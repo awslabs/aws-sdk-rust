@@ -2807,6 +2807,10 @@ source_hash = '82f82c1caf595beecc9118ae0157240c1580640f2f10e650c478ed6e003887be'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '484ac8814dc06739c5b28ff9ef294f81487d2cc348776e1e51dafd7b15d0890e'
+
+[release]
+tag = 'release-2026-10-26'
+
 [release.crates]
 aws-sdk-appstream = '1.136.0'
 aws-sdk-billing = '1.78.0'
