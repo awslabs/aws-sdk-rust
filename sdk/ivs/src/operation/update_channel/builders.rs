@@ -276,4 +276,18 @@ impl UpdateChannelFluentBuilder {
     pub fn get_ad_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ad_configuration_arn()
     }
+    /// <p>Failover-slate-configuration ARN. A valid ARN value here both specifies the ARN and enables failover slate. If this is set to an empty string, failover slate configuration is disabled.</p>
+    pub fn failover_slate_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.failover_slate_configuration_arn(input.into());
+        self
+    }
+    /// <p>Failover-slate-configuration ARN. A valid ARN value here both specifies the ARN and enables failover slate. If this is set to an empty string, failover slate configuration is disabled.</p>
+    pub fn set_failover_slate_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_failover_slate_configuration_arn(input);
+        self
+    }
+    /// <p>Failover-slate-configuration ARN. A valid ARN value here both specifies the ARN and enables failover slate. If this is set to an empty string, failover slate configuration is disabled.</p>
+    pub fn get_failover_slate_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_failover_slate_configuration_arn()
+    }
 }

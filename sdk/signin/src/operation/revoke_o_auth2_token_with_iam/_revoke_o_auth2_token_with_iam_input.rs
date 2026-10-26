@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RevokeOAuth2TokenWithIamInput {
-    /// The refresh_token to revoke. Must be a refresh_token issued by AWS Sign-In (prefix "ASOR"); access_tokens are not accepted for revocation.
+    /// The refresh token to revoke. Must be a refresh token issued by AWS Sign-In. Access tokens are not accepted for revocation.
     pub token: ::std::option::Option<::std::string::String>,
 }
 impl RevokeOAuth2TokenWithIamInput {
-    /// The refresh_token to revoke. Must be a refresh_token issued by AWS Sign-In (prefix "ASOR"); access_tokens are not accepted for revocation.
+    /// The refresh token to revoke. Must be a refresh token issued by AWS Sign-In. Access tokens are not accepted for revocation.
     pub fn token(&self) -> ::std::option::Option<&str> {
         self.token.as_deref()
     }
@@ -34,18 +34,18 @@ pub struct RevokeOAuth2TokenWithIamInputBuilder {
     pub(crate) token: ::std::option::Option<::std::string::String>,
 }
 impl RevokeOAuth2TokenWithIamInputBuilder {
-    /// The refresh_token to revoke. Must be a refresh_token issued by AWS Sign-In (prefix "ASOR"); access_tokens are not accepted for revocation.
+    /// The refresh token to revoke. Must be a refresh token issued by AWS Sign-In. Access tokens are not accepted for revocation.
     /// This field is required.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
         self
     }
-    /// The refresh_token to revoke. Must be a refresh_token issued by AWS Sign-In (prefix "ASOR"); access_tokens are not accepted for revocation.
+    /// The refresh token to revoke. Must be a refresh token issued by AWS Sign-In. Access tokens are not accepted for revocation.
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token = input;
         self
     }
-    /// The refresh_token to revoke. Must be a refresh_token issued by AWS Sign-In (prefix "ASOR"); access_tokens are not accepted for revocation.
+    /// The refresh token to revoke. Must be a refresh token issued by AWS Sign-In. Access tokens are not accepted for revocation.
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.token
     }

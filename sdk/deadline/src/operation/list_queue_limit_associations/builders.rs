@@ -22,7 +22,7 @@ impl crate::operation::list_queue_limit_associations::builders::ListQueueLimitAs
 }
 /// Fluent builder constructing a request to `ListQueueLimitAssociations`.
 ///
-/// <p>Gets a list of the associations between queues and limits defined in a farm.</p>
+/// Gets a list of the associations between queues and limits defined in a farm.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListQueueLimitAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,73 +114,73 @@ impl ListQueueLimitAssociationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_queue_limit_associations::paginator::ListQueueLimitAssociationsPaginator {
         crate::operation::list_queue_limit_associations::paginator::ListQueueLimitAssociationsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The unique identifier of the farm that contains the limits and associations.</p>
+    /// The unique identifier of the farm that contains the limits and associations.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The unique identifier of the farm that contains the limits and associations.</p>
+    /// The unique identifier of the farm that contains the limits and associations.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The unique identifier of the farm that contains the limits and associations.</p>
+    /// The unique identifier of the farm that contains the limits and associations.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of associations to return in each page of results.</p>
+    /// The maximum number of associations to return in each page of results.
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of associations to return in each page of results.</p>
+    /// The maximum number of associations to return in each page of results.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of associations to return in each page of results.</p>
+    /// The maximum number of associations to return in each page of results.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>Specifies that the operation should return only the queue limit associations for the specified queue. If you specify both the <code>queueId</code> and the <code>limitId</code>, only the specified limit is returned if it exists.</p>
+    /// Specifies that the operation should return only the queue limit associations for the specified queue. If you specify both the <code>queueId</code> and the <code>limitId</code>, only the specified limit is returned if it exists.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
         self
     }
-    /// <p>Specifies that the operation should return only the queue limit associations for the specified queue. If you specify both the <code>queueId</code> and the <code>limitId</code>, only the specified limit is returned if it exists.</p>
+    /// Specifies that the operation should return only the queue limit associations for the specified queue. If you specify both the <code>queueId</code> and the <code>limitId</code>, only the specified limit is returned if it exists.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_id(input);
         self
     }
-    /// <p>Specifies that the operation should return only the queue limit associations for the specified queue. If you specify both the <code>queueId</code> and the <code>limitId</code>, only the specified limit is returned if it exists.</p>
+    /// Specifies that the operation should return only the queue limit associations for the specified queue. If you specify both the <code>queueId</code> and the <code>limitId</code>, only the specified limit is returned if it exists.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }
-    /// <p>Specifies that the operation should return only the queue limit associations for the specified limit. If you specify both the <code>queueId</code> and the <code>limitId</code>, only the specified limit is returned if it exists.</p>
+    /// Specifies that the operation should return only the queue limit associations for the specified limit. If you specify both the <code>queueId</code> and the <code>limitId</code>, only the specified limit is returned if it exists.
     pub fn limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.limit_id(input.into());
         self
     }
-    /// <p>Specifies that the operation should return only the queue limit associations for the specified limit. If you specify both the <code>queueId</code> and the <code>limitId</code>, only the specified limit is returned if it exists.</p>
+    /// Specifies that the operation should return only the queue limit associations for the specified limit. If you specify both the <code>queueId</code> and the <code>limitId</code>, only the specified limit is returned if it exists.
     pub fn set_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_limit_id(input);
         self
     }
-    /// <p>Specifies that the operation should return only the queue limit associations for the specified limit. If you specify both the <code>queueId</code> and the <code>limitId</code>, only the specified limit is returned if it exists.</p>
+    /// Specifies that the operation should return only the queue limit associations for the specified limit. If you specify both the <code>queueId</code> and the <code>limitId</code>, only the specified limit is returned if it exists.
     pub fn get_limit_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_limit_id()
     }

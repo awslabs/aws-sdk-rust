@@ -61,6 +61,8 @@ pub use crate::types::error::_image_not_found_exception::ImageNotFoundException;
 
 pub use crate::types::error::_scan_not_found_exception::ScanNotFoundException;
 
+pub use crate::types::error::_replication_backfill_not_found_exception::ReplicationBackfillNotFoundException;
+
 pub use crate::types::error::_layer_inaccessible_exception::LayerInaccessibleException;
 
 pub use crate::types::error::_layers_not_found_exception::LayersNotFoundException;
@@ -88,6 +90,10 @@ pub use crate::types::error::_image_archived_exception::ImageArchivedException;
 pub use crate::types::error::_unsupported_image_type_exception::UnsupportedImageTypeException;
 
 pub use crate::types::error::_lifecycle_policy_preview_in_progress_exception::LifecyclePolicyPreviewInProgressException;
+
+pub use crate::types::error::_replication_backfill_in_progress_exception::ReplicationBackfillInProgressException;
+
+pub use crate::types::error::_replication_backfill_invalid_status_exception::ReplicationBackfillInvalidStatusException;
 
 pub use crate::types::error::_image_storage_class_update_not_supported_exception::ImageStorageClassUpdateNotSupportedException;
 
@@ -146,6 +152,12 @@ mod _pull_through_cache_rule_not_found_exception;
 mod _referenced_images_not_found_exception;
 
 mod _registry_policy_not_found_exception;
+
+mod _replication_backfill_in_progress_exception;
+
+mod _replication_backfill_invalid_status_exception;
+
+mod _replication_backfill_not_found_exception;
 
 mod _repository_already_exists_exception;
 

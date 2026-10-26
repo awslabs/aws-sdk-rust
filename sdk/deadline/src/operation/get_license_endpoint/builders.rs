@@ -22,7 +22,7 @@ impl crate::operation::get_license_endpoint::builders::GetLicenseEndpointInputBu
 }
 /// Fluent builder constructing a request to `GetLicenseEndpoint`.
 ///
-/// <p>Gets a licence endpoint.</p>
+/// Gets a licence endpoint.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLicenseEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetLicenseEndpointFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The license endpoint ID.</p>
+    /// The license endpoint ID.
     pub fn license_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_endpoint_id(input.into());
         self
     }
-    /// <p>The license endpoint ID.</p>
+    /// The license endpoint ID.
     pub fn set_license_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_endpoint_id(input);
         self
     }
-    /// <p>The license endpoint ID.</p>
+    /// The license endpoint ID.
     pub fn get_license_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_license_endpoint_id()
     }

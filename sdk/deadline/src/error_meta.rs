@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>You don't have permission to perform the action.</p>
+    /// You don't have permission to perform the action.
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
+    /// Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.
     ConflictException(crate::types::error::ConflictException),
-    /// <p>Deadline Cloud can't process your request right now. Try again later.</p>
+    /// Deadline Cloud can't process your request right now. Try again later.
     InternalServerErrorException(crate::types::error::InternalServerErrorException),
-    /// <p>The requested resource can't be found.</p>
+    /// The requested resource can't be found.
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>You exceeded your service quota. Service quotas, also referred to as limits, are the maximum number of service resources or operations for your Amazon Web Services account.</p>
+    /// You exceeded your service quota. Service quotas, also referred to as limits, are the maximum number of service resources or operations for your Amazon Web Services account.
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p>Your request exceeded a request rate quota.</p>
+    /// Your request exceeded a request rate quota.
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.</p>
+    /// The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters.
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

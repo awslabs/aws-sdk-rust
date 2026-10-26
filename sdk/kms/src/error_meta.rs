@@ -72,6 +72,7 @@ pub enum Error {
     InvalidArnException(crate::types::error::InvalidArnException),
     /// <p>From the <code>Decrypt</code> or <code>ReEncrypt</code> operation, the request was rejected because the specified ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.</p>
     /// <p>From the <code>ImportKeyMaterial</code> operation, the request was rejected because KMS could not decrypt the encrypted (wrapped) key material.</p>
+    /// <p>From the <code>Decapsulate</code> operation, the request was rejected because the length of the <code>SharedSecretCiphertextBlob</code> is inconsistent with the specified ML-KEM key spec.</p>
     InvalidCiphertextException(crate::types::error::InvalidCiphertextException),
     /// <p>The request was rejected because the specified <code>GrantId</code> is not valid.</p>
     InvalidGrantIdException(crate::types::error::InvalidGrantIdException),
@@ -86,7 +87,7 @@ pub enum Error {
     /// <li>
     /// <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p></li>
     /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. For deriving key agreement secrets, the <code>KeyUsage</code> must be <code>KEY_AGREEMENT</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. For deriving key agreement secrets, the <code>KeyUsage</code> must be <code>KEY_AGREEMENT</code>. For encapsulating and decapsulating shared secrets, the <code>KeyUsage</code> must be <code>ENCAPSULATE_DECAPSULATE</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
     /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::types::error::InvalidKeyUsageException),
     /// <p>The request was rejected because the marker that specifies where pagination should next begin is not valid.</p>
@@ -514,6 +515,37 @@ impl From<crate::operation::create_key::CreateKeyError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::decapsulate::DecapsulateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::decapsulate::DecapsulateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::decapsulate::DecapsulateError> for Error {
+    fn from(err: crate::operation::decapsulate::DecapsulateError) -> Self {
+        match err {
+            crate::operation::decapsulate::DecapsulateError::DependencyTimeoutException(inner) => Error::DependencyTimeoutException(inner),
+            crate::operation::decapsulate::DecapsulateError::DisabledException(inner) => Error::DisabledException(inner),
+            crate::operation::decapsulate::DecapsulateError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
+            crate::operation::decapsulate::DecapsulateError::InvalidCiphertextException(inner) => Error::InvalidCiphertextException(inner),
+            crate::operation::decapsulate::DecapsulateError::InvalidGrantTokenException(inner) => Error::InvalidGrantTokenException(inner),
+            crate::operation::decapsulate::DecapsulateError::InvalidKeyUsageException(inner) => Error::InvalidKeyUsageException(inner),
+            crate::operation::decapsulate::DecapsulateError::KeyUnavailableException(inner) => Error::KeyUnavailableException(inner),
+            crate::operation::decapsulate::DecapsulateError::KmsInternalException(inner) => Error::KmsInternalException(inner),
+            crate::operation::decapsulate::DecapsulateError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
+            crate::operation::decapsulate::DecapsulateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::decapsulate::DecapsulateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::decrypt::DecryptError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -893,6 +925,36 @@ impl From<crate::operation::enable_key_rotation::EnableKeyRotationError> for Err
                 Error::UnsupportedOperationException(inner)
             }
             crate::operation::enable_key_rotation::EnableKeyRotationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::encapsulate::EncapsulateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::encapsulate::EncapsulateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::encapsulate::EncapsulateError> for Error {
+    fn from(err: crate::operation::encapsulate::EncapsulateError) -> Self {
+        match err {
+            crate::operation::encapsulate::EncapsulateError::DependencyTimeoutException(inner) => Error::DependencyTimeoutException(inner),
+            crate::operation::encapsulate::EncapsulateError::DisabledException(inner) => Error::DisabledException(inner),
+            crate::operation::encapsulate::EncapsulateError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
+            crate::operation::encapsulate::EncapsulateError::InvalidGrantTokenException(inner) => Error::InvalidGrantTokenException(inner),
+            crate::operation::encapsulate::EncapsulateError::InvalidKeyUsageException(inner) => Error::InvalidKeyUsageException(inner),
+            crate::operation::encapsulate::EncapsulateError::KeyUnavailableException(inner) => Error::KeyUnavailableException(inner),
+            crate::operation::encapsulate::EncapsulateError::KmsInternalException(inner) => Error::KmsInternalException(inner),
+            crate::operation::encapsulate::EncapsulateError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
+            crate::operation::encapsulate::EncapsulateError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::encapsulate::EncapsulateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

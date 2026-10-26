@@ -889,6 +889,8 @@ mod update_metric_metadata;
 
 mod update_notification_content;
 
+mod update_outbound_email_contact_message;
+
 mod update_participant_authentication;
 
 mod update_participant_role_config;

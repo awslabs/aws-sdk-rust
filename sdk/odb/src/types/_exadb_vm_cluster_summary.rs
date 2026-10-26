@@ -66,7 +66,7 @@ pub struct ExadbVmClusterSummary {
     pub scan_ip_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The port number for TCP connections to the Single Client Access Name (SCAN) listener for the Exascale VM cluster.</p>
     pub scan_listener_port_tcp: ::std::option::Option<i32>,
-    /// <p>The port number for TCP connections with SSL to the Single Client Access Name (SCAN) listener for the Exascale VM cluster.</p>
+    /// <p>Reserved for future use.</p>
     pub scan_listener_port_tcp_ssl: ::std::option::Option<i32>,
     /// <p>The hardware model name of the Exadata infrastructure that's running the Exascale VM cluster.</p>
     pub shape: ::std::option::Option<::std::string::String>,
@@ -223,7 +223,7 @@ impl ExadbVmClusterSummary {
     pub fn scan_listener_port_tcp(&self) -> ::std::option::Option<i32> {
         self.scan_listener_port_tcp
     }
-    /// <p>The port number for TCP connections with SSL to the Single Client Access Name (SCAN) listener for the Exascale VM cluster.</p>
+    /// <p>Reserved for future use.</p>
     pub fn scan_listener_port_tcp_ssl(&self) -> ::std::option::Option<i32> {
         self.scan_listener_port_tcp_ssl
     }
@@ -784,17 +784,17 @@ impl ExadbVmClusterSummaryBuilder {
     pub fn get_scan_listener_port_tcp(&self) -> &::std::option::Option<i32> {
         &self.scan_listener_port_tcp
     }
-    /// <p>The port number for TCP connections with SSL to the Single Client Access Name (SCAN) listener for the Exascale VM cluster.</p>
+    /// <p>Reserved for future use.</p>
     pub fn scan_listener_port_tcp_ssl(mut self, input: i32) -> Self {
         self.scan_listener_port_tcp_ssl = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The port number for TCP connections with SSL to the Single Client Access Name (SCAN) listener for the Exascale VM cluster.</p>
+    /// <p>Reserved for future use.</p>
     pub fn set_scan_listener_port_tcp_ssl(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scan_listener_port_tcp_ssl = input;
         self
     }
-    /// <p>The port number for TCP connections with SSL to the Single Client Access Name (SCAN) listener for the Exascale VM cluster.</p>
+    /// <p>Reserved for future use.</p>
     pub fn get_scan_listener_port_tcp_ssl(&self) -> &::std::option::Option<i32> {
         &self.scan_listener_port_tcp_ssl
     }

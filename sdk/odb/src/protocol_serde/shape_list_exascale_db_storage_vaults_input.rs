@@ -12,5 +12,11 @@ pub fn ser_list_exascale_db_storage_vaults_input_input(
     if let Some(var_2) = &input.next_token {
         object.key("nextToken").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.cloud_exadata_infrastructure_id {
+        object.key("cloudExadataInfrastructureId").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.vault_type {
+        object.key("vaultType").string(var_4.as_str());
+    }
     Ok(())
 }

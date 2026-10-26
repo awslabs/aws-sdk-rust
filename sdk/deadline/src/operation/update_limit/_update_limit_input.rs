@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateLimitInput {
-    /// <p>The unique identifier of the farm that contains the limit.</p>
+    /// The unique identifier of the farm that contains the limit.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the limit to update.</p>
+    /// The unique identifier of the limit to update.
     pub limit_id: ::std::option::Option<::std::string::String>,
     /// <p>The new display name of the limit.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
@@ -15,17 +15,15 @@ pub struct UpdateLimitInput {
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available.</p>
-    /// <p>If more than the new maximum number is currently in use, running jobs finish but no new jobs are started until the number of resources in use is below the new maximum number.</p>
-    /// <p>The <code>maxCount</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.</p>
+    /// The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available. If more than the new maximum number is currently in use, running jobs finish but no new jobs are started until the number of resources in use is below the new maximum number. The <code>maxCount</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.
     pub max_count: ::std::option::Option<i32>,
 }
 impl UpdateLimitInput {
-    /// <p>The unique identifier of the farm that contains the limit.</p>
+    /// The unique identifier of the farm that contains the limit.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The unique identifier of the limit to update.</p>
+    /// The unique identifier of the limit to update.
     pub fn limit_id(&self) -> ::std::option::Option<&str> {
         self.limit_id.as_deref()
     }
@@ -41,9 +39,7 @@ impl UpdateLimitInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available.</p>
-    /// <p>If more than the new maximum number is currently in use, running jobs finish but no new jobs are started until the number of resources in use is below the new maximum number.</p>
-    /// <p>The <code>maxCount</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.</p>
+    /// The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available. If more than the new maximum number is currently in use, running jobs finish but no new jobs are started until the number of resources in use is below the new maximum number. The <code>maxCount</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.
     pub fn max_count(&self) -> ::std::option::Option<i32> {
         self.max_count
     }
@@ -77,33 +73,33 @@ pub struct UpdateLimitInputBuilder {
     pub(crate) max_count: ::std::option::Option<i32>,
 }
 impl UpdateLimitInputBuilder {
-    /// <p>The unique identifier of the farm that contains the limit.</p>
+    /// The unique identifier of the farm that contains the limit.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the farm that contains the limit.</p>
+    /// The unique identifier of the farm that contains the limit.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The unique identifier of the farm that contains the limit.</p>
+    /// The unique identifier of the farm that contains the limit.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The unique identifier of the limit to update.</p>
+    /// The unique identifier of the limit to update.
     /// This field is required.
     pub fn limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.limit_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the limit to update.</p>
+    /// The unique identifier of the limit to update.
     pub fn set_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.limit_id = input;
         self
     }
-    /// <p>The unique identifier of the limit to update.</p>
+    /// The unique identifier of the limit to update.
     pub fn get_limit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.limit_id
     }
@@ -147,23 +143,17 @@ impl UpdateLimitInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available.</p>
-    /// <p>If more than the new maximum number is currently in use, running jobs finish but no new jobs are started until the number of resources in use is below the new maximum number.</p>
-    /// <p>The <code>maxCount</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.</p>
+    /// The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available. If more than the new maximum number is currently in use, running jobs finish but no new jobs are started until the number of resources in use is below the new maximum number. The <code>maxCount</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.
     pub fn max_count(mut self, input: i32) -> Self {
         self.max_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available.</p>
-    /// <p>If more than the new maximum number is currently in use, running jobs finish but no new jobs are started until the number of resources in use is below the new maximum number.</p>
-    /// <p>The <code>maxCount</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.</p>
+    /// The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available. If more than the new maximum number is currently in use, running jobs finish but no new jobs are started until the number of resources in use is below the new maximum number. The <code>maxCount</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.
     pub fn set_max_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_count = input;
         self
     }
-    /// <p>The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available.</p>
-    /// <p>If more than the new maximum number is currently in use, running jobs finish but no new jobs are started until the number of resources in use is below the new maximum number.</p>
-    /// <p>The <code>maxCount</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.</p>
+    /// The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available. If more than the new maximum number is currently in use, running jobs finish but no new jobs are started until the number of resources in use is below the new maximum number. The <code>maxCount</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.
     pub fn get_max_count(&self) -> &::std::option::Option<i32> {
         &self.max_count
     }

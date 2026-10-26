@@ -3,19 +3,19 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetQueueEnvironment`](crate::operation::get_queue_environment::builders::GetQueueEnvironmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_queue_environment::builders::GetQueueEnvironmentFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_queue_environment::builders::GetQueueEnvironmentFluentBuilder::set_farm_id):<br>required: **true**<br><p>The farm ID for the queue environment.</p><br>
-    ///   - [`queue_id(impl Into<String>)`](crate::operation::get_queue_environment::builders::GetQueueEnvironmentFluentBuilder::queue_id) / [`set_queue_id(Option<String>)`](crate::operation::get_queue_environment::builders::GetQueueEnvironmentFluentBuilder::set_queue_id):<br>required: **true**<br><p>The queue ID for the queue environment.</p><br>
-    ///   - [`queue_environment_id(impl Into<String>)`](crate::operation::get_queue_environment::builders::GetQueueEnvironmentFluentBuilder::queue_environment_id) / [`set_queue_environment_id(Option<String>)`](crate::operation::get_queue_environment::builders::GetQueueEnvironmentFluentBuilder::set_queue_environment_id):<br>required: **true**<br><p>The queue environment ID.</p><br>
+    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_queue_environment::builders::GetQueueEnvironmentFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_queue_environment::builders::GetQueueEnvironmentFluentBuilder::set_farm_id):<br>required: **true**<br>The farm ID for the queue environment.<br>
+    ///   - [`queue_id(impl Into<String>)`](crate::operation::get_queue_environment::builders::GetQueueEnvironmentFluentBuilder::queue_id) / [`set_queue_id(Option<String>)`](crate::operation::get_queue_environment::builders::GetQueueEnvironmentFluentBuilder::set_queue_id):<br>required: **true**<br>The queue ID for the queue environment.<br>
+    ///   - [`queue_environment_id(impl Into<String>)`](crate::operation::get_queue_environment::builders::GetQueueEnvironmentFluentBuilder::queue_environment_id) / [`set_queue_environment_id(Option<String>)`](crate::operation::get_queue_environment::builders::GetQueueEnvironmentFluentBuilder::set_queue_environment_id):<br>required: **true**<br>The queue environment ID.<br>
     /// - On success, responds with [`GetQueueEnvironmentOutput`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput) with field(s):
-    ///   - [`queue_environment_id(String)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::queue_environment_id): <p>The queue environment ID.</p>
-    ///   - [`name(String)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::name): <p>The name of the queue environment.</p>
-    ///   - [`priority(i32)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::priority): <p>The priority of the queue environment.</p>
-    ///   - [`template_type(EnvironmentTemplateType)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::template_type): <p>The type of template for the queue environment.</p>
-    ///   - [`template(String)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::template): <p>The template for the queue environment.</p>
-    ///   - [`created_at(DateTime)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::created_at): <p>The date and time the resource was created.</p>
-    ///   - [`created_by(String)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::created_by): <p>The user or system that created this resource.&gt;</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::updated_at): <p>The date and time the resource was updated.</p>
-    ///   - [`updated_by(Option<String>)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::updated_by): <p>The user or system that updated this resource.</p>
+    ///   - [`queue_environment_id(String)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::queue_environment_id): The queue environment ID.
+    ///   - [`name(String)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::name): The name of the queue environment.
+    ///   - [`priority(i32)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::priority): The priority of the queue environment.
+    ///   - [`template_type(EnvironmentTemplateType)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::template_type): The type of template for the queue environment.
+    ///   - [`template(String)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::template): The template for the queue environment.
+    ///   - [`created_at(DateTime)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::created_at): The date and time the resource was created.
+    ///   - [`created_by(String)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::created_by): The user or system that created this resource.&gt;
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::updated_at): The date and time the resource was updated.
+    ///   - [`updated_by(Option<String>)`](crate::operation::get_queue_environment::GetQueueEnvironmentOutput::updated_by): The user or system that updated this resource.
     /// - On failure, responds with [`SdkError<GetQueueEnvironmentError>`](crate::operation::get_queue_environment::GetQueueEnvironmentError)
     pub fn get_queue_environment(&self) -> crate::operation::get_queue_environment::builders::GetQueueEnvironmentFluentBuilder {
         crate::operation::get_queue_environment::builders::GetQueueEnvironmentFluentBuilder::new(self.handle.clone())

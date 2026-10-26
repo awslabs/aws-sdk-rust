@@ -25,6 +25,10 @@ pub use crate::types::_bridge_source::BridgeSource;
 
 pub use crate::types::_desired_state::DesiredState;
 
+pub use crate::types::_destination_endpoint_configuration::DestinationEndpointConfiguration;
+
+pub use crate::types::_destination_endpoint::DestinationEndpoint;
+
 pub use crate::types::_set_source_request::SetSourceRequest;
 
 pub use crate::types::_add_maintenance::AddMaintenance;
@@ -137,6 +141,10 @@ pub use crate::types::_router_output_state::RouterOutputState;
 
 pub use crate::types::_router_output_routed_state::RouterOutputRoutedState;
 
+pub use crate::types::_source_endpoint_configuration::SourceEndpointConfiguration;
+
+pub use crate::types::_source_endpoint::SourceEndpoint;
+
 pub use crate::types::_listed_entitlement::ListedEntitlement;
 
 pub use crate::types::_listed_bridge::ListedBridge;
@@ -164,6 +172,36 @@ pub use crate::types::_multicast_source_settings::MulticastSourceSettings;
 pub use crate::types::_bridge_flow_source::BridgeFlowSource;
 
 pub use crate::types::_bridge_network_source::BridgeNetworkSource;
+
+pub use crate::types::_destination_endpoint_filter::DestinationEndpointFilter;
+
+pub use crate::types::_listed_destination_endpoint::ListedDestinationEndpoint;
+
+pub use crate::types::_standard_destination_endpoint_configuration::StandardDestinationEndpointConfiguration;
+
+pub use crate::types::_router_input_destination_endpoint_configuration::RouterInputDestinationEndpointConfiguration;
+
+pub use crate::types::_endpoint_lifecycle::EndpointLifecycle;
+
+pub use crate::types::_destination_endpoint_type::DestinationEndpointType;
+
+pub use crate::types::_resource_share_ownership::ResourceShareOwnership;
+
+pub use crate::types::_resource_share_details::ResourceShareDetails;
+
+pub use crate::types::_destination_endpoint_registration_state::DestinationEndpointRegistrationState;
+
+pub use crate::types::_destination_endpoint_connection_details::DestinationEndpointConnectionDetails;
+
+pub use crate::types::_destination_endpoint_connection_state::DestinationEndpointConnectionState;
+
+pub use crate::types::_endpoint_encryption_type::EndpointEncryptionType;
+
+pub use crate::types::_endpoint_encryption_configuration::EndpointEncryptionConfiguration;
+
+pub use crate::types::_destination_endpoint_associated_resource_details::DestinationEndpointAssociatedResourceDetails;
+
+pub use crate::types::_batch_get_destination_endpoint_error::BatchGetDestinationEndpointError;
 
 pub use crate::types::_listed_flow::ListedFlow;
 
@@ -241,6 +279,8 @@ pub use crate::types::_router_input_filter::RouterInputFilter;
 
 pub use crate::types::_listed_router_input::ListedRouterInput;
 
+pub use crate::types::_destination_endpoint_router_input_configuration::DestinationEndpointRouterInputConfiguration;
+
 pub use crate::types::_standard_router_input_configuration::StandardRouterInputConfiguration;
 
 pub use crate::types::_media_live_channel_router_input_configuration::MediaLiveChannelRouterInputConfiguration;
@@ -297,6 +337,8 @@ pub use crate::types::_media_connect_flow_router_output_configuration::MediaConn
 
 pub use crate::types::_media_live_input_router_output_configuration::MediaLiveInputRouterOutputConfiguration;
 
+pub use crate::types::_source_endpoint_router_output_configuration::SourceEndpointRouterOutputConfiguration;
+
 pub use crate::types::_fabric_latency_mode::FabricLatencyMode;
 
 pub use crate::types::_router_output_type::RouterOutputType;
@@ -305,11 +347,59 @@ pub use crate::types::_router_output_stream_details::RouterOutputStreamDetails;
 
 pub use crate::types::_batch_get_router_output_error::BatchGetRouterOutputError;
 
+pub use crate::types::_source_endpoint_filter::SourceEndpointFilter;
+
+pub use crate::types::_listed_source_endpoint::ListedSourceEndpoint;
+
+pub use crate::types::_standard_source_endpoint_configuration::StandardSourceEndpointConfiguration;
+
+pub use crate::types::_router_output_source_endpoint_configuration::RouterOutputSourceEndpointConfiguration;
+
+pub use crate::types::_source_endpoint_type::SourceEndpointType;
+
+pub use crate::types::_source_endpoint_registration_state::SourceEndpointRegistrationState;
+
+pub use crate::types::_source_endpoint_connection_state::SourceEndpointConnectionState;
+
+pub use crate::types::_source_endpoint_connection_details::SourceEndpointConnectionDetails;
+
+pub use crate::types::_source_endpoint_associated_resource_details::SourceEndpointAssociatedResourceDetails;
+
+pub use crate::types::_batch_get_source_endpoint_error::BatchGetSourceEndpointError;
+
 pub use crate::types::_add_bridge_network_output_request::AddBridgeNetworkOutputRequest;
 
 pub use crate::types::_add_bridge_flow_source_request::AddBridgeFlowSourceRequest;
 
 pub use crate::types::_add_bridge_network_source_request::AddBridgeNetworkSourceRequest;
+
+pub use crate::types::_resource_share_state::ResourceShareState;
+
+pub use crate::types::_standard_destination_endpoint_networking_configuration::StandardDestinationEndpointNetworkingConfiguration;
+
+pub use crate::types::_standard_destination_endpoint_protocol_configuration::StandardDestinationEndpointProtocolConfiguration;
+
+pub use crate::types::_destination_endpoint_networking_type::DestinationEndpointNetworkingType;
+
+pub use crate::types::_destination_endpoint_protocol::DestinationEndpointProtocol;
+
+pub use crate::types::_destination_endpoint_message::DestinationEndpointMessage;
+
+pub use crate::types::_owned_resource_share_details::OwnedResourceShareDetails;
+
+pub use crate::types::_consumed_resource_share_details::ConsumedResourceShareDetails;
+
+pub use crate::types::_standard_destination_endpoint_connection_details::StandardDestinationEndpointConnectionDetails;
+
+pub use crate::types::_router_input_destination_endpoint_connection_details::RouterInputDestinationEndpointConnectionDetails;
+
+pub use crate::types::_secrets_manager_endpoint_encryption_configuration::SecretsManagerEndpointEncryptionConfiguration;
+
+pub use crate::types::_automatic_endpoint_encryption_configuration::AutomaticEndpointEncryptionConfiguration;
+
+pub use crate::types::_standard_destination_endpoint_associated_resource_details::StandardDestinationEndpointAssociatedResourceDetails;
+
+pub use crate::types::_router_input_destination_endpoint_associated_resource_details::RouterInputDestinationEndpointAssociatedResourceDetails;
 
 pub use crate::types::_source_type::SourceType;
 
@@ -367,6 +457,8 @@ pub use crate::types::_silent_audio_configuration::SilentAudioConfiguration;
 
 pub use crate::types::_router_input_message::RouterInputMessage;
 
+pub use crate::types::_destination_endpoint_router_input_stream_details::DestinationEndpointRouterInputStreamDetails;
+
 pub use crate::types::_standard_router_input_stream_details::StandardRouterInputStreamDetails;
 
 pub use crate::types::_media_live_channel_router_input_stream_details::MediaLiveChannelRouterInputStreamDetails;
@@ -390,6 +482,42 @@ pub use crate::types::_standard_router_output_stream_details::StandardRouterOutp
 pub use crate::types::_media_connect_flow_router_output_stream_details::MediaConnectFlowRouterOutputStreamDetails;
 
 pub use crate::types::_media_live_input_router_output_stream_details::MediaLiveInputRouterOutputStreamDetails;
+
+pub use crate::types::_source_endpoint_router_output_stream_details::SourceEndpointRouterOutputStreamDetails;
+
+pub use crate::types::_standard_source_endpoint_networking_configuration::StandardSourceEndpointNetworkingConfiguration;
+
+pub use crate::types::_standard_source_endpoint_protocol_configuration::StandardSourceEndpointProtocolConfiguration;
+
+pub use crate::types::_source_endpoint_networking_type::SourceEndpointNetworkingType;
+
+pub use crate::types::_source_endpoint_protocol::SourceEndpointProtocol;
+
+pub use crate::types::_source_endpoint_message::SourceEndpointMessage;
+
+pub use crate::types::_standard_source_endpoint_connection_details::StandardSourceEndpointConnectionDetails;
+
+pub use crate::types::_router_output_source_endpoint_connection_details::RouterOutputSourceEndpointConnectionDetails;
+
+pub use crate::types::_standard_source_endpoint_associated_resource_details::StandardSourceEndpointAssociatedResourceDetails;
+
+pub use crate::types::_router_output_source_endpoint_associated_resource_details::RouterOutputSourceEndpointAssociatedResourceDetails;
+
+pub use crate::types::_public_destination_endpoint_networking_configuration::PublicDestinationEndpointNetworkingConfiguration;
+
+pub use crate::types::_vpc_destination_endpoint_networking_configuration::VpcDestinationEndpointNetworkingConfiguration;
+
+pub use crate::types::_rist_standard_destination_endpoint_configuration::RistStandardDestinationEndpointConfiguration;
+
+pub use crate::types::_srt_listener_standard_destination_endpoint_configuration::SrtListenerStandardDestinationEndpointConfiguration;
+
+pub use crate::types::_srt_caller_standard_destination_endpoint_configuration::SrtCallerStandardDestinationEndpointConfiguration;
+
+pub use crate::types::_rtp_standard_destination_endpoint_configuration::RtpStandardDestinationEndpointConfiguration;
+
+pub use crate::types::_endpoint_encryption_secret_type::EndpointEncryptionSecretType;
+
+pub use crate::types::_endpoint_encryption_secret_configuration::EndpointEncryptionSecretConfiguration;
 
 pub use crate::types::_silent_audio::SilentAudio;
 
@@ -439,6 +567,20 @@ pub use crate::types::_srt_caller_router_output_configuration::SrtCallerRouterOu
 
 pub use crate::types::_rtp_router_output_configuration::RtpRouterOutputConfiguration;
 
+pub use crate::types::_public_source_endpoint_networking_configuration::PublicSourceEndpointNetworkingConfiguration;
+
+pub use crate::types::_vpc_source_endpoint_networking_configuration::VpcSourceEndpointNetworkingConfiguration;
+
+pub use crate::types::_rist_standard_source_endpoint_configuration::RistStandardSourceEndpointConfiguration;
+
+pub use crate::types::_srt_listener_standard_source_endpoint_configuration::SrtListenerStandardSourceEndpointConfiguration;
+
+pub use crate::types::_srt_caller_standard_source_endpoint_configuration::SrtCallerStandardSourceEndpointConfiguration;
+
+pub use crate::types::_rtp_standard_source_endpoint_configuration::RtpStandardSourceEndpointConfiguration;
+
+pub use crate::types::_forward_error_correction_state::ForwardErrorCorrectionState;
+
 pub use crate::types::_transport_stream::TransportStream;
 
 pub use crate::types::_color_information::ColorInformation;
@@ -453,11 +595,11 @@ pub use crate::types::_input_configuration::InputConfiguration;
 
 pub use crate::types::_srt_decryption_configuration::SrtDecryptionConfiguration;
 
-pub use crate::types::_forward_error_correction_state::ForwardErrorCorrectionState;
-
 pub use crate::types::_srt_encryption_configuration::SrtEncryptionConfiguration;
 
 pub use crate::types::_tls_encryption::TlsEncryption;
+
+pub use crate::types::_public_destination_endpoint_networking_configuration_allow_rule::PublicDestinationEndpointNetworkingConfigurationAllowRule;
 
 pub use crate::types::_video_colorimetry::VideoColorimetry;
 
@@ -470,6 +612,8 @@ pub use crate::types::_interface::Interface;
 pub use crate::types::_tls_encryption_type::TlsEncryptionType;
 
 pub use crate::types::_tls_encryption_configuration::TlsEncryptionConfiguration;
+
+pub use crate::types::_public_source_endpoint_networking_configuration_allow_rule::PublicSourceEndpointNetworkingConfigurationAllowRule;
 
 pub use crate::types::_public_tls_encryption_configuration::PublicTlsEncryptionConfiguration;
 
@@ -499,11 +643,17 @@ mod _audio_monitoring_setting;
 
 mod _automatic_encryption_key_configuration;
 
+mod _automatic_endpoint_encryption_configuration;
+
+mod _batch_get_destination_endpoint_error;
+
 mod _batch_get_router_input_error;
 
 mod _batch_get_router_network_interface_error;
 
 mod _batch_get_router_output_error;
+
+mod _batch_get_source_endpoint_error;
 
 mod _black_frames;
 
@@ -533,6 +683,8 @@ mod _colorimetry;
 
 mod _connection_status;
 
+mod _consumed_resource_share_details;
+
 mod _content_quality_analysis_feature_configuration;
 
 mod _content_quality_analysis_state;
@@ -546,6 +698,32 @@ mod _desired_state;
 mod _destination_configuration;
 
 mod _destination_configuration_request;
+
+mod _destination_endpoint;
+
+mod _destination_endpoint_associated_resource_details;
+
+mod _destination_endpoint_configuration;
+
+mod _destination_endpoint_connection_details;
+
+mod _destination_endpoint_connection_state;
+
+mod _destination_endpoint_filter;
+
+mod _destination_endpoint_message;
+
+mod _destination_endpoint_networking_type;
+
+mod _destination_endpoint_protocol;
+
+mod _destination_endpoint_registration_state;
+
+mod _destination_endpoint_router_input_configuration;
+
+mod _destination_endpoint_router_input_stream_details;
+
+mod _destination_endpoint_type;
 
 mod _duration_units;
 
@@ -564,6 +742,16 @@ mod _encoding_parameters_request;
 mod _encoding_profile;
 
 mod _encryption;
+
+mod _endpoint_encryption_configuration;
+
+mod _endpoint_encryption_secret_configuration;
+
+mod _endpoint_encryption_secret_type;
+
+mod _endpoint_encryption_type;
+
+mod _endpoint_lifecycle;
 
 mod _entitlement;
 
@@ -637,6 +825,8 @@ mod _key_type;
 
 mod _listed_bridge;
 
+mod _listed_destination_endpoint;
+
 mod _listed_entitlement;
 
 mod _listed_flow;
@@ -650,6 +840,8 @@ mod _listed_router_input;
 mod _listed_router_network_interface;
 
 mod _listed_router_output;
+
+mod _listed_source_endpoint;
 
 mod _maintenance;
 
@@ -747,15 +939,25 @@ mod _output;
 
 mod _output_status;
 
+mod _owned_resource_share_details;
+
 mod _preferred_day_time_maintenance_configuration;
 
 mod _price_units;
 
 mod _protocol;
 
+mod _public_destination_endpoint_networking_configuration;
+
+mod _public_destination_endpoint_networking_configuration_allow_rule;
+
 mod _public_router_network_interface_configuration;
 
 mod _public_router_network_interface_rule;
+
+mod _public_source_endpoint_networking_configuration;
+
+mod _public_source_endpoint_networking_configuration_allow_rule;
 
 mod _public_tls_encryption_configuration;
 
@@ -765,6 +967,12 @@ mod _reservation;
 
 mod _reservation_state;
 
+mod _resource_share_details;
+
+mod _resource_share_ownership;
+
+mod _resource_share_state;
+
 mod _resource_specification;
 
 mod _resource_type;
@@ -773,6 +981,10 @@ mod _rist_router_input_configuration;
 
 mod _rist_router_output_configuration;
 
+mod _rist_standard_destination_endpoint_configuration;
+
+mod _rist_standard_source_endpoint_configuration;
+
 mod _router_content_quality_analysis_configuration;
 
 mod _router_content_quality_analysis_type;
@@ -780,6 +992,12 @@ mod _router_content_quality_analysis_type;
 mod _router_input;
 
 mod _router_input_configuration;
+
+mod _router_input_destination_endpoint_associated_resource_details;
+
+mod _router_input_destination_endpoint_configuration;
+
+mod _router_input_destination_endpoint_connection_details;
 
 mod _router_input_filter;
 
@@ -833,6 +1051,12 @@ mod _router_output_protocol_configuration;
 
 mod _router_output_routed_state;
 
+mod _router_output_source_endpoint_associated_resource_details;
+
+mod _router_output_source_endpoint_configuration;
+
+mod _router_output_source_endpoint_connection_details;
+
 mod _router_output_state;
 
 mod _router_output_stream_details;
@@ -849,9 +1073,15 @@ mod _rtp_router_input_configuration;
 
 mod _rtp_router_output_configuration;
 
+mod _rtp_standard_destination_endpoint_configuration;
+
+mod _rtp_standard_source_endpoint_configuration;
+
 mod _scan_mode;
 
 mod _secrets_manager_encryption_key_configuration;
+
+mod _secrets_manager_endpoint_encryption_configuration;
 
 mod _set_gateway_bridge_source_request;
 
@@ -863,6 +1093,32 @@ mod _silent_audio_configuration;
 
 mod _source;
 
+mod _source_endpoint;
+
+mod _source_endpoint_associated_resource_details;
+
+mod _source_endpoint_configuration;
+
+mod _source_endpoint_connection_details;
+
+mod _source_endpoint_connection_state;
+
+mod _source_endpoint_filter;
+
+mod _source_endpoint_message;
+
+mod _source_endpoint_networking_type;
+
+mod _source_endpoint_protocol;
+
+mod _source_endpoint_registration_state;
+
+mod _source_endpoint_router_output_configuration;
+
+mod _source_endpoint_router_output_stream_details;
+
+mod _source_endpoint_type;
+
 mod _source_priority;
 
 mod _source_type;
@@ -870,6 +1126,10 @@ mod _source_type;
 mod _srt_caller_router_input_configuration;
 
 mod _srt_caller_router_output_configuration;
+
+mod _srt_caller_standard_destination_endpoint_configuration;
+
+mod _srt_caller_standard_source_endpoint_configuration;
 
 mod _srt_decryption_configuration;
 
@@ -879,6 +1139,20 @@ mod _srt_listener_router_input_configuration;
 
 mod _srt_listener_router_output_configuration;
 
+mod _srt_listener_standard_destination_endpoint_configuration;
+
+mod _srt_listener_standard_source_endpoint_configuration;
+
+mod _standard_destination_endpoint_associated_resource_details;
+
+mod _standard_destination_endpoint_configuration;
+
+mod _standard_destination_endpoint_connection_details;
+
+mod _standard_destination_endpoint_networking_configuration;
+
+mod _standard_destination_endpoint_protocol_configuration;
+
 mod _standard_router_input_configuration;
 
 mod _standard_router_input_stream_details;
@@ -886,6 +1160,16 @@ mod _standard_router_input_stream_details;
 mod _standard_router_output_configuration;
 
 mod _standard_router_output_stream_details;
+
+mod _standard_source_endpoint_associated_resource_details;
+
+mod _standard_source_endpoint_configuration;
+
+mod _standard_source_endpoint_connection_details;
+
+mod _standard_source_endpoint_networking_configuration;
+
+mod _standard_source_endpoint_protocol_configuration;
 
 mod _state;
 
@@ -937,6 +1221,8 @@ mod _video_monitoring_setting;
 
 mod _video_transfer_characteristics;
 
+mod _vpc_destination_endpoint_networking_configuration;
+
 mod _vpc_interface;
 
 mod _vpc_interface_attachment;
@@ -944,6 +1230,8 @@ mod _vpc_interface_attachment;
 mod _vpc_interface_request;
 
 mod _vpc_router_network_interface_configuration;
+
+mod _vpc_source_endpoint_networking_configuration;
 
 mod _window_maintenance_schedule;
 

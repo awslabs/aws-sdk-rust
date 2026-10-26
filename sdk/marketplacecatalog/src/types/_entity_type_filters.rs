@@ -22,6 +22,8 @@ pub enum EntityTypeFilters {
     ResaleAuthorizationFilters(crate::types::ResaleAuthorizationFilters),
     /// <p>A filter for SaaS products.</p>
     SaaSProductFilters(crate::types::SaaSProductFilters),
+    /// <p>A filter for subsidiary authorizations.</p>
+    SubsidiaryAuthorizationFilters(crate::types::SubsidiaryAuthorizationFilters),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -151,6 +153,19 @@ impl EntityTypeFilters {
     /// Returns true if this is a [`SaaSProductFilters`](crate::types::EntityTypeFilters::SaaSProductFilters).
     pub fn is_saa_s_product_filters(&self) -> bool {
         self.as_saa_s_product_filters().is_ok()
+    }
+    /// Tries to convert the enum instance into [`SubsidiaryAuthorizationFilters`](crate::types::EntityTypeFilters::SubsidiaryAuthorizationFilters), extracting the inner [`SubsidiaryAuthorizationFilters`](crate::types::SubsidiaryAuthorizationFilters).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_subsidiary_authorization_filters(&self) -> ::std::result::Result<&crate::types::SubsidiaryAuthorizationFilters, &Self> {
+        if let EntityTypeFilters::SubsidiaryAuthorizationFilters(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SubsidiaryAuthorizationFilters`](crate::types::EntityTypeFilters::SubsidiaryAuthorizationFilters).
+    pub fn is_subsidiary_authorization_filters(&self) -> bool {
+        self.as_subsidiary_authorization_filters().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

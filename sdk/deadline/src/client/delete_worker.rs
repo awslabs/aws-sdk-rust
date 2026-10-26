@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWorker`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`farm_id(impl Into<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::set_farm_id):<br>required: **true**<br><p>The farm ID of the worker to delete.</p><br>
-    ///   - [`fleet_id(impl Into<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::set_fleet_id):<br>required: **true**<br><p>The fleet ID of the worker to delete.</p><br>
-    ///   - [`worker_id(impl Into<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::worker_id) / [`set_worker_id(Option<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::set_worker_id):<br>required: **true**<br><p>The worker ID of the worker to delete.</p><br>
+    ///   - [`farm_id(impl Into<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::set_farm_id):<br>required: **true**<br>The farm ID of the worker to delete.<br>
+    ///   - [`fleet_id(impl Into<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::set_fleet_id):<br>required: **true**<br>The fleet ID of the worker to delete.<br>
+    ///   - [`worker_id(impl Into<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::worker_id) / [`set_worker_id(Option<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::set_worker_id):<br>required: **true**<br>The worker ID of the worker to delete.<br>
     /// - On success, responds with [`DeleteWorkerOutput`](crate::operation::delete_worker::DeleteWorkerOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkerError>`](crate::operation::delete_worker::DeleteWorkerError)
     pub fn delete_worker(&self) -> crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder {

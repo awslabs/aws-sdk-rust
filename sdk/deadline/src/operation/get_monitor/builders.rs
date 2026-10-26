@@ -22,7 +22,7 @@ impl crate::operation::get_monitor::builders::GetMonitorInputBuilder {
 }
 /// Fluent builder constructing a request to `GetMonitor`.
 ///
-/// <p>Gets information about the specified monitor.</p>
+/// Gets information about the specified monitor.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMonitorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetMonitorFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier for the monitor. This ID is returned by the <code>CreateMonitor</code> operation.</p>
+    /// The unique identifier for the monitor. This ID is returned by the <code>CreateMonitor</code> operation.
     pub fn monitor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitor_id(input.into());
         self
     }
-    /// <p>The unique identifier for the monitor. This ID is returned by the <code>CreateMonitor</code> operation.</p>
+    /// The unique identifier for the monitor. This ID is returned by the <code>CreateMonitor</code> operation.
     pub fn set_monitor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitor_id(input);
         self
     }
-    /// <p>The unique identifier for the monitor. This ID is returned by the <code>CreateMonitor</code> operation.</p>
+    /// The unique identifier for the monitor. This ID is returned by the <code>CreateMonitor</code> operation.
     pub fn get_monitor_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_id()
     }

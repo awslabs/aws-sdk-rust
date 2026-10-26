@@ -11,6 +11,30 @@ pub(crate) fn create_ad_configuration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_failover_slate_configuration_output_output_correct_errors(
+    mut builder: crate::operation::create_failover_slate_configuration::builders::CreateFailoverSlateConfigurationOutputBuilder,
+) -> crate::operation::create_failover_slate_configuration::builders::CreateFailoverSlateConfigurationOutputBuilder {
+    if builder.failover_slate_configuration.is_none() {
+        builder.failover_slate_configuration = {
+            let builder = crate::types::builders::FailoverSlateConfigurationBuilder::default();
+            crate::serde_util::failover_slate_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_failover_slate_configuration_output_output_correct_errors(
+    mut builder: crate::operation::get_failover_slate_configuration::builders::GetFailoverSlateConfigurationOutputBuilder,
+) -> crate::operation::get_failover_slate_configuration::builders::GetFailoverSlateConfigurationOutputBuilder {
+    if builder.failover_slate_configuration.is_none() {
+        builder.failover_slate_configuration = {
+            let builder = crate::types::builders::FailoverSlateConfigurationBuilder::default();
+            crate::serde_util::failover_slate_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn list_ad_configurations_output_output_correct_errors(
     mut builder: crate::operation::list_ad_configurations::builders::ListAdConfigurationsOutputBuilder,
 ) -> crate::operation::list_ad_configurations::builders::ListAdConfigurationsOutputBuilder {
@@ -25,6 +49,15 @@ pub(crate) fn list_channels_output_output_correct_errors(
 ) -> crate::operation::list_channels::builders::ListChannelsOutputBuilder {
     if builder.channels.is_none() {
         builder.channels = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_failover_slate_configurations_output_output_correct_errors(
+    mut builder: crate::operation::list_failover_slate_configurations::builders::ListFailoverSlateConfigurationsOutputBuilder,
+) -> crate::operation::list_failover_slate_configurations::builders::ListFailoverSlateConfigurationsOutputBuilder {
+    if builder.failover_slate_configurations.is_none() {
+        builder.failover_slate_configurations = Some(Default::default())
     }
     builder
 }
@@ -104,6 +137,18 @@ pub(crate) fn update_ad_configuration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_failover_slate_configuration_output_output_correct_errors(
+    mut builder: crate::operation::update_failover_slate_configuration::builders::UpdateFailoverSlateConfigurationOutputBuilder,
+) -> crate::operation::update_failover_slate_configuration::builders::UpdateFailoverSlateConfigurationOutputBuilder {
+    if builder.failover_slate_configuration.is_none() {
+        builder.failover_slate_configuration = {
+            let builder = crate::types::builders::FailoverSlateConfigurationBuilder::default();
+            crate::serde_util::failover_slate_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn ad_configuration_correct_errors(
     mut builder: crate::types::builders::AdConfigurationBuilder,
 ) -> crate::types::builders::AdConfigurationBuilder {
@@ -112,6 +157,18 @@ pub(crate) fn ad_configuration_correct_errors(
     }
     if builder.media_tailor_playback_configurations.is_none() {
         builder.media_tailor_playback_configurations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn failover_slate_configuration_correct_errors(
+    mut builder: crate::types::builders::FailoverSlateConfigurationBuilder,
+) -> crate::types::builders::FailoverSlateConfigurationBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::FailoverSlateConfigurationState>().ok()
     }
     builder
 }
@@ -169,6 +226,18 @@ pub(crate) fn batch_start_viewer_session_revocation_error_correct_errors(
     }
     if builder.viewer_id.is_none() {
         builder.viewer_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn failover_slate_configuration_summary_correct_errors(
+    mut builder: crate::types::builders::FailoverSlateConfigurationSummaryBuilder,
+) -> crate::types::builders::FailoverSlateConfigurationSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::FailoverSlateConfigurationState>().ok()
     }
     builder
 }

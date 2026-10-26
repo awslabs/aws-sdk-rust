@@ -3,7 +3,13 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_expression::Expression;
 
+pub use crate::types::_approver_details::ApproverDetails;
+
+pub use crate::types::_attestation_details::AttestationDetails;
+
 pub use crate::types::_billing_view_element::BillingViewElement;
+
+pub use crate::types::_contract_details::ContractDetails;
 
 pub use crate::types::_pricing_plan::PricingPlan;
 
@@ -25,6 +31,10 @@ pub use crate::types::_time_range::TimeRange;
 
 pub use crate::types::_resource_tag::ResourceTag;
 
+pub use crate::types::_attestation_value::AttestationValue;
+
+pub use crate::types::_additional_recipient::AdditionalRecipient;
+
 pub use crate::types::_billing_feature_filter::BillingFeatureFilter;
 
 pub use crate::types::_billing_preference_summary::BillingPreferenceSummary;
@@ -32,6 +42,8 @@ pub use crate::types::_billing_preference_summary::BillingPreferenceSummary;
 pub use crate::types::_billing_view_type::BillingViewType;
 
 pub use crate::types::_billing_view_health_status::BillingViewHealthStatus;
+
+pub use crate::types::_private_pricing_addendum::PrivatePricingAddendum;
 
 pub use crate::types::_credit_allocation_history_entry::CreditAllocationHistoryEntry;
 
@@ -53,11 +65,23 @@ pub use crate::types::_business_support_account_charge::BusinessSupportAccountCh
 
 pub use crate::types::_business_support_subscription_contract::BusinessSupportSubscriptionContract;
 
+pub use crate::types::_contract_summary::ContractSummary;
+
+pub use crate::types::_investment_attestation::InvestmentAttestation;
+
+pub use crate::types::_investment::Investment;
+
+pub use crate::types::_investment_summary::InvestmentSummary;
+
 pub use crate::types::_linked_account_charge::LinkedAccountCharge;
 
 pub use crate::types::_billing_preference_for_key::BillingPreferenceForKey;
 
 pub use crate::types::_dimension::Dimension;
+
+pub use crate::types::_amount::Amount;
+
+pub use crate::types::_investment_distribution::InvestmentDistribution;
 
 pub use crate::types::_billing_feature_filter_name::BillingFeatureFilterName;
 
@@ -67,7 +91,7 @@ pub use crate::types::_billing_period::BillingPeriod;
 
 pub use crate::types::_billing_view_status::BillingViewStatus;
 
-pub use crate::types::_amount::Amount;
+pub use crate::types::_interval::Interval;
 
 pub use crate::types::_application_type::ApplicationType;
 
@@ -83,7 +107,25 @@ pub use crate::types::_billing_domain::BillingDomain;
 
 pub use crate::types::_business_support_discount::BusinessSupportDiscount;
 
+pub use crate::types::_contract_type::ContractType;
+
+pub use crate::types::_association_status::AssociationStatus;
+
+pub use crate::types::_investment_attestation_status::InvestmentAttestationStatus;
+
+pub use crate::types::_milestone_based_investment::MilestoneBasedInvestment;
+
+pub use crate::types::_outcome_based_investment::OutcomeBasedInvestment;
+
+pub use crate::types::_investment_type::InvestmentType;
+
+pub use crate::types::_attestation_quantity::AttestationQuantity;
+
 pub use crate::types::_billing_view_status_reason::BillingViewStatusReason;
+
+pub use crate::types::_legal_entity::LegalEntity;
+
+pub use crate::types::_contract_restriction::ContractRestriction;
 
 pub use crate::types::_business_support_tier_charge::BusinessSupportTierCharge;
 
@@ -93,13 +135,31 @@ pub use crate::types::_enterprise_support_time_period::EnterpriseSupportTimePeri
 
 pub use crate::types::_service_level_account_usage::ServiceLevelAccountUsage;
 
+pub use crate::types::_investment_restriction::InvestmentRestriction;
+
+pub use crate::types::_investment_multiplier::InvestmentMultiplier;
+
+pub use crate::types::_multiplier_type::MultiplierType;
+
 mod _active_time_range;
 
 mod _additional_charge;
 
+mod _additional_recipient;
+
 mod _amount;
 
 mod _application_type;
+
+mod _approver_details;
+
+mod _association_status;
+
+mod _attestation_details;
+
+mod _attestation_quantity;
+
+mod _attestation_value;
 
 mod _billing_domain;
 
@@ -145,6 +205,14 @@ mod _charge_account;
 
 mod _contract_account;
 
+mod _contract_details;
+
+mod _contract_restriction;
+
+mod _contract_summary;
+
+mod _contract_type;
+
 mod _cost_category_values;
 
 mod _credit_allocation_history_entry;
@@ -163,13 +231,41 @@ mod _enterprise_support_time_period;
 
 mod _expression;
 
+mod _interval;
+
+mod _investment;
+
+mod _investment_attestation;
+
+mod _investment_attestation_status;
+
+mod _investment_distribution;
+
+mod _investment_multiplier;
+
+mod _investment_restriction;
+
+mod _investment_summary;
+
+mod _investment_type;
+
+mod _legal_entity;
+
 mod _linked_account_charge;
+
+mod _milestone_based_investment;
+
+mod _multiplier_type;
+
+mod _outcome_based_investment;
 
 mod _preference_value;
 
 mod _pricing_plan;
 
 mod _pricing_plan_tier;
+
+mod _private_pricing_addendum;
 
 mod _resource_tag;
 

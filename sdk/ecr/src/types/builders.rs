@@ -21,6 +21,10 @@ pub use crate::types::_image_scan_findings::ImageScanFindingsBuilder;
 
 pub use crate::types::_replication_configuration::ReplicationConfigurationBuilder;
 
+pub use crate::types::_replication_destination::ReplicationDestinationBuilder;
+
+pub use crate::types::_replication_backfill_progress::ReplicationBackfillProgressBuilder;
+
 pub use crate::types::_lifecycle_policy_preview_filter::LifecyclePolicyPreviewFilterBuilder;
 
 pub use crate::types::_lifecycle_policy_preview_summary::LifecyclePolicyPreviewSummaryBuilder;
@@ -57,11 +61,15 @@ pub use crate::types::_image_signing_status::ImageSigningStatusBuilder;
 
 pub use crate::types::_pull_through_cache_rule::PullThroughCacheRuleBuilder;
 
+pub use crate::types::_replication_backfill_result::ReplicationBackfillResultBuilder;
+
 pub use crate::types::_authorization_data::AuthorizationDataBuilder;
 
 pub use crate::types::_lifecycle_policy_preview_result::LifecyclePolicyPreviewResultBuilder;
 
 pub use crate::types::_image_referrer::ImageReferrerBuilder;
+
+pub use crate::types::_replication_backfill_summary::ReplicationBackfillSummaryBuilder;
 
 pub use crate::types::_registry_scanning_rule::RegistryScanningRuleBuilder;
 
@@ -96,8 +104,6 @@ pub use crate::types::_recommendation::RecommendationBuilder;
 pub use crate::types::_resource::ResourceBuilder;
 
 pub use crate::types::_cvss_score_details::CvssScoreDetailsBuilder;
-
-pub use crate::types::_replication_destination::ReplicationDestinationBuilder;
 
 pub use crate::types::_repository_filter::RepositoryFilterBuilder;
 

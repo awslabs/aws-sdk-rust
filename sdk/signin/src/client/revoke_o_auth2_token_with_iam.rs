@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RevokeOAuth2TokenWithIAM`](crate::operation::revoke_o_auth2_token_with_iam::builders::RevokeOAuth2TokenWithIAMFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`token(impl Into<String>)`](crate::operation::revoke_o_auth2_token_with_iam::builders::RevokeOAuth2TokenWithIAMFluentBuilder::token) / [`set_token(Option<String>)`](crate::operation::revoke_o_auth2_token_with_iam::builders::RevokeOAuth2TokenWithIAMFluentBuilder::set_token):<br>required: **true**<br>The refresh_token to revoke. Must be a refresh_token issued by AWS Sign-In (prefix "ASOR"); access_tokens are not accepted for revocation.<br>
+    ///   - [`token(impl Into<String>)`](crate::operation::revoke_o_auth2_token_with_iam::builders::RevokeOAuth2TokenWithIAMFluentBuilder::token) / [`set_token(Option<String>)`](crate::operation::revoke_o_auth2_token_with_iam::builders::RevokeOAuth2TokenWithIAMFluentBuilder::set_token):<br>required: **true**<br>The refresh token to revoke. Must be a refresh token issued by AWS Sign-In. Access tokens are not accepted for revocation.<br>
     /// - On success, responds with [`RevokeOAuth2TokenWithIamOutput`](crate::operation::revoke_o_auth2_token_with_iam::RevokeOAuth2TokenWithIamOutput)
     /// - On failure, responds with [`SdkError<RevokeOAuth2TokenWithIAMError>`](crate::operation::revoke_o_auth2_token_with_iam::RevokeOAuth2TokenWithIAMError)
     pub fn revoke_o_auth2_token_with_iam(&self) -> crate::operation::revoke_o_auth2_token_with_iam::builders::RevokeOAuth2TokenWithIAMFluentBuilder {

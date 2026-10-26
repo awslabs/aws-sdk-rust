@@ -70,7 +70,7 @@ pub struct CloudExadataInfrastructure {
     pub storage_server_version: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the Exadata infrastructure was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The total amount of storage, in gigabytes (GB), on the the Exadata infrastructure.</p>
+    /// <p>The total amount of storage, in gigabytes (GB), on the Exadata infrastructure.</p>
     pub total_storage_size_in_gbs: ::std::option::Option<i32>,
     /// <p>The amount of progress made on the current operation on the Exadata infrastructure, expressed as a percentage.</p>
     pub percent_progress: ::std::option::Option<f32>,
@@ -80,6 +80,8 @@ pub struct CloudExadataInfrastructure {
     pub storage_server_type: ::std::option::Option<::std::string::String>,
     /// <p>The OCI model compute model used when you create or clone an instance: ECPU or OCPU. An ECPU is an abstracted measure of compute resources. ECPUs are based on the number of cores elastically allocated from a pool of compute and storage servers. An OCPU is a legacy physical measure of compute resources. OCPUs are based on the physical core of a processor with hyper-threading enabled.</p>
     pub compute_model: ::std::option::Option<crate::types::ComputeModel>,
+    /// <p>The Exascale storage configuration of the Exadata infrastructure. This value is present only when Exascale storage is configured on the infrastructure.</p>
+    pub exascale_configuration: ::std::option::Option<crate::types::ExascaleConfiguration>,
 }
 impl CloudExadataInfrastructure {
     /// <p>The unique identifier for the Exadata infrastructure.</p>
@@ -217,7 +219,7 @@ impl CloudExadataInfrastructure {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The total amount of storage, in gigabytes (GB), on the the Exadata infrastructure.</p>
+    /// <p>The total amount of storage, in gigabytes (GB), on the Exadata infrastructure.</p>
     pub fn total_storage_size_in_gbs(&self) -> ::std::option::Option<i32> {
         self.total_storage_size_in_gbs
     }
@@ -236,6 +238,10 @@ impl CloudExadataInfrastructure {
     /// <p>The OCI model compute model used when you create or clone an instance: ECPU or OCPU. An ECPU is an abstracted measure of compute resources. ECPUs are based on the number of cores elastically allocated from a pool of compute and storage servers. An OCPU is a legacy physical measure of compute resources. OCPUs are based on the physical core of a processor with hyper-threading enabled.</p>
     pub fn compute_model(&self) -> ::std::option::Option<&crate::types::ComputeModel> {
         self.compute_model.as_ref()
+    }
+    /// <p>The Exascale storage configuration of the Exadata infrastructure. This value is present only when Exascale storage is configured on the infrastructure.</p>
+    pub fn exascale_configuration(&self) -> ::std::option::Option<&crate::types::ExascaleConfiguration> {
+        self.exascale_configuration.as_ref()
     }
 }
 impl CloudExadataInfrastructure {
@@ -287,6 +293,7 @@ pub struct CloudExadataInfrastructureBuilder {
     pub(crate) database_server_type: ::std::option::Option<::std::string::String>,
     pub(crate) storage_server_type: ::std::option::Option<::std::string::String>,
     pub(crate) compute_model: ::std::option::Option<crate::types::ComputeModel>,
+    pub(crate) exascale_configuration: ::std::option::Option<crate::types::ExascaleConfiguration>,
 }
 impl CloudExadataInfrastructureBuilder {
     /// <p>The unique identifier for the Exadata infrastructure.</p>
@@ -758,17 +765,17 @@ impl CloudExadataInfrastructureBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The total amount of storage, in gigabytes (GB), on the the Exadata infrastructure.</p>
+    /// <p>The total amount of storage, in gigabytes (GB), on the Exadata infrastructure.</p>
     pub fn total_storage_size_in_gbs(mut self, input: i32) -> Self {
         self.total_storage_size_in_gbs = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total amount of storage, in gigabytes (GB), on the the Exadata infrastructure.</p>
+    /// <p>The total amount of storage, in gigabytes (GB), on the Exadata infrastructure.</p>
     pub fn set_total_storage_size_in_gbs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_storage_size_in_gbs = input;
         self
     }
-    /// <p>The total amount of storage, in gigabytes (GB), on the the Exadata infrastructure.</p>
+    /// <p>The total amount of storage, in gigabytes (GB), on the Exadata infrastructure.</p>
     pub fn get_total_storage_size_in_gbs(&self) -> &::std::option::Option<i32> {
         &self.total_storage_size_in_gbs
     }
@@ -828,6 +835,20 @@ impl CloudExadataInfrastructureBuilder {
     pub fn get_compute_model(&self) -> &::std::option::Option<crate::types::ComputeModel> {
         &self.compute_model
     }
+    /// <p>The Exascale storage configuration of the Exadata infrastructure. This value is present only when Exascale storage is configured on the infrastructure.</p>
+    pub fn exascale_configuration(mut self, input: crate::types::ExascaleConfiguration) -> Self {
+        self.exascale_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Exascale storage configuration of the Exadata infrastructure. This value is present only when Exascale storage is configured on the infrastructure.</p>
+    pub fn set_exascale_configuration(mut self, input: ::std::option::Option<crate::types::ExascaleConfiguration>) -> Self {
+        self.exascale_configuration = input;
+        self
+    }
+    /// <p>The Exascale storage configuration of the Exadata infrastructure. This value is present only when Exascale storage is configured on the infrastructure.</p>
+    pub fn get_exascale_configuration(&self) -> &::std::option::Option<crate::types::ExascaleConfiguration> {
+        &self.exascale_configuration
+    }
     /// Consumes the builder and constructs a [`CloudExadataInfrastructure`](crate::types::CloudExadataInfrastructure).
     /// This method will fail if any of the following fields are not set:
     /// - [`cloud_exadata_infrastructure_id`](crate::types::builders::CloudExadataInfrastructureBuilder::cloud_exadata_infrastructure_id)
@@ -876,6 +897,7 @@ impl CloudExadataInfrastructureBuilder {
             database_server_type: self.database_server_type,
             storage_server_type: self.storage_server_type,
             compute_model: self.compute_model,
+            exascale_configuration: self.exascale_configuration,
         })
     }
 }

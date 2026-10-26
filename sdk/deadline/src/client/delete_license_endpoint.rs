@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLicenseEndpoint`](crate::operation::delete_license_endpoint::builders::DeleteLicenseEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`license_endpoint_id(impl Into<String>)`](crate::operation::delete_license_endpoint::builders::DeleteLicenseEndpointFluentBuilder::license_endpoint_id) / [`set_license_endpoint_id(Option<String>)`](crate::operation::delete_license_endpoint::builders::DeleteLicenseEndpointFluentBuilder::set_license_endpoint_id):<br>required: **true**<br><p>The license endpoint ID of the license endpoint to delete.</p><br>
+    ///   - [`license_endpoint_id(impl Into<String>)`](crate::operation::delete_license_endpoint::builders::DeleteLicenseEndpointFluentBuilder::license_endpoint_id) / [`set_license_endpoint_id(Option<String>)`](crate::operation::delete_license_endpoint::builders::DeleteLicenseEndpointFluentBuilder::set_license_endpoint_id):<br>required: **true**<br>The license endpoint ID of the license endpoint to delete.<br>
     /// - On success, responds with [`DeleteLicenseEndpointOutput`](crate::operation::delete_license_endpoint::DeleteLicenseEndpointOutput)
     /// - On failure, responds with [`SdkError<DeleteLicenseEndpointError>`](crate::operation::delete_license_endpoint::DeleteLicenseEndpointError)
     pub fn delete_license_endpoint(&self) -> crate::operation::delete_license_endpoint::builders::DeleteLicenseEndpointFluentBuilder {

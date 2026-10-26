@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetWorkerOutput {
-    /// <p>A list of workers that were successfully retrieved.</p>
+    /// A list of workers that were successfully retrieved.
     pub workers: ::std::vec::Vec<crate::types::BatchGetWorkerItem>,
-    /// <p>A list of errors for workers that could not be retrieved.</p>
+    /// A list of errors for workers that could not be retrieved.
     pub errors: ::std::vec::Vec<crate::types::BatchGetWorkerError>,
     _request_id: Option<String>,
 }
 impl BatchGetWorkerOutput {
-    /// <p>A list of workers that were successfully retrieved.</p>
+    /// A list of workers that were successfully retrieved.
     pub fn workers(&self) -> &[crate::types::BatchGetWorkerItem] {
         use std::ops::Deref;
         self.workers.deref()
     }
-    /// <p>A list of errors for workers that could not be retrieved.</p>
+    /// A list of errors for workers that could not be retrieved.
     pub fn errors(&self) -> &[crate::types::BatchGetWorkerError] {
         use std::ops::Deref;
         self.errors.deref()
@@ -46,19 +46,19 @@ impl BatchGetWorkerOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_workers`](Self::set_workers).
     ///
-    /// <p>A list of workers that were successfully retrieved.</p>
+    /// A list of workers that were successfully retrieved.
     pub fn workers(mut self, input: crate::types::BatchGetWorkerItem) -> Self {
         let mut v = self.workers.unwrap_or_default();
         v.push(input);
         self.workers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of workers that were successfully retrieved.</p>
+    /// A list of workers that were successfully retrieved.
     pub fn set_workers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetWorkerItem>>) -> Self {
         self.workers = input;
         self
     }
-    /// <p>A list of workers that were successfully retrieved.</p>
+    /// A list of workers that were successfully retrieved.
     pub fn get_workers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetWorkerItem>> {
         &self.workers
     }
@@ -66,19 +66,19 @@ impl BatchGetWorkerOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>A list of errors for workers that could not be retrieved.</p>
+    /// A list of errors for workers that could not be retrieved.
     pub fn errors(mut self, input: crate::types::BatchGetWorkerError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of errors for workers that could not be retrieved.</p>
+    /// A list of errors for workers that could not be retrieved.
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetWorkerError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>A list of errors for workers that could not be retrieved.</p>
+    /// A list of errors for workers that could not be retrieved.
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetWorkerError>> {
         &self.errors
     }

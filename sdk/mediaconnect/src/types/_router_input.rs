@@ -69,6 +69,8 @@ pub struct RouterInput {
     pub content_quality_analysis_type: ::std::option::Option<crate::types::RouterContentQualityAnalysisType>,
     /// <p>The content quality analysis configuration for the router input.</p>
     pub content_quality_analysis_configuration: ::std::option::Option<crate::types::RouterContentQualityAnalysisConfiguration>,
+    /// <p>The Amazon Resource Names (ARNs) of one or more destination endpoints that are associated with this router input.</p>
+    pub associated_destination_endpoint_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RouterInput {
     /// <p>The name of the router input.</p>
@@ -194,6 +196,12 @@ impl RouterInput {
     pub fn content_quality_analysis_configuration(&self) -> ::std::option::Option<&crate::types::RouterContentQualityAnalysisConfiguration> {
         self.content_quality_analysis_configuration.as_ref()
     }
+    /// <p>The Amazon Resource Names (ARNs) of one or more destination endpoints that are associated with this router input.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_destination_endpoint_arns.is_none()`.
+    pub fn associated_destination_endpoint_arns(&self) -> &[::std::string::String] {
+        self.associated_destination_endpoint_arns.as_deref().unwrap_or_default()
+    }
 }
 impl RouterInput {
     /// Creates a new builder-style object to manufacture [`RouterInput`](crate::types::RouterInput).
@@ -232,6 +240,7 @@ pub struct RouterInputBuilder {
     pub(crate) maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
     pub(crate) content_quality_analysis_type: ::std::option::Option<crate::types::RouterContentQualityAnalysisType>,
     pub(crate) content_quality_analysis_configuration: ::std::option::Option<crate::types::RouterContentQualityAnalysisConfiguration>,
+    pub(crate) associated_destination_endpoint_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RouterInputBuilder {
     /// <p>The name of the router input.</p>
@@ -672,6 +681,26 @@ impl RouterInputBuilder {
     pub fn get_content_quality_analysis_configuration(&self) -> &::std::option::Option<crate::types::RouterContentQualityAnalysisConfiguration> {
         &self.content_quality_analysis_configuration
     }
+    /// Appends an item to `associated_destination_endpoint_arns`.
+    ///
+    /// To override the contents of this collection use [`set_associated_destination_endpoint_arns`](Self::set_associated_destination_endpoint_arns).
+    ///
+    /// <p>The Amazon Resource Names (ARNs) of one or more destination endpoints that are associated with this router input.</p>
+    pub fn associated_destination_endpoint_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.associated_destination_endpoint_arns.unwrap_or_default();
+        v.push(input.into());
+        self.associated_destination_endpoint_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of one or more destination endpoints that are associated with this router input.</p>
+    pub fn set_associated_destination_endpoint_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.associated_destination_endpoint_arns = input;
+        self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of one or more destination endpoints that are associated with this router input.</p>
+    pub fn get_associated_destination_endpoint_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.associated_destination_endpoint_arns
+    }
     /// Consumes the builder and constructs a [`RouterInput`](crate::types::RouterInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::RouterInputBuilder::name)
@@ -798,6 +827,7 @@ impl RouterInputBuilder {
             maintenance_schedule: self.maintenance_schedule,
             content_quality_analysis_type: self.content_quality_analysis_type,
             content_quality_analysis_configuration: self.content_quality_analysis_configuration,
+            associated_destination_endpoint_arns: self.associated_destination_endpoint_arns,
         })
     }
 }

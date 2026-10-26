@@ -65,6 +65,8 @@ pub struct RouterOutput {
     pub maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
     /// <p>The fabric configuration settings for the router output.</p>
     pub fabric_configuration: ::std::option::Option<crate::types::FabricConfiguration>,
+    /// <p>The Amazon Resource Names (ARNs) of one or more source endpoints that are associated with this router output.</p>
+    pub associated_source_endpoint_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RouterOutput {
     /// <p>The name of the router output.</p>
@@ -182,6 +184,12 @@ impl RouterOutput {
     pub fn fabric_configuration(&self) -> ::std::option::Option<&crate::types::FabricConfiguration> {
         self.fabric_configuration.as_ref()
     }
+    /// <p>The Amazon Resource Names (ARNs) of one or more source endpoints that are associated with this router output.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_source_endpoint_arns.is_none()`.
+    pub fn associated_source_endpoint_arns(&self) -> &[::std::string::String] {
+        self.associated_source_endpoint_arns.as_deref().unwrap_or_default()
+    }
 }
 impl RouterOutput {
     /// Creates a new builder-style object to manufacture [`RouterOutput`](crate::types::RouterOutput).
@@ -218,6 +226,7 @@ pub struct RouterOutputBuilder {
     pub(crate) maintenance_schedule_type: ::std::option::Option<crate::types::MaintenanceScheduleType>,
     pub(crate) maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
     pub(crate) fabric_configuration: ::std::option::Option<crate::types::FabricConfiguration>,
+    pub(crate) associated_source_endpoint_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RouterOutputBuilder {
     /// <p>The name of the router output.</p>
@@ -625,6 +634,26 @@ impl RouterOutputBuilder {
     pub fn get_fabric_configuration(&self) -> &::std::option::Option<crate::types::FabricConfiguration> {
         &self.fabric_configuration
     }
+    /// Appends an item to `associated_source_endpoint_arns`.
+    ///
+    /// To override the contents of this collection use [`set_associated_source_endpoint_arns`](Self::set_associated_source_endpoint_arns).
+    ///
+    /// <p>The Amazon Resource Names (ARNs) of one or more source endpoints that are associated with this router output.</p>
+    pub fn associated_source_endpoint_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.associated_source_endpoint_arns.unwrap_or_default();
+        v.push(input.into());
+        self.associated_source_endpoint_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of one or more source endpoints that are associated with this router output.</p>
+    pub fn set_associated_source_endpoint_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.associated_source_endpoint_arns = input;
+        self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of one or more source endpoints that are associated with this router output.</p>
+    pub fn get_associated_source_endpoint_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.associated_source_endpoint_arns
+    }
     /// Consumes the builder and constructs a [`RouterOutput`](crate::types::RouterOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::RouterOutputBuilder::name)
@@ -749,6 +778,7 @@ impl RouterOutputBuilder {
             maintenance_schedule_type: self.maintenance_schedule_type,
             maintenance_schedule: self.maintenance_schedule,
             fabric_configuration: self.fabric_configuration,
+            associated_source_endpoint_arns: self.associated_source_endpoint_arns,
         })
     }
 }

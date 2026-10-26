@@ -23,17 +23,27 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_associate_contract;
+
 pub(crate) mod shape_associate_source_views;
+
+pub(crate) mod shape_cancel_contractual_investment_attestation;
 
 pub(crate) mod shape_create_billing_view;
 
+pub(crate) mod shape_create_contractual_investment_attestation;
+
 pub(crate) mod shape_delete_billing_view;
+
+pub(crate) mod shape_disassociate_contract;
 
 pub(crate) mod shape_disassociate_source_views;
 
 pub(crate) mod shape_get_billing_preferences;
 
 pub(crate) mod shape_get_billing_view;
+
+pub(crate) mod shape_get_contract_information;
 
 pub(crate) mod shape_get_credit_allocation_history;
 
@@ -52,6 +62,14 @@ pub(crate) mod shape_list_billing_views;
 pub(crate) mod shape_list_business_support_account_charges;
 
 pub(crate) mod shape_list_business_support_subscription_history;
+
+pub(crate) mod shape_list_contracts;
+
+pub(crate) mod shape_list_contractual_investment_attestations;
+
+pub(crate) mod shape_list_contractual_investment_summaries;
+
+pub(crate) mod shape_list_contractual_investments;
 
 pub(crate) mod shape_list_enterprise_support_linked_account_charges;
 
@@ -79,21 +97,31 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_associate_contract_input;
+
 pub(crate) mod shape_associate_source_views_input;
 
 pub(crate) mod shape_billing_view_health_status_exception;
+
+pub(crate) mod shape_cancel_contractual_investment_attestation_input;
 
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_billing_view_input;
 
+pub(crate) mod shape_create_contractual_investment_attestation_input;
+
 pub(crate) mod shape_delete_billing_view_input;
+
+pub(crate) mod shape_disassociate_contract_input;
 
 pub(crate) mod shape_disassociate_source_views_input;
 
 pub(crate) mod shape_get_billing_preferences_input;
 
 pub(crate) mod shape_get_billing_view_input;
+
+pub(crate) mod shape_get_contract_information_input;
 
 pub(crate) mod shape_get_credit_allocation_history_input;
 
@@ -114,6 +142,14 @@ pub(crate) mod shape_list_billing_views_input;
 pub(crate) mod shape_list_business_support_account_charges_input;
 
 pub(crate) mod shape_list_business_support_subscription_history_input;
+
+pub(crate) mod shape_list_contracts_input;
+
+pub(crate) mod shape_list_contractual_investment_attestations_input;
+
+pub(crate) mod shape_list_contractual_investment_summaries_input;
+
+pub(crate) mod shape_list_contractual_investments_input;
 
 pub(crate) mod shape_list_enterprise_support_linked_account_charges_input;
 
@@ -143,6 +179,12 @@ pub(crate) mod shape_active_time_range;
 
 pub(crate) mod shape_additional_charge_list;
 
+pub(crate) mod shape_additional_recipient;
+
+pub(crate) mod shape_approver_details;
+
+pub(crate) mod shape_attestation_details;
+
 pub(crate) mod shape_billing_feature_filter;
 
 pub(crate) mod shape_billing_preference_for_key;
@@ -167,6 +209,10 @@ pub(crate) mod shape_charge_account_list;
 
 pub(crate) mod shape_contract_account_list;
 
+pub(crate) mod shape_contract_details;
+
+pub(crate) mod shape_contract_summaries;
+
 pub(crate) mod shape_credit_allocation_history_list;
 
 pub(crate) mod shape_credit_data_list;
@@ -174,6 +220,12 @@ pub(crate) mod shape_credit_data_list;
 pub(crate) mod shape_expression;
 
 pub(crate) mod shape_failed_months_list;
+
+pub(crate) mod shape_investment_attestations;
+
+pub(crate) mod shape_investment_summaries;
+
+pub(crate) mod shape_investments;
 
 pub(crate) mod shape_linked_account_charge_list;
 
@@ -191,6 +243,8 @@ pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_additional_charge;
 
+pub(crate) mod shape_attestation_value;
+
 pub(crate) mod shape_billing_preference_summary;
 
 pub(crate) mod shape_billing_view_health_status;
@@ -207,6 +261,8 @@ pub(crate) mod shape_charge_account;
 
 pub(crate) mod shape_contract_account;
 
+pub(crate) mod shape_contract_summary;
+
 pub(crate) mod shape_cost_category_values;
 
 pub(crate) mod shape_credit_allocation_history_entry;
@@ -215,9 +271,19 @@ pub(crate) mod shape_credit_data;
 
 pub(crate) mod shape_dimension_values;
 
+pub(crate) mod shape_investment;
+
+pub(crate) mod shape_investment_attestation;
+
+pub(crate) mod shape_investment_distribution;
+
+pub(crate) mod shape_investment_summary;
+
 pub(crate) mod shape_linked_account_charge;
 
 pub(crate) mod shape_pricing_plan_tier_list;
+
+pub(crate) mod shape_private_pricing_addendum;
 
 pub(crate) mod shape_tag_values;
 
@@ -225,7 +291,11 @@ pub(crate) mod shape_time_range;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_account_list;
+
 pub(crate) mod shape_amount;
+
+pub(crate) mod shape_attestation_quantity;
 
 pub(crate) mod shape_billing_period;
 
@@ -237,11 +307,25 @@ pub(crate) mod shape_business_support_service_spend_list;
 
 pub(crate) mod shape_business_support_tier_charge_list;
 
+pub(crate) mod shape_contract_restrictions;
+
+pub(crate) mod shape_interval;
+
+pub(crate) mod shape_investment_distributions;
+
+pub(crate) mod shape_legal_entities;
+
+pub(crate) mod shape_milestone_based_investment;
+
+pub(crate) mod shape_outcome_based_investment;
+
 pub(crate) mod shape_pricing_plan_tier;
 
 pub(crate) mod shape_product_names;
 
 pub(crate) mod shape_purchase_type_applications;
+
+pub(crate) mod shape_rejection_reasons;
 
 pub(crate) mod shape_service_level_account_usage_list;
 
@@ -255,6 +339,16 @@ pub(crate) mod shape_business_support_tier_charge;
 
 pub(crate) mod shape_enterprise_support_time_period;
 
+pub(crate) mod shape_investment_multipliers;
+
+pub(crate) mod shape_investment_restrictions;
+
+pub(crate) mod shape_legal_entity;
+
 pub(crate) mod shape_service_level_account_usage;
 
 pub(crate) mod shape_values;
+
+pub(crate) mod shape_investment_multiplier;
+
+pub(crate) mod shape_investment_restriction;

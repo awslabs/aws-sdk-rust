@@ -23,6 +23,7 @@ impl crate::operation::create_exascale_db_storage_vault::builders::CreateExascal
 /// Fluent builder constructing a request to `CreateExascaleDbStorageVault`.
 ///
 /// <p>Creates an Exascale storage vault.</p>
+/// <p>To create the Exascale storage vault on dedicated Exadata infrastructure, specify <code>cloudExadataInfrastructureId</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateExascaleDbStorageVaultFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -163,6 +164,20 @@ impl CreateExascaleDbStorageVaultFluentBuilder {
     /// <p>The autoscale limit in gigabytes (GB) for the Exascale storage vault.</p>
     pub fn get_autoscale_limit_in_gbs(&self) -> &::std::option::Option<i32> {
         self.inner.get_autoscale_limit_in_gbs()
+    }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of the Exadata infrastructure on which to create the Exascale storage vault. Specify this value to create the Exascale storage vault on dedicated Exadata infrastructure that has Exascale storage configured. If you specify <code>availabilityZone</code> or <code>availabilityZoneId</code>, the value must match the Availability Zone of the Exadata infrastructure. If you specify neither, the service uses the Availability Zone of the Exadata infrastructure.</p>
+    pub fn cloud_exadata_infrastructure_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.cloud_exadata_infrastructure_id(input.into());
+        self
+    }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of the Exadata infrastructure on which to create the Exascale storage vault. Specify this value to create the Exascale storage vault on dedicated Exadata infrastructure that has Exascale storage configured. If you specify <code>availabilityZone</code> or <code>availabilityZoneId</code>, the value must match the Availability Zone of the Exadata infrastructure. If you specify neither, the service uses the Availability Zone of the Exadata infrastructure.</p>
+    pub fn set_cloud_exadata_infrastructure_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_cloud_exadata_infrastructure_id(input);
+        self
+    }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of the Exadata infrastructure on which to create the Exascale storage vault. Specify this value to create the Exascale storage vault on dedicated Exadata infrastructure that has Exascale storage configured. If you specify <code>availabilityZone</code> or <code>availabilityZoneId</code>, the value must match the Availability Zone of the Exadata infrastructure. If you specify neither, the service uses the Availability Zone of the Exadata infrastructure.</p>
+    pub fn get_cloud_exadata_infrastructure_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cloud_exadata_infrastructure_id()
     }
     /// <p>The Availability Zone ID for the Exascale storage vault.</p>
     pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

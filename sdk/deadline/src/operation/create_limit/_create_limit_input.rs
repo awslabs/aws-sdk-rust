@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateLimitInput {
-    /// <p>The farm ID of the farm that contains the limit.</p>
+    /// The farm ID of the farm that contains the limit.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the limit.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.</p>
+    /// The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.
     pub amount_requirement_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available.</p>
     /// <p>The <code>maxCount</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.</p>
@@ -22,11 +22,11 @@ pub struct CreateLimitInput {
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl CreateLimitInput {
-    /// <p>The farm ID of the farm that contains the limit.</p>
+    /// The farm ID of the farm that contains the limit.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -36,7 +36,7 @@ impl CreateLimitInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.</p>
+    /// The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.
     pub fn amount_requirement_name(&self) -> ::std::option::Option<&str> {
         self.amount_requirement_name.as_deref()
     }
@@ -83,32 +83,32 @@ pub struct CreateLimitInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl CreateLimitInputBuilder {
-    /// <p>The farm ID of the farm that contains the limit.</p>
+    /// The farm ID of the farm that contains the limit.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID of the farm that contains the limit.</p>
+    /// The farm ID of the farm that contains the limit.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID of the farm that contains the limit.</p>
+    /// The farm ID of the farm that contains the limit.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
@@ -133,18 +133,18 @@ impl CreateLimitInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.</p>
+    /// The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.
     /// This field is required.
     pub fn amount_requirement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amount_requirement_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.</p>
+    /// The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.
     pub fn set_amount_requirement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amount_requirement_name = input;
         self
     }
-    /// <p>The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.</p>
+    /// The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.
     pub fn get_amount_requirement_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.amount_requirement_name
     }

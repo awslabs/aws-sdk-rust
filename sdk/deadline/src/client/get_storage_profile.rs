@@ -3,17 +3,17 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetStorageProfile`](crate::operation::get_storage_profile::builders::GetStorageProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_storage_profile::builders::GetStorageProfileFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_storage_profile::builders::GetStorageProfileFluentBuilder::set_farm_id):<br>required: **true**<br><p>The farm ID for the storage profile.</p><br>
-    ///   - [`storage_profile_id(impl Into<String>)`](crate::operation::get_storage_profile::builders::GetStorageProfileFluentBuilder::storage_profile_id) / [`set_storage_profile_id(Option<String>)`](crate::operation::get_storage_profile::builders::GetStorageProfileFluentBuilder::set_storage_profile_id):<br>required: **true**<br><p>The storage profile ID.</p><br>
+    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_storage_profile::builders::GetStorageProfileFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_storage_profile::builders::GetStorageProfileFluentBuilder::set_farm_id):<br>required: **true**<br>The farm ID for the storage profile.<br>
+    ///   - [`storage_profile_id(impl Into<String>)`](crate::operation::get_storage_profile::builders::GetStorageProfileFluentBuilder::storage_profile_id) / [`set_storage_profile_id(Option<String>)`](crate::operation::get_storage_profile::builders::GetStorageProfileFluentBuilder::set_storage_profile_id):<br>required: **true**<br>The storage profile ID.<br>
     /// - On success, responds with [`GetStorageProfileOutput`](crate::operation::get_storage_profile::GetStorageProfileOutput) with field(s):
-    ///   - [`storage_profile_id(String)`](crate::operation::get_storage_profile::GetStorageProfileOutput::storage_profile_id): <p>The storage profile ID.</p>
+    ///   - [`storage_profile_id(String)`](crate::operation::get_storage_profile::GetStorageProfileOutput::storage_profile_id): The storage profile ID.
     ///   - [`display_name(String)`](crate::operation::get_storage_profile::GetStorageProfileOutput::display_name): <p>The display name of the storage profile.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
-    ///   - [`os_family(StorageProfileOperatingSystemFamily)`](crate::operation::get_storage_profile::GetStorageProfileOutput::os_family): <p>The operating system (OS) for the storage profile.</p>
-    ///   - [`created_at(DateTime)`](crate::operation::get_storage_profile::GetStorageProfileOutput::created_at): <p>The date and time the resource was created.</p>
-    ///   - [`created_by(String)`](crate::operation::get_storage_profile::GetStorageProfileOutput::created_by): <p>The user or system that created this resource.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_storage_profile::GetStorageProfileOutput::updated_at): <p>The date and time the resource was updated.</p>
-    ///   - [`updated_by(Option<String>)`](crate::operation::get_storage_profile::GetStorageProfileOutput::updated_by): <p>The user or system that updated this resource.</p>
-    ///   - [`file_system_locations(Option<Vec::<FileSystemLocation>>)`](crate::operation::get_storage_profile::GetStorageProfileOutput::file_system_locations): <p>The location of the files for the storage profile.</p>
+    ///   - [`os_family(StorageProfileOperatingSystemFamily)`](crate::operation::get_storage_profile::GetStorageProfileOutput::os_family): The operating system (OS) for the storage profile.
+    ///   - [`created_at(DateTime)`](crate::operation::get_storage_profile::GetStorageProfileOutput::created_at): The date and time the resource was created.
+    ///   - [`created_by(String)`](crate::operation::get_storage_profile::GetStorageProfileOutput::created_by): The user or system that created this resource.
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_storage_profile::GetStorageProfileOutput::updated_at): The date and time the resource was updated.
+    ///   - [`updated_by(Option<String>)`](crate::operation::get_storage_profile::GetStorageProfileOutput::updated_by): The user or system that updated this resource.
+    ///   - [`file_system_locations(Option<Vec::<FileSystemLocation>>)`](crate::operation::get_storage_profile::GetStorageProfileOutput::file_system_locations): The location of the files for the storage profile.
     /// - On failure, responds with [`SdkError<GetStorageProfileError>`](crate::operation::get_storage_profile::GetStorageProfileError)
     pub fn get_storage_profile(&self) -> crate::operation::get_storage_profile::builders::GetStorageProfileFluentBuilder {
         crate::operation::get_storage_profile::builders::GetStorageProfileFluentBuilder::new(self.handle.clone())

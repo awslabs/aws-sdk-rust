@@ -22,7 +22,7 @@ impl crate::operation::delete_worker::builders::DeleteWorkerInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteWorker`.
 ///
-/// <p>Deletes a worker.</p>
+/// Deletes a worker.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWorkerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl DeleteWorkerFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the worker to delete.</p>
+    /// The farm ID of the worker to delete.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the worker to delete.</p>
+    /// The farm ID of the worker to delete.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the worker to delete.</p>
+    /// The farm ID of the worker to delete.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The fleet ID of the worker to delete.</p>
+    /// The fleet ID of the worker to delete.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>The fleet ID of the worker to delete.</p>
+    /// The fleet ID of the worker to delete.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>The fleet ID of the worker to delete.</p>
+    /// The fleet ID of the worker to delete.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>The worker ID of the worker to delete.</p>
+    /// The worker ID of the worker to delete.
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.worker_id(input.into());
         self
     }
-    /// <p>The worker ID of the worker to delete.</p>
+    /// The worker ID of the worker to delete.
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_worker_id(input);
         self
     }
-    /// <p>The worker ID of the worker to delete.</p>
+    /// The worker ID of the worker to delete.
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_worker_id()
     }

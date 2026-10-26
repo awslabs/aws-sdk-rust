@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOAuth2TokenWithIamInput {
-    /// OAuth 2.0 grant type. Must be "client_credentials".
+    /// The OAuth 2.0 grant type. Must be "client_credentials".
     pub grant_type: ::std::option::Option<::std::string::String>,
     /// The OAuth resource for which the access token is requested. Example: "aws-mcp.amazonaws.com".
     pub resource: ::std::option::Option<::std::string::String>,
 }
 impl CreateOAuth2TokenWithIamInput {
-    /// OAuth 2.0 grant type. Must be "client_credentials".
+    /// The OAuth 2.0 grant type. Must be "client_credentials".
     pub fn grant_type(&self) -> ::std::option::Option<&str> {
         self.grant_type.as_deref()
     }
@@ -34,18 +34,18 @@ pub struct CreateOAuth2TokenWithIamInputBuilder {
     pub(crate) resource: ::std::option::Option<::std::string::String>,
 }
 impl CreateOAuth2TokenWithIamInputBuilder {
-    /// OAuth 2.0 grant type. Must be "client_credentials".
+    /// The OAuth 2.0 grant type. Must be "client_credentials".
     /// This field is required.
     pub fn grant_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// OAuth 2.0 grant type. Must be "client_credentials".
+    /// The OAuth 2.0 grant type. Must be "client_credentials".
     pub fn set_grant_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_type = input;
         self
     }
-    /// OAuth 2.0 grant type. Must be "client_credentials".
+    /// The OAuth 2.0 grant type. Must be "client_credentials".
     pub fn get_grant_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.grant_type
     }

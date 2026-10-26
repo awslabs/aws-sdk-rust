@@ -22,7 +22,7 @@ impl crate::operation::update_queue_fleet_association::builders::UpdateQueueFlee
 }
 /// Fluent builder constructing a request to `UpdateQueueFleetAssociation`.
 ///
-/// <p>Updates a queue-fleet association.</p>
+/// Updates a queue-fleet association.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateQueueFleetAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl UpdateQueueFleetAssociationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The queue ID to update.</p>
+    /// The queue ID to update.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
         self
     }
-    /// <p>The queue ID to update.</p>
+    /// The queue ID to update.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_id(input);
         self
     }
-    /// <p>The queue ID to update.</p>
+    /// The queue ID to update.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }
-    /// <p>The fleet ID to update.</p>
+    /// The fleet ID to update.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>The fleet ID to update.</p>
+    /// The fleet ID to update.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>The fleet ID to update.</p>
+    /// The fleet ID to update.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>The status to update.</p>
+    /// The status to update.
     pub fn status(mut self, input: crate::types::UpdateQueueFleetAssociationStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>The status to update.</p>
+    /// The status to update.
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::UpdateQueueFleetAssociationStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>The status to update.</p>
+    /// The status to update.
     pub fn get_status(&self) -> &::std::option::Option<crate::types::UpdateQueueFleetAssociationStatus> {
         self.inner.get_status()
     }

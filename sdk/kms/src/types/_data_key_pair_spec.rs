@@ -17,6 +17,9 @@
 ///     DataKeyPairSpec::EccNistP384 => { /* ... */ },
 ///     DataKeyPairSpec::EccNistP521 => { /* ... */ },
 ///     DataKeyPairSpec::EccSecgP256K1 => { /* ... */ },
+///     DataKeyPairSpec::MlKem1024 => { /* ... */ },
+///     DataKeyPairSpec::MlKem512 => { /* ... */ },
+///     DataKeyPairSpec::MlKem768 => { /* ... */ },
 ///     DataKeyPairSpec::Rsa2048 => { /* ... */ },
 ///     DataKeyPairSpec::Rsa3072 => { /* ... */ },
 ///     DataKeyPairSpec::Rsa4096 => { /* ... */ },
@@ -60,6 +63,12 @@ pub enum DataKeyPairSpec {
     #[allow(missing_docs)] // documentation missing in model
     EccSecgP256K1,
     #[allow(missing_docs)] // documentation missing in model
+    MlKem1024,
+    #[allow(missing_docs)] // documentation missing in model
+    MlKem512,
+    #[allow(missing_docs)] // documentation missing in model
+    MlKem768,
+    #[allow(missing_docs)] // documentation missing in model
     Rsa2048,
     #[allow(missing_docs)] // documentation missing in model
     Rsa3072,
@@ -79,6 +88,9 @@ impl ::std::convert::From<&str> for DataKeyPairSpec {
             "ECC_NIST_P384" => DataKeyPairSpec::EccNistP384,
             "ECC_NIST_P521" => DataKeyPairSpec::EccNistP521,
             "ECC_SECG_P256K1" => DataKeyPairSpec::EccSecgP256K1,
+            "ML_KEM_1024" => DataKeyPairSpec::MlKem1024,
+            "ML_KEM_512" => DataKeyPairSpec::MlKem512,
+            "ML_KEM_768" => DataKeyPairSpec::MlKem768,
             "RSA_2048" => DataKeyPairSpec::Rsa2048,
             "RSA_3072" => DataKeyPairSpec::Rsa3072,
             "RSA_4096" => DataKeyPairSpec::Rsa4096,
@@ -103,6 +115,9 @@ impl DataKeyPairSpec {
             DataKeyPairSpec::EccNistP384 => "ECC_NIST_P384",
             DataKeyPairSpec::EccNistP521 => "ECC_NIST_P521",
             DataKeyPairSpec::EccSecgP256K1 => "ECC_SECG_P256K1",
+            DataKeyPairSpec::MlKem1024 => "ML_KEM_1024",
+            DataKeyPairSpec::MlKem512 => "ML_KEM_512",
+            DataKeyPairSpec::MlKem768 => "ML_KEM_768",
             DataKeyPairSpec::Rsa2048 => "RSA_2048",
             DataKeyPairSpec::Rsa3072 => "RSA_3072",
             DataKeyPairSpec::Rsa4096 => "RSA_4096",
@@ -118,6 +133,9 @@ impl DataKeyPairSpec {
             "ECC_NIST_P384",
             "ECC_NIST_P521",
             "ECC_SECG_P256K1",
+            "ML_KEM_1024",
+            "ML_KEM_512",
+            "ML_KEM_768",
             "RSA_2048",
             "RSA_3072",
             "RSA_4096",
@@ -150,6 +168,9 @@ impl ::std::fmt::Display for DataKeyPairSpec {
             DataKeyPairSpec::EccNistP384 => write!(f, "ECC_NIST_P384"),
             DataKeyPairSpec::EccNistP521 => write!(f, "ECC_NIST_P521"),
             DataKeyPairSpec::EccSecgP256K1 => write!(f, "ECC_SECG_P256K1"),
+            DataKeyPairSpec::MlKem1024 => write!(f, "ML_KEM_1024"),
+            DataKeyPairSpec::MlKem512 => write!(f, "ML_KEM_512"),
+            DataKeyPairSpec::MlKem768 => write!(f, "ML_KEM_768"),
             DataKeyPairSpec::Rsa2048 => write!(f, "RSA_2048"),
             DataKeyPairSpec::Rsa3072 => write!(f, "RSA_3072"),
             DataKeyPairSpec::Rsa4096 => write!(f, "RSA_4096"),

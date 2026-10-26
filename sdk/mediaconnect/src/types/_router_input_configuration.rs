@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum RouterInputConfiguration {
+    /// <p>Configuration settings for a router input that is represented by a destination endpoint.</p>
+    DestinationEndpoint(crate::types::DestinationEndpointRouterInputConfiguration),
     /// <p>Configuration settings for a failover router input that allows switching between two input sources.</p>
     Failover(crate::types::FailoverRouterInputConfiguration),
     /// <p>Configuration settings for connecting a router input to a flow output.</p>
@@ -31,6 +33,19 @@ pub enum RouterInputConfiguration {
     Unknown,
 }
 impl RouterInputConfiguration {
+    /// Tries to convert the enum instance into [`DestinationEndpoint`](crate::types::RouterInputConfiguration::DestinationEndpoint), extracting the inner [`DestinationEndpointRouterInputConfiguration`](crate::types::DestinationEndpointRouterInputConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_destination_endpoint(&self) -> ::std::result::Result<&crate::types::DestinationEndpointRouterInputConfiguration, &Self> {
+        if let RouterInputConfiguration::DestinationEndpoint(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`DestinationEndpoint`](crate::types::RouterInputConfiguration::DestinationEndpoint).
+    pub fn is_destination_endpoint(&self) -> bool {
+        self.as_destination_endpoint().is_ok()
+    }
     /// Tries to convert the enum instance into [`Failover`](crate::types::RouterInputConfiguration::Failover), extracting the inner [`FailoverRouterInputConfiguration`](crate::types::FailoverRouterInputConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_failover(&self) -> ::std::result::Result<&crate::types::FailoverRouterInputConfiguration, &Self> {

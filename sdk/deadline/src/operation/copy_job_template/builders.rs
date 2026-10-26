@@ -22,7 +22,7 @@ impl crate::operation::copy_job_template::builders::CopyJobTemplateInputBuilder 
 }
 /// Fluent builder constructing a request to `CopyJobTemplate`.
 ///
-/// <p>Copies a job template to an Amazon S3 bucket.</p>
+/// Copies a job template to an Amazon S3 bucket.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CopyJobTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl CopyJobTemplateFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID to copy.</p>
+    /// The farm ID to copy.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID to copy.</p>
+    /// The farm ID to copy.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID to copy.</p>
+    /// The farm ID to copy.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The queue ID to copy.</p>
+    /// The queue ID to copy.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
         self
     }
-    /// <p>The queue ID to copy.</p>
+    /// The queue ID to copy.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_id(input);
         self
     }
-    /// <p>The queue ID to copy.</p>
+    /// The queue ID to copy.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }
-    /// <p>The job ID to copy.</p>
+    /// The job ID to copy.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
         self
     }
-    /// <p>The job ID to copy.</p>
+    /// The job ID to copy.
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
     }
-    /// <p>The job ID to copy.</p>
+    /// The job ID to copy.
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_id()
     }
-    /// <p>The Amazon S3 bucket name and key where you would like to add a copy of the job template.</p>
+    /// The Amazon S3 bucket name and key where you would like to add a copy of the job template.
     pub fn target_s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.inner = self.inner.target_s3_location(input);
         self
     }
-    /// <p>The Amazon S3 bucket name and key where you would like to add a copy of the job template.</p>
+    /// The Amazon S3 bucket name and key where you would like to add a copy of the job template.
     pub fn set_target_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.inner = self.inner.set_target_s3_location(input);
         self
     }
-    /// <p>The Amazon S3 bucket name and key where you would like to add a copy of the job template.</p>
+    /// The Amazon S3 bucket name and key where you would like to add a copy of the job template.
     pub fn get_target_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
         self.inner.get_target_s3_location()
     }

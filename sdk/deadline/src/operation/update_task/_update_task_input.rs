@@ -3,47 +3,47 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTaskInput {
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID to update.</p>
+    /// The queue ID to update.
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The job ID to update.</p>
+    /// The job ID to update.
     pub job_id: ::std::option::Option<::std::string::String>,
-    /// <p>The step ID to update.</p>
+    /// The step ID to update.
     pub step_id: ::std::option::Option<::std::string::String>,
-    /// <p>The task ID to update.</p>
+    /// The task ID to update.
     pub task_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The run status with which to start the task.</p>
+    /// The run status with which to start the task.
     pub target_run_status: ::std::option::Option<crate::types::TaskTargetRunStatus>,
 }
 impl UpdateTaskInput {
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The queue ID to update.</p>
+    /// The queue ID to update.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The job ID to update.</p>
+    /// The job ID to update.
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The step ID to update.</p>
+    /// The step ID to update.
     pub fn step_id(&self) -> ::std::option::Option<&str> {
         self.step_id.as_deref()
     }
-    /// <p>The task ID to update.</p>
+    /// The task ID to update.
     pub fn task_id(&self) -> ::std::option::Option<&str> {
         self.task_id.as_deref()
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The run status with which to start the task.</p>
+    /// The run status with which to start the task.
     pub fn target_run_status(&self) -> ::std::option::Option<&crate::types::TaskTargetRunStatus> {
         self.target_run_status.as_ref()
     }
@@ -68,107 +68,107 @@ pub struct UpdateTaskInputBuilder {
     pub(crate) target_run_status: ::std::option::Option<crate::types::TaskTargetRunStatus>,
 }
 impl UpdateTaskInputBuilder {
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The queue ID to update.</p>
+    /// The queue ID to update.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue ID to update.</p>
+    /// The queue ID to update.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The queue ID to update.</p>
+    /// The queue ID to update.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The job ID to update.</p>
+    /// The job ID to update.
     /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The job ID to update.</p>
+    /// The job ID to update.
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The job ID to update.</p>
+    /// The job ID to update.
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
-    /// <p>The step ID to update.</p>
+    /// The step ID to update.
     /// This field is required.
     pub fn step_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The step ID to update.</p>
+    /// The step ID to update.
     pub fn set_step_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_id = input;
         self
     }
-    /// <p>The step ID to update.</p>
+    /// The step ID to update.
     pub fn get_step_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.step_id
     }
-    /// <p>The task ID to update.</p>
+    /// The task ID to update.
     /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The task ID to update.</p>
+    /// The task ID to update.
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
     }
-    /// <p>The task ID to update.</p>
+    /// The task ID to update.
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The run status with which to start the task.</p>
+    /// The run status with which to start the task.
     /// This field is required.
     pub fn target_run_status(mut self, input: crate::types::TaskTargetRunStatus) -> Self {
         self.target_run_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The run status with which to start the task.</p>
+    /// The run status with which to start the task.
     pub fn set_target_run_status(mut self, input: ::std::option::Option<crate::types::TaskTargetRunStatus>) -> Self {
         self.target_run_status = input;
         self
     }
-    /// <p>The run status with which to start the task.</p>
+    /// The run status with which to start the task.
     pub fn get_target_run_status(&self) -> &::std::option::Option<crate::types::TaskTargetRunStatus> {
         &self.target_run_status
     }

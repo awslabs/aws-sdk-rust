@@ -181,6 +181,11 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "associatedSourceEndpointArns" => {
+                            builder = builder.set_associated_source_endpoint_arns(
+                                crate::protocol_serde::shape_source_endpoint_arn_list::de_source_endpoint_arn_list(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

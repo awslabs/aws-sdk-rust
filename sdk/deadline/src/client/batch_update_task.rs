@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchUpdateTask`](crate::operation::batch_update_task::builders::BatchUpdateTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::operation::batch_update_task::builders::BatchUpdateTaskFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::batch_update_task::builders::BatchUpdateTaskFluentBuilder::set_client_token):<br>required: **false**<br><p>The unique token which the server uses to recognize retries of the same request.</p><br>
-    ///   - [`tasks(BatchUpdateTaskItem)`](crate::operation::batch_update_task::builders::BatchUpdateTaskFluentBuilder::tasks) / [`set_tasks(Option<Vec::<BatchUpdateTaskItem>>)`](crate::operation::batch_update_task::builders::BatchUpdateTaskFluentBuilder::set_tasks):<br>required: **true**<br><p>The list of tasks to update. You can specify up to 100 tasks per request.</p><br>
+    ///   - [`client_token(impl Into<String>)`](crate::operation::batch_update_task::builders::BatchUpdateTaskFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::batch_update_task::builders::BatchUpdateTaskFluentBuilder::set_client_token):<br>required: **false**<br>The unique token which the server uses to recognize retries of the same request.<br>
+    ///   - [`tasks(BatchUpdateTaskItem)`](crate::operation::batch_update_task::builders::BatchUpdateTaskFluentBuilder::tasks) / [`set_tasks(Option<Vec::<BatchUpdateTaskItem>>)`](crate::operation::batch_update_task::builders::BatchUpdateTaskFluentBuilder::set_tasks):<br>required: **true**<br>The list of tasks to update. You can specify up to 100 tasks per request.<br>
     /// - On success, responds with [`BatchUpdateTaskOutput`](crate::operation::batch_update_task::BatchUpdateTaskOutput) with field(s):
-    ///   - [`errors(Vec::<BatchUpdateTaskError>)`](crate::operation::batch_update_task::BatchUpdateTaskOutput::errors): <p>A list of errors for tasks that could not be updated.</p>
+    ///   - [`errors(Vec::<BatchUpdateTaskError>)`](crate::operation::batch_update_task::BatchUpdateTaskOutput::errors): A list of errors for tasks that could not be updated.
     /// - On failure, responds with [`SdkError<BatchUpdateTaskError>`](crate::operation::batch_update_task::BatchUpdateTaskError)
     pub fn batch_update_task(&self) -> crate::operation::batch_update_task::builders::BatchUpdateTaskFluentBuilder {
         crate::operation::batch_update_task::builders::BatchUpdateTaskFluentBuilder::new(self.handle.clone())

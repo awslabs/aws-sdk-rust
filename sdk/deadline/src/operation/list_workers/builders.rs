@@ -22,7 +22,7 @@ impl crate::operation::list_workers::builders::ListWorkersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListWorkers`.
 ///
-/// <p>Lists workers.</p>
+/// Lists workers.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWorkersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,59 +114,59 @@ impl ListWorkersFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_workers::paginator::ListWorkersPaginator {
         crate::operation::list_workers::paginator::ListWorkersPaginator::new(self.handle, self.inner)
     }
-    /// <p>The farm ID connected to the workers.</p>
+    /// The farm ID connected to the workers.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID connected to the workers.</p>
+    /// The farm ID connected to the workers.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID connected to the workers.</p>
+    /// The farm ID connected to the workers.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The fleet ID of the workers.</p>
+    /// The fleet ID of the workers.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>The fleet ID of the workers.</p>
+    /// The fleet ID of the workers.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>The fleet ID of the workers.</p>
+    /// The fleet ID of the workers.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

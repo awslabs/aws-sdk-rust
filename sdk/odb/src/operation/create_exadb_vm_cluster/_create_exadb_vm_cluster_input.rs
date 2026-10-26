@@ -33,7 +33,7 @@ pub struct CreateExadbVmClusterInput {
     pub license_model: ::std::option::Option<crate::types::LicenseModel>,
     /// <p>The port number for TCP connections to the Single Client Access Name (SCAN) listener.</p>
     pub scan_listener_port_tcp: ::std::option::Option<i32>,
-    /// <p>The port number for TCP connections with SSL to the Single Client Access Name (SCAN) listener.</p>
+    /// <p>Reserved for future use.</p>
     pub scan_listener_port_tcp_ssl: ::std::option::Option<i32>,
     /// <p>The shape attribute for the Exascale VM cluster.</p>
     pub shape_attribute: ::std::option::Option<crate::types::ShapeAttribute>,
@@ -109,7 +109,7 @@ impl CreateExadbVmClusterInput {
     pub fn scan_listener_port_tcp(&self) -> ::std::option::Option<i32> {
         self.scan_listener_port_tcp
     }
-    /// <p>The port number for TCP connections with SSL to the Single Client Access Name (SCAN) listener.</p>
+    /// <p>Reserved for future use.</p>
     pub fn scan_listener_port_tcp_ssl(&self) -> ::std::option::Option<i32> {
         self.scan_listener_port_tcp_ssl
     }
@@ -394,17 +394,17 @@ impl CreateExadbVmClusterInputBuilder {
     pub fn get_scan_listener_port_tcp(&self) -> &::std::option::Option<i32> {
         &self.scan_listener_port_tcp
     }
-    /// <p>The port number for TCP connections with SSL to the Single Client Access Name (SCAN) listener.</p>
+    /// <p>Reserved for future use.</p>
     pub fn scan_listener_port_tcp_ssl(mut self, input: i32) -> Self {
         self.scan_listener_port_tcp_ssl = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The port number for TCP connections with SSL to the Single Client Access Name (SCAN) listener.</p>
+    /// <p>Reserved for future use.</p>
     pub fn set_scan_listener_port_tcp_ssl(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scan_listener_port_tcp_ssl = input;
         self
     }
-    /// <p>The port number for TCP connections with SSL to the Single Client Access Name (SCAN) listener.</p>
+    /// <p>Reserved for future use.</p>
     pub fn get_scan_listener_port_tcp_ssl(&self) -> &::std::option::Option<i32> {
         &self.scan_listener_port_tcp_ssl
     }

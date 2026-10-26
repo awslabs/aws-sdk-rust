@@ -67,6 +67,9 @@ pub mod describe_pull_through_cache_rules;
 /// Types for the `DescribeRegistry` operation.
 pub mod describe_registry;
 
+/// Types for the `DescribeReplicationBackfillResults` operation.
+pub mod describe_replication_backfill_results;
+
 /// Types for the `DescribeRepositories` operation.
 pub mod describe_repositories;
 
@@ -112,6 +115,9 @@ pub mod list_images;
 /// Types for the `ListPullTimeUpdateExclusions` operation.
 pub mod list_pull_time_update_exclusions;
 
+/// Types for the `ListReplicationBackfills` operation.
+pub mod list_replication_backfills;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
@@ -153,6 +159,12 @@ pub mod start_image_scan;
 
 /// Types for the `StartLifecyclePolicyPreview` operation.
 pub mod start_lifecycle_policy_preview;
+
+/// Types for the `StartReplicationBackfill` operation.
+pub mod start_replication_backfill;
+
+/// Types for the `StopReplicationBackfill` operation.
+pub mod stop_replication_backfill;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

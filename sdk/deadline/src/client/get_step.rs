@@ -3,28 +3,28 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetStep`](crate::operation::get_step::builders::GetStepFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_step::builders::GetStepFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_step::builders::GetStepFluentBuilder::set_farm_id):<br>required: **true**<br><p>The farm ID for the step.</p><br>
-    ///   - [`queue_id(impl Into<String>)`](crate::operation::get_step::builders::GetStepFluentBuilder::queue_id) / [`set_queue_id(Option<String>)`](crate::operation::get_step::builders::GetStepFluentBuilder::set_queue_id):<br>required: **true**<br><p>The queue ID for the step.</p><br>
-    ///   - [`job_id(impl Into<String>)`](crate::operation::get_step::builders::GetStepFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_step::builders::GetStepFluentBuilder::set_job_id):<br>required: **true**<br><p>The job ID for the step.</p><br>
-    ///   - [`step_id(impl Into<String>)`](crate::operation::get_step::builders::GetStepFluentBuilder::step_id) / [`set_step_id(Option<String>)`](crate::operation::get_step::builders::GetStepFluentBuilder::set_step_id):<br>required: **true**<br><p>The step ID.</p><br>
+    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_step::builders::GetStepFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_step::builders::GetStepFluentBuilder::set_farm_id):<br>required: **true**<br>The farm ID for the step.<br>
+    ///   - [`queue_id(impl Into<String>)`](crate::operation::get_step::builders::GetStepFluentBuilder::queue_id) / [`set_queue_id(Option<String>)`](crate::operation::get_step::builders::GetStepFluentBuilder::set_queue_id):<br>required: **true**<br>The queue ID for the step.<br>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::get_step::builders::GetStepFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_step::builders::GetStepFluentBuilder::set_job_id):<br>required: **true**<br>The job ID for the step.<br>
+    ///   - [`step_id(impl Into<String>)`](crate::operation::get_step::builders::GetStepFluentBuilder::step_id) / [`set_step_id(Option<String>)`](crate::operation::get_step::builders::GetStepFluentBuilder::set_step_id):<br>required: **true**<br>The step ID.<br>
     /// - On success, responds with [`GetStepOutput`](crate::operation::get_step::GetStepOutput) with field(s):
-    ///   - [`step_id(String)`](crate::operation::get_step::GetStepOutput::step_id): <p>The step ID.</p>
-    ///   - [`name(String)`](crate::operation::get_step::GetStepOutput::name): <p>The name of the step.</p>
-    ///   - [`lifecycle_status(StepLifecycleStatus)`](crate::operation::get_step::GetStepOutput::lifecycle_status): <p>The life cycle status of the step.</p>
-    ///   - [`lifecycle_status_message(Option<String>)`](crate::operation::get_step::GetStepOutput::lifecycle_status_message): <p>A message that describes the lifecycle status of the step.</p>
-    ///   - [`task_run_status(TaskRunStatus)`](crate::operation::get_step::GetStepOutput::task_run_status): <p>The task run status for the job.</p>
-    ///   - [`task_run_status_counts(HashMap::<TaskRunStatus, i32>)`](crate::operation::get_step::GetStepOutput::task_run_status_counts): <p>The number of tasks running on the job.</p>
-    ///   - [`task_failure_retry_count(Option<i32>)`](crate::operation::get_step::GetStepOutput::task_failure_retry_count): <p>The total number of times tasks from the step failed and were retried.</p>
-    ///   - [`target_task_run_status(Option<StepTargetTaskRunStatus>)`](crate::operation::get_step::GetStepOutput::target_task_run_status): <p>The task status with which the job started.</p>
-    ///   - [`created_at(DateTime)`](crate::operation::get_step::GetStepOutput::created_at): <p>The date and time the resource was created.</p>
-    ///   - [`created_by(String)`](crate::operation::get_step::GetStepOutput::created_by): <p>The user or system that created this resource.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_step::GetStepOutput::updated_at): <p>The date and time the resource was updated.</p>
-    ///   - [`updated_by(Option<String>)`](crate::operation::get_step::GetStepOutput::updated_by): <p>The user or system that updated this resource.</p>
-    ///   - [`started_at(Option<DateTime>)`](crate::operation::get_step::GetStepOutput::started_at): <p>The date and time the resource started running.</p>
-    ///   - [`ended_at(Option<DateTime>)`](crate::operation::get_step::GetStepOutput::ended_at): <p>The date and time the resource ended running.</p>
-    ///   - [`dependency_counts(Option<DependencyCounts>)`](crate::operation::get_step::GetStepOutput::dependency_counts): <p>The number of dependencies in the step.</p>
-    ///   - [`required_capabilities(Option<StepRequiredCapabilities>)`](crate::operation::get_step::GetStepOutput::required_capabilities): <p>The required capabilities of the step.</p>
-    ///   - [`parameter_space(Option<ParameterSpace>)`](crate::operation::get_step::GetStepOutput::parameter_space): <p>A list of step parameters and the combination expression for the step.</p>
+    ///   - [`step_id(String)`](crate::operation::get_step::GetStepOutput::step_id): The step ID.
+    ///   - [`name(String)`](crate::operation::get_step::GetStepOutput::name): The name of the step.
+    ///   - [`lifecycle_status(StepLifecycleStatus)`](crate::operation::get_step::GetStepOutput::lifecycle_status): The life cycle status of the step.
+    ///   - [`lifecycle_status_message(Option<String>)`](crate::operation::get_step::GetStepOutput::lifecycle_status_message): A message that describes the lifecycle status of the step.
+    ///   - [`task_run_status(TaskRunStatus)`](crate::operation::get_step::GetStepOutput::task_run_status): The task run status for the job.
+    ///   - [`task_run_status_counts(HashMap::<TaskRunStatus, i32>)`](crate::operation::get_step::GetStepOutput::task_run_status_counts): The number of tasks running on the job.
+    ///   - [`task_failure_retry_count(Option<i32>)`](crate::operation::get_step::GetStepOutput::task_failure_retry_count): The total number of times tasks from the step failed and were retried.
+    ///   - [`target_task_run_status(Option<StepTargetTaskRunStatus>)`](crate::operation::get_step::GetStepOutput::target_task_run_status): The task status with which the job started.
+    ///   - [`created_at(DateTime)`](crate::operation::get_step::GetStepOutput::created_at): The date and time the resource was created.
+    ///   - [`created_by(String)`](crate::operation::get_step::GetStepOutput::created_by): The user or system that created this resource.
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_step::GetStepOutput::updated_at): The date and time the resource was updated.
+    ///   - [`updated_by(Option<String>)`](crate::operation::get_step::GetStepOutput::updated_by): The user or system that updated this resource.
+    ///   - [`started_at(Option<DateTime>)`](crate::operation::get_step::GetStepOutput::started_at): The date and time the resource started running.
+    ///   - [`ended_at(Option<DateTime>)`](crate::operation::get_step::GetStepOutput::ended_at): The date and time the resource ended running.
+    ///   - [`dependency_counts(Option<DependencyCounts>)`](crate::operation::get_step::GetStepOutput::dependency_counts): The number of dependencies in the step.
+    ///   - [`required_capabilities(Option<StepRequiredCapabilities>)`](crate::operation::get_step::GetStepOutput::required_capabilities): The required capabilities of the step.
+    ///   - [`parameter_space(Option<ParameterSpace>)`](crate::operation::get_step::GetStepOutput::parameter_space): A list of step parameters and the combination expression for the step.
     ///   - [`description(Option<String>)`](crate::operation::get_step::GetStepOutput::description): <p>The description of the step.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
     /// - On failure, responds with [`SdkError<GetStepError>`](crate::operation::get_step::GetStepError)
     pub fn get_step(&self) -> crate::operation::get_step::builders::GetStepFluentBuilder {

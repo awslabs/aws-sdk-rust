@@ -3,84 +3,84 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetSessionActionOutput {
-    /// <p>The session action ID.</p>
+    /// The session action ID.
     pub session_action_id: ::std::string::String,
-    /// <p>The status of the session action.</p>
+    /// The status of the session action.
     pub status: crate::types::SessionActionStatus,
-    /// <p>The date and time the resource started running.</p>
+    /// The date and time the resource started running.
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time the resource ended running.</p>
+    /// The date and time the resource ended running.
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The Linux timestamp of the date and time the session action was last updated.</p>
+    /// The Linux timestamp of the date and time the session action was last updated.
     pub worker_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The percentage completed for a session action.</p>
+    /// The percentage completed for a session action.
     pub progress_percent: ::std::option::Option<f32>,
-    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    /// The list of manifest properties that describe file attachments for the task run.
     pub manifests: ::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>>,
-    /// <p>The session ID for the session action.</p>
+    /// The session ID for the session action.
     pub session_id: ::std::string::String,
-    /// <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
+    /// The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.
     pub process_exit_code: ::std::option::Option<i32>,
-    /// <p>The message that communicates the progress of the session action.</p>
+    /// The message that communicates the progress of the session action.
     pub progress_message: ::std::option::Option<::std::string::String>,
-    /// <p>The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.</p>
+    /// The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.
     pub acquired_limits: ::std::option::Option<::std::vec::Vec<crate::types::AcquiredLimit>>,
-    /// <p>The session action definition.</p>
+    /// The session action definition.
     pub definition: ::std::option::Option<crate::types::SessionActionDefinition>,
     _request_id: Option<String>,
 }
 impl GetSessionActionOutput {
-    /// <p>The session action ID.</p>
+    /// The session action ID.
     pub fn session_action_id(&self) -> &str {
         use std::ops::Deref;
         self.session_action_id.deref()
     }
-    /// <p>The status of the session action.</p>
+    /// The status of the session action.
     pub fn status(&self) -> &crate::types::SessionActionStatus {
         &self.status
     }
-    /// <p>The date and time the resource started running.</p>
+    /// The date and time the resource started running.
     pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
-    /// <p>The date and time the resource ended running.</p>
+    /// The date and time the resource ended running.
     pub fn ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
-    /// <p>The Linux timestamp of the date and time the session action was last updated.</p>
+    /// The Linux timestamp of the date and time the session action was last updated.
     pub fn worker_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.worker_updated_at.as_ref()
     }
-    /// <p>The percentage completed for a session action.</p>
+    /// The percentage completed for a session action.
     pub fn progress_percent(&self) -> ::std::option::Option<f32> {
         self.progress_percent
     }
-    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    /// The list of manifest properties that describe file attachments for the task run.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.manifests.is_none()`.
     pub fn manifests(&self) -> &[crate::types::TaskRunManifestPropertiesResponse] {
         self.manifests.as_deref().unwrap_or_default()
     }
-    /// <p>The session ID for the session action.</p>
+    /// The session ID for the session action.
     pub fn session_id(&self) -> &str {
         use std::ops::Deref;
         self.session_id.deref()
     }
-    /// <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
+    /// The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.
     pub fn process_exit_code(&self) -> ::std::option::Option<i32> {
         self.process_exit_code
     }
-    /// <p>The message that communicates the progress of the session action.</p>
+    /// The message that communicates the progress of the session action.
     pub fn progress_message(&self) -> ::std::option::Option<&str> {
         self.progress_message.as_deref()
     }
-    /// <p>The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.</p>
+    /// The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.acquired_limits.is_none()`.
     pub fn acquired_limits(&self) -> &[crate::types::AcquiredLimit] {
         self.acquired_limits.as_deref().unwrap_or_default()
     }
-    /// <p>The session action definition.</p>
+    /// The session action definition.
     pub fn definition(&self) -> ::std::option::Option<&crate::types::SessionActionDefinition> {
         self.definition.as_ref()
     }
@@ -135,89 +135,89 @@ pub struct GetSessionActionOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetSessionActionOutputBuilder {
-    /// <p>The session action ID.</p>
+    /// The session action ID.
     /// This field is required.
     pub fn session_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_action_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The session action ID.</p>
+    /// The session action ID.
     pub fn set_session_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_action_id = input;
         self
     }
-    /// <p>The session action ID.</p>
+    /// The session action ID.
     pub fn get_session_action_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_action_id
     }
-    /// <p>The status of the session action.</p>
+    /// The status of the session action.
     /// This field is required.
     pub fn status(mut self, input: crate::types::SessionActionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the session action.</p>
+    /// The status of the session action.
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SessionActionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the session action.</p>
+    /// The status of the session action.
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SessionActionStatus> {
         &self.status
     }
-    /// <p>The date and time the resource started running.</p>
+    /// The date and time the resource started running.
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time the resource started running.</p>
+    /// The date and time the resource started running.
     pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
-    /// <p>The date and time the resource started running.</p>
+    /// The date and time the resource started running.
     pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.started_at
     }
-    /// <p>The date and time the resource ended running.</p>
+    /// The date and time the resource ended running.
     pub fn ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ended_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time the resource ended running.</p>
+    /// The date and time the resource ended running.
     pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ended_at = input;
         self
     }
-    /// <p>The date and time the resource ended running.</p>
+    /// The date and time the resource ended running.
     pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.ended_at
     }
-    /// <p>The Linux timestamp of the date and time the session action was last updated.</p>
+    /// The Linux timestamp of the date and time the session action was last updated.
     pub fn worker_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.worker_updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Linux timestamp of the date and time the session action was last updated.</p>
+    /// The Linux timestamp of the date and time the session action was last updated.
     pub fn set_worker_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.worker_updated_at = input;
         self
     }
-    /// <p>The Linux timestamp of the date and time the session action was last updated.</p>
+    /// The Linux timestamp of the date and time the session action was last updated.
     pub fn get_worker_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.worker_updated_at
     }
-    /// <p>The percentage completed for a session action.</p>
+    /// The percentage completed for a session action.
     pub fn progress_percent(mut self, input: f32) -> Self {
         self.progress_percent = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The percentage completed for a session action.</p>
+    /// The percentage completed for a session action.
     pub fn set_progress_percent(mut self, input: ::std::option::Option<f32>) -> Self {
         self.progress_percent = input;
         self
     }
-    /// <p>The percentage completed for a session action.</p>
+    /// The percentage completed for a session action.
     pub fn get_progress_percent(&self) -> &::std::option::Option<f32> {
         &self.progress_percent
     }
@@ -225,62 +225,62 @@ impl GetSessionActionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_manifests`](Self::set_manifests).
     ///
-    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    /// The list of manifest properties that describe file attachments for the task run.
     pub fn manifests(mut self, input: crate::types::TaskRunManifestPropertiesResponse) -> Self {
         let mut v = self.manifests.unwrap_or_default();
         v.push(input);
         self.manifests = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    /// The list of manifest properties that describe file attachments for the task run.
     pub fn set_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>>) -> Self {
         self.manifests = input;
         self
     }
-    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    /// The list of manifest properties that describe file attachments for the task run.
     pub fn get_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>> {
         &self.manifests
     }
-    /// <p>The session ID for the session action.</p>
+    /// The session ID for the session action.
     /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The session ID for the session action.</p>
+    /// The session ID for the session action.
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
     }
-    /// <p>The session ID for the session action.</p>
+    /// The session ID for the session action.
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
-    /// <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
+    /// The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.
     pub fn process_exit_code(mut self, input: i32) -> Self {
         self.process_exit_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
+    /// The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.
     pub fn set_process_exit_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.process_exit_code = input;
         self
     }
-    /// <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
+    /// The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.
     pub fn get_process_exit_code(&self) -> &::std::option::Option<i32> {
         &self.process_exit_code
     }
-    /// <p>The message that communicates the progress of the session action.</p>
+    /// The message that communicates the progress of the session action.
     pub fn progress_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The message that communicates the progress of the session action.</p>
+    /// The message that communicates the progress of the session action.
     pub fn set_progress_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress_message = input;
         self
     }
-    /// <p>The message that communicates the progress of the session action.</p>
+    /// The message that communicates the progress of the session action.
     pub fn get_progress_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.progress_message
     }
@@ -288,34 +288,34 @@ impl GetSessionActionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_acquired_limits`](Self::set_acquired_limits).
     ///
-    /// <p>The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.</p>
+    /// The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.
     pub fn acquired_limits(mut self, input: crate::types::AcquiredLimit) -> Self {
         let mut v = self.acquired_limits.unwrap_or_default();
         v.push(input);
         self.acquired_limits = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.</p>
+    /// The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.
     pub fn set_acquired_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcquiredLimit>>) -> Self {
         self.acquired_limits = input;
         self
     }
-    /// <p>The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.</p>
+    /// The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.
     pub fn get_acquired_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcquiredLimit>> {
         &self.acquired_limits
     }
-    /// <p>The session action definition.</p>
+    /// The session action definition.
     /// This field is required.
     pub fn definition(mut self, input: crate::types::SessionActionDefinition) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The session action definition.</p>
+    /// The session action definition.
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::SessionActionDefinition>) -> Self {
         self.definition = input;
         self
     }
-    /// <p>The session action definition.</p>
+    /// The session action definition.
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::SessionActionDefinition> {
         &self.definition
     }

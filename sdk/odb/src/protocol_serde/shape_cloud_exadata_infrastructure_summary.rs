@@ -278,6 +278,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "exascaleConfiguration" => {
+                            builder = builder.set_exascale_configuration(
+                                crate::protocol_serde::shape_exascale_configuration::de_exascale_configuration(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

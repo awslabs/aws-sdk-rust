@@ -61,6 +61,8 @@ pub use crate::types::_list_application_assignments_filter::ListApplicationAssig
 
 pub use crate::types::_list_applications_filter::ListApplicationsFilter;
 
+pub use crate::types::_region_scope::RegionScope;
+
 pub use crate::types::_provision_target_type::ProvisionTargetType;
 
 pub use crate::types::_update_application_portal_options::UpdateApplicationPortalOptions;
@@ -244,6 +246,8 @@ mod _provisioning_status;
 mod _refresh_token_grant;
 
 mod _region_metadata;
+
+mod _region_scope;
 
 mod _region_status;
 

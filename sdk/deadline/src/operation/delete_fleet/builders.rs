@@ -22,7 +22,7 @@ impl crate::operation::delete_fleet::builders::DeleteFleetInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteFleet`.
 ///
-/// <p>Deletes a fleet.</p>
+/// Deletes a fleet.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFleetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl DeleteFleetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the farm to remove from the fleet.</p>
+    /// The farm ID of the farm to remove from the fleet.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the farm to remove from the fleet.</p>
+    /// The farm ID of the farm to remove from the fleet.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the farm to remove from the fleet.</p>
+    /// The farm ID of the farm to remove from the fleet.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The fleet ID of the fleet to delete.</p>
+    /// The fleet ID of the fleet to delete.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>The fleet ID of the fleet to delete.</p>
+    /// The fleet ID of the fleet to delete.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>The fleet ID of the fleet to delete.</p>
+    /// The fleet ID of the fleet to delete.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

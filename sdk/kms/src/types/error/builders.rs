@@ -67,13 +67,13 @@ pub use crate::types::error::_xks_key_invalid_configuration_exception::XksKeyInv
 
 pub use crate::types::error::_xks_key_not_found_exception::XksKeyNotFoundExceptionBuilder;
 
-pub use crate::types::error::_incorrect_key_exception::IncorrectKeyExceptionBuilder;
-
 pub use crate::types::error::_invalid_ciphertext_exception::InvalidCiphertextExceptionBuilder;
 
 pub use crate::types::error::_invalid_key_usage_exception::InvalidKeyUsageExceptionBuilder;
 
 pub use crate::types::error::_key_unavailable_exception::KeyUnavailableExceptionBuilder;
+
+pub use crate::types::error::_incorrect_key_exception::IncorrectKeyExceptionBuilder;
 
 pub use crate::types::error::_custom_key_store_has_cmks_exception::CustomKeyStoreHasCmKsExceptionBuilder;
 

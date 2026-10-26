@@ -108,31 +108,31 @@ impl DeleteLimitFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the farm that contains the limit to delete.</p>
+    /// The unique identifier of the farm that contains the limit to delete.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The unique identifier of the farm that contains the limit to delete.</p>
+    /// The unique identifier of the farm that contains the limit to delete.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The unique identifier of the farm that contains the limit to delete.</p>
+    /// The unique identifier of the farm that contains the limit to delete.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The unique identifier of the limit to delete.</p>
+    /// The unique identifier of the limit to delete.
     pub fn limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.limit_id(input.into());
         self
     }
-    /// <p>The unique identifier of the limit to delete.</p>
+    /// The unique identifier of the limit to delete.
     pub fn set_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_limit_id(input);
         self
     }
-    /// <p>The unique identifier of the limit to delete.</p>
+    /// The unique identifier of the limit to delete.
     pub fn get_limit_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_limit_id()
     }

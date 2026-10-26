@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetStep`](crate::operation::batch_get_step::builders::BatchGetStepFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifiers(BatchGetStepIdentifier)`](crate::operation::batch_get_step::builders::BatchGetStepFluentBuilder::identifiers) / [`set_identifiers(Option<Vec::<BatchGetStepIdentifier>>)`](crate::operation::batch_get_step::builders::BatchGetStepFluentBuilder::set_identifiers):<br>required: **true**<br><p>The list of step identifiers to retrieve. You can specify up to 100 identifiers per request.</p><br>
+    ///   - [`identifiers(BatchGetStepIdentifier)`](crate::operation::batch_get_step::builders::BatchGetStepFluentBuilder::identifiers) / [`set_identifiers(Option<Vec::<BatchGetStepIdentifier>>)`](crate::operation::batch_get_step::builders::BatchGetStepFluentBuilder::set_identifiers):<br>required: **true**<br>The list of step identifiers to retrieve. You can specify up to 100 identifiers per request.<br>
     /// - On success, responds with [`BatchGetStepOutput`](crate::operation::batch_get_step::BatchGetStepOutput) with field(s):
-    ///   - [`steps(Vec::<BatchGetStepItem>)`](crate::operation::batch_get_step::BatchGetStepOutput::steps): <p>A list of steps that were successfully retrieved.</p>
-    ///   - [`errors(Vec::<BatchGetStepError>)`](crate::operation::batch_get_step::BatchGetStepOutput::errors): <p>A list of errors for steps that could not be retrieved.</p>
+    ///   - [`steps(Vec::<BatchGetStepItem>)`](crate::operation::batch_get_step::BatchGetStepOutput::steps): A list of steps that were successfully retrieved.
+    ///   - [`errors(Vec::<BatchGetStepError>)`](crate::operation::batch_get_step::BatchGetStepOutput::errors): A list of errors for steps that could not be retrieved.
     /// - On failure, responds with [`SdkError<BatchGetStepError>`](crate::operation::batch_get_step::BatchGetStepError)
     pub fn batch_get_step(&self) -> crate::operation::batch_get_step::builders::BatchGetStepFluentBuilder {
         crate::operation::batch_get_step::builders::BatchGetStepFluentBuilder::new(self.handle.clone())

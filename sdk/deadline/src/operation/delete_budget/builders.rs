@@ -22,7 +22,7 @@ impl crate::operation::delete_budget::builders::DeleteBudgetInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteBudget`.
 ///
-/// <p>Deletes a budget.</p>
+/// Deletes a budget.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBudgetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteBudgetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the farm to remove from the budget.</p>
+    /// The farm ID of the farm to remove from the budget.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the farm to remove from the budget.</p>
+    /// The farm ID of the farm to remove from the budget.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the farm to remove from the budget.</p>
+    /// The farm ID of the farm to remove from the budget.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The budget ID of the budget to delete.</p>
+    /// The budget ID of the budget to delete.
     pub fn budget_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.budget_id(input.into());
         self
     }
-    /// <p>The budget ID of the budget to delete.</p>
+    /// The budget ID of the budget to delete.
     pub fn set_budget_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_budget_id(input);
         self
     }
-    /// <p>The budget ID of the budget to delete.</p>
+    /// The budget ID of the budget to delete.
     pub fn get_budget_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_budget_id()
     }

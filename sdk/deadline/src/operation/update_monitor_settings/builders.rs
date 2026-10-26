@@ -22,7 +22,7 @@ impl crate::operation::update_monitor_settings::builders::UpdateMonitorSettingsI
 }
 /// Fluent builder constructing a request to `UpdateMonitorSettings`.
 ///
-/// <p>Updates the settings for a Deadline Cloud monitor. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.</p>
+/// Updates the settings for a Deadline Cloud monitor. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMonitorSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UpdateMonitorSettingsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the monitor to update settings for.</p>
+    /// The unique identifier of the monitor to update settings for.
     pub fn monitor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitor_id(input.into());
         self
     }
-    /// <p>The unique identifier of the monitor to update settings for.</p>
+    /// The unique identifier of the monitor to update settings for.
     pub fn set_monitor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitor_id(input);
         self
     }
-    /// <p>The unique identifier of the monitor to update settings for.</p>
+    /// The unique identifier of the monitor to update settings for.
     pub fn get_monitor_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_id()
     }
@@ -127,17 +127,17 @@ impl UpdateMonitorSettingsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_settings`](Self::set_settings).
     ///
-    /// <p>The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.</p>
+    /// The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.
     pub fn settings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.settings(k.into(), v.into());
         self
     }
-    /// <p>The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.</p>
+    /// The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.
     pub fn set_settings(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_settings(input);
         self
     }
-    /// <p>The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.</p>
+    /// The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.
     pub fn get_settings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_settings()
     }

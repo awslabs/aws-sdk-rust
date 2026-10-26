@@ -49,6 +49,8 @@ pub use crate::types::_offer_set_filters::OfferSetFiltersBuilder;
 
 pub use crate::types::_express_private_offer_configuration_filters::ExpressPrivateOfferConfigurationFiltersBuilder;
 
+pub use crate::types::_subsidiary_authorization_filters::SubsidiaryAuthorizationFiltersBuilder;
+
 pub use crate::types::_data_product_sort::DataProductSortBuilder;
 
 pub use crate::types::_saa_s_product_sort::SaaSProductSortBuilder;
@@ -66,6 +68,8 @@ pub use crate::types::_machine_learning_product_sort::MachineLearningProductSort
 pub use crate::types::_offer_set_sort::OfferSetSortBuilder;
 
 pub use crate::types::_express_private_offer_configuration_sort::ExpressPrivateOfferConfigurationSortBuilder;
+
+pub use crate::types::_subsidiary_authorization_sort::SubsidiaryAuthorizationSortBuilder;
 
 pub use crate::types::_entity_summary::EntitySummaryBuilder;
 
@@ -195,6 +199,22 @@ pub use crate::types::_express_private_offer_configuration_product_id_filter::Ex
 
 pub use crate::types::_express_private_offer_configuration_state_filter::ExpressPrivateOfferConfigurationStateFilterBuilder;
 
+pub use crate::types::_subsidiary_authorization_entity_id_filter::SubsidiaryAuthorizationEntityIdFilterBuilder;
+
+pub use crate::types::_subsidiary_authorization_status_filter::SubsidiaryAuthorizationStatusFilterBuilder;
+
+pub use crate::types::_subsidiary_authorization_resource_id_filter::SubsidiaryAuthorizationResourceIdFilterBuilder;
+
+pub use crate::types::_subsidiary_authorization_resource_name_filter::SubsidiaryAuthorizationResourceNameFilterBuilder;
+
+pub use crate::types::_subsidiary_authorization_name_filter::SubsidiaryAuthorizationNameFilterBuilder;
+
+pub use crate::types::_subsidiary_authorization_subsidiary_account_id_filter::SubsidiaryAuthorizationSubsidiaryAccountIdFilterBuilder;
+
+pub use crate::types::_subsidiary_authorization_created_date_filter::SubsidiaryAuthorizationCreatedDateFilterBuilder;
+
+pub use crate::types::_subsidiary_authorization_last_modified_date_filter::SubsidiaryAuthorizationLastModifiedDateFilterBuilder;
+
 pub use crate::types::_ami_product_summary::AmiProductSummaryBuilder;
 
 pub use crate::types::_container_product_summary::ContainerProductSummaryBuilder;
@@ -212,6 +232,8 @@ pub use crate::types::_machine_learning_product_summary::MachineLearningProductS
 pub use crate::types::_offer_set_summary::OfferSetSummaryBuilder;
 
 pub use crate::types::_express_private_offer_configuration_summary::ExpressPrivateOfferConfigurationSummaryBuilder;
+
+pub use crate::types::_subsidiary_authorization_summary::SubsidiaryAuthorizationSummaryBuilder;
 
 pub use crate::types::_control_error::ControlErrorBuilder;
 
@@ -242,5 +264,9 @@ pub use crate::types::_machine_learning_product_last_modified_date_filter_date_r
 pub use crate::types::_offer_set_release_date_filter_date_range::OfferSetReleaseDateFilterDateRangeBuilder;
 
 pub use crate::types::_offer_set_last_modified_date_filter_date_range::OfferSetLastModifiedDateFilterDateRangeBuilder;
+
+pub use crate::types::_subsidiary_authorization_created_date_filter_date_range::SubsidiaryAuthorizationCreatedDateFilterDateRangeBuilder;
+
+pub use crate::types::_subsidiary_authorization_last_modified_date_filter_date_range::SubsidiaryAuthorizationLastModifiedDateFilterDateRangeBuilder;
 
 pub use crate::types::_error_scope::ErrorScopeBuilder;

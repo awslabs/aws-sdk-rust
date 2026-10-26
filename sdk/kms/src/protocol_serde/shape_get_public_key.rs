@@ -267,6 +267,15 @@ pub(crate) fn de_get_public_key(
                         )?,
                     );
                 }
+                "EncapsulationAlgorithms" => {
+                    builder = builder.set_encapsulation_algorithms(
+                        crate::protocol_serde::shape_encapsulation_algorithm_spec_list::de_encapsulation_algorithm_spec_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

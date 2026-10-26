@@ -69,6 +69,8 @@ pub use crate::types::_offer_set_filters::OfferSetFilters;
 
 pub use crate::types::_express_private_offer_configuration_filters::ExpressPrivateOfferConfigurationFilters;
 
+pub use crate::types::_subsidiary_authorization_filters::SubsidiaryAuthorizationFilters;
+
 pub use crate::types::_data_product_sort::DataProductSort;
 
 pub use crate::types::_saa_s_product_sort::SaaSProductSort;
@@ -86,6 +88,8 @@ pub use crate::types::_machine_learning_product_sort::MachineLearningProductSort
 pub use crate::types::_offer_set_sort::OfferSetSort;
 
 pub use crate::types::_express_private_offer_configuration_sort::ExpressPrivateOfferConfigurationSort;
+
+pub use crate::types::_subsidiary_authorization_sort::SubsidiaryAuthorizationSort;
 
 pub use crate::types::_entity_summary::EntitySummary;
 
@@ -219,6 +223,22 @@ pub use crate::types::_express_private_offer_configuration_product_id_filter::Ex
 
 pub use crate::types::_express_private_offer_configuration_state_filter::ExpressPrivateOfferConfigurationStateFilter;
 
+pub use crate::types::_subsidiary_authorization_entity_id_filter::SubsidiaryAuthorizationEntityIdFilter;
+
+pub use crate::types::_subsidiary_authorization_status_filter::SubsidiaryAuthorizationStatusFilter;
+
+pub use crate::types::_subsidiary_authorization_resource_id_filter::SubsidiaryAuthorizationResourceIdFilter;
+
+pub use crate::types::_subsidiary_authorization_resource_name_filter::SubsidiaryAuthorizationResourceNameFilter;
+
+pub use crate::types::_subsidiary_authorization_name_filter::SubsidiaryAuthorizationNameFilter;
+
+pub use crate::types::_subsidiary_authorization_subsidiary_account_id_filter::SubsidiaryAuthorizationSubsidiaryAccountIdFilter;
+
+pub use crate::types::_subsidiary_authorization_created_date_filter::SubsidiaryAuthorizationCreatedDateFilter;
+
+pub use crate::types::_subsidiary_authorization_last_modified_date_filter::SubsidiaryAuthorizationLastModifiedDateFilter;
+
 pub use crate::types::_data_product_sort_by::DataProductSortBy;
 
 pub use crate::types::_saa_s_product_sort_by::SaaSProductSortBy;
@@ -237,6 +257,8 @@ pub use crate::types::_offer_set_sort_by::OfferSetSortBy;
 
 pub use crate::types::_express_private_offer_configuration_sort_by::ExpressPrivateOfferConfigurationSortBy;
 
+pub use crate::types::_subsidiary_authorization_sort_by::SubsidiaryAuthorizationSortBy;
+
 pub use crate::types::_ami_product_summary::AmiProductSummary;
 
 pub use crate::types::_container_product_summary::ContainerProductSummary;
@@ -254,6 +276,8 @@ pub use crate::types::_machine_learning_product_summary::MachineLearningProductS
 pub use crate::types::_offer_set_summary::OfferSetSummary;
 
 pub use crate::types::_express_private_offer_configuration_summary::ExpressPrivateOfferConfigurationSummary;
+
+pub use crate::types::_subsidiary_authorization_summary::SubsidiaryAuthorizationSummary;
 
 pub use crate::types::_control_error::ControlError;
 
@@ -285,6 +309,10 @@ pub use crate::types::_offer_set_release_date_filter_date_range::OfferSetRelease
 
 pub use crate::types::_offer_set_last_modified_date_filter_date_range::OfferSetLastModifiedDateFilterDateRange;
 
+pub use crate::types::_subsidiary_authorization_created_date_filter_date_range::SubsidiaryAuthorizationCreatedDateFilterDateRange;
+
+pub use crate::types::_subsidiary_authorization_last_modified_date_filter_date_range::SubsidiaryAuthorizationLastModifiedDateFilterDateRange;
+
 pub use crate::types::_ami_product_visibility_string::AmiProductVisibilityString;
 
 pub use crate::types::_container_product_visibility_string::ContainerProductVisibilityString;
@@ -310,6 +338,8 @@ pub use crate::types::_offer_set_state_string::OfferSetStateString;
 pub use crate::types::_express_private_offer_configuration_state_string::ExpressPrivateOfferConfigurationStateString;
 
 pub use crate::types::_offer_targeting_string::OfferTargetingString;
+
+pub use crate::types::_subsidiary_authorization_status_string::SubsidiaryAuthorizationStatusString;
 
 pub use crate::types::_error_scope::ErrorScope;
 
@@ -620,6 +650,36 @@ mod _saa_s_product_visibility_string;
 mod _sort;
 
 mod _sort_order;
+
+mod _subsidiary_authorization_created_date_filter;
+
+mod _subsidiary_authorization_created_date_filter_date_range;
+
+mod _subsidiary_authorization_entity_id_filter;
+
+mod _subsidiary_authorization_filters;
+
+mod _subsidiary_authorization_last_modified_date_filter;
+
+mod _subsidiary_authorization_last_modified_date_filter_date_range;
+
+mod _subsidiary_authorization_name_filter;
+
+mod _subsidiary_authorization_resource_id_filter;
+
+mod _subsidiary_authorization_resource_name_filter;
+
+mod _subsidiary_authorization_sort;
+
+mod _subsidiary_authorization_sort_by;
+
+mod _subsidiary_authorization_status_filter;
+
+mod _subsidiary_authorization_status_string;
+
+mod _subsidiary_authorization_subsidiary_account_id_filter;
+
+mod _subsidiary_authorization_summary;
 
 mod _tag;
 

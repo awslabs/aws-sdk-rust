@@ -19,6 +19,9 @@ pub mod create_grant;
 /// Types for the `CreateKey` operation.
 pub mod create_key;
 
+/// Types for the `Decapsulate` operation.
+pub mod decapsulate;
+
 /// Types for the `Decrypt` operation.
 pub mod decrypt;
 
@@ -54,6 +57,9 @@ pub mod enable_key;
 
 /// Types for the `EnableKeyRotation` operation.
 pub mod enable_key_rotation;
+
+/// Types for the `Encapsulate` operation.
+pub mod encapsulate;
 
 /// Types for the `Encrypt` operation.
 pub mod encrypt;

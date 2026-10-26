@@ -16,6 +16,10 @@ pub struct ExascaleDbStorageVault {
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone ID for the Exascale storage vault.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure that hosts the Exascale storage vault. This value is present only for vaults on dedicated Exadata infrastructure.</p>
+    pub cloud_exadata_infrastructure_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the Exadata infrastructure that hosts the Exascale storage vault. This value is present only for vaults on dedicated Exadata infrastructure.</p>
+    pub cloud_exadata_infrastructure_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the Exascale storage vault was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the Exascale storage vault.</p>
@@ -48,6 +52,8 @@ pub struct ExascaleDbStorageVault {
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time zone of the Exascale storage vault.</p>
     pub time_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The type of infrastructure that hosts the Exascale storage vault.</p>
+    pub vault_type: ::std::option::Option<crate::types::ExascaleDbStorageVaultType>,
 }
 impl ExascaleDbStorageVault {
     /// <p>The unique identifier of the Exascale storage vault.</p>
@@ -76,6 +82,14 @@ impl ExascaleDbStorageVault {
     /// <p>The Availability Zone ID for the Exascale storage vault.</p>
     pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
         self.availability_zone_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure that hosts the Exascale storage vault. This value is present only for vaults on dedicated Exadata infrastructure.</p>
+    pub fn cloud_exadata_infrastructure_arn(&self) -> ::std::option::Option<&str> {
+        self.cloud_exadata_infrastructure_arn.as_deref()
+    }
+    /// <p>The unique identifier of the Exadata infrastructure that hosts the Exascale storage vault. This value is present only for vaults on dedicated Exadata infrastructure.</p>
+    pub fn cloud_exadata_infrastructure_id(&self) -> ::std::option::Option<&str> {
+        self.cloud_exadata_infrastructure_id.as_deref()
     }
     /// <p>The date and time when the Exascale storage vault was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -145,6 +159,10 @@ impl ExascaleDbStorageVault {
     pub fn time_zone(&self) -> ::std::option::Option<&str> {
         self.time_zone.as_deref()
     }
+    /// <p>The type of infrastructure that hosts the Exascale storage vault.</p>
+    pub fn vault_type(&self) -> ::std::option::Option<&crate::types::ExascaleDbStorageVaultType> {
+        self.vault_type.as_ref()
+    }
 }
 impl ExascaleDbStorageVault {
     /// Creates a new builder-style object to manufacture [`ExascaleDbStorageVault`](crate::types::ExascaleDbStorageVault).
@@ -163,6 +181,8 @@ pub struct ExascaleDbStorageVaultBuilder {
     pub(crate) autoscale_limit_in_gbs: ::std::option::Option<i32>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cloud_exadata_infrastructure_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) cloud_exadata_infrastructure_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -179,6 +199,7 @@ pub struct ExascaleDbStorageVaultBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ResourceStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) time_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) vault_type: ::std::option::Option<crate::types::ExascaleDbStorageVaultType>,
 }
 impl ExascaleDbStorageVaultBuilder {
     /// <p>The unique identifier of the Exascale storage vault.</p>
@@ -271,6 +292,34 @@ impl ExascaleDbStorageVaultBuilder {
     /// <p>The Availability Zone ID for the Exascale storage vault.</p>
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone_id
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure that hosts the Exascale storage vault. This value is present only for vaults on dedicated Exadata infrastructure.</p>
+    pub fn cloud_exadata_infrastructure_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cloud_exadata_infrastructure_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure that hosts the Exascale storage vault. This value is present only for vaults on dedicated Exadata infrastructure.</p>
+    pub fn set_cloud_exadata_infrastructure_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cloud_exadata_infrastructure_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure that hosts the Exascale storage vault. This value is present only for vaults on dedicated Exadata infrastructure.</p>
+    pub fn get_cloud_exadata_infrastructure_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_exadata_infrastructure_arn
+    }
+    /// <p>The unique identifier of the Exadata infrastructure that hosts the Exascale storage vault. This value is present only for vaults on dedicated Exadata infrastructure.</p>
+    pub fn cloud_exadata_infrastructure_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cloud_exadata_infrastructure_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the Exadata infrastructure that hosts the Exascale storage vault. This value is present only for vaults on dedicated Exadata infrastructure.</p>
+    pub fn set_cloud_exadata_infrastructure_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cloud_exadata_infrastructure_id = input;
+        self
+    }
+    /// <p>The unique identifier of the Exadata infrastructure that hosts the Exascale storage vault. This value is present only for vaults on dedicated Exadata infrastructure.</p>
+    pub fn get_cloud_exadata_infrastructure_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_exadata_infrastructure_id
     }
     /// <p>The date and time when the Exascale storage vault was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -508,6 +557,20 @@ impl ExascaleDbStorageVaultBuilder {
     pub fn get_time_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.time_zone
     }
+    /// <p>The type of infrastructure that hosts the Exascale storage vault.</p>
+    pub fn vault_type(mut self, input: crate::types::ExascaleDbStorageVaultType) -> Self {
+        self.vault_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of infrastructure that hosts the Exascale storage vault.</p>
+    pub fn set_vault_type(mut self, input: ::std::option::Option<crate::types::ExascaleDbStorageVaultType>) -> Self {
+        self.vault_type = input;
+        self
+    }
+    /// <p>The type of infrastructure that hosts the Exascale storage vault.</p>
+    pub fn get_vault_type(&self) -> &::std::option::Option<crate::types::ExascaleDbStorageVaultType> {
+        &self.vault_type
+    }
     /// Consumes the builder and constructs a [`ExascaleDbStorageVault`](crate::types::ExascaleDbStorageVault).
     /// This method will fail if any of the following fields are not set:
     /// - [`exascale_db_storage_vault_id`](crate::types::builders::ExascaleDbStorageVaultBuilder::exascale_db_storage_vault_id)
@@ -524,6 +587,8 @@ impl ExascaleDbStorageVaultBuilder {
             autoscale_limit_in_gbs: self.autoscale_limit_in_gbs,
             availability_zone: self.availability_zone,
             availability_zone_id: self.availability_zone_id,
+            cloud_exadata_infrastructure_arn: self.cloud_exadata_infrastructure_arn,
+            cloud_exadata_infrastructure_id: self.cloud_exadata_infrastructure_id,
             created_at: self.created_at,
             description: self.description,
             display_name: self.display_name,
@@ -540,6 +605,7 @@ impl ExascaleDbStorageVaultBuilder {
             status: self.status,
             status_reason: self.status_reason,
             time_zone: self.time_zone,
+            vault_type: self.vault_type,
         })
     }
 }

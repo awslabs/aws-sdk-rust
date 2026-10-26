@@ -22,7 +22,7 @@ impl crate::operation::list_metered_products::builders::ListMeteredProductsInput
 }
 /// Fluent builder constructing a request to `ListMeteredProducts`.
 ///
-/// <p>Lists metered products.</p>
+/// Lists metered products.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMeteredProductsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl ListMeteredProductsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_metered_products::paginator::ListMeteredProductsPaginator {
         crate::operation::list_metered_products::paginator::ListMeteredProductsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The license endpoint ID to include on the list of metered products.</p>
+    /// The license endpoint ID to include on the list of metered products.
     pub fn license_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_endpoint_id(input.into());
         self
     }
-    /// <p>The license endpoint ID to include on the list of metered products.</p>
+    /// The license endpoint ID to include on the list of metered products.
     pub fn set_license_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_endpoint_id(input);
         self
     }
-    /// <p>The license endpoint ID to include on the list of metered products.</p>
+    /// The license endpoint ID to include on the list of metered products.
     pub fn get_license_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_license_endpoint_id()
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

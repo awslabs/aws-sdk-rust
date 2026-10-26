@@ -29,6 +29,16 @@ pub(crate) fn reflens_describe_pull_through_cache_rules_output_output_next_token
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_replication_backfill_results_output_output_next_token(
+    input: &crate::operation::describe_replication_backfill_results::DescribeReplicationBackfillResultsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_repositories_output_output_next_token(
     input: &crate::operation::describe_repositories::DescribeRepositoriesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -69,6 +79,16 @@ pub(crate) fn reflens_list_images_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_replication_backfills_output_output_next_token(
+    input: &crate::operation::list_replication_backfills::ListReplicationBackfillsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_images_output_output_image_details(
     input: crate::operation::describe_images::DescribeImagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImageDetail>> {
@@ -80,6 +100,13 @@ pub(crate) fn lens_describe_pull_through_cache_rules_output_output_pull_through_
     input: crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PullThroughCacheRule>> {
     let input = input.pull_through_cache_rules?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_replication_backfill_results_output_output_results(
+    input: crate::operation::describe_replication_backfill_results::DescribeReplicationBackfillResultsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ReplicationBackfillResult>> {
+    let input = input.results?;
     ::std::option::Option::Some(input)
 }
 
@@ -108,5 +135,12 @@ pub(crate) fn lens_list_images_output_output_image_ids(
     input: crate::operation::list_images::ListImagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
     let input = input.image_ids?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_replication_backfills_output_output_backfills(
+    input: crate::operation::list_replication_backfills::ListReplicationBackfillsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ReplicationBackfillSummary>> {
+    let input = input.backfills?;
     ::std::option::Option::Some(input)
 }

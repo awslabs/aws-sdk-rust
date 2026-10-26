@@ -22,8 +22,7 @@ impl crate::operation::batch_get_task::builders::BatchGetTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchGetTask`.
 ///
-/// <p>Retrieves multiple tasks in a single request. This is a batch version of the <code>GetTask</code> API.</p>
-/// <p>The result of getting each task is reported individually in the response. Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of 200.</p>
+/// Retrieves multiple tasks in a single request. This is a batch version of the <code>GetTask</code> API. The result of getting each task is reported individually in the response. Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of 200.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +113,17 @@ impl BatchGetTaskFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_identifiers`](Self::set_identifiers).
     ///
-    /// <p>The list of task identifiers to retrieve. You can specify up to 100 identifiers per request.</p>
+    /// The list of task identifiers to retrieve. You can specify up to 100 identifiers per request.
     pub fn identifiers(mut self, input: crate::types::BatchGetTaskIdentifier) -> Self {
         self.inner = self.inner.identifiers(input);
         self
     }
-    /// <p>The list of task identifiers to retrieve. You can specify up to 100 identifiers per request.</p>
+    /// The list of task identifiers to retrieve. You can specify up to 100 identifiers per request.
     pub fn set_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTaskIdentifier>>) -> Self {
         self.inner = self.inner.set_identifiers(input);
         self
     }
-    /// <p>The list of task identifiers to retrieve. You can specify up to 100 identifiers per request.</p>
+    /// The list of task identifiers to retrieve. You can specify up to 100 identifiers per request.
     pub fn get_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTaskIdentifier>> {
         self.inner.get_identifiers()
     }

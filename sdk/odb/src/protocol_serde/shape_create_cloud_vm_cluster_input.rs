@@ -6,101 +6,122 @@ pub fn ser_create_cloud_vm_cluster_input_input(
     if let Some(var_1) = &input.cloud_exadata_infrastructure_id {
         object.key("cloudExadataInfrastructureId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.cpu_core_count {
+    if let Some(var_2) = &input.exascale_db_storage_vault_id {
+        object.key("exascaleDbStorageVaultId").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.vm_file_system_storage_type {
+        object.key("vmFileSystemStorageType").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.vm_backup_storage_type {
+        object.key("vmBackupStorageType").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.file_system_configuration_details {
+        let mut array_6 = object.key("fileSystemConfigurationDetails").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_file_system_configuration_details::ser_file_system_configuration_details(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
+    }
+    if let Some(var_9) = &input.cpu_core_count {
         object.key("cpuCoreCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_3) = &input.display_name {
-        object.key("displayName").string(var_3.as_str());
+    if let Some(var_10) = &input.display_name {
+        object.key("displayName").string(var_10.as_str());
     }
-    if let Some(var_4) = &input.gi_version {
-        object.key("giVersion").string(var_4.as_str());
+    if let Some(var_11) = &input.gi_version {
+        object.key("giVersion").string(var_11.as_str());
     }
-    if let Some(var_5) = &input.hostname {
-        object.key("hostname").string(var_5.as_str());
+    if let Some(var_12) = &input.hostname {
+        object.key("hostname").string(var_12.as_str());
     }
-    if let Some(var_6) = &input.ssh_public_keys {
-        let mut array_7 = object.key("sshPublicKeys").start_array();
-        for item_8 in var_6 {
+    if let Some(var_13) = &input.ssh_public_keys {
+        let mut array_14 = object.key("sshPublicKeys").start_array();
+        for item_15 in var_13 {
             {
-                array_7.value().string(item_8.as_str());
+                array_14.value().string(item_15.as_str());
             }
         }
-        array_7.finish();
+        array_14.finish();
     }
-    if let Some(var_9) = &input.odb_network_id {
-        object.key("odbNetworkId").string(var_9.as_str());
+    if let Some(var_16) = &input.odb_network_id {
+        object.key("odbNetworkId").string(var_16.as_str());
     }
-    if let Some(var_10) = &input.cluster_name {
-        object.key("clusterName").string(var_10.as_str());
+    if let Some(var_17) = &input.cluster_name {
+        object.key("clusterName").string(var_17.as_str());
     }
-    if let Some(var_11) = &input.data_collection_options {
+    if let Some(var_18) = &input.data_collection_options {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("dataCollectionOptions").start_object();
-        crate::protocol_serde::shape_data_collection_options::ser_data_collection_options(&mut object_12, var_11)?;
-        object_12.finish();
-    }
-    if let Some(var_13) = &input.data_storage_size_in_tbs {
-        object.key("dataStorageSizeInTBs").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_13).into()),
-        );
-    }
-    if let Some(var_14) = &input.db_node_storage_size_in_gbs {
-        object.key("dbNodeStorageSizeInGBs").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_14).into()),
-        );
-    }
-    if let Some(var_15) = &input.db_servers {
-        let mut array_16 = object.key("dbServers").start_array();
-        for item_17 in var_15 {
-            {
-                array_16.value().string(item_17.as_str());
-            }
-        }
-        array_16.finish();
-    }
-    if let Some(var_18) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_19 = object.key("tags").start_object();
-        for (key_20, value_21) in var_18 {
-            {
-                object_19.key(key_20.as_str()).string(value_21.as_str());
-            }
-        }
+        let mut object_19 = object.key("dataCollectionOptions").start_object();
+        crate::protocol_serde::shape_data_collection_options::ser_data_collection_options(&mut object_19, var_18)?;
         object_19.finish();
     }
-    if let Some(var_22) = &input.is_local_backup_enabled {
-        object.key("isLocalBackupEnabled").boolean(*var_22);
-    }
-    if let Some(var_23) = &input.is_sparse_diskgroup_enabled {
-        object.key("isSparseDiskgroupEnabled").boolean(*var_23);
-    }
-    if let Some(var_24) = &input.license_model {
-        object.key("licenseModel").string(var_24.as_str());
-    }
-    if let Some(var_25) = &input.memory_size_in_gbs {
-        object.key("memorySizeInGBs").number(
+    if let Some(var_20) = &input.data_storage_size_in_tbs {
+        object.key("dataStorageSizeInTBs").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_25).into()),
+            ::aws_smithy_types::Number::Float((*var_20).into()),
         );
     }
-    if let Some(var_26) = &input.system_version {
-        object.key("systemVersion").string(var_26.as_str());
+    if let Some(var_21) = &input.db_node_storage_size_in_gbs {
+        object.key("dbNodeStorageSizeInGBs").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_21).into()),
+        );
     }
-    if let Some(var_27) = &input.time_zone {
-        object.key("timeZone").string(var_27.as_str());
+    if let Some(var_22) = &input.db_servers {
+        let mut array_23 = object.key("dbServers").start_array();
+        for item_24 in var_22 {
+            {
+                array_23.value().string(item_24.as_str());
+            }
+        }
+        array_23.finish();
     }
-    if let Some(var_28) = &input.client_token {
-        object.key("clientToken").string(var_28.as_str());
+    if let Some(var_25) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("tags").start_object();
+        for (key_27, value_28) in var_25 {
+            {
+                object_26.key(key_27.as_str()).string(value_28.as_str());
+            }
+        }
+        object_26.finish();
     }
-    if let Some(var_29) = &input.scan_listener_port_tcp {
+    if let Some(var_29) = &input.is_local_backup_enabled {
+        object.key("isLocalBackupEnabled").boolean(*var_29);
+    }
+    if let Some(var_30) = &input.is_sparse_diskgroup_enabled {
+        object.key("isSparseDiskgroupEnabled").boolean(*var_30);
+    }
+    if let Some(var_31) = &input.license_model {
+        object.key("licenseModel").string(var_31.as_str());
+    }
+    if let Some(var_32) = &input.memory_size_in_gbs {
+        object.key("memorySizeInGBs").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_32).into()),
+        );
+    }
+    if let Some(var_33) = &input.system_version {
+        object.key("systemVersion").string(var_33.as_str());
+    }
+    if let Some(var_34) = &input.time_zone {
+        object.key("timeZone").string(var_34.as_str());
+    }
+    if let Some(var_35) = &input.client_token {
+        object.key("clientToken").string(var_35.as_str());
+    }
+    if let Some(var_36) = &input.scan_listener_port_tcp {
         object.key("scanListenerPortTcp").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_29).into()),
+            ::aws_smithy_types::Number::NegInt((*var_36).into()),
         );
     }
     Ok(())

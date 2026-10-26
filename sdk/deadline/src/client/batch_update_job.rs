@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchUpdateJob`](crate::operation::batch_update_job::builders::BatchUpdateJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::operation::batch_update_job::builders::BatchUpdateJobFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::batch_update_job::builders::BatchUpdateJobFluentBuilder::set_client_token):<br>required: **false**<br><p>The unique token which the server uses to recognize retries of the same request.</p><br>
-    ///   - [`jobs(BatchUpdateJobItem)`](crate::operation::batch_update_job::builders::BatchUpdateJobFluentBuilder::jobs) / [`set_jobs(Option<Vec::<BatchUpdateJobItem>>)`](crate::operation::batch_update_job::builders::BatchUpdateJobFluentBuilder::set_jobs):<br>required: **true**<br><p>The list of jobs to update. You can specify up to 100 jobs per request.</p><br>
+    ///   - [`client_token(impl Into<String>)`](crate::operation::batch_update_job::builders::BatchUpdateJobFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::batch_update_job::builders::BatchUpdateJobFluentBuilder::set_client_token):<br>required: **false**<br>The unique token which the server uses to recognize retries of the same request.<br>
+    ///   - [`jobs(BatchUpdateJobItem)`](crate::operation::batch_update_job::builders::BatchUpdateJobFluentBuilder::jobs) / [`set_jobs(Option<Vec::<BatchUpdateJobItem>>)`](crate::operation::batch_update_job::builders::BatchUpdateJobFluentBuilder::set_jobs):<br>required: **true**<br>The list of jobs to update. You can specify up to 100 jobs per request.<br>
     /// - On success, responds with [`BatchUpdateJobOutput`](crate::operation::batch_update_job::BatchUpdateJobOutput) with field(s):
-    ///   - [`errors(Vec::<BatchUpdateJobError>)`](crate::operation::batch_update_job::BatchUpdateJobOutput::errors): <p>A list of errors for jobs that could not be updated.</p>
+    ///   - [`errors(Vec::<BatchUpdateJobError>)`](crate::operation::batch_update_job::BatchUpdateJobOutput::errors): A list of errors for jobs that could not be updated.
     /// - On failure, responds with [`SdkError<BatchUpdateJobError>`](crate::operation::batch_update_job::BatchUpdateJobError)
     pub fn batch_update_job(&self) -> crate::operation::batch_update_job::builders::BatchUpdateJobFluentBuilder {
         crate::operation::batch_update_job::builders::BatchUpdateJobFluentBuilder::new(self.handle.clone())

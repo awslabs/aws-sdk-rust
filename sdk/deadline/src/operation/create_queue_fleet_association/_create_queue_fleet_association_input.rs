@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQueueFleetAssociationInput {
-    /// <p>The ID of the farm that the queue and fleet belong to.</p>
+    /// The ID of the farm that the queue and fleet belong to.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID.</p>
+    /// The queue ID.
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The fleet ID.</p>
+    /// The fleet ID.
     pub fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateQueueFleetAssociationInput {
-    /// <p>The ID of the farm that the queue and fleet belong to.</p>
+    /// The ID of the farm that the queue and fleet belong to.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The queue ID.</p>
+    /// The queue ID.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The fleet ID.</p>
+    /// The fleet ID.
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
@@ -40,48 +40,48 @@ pub struct CreateQueueFleetAssociationInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateQueueFleetAssociationInputBuilder {
-    /// <p>The ID of the farm that the queue and fleet belong to.</p>
+    /// The ID of the farm that the queue and fleet belong to.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the farm that the queue and fleet belong to.</p>
+    /// The ID of the farm that the queue and fleet belong to.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The ID of the farm that the queue and fleet belong to.</p>
+    /// The ID of the farm that the queue and fleet belong to.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The queue ID.</p>
+    /// The queue ID.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue ID.</p>
+    /// The queue ID.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The queue ID.</p>
+    /// The queue ID.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The fleet ID.</p>
+    /// The fleet ID.
     /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The fleet ID.</p>
+    /// The fleet ID.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p>The fleet ID.</p>
+    /// The fleet ID.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }

@@ -22,7 +22,7 @@ impl crate::operation::get_queue_fleet_association::builders::GetQueueFleetAssoc
 }
 /// Fluent builder constructing a request to `GetQueueFleetAssociation`.
 ///
-/// <p>Gets a queue-fleet association.</p>
+/// Gets a queue-fleet association.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetQueueFleetAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl GetQueueFleetAssociationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the farm that contains the queue-fleet association.</p>
+    /// The farm ID of the farm that contains the queue-fleet association.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the farm that contains the queue-fleet association.</p>
+    /// The farm ID of the farm that contains the queue-fleet association.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the farm that contains the queue-fleet association.</p>
+    /// The farm ID of the farm that contains the queue-fleet association.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The queue ID for the queue-fleet association.</p>
+    /// The queue ID for the queue-fleet association.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
         self
     }
-    /// <p>The queue ID for the queue-fleet association.</p>
+    /// The queue ID for the queue-fleet association.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_id(input);
         self
     }
-    /// <p>The queue ID for the queue-fleet association.</p>
+    /// The queue ID for the queue-fleet association.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }
-    /// <p>The fleet ID for the queue-fleet association.</p>
+    /// The fleet ID for the queue-fleet association.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>The fleet ID for the queue-fleet association.</p>
+    /// The fleet ID for the queue-fleet association.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>The fleet ID for the queue-fleet association.</p>
+    /// The fleet ID for the queue-fleet association.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }

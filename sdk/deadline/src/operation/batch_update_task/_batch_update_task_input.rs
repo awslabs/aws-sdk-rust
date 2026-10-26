@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateTaskInput {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The list of tasks to update. You can specify up to 100 tasks per request.</p>
+    /// The list of tasks to update. You can specify up to 100 tasks per request.
     pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateTaskItem>>,
 }
 impl BatchUpdateTaskInput {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The list of tasks to update. You can specify up to 100 tasks per request.</p>
+    /// The list of tasks to update. You can specify up to 100 tasks per request.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
     pub fn tasks(&self) -> &[crate::types::BatchUpdateTaskItem] {
@@ -35,17 +35,17 @@ pub struct BatchUpdateTaskInputBuilder {
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateTaskItem>>,
 }
 impl BatchUpdateTaskInputBuilder {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
@@ -53,19 +53,19 @@ impl BatchUpdateTaskInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
     ///
-    /// <p>The list of tasks to update. You can specify up to 100 tasks per request.</p>
+    /// The list of tasks to update. You can specify up to 100 tasks per request.
     pub fn tasks(mut self, input: crate::types::BatchUpdateTaskItem) -> Self {
         let mut v = self.tasks.unwrap_or_default();
         v.push(input);
         self.tasks = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of tasks to update. You can specify up to 100 tasks per request.</p>
+    /// The list of tasks to update. You can specify up to 100 tasks per request.
     pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateTaskItem>>) -> Self {
         self.tasks = input;
         self
     }
-    /// <p>The list of tasks to update. You can specify up to 100 tasks per request.</p>
+    /// The list of tasks to update. You can specify up to 100 tasks per request.
     pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateTaskItem>> {
         &self.tasks
     }

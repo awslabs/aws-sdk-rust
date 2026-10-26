@@ -101,7 +101,11 @@ pub use crate::types::_cache_behavior_per_path::CacheBehaviorPerPathBuilder;
 
 pub use crate::types::_distribution_custom_error_response::DistributionCustomErrorResponseBuilder;
 
+pub use crate::types::_waf_rule::WafRuleBuilder;
+
 pub use crate::types::_origin::OriginBuilder;
+
+pub use crate::types::_waf_config::WafConfigBuilder;
 
 pub use crate::types::_session::SessionBuilder;
 
@@ -179,6 +183,12 @@ pub use crate::types::_container_service_endpoint::ContainerServiceEndpointBuild
 
 pub use crate::types::_container_service_ecr_image_puller_role::ContainerServiceEcrImagePullerRoleBuilder;
 
+pub use crate::types::_waf_atp_config::WafAtpConfigBuilder;
+
+pub use crate::types::_waf_acfp_config::WafAcfpConfigBuilder;
+
+pub use crate::types::_waf_bot_control_config::WafBotControlConfigBuilder;
+
 pub use crate::types::_disk_map::DiskMapBuilder;
 
 pub use crate::types::_monitored_resource_info::MonitoredResourceInfoBuilder;
@@ -212,6 +222,8 @@ pub use crate::types::_setup_history_resource::SetupHistoryResourceBuilder;
 pub use crate::types::_bucket_cors_rule::BucketCorsRuleBuilder;
 
 pub use crate::types::_domain_validation_record::DomainValidationRecordBuilder;
+
+pub use crate::types::_waf_response_inspection::WafResponseInspectionBuilder;
 
 pub use crate::types::_attached_disk::AttachedDiskBuilder;
 

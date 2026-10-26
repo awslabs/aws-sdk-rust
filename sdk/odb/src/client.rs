@@ -317,6 +317,8 @@ mod update_cloud_exadata_infrastructure;
 
 mod update_exadb_vm_cluster;
 
+mod update_exascale_cloud_exadata_infrastructure;
+
 mod update_exascale_db_storage_vault;
 
 mod update_odb_network;

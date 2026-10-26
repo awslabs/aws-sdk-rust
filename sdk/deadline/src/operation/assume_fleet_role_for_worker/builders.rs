@@ -22,7 +22,7 @@ impl crate::operation::assume_fleet_role_for_worker::builders::AssumeFleetRoleFo
 }
 /// Fluent builder constructing a request to `AssumeFleetRoleForWorker`.
 ///
-/// <p>Get credentials from the fleet role for a worker.</p>
+/// Get credentials from the fleet role for a worker.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssumeFleetRoleForWorkerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl AssumeFleetRoleForWorkerFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID for the fleet's farm.</p>
+    /// The farm ID for the fleet's farm.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID for the fleet's farm.</p>
+    /// The farm ID for the fleet's farm.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID for the fleet's farm.</p>
+    /// The farm ID for the fleet's farm.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The fleet ID that contains the worker.</p>
+    /// The fleet ID that contains the worker.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>The fleet ID that contains the worker.</p>
+    /// The fleet ID that contains the worker.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>The fleet ID that contains the worker.</p>
+    /// The fleet ID that contains the worker.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>The ID of the worker assuming the fleet role.</p>
+    /// The ID of the worker assuming the fleet role.
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.worker_id(input.into());
         self
     }
-    /// <p>The ID of the worker assuming the fleet role.</p>
+    /// The ID of the worker assuming the fleet role.
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_worker_id(input);
         self
     }
-    /// <p>The ID of the worker assuming the fleet role.</p>
+    /// The ID of the worker assuming the fleet role.
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_worker_id()
     }

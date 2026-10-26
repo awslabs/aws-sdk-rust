@@ -36,6 +36,13 @@ impl crate::operation::batch_put_tax_registration::builders::BatchPutTaxRegistra
 /// <li>
 /// <p>For Amazon Web Services accounts created through Organizations, you can call this API operation when you don't have a billing address.</p></li>
 /// </ul>
+/// <p><b>Colombia</b></p>
+/// <ul>
+/// <li>
+/// <p>You can provide a Registro Único Tributario (RUT) document in the <b>verificationDetails</b> field.</p></li>
+/// <li>
+/// <p>If you provide the RUT document, you do not need to provide address and legal name. These will be populated based on your document.</p></li>
+/// </ul>
 /// <p><b>Georgia</b></p>
 /// <ul>
 /// <li>
@@ -171,6 +178,13 @@ impl crate::operation::batch_put_tax_registration::builders::BatchPutTaxRegistra
 /// <ul>
 /// <li>
 /// <p>You must specify the <code>businessNumber</code> in the <code>monacoAdditionalInfo</code> field of the <code>additionalTaxInformation</code> object.</p></li>
+/// </ul>
+/// <p><b>Germany</b></p>
+/// <ul>
+/// <li>
+/// <p>You must provide at least one of the following: a Tax Registration Number (TRN) (<code>registrationId</code>), the <code>economicIdentificationNumber</code>, or the <code>steuernummer</code>.</p></li>
+/// <li>
+/// <p>You can optionally specify the <code>economicIdentificationNumber</code> (Wirtschafts-Identifikationsnummer, or W-IdNr) and the <code>steuernummer</code> (tax number issued by the local tax office) in the <code>germanyAdditionalInfo</code> field of the <code>additionalTaxInformation</code> object.</p></li>
 /// </ul>
 /// <p><b>Poland</b></p>
 /// <ul>

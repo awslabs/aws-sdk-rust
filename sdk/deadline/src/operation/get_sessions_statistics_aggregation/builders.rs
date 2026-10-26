@@ -22,7 +22,7 @@ impl crate::operation::get_sessions_statistics_aggregation::builders::GetSession
 }
 /// Fluent builder constructing a request to `GetSessionsStatisticsAggregation`.
 ///
-/// <p>Gets a set of statistics for queues or farms. Before you can call the <code>GetSessionStatisticsAggregation</code> operation, you must first call the <code>StartSessionsStatisticsAggregation</code> operation. Statistics are available for 1 hour after you call the <code>StartSessionsStatisticsAggregation</code> operation.</p>
+/// Gets a set of statistics for queues or farms. Before you can call the <code>GetSessionStatisticsAggregation</code> operation, you must first call the <code>StartSessionsStatisticsAggregation</code> operation. Statistics are available for 1 hour after you call the <code>StartSessionsStatisticsAggregation</code> operation.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSessionsStatisticsAggregationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,59 +114,59 @@ impl GetSessionsStatisticsAggregationFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_sessions_statistics_aggregation::paginator::GetSessionsStatisticsAggregationPaginator {
         crate::operation::get_sessions_statistics_aggregation::paginator::GetSessionsStatisticsAggregationPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the farm to include in the statistics. This should be the same as the farm ID used in the call to the <code>StartSessionsStatisticsAggregation</code> operation.</p>
+    /// The identifier of the farm to include in the statistics. This should be the same as the farm ID used in the call to the <code>StartSessionsStatisticsAggregation</code> operation.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The identifier of the farm to include in the statistics. This should be the same as the farm ID used in the call to the <code>StartSessionsStatisticsAggregation</code> operation.</p>
+    /// The identifier of the farm to include in the statistics. This should be the same as the farm ID used in the call to the <code>StartSessionsStatisticsAggregation</code> operation.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The identifier of the farm to include in the statistics. This should be the same as the farm ID used in the call to the <code>StartSessionsStatisticsAggregation</code> operation.</p>
+    /// The identifier of the farm to include in the statistics. This should be the same as the farm ID used in the call to the <code>StartSessionsStatisticsAggregation</code> operation.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The identifier returned by the <code>StartSessionsStatisticsAggregation</code> operation that identifies the aggregated statistics.</p>
+    /// The identifier returned by the <code>StartSessionsStatisticsAggregation</code> operation that identifies the aggregated statistics.
     pub fn aggregation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aggregation_id(input.into());
         self
     }
-    /// <p>The identifier returned by the <code>StartSessionsStatisticsAggregation</code> operation that identifies the aggregated statistics.</p>
+    /// The identifier returned by the <code>StartSessionsStatisticsAggregation</code> operation that identifies the aggregated statistics.
     pub fn set_aggregation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aggregation_id(input);
         self
     }
-    /// <p>The identifier returned by the <code>StartSessionsStatisticsAggregation</code> operation that identifies the aggregated statistics.</p>
+    /// The identifier returned by the <code>StartSessionsStatisticsAggregation</code> operation that identifies the aggregated statistics.
     pub fn get_aggregation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aggregation_id()
     }

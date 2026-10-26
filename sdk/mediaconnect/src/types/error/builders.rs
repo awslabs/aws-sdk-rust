@@ -15,6 +15,8 @@ pub use crate::types::error::_create_bridge420_exception::CreateBridge420Excepti
 
 pub use crate::types::error::_forbidden_exception::ForbiddenExceptionBuilder;
 
+pub use crate::types::error::_destination_endpoint_service_quota_exceeded_exception::DestinationEndpointServiceQuotaExceededExceptionBuilder;
+
 pub use crate::types::error::_create_flow420_exception::CreateFlow420ExceptionBuilder;
 
 pub use crate::types::error::_add_flow_outputs420_exception::AddFlowOutputs420ExceptionBuilder;
@@ -28,3 +30,5 @@ pub use crate::types::error::_router_input_service_quota_exceeded_exception::Rou
 pub use crate::types::error::_router_network_interface_service_quota_exceeded_exception::RouterNetworkInterfaceServiceQuotaExceededExceptionBuilder;
 
 pub use crate::types::error::_router_output_service_quota_exceeded_exception::RouterOutputServiceQuotaExceededExceptionBuilder;
+
+pub use crate::types::error::_source_endpoint_service_quota_exceeded_exception::SourceEndpointServiceQuotaExceededExceptionBuilder;

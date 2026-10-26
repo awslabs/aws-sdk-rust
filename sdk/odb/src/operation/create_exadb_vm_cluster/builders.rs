@@ -323,17 +323,17 @@ impl CreateExadbVmClusterFluentBuilder {
     pub fn get_scan_listener_port_tcp(&self) -> &::std::option::Option<i32> {
         self.inner.get_scan_listener_port_tcp()
     }
-    /// <p>The port number for TCP connections with SSL to the Single Client Access Name (SCAN) listener.</p>
+    /// <p>Reserved for future use.</p>
     pub fn scan_listener_port_tcp_ssl(mut self, input: i32) -> Self {
         self.inner = self.inner.scan_listener_port_tcp_ssl(input);
         self
     }
-    /// <p>The port number for TCP connections with SSL to the Single Client Access Name (SCAN) listener.</p>
+    /// <p>Reserved for future use.</p>
     pub fn set_scan_listener_port_tcp_ssl(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_scan_listener_port_tcp_ssl(input);
         self
     }
-    /// <p>The port number for TCP connections with SSL to the Single Client Access Name (SCAN) listener.</p>
+    /// <p>Reserved for future use.</p>
     pub fn get_scan_listener_port_tcp_ssl(&self) -> &::std::option::Option<i32> {
         self.inner.get_scan_listener_port_tcp_ssl()
     }

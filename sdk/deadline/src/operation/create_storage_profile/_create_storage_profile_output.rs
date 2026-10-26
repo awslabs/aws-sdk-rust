@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStorageProfileOutput {
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     pub storage_profile_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateStorageProfileOutput {
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     pub fn storage_profile_id(&self) -> &str {
         use std::ops::Deref;
         self.storage_profile_id.deref()
@@ -34,18 +34,18 @@ pub struct CreateStorageProfileOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateStorageProfileOutputBuilder {
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     /// This field is required.
     pub fn storage_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_profile_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     pub fn set_storage_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_profile_id = input;
         self
     }
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_profile_id
     }

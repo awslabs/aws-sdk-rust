@@ -213,6 +213,8 @@ pub use crate::types::_argo_cd_config_response::ArgoCdConfigResponseBuilder;
 
 pub use crate::types::_ack_config_response::AckConfigResponseBuilder;
 
+pub use crate::types::_gateway_api_configuration::GatewayApiConfigurationBuilder;
+
 pub use crate::types::_log_setup::LogSetupBuilder;
 
 pub use crate::types::_remote_node_network::RemoteNodeNetworkBuilder;
@@ -252,6 +254,8 @@ pub use crate::types::_argo_cd_aws_idc_config_response::ArgoCdAwsIdcConfigRespon
 pub use crate::types::_argo_cd_network_access_config_response::ArgoCdNetworkAccessConfigResponseBuilder;
 
 pub use crate::types::_capability_issue::CapabilityIssueBuilder;
+
+pub use crate::types::_crd_management_configuration::CrdManagementConfigurationBuilder;
 
 pub use crate::types::_cluster_issue::ClusterIssueBuilder;
 

@@ -261,13 +261,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetResourcePo
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetResourcePolicyError {
-    /// Error thrown for access denied scenarios with flexible HTTP status mapping Runtime HTTP Status Code Mapping: - HTTP 401 (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED - HTTP 403 (Forbidden): USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS The specific HTTP status code is determined at runtime based on the error enum value. Consumers should use the error field to determine the specific access denial reason.
+    /// You do not have sufficient access to perform this action.
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// Error thrown when an internal server error occurs HTTP Status Code: 500 Internal Server Error Used for unexpected server-side errors that prevent request processing.
+    /// The request failed because of an internal server error.
     InternalServerException(crate::types::error::InternalServerException),
     /// Error thrown when requested resource is not found HTTP Status Code: 404 Not Found Used when the specified resource does not exist
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// Error thrown when rate limit is exceeded HTTP Status Code: 429 Too Many Requests Possible OAuth2ErrorCode values: - INVALID_REQUEST: Rate limiting, too many requests, abuse prevention Possible causes: - Too many token requests from the same client - Rate limiting based on client_id or IP address - Abuse prevention mechanisms triggered - Service protection against excessive token generation
+    /// The request failed because you exceeded the request rate limit for this operation.
     TooManyRequestsError(crate::types::error::TooManyRequestsError),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

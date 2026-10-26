@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetSessionOutput {
-    /// <p>A list of sessions that were successfully retrieved.</p>
+    /// A list of sessions that were successfully retrieved.
     pub sessions: ::std::vec::Vec<crate::types::BatchGetSessionItem>,
-    /// <p>A list of errors for sessions that could not be retrieved.</p>
+    /// A list of errors for sessions that could not be retrieved.
     pub errors: ::std::vec::Vec<crate::types::BatchGetSessionError>,
     _request_id: Option<String>,
 }
 impl BatchGetSessionOutput {
-    /// <p>A list of sessions that were successfully retrieved.</p>
+    /// A list of sessions that were successfully retrieved.
     pub fn sessions(&self) -> &[crate::types::BatchGetSessionItem] {
         use std::ops::Deref;
         self.sessions.deref()
     }
-    /// <p>A list of errors for sessions that could not be retrieved.</p>
+    /// A list of errors for sessions that could not be retrieved.
     pub fn errors(&self) -> &[crate::types::BatchGetSessionError] {
         use std::ops::Deref;
         self.errors.deref()
@@ -46,19 +46,19 @@ impl BatchGetSessionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_sessions`](Self::set_sessions).
     ///
-    /// <p>A list of sessions that were successfully retrieved.</p>
+    /// A list of sessions that were successfully retrieved.
     pub fn sessions(mut self, input: crate::types::BatchGetSessionItem) -> Self {
         let mut v = self.sessions.unwrap_or_default();
         v.push(input);
         self.sessions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of sessions that were successfully retrieved.</p>
+    /// A list of sessions that were successfully retrieved.
     pub fn set_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetSessionItem>>) -> Self {
         self.sessions = input;
         self
     }
-    /// <p>A list of sessions that were successfully retrieved.</p>
+    /// A list of sessions that were successfully retrieved.
     pub fn get_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetSessionItem>> {
         &self.sessions
     }
@@ -66,19 +66,19 @@ impl BatchGetSessionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>A list of errors for sessions that could not be retrieved.</p>
+    /// A list of errors for sessions that could not be retrieved.
     pub fn errors(mut self, input: crate::types::BatchGetSessionError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of errors for sessions that could not be retrieved.</p>
+    /// A list of errors for sessions that could not be retrieved.
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetSessionError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>A list of errors for sessions that could not be retrieved.</p>
+    /// A list of errors for sessions that could not be retrieved.
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetSessionError>> {
         &self.errors
     }

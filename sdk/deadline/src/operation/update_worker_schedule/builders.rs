@@ -22,7 +22,7 @@ impl crate::operation::update_worker_schedule::builders::UpdateWorkerScheduleInp
 }
 /// Fluent builder constructing a request to `UpdateWorkerSchedule`.
 ///
-/// <p>Updates the schedule for a worker.</p>
+/// Updates the schedule for a worker.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWorkerScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdateWorkerScheduleFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The fleet ID to update.</p>
+    /// The fleet ID to update.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>The fleet ID to update.</p>
+    /// The fleet ID to update.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>The fleet ID to update.</p>
+    /// The fleet ID to update.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>The worker ID to update.</p>
+    /// The worker ID to update.
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.worker_id(input.into());
         self
     }
-    /// <p>The worker ID to update.</p>
+    /// The worker ID to update.
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_worker_id(input);
         self
     }
-    /// <p>The worker ID to update.</p>
+    /// The worker ID to update.
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_worker_id()
     }
@@ -155,12 +155,12 @@ impl UpdateWorkerScheduleFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_updated_session_actions`](Self::set_updated_session_actions).
     ///
-    /// <p>The session actions associated with the worker schedule to update.</p>
+    /// The session actions associated with the worker schedule to update.
     pub fn updated_session_actions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::UpdatedSessionActionInfo) -> Self {
         self.inner = self.inner.updated_session_actions(k.into(), v);
         self
     }
-    /// <p>The session actions associated with the worker schedule to update.</p>
+    /// The session actions associated with the worker schedule to update.
     pub fn set_updated_session_actions(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpdatedSessionActionInfo>>,
@@ -168,7 +168,7 @@ impl UpdateWorkerScheduleFluentBuilder {
         self.inner = self.inner.set_updated_session_actions(input);
         self
     }
-    /// <p>The session actions associated with the worker schedule to update.</p>
+    /// The session actions associated with the worker schedule to update.
     pub fn get_updated_session_actions(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpdatedSessionActionInfo>> {

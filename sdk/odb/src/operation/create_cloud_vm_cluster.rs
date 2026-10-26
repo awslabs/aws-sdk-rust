@@ -197,6 +197,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateCloudVm
                 captured.insert("cloudExadataInfrastructureId", value);
             }
         }
+        if requested.should_capture("exascaleDbStorageVaultId") {
+            if let ::std::option::Option::Some(value) = input.exascale_db_storage_vault_id.as_deref() {
+                captured.insert("exascaleDbStorageVaultId", value);
+            }
+        }
         if requested.should_capture("displayName") {
             if let ::std::option::Option::Some(value) = input.display_name.as_deref() {
                 captured.insert("displayName", value);

@@ -105,115 +105,115 @@ impl UpdateJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the job to update.</p>
+    /// The farm ID of the job to update.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the job to update.</p>
+    /// The farm ID of the job to update.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the job to update.</p>
+    /// The farm ID of the job to update.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The queue ID of the job to update.</p>
+    /// The queue ID of the job to update.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
         self
     }
-    /// <p>The queue ID of the job to update.</p>
+    /// The queue ID of the job to update.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_id(input);
         self
     }
-    /// <p>The queue ID of the job to update.</p>
+    /// The queue ID of the job to update.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }
-    /// <p>The job ID to update.</p>
+    /// The job ID to update.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
         self
     }
-    /// <p>The job ID to update.</p>
+    /// The job ID to update.
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
     }
-    /// <p>The job ID to update.</p>
+    /// The job ID to update.
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_id()
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The task status to update the job's tasks to.</p>
+    /// The task status to update the job's tasks to.
     pub fn target_task_run_status(mut self, input: crate::types::JobTargetTaskRunStatus) -> Self {
         self.inner = self.inner.target_task_run_status(input);
         self
     }
-    /// <p>The task status to update the job's tasks to.</p>
+    /// The task status to update the job's tasks to.
     pub fn set_target_task_run_status(mut self, input: ::std::option::Option<crate::types::JobTargetTaskRunStatus>) -> Self {
         self.inner = self.inner.set_target_task_run_status(input);
         self
     }
-    /// <p>The task status to update the job's tasks to.</p>
+    /// The task status to update the job's tasks to.
     pub fn get_target_task_run_status(&self) -> &::std::option::Option<crate::types::JobTargetTaskRunStatus> {
         self.inner.get_target_task_run_status()
     }
-    /// <p>The updated job priority.</p>
+    /// The updated job priority.
     pub fn priority(mut self, input: i32) -> Self {
         self.inner = self.inner.priority(input);
         self
     }
-    /// <p>The updated job priority.</p>
+    /// The updated job priority.
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
     }
-    /// <p>The updated job priority.</p>
+    /// The updated job priority.
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         self.inner.get_priority()
     }
-    /// <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
+    /// The number of task failures before the job stops running and is marked as <code>FAILED</code>.
     pub fn max_failed_tasks_count(mut self, input: i32) -> Self {
         self.inner = self.inner.max_failed_tasks_count(input);
         self
     }
-    /// <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
+    /// The number of task failures before the job stops running and is marked as <code>FAILED</code>.
     pub fn set_max_failed_tasks_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_failed_tasks_count(input);
         self
     }
-    /// <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
+    /// The number of task failures before the job stops running and is marked as <code>FAILED</code>.
     pub fn get_max_failed_tasks_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_failed_tasks_count()
     }
-    /// <p>The maximum number of retries for a job.</p>
+    /// The maximum number of retries for a job.
     pub fn max_retries_per_task(mut self, input: i32) -> Self {
         self.inner = self.inner.max_retries_per_task(input);
         self
     }
-    /// <p>The maximum number of retries for a job.</p>
+    /// The maximum number of retries for a job.
     pub fn set_max_retries_per_task(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_retries_per_task(input);
         self
     }
-    /// <p>The maximum number of retries for a job.</p>
+    /// The maximum number of retries for a job.
     pub fn get_max_retries_per_task(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_retries_per_task()
     }
@@ -237,54 +237,45 @@ impl UpdateJobFluentBuilder {
     pub fn get_lifecycle_status(&self) -> &::std::option::Option<crate::types::UpdateJobLifecycleStatus> {
         self.inner.get_lifecycle_status()
     }
-    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
-    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
-    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
-    /// <p>The maximum number of workers that can process tasks in the job.</p>
+    /// The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers. You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers. If you don't specify the <code>maxWorkerCount</code>, the default is -1. The maximum number of workers that can process tasks in the job.
     pub fn max_worker_count(mut self, input: i32) -> Self {
         self.inner = self.inner.max_worker_count(input);
         self
     }
-    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
-    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
-    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
-    /// <p>The maximum number of workers that can process tasks in the job.</p>
+    /// The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers. You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers. If you don't specify the <code>maxWorkerCount</code>, the default is -1. The maximum number of workers that can process tasks in the job.
     pub fn set_max_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_worker_count(input);
         self
     }
-    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
-    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
-    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
-    /// <p>The maximum number of workers that can process tasks in the job.</p>
+    /// The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers. You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers. If you don't specify the <code>maxWorkerCount</code>, the default is -1. The maximum number of workers that can process tasks in the job.
     pub fn get_max_worker_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_worker_count()
     }
-    /// <p>The updated job name.</p>
+    /// The updated job name.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The updated job name.</p>
+    /// The updated job name.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The updated job name.</p>
+    /// The updated job name.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The updated job description.</p>
+    /// The updated job description.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The updated job description.</p>
+    /// The updated job description.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The updated job description.</p>
+    /// The updated job description.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

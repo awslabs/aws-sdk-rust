@@ -156,6 +156,15 @@ where
                                 )?,
                             );
                         }
+                        "EncapsulationAlgorithms" => {
+                            builder = builder.set_encapsulation_algorithms(
+                                crate::protocol_serde::shape_encapsulation_algorithm_spec_list::de_encapsulation_algorithm_spec_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "MultiRegion" => {
                             builder = builder.set_multi_region(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }

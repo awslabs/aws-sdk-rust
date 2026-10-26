@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBudget`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`farm_id(impl Into<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::set_farm_id):<br>required: **true**<br><p>The farm ID of the farm to remove from the budget.</p><br>
-    ///   - [`budget_id(impl Into<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::budget_id) / [`set_budget_id(Option<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::set_budget_id):<br>required: **true**<br><p>The budget ID of the budget to delete.</p><br>
+    ///   - [`farm_id(impl Into<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::set_farm_id):<br>required: **true**<br>The farm ID of the farm to remove from the budget.<br>
+    ///   - [`budget_id(impl Into<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::budget_id) / [`set_budget_id(Option<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::set_budget_id):<br>required: **true**<br>The budget ID of the budget to delete.<br>
     /// - On success, responds with [`DeleteBudgetOutput`](crate::operation::delete_budget::DeleteBudgetOutput)
     /// - On failure, responds with [`SdkError<DeleteBudgetError>`](crate::operation::delete_budget::DeleteBudgetError)
     pub fn delete_budget(&self) -> crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder {

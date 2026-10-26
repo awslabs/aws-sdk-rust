@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStorageProfileInput {
-    /// <p>The farm ID of the farm to connect to the storage profile.</p>
+    /// The farm ID of the farm to connect to the storage profile.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the storage profile.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of operating system (OS) for the storage profile.</p>
+    /// The type of operating system (OS) for the storage profile.
     pub os_family: ::std::option::Option<crate::types::StorageProfileOperatingSystemFamily>,
-    /// <p>File system paths to include in the storage profile.</p>
+    /// File system paths to include in the storage profile.
     pub file_system_locations: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>>,
 }
 impl CreateStorageProfileInput {
-    /// <p>The farm ID of the farm to connect to the storage profile.</p>
+    /// The farm ID of the farm to connect to the storage profile.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -31,11 +31,11 @@ impl CreateStorageProfileInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The type of operating system (OS) for the storage profile.</p>
+    /// The type of operating system (OS) for the storage profile.
     pub fn os_family(&self) -> ::std::option::Option<&crate::types::StorageProfileOperatingSystemFamily> {
         self.os_family.as_ref()
     }
-    /// <p>File system paths to include in the storage profile.</p>
+    /// File system paths to include in the storage profile.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_locations.is_none()`.
     pub fn file_system_locations(&self) -> &[crate::types::FileSystemLocation] {
@@ -60,32 +60,32 @@ pub struct CreateStorageProfileInputBuilder {
     pub(crate) file_system_locations: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>>,
 }
 impl CreateStorageProfileInputBuilder {
-    /// <p>The farm ID of the farm to connect to the storage profile.</p>
+    /// The farm ID of the farm to connect to the storage profile.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID of the farm to connect to the storage profile.</p>
+    /// The farm ID of the farm to connect to the storage profile.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID of the farm to connect to the storage profile.</p>
+    /// The farm ID of the farm to connect to the storage profile.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
@@ -110,18 +110,18 @@ impl CreateStorageProfileInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The type of operating system (OS) for the storage profile.</p>
+    /// The type of operating system (OS) for the storage profile.
     /// This field is required.
     pub fn os_family(mut self, input: crate::types::StorageProfileOperatingSystemFamily) -> Self {
         self.os_family = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of operating system (OS) for the storage profile.</p>
+    /// The type of operating system (OS) for the storage profile.
     pub fn set_os_family(mut self, input: ::std::option::Option<crate::types::StorageProfileOperatingSystemFamily>) -> Self {
         self.os_family = input;
         self
     }
-    /// <p>The type of operating system (OS) for the storage profile.</p>
+    /// The type of operating system (OS) for the storage profile.
     pub fn get_os_family(&self) -> &::std::option::Option<crate::types::StorageProfileOperatingSystemFamily> {
         &self.os_family
     }
@@ -129,19 +129,19 @@ impl CreateStorageProfileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_file_system_locations`](Self::set_file_system_locations).
     ///
-    /// <p>File system paths to include in the storage profile.</p>
+    /// File system paths to include in the storage profile.
     pub fn file_system_locations(mut self, input: crate::types::FileSystemLocation) -> Self {
         let mut v = self.file_system_locations.unwrap_or_default();
         v.push(input);
         self.file_system_locations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>File system paths to include in the storage profile.</p>
+    /// File system paths to include in the storage profile.
     pub fn set_file_system_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>>) -> Self {
         self.file_system_locations = input;
         self
     }
-    /// <p>File system paths to include in the storage profile.</p>
+    /// File system paths to include in the storage profile.
     pub fn get_file_system_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>> {
         &self.file_system_locations
     }

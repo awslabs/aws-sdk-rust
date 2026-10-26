@@ -22,7 +22,7 @@ impl crate::operation::delete_license_endpoint::builders::DeleteLicenseEndpointI
 }
 /// Fluent builder constructing a request to `DeleteLicenseEndpoint`.
 ///
-/// <p>Deletes a license endpoint.</p>
+/// Deletes a license endpoint.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLicenseEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteLicenseEndpointFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The license endpoint ID of the license endpoint to delete.</p>
+    /// The license endpoint ID of the license endpoint to delete.
     pub fn license_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_endpoint_id(input.into());
         self
     }
-    /// <p>The license endpoint ID of the license endpoint to delete.</p>
+    /// The license endpoint ID of the license endpoint to delete.
     pub fn set_license_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_endpoint_id(input);
         self
     }
-    /// <p>The license endpoint ID of the license endpoint to delete.</p>
+    /// The license endpoint ID of the license endpoint to delete.
     pub fn get_license_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_license_endpoint_id()
     }

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteQueue`](crate::operation::delete_queue::builders::DeleteQueueFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`farm_id(impl Into<String>)`](crate::operation::delete_queue::builders::DeleteQueueFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::delete_queue::builders::DeleteQueueFluentBuilder::set_farm_id):<br>required: **true**<br><p>The ID of the farm from which to remove the queue.</p><br>
-    ///   - [`queue_id(impl Into<String>)`](crate::operation::delete_queue::builders::DeleteQueueFluentBuilder::queue_id) / [`set_queue_id(Option<String>)`](crate::operation::delete_queue::builders::DeleteQueueFluentBuilder::set_queue_id):<br>required: **true**<br><p>The queue ID of the queue to delete.</p><br>
+    ///   - [`farm_id(impl Into<String>)`](crate::operation::delete_queue::builders::DeleteQueueFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::delete_queue::builders::DeleteQueueFluentBuilder::set_farm_id):<br>required: **true**<br>The ID of the farm from which to remove the queue.<br>
+    ///   - [`queue_id(impl Into<String>)`](crate::operation::delete_queue::builders::DeleteQueueFluentBuilder::queue_id) / [`set_queue_id(Option<String>)`](crate::operation::delete_queue::builders::DeleteQueueFluentBuilder::set_queue_id):<br>required: **true**<br>The queue ID of the queue to delete.<br>
     /// - On success, responds with [`DeleteQueueOutput`](crate::operation::delete_queue::DeleteQueueOutput)
     /// - On failure, responds with [`SdkError<DeleteQueueError>`](crate::operation::delete_queue::DeleteQueueError)
     pub fn delete_queue(&self) -> crate::operation::delete_queue::builders::DeleteQueueFluentBuilder {

@@ -3,41 +3,41 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSessionInput {
-    /// <p>The farm ID to update in the session.</p>
+    /// The farm ID to update in the session.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID to update in the session.</p>
+    /// The queue ID to update in the session.
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The job ID to update in the session.</p>
+    /// The job ID to update in the session.
     pub job_id: ::std::option::Option<::std::string::String>,
-    /// <p>The session ID to update.</p>
+    /// The session ID to update.
     pub session_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The life cycle status to update in the session.</p>
+    /// The life cycle status to update in the session.
     pub target_lifecycle_status: ::std::option::Option<crate::types::SessionLifecycleTargetStatus>,
 }
 impl UpdateSessionInput {
-    /// <p>The farm ID to update in the session.</p>
+    /// The farm ID to update in the session.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The queue ID to update in the session.</p>
+    /// The queue ID to update in the session.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The job ID to update in the session.</p>
+    /// The job ID to update in the session.
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The session ID to update.</p>
+    /// The session ID to update.
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The life cycle status to update in the session.</p>
+    /// The life cycle status to update in the session.
     pub fn target_lifecycle_status(&self) -> ::std::option::Option<&crate::types::SessionLifecycleTargetStatus> {
         self.target_lifecycle_status.as_ref()
     }
@@ -61,92 +61,92 @@ pub struct UpdateSessionInputBuilder {
     pub(crate) target_lifecycle_status: ::std::option::Option<crate::types::SessionLifecycleTargetStatus>,
 }
 impl UpdateSessionInputBuilder {
-    /// <p>The farm ID to update in the session.</p>
+    /// The farm ID to update in the session.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID to update in the session.</p>
+    /// The farm ID to update in the session.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID to update in the session.</p>
+    /// The farm ID to update in the session.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The queue ID to update in the session.</p>
+    /// The queue ID to update in the session.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue ID to update in the session.</p>
+    /// The queue ID to update in the session.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The queue ID to update in the session.</p>
+    /// The queue ID to update in the session.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The job ID to update in the session.</p>
+    /// The job ID to update in the session.
     /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The job ID to update in the session.</p>
+    /// The job ID to update in the session.
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The job ID to update in the session.</p>
+    /// The job ID to update in the session.
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
-    /// <p>The session ID to update.</p>
+    /// The session ID to update.
     /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The session ID to update.</p>
+    /// The session ID to update.
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
     }
-    /// <p>The session ID to update.</p>
+    /// The session ID to update.
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The life cycle status to update in the session.</p>
+    /// The life cycle status to update in the session.
     /// This field is required.
     pub fn target_lifecycle_status(mut self, input: crate::types::SessionLifecycleTargetStatus) -> Self {
         self.target_lifecycle_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The life cycle status to update in the session.</p>
+    /// The life cycle status to update in the session.
     pub fn set_target_lifecycle_status(mut self, input: ::std::option::Option<crate::types::SessionLifecycleTargetStatus>) -> Self {
         self.target_lifecycle_status = input;
         self
     }
-    /// <p>The life cycle status to update in the session.</p>
+    /// The life cycle status to update in the session.
     pub fn get_target_lifecycle_status(&self) -> &::std::option::Option<crate::types::SessionLifecycleTargetStatus> {
         &self.target_lifecycle_status
     }

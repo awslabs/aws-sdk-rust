@@ -14,6 +14,7 @@
 /// match deephealthchecktype {
 ///     DeepHealthCheckType::InstanceConnectivity => { /* ... */ },
 ///     DeepHealthCheckType::InstanceStress => { /* ... */ },
+///     DeepHealthCheckType::MultiNodeTrainingValidation => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum DeepHealthCheckType {
     InstanceConnectivity,
     #[allow(missing_docs)] // documentation missing in model
     InstanceStress,
+    #[allow(missing_docs)] // documentation missing in model
+    MultiNodeTrainingValidation,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for DeepHealthCheckType {
         match s {
             "InstanceConnectivity" => DeepHealthCheckType::InstanceConnectivity,
             "InstanceStress" => DeepHealthCheckType::InstanceStress,
+            "MultiNodeTrainingValidation" => DeepHealthCheckType::MultiNodeTrainingValidation,
             other => DeepHealthCheckType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl DeepHealthCheckType {
         match self {
             DeepHealthCheckType::InstanceConnectivity => "InstanceConnectivity",
             DeepHealthCheckType::InstanceStress => "InstanceStress",
+            DeepHealthCheckType::MultiNodeTrainingValidation => "MultiNodeTrainingValidation",
             DeepHealthCheckType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["InstanceConnectivity", "InstanceStress"]
+        &["InstanceConnectivity", "InstanceStress", "MultiNodeTrainingValidation"]
     }
 }
 impl ::std::convert::AsRef<str> for DeepHealthCheckType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for DeepHealthCheckType {
         match self {
             DeepHealthCheckType::InstanceConnectivity => write!(f, "InstanceConnectivity"),
             DeepHealthCheckType::InstanceStress => write!(f, "InstanceStress"),
+            DeepHealthCheckType::MultiNodeTrainingValidation => write!(f, "MultiNodeTrainingValidation"),
             DeepHealthCheckType::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -22,8 +22,7 @@ impl crate::operation::batch_update_task::builders::BatchUpdateTaskInputBuilder 
 }
 /// Fluent builder constructing a request to `BatchUpdateTask`.
 ///
-/// <p>Updates multiple tasks in a single request. This is a batch version of the <code>UpdateTask</code> API.</p>
-/// <p>The result of updating each task is reported individually in the response. Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of 200.</p>
+/// Updates multiple tasks in a single request. This is a batch version of the <code>UpdateTask</code> API. The result of updating each task is reported individually in the response. Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of 200.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUpdateTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +108,17 @@ impl BatchUpdateTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -128,17 +127,17 @@ impl BatchUpdateTaskFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
     ///
-    /// <p>The list of tasks to update. You can specify up to 100 tasks per request.</p>
+    /// The list of tasks to update. You can specify up to 100 tasks per request.
     pub fn tasks(mut self, input: crate::types::BatchUpdateTaskItem) -> Self {
         self.inner = self.inner.tasks(input);
         self
     }
-    /// <p>The list of tasks to update. You can specify up to 100 tasks per request.</p>
+    /// The list of tasks to update. You can specify up to 100 tasks per request.
     pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateTaskItem>>) -> Self {
         self.inner = self.inner.set_tasks(input);
         self
     }
-    /// <p>The list of tasks to update. You can specify up to 100 tasks per request.</p>
+    /// The list of tasks to update. You can specify up to 100 tasks per request.
     pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateTaskItem>> {
         self.inner.get_tasks()
     }

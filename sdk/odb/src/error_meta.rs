@@ -543,6 +543,9 @@ impl From<crate::operation::create_exascale_db_storage_vault::CreateExascaleDbSt
             crate::operation::create_exascale_db_storage_vault::CreateExascaleDbStorageVaultError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::operation::create_exascale_db_storage_vault::CreateExascaleDbStorageVaultError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::create_exascale_db_storage_vault::CreateExascaleDbStorageVaultError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
@@ -2201,6 +2204,9 @@ impl From<crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStora
             crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
@@ -2940,6 +2946,44 @@ impl From<crate::operation::update_exadb_vm_cluster::UpdateExadbVmClusterError> 
             crate::operation::update_exadb_vm_cluster::UpdateExadbVmClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_exadb_vm_cluster::UpdateExadbVmClusterError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_exadb_vm_cluster::UpdateExadbVmClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_exascale_cloud_exadata_infrastructure::UpdateExascaleCloudExadataInfrastructureError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_exascale_cloud_exadata_infrastructure::UpdateExascaleCloudExadataInfrastructureError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_exascale_cloud_exadata_infrastructure::UpdateExascaleCloudExadataInfrastructureError> for Error {
+    fn from(err: crate::operation::update_exascale_cloud_exadata_infrastructure::UpdateExascaleCloudExadataInfrastructureError) -> Self {
+        match err {
+            crate::operation::update_exascale_cloud_exadata_infrastructure::UpdateExascaleCloudExadataInfrastructureError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_exascale_cloud_exadata_infrastructure::UpdateExascaleCloudExadataInfrastructureError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_exascale_cloud_exadata_infrastructure::UpdateExascaleCloudExadataInfrastructureError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_exascale_cloud_exadata_infrastructure::UpdateExascaleCloudExadataInfrastructureError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_exascale_cloud_exadata_infrastructure::UpdateExascaleCloudExadataInfrastructureError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_exascale_cloud_exadata_infrastructure::UpdateExascaleCloudExadataInfrastructureError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_exascale_cloud_exadata_infrastructure::UpdateExascaleCloudExadataInfrastructureError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

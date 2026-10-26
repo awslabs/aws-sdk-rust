@@ -8,6 +8,12 @@ pub struct H264FilterSettings {
     pub temporal_filter_settings: ::std::option::Option<crate::types::TemporalFilterSettings>,
     /// Bandwidth Reduction Filter Settings
     pub bandwidth_reduction_filter_settings: ::std::option::Option<crate::types::BandwidthReductionFilterSettings>,
+    /// System-managed filter selection. Resolves to the perceptual filter at strength 1 where the codec is eligible (AV1 and H.265 unconditionally; H.264 only at enhanced_quality), and to no filter otherwise. An empty / undefined filter_settings_choice is treated as "auto". Carries no body (extends EmptySettings, which sets additionalProperties: false), mirroring the ColorSpacePassthroughSettings empty-settings pattern.
+    pub auto_filter_settings: ::std::option::Option<crate::types::AutoFilterSettings>,
+    /// Explicitly disables the video filter. This is the customer opt-out: a video description set to "none" never has a filter applied and is never overridden by the system-managed "auto" default. Carries no body (extends EmptySettings, which sets additionalProperties: false), mirroring the ColorSpacePassthroughSettings empty-settings pattern.
+    pub none_filter_settings: ::std::option::Option<crate::types::NoneFilterSettings>,
+    /// Perceptual Filter Settings
+    pub perceptual_filter_settings: ::std::option::Option<crate::types::PerceptualFilterSettings>,
 }
 impl H264FilterSettings {
     /// Temporal Filter Settings
@@ -17,6 +23,18 @@ impl H264FilterSettings {
     /// Bandwidth Reduction Filter Settings
     pub fn bandwidth_reduction_filter_settings(&self) -> ::std::option::Option<&crate::types::BandwidthReductionFilterSettings> {
         self.bandwidth_reduction_filter_settings.as_ref()
+    }
+    /// System-managed filter selection. Resolves to the perceptual filter at strength 1 where the codec is eligible (AV1 and H.265 unconditionally; H.264 only at enhanced_quality), and to no filter otherwise. An empty / undefined filter_settings_choice is treated as "auto". Carries no body (extends EmptySettings, which sets additionalProperties: false), mirroring the ColorSpacePassthroughSettings empty-settings pattern.
+    pub fn auto_filter_settings(&self) -> ::std::option::Option<&crate::types::AutoFilterSettings> {
+        self.auto_filter_settings.as_ref()
+    }
+    /// Explicitly disables the video filter. This is the customer opt-out: a video description set to "none" never has a filter applied and is never overridden by the system-managed "auto" default. Carries no body (extends EmptySettings, which sets additionalProperties: false), mirroring the ColorSpacePassthroughSettings empty-settings pattern.
+    pub fn none_filter_settings(&self) -> ::std::option::Option<&crate::types::NoneFilterSettings> {
+        self.none_filter_settings.as_ref()
+    }
+    /// Perceptual Filter Settings
+    pub fn perceptual_filter_settings(&self) -> ::std::option::Option<&crate::types::PerceptualFilterSettings> {
+        self.perceptual_filter_settings.as_ref()
     }
 }
 impl H264FilterSettings {
@@ -32,6 +50,9 @@ impl H264FilterSettings {
 pub struct H264FilterSettingsBuilder {
     pub(crate) temporal_filter_settings: ::std::option::Option<crate::types::TemporalFilterSettings>,
     pub(crate) bandwidth_reduction_filter_settings: ::std::option::Option<crate::types::BandwidthReductionFilterSettings>,
+    pub(crate) auto_filter_settings: ::std::option::Option<crate::types::AutoFilterSettings>,
+    pub(crate) none_filter_settings: ::std::option::Option<crate::types::NoneFilterSettings>,
+    pub(crate) perceptual_filter_settings: ::std::option::Option<crate::types::PerceptualFilterSettings>,
 }
 impl H264FilterSettingsBuilder {
     /// Temporal Filter Settings
@@ -62,11 +83,56 @@ impl H264FilterSettingsBuilder {
     pub fn get_bandwidth_reduction_filter_settings(&self) -> &::std::option::Option<crate::types::BandwidthReductionFilterSettings> {
         &self.bandwidth_reduction_filter_settings
     }
+    /// System-managed filter selection. Resolves to the perceptual filter at strength 1 where the codec is eligible (AV1 and H.265 unconditionally; H.264 only at enhanced_quality), and to no filter otherwise. An empty / undefined filter_settings_choice is treated as "auto". Carries no body (extends EmptySettings, which sets additionalProperties: false), mirroring the ColorSpacePassthroughSettings empty-settings pattern.
+    pub fn auto_filter_settings(mut self, input: crate::types::AutoFilterSettings) -> Self {
+        self.auto_filter_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// System-managed filter selection. Resolves to the perceptual filter at strength 1 where the codec is eligible (AV1 and H.265 unconditionally; H.264 only at enhanced_quality), and to no filter otherwise. An empty / undefined filter_settings_choice is treated as "auto". Carries no body (extends EmptySettings, which sets additionalProperties: false), mirroring the ColorSpacePassthroughSettings empty-settings pattern.
+    pub fn set_auto_filter_settings(mut self, input: ::std::option::Option<crate::types::AutoFilterSettings>) -> Self {
+        self.auto_filter_settings = input;
+        self
+    }
+    /// System-managed filter selection. Resolves to the perceptual filter at strength 1 where the codec is eligible (AV1 and H.265 unconditionally; H.264 only at enhanced_quality), and to no filter otherwise. An empty / undefined filter_settings_choice is treated as "auto". Carries no body (extends EmptySettings, which sets additionalProperties: false), mirroring the ColorSpacePassthroughSettings empty-settings pattern.
+    pub fn get_auto_filter_settings(&self) -> &::std::option::Option<crate::types::AutoFilterSettings> {
+        &self.auto_filter_settings
+    }
+    /// Explicitly disables the video filter. This is the customer opt-out: a video description set to "none" never has a filter applied and is never overridden by the system-managed "auto" default. Carries no body (extends EmptySettings, which sets additionalProperties: false), mirroring the ColorSpacePassthroughSettings empty-settings pattern.
+    pub fn none_filter_settings(mut self, input: crate::types::NoneFilterSettings) -> Self {
+        self.none_filter_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Explicitly disables the video filter. This is the customer opt-out: a video description set to "none" never has a filter applied and is never overridden by the system-managed "auto" default. Carries no body (extends EmptySettings, which sets additionalProperties: false), mirroring the ColorSpacePassthroughSettings empty-settings pattern.
+    pub fn set_none_filter_settings(mut self, input: ::std::option::Option<crate::types::NoneFilterSettings>) -> Self {
+        self.none_filter_settings = input;
+        self
+    }
+    /// Explicitly disables the video filter. This is the customer opt-out: a video description set to "none" never has a filter applied and is never overridden by the system-managed "auto" default. Carries no body (extends EmptySettings, which sets additionalProperties: false), mirroring the ColorSpacePassthroughSettings empty-settings pattern.
+    pub fn get_none_filter_settings(&self) -> &::std::option::Option<crate::types::NoneFilterSettings> {
+        &self.none_filter_settings
+    }
+    /// Perceptual Filter Settings
+    pub fn perceptual_filter_settings(mut self, input: crate::types::PerceptualFilterSettings) -> Self {
+        self.perceptual_filter_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Perceptual Filter Settings
+    pub fn set_perceptual_filter_settings(mut self, input: ::std::option::Option<crate::types::PerceptualFilterSettings>) -> Self {
+        self.perceptual_filter_settings = input;
+        self
+    }
+    /// Perceptual Filter Settings
+    pub fn get_perceptual_filter_settings(&self) -> &::std::option::Option<crate::types::PerceptualFilterSettings> {
+        &self.perceptual_filter_settings
+    }
     /// Consumes the builder and constructs a [`H264FilterSettings`](crate::types::H264FilterSettings).
     pub fn build(self) -> crate::types::H264FilterSettings {
         crate::types::H264FilterSettings {
             temporal_filter_settings: self.temporal_filter_settings,
             bandwidth_reduction_filter_settings: self.bandwidth_reduction_filter_settings,
+            auto_filter_settings: self.auto_filter_settings,
+            none_filter_settings: self.none_filter_settings,
+            perceptual_filter_settings: self.perceptual_filter_settings,
         }
     }
 }

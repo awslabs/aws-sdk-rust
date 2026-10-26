@@ -22,6 +22,8 @@ pub enum EntityTypeSort {
     ResaleAuthorizationSort(crate::types::ResaleAuthorizationSort),
     /// <p>A sort for SaaS products.</p>
     SaaSProductSort(crate::types::SaaSProductSort),
+    /// <p>A sort for subsidiary authorizations.</p>
+    SubsidiaryAuthorizationSort(crate::types::SubsidiaryAuthorizationSort),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -149,6 +151,19 @@ impl EntityTypeSort {
     /// Returns true if this is a [`SaaSProductSort`](crate::types::EntityTypeSort::SaaSProductSort).
     pub fn is_saa_s_product_sort(&self) -> bool {
         self.as_saa_s_product_sort().is_ok()
+    }
+    /// Tries to convert the enum instance into [`SubsidiaryAuthorizationSort`](crate::types::EntityTypeSort::SubsidiaryAuthorizationSort), extracting the inner [`SubsidiaryAuthorizationSort`](crate::types::SubsidiaryAuthorizationSort).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_subsidiary_authorization_sort(&self) -> ::std::result::Result<&crate::types::SubsidiaryAuthorizationSort, &Self> {
+        if let EntityTypeSort::SubsidiaryAuthorizationSort(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SubsidiaryAuthorizationSort`](crate::types::EntityTypeSort::SubsidiaryAuthorizationSort).
+    pub fn is_subsidiary_authorization_sort(&self) -> bool {
+        self.as_subsidiary_authorization_sort().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

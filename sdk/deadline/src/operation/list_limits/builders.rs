@@ -22,7 +22,7 @@ impl crate::operation::list_limits::builders::ListLimitsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListLimits`.
 ///
-/// <p>Gets a list of limits defined in the specified farm.</p>
+/// Gets a list of limits defined in the specified farm.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLimitsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl ListLimitsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_limits::paginator::ListLimitsPaginator {
         crate::operation::list_limits::paginator::ListLimitsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The unique identifier of the farm that contains the limits.</p>
+    /// The unique identifier of the farm that contains the limits.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The unique identifier of the farm that contains the limits.</p>
+    /// The unique identifier of the farm that contains the limits.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The unique identifier of the farm that contains the limits.</p>
+    /// The unique identifier of the farm that contains the limits.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of limits to return in each page of results.</p>
+    /// The maximum number of limits to return in each page of results.
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of limits to return in each page of results.</p>
+    /// The maximum number of limits to return in each page of results.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of limits to return in each page of results.</p>
+    /// The maximum number of limits to return in each page of results.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

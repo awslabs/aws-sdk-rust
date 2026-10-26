@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQueueLimitAssociationInput {
-    /// <p>The unique identifier of the farm that contains the associated queue and limit.</p>
+    /// The unique identifier of the farm that contains the associated queue and limit.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the queue associated with the limit.</p>
+    /// The unique identifier of the queue associated with the limit.
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the limit associated with the queue.</p>
+    /// The unique identifier of the limit associated with the queue.
     pub limit_id: ::std::option::Option<::std::string::String>,
 }
 impl GetQueueLimitAssociationInput {
-    /// <p>The unique identifier of the farm that contains the associated queue and limit.</p>
+    /// The unique identifier of the farm that contains the associated queue and limit.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The unique identifier of the queue associated with the limit.</p>
+    /// The unique identifier of the queue associated with the limit.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The unique identifier of the limit associated with the queue.</p>
+    /// The unique identifier of the limit associated with the queue.
     pub fn limit_id(&self) -> ::std::option::Option<&str> {
         self.limit_id.as_deref()
     }
@@ -40,48 +40,48 @@ pub struct GetQueueLimitAssociationInputBuilder {
     pub(crate) limit_id: ::std::option::Option<::std::string::String>,
 }
 impl GetQueueLimitAssociationInputBuilder {
-    /// <p>The unique identifier of the farm that contains the associated queue and limit.</p>
+    /// The unique identifier of the farm that contains the associated queue and limit.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the farm that contains the associated queue and limit.</p>
+    /// The unique identifier of the farm that contains the associated queue and limit.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The unique identifier of the farm that contains the associated queue and limit.</p>
+    /// The unique identifier of the farm that contains the associated queue and limit.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The unique identifier of the queue associated with the limit.</p>
+    /// The unique identifier of the queue associated with the limit.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the queue associated with the limit.</p>
+    /// The unique identifier of the queue associated with the limit.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The unique identifier of the queue associated with the limit.</p>
+    /// The unique identifier of the queue associated with the limit.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The unique identifier of the limit associated with the queue.</p>
+    /// The unique identifier of the limit associated with the queue.
     /// This field is required.
     pub fn limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.limit_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the limit associated with the queue.</p>
+    /// The unique identifier of the limit associated with the queue.
     pub fn set_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.limit_id = input;
         self
     }
-    /// <p>The unique identifier of the limit associated with the queue.</p>
+    /// The unique identifier of the limit associated with the queue.
     pub fn get_limit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.limit_id
     }

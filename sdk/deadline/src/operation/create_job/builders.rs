@@ -22,7 +22,7 @@ impl crate::operation::create_job::builders::CreateJobInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateJob`.
 ///
-/// <p>Creates a job. A job is a set of instructions that Deadline Cloud uses to schedule and run work on available workers. For more information, see <a href="https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html">Deadline Cloud jobs</a>.</p>
+/// Creates a job. A job is a set of instructions that Deadline Cloud uses to schedule and run work on available workers. For more information, see <a href="https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html">Deadline Cloud jobs</a>.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -102,87 +102,87 @@ impl CreateJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the farm to connect to the job.</p>
+    /// The farm ID of the farm to connect to the job.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the farm to connect to the job.</p>
+    /// The farm ID of the farm to connect to the job.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the farm to connect to the job.</p>
+    /// The farm ID of the farm to connect to the job.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The ID of the queue that the job is submitted to.</p>
+    /// The ID of the queue that the job is submitted to.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
         self
     }
-    /// <p>The ID of the queue that the job is submitted to.</p>
+    /// The ID of the queue that the job is submitted to.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_id(input);
         self
     }
-    /// <p>The ID of the queue that the job is submitted to.</p>
+    /// The ID of the queue that the job is submitted to.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The job template to use for this job.</p>
+    /// The job template to use for this job.
     pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template(input.into());
         self
     }
-    /// <p>The job template to use for this job.</p>
+    /// The job template to use for this job.
     pub fn set_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template(input);
         self
     }
-    /// <p>The job template to use for this job.</p>
+    /// The job template to use for this job.
     pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_template()
     }
-    /// <p>The file type for the job template.</p>
+    /// The file type for the job template.
     pub fn template_type(mut self, input: crate::types::JobTemplateType) -> Self {
         self.inner = self.inner.template_type(input);
         self
     }
-    /// <p>The file type for the job template.</p>
+    /// The file type for the job template.
     pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::JobTemplateType>) -> Self {
         self.inner = self.inner.set_template_type(input);
         self
     }
-    /// <p>The file type for the job template.</p>
+    /// The file type for the job template.
     pub fn get_template_type(&self) -> &::std::option::Option<crate::types::JobTemplateType> {
         self.inner.get_template_type()
     }
-    /// <p>The priority of the job. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
+    /// The priority of the job. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.
     pub fn priority(mut self, input: i32) -> Self {
         self.inner = self.inner.priority(input);
         self
     }
-    /// <p>The priority of the job. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
+    /// The priority of the job. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
     }
-    /// <p>The priority of the job. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
+    /// The priority of the job. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         self.inner.get_priority()
     }
@@ -191,12 +191,12 @@ impl CreateJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>The parameters for the job.</p>
+    /// The parameters for the job.
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::JobParameter) -> Self {
         self.inner = self.inner.parameters(k.into(), v);
         self
     }
-    /// <p>The parameters for the job.</p>
+    /// The parameters for the job.
     pub fn set_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::JobParameter>>,
@@ -204,139 +204,133 @@ impl CreateJobFluentBuilder {
         self.inner = self.inner.set_parameters(input);
         self
     }
-    /// <p>The parameters for the job.</p>
+    /// The parameters for the job.
     pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::JobParameter>> {
         self.inner.get_parameters()
     }
-    /// <p>The attachments for the job. Attach files required for the job to run to a render job.</p>
+    /// The attachments for the job. Attach files required for the job to run to a render job.
     pub fn attachments(mut self, input: crate::types::Attachments) -> Self {
         self.inner = self.inner.attachments(input);
         self
     }
-    /// <p>The attachments for the job. Attach files required for the job to run to a render job.</p>
+    /// The attachments for the job. Attach files required for the job to run to a render job.
     pub fn set_attachments(mut self, input: ::std::option::Option<crate::types::Attachments>) -> Self {
         self.inner = self.inner.set_attachments(input);
         self
     }
-    /// <p>The attachments for the job. Attach files required for the job to run to a render job.</p>
+    /// The attachments for the job. Attach files required for the job to run to a render job.
     pub fn get_attachments(&self) -> &::std::option::Option<crate::types::Attachments> {
         self.inner.get_attachments()
     }
-    /// <p>The storage profile ID for the storage profile to connect to the job.</p>
+    /// The storage profile ID for the storage profile to connect to the job.
     pub fn storage_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_profile_id(input.into());
         self
     }
-    /// <p>The storage profile ID for the storage profile to connect to the job.</p>
+    /// The storage profile ID for the storage profile to connect to the job.
     pub fn set_storage_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_profile_id(input);
         self
     }
-    /// <p>The storage profile ID for the storage profile to connect to the job.</p>
+    /// The storage profile ID for the storage profile to connect to the job.
     pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_profile_id()
     }
-    /// <p>The initial job status when it is created. Jobs that are created with a <code>SUSPENDED</code> status will not run until manually requeued.</p>
+    /// The initial job status when it is created. Jobs that are created with a <code>SUSPENDED</code> status will not run until manually requeued.
     pub fn target_task_run_status(mut self, input: crate::types::CreateJobTargetTaskRunStatus) -> Self {
         self.inner = self.inner.target_task_run_status(input);
         self
     }
-    /// <p>The initial job status when it is created. Jobs that are created with a <code>SUSPENDED</code> status will not run until manually requeued.</p>
+    /// The initial job status when it is created. Jobs that are created with a <code>SUSPENDED</code> status will not run until manually requeued.
     pub fn set_target_task_run_status(mut self, input: ::std::option::Option<crate::types::CreateJobTargetTaskRunStatus>) -> Self {
         self.inner = self.inner.set_target_task_run_status(input);
         self
     }
-    /// <p>The initial job status when it is created. Jobs that are created with a <code>SUSPENDED</code> status will not run until manually requeued.</p>
+    /// The initial job status when it is created. Jobs that are created with a <code>SUSPENDED</code> status will not run until manually requeued.
     pub fn get_target_task_run_status(&self) -> &::std::option::Option<crate::types::CreateJobTargetTaskRunStatus> {
         self.inner.get_target_task_run_status()
     }
-    /// <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
+    /// The number of task failures before the job stops running and is marked as <code>FAILED</code>.
     pub fn max_failed_tasks_count(mut self, input: i32) -> Self {
         self.inner = self.inner.max_failed_tasks_count(input);
         self
     }
-    /// <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
+    /// The number of task failures before the job stops running and is marked as <code>FAILED</code>.
     pub fn set_max_failed_tasks_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_failed_tasks_count(input);
         self
     }
-    /// <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
+    /// The number of task failures before the job stops running and is marked as <code>FAILED</code>.
     pub fn get_max_failed_tasks_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_failed_tasks_count()
     }
-    /// <p>The maximum number of retries for each task.</p>
+    /// The maximum number of retries for each task.
     pub fn max_retries_per_task(mut self, input: i32) -> Self {
         self.inner = self.inner.max_retries_per_task(input);
         self
     }
-    /// <p>The maximum number of retries for each task.</p>
+    /// The maximum number of retries for each task.
     pub fn set_max_retries_per_task(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_retries_per_task(input);
         self
     }
-    /// <p>The maximum number of retries for each task.</p>
+    /// The maximum number of retries for each task.
     pub fn get_max_retries_per_task(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_retries_per_task()
     }
-    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
-    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
-    /// <p>If you don't specify the <code>maxWorkerCount</code>, Deadline Cloud won't throttle the number of workers used to process the job.</p>
+    /// The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers. You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers. If you don't specify the <code>maxWorkerCount</code>, Deadline Cloud won't throttle the number of workers used to process the job.
     pub fn max_worker_count(mut self, input: i32) -> Self {
         self.inner = self.inner.max_worker_count(input);
         self
     }
-    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
-    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
-    /// <p>If you don't specify the <code>maxWorkerCount</code>, Deadline Cloud won't throttle the number of workers used to process the job.</p>
+    /// The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers. You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers. If you don't specify the <code>maxWorkerCount</code>, Deadline Cloud won't throttle the number of workers used to process the job.
     pub fn set_max_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_worker_count(input);
         self
     }
-    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
-    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
-    /// <p>If you don't specify the <code>maxWorkerCount</code>, Deadline Cloud won't throttle the number of workers used to process the job.</p>
+    /// The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers. You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers. If you don't specify the <code>maxWorkerCount</code>, Deadline Cloud won't throttle the number of workers used to process the job.
     pub fn get_max_worker_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_worker_count()
     }
-    /// <p>The job ID for the source job.</p>
+    /// The job ID for the source job.
     pub fn source_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_job_id(input.into());
         self
     }
-    /// <p>The job ID for the source job.</p>
+    /// The job ID for the source job.
     pub fn set_source_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_job_id(input);
         self
     }
-    /// <p>The job ID for the source job.</p>
+    /// The job ID for the source job.
     pub fn get_source_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_job_id()
     }
-    /// <p>A custom name to override the job name derived from the job template.</p>
+    /// A custom name to override the job name derived from the job template.
     pub fn name_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_override(input.into());
         self
     }
-    /// <p>A custom name to override the job name derived from the job template.</p>
+    /// A custom name to override the job name derived from the job template.
     pub fn set_name_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_override(input);
         self
     }
-    /// <p>A custom name to override the job name derived from the job template.</p>
+    /// A custom name to override the job name derived from the job template.
     pub fn get_name_override(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name_override()
     }
-    /// <p>A custom description to override the job description derived from the job template.</p>
+    /// A custom description to override the job description derived from the job template.
     pub fn description_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description_override(input.into());
         self
     }
-    /// <p>A custom description to override the job description derived from the job template.</p>
+    /// A custom description to override the job description derived from the job template.
     pub fn set_description_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description_override(input);
         self
     }
-    /// <p>A custom description to override the job description derived from the job template.</p>
+    /// A custom description to override the job description derived from the job template.
     pub fn get_description_override(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description_override()
     }
@@ -345,17 +339,17 @@ impl CreateJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to add to your job. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    /// The tags to add to your job. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>The tags to add to your job. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    /// The tags to add to your job. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The tags to add to your job. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    /// The tags to add to your job. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

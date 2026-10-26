@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssumeQueueRoleForWorkerInput {
-    /// <p>The farm ID of the worker assuming the queue role.</p>
+    /// The farm ID of the worker assuming the queue role.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The fleet ID of the worker assuming the queue role.</p>
+    /// The fleet ID of the worker assuming the queue role.
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The worker ID of the worker assuming the queue role.</p>
+    /// The worker ID of the worker assuming the queue role.
     pub worker_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID of the worker assuming the queue role.</p>
+    /// The queue ID of the worker assuming the queue role.
     pub queue_id: ::std::option::Option<::std::string::String>,
 }
 impl AssumeQueueRoleForWorkerInput {
-    /// <p>The farm ID of the worker assuming the queue role.</p>
+    /// The farm ID of the worker assuming the queue role.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The fleet ID of the worker assuming the queue role.</p>
+    /// The fleet ID of the worker assuming the queue role.
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The worker ID of the worker assuming the queue role.</p>
+    /// The worker ID of the worker assuming the queue role.
     pub fn worker_id(&self) -> ::std::option::Option<&str> {
         self.worker_id.as_deref()
     }
-    /// <p>The queue ID of the worker assuming the queue role.</p>
+    /// The queue ID of the worker assuming the queue role.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
@@ -47,63 +47,63 @@ pub struct AssumeQueueRoleForWorkerInputBuilder {
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
 }
 impl AssumeQueueRoleForWorkerInputBuilder {
-    /// <p>The farm ID of the worker assuming the queue role.</p>
+    /// The farm ID of the worker assuming the queue role.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID of the worker assuming the queue role.</p>
+    /// The farm ID of the worker assuming the queue role.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID of the worker assuming the queue role.</p>
+    /// The farm ID of the worker assuming the queue role.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The fleet ID of the worker assuming the queue role.</p>
+    /// The fleet ID of the worker assuming the queue role.
     /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The fleet ID of the worker assuming the queue role.</p>
+    /// The fleet ID of the worker assuming the queue role.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p>The fleet ID of the worker assuming the queue role.</p>
+    /// The fleet ID of the worker assuming the queue role.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>The worker ID of the worker assuming the queue role.</p>
+    /// The worker ID of the worker assuming the queue role.
     /// This field is required.
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The worker ID of the worker assuming the queue role.</p>
+    /// The worker ID of the worker assuming the queue role.
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.worker_id = input;
         self
     }
-    /// <p>The worker ID of the worker assuming the queue role.</p>
+    /// The worker ID of the worker assuming the queue role.
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.worker_id
     }
-    /// <p>The queue ID of the worker assuming the queue role.</p>
+    /// The queue ID of the worker assuming the queue role.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue ID of the worker assuming the queue role.</p>
+    /// The queue ID of the worker assuming the queue role.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The queue ID of the worker assuming the queue role.</p>
+    /// The queue ID of the worker assuming the queue role.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }

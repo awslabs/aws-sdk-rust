@@ -7,6 +7,9 @@ pub mod create_o_auth2_token;
 /// Types for the `CreateOAuth2TokenWithIAM` operation.
 pub mod create_o_auth2_token_with_iam;
 
+/// Types for the `CreateOAuth2TokenWithTokenExchange` operation.
+pub mod create_o_auth2_token_with_token_exchange;
+
 /// Types for the `DeleteConsoleAuthorizationConfiguration` operation.
 pub mod delete_console_authorization_configuration;
 

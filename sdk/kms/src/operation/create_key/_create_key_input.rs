@@ -40,6 +40,8 @@ pub struct CreateKeyInput {
     /// <li>
     /// <p>For asymmetric KMS keys with ML-DSA key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
+    /// <p>For asymmetric KMS keys with ML-KEM key pairs, specify <code>ENCAPSULATE_DECAPSULATE</code>.</p></li>
+    /// <li>
     /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
     pub key_usage: ::std::option::Option<crate::types::KeyUsageType>,
@@ -113,6 +115,17 @@ pub struct CreateKeyInput {
     /// <li>
     /// <p><code>ML_DSA_87</code></p></li>
     /// </ul></li>
+    /// <li>
+    /// <p>Asymmetric ML-KEM key pairs (establishing shared secrets)</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ML_KEM_512</code></p></li>
+    /// <li>
+    /// <p><code>ML_KEM_768</code></p></li>
+    /// <li>
+    /// <p><code>ML_KEM_1024</code></p></li>
+    /// </ul>
+    /// <p>The ML-KEM key specs are not available in China Regions.</p></li>
     /// <li>
     /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>
     /// <ul>
@@ -199,6 +212,8 @@ impl CreateKeyInput {
     /// <li>
     /// <p>For asymmetric KMS keys with ML-DSA key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
+    /// <p>For asymmetric KMS keys with ML-KEM key pairs, specify <code>ENCAPSULATE_DECAPSULATE</code>.</p></li>
+    /// <li>
     /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
     pub fn key_usage(&self) -> ::std::option::Option<&crate::types::KeyUsageType> {
@@ -276,6 +291,17 @@ impl CreateKeyInput {
     /// <li>
     /// <p><code>ML_DSA_87</code></p></li>
     /// </ul></li>
+    /// <li>
+    /// <p>Asymmetric ML-KEM key pairs (establishing shared secrets)</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ML_KEM_512</code></p></li>
+    /// <li>
+    /// <p><code>ML_KEM_768</code></p></li>
+    /// <li>
+    /// <p><code>ML_KEM_1024</code></p></li>
+    /// </ul>
+    /// <p>The ML-KEM key specs are not available in China Regions.</p></li>
     /// <li>
     /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>
     /// <ul>
@@ -455,6 +481,8 @@ impl CreateKeyInputBuilder {
     /// <li>
     /// <p>For asymmetric KMS keys with ML-DSA key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
+    /// <p>For asymmetric KMS keys with ML-KEM key pairs, specify <code>ENCAPSULATE_DECAPSULATE</code>.</p></li>
+    /// <li>
     /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
     pub fn key_usage(mut self, input: crate::types::KeyUsageType) -> Self {
@@ -477,6 +505,8 @@ impl CreateKeyInputBuilder {
     /// <li>
     /// <p>For asymmetric KMS keys with ML-DSA key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
+    /// <p>For asymmetric KMS keys with ML-KEM key pairs, specify <code>ENCAPSULATE_DECAPSULATE</code>.</p></li>
+    /// <li>
     /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
     pub fn set_key_usage(mut self, input: ::std::option::Option<crate::types::KeyUsageType>) -> Self {
@@ -498,6 +528,8 @@ impl CreateKeyInputBuilder {
     /// <p>For asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
     /// <li>
     /// <p>For asymmetric KMS keys with ML-DSA key pairs, specify <code>SIGN_VERIFY</code>.</p></li>
+    /// <li>
+    /// <p>For asymmetric KMS keys with ML-KEM key pairs, specify <code>ENCAPSULATE_DECAPSULATE</code>.</p></li>
     /// <li>
     /// <p>For asymmetric KMS keys with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p></li>
     /// </ul>
@@ -591,6 +623,17 @@ impl CreateKeyInputBuilder {
     /// <p><code>ML_DSA_87</code></p></li>
     /// </ul></li>
     /// <li>
+    /// <p>Asymmetric ML-KEM key pairs (establishing shared secrets)</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ML_KEM_512</code></p></li>
+    /// <li>
+    /// <p><code>ML_KEM_768</code></p></li>
+    /// <li>
+    /// <p><code>ML_KEM_1024</code></p></li>
+    /// </ul>
+    /// <p>The ML-KEM key specs are not available in China Regions.</p></li>
+    /// <li>
     /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>
     /// <ul>
     /// <li>
@@ -668,6 +711,17 @@ impl CreateKeyInputBuilder {
     /// <p><code>ML_DSA_87</code></p></li>
     /// </ul></li>
     /// <li>
+    /// <p>Asymmetric ML-KEM key pairs (establishing shared secrets)</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ML_KEM_512</code></p></li>
+    /// <li>
+    /// <p><code>ML_KEM_768</code></p></li>
+    /// <li>
+    /// <p><code>ML_KEM_1024</code></p></li>
+    /// </ul>
+    /// <p>The ML-KEM key specs are not available in China Regions.</p></li>
+    /// <li>
     /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>
     /// <ul>
     /// <li>
@@ -744,6 +798,17 @@ impl CreateKeyInputBuilder {
     /// <li>
     /// <p><code>ML_DSA_87</code></p></li>
     /// </ul></li>
+    /// <li>
+    /// <p>Asymmetric ML-KEM key pairs (establishing shared secrets)</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ML_KEM_512</code></p></li>
+    /// <li>
+    /// <p><code>ML_KEM_768</code></p></li>
+    /// <li>
+    /// <p><code>ML_KEM_1024</code></p></li>
+    /// </ul>
+    /// <p>The ML-KEM key specs are not available in China Regions.</p></li>
     /// <li>
     /// <p>SM2 key pairs (encryption and decryption -or- signing and verification -or- deriving shared secrets)</p>
     /// <ul>

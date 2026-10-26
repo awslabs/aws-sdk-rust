@@ -27,6 +27,8 @@ pub struct GetPublicKeyOutput {
     pub signing_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>>,
     /// <p>The key agreement algorithm used to derive a shared secret. This field is present only when the KMS key has a <code>KeyUsage</code> value of <code>KEY_AGREEMENT</code>.</p>
     pub key_agreement_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::KeyAgreementAlgorithmSpec>>,
+    /// <p>The key encapsulation algorithm used to establish a shared secret. This field is present only when the KMS key has a <code>KeyUsage</code> value of <code>ENCAPSULATE_DECAPSULATE</code>.</p>
+    pub encapsulation_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::EncapsulationAlgorithmSpec>>,
     _request_id: Option<String>,
 }
 impl GetPublicKeyOutput {
@@ -76,6 +78,12 @@ impl GetPublicKeyOutput {
     pub fn key_agreement_algorithms(&self) -> &[crate::types::KeyAgreementAlgorithmSpec] {
         self.key_agreement_algorithms.as_deref().unwrap_or_default()
     }
+    /// <p>The key encapsulation algorithm used to establish a shared secret. This field is present only when the KMS key has a <code>KeyUsage</code> value of <code>ENCAPSULATE_DECAPSULATE</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.encapsulation_algorithms.is_none()`.
+    pub fn encapsulation_algorithms(&self) -> &[crate::types::EncapsulationAlgorithmSpec] {
+        self.encapsulation_algorithms.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetPublicKeyOutput {
     fn request_id(&self) -> Option<&str> {
@@ -101,6 +109,7 @@ pub struct GetPublicKeyOutputBuilder {
     pub(crate) encryption_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithmSpec>>,
     pub(crate) signing_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>>,
     pub(crate) key_agreement_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::KeyAgreementAlgorithmSpec>>,
+    pub(crate) encapsulation_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::EncapsulationAlgorithmSpec>>,
     _request_id: Option<String>,
 }
 impl GetPublicKeyOutputBuilder {
@@ -258,6 +267,26 @@ impl GetPublicKeyOutputBuilder {
     pub fn get_key_agreement_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyAgreementAlgorithmSpec>> {
         &self.key_agreement_algorithms
     }
+    /// Appends an item to `encapsulation_algorithms`.
+    ///
+    /// To override the contents of this collection use [`set_encapsulation_algorithms`](Self::set_encapsulation_algorithms).
+    ///
+    /// <p>The key encapsulation algorithm used to establish a shared secret. This field is present only when the KMS key has a <code>KeyUsage</code> value of <code>ENCAPSULATE_DECAPSULATE</code>.</p>
+    pub fn encapsulation_algorithms(mut self, input: crate::types::EncapsulationAlgorithmSpec) -> Self {
+        let mut v = self.encapsulation_algorithms.unwrap_or_default();
+        v.push(input);
+        self.encapsulation_algorithms = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The key encapsulation algorithm used to establish a shared secret. This field is present only when the KMS key has a <code>KeyUsage</code> value of <code>ENCAPSULATE_DECAPSULATE</code>.</p>
+    pub fn set_encapsulation_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EncapsulationAlgorithmSpec>>) -> Self {
+        self.encapsulation_algorithms = input;
+        self
+    }
+    /// <p>The key encapsulation algorithm used to establish a shared secret. This field is present only when the KMS key has a <code>KeyUsage</code> value of <code>ENCAPSULATE_DECAPSULATE</code>.</p>
+    pub fn get_encapsulation_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncapsulationAlgorithmSpec>> {
+        &self.encapsulation_algorithms
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -278,6 +307,7 @@ impl GetPublicKeyOutputBuilder {
             encryption_algorithms: self.encryption_algorithms,
             signing_algorithms: self.signing_algorithms,
             key_agreement_algorithms: self.key_agreement_algorithms,
+            encapsulation_algorithms: self.encapsulation_algorithms,
             _request_id: self._request_id,
         }
     }

@@ -122,6 +122,70 @@ impl CreateCloudVmClusterFluentBuilder {
     pub fn get_cloud_exadata_infrastructure_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cloud_exadata_infrastructure_id()
     }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of the Exascale storage vault to use for the VM cluster. Specify this value to create a VM cluster that uses Exascale storage on dedicated Exadata infrastructure.</p>
+    pub fn exascale_db_storage_vault_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.exascale_db_storage_vault_id(input.into());
+        self
+    }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of the Exascale storage vault to use for the VM cluster. Specify this value to create a VM cluster that uses Exascale storage on dedicated Exadata infrastructure.</p>
+    pub fn set_exascale_db_storage_vault_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_exascale_db_storage_vault_id(input);
+        self
+    }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of the Exascale storage vault to use for the VM cluster. Specify this value to create a VM cluster that uses Exascale storage on dedicated Exadata infrastructure.</p>
+    pub fn get_exascale_db_storage_vault_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_exascale_db_storage_vault_id()
+    }
+    /// <p>The type of storage to use for the VM file systems. Specify <code>EXASCALE</code> to store the VM file systems in Exascale storage on the storage servers, or <code>LOCAL</code> to store them on the database servers.</p>
+    pub fn vm_file_system_storage_type(mut self, input: crate::types::VmStorageType) -> Self {
+        self.inner = self.inner.vm_file_system_storage_type(input);
+        self
+    }
+    /// <p>The type of storage to use for the VM file systems. Specify <code>EXASCALE</code> to store the VM file systems in Exascale storage on the storage servers, or <code>LOCAL</code> to store them on the database servers.</p>
+    pub fn set_vm_file_system_storage_type(mut self, input: ::std::option::Option<crate::types::VmStorageType>) -> Self {
+        self.inner = self.inner.set_vm_file_system_storage_type(input);
+        self
+    }
+    /// <p>The type of storage to use for the VM file systems. Specify <code>EXASCALE</code> to store the VM file systems in Exascale storage on the storage servers, or <code>LOCAL</code> to store them on the database servers.</p>
+    pub fn get_vm_file_system_storage_type(&self) -> &::std::option::Option<crate::types::VmStorageType> {
+        self.inner.get_vm_file_system_storage_type()
+    }
+    /// <p>The type of storage to use for VM backups. Specify <code>EXASCALE</code> to store VM backups in Exascale storage on the storage servers, or <code>LOCAL</code> to store them on the database servers.</p>
+    pub fn vm_backup_storage_type(mut self, input: crate::types::VmStorageType) -> Self {
+        self.inner = self.inner.vm_backup_storage_type(input);
+        self
+    }
+    /// <p>The type of storage to use for VM backups. Specify <code>EXASCALE</code> to store VM backups in Exascale storage on the storage servers, or <code>LOCAL</code> to store them on the database servers.</p>
+    pub fn set_vm_backup_storage_type(mut self, input: ::std::option::Option<crate::types::VmStorageType>) -> Self {
+        self.inner = self.inner.set_vm_backup_storage_type(input);
+        self
+    }
+    /// <p>The type of storage to use for VM backups. Specify <code>EXASCALE</code> to store VM backups in Exascale storage on the storage servers, or <code>LOCAL</code> to store them on the database servers.</p>
+    pub fn get_vm_backup_storage_type(&self) -> &::std::option::Option<crate::types::VmStorageType> {
+        self.inner.get_vm_backup_storage_type()
+    }
+    ///
+    /// Appends an item to `fileSystemConfigurationDetails`.
+    ///
+    /// To override the contents of this collection use [`set_file_system_configuration_details`](Self::set_file_system_configuration_details).
+    ///
+    /// <p>The list of file system configurations for the VM cluster. Each entry specifies the mount point of a file system and its size, in gigabytes (GB).</p>
+    pub fn file_system_configuration_details(mut self, input: crate::types::FileSystemConfigurationDetails) -> Self {
+        self.inner = self.inner.file_system_configuration_details(input);
+        self
+    }
+    /// <p>The list of file system configurations for the VM cluster. Each entry specifies the mount point of a file system and its size, in gigabytes (GB).</p>
+    pub fn set_file_system_configuration_details(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfigurationDetails>>,
+    ) -> Self {
+        self.inner = self.inner.set_file_system_configuration_details(input);
+        self
+    }
+    /// <p>The list of file system configurations for the VM cluster. Each entry specifies the mount point of a file system and its size, in gigabytes (GB).</p>
+    pub fn get_file_system_configuration_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfigurationDetails>> {
+        self.inner.get_file_system_configuration_details()
+    }
     /// <p>The number of CPU cores to enable on the VM cluster.</p>
     pub fn cpu_core_count(mut self, input: i32) -> Self {
         self.inner = self.inner.cpu_core_count(input);

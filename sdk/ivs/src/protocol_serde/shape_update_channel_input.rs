@@ -15,32 +15,35 @@ pub fn ser_update_channel_input_input(
     if let Some(var_4) = &input.container_format {
         object.key("containerFormat").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.insecure_ingest {
-        object.key("insecureIngest").boolean(*var_5);
+    if let Some(var_5) = &input.failover_slate_configuration_arn {
+        object.key("failoverSlateConfigurationArn").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.latency_mode {
-        object.key("latencyMode").string(var_6.as_str());
+    if let Some(var_6) = &input.insecure_ingest {
+        object.key("insecureIngest").boolean(*var_6);
     }
-    if let Some(var_7) = &input.multitrack_input_configuration {
+    if let Some(var_7) = &input.latency_mode {
+        object.key("latencyMode").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.multitrack_input_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("multitrackInputConfiguration").start_object();
-        crate::protocol_serde::shape_multitrack_input_configuration::ser_multitrack_input_configuration(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("multitrackInputConfiguration").start_object();
+        crate::protocol_serde::shape_multitrack_input_configuration::ser_multitrack_input_configuration(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.name {
-        object.key("name").string(var_9.as_str());
+    if let Some(var_10) = &input.name {
+        object.key("name").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.playback_restriction_policy_arn {
-        object.key("playbackRestrictionPolicyArn").string(var_10.as_str());
+    if let Some(var_11) = &input.playback_restriction_policy_arn {
+        object.key("playbackRestrictionPolicyArn").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.preset {
-        object.key("preset").string(var_11.as_str());
+    if let Some(var_12) = &input.preset {
+        object.key("preset").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.recording_configuration_arn {
-        object.key("recordingConfigurationArn").string(var_12.as_str());
+    if let Some(var_13) = &input.recording_configuration_arn {
+        object.key("recordingConfigurationArn").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.r#type {
-        object.key("type").string(var_13.as_str());
+    if let Some(var_14) = &input.r#type {
+        object.key("type").string(var_14.as_str());
     }
     Ok(())
 }

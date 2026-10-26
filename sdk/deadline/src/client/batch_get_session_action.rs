@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetSessionAction`](crate::operation::batch_get_session_action::builders::BatchGetSessionActionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifiers(BatchGetSessionActionIdentifier)`](crate::operation::batch_get_session_action::builders::BatchGetSessionActionFluentBuilder::identifiers) / [`set_identifiers(Option<Vec::<BatchGetSessionActionIdentifier>>)`](crate::operation::batch_get_session_action::builders::BatchGetSessionActionFluentBuilder::set_identifiers):<br>required: **true**<br><p>The list of session action identifiers to retrieve. You can specify up to 100 identifiers per request.</p><br>
+    ///   - [`identifiers(BatchGetSessionActionIdentifier)`](crate::operation::batch_get_session_action::builders::BatchGetSessionActionFluentBuilder::identifiers) / [`set_identifiers(Option<Vec::<BatchGetSessionActionIdentifier>>)`](crate::operation::batch_get_session_action::builders::BatchGetSessionActionFluentBuilder::set_identifiers):<br>required: **true**<br>The list of session action identifiers to retrieve. You can specify up to 100 identifiers per request.<br>
     /// - On success, responds with [`BatchGetSessionActionOutput`](crate::operation::batch_get_session_action::BatchGetSessionActionOutput) with field(s):
-    ///   - [`session_actions(Vec::<BatchGetSessionActionItem>)`](crate::operation::batch_get_session_action::BatchGetSessionActionOutput::session_actions): <p>A list of session actions that were successfully retrieved.</p>
-    ///   - [`errors(Vec::<BatchGetSessionActionError>)`](crate::operation::batch_get_session_action::BatchGetSessionActionOutput::errors): <p>A list of errors for session actions that could not be retrieved.</p>
+    ///   - [`session_actions(Vec::<BatchGetSessionActionItem>)`](crate::operation::batch_get_session_action::BatchGetSessionActionOutput::session_actions): A list of session actions that were successfully retrieved.
+    ///   - [`errors(Vec::<BatchGetSessionActionError>)`](crate::operation::batch_get_session_action::BatchGetSessionActionOutput::errors): A list of errors for session actions that could not be retrieved.
     /// - On failure, responds with [`SdkError<BatchGetSessionActionError>`](crate::operation::batch_get_session_action::BatchGetSessionActionError)
     pub fn batch_get_session_action(&self) -> crate::operation::batch_get_session_action::builders::BatchGetSessionActionFluentBuilder {
         crate::operation::batch_get_session_action::builders::BatchGetSessionActionFluentBuilder::new(self.handle.clone())

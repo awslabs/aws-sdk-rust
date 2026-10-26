@@ -22,7 +22,7 @@ impl crate::operation::batch_get_job_entity::builders::BatchGetJobEntityInputBui
 }
 /// Fluent builder constructing a request to `BatchGetJobEntity`.
 ///
-/// <p>Get batched job details for a worker.</p>
+/// Get batched job details for a worker.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetJobEntityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl BatchGetJobEntityFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.</p>
+    /// The farm ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.</p>
+    /// The farm ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.</p>
+    /// The farm ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The fleet ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.</p>
+    /// The fleet ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>The fleet ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.</p>
+    /// The fleet ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>The fleet ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.</p>
+    /// The fleet ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>The worker ID of the worker containing the job details to get.</p>
+    /// The worker ID of the worker containing the job details to get.
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.worker_id(input.into());
         self
     }
-    /// <p>The worker ID of the worker containing the job details to get.</p>
+    /// The worker ID of the worker containing the job details to get.
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_worker_id(input);
         self
     }
-    /// <p>The worker ID of the worker containing the job details to get.</p>
+    /// The worker ID of the worker containing the job details to get.
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_worker_id()
     }
@@ -155,17 +155,17 @@ impl BatchGetJobEntityFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_identifiers`](Self::set_identifiers).
     ///
-    /// <p>The job identifiers to include within the job entity batch details.</p>
+    /// The job identifiers to include within the job entity batch details.
     pub fn identifiers(mut self, input: crate::types::JobEntityIdentifiersUnion) -> Self {
         self.inner = self.inner.identifiers(input);
         self
     }
-    /// <p>The job identifiers to include within the job entity batch details.</p>
+    /// The job identifiers to include within the job entity batch details.
     pub fn set_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobEntityIdentifiersUnion>>) -> Self {
         self.inner = self.inner.set_identifiers(input);
         self
     }
-    /// <p>The job identifiers to include within the job entity batch details.</p>
+    /// The job identifiers to include within the job entity batch details.
     pub fn get_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobEntityIdentifiersUnion>> {
         self.inner.get_identifiers()
     }

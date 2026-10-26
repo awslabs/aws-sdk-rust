@@ -1091,6 +1091,8 @@ pub(crate) mod shape_audio_track_selection;
 
 pub(crate) mod shape_av1_color_space_settings;
 
+pub(crate) mod shape_av1_filter_settings;
+
 pub(crate) mod shape_caption_language_mapping;
 
 pub(crate) mod shape_cmaf_ingest_caption_language_mapping;
@@ -1197,6 +1199,8 @@ pub(crate) mod shape_audio_pid;
 
 pub(crate) mod shape_audio_track;
 
+pub(crate) mod shape_auto_filter_settings;
+
 pub(crate) mod shape_bandwidth_reduction_filter_settings;
 
 pub(crate) mod shape_caption_rectangle;
@@ -1246,6 +1250,10 @@ pub(crate) mod shape_media_package_v2_destination_settings;
 pub(crate) mod shape_media_package_v2_watermarking_settings;
 
 pub(crate) mod shape_multiplex_container_settings;
+
+pub(crate) mod shape_none_filter_settings;
+
+pub(crate) mod shape_perceptual_filter_settings;
 
 pub(crate) mod shape_rec601_settings;
 

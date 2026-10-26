@@ -4,41 +4,50 @@ pub fn ser_router_input_configuration(
     input: &crate::types::RouterInputConfiguration,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
+        crate::types::RouterInputConfiguration::DestinationEndpoint(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_4.key("destinationEndpoint").start_object();
+            crate::protocol_serde::shape_destination_endpoint_router_input_configuration::ser_destination_endpoint_router_input_configuration(
+                &mut object_1,
+                inner,
+            )?;
+            object_1.finish();
+        }
         crate::types::RouterInputConfiguration::Standard(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_4.key("standard").start_object();
-            crate::protocol_serde::shape_standard_router_input_configuration::ser_standard_router_input_configuration(&mut object_1, inner)?;
-            object_1.finish();
+            let mut object_2 = object_4.key("standard").start_object();
+            crate::protocol_serde::shape_standard_router_input_configuration::ser_standard_router_input_configuration(&mut object_2, inner)?;
+            object_2.finish();
         }
         crate::types::RouterInputConfiguration::MediaLiveChannel(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_4.key("mediaLiveChannel").start_object();
+            let mut object_3 = object_4.key("mediaLiveChannel").start_object();
             crate::protocol_serde::shape_media_live_channel_router_input_configuration::ser_media_live_channel_router_input_configuration(
-                &mut object_2,
+                &mut object_3,
                 inner,
             )?;
-            object_2.finish();
+            object_3.finish();
         }
         crate::types::RouterInputConfiguration::Failover(inner) => {
             #[allow(unused_mut)]
-            let mut object_3 = object_4.key("failover").start_object();
-            crate::protocol_serde::shape_failover_router_input_configuration::ser_failover_router_input_configuration(&mut object_3, inner)?;
-            object_3.finish();
+            let mut object_4 = object_4.key("failover").start_object();
+            crate::protocol_serde::shape_failover_router_input_configuration::ser_failover_router_input_configuration(&mut object_4, inner)?;
+            object_4.finish();
         }
         crate::types::RouterInputConfiguration::MediaConnectFlow(inner) => {
             #[allow(unused_mut)]
-            let mut object_4 = object_4.key("mediaConnectFlow").start_object();
+            let mut object_5 = object_4.key("mediaConnectFlow").start_object();
             crate::protocol_serde::shape_media_connect_flow_router_input_configuration::ser_media_connect_flow_router_input_configuration(
-                &mut object_4,
+                &mut object_5,
                 inner,
             )?;
-            object_4.finish();
+            object_5.finish();
         }
         crate::types::RouterInputConfiguration::Merge(inner) => {
             #[allow(unused_mut)]
-            let mut object_5 = object_4.key("merge").start_object();
-            crate::protocol_serde::shape_merge_router_input_configuration::ser_merge_router_input_configuration(&mut object_5, inner)?;
-            object_5.finish();
+            let mut object_6 = object_4.key("merge").start_object();
+            crate::protocol_serde::shape_merge_router_input_configuration::ser_merge_router_input_configuration(&mut object_6, inner)?;
+            object_6.finish();
         }
         crate::types::RouterInputConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
@@ -86,6 +95,12 @@ where
                         ));
                     }
                     variant = match key.as_ref() {
+                            "destinationEndpoint" => {
+                                Some(crate::types::RouterInputConfiguration::DestinationEndpoint(
+                                    crate::protocol_serde::shape_destination_endpoint_router_input_configuration::de_destination_endpoint_router_input_configuration(tokens, _value, depth + 1)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DestinationEndpoint' cannot be null"))?
+                                ))
+                            }
                             "standard" => {
                                 Some(crate::types::RouterInputConfiguration::Standard(
                                     crate::protocol_serde::shape_standard_router_input_configuration::de_standard_router_input_configuration(tokens, _value, depth + 1)?

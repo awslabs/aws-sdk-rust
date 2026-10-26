@@ -146,6 +146,20 @@ pub trait Waiters {
     fn wait_until_flow_standby(&self) -> crate::waiters::flow_standby::FlowStandbyFluentBuilder;
     /// Wait until a flow is deleted
     fn wait_until_flow_deleted(&self) -> crate::waiters::flow_deleted::FlowDeletedFluentBuilder;
+    /// Wait until the Destination Endpoint is CONNECTED
+    fn wait_until_destination_endpoint_connected(&self) -> crate::waiters::destination_endpoint_connected::DestinationEndpointConnectedFluentBuilder;
+    /// Wait until the Destination Endpoint is DISCONNECTED
+    fn wait_until_destination_endpoint_disconnected(
+        &self,
+    ) -> crate::waiters::destination_endpoint_disconnected::DestinationEndpointDisconnectedFluentBuilder;
+    /// Wait until the Destination Endpoint is deregistered
+    fn wait_until_destination_endpoint_deregistered(
+        &self,
+    ) -> crate::waiters::destination_endpoint_deregistered::DestinationEndpointDeregisteredFluentBuilder;
+    /// Wait until the Destination Endpoint is registered
+    fn wait_until_destination_endpoint_registered(
+        &self,
+    ) -> crate::waiters::destination_endpoint_registered::DestinationEndpointRegisteredFluentBuilder;
     /// Wait until the Input is ACTIVE
     fn wait_until_input_active(&self) -> crate::waiters::input_active::InputActiveFluentBuilder;
     /// Wait until the Input is STANDBY
@@ -162,6 +176,18 @@ pub trait Waiters {
     fn wait_until_output_standby(&self) -> crate::waiters::output_standby::OutputStandbyFluentBuilder;
     /// Wait until the Output is UNROUTED
     fn wait_until_output_unrouted(&self) -> crate::waiters::output_unrouted::OutputUnroutedFluentBuilder;
+    /// Wait until the Source Endpoint is CONNECTED
+    fn wait_until_source_endpoint_connected(&self) -> crate::waiters::source_endpoint_connected::SourceEndpointConnectedFluentBuilder;
+    /// Wait until the Source Endpoint is DISCONNECTED
+    fn wait_until_source_endpoint_disconnected(&self) -> crate::waiters::source_endpoint_disconnected::SourceEndpointDisconnectedFluentBuilder;
+    /// Wait until the Source Endpoint has begun connecting
+    fn wait_until_source_endpoint_connecting(&self) -> crate::waiters::source_endpoint_connecting::SourceEndpointConnectingFluentBuilder;
+    /// Wait until the Source Endpoint is registered
+    fn wait_until_source_endpoint_registered(&self) -> crate::waiters::source_endpoint_registered::SourceEndpointRegisteredFluentBuilder;
+    /// Wait until the Source Endpoint has begun disconnecting
+    fn wait_until_source_endpoint_disconnecting(&self) -> crate::waiters::source_endpoint_disconnecting::SourceEndpointDisconnectingFluentBuilder;
+    /// Wait until the Source Endpoint is deregistered
+    fn wait_until_source_endpoint_deregistered(&self) -> crate::waiters::source_endpoint_deregistered::SourceEndpointDeregisteredFluentBuilder;
 }
 impl Waiters for Client {
     fn wait_until_flow_active(&self) -> crate::waiters::flow_active::FlowActiveFluentBuilder {
@@ -172,6 +198,24 @@ impl Waiters for Client {
     }
     fn wait_until_flow_deleted(&self) -> crate::waiters::flow_deleted::FlowDeletedFluentBuilder {
         crate::waiters::flow_deleted::FlowDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_destination_endpoint_connected(&self) -> crate::waiters::destination_endpoint_connected::DestinationEndpointConnectedFluentBuilder {
+        crate::waiters::destination_endpoint_connected::DestinationEndpointConnectedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_destination_endpoint_disconnected(
+        &self,
+    ) -> crate::waiters::destination_endpoint_disconnected::DestinationEndpointDisconnectedFluentBuilder {
+        crate::waiters::destination_endpoint_disconnected::DestinationEndpointDisconnectedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_destination_endpoint_deregistered(
+        &self,
+    ) -> crate::waiters::destination_endpoint_deregistered::DestinationEndpointDeregisteredFluentBuilder {
+        crate::waiters::destination_endpoint_deregistered::DestinationEndpointDeregisteredFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_destination_endpoint_registered(
+        &self,
+    ) -> crate::waiters::destination_endpoint_registered::DestinationEndpointRegisteredFluentBuilder {
+        crate::waiters::destination_endpoint_registered::DestinationEndpointRegisteredFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_input_active(&self) -> crate::waiters::input_active::InputActiveFluentBuilder {
         crate::waiters::input_active::InputActiveFluentBuilder::new(self.handle.clone())
@@ -196,6 +240,24 @@ impl Waiters for Client {
     }
     fn wait_until_output_unrouted(&self) -> crate::waiters::output_unrouted::OutputUnroutedFluentBuilder {
         crate::waiters::output_unrouted::OutputUnroutedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_source_endpoint_connected(&self) -> crate::waiters::source_endpoint_connected::SourceEndpointConnectedFluentBuilder {
+        crate::waiters::source_endpoint_connected::SourceEndpointConnectedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_source_endpoint_disconnected(&self) -> crate::waiters::source_endpoint_disconnected::SourceEndpointDisconnectedFluentBuilder {
+        crate::waiters::source_endpoint_disconnected::SourceEndpointDisconnectedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_source_endpoint_connecting(&self) -> crate::waiters::source_endpoint_connecting::SourceEndpointConnectingFluentBuilder {
+        crate::waiters::source_endpoint_connecting::SourceEndpointConnectingFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_source_endpoint_registered(&self) -> crate::waiters::source_endpoint_registered::SourceEndpointRegisteredFluentBuilder {
+        crate::waiters::source_endpoint_registered::SourceEndpointRegisteredFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_source_endpoint_disconnecting(&self) -> crate::waiters::source_endpoint_disconnecting::SourceEndpointDisconnectingFluentBuilder {
+        crate::waiters::source_endpoint_disconnecting::SourceEndpointDisconnectingFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_source_endpoint_deregistered(&self) -> crate::waiters::source_endpoint_deregistered::SourceEndpointDeregisteredFluentBuilder {
+        crate::waiters::source_endpoint_deregistered::SourceEndpointDeregisteredFluentBuilder::new(self.handle.clone())
     }
 }
 
@@ -227,11 +289,17 @@ mod add_flow_sources;
 
 mod add_flow_vpc_interfaces;
 
+mod batch_get_destination_endpoint;
+
 mod batch_get_router_input;
 
 mod batch_get_router_network_interface;
 
 mod batch_get_router_output;
+
+mod batch_get_source_endpoint;
+
+mod connect_endpoints;
 
 mod create_bridge;
 
@@ -284,7 +352,11 @@ mod delete_router_network_interface;
 
 mod delete_router_output;
 
+mod deregister_destination_endpoint;
+
 mod deregister_gateway_instance;
+
+mod deregister_source_endpoint;
 
 mod describe_bridge;
 
@@ -302,6 +374,10 @@ mod describe_offering;
 
 mod describe_reservation;
 
+mod disconnect_endpoints;
+
+mod get_destination_endpoint;
+
 mod get_router_input;
 
 mod get_router_input_source_metadata;
@@ -312,9 +388,13 @@ mod get_router_network_interface;
 
 mod get_router_output;
 
+mod get_source_endpoint;
+
 mod grant_flow_entitlements;
 
 mod list_bridges;
+
+mod list_destination_endpoints;
 
 mod list_entitlements;
 
@@ -334,11 +414,17 @@ mod list_router_network_interfaces;
 
 mod list_router_outputs;
 
+mod list_source_endpoints;
+
 mod list_tags_for_global_resource;
 
 mod list_tags_for_resource;
 
 mod purchase_offering;
+
+mod register_destination_endpoint;
+
+mod register_source_endpoint;
 
 mod remove_bridge_output;
 
@@ -388,6 +474,8 @@ mod update_bridge_source;
 
 mod update_bridge_state;
 
+mod update_destination_endpoint;
+
 mod update_flow;
 
 mod update_flow_entitlement;
@@ -405,3 +493,5 @@ mod update_router_input;
 mod update_router_network_interface;
 
 mod update_router_output;
+
+mod update_source_endpoint;

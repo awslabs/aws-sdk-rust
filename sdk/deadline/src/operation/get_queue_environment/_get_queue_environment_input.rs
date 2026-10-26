@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQueueEnvironmentInput {
-    /// <p>The farm ID for the queue environment.</p>
+    /// The farm ID for the queue environment.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID for the queue environment.</p>
+    /// The queue ID for the queue environment.
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue environment ID.</p>
+    /// The queue environment ID.
     pub queue_environment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetQueueEnvironmentInput {
-    /// <p>The farm ID for the queue environment.</p>
+    /// The farm ID for the queue environment.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The queue ID for the queue environment.</p>
+    /// The queue ID for the queue environment.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The queue environment ID.</p>
+    /// The queue environment ID.
     pub fn queue_environment_id(&self) -> ::std::option::Option<&str> {
         self.queue_environment_id.as_deref()
     }
@@ -40,48 +40,48 @@ pub struct GetQueueEnvironmentInputBuilder {
     pub(crate) queue_environment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetQueueEnvironmentInputBuilder {
-    /// <p>The farm ID for the queue environment.</p>
+    /// The farm ID for the queue environment.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID for the queue environment.</p>
+    /// The farm ID for the queue environment.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID for the queue environment.</p>
+    /// The farm ID for the queue environment.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The queue ID for the queue environment.</p>
+    /// The queue ID for the queue environment.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue ID for the queue environment.</p>
+    /// The queue ID for the queue environment.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The queue ID for the queue environment.</p>
+    /// The queue ID for the queue environment.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The queue environment ID.</p>
+    /// The queue environment ID.
     /// This field is required.
     pub fn queue_environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_environment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue environment ID.</p>
+    /// The queue environment ID.
     pub fn set_queue_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_environment_id = input;
         self
     }
-    /// <p>The queue environment ID.</p>
+    /// The queue environment ID.
     pub fn get_queue_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_environment_id
     }

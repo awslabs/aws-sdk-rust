@@ -246,6 +246,56 @@ impl From<crate::operation::create_channel::CreateChannelError> for Error {
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_failover_slate_configuration::CreateFailoverSlateConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_failover_slate_configuration::CreateFailoverSlateConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_failover_slate_configuration::CreateFailoverSlateConfigurationError> for Error {
+    fn from(err: crate::operation::create_failover_slate_configuration::CreateFailoverSlateConfigurationError) -> Self {
+        match err {
+            crate::operation::create_failover_slate_configuration::CreateFailoverSlateConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_failover_slate_configuration::CreateFailoverSlateConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_failover_slate_configuration::CreateFailoverSlateConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_failover_slate_configuration::CreateFailoverSlateConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_failover_slate_configuration::CreateFailoverSlateConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_failover_slate_configuration::CreateFailoverSlateConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_failover_slate_configuration::CreateFailoverSlateConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_playback_restriction_policy::CreatePlaybackRestrictionPolicyError,
             R,
         >,
@@ -421,6 +471,53 @@ impl From<crate::operation::delete_channel::DeleteChannelError> for Error {
             crate::operation::delete_channel::DeleteChannelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_channel::DeleteChannelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_channel::DeleteChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_failover_slate_configuration::DeleteFailoverSlateConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_failover_slate_configuration::DeleteFailoverSlateConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_failover_slate_configuration::DeleteFailoverSlateConfigurationError> for Error {
+    fn from(err: crate::operation::delete_failover_slate_configuration::DeleteFailoverSlateConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_failover_slate_configuration::DeleteFailoverSlateConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_failover_slate_configuration::DeleteFailoverSlateConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_failover_slate_configuration::DeleteFailoverSlateConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_failover_slate_configuration::DeleteFailoverSlateConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_failover_slate_configuration::DeleteFailoverSlateConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_failover_slate_configuration::DeleteFailoverSlateConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -618,6 +715,47 @@ impl From<crate::operation::get_channel::GetChannelError> for Error {
             crate::operation::get_channel::GetChannelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_channel::GetChannelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_channel::GetChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_failover_slate_configuration::GetFailoverSlateConfigurationError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_failover_slate_configuration::GetFailoverSlateConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_failover_slate_configuration::GetFailoverSlateConfigurationError> for Error {
+    fn from(err: crate::operation::get_failover_slate_configuration::GetFailoverSlateConfigurationError) -> Self {
+        match err {
+            crate::operation::get_failover_slate_configuration::GetFailoverSlateConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_failover_slate_configuration::GetFailoverSlateConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_failover_slate_configuration::GetFailoverSlateConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_failover_slate_configuration::GetFailoverSlateConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_failover_slate_configuration::GetFailoverSlateConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -903,6 +1041,47 @@ impl From<crate::operation::list_channels::ListChannelsError> for Error {
             crate::operation::list_channels::ListChannelsError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::list_channels::ListChannelsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_channels::ListChannelsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_failover_slate_configurations::ListFailoverSlateConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_failover_slate_configurations::ListFailoverSlateConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_failover_slate_configurations::ListFailoverSlateConfigurationsError> for Error {
+    fn from(err: crate::operation::list_failover_slate_configurations::ListFailoverSlateConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_failover_slate_configurations::ListFailoverSlateConfigurationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_failover_slate_configurations::ListFailoverSlateConfigurationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_failover_slate_configurations::ListFailoverSlateConfigurationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_failover_slate_configurations::ListFailoverSlateConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1315,8 +1494,62 @@ impl From<crate::operation::update_channel::UpdateChannelError> for Error {
             crate::operation::update_channel::UpdateChannelError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_channel::UpdateChannelError::PendingVerification(inner) => Error::PendingVerification(inner),
             crate::operation::update_channel::UpdateChannelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_channel::UpdateChannelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_channel::UpdateChannelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_channel::UpdateChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_failover_slate_configuration::UpdateFailoverSlateConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_failover_slate_configuration::UpdateFailoverSlateConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_failover_slate_configuration::UpdateFailoverSlateConfigurationError> for Error {
+    fn from(err: crate::operation::update_failover_slate_configuration::UpdateFailoverSlateConfigurationError) -> Self {
+        match err {
+            crate::operation::update_failover_slate_configuration::UpdateFailoverSlateConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_failover_slate_configuration::UpdateFailoverSlateConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_failover_slate_configuration::UpdateFailoverSlateConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_failover_slate_configuration::UpdateFailoverSlateConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_failover_slate_configuration::UpdateFailoverSlateConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_failover_slate_configuration::UpdateFailoverSlateConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_failover_slate_configuration::UpdateFailoverSlateConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_failover_slate_configuration::UpdateFailoverSlateConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMeteredProductInput {
-    /// <p>The ID of the license endpoint from which to remove the metered product.</p>
+    /// The ID of the license endpoint from which to remove the metered product.
     pub license_endpoint_id: ::std::option::Option<::std::string::String>,
-    /// <p>The product ID to remove from the license endpoint.</p>
+    /// The product ID to remove from the license endpoint.
     pub product_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMeteredProductInput {
-    /// <p>The ID of the license endpoint from which to remove the metered product.</p>
+    /// The ID of the license endpoint from which to remove the metered product.
     pub fn license_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.license_endpoint_id.as_deref()
     }
-    /// <p>The product ID to remove from the license endpoint.</p>
+    /// The product ID to remove from the license endpoint.
     pub fn product_id(&self) -> ::std::option::Option<&str> {
         self.product_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DeleteMeteredProductInputBuilder {
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMeteredProductInputBuilder {
-    /// <p>The ID of the license endpoint from which to remove the metered product.</p>
+    /// The ID of the license endpoint from which to remove the metered product.
     /// This field is required.
     pub fn license_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the license endpoint from which to remove the metered product.</p>
+    /// The ID of the license endpoint from which to remove the metered product.
     pub fn set_license_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_endpoint_id = input;
         self
     }
-    /// <p>The ID of the license endpoint from which to remove the metered product.</p>
+    /// The ID of the license endpoint from which to remove the metered product.
     pub fn get_license_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_endpoint_id
     }
-    /// <p>The product ID to remove from the license endpoint.</p>
+    /// The product ID to remove from the license endpoint.
     /// This field is required.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The product ID to remove from the license endpoint.</p>
+    /// The product ID to remove from the license endpoint.
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_id = input;
         self
     }
-    /// <p>The product ID to remove from the license endpoint.</p>
+    /// The product ID to remove from the license endpoint.
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.product_id
     }

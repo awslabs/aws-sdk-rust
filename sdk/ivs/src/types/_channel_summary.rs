@@ -26,6 +26,8 @@ pub struct ChannelSummary {
     pub playback_restriction_policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the ad configuration associated with the channel.</p>
     pub ad_configuration_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Failover-slate-configuration ARN. A valid ARN value here both specifies the ARN and enables failover slate. Default: "" (empty string, no failover slate configuration is applied).</p>
+    pub failover_slate_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl ChannelSummary {
     /// <p>Channel ARN.</p>
@@ -72,6 +74,10 @@ impl ChannelSummary {
     pub fn ad_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.ad_configuration_arn.as_deref()
     }
+    /// <p>Failover-slate-configuration ARN. A valid ARN value here both specifies the ARN and enables failover slate. Default: "" (empty string, no failover slate configuration is applied).</p>
+    pub fn failover_slate_configuration_arn(&self) -> ::std::option::Option<&str> {
+        self.failover_slate_configuration_arn.as_deref()
+    }
 }
 impl ChannelSummary {
     /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::types::ChannelSummary).
@@ -95,6 +101,7 @@ pub struct ChannelSummaryBuilder {
     pub(crate) preset: ::std::option::Option<crate::types::TranscodePreset>,
     pub(crate) playback_restriction_policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ad_configuration_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) failover_slate_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl ChannelSummaryBuilder {
     /// <p>Channel ARN.</p>
@@ -257,6 +264,20 @@ impl ChannelSummaryBuilder {
     pub fn get_ad_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ad_configuration_arn
     }
+    /// <p>Failover-slate-configuration ARN. A valid ARN value here both specifies the ARN and enables failover slate. Default: "" (empty string, no failover slate configuration is applied).</p>
+    pub fn failover_slate_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failover_slate_configuration_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Failover-slate-configuration ARN. A valid ARN value here both specifies the ARN and enables failover slate. Default: "" (empty string, no failover slate configuration is applied).</p>
+    pub fn set_failover_slate_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failover_slate_configuration_arn = input;
+        self
+    }
+    /// <p>Failover-slate-configuration ARN. A valid ARN value here both specifies the ARN and enables failover slate. Default: "" (empty string, no failover slate configuration is applied).</p>
+    pub fn get_failover_slate_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failover_slate_configuration_arn
+    }
     /// Consumes the builder and constructs a [`ChannelSummary`](crate::types::ChannelSummary).
     pub fn build(self) -> crate::types::ChannelSummary {
         crate::types::ChannelSummary {
@@ -271,6 +292,7 @@ impl ChannelSummaryBuilder {
             preset: self.preset,
             playback_restriction_policy_arn: self.playback_restriction_policy_arn,
             ad_configuration_arn: self.ad_configuration_arn,
+            failover_slate_configuration_arn: self.failover_slate_configuration_arn,
         }
     }
 }

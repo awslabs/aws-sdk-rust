@@ -22,7 +22,7 @@ impl crate::operation::create_fleet::builders::CreateFleetInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateFleet`.
 ///
-/// <p>Creates a fleet. Fleets gather information relating to compute, or capacity, for renders within your farms. You can choose to manage your own capacity or opt to have fleets fully managed by Deadline Cloud.</p>
+/// Creates a fleet. Fleets gather information relating to compute, or capacity, for renders within your farms. You can choose to manage your own capacity or opt to have fleets fully managed by Deadline Cloud.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFleetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl CreateFleetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the farm to connect to the fleet.</p>
+    /// The farm ID of the farm to connect to the fleet.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the farm to connect to the fleet.</p>
+    /// The farm ID of the farm to connect to the fleet.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the farm to connect to the fleet.</p>
+    /// The farm ID of the farm to connect to the fleet.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -176,62 +176,59 @@ impl CreateFleetFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The IAM role ARN for the role that the fleet's workers will use.</p>
+    /// The IAM role ARN for the role that the fleet's workers will use.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The IAM role ARN for the role that the fleet's workers will use.</p>
+    /// The IAM role ARN for the role that the fleet's workers will use.
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The IAM role ARN for the role that the fleet's workers will use.</p>
+    /// The IAM role ARN for the role that the fleet's workers will use.
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
-    /// <p>The minimum number of workers for the fleet.</p>
+    /// The minimum number of workers for the fleet.
     pub fn min_worker_count(mut self, input: i32) -> Self {
         self.inner = self.inner.min_worker_count(input);
         self
     }
-    /// <p>The minimum number of workers for the fleet.</p>
+    /// The minimum number of workers for the fleet.
     pub fn set_min_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_min_worker_count(input);
         self
     }
-    /// <p>The minimum number of workers for the fleet.</p>
+    /// The minimum number of workers for the fleet.
     pub fn get_min_worker_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_min_worker_count()
     }
-    /// <p>The maximum number of workers for the fleet.</p>
-    /// <p>Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum worker count. The service maintains eventual consistency for the worker count. If you make multiple rapid calls to <code>CreateWorker</code> before the field updates, you might exceed your fleet's maximum worker count. For example, if your <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two quick <code>CreateWorker</code> calls might successfully create 2 workers instead of 1, resulting in 11 total workers.</p>
+    /// The maximum number of workers for the fleet. Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum worker count. The service maintains eventual consistency for the worker count. If you make multiple rapid calls to <code>CreateWorker</code> before the field updates, you might exceed your fleet's maximum worker count. For example, if your <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two quick <code>CreateWorker</code> calls might successfully create 2 workers instead of 1, resulting in 11 total workers.
     pub fn max_worker_count(mut self, input: i32) -> Self {
         self.inner = self.inner.max_worker_count(input);
         self
     }
-    /// <p>The maximum number of workers for the fleet.</p>
-    /// <p>Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum worker count. The service maintains eventual consistency for the worker count. If you make multiple rapid calls to <code>CreateWorker</code> before the field updates, you might exceed your fleet's maximum worker count. For example, if your <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two quick <code>CreateWorker</code> calls might successfully create 2 workers instead of 1, resulting in 11 total workers.</p>
+    /// The maximum number of workers for the fleet. Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum worker count. The service maintains eventual consistency for the worker count. If you make multiple rapid calls to <code>CreateWorker</code> before the field updates, you might exceed your fleet's maximum worker count. For example, if your <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two quick <code>CreateWorker</code> calls might successfully create 2 workers instead of 1, resulting in 11 total workers.
     pub fn set_max_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_worker_count(input);
         self
     }
-    /// <p>The maximum number of workers for the fleet.</p>
-    /// <p>Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum worker count. The service maintains eventual consistency for the worker count. If you make multiple rapid calls to <code>CreateWorker</code> before the field updates, you might exceed your fleet's maximum worker count. For example, if your <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two quick <code>CreateWorker</code> calls might successfully create 2 workers instead of 1, resulting in 11 total workers.</p>
+    /// The maximum number of workers for the fleet. Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum worker count. The service maintains eventual consistency for the worker count. If you make multiple rapid calls to <code>CreateWorker</code> before the field updates, you might exceed your fleet's maximum worker count. For example, if your <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two quick <code>CreateWorker</code> calls might successfully create 2 workers instead of 1, resulting in 11 total workers.
     pub fn get_max_worker_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_worker_count()
     }
-    /// <p>The configuration settings for the fleet. Customer managed fleets are self-managed. Service managed Amazon EC2 fleets are managed by Deadline Cloud.</p>
+    /// The configuration settings for the fleet. Customer managed fleets are self-managed. Service managed Amazon EC2 fleets are managed by Deadline Cloud.
     pub fn configuration(mut self, input: crate::types::FleetConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
-    /// <p>The configuration settings for the fleet. Customer managed fleets are self-managed. Service managed Amazon EC2 fleets are managed by Deadline Cloud.</p>
+    /// The configuration settings for the fleet. Customer managed fleets are self-managed. Service managed Amazon EC2 fleets are managed by Deadline Cloud.
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::FleetConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
-    /// <p>The configuration settings for the fleet. Customer managed fleets are self-managed. Service managed Amazon EC2 fleets are managed by Deadline Cloud.</p>
+    /// The configuration settings for the fleet. Customer managed fleets are self-managed. Service managed Amazon EC2 fleets are managed by Deadline Cloud.
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::FleetConfiguration> {
         self.inner.get_configuration()
     }
@@ -240,31 +237,31 @@ impl CreateFleetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    /// Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    /// Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    /// Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>Provides a script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    /// Provides a script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.
     pub fn host_configuration(mut self, input: crate::types::HostConfiguration) -> Self {
         self.inner = self.inner.host_configuration(input);
         self
     }
-    /// <p>Provides a script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    /// Provides a script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.
     pub fn set_host_configuration(mut self, input: ::std::option::Option<crate::types::HostConfiguration>) -> Self {
         self.inner = self.inner.set_host_configuration(input);
         self
     }
-    /// <p>Provides a script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    /// Provides a script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.
     pub fn get_host_configuration(&self) -> &::std::option::Option<crate::types::HostConfiguration> {
         self.inner.get_host_configuration()
     }

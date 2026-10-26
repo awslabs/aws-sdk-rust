@@ -35,6 +35,8 @@ pub(crate) mod shape_create_grant;
 
 pub(crate) mod shape_create_key;
 
+pub(crate) mod shape_decapsulate;
+
 pub(crate) mod shape_decrypt;
 
 pub(crate) mod shape_delete_alias;
@@ -58,6 +60,8 @@ pub(crate) mod shape_disconnect_custom_key_store;
 pub(crate) mod shape_enable_key;
 
 pub(crate) mod shape_enable_key_rotation;
+
+pub(crate) mod shape_encapsulate;
 
 pub(crate) mod shape_encrypt;
 
@@ -173,6 +177,8 @@ pub(crate) mod shape_custom_key_store_name_in_use_exception;
 
 pub(crate) mod shape_custom_key_store_not_found_exception;
 
+pub(crate) mod shape_decapsulate_input;
+
 pub(crate) mod shape_decrypt_input;
 
 pub(crate) mod shape_delete_alias_input;
@@ -202,6 +208,8 @@ pub(crate) mod shape_dry_run_operation_exception;
 pub(crate) mod shape_enable_key_input;
 
 pub(crate) mod shape_enable_key_rotation_input;
+
+pub(crate) mod shape_encapsulate_input;
 
 pub(crate) mod shape_encrypt_input;
 
@@ -346,6 +354,8 @@ pub(crate) mod shape_xks_proxy_vpc_endpoint_service_not_found_exception;
 pub(crate) mod shape_alias_list;
 
 pub(crate) mod shape_custom_key_stores_list;
+
+pub(crate) mod shape_encapsulation_algorithm_spec_list;
 
 pub(crate) mod shape_encryption_algorithm_spec_list;
 

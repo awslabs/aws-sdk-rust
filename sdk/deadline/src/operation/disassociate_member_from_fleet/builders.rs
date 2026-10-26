@@ -22,7 +22,7 @@ impl crate::operation::disassociate_member_from_fleet::builders::DisassociateMem
 }
 /// Fluent builder constructing a request to `DisassociateMemberFromFleet`.
 ///
-/// <p>Disassociates a member from a fleet.</p>
+/// Disassociates a member from a fleet.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateMemberFromFleetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl DisassociateMemberFromFleetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the fleet to disassociate a member from.</p>
+    /// The farm ID of the fleet to disassociate a member from.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the fleet to disassociate a member from.</p>
+    /// The farm ID of the fleet to disassociate a member from.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the fleet to disassociate a member from.</p>
+    /// The farm ID of the fleet to disassociate a member from.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The fleet ID of the fleet to from which to disassociate a member.</p>
+    /// The fleet ID of the fleet to from which to disassociate a member.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>The fleet ID of the fleet to from which to disassociate a member.</p>
+    /// The fleet ID of the fleet to from which to disassociate a member.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>The fleet ID of the fleet to from which to disassociate a member.</p>
+    /// The fleet ID of the fleet to from which to disassociate a member.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>A member's principal ID to disassociate from a fleet.</p>
+    /// A member's principal ID to disassociate from a fleet.
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_id(input.into());
         self
     }
-    /// <p>A member's principal ID to disassociate from a fleet.</p>
+    /// A member's principal ID to disassociate from a fleet.
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_id(input);
         self
     }
-    /// <p>A member's principal ID to disassociate from a fleet.</p>
+    /// A member's principal ID to disassociate from a fleet.
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_principal_id()
     }

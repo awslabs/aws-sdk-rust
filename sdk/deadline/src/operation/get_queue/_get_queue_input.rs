@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQueueInput {
-    /// <p>The farm ID of the farm in the queue.</p>
+    /// The farm ID of the farm in the queue.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID for the queue to retrieve.</p>
+    /// The queue ID for the queue to retrieve.
     pub queue_id: ::std::option::Option<::std::string::String>,
 }
 impl GetQueueInput {
-    /// <p>The farm ID of the farm in the queue.</p>
+    /// The farm ID of the farm in the queue.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The queue ID for the queue to retrieve.</p>
+    /// The queue ID for the queue to retrieve.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct GetQueueInputBuilder {
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
 }
 impl GetQueueInputBuilder {
-    /// <p>The farm ID of the farm in the queue.</p>
+    /// The farm ID of the farm in the queue.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID of the farm in the queue.</p>
+    /// The farm ID of the farm in the queue.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID of the farm in the queue.</p>
+    /// The farm ID of the farm in the queue.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The queue ID for the queue to retrieve.</p>
+    /// The queue ID for the queue to retrieve.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue ID for the queue to retrieve.</p>
+    /// The queue ID for the queue to retrieve.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The queue ID for the queue to retrieve.</p>
+    /// The queue ID for the queue to retrieve.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }

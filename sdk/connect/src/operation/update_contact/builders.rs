@@ -250,32 +250,46 @@ impl UpdateContactFluentBuilder {
     pub fn get_user_info(&self) -> &::std::option::Option<crate::types::UserInfo> {
         self.inner.get_user_info()
     }
-    /// <p>The endpoint of the customer for which the contact was initiated. For external audio contacts, this is usually the end customer's phone number. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect Customer Contact Lens integration</a> in the <i>Connect Customer Administrator Guide</i>.</p>
+    /// <p>The endpoint of the customer for which the contact was initiated. For external audio contacts, this is usually the end customer's phone number. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect Customer Contact Lens integration</a> in the <i>Connect Customer Administrator Guide</i>. For email contacts with an <code>OUTBOUND</code> or <code>AGENT_REPLY</code> initiation method, this value can be updated while the outbound email is still a draft, before you send it.</p>
     pub fn customer_endpoint(mut self, input: crate::types::Endpoint) -> Self {
         self.inner = self.inner.customer_endpoint(input);
         self
     }
-    /// <p>The endpoint of the customer for which the contact was initiated. For external audio contacts, this is usually the end customer's phone number. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect Customer Contact Lens integration</a> in the <i>Connect Customer Administrator Guide</i>.</p>
+    /// <p>The endpoint of the customer for which the contact was initiated. For external audio contacts, this is usually the end customer's phone number. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect Customer Contact Lens integration</a> in the <i>Connect Customer Administrator Guide</i>. For email contacts with an <code>OUTBOUND</code> or <code>AGENT_REPLY</code> initiation method, this value can be updated while the outbound email is still a draft, before you send it.</p>
     pub fn set_customer_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
         self.inner = self.inner.set_customer_endpoint(input);
         self
     }
-    /// <p>The endpoint of the customer for which the contact was initiated. For external audio contacts, this is usually the end customer's phone number. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect Customer Contact Lens integration</a> in the <i>Connect Customer Administrator Guide</i>.</p>
+    /// <p>The endpoint of the customer for which the contact was initiated. For external audio contacts, this is usually the end customer's phone number. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect Customer Contact Lens integration</a> in the <i>Connect Customer Administrator Guide</i>. For email contacts with an <code>OUTBOUND</code> or <code>AGENT_REPLY</code> initiation method, this value can be updated while the outbound email is still a draft, before you send it.</p>
     pub fn get_customer_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
         self.inner.get_customer_endpoint()
     }
-    /// <p>External system endpoint for the contact was initiated. For external audio contacts, this is the phone number of the external system such as the contact center. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect Customer Contact Lens integration</a> in the <i>Connect Customer Administrator Guide</i>.</p>
+    /// <p>External system endpoint for the contact was initiated. For external audio contacts, this is the phone number of the external system such as the contact center. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect Customer Contact Lens integration</a> in the <i>Connect Customer Administrator Guide</i>. For email contacts with an <code>OUTBOUND</code> or <code>AGENT_REPLY</code> initiation method, this value can be updated while the outbound email is still a draft, before you send it.</p>
     pub fn system_endpoint(mut self, input: crate::types::Endpoint) -> Self {
         self.inner = self.inner.system_endpoint(input);
         self
     }
-    /// <p>External system endpoint for the contact was initiated. For external audio contacts, this is the phone number of the external system such as the contact center. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect Customer Contact Lens integration</a> in the <i>Connect Customer Administrator Guide</i>.</p>
+    /// <p>External system endpoint for the contact was initiated. For external audio contacts, this is the phone number of the external system such as the contact center. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect Customer Contact Lens integration</a> in the <i>Connect Customer Administrator Guide</i>. For email contacts with an <code>OUTBOUND</code> or <code>AGENT_REPLY</code> initiation method, this value can be updated while the outbound email is still a draft, before you send it.</p>
     pub fn set_system_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
         self.inner = self.inner.set_system_endpoint(input);
         self
     }
-    /// <p>External system endpoint for the contact was initiated. For external audio contacts, this is the phone number of the external system such as the contact center. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect Customer Contact Lens integration</a> in the <i>Connect Customer Administrator Guide</i>.</p>
+    /// <p>External system endpoint for the contact was initiated. For external audio contacts, this is the phone number of the external system such as the contact center. This value can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect Customer Contact Lens integration</a> in the <i>Connect Customer Administrator Guide</i>. For email contacts with an <code>OUTBOUND</code> or <code>AGENT_REPLY</code> initiation method, this value can be updated while the outbound email is still a draft, before you send it.</p>
     pub fn get_system_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
         self.inner.get_system_endpoint()
+    }
+    /// <p>The additional recipients of an outbound email. Use this field to update the CC email address recipients of a contact. An empty list clears the existing CC recipients.</p>
+    pub fn additional_recipients(mut self, input: crate::types::NullableAdditionalRecipients) -> Self {
+        self.inner = self.inner.additional_recipients(input);
+        self
+    }
+    /// <p>The additional recipients of an outbound email. Use this field to update the CC email address recipients of a contact. An empty list clears the existing CC recipients.</p>
+    pub fn set_additional_recipients(mut self, input: ::std::option::Option<crate::types::NullableAdditionalRecipients>) -> Self {
+        self.inner = self.inner.set_additional_recipients(input);
+        self
+    }
+    /// <p>The additional recipients of an outbound email. Use this field to update the CC email address recipients of a contact. An empty list clears the existing CC recipients.</p>
+    pub fn get_additional_recipients(&self) -> &::std::option::Option<crate::types::NullableAdditionalRecipients> {
+        self.inner.get_additional_recipients()
     }
 }

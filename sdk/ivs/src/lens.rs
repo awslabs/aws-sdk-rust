@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_channels_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_failover_slate_configurations_output_output_next_token(
+    input: &crate::operation::list_failover_slate_configurations::ListFailoverSlateConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_playback_key_pairs_output_output_next_token(
     input: &crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -83,5 +93,12 @@ pub(crate) fn lens_list_ad_configurations_output_output_ad_configurations(
     input: crate::operation::list_ad_configurations::ListAdConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AdConfigurationSummary>> {
     let input = input.ad_configurations;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_failover_slate_configurations_output_output_failover_slate_configurations(
+    input: crate::operation::list_failover_slate_configurations::ListFailoverSlateConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FailoverSlateConfigurationSummary>> {
+    let input = input.failover_slate_configurations;
     ::std::option::Option::Some(input)
 }

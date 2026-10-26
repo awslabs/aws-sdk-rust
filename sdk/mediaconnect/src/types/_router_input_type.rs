@@ -12,6 +12,7 @@
 /// ```text
 /// # let routerinputtype = unimplemented!();
 /// match routerinputtype {
+///     RouterInputType::DestinationEndpoint => { /* ... */ },
 ///     RouterInputType::Failover => { /* ... */ },
 ///     RouterInputType::MediaconnectFlow => { /* ... */ },
 ///     RouterInputType::MedialiveChannel => { /* ... */ },
@@ -46,6 +47,8 @@
 )]
 pub enum RouterInputType {
     #[allow(missing_docs)] // documentation missing in model
+    DestinationEndpoint,
+    #[allow(missing_docs)] // documentation missing in model
     Failover,
     #[allow(missing_docs)] // documentation missing in model
     MediaconnectFlow,
@@ -62,6 +65,7 @@ pub enum RouterInputType {
 impl ::std::convert::From<&str> for RouterInputType {
     fn from(s: &str) -> Self {
         match s {
+            "DESTINATION_ENDPOINT" => RouterInputType::DestinationEndpoint,
             "FAILOVER" => RouterInputType::Failover,
             "MEDIACONNECT_FLOW" => RouterInputType::MediaconnectFlow,
             "MEDIALIVE_CHANNEL" => RouterInputType::MedialiveChannel,
@@ -82,6 +86,7 @@ impl RouterInputType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RouterInputType::DestinationEndpoint => "DESTINATION_ENDPOINT",
             RouterInputType::Failover => "FAILOVER",
             RouterInputType::MediaconnectFlow => "MEDIACONNECT_FLOW",
             RouterInputType::MedialiveChannel => "MEDIALIVE_CHANNEL",
@@ -92,7 +97,14 @@ impl RouterInputType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILOVER", "MEDIACONNECT_FLOW", "MEDIALIVE_CHANNEL", "MERGE", "STANDARD"]
+        &[
+            "DESTINATION_ENDPOINT",
+            "FAILOVER",
+            "MEDIACONNECT_FLOW",
+            "MEDIALIVE_CHANNEL",
+            "MERGE",
+            "STANDARD",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for RouterInputType {
@@ -115,6 +127,7 @@ impl RouterInputType {
 impl ::std::fmt::Display for RouterInputType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RouterInputType::DestinationEndpoint => write!(f, "DESTINATION_ENDPOINT"),
             RouterInputType::Failover => write!(f, "FAILOVER"),
             RouterInputType::MediaconnectFlow => write!(f, "MEDIACONNECT_FLOW"),
             RouterInputType::MedialiveChannel => write!(f, "MEDIALIVE_CHANNEL"),

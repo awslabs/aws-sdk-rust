@@ -36,6 +36,12 @@ where
                         ));
                     }
                     variant = match key.as_ref() {
+                            "destinationEndpoint" => {
+                                Some(crate::types::RouterInputStreamDetails::DestinationEndpoint(
+                                    crate::protocol_serde::shape_destination_endpoint_router_input_stream_details::de_destination_endpoint_router_input_stream_details(tokens, _value, depth + 1)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DestinationEndpoint' cannot be null"))?
+                                ))
+                            }
                             "standard" => {
                                 Some(crate::types::RouterInputStreamDetails::Standard(
                                     crate::protocol_serde::shape_standard_router_input_stream_details::de_standard_router_input_stream_details(tokens, _value, depth + 1)?

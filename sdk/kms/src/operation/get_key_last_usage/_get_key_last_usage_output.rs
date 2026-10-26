@@ -5,7 +5,7 @@
 pub struct GetKeyLastUsageOutput {
     /// <p>The globally unique identifier for the KMS key.</p>
     pub key_id: ::std::option::Option<::std::string::String>,
-    /// <p>Contains usage information about the last time the KMS key was used for a successful cryptographic operation. If the key has not been used since tracking began, this response element is empty.</p>
+    /// <p>Contains usage information about the last time the KMS key was used for a successful cryptographic operation. If the key has not been used since tracking began, this response element is an empty object.</p>
     pub key_last_usage: ::std::option::Option<crate::types::KeyLastUsageData>,
     /// <p>The date from which KMS began recording cryptographic activity for this key, or the date the KMS key was created, whichever is later.</p>
     pub tracking_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -18,7 +18,7 @@ impl GetKeyLastUsageOutput {
     pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>Contains usage information about the last time the KMS key was used for a successful cryptographic operation. If the key has not been used since tracking began, this response element is empty.</p>
+    /// <p>Contains usage information about the last time the KMS key was used for a successful cryptographic operation. If the key has not been used since tracking began, this response element is an empty object.</p>
     pub fn key_last_usage(&self) -> ::std::option::Option<&crate::types::KeyLastUsageData> {
         self.key_last_usage.as_ref()
     }
@@ -68,17 +68,17 @@ impl GetKeyLastUsageOutputBuilder {
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_id
     }
-    /// <p>Contains usage information about the last time the KMS key was used for a successful cryptographic operation. If the key has not been used since tracking began, this response element is empty.</p>
+    /// <p>Contains usage information about the last time the KMS key was used for a successful cryptographic operation. If the key has not been used since tracking began, this response element is an empty object.</p>
     pub fn key_last_usage(mut self, input: crate::types::KeyLastUsageData) -> Self {
         self.key_last_usage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains usage information about the last time the KMS key was used for a successful cryptographic operation. If the key has not been used since tracking began, this response element is empty.</p>
+    /// <p>Contains usage information about the last time the KMS key was used for a successful cryptographic operation. If the key has not been used since tracking began, this response element is an empty object.</p>
     pub fn set_key_last_usage(mut self, input: ::std::option::Option<crate::types::KeyLastUsageData>) -> Self {
         self.key_last_usage = input;
         self
     }
-    /// <p>Contains usage information about the last time the KMS key was used for a successful cryptographic operation. If the key has not been used since tracking began, this response element is empty.</p>
+    /// <p>Contains usage information about the last time the KMS key was used for a successful cryptographic operation. If the key has not been used since tracking began, this response element is an empty object.</p>
     pub fn get_key_last_usage(&self) -> &::std::option::Option<crate::types::KeyLastUsageData> {
         &self.key_last_usage
     }

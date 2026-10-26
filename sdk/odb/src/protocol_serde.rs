@@ -177,6 +177,8 @@ pub(crate) mod shape_update_cloud_exadata_infrastructure;
 
 pub(crate) mod shape_update_exadb_vm_cluster;
 
+pub(crate) mod shape_update_exascale_cloud_exadata_infrastructure;
+
 pub(crate) mod shape_update_exascale_db_storage_vault;
 
 pub(crate) mod shape_update_odb_network;
@@ -355,6 +357,8 @@ pub(crate) mod shape_update_cloud_exadata_infrastructure_input;
 
 pub(crate) mod shape_update_exadb_vm_cluster_input;
 
+pub(crate) mod shape_update_exascale_cloud_exadata_infrastructure_input;
+
 pub(crate) mod shape_update_exascale_db_storage_vault_input;
 
 pub(crate) mod shape_update_odb_network_input;
@@ -422,6 +426,8 @@ pub(crate) mod shape_exadb_vm_cluster_list;
 pub(crate) mod shape_exascale_db_storage_vault;
 
 pub(crate) mod shape_exascale_db_storage_vault_list;
+
+pub(crate) mod shape_file_system_configuration_details;
 
 pub(crate) mod shape_flex_component_list;
 
@@ -529,9 +535,13 @@ pub(crate) mod shape_exadb_vm_cluster_storage_details;
 
 pub(crate) mod shape_exadb_vm_cluster_summary;
 
+pub(crate) mod shape_exascale_configuration;
+
 pub(crate) mod shape_exascale_db_storage_details;
 
 pub(crate) mod shape_exascale_db_storage_vault_summary;
+
+pub(crate) mod shape_file_system_configuration_details_list;
 
 pub(crate) mod shape_flex_component_summary;
 

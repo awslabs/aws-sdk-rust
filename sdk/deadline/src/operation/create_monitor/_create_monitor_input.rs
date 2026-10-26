@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMonitorInput {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name that you give the monitor that is displayed in the Deadline Cloud console.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.</p>
+    /// The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.
     pub identity_center_instance_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.</p>
+    /// The Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.
     pub identity_center_region: ::std::option::Option<::std::string::String>,
-    /// <p>The subdomain to use when creating the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.</p>
+    /// The subdomain to use when creating the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.
     pub subdomain: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.</p>
+    /// The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The tags to add to your monitor. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    /// The tags to add to your monitor. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateMonitorInput {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -31,23 +31,23 @@ impl CreateMonitorInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.</p>
+    /// The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.
     pub fn identity_center_instance_arn(&self) -> ::std::option::Option<&str> {
         self.identity_center_instance_arn.as_deref()
     }
-    /// <p>The Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.</p>
+    /// The Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.
     pub fn identity_center_region(&self) -> ::std::option::Option<&str> {
         self.identity_center_region.as_deref()
     }
-    /// <p>The subdomain to use when creating the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.</p>
+    /// The subdomain to use when creating the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.
     pub fn subdomain(&self) -> ::std::option::Option<&str> {
         self.subdomain.as_deref()
     }
-    /// <p>The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.</p>
+    /// The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The tags to add to your monitor. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    /// The tags to add to your monitor. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -72,17 +72,17 @@ pub struct CreateMonitorInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateMonitorInputBuilder {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
@@ -107,62 +107,62 @@ impl CreateMonitorInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.</p>
+    /// The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.
     /// This field is required.
     pub fn identity_center_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_center_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.</p>
+    /// The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.
     pub fn set_identity_center_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_center_instance_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.</p>
+    /// The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.
     pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_center_instance_arn
     }
-    /// <p>The Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.</p>
+    /// The Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.
     pub fn identity_center_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_center_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.</p>
+    /// The Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.
     pub fn set_identity_center_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_center_region = input;
         self
     }
-    /// <p>The Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.</p>
+    /// The Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.
     pub fn get_identity_center_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_center_region
     }
-    /// <p>The subdomain to use when creating the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.</p>
+    /// The subdomain to use when creating the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.
     /// This field is required.
     pub fn subdomain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subdomain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The subdomain to use when creating the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.</p>
+    /// The subdomain to use when creating the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.
     pub fn set_subdomain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subdomain = input;
         self
     }
-    /// <p>The subdomain to use when creating the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.</p>
+    /// The subdomain to use when creating the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.
     pub fn get_subdomain(&self) -> &::std::option::Option<::std::string::String> {
         &self.subdomain
     }
-    /// <p>The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.</p>
+    /// The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.</p>
+    /// The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.</p>
+    /// The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
@@ -170,19 +170,19 @@ impl CreateMonitorInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to add to your monitor. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    /// The tags to add to your monitor. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags to add to your monitor. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    /// The tags to add to your monitor. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags to add to your monitor. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    /// The tags to add to your monitor. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

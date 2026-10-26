@@ -71,6 +71,18 @@ pub(crate) fn add_flow_outputs420_exception_correct_errors(
     builder
 }
 
+pub(crate) fn batch_get_destination_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::batch_get_destination_endpoint::builders::BatchGetDestinationEndpointOutputBuilder,
+) -> crate::operation::batch_get_destination_endpoint::builders::BatchGetDestinationEndpointOutputBuilder {
+    if builder.destination_endpoints.is_none() {
+        builder.destination_endpoints = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_get_router_input_output_output_correct_errors(
     mut builder: crate::operation::batch_get_router_input::builders::BatchGetRouterInputOutputBuilder,
 ) -> crate::operation::batch_get_router_input::builders::BatchGetRouterInputOutputBuilder {
@@ -103,6 +115,36 @@ pub(crate) fn batch_get_router_output_output_output_correct_errors(
     }
     if builder.errors.is_none() {
         builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_source_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::batch_get_source_endpoint::builders::BatchGetSourceEndpointOutputBuilder,
+) -> crate::operation::batch_get_source_endpoint::builders::BatchGetSourceEndpointOutputBuilder {
+    if builder.source_endpoints.is_none() {
+        builder.source_endpoints = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn connect_endpoints_output_output_correct_errors(
+    mut builder: crate::operation::connect_endpoints::builders::ConnectEndpointsOutputBuilder,
+) -> crate::operation::connect_endpoints::builders::ConnectEndpointsOutputBuilder {
+    if builder.destination_endpoint_arn.is_none() {
+        builder.destination_endpoint_arn = Some(Default::default())
+    }
+    if builder.destination_endpoint_name.is_none() {
+        builder.destination_endpoint_name = Some(Default::default())
+    }
+    if builder.source_endpoint_arn.is_none() {
+        builder.source_endpoint_arn = Some(Default::default())
+    }
+    if builder.source_endpoint_name.is_none() {
+        builder.source_endpoint_name = Some(Default::default())
     }
     builder
 }
@@ -242,6 +284,60 @@ pub(crate) fn delete_router_output_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn deregister_destination_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::deregister_destination_endpoint::builders::DeregisterDestinationEndpointOutputBuilder,
+) -> crate::operation::deregister_destination_endpoint::builders::DeregisterDestinationEndpointOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn deregister_source_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::deregister_source_endpoint::builders::DeregisterSourceEndpointOutputBuilder,
+) -> crate::operation::deregister_source_endpoint::builders::DeregisterSourceEndpointOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn disconnect_endpoints_output_output_correct_errors(
+    mut builder: crate::operation::disconnect_endpoints::builders::DisconnectEndpointsOutputBuilder,
+) -> crate::operation::disconnect_endpoints::builders::DisconnectEndpointsOutputBuilder {
+    if builder.destination_endpoint_arn.is_none() {
+        builder.destination_endpoint_arn = Some(Default::default())
+    }
+    if builder.destination_endpoint_name.is_none() {
+        builder.destination_endpoint_name = Some(Default::default())
+    }
+    if builder.source_endpoint_arn.is_none() {
+        builder.source_endpoint_arn = Some(Default::default())
+    }
+    if builder.source_endpoint_name.is_none() {
+        builder.source_endpoint_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_destination_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::get_destination_endpoint::builders::GetDestinationEndpointOutputBuilder,
+) -> crate::operation::get_destination_endpoint::builders::GetDestinationEndpointOutputBuilder {
+    if builder.destination_endpoint.is_none() {
+        builder.destination_endpoint = {
+            let builder = crate::types::builders::DestinationEndpointBuilder::default();
+            crate::serde_util::destination_endpoint_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_router_input_output_output_correct_errors(
     mut builder: crate::operation::get_router_input::builders::GetRouterInputOutputBuilder,
 ) -> crate::operation::get_router_input::builders::GetRouterInputOutputBuilder {
@@ -316,11 +412,32 @@ pub(crate) fn get_router_output_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_source_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::get_source_endpoint::builders::GetSourceEndpointOutputBuilder,
+) -> crate::operation::get_source_endpoint::builders::GetSourceEndpointOutputBuilder {
+    if builder.source_endpoint.is_none() {
+        builder.source_endpoint = {
+            let builder = crate::types::builders::SourceEndpointBuilder::default();
+            crate::serde_util::source_endpoint_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn grant_flow_entitlements420_exception_correct_errors(
     mut builder: crate::types::error::builders::GrantFlowEntitlements420ExceptionBuilder,
 ) -> crate::types::error::builders::GrantFlowEntitlements420ExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_destination_endpoints_output_output_correct_errors(
+    mut builder: crate::operation::list_destination_endpoints::builders::ListDestinationEndpointsOutputBuilder,
+) -> crate::operation::list_destination_endpoints::builders::ListDestinationEndpointsOutputBuilder {
+    if builder.destination_endpoints.is_none() {
+        builder.destination_endpoints = Some(Default::default())
     }
     builder
 }
@@ -348,6 +465,57 @@ pub(crate) fn list_router_outputs_output_output_correct_errors(
 ) -> crate::operation::list_router_outputs::builders::ListRouterOutputsOutputBuilder {
     if builder.router_outputs.is_none() {
         builder.router_outputs = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_source_endpoints_output_output_correct_errors(
+    mut builder: crate::operation::list_source_endpoints::builders::ListSourceEndpointsOutputBuilder,
+) -> crate::operation::list_source_endpoints::builders::ListSourceEndpointsOutputBuilder {
+    if builder.source_endpoints.is_none() {
+        builder.source_endpoints = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn destination_endpoint_service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::DestinationEndpointServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::DestinationEndpointServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn register_destination_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::register_destination_endpoint::builders::RegisterDestinationEndpointOutputBuilder,
+) -> crate::operation::register_destination_endpoint::builders::RegisterDestinationEndpointOutputBuilder {
+    if builder.destination_endpoint.is_none() {
+        builder.destination_endpoint = {
+            let builder = crate::types::builders::DestinationEndpointBuilder::default();
+            crate::serde_util::destination_endpoint_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn source_endpoint_service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::SourceEndpointServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::SourceEndpointServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn register_source_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::register_source_endpoint::builders::RegisterSourceEndpointOutputBuilder,
+) -> crate::operation::register_source_endpoint::builders::RegisterSourceEndpointOutputBuilder {
+    if builder.source_endpoint.is_none() {
+        builder.source_endpoint = {
+            let builder = crate::types::builders::SourceEndpointBuilder::default();
+            crate::serde_util::source_endpoint_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -469,6 +637,18 @@ pub(crate) fn take_router_input_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_destination_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::update_destination_endpoint::builders::UpdateDestinationEndpointOutputBuilder,
+) -> crate::operation::update_destination_endpoint::builders::UpdateDestinationEndpointOutputBuilder {
+    if builder.destination_endpoint.is_none() {
+        builder.destination_endpoint = {
+            let builder = crate::types::builders::DestinationEndpointBuilder::default();
+            crate::serde_util::destination_endpoint_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn update_router_input_output_output_correct_errors(
     mut builder: crate::operation::update_router_input::builders::UpdateRouterInputOutputBuilder,
 ) -> crate::operation::update_router_input::builders::UpdateRouterInputOutputBuilder {
@@ -500,6 +680,18 @@ pub(crate) fn update_router_output_output_output_correct_errors(
         builder.router_output = {
             let builder = crate::types::builders::RouterOutputBuilder::default();
             crate::serde_util::router_output_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_source_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::update_source_endpoint::builders::UpdateSourceEndpointOutputBuilder,
+) -> crate::operation::update_source_endpoint::builders::UpdateSourceEndpointOutputBuilder {
+    if builder.source_endpoint.is_none() {
+        builder.source_endpoint = {
+            let builder = crate::types::builders::SourceEndpointBuilder::default();
+            crate::serde_util::source_endpoint_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -687,6 +879,63 @@ pub(crate) fn router_output_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn destination_endpoint_correct_errors(
+    mut builder: crate::types::builders::DestinationEndpointBuilder,
+) -> crate::types::builders::DestinationEndpointBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.region_name.is_none() {
+        builder.region_name = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.lifecycle_management.is_none() {
+        builder.lifecycle_management = "no value was set".parse::<crate::types::EndpointLifecycle>().ok()
+    }
+    if builder.messages.is_none() {
+        builder.messages = Some(Default::default())
+    }
+    if builder.destination_type.is_none() {
+        builder.destination_type = "no value was set".parse::<crate::types::DestinationEndpointType>().ok()
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = Some(crate::types::DestinationEndpointConfiguration::Unknown)
+    }
+    if builder.resource_share_ownership.is_none() {
+        builder.resource_share_ownership = "no value was set".parse::<crate::types::ResourceShareOwnership>().ok()
+    }
+    if builder.resource_share_details.is_none() {
+        builder.resource_share_details = Some(crate::types::ResourceShareDetails::Unknown)
+    }
+    if builder.registration_state.is_none() {
+        builder.registration_state = "no value was set".parse::<crate::types::DestinationEndpointRegistrationState>().ok()
+    }
+    if builder.connection_state.is_none() {
+        builder.connection_state = "no value was set".parse::<crate::types::DestinationEndpointConnectionState>().ok()
+    }
+    if builder.associated_resource_details.is_none() {
+        builder.associated_resource_details = Some(crate::types::DestinationEndpointAssociatedResourceDetails::Unknown)
+    }
+    if builder.tags.is_none() {
+        builder.tags = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn router_input_source_metadata_details_correct_errors(
     mut builder: crate::types::builders::RouterInputSourceMetadataDetailsBuilder,
 ) -> crate::types::builders::RouterInputSourceMetadataDetailsBuilder {
@@ -704,6 +953,66 @@ pub(crate) fn router_input_thumbnail_details_correct_errors(
 ) -> crate::types::builders::RouterInputThumbnailDetailsBuilder {
     if builder.thumbnail_messages.is_none() {
         builder.thumbnail_messages = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn source_endpoint_correct_errors(
+    mut builder: crate::types::builders::SourceEndpointBuilder,
+) -> crate::types::builders::SourceEndpointBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.region_name.is_none() {
+        builder.region_name = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.lifecycle_management.is_none() {
+        builder.lifecycle_management = "no value was set".parse::<crate::types::EndpointLifecycle>().ok()
+    }
+    if builder.messages.is_none() {
+        builder.messages = Some(Default::default())
+    }
+    if builder.source_type.is_none() {
+        builder.source_type = "no value was set".parse::<crate::types::SourceEndpointType>().ok()
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = Some(crate::types::SourceEndpointConfiguration::Unknown)
+    }
+    if builder.resource_share_ownership.is_none() {
+        builder.resource_share_ownership = "no value was set".parse::<crate::types::ResourceShareOwnership>().ok()
+    }
+    if builder.resource_share_details.is_none() {
+        builder.resource_share_details = Some(crate::types::ResourceShareDetails::Unknown)
+    }
+    if builder.registration_state.is_none() {
+        builder.registration_state = "no value was set".parse::<crate::types::SourceEndpointRegistrationState>().ok()
+    }
+    if builder.connection_state.is_none() {
+        builder.connection_state = "no value was set".parse::<crate::types::SourceEndpointConnectionState>().ok()
+    }
+    if builder.connected_destinations.is_none() {
+        builder.connected_destinations = Some(Default::default())
+    }
+    if builder.associated_resource_details.is_none() {
+        builder.associated_resource_details = Some(crate::types::SourceEndpointAssociatedResourceDetails::Unknown)
+    }
+    if builder.tags.is_none() {
+        builder.tags = Some(Default::default())
     }
     builder
 }
@@ -985,6 +1294,21 @@ pub(crate) fn fabric_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn batch_get_destination_endpoint_error_correct_errors(
+    mut builder: crate::types::builders::BatchGetDestinationEndpointErrorBuilder,
+) -> crate::types::builders::BatchGetDestinationEndpointErrorBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_get_router_input_error_correct_errors(
     mut builder: crate::types::builders::BatchGetRouterInputErrorBuilder,
 ) -> crate::types::builders::BatchGetRouterInputErrorBuilder {
@@ -1018,6 +1342,21 @@ pub(crate) fn batch_get_router_network_interface_error_correct_errors(
 pub(crate) fn batch_get_router_output_error_correct_errors(
     mut builder: crate::types::builders::BatchGetRouterOutputErrorBuilder,
 ) -> crate::types::builders::BatchGetRouterOutputErrorBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_source_endpoint_error_correct_errors(
+    mut builder: crate::types::builders::BatchGetSourceEndpointErrorBuilder,
+) -> crate::types::builders::BatchGetSourceEndpointErrorBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
     }
@@ -1163,6 +1502,51 @@ pub(crate) fn listed_bridge_correct_errors(mut builder: crate::types::builders::
     }
     if builder.placement_arn.is_none() {
         builder.placement_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn listed_destination_endpoint_correct_errors(
+    mut builder: crate::types::builders::ListedDestinationEndpointBuilder,
+) -> crate::types::builders::ListedDestinationEndpointBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.destination_type.is_none() {
+        builder.destination_type = "no value was set".parse::<crate::types::DestinationEndpointType>().ok()
+    }
+    if builder.region_name.is_none() {
+        builder.region_name = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.lifecycle_management.is_none() {
+        builder.lifecycle_management = "no value was set".parse::<crate::types::EndpointLifecycle>().ok()
+    }
+    if builder.message_count.is_none() {
+        builder.message_count = Some(Default::default())
+    }
+    if builder.resource_share_ownership.is_none() {
+        builder.resource_share_ownership = "no value was set".parse::<crate::types::ResourceShareOwnership>().ok()
+    }
+    if builder.resource_share_state.is_none() {
+        builder.resource_share_state = "no value was set".parse::<crate::types::ResourceShareState>().ok()
+    }
+    if builder.registration_state.is_none() {
+        builder.registration_state = "no value was set".parse::<crate::types::DestinationEndpointRegistrationState>().ok()
+    }
+    if builder.connection_state.is_none() {
+        builder.connection_state = "no value was set".parse::<crate::types::DestinationEndpointConnectionState>().ok()
     }
     builder
 }
@@ -1357,6 +1741,54 @@ pub(crate) fn listed_router_output_correct_errors(
     builder
 }
 
+pub(crate) fn listed_source_endpoint_correct_errors(
+    mut builder: crate::types::builders::ListedSourceEndpointBuilder,
+) -> crate::types::builders::ListedSourceEndpointBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.source_type.is_none() {
+        builder.source_type = "no value was set".parse::<crate::types::SourceEndpointType>().ok()
+    }
+    if builder.region_name.is_none() {
+        builder.region_name = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.lifecycle_management.is_none() {
+        builder.lifecycle_management = "no value was set".parse::<crate::types::EndpointLifecycle>().ok()
+    }
+    if builder.message_count.is_none() {
+        builder.message_count = Some(Default::default())
+    }
+    if builder.resource_share_ownership.is_none() {
+        builder.resource_share_ownership = "no value was set".parse::<crate::types::ResourceShareOwnership>().ok()
+    }
+    if builder.resource_share_state.is_none() {
+        builder.resource_share_state = "no value was set".parse::<crate::types::ResourceShareState>().ok()
+    }
+    if builder.registration_state.is_none() {
+        builder.registration_state = "no value was set".parse::<crate::types::SourceEndpointRegistrationState>().ok()
+    }
+    if builder.connection_state.is_none() {
+        builder.connection_state = "no value was set".parse::<crate::types::SourceEndpointConnectionState>().ok()
+    }
+    if builder.connected_destination_count.is_none() {
+        builder.connected_destination_count = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn media_stream_attributes_correct_errors(
     mut builder: crate::types::builders::MediaStreamAttributesBuilder,
 ) -> crate::types::builders::MediaStreamAttributesBuilder {
@@ -1446,6 +1878,39 @@ pub(crate) fn window_maintenance_schedule_correct_errors(
     }
     if builder.scheduled_time.is_none() {
         builder.scheduled_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn consumed_resource_share_details_correct_errors(
+    mut builder: crate::types::builders::ConsumedResourceShareDetailsBuilder,
+) -> crate::types::builders::ConsumedResourceShareDetailsBuilder {
+    if builder.owner_account_id.is_none() {
+        builder.owner_account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn destination_endpoint_message_correct_errors(
+    mut builder: crate::types::builders::DestinationEndpointMessageBuilder,
+) -> crate::types::builders::DestinationEndpointMessageBuilder {
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn destination_endpoint_router_input_configuration_correct_errors(
+    mut builder: crate::types::builders::DestinationEndpointRouterInputConfigurationBuilder,
+) -> crate::types::builders::DestinationEndpointRouterInputConfigurationBuilder {
+    if builder.endpoint_lifecycle_management.is_none() {
+        builder.endpoint_lifecycle_management = "no value was set".parse::<crate::types::EndpointLifecycle>().ok()
+    }
+    if builder.source_transit_decryption.is_none() {
+        builder.source_transit_decryption = Some(crate::types::EndpointEncryptionConfiguration::Unknown)
     }
     builder
 }
@@ -1608,6 +2073,15 @@ pub(crate) fn merge_router_input_stream_details_correct_errors(
     builder
 }
 
+pub(crate) fn owned_resource_share_details_correct_errors(
+    mut builder: crate::types::builders::OwnedResourceShareDetailsBuilder,
+) -> crate::types::builders::OwnedResourceShareDetailsBuilder {
+    if builder.share_state.is_none() {
+        builder.share_state = "no value was set".parse::<crate::types::ResourceShareState>().ok()
+    }
+    builder
+}
+
 pub(crate) fn preferred_day_time_maintenance_configuration_correct_errors(
     mut builder: crate::types::builders::PreferredDayTimeMaintenanceConfigurationBuilder,
 ) -> crate::types::builders::PreferredDayTimeMaintenanceConfigurationBuilder {
@@ -1625,6 +2099,33 @@ pub(crate) fn public_router_network_interface_configuration_correct_errors(
 ) -> crate::types::builders::PublicRouterNetworkInterfaceConfigurationBuilder {
     if builder.allow_rules.is_none() {
         builder.allow_rules = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn router_input_destination_endpoint_associated_resource_details_correct_errors(
+    mut builder: crate::types::builders::RouterInputDestinationEndpointAssociatedResourceDetailsBuilder,
+) -> crate::types::builders::RouterInputDestinationEndpointAssociatedResourceDetailsBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.maximum_bitrate.is_none() {
+        builder.maximum_bitrate = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RouterInputState>().ok()
+    }
+    if builder.messages.is_none() {
+        builder.messages = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn router_input_destination_endpoint_configuration_correct_errors(
+    mut builder: crate::types::builders::RouterInputDestinationEndpointConfigurationBuilder,
+) -> crate::types::builders::RouterInputDestinationEndpointConfigurationBuilder {
+    if builder.router_input_arn.is_none() {
+        builder.router_input_arn = Some(Default::default())
     }
     builder
 }
@@ -1653,6 +2154,86 @@ pub(crate) fn router_output_message_correct_errors(
     builder
 }
 
+pub(crate) fn router_output_source_endpoint_associated_resource_details_correct_errors(
+    mut builder: crate::types::builders::RouterOutputSourceEndpointAssociatedResourceDetailsBuilder,
+) -> crate::types::builders::RouterOutputSourceEndpointAssociatedResourceDetailsBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.maximum_bitrate.is_none() {
+        builder.maximum_bitrate = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RouterOutputState>().ok()
+    }
+    if builder.messages.is_none() {
+        builder.messages = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn router_output_source_endpoint_configuration_correct_errors(
+    mut builder: crate::types::builders::RouterOutputSourceEndpointConfigurationBuilder,
+) -> crate::types::builders::RouterOutputSourceEndpointConfigurationBuilder {
+    if builder.router_output_arn.is_none() {
+        builder.router_output_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn secrets_manager_endpoint_encryption_configuration_correct_errors(
+    mut builder: crate::types::builders::SecretsManagerEndpointEncryptionConfigurationBuilder,
+) -> crate::types::builders::SecretsManagerEndpointEncryptionConfigurationBuilder {
+    if builder.encryption_secret.is_none() {
+        builder.encryption_secret = {
+            let builder = crate::types::builders::EndpointEncryptionSecretConfigurationBuilder::default();
+            crate::serde_util::endpoint_encryption_secret_configuration_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn source_endpoint_message_correct_errors(
+    mut builder: crate::types::builders::SourceEndpointMessageBuilder,
+) -> crate::types::builders::SourceEndpointMessageBuilder {
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn source_endpoint_router_output_configuration_correct_errors(
+    mut builder: crate::types::builders::SourceEndpointRouterOutputConfigurationBuilder,
+) -> crate::types::builders::SourceEndpointRouterOutputConfigurationBuilder {
+    if builder.endpoint_lifecycle_management.is_none() {
+        builder.endpoint_lifecycle_management = "no value was set".parse::<crate::types::EndpointLifecycle>().ok()
+    }
+    if builder.destination_transit_encryption.is_none() {
+        builder.destination_transit_encryption = Some(crate::types::EndpointEncryptionConfiguration::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn standard_destination_endpoint_configuration_correct_errors(
+    mut builder: crate::types::builders::StandardDestinationEndpointConfigurationBuilder,
+) -> crate::types::builders::StandardDestinationEndpointConfigurationBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.destination_networking_configuration.is_none() {
+        builder.destination_networking_configuration = Some(crate::types::StandardDestinationEndpointNetworkingConfiguration::Unknown)
+    }
+    if builder.protocol_configuration.is_none() {
+        builder.protocol_configuration = Some(crate::types::StandardDestinationEndpointProtocolConfiguration::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn standard_router_input_configuration_correct_errors(
     mut builder: crate::types::builders::StandardRouterInputConfigurationBuilder,
 ) -> crate::types::builders::StandardRouterInputConfigurationBuilder {
@@ -1673,6 +2254,21 @@ pub(crate) fn standard_router_output_configuration_correct_errors(
     }
     if builder.protocol_configuration.is_none() {
         builder.protocol_configuration = Some(crate::types::RouterOutputProtocolConfiguration::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn standard_source_endpoint_configuration_correct_errors(
+    mut builder: crate::types::builders::StandardSourceEndpointConfigurationBuilder,
+) -> crate::types::builders::StandardSourceEndpointConfigurationBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.source_networking_configuration.is_none() {
+        builder.source_networking_configuration = Some(crate::types::StandardSourceEndpointNetworkingConfiguration::Unknown)
+    }
+    if builder.protocol_configuration.is_none() {
+        builder.protocol_configuration = Some(crate::types::StandardSourceEndpointProtocolConfiguration::Unknown)
     }
     builder
 }
@@ -1727,6 +2323,15 @@ pub(crate) fn encoding_parameters_correct_errors(
     }
     if builder.encoder_profile.is_none() {
         builder.encoder_profile = "no value was set".parse::<crate::types::EncoderProfile>().ok()
+    }
+    builder
+}
+
+pub(crate) fn endpoint_encryption_secret_configuration_correct_errors(
+    mut builder: crate::types::builders::EndpointEncryptionSecretConfigurationBuilder,
+) -> crate::types::builders::EndpointEncryptionSecretConfigurationBuilder {
+    if builder.secret_arn.is_none() {
+        builder.secret_arn = Some(Default::default())
     }
     builder
 }
@@ -1872,11 +2477,29 @@ pub(crate) fn input_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn public_destination_endpoint_networking_configuration_correct_errors(
+    mut builder: crate::types::builders::PublicDestinationEndpointNetworkingConfigurationBuilder,
+) -> crate::types::builders::PublicDestinationEndpointNetworkingConfigurationBuilder {
+    if builder.destination_allow_rules.is_none() {
+        builder.destination_allow_rules = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn public_router_network_interface_rule_correct_errors(
     mut builder: crate::types::builders::PublicRouterNetworkInterfaceRuleBuilder,
 ) -> crate::types::builders::PublicRouterNetworkInterfaceRuleBuilder {
     if builder.cidr.is_none() {
         builder.cidr = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn public_source_endpoint_networking_configuration_correct_errors(
+    mut builder: crate::types::builders::PublicSourceEndpointNetworkingConfigurationBuilder,
+) -> crate::types::builders::PublicSourceEndpointNetworkingConfigurationBuilder {
+    if builder.source_allow_rules.is_none() {
+        builder.source_allow_rules = Some(Default::default())
     }
     builder
 }
@@ -1901,6 +2524,30 @@ pub(crate) fn rist_router_output_configuration_correct_errors(
     }
     if builder.destination_port.is_none() {
         builder.destination_port = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn rist_standard_destination_endpoint_configuration_correct_errors(
+    mut builder: crate::types::builders::RistStandardDestinationEndpointConfigurationBuilder,
+) -> crate::types::builders::RistStandardDestinationEndpointConfigurationBuilder {
+    if builder.destination_address.is_none() {
+        builder.destination_address = Some(Default::default())
+    }
+    if builder.destination_ingest_port.is_none() {
+        builder.destination_ingest_port = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn rist_standard_source_endpoint_configuration_correct_errors(
+    mut builder: crate::types::builders::RistStandardSourceEndpointConfigurationBuilder,
+) -> crate::types::builders::RistStandardSourceEndpointConfigurationBuilder {
+    if builder.destination_ingest_port.is_none() {
+        builder.destination_ingest_port = Some(Default::default())
+    }
+    if builder.recovery_latency_milliseconds.is_none() {
+        builder.recovery_latency_milliseconds = Some(Default::default())
     }
     builder
 }
@@ -1944,6 +2591,33 @@ pub(crate) fn rtp_router_output_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn rtp_standard_destination_endpoint_configuration_correct_errors(
+    mut builder: crate::types::builders::RtpStandardDestinationEndpointConfigurationBuilder,
+) -> crate::types::builders::RtpStandardDestinationEndpointConfigurationBuilder {
+    if builder.destination_address.is_none() {
+        builder.destination_address = Some(Default::default())
+    }
+    if builder.destination_ingest_port.is_none() {
+        builder.destination_ingest_port = Some(Default::default())
+    }
+    if builder.forward_error_correction_state.is_none() {
+        builder.forward_error_correction_state = "no value was set".parse::<crate::types::ForwardErrorCorrectionState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn rtp_standard_source_endpoint_configuration_correct_errors(
+    mut builder: crate::types::builders::RtpStandardSourceEndpointConfigurationBuilder,
+) -> crate::types::builders::RtpStandardSourceEndpointConfigurationBuilder {
+    if builder.destination_ingest_port.is_none() {
+        builder.destination_ingest_port = Some(Default::default())
+    }
+    if builder.forward_error_correction_state.is_none() {
+        builder.forward_error_correction_state = "no value was set".parse::<crate::types::ForwardErrorCorrectionState>().ok()
+    }
+    builder
+}
+
 pub(crate) fn srt_caller_router_input_configuration_correct_errors(
     mut builder: crate::types::builders::SrtCallerRouterInputConfigurationBuilder,
 ) -> crate::types::builders::SrtCallerRouterInputConfigurationBuilder {
@@ -1967,6 +2641,30 @@ pub(crate) fn srt_caller_router_output_configuration_correct_errors(
     }
     if builder.destination_port.is_none() {
         builder.destination_port = Some(Default::default())
+    }
+    if builder.minimum_latency_milliseconds.is_none() {
+        builder.minimum_latency_milliseconds = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn srt_caller_standard_destination_endpoint_configuration_correct_errors(
+    mut builder: crate::types::builders::SrtCallerStandardDestinationEndpointConfigurationBuilder,
+) -> crate::types::builders::SrtCallerStandardDestinationEndpointConfigurationBuilder {
+    if builder.source_listener_port.is_none() {
+        builder.source_listener_port = Some(Default::default())
+    }
+    if builder.minimum_latency_milliseconds.is_none() {
+        builder.minimum_latency_milliseconds = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn srt_caller_standard_source_endpoint_configuration_correct_errors(
+    mut builder: crate::types::builders::SrtCallerStandardSourceEndpointConfigurationBuilder,
+) -> crate::types::builders::SrtCallerStandardSourceEndpointConfigurationBuilder {
+    if builder.destination_ingest_port.is_none() {
+        builder.destination_ingest_port = Some(Default::default())
     }
     if builder.minimum_latency_milliseconds.is_none() {
         builder.minimum_latency_milliseconds = Some(Default::default())
@@ -1998,6 +2696,36 @@ pub(crate) fn srt_listener_router_output_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn srt_listener_standard_destination_endpoint_configuration_correct_errors(
+    mut builder: crate::types::builders::SrtListenerStandardDestinationEndpointConfigurationBuilder,
+) -> crate::types::builders::SrtListenerStandardDestinationEndpointConfigurationBuilder {
+    if builder.destination_address.is_none() {
+        builder.destination_address = Some(Default::default())
+    }
+    if builder.destination_ingest_port.is_none() {
+        builder.destination_ingest_port = Some(Default::default())
+    }
+    if builder.minimum_latency_milliseconds.is_none() {
+        builder.minimum_latency_milliseconds = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn srt_listener_standard_source_endpoint_configuration_correct_errors(
+    mut builder: crate::types::builders::SrtListenerStandardSourceEndpointConfigurationBuilder,
+) -> crate::types::builders::SrtListenerStandardSourceEndpointConfigurationBuilder {
+    if builder.source_listener_port.is_none() {
+        builder.source_listener_port = Some(Default::default())
+    }
+    if builder.source_address.is_none() {
+        builder.source_address = Some(Default::default())
+    }
+    if builder.minimum_latency_milliseconds.is_none() {
+        builder.minimum_latency_milliseconds = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn transport_stream_correct_errors(
     mut builder: crate::types::builders::TransportStreamBuilder,
 ) -> crate::types::builders::TransportStreamBuilder {
@@ -2006,6 +2734,30 @@ pub(crate) fn transport_stream_correct_errors(
     }
     if builder.stream_type.is_none() {
         builder.stream_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn vpc_destination_endpoint_networking_configuration_correct_errors(
+    mut builder: crate::types::builders::VpcDestinationEndpointNetworkingConfigurationBuilder,
+) -> crate::types::builders::VpcDestinationEndpointNetworkingConfigurationBuilder {
+    if builder.security_group_ids.is_none() {
+        builder.security_group_ids = Some(Default::default())
+    }
+    if builder.subnet_id.is_none() {
+        builder.subnet_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn vpc_source_endpoint_networking_configuration_correct_errors(
+    mut builder: crate::types::builders::VpcSourceEndpointNetworkingConfigurationBuilder,
+) -> crate::types::builders::VpcSourceEndpointNetworkingConfigurationBuilder {
+    if builder.security_group_ids.is_none() {
+        builder.security_group_ids = Some(Default::default())
+    }
+    if builder.subnet_id.is_none() {
+        builder.subnet_id = Some(Default::default())
     }
     builder
 }
@@ -2050,6 +2802,24 @@ pub(crate) fn tls_encryption_correct_errors(
 ) -> crate::types::builders::TlsEncryptionBuilder {
     if builder.encryption_configuration.is_none() {
         builder.encryption_configuration = Some(crate::types::TlsEncryptionConfiguration::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn public_destination_endpoint_networking_configuration_allow_rule_correct_errors(
+    mut builder: crate::types::builders::PublicDestinationEndpointNetworkingConfigurationAllowRuleBuilder,
+) -> crate::types::builders::PublicDestinationEndpointNetworkingConfigurationAllowRuleBuilder {
+    if builder.cidr.is_none() {
+        builder.cidr = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn public_source_endpoint_networking_configuration_allow_rule_correct_errors(
+    mut builder: crate::types::builders::PublicSourceEndpointNetworkingConfigurationAllowRuleBuilder,
+) -> crate::types::builders::PublicSourceEndpointNetworkingConfigurationAllowRuleBuilder {
+    if builder.cidr.is_none() {
+        builder.cidr = Some(Default::default())
     }
     builder
 }

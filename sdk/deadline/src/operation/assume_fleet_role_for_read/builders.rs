@@ -22,7 +22,7 @@ impl crate::operation::assume_fleet_role_for_read::builders::AssumeFleetRoleForR
 }
 /// Fluent builder constructing a request to `AssumeFleetRoleForRead`.
 ///
-/// <p>Get Amazon Web Services credentials from the fleet role. The IAM permissions of the credentials are scoped down to have read-only access.</p>
+/// Get Amazon Web Services credentials from the fleet role. The IAM permissions of the credentials are scoped down to have read-only access.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssumeFleetRoleForReadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl AssumeFleetRoleForReadFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID for the fleet's farm.</p>
+    /// The farm ID for the fleet's farm.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID for the fleet's farm.</p>
+    /// The farm ID for the fleet's farm.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID for the fleet's farm.</p>
+    /// The farm ID for the fleet's farm.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The fleet ID.</p>
+    /// The fleet ID.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>The fleet ID.</p>
+    /// The fleet ID.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>The fleet ID.</p>
+    /// The fleet ID.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }

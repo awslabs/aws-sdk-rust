@@ -13,9 +13,11 @@
 /// # let grantoperation = unimplemented!();
 /// match grantoperation {
 ///     GrantOperation::CreateGrant => { /* ... */ },
+///     GrantOperation::Decapsulate => { /* ... */ },
 ///     GrantOperation::Decrypt => { /* ... */ },
 ///     GrantOperation::DeriveSharedSecret => { /* ... */ },
 ///     GrantOperation::DescribeKey => { /* ... */ },
+///     GrantOperation::Encapsulate => { /* ... */ },
 ///     GrantOperation::Encrypt => { /* ... */ },
 ///     GrantOperation::GenerateDataKey => { /* ... */ },
 ///     GrantOperation::GenerateDataKeyPair => { /* ... */ },
@@ -60,11 +62,15 @@ pub enum GrantOperation {
     #[allow(missing_docs)] // documentation missing in model
     CreateGrant,
     #[allow(missing_docs)] // documentation missing in model
+    Decapsulate,
+    #[allow(missing_docs)] // documentation missing in model
     Decrypt,
     #[allow(missing_docs)] // documentation missing in model
     DeriveSharedSecret,
     #[allow(missing_docs)] // documentation missing in model
     DescribeKey,
+    #[allow(missing_docs)] // documentation missing in model
+    Encapsulate,
     #[allow(missing_docs)] // documentation missing in model
     Encrypt,
     #[allow(missing_docs)] // documentation missing in model
@@ -99,9 +105,11 @@ impl ::std::convert::From<&str> for GrantOperation {
     fn from(s: &str) -> Self {
         match s {
             "CreateGrant" => GrantOperation::CreateGrant,
+            "Decapsulate" => GrantOperation::Decapsulate,
             "Decrypt" => GrantOperation::Decrypt,
             "DeriveSharedSecret" => GrantOperation::DeriveSharedSecret,
             "DescribeKey" => GrantOperation::DescribeKey,
+            "Encapsulate" => GrantOperation::Encapsulate,
             "Encrypt" => GrantOperation::Encrypt,
             "GenerateDataKey" => GrantOperation::GenerateDataKey,
             "GenerateDataKeyPair" => GrantOperation::GenerateDataKeyPair,
@@ -131,9 +139,11 @@ impl GrantOperation {
     pub fn as_str(&self) -> &str {
         match self {
             GrantOperation::CreateGrant => "CreateGrant",
+            GrantOperation::Decapsulate => "Decapsulate",
             GrantOperation::Decrypt => "Decrypt",
             GrantOperation::DeriveSharedSecret => "DeriveSharedSecret",
             GrantOperation::DescribeKey => "DescribeKey",
+            GrantOperation::Encapsulate => "Encapsulate",
             GrantOperation::Encrypt => "Encrypt",
             GrantOperation::GenerateDataKey => "GenerateDataKey",
             GrantOperation::GenerateDataKeyPair => "GenerateDataKeyPair",
@@ -154,9 +164,11 @@ impl GrantOperation {
     pub const fn values() -> &'static [&'static str] {
         &[
             "CreateGrant",
+            "Decapsulate",
             "Decrypt",
             "DeriveSharedSecret",
             "DescribeKey",
+            "Encapsulate",
             "Encrypt",
             "GenerateDataKey",
             "GenerateDataKeyPair",
@@ -194,9 +206,11 @@ impl ::std::fmt::Display for GrantOperation {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GrantOperation::CreateGrant => write!(f, "CreateGrant"),
+            GrantOperation::Decapsulate => write!(f, "Decapsulate"),
             GrantOperation::Decrypt => write!(f, "Decrypt"),
             GrantOperation::DeriveSharedSecret => write!(f, "DeriveSharedSecret"),
             GrantOperation::DescribeKey => write!(f, "DescribeKey"),
+            GrantOperation::Encapsulate => write!(f, "Encapsulate"),
             GrantOperation::Encrypt => write!(f, "Encrypt"),
             GrantOperation::GenerateDataKey => write!(f, "GenerateDataKey"),
             GrantOperation::GenerateDataKeyPair => write!(f, "GenerateDataKeyPair"),

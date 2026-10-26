@@ -22,7 +22,7 @@ impl crate::operation::get_storage_profile::builders::GetStorageProfileInputBuil
 }
 /// Fluent builder constructing a request to `GetStorageProfile`.
 ///
-/// <p>Gets a storage profile.</p>
+/// Gets a storage profile.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetStorageProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl GetStorageProfileFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID for the storage profile.</p>
+    /// The farm ID for the storage profile.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID for the storage profile.</p>
+    /// The farm ID for the storage profile.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID for the storage profile.</p>
+    /// The farm ID for the storage profile.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     pub fn storage_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_profile_id(input.into());
         self
     }
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     pub fn set_storage_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_profile_id(input);
         self
     }
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_profile_id()
     }

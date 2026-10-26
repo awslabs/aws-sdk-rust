@@ -15,6 +15,7 @@
 ///     ReferenceStatus::Approved => { /* ... */ },
 ///     ReferenceStatus::Available => { /* ... */ },
 ///     ReferenceStatus::Deleted => { /* ... */ },
+///     ReferenceStatus::Drafting => { /* ... */ },
 ///     ReferenceStatus::Failed => { /* ... */ },
 ///     ReferenceStatus::Processing => { /* ... */ },
 ///     ReferenceStatus::Rejected => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum ReferenceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
+    Drafting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Processing,
@@ -68,6 +71,7 @@ impl ::std::convert::From<&str> for ReferenceStatus {
             "APPROVED" => ReferenceStatus::Approved,
             "AVAILABLE" => ReferenceStatus::Available,
             "DELETED" => ReferenceStatus::Deleted,
+            "DRAFTING" => ReferenceStatus::Drafting,
             "FAILED" => ReferenceStatus::Failed,
             "PROCESSING" => ReferenceStatus::Processing,
             "REJECTED" => ReferenceStatus::Rejected,
@@ -89,6 +93,7 @@ impl ReferenceStatus {
             ReferenceStatus::Approved => "APPROVED",
             ReferenceStatus::Available => "AVAILABLE",
             ReferenceStatus::Deleted => "DELETED",
+            ReferenceStatus::Drafting => "DRAFTING",
             ReferenceStatus::Failed => "FAILED",
             ReferenceStatus::Processing => "PROCESSING",
             ReferenceStatus::Rejected => "REJECTED",
@@ -97,7 +102,7 @@ impl ReferenceStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["APPROVED", "AVAILABLE", "DELETED", "FAILED", "PROCESSING", "REJECTED"]
+        &["APPROVED", "AVAILABLE", "DELETED", "DRAFTING", "FAILED", "PROCESSING", "REJECTED"]
     }
 }
 impl ::std::convert::AsRef<str> for ReferenceStatus {
@@ -123,6 +128,7 @@ impl ::std::fmt::Display for ReferenceStatus {
             ReferenceStatus::Approved => write!(f, "APPROVED"),
             ReferenceStatus::Available => write!(f, "AVAILABLE"),
             ReferenceStatus::Deleted => write!(f, "DELETED"),
+            ReferenceStatus::Drafting => write!(f, "DRAFTING"),
             ReferenceStatus::Failed => write!(f, "FAILED"),
             ReferenceStatus::Processing => write!(f, "PROCESSING"),
             ReferenceStatus::Rejected => write!(f, "REJECTED"),

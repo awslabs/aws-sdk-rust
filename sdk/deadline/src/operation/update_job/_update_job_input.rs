@@ -3,66 +3,63 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateJobInput {
-    /// <p>The farm ID of the job to update.</p>
+    /// The farm ID of the job to update.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID of the job to update.</p>
+    /// The queue ID of the job to update.
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The job ID to update.</p>
+    /// The job ID to update.
     pub job_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The task status to update the job's tasks to.</p>
+    /// The task status to update the job's tasks to.
     pub target_task_run_status: ::std::option::Option<crate::types::JobTargetTaskRunStatus>,
-    /// <p>The updated job priority.</p>
+    /// The updated job priority.
     pub priority: ::std::option::Option<i32>,
-    /// <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
+    /// The number of task failures before the job stops running and is marked as <code>FAILED</code>.
     pub max_failed_tasks_count: ::std::option::Option<i32>,
-    /// <p>The maximum number of retries for a job.</p>
+    /// The maximum number of retries for a job.
     pub max_retries_per_task: ::std::option::Option<i32>,
     /// <p>The status of a job in its lifecycle. When you change the status of the job to <code>ARCHIVED</code>, the job can't be scheduled or archived.</p><important>
     /// <p>An archived jobs and its steps and tasks are deleted after 120 days. The job can't be recovered.</p>
     /// </important>
     pub lifecycle_status: ::std::option::Option<crate::types::UpdateJobLifecycleStatus>,
-    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
-    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
-    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
-    /// <p>The maximum number of workers that can process tasks in the job.</p>
+    /// The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers. You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers. If you don't specify the <code>maxWorkerCount</code>, the default is -1. The maximum number of workers that can process tasks in the job.
     pub max_worker_count: ::std::option::Option<i32>,
-    /// <p>The updated job name.</p>
+    /// The updated job name.
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The updated job description.</p>
+    /// The updated job description.
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateJobInput {
-    /// <p>The farm ID of the job to update.</p>
+    /// The farm ID of the job to update.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The queue ID of the job to update.</p>
+    /// The queue ID of the job to update.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The job ID to update.</p>
+    /// The job ID to update.
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The task status to update the job's tasks to.</p>
+    /// The task status to update the job's tasks to.
     pub fn target_task_run_status(&self) -> ::std::option::Option<&crate::types::JobTargetTaskRunStatus> {
         self.target_task_run_status.as_ref()
     }
-    /// <p>The updated job priority.</p>
+    /// The updated job priority.
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
-    /// <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
+    /// The number of task failures before the job stops running and is marked as <code>FAILED</code>.
     pub fn max_failed_tasks_count(&self) -> ::std::option::Option<i32> {
         self.max_failed_tasks_count
     }
-    /// <p>The maximum number of retries for a job.</p>
+    /// The maximum number of retries for a job.
     pub fn max_retries_per_task(&self) -> ::std::option::Option<i32> {
         self.max_retries_per_task
     }
@@ -72,18 +69,15 @@ impl UpdateJobInput {
     pub fn lifecycle_status(&self) -> ::std::option::Option<&crate::types::UpdateJobLifecycleStatus> {
         self.lifecycle_status.as_ref()
     }
-    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
-    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
-    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
-    /// <p>The maximum number of workers that can process tasks in the job.</p>
+    /// The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers. You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers. If you don't specify the <code>maxWorkerCount</code>, the default is -1. The maximum number of workers that can process tasks in the job.
     pub fn max_worker_count(&self) -> ::std::option::Option<i32> {
         self.max_worker_count
     }
-    /// <p>The updated job name.</p>
+    /// The updated job name.
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The updated job description.</p>
+    /// The updated job description.
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -131,118 +125,118 @@ pub struct UpdateJobInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateJobInputBuilder {
-    /// <p>The farm ID of the job to update.</p>
+    /// The farm ID of the job to update.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID of the job to update.</p>
+    /// The farm ID of the job to update.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID of the job to update.</p>
+    /// The farm ID of the job to update.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The queue ID of the job to update.</p>
+    /// The queue ID of the job to update.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue ID of the job to update.</p>
+    /// The queue ID of the job to update.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The queue ID of the job to update.</p>
+    /// The queue ID of the job to update.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The job ID to update.</p>
+    /// The job ID to update.
     /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The job ID to update.</p>
+    /// The job ID to update.
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The job ID to update.</p>
+    /// The job ID to update.
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The task status to update the job's tasks to.</p>
+    /// The task status to update the job's tasks to.
     pub fn target_task_run_status(mut self, input: crate::types::JobTargetTaskRunStatus) -> Self {
         self.target_task_run_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The task status to update the job's tasks to.</p>
+    /// The task status to update the job's tasks to.
     pub fn set_target_task_run_status(mut self, input: ::std::option::Option<crate::types::JobTargetTaskRunStatus>) -> Self {
         self.target_task_run_status = input;
         self
     }
-    /// <p>The task status to update the job's tasks to.</p>
+    /// The task status to update the job's tasks to.
     pub fn get_target_task_run_status(&self) -> &::std::option::Option<crate::types::JobTargetTaskRunStatus> {
         &self.target_task_run_status
     }
-    /// <p>The updated job priority.</p>
+    /// The updated job priority.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated job priority.</p>
+    /// The updated job priority.
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
-    /// <p>The updated job priority.</p>
+    /// The updated job priority.
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }
-    /// <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
+    /// The number of task failures before the job stops running and is marked as <code>FAILED</code>.
     pub fn max_failed_tasks_count(mut self, input: i32) -> Self {
         self.max_failed_tasks_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
+    /// The number of task failures before the job stops running and is marked as <code>FAILED</code>.
     pub fn set_max_failed_tasks_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_failed_tasks_count = input;
         self
     }
-    /// <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
+    /// The number of task failures before the job stops running and is marked as <code>FAILED</code>.
     pub fn get_max_failed_tasks_count(&self) -> &::std::option::Option<i32> {
         &self.max_failed_tasks_count
     }
-    /// <p>The maximum number of retries for a job.</p>
+    /// The maximum number of retries for a job.
     pub fn max_retries_per_task(mut self, input: i32) -> Self {
         self.max_retries_per_task = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of retries for a job.</p>
+    /// The maximum number of retries for a job.
     pub fn set_max_retries_per_task(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_retries_per_task = input;
         self
     }
-    /// <p>The maximum number of retries for a job.</p>
+    /// The maximum number of retries for a job.
     pub fn get_max_retries_per_task(&self) -> &::std::option::Option<i32> {
         &self.max_retries_per_task
     }
@@ -266,54 +260,45 @@ impl UpdateJobInputBuilder {
     pub fn get_lifecycle_status(&self) -> &::std::option::Option<crate::types::UpdateJobLifecycleStatus> {
         &self.lifecycle_status
     }
-    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
-    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
-    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
-    /// <p>The maximum number of workers that can process tasks in the job.</p>
+    /// The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers. You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers. If you don't specify the <code>maxWorkerCount</code>, the default is -1. The maximum number of workers that can process tasks in the job.
     pub fn max_worker_count(mut self, input: i32) -> Self {
         self.max_worker_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
-    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
-    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
-    /// <p>The maximum number of workers that can process tasks in the job.</p>
+    /// The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers. You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers. If you don't specify the <code>maxWorkerCount</code>, the default is -1. The maximum number of workers that can process tasks in the job.
     pub fn set_max_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_worker_count = input;
         self
     }
-    /// <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p>
-    /// <p>You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers.</p>
-    /// <p>If you don't specify the <code>maxWorkerCount</code>, the default is -1.</p>
-    /// <p>The maximum number of workers that can process tasks in the job.</p>
+    /// The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers. You can't set the <code>maxWorkerCount</code> to 0. If you set it to -1, there is no maximum number of workers. If you don't specify the <code>maxWorkerCount</code>, the default is -1. The maximum number of workers that can process tasks in the job.
     pub fn get_max_worker_count(&self) -> &::std::option::Option<i32> {
         &self.max_worker_count
     }
-    /// <p>The updated job name.</p>
+    /// The updated job name.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The updated job name.</p>
+    /// The updated job name.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The updated job name.</p>
+    /// The updated job name.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The updated job description.</p>
+    /// The updated job description.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The updated job description.</p>
+    /// The updated job description.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The updated job description.</p>
+    /// The updated job description.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

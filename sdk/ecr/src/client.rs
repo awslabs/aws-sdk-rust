@@ -245,6 +245,8 @@ mod describe_pull_through_cache_rules;
 
 mod describe_registry;
 
+mod describe_replication_backfill_results;
+
 mod describe_repositories;
 
 mod describe_repository_creation_templates;
@@ -275,6 +277,8 @@ mod list_images;
 
 mod list_pull_time_update_exclusions;
 
+mod list_replication_backfills;
+
 mod list_tags_for_resource;
 
 mod put_account_setting;
@@ -302,6 +306,10 @@ mod set_repository_policy;
 mod start_image_scan;
 
 mod start_lifecycle_policy_preview;
+
+mod start_replication_backfill;
+
+mod stop_replication_backfill;
 
 mod tag_resource;
 

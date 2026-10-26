@@ -191,6 +191,15 @@ where
                                     crate::protocol_serde::shape_router_content_quality_analysis_configuration::de_router_content_quality_analysis_configuration(tokens, _value, depth + 1)?
                                 );
                         }
+                        "associatedDestinationEndpointArns" => {
+                            builder = builder.set_associated_destination_endpoint_arns(
+                                crate::protocol_serde::shape_destination_endpoint_arn_list::de_destination_endpoint_arn_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

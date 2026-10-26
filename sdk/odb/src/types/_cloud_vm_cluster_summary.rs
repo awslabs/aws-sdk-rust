@@ -18,6 +18,18 @@ pub struct CloudVmClusterSummary {
     pub cloud_exadata_infrastructure_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure that this VM cluster belongs to.</p>
     pub cloud_exadata_infrastructure_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the Exascale storage vault that the VM cluster uses. This value is present only for VM clusters that use an Exascale storage vault.</p>
+    pub exascale_db_storage_vault_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Exascale storage vault that the VM cluster uses. This value is present only for VM clusters that use an Exascale storage vault.</p>
+    pub exascale_db_storage_vault_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The type of storage management for the VM cluster. A value of <code>ASM</code> indicates Oracle Automatic Storage Management, and <code>EXASCALE</code> indicates Exascale storage.</p>
+    pub storage_management_type: ::std::option::Option<crate::types::StorageManagementType>,
+    /// <p>The type of storage that the VM cluster uses for its VM file systems.</p>
+    pub vm_file_system_storage_type: ::std::option::Option<crate::types::VmStorageType>,
+    /// <p>The type of storage that the VM cluster uses for VM backups.</p>
+    pub vm_backup_storage_type: ::std::option::Option<crate::types::VmStorageType>,
+    /// <p>The list of file system configurations for the VM cluster.</p>
+    pub file_system_configuration_details: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfigurationDetails>>,
     /// <p>The name of the Grid Infrastructure (GI) cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of CPU cores enabled on the VM cluster.</p>
@@ -120,6 +132,32 @@ impl CloudVmClusterSummary {
     /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure that this VM cluster belongs to.</p>
     pub fn cloud_exadata_infrastructure_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_exadata_infrastructure_arn.as_deref()
+    }
+    /// <p>The unique identifier of the Exascale storage vault that the VM cluster uses. This value is present only for VM clusters that use an Exascale storage vault.</p>
+    pub fn exascale_db_storage_vault_id(&self) -> ::std::option::Option<&str> {
+        self.exascale_db_storage_vault_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Exascale storage vault that the VM cluster uses. This value is present only for VM clusters that use an Exascale storage vault.</p>
+    pub fn exascale_db_storage_vault_arn(&self) -> ::std::option::Option<&str> {
+        self.exascale_db_storage_vault_arn.as_deref()
+    }
+    /// <p>The type of storage management for the VM cluster. A value of <code>ASM</code> indicates Oracle Automatic Storage Management, and <code>EXASCALE</code> indicates Exascale storage.</p>
+    pub fn storage_management_type(&self) -> ::std::option::Option<&crate::types::StorageManagementType> {
+        self.storage_management_type.as_ref()
+    }
+    /// <p>The type of storage that the VM cluster uses for its VM file systems.</p>
+    pub fn vm_file_system_storage_type(&self) -> ::std::option::Option<&crate::types::VmStorageType> {
+        self.vm_file_system_storage_type.as_ref()
+    }
+    /// <p>The type of storage that the VM cluster uses for VM backups.</p>
+    pub fn vm_backup_storage_type(&self) -> ::std::option::Option<&crate::types::VmStorageType> {
+        self.vm_backup_storage_type.as_ref()
+    }
+    /// <p>The list of file system configurations for the VM cluster.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_configuration_details.is_none()`.
+    pub fn file_system_configuration_details(&self) -> &[crate::types::FileSystemConfigurationDetails] {
+        self.file_system_configuration_details.as_deref().unwrap_or_default()
     }
     /// <p>The name of the Grid Infrastructure (GI) cluster.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
@@ -294,6 +332,12 @@ pub struct CloudVmClusterSummaryBuilder {
     pub(crate) cloud_vm_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_exadata_infrastructure_id: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_exadata_infrastructure_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) exascale_db_storage_vault_id: ::std::option::Option<::std::string::String>,
+    pub(crate) exascale_db_storage_vault_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_management_type: ::std::option::Option<crate::types::StorageManagementType>,
+    pub(crate) vm_file_system_storage_type: ::std::option::Option<crate::types::VmStorageType>,
+    pub(crate) vm_backup_storage_type: ::std::option::Option<crate::types::VmStorageType>,
+    pub(crate) file_system_configuration_details: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfigurationDetails>>,
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) cpu_core_count: ::std::option::Option<i32>,
     pub(crate) data_collection_options: ::std::option::Option<crate::types::DataCollectionOptions>,
@@ -430,6 +474,99 @@ impl CloudVmClusterSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure that this VM cluster belongs to.</p>
     pub fn get_cloud_exadata_infrastructure_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_exadata_infrastructure_arn
+    }
+    /// <p>The unique identifier of the Exascale storage vault that the VM cluster uses. This value is present only for VM clusters that use an Exascale storage vault.</p>
+    pub fn exascale_db_storage_vault_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.exascale_db_storage_vault_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the Exascale storage vault that the VM cluster uses. This value is present only for VM clusters that use an Exascale storage vault.</p>
+    pub fn set_exascale_db_storage_vault_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.exascale_db_storage_vault_id = input;
+        self
+    }
+    /// <p>The unique identifier of the Exascale storage vault that the VM cluster uses. This value is present only for VM clusters that use an Exascale storage vault.</p>
+    pub fn get_exascale_db_storage_vault_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exascale_db_storage_vault_id
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Exascale storage vault that the VM cluster uses. This value is present only for VM clusters that use an Exascale storage vault.</p>
+    pub fn exascale_db_storage_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.exascale_db_storage_vault_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Exascale storage vault that the VM cluster uses. This value is present only for VM clusters that use an Exascale storage vault.</p>
+    pub fn set_exascale_db_storage_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.exascale_db_storage_vault_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Exascale storage vault that the VM cluster uses. This value is present only for VM clusters that use an Exascale storage vault.</p>
+    pub fn get_exascale_db_storage_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exascale_db_storage_vault_arn
+    }
+    /// <p>The type of storage management for the VM cluster. A value of <code>ASM</code> indicates Oracle Automatic Storage Management, and <code>EXASCALE</code> indicates Exascale storage.</p>
+    pub fn storage_management_type(mut self, input: crate::types::StorageManagementType) -> Self {
+        self.storage_management_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of storage management for the VM cluster. A value of <code>ASM</code> indicates Oracle Automatic Storage Management, and <code>EXASCALE</code> indicates Exascale storage.</p>
+    pub fn set_storage_management_type(mut self, input: ::std::option::Option<crate::types::StorageManagementType>) -> Self {
+        self.storage_management_type = input;
+        self
+    }
+    /// <p>The type of storage management for the VM cluster. A value of <code>ASM</code> indicates Oracle Automatic Storage Management, and <code>EXASCALE</code> indicates Exascale storage.</p>
+    pub fn get_storage_management_type(&self) -> &::std::option::Option<crate::types::StorageManagementType> {
+        &self.storage_management_type
+    }
+    /// <p>The type of storage that the VM cluster uses for its VM file systems.</p>
+    pub fn vm_file_system_storage_type(mut self, input: crate::types::VmStorageType) -> Self {
+        self.vm_file_system_storage_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of storage that the VM cluster uses for its VM file systems.</p>
+    pub fn set_vm_file_system_storage_type(mut self, input: ::std::option::Option<crate::types::VmStorageType>) -> Self {
+        self.vm_file_system_storage_type = input;
+        self
+    }
+    /// <p>The type of storage that the VM cluster uses for its VM file systems.</p>
+    pub fn get_vm_file_system_storage_type(&self) -> &::std::option::Option<crate::types::VmStorageType> {
+        &self.vm_file_system_storage_type
+    }
+    /// <p>The type of storage that the VM cluster uses for VM backups.</p>
+    pub fn vm_backup_storage_type(mut self, input: crate::types::VmStorageType) -> Self {
+        self.vm_backup_storage_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of storage that the VM cluster uses for VM backups.</p>
+    pub fn set_vm_backup_storage_type(mut self, input: ::std::option::Option<crate::types::VmStorageType>) -> Self {
+        self.vm_backup_storage_type = input;
+        self
+    }
+    /// <p>The type of storage that the VM cluster uses for VM backups.</p>
+    pub fn get_vm_backup_storage_type(&self) -> &::std::option::Option<crate::types::VmStorageType> {
+        &self.vm_backup_storage_type
+    }
+    /// Appends an item to `file_system_configuration_details`.
+    ///
+    /// To override the contents of this collection use [`set_file_system_configuration_details`](Self::set_file_system_configuration_details).
+    ///
+    /// <p>The list of file system configurations for the VM cluster.</p>
+    pub fn file_system_configuration_details(mut self, input: crate::types::FileSystemConfigurationDetails) -> Self {
+        let mut v = self.file_system_configuration_details.unwrap_or_default();
+        v.push(input);
+        self.file_system_configuration_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of file system configurations for the VM cluster.</p>
+    pub fn set_file_system_configuration_details(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfigurationDetails>>,
+    ) -> Self {
+        self.file_system_configuration_details = input;
+        self
+    }
+    /// <p>The list of file system configurations for the VM cluster.</p>
+    pub fn get_file_system_configuration_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfigurationDetails>> {
+        &self.file_system_configuration_details
     }
     /// <p>The name of the Grid Infrastructure (GI) cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -982,6 +1119,12 @@ impl CloudVmClusterSummaryBuilder {
             cloud_vm_cluster_arn: self.cloud_vm_cluster_arn,
             cloud_exadata_infrastructure_id: self.cloud_exadata_infrastructure_id,
             cloud_exadata_infrastructure_arn: self.cloud_exadata_infrastructure_arn,
+            exascale_db_storage_vault_id: self.exascale_db_storage_vault_id,
+            exascale_db_storage_vault_arn: self.exascale_db_storage_vault_arn,
+            storage_management_type: self.storage_management_type,
+            vm_file_system_storage_type: self.vm_file_system_storage_type,
+            vm_backup_storage_type: self.vm_backup_storage_type,
+            file_system_configuration_details: self.file_system_configuration_details,
             cluster_name: self.cluster_name,
             cpu_core_count: self.cpu_core_count,
             data_collection_options: self.data_collection_options,

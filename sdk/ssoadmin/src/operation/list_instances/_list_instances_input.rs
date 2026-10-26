@@ -7,6 +7,15 @@ pub struct ListInstancesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies which Amazon Web Services Regions to list IAM Identity Center instances from. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CURRENT_REGION</code> - Lists only the instances in the Region that you call this API from.</p></li>
+    /// <li>
+    /// <p><code>ALL_REGIONS</code> - Lists the instances that the caller owns or that are shared with the caller across all Regions.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the default is <code>CURRENT_REGION</code>.</p>
+    pub region_scope: ::std::option::Option<crate::types::RegionScope>,
 }
 impl ListInstancesInput {
     /// <p>The maximum number of results to display for the instance.</p>
@@ -16,6 +25,17 @@ impl ListInstancesInput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>Specifies which Amazon Web Services Regions to list IAM Identity Center instances from. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CURRENT_REGION</code> - Lists only the instances in the Region that you call this API from.</p></li>
+    /// <li>
+    /// <p><code>ALL_REGIONS</code> - Lists the instances that the caller owns or that are shared with the caller across all Regions.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the default is <code>CURRENT_REGION</code>.</p>
+    pub fn region_scope(&self) -> ::std::option::Option<&crate::types::RegionScope> {
+        self.region_scope.as_ref()
     }
 }
 impl ListInstancesInput {
@@ -31,6 +51,7 @@ impl ListInstancesInput {
 pub struct ListInstancesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) region_scope: ::std::option::Option<crate::types::RegionScope>,
 }
 impl ListInstancesInputBuilder {
     /// <p>The maximum number of results to display for the instance.</p>
@@ -61,6 +82,41 @@ impl ListInstancesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>Specifies which Amazon Web Services Regions to list IAM Identity Center instances from. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CURRENT_REGION</code> - Lists only the instances in the Region that you call this API from.</p></li>
+    /// <li>
+    /// <p><code>ALL_REGIONS</code> - Lists the instances that the caller owns or that are shared with the caller across all Regions.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the default is <code>CURRENT_REGION</code>.</p>
+    pub fn region_scope(mut self, input: crate::types::RegionScope) -> Self {
+        self.region_scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies which Amazon Web Services Regions to list IAM Identity Center instances from. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CURRENT_REGION</code> - Lists only the instances in the Region that you call this API from.</p></li>
+    /// <li>
+    /// <p><code>ALL_REGIONS</code> - Lists the instances that the caller owns or that are shared with the caller across all Regions.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the default is <code>CURRENT_REGION</code>.</p>
+    pub fn set_region_scope(mut self, input: ::std::option::Option<crate::types::RegionScope>) -> Self {
+        self.region_scope = input;
+        self
+    }
+    /// <p>Specifies which Amazon Web Services Regions to list IAM Identity Center instances from. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CURRENT_REGION</code> - Lists only the instances in the Region that you call this API from.</p></li>
+    /// <li>
+    /// <p><code>ALL_REGIONS</code> - Lists the instances that the caller owns or that are shared with the caller across all Regions.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the default is <code>CURRENT_REGION</code>.</p>
+    pub fn get_region_scope(&self) -> &::std::option::Option<crate::types::RegionScope> {
+        &self.region_scope
+    }
     /// Consumes the builder and constructs a [`ListInstancesInput`](crate::operation::list_instances::ListInstancesInput).
     pub fn build(
         self,
@@ -68,6 +124,7 @@ impl ListInstancesInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_instances::ListInstancesInput {
             max_results: self.max_results,
             next_token: self.next_token,
+            region_scope: self.region_scope,
         })
     }
 }

@@ -7,6 +7,10 @@ pub struct ListExascaleDbStorageVaultsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of an Exadata infrastructure. If you specify this value, the operation returns only the Exascale storage vaults on that infrastructure that you own or that are shared with you. The infrastructure can be one that's shared with you through Amazon Web Services Resource Access Manager (Amazon Web Services RAM). You can't combine this filter with a <code>vaultType</code> of <code>EXASCALE_INFRASTRUCTURE</code>.</p>
+    pub cloud_exadata_infrastructure_id: ::std::option::Option<::std::string::String>,
+    /// <p>The type of Exascale storage vaults to return. Specify <code>DEDICATED_INFRASTRUCTURE</code> to return Exascale storage vaults on dedicated Exadata infrastructure, or <code>EXASCALE_INFRASTRUCTURE</code> to return Exascale storage vaults for Exascale VM clusters. If you don't specify a value, the operation returns both types. You can't combine <code>EXASCALE_INFRASTRUCTURE</code> with the <code>cloudExadataInfrastructureId</code> filter.</p>
+    pub vault_type: ::std::option::Option<crate::types::ExascaleDbStorageVaultType>,
 }
 impl ListExascaleDbStorageVaultsInput {
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output.</p>
@@ -16,6 +20,14 @@ impl ListExascaleDbStorageVaultsInput {
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of an Exadata infrastructure. If you specify this value, the operation returns only the Exascale storage vaults on that infrastructure that you own or that are shared with you. The infrastructure can be one that's shared with you through Amazon Web Services Resource Access Manager (Amazon Web Services RAM). You can't combine this filter with a <code>vaultType</code> of <code>EXASCALE_INFRASTRUCTURE</code>.</p>
+    pub fn cloud_exadata_infrastructure_id(&self) -> ::std::option::Option<&str> {
+        self.cloud_exadata_infrastructure_id.as_deref()
+    }
+    /// <p>The type of Exascale storage vaults to return. Specify <code>DEDICATED_INFRASTRUCTURE</code> to return Exascale storage vaults on dedicated Exadata infrastructure, or <code>EXASCALE_INFRASTRUCTURE</code> to return Exascale storage vaults for Exascale VM clusters. If you don't specify a value, the operation returns both types. You can't combine <code>EXASCALE_INFRASTRUCTURE</code> with the <code>cloudExadataInfrastructureId</code> filter.</p>
+    pub fn vault_type(&self) -> ::std::option::Option<&crate::types::ExascaleDbStorageVaultType> {
+        self.vault_type.as_ref()
     }
 }
 impl ListExascaleDbStorageVaultsInput {
@@ -31,6 +43,8 @@ impl ListExascaleDbStorageVaultsInput {
 pub struct ListExascaleDbStorageVaultsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) cloud_exadata_infrastructure_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vault_type: ::std::option::Option<crate::types::ExascaleDbStorageVaultType>,
 }
 impl ListExascaleDbStorageVaultsInputBuilder {
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output.</p>
@@ -61,6 +75,34 @@ impl ListExascaleDbStorageVaultsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of an Exadata infrastructure. If you specify this value, the operation returns only the Exascale storage vaults on that infrastructure that you own or that are shared with you. The infrastructure can be one that's shared with you through Amazon Web Services Resource Access Manager (Amazon Web Services RAM). You can't combine this filter with a <code>vaultType</code> of <code>EXASCALE_INFRASTRUCTURE</code>.</p>
+    pub fn cloud_exadata_infrastructure_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cloud_exadata_infrastructure_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of an Exadata infrastructure. If you specify this value, the operation returns only the Exascale storage vaults on that infrastructure that you own or that are shared with you. The infrastructure can be one that's shared with you through Amazon Web Services Resource Access Manager (Amazon Web Services RAM). You can't combine this filter with a <code>vaultType</code> of <code>EXASCALE_INFRASTRUCTURE</code>.</p>
+    pub fn set_cloud_exadata_infrastructure_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cloud_exadata_infrastructure_id = input;
+        self
+    }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of an Exadata infrastructure. If you specify this value, the operation returns only the Exascale storage vaults on that infrastructure that you own or that are shared with you. The infrastructure can be one that's shared with you through Amazon Web Services Resource Access Manager (Amazon Web Services RAM). You can't combine this filter with a <code>vaultType</code> of <code>EXASCALE_INFRASTRUCTURE</code>.</p>
+    pub fn get_cloud_exadata_infrastructure_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_exadata_infrastructure_id
+    }
+    /// <p>The type of Exascale storage vaults to return. Specify <code>DEDICATED_INFRASTRUCTURE</code> to return Exascale storage vaults on dedicated Exadata infrastructure, or <code>EXASCALE_INFRASTRUCTURE</code> to return Exascale storage vaults for Exascale VM clusters. If you don't specify a value, the operation returns both types. You can't combine <code>EXASCALE_INFRASTRUCTURE</code> with the <code>cloudExadataInfrastructureId</code> filter.</p>
+    pub fn vault_type(mut self, input: crate::types::ExascaleDbStorageVaultType) -> Self {
+        self.vault_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of Exascale storage vaults to return. Specify <code>DEDICATED_INFRASTRUCTURE</code> to return Exascale storage vaults on dedicated Exadata infrastructure, or <code>EXASCALE_INFRASTRUCTURE</code> to return Exascale storage vaults for Exascale VM clusters. If you don't specify a value, the operation returns both types. You can't combine <code>EXASCALE_INFRASTRUCTURE</code> with the <code>cloudExadataInfrastructureId</code> filter.</p>
+    pub fn set_vault_type(mut self, input: ::std::option::Option<crate::types::ExascaleDbStorageVaultType>) -> Self {
+        self.vault_type = input;
+        self
+    }
+    /// <p>The type of Exascale storage vaults to return. Specify <code>DEDICATED_INFRASTRUCTURE</code> to return Exascale storage vaults on dedicated Exadata infrastructure, or <code>EXASCALE_INFRASTRUCTURE</code> to return Exascale storage vaults for Exascale VM clusters. If you don't specify a value, the operation returns both types. You can't combine <code>EXASCALE_INFRASTRUCTURE</code> with the <code>cloudExadataInfrastructureId</code> filter.</p>
+    pub fn get_vault_type(&self) -> &::std::option::Option<crate::types::ExascaleDbStorageVaultType> {
+        &self.vault_type
+    }
     /// Consumes the builder and constructs a [`ListExascaleDbStorageVaultsInput`](crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsInput).
     pub fn build(
         self,
@@ -71,6 +113,8 @@ impl ListExascaleDbStorageVaultsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsInput {
             max_results: self.max_results,
             next_token: self.next_token,
+            cloud_exadata_infrastructure_id: self.cloud_exadata_infrastructure_id,
+            vault_type: self.vault_type,
         })
     }
 }

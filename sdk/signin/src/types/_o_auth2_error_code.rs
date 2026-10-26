@@ -20,7 +20,14 @@
 ///     OAuth2ErrorCode::ServiceQuotaExceeded => { /* ... */ },
 ///     OAuth2ErrorCode::TokenExpired => { /* ... */ },
 ///     OAuth2ErrorCode::UserCredentialsChanged => { /* ... */ },
+///     OAuth2ErrorCode::OauthInvalidGrant => { /* ... */ },
+///     OAuth2ErrorCode::OauthInvalidRequest => { /* ... */ },
+///     OAuth2ErrorCode::OauthInvalidScope => { /* ... */ },
+///     OAuth2ErrorCode::OauthInvalidTarget => { /* ... */ },
+///     OAuth2ErrorCode::OauthRateExceeded => { /* ... */ },
 ///     OAuth2ErrorCode::ServerError => { /* ... */ },
+///     OAuth2ErrorCode::OauthServiceUnavailable => { /* ... */ },
+///     OAuth2ErrorCode::OauthUnsupportedGrantType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,24 +59,38 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OAuth2ErrorCode {
-    /// Authorization code has expired
+    /// Authorization code has expired.
     AuthcodeExpired,
-    /// Request conflicts with current state of the resource
+    /// Request conflicts with the current state of the resource.
     Conflict,
-    /// Insufficient permissions to perform this operation
+    /// Insufficient permissions to perform this operation.
     InsufficientPermissions,
-    /// The request is missing a required parameter, includes an invalid parameter value, or is otherwise malformed
+    /// The request is missing a required parameter, includes an invalid parameter value, or is otherwise malformed.
     InvalidRequest,
-    /// Requested resource was not found
+    /// Requested resource was not found.
     ResourceNotFound,
-    /// Request would cause a service quota to be exceeded
+    /// Request would cause a service quota to be exceeded.
     ServiceQuotaExceeded,
-    /// Token has expired and needs to be refreshed
+    /// Token has expired.
     TokenExpired,
-    /// User credentials have been changed
+    /// User credentials have been changed.
     UserCredentialsChanged,
-    /// Internal server error occurred
+    #[allow(missing_docs)] // documentation missing in model
+    OauthInvalidGrant,
+    #[allow(missing_docs)] // documentation missing in model
+    OauthInvalidRequest,
+    #[allow(missing_docs)] // documentation missing in model
+    OauthInvalidScope,
+    #[allow(missing_docs)] // documentation missing in model
+    OauthInvalidTarget,
+    #[allow(missing_docs)] // documentation missing in model
+    OauthRateExceeded,
+    /// Internal server error occurred.
     ServerError,
+    #[allow(missing_docs)] // documentation missing in model
+    OauthServiceUnavailable,
+    #[allow(missing_docs)] // documentation missing in model
+    OauthUnsupportedGrantType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -85,7 +106,14 @@ impl ::std::convert::From<&str> for OAuth2ErrorCode {
             "SERVICE_QUOTA_EXCEEDED" => OAuth2ErrorCode::ServiceQuotaExceeded,
             "TOKEN_EXPIRED" => OAuth2ErrorCode::TokenExpired,
             "USER_CREDENTIALS_CHANGED" => OAuth2ErrorCode::UserCredentialsChanged,
+            "invalid_grant" => OAuth2ErrorCode::OauthInvalidGrant,
+            "invalid_request" => OAuth2ErrorCode::OauthInvalidRequest,
+            "invalid_scope" => OAuth2ErrorCode::OauthInvalidScope,
+            "invalid_target" => OAuth2ErrorCode::OauthInvalidTarget,
+            "rate_exceeded" => OAuth2ErrorCode::OauthRateExceeded,
             "server_error" => OAuth2ErrorCode::ServerError,
+            "service_unavailable" => OAuth2ErrorCode::OauthServiceUnavailable,
+            "unsupported_grant_type" => OAuth2ErrorCode::OauthUnsupportedGrantType,
             other => OAuth2ErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -109,7 +137,14 @@ impl OAuth2ErrorCode {
             OAuth2ErrorCode::ServiceQuotaExceeded => "SERVICE_QUOTA_EXCEEDED",
             OAuth2ErrorCode::TokenExpired => "TOKEN_EXPIRED",
             OAuth2ErrorCode::UserCredentialsChanged => "USER_CREDENTIALS_CHANGED",
+            OAuth2ErrorCode::OauthInvalidGrant => "invalid_grant",
+            OAuth2ErrorCode::OauthInvalidRequest => "invalid_request",
+            OAuth2ErrorCode::OauthInvalidScope => "invalid_scope",
+            OAuth2ErrorCode::OauthInvalidTarget => "invalid_target",
+            OAuth2ErrorCode::OauthRateExceeded => "rate_exceeded",
             OAuth2ErrorCode::ServerError => "server_error",
+            OAuth2ErrorCode::OauthServiceUnavailable => "service_unavailable",
+            OAuth2ErrorCode::OauthUnsupportedGrantType => "unsupported_grant_type",
             OAuth2ErrorCode::Unknown(value) => value.as_str(),
         }
     }
@@ -124,7 +159,14 @@ impl OAuth2ErrorCode {
             "SERVICE_QUOTA_EXCEEDED",
             "TOKEN_EXPIRED",
             "USER_CREDENTIALS_CHANGED",
+            "invalid_grant",
+            "invalid_request",
+            "invalid_scope",
+            "invalid_target",
+            "rate_exceeded",
             "server_error",
+            "service_unavailable",
+            "unsupported_grant_type",
         ]
     }
 }
@@ -156,7 +198,14 @@ impl ::std::fmt::Display for OAuth2ErrorCode {
             OAuth2ErrorCode::ServiceQuotaExceeded => write!(f, "SERVICE_QUOTA_EXCEEDED"),
             OAuth2ErrorCode::TokenExpired => write!(f, "TOKEN_EXPIRED"),
             OAuth2ErrorCode::UserCredentialsChanged => write!(f, "USER_CREDENTIALS_CHANGED"),
+            OAuth2ErrorCode::OauthInvalidGrant => write!(f, "invalid_grant"),
+            OAuth2ErrorCode::OauthInvalidRequest => write!(f, "invalid_request"),
+            OAuth2ErrorCode::OauthInvalidScope => write!(f, "invalid_scope"),
+            OAuth2ErrorCode::OauthInvalidTarget => write!(f, "invalid_target"),
+            OAuth2ErrorCode::OauthRateExceeded => write!(f, "rate_exceeded"),
             OAuth2ErrorCode::ServerError => write!(f, "server_error"),
+            OAuth2ErrorCode::OauthServiceUnavailable => write!(f, "service_unavailable"),
+            OAuth2ErrorCode::OauthUnsupportedGrantType => write!(f, "unsupported_grant_type"),
             OAuth2ErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }

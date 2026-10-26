@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateTaskOutput {
-    /// <p>A list of errors for tasks that could not be updated.</p>
+    /// A list of errors for tasks that could not be updated.
     pub errors: ::std::vec::Vec<crate::types::BatchUpdateTaskError>,
     _request_id: Option<String>,
 }
 impl BatchUpdateTaskOutput {
-    /// <p>A list of errors for tasks that could not be updated.</p>
+    /// A list of errors for tasks that could not be updated.
     pub fn errors(&self) -> &[crate::types::BatchUpdateTaskError] {
         use std::ops::Deref;
         self.errors.deref()
@@ -38,19 +38,19 @@ impl BatchUpdateTaskOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>A list of errors for tasks that could not be updated.</p>
+    /// A list of errors for tasks that could not be updated.
     pub fn errors(mut self, input: crate::types::BatchUpdateTaskError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of errors for tasks that could not be updated.</p>
+    /// A list of errors for tasks that could not be updated.
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateTaskError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>A list of errors for tasks that could not be updated.</p>
+    /// A list of errors for tasks that could not be updated.
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateTaskError>> {
         &self.errors
     }

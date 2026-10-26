@@ -22,7 +22,7 @@ impl crate::operation::list_memberships::builders::ListMembershipsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListMemberships`.
 ///
-/// <p>Lists the Deadline Cloud resource memberships associated with a specified IAM Identity Center principal, optionally filtered by the requested resource types.</p>
+/// Lists the Deadline Cloud resource memberships associated with a specified IAM Identity Center principal, optionally filtered by the requested resource types.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMembershipsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,73 +114,73 @@ impl ListMembershipsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_memberships::paginator::ListMembershipsPaginator {
         crate::operation::list_memberships::paginator::ListMembershipsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The ID of the IAM Identity Center principal whose Deadline Cloud resource memberships you want to list.</p>
+    /// The ID of the IAM Identity Center principal whose Deadline Cloud resource memberships you want to list.
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_id(input.into());
         self
     }
-    /// <p>The ID of the IAM Identity Center principal whose Deadline Cloud resource memberships you want to list.</p>
+    /// The ID of the IAM Identity Center principal whose Deadline Cloud resource memberships you want to list.
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_id(input);
         self
     }
-    /// <p>The ID of the IAM Identity Center principal whose Deadline Cloud resource memberships you want to list.</p>
+    /// The ID of the IAM Identity Center principal whose Deadline Cloud resource memberships you want to list.
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_principal_id()
     }
-    /// <p>The identity store ID that contains the principal. This parameter is required for callers that do not use a monitor session.</p>
+    /// The identity store ID that contains the principal. This parameter is required for callers that do not use a monitor session.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_store_id(input.into());
         self
     }
-    /// <p>The identity store ID that contains the principal. This parameter is required for callers that do not use a monitor session.</p>
+    /// The identity store ID that contains the principal. This parameter is required for callers that do not use a monitor session.
     pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
-    /// <p>The identity store ID that contains the principal. This parameter is required for callers that do not use a monitor session.</p>
+    /// The identity store ID that contains the principal. This parameter is required for callers that do not use a monitor session.
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_store_id()
     }
-    /// <p>The Region of the IAM Identity Center instance. If not provided, the service defaults to the Amazon Web Services Region in which you make the request.</p>
+    /// The Region of the IAM Identity Center instance. If not provided, the service defaults to the Amazon Web Services Region in which you make the request.
     pub fn identity_center_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_center_region(input.into());
         self
     }
-    /// <p>The Region of the IAM Identity Center instance. If not provided, the service defaults to the Amazon Web Services Region in which you make the request.</p>
+    /// The Region of the IAM Identity Center instance. If not provided, the service defaults to the Amazon Web Services Region in which you make the request.
     pub fn set_identity_center_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_center_region(input);
         self
     }
-    /// <p>The Region of the IAM Identity Center instance. If not provided, the service defaults to the Amazon Web Services Region in which you make the request.</p>
+    /// The Region of the IAM Identity Center instance. If not provided, the service defaults to the Amazon Web Services Region in which you make the request.
     pub fn get_identity_center_region(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_center_region()
     }
@@ -189,17 +189,17 @@ impl ListMembershipsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
     ///
-    /// <p>The resource types to include when listing the principal's memberships. If not specified, memberships for all supported resource types are returned.</p>
+    /// The resource types to include when listing the principal's memberships. If not specified, memberships for all supported resource types are returned.
     pub fn resource_types(mut self, input: crate::types::MembershipResourceType) -> Self {
         self.inner = self.inner.resource_types(input);
         self
     }
-    /// <p>The resource types to include when listing the principal's memberships. If not specified, memberships for all supported resource types are returned.</p>
+    /// The resource types to include when listing the principal's memberships. If not specified, memberships for all supported resource types are returned.
     pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MembershipResourceType>>) -> Self {
         self.inner = self.inner.set_resource_types(input);
         self
     }
-    /// <p>The resource types to include when listing the principal's memberships. If not specified, memberships for all supported resource types are returned.</p>
+    /// The resource types to include when listing the principal's memberships. If not specified, memberships for all supported resource types are returned.
     pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MembershipResourceType>> {
         self.inner.get_resource_types()
     }

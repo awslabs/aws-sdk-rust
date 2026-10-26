@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOAuth2TokenOutput {
-    /// Flattened token operation outputs The specific response fields depend on the grant_type used in the request
+    /// Flattened token operation outputs. The specific response fields depend on the grant_type used in the request.
     pub token_output: ::std::option::Option<crate::types::CreateOAuth2TokenResponseBody>,
     _request_id: Option<String>,
 }
 impl CreateOAuth2TokenOutput {
-    /// Flattened token operation outputs The specific response fields depend on the grant_type used in the request
+    /// Flattened token operation outputs. The specific response fields depend on the grant_type used in the request.
     pub fn token_output(&self) -> ::std::option::Option<&crate::types::CreateOAuth2TokenResponseBody> {
         self.token_output.as_ref()
     }
@@ -34,18 +34,18 @@ pub struct CreateOAuth2TokenOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateOAuth2TokenOutputBuilder {
-    /// Flattened token operation outputs The specific response fields depend on the grant_type used in the request
+    /// Flattened token operation outputs. The specific response fields depend on the grant_type used in the request.
     /// This field is required.
     pub fn token_output(mut self, input: crate::types::CreateOAuth2TokenResponseBody) -> Self {
         self.token_output = ::std::option::Option::Some(input);
         self
     }
-    /// Flattened token operation outputs The specific response fields depend on the grant_type used in the request
+    /// Flattened token operation outputs. The specific response fields depend on the grant_type used in the request.
     pub fn set_token_output(mut self, input: ::std::option::Option<crate::types::CreateOAuth2TokenResponseBody>) -> Self {
         self.token_output = input;
         self
     }
-    /// Flattened token operation outputs The specific response fields depend on the grant_type used in the request
+    /// Flattened token operation outputs. The specific response fields depend on the grant_type used in the request.
     pub fn get_token_output(&self) -> &::std::option::Option<crate::types::CreateOAuth2TokenResponseBody> {
         &self.token_output
     }

@@ -22,7 +22,7 @@ impl crate::operation::disassociate_member_from_farm::builders::DisassociateMemb
 }
 /// Fluent builder constructing a request to `DisassociateMemberFromFarm`.
 ///
-/// <p>Disassociates a member from a farm.</p>
+/// Disassociates a member from a farm.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateMemberFromFarmFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DisassociateMemberFromFarmFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the farm to disassociate from the member.</p>
+    /// The farm ID of the farm to disassociate from the member.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the farm to disassociate from the member.</p>
+    /// The farm ID of the farm to disassociate from the member.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the farm to disassociate from the member.</p>
+    /// The farm ID of the farm to disassociate from the member.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>A member's principal ID to disassociate from a farm.</p>
+    /// A member's principal ID to disassociate from a farm.
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_id(input.into());
         self
     }
-    /// <p>A member's principal ID to disassociate from a farm.</p>
+    /// A member's principal ID to disassociate from a farm.
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_id(input);
         self
     }
-    /// <p>A member's principal ID to disassociate from a farm.</p>
+    /// A member's principal ID to disassociate from a farm.
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_principal_id()
     }

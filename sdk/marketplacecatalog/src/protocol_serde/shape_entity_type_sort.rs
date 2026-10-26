@@ -61,6 +61,12 @@ pub fn ser_entity_type_sort(
             )?;
             object_9.finish();
         }
+        crate::types::EntityTypeSort::SubsidiaryAuthorizationSort(inner) => {
+            #[allow(unused_mut)]
+            let mut object_10 = object_6.key("SubsidiaryAuthorizationSort").start_object();
+            crate::protocol_serde::shape_subsidiary_authorization_sort::ser_subsidiary_authorization_sort(&mut object_10, inner)?;
+            object_10.finish();
+        }
         crate::types::EntityTypeSort::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EntityTypeSort",

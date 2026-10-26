@@ -22,7 +22,7 @@ impl crate::operation::delete_monitor::builders::DeleteMonitorInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteMonitor`.
 ///
-/// <p>Removes a Deadline Cloud monitor. After you delete a monitor, you can create a new one and attach farms to the monitor.</p>
+/// Removes a Deadline Cloud monitor. After you delete a monitor, you can create a new one and attach farms to the monitor.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMonitorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteMonitorFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the monitor to delete. This ID is returned by the <code>CreateMonitor</code> operation, and is included in the response to the <code>GetMonitor</code> operation.</p>
+    /// The unique identifier of the monitor to delete. This ID is returned by the <code>CreateMonitor</code> operation, and is included in the response to the <code>GetMonitor</code> operation.
     pub fn monitor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitor_id(input.into());
         self
     }
-    /// <p>The unique identifier of the monitor to delete. This ID is returned by the <code>CreateMonitor</code> operation, and is included in the response to the <code>GetMonitor</code> operation.</p>
+    /// The unique identifier of the monitor to delete. This ID is returned by the <code>CreateMonitor</code> operation, and is included in the response to the <code>GetMonitor</code> operation.
     pub fn set_monitor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitor_id(input);
         self
     }
-    /// <p>The unique identifier of the monitor to delete. This ID is returned by the <code>CreateMonitor</code> operation, and is included in the response to the <code>GetMonitor</code> operation.</p>
+    /// The unique identifier of the monitor to delete. This ID is returned by the <code>CreateMonitor</code> operation, and is included in the response to the <code>GetMonitor</code> operation.
     pub fn get_monitor_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_id()
     }

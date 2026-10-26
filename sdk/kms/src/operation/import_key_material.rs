@@ -332,6 +332,7 @@ pub enum ImportKeyMaterialError {
     InvalidArnException(crate::types::error::InvalidArnException),
     /// <p>From the <code>Decrypt</code> or <code>ReEncrypt</code> operation, the request was rejected because the specified ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.</p>
     /// <p>From the <code>ImportKeyMaterial</code> operation, the request was rejected because KMS could not decrypt the encrypted (wrapped) key material.</p>
+    /// <p>From the <code>Decapsulate</code> operation, the request was rejected because the length of the <code>SharedSecretCiphertextBlob</code> is inconsistent with the specified ML-KEM key spec.</p>
     InvalidCiphertextException(crate::types::error::InvalidCiphertextException),
     /// <p>The request was rejected because the provided import token is invalid or is associated with a different KMS key.</p>
     InvalidImportTokenException(crate::types::error::InvalidImportTokenException),

@@ -28,6 +28,15 @@ pub fn ser_router_output_configuration(
             )?;
             object_3.finish();
         }
+        crate::types::RouterOutputConfiguration::SourceEndpoint(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_4.key("sourceEndpoint").start_object();
+            crate::protocol_serde::shape_source_endpoint_router_output_configuration::ser_source_endpoint_router_output_configuration(
+                &mut object_4,
+                inner,
+            )?;
+            object_4.finish();
+        }
         crate::types::RouterOutputConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "RouterOutputConfiguration",
@@ -90,6 +99,12 @@ where
                                 Some(crate::types::RouterOutputConfiguration::MediaLiveInput(
                                     crate::protocol_serde::shape_media_live_input_router_output_configuration::de_media_live_input_router_output_configuration(tokens, _value, depth + 1)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MediaLiveInput' cannot be null"))?
+                                ))
+                            }
+                            "sourceEndpoint" => {
+                                Some(crate::types::RouterOutputConfiguration::SourceEndpoint(
+                                    crate::protocol_serde::shape_source_endpoint_router_output_configuration::de_source_endpoint_router_output_configuration(tokens, _value, depth + 1)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SourceEndpoint' cannot be null"))?
                                 ))
                             }
                             _ => {

@@ -22,7 +22,7 @@ impl crate::operation::introspect_o_auth2_token_with_iam::builders::IntrospectOA
 }
 /// Fluent builder constructing a request to `IntrospectOAuth2TokenWithIAM`.
 ///
-/// Grants permission to inspect the metadata and state of an OAuth 2.0 access token or refresh token Implements RFC 7662 OAuth 2.0 Token Introspection over a SigV4-authenticated endpoint. Inspects the metadata of an access_token or refresh_token issued by AWS Sign-In and returns the claims associated with it. Inactive token semantics (RFC 7662 §2.2): when the supplied token is unknown, expired, revoked, malformed, or owned by a different account, the response body is exactly { "active": false } with all other claims omitted.
+/// Inspects the metadata and active state of an OAuth 2.0 access token or refresh token. Implements RFC 7662 OAuth 2.0 Token Introspection over a SigV4-authenticated endpoint. Returns the claims associated with a token issued by AWS Sign-In.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct IntrospectOAuth2TokenWithIAMFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl IntrospectOAuth2TokenWithIAMFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The string value of the token to introspect. May be either an access_token or a refresh_token issued by AWS Sign-In.
+    /// The access token or refresh token issued by AWS Sign-In.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token(input.into());
         self
     }
-    /// The string value of the token to introspect. May be either an access_token or a refresh_token issued by AWS Sign-In.
+    /// The access token or refresh token issued by AWS Sign-In.
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_token(input);
         self
     }
-    /// The string value of the token to introspect. May be either an access_token or a refresh_token issued by AWS Sign-In.
+    /// The access token or refresh token issued by AWS Sign-In.
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_token()
     }
-    /// Optional hint about the type of the token submitted for introspection. The server uses this hint to optimize lookup, but still falls back to the other token type on miss. Allowed values: access_token, refresh_token.
+    /// An optional hint about the type of the token submitted for introspection, as defined in RFC 7662 §2.1. The server checks both token types regardless of the hint. Allowed values: "access_token", "refresh_token".
     pub fn token_type_hint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token_type_hint(input.into());
         self
     }
-    /// Optional hint about the type of the token submitted for introspection. The server uses this hint to optimize lookup, but still falls back to the other token type on miss. Allowed values: access_token, refresh_token.
+    /// An optional hint about the type of the token submitted for introspection, as defined in RFC 7662 §2.1. The server checks both token types regardless of the hint. Allowed values: "access_token", "refresh_token".
     pub fn set_token_type_hint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_token_type_hint(input);
         self
     }
-    /// Optional hint about the type of the token submitted for introspection. The server uses this hint to optimize lookup, but still falls back to the other token type on miss. Allowed values: access_token, refresh_token.
+    /// An optional hint about the type of the token submitted for introspection, as defined in RFC 7662 §2.1. The server checks both token types regardless of the hint. Allowed values: "access_token", "refresh_token".
     pub fn get_token_type_hint(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_token_type_hint()
     }

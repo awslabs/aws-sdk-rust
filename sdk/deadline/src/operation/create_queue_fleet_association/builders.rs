@@ -22,7 +22,7 @@ impl crate::operation::create_queue_fleet_association::builders::CreateQueueFlee
 }
 /// Fluent builder constructing a request to `CreateQueueFleetAssociation`.
 ///
-/// <p>Creates an association between a queue and a fleet.</p>
+/// Creates an association between a queue and a fleet.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateQueueFleetAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl CreateQueueFleetAssociationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the farm that the queue and fleet belong to.</p>
+    /// The ID of the farm that the queue and fleet belong to.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The ID of the farm that the queue and fleet belong to.</p>
+    /// The ID of the farm that the queue and fleet belong to.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The ID of the farm that the queue and fleet belong to.</p>
+    /// The ID of the farm that the queue and fleet belong to.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The queue ID.</p>
+    /// The queue ID.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
         self
     }
-    /// <p>The queue ID.</p>
+    /// The queue ID.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_id(input);
         self
     }
-    /// <p>The queue ID.</p>
+    /// The queue ID.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }
-    /// <p>The fleet ID.</p>
+    /// The fleet ID.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>The fleet ID.</p>
+    /// The fleet ID.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>The fleet ID.</p>
+    /// The fleet ID.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }

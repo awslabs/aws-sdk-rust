@@ -22,7 +22,7 @@ impl crate::operation::search_workers::builders::SearchWorkersInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchWorkers`.
 ///
-/// <p>Searches for workers.</p>
+/// Searches for workers.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchWorkersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl SearchWorkersFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID in the workers search.</p>
+    /// The farm ID in the workers search.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID in the workers search.</p>
+    /// The farm ID in the workers search.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID in the workers search.</p>
+    /// The farm ID in the workers search.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The search terms for a resource.</p>
+    /// The search terms for a resource.
     pub fn filter_expressions(mut self, input: crate::types::SearchGroupedFilterExpressions) -> Self {
         self.inner = self.inner.filter_expressions(input);
         self
     }
-    /// <p>The search terms for a resource.</p>
+    /// The search terms for a resource.
     pub fn set_filter_expressions(mut self, input: ::std::option::Option<crate::types::SearchGroupedFilterExpressions>) -> Self {
         self.inner = self.inner.set_filter_expressions(input);
         self
     }
-    /// <p>The search terms for a resource.</p>
+    /// The search terms for a resource.
     pub fn get_filter_expressions(&self) -> &::std::option::Option<crate::types::SearchGroupedFilterExpressions> {
         self.inner.get_filter_expressions()
     }
@@ -141,45 +141,45 @@ impl SearchWorkersFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sort_expressions`](Self::set_sort_expressions).
     ///
-    /// <p>The search terms for a resource.</p>
+    /// The search terms for a resource.
     pub fn sort_expressions(mut self, input: crate::types::SearchSortExpression) -> Self {
         self.inner = self.inner.sort_expressions(input);
         self
     }
-    /// <p>The search terms for a resource.</p>
+    /// The search terms for a resource.
     pub fn set_sort_expressions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchSortExpression>>) -> Self {
         self.inner = self.inner.set_sort_expressions(input);
         self
     }
-    /// <p>The search terms for a resource.</p>
+    /// The search terms for a resource.
     pub fn get_sort_expressions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchSortExpression>> {
         self.inner.get_sort_expressions()
     }
-    /// <p>The offset for the search results.</p>
+    /// The offset for the search results.
     pub fn item_offset(mut self, input: i32) -> Self {
         self.inner = self.inner.item_offset(input);
         self
     }
-    /// <p>The offset for the search results.</p>
+    /// The offset for the search results.
     pub fn set_item_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_item_offset(input);
         self
     }
-    /// <p>The offset for the search results.</p>
+    /// The offset for the search results.
     pub fn get_item_offset(&self) -> &::std::option::Option<i32> {
         self.inner.get_item_offset()
     }
-    /// <p>Specifies the number of results to return.</p>
+    /// Specifies the number of results to return.
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
         self
     }
-    /// <p>Specifies the number of results to return.</p>
+    /// Specifies the number of results to return.
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
     }
-    /// <p>Specifies the number of results to return.</p>
+    /// Specifies the number of results to return.
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         self.inner.get_page_size()
     }
@@ -188,17 +188,17 @@ impl SearchWorkersFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
     ///
-    /// <p>The fleet ID of the workers to search for.</p>
+    /// The fleet ID of the workers to search for.
     pub fn fleet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_ids(input.into());
         self
     }
-    /// <p>The fleet ID of the workers to search for.</p>
+    /// The fleet ID of the workers to search for.
     pub fn set_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_fleet_ids(input);
         self
     }
-    /// <p>The fleet ID of the workers to search for.</p>
+    /// The fleet ID of the workers to search for.
     pub fn get_fleet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_fleet_ids()
     }

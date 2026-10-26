@@ -15,6 +15,8 @@ pub use crate::types::error::_create_bridge420_exception::CreateBridge420Excepti
 
 pub use crate::types::error::_forbidden_exception::ForbiddenException;
 
+pub use crate::types::error::_destination_endpoint_service_quota_exceeded_exception::DestinationEndpointServiceQuotaExceededException;
+
 pub use crate::types::error::_create_flow420_exception::CreateFlow420Exception;
 
 pub use crate::types::error::_add_flow_outputs420_exception::AddFlowOutputs420Exception;
@@ -29,6 +31,8 @@ pub use crate::types::error::_router_network_interface_service_quota_exceeded_ex
 
 pub use crate::types::error::_router_output_service_quota_exceeded_exception::RouterOutputServiceQuotaExceededException;
 
+pub use crate::types::error::_source_endpoint_service_quota_exceeded_exception::SourceEndpointServiceQuotaExceededException;
+
 mod _add_flow_outputs420_exception;
 
 mod _bad_request_exception;
@@ -40,6 +44,8 @@ mod _create_bridge420_exception;
 mod _create_flow420_exception;
 
 mod _create_gateway420_exception;
+
+mod _destination_endpoint_service_quota_exceeded_exception;
 
 mod _forbidden_exception;
 
@@ -56,6 +62,8 @@ mod _router_network_interface_service_quota_exceeded_exception;
 mod _router_output_service_quota_exceeded_exception;
 
 mod _service_unavailable_exception;
+
+mod _source_endpoint_service_quota_exceeded_exception;
 
 mod _too_many_requests_exception;
 

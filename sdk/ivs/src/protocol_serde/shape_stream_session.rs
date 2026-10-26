@@ -66,6 +66,15 @@ where
                                     depth + 1,
                                 )?);
                             }
+                            "failoverSlateConfiguration" => {
+                                builder = builder.set_failover_slate_configuration(
+                                    crate::protocol_serde::shape_failover_slate_configuration::de_failover_slate_configuration(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

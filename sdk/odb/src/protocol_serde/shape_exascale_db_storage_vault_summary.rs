@@ -61,6 +61,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "cloudExadataInfrastructureArn" => {
+                            builder = builder.set_cloud_exadata_infrastructure_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "cloudExadataInfrastructureId" => {
+                            builder = builder.set_cloud_exadata_infrastructure_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
@@ -161,6 +175,13 @@ where
                             builder = builder.set_time_zone(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "vaultType" => {
+                            builder = builder.set_vault_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ExascaleDbStorageVaultType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

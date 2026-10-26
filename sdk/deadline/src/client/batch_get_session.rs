@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetSession`](crate::operation::batch_get_session::builders::BatchGetSessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifiers(BatchGetSessionIdentifier)`](crate::operation::batch_get_session::builders::BatchGetSessionFluentBuilder::identifiers) / [`set_identifiers(Option<Vec::<BatchGetSessionIdentifier>>)`](crate::operation::batch_get_session::builders::BatchGetSessionFluentBuilder::set_identifiers):<br>required: **true**<br><p>The list of session identifiers to retrieve. You can specify up to 100 identifiers per request.</p><br>
+    ///   - [`identifiers(BatchGetSessionIdentifier)`](crate::operation::batch_get_session::builders::BatchGetSessionFluentBuilder::identifiers) / [`set_identifiers(Option<Vec::<BatchGetSessionIdentifier>>)`](crate::operation::batch_get_session::builders::BatchGetSessionFluentBuilder::set_identifiers):<br>required: **true**<br>The list of session identifiers to retrieve. You can specify up to 100 identifiers per request.<br>
     /// - On success, responds with [`BatchGetSessionOutput`](crate::operation::batch_get_session::BatchGetSessionOutput) with field(s):
-    ///   - [`sessions(Vec::<BatchGetSessionItem>)`](crate::operation::batch_get_session::BatchGetSessionOutput::sessions): <p>A list of sessions that were successfully retrieved.</p>
-    ///   - [`errors(Vec::<BatchGetSessionError>)`](crate::operation::batch_get_session::BatchGetSessionOutput::errors): <p>A list of errors for sessions that could not be retrieved.</p>
+    ///   - [`sessions(Vec::<BatchGetSessionItem>)`](crate::operation::batch_get_session::BatchGetSessionOutput::sessions): A list of sessions that were successfully retrieved.
+    ///   - [`errors(Vec::<BatchGetSessionError>)`](crate::operation::batch_get_session::BatchGetSessionOutput::errors): A list of errors for sessions that could not be retrieved.
     /// - On failure, responds with [`SdkError<BatchGetSessionError>`](crate::operation::batch_get_session::BatchGetSessionError)
     pub fn batch_get_session(&self) -> crate::operation::batch_get_session::builders::BatchGetSessionFluentBuilder {
         crate::operation::batch_get_session::builders::BatchGetSessionFluentBuilder::new(self.handle.clone())

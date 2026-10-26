@@ -190,6 +190,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListExascaleD
                 captured.insert("nextToken", value);
             }
         }
+        if requested.should_capture("cloudExadataInfrastructureId") {
+            if let ::std::option::Option::Some(value) = input.cloud_exadata_infrastructure_id.as_deref() {
+                captured.insert("cloudExadataInfrastructureId", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())
@@ -323,6 +328,8 @@ pub enum ListExascaleDbStorageVaultsError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Occurs when there is an internal failure in the Oracle Database@Amazon Web Services service. Wait and try again.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The operation tried to access a resource that doesn't exist. Make sure you provided the correct resource and try again.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request has failed validation because it is missing required fields or has invalid inputs.</p>
@@ -362,6 +369,7 @@ impl ListExascaleDbStorageVaultsError {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -374,6 +382,10 @@ impl ListExascaleDbStorageVaultsError {
     /// Returns `true` if the error kind is `ListExascaleDbStorageVaultsError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `ListExascaleDbStorageVaultsError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListExascaleDbStorageVaultsError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -389,6 +401,7 @@ impl ::std::error::Error for ListExascaleDbStorageVaultsError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -400,6 +413,7 @@ impl ::std::fmt::Display for ListExascaleDbStorageVaultsError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -428,6 +442,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListExascaleD
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

@@ -22,7 +22,7 @@ impl crate::operation::delete_metered_product::builders::DeleteMeteredProductInp
 }
 /// Fluent builder constructing a request to `DeleteMeteredProduct`.
 ///
-/// <p>Deletes a metered product.</p>
+/// Deletes a metered product.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMeteredProductFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteMeteredProductFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the license endpoint from which to remove the metered product.</p>
+    /// The ID of the license endpoint from which to remove the metered product.
     pub fn license_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_endpoint_id(input.into());
         self
     }
-    /// <p>The ID of the license endpoint from which to remove the metered product.</p>
+    /// The ID of the license endpoint from which to remove the metered product.
     pub fn set_license_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_endpoint_id(input);
         self
     }
-    /// <p>The ID of the license endpoint from which to remove the metered product.</p>
+    /// The ID of the license endpoint from which to remove the metered product.
     pub fn get_license_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_license_endpoint_id()
     }
-    /// <p>The product ID to remove from the license endpoint.</p>
+    /// The product ID to remove from the license endpoint.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_id(input.into());
         self
     }
-    /// <p>The product ID to remove from the license endpoint.</p>
+    /// The product ID to remove from the license endpoint.
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product_id(input);
         self
     }
-    /// <p>The product ID to remove from the license endpoint.</p>
+    /// The product ID to remove from the license endpoint.
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_product_id()
     }

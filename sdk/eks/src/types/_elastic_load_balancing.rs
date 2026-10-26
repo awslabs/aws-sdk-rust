@@ -6,11 +6,17 @@
 pub struct ElasticLoadBalancing {
     /// <p>Indicates if the load balancing capability is enabled on your EKS Auto Mode cluster. If the load balancing capability is enabled, EKS Auto Mode will create and delete load balancers in your Amazon Web Services account.</p>
     pub enabled: ::std::option::Option<bool>,
+    /// <p>Indicates the current configuration of the Kubernetes Gateway API for the load balancing capability on your EKS Auto Mode cluster. For more information, see EKS Auto Mode load balancing capability in the <i>Amazon EKS User Guide</i>.</p>
+    pub gateway_api: ::std::option::Option<crate::types::GatewayApiConfiguration>,
 }
 impl ElasticLoadBalancing {
     /// <p>Indicates if the load balancing capability is enabled on your EKS Auto Mode cluster. If the load balancing capability is enabled, EKS Auto Mode will create and delete load balancers in your Amazon Web Services account.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
+    }
+    /// <p>Indicates the current configuration of the Kubernetes Gateway API for the load balancing capability on your EKS Auto Mode cluster. For more information, see EKS Auto Mode load balancing capability in the <i>Amazon EKS User Guide</i>.</p>
+    pub fn gateway_api(&self) -> ::std::option::Option<&crate::types::GatewayApiConfiguration> {
+        self.gateway_api.as_ref()
     }
 }
 impl ElasticLoadBalancing {
@@ -25,6 +31,7 @@ impl ElasticLoadBalancing {
 #[non_exhaustive]
 pub struct ElasticLoadBalancingBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) gateway_api: ::std::option::Option<crate::types::GatewayApiConfiguration>,
 }
 impl ElasticLoadBalancingBuilder {
     /// <p>Indicates if the load balancing capability is enabled on your EKS Auto Mode cluster. If the load balancing capability is enabled, EKS Auto Mode will create and delete load balancers in your Amazon Web Services account.</p>
@@ -41,8 +48,25 @@ impl ElasticLoadBalancingBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
+    /// <p>Indicates the current configuration of the Kubernetes Gateway API for the load balancing capability on your EKS Auto Mode cluster. For more information, see EKS Auto Mode load balancing capability in the <i>Amazon EKS User Guide</i>.</p>
+    pub fn gateway_api(mut self, input: crate::types::GatewayApiConfiguration) -> Self {
+        self.gateway_api = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the current configuration of the Kubernetes Gateway API for the load balancing capability on your EKS Auto Mode cluster. For more information, see EKS Auto Mode load balancing capability in the <i>Amazon EKS User Guide</i>.</p>
+    pub fn set_gateway_api(mut self, input: ::std::option::Option<crate::types::GatewayApiConfiguration>) -> Self {
+        self.gateway_api = input;
+        self
+    }
+    /// <p>Indicates the current configuration of the Kubernetes Gateway API for the load balancing capability on your EKS Auto Mode cluster. For more information, see EKS Auto Mode load balancing capability in the <i>Amazon EKS User Guide</i>.</p>
+    pub fn get_gateway_api(&self) -> &::std::option::Option<crate::types::GatewayApiConfiguration> {
+        &self.gateway_api
+    }
     /// Consumes the builder and constructs a [`ElasticLoadBalancing`](crate::types::ElasticLoadBalancing).
     pub fn build(self) -> crate::types::ElasticLoadBalancing {
-        crate::types::ElasticLoadBalancing { enabled: self.enabled }
+        crate::types::ElasticLoadBalancing {
+            enabled: self.enabled,
+            gateway_api: self.gateway_api,
+        }
     }
 }

@@ -22,7 +22,7 @@ impl crate::operation::update_budget::builders::UpdateBudgetInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateBudget`.
 ///
-/// <p>Updates a budget that sets spending thresholds for rendering activity.</p>
+/// Updates a budget that sets spending thresholds for rendering activity.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBudgetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdateBudgetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the budget to update.</p>
+    /// The farm ID of the budget to update.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the budget to update.</p>
+    /// The farm ID of the budget to update.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the budget to update.</p>
+    /// The farm ID of the budget to update.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The budget ID to update.</p>
+    /// The budget ID to update.
     pub fn budget_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.budget_id(input.into());
         self
     }
-    /// <p>The budget ID to update.</p>
+    /// The budget ID to update.
     pub fn set_budget_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_budget_id(input);
         self
     }
-    /// <p>The budget ID to update.</p>
+    /// The budget ID to update.
     pub fn get_budget_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_budget_id()
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -222,17 +222,17 @@ impl UpdateBudgetFluentBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BudgetStatus> {
         self.inner.get_status()
     }
-    /// <p>The dollar limit to update on the budget. Based on consumed usage.</p>
+    /// The dollar limit to update on the budget. Based on consumed usage.
     pub fn approximate_dollar_limit(mut self, input: f32) -> Self {
         self.inner = self.inner.approximate_dollar_limit(input);
         self
     }
-    /// <p>The dollar limit to update on the budget. Based on consumed usage.</p>
+    /// The dollar limit to update on the budget. Based on consumed usage.
     pub fn set_approximate_dollar_limit(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_approximate_dollar_limit(input);
         self
     }
-    /// <p>The dollar limit to update on the budget. Based on consumed usage.</p>
+    /// The dollar limit to update on the budget. Based on consumed usage.
     pub fn get_approximate_dollar_limit(&self) -> &::std::option::Option<f32> {
         self.inner.get_approximate_dollar_limit()
     }
@@ -241,17 +241,17 @@ impl UpdateBudgetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_actions_to_add`](Self::set_actions_to_add).
     ///
-    /// <p>The budget actions to add. Budget actions specify what happens when the budget runs out.</p>
+    /// The budget actions to add. Budget actions specify what happens when the budget runs out.
     pub fn actions_to_add(mut self, input: crate::types::BudgetActionToAdd) -> Self {
         self.inner = self.inner.actions_to_add(input);
         self
     }
-    /// <p>The budget actions to add. Budget actions specify what happens when the budget runs out.</p>
+    /// The budget actions to add. Budget actions specify what happens when the budget runs out.
     pub fn set_actions_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BudgetActionToAdd>>) -> Self {
         self.inner = self.inner.set_actions_to_add(input);
         self
     }
-    /// <p>The budget actions to add. Budget actions specify what happens when the budget runs out.</p>
+    /// The budget actions to add. Budget actions specify what happens when the budget runs out.
     pub fn get_actions_to_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetActionToAdd>> {
         self.inner.get_actions_to_add()
     }
@@ -260,31 +260,31 @@ impl UpdateBudgetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_actions_to_remove`](Self::set_actions_to_remove).
     ///
-    /// <p>The budget actions to remove from the budget.</p>
+    /// The budget actions to remove from the budget.
     pub fn actions_to_remove(mut self, input: crate::types::BudgetActionToRemove) -> Self {
         self.inner = self.inner.actions_to_remove(input);
         self
     }
-    /// <p>The budget actions to remove from the budget.</p>
+    /// The budget actions to remove from the budget.
     pub fn set_actions_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BudgetActionToRemove>>) -> Self {
         self.inner = self.inner.set_actions_to_remove(input);
         self
     }
-    /// <p>The budget actions to remove from the budget.</p>
+    /// The budget actions to remove from the budget.
     pub fn get_actions_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetActionToRemove>> {
         self.inner.get_actions_to_remove()
     }
-    /// <p>The schedule to update.</p>
+    /// The schedule to update.
     pub fn schedule(mut self, input: crate::types::BudgetSchedule) -> Self {
         self.inner = self.inner.schedule(input);
         self
     }
-    /// <p>The schedule to update.</p>
+    /// The schedule to update.
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::BudgetSchedule>) -> Self {
         self.inner = self.inner.set_schedule(input);
         self
     }
-    /// <p>The schedule to update.</p>
+    /// The schedule to update.
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::BudgetSchedule> {
         self.inner.get_schedule()
     }

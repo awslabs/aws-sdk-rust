@@ -17,6 +17,8 @@ pub use crate::types::_channel::Channel;
 
 pub use crate::types::_stream_key::StreamKey;
 
+pub use crate::types::_failover_slate_configuration::FailoverSlateConfiguration;
+
 pub use crate::types::_playback_restriction_policy::PlaybackRestrictionPolicy;
 
 pub use crate::types::_destination_configuration::DestinationConfiguration;
@@ -49,6 +51,8 @@ pub use crate::types::_multitrack_maximum_resolution::MultitrackMaximumResolutio
 
 pub use crate::types::_srt::Srt;
 
+pub use crate::types::_failover_slate_configuration_state::FailoverSlateConfigurationState;
+
 pub use crate::types::_s3_destination_configuration::S3DestinationConfiguration;
 
 pub use crate::types::_recording_mode::RecordingMode;
@@ -70,6 +74,8 @@ pub use crate::types::_ingest_configurations::IngestConfigurations;
 pub use crate::types::_ad_configuration_summary::AdConfigurationSummary;
 
 pub use crate::types::_channel_summary::ChannelSummary;
+
+pub use crate::types::_failover_slate_configuration_summary::FailoverSlateConfigurationSummary;
 
 pub use crate::types::_playback_key_pair_summary::PlaybackKeyPairSummary;
 
@@ -116,6 +122,12 @@ mod _channel_type;
 mod _container_format;
 
 mod _destination_configuration;
+
+mod _failover_slate_configuration;
+
+mod _failover_slate_configuration_state;
+
+mod _failover_slate_configuration_summary;
 
 mod _ingest_configuration;
 

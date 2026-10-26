@@ -197,6 +197,10 @@ pub(crate) mod shape_saa_s_product_filters;
 
 pub(crate) mod shape_saa_s_product_sort;
 
+pub(crate) mod shape_subsidiary_authorization_filters;
+
+pub(crate) mod shape_subsidiary_authorization_sort;
+
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_ami_product_entity_id_filter;
@@ -343,6 +347,24 @@ pub(crate) mod shape_saa_s_product_title_filter;
 
 pub(crate) mod shape_saa_s_product_visibility_filter;
 
+pub(crate) mod shape_subsidiary_authorization_created_date_filter;
+
+pub(crate) mod shape_subsidiary_authorization_entity_id_filter;
+
+pub(crate) mod shape_subsidiary_authorization_last_modified_date_filter;
+
+pub(crate) mod shape_subsidiary_authorization_name_filter;
+
+pub(crate) mod shape_subsidiary_authorization_resource_id_filter;
+
+pub(crate) mod shape_subsidiary_authorization_resource_name_filter;
+
+pub(crate) mod shape_subsidiary_authorization_status_filter;
+
+pub(crate) mod shape_subsidiary_authorization_subsidiary_account_id_filter;
+
+pub(crate) mod shape_subsidiary_authorization_summary;
+
 pub(crate) mod shape_ami_product_last_modified_date_filter_date_range;
 
 pub(crate) mod shape_container_product_last_modified_date_filter_date_range;
@@ -378,6 +400,10 @@ pub(crate) mod shape_resale_authorization_created_date_filter_date_range;
 pub(crate) mod shape_resale_authorization_last_modified_date_filter_date_range;
 
 pub(crate) mod shape_saa_s_product_last_modified_date_filter_date_range;
+
+pub(crate) mod shape_subsidiary_authorization_created_date_filter_date_range;
+
+pub(crate) mod shape_subsidiary_authorization_last_modified_date_filter_date_range;
 
 pub(crate) mod shape_error_scope_list;
 

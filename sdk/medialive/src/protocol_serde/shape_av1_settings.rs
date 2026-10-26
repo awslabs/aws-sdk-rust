@@ -114,6 +114,12 @@ pub fn ser_av1_settings(
     if let Some(var_26) = &input.bit_depth {
         object.key("bitDepth").string(var_26.as_str());
     }
+    if let Some(var_27) = &input.filter_settings {
+        #[allow(unused_mut)]
+        let mut object_28 = object.key("filterSettings").start_object();
+        crate::protocol_serde::shape_av1_filter_settings::ser_av1_filter_settings(&mut object_28, var_27)?;
+        object_28.finish();
+    }
     Ok(())
 }
 
@@ -299,6 +305,13 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::Av1BitDepth::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "filterSettings" => {
+                            builder = builder.set_filter_settings(crate::protocol_serde::shape_av1_filter_settings::de_av1_filter_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

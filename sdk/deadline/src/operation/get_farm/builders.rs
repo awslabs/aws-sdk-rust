@@ -22,7 +22,7 @@ impl crate::operation::get_farm::builders::GetFarmInputBuilder {
 }
 /// Fluent builder constructing a request to `GetFarm`.
 ///
-/// <p>Get a farm.</p>
+/// Get a farm.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFarmFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,17 +99,17 @@ impl GetFarmFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the farm.</p>
+    /// The farm ID of the farm.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the farm.</p>
+    /// The farm ID of the farm.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the farm.</p>
+    /// The farm ID of the farm.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }

@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AssociateSourceViews`](crate::operation::associate_source_views) operation has
-/// a [`Client::associate_source_views`], function which returns a builder for that operation.
+/// For example, the [`AssociateContract`](crate::operation::associate_contract) operation has
+/// a [`Client::associate_contract`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.associate_source_views()
-///     .arn("example")
+/// let result = client.associate_contract()
+///     .contract_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,9 +136,15 @@ impl Client {
     }
 }
 
+mod associate_contract;
+
 mod associate_source_views;
 
+mod cancel_contractual_investment_attestation;
+
 mod create_billing_view;
+
+mod create_contractual_investment_attestation;
 
 /// Operation customization and supporting types.
 ///
@@ -151,7 +157,7 @@ mod create_billing_view;
 /// # let client: aws_sdk_billing::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.associate_source_views()
+/// let result = client.associate_contract()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -169,11 +175,15 @@ pub mod customize;
 
 mod delete_billing_view;
 
+mod disassociate_contract;
+
 mod disassociate_source_views;
 
 mod get_billing_preferences;
 
 mod get_billing_view;
+
+mod get_contract_information;
 
 mod get_credit_allocation_history;
 
@@ -192,6 +202,14 @@ mod list_billing_views;
 mod list_business_support_account_charges;
 
 mod list_business_support_subscription_history;
+
+mod list_contracts;
+
+mod list_contractual_investment_attestations;
+
+mod list_contractual_investment_summaries;
+
+mod list_contractual_investments;
 
 mod list_enterprise_support_linked_account_charges;
 

@@ -3,30 +3,30 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkerScheduleOutput {
-    /// <p>The assigned sessions to update.</p>
+    /// The assigned sessions to update.
     pub assigned_sessions: ::std::collections::HashMap<::std::string::String, crate::types::AssignedSession>,
-    /// <p>The session actions associated with the worker schedule to cancel.</p>
+    /// The session actions associated with the worker schedule to cancel.
     pub cancel_session_actions: ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    /// <p>The status to update the worker to.</p>
+    /// The status to update the worker to.
     pub desired_worker_status: ::std::option::Option<crate::types::DesiredWorkerStatus>,
-    /// <p>Updates the time interval (in seconds) for the schedule.</p>
+    /// Updates the time interval (in seconds) for the schedule.
     pub update_interval_seconds: i32,
     _request_id: Option<String>,
 }
 impl UpdateWorkerScheduleOutput {
-    /// <p>The assigned sessions to update.</p>
+    /// The assigned sessions to update.
     pub fn assigned_sessions(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::AssignedSession> {
         &self.assigned_sessions
     }
-    /// <p>The session actions associated with the worker schedule to cancel.</p>
+    /// The session actions associated with the worker schedule to cancel.
     pub fn cancel_session_actions(&self) -> &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>> {
         &self.cancel_session_actions
     }
-    /// <p>The status to update the worker to.</p>
+    /// The status to update the worker to.
     pub fn desired_worker_status(&self) -> ::std::option::Option<&crate::types::DesiredWorkerStatus> {
         self.desired_worker_status.as_ref()
     }
-    /// <p>Updates the time interval (in seconds) for the schedule.</p>
+    /// Updates the time interval (in seconds) for the schedule.
     pub fn update_interval_seconds(&self) -> i32 {
         self.update_interval_seconds
     }
@@ -59,14 +59,14 @@ impl UpdateWorkerScheduleOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_assigned_sessions`](Self::set_assigned_sessions).
     ///
-    /// <p>The assigned sessions to update.</p>
+    /// The assigned sessions to update.
     pub fn assigned_sessions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AssignedSession) -> Self {
         let mut hash_map = self.assigned_sessions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.assigned_sessions = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The assigned sessions to update.</p>
+    /// The assigned sessions to update.
     pub fn set_assigned_sessions(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssignedSession>>,
@@ -74,7 +74,7 @@ impl UpdateWorkerScheduleOutputBuilder {
         self.assigned_sessions = input;
         self
     }
-    /// <p>The assigned sessions to update.</p>
+    /// The assigned sessions to update.
     pub fn get_assigned_sessions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssignedSession>> {
         &self.assigned_sessions
     }
@@ -82,14 +82,14 @@ impl UpdateWorkerScheduleOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_cancel_session_actions`](Self::set_cancel_session_actions).
     ///
-    /// <p>The session actions associated with the worker schedule to cancel.</p>
+    /// The session actions associated with the worker schedule to cancel.
     pub fn cancel_session_actions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.cancel_session_actions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.cancel_session_actions = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The session actions associated with the worker schedule to cancel.</p>
+    /// The session actions associated with the worker schedule to cancel.
     pub fn set_cancel_session_actions(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -97,38 +97,38 @@ impl UpdateWorkerScheduleOutputBuilder {
         self.cancel_session_actions = input;
         self
     }
-    /// <p>The session actions associated with the worker schedule to cancel.</p>
+    /// The session actions associated with the worker schedule to cancel.
     pub fn get_cancel_session_actions(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.cancel_session_actions
     }
-    /// <p>The status to update the worker to.</p>
+    /// The status to update the worker to.
     pub fn desired_worker_status(mut self, input: crate::types::DesiredWorkerStatus) -> Self {
         self.desired_worker_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status to update the worker to.</p>
+    /// The status to update the worker to.
     pub fn set_desired_worker_status(mut self, input: ::std::option::Option<crate::types::DesiredWorkerStatus>) -> Self {
         self.desired_worker_status = input;
         self
     }
-    /// <p>The status to update the worker to.</p>
+    /// The status to update the worker to.
     pub fn get_desired_worker_status(&self) -> &::std::option::Option<crate::types::DesiredWorkerStatus> {
         &self.desired_worker_status
     }
-    /// <p>Updates the time interval (in seconds) for the schedule.</p>
+    /// Updates the time interval (in seconds) for the schedule.
     /// This field is required.
     pub fn update_interval_seconds(mut self, input: i32) -> Self {
         self.update_interval_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Updates the time interval (in seconds) for the schedule.</p>
+    /// Updates the time interval (in seconds) for the schedule.
     pub fn set_update_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.update_interval_seconds = input;
         self
     }
-    /// <p>Updates the time interval (in seconds) for the schedule.</p>
+    /// Updates the time interval (in seconds) for the schedule.
     pub fn get_update_interval_seconds(&self) -> &::std::option::Option<i32> {
         &self.update_interval_seconds
     }

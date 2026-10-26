@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateJobInput {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The list of jobs to update. You can specify up to 100 jobs per request.</p>
+    /// The list of jobs to update. You can specify up to 100 jobs per request.
     pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateJobItem>>,
 }
 impl BatchUpdateJobInput {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The list of jobs to update. You can specify up to 100 jobs per request.</p>
+    /// The list of jobs to update. You can specify up to 100 jobs per request.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jobs.is_none()`.
     pub fn jobs(&self) -> &[crate::types::BatchUpdateJobItem] {
@@ -35,17 +35,17 @@ pub struct BatchUpdateJobInputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateJobItem>>,
 }
 impl BatchUpdateJobInputBuilder {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
@@ -53,19 +53,19 @@ impl BatchUpdateJobInputBuilder {
     ///
     /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
     ///
-    /// <p>The list of jobs to update. You can specify up to 100 jobs per request.</p>
+    /// The list of jobs to update. You can specify up to 100 jobs per request.
     pub fn jobs(mut self, input: crate::types::BatchUpdateJobItem) -> Self {
         let mut v = self.jobs.unwrap_or_default();
         v.push(input);
         self.jobs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of jobs to update. You can specify up to 100 jobs per request.</p>
+    /// The list of jobs to update. You can specify up to 100 jobs per request.
     pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateJobItem>>) -> Self {
         self.jobs = input;
         self
     }
-    /// <p>The list of jobs to update. You can specify up to 100 jobs per request.</p>
+    /// The list of jobs to update. You can specify up to 100 jobs per request.
     pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateJobItem>> {
         &self.jobs
     }

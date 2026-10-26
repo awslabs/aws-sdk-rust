@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteQueueLimitAssociationInput {
-    /// <p>The unique identifier of the farm that contains the queue and limit to disassociate.</p>
+    /// The unique identifier of the farm that contains the queue and limit to disassociate.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the queue to disassociate.</p>
+    /// The unique identifier of the queue to disassociate.
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the limit to disassociate.</p>
+    /// The unique identifier of the limit to disassociate.
     pub limit_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteQueueLimitAssociationInput {
-    /// <p>The unique identifier of the farm that contains the queue and limit to disassociate.</p>
+    /// The unique identifier of the farm that contains the queue and limit to disassociate.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The unique identifier of the queue to disassociate.</p>
+    /// The unique identifier of the queue to disassociate.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The unique identifier of the limit to disassociate.</p>
+    /// The unique identifier of the limit to disassociate.
     pub fn limit_id(&self) -> ::std::option::Option<&str> {
         self.limit_id.as_deref()
     }
@@ -40,48 +40,48 @@ pub struct DeleteQueueLimitAssociationInputBuilder {
     pub(crate) limit_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteQueueLimitAssociationInputBuilder {
-    /// <p>The unique identifier of the farm that contains the queue and limit to disassociate.</p>
+    /// The unique identifier of the farm that contains the queue and limit to disassociate.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the farm that contains the queue and limit to disassociate.</p>
+    /// The unique identifier of the farm that contains the queue and limit to disassociate.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The unique identifier of the farm that contains the queue and limit to disassociate.</p>
+    /// The unique identifier of the farm that contains the queue and limit to disassociate.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The unique identifier of the queue to disassociate.</p>
+    /// The unique identifier of the queue to disassociate.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the queue to disassociate.</p>
+    /// The unique identifier of the queue to disassociate.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The unique identifier of the queue to disassociate.</p>
+    /// The unique identifier of the queue to disassociate.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The unique identifier of the limit to disassociate.</p>
+    /// The unique identifier of the limit to disassociate.
     /// This field is required.
     pub fn limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.limit_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the limit to disassociate.</p>
+    /// The unique identifier of the limit to disassociate.
     pub fn set_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.limit_id = input;
         self
     }
-    /// <p>The unique identifier of the limit to disassociate.</p>
+    /// The unique identifier of the limit to disassociate.
     pub fn get_limit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.limit_id
     }

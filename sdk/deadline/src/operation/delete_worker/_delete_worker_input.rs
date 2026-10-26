@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWorkerInput {
-    /// <p>The farm ID of the worker to delete.</p>
+    /// The farm ID of the worker to delete.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The fleet ID of the worker to delete.</p>
+    /// The fleet ID of the worker to delete.
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The worker ID of the worker to delete.</p>
+    /// The worker ID of the worker to delete.
     pub worker_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWorkerInput {
-    /// <p>The farm ID of the worker to delete.</p>
+    /// The farm ID of the worker to delete.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The fleet ID of the worker to delete.</p>
+    /// The fleet ID of the worker to delete.
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The worker ID of the worker to delete.</p>
+    /// The worker ID of the worker to delete.
     pub fn worker_id(&self) -> ::std::option::Option<&str> {
         self.worker_id.as_deref()
     }
@@ -40,48 +40,48 @@ pub struct DeleteWorkerInputBuilder {
     pub(crate) worker_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWorkerInputBuilder {
-    /// <p>The farm ID of the worker to delete.</p>
+    /// The farm ID of the worker to delete.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID of the worker to delete.</p>
+    /// The farm ID of the worker to delete.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID of the worker to delete.</p>
+    /// The farm ID of the worker to delete.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The fleet ID of the worker to delete.</p>
+    /// The fleet ID of the worker to delete.
     /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The fleet ID of the worker to delete.</p>
+    /// The fleet ID of the worker to delete.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p>The fleet ID of the worker to delete.</p>
+    /// The fleet ID of the worker to delete.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>The worker ID of the worker to delete.</p>
+    /// The worker ID of the worker to delete.
     /// This field is required.
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The worker ID of the worker to delete.</p>
+    /// The worker ID of the worker to delete.
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.worker_id = input;
         self
     }
-    /// <p>The worker ID of the worker to delete.</p>
+    /// The worker ID of the worker to delete.
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.worker_id
     }

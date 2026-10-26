@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQueueEnvironmentOutput {
-    /// <p>The queue environment ID.</p>
+    /// The queue environment ID.
     pub queue_environment_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateQueueEnvironmentOutput {
-    /// <p>The queue environment ID.</p>
+    /// The queue environment ID.
     pub fn queue_environment_id(&self) -> &str {
         use std::ops::Deref;
         self.queue_environment_id.deref()
@@ -34,18 +34,18 @@ pub struct CreateQueueEnvironmentOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateQueueEnvironmentOutputBuilder {
-    /// <p>The queue environment ID.</p>
+    /// The queue environment ID.
     /// This field is required.
     pub fn queue_environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_environment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue environment ID.</p>
+    /// The queue environment ID.
     pub fn set_queue_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_environment_id = input;
         self
     }
-    /// <p>The queue environment ID.</p>
+    /// The queue environment ID.
     pub fn get_queue_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_environment_id
     }

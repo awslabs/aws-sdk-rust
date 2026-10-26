@@ -19,6 +19,9 @@ pub mod add_flow_sources;
 /// Types for the `AddFlowVpcInterfaces` operation.
 pub mod add_flow_vpc_interfaces;
 
+/// Types for the `BatchGetDestinationEndpoint` operation.
+pub mod batch_get_destination_endpoint;
+
 /// Types for the `BatchGetRouterInput` operation.
 pub mod batch_get_router_input;
 
@@ -27,6 +30,12 @@ pub mod batch_get_router_network_interface;
 
 /// Types for the `BatchGetRouterOutput` operation.
 pub mod batch_get_router_output;
+
+/// Types for the `BatchGetSourceEndpoint` operation.
+pub mod batch_get_source_endpoint;
+
+/// Types for the `ConnectEndpoints` operation.
+pub mod connect_endpoints;
 
 /// Types for the `CreateBridge` operation.
 pub mod create_bridge;
@@ -64,8 +73,14 @@ pub mod delete_router_network_interface;
 /// Types for the `DeleteRouterOutput` operation.
 pub mod delete_router_output;
 
+/// Types for the `DeregisterDestinationEndpoint` operation.
+pub mod deregister_destination_endpoint;
+
 /// Types for the `DeregisterGatewayInstance` operation.
 pub mod deregister_gateway_instance;
+
+/// Types for the `DeregisterSourceEndpoint` operation.
+pub mod deregister_source_endpoint;
 
 /// Types for the `DescribeBridge` operation.
 pub mod describe_bridge;
@@ -91,6 +106,12 @@ pub mod describe_offering;
 /// Types for the `DescribeReservation` operation.
 pub mod describe_reservation;
 
+/// Types for the `DisconnectEndpoints` operation.
+pub mod disconnect_endpoints;
+
+/// Types for the `GetDestinationEndpoint` operation.
+pub mod get_destination_endpoint;
+
 /// Types for the `GetRouterInput` operation.
 pub mod get_router_input;
 
@@ -106,11 +127,17 @@ pub mod get_router_network_interface;
 /// Types for the `GetRouterOutput` operation.
 pub mod get_router_output;
 
+/// Types for the `GetSourceEndpoint` operation.
+pub mod get_source_endpoint;
+
 /// Types for the `GrantFlowEntitlements` operation.
 pub mod grant_flow_entitlements;
 
 /// Types for the `ListBridges` operation.
 pub mod list_bridges;
+
+/// Types for the `ListDestinationEndpoints` operation.
+pub mod list_destination_endpoints;
 
 /// Types for the `ListEntitlements` operation.
 pub mod list_entitlements;
@@ -139,6 +166,9 @@ pub mod list_router_network_interfaces;
 /// Types for the `ListRouterOutputs` operation.
 pub mod list_router_outputs;
 
+/// Types for the `ListSourceEndpoints` operation.
+pub mod list_source_endpoints;
+
 /// Types for the `ListTagsForGlobalResource` operation.
 pub mod list_tags_for_global_resource;
 
@@ -147,6 +177,12 @@ pub mod list_tags_for_resource;
 
 /// Types for the `PurchaseOffering` operation.
 pub mod purchase_offering;
+
+/// Types for the `RegisterDestinationEndpoint` operation.
+pub mod register_destination_endpoint;
+
+/// Types for the `RegisterSourceEndpoint` operation.
+pub mod register_source_endpoint;
 
 /// Types for the `RemoveBridgeOutput` operation.
 pub mod remove_bridge_output;
@@ -220,6 +256,9 @@ pub mod update_bridge_source;
 /// Types for the `UpdateBridgeState` operation.
 pub mod update_bridge_state;
 
+/// Types for the `UpdateDestinationEndpoint` operation.
+pub mod update_destination_endpoint;
+
 /// Types for the `UpdateFlow` operation.
 pub mod update_flow;
 
@@ -246,3 +285,6 @@ pub mod update_router_network_interface;
 
 /// Types for the `UpdateRouterOutput` operation.
 pub mod update_router_output;
+
+/// Types for the `UpdateSourceEndpoint` operation.
+pub mod update_source_endpoint;

@@ -15,6 +15,8 @@ pub enum Error {
     CreateFlow420Exception(crate::types::error::CreateFlow420Exception),
     /// <p>Exception raised by Elemental MediaConnect when creating the gateway. See the error message for the operation for more information on the cause of this exception.</p>
     CreateGateway420Exception(crate::types::error::CreateGateway420Exception),
+    /// <p>The request would cause you to exceed a service quota for destination endpoints. Delete unused destination endpoints or request a quota increase, then try your request again.</p>
+    DestinationEndpointServiceQuotaExceededException(crate::types::error::DestinationEndpointServiceQuotaExceededException),
     /// <p>You do not have sufficient access to perform this action.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>Exception raised by Elemental MediaConnect when granting the entitlement. See the error message for the operation for more information on the cause of this exception.</p>
@@ -31,6 +33,8 @@ pub enum Error {
     RouterOutputServiceQuotaExceededException(crate::types::error::RouterOutputServiceQuotaExceededException),
     /// <p>The service is currently unavailable or busy.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
+    /// <p>The request would cause you to exceed a service quota for source endpoints. Delete unused source endpoints or request a quota increase, then try your request again.</p>
+    SourceEndpointServiceQuotaExceededException(crate::types::error::SourceEndpointServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -51,6 +55,7 @@ impl ::std::fmt::Display for Error {
             Error::CreateBridge420Exception(inner) => inner.fmt(f),
             Error::CreateFlow420Exception(inner) => inner.fmt(f),
             Error::CreateGateway420Exception(inner) => inner.fmt(f),
+            Error::DestinationEndpointServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ForbiddenException(inner) => inner.fmt(f),
             Error::GrantFlowEntitlements420Exception(inner) => inner.fmt(f),
             Error::InternalServerErrorException(inner) => inner.fmt(f),
@@ -59,6 +64,7 @@ impl ::std::fmt::Display for Error {
             Error::RouterNetworkInterfaceServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::RouterOutputServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
+            Error::SourceEndpointServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -87,6 +93,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::CreateBridge420Exception(inner) => inner.meta(),
             Self::CreateFlow420Exception(inner) => inner.meta(),
             Self::CreateGateway420Exception(inner) => inner.meta(),
+            Self::DestinationEndpointServiceQuotaExceededException(inner) => inner.meta(),
             Self::ForbiddenException(inner) => inner.meta(),
             Self::GrantFlowEntitlements420Exception(inner) => inner.meta(),
             Self::InternalServerErrorException(inner) => inner.meta(),
@@ -95,6 +102,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::RouterNetworkInterfaceServiceQuotaExceededException(inner) => inner.meta(),
             Self::RouterOutputServiceQuotaExceededException(inner) => inner.meta(),
             Self::ServiceUnavailableException(inner) => inner.meta(),
+            Self::SourceEndpointServiceQuotaExceededException(inner) => inner.meta(),
             Self::TooManyRequestsException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
@@ -291,6 +299,49 @@ impl From<crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError> 
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_destination_endpoint::BatchGetDestinationEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_get_destination_endpoint::BatchGetDestinationEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_destination_endpoint::BatchGetDestinationEndpointError> for Error {
+    fn from(err: crate::operation::batch_get_destination_endpoint::BatchGetDestinationEndpointError) -> Self {
+        match err {
+            crate::operation::batch_get_destination_endpoint::BatchGetDestinationEndpointError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::batch_get_destination_endpoint::BatchGetDestinationEndpointError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::batch_get_destination_endpoint::BatchGetDestinationEndpointError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::batch_get_destination_endpoint::BatchGetDestinationEndpointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::batch_get_destination_endpoint::BatchGetDestinationEndpointError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::batch_get_destination_endpoint::BatchGetDestinationEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_router_input::BatchGetRouterInputError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -401,6 +452,73 @@ impl From<crate::operation::batch_get_router_output::BatchGetRouterOutputError> 
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::batch_get_router_output::BatchGetRouterOutputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_source_endpoint::BatchGetSourceEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_source_endpoint::BatchGetSourceEndpointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_source_endpoint::BatchGetSourceEndpointError> for Error {
+    fn from(err: crate::operation::batch_get_source_endpoint::BatchGetSourceEndpointError) -> Self {
+        match err {
+            crate::operation::batch_get_source_endpoint::BatchGetSourceEndpointError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::batch_get_source_endpoint::BatchGetSourceEndpointError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::batch_get_source_endpoint::BatchGetSourceEndpointError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::batch_get_source_endpoint::BatchGetSourceEndpointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::batch_get_source_endpoint::BatchGetSourceEndpointError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::batch_get_source_endpoint::BatchGetSourceEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::connect_endpoints::ConnectEndpointsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::connect_endpoints::ConnectEndpointsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::connect_endpoints::ConnectEndpointsError> for Error {
+    fn from(err: crate::operation::connect_endpoints::ConnectEndpointsError) -> Self {
+        match err {
+            crate::operation::connect_endpoints::ConnectEndpointsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::connect_endpoints::ConnectEndpointsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::connect_endpoints::ConnectEndpointsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::connect_endpoints::ConnectEndpointsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::connect_endpoints::ConnectEndpointsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::connect_endpoints::ConnectEndpointsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::connect_endpoints::ConnectEndpointsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::connect_endpoints::ConnectEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -790,6 +908,55 @@ impl From<crate::operation::delete_router_output::DeleteRouterOutputError> for E
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_destination_endpoint::DeregisterDestinationEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::deregister_destination_endpoint::DeregisterDestinationEndpointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::deregister_destination_endpoint::DeregisterDestinationEndpointError> for Error {
+    fn from(err: crate::operation::deregister_destination_endpoint::DeregisterDestinationEndpointError) -> Self {
+        match err {
+            crate::operation::deregister_destination_endpoint::DeregisterDestinationEndpointError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::deregister_destination_endpoint::DeregisterDestinationEndpointError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::deregister_destination_endpoint::DeregisterDestinationEndpointError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::deregister_destination_endpoint::DeregisterDestinationEndpointError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::deregister_destination_endpoint::DeregisterDestinationEndpointError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::deregister_destination_endpoint::DeregisterDestinationEndpointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::deregister_destination_endpoint::DeregisterDestinationEndpointError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::deregister_destination_endpoint::DeregisterDestinationEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceError, R>>
     for Error
 where
@@ -832,6 +999,47 @@ impl From<crate::operation::deregister_gateway_instance::DeregisterGatewayInstan
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_source_endpoint::DeregisterSourceEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_source_endpoint::DeregisterSourceEndpointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::deregister_source_endpoint::DeregisterSourceEndpointError> for Error {
+    fn from(err: crate::operation::deregister_source_endpoint::DeregisterSourceEndpointError) -> Self {
+        match err {
+            crate::operation::deregister_source_endpoint::DeregisterSourceEndpointError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::deregister_source_endpoint::DeregisterSourceEndpointError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::deregister_source_endpoint::DeregisterSourceEndpointError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::deregister_source_endpoint::DeregisterSourceEndpointError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::deregister_source_endpoint::DeregisterSourceEndpointError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::deregister_source_endpoint::DeregisterSourceEndpointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::deregister_source_endpoint::DeregisterSourceEndpointError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::deregister_source_endpoint::DeregisterSourceEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1109,6 +1317,76 @@ impl From<crate::operation::describe_reservation::DescribeReservationError> for 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disconnect_endpoints::DisconnectEndpointsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disconnect_endpoints::DisconnectEndpointsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disconnect_endpoints::DisconnectEndpointsError> for Error {
+    fn from(err: crate::operation::disconnect_endpoints::DisconnectEndpointsError) -> Self {
+        match err {
+            crate::operation::disconnect_endpoints::DisconnectEndpointsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::disconnect_endpoints::DisconnectEndpointsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::disconnect_endpoints::DisconnectEndpointsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::disconnect_endpoints::DisconnectEndpointsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::disconnect_endpoints::DisconnectEndpointsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::disconnect_endpoints::DisconnectEndpointsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::disconnect_endpoints::DisconnectEndpointsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::disconnect_endpoints::DisconnectEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_destination_endpoint::GetDestinationEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_destination_endpoint::GetDestinationEndpointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_destination_endpoint::GetDestinationEndpointError> for Error {
+    fn from(err: crate::operation::get_destination_endpoint::GetDestinationEndpointError) -> Self {
+        match err {
+            crate::operation::get_destination_endpoint::GetDestinationEndpointError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_destination_endpoint::GetDestinationEndpointError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_destination_endpoint::GetDestinationEndpointError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_destination_endpoint::GetDestinationEndpointError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_destination_endpoint::GetDestinationEndpointError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_destination_endpoint::GetDestinationEndpointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_destination_endpoint::GetDestinationEndpointError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_destination_endpoint::GetDestinationEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_router_input::GetRouterInputError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1300,6 +1578,37 @@ impl From<crate::operation::get_router_output::GetRouterOutputError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_source_endpoint::GetSourceEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_source_endpoint::GetSourceEndpointError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_source_endpoint::GetSourceEndpointError> for Error {
+    fn from(err: crate::operation::get_source_endpoint::GetSourceEndpointError) -> Self {
+        match err {
+            crate::operation::get_source_endpoint::GetSourceEndpointError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_source_endpoint::GetSourceEndpointError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_source_endpoint::GetSourceEndpointError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_source_endpoint::GetSourceEndpointError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_source_endpoint::GetSourceEndpointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_source_endpoint::GetSourceEndpointError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_source_endpoint::GetSourceEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1361,6 +1670,43 @@ impl From<crate::operation::list_bridges::ListBridgesError> for Error {
             crate::operation::list_bridges::ListBridgesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::list_bridges::ListBridgesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_bridges::ListBridgesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_destination_endpoints::ListDestinationEndpointsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_destination_endpoints::ListDestinationEndpointsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_destination_endpoints::ListDestinationEndpointsError> for Error {
+    fn from(err: crate::operation::list_destination_endpoints::ListDestinationEndpointsError) -> Self {
+        match err {
+            crate::operation::list_destination_endpoints::ListDestinationEndpointsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_destination_endpoints::ListDestinationEndpointsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_destination_endpoints::ListDestinationEndpointsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_destination_endpoints::ListDestinationEndpointsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_destination_endpoints::ListDestinationEndpointsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_destination_endpoints::ListDestinationEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1633,6 +1979,38 @@ impl From<crate::operation::list_router_outputs::ListRouterOutputsError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_source_endpoints::ListSourceEndpointsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_source_endpoints::ListSourceEndpointsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_source_endpoints::ListSourceEndpointsError> for Error {
+    fn from(err: crate::operation::list_source_endpoints::ListSourceEndpointsError) -> Self {
+        match err {
+            crate::operation::list_source_endpoints::ListSourceEndpointsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_source_endpoints::ListSourceEndpointsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_source_endpoints::ListSourceEndpointsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_source_endpoints::ListSourceEndpointsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_source_endpoints::ListSourceEndpointsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_source_endpoints::ListSourceEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_global_resource::ListTagsForGlobalResourceError, R>>
     for Error
 where
@@ -1720,6 +2098,89 @@ impl From<crate::operation::purchase_offering::PurchaseOfferingError> for Error 
             }
             crate::operation::purchase_offering::PurchaseOfferingError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::purchase_offering::PurchaseOfferingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_destination_endpoint::RegisterDestinationEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_destination_endpoint::RegisterDestinationEndpointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::register_destination_endpoint::RegisterDestinationEndpointError> for Error {
+    fn from(err: crate::operation::register_destination_endpoint::RegisterDestinationEndpointError) -> Self {
+        match err {
+            crate::operation::register_destination_endpoint::RegisterDestinationEndpointError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::register_destination_endpoint::RegisterDestinationEndpointError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::register_destination_endpoint::RegisterDestinationEndpointError::DestinationEndpointServiceQuotaExceededException(
+                inner,
+            ) => Error::DestinationEndpointServiceQuotaExceededException(inner),
+            crate::operation::register_destination_endpoint::RegisterDestinationEndpointError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::register_destination_endpoint::RegisterDestinationEndpointError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::register_destination_endpoint::RegisterDestinationEndpointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::register_destination_endpoint::RegisterDestinationEndpointError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::register_destination_endpoint::RegisterDestinationEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_source_endpoint::RegisterSourceEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_source_endpoint::RegisterSourceEndpointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::register_source_endpoint::RegisterSourceEndpointError> for Error {
+    fn from(err: crate::operation::register_source_endpoint::RegisterSourceEndpointError) -> Self {
+        match err {
+            crate::operation::register_source_endpoint::RegisterSourceEndpointError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::register_source_endpoint::RegisterSourceEndpointError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::register_source_endpoint::RegisterSourceEndpointError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::register_source_endpoint::RegisterSourceEndpointError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::register_source_endpoint::RegisterSourceEndpointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::register_source_endpoint::RegisterSourceEndpointError::SourceEndpointServiceQuotaExceededException(inner) => {
+                Error::SourceEndpointServiceQuotaExceededException(inner)
+            }
+            crate::operation::register_source_endpoint::RegisterSourceEndpointError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::register_source_endpoint::RegisterSourceEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2469,6 +2930,51 @@ impl From<crate::operation::update_bridge_state::UpdateBridgeStateError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_destination_endpoint::UpdateDestinationEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_destination_endpoint::UpdateDestinationEndpointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_destination_endpoint::UpdateDestinationEndpointError> for Error {
+    fn from(err: crate::operation::update_destination_endpoint::UpdateDestinationEndpointError) -> Self {
+        match err {
+            crate::operation::update_destination_endpoint::UpdateDestinationEndpointError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::update_destination_endpoint::UpdateDestinationEndpointError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_destination_endpoint::UpdateDestinationEndpointError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::update_destination_endpoint::UpdateDestinationEndpointError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_destination_endpoint::UpdateDestinationEndpointError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::update_destination_endpoint::UpdateDestinationEndpointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_destination_endpoint::UpdateDestinationEndpointError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_destination_endpoint::UpdateDestinationEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_flow::UpdateFlowError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2776,6 +3282,40 @@ impl From<crate::operation::update_router_output::UpdateRouterOutputError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_source_endpoint::UpdateSourceEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_source_endpoint::UpdateSourceEndpointError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_source_endpoint::UpdateSourceEndpointError> for Error {
+    fn from(err: crate::operation::update_source_endpoint::UpdateSourceEndpointError) -> Self {
+        match err {
+            crate::operation::update_source_endpoint::UpdateSourceEndpointError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_source_endpoint::UpdateSourceEndpointError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_source_endpoint::UpdateSourceEndpointError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_source_endpoint::UpdateSourceEndpointError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_source_endpoint::UpdateSourceEndpointError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_source_endpoint::UpdateSourceEndpointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_source_endpoint::UpdateSourceEndpointError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_source_endpoint::UpdateSourceEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<O, E> ::std::convert::From<::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>> for Error
 where
     O: ::std::fmt::Debug + ::std::marker::Send + ::std::marker::Sync + 'static,
@@ -2797,6 +3337,7 @@ impl ::std::error::Error for Error {
             Error::CreateBridge420Exception(inner) => inner.source(),
             Error::CreateFlow420Exception(inner) => inner.source(),
             Error::CreateGateway420Exception(inner) => inner.source(),
+            Error::DestinationEndpointServiceQuotaExceededException(inner) => inner.source(),
             Error::ForbiddenException(inner) => inner.source(),
             Error::GrantFlowEntitlements420Exception(inner) => inner.source(),
             Error::InternalServerErrorException(inner) => inner.source(),
@@ -2805,6 +3346,7 @@ impl ::std::error::Error for Error {
             Error::RouterNetworkInterfaceServiceQuotaExceededException(inner) => inner.source(),
             Error::RouterOutputServiceQuotaExceededException(inner) => inner.source(),
             Error::ServiceUnavailableException(inner) => inner.source(),
+            Error::SourceEndpointServiceQuotaExceededException(inner) => inner.source(),
             Error::TooManyRequestsException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -2819,6 +3361,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::CreateBridge420Exception(e) => e.request_id(),
             Self::CreateFlow420Exception(e) => e.request_id(),
             Self::CreateGateway420Exception(e) => e.request_id(),
+            Self::DestinationEndpointServiceQuotaExceededException(e) => e.request_id(),
             Self::ForbiddenException(e) => e.request_id(),
             Self::GrantFlowEntitlements420Exception(e) => e.request_id(),
             Self::InternalServerErrorException(e) => e.request_id(),
@@ -2827,6 +3370,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::RouterNetworkInterfaceServiceQuotaExceededException(e) => e.request_id(),
             Self::RouterOutputServiceQuotaExceededException(e) => e.request_id(),
             Self::ServiceUnavailableException(e) => e.request_id(),
+            Self::SourceEndpointServiceQuotaExceededException(e) => e.request_id(),
             Self::TooManyRequestsException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

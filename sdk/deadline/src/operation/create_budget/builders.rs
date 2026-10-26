@@ -22,7 +22,7 @@ impl crate::operation::create_budget::builders::CreateBudgetInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateBudget`.
 ///
-/// <p>Creates a budget to set spending thresholds for your rendering activity.</p>
+/// Creates a budget to set spending thresholds for your rendering activity.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBudgetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl CreateBudgetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID to include in this budget.</p>
+    /// The farm ID to include in this budget.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID to include in this budget.</p>
+    /// The farm ID to include in this budget.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID to include in this budget.</p>
+    /// The farm ID to include in this budget.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
@@ -162,45 +162,45 @@ impl CreateBudgetFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The queue ID provided to this budget to track usage.</p>
+    /// The queue ID provided to this budget to track usage.
     pub fn usage_tracking_resource(mut self, input: crate::types::UsageTrackingResource) -> Self {
         self.inner = self.inner.usage_tracking_resource(input);
         self
     }
-    /// <p>The queue ID provided to this budget to track usage.</p>
+    /// The queue ID provided to this budget to track usage.
     pub fn set_usage_tracking_resource(mut self, input: ::std::option::Option<crate::types::UsageTrackingResource>) -> Self {
         self.inner = self.inner.set_usage_tracking_resource(input);
         self
     }
-    /// <p>The queue ID provided to this budget to track usage.</p>
+    /// The queue ID provided to this budget to track usage.
     pub fn get_usage_tracking_resource(&self) -> &::std::option::Option<crate::types::UsageTrackingResource> {
         self.inner.get_usage_tracking_resource()
     }
-    /// <p>The dollar limit based on consumed usage.</p>
+    /// The dollar limit based on consumed usage.
     pub fn approximate_dollar_limit(mut self, input: f32) -> Self {
         self.inner = self.inner.approximate_dollar_limit(input);
         self
     }
-    /// <p>The dollar limit based on consumed usage.</p>
+    /// The dollar limit based on consumed usage.
     pub fn set_approximate_dollar_limit(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_approximate_dollar_limit(input);
         self
     }
-    /// <p>The dollar limit based on consumed usage.</p>
+    /// The dollar limit based on consumed usage.
     pub fn get_approximate_dollar_limit(&self) -> &::std::option::Option<f32> {
         self.inner.get_approximate_dollar_limit()
     }
@@ -209,31 +209,31 @@ impl CreateBudgetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
     ///
-    /// <p>The budget actions to specify what happens when the budget runs out.</p>
+    /// The budget actions to specify what happens when the budget runs out.
     pub fn actions(mut self, input: crate::types::BudgetActionToAdd) -> Self {
         self.inner = self.inner.actions(input);
         self
     }
-    /// <p>The budget actions to specify what happens when the budget runs out.</p>
+    /// The budget actions to specify what happens when the budget runs out.
     pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BudgetActionToAdd>>) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
-    /// <p>The budget actions to specify what happens when the budget runs out.</p>
+    /// The budget actions to specify what happens when the budget runs out.
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetActionToAdd>> {
         self.inner.get_actions()
     }
-    /// <p>The schedule to associate with this budget.</p>
+    /// The schedule to associate with this budget.
     pub fn schedule(mut self, input: crate::types::BudgetSchedule) -> Self {
         self.inner = self.inner.schedule(input);
         self
     }
-    /// <p>The schedule to associate with this budget.</p>
+    /// The schedule to associate with this budget.
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::BudgetSchedule>) -> Self {
         self.inner = self.inner.set_schedule(input);
         self
     }
-    /// <p>The schedule to associate with this budget.</p>
+    /// The schedule to associate with this budget.
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::BudgetSchedule> {
         self.inner.get_schedule()
     }
@@ -242,17 +242,17 @@ impl CreateBudgetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    /// Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    /// Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    /// Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

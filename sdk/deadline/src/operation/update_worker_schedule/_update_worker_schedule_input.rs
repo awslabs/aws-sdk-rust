@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkerScheduleInput {
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The fleet ID to update.</p>
+    /// The fleet ID to update.
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The worker ID to update.</p>
+    /// The worker ID to update.
     pub worker_id: ::std::option::Option<::std::string::String>,
-    /// <p>The session actions associated with the worker schedule to update.</p>
+    /// The session actions associated with the worker schedule to update.
     pub updated_session_actions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpdatedSessionActionInfo>>,
 }
 impl UpdateWorkerScheduleInput {
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The fleet ID to update.</p>
+    /// The fleet ID to update.
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The worker ID to update.</p>
+    /// The worker ID to update.
     pub fn worker_id(&self) -> ::std::option::Option<&str> {
         self.worker_id.as_deref()
     }
-    /// <p>The session actions associated with the worker schedule to update.</p>
+    /// The session actions associated with the worker schedule to update.
     pub fn updated_session_actions(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::UpdatedSessionActionInfo>> {
@@ -50,48 +50,48 @@ pub struct UpdateWorkerScheduleInputBuilder {
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpdatedSessionActionInfo>>,
 }
 impl UpdateWorkerScheduleInputBuilder {
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The fleet ID to update.</p>
+    /// The fleet ID to update.
     /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The fleet ID to update.</p>
+    /// The fleet ID to update.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p>The fleet ID to update.</p>
+    /// The fleet ID to update.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>The worker ID to update.</p>
+    /// The worker ID to update.
     /// This field is required.
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The worker ID to update.</p>
+    /// The worker ID to update.
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.worker_id = input;
         self
     }
-    /// <p>The worker ID to update.</p>
+    /// The worker ID to update.
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.worker_id
     }
@@ -99,14 +99,14 @@ impl UpdateWorkerScheduleInputBuilder {
     ///
     /// To override the contents of this collection use [`set_updated_session_actions`](Self::set_updated_session_actions).
     ///
-    /// <p>The session actions associated with the worker schedule to update.</p>
+    /// The session actions associated with the worker schedule to update.
     pub fn updated_session_actions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::UpdatedSessionActionInfo) -> Self {
         let mut hash_map = self.updated_session_actions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.updated_session_actions = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The session actions associated with the worker schedule to update.</p>
+    /// The session actions associated with the worker schedule to update.
     pub fn set_updated_session_actions(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpdatedSessionActionInfo>>,
@@ -114,7 +114,7 @@ impl UpdateWorkerScheduleInputBuilder {
         self.updated_session_actions = input;
         self
     }
-    /// <p>The session actions associated with the worker schedule to update.</p>
+    /// The session actions associated with the worker schedule to update.
     pub fn get_updated_session_actions(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpdatedSessionActionInfo>> {

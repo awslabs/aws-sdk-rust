@@ -232,6 +232,9 @@ pub mod update_cloud_exadata_infrastructure;
 /// Types for the `UpdateExadbVmCluster` operation.
 pub mod update_exadb_vm_cluster;
 
+/// Types for the `UpdateExascaleCloudExadataInfrastructure` operation.
+pub mod update_exascale_cloud_exadata_infrastructure;
+
 /// Types for the `UpdateExascaleDbStorageVault` operation.
 pub mod update_exascale_db_storage_vault;
 

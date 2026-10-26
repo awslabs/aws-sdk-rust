@@ -177,7 +177,11 @@ pub use crate::types::_cache_behavior_per_path::CacheBehaviorPerPath;
 
 pub use crate::types::_distribution_custom_error_response::DistributionCustomErrorResponse;
 
+pub use crate::types::_waf_rule::WafRule;
+
 pub use crate::types::_origin::Origin;
+
+pub use crate::types::_waf_config::WafConfig;
 
 pub use crate::types::_session::Session;
 
@@ -289,6 +293,12 @@ pub use crate::types::_container_service_ecr_image_puller_role::ContainerService
 
 pub use crate::types::_forward_values::ForwardValues;
 
+pub use crate::types::_waf_atp_config::WafAtpConfig;
+
+pub use crate::types::_waf_acfp_config::WafAcfpConfig;
+
+pub use crate::types::_waf_bot_control_config::WafBotControlConfig;
+
 pub use crate::types::_disk_map::DiskMap;
 
 pub use crate::types::_monitored_resource_info::MonitoredResourceInfo;
@@ -352,6 +362,12 @@ pub use crate::types::_renewal_status::RenewalStatus;
 pub use crate::types::_container_service_protocol::ContainerServiceProtocol;
 
 pub use crate::types::_header_enum::HeaderEnum;
+
+pub use crate::types::_waf_payload_type_enum::WafPayloadTypeEnum;
+
+pub use crate::types::_waf_response_inspection::WafResponseInspection;
+
+pub use crate::types::_waf_inspection_level_enum::WafInspectionLevelEnum;
 
 pub use crate::types::_attached_disk::AttachedDisk;
 
@@ -830,6 +846,22 @@ mod _time_period;
 mod _treat_missing_data;
 
 mod _viewer_minimum_tls_protocol_version_enum;
+
+mod _waf_acfp_config;
+
+mod _waf_atp_config;
+
+mod _waf_bot_control_config;
+
+mod _waf_config;
+
+mod _waf_inspection_level_enum;
+
+mod _waf_payload_type_enum;
+
+mod _waf_response_inspection;
+
+mod _waf_rule;
 
 /// Builders
 pub mod builders;

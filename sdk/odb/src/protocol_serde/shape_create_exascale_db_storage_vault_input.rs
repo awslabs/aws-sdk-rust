@@ -24,33 +24,36 @@ pub fn ser_create_exascale_db_storage_vault_input_input(
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_5) = &input.availability_zone_id {
-        object.key("availabilityZoneId").string(var_5.as_str());
+    if let Some(var_5) = &input.cloud_exadata_infrastructure_id {
+        object.key("cloudExadataInfrastructureId").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.availability_zone {
-        object.key("availabilityZone").string(var_6.as_str());
+    if let Some(var_6) = &input.availability_zone_id {
+        object.key("availabilityZoneId").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.description {
-        object.key("description").string(var_7.as_str());
+    if let Some(var_7) = &input.availability_zone {
+        object.key("availabilityZone").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.is_autoscale_enabled {
-        object.key("isAutoscaleEnabled").boolean(*var_8);
+    if let Some(var_8) = &input.description {
+        object.key("description").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.tags {
+    if let Some(var_9) = &input.is_autoscale_enabled {
+        object.key("isAutoscaleEnabled").boolean(*var_9);
+    }
+    if let Some(var_10) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("tags").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_11 = object.key("tags").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
-        object_10.finish();
+        object_11.finish();
     }
-    if let Some(var_13) = &input.time_zone {
-        object.key("timeZone").string(var_13.as_str());
+    if let Some(var_14) = &input.time_zone {
+        object.key("timeZone").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.client_token {
-        object.key("clientToken").string(var_14.as_str());
+    if let Some(var_15) = &input.client_token {
+        object.key("clientToken").string(var_15.as_str());
     }
     Ok(())
 }

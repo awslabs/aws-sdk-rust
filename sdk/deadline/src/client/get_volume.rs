@@ -3,24 +3,24 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetVolume`](crate::operation::get_volume::builders::GetVolumeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_volume::builders::GetVolumeFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_volume::builders::GetVolumeFluentBuilder::set_farm_id):<br>required: **true**<br><p>The farm ID of the farm that contains the fleet.</p><br>
-    ///   - [`fleet_id(impl Into<String>)`](crate::operation::get_volume::builders::GetVolumeFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::get_volume::builders::GetVolumeFluentBuilder::set_fleet_id):<br>required: **true**<br><p>The fleet ID of the fleet that contains the volume.</p><br>
-    ///   - [`volume_id(impl Into<String>)`](crate::operation::get_volume::builders::GetVolumeFluentBuilder::volume_id) / [`set_volume_id(Option<String>)`](crate::operation::get_volume::builders::GetVolumeFluentBuilder::set_volume_id):<br>required: **true**<br><p>The volume ID of the volume to retrieve.</p><br>
+    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_volume::builders::GetVolumeFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_volume::builders::GetVolumeFluentBuilder::set_farm_id):<br>required: **true**<br>The farm ID of the farm that contains the fleet.<br>
+    ///   - [`fleet_id(impl Into<String>)`](crate::operation::get_volume::builders::GetVolumeFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::get_volume::builders::GetVolumeFluentBuilder::set_fleet_id):<br>required: **true**<br>The fleet ID of the fleet that contains the volume.<br>
+    ///   - [`volume_id(impl Into<String>)`](crate::operation::get_volume::builders::GetVolumeFluentBuilder::volume_id) / [`set_volume_id(Option<String>)`](crate::operation::get_volume::builders::GetVolumeFluentBuilder::set_volume_id):<br>required: **true**<br>The volume ID of the volume to retrieve.<br>
     /// - On success, responds with [`GetVolumeOutput`](crate::operation::get_volume::GetVolumeOutput) with field(s):
-    ///   - [`volume_id(String)`](crate::operation::get_volume::GetVolumeOutput::volume_id): <p>The volume ID.</p>
-    ///   - [`farm_id(String)`](crate::operation::get_volume::GetVolumeOutput::farm_id): <p>The farm ID of the farm that contains the fleet.</p>
-    ///   - [`fleet_id(String)`](crate::operation::get_volume::GetVolumeOutput::fleet_id): <p>The fleet ID of the fleet that contains the volume.</p>
-    ///   - [`state(VolumeState)`](crate::operation::get_volume::GetVolumeOutput::state): <p>The state of the volume.</p>
-    ///   - [`size_gib(i32)`](crate::operation::get_volume::GetVolumeOutput::size_gib): <p>The volume size in GiB.</p>
-    ///   - [`availability_zone_id(String)`](crate::operation::get_volume::GetVolumeOutput::availability_zone_id): <p>The Availability Zone ID of the volume.</p>
-    ///   - [`attached_worker_id(Option<String>)`](crate::operation::get_volume::GetVolumeOutput::attached_worker_id): <p>The worker ID of the worker the volume is attached to.</p>
-    ///   - [`volume_type(EbsVolumeType)`](crate::operation::get_volume::GetVolumeOutput::volume_type): <p>The EBS volume type.</p>
-    ///   - [`iops(Option<i32>)`](crate::operation::get_volume::GetVolumeOutput::iops): <p>The IOPS of the volume.</p>
-    ///   - [`throughput_mib(Option<i32>)`](crate::operation::get_volume::GetVolumeOutput::throughput_mib): <p>The throughput of the volume in MiB.</p>
-    ///   - [`created_at(DateTime)`](crate::operation::get_volume::GetVolumeOutput::created_at): <p>The date and time the resource was created.</p>
-    ///   - [`last_assigned_at(Option<DateTime>)`](crate::operation::get_volume::GetVolumeOutput::last_assigned_at): <p>The date and time the volume was last assigned to a worker.</p>
-    ///   - [`last_released_at(Option<DateTime>)`](crate::operation::get_volume::GetVolumeOutput::last_released_at): <p>The date and time the volume was last released from a worker.</p>
-    ///   - [`expires_at(Option<DateTime>)`](crate::operation::get_volume::GetVolumeOutput::expires_at): <p>The date and time the volume expires and will be deleted.</p>
+    ///   - [`volume_id(String)`](crate::operation::get_volume::GetVolumeOutput::volume_id): The volume ID.
+    ///   - [`farm_id(String)`](crate::operation::get_volume::GetVolumeOutput::farm_id): The farm ID of the farm that contains the fleet.
+    ///   - [`fleet_id(String)`](crate::operation::get_volume::GetVolumeOutput::fleet_id): The fleet ID of the fleet that contains the volume.
+    ///   - [`state(VolumeState)`](crate::operation::get_volume::GetVolumeOutput::state): The state of the volume.
+    ///   - [`size_gib(i32)`](crate::operation::get_volume::GetVolumeOutput::size_gib): The volume size in GiB.
+    ///   - [`availability_zone_id(String)`](crate::operation::get_volume::GetVolumeOutput::availability_zone_id): The Availability Zone ID of the volume.
+    ///   - [`attached_worker_id(Option<String>)`](crate::operation::get_volume::GetVolumeOutput::attached_worker_id): The worker ID of the worker the volume is attached to.
+    ///   - [`volume_type(EbsVolumeType)`](crate::operation::get_volume::GetVolumeOutput::volume_type): The EBS volume type.
+    ///   - [`iops(Option<i32>)`](crate::operation::get_volume::GetVolumeOutput::iops): The IOPS of the volume.
+    ///   - [`throughput_mib(Option<i32>)`](crate::operation::get_volume::GetVolumeOutput::throughput_mib): The throughput of the volume in MiB.
+    ///   - [`created_at(DateTime)`](crate::operation::get_volume::GetVolumeOutput::created_at): The date and time the resource was created.
+    ///   - [`last_assigned_at(Option<DateTime>)`](crate::operation::get_volume::GetVolumeOutput::last_assigned_at): The date and time the volume was last assigned to a worker.
+    ///   - [`last_released_at(Option<DateTime>)`](crate::operation::get_volume::GetVolumeOutput::last_released_at): The date and time the volume was last released from a worker.
+    ///   - [`expires_at(Option<DateTime>)`](crate::operation::get_volume::GetVolumeOutput::expires_at): The date and time the volume expires and will be deleted.
     /// - On failure, responds with [`SdkError<GetVolumeError>`](crate::operation::get_volume::GetVolumeError)
     pub fn get_volume(&self) -> crate::operation::get_volume::builders::GetVolumeFluentBuilder {
         crate::operation::get_volume::builders::GetVolumeFluentBuilder::new(self.handle.clone())

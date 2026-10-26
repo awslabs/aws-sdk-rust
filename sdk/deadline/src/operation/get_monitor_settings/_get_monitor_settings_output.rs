@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMonitorSettingsOutput {
-    /// <p>The monitor settings as key-value pairs.</p>
+    /// The monitor settings as key-value pairs.
     pub settings: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetMonitorSettingsOutput {
-    /// <p>The monitor settings as key-value pairs.</p>
+    /// The monitor settings as key-value pairs.
     pub fn settings(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
         &self.settings
     }
@@ -37,19 +37,19 @@ impl GetMonitorSettingsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_settings`](Self::set_settings).
     ///
-    /// <p>The monitor settings as key-value pairs.</p>
+    /// The monitor settings as key-value pairs.
     pub fn settings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.settings.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.settings = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The monitor settings as key-value pairs.</p>
+    /// The monitor settings as key-value pairs.
     pub fn set_settings(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.settings = input;
         self
     }
-    /// <p>The monitor settings as key-value pairs.</p>
+    /// The monitor settings as key-value pairs.
     pub fn get_settings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.settings
     }

@@ -72,6 +72,33 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_contract::AssociateContractError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_contract::AssociateContractError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_contract::AssociateContractError> for Error {
+    fn from(err: crate::operation::associate_contract::AssociateContractError) -> Self {
+        match err {
+            crate::operation::associate_contract::AssociateContractError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_contract::AssociateContractError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_contract::AssociateContractError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::associate_contract::AssociateContractError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_contract::AssociateContractError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_contract::AssociateContractError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_contract::AssociateContractError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_source_views::AssociateSourceViewsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -106,6 +133,58 @@ impl From<crate::operation::associate_source_views::AssociateSourceViewsError> f
             crate::operation::associate_source_views::AssociateSourceViewsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::associate_source_views::AssociateSourceViewsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::associate_source_views::AssociateSourceViewsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::cancel_contractual_investment_attestation::CancelContractualInvestmentAttestationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::cancel_contractual_investment_attestation::CancelContractualInvestmentAttestationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_contractual_investment_attestation::CancelContractualInvestmentAttestationError> for Error {
+    fn from(err: crate::operation::cancel_contractual_investment_attestation::CancelContractualInvestmentAttestationError) -> Self {
+        match err {
+            crate::operation::cancel_contractual_investment_attestation::CancelContractualInvestmentAttestationError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::cancel_contractual_investment_attestation::CancelContractualInvestmentAttestationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::cancel_contractual_investment_attestation::CancelContractualInvestmentAttestationError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::cancel_contractual_investment_attestation::CancelContractualInvestmentAttestationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_contractual_investment_attestation::CancelContractualInvestmentAttestationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::cancel_contractual_investment_attestation::CancelContractualInvestmentAttestationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::cancel_contractual_investment_attestation::CancelContractualInvestmentAttestationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -144,6 +223,58 @@ impl From<crate::operation::create_billing_view::CreateBillingViewError> for Err
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_contractual_investment_attestation::CreateContractualInvestmentAttestationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_contractual_investment_attestation::CreateContractualInvestmentAttestationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_contractual_investment_attestation::CreateContractualInvestmentAttestationError> for Error {
+    fn from(err: crate::operation::create_contractual_investment_attestation::CreateContractualInvestmentAttestationError) -> Self {
+        match err {
+            crate::operation::create_contractual_investment_attestation::CreateContractualInvestmentAttestationError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::create_contractual_investment_attestation::CreateContractualInvestmentAttestationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_contractual_investment_attestation::CreateContractualInvestmentAttestationError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::create_contractual_investment_attestation::CreateContractualInvestmentAttestationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_contractual_investment_attestation::CreateContractualInvestmentAttestationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_contractual_investment_attestation::CreateContractualInvestmentAttestationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_contractual_investment_attestation::CreateContractualInvestmentAttestationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_billing_view::DeleteBillingViewError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -167,6 +298,36 @@ impl From<crate::operation::delete_billing_view::DeleteBillingViewError> for Err
             crate::operation::delete_billing_view::DeleteBillingViewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_billing_view::DeleteBillingViewError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_billing_view::DeleteBillingViewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_contract::DisassociateContractError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_contract::DisassociateContractError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_contract::DisassociateContractError> for Error {
+    fn from(err: crate::operation::disassociate_contract::DisassociateContractError) -> Self {
+        match err {
+            crate::operation::disassociate_contract::DisassociateContractError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disassociate_contract::DisassociateContractError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::disassociate_contract::DisassociateContractError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_contract::DisassociateContractError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_contract::DisassociateContractError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disassociate_contract::DisassociateContractError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -267,6 +428,40 @@ impl From<crate::operation::get_billing_view::GetBillingViewError> for Error {
             crate::operation::get_billing_view::GetBillingViewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_billing_view::GetBillingViewError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_billing_view::GetBillingViewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_contract_information::GetContractInformationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_contract_information::GetContractInformationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_contract_information::GetContractInformationError> for Error {
+    fn from(err: crate::operation::get_contract_information::GetContractInformationError) -> Self {
+        match err {
+            crate::operation::get_contract_information::GetContractInformationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_contract_information::GetContractInformationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_contract_information::GetContractInformationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_contract_information::GetContractInformationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_contract_information::GetContractInformationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_contract_information::GetContractInformationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -617,6 +812,168 @@ impl From<crate::operation::list_business_support_subscription_history::ListBusi
                 Error::ValidationException(inner)
             }
             crate::operation::list_business_support_subscription_history::ListBusinessSupportSubscriptionHistoryError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_contracts::ListContractsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_contracts::ListContractsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_contracts::ListContractsError> for Error {
+    fn from(err: crate::operation::list_contracts::ListContractsError) -> Self {
+        match err {
+            crate::operation::list_contracts::ListContractsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_contracts::ListContractsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_contracts::ListContractsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_contracts::ListContractsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_contracts::ListContractsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_contractual_investment_attestations::ListContractualInvestmentAttestationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_contractual_investment_attestations::ListContractualInvestmentAttestationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_contractual_investment_attestations::ListContractualInvestmentAttestationsError> for Error {
+    fn from(err: crate::operation::list_contractual_investment_attestations::ListContractualInvestmentAttestationsError) -> Self {
+        match err {
+            crate::operation::list_contractual_investment_attestations::ListContractualInvestmentAttestationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_contractual_investment_attestations::ListContractualInvestmentAttestationsError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::list_contractual_investment_attestations::ListContractualInvestmentAttestationsError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_contractual_investment_attestations::ListContractualInvestmentAttestationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_contractual_investment_attestations::ListContractualInvestmentAttestationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_contractual_investment_attestations::ListContractualInvestmentAttestationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_contractual_investments::ListContractualInvestmentsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_contractual_investments::ListContractualInvestmentsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_contractual_investments::ListContractualInvestmentsError> for Error {
+    fn from(err: crate::operation::list_contractual_investments::ListContractualInvestmentsError) -> Self {
+        match err {
+            crate::operation::list_contractual_investments::ListContractualInvestmentsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_contractual_investments::ListContractualInvestmentsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_contractual_investments::ListContractualInvestmentsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_contractual_investments::ListContractualInvestmentsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_contractual_investments::ListContractualInvestmentsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_contractual_investments::ListContractualInvestmentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_contractual_investment_summaries::ListContractualInvestmentSummariesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_contractual_investment_summaries::ListContractualInvestmentSummariesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_contractual_investment_summaries::ListContractualInvestmentSummariesError> for Error {
+    fn from(err: crate::operation::list_contractual_investment_summaries::ListContractualInvestmentSummariesError) -> Self {
+        match err {
+            crate::operation::list_contractual_investment_summaries::ListContractualInvestmentSummariesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_contractual_investment_summaries::ListContractualInvestmentSummariesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_contractual_investment_summaries::ListContractualInvestmentSummariesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_contractual_investment_summaries::ListContractualInvestmentSummariesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_contractual_investment_summaries::ListContractualInvestmentSummariesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_contractual_investment_summaries::ListContractualInvestmentSummariesError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }

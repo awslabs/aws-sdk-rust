@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFarmInput {
-    /// <p>The farm ID of the farm.</p>
+    /// The farm ID of the farm.
     pub farm_id: ::std::option::Option<::std::string::String>,
 }
 impl GetFarmInput {
-    /// <p>The farm ID of the farm.</p>
+    /// The farm ID of the farm.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetFarmInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
 }
 impl GetFarmInputBuilder {
-    /// <p>The farm ID of the farm.</p>
+    /// The farm ID of the farm.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID of the farm.</p>
+    /// The farm ID of the farm.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID of the farm.</p>
+    /// The farm ID of the farm.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }

@@ -22,7 +22,7 @@ impl crate::operation::start_sessions_statistics_aggregation::builders::StartSes
 }
 /// Fluent builder constructing a request to `StartSessionsStatisticsAggregation`.
 ///
-/// <p>Starts an asynchronous request for getting aggregated statistics about queues and farms. Get the statistics using the <code>GetSessionsStatisticsAggregation</code> operation. You can only have one running aggregation for your Deadline Cloud farm. Call the <code>GetSessionsStatisticsAggregation</code> operation and check the <code>status</code> field to see if an aggregation is running. Statistics are available for 1 hour after you call the <code>StartSessionsStatisticsAggregation</code> operation.</p>
+/// Starts an asynchronous request for getting aggregated statistics about queues and farms. Get the statistics using the <code>GetSessionsStatisticsAggregation</code> operation. You can only have one running aggregation for your Deadline Cloud farm. Call the <code>GetSessionsStatisticsAggregation</code> operation and check the <code>status</code> field to see if an aggregation is running. Statistics are available for 1 hour after you call the <code>StartSessionsStatisticsAggregation</code> operation.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartSessionsStatisticsAggregationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl StartSessionsStatisticsAggregationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the farm that contains queues or fleets to return statistics for.</p>
+    /// The identifier of the farm that contains queues or fleets to return statistics for.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The identifier of the farm that contains queues or fleets to return statistics for.</p>
+    /// The identifier of the farm that contains queues or fleets to return statistics for.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The identifier of the farm that contains queues or fleets to return statistics for.</p>
+    /// The identifier of the farm that contains queues or fleets to return statistics for.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>A list of fleet IDs or queue IDs to gather statistics for.</p>
+    /// A list of fleet IDs or queue IDs to gather statistics for.
     pub fn resource_ids(mut self, input: crate::types::SessionsStatisticsResources) -> Self {
         self.inner = self.inner.resource_ids(input);
         self
     }
-    /// <p>A list of fleet IDs or queue IDs to gather statistics for.</p>
+    /// A list of fleet IDs or queue IDs to gather statistics for.
     pub fn set_resource_ids(mut self, input: ::std::option::Option<crate::types::SessionsStatisticsResources>) -> Self {
         self.inner = self.inner.set_resource_ids(input);
         self
     }
-    /// <p>A list of fleet IDs or queue IDs to gather statistics for.</p>
+    /// A list of fleet IDs or queue IDs to gather statistics for.
     pub fn get_resource_ids(&self) -> &::std::option::Option<crate::types::SessionsStatisticsResources> {
         self.inner.get_resource_ids()
     }
-    /// <p>The Linux timestamp of the date and time that the statistics start.</p>
+    /// The Linux timestamp of the date and time that the statistics start.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p>The Linux timestamp of the date and time that the statistics start.</p>
+    /// The Linux timestamp of the date and time that the statistics start.
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p>The Linux timestamp of the date and time that the statistics start.</p>
+    /// The Linux timestamp of the date and time that the statistics start.
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
-    /// <p>The Linux timestamp of the date and time that the statistics end.</p>
+    /// The Linux timestamp of the date and time that the statistics end.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
-    /// <p>The Linux timestamp of the date and time that the statistics end.</p>
+    /// The Linux timestamp of the date and time that the statistics end.
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
-    /// <p>The Linux timestamp of the date and time that the statistics end.</p>
+    /// The Linux timestamp of the date and time that the statistics end.
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
@@ -178,17 +178,17 @@ impl StartSessionsStatisticsAggregationFluentBuilder {
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_timezone()
     }
-    /// <p>The period to aggregate the statistics.</p>
+    /// The period to aggregate the statistics.
     pub fn period(mut self, input: crate::types::Period) -> Self {
         self.inner = self.inner.period(input);
         self
     }
-    /// <p>The period to aggregate the statistics.</p>
+    /// The period to aggregate the statistics.
     pub fn set_period(mut self, input: ::std::option::Option<crate::types::Period>) -> Self {
         self.inner = self.inner.set_period(input);
         self
     }
-    /// <p>The period to aggregate the statistics.</p>
+    /// The period to aggregate the statistics.
     pub fn get_period(&self) -> &::std::option::Option<crate::types::Period> {
         self.inner.get_period()
     }
@@ -197,17 +197,17 @@ impl StartSessionsStatisticsAggregationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
     ///
-    /// <p>The field to use to group the statistics.</p>
+    /// The field to use to group the statistics.
     pub fn group_by(mut self, input: crate::types::UsageGroupByField) -> Self {
         self.inner = self.inner.group_by(input);
         self
     }
-    /// <p>The field to use to group the statistics.</p>
+    /// The field to use to group the statistics.
     pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageGroupByField>>) -> Self {
         self.inner = self.inner.set_group_by(input);
         self
     }
-    /// <p>The field to use to group the statistics.</p>
+    /// The field to use to group the statistics.
     pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageGroupByField>> {
         self.inner.get_group_by()
     }
@@ -216,17 +216,17 @@ impl StartSessionsStatisticsAggregationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_statistics`](Self::set_statistics).
     ///
-    /// <p>One to four statistics to return.</p>
+    /// One to four statistics to return.
     pub fn statistics(mut self, input: crate::types::UsageStatistic) -> Self {
         self.inner = self.inner.statistics(input);
         self
     }
-    /// <p>One to four statistics to return.</p>
+    /// One to four statistics to return.
     pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageStatistic>>) -> Self {
         self.inner = self.inner.set_statistics(input);
         self
     }
-    /// <p>One to four statistics to return.</p>
+    /// One to four statistics to return.
     pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageStatistic>> {
         self.inner.get_statistics()
     }

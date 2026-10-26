@@ -22,7 +22,7 @@ impl crate::operation::create_storage_profile::builders::CreateStorageProfileInp
 }
 /// Fluent builder constructing a request to `CreateStorageProfile`.
 ///
-/// <p>Creates a storage profile that specifies the operating system, file type, and file location of resources used on a farm.</p>
+/// Creates a storage profile that specifies the operating system, file type, and file location of resources used on a farm.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStorageProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl CreateStorageProfileFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the farm to connect to the storage profile.</p>
+    /// The farm ID of the farm to connect to the storage profile.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the farm to connect to the storage profile.</p>
+    /// The farm ID of the farm to connect to the storage profile.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the farm to connect to the storage profile.</p>
+    /// The farm ID of the farm to connect to the storage profile.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -156,17 +156,17 @@ impl CreateStorageProfileFluentBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
-    /// <p>The type of operating system (OS) for the storage profile.</p>
+    /// The type of operating system (OS) for the storage profile.
     pub fn os_family(mut self, input: crate::types::StorageProfileOperatingSystemFamily) -> Self {
         self.inner = self.inner.os_family(input);
         self
     }
-    /// <p>The type of operating system (OS) for the storage profile.</p>
+    /// The type of operating system (OS) for the storage profile.
     pub fn set_os_family(mut self, input: ::std::option::Option<crate::types::StorageProfileOperatingSystemFamily>) -> Self {
         self.inner = self.inner.set_os_family(input);
         self
     }
-    /// <p>The type of operating system (OS) for the storage profile.</p>
+    /// The type of operating system (OS) for the storage profile.
     pub fn get_os_family(&self) -> &::std::option::Option<crate::types::StorageProfileOperatingSystemFamily> {
         self.inner.get_os_family()
     }
@@ -175,17 +175,17 @@ impl CreateStorageProfileFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_file_system_locations`](Self::set_file_system_locations).
     ///
-    /// <p>File system paths to include in the storage profile.</p>
+    /// File system paths to include in the storage profile.
     pub fn file_system_locations(mut self, input: crate::types::FileSystemLocation) -> Self {
         self.inner = self.inner.file_system_locations(input);
         self
     }
-    /// <p>File system paths to include in the storage profile.</p>
+    /// File system paths to include in the storage profile.
     pub fn set_file_system_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>>) -> Self {
         self.inner = self.inner.set_file_system_locations(input);
         self
     }
-    /// <p>File system paths to include in the storage profile.</p>
+    /// File system paths to include in the storage profile.
     pub fn get_file_system_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>> {
         self.inner.get_file_system_locations()
     }

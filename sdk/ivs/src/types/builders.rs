@@ -9,6 +9,8 @@ pub use crate::types::_channel::ChannelBuilder;
 
 pub use crate::types::_stream_key::StreamKeyBuilder;
 
+pub use crate::types::_failover_slate_configuration::FailoverSlateConfigurationBuilder;
+
 pub use crate::types::_playback_restriction_policy::PlaybackRestrictionPolicyBuilder;
 
 pub use crate::types::_destination_configuration::DestinationConfigurationBuilder;
@@ -46,6 +48,8 @@ pub use crate::types::_ingest_configurations::IngestConfigurationsBuilder;
 pub use crate::types::_ad_configuration_summary::AdConfigurationSummaryBuilder;
 
 pub use crate::types::_channel_summary::ChannelSummaryBuilder;
+
+pub use crate::types::_failover_slate_configuration_summary::FailoverSlateConfigurationSummaryBuilder;
 
 pub use crate::types::_playback_key_pair_summary::PlaybackKeyPairSummaryBuilder;
 

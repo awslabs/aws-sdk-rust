@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetWorker`](crate::operation::batch_get_worker::builders::BatchGetWorkerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifiers(BatchGetWorkerIdentifier)`](crate::operation::batch_get_worker::builders::BatchGetWorkerFluentBuilder::identifiers) / [`set_identifiers(Option<Vec::<BatchGetWorkerIdentifier>>)`](crate::operation::batch_get_worker::builders::BatchGetWorkerFluentBuilder::set_identifiers):<br>required: **true**<br><p>The list of worker identifiers to retrieve. You can specify up to 100 identifiers per request.</p><br>
+    ///   - [`identifiers(BatchGetWorkerIdentifier)`](crate::operation::batch_get_worker::builders::BatchGetWorkerFluentBuilder::identifiers) / [`set_identifiers(Option<Vec::<BatchGetWorkerIdentifier>>)`](crate::operation::batch_get_worker::builders::BatchGetWorkerFluentBuilder::set_identifiers):<br>required: **true**<br>The list of worker identifiers to retrieve. You can specify up to 100 identifiers per request.<br>
     /// - On success, responds with [`BatchGetWorkerOutput`](crate::operation::batch_get_worker::BatchGetWorkerOutput) with field(s):
-    ///   - [`workers(Vec::<BatchGetWorkerItem>)`](crate::operation::batch_get_worker::BatchGetWorkerOutput::workers): <p>A list of workers that were successfully retrieved.</p>
-    ///   - [`errors(Vec::<BatchGetWorkerError>)`](crate::operation::batch_get_worker::BatchGetWorkerOutput::errors): <p>A list of errors for workers that could not be retrieved.</p>
+    ///   - [`workers(Vec::<BatchGetWorkerItem>)`](crate::operation::batch_get_worker::BatchGetWorkerOutput::workers): A list of workers that were successfully retrieved.
+    ///   - [`errors(Vec::<BatchGetWorkerError>)`](crate::operation::batch_get_worker::BatchGetWorkerOutput::errors): A list of errors for workers that could not be retrieved.
     /// - On failure, responds with [`SdkError<BatchGetWorkerError>`](crate::operation::batch_get_worker::BatchGetWorkerError)
     pub fn batch_get_worker(&self) -> crate::operation::batch_get_worker::builders::BatchGetWorkerFluentBuilder {
         crate::operation::batch_get_worker::builders::BatchGetWorkerFluentBuilder::new(self.handle.clone())

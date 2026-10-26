@@ -22,7 +22,7 @@ impl crate::operation::delete_storage_profile::builders::DeleteStorageProfileInp
 }
 /// Fluent builder constructing a request to `DeleteStorageProfile`.
 ///
-/// <p>Deletes a storage profile.</p>
+/// Deletes a storage profile.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteStorageProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteStorageProfileFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the farm from which to remove the storage profile.</p>
+    /// The farm ID of the farm from which to remove the storage profile.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the farm from which to remove the storage profile.</p>
+    /// The farm ID of the farm from which to remove the storage profile.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the farm from which to remove the storage profile.</p>
+    /// The farm ID of the farm from which to remove the storage profile.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The storage profile ID of the storage profile to delete.</p>
+    /// The storage profile ID of the storage profile to delete.
     pub fn storage_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_profile_id(input.into());
         self
     }
-    /// <p>The storage profile ID of the storage profile to delete.</p>
+    /// The storage profile ID of the storage profile to delete.
     pub fn set_storage_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_profile_id(input);
         self
     }
-    /// <p>The storage profile ID of the storage profile to delete.</p>
+    /// The storage profile ID of the storage profile to delete.
     pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_profile_id()
     }

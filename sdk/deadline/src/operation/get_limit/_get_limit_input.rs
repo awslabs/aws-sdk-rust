@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLimitInput {
-    /// <p>The unique identifier of the farm that contains the limit.</p>
+    /// The unique identifier of the farm that contains the limit.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the limit to return.</p>
+    /// The unique identifier of the limit to return.
     pub limit_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLimitInput {
-    /// <p>The unique identifier of the farm that contains the limit.</p>
+    /// The unique identifier of the farm that contains the limit.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The unique identifier of the limit to return.</p>
+    /// The unique identifier of the limit to return.
     pub fn limit_id(&self) -> ::std::option::Option<&str> {
         self.limit_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct GetLimitInputBuilder {
     pub(crate) limit_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLimitInputBuilder {
-    /// <p>The unique identifier of the farm that contains the limit.</p>
+    /// The unique identifier of the farm that contains the limit.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the farm that contains the limit.</p>
+    /// The unique identifier of the farm that contains the limit.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The unique identifier of the farm that contains the limit.</p>
+    /// The unique identifier of the farm that contains the limit.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The unique identifier of the limit to return.</p>
+    /// The unique identifier of the limit to return.
     /// This field is required.
     pub fn limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.limit_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the limit to return.</p>
+    /// The unique identifier of the limit to return.
     pub fn set_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.limit_id = input;
         self
     }
-    /// <p>The unique identifier of the limit to return.</p>
+    /// The unique identifier of the limit to return.
     pub fn get_limit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.limit_id
     }

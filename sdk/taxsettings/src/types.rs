@@ -95,6 +95,10 @@ pub use crate::types::_france_additional_info::FranceAdditionalInfo;
 
 pub use crate::types::_monaco_additional_info::MonacoAdditionalInfo;
 
+pub use crate::types::_germany_additional_info::GermanyAdditionalInfo;
+
+pub use crate::types::_mexico_additional_info::MexicoAdditionalInfo;
+
 pub use crate::types::_brazil_additional_info::BrazilAdditionalInfo;
 
 pub use crate::types::_india_additional_info::IndiaAdditionalInfo;
@@ -191,6 +195,8 @@ mod _france_additional_info;
 
 mod _georgia_additional_info;
 
+mod _germany_additional_info;
+
 mod _greece_additional_info;
 
 mod _heritage_status;
@@ -218,6 +224,8 @@ mod _kenya_additional_info;
 mod _malaysia_additional_info;
 
 mod _malaysia_service_tax_code;
+
+mod _mexico_additional_info;
 
 mod _monaco_additional_info;
 

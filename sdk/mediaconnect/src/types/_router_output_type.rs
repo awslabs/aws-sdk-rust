@@ -14,6 +14,7 @@
 /// match routeroutputtype {
 ///     RouterOutputType::MediaconnectFlow => { /* ... */ },
 ///     RouterOutputType::MedialiveInput => { /* ... */ },
+///     RouterOutputType::SourceEndpoint => { /* ... */ },
 ///     RouterOutputType::Standard => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum RouterOutputType {
     #[allow(missing_docs)] // documentation missing in model
     MedialiveInput,
     #[allow(missing_docs)] // documentation missing in model
+    SourceEndpoint,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for RouterOutputType {
         match s {
             "MEDIACONNECT_FLOW" => RouterOutputType::MediaconnectFlow,
             "MEDIALIVE_INPUT" => RouterOutputType::MedialiveInput,
+            "SOURCE_ENDPOINT" => RouterOutputType::SourceEndpoint,
             "STANDARD" => RouterOutputType::Standard,
             other => RouterOutputType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl RouterOutputType {
         match self {
             RouterOutputType::MediaconnectFlow => "MEDIACONNECT_FLOW",
             RouterOutputType::MedialiveInput => "MEDIALIVE_INPUT",
+            RouterOutputType::SourceEndpoint => "SOURCE_ENDPOINT",
             RouterOutputType::Standard => "STANDARD",
             RouterOutputType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MEDIACONNECT_FLOW", "MEDIALIVE_INPUT", "STANDARD"]
+        &["MEDIACONNECT_FLOW", "MEDIALIVE_INPUT", "SOURCE_ENDPOINT", "STANDARD"]
     }
 }
 impl ::std::convert::AsRef<str> for RouterOutputType {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for RouterOutputType {
         match self {
             RouterOutputType::MediaconnectFlow => write!(f, "MEDIACONNECT_FLOW"),
             RouterOutputType::MedialiveInput => write!(f, "MEDIALIVE_INPUT"),
+            RouterOutputType::SourceEndpoint => write!(f, "SOURCE_ENDPOINT"),
             RouterOutputType::Standard => write!(f, "STANDARD"),
             RouterOutputType::Unknown(value) => write!(f, "{value}"),
         }

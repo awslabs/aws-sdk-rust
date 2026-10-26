@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateMemberFromQueueInput {
-    /// <p>The farm ID for the queue to disassociate from a member.</p>
+    /// The farm ID for the queue to disassociate from a member.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID of the queue in which you're disassociating from a member.</p>
+    /// The queue ID of the queue in which you're disassociating from a member.
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>A member's principal ID to disassociate from a queue.</p>
+    /// A member's principal ID to disassociate from a queue.
     pub principal_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateMemberFromQueueInput {
-    /// <p>The farm ID for the queue to disassociate from a member.</p>
+    /// The farm ID for the queue to disassociate from a member.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The queue ID of the queue in which you're disassociating from a member.</p>
+    /// The queue ID of the queue in which you're disassociating from a member.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>A member's principal ID to disassociate from a queue.</p>
+    /// A member's principal ID to disassociate from a queue.
     pub fn principal_id(&self) -> ::std::option::Option<&str> {
         self.principal_id.as_deref()
     }
@@ -40,48 +40,48 @@ pub struct DisassociateMemberFromQueueInputBuilder {
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateMemberFromQueueInputBuilder {
-    /// <p>The farm ID for the queue to disassociate from a member.</p>
+    /// The farm ID for the queue to disassociate from a member.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID for the queue to disassociate from a member.</p>
+    /// The farm ID for the queue to disassociate from a member.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID for the queue to disassociate from a member.</p>
+    /// The farm ID for the queue to disassociate from a member.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The queue ID of the queue in which you're disassociating from a member.</p>
+    /// The queue ID of the queue in which you're disassociating from a member.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue ID of the queue in which you're disassociating from a member.</p>
+    /// The queue ID of the queue in which you're disassociating from a member.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The queue ID of the queue in which you're disassociating from a member.</p>
+    /// The queue ID of the queue in which you're disassociating from a member.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>A member's principal ID to disassociate from a queue.</p>
+    /// A member's principal ID to disassociate from a queue.
     /// This field is required.
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A member's principal ID to disassociate from a queue.</p>
+    /// A member's principal ID to disassociate from a queue.
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
     }
-    /// <p>A member's principal ID to disassociate from a queue.</p>
+    /// A member's principal ID to disassociate from a queue.
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal_id
     }

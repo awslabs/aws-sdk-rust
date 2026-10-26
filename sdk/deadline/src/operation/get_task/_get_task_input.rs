@@ -3,35 +3,35 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTaskInput {
-    /// <p>The farm ID of the farm connected to the task.</p>
+    /// The farm ID of the farm connected to the task.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID for the queue connected to the task.</p>
+    /// The queue ID for the queue connected to the task.
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The job ID of the job connected to the task.</p>
+    /// The job ID of the job connected to the task.
     pub job_id: ::std::option::Option<::std::string::String>,
-    /// <p>The step ID for the step connected to the task.</p>
+    /// The step ID for the step connected to the task.
     pub step_id: ::std::option::Option<::std::string::String>,
-    /// <p>The task ID.</p>
+    /// The task ID.
     pub task_id: ::std::option::Option<::std::string::String>,
 }
 impl GetTaskInput {
-    /// <p>The farm ID of the farm connected to the task.</p>
+    /// The farm ID of the farm connected to the task.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The queue ID for the queue connected to the task.</p>
+    /// The queue ID for the queue connected to the task.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The job ID of the job connected to the task.</p>
+    /// The job ID of the job connected to the task.
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The step ID for the step connected to the task.</p>
+    /// The step ID for the step connected to the task.
     pub fn step_id(&self) -> ::std::option::Option<&str> {
         self.step_id.as_deref()
     }
-    /// <p>The task ID.</p>
+    /// The task ID.
     pub fn task_id(&self) -> ::std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -54,78 +54,78 @@ pub struct GetTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }
 impl GetTaskInputBuilder {
-    /// <p>The farm ID of the farm connected to the task.</p>
+    /// The farm ID of the farm connected to the task.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID of the farm connected to the task.</p>
+    /// The farm ID of the farm connected to the task.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID of the farm connected to the task.</p>
+    /// The farm ID of the farm connected to the task.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The queue ID for the queue connected to the task.</p>
+    /// The queue ID for the queue connected to the task.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue ID for the queue connected to the task.</p>
+    /// The queue ID for the queue connected to the task.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The queue ID for the queue connected to the task.</p>
+    /// The queue ID for the queue connected to the task.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The job ID of the job connected to the task.</p>
+    /// The job ID of the job connected to the task.
     /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The job ID of the job connected to the task.</p>
+    /// The job ID of the job connected to the task.
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The job ID of the job connected to the task.</p>
+    /// The job ID of the job connected to the task.
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
-    /// <p>The step ID for the step connected to the task.</p>
+    /// The step ID for the step connected to the task.
     /// This field is required.
     pub fn step_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The step ID for the step connected to the task.</p>
+    /// The step ID for the step connected to the task.
     pub fn set_step_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_id = input;
         self
     }
-    /// <p>The step ID for the step connected to the task.</p>
+    /// The step ID for the step connected to the task.
     pub fn get_step_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.step_id
     }
-    /// <p>The task ID.</p>
+    /// The task ID.
     /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The task ID.</p>
+    /// The task ID.
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
     }
-    /// <p>The task ID.</p>
+    /// The task ID.
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }

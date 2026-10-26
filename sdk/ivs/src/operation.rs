@@ -16,6 +16,9 @@ pub mod create_ad_configuration;
 /// Types for the `CreateChannel` operation.
 pub mod create_channel;
 
+/// Types for the `CreateFailoverSlateConfiguration` operation.
+pub mod create_failover_slate_configuration;
+
 /// Types for the `CreatePlaybackRestrictionPolicy` operation.
 pub mod create_playback_restriction_policy;
 
@@ -30,6 +33,9 @@ pub mod delete_ad_configuration;
 
 /// Types for the `DeleteChannel` operation.
 pub mod delete_channel;
+
+/// Types for the `DeleteFailoverSlateConfiguration` operation.
+pub mod delete_failover_slate_configuration;
 
 /// Types for the `DeletePlaybackKeyPair` operation.
 pub mod delete_playback_key_pair;
@@ -48,6 +54,9 @@ pub mod get_ad_configuration;
 
 /// Types for the `GetChannel` operation.
 pub mod get_channel;
+
+/// Types for the `GetFailoverSlateConfiguration` operation.
+pub mod get_failover_slate_configuration;
 
 /// Types for the `GetPlaybackKeyPair` operation.
 pub mod get_playback_key_pair;
@@ -78,6 +87,9 @@ pub mod list_ad_configurations;
 
 /// Types for the `ListChannels` operation.
 pub mod list_channels;
+
+/// Types for the `ListFailoverSlateConfigurations` operation.
+pub mod list_failover_slate_configurations;
 
 /// Types for the `ListPlaybackKeyPairs` operation.
 pub mod list_playback_key_pairs;
@@ -120,6 +132,9 @@ pub mod update_ad_configuration;
 
 /// Types for the `UpdateChannel` operation.
 pub mod update_channel;
+
+/// Types for the `UpdateFailoverSlateConfiguration` operation.
+pub mod update_failover_slate_configuration;
 
 /// Types for the `UpdatePlaybackRestrictionPolicy` operation.
 pub mod update_playback_restriction_policy;

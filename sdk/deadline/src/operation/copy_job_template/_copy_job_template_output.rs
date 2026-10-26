@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyJobTemplateOutput {
-    /// <p>The format of the job template, either <code>JSON</code> or <code>YAML</code>.</p>
+    /// The format of the job template, either <code>JSON</code> or <code>YAML</code>.
     pub template_type: crate::types::JobTemplateType,
     _request_id: Option<String>,
 }
 impl CopyJobTemplateOutput {
-    /// <p>The format of the job template, either <code>JSON</code> or <code>YAML</code>.</p>
+    /// The format of the job template, either <code>JSON</code> or <code>YAML</code>.
     pub fn template_type(&self) -> &crate::types::JobTemplateType {
         &self.template_type
     }
@@ -33,18 +33,18 @@ pub struct CopyJobTemplateOutputBuilder {
     _request_id: Option<String>,
 }
 impl CopyJobTemplateOutputBuilder {
-    /// <p>The format of the job template, either <code>JSON</code> or <code>YAML</code>.</p>
+    /// The format of the job template, either <code>JSON</code> or <code>YAML</code>.
     /// This field is required.
     pub fn template_type(mut self, input: crate::types::JobTemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The format of the job template, either <code>JSON</code> or <code>YAML</code>.</p>
+    /// The format of the job template, either <code>JSON</code> or <code>YAML</code>.
     pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::JobTemplateType>) -> Self {
         self.template_type = input;
         self
     }
-    /// <p>The format of the job template, either <code>JSON</code> or <code>YAML</code>.</p>
+    /// The format of the job template, either <code>JSON</code> or <code>YAML</code>.
     pub fn get_template_type(&self) -> &::std::option::Option<crate::types::JobTemplateType> {
         &self.template_type
     }

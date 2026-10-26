@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMonitorInput {
-    /// <p>The unique identifier of the monitor to update.</p>
+    /// The unique identifier of the monitor to update.
     pub monitor_id: ::std::option::Option<::std::string::String>,
-    /// <p>The new value of the subdomain to use when forming the monitor URL.</p>
+    /// The new value of the subdomain to use when forming the monitor URL.
     pub subdomain: ::std::option::Option<::std::string::String>,
     /// <p>The new value to use for the monitor's display name.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name of the new IAM role to use with the monitor.</p>
+    /// The Amazon Resource Name of the new IAM role to use with the monitor.
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateMonitorInput {
-    /// <p>The unique identifier of the monitor to update.</p>
+    /// The unique identifier of the monitor to update.
     pub fn monitor_id(&self) -> ::std::option::Option<&str> {
         self.monitor_id.as_deref()
     }
-    /// <p>The new value of the subdomain to use when forming the monitor URL.</p>
+    /// The new value of the subdomain to use when forming the monitor URL.
     pub fn subdomain(&self) -> ::std::option::Option<&str> {
         self.subdomain.as_deref()
     }
@@ -29,7 +29,7 @@ impl UpdateMonitorInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The Amazon Resource Name of the new IAM role to use with the monitor.</p>
+    /// The Amazon Resource Name of the new IAM role to use with the monitor.
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -51,32 +51,32 @@ pub struct UpdateMonitorInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateMonitorInputBuilder {
-    /// <p>The unique identifier of the monitor to update.</p>
+    /// The unique identifier of the monitor to update.
     /// This field is required.
     pub fn monitor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the monitor to update.</p>
+    /// The unique identifier of the monitor to update.
     pub fn set_monitor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_id = input;
         self
     }
-    /// <p>The unique identifier of the monitor to update.</p>
+    /// The unique identifier of the monitor to update.
     pub fn get_monitor_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_id
     }
-    /// <p>The new value of the subdomain to use when forming the monitor URL.</p>
+    /// The new value of the subdomain to use when forming the monitor URL.
     pub fn subdomain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subdomain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new value of the subdomain to use when forming the monitor URL.</p>
+    /// The new value of the subdomain to use when forming the monitor URL.
     pub fn set_subdomain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subdomain = input;
         self
     }
-    /// <p>The new value of the subdomain to use when forming the monitor URL.</p>
+    /// The new value of the subdomain to use when forming the monitor URL.
     pub fn get_subdomain(&self) -> &::std::option::Option<::std::string::String> {
         &self.subdomain
     }
@@ -100,17 +100,17 @@ impl UpdateMonitorInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The Amazon Resource Name of the new IAM role to use with the monitor.</p>
+    /// The Amazon Resource Name of the new IAM role to use with the monitor.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name of the new IAM role to use with the monitor.</p>
+    /// The Amazon Resource Name of the new IAM role to use with the monitor.
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name of the new IAM role to use with the monitor.</p>
+    /// The Amazon Resource Name of the new IAM role to use with the monitor.
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

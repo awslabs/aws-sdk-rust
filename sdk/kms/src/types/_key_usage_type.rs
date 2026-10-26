@@ -12,6 +12,7 @@
 /// ```text
 /// # let keyusagetype = unimplemented!();
 /// match keyusagetype {
+///     KeyUsageType::EncapsulateDecapsulate => { /* ... */ },
 ///     KeyUsageType::EncryptDecrypt => { /* ... */ },
 ///     KeyUsageType::GenerateVerifyMac => { /* ... */ },
 ///     KeyUsageType::KeyAgreement => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum KeyUsageType {
     #[allow(missing_docs)] // documentation missing in model
+    EncapsulateDecapsulate,
+    #[allow(missing_docs)] // documentation missing in model
     EncryptDecrypt,
     #[allow(missing_docs)] // documentation missing in model
     GenerateVerifyMac,
@@ -59,6 +62,7 @@ pub enum KeyUsageType {
 impl ::std::convert::From<&str> for KeyUsageType {
     fn from(s: &str) -> Self {
         match s {
+            "ENCAPSULATE_DECAPSULATE" => KeyUsageType::EncapsulateDecapsulate,
             "ENCRYPT_DECRYPT" => KeyUsageType::EncryptDecrypt,
             "GENERATE_VERIFY_MAC" => KeyUsageType::GenerateVerifyMac,
             "KEY_AGREEMENT" => KeyUsageType::KeyAgreement,
@@ -78,6 +82,7 @@ impl KeyUsageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            KeyUsageType::EncapsulateDecapsulate => "ENCAPSULATE_DECAPSULATE",
             KeyUsageType::EncryptDecrypt => "ENCRYPT_DECRYPT",
             KeyUsageType::GenerateVerifyMac => "GENERATE_VERIFY_MAC",
             KeyUsageType::KeyAgreement => "KEY_AGREEMENT",
@@ -87,7 +92,13 @@ impl KeyUsageType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ENCRYPT_DECRYPT", "GENERATE_VERIFY_MAC", "KEY_AGREEMENT", "SIGN_VERIFY"]
+        &[
+            "ENCAPSULATE_DECAPSULATE",
+            "ENCRYPT_DECRYPT",
+            "GENERATE_VERIFY_MAC",
+            "KEY_AGREEMENT",
+            "SIGN_VERIFY",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for KeyUsageType {
@@ -110,6 +121,7 @@ impl KeyUsageType {
 impl ::std::fmt::Display for KeyUsageType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            KeyUsageType::EncapsulateDecapsulate => write!(f, "ENCAPSULATE_DECAPSULATE"),
             KeyUsageType::EncryptDecrypt => write!(f, "ENCRYPT_DECRYPT"),
             KeyUsageType::GenerateVerifyMac => write!(f, "GENERATE_VERIFY_MAC"),
             KeyUsageType::KeyAgreement => write!(f, "KEY_AGREEMENT"),

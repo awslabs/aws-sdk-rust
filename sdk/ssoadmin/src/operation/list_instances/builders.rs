@@ -142,4 +142,39 @@ impl ListInstancesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>Specifies which Amazon Web Services Regions to list IAM Identity Center instances from. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CURRENT_REGION</code> - Lists only the instances in the Region that you call this API from.</p></li>
+    /// <li>
+    /// <p><code>ALL_REGIONS</code> - Lists the instances that the caller owns or that are shared with the caller across all Regions.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the default is <code>CURRENT_REGION</code>.</p>
+    pub fn region_scope(mut self, input: crate::types::RegionScope) -> Self {
+        self.inner = self.inner.region_scope(input);
+        self
+    }
+    /// <p>Specifies which Amazon Web Services Regions to list IAM Identity Center instances from. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CURRENT_REGION</code> - Lists only the instances in the Region that you call this API from.</p></li>
+    /// <li>
+    /// <p><code>ALL_REGIONS</code> - Lists the instances that the caller owns or that are shared with the caller across all Regions.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the default is <code>CURRENT_REGION</code>.</p>
+    pub fn set_region_scope(mut self, input: ::std::option::Option<crate::types::RegionScope>) -> Self {
+        self.inner = self.inner.set_region_scope(input);
+        self
+    }
+    /// <p>Specifies which Amazon Web Services Regions to list IAM Identity Center instances from. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CURRENT_REGION</code> - Lists only the instances in the Region that you call this API from.</p></li>
+    /// <li>
+    /// <p><code>ALL_REGIONS</code> - Lists the instances that the caller owns or that are shared with the caller across all Regions.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the default is <code>CURRENT_REGION</code>.</p>
+    pub fn get_region_scope(&self) -> &::std::option::Option<crate::types::RegionScope> {
+        self.inner.get_region_scope()
+    }
 }

@@ -7,6 +7,12 @@ pub use crate::types::error::_too_many_requests_error::TooManyRequestsErrorBuild
 
 pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 
+pub use crate::types::error::_invalid_grant_exception::InvalidGrantExceptionBuilder;
+
+pub use crate::types::error::_invalid_scope_exception::InvalidScopeExceptionBuilder;
+
+pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableExceptionBuilder;
+
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;

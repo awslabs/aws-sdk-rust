@@ -22,7 +22,7 @@ impl crate::operation::list_fleets::builders::ListFleetsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFleets`.
 ///
-/// <p>Lists fleets.</p>
+/// Lists fleets.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFleetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,59 +114,59 @@ impl ListFleetsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_fleets::paginator::ListFleetsPaginator {
         crate::operation::list_fleets::paginator::ListFleetsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The farm ID of the fleets.</p>
+    /// The farm ID of the fleets.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the fleets.</p>
+    /// The farm ID of the fleets.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the fleets.</p>
+    /// The farm ID of the fleets.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The principal ID of the members to include in the fleet.</p>
+    /// The principal ID of the members to include in the fleet.
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_id(input.into());
         self
     }
-    /// <p>The principal ID of the members to include in the fleet.</p>
+    /// The principal ID of the members to include in the fleet.
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_id(input);
         self
     }
-    /// <p>The principal ID of the members to include in the fleet.</p>
+    /// The principal ID of the members to include in the fleet.
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_principal_id()
     }
@@ -190,17 +190,17 @@ impl ListFleetsFluentBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
-    /// <p>The status of the fleet.</p>
+    /// The status of the fleet.
     pub fn status(mut self, input: crate::types::FleetStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>The status of the fleet.</p>
+    /// The status of the fleet.
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FleetStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>The status of the fleet.</p>
+    /// The status of the fleet.
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FleetStatus> {
         self.inner.get_status()
     }

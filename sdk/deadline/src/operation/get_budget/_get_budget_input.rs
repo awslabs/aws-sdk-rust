@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBudgetInput {
-    /// <p>The farm ID of the farm connected to the budget.</p>
+    /// The farm ID of the farm connected to the budget.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The budget ID.</p>
+    /// The budget ID.
     pub budget_id: ::std::option::Option<::std::string::String>,
 }
 impl GetBudgetInput {
-    /// <p>The farm ID of the farm connected to the budget.</p>
+    /// The farm ID of the farm connected to the budget.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The budget ID.</p>
+    /// The budget ID.
     pub fn budget_id(&self) -> ::std::option::Option<&str> {
         self.budget_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct GetBudgetInputBuilder {
     pub(crate) budget_id: ::std::option::Option<::std::string::String>,
 }
 impl GetBudgetInputBuilder {
-    /// <p>The farm ID of the farm connected to the budget.</p>
+    /// The farm ID of the farm connected to the budget.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID of the farm connected to the budget.</p>
+    /// The farm ID of the farm connected to the budget.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID of the farm connected to the budget.</p>
+    /// The farm ID of the farm connected to the budget.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The budget ID.</p>
+    /// The budget ID.
     /// This field is required.
     pub fn budget_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The budget ID.</p>
+    /// The budget ID.
     pub fn set_budget_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_id = input;
         self
     }
-    /// <p>The budget ID.</p>
+    /// The budget ID.
     pub fn get_budget_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.budget_id
     }

@@ -33,6 +33,8 @@ pub(crate) mod shape_create_o_auth2_token_input;
 
 pub(crate) mod shape_create_o_auth2_token_with_iam;
 
+pub(crate) mod shape_create_o_auth2_token_with_token_exchange;
+
 pub(crate) mod shape_delete_console_authorization_configuration;
 
 pub(crate) mod shape_delete_resource_permission_statement;
@@ -67,6 +69,8 @@ pub(crate) mod shape_create_o_auth2_token_output;
 
 pub(crate) mod shape_create_o_auth2_token_with_iam_input;
 
+pub(crate) mod shape_create_o_auth2_token_with_token_exchange_input;
+
 pub(crate) mod shape_delete_console_authorization_configuration_input;
 
 pub(crate) mod shape_delete_resource_permission_statement_input;
@@ -76,6 +80,10 @@ pub(crate) mod shape_get_console_authorization_configuration_input;
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_introspect_o_auth2_token_with_iam_input;
+
+pub(crate) mod shape_invalid_grant_exception;
+
+pub(crate) mod shape_invalid_scope_exception;
 
 pub(crate) mod shape_list_resource_permission_statements_input;
 
@@ -88,6 +96,8 @@ pub(crate) mod shape_resource_not_found_exception;
 pub(crate) mod shape_revoke_o_auth2_token_with_iam_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_service_unavailable_exception;
 
 pub(crate) mod shape_too_many_requests_error;
 

@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateOAuth2TokenWithIAM`](crate::operation::create_o_auth2_token_with_iam::builders::CreateOAuth2TokenWithIAMFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`grant_type(impl Into<String>)`](crate::operation::create_o_auth2_token_with_iam::builders::CreateOAuth2TokenWithIAMFluentBuilder::grant_type) / [`set_grant_type(Option<String>)`](crate::operation::create_o_auth2_token_with_iam::builders::CreateOAuth2TokenWithIAMFluentBuilder::set_grant_type):<br>required: **true**<br>OAuth 2.0 grant type. Must be "client_credentials".<br>
+    ///   - [`grant_type(impl Into<String>)`](crate::operation::create_o_auth2_token_with_iam::builders::CreateOAuth2TokenWithIAMFluentBuilder::grant_type) / [`set_grant_type(Option<String>)`](crate::operation::create_o_auth2_token_with_iam::builders::CreateOAuth2TokenWithIAMFluentBuilder::set_grant_type):<br>required: **true**<br>The OAuth 2.0 grant type. Must be "client_credentials".<br>
     ///   - [`resource(impl Into<String>)`](crate::operation::create_o_auth2_token_with_iam::builders::CreateOAuth2TokenWithIAMFluentBuilder::resource) / [`set_resource(Option<String>)`](crate::operation::create_o_auth2_token_with_iam::builders::CreateOAuth2TokenWithIAMFluentBuilder::set_resource):<br>required: **true**<br>The OAuth resource for which the access token is requested. Example: "aws-mcp.amazonaws.com".<br>
     /// - On success, responds with [`CreateOAuth2TokenWithIamOutput`](crate::operation::create_o_auth2_token_with_iam::CreateOAuth2TokenWithIamOutput) with field(s):
-    ///   - [`access_token(String)`](crate::operation::create_o_auth2_token_with_iam::CreateOAuth2TokenWithIamOutput::access_token): JWT access token containing principal identity, resource scope, and session metadata
-    ///   - [`token_type(String)`](crate::operation::create_o_auth2_token_with_iam::CreateOAuth2TokenWithIamOutput::token_type): Always "Bearer" per OAuth 2.1 specification
-    ///   - [`expires_in(i32)`](crate::operation::create_o_auth2_token_with_iam::CreateOAuth2TokenWithIamOutput::expires_in): Token lifetime in seconds. Value is the minimum of session validity and 1 hour.
+    ///   - [`access_token(String)`](crate::operation::create_o_auth2_token_with_iam::CreateOAuth2TokenWithIamOutput::access_token): Access token containing principal identity, resource scope, and session metadata.
+    ///   - [`token_type(String)`](crate::operation::create_o_auth2_token_with_iam::CreateOAuth2TokenWithIamOutput::token_type): The token type. Always "Bearer" as defined in RFC 6749.
+    ///   - [`expires_in(i32)`](crate::operation::create_o_auth2_token_with_iam::CreateOAuth2TokenWithIamOutput::expires_in): Token lifetime in seconds. Value is the minimum of the caller's session validity and 1 hour (3600 seconds).
     /// - On failure, responds with [`SdkError<CreateOAuth2TokenWithIAMError>`](crate::operation::create_o_auth2_token_with_iam::CreateOAuth2TokenWithIAMError)
     pub fn create_o_auth2_token_with_iam(&self) -> crate::operation::create_o_auth2_token_with_iam::builders::CreateOAuth2TokenWithIAMFluentBuilder {
         crate::operation::create_o_auth2_token_with_iam::builders::CreateOAuth2TokenWithIAMFluentBuilder::new(self.handle.clone())

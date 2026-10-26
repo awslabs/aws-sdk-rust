@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkerOutput {
-    /// <p>The worker log to update.</p>
+    /// The worker log to update.
     pub log: ::std::option::Option<crate::types::LogConfiguration>,
-    /// <p>The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    /// The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.
     pub host_configuration: ::std::option::Option<crate::types::HostConfiguration>,
     _request_id: Option<String>,
 }
 impl UpdateWorkerOutput {
-    /// <p>The worker log to update.</p>
+    /// The worker log to update.
     pub fn log(&self) -> ::std::option::Option<&crate::types::LogConfiguration> {
         self.log.as_ref()
     }
-    /// <p>The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    /// The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.
     pub fn host_configuration(&self) -> ::std::option::Option<&crate::types::HostConfiguration> {
         self.host_configuration.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct UpdateWorkerOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateWorkerOutputBuilder {
-    /// <p>The worker log to update.</p>
+    /// The worker log to update.
     pub fn log(mut self, input: crate::types::LogConfiguration) -> Self {
         self.log = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The worker log to update.</p>
+    /// The worker log to update.
     pub fn set_log(mut self, input: ::std::option::Option<crate::types::LogConfiguration>) -> Self {
         self.log = input;
         self
     }
-    /// <p>The worker log to update.</p>
+    /// The worker log to update.
     pub fn get_log(&self) -> &::std::option::Option<crate::types::LogConfiguration> {
         &self.log
     }
-    /// <p>The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    /// The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.
     pub fn host_configuration(mut self, input: crate::types::HostConfiguration) -> Self {
         self.host_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    /// The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.
     pub fn set_host_configuration(mut self, input: ::std::option::Option<crate::types::HostConfiguration>) -> Self {
         self.host_configuration = input;
         self
     }
-    /// <p>The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    /// The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.
     pub fn get_host_configuration(&self) -> &::std::option::Option<crate::types::HostConfiguration> {
         &self.host_configuration
     }

@@ -22,7 +22,7 @@ impl crate::operation::update_monitor::builders::UpdateMonitorInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateMonitor`.
 ///
-/// <p>Modifies the settings for a Deadline Cloud monitor. You can modify one or all of the settings when you call <code>UpdateMonitor</code>.</p>
+/// Modifies the settings for a Deadline Cloud monitor. You can modify one or all of the settings when you call <code>UpdateMonitor</code>.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMonitorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl UpdateMonitorFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the monitor to update.</p>
+    /// The unique identifier of the monitor to update.
     pub fn monitor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitor_id(input.into());
         self
     }
-    /// <p>The unique identifier of the monitor to update.</p>
+    /// The unique identifier of the monitor to update.
     pub fn set_monitor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitor_id(input);
         self
     }
-    /// <p>The unique identifier of the monitor to update.</p>
+    /// The unique identifier of the monitor to update.
     pub fn get_monitor_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_id()
     }
-    /// <p>The new value of the subdomain to use when forming the monitor URL.</p>
+    /// The new value of the subdomain to use when forming the monitor URL.
     pub fn subdomain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subdomain(input.into());
         self
     }
-    /// <p>The new value of the subdomain to use when forming the monitor URL.</p>
+    /// The new value of the subdomain to use when forming the monitor URL.
     pub fn set_subdomain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subdomain(input);
         self
     }
-    /// <p>The new value of the subdomain to use when forming the monitor URL.</p>
+    /// The new value of the subdomain to use when forming the monitor URL.
     pub fn get_subdomain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subdomain()
     }
@@ -156,17 +156,17 @@ impl UpdateMonitorFluentBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
-    /// <p>The Amazon Resource Name of the new IAM role to use with the monitor.</p>
+    /// The Amazon Resource Name of the new IAM role to use with the monitor.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name of the new IAM role to use with the monitor.</p>
+    /// The Amazon Resource Name of the new IAM role to use with the monitor.
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name of the new IAM role to use with the monitor.</p>
+    /// The Amazon Resource Name of the new IAM role to use with the monitor.
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }

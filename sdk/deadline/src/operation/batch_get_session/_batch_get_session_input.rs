@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetSessionInput {
-    /// <p>The list of session identifiers to retrieve. You can specify up to 100 identifiers per request.</p>
+    /// The list of session identifiers to retrieve. You can specify up to 100 identifiers per request.
     pub identifiers: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetSessionIdentifier>>,
 }
 impl BatchGetSessionInput {
-    /// <p>The list of session identifiers to retrieve. You can specify up to 100 identifiers per request.</p>
+    /// The list of session identifiers to retrieve. You can specify up to 100 identifiers per request.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identifiers.is_none()`.
     pub fn identifiers(&self) -> &[crate::types::BatchGetSessionIdentifier] {
@@ -32,19 +32,19 @@ impl BatchGetSessionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_identifiers`](Self::set_identifiers).
     ///
-    /// <p>The list of session identifiers to retrieve. You can specify up to 100 identifiers per request.</p>
+    /// The list of session identifiers to retrieve. You can specify up to 100 identifiers per request.
     pub fn identifiers(mut self, input: crate::types::BatchGetSessionIdentifier) -> Self {
         let mut v = self.identifiers.unwrap_or_default();
         v.push(input);
         self.identifiers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of session identifiers to retrieve. You can specify up to 100 identifiers per request.</p>
+    /// The list of session identifiers to retrieve. You can specify up to 100 identifiers per request.
     pub fn set_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetSessionIdentifier>>) -> Self {
         self.identifiers = input;
         self
     }
-    /// <p>The list of session identifiers to retrieve. You can specify up to 100 identifiers per request.</p>
+    /// The list of session identifiers to retrieve. You can specify up to 100 identifiers per request.
     pub fn get_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetSessionIdentifier>> {
         &self.identifiers
     }

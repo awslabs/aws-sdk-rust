@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetTaskOutput {
-    /// <p>A list of tasks that were successfully retrieved.</p>
+    /// A list of tasks that were successfully retrieved.
     pub tasks: ::std::vec::Vec<crate::types::BatchGetTaskItem>,
-    /// <p>A list of errors for tasks that could not be retrieved.</p>
+    /// A list of errors for tasks that could not be retrieved.
     pub errors: ::std::vec::Vec<crate::types::BatchGetTaskError>,
     _request_id: Option<String>,
 }
 impl BatchGetTaskOutput {
-    /// <p>A list of tasks that were successfully retrieved.</p>
+    /// A list of tasks that were successfully retrieved.
     pub fn tasks(&self) -> &[crate::types::BatchGetTaskItem] {
         use std::ops::Deref;
         self.tasks.deref()
     }
-    /// <p>A list of errors for tasks that could not be retrieved.</p>
+    /// A list of errors for tasks that could not be retrieved.
     pub fn errors(&self) -> &[crate::types::BatchGetTaskError] {
         use std::ops::Deref;
         self.errors.deref()
@@ -46,19 +46,19 @@ impl BatchGetTaskOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
     ///
-    /// <p>A list of tasks that were successfully retrieved.</p>
+    /// A list of tasks that were successfully retrieved.
     pub fn tasks(mut self, input: crate::types::BatchGetTaskItem) -> Self {
         let mut v = self.tasks.unwrap_or_default();
         v.push(input);
         self.tasks = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tasks that were successfully retrieved.</p>
+    /// A list of tasks that were successfully retrieved.
     pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTaskItem>>) -> Self {
         self.tasks = input;
         self
     }
-    /// <p>A list of tasks that were successfully retrieved.</p>
+    /// A list of tasks that were successfully retrieved.
     pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTaskItem>> {
         &self.tasks
     }
@@ -66,19 +66,19 @@ impl BatchGetTaskOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>A list of errors for tasks that could not be retrieved.</p>
+    /// A list of errors for tasks that could not be retrieved.
     pub fn errors(mut self, input: crate::types::BatchGetTaskError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of errors for tasks that could not be retrieved.</p>
+    /// A list of errors for tasks that could not be retrieved.
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTaskError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>A list of errors for tasks that could not be retrieved.</p>
+    /// A list of errors for tasks that could not be retrieved.
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTaskError>> {
         &self.errors
     }

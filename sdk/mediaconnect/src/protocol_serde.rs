@@ -35,11 +35,17 @@ pub(crate) mod shape_add_flow_sources;
 
 pub(crate) mod shape_add_flow_vpc_interfaces;
 
+pub(crate) mod shape_batch_get_destination_endpoint;
+
 pub(crate) mod shape_batch_get_router_input;
 
 pub(crate) mod shape_batch_get_router_network_interface;
 
 pub(crate) mod shape_batch_get_router_output;
+
+pub(crate) mod shape_batch_get_source_endpoint;
+
+pub(crate) mod shape_connect_endpoints;
 
 pub(crate) mod shape_create_bridge;
 
@@ -65,7 +71,11 @@ pub(crate) mod shape_delete_router_network_interface;
 
 pub(crate) mod shape_delete_router_output;
 
+pub(crate) mod shape_deregister_destination_endpoint;
+
 pub(crate) mod shape_deregister_gateway_instance;
+
+pub(crate) mod shape_deregister_source_endpoint;
 
 pub(crate) mod shape_describe_bridge;
 
@@ -83,6 +93,10 @@ pub(crate) mod shape_describe_offering;
 
 pub(crate) mod shape_describe_reservation;
 
+pub(crate) mod shape_disconnect_endpoints;
+
+pub(crate) mod shape_get_destination_endpoint;
+
 pub(crate) mod shape_get_router_input;
 
 pub(crate) mod shape_get_router_input_source_metadata;
@@ -93,9 +107,13 @@ pub(crate) mod shape_get_router_network_interface;
 
 pub(crate) mod shape_get_router_output;
 
+pub(crate) mod shape_get_source_endpoint;
+
 pub(crate) mod shape_grant_flow_entitlements;
 
 pub(crate) mod shape_list_bridges;
+
+pub(crate) mod shape_list_destination_endpoints;
 
 pub(crate) mod shape_list_entitlements;
 
@@ -115,11 +133,17 @@ pub(crate) mod shape_list_router_network_interfaces;
 
 pub(crate) mod shape_list_router_outputs;
 
+pub(crate) mod shape_list_source_endpoints;
+
 pub(crate) mod shape_list_tags_for_global_resource;
 
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_purchase_offering;
+
+pub(crate) mod shape_register_destination_endpoint;
+
+pub(crate) mod shape_register_source_endpoint;
 
 pub(crate) mod shape_remove_bridge_output;
 
@@ -169,6 +193,8 @@ pub(crate) mod shape_update_bridge_source;
 
 pub(crate) mod shape_update_bridge_state;
 
+pub(crate) mod shape_update_destination_endpoint;
+
 pub(crate) mod shape_update_flow;
 
 pub(crate) mod shape_update_flow_entitlement;
@@ -186,6 +212,8 @@ pub(crate) mod shape_update_router_input;
 pub(crate) mod shape_update_router_network_interface;
 
 pub(crate) mod shape_update_router_output;
+
+pub(crate) mod shape_update_source_endpoint;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -213,6 +241,8 @@ pub(crate) mod shape_bad_request_exception;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_connect_endpoints_input;
+
 pub(crate) mod shape_create_bridge420_exception;
 
 pub(crate) mod shape_create_bridge_input;
@@ -231,6 +261,10 @@ pub(crate) mod shape_create_router_network_interface_input;
 
 pub(crate) mod shape_create_router_output_input;
 
+pub(crate) mod shape_destination_endpoint_service_quota_exceeded_exception;
+
+pub(crate) mod shape_disconnect_endpoints_input;
+
 pub(crate) mod shape_forbidden_exception;
 
 pub(crate) mod shape_grant_flow_entitlements420_exception;
@@ -239,15 +273,23 @@ pub(crate) mod shape_grant_flow_entitlements_input;
 
 pub(crate) mod shape_internal_server_error_exception;
 
+pub(crate) mod shape_list_destination_endpoints_input;
+
 pub(crate) mod shape_list_router_inputs_input;
 
 pub(crate) mod shape_list_router_network_interfaces_input;
 
 pub(crate) mod shape_list_router_outputs_input;
 
+pub(crate) mod shape_list_source_endpoints_input;
+
 pub(crate) mod shape_not_found_exception;
 
 pub(crate) mod shape_purchase_offering_input;
+
+pub(crate) mod shape_register_destination_endpoint_input;
+
+pub(crate) mod shape_register_source_endpoint_input;
 
 pub(crate) mod shape_router_input_service_quota_exceeded_exception;
 
@@ -256,6 +298,8 @@ pub(crate) mod shape_router_network_interface_service_quota_exceeded_exception;
 pub(crate) mod shape_router_output_service_quota_exceeded_exception;
 
 pub(crate) mod shape_service_unavailable_exception;
+
+pub(crate) mod shape_source_endpoint_service_quota_exceeded_exception;
 
 pub(crate) mod shape_tag_global_resource_input;
 
@@ -272,6 +316,8 @@ pub(crate) mod shape_update_bridge_output_input;
 pub(crate) mod shape_update_bridge_source_input;
 
 pub(crate) mod shape_update_bridge_state_input;
+
+pub(crate) mod shape_update_destination_endpoint_input;
 
 pub(crate) mod shape_update_flow_entitlement_input;
 
@@ -291,6 +337,8 @@ pub(crate) mod shape_update_router_network_interface_input;
 
 pub(crate) mod shape_update_router_output_input;
 
+pub(crate) mod shape_update_source_endpoint_input;
+
 pub(crate) mod shape_add_bridge_output_request;
 
 pub(crate) mod shape_add_bridge_source_request;
@@ -305,17 +353,29 @@ pub(crate) mod shape_add_media_stream_request;
 
 pub(crate) mod shape_add_output_request;
 
+pub(crate) mod shape_batch_get_destination_endpoint_error_list;
+
 pub(crate) mod shape_batch_get_router_input_error_list;
 
 pub(crate) mod shape_batch_get_router_network_interface_error_list;
 
 pub(crate) mod shape_batch_get_router_output_error_list;
 
+pub(crate) mod shape_batch_get_source_endpoint_error_list;
+
 pub(crate) mod shape_bridge;
 
 pub(crate) mod shape_bridge_output;
 
 pub(crate) mod shape_bridge_source;
+
+pub(crate) mod shape_destination_endpoint;
+
+pub(crate) mod shape_destination_endpoint_configuration;
+
+pub(crate) mod shape_destination_endpoint_filter;
+
+pub(crate) mod shape_destination_endpoint_list;
 
 pub(crate) mod shape_encoding_config;
 
@@ -369,11 +429,15 @@ pub(crate) mod shape_list_of_string;
 
 pub(crate) mod shape_list_of_vpc_interface;
 
+pub(crate) mod shape_listed_destination_endpoint_list;
+
 pub(crate) mod shape_listed_router_input_list;
 
 pub(crate) mod shape_listed_router_network_interface_list;
 
 pub(crate) mod shape_listed_router_output_list;
+
+pub(crate) mod shape_listed_source_endpoint_list;
 
 pub(crate) mod shape_maintenance_configuration;
 
@@ -441,6 +505,14 @@ pub(crate) mod shape_set_source_request;
 
 pub(crate) mod shape_source;
 
+pub(crate) mod shape_source_endpoint;
+
+pub(crate) mod shape_source_endpoint_configuration;
+
+pub(crate) mod shape_source_endpoint_filter;
+
+pub(crate) mod shape_source_endpoint_list;
+
 pub(crate) mod shape_thumbnail_details;
 
 pub(crate) mod shape_transport_media_info;
@@ -475,11 +547,15 @@ pub(crate) mod shape_add_bridge_network_source_request;
 
 pub(crate) mod shape_audio_monitoring_setting;
 
+pub(crate) mod shape_batch_get_destination_endpoint_error;
+
 pub(crate) mod shape_batch_get_router_input_error;
 
 pub(crate) mod shape_batch_get_router_network_interface_error;
 
 pub(crate) mod shape_batch_get_router_output_error;
+
+pub(crate) mod shape_batch_get_source_endpoint_error;
 
 pub(crate) mod shape_bridge_flow_output;
 
@@ -495,11 +571,23 @@ pub(crate) mod shape_default_maintenance_configuration;
 
 pub(crate) mod shape_destination_configuration_request;
 
+pub(crate) mod shape_destination_endpoint_arn_list;
+
+pub(crate) mod shape_destination_endpoint_associated_resource_details;
+
+pub(crate) mod shape_destination_endpoint_connection_details;
+
+pub(crate) mod shape_destination_endpoint_message_list;
+
+pub(crate) mod shape_destination_endpoint_router_input_configuration;
+
 pub(crate) mod shape_egress_gateway_bridge;
 
 pub(crate) mod shape_encoding_parameters_request;
 
 pub(crate) mod shape_encryption;
+
+pub(crate) mod shape_endpoint_encryption_configuration;
 
 pub(crate) mod shape_failover_router_input_configuration;
 
@@ -527,6 +615,8 @@ pub(crate) mod shape_list_of_transport_stream_program;
 
 pub(crate) mod shape_listed_bridge;
 
+pub(crate) mod shape_listed_destination_endpoint;
+
 pub(crate) mod shape_listed_entitlement;
 
 pub(crate) mod shape_listed_flow;
@@ -540,6 +630,8 @@ pub(crate) mod shape_listed_router_input;
 pub(crate) mod shape_listed_router_network_interface;
 
 pub(crate) mod shape_listed_router_output;
+
+pub(crate) mod shape_listed_source_endpoint;
 
 pub(crate) mod shape_maintenance;
 
@@ -569,7 +661,11 @@ pub(crate) mod shape_preferred_day_time_maintenance_configuration;
 
 pub(crate) mod shape_public_router_network_interface_configuration;
 
+pub(crate) mod shape_resource_share_details;
+
 pub(crate) mod shape_resource_specification;
+
+pub(crate) mod shape_router_input_destination_endpoint_configuration;
 
 pub(crate) mod shape_router_input_messages;
 
@@ -581,15 +677,31 @@ pub(crate) mod shape_router_input_transit_encryption_key_configuration;
 
 pub(crate) mod shape_router_output_messages;
 
+pub(crate) mod shape_router_output_source_endpoint_configuration;
+
 pub(crate) mod shape_router_output_stream_details;
 
 pub(crate) mod shape_set_gateway_bridge_source_request;
 
+pub(crate) mod shape_source_endpoint_arn_list;
+
+pub(crate) mod shape_source_endpoint_associated_resource_details;
+
+pub(crate) mod shape_source_endpoint_connection_details;
+
+pub(crate) mod shape_source_endpoint_message_list;
+
+pub(crate) mod shape_source_endpoint_router_output_configuration;
+
 pub(crate) mod shape_source_priority;
+
+pub(crate) mod shape_standard_destination_endpoint_configuration;
 
 pub(crate) mod shape_standard_router_input_configuration;
 
 pub(crate) mod shape_standard_router_output_configuration;
+
+pub(crate) mod shape_standard_source_endpoint_configuration;
 
 pub(crate) mod shape_transport;
 
@@ -603,9 +715,17 @@ pub(crate) mod shape_window_maintenance_schedule;
 
 pub(crate) mod shape_automatic_encryption_key_configuration;
 
+pub(crate) mod shape_automatic_endpoint_encryption_configuration;
+
 pub(crate) mod shape_black_frames;
 
 pub(crate) mod shape_black_frames_configuration;
+
+pub(crate) mod shape_consumed_resource_share_details;
+
+pub(crate) mod shape_destination_endpoint_message;
+
+pub(crate) mod shape_destination_endpoint_router_input_stream_details;
 
 pub(crate) mod shape_failover_router_input_protocol_configuration;
 
@@ -645,7 +765,13 @@ pub(crate) mod shape_merge_router_input_protocol_configuration;
 
 pub(crate) mod shape_merge_router_input_stream_details;
 
+pub(crate) mod shape_owned_resource_share_details;
+
 pub(crate) mod shape_public_router_network_interface_rule;
+
+pub(crate) mod shape_router_input_destination_endpoint_associated_resource_details;
+
+pub(crate) mod shape_router_input_destination_endpoint_connection_details;
 
 pub(crate) mod shape_router_input_message;
 
@@ -655,19 +781,47 @@ pub(crate) mod shape_router_output_message;
 
 pub(crate) mod shape_router_output_protocol_configuration;
 
+pub(crate) mod shape_router_output_source_endpoint_associated_resource_details;
+
+pub(crate) mod shape_router_output_source_endpoint_connection_details;
+
 pub(crate) mod shape_secrets_manager_encryption_key_configuration;
+
+pub(crate) mod shape_secrets_manager_endpoint_encryption_configuration;
 
 pub(crate) mod shape_silent_audio;
 
 pub(crate) mod shape_silent_audio_configuration;
 
+pub(crate) mod shape_source_endpoint_message;
+
+pub(crate) mod shape_source_endpoint_router_output_stream_details;
+
+pub(crate) mod shape_standard_destination_endpoint_associated_resource_details;
+
+pub(crate) mod shape_standard_destination_endpoint_connection_details;
+
+pub(crate) mod shape_standard_destination_endpoint_networking_configuration;
+
+pub(crate) mod shape_standard_destination_endpoint_protocol_configuration;
+
 pub(crate) mod shape_standard_router_input_stream_details;
 
 pub(crate) mod shape_standard_router_output_stream_details;
 
+pub(crate) mod shape_standard_source_endpoint_associated_resource_details;
+
+pub(crate) mod shape_standard_source_endpoint_connection_details;
+
+pub(crate) mod shape_standard_source_endpoint_networking_configuration;
+
+pub(crate) mod shape_standard_source_endpoint_protocol_configuration;
+
 pub(crate) mod shape_transport_stream_program;
 
 pub(crate) mod shape_encoding_parameters;
+
+pub(crate) mod shape_endpoint_encryption_secret_configuration;
 
 pub(crate) mod shape_failover_router_input_indexed_stream_details;
 
@@ -689,9 +843,17 @@ pub(crate) mod shape_ndi_media_stream_info;
 
 pub(crate) mod shape_network_interface_rule_list;
 
+pub(crate) mod shape_public_destination_endpoint_networking_configuration;
+
+pub(crate) mod shape_public_source_endpoint_networking_configuration;
+
 pub(crate) mod shape_rist_router_input_configuration;
 
 pub(crate) mod shape_rist_router_output_configuration;
+
+pub(crate) mod shape_rist_standard_destination_endpoint_configuration;
+
+pub(crate) mod shape_rist_standard_source_endpoint_configuration;
 
 pub(crate) mod shape_rtmp_push_router_output_configuration;
 
@@ -699,15 +861,31 @@ pub(crate) mod shape_rtp_router_input_configuration;
 
 pub(crate) mod shape_rtp_router_output_configuration;
 
+pub(crate) mod shape_rtp_standard_destination_endpoint_configuration;
+
+pub(crate) mod shape_rtp_standard_source_endpoint_configuration;
+
 pub(crate) mod shape_security_group_id_list;
 
 pub(crate) mod shape_srt_caller_router_input_configuration;
 
 pub(crate) mod shape_srt_caller_router_output_configuration;
 
+pub(crate) mod shape_srt_caller_standard_destination_endpoint_configuration;
+
+pub(crate) mod shape_srt_caller_standard_source_endpoint_configuration;
+
 pub(crate) mod shape_srt_listener_router_input_configuration;
 
 pub(crate) mod shape_srt_listener_router_output_configuration;
+
+pub(crate) mod shape_srt_listener_standard_destination_endpoint_configuration;
+
+pub(crate) mod shape_srt_listener_standard_source_endpoint_configuration;
+
+pub(crate) mod shape_vpc_destination_endpoint_networking_configuration;
+
+pub(crate) mod shape_vpc_source_endpoint_networking_configuration;
 
 pub(crate) mod shape_color_information;
 
@@ -716,6 +894,10 @@ pub(crate) mod shape_destination_configuration;
 pub(crate) mod shape_frame_resolution;
 
 pub(crate) mod shape_input_configuration;
+
+pub(crate) mod shape_public_destination_endpoint_networking_configuration_allow_rule;
+
+pub(crate) mod shape_public_source_endpoint_networking_configuration_allow_rule;
 
 pub(crate) mod shape_srt_decryption_configuration;
 
@@ -726,6 +908,10 @@ pub(crate) mod shape_tls_encryption;
 pub(crate) mod shape_transport_stream;
 
 pub(crate) mod shape_interface;
+
+pub(crate) mod shape_public_destination_endpoint_networking_configuration_allow_rule_list;
+
+pub(crate) mod shape_public_source_endpoint_networking_configuration_allow_rule_list;
 
 pub(crate) mod shape_tls_encryption_configuration;
 

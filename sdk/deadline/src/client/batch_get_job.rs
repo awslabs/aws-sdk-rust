@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetJob`](crate::operation::batch_get_job::builders::BatchGetJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifiers(BatchGetJobIdentifier)`](crate::operation::batch_get_job::builders::BatchGetJobFluentBuilder::identifiers) / [`set_identifiers(Option<Vec::<BatchGetJobIdentifier>>)`](crate::operation::batch_get_job::builders::BatchGetJobFluentBuilder::set_identifiers):<br>required: **true**<br><p>The list of job identifiers to retrieve. You can specify up to 100 identifiers per request.</p><br>
+    ///   - [`identifiers(BatchGetJobIdentifier)`](crate::operation::batch_get_job::builders::BatchGetJobFluentBuilder::identifiers) / [`set_identifiers(Option<Vec::<BatchGetJobIdentifier>>)`](crate::operation::batch_get_job::builders::BatchGetJobFluentBuilder::set_identifiers):<br>required: **true**<br>The list of job identifiers to retrieve. You can specify up to 100 identifiers per request.<br>
     /// - On success, responds with [`BatchGetJobOutput`](crate::operation::batch_get_job::BatchGetJobOutput) with field(s):
-    ///   - [`jobs(Vec::<BatchGetJobItem>)`](crate::operation::batch_get_job::BatchGetJobOutput::jobs): <p>A list of jobs that were successfully retrieved.</p>
-    ///   - [`errors(Vec::<BatchGetJobError>)`](crate::operation::batch_get_job::BatchGetJobOutput::errors): <p>A list of errors for jobs that could not be retrieved.</p>
+    ///   - [`jobs(Vec::<BatchGetJobItem>)`](crate::operation::batch_get_job::BatchGetJobOutput::jobs): A list of jobs that were successfully retrieved.
+    ///   - [`errors(Vec::<BatchGetJobError>)`](crate::operation::batch_get_job::BatchGetJobOutput::errors): A list of errors for jobs that could not be retrieved.
     /// - On failure, responds with [`SdkError<BatchGetJobError>`](crate::operation::batch_get_job::BatchGetJobError)
     pub fn batch_get_job(&self) -> crate::operation::batch_get_job::builders::BatchGetJobFluentBuilder {
         crate::operation::batch_get_job::builders::BatchGetJobFluentBuilder::new(self.handle.clone())

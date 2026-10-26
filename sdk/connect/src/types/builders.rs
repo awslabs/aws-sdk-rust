@@ -325,7 +325,11 @@ pub use crate::types::_extension_configuration::ExtensionConfigurationBuilder;
 
 pub use crate::types::_queue_info_input::QueueInfoInputBuilder;
 
+pub use crate::types::_nullable_additional_recipients::NullableAdditionalRecipientsBuilder;
+
 pub use crate::types::_routing_criteria_input::RoutingCriteriaInputBuilder;
+
+pub use crate::types::_update_outbound_email_content::UpdateOutboundEmailContentBuilder;
 
 pub use crate::types::_hierarchy_structure_update::HierarchyStructureUpdateBuilder;
 
@@ -752,6 +756,8 @@ pub use crate::types::_evaluation_answer_input::EvaluationAnswerInputBuilder;
 pub use crate::types::_evaluation_note::EvaluationNoteBuilder;
 
 pub use crate::types::_primary_value::PrimaryValueBuilder;
+
+pub use crate::types::_update_outbound_raw_message::UpdateOutboundRawMessageBuilder;
 
 pub use crate::types::_chat_participant_role_config::ChatParticipantRoleConfigBuilder;
 

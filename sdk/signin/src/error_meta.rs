@@ -3,19 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// Error thrown for access denied scenarios with flexible HTTP status mapping Runtime HTTP Status Code Mapping: - HTTP 401 (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED - HTTP 403 (Forbidden): USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS The specific HTTP status code is determined at runtime based on the error enum value. Consumers should use the error field to determine the specific access denial reason.
+    /// You do not have sufficient access to perform this action.
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// Error thrown when request conflicts with current state HTTP Status Code: 409 Conflict Used when the request conflicts with the current state of the resource
     ConflictException(crate::types::error::ConflictException),
-    /// Error thrown when an internal server error occurs HTTP Status Code: 500 Internal Server Error Used for unexpected server-side errors that prevent request processing.
+    /// The request failed because of an internal server error.
     InternalServerException(crate::types::error::InternalServerException),
+    /// The request failed because the provided grant is invalid or expired.
+    InvalidGrantException(crate::types::error::InvalidGrantException),
+    /// The request failed because the requested scope is invalid or exceeds the scope that can be granted.
+    InvalidScopeException(crate::types::error::InvalidScopeException),
     /// Error thrown when requested resource is not found HTTP Status Code: 404 Not Found Used when the specified resource does not exist
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// Error thrown when service quota is exceeded HTTP Status Code: 402 Payment Required (used as quota exceeded indicator) Used when the request would cause a service quota to be exceeded
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// Error thrown when rate limit is exceeded HTTP Status Code: 429 Too Many Requests Possible OAuth2ErrorCode values: - INVALID_REQUEST: Rate limiting, too many requests, abuse prevention Possible causes: - Too many token requests from the same client - Rate limiting based on client_id or IP address - Abuse prevention mechanisms triggered - Service protection against excessive token generation
+    /// The request failed because a dependency is temporarily unavailable. You can retry the request.
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
+    /// The request failed because you exceeded the request rate limit for this operation.
     TooManyRequestsError(crate::types::error::TooManyRequestsError),
-    /// Error thrown when request validation fails HTTP Status Code: 400 Bad Request Used for request validation errors such as malformed parameters, missing required fields, or invalid parameter values.
+    /// The request failed because it contains a malformed, missing, or invalid parameter.
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -32,8 +38,11 @@ impl ::std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::InvalidGrantException(inner) => inner.fmt(f),
+            Error::InvalidScopeException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::TooManyRequestsError(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -60,8 +69,11 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
+            Self::InvalidGrantException(inner) => inner.meta(),
+            Self::InvalidScopeException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
+            Self::ServiceUnavailableException(inner) => inner.meta(),
             Self::TooManyRequestsError(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -126,6 +138,58 @@ impl From<crate::operation::create_o_auth2_token_with_iam::CreateOAuth2TokenWith
                 Error::ValidationException(inner)
             }
             crate::operation::create_o_auth2_token_with_iam::CreateOAuth2TokenWithIAMError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_o_auth2_token_with_token_exchange::CreateOAuth2TokenWithTokenExchangeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_o_auth2_token_with_token_exchange::CreateOAuth2TokenWithTokenExchangeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_o_auth2_token_with_token_exchange::CreateOAuth2TokenWithTokenExchangeError> for Error {
+    fn from(err: crate::operation::create_o_auth2_token_with_token_exchange::CreateOAuth2TokenWithTokenExchangeError) -> Self {
+        match err {
+            crate::operation::create_o_auth2_token_with_token_exchange::CreateOAuth2TokenWithTokenExchangeError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_o_auth2_token_with_token_exchange::CreateOAuth2TokenWithTokenExchangeError::InvalidGrantException(inner) => {
+                Error::InvalidGrantException(inner)
+            }
+            crate::operation::create_o_auth2_token_with_token_exchange::CreateOAuth2TokenWithTokenExchangeError::InvalidScopeException(inner) => {
+                Error::InvalidScopeException(inner)
+            }
+            crate::operation::create_o_auth2_token_with_token_exchange::CreateOAuth2TokenWithTokenExchangeError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_o_auth2_token_with_token_exchange::CreateOAuth2TokenWithTokenExchangeError::TooManyRequestsError(inner) => {
+                Error::TooManyRequestsError(inner)
+            }
+            crate::operation::create_o_auth2_token_with_token_exchange::CreateOAuth2TokenWithTokenExchangeError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_o_auth2_token_with_token_exchange::CreateOAuth2TokenWithTokenExchangeError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -535,8 +599,11 @@ impl ::std::error::Error for Error {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
+            Error::InvalidGrantException(inner) => inner.source(),
+            Error::InvalidScopeException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::ServiceUnavailableException(inner) => inner.source(),
             Error::TooManyRequestsError(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -549,8 +616,11 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
+            Self::InvalidGrantException(e) => e.request_id(),
+            Self::InvalidScopeException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
             Self::TooManyRequestsError(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

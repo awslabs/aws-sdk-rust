@@ -3,41 +3,41 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateQueueEnvironmentInput {
-    /// <p>The farm ID of the farm to connect to the environment.</p>
+    /// The farm ID of the farm to connect to the environment.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID to connect the queue and environment.</p>
+    /// The queue ID to connect the queue and environment.
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.</p>
+    /// Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.
     pub priority: ::std::option::Option<i32>,
-    /// <p>The template's file type, <code>JSON</code> or <code>YAML</code>.</p>
+    /// The template's file type, <code>JSON</code> or <code>YAML</code>.
     pub template_type: ::std::option::Option<crate::types::EnvironmentTemplateType>,
-    /// <p>The environment template to use in the queue.</p>
+    /// The environment template to use in the queue.
     pub template: ::std::option::Option<::std::string::String>,
 }
 impl CreateQueueEnvironmentInput {
-    /// <p>The farm ID of the farm to connect to the environment.</p>
+    /// The farm ID of the farm to connect to the environment.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The queue ID to connect the queue and environment.</p>
+    /// The queue ID to connect the queue and environment.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.</p>
+    /// Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
-    /// <p>The template's file type, <code>JSON</code> or <code>YAML</code>.</p>
+    /// The template's file type, <code>JSON</code> or <code>YAML</code>.
     pub fn template_type(&self) -> ::std::option::Option<&crate::types::EnvironmentTemplateType> {
         self.template_type.as_ref()
     }
-    /// <p>The environment template to use in the queue.</p>
+    /// The environment template to use in the queue.
     pub fn template(&self) -> ::std::option::Option<&str> {
         self.template.as_deref()
     }
@@ -73,92 +73,92 @@ pub struct CreateQueueEnvironmentInputBuilder {
     pub(crate) template: ::std::option::Option<::std::string::String>,
 }
 impl CreateQueueEnvironmentInputBuilder {
-    /// <p>The farm ID of the farm to connect to the environment.</p>
+    /// The farm ID of the farm to connect to the environment.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID of the farm to connect to the environment.</p>
+    /// The farm ID of the farm to connect to the environment.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID of the farm to connect to the environment.</p>
+    /// The farm ID of the farm to connect to the environment.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The queue ID to connect the queue and environment.</p>
+    /// The queue ID to connect the queue and environment.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue ID to connect the queue and environment.</p>
+    /// The queue ID to connect the queue and environment.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The queue ID to connect the queue and environment.</p>
+    /// The queue ID to connect the queue and environment.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.</p>
+    /// Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.
     /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.</p>
+    /// Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
-    /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.</p>
+    /// Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }
-    /// <p>The template's file type, <code>JSON</code> or <code>YAML</code>.</p>
+    /// The template's file type, <code>JSON</code> or <code>YAML</code>.
     /// This field is required.
     pub fn template_type(mut self, input: crate::types::EnvironmentTemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The template's file type, <code>JSON</code> or <code>YAML</code>.</p>
+    /// The template's file type, <code>JSON</code> or <code>YAML</code>.
     pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::EnvironmentTemplateType>) -> Self {
         self.template_type = input;
         self
     }
-    /// <p>The template's file type, <code>JSON</code> or <code>YAML</code>.</p>
+    /// The template's file type, <code>JSON</code> or <code>YAML</code>.
     pub fn get_template_type(&self) -> &::std::option::Option<crate::types::EnvironmentTemplateType> {
         &self.template_type
     }
-    /// <p>The environment template to use in the queue.</p>
+    /// The environment template to use in the queue.
     /// This field is required.
     pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The environment template to use in the queue.</p>
+    /// The environment template to use in the queue.
     pub fn set_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template = input;
         self
     }
-    /// <p>The environment template to use in the queue.</p>
+    /// The environment template to use in the queue.
     pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.template
     }

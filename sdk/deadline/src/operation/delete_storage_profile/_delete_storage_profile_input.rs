@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteStorageProfileInput {
-    /// <p>The farm ID of the farm from which to remove the storage profile.</p>
+    /// The farm ID of the farm from which to remove the storage profile.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The storage profile ID of the storage profile to delete.</p>
+    /// The storage profile ID of the storage profile to delete.
     pub storage_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStorageProfileInput {
-    /// <p>The farm ID of the farm from which to remove the storage profile.</p>
+    /// The farm ID of the farm from which to remove the storage profile.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The storage profile ID of the storage profile to delete.</p>
+    /// The storage profile ID of the storage profile to delete.
     pub fn storage_profile_id(&self) -> ::std::option::Option<&str> {
         self.storage_profile_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DeleteStorageProfileInputBuilder {
     pub(crate) storage_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStorageProfileInputBuilder {
-    /// <p>The farm ID of the farm from which to remove the storage profile.</p>
+    /// The farm ID of the farm from which to remove the storage profile.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID of the farm from which to remove the storage profile.</p>
+    /// The farm ID of the farm from which to remove the storage profile.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID of the farm from which to remove the storage profile.</p>
+    /// The farm ID of the farm from which to remove the storage profile.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The storage profile ID of the storage profile to delete.</p>
+    /// The storage profile ID of the storage profile to delete.
     /// This field is required.
     pub fn storage_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_profile_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The storage profile ID of the storage profile to delete.</p>
+    /// The storage profile ID of the storage profile to delete.
     pub fn set_storage_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_profile_id = input;
         self
     }
-    /// <p>The storage profile ID of the storage profile to delete.</p>
+    /// The storage profile ID of the storage profile to delete.
     pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_profile_id
     }

@@ -6,6 +6,12 @@ pub fn ser_elastic_load_balancing(
     if let Some(var_1) = &input.enabled {
         object.key("enabled").boolean(*var_1);
     }
+    if let Some(var_2) = &input.gateway_api {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("gatewayApi").start_object();
+        crate::protocol_serde::shape_gateway_api_configuration::ser_gateway_api_configuration(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }
 
@@ -30,12 +36,19 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "enabled" => {
-                            builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "enabled" => {
+                                builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "gatewayApi" => {
+                                builder = builder.set_gateway_api(
+                                    crate::protocol_serde::shape_gateway_api_configuration::de_gateway_api_configuration(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

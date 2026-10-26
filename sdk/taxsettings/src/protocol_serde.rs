@@ -179,6 +179,8 @@ pub(crate) mod shape_france_additional_info;
 
 pub(crate) mod shape_georgia_additional_info;
 
+pub(crate) mod shape_germany_additional_info;
+
 pub(crate) mod shape_greece_additional_info;
 
 pub(crate) mod shape_india_additional_info;
@@ -192,6 +194,8 @@ pub(crate) mod shape_italy_additional_info;
 pub(crate) mod shape_kenya_additional_info;
 
 pub(crate) mod shape_malaysia_additional_info;
+
+pub(crate) mod shape_mexico_additional_info;
 
 pub(crate) mod shape_monaco_additional_info;
 

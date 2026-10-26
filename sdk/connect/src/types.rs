@@ -445,9 +445,13 @@ pub use crate::types::_extension_configuration::ExtensionConfiguration;
 
 pub use crate::types::_queue_info_input::QueueInfoInput;
 
+pub use crate::types::_nullable_additional_recipients::NullableAdditionalRecipients;
+
 pub use crate::types::_contact_flow_state::ContactFlowState;
 
 pub use crate::types::_routing_criteria_input::RoutingCriteriaInput;
+
+pub use crate::types::_update_outbound_email_content::UpdateOutboundEmailContent;
 
 pub use crate::types::_update_participant_role_config_channel_info::UpdateParticipantRoleConfigChannelInfo;
 
@@ -978,6 +982,10 @@ pub use crate::types::_evaluation_answer_input::EvaluationAnswerInput;
 pub use crate::types::_evaluation_note::EvaluationNote;
 
 pub use crate::types::_primary_value::PrimaryValue;
+
+pub use crate::types::_update_outbound_email_message_source_type::UpdateOutboundEmailMessageSourceType;
+
+pub use crate::types::_update_outbound_raw_message::UpdateOutboundRawMessage;
 
 pub use crate::types::_chat_participant_role_config::ChatParticipantRoleConfig;
 
@@ -2551,6 +2559,8 @@ mod _notification_status;
 
 mod _notification_type;
 
+mod _nullable_additional_recipients;
+
 mod _number_comparison_type;
 
 mod _number_condition;
@@ -3086,6 +3096,12 @@ mod _trend_indicator;
 mod _unit;
 
 mod _update_case_action_definition;
+
+mod _update_outbound_email_content;
+
+mod _update_outbound_email_message_source_type;
+
+mod _update_outbound_raw_message;
 
 mod _update_participant_role_config_channel_info;
 

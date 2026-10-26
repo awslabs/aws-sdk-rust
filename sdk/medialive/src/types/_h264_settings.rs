@@ -92,6 +92,8 @@ pub struct H264Settings {
     pub min_qp: ::std::option::Option<i32>,
     /// Used for QVBR rate control mode only. Optional. Enter a minimum bitrate if you want to keep the output bitrate about a threshold, in order to prevent the downstream system from de-allocating network bandwidth for this output.
     pub min_bitrate: ::std::option::Option<i32>,
+    /// Specifies whether the encoder may apply explicit weighted prediction (EWP), an H.264 coding tool that can improve compression. EWP applies a scaling factor and offset to reference frames, which helps when brightness changes between frames, such as during a fade. When this setting is enabled, the encoder decides whether to apply EWP based on the output's other codec settings, such as profile and quality level. We recommend that you keep the default, enabled. When disabled, the encoder never applies EWP.
+    pub allow_explicit_weighted_prediction: ::std::option::Option<crate::types::H264AllowExplicitWeightedPrediction>,
 }
 impl H264Settings {
     /// Enables or disables adaptive quantization (AQ), which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: spatial, temporal, and flicker. We recommend that you set the field to Auto. For more information about all the options, see the topic about video adaptive quantization in the MediaLive user guide.
@@ -270,6 +272,10 @@ impl H264Settings {
     pub fn min_bitrate(&self) -> ::std::option::Option<i32> {
         self.min_bitrate
     }
+    /// Specifies whether the encoder may apply explicit weighted prediction (EWP), an H.264 coding tool that can improve compression. EWP applies a scaling factor and offset to reference frames, which helps when brightness changes between frames, such as during a fade. When this setting is enabled, the encoder decides whether to apply EWP based on the output's other codec settings, such as profile and quality level. We recommend that you keep the default, enabled. When disabled, the encoder never applies EWP.
+    pub fn allow_explicit_weighted_prediction(&self) -> ::std::option::Option<&crate::types::H264AllowExplicitWeightedPrediction> {
+        self.allow_explicit_weighted_prediction.as_ref()
+    }
 }
 impl H264Settings {
     /// Creates a new builder-style object to manufacture [`H264Settings`](crate::types::H264Settings).
@@ -326,6 +332,7 @@ pub struct H264SettingsBuilder {
     pub(crate) timecode_burnin_settings: ::std::option::Option<crate::types::TimecodeBurninSettings>,
     pub(crate) min_qp: ::std::option::Option<i32>,
     pub(crate) min_bitrate: ::std::option::Option<i32>,
+    pub(crate) allow_explicit_weighted_prediction: ::std::option::Option<crate::types::H264AllowExplicitWeightedPrediction>,
 }
 impl H264SettingsBuilder {
     /// Enables or disables adaptive quantization (AQ), which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: spatial, temporal, and flicker. We recommend that you set the field to Auto. For more information about all the options, see the topic about video adaptive quantization in the MediaLive user guide.
@@ -944,6 +951,20 @@ impl H264SettingsBuilder {
     pub fn get_min_bitrate(&self) -> &::std::option::Option<i32> {
         &self.min_bitrate
     }
+    /// Specifies whether the encoder may apply explicit weighted prediction (EWP), an H.264 coding tool that can improve compression. EWP applies a scaling factor and offset to reference frames, which helps when brightness changes between frames, such as during a fade. When this setting is enabled, the encoder decides whether to apply EWP based on the output's other codec settings, such as profile and quality level. We recommend that you keep the default, enabled. When disabled, the encoder never applies EWP.
+    pub fn allow_explicit_weighted_prediction(mut self, input: crate::types::H264AllowExplicitWeightedPrediction) -> Self {
+        self.allow_explicit_weighted_prediction = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specifies whether the encoder may apply explicit weighted prediction (EWP), an H.264 coding tool that can improve compression. EWP applies a scaling factor and offset to reference frames, which helps when brightness changes between frames, such as during a fade. When this setting is enabled, the encoder decides whether to apply EWP based on the output's other codec settings, such as profile and quality level. We recommend that you keep the default, enabled. When disabled, the encoder never applies EWP.
+    pub fn set_allow_explicit_weighted_prediction(mut self, input: ::std::option::Option<crate::types::H264AllowExplicitWeightedPrediction>) -> Self {
+        self.allow_explicit_weighted_prediction = input;
+        self
+    }
+    /// Specifies whether the encoder may apply explicit weighted prediction (EWP), an H.264 coding tool that can improve compression. EWP applies a scaling factor and offset to reference frames, which helps when brightness changes between frames, such as during a fade. When this setting is enabled, the encoder decides whether to apply EWP based on the output's other codec settings, such as profile and quality level. We recommend that you keep the default, enabled. When disabled, the encoder never applies EWP.
+    pub fn get_allow_explicit_weighted_prediction(&self) -> &::std::option::Option<crate::types::H264AllowExplicitWeightedPrediction> {
+        &self.allow_explicit_weighted_prediction
+    }
     /// Consumes the builder and constructs a [`H264Settings`](crate::types::H264Settings).
     pub fn build(self) -> crate::types::H264Settings {
         crate::types::H264Settings {
@@ -991,6 +1012,7 @@ impl H264SettingsBuilder {
             timecode_burnin_settings: self.timecode_burnin_settings,
             min_qp: self.min_qp,
             min_bitrate: self.min_bitrate,
+            allow_explicit_weighted_prediction: self.allow_explicit_weighted_prediction,
         }
     }
 }

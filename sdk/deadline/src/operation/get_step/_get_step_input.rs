@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStepInput {
-    /// <p>The farm ID for the step.</p>
+    /// The farm ID for the step.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID for the step.</p>
+    /// The queue ID for the step.
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The job ID for the step.</p>
+    /// The job ID for the step.
     pub job_id: ::std::option::Option<::std::string::String>,
-    /// <p>The step ID.</p>
+    /// The step ID.
     pub step_id: ::std::option::Option<::std::string::String>,
 }
 impl GetStepInput {
-    /// <p>The farm ID for the step.</p>
+    /// The farm ID for the step.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The queue ID for the step.</p>
+    /// The queue ID for the step.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The job ID for the step.</p>
+    /// The job ID for the step.
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The step ID.</p>
+    /// The step ID.
     pub fn step_id(&self) -> ::std::option::Option<&str> {
         self.step_id.as_deref()
     }
@@ -47,63 +47,63 @@ pub struct GetStepInputBuilder {
     pub(crate) step_id: ::std::option::Option<::std::string::String>,
 }
 impl GetStepInputBuilder {
-    /// <p>The farm ID for the step.</p>
+    /// The farm ID for the step.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID for the step.</p>
+    /// The farm ID for the step.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID for the step.</p>
+    /// The farm ID for the step.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The queue ID for the step.</p>
+    /// The queue ID for the step.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue ID for the step.</p>
+    /// The queue ID for the step.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The queue ID for the step.</p>
+    /// The queue ID for the step.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The job ID for the step.</p>
+    /// The job ID for the step.
     /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The job ID for the step.</p>
+    /// The job ID for the step.
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The job ID for the step.</p>
+    /// The job ID for the step.
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
-    /// <p>The step ID.</p>
+    /// The step ID.
     /// This field is required.
     pub fn step_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The step ID.</p>
+    /// The step ID.
     pub fn set_step_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_id = input;
         self
     }
-    /// <p>The step ID.</p>
+    /// The step ID.
     pub fn get_step_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.step_id
     }

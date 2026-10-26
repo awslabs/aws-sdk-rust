@@ -22,7 +22,7 @@ impl crate::operation::get_session_action::builders::GetSessionActionInputBuilde
 }
 /// Fluent builder constructing a request to `GetSessionAction`.
 ///
-/// <p>Gets a session action for the job.</p>
+/// Gets a session action for the job.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSessionActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl GetSessionActionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID for the session action.</p>
+    /// The farm ID for the session action.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID for the session action.</p>
+    /// The farm ID for the session action.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID for the session action.</p>
+    /// The farm ID for the session action.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The queue ID for the session action.</p>
+    /// The queue ID for the session action.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
         self
     }
-    /// <p>The queue ID for the session action.</p>
+    /// The queue ID for the session action.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_id(input);
         self
     }
-    /// <p>The queue ID for the session action.</p>
+    /// The queue ID for the session action.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }
-    /// <p>The job ID for the session.</p>
+    /// The job ID for the session.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
         self
     }
-    /// <p>The job ID for the session.</p>
+    /// The job ID for the session.
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
     }
-    /// <p>The job ID for the session.</p>
+    /// The job ID for the session.
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_id()
     }
-    /// <p>The session action ID for the session.</p>
+    /// The session action ID for the session.
     pub fn session_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_action_id(input.into());
         self
     }
-    /// <p>The session action ID for the session.</p>
+    /// The session action ID for the session.
     pub fn set_session_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_action_id(input);
         self
     }
-    /// <p>The session action ID for the session.</p>
+    /// The session action ID for the session.
     pub fn get_session_action_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session_action_id()
     }

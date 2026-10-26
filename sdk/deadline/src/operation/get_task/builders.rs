@@ -22,7 +22,7 @@ impl crate::operation::get_task::builders::GetTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `GetTask`.
 ///
-/// <p>Gets a task.</p>
+/// Gets a task.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,73 +99,73 @@ impl GetTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the farm connected to the task.</p>
+    /// The farm ID of the farm connected to the task.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the farm connected to the task.</p>
+    /// The farm ID of the farm connected to the task.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the farm connected to the task.</p>
+    /// The farm ID of the farm connected to the task.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The queue ID for the queue connected to the task.</p>
+    /// The queue ID for the queue connected to the task.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
         self
     }
-    /// <p>The queue ID for the queue connected to the task.</p>
+    /// The queue ID for the queue connected to the task.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_id(input);
         self
     }
-    /// <p>The queue ID for the queue connected to the task.</p>
+    /// The queue ID for the queue connected to the task.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }
-    /// <p>The job ID of the job connected to the task.</p>
+    /// The job ID of the job connected to the task.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
         self
     }
-    /// <p>The job ID of the job connected to the task.</p>
+    /// The job ID of the job connected to the task.
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
     }
-    /// <p>The job ID of the job connected to the task.</p>
+    /// The job ID of the job connected to the task.
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_id()
     }
-    /// <p>The step ID for the step connected to the task.</p>
+    /// The step ID for the step connected to the task.
     pub fn step_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.step_id(input.into());
         self
     }
-    /// <p>The step ID for the step connected to the task.</p>
+    /// The step ID for the step connected to the task.
     pub fn set_step_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_step_id(input);
         self
     }
-    /// <p>The step ID for the step connected to the task.</p>
+    /// The step ID for the step connected to the task.
     pub fn get_step_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_step_id()
     }
-    /// <p>The task ID.</p>
+    /// The task ID.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_id(input.into());
         self
     }
-    /// <p>The task ID.</p>
+    /// The task ID.
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_id(input);
         self
     }
-    /// <p>The task ID.</p>
+    /// The task ID.
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_id()
     }

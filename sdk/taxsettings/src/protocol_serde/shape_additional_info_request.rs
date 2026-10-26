@@ -147,5 +147,17 @@ pub fn ser_additional_info_request(
         crate::protocol_serde::shape_monaco_additional_info::ser_monaco_additional_info(&mut object_48, var_47)?;
         object_48.finish();
     }
+    if let Some(var_49) = &input.germany_additional_info {
+        #[allow(unused_mut)]
+        let mut object_50 = object.key("germanyAdditionalInfo").start_object();
+        crate::protocol_serde::shape_germany_additional_info::ser_germany_additional_info(&mut object_50, var_49)?;
+        object_50.finish();
+    }
+    if let Some(var_51) = &input.mexico_additional_info {
+        #[allow(unused_mut)]
+        let mut object_52 = object.key("mexicoAdditionalInfo").start_object();
+        crate::protocol_serde::shape_mexico_additional_info::ser_mexico_additional_info(&mut object_52, var_51)?;
+        object_52.finish();
+    }
     Ok(())
 }

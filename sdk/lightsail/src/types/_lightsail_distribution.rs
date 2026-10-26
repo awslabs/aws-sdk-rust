@@ -55,6 +55,8 @@ pub struct LightsailDistribution {
     pub default_root_object: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe the custom error responses configured for the distribution.</p>
     pub custom_error_responses: ::std::option::Option<::std::vec::Vec<crate::types::DistributionCustomErrorResponse>>,
+    /// <p>An object that describes the Web Application Firewall (WAF) configuration of the distribution.</p>
+    pub waf: ::std::option::Option<crate::types::WafConfig>,
 }
 impl LightsailDistribution {
     /// <p>The name of the distribution.</p>
@@ -161,6 +163,10 @@ impl LightsailDistribution {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_error_responses.is_none()`.
     pub fn custom_error_responses(&self) -> &[crate::types::DistributionCustomErrorResponse] {
         self.custom_error_responses.as_deref().unwrap_or_default()
+    }
+    /// <p>An object that describes the Web Application Firewall (WAF) configuration of the distribution.</p>
+    pub fn waf(&self) -> ::std::option::Option<&crate::types::WafConfig> {
+        self.waf.as_ref()
     }
 }
 static LIGHTSAILDISTRIBUTION_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -430,6 +436,16 @@ static LIGHTSAILDISTRIBUTION_MEMBER_CUSTOM_ERROR_RESPONSES: ::aws_smithy_schema:
     22,
 )
 .with_list_member(&LIGHTSAILDISTRIBUTION_MEMBER_CUSTOM_ERROR_RESPONSES_MEMBER);
+static LIGHTSAILDISTRIBUTION_MEMBER_WAF: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$waf",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "waf",
+    23,
+);
 static LIGHTSAILDISTRIBUTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.lightsail#LightsailDistribution",
@@ -461,6 +477,7 @@ static LIGHTSAILDISTRIBUTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aw
         &LIGHTSAILDISTRIBUTION_MEMBER_VIEWER_MINIMUM_TLS_PROTOCOL_VERSION,
         &LIGHTSAILDISTRIBUTION_MEMBER_DEFAULT_ROOT_OBJECT,
         &LIGHTSAILDISTRIBUTION_MEMBER_CUSTOM_ERROR_RESPONSES,
+        &LIGHTSAILDISTRIBUTION_MEMBER_WAF,
     ],
 );
 impl LightsailDistribution {
@@ -577,6 +594,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for LightsailDistribution {
                     Ok(())
                 },
             )?;
+        }
+        if let Some(ref val) = self.waf {
+            ser.write_struct(&LIGHTSAILDISTRIBUTION_MEMBER_WAF, val)?;
         }
         Ok(())
     }
@@ -777,6 +797,13 @@ impl crate::types::builders::LightsailDistributionBuilder {
                         });
                     }
                 }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.waf = Some(crate::types::WafConfig::deserialize(deser)?);
+                    }
+                }
                 _ => {}
             }
             Ok(())
@@ -828,6 +855,7 @@ pub struct LightsailDistributionBuilder {
     pub(crate) viewer_minimum_tls_protocol_version: ::std::option::Option<::std::string::String>,
     pub(crate) default_root_object: ::std::option::Option<::std::string::String>,
     pub(crate) custom_error_responses: ::std::option::Option<::std::vec::Vec<crate::types::DistributionCustomErrorResponse>>,
+    pub(crate) waf: ::std::option::Option<crate::types::WafConfig>,
 }
 impl LightsailDistributionBuilder {
     /// <p>The name of the distribution.</p>
@@ -1194,6 +1222,20 @@ impl LightsailDistributionBuilder {
     pub fn get_custom_error_responses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DistributionCustomErrorResponse>> {
         &self.custom_error_responses
     }
+    /// <p>An object that describes the Web Application Firewall (WAF) configuration of the distribution.</p>
+    pub fn waf(mut self, input: crate::types::WafConfig) -> Self {
+        self.waf = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that describes the Web Application Firewall (WAF) configuration of the distribution.</p>
+    pub fn set_waf(mut self, input: ::std::option::Option<crate::types::WafConfig>) -> Self {
+        self.waf = input;
+        self
+    }
+    /// <p>An object that describes the Web Application Firewall (WAF) configuration of the distribution.</p>
+    pub fn get_waf(&self) -> &::std::option::Option<crate::types::WafConfig> {
+        &self.waf
+    }
     /// Consumes the builder and constructs a [`LightsailDistribution`](crate::types::LightsailDistribution).
     pub fn build(self) -> crate::types::LightsailDistribution {
         crate::types::LightsailDistribution {
@@ -1220,6 +1262,7 @@ impl LightsailDistributionBuilder {
             viewer_minimum_tls_protocol_version: self.viewer_minimum_tls_protocol_version,
             default_root_object: self.default_root_object,
             custom_error_responses: self.custom_error_responses,
+            waf: self.waf,
         }
     }
 }

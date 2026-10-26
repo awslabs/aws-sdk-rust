@@ -61,6 +61,12 @@ pub fn ser_entity_type_filters(
             )?;
             object_9.finish();
         }
+        crate::types::EntityTypeFilters::SubsidiaryAuthorizationFilters(inner) => {
+            #[allow(unused_mut)]
+            let mut object_10 = object_4.key("SubsidiaryAuthorizationFilters").start_object();
+            crate::protocol_serde::shape_subsidiary_authorization_filters::ser_subsidiary_authorization_filters(&mut object_10, inner)?;
+            object_10.finish();
+        }
         crate::types::EntityTypeFilters::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EntityTypeFilters",

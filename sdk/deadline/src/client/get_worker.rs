@@ -3,20 +3,20 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWorker`](crate::operation::get_worker::builders::GetWorkerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::set_farm_id):<br>required: **true**<br><p>The farm ID for the worker.</p><br>
-    ///   - [`fleet_id(impl Into<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::set_fleet_id):<br>required: **true**<br><p>The fleet ID of the worker.</p><br>
-    ///   - [`worker_id(impl Into<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::worker_id) / [`set_worker_id(Option<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::set_worker_id):<br>required: **true**<br><p>The worker ID.</p><br>
+    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::set_farm_id):<br>required: **true**<br>The farm ID for the worker.<br>
+    ///   - [`fleet_id(impl Into<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::set_fleet_id):<br>required: **true**<br>The fleet ID of the worker.<br>
+    ///   - [`worker_id(impl Into<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::worker_id) / [`set_worker_id(Option<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::set_worker_id):<br>required: **true**<br>The worker ID.<br>
     /// - On success, responds with [`GetWorkerOutput`](crate::operation::get_worker::GetWorkerOutput) with field(s):
-    ///   - [`farm_id(String)`](crate::operation::get_worker::GetWorkerOutput::farm_id): <p>The farm ID.</p>
-    ///   - [`fleet_id(String)`](crate::operation::get_worker::GetWorkerOutput::fleet_id): <p>The fleet ID.</p>
-    ///   - [`worker_id(String)`](crate::operation::get_worker::GetWorkerOutput::worker_id): <p>The worker ID.</p>
-    ///   - [`host_properties(Option<HostPropertiesResponse>)`](crate::operation::get_worker::GetWorkerOutput::host_properties): <p>The host properties for the worker.</p>
-    ///   - [`status(WorkerStatus)`](crate::operation::get_worker::GetWorkerOutput::status): <p>The status of the worker.</p>
-    ///   - [`log(Option<LogConfiguration>)`](crate::operation::get_worker::GetWorkerOutput::log): <p>The logs for the associated worker.</p>
-    ///   - [`created_at(DateTime)`](crate::operation::get_worker::GetWorkerOutput::created_at): <p>The date and time the resource was created.</p>
-    ///   - [`created_by(String)`](crate::operation::get_worker::GetWorkerOutput::created_by): <p>The user or system that created this resource.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_worker::GetWorkerOutput::updated_at): <p>The date and time the resource was updated.</p>
-    ///   - [`updated_by(Option<String>)`](crate::operation::get_worker::GetWorkerOutput::updated_by): <p>The user or system that updated this resource.</p>
+    ///   - [`farm_id(String)`](crate::operation::get_worker::GetWorkerOutput::farm_id): The farm ID.
+    ///   - [`fleet_id(String)`](crate::operation::get_worker::GetWorkerOutput::fleet_id): The fleet ID.
+    ///   - [`worker_id(String)`](crate::operation::get_worker::GetWorkerOutput::worker_id): The worker ID.
+    ///   - [`host_properties(Option<HostPropertiesResponse>)`](crate::operation::get_worker::GetWorkerOutput::host_properties): The host properties for the worker.
+    ///   - [`status(WorkerStatus)`](crate::operation::get_worker::GetWorkerOutput::status): The status of the worker.
+    ///   - [`log(Option<LogConfiguration>)`](crate::operation::get_worker::GetWorkerOutput::log): The logs for the associated worker.
+    ///   - [`created_at(DateTime)`](crate::operation::get_worker::GetWorkerOutput::created_at): The date and time the resource was created.
+    ///   - [`created_by(String)`](crate::operation::get_worker::GetWorkerOutput::created_by): The user or system that created this resource.
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_worker::GetWorkerOutput::updated_at): The date and time the resource was updated.
+    ///   - [`updated_by(Option<String>)`](crate::operation::get_worker::GetWorkerOutput::updated_by): The user or system that updated this resource.
     /// - On failure, responds with [`SdkError<GetWorkerError>`](crate::operation::get_worker::GetWorkerError)
     pub fn get_worker(&self) -> crate::operation::get_worker::builders::GetWorkerFluentBuilder {
         crate::operation::get_worker::builders::GetWorkerFluentBuilder::new(self.handle.clone())

@@ -12,5 +12,8 @@ pub fn ser_list_instances_input_input(
     if let Some(var_2) = &input.next_token {
         object.key("NextToken").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.region_scope {
+        object.key("RegionScope").string(var_3.as_str());
+    }
     Ok(())
 }

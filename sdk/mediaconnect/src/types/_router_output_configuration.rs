@@ -14,6 +14,8 @@ pub enum RouterOutputConfiguration {
     /// <p>You can't change <code>destinationTransitEncryption</code> while the router output is connected to a MediaLive input. To change it, first disconnect the router output, then update the encryption.</p>
     /// </note>
     MediaLiveInput(crate::types::MediaLiveInputRouterOutputConfiguration),
+    /// <p>Configuration settings for a router output that is represented by a source endpoint.</p>
+    SourceEndpoint(crate::types::SourceEndpointRouterOutputConfiguration),
     /// <p>The configuration settings for a standard router output, including the protocol, protocol-specific configuration, network interface, and availability zone.</p>
     Standard(crate::types::StandardRouterOutputConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -52,6 +54,19 @@ impl RouterOutputConfiguration {
     /// Returns true if this is a [`MediaLiveInput`](crate::types::RouterOutputConfiguration::MediaLiveInput).
     pub fn is_media_live_input(&self) -> bool {
         self.as_media_live_input().is_ok()
+    }
+    /// Tries to convert the enum instance into [`SourceEndpoint`](crate::types::RouterOutputConfiguration::SourceEndpoint), extracting the inner [`SourceEndpointRouterOutputConfiguration`](crate::types::SourceEndpointRouterOutputConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_source_endpoint(&self) -> ::std::result::Result<&crate::types::SourceEndpointRouterOutputConfiguration, &Self> {
+        if let RouterOutputConfiguration::SourceEndpoint(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SourceEndpoint`](crate::types::RouterOutputConfiguration::SourceEndpoint).
+    pub fn is_source_endpoint(&self) -> bool {
+        self.as_source_endpoint().is_ok()
     }
     /// Tries to convert the enum instance into [`Standard`](crate::types::RouterOutputConfiguration::Standard), extracting the inner [`StandardRouterOutputConfiguration`](crate::types::StandardRouterOutputConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

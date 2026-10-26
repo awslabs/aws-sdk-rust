@@ -18,6 +18,8 @@
 ///     DistributionMetricName::Http5xxErrorRate => { /* ... */ },
 ///     DistributionMetricName::Requests => { /* ... */ },
 ///     DistributionMetricName::TotalErrorRate => { /* ... */ },
+///     DistributionMetricName::WafAllowedRequests => { /* ... */ },
+///     DistributionMetricName::WafBlockedRequests => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -58,6 +60,10 @@ pub enum DistributionMetricName {
     Requests,
     #[allow(missing_docs)] // documentation missing in model
     TotalErrorRate,
+    #[allow(missing_docs)] // documentation missing in model
+    WafAllowedRequests,
+    #[allow(missing_docs)] // documentation missing in model
+    WafBlockedRequests,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -71,6 +77,8 @@ impl ::std::convert::From<&str> for DistributionMetricName {
             "Http5xxErrorRate" => DistributionMetricName::Http5xxErrorRate,
             "Requests" => DistributionMetricName::Requests,
             "TotalErrorRate" => DistributionMetricName::TotalErrorRate,
+            "WafAllowedRequests" => DistributionMetricName::WafAllowedRequests,
+            "WafBlockedRequests" => DistributionMetricName::WafBlockedRequests,
             other => DistributionMetricName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -92,6 +100,8 @@ impl DistributionMetricName {
             DistributionMetricName::Http5xxErrorRate => "Http5xxErrorRate",
             DistributionMetricName::Requests => "Requests",
             DistributionMetricName::TotalErrorRate => "TotalErrorRate",
+            DistributionMetricName::WafAllowedRequests => "WafAllowedRequests",
+            DistributionMetricName::WafBlockedRequests => "WafBlockedRequests",
             DistributionMetricName::Unknown(value) => value.as_str(),
         }
     }
@@ -104,6 +114,8 @@ impl DistributionMetricName {
             "Http5xxErrorRate",
             "Requests",
             "TotalErrorRate",
+            "WafAllowedRequests",
+            "WafBlockedRequests",
         ]
     }
 }
@@ -133,6 +145,8 @@ impl ::std::fmt::Display for DistributionMetricName {
             DistributionMetricName::Http5xxErrorRate => write!(f, "Http5xxErrorRate"),
             DistributionMetricName::Requests => write!(f, "Requests"),
             DistributionMetricName::TotalErrorRate => write!(f, "TotalErrorRate"),
+            DistributionMetricName::WafAllowedRequests => write!(f, "WafAllowedRequests"),
+            DistributionMetricName::WafBlockedRequests => write!(f, "WafBlockedRequests"),
             DistributionMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }

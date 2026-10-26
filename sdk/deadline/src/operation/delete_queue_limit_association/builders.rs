@@ -22,7 +22,7 @@ impl crate::operation::delete_queue_limit_association::builders::DeleteQueueLimi
 }
 /// Fluent builder constructing a request to `DeleteQueueLimitAssociation`.
 ///
-/// <p>Removes the association between a queue and a limit. You must use the <code>UpdateQueueLimitAssociation</code> operation to set the status to <code>STOP_LIMIT_USAGE_AND_COMPLETE_TASKS</code> or <code>STOP_LIMIT_USAGE_AND_CANCEL_TASKS</code>. The status does not change immediately. Use the <code>GetQueueLimitAssociation</code> operation to see if the status changed to <code>STOPPED</code> before deleting the association.</p>
+/// Removes the association between a queue and a limit. You must use the <code>UpdateQueueLimitAssociation</code> operation to set the status to <code>STOP_LIMIT_USAGE_AND_COMPLETE_TASKS</code> or <code>STOP_LIMIT_USAGE_AND_CANCEL_TASKS</code>. The status does not change immediately. Use the <code>GetQueueLimitAssociation</code> operation to see if the status changed to <code>STOPPED</code> before deleting the association.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteQueueLimitAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl DeleteQueueLimitAssociationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the farm that contains the queue and limit to disassociate.</p>
+    /// The unique identifier of the farm that contains the queue and limit to disassociate.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The unique identifier of the farm that contains the queue and limit to disassociate.</p>
+    /// The unique identifier of the farm that contains the queue and limit to disassociate.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The unique identifier of the farm that contains the queue and limit to disassociate.</p>
+    /// The unique identifier of the farm that contains the queue and limit to disassociate.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The unique identifier of the queue to disassociate.</p>
+    /// The unique identifier of the queue to disassociate.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
         self
     }
-    /// <p>The unique identifier of the queue to disassociate.</p>
+    /// The unique identifier of the queue to disassociate.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_id(input);
         self
     }
-    /// <p>The unique identifier of the queue to disassociate.</p>
+    /// The unique identifier of the queue to disassociate.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }
-    /// <p>The unique identifier of the limit to disassociate.</p>
+    /// The unique identifier of the limit to disassociate.
     pub fn limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.limit_id(input.into());
         self
     }
-    /// <p>The unique identifier of the limit to disassociate.</p>
+    /// The unique identifier of the limit to disassociate.
     pub fn set_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_limit_id(input);
         self
     }
-    /// <p>The unique identifier of the limit to disassociate.</p>
+    /// The unique identifier of the limit to disassociate.
     pub fn get_limit_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_limit_id()
     }

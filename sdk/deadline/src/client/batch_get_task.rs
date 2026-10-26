@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetTask`](crate::operation::batch_get_task::builders::BatchGetTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifiers(BatchGetTaskIdentifier)`](crate::operation::batch_get_task::builders::BatchGetTaskFluentBuilder::identifiers) / [`set_identifiers(Option<Vec::<BatchGetTaskIdentifier>>)`](crate::operation::batch_get_task::builders::BatchGetTaskFluentBuilder::set_identifiers):<br>required: **true**<br><p>The list of task identifiers to retrieve. You can specify up to 100 identifiers per request.</p><br>
+    ///   - [`identifiers(BatchGetTaskIdentifier)`](crate::operation::batch_get_task::builders::BatchGetTaskFluentBuilder::identifiers) / [`set_identifiers(Option<Vec::<BatchGetTaskIdentifier>>)`](crate::operation::batch_get_task::builders::BatchGetTaskFluentBuilder::set_identifiers):<br>required: **true**<br>The list of task identifiers to retrieve. You can specify up to 100 identifiers per request.<br>
     /// - On success, responds with [`BatchGetTaskOutput`](crate::operation::batch_get_task::BatchGetTaskOutput) with field(s):
-    ///   - [`tasks(Vec::<BatchGetTaskItem>)`](crate::operation::batch_get_task::BatchGetTaskOutput::tasks): <p>A list of tasks that were successfully retrieved.</p>
-    ///   - [`errors(Vec::<BatchGetTaskError>)`](crate::operation::batch_get_task::BatchGetTaskOutput::errors): <p>A list of errors for tasks that could not be retrieved.</p>
+    ///   - [`tasks(Vec::<BatchGetTaskItem>)`](crate::operation::batch_get_task::BatchGetTaskOutput::tasks): A list of tasks that were successfully retrieved.
+    ///   - [`errors(Vec::<BatchGetTaskError>)`](crate::operation::batch_get_task::BatchGetTaskOutput::errors): A list of errors for tasks that could not be retrieved.
     /// - On failure, responds with [`SdkError<BatchGetTaskError>`](crate::operation::batch_get_task::BatchGetTaskError)
     pub fn batch_get_task(&self) -> crate::operation::batch_get_task::builders::BatchGetTaskFluentBuilder {
         crate::operation::batch_get_task::builders::BatchGetTaskFluentBuilder::new(self.handle.clone())

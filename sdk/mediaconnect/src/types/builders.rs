@@ -23,6 +23,8 @@ pub use crate::types::_update_bridge_network_source_request::UpdateBridgeNetwork
 
 pub use crate::types::_bridge_source::BridgeSourceBuilder;
 
+pub use crate::types::_destination_endpoint::DestinationEndpointBuilder;
+
 pub use crate::types::_set_source_request::SetSourceRequestBuilder;
 
 pub use crate::types::_add_maintenance::AddMaintenanceBuilder;
@@ -87,6 +89,8 @@ pub use crate::types::_fabric_configuration::FabricConfigurationBuilder;
 
 pub use crate::types::_router_output::RouterOutputBuilder;
 
+pub use crate::types::_source_endpoint::SourceEndpointBuilder;
+
 pub use crate::types::_listed_entitlement::ListedEntitlementBuilder;
 
 pub use crate::types::_listed_bridge::ListedBridgeBuilder;
@@ -110,6 +114,14 @@ pub use crate::types::_multicast_source_settings::MulticastSourceSettingsBuilder
 pub use crate::types::_bridge_flow_source::BridgeFlowSourceBuilder;
 
 pub use crate::types::_bridge_network_source::BridgeNetworkSourceBuilder;
+
+pub use crate::types::_listed_destination_endpoint::ListedDestinationEndpointBuilder;
+
+pub use crate::types::_standard_destination_endpoint_configuration::StandardDestinationEndpointConfigurationBuilder;
+
+pub use crate::types::_router_input_destination_endpoint_configuration::RouterInputDestinationEndpointConfigurationBuilder;
+
+pub use crate::types::_batch_get_destination_endpoint_error::BatchGetDestinationEndpointErrorBuilder;
 
 pub use crate::types::_listed_flow::ListedFlowBuilder;
 
@@ -157,6 +169,8 @@ pub use crate::types::_resource_specification::ResourceSpecificationBuilder;
 
 pub use crate::types::_listed_router_input::ListedRouterInputBuilder;
 
+pub use crate::types::_destination_endpoint_router_input_configuration::DestinationEndpointRouterInputConfigurationBuilder;
+
 pub use crate::types::_standard_router_input_configuration::StandardRouterInputConfigurationBuilder;
 
 pub use crate::types::_media_live_channel_router_input_configuration::MediaLiveChannelRouterInputConfigurationBuilder;
@@ -193,13 +207,41 @@ pub use crate::types::_media_connect_flow_router_output_configuration::MediaConn
 
 pub use crate::types::_media_live_input_router_output_configuration::MediaLiveInputRouterOutputConfigurationBuilder;
 
+pub use crate::types::_source_endpoint_router_output_configuration::SourceEndpointRouterOutputConfigurationBuilder;
+
 pub use crate::types::_batch_get_router_output_error::BatchGetRouterOutputErrorBuilder;
+
+pub use crate::types::_listed_source_endpoint::ListedSourceEndpointBuilder;
+
+pub use crate::types::_standard_source_endpoint_configuration::StandardSourceEndpointConfigurationBuilder;
+
+pub use crate::types::_router_output_source_endpoint_configuration::RouterOutputSourceEndpointConfigurationBuilder;
+
+pub use crate::types::_batch_get_source_endpoint_error::BatchGetSourceEndpointErrorBuilder;
 
 pub use crate::types::_add_bridge_network_output_request::AddBridgeNetworkOutputRequestBuilder;
 
 pub use crate::types::_add_bridge_flow_source_request::AddBridgeFlowSourceRequestBuilder;
 
 pub use crate::types::_add_bridge_network_source_request::AddBridgeNetworkSourceRequestBuilder;
+
+pub use crate::types::_destination_endpoint_message::DestinationEndpointMessageBuilder;
+
+pub use crate::types::_owned_resource_share_details::OwnedResourceShareDetailsBuilder;
+
+pub use crate::types::_consumed_resource_share_details::ConsumedResourceShareDetailsBuilder;
+
+pub use crate::types::_standard_destination_endpoint_connection_details::StandardDestinationEndpointConnectionDetailsBuilder;
+
+pub use crate::types::_router_input_destination_endpoint_connection_details::RouterInputDestinationEndpointConnectionDetailsBuilder;
+
+pub use crate::types::_secrets_manager_endpoint_encryption_configuration::SecretsManagerEndpointEncryptionConfigurationBuilder;
+
+pub use crate::types::_automatic_endpoint_encryption_configuration::AutomaticEndpointEncryptionConfigurationBuilder;
+
+pub use crate::types::_standard_destination_endpoint_associated_resource_details::StandardDestinationEndpointAssociatedResourceDetailsBuilder;
+
+pub use crate::types::_router_input_destination_endpoint_associated_resource_details::RouterInputDestinationEndpointAssociatedResourceDetailsBuilder;
 
 pub use crate::types::_audio_monitoring_setting::AudioMonitoringSettingBuilder;
 
@@ -231,6 +273,8 @@ pub use crate::types::_silent_audio_configuration::SilentAudioConfigurationBuild
 
 pub use crate::types::_router_input_message::RouterInputMessageBuilder;
 
+pub use crate::types::_destination_endpoint_router_input_stream_details::DestinationEndpointRouterInputStreamDetailsBuilder;
+
 pub use crate::types::_standard_router_input_stream_details::StandardRouterInputStreamDetailsBuilder;
 
 pub use crate::types::_media_live_channel_router_input_stream_details::MediaLiveChannelRouterInputStreamDetailsBuilder;
@@ -248,6 +292,32 @@ pub use crate::types::_standard_router_output_stream_details::StandardRouterOutp
 pub use crate::types::_media_connect_flow_router_output_stream_details::MediaConnectFlowRouterOutputStreamDetailsBuilder;
 
 pub use crate::types::_media_live_input_router_output_stream_details::MediaLiveInputRouterOutputStreamDetailsBuilder;
+
+pub use crate::types::_source_endpoint_router_output_stream_details::SourceEndpointRouterOutputStreamDetailsBuilder;
+
+pub use crate::types::_source_endpoint_message::SourceEndpointMessageBuilder;
+
+pub use crate::types::_standard_source_endpoint_connection_details::StandardSourceEndpointConnectionDetailsBuilder;
+
+pub use crate::types::_router_output_source_endpoint_connection_details::RouterOutputSourceEndpointConnectionDetailsBuilder;
+
+pub use crate::types::_standard_source_endpoint_associated_resource_details::StandardSourceEndpointAssociatedResourceDetailsBuilder;
+
+pub use crate::types::_router_output_source_endpoint_associated_resource_details::RouterOutputSourceEndpointAssociatedResourceDetailsBuilder;
+
+pub use crate::types::_public_destination_endpoint_networking_configuration::PublicDestinationEndpointNetworkingConfigurationBuilder;
+
+pub use crate::types::_vpc_destination_endpoint_networking_configuration::VpcDestinationEndpointNetworkingConfigurationBuilder;
+
+pub use crate::types::_rist_standard_destination_endpoint_configuration::RistStandardDestinationEndpointConfigurationBuilder;
+
+pub use crate::types::_srt_listener_standard_destination_endpoint_configuration::SrtListenerStandardDestinationEndpointConfigurationBuilder;
+
+pub use crate::types::_srt_caller_standard_destination_endpoint_configuration::SrtCallerStandardDestinationEndpointConfigurationBuilder;
+
+pub use crate::types::_rtp_standard_destination_endpoint_configuration::RtpStandardDestinationEndpointConfigurationBuilder;
+
+pub use crate::types::_endpoint_encryption_secret_configuration::EndpointEncryptionSecretConfigurationBuilder;
 
 pub use crate::types::_silent_audio::SilentAudioBuilder;
 
@@ -287,6 +357,18 @@ pub use crate::types::_srt_caller_router_output_configuration::SrtCallerRouterOu
 
 pub use crate::types::_rtp_router_output_configuration::RtpRouterOutputConfigurationBuilder;
 
+pub use crate::types::_public_source_endpoint_networking_configuration::PublicSourceEndpointNetworkingConfigurationBuilder;
+
+pub use crate::types::_vpc_source_endpoint_networking_configuration::VpcSourceEndpointNetworkingConfigurationBuilder;
+
+pub use crate::types::_rist_standard_source_endpoint_configuration::RistStandardSourceEndpointConfigurationBuilder;
+
+pub use crate::types::_srt_listener_standard_source_endpoint_configuration::SrtListenerStandardSourceEndpointConfigurationBuilder;
+
+pub use crate::types::_srt_caller_standard_source_endpoint_configuration::SrtCallerStandardSourceEndpointConfigurationBuilder;
+
+pub use crate::types::_rtp_standard_source_endpoint_configuration::RtpStandardSourceEndpointConfigurationBuilder;
+
 pub use crate::types::_transport_stream::TransportStreamBuilder;
 
 pub use crate::types::_color_information::ColorInformationBuilder;
@@ -305,6 +387,10 @@ pub use crate::types::_srt_encryption_configuration::SrtEncryptionConfigurationB
 
 pub use crate::types::_tls_encryption::TlsEncryptionBuilder;
 
+pub use crate::types::_public_destination_endpoint_networking_configuration_allow_rule::PublicDestinationEndpointNetworkingConfigurationAllowRuleBuilder;
+
 pub use crate::types::_interface::InterfaceBuilder;
+
+pub use crate::types::_public_source_endpoint_networking_configuration_allow_rule::PublicSourceEndpointNetworkingConfigurationAllowRuleBuilder;
 
 pub use crate::types::_public_tls_encryption_configuration::PublicTlsEncryptionConfigurationBuilder;

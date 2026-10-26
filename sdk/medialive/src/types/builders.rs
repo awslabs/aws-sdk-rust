@@ -551,6 +551,8 @@ pub use crate::types::_mpeg2_filter_settings::Mpeg2FilterSettingsBuilder;
 
 pub use crate::types::_av1_color_space_settings::Av1ColorSpaceSettingsBuilder;
 
+pub use crate::types::_av1_filter_settings::Av1FilterSettingsBuilder;
+
 pub use crate::types::_failover_condition_settings::FailoverConditionSettingsBuilder;
 
 pub use crate::types::_audio_selector_settings::AudioSelectorSettingsBuilder;
@@ -628,6 +630,12 @@ pub use crate::types::_rec709_settings::Rec709SettingsBuilder;
 pub use crate::types::_temporal_filter_settings::TemporalFilterSettingsBuilder;
 
 pub use crate::types::_bandwidth_reduction_filter_settings::BandwidthReductionFilterSettingsBuilder;
+
+pub use crate::types::_auto_filter_settings::AutoFilterSettingsBuilder;
+
+pub use crate::types::_none_filter_settings::NoneFilterSettingsBuilder;
+
+pub use crate::types::_perceptual_filter_settings::PerceptualFilterSettingsBuilder;
 
 pub use crate::types::_dolby_vision81_settings::DolbyVision81SettingsBuilder;
 

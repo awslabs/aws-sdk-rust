@@ -3,17 +3,17 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFarm`](crate::operation::get_farm::builders::GetFarmFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_farm::builders::GetFarmFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_farm::builders::GetFarmFluentBuilder::set_farm_id):<br>required: **true**<br><p>The farm ID of the farm.</p><br>
+    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_farm::builders::GetFarmFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_farm::builders::GetFarmFluentBuilder::set_farm_id):<br>required: **true**<br>The farm ID of the farm.<br>
     /// - On success, responds with [`GetFarmOutput`](crate::operation::get_farm::GetFarmOutput) with field(s):
-    ///   - [`farm_id(String)`](crate::operation::get_farm::GetFarmOutput::farm_id): <p>The farm ID of the farm to get.</p>
+    ///   - [`farm_id(String)`](crate::operation::get_farm::GetFarmOutput::farm_id): The farm ID of the farm to get.
     ///   - [`display_name(String)`](crate::operation::get_farm::GetFarmOutput::display_name): <p>The display name of the farm.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
-    ///   - [`kms_key_arn(Option<String>)`](crate::operation::get_farm::GetFarmOutput::kms_key_arn): <p>The ARN of the KMS key used on the farm.</p>
-    ///   - [`created_at(DateTime)`](crate::operation::get_farm::GetFarmOutput::created_at): <p>The date and time the resource was created.</p>
-    ///   - [`created_by(String)`](crate::operation::get_farm::GetFarmOutput::created_by): <p>The user or system that created this resource.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_farm::GetFarmOutput::updated_at): <p>The date and time the resource was updated.</p>
-    ///   - [`updated_by(Option<String>)`](crate::operation::get_farm::GetFarmOutput::updated_by): <p>The user or system that updated this resource.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::operation::get_farm::GetFarmOutput::kms_key_arn): The ARN of the KMS key used on the farm.
+    ///   - [`created_at(DateTime)`](crate::operation::get_farm::GetFarmOutput::created_at): The date and time the resource was created.
+    ///   - [`created_by(String)`](crate::operation::get_farm::GetFarmOutput::created_by): The user or system that created this resource.
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_farm::GetFarmOutput::updated_at): The date and time the resource was updated.
+    ///   - [`updated_by(Option<String>)`](crate::operation::get_farm::GetFarmOutput::updated_by): The user or system that updated this resource.
     ///   - [`description(Option<String>)`](crate::operation::get_farm::GetFarmOutput::description): <p>The description of the farm.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
-    ///   - [`cost_scale_factor(f32)`](crate::operation::get_farm::GetFarmOutput::cost_scale_factor): <p>A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment.</p>
+    ///   - [`cost_scale_factor(f32)`](crate::operation::get_farm::GetFarmOutput::cost_scale_factor): A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment.
     /// - On failure, responds with [`SdkError<GetFarmError>`](crate::operation::get_farm::GetFarmError)
     pub fn get_farm(&self) -> crate::operation::get_farm::builders::GetFarmFluentBuilder {
         crate::operation::get_farm::builders::GetFarmFluentBuilder::new(self.handle.clone())

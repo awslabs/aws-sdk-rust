@@ -22,7 +22,7 @@ impl crate::operation::create_o_auth2_token_with_iam::builders::CreateOAuth2Toke
 }
 /// Fluent builder constructing a request to `CreateOAuth2TokenWithIAM`.
 ///
-/// Grants permission to exchange client credentials for an OAuth 2.0 access token scoped to a resource that can be used to access AWS services from applications
+/// Exchanges client credentials for an OAuth 2.0 access token scoped to a resource, which you can use to access AWS services from applications.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateOAuth2TokenWithIAMFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl CreateOAuth2TokenWithIAMFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// OAuth 2.0 grant type. Must be "client_credentials".
+    /// The OAuth 2.0 grant type. Must be "client_credentials".
     pub fn grant_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_type(input.into());
         self
     }
-    /// OAuth 2.0 grant type. Must be "client_credentials".
+    /// The OAuth 2.0 grant type. Must be "client_credentials".
     pub fn set_grant_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_type(input);
         self
     }
-    /// OAuth 2.0 grant type. Must be "client_credentials".
+    /// The OAuth 2.0 grant type. Must be "client_credentials".
     pub fn get_grant_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_grant_type()
     }

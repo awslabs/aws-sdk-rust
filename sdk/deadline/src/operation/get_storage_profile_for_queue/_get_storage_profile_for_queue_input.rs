@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStorageProfileForQueueInput {
-    /// <p>The farm ID for the queue in storage profile.</p>
+    /// The farm ID for the queue in storage profile.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID the queue in the storage profile.</p>
+    /// The queue ID the queue in the storage profile.
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The storage profile ID for the storage profile in the queue.</p>
+    /// The storage profile ID for the storage profile in the queue.
     pub storage_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl GetStorageProfileForQueueInput {
-    /// <p>The farm ID for the queue in storage profile.</p>
+    /// The farm ID for the queue in storage profile.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The queue ID the queue in the storage profile.</p>
+    /// The queue ID the queue in the storage profile.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The storage profile ID for the storage profile in the queue.</p>
+    /// The storage profile ID for the storage profile in the queue.
     pub fn storage_profile_id(&self) -> ::std::option::Option<&str> {
         self.storage_profile_id.as_deref()
     }
@@ -40,48 +40,48 @@ pub struct GetStorageProfileForQueueInputBuilder {
     pub(crate) storage_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl GetStorageProfileForQueueInputBuilder {
-    /// <p>The farm ID for the queue in storage profile.</p>
+    /// The farm ID for the queue in storage profile.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID for the queue in storage profile.</p>
+    /// The farm ID for the queue in storage profile.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID for the queue in storage profile.</p>
+    /// The farm ID for the queue in storage profile.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The queue ID the queue in the storage profile.</p>
+    /// The queue ID the queue in the storage profile.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue ID the queue in the storage profile.</p>
+    /// The queue ID the queue in the storage profile.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The queue ID the queue in the storage profile.</p>
+    /// The queue ID the queue in the storage profile.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The storage profile ID for the storage profile in the queue.</p>
+    /// The storage profile ID for the storage profile in the queue.
     /// This field is required.
     pub fn storage_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_profile_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The storage profile ID for the storage profile in the queue.</p>
+    /// The storage profile ID for the storage profile in the queue.
     pub fn set_storage_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_profile_id = input;
         self
     }
-    /// <p>The storage profile ID for the storage profile in the queue.</p>
+    /// The storage profile ID for the storage profile in the queue.
     pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_profile_id
     }

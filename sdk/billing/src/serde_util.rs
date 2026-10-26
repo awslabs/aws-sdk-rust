@@ -8,15 +8,6 @@ pub(crate) fn access_denied_exception_correct_errors(
     builder
 }
 
-pub(crate) fn billing_view_health_status_exception_correct_errors(
-    mut builder: crate::types::error::builders::BillingViewHealthStatusExceptionBuilder,
-) -> crate::types::error::builders::BillingViewHealthStatusExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn conflict_exception_correct_errors(
     mut builder: crate::types::error::builders::ConflictExceptionBuilder,
 ) -> crate::types::error::builders::ConflictExceptionBuilder {
@@ -56,27 +47,6 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
-pub(crate) fn service_quota_exceeded_exception_correct_errors(
-    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
-) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    if builder.resource_id.is_none() {
-        builder.resource_id = Some(Default::default())
-    }
-    if builder.resource_type.is_none() {
-        builder.resource_type = Some(Default::default())
-    }
-    if builder.service_code.is_none() {
-        builder.service_code = Some(Default::default())
-    }
-    if builder.quota_code.is_none() {
-        builder.quota_code = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn throttling_exception_correct_errors(
     mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
 ) -> crate::types::error::builders::ThrottlingExceptionBuilder {
@@ -98,6 +68,36 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn billing_view_health_status_exception_correct_errors(
+    mut builder: crate::types::error::builders::BillingViewHealthStatusExceptionBuilder,
+) -> crate::types::error::builders::BillingViewHealthStatusExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
+    }
+    if builder.service_code.is_none() {
+        builder.service_code = Some(Default::default())
+    }
+    if builder.quota_code.is_none() {
+        builder.quota_code = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn associate_source_views_output_output_correct_errors(
     mut builder: crate::operation::associate_source_views::builders::AssociateSourceViewsOutputBuilder,
 ) -> crate::operation::associate_source_views::builders::AssociateSourceViewsOutputBuilder {
@@ -112,6 +112,15 @@ pub(crate) fn create_billing_view_output_output_correct_errors(
 ) -> crate::operation::create_billing_view::builders::CreateBillingViewOutputBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_contractual_investment_attestation_output_output_correct_errors(
+    mut builder: crate::operation::create_contractual_investment_attestation::builders::CreateContractualInvestmentAttestationOutputBuilder,
+) -> crate::operation::create_contractual_investment_attestation::builders::CreateContractualInvestmentAttestationOutputBuilder {
+    if builder.attestation_id.is_none() {
+        builder.attestation_id = Some(Default::default())
     }
     builder
 }
@@ -151,6 +160,15 @@ pub(crate) fn get_billing_view_output_output_correct_errors(
             let builder = crate::types::builders::BillingViewElementBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn get_contract_information_output_output_correct_errors(
+    mut builder: crate::operation::get_contract_information::builders::GetContractInformationOutputBuilder,
+) -> crate::operation::get_contract_information::builders::GetContractInformationOutputBuilder {
+    if builder.contract.is_none() {
+        builder.contract = Some(crate::types::ContractDetails::Unknown)
     }
     builder
 }
@@ -296,6 +314,42 @@ pub(crate) fn list_business_support_subscription_history_output_output_correct_e
     builder
 }
 
+pub(crate) fn list_contracts_output_output_correct_errors(
+    mut builder: crate::operation::list_contracts::builders::ListContractsOutputBuilder,
+) -> crate::operation::list_contracts::builders::ListContractsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_contractual_investment_attestations_output_output_correct_errors(
+    mut builder: crate::operation::list_contractual_investment_attestations::builders::ListContractualInvestmentAttestationsOutputBuilder,
+) -> crate::operation::list_contractual_investment_attestations::builders::ListContractualInvestmentAttestationsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_contractual_investment_summaries_output_output_correct_errors(
+    mut builder: crate::operation::list_contractual_investment_summaries::builders::ListContractualInvestmentSummariesOutputBuilder,
+) -> crate::operation::list_contractual_investment_summaries::builders::ListContractualInvestmentSummariesOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_contractual_investments_output_output_correct_errors(
+    mut builder: crate::operation::list_contractual_investments::builders::ListContractualInvestmentsOutputBuilder,
+) -> crate::operation::list_contractual_investments::builders::ListContractualInvestmentsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_enterprise_support_linked_account_charges_output_output_correct_errors(
     mut builder: crate::operation::list_enterprise_support_linked_account_charges::builders::ListEnterpriseSupportLinkedAccountChargesOutputBuilder,
 ) -> crate::operation::list_enterprise_support_linked_account_charges::builders::ListEnterpriseSupportLinkedAccountChargesOutputBuilder {
@@ -414,6 +468,24 @@ pub(crate) fn contract_account_correct_errors(
     builder
 }
 
+pub(crate) fn contract_summary_correct_errors(
+    mut builder: crate::types::builders::ContractSummaryBuilder,
+) -> crate::types::builders::ContractSummaryBuilder {
+    if builder.contract_arn.is_none() {
+        builder.contract_arn = Some(Default::default())
+    }
+    if builder.contract_term.is_none() {
+        builder.contract_term = {
+            let builder = crate::types::builders::IntervalBuilder::default();
+            crate::serde_util::interval_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.association_status.is_none() {
+        builder.association_status = "no value was set".parse::<crate::types::AssociationStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn credit_allocation_history_entry_correct_errors(
     mut builder: crate::types::builders::CreditAllocationHistoryEntryBuilder,
 ) -> crate::types::builders::CreditAllocationHistoryEntryBuilder {
@@ -472,6 +544,51 @@ pub(crate) fn credit_data_correct_errors(mut builder: crate::types::builders::Cr
     builder
 }
 
+pub(crate) fn investment_attestation_correct_errors(
+    mut builder: crate::types::builders::InvestmentAttestationBuilder,
+) -> crate::types::builders::InvestmentAttestationBuilder {
+    if builder.attestation_id.is_none() {
+        builder.attestation_id = Some(Default::default())
+    }
+    if builder.investment_name.is_none() {
+        builder.investment_name = Some(Default::default())
+    }
+    if builder.outcome_description.is_none() {
+        builder.outcome_description = Some(Default::default())
+    }
+    if builder.investment_summary_id.is_none() {
+        builder.investment_summary_id = Some(Default::default())
+    }
+    if builder.investment_id.is_none() {
+        builder.investment_id = Some(Default::default())
+    }
+    if builder.attested_at.is_none() {
+        builder.attested_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.attestation_status.is_none() {
+        builder.attestation_status = "no value was set".parse::<crate::types::InvestmentAttestationStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn investment_summary_correct_errors(
+    mut builder: crate::types::builders::InvestmentSummaryBuilder,
+) -> crate::types::builders::InvestmentSummaryBuilder {
+    if builder.investment_summary_id.is_none() {
+        builder.investment_summary_id = Some(Default::default())
+    }
+    if builder.investment_name.is_none() {
+        builder.investment_name = Some(Default::default())
+    }
+    if builder.investment_type.is_none() {
+        builder.investment_type = "no value was set".parse::<crate::types::InvestmentType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn linked_account_charge_correct_errors(
     mut builder: crate::types::builders::LinkedAccountChargeBuilder,
 ) -> crate::types::builders::LinkedAccountChargeBuilder {
@@ -492,6 +609,30 @@ pub(crate) fn linked_account_charge_correct_errors(
     }
     if builder.prorated_total_support_eligible_spend.is_none() {
         builder.prorated_total_support_eligible_spend = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn private_pricing_addendum_correct_errors(
+    mut builder: crate::types::builders::PrivatePricingAddendumBuilder,
+) -> crate::types::builders::PrivatePricingAddendumBuilder {
+    if builder.contract_arn.is_none() {
+        builder.contract_arn = Some(Default::default())
+    }
+    if builder.contract_term.is_none() {
+        builder.contract_term = {
+            let builder = crate::types::builders::IntervalBuilder::default();
+            crate::serde_util::interval_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.eligible_payer_accounts.is_none() {
+        builder.eligible_payer_accounts = Some(Default::default())
+    }
+    if builder.investment_accounts.is_none() {
+        builder.investment_accounts = Some(Default::default())
+    }
+    if builder.legal_entities.is_none() {
+        builder.legal_entities = Some(Default::default())
     }
     builder
 }
@@ -557,6 +698,58 @@ pub(crate) fn dimension_values_correct_errors(
     }
     if builder.values.is_none() {
         builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn interval_correct_errors(mut builder: crate::types::builders::IntervalBuilder) -> crate::types::builders::IntervalBuilder {
+    if builder.start_date_inclusive.is_none() {
+        builder.start_date_inclusive = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.end_date_inclusive.is_none() {
+        builder.end_date_inclusive = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn milestone_based_investment_correct_errors(
+    mut builder: crate::types::builders::MilestoneBasedInvestmentBuilder,
+) -> crate::types::builders::MilestoneBasedInvestmentBuilder {
+    if builder.investment_id.is_none() {
+        builder.investment_id = Some(Default::default())
+    }
+    if builder.investment_value.is_none() {
+        builder.investment_value = {
+            let builder = crate::types::builders::AmountBuilder::default();
+            crate::serde_util::amount_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.investment_disbursed_at.is_none() {
+        builder.investment_disbursed_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn outcome_based_investment_correct_errors(
+    mut builder: crate::types::builders::OutcomeBasedInvestmentBuilder,
+) -> crate::types::builders::OutcomeBasedInvestmentBuilder {
+    if builder.investment_id.is_none() {
+        builder.investment_id = Some(Default::default())
+    }
+    if builder.outcome_description.is_none() {
+        builder.outcome_description = Some(Default::default())
+    }
+    if builder.attestation_window.is_none() {
+        builder.attestation_window = {
+            let builder = crate::types::builders::IntervalBuilder::default();
+            crate::serde_util::interval_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.disbursed_value.is_none() {
+        builder.disbursed_value = {
+            let builder = crate::types::builders::AmountBuilder::default();
+            crate::serde_util::amount_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -633,6 +826,55 @@ pub(crate) fn enterprise_support_time_period_correct_errors(
 ) -> crate::types::builders::EnterpriseSupportTimePeriodBuilder {
     if builder.begin_date.is_none() {
         builder.begin_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn investment_distribution_correct_errors(
+    mut builder: crate::types::builders::InvestmentDistributionBuilder,
+) -> crate::types::builders::InvestmentDistributionBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.investment_amount.is_none() {
+        builder.investment_amount = {
+            let builder = crate::types::builders::AmountBuilder::default();
+            crate::serde_util::amount_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn legal_entity_correct_errors(mut builder: crate::types::builders::LegalEntityBuilder) -> crate::types::builders::LegalEntityBuilder {
+    if builder.legal_entity_name.is_none() {
+        builder.legal_entity_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn investment_multiplier_correct_errors(
+    mut builder: crate::types::builders::InvestmentMultiplierBuilder,
+) -> crate::types::builders::InvestmentMultiplierBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    if builder.investment_attestation_input_unit.is_none() {
+        builder.investment_attestation_input_unit = Some(Default::default())
+    }
+    if builder.multiplier_type.is_none() {
+        builder.multiplier_type = "no value was set".parse::<crate::types::MultiplierType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn investment_restriction_correct_errors(
+    mut builder: crate::types::builders::InvestmentRestrictionBuilder,
+) -> crate::types::builders::InvestmentRestrictionBuilder {
+    if builder.amount.is_none() {
+        builder.amount = {
+            let builder = crate::types::builders::AmountBuilder::default();
+            crate::serde_util::amount_correct_errors(builder).build().ok()
+        }
     }
     builder
 }

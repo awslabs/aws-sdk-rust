@@ -3,26 +3,26 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetQueue`](crate::operation::get_queue::builders::GetQueueFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_queue::builders::GetQueueFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_queue::builders::GetQueueFluentBuilder::set_farm_id):<br>required: **true**<br><p>The farm ID of the farm in the queue.</p><br>
-    ///   - [`queue_id(impl Into<String>)`](crate::operation::get_queue::builders::GetQueueFluentBuilder::queue_id) / [`set_queue_id(Option<String>)`](crate::operation::get_queue::builders::GetQueueFluentBuilder::set_queue_id):<br>required: **true**<br><p>The queue ID for the queue to retrieve.</p><br>
+    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_queue::builders::GetQueueFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_queue::builders::GetQueueFluentBuilder::set_farm_id):<br>required: **true**<br>The farm ID of the farm in the queue.<br>
+    ///   - [`queue_id(impl Into<String>)`](crate::operation::get_queue::builders::GetQueueFluentBuilder::queue_id) / [`set_queue_id(Option<String>)`](crate::operation::get_queue::builders::GetQueueFluentBuilder::set_queue_id):<br>required: **true**<br>The queue ID for the queue to retrieve.<br>
     /// - On success, responds with [`GetQueueOutput`](crate::operation::get_queue::GetQueueOutput) with field(s):
-    ///   - [`farm_id(String)`](crate::operation::get_queue::GetQueueOutput::farm_id): <p>The farm ID for the queue.</p>
-    ///   - [`queue_id(String)`](crate::operation::get_queue::GetQueueOutput::queue_id): <p>The queue ID.</p>
+    ///   - [`farm_id(String)`](crate::operation::get_queue::GetQueueOutput::farm_id): The farm ID for the queue.
+    ///   - [`queue_id(String)`](crate::operation::get_queue::GetQueueOutput::queue_id): The queue ID.
     ///   - [`display_name(String)`](crate::operation::get_queue::GetQueueOutput::display_name): <p>The display name of the queue.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
     ///   - [`status(QueueStatus)`](crate::operation::get_queue::GetQueueOutput::status): <p>The status of the queue.</p> <ul>  <li>   <p><code>ACTIVE</code>–The queue is active.</p></li>  <li>   <p><code>SCHEDULING</code>–The queue is scheduling.</p></li>  <li>   <p><code>SCHEDULING_BLOCKED</code>–The queue scheduling is blocked. See the provided reason.</p></li> </ul>
-    ///   - [`default_budget_action(DefaultQueueBudgetAction)`](crate::operation::get_queue::GetQueueOutput::default_budget_action): <p>The default action taken on a queue if a budget wasn't configured.</p>
-    ///   - [`blocked_reason(Option<QueueBlockedReason>)`](crate::operation::get_queue::GetQueueOutput::blocked_reason): <p>The reason the queue was blocked.</p>
-    ///   - [`created_at(DateTime)`](crate::operation::get_queue::GetQueueOutput::created_at): <p>The date and time the resource was created.</p>
-    ///   - [`created_by(String)`](crate::operation::get_queue::GetQueueOutput::created_by): <p>The user or system that created this resource.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_queue::GetQueueOutput::updated_at): <p>The date and time the resource was updated.</p>
-    ///   - [`updated_by(Option<String>)`](crate::operation::get_queue::GetQueueOutput::updated_by): <p>The user or system that updated this resource.</p>
+    ///   - [`default_budget_action(DefaultQueueBudgetAction)`](crate::operation::get_queue::GetQueueOutput::default_budget_action): The default action taken on a queue if a budget wasn't configured.
+    ///   - [`blocked_reason(Option<QueueBlockedReason>)`](crate::operation::get_queue::GetQueueOutput::blocked_reason): The reason the queue was blocked.
+    ///   - [`created_at(DateTime)`](crate::operation::get_queue::GetQueueOutput::created_at): The date and time the resource was created.
+    ///   - [`created_by(String)`](crate::operation::get_queue::GetQueueOutput::created_by): The user or system that created this resource.
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_queue::GetQueueOutput::updated_at): The date and time the resource was updated.
+    ///   - [`updated_by(Option<String>)`](crate::operation::get_queue::GetQueueOutput::updated_by): The user or system that updated this resource.
     ///   - [`description(Option<String>)`](crate::operation::get_queue::GetQueueOutput::description): <p>The description of the queue.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
-    ///   - [`job_attachment_settings(Option<JobAttachmentSettings>)`](crate::operation::get_queue::GetQueueOutput::job_attachment_settings): <p>The job attachment settings for the queue.</p>
-    ///   - [`role_arn(Option<String>)`](crate::operation::get_queue::GetQueueOutput::role_arn): <p>The IAM role ARN.</p>
-    ///   - [`required_file_system_location_names(Option<Vec::<String>>)`](crate::operation::get_queue::GetQueueOutput::required_file_system_location_names): <p>A list of the required file system location names in the queue.</p>
-    ///   - [`allowed_storage_profile_ids(Option<Vec::<String>>)`](crate::operation::get_queue::GetQueueOutput::allowed_storage_profile_ids): <p>The storage profile IDs for the queue.</p>
-    ///   - [`job_run_as_user(Option<JobRunAsUser>)`](crate::operation::get_queue::GetQueueOutput::job_run_as_user): <p>The jobs in the queue ran as this specified POSIX user.</p>
-    ///   - [`scheduling_configuration(Option<SchedulingConfiguration>)`](crate::operation::get_queue::GetQueueOutput::scheduling_configuration): <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    ///   - [`job_attachment_settings(Option<JobAttachmentSettings>)`](crate::operation::get_queue::GetQueueOutput::job_attachment_settings): The job attachment settings for the queue.
+    ///   - [`role_arn(Option<String>)`](crate::operation::get_queue::GetQueueOutput::role_arn): The IAM role ARN.
+    ///   - [`required_file_system_location_names(Option<Vec::<String>>)`](crate::operation::get_queue::GetQueueOutput::required_file_system_location_names): A list of the required file system location names in the queue.
+    ///   - [`allowed_storage_profile_ids(Option<Vec::<String>>)`](crate::operation::get_queue::GetQueueOutput::allowed_storage_profile_ids): The storage profile IDs for the queue.
+    ///   - [`job_run_as_user(Option<JobRunAsUser>)`](crate::operation::get_queue::GetQueueOutput::job_run_as_user): The jobs in the queue ran as this specified POSIX user.
+    ///   - [`scheduling_configuration(Option<SchedulingConfiguration>)`](crate::operation::get_queue::GetQueueOutput::scheduling_configuration): The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.
     /// - On failure, responds with [`SdkError<GetQueueError>`](crate::operation::get_queue::GetQueueError)
     pub fn get_queue(&self) -> crate::operation::get_queue::builders::GetQueueFluentBuilder {
         crate::operation::get_queue::builders::GetQueueFluentBuilder::new(self.handle.clone())

@@ -11,6 +11,8 @@ pub struct CreateExascaleDbStorageVaultInput {
     pub additional_flash_cache_in_percent: ::std::option::Option<i32>,
     /// <p>The autoscale limit in gigabytes (GB) for the Exascale storage vault.</p>
     pub autoscale_limit_in_gbs: ::std::option::Option<i32>,
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of the Exadata infrastructure on which to create the Exascale storage vault. Specify this value to create the Exascale storage vault on dedicated Exadata infrastructure that has Exascale storage configured. If you specify <code>availabilityZone</code> or <code>availabilityZoneId</code>, the value must match the Availability Zone of the Exadata infrastructure. If you specify neither, the service uses the Availability Zone of the Exadata infrastructure.</p>
+    pub cloud_exadata_infrastructure_id: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone ID for the Exascale storage vault.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone for the Exascale storage vault.</p>
@@ -42,6 +44,10 @@ impl CreateExascaleDbStorageVaultInput {
     /// <p>The autoscale limit in gigabytes (GB) for the Exascale storage vault.</p>
     pub fn autoscale_limit_in_gbs(&self) -> ::std::option::Option<i32> {
         self.autoscale_limit_in_gbs
+    }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of the Exadata infrastructure on which to create the Exascale storage vault. Specify this value to create the Exascale storage vault on dedicated Exadata infrastructure that has Exascale storage configured. If you specify <code>availabilityZone</code> or <code>availabilityZoneId</code>, the value must match the Availability Zone of the Exadata infrastructure. If you specify neither, the service uses the Availability Zone of the Exadata infrastructure.</p>
+    pub fn cloud_exadata_infrastructure_id(&self) -> ::std::option::Option<&str> {
+        self.cloud_exadata_infrastructure_id.as_deref()
     }
     /// <p>The Availability Zone ID for the Exascale storage vault.</p>
     pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
@@ -87,6 +93,7 @@ pub struct CreateExascaleDbStorageVaultInputBuilder {
     pub(crate) high_capacity_database_storage_total_size_in_gbs: ::std::option::Option<i32>,
     pub(crate) additional_flash_cache_in_percent: ::std::option::Option<i32>,
     pub(crate) autoscale_limit_in_gbs: ::std::option::Option<i32>,
+    pub(crate) cloud_exadata_infrastructure_id: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -153,6 +160,20 @@ impl CreateExascaleDbStorageVaultInputBuilder {
     /// <p>The autoscale limit in gigabytes (GB) for the Exascale storage vault.</p>
     pub fn get_autoscale_limit_in_gbs(&self) -> &::std::option::Option<i32> {
         &self.autoscale_limit_in_gbs
+    }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of the Exadata infrastructure on which to create the Exascale storage vault. Specify this value to create the Exascale storage vault on dedicated Exadata infrastructure that has Exascale storage configured. If you specify <code>availabilityZone</code> or <code>availabilityZoneId</code>, the value must match the Availability Zone of the Exadata infrastructure. If you specify neither, the service uses the Availability Zone of the Exadata infrastructure.</p>
+    pub fn cloud_exadata_infrastructure_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cloud_exadata_infrastructure_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of the Exadata infrastructure on which to create the Exascale storage vault. Specify this value to create the Exascale storage vault on dedicated Exadata infrastructure that has Exascale storage configured. If you specify <code>availabilityZone</code> or <code>availabilityZoneId</code>, the value must match the Availability Zone of the Exadata infrastructure. If you specify neither, the service uses the Availability Zone of the Exadata infrastructure.</p>
+    pub fn set_cloud_exadata_infrastructure_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cloud_exadata_infrastructure_id = input;
+        self
+    }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of the Exadata infrastructure on which to create the Exascale storage vault. Specify this value to create the Exascale storage vault on dedicated Exadata infrastructure that has Exascale storage configured. If you specify <code>availabilityZone</code> or <code>availabilityZoneId</code>, the value must match the Availability Zone of the Exadata infrastructure. If you specify neither, the service uses the Availability Zone of the Exadata infrastructure.</p>
+    pub fn get_cloud_exadata_infrastructure_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_exadata_infrastructure_id
     }
     /// <p>The Availability Zone ID for the Exascale storage vault.</p>
     pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -270,6 +291,7 @@ impl CreateExascaleDbStorageVaultInputBuilder {
             high_capacity_database_storage_total_size_in_gbs: self.high_capacity_database_storage_total_size_in_gbs,
             additional_flash_cache_in_percent: self.additional_flash_cache_in_percent,
             autoscale_limit_in_gbs: self.autoscale_limit_in_gbs,
+            cloud_exadata_infrastructure_id: self.cloud_exadata_infrastructure_id,
             availability_zone_id: self.availability_zone_id,
             availability_zone: self.availability_zone,
             description: self.description,

@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobInput {
-    /// <p>The farm ID of the farm in the job.</p>
+    /// The farm ID of the farm in the job.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID associated with the job.</p>
+    /// The queue ID associated with the job.
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The job ID.</p>
+    /// The job ID.
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl GetJobInput {
-    /// <p>The farm ID of the farm in the job.</p>
+    /// The farm ID of the farm in the job.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The queue ID associated with the job.</p>
+    /// The queue ID associated with the job.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The job ID.</p>
+    /// The job ID.
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -40,48 +40,48 @@ pub struct GetJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
 impl GetJobInputBuilder {
-    /// <p>The farm ID of the farm in the job.</p>
+    /// The farm ID of the farm in the job.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID of the farm in the job.</p>
+    /// The farm ID of the farm in the job.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID of the farm in the job.</p>
+    /// The farm ID of the farm in the job.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The queue ID associated with the job.</p>
+    /// The queue ID associated with the job.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue ID associated with the job.</p>
+    /// The queue ID associated with the job.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The queue ID associated with the job.</p>
+    /// The queue ID associated with the job.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The job ID.</p>
+    /// The job ID.
     /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The job ID.</p>
+    /// The job ID.
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The job ID.</p>
+    /// The job ID.
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateMemberFromFarmInput {
-    /// <p>The farm ID of the farm to disassociate from the member.</p>
+    /// The farm ID of the farm to disassociate from the member.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>A member's principal ID to disassociate from a farm.</p>
+    /// A member's principal ID to disassociate from a farm.
     pub principal_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateMemberFromFarmInput {
-    /// <p>The farm ID of the farm to disassociate from the member.</p>
+    /// The farm ID of the farm to disassociate from the member.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>A member's principal ID to disassociate from a farm.</p>
+    /// A member's principal ID to disassociate from a farm.
     pub fn principal_id(&self) -> ::std::option::Option<&str> {
         self.principal_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DisassociateMemberFromFarmInputBuilder {
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateMemberFromFarmInputBuilder {
-    /// <p>The farm ID of the farm to disassociate from the member.</p>
+    /// The farm ID of the farm to disassociate from the member.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID of the farm to disassociate from the member.</p>
+    /// The farm ID of the farm to disassociate from the member.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID of the farm to disassociate from the member.</p>
+    /// The farm ID of the farm to disassociate from the member.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>A member's principal ID to disassociate from a farm.</p>
+    /// A member's principal ID to disassociate from a farm.
     /// This field is required.
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A member's principal ID to disassociate from a farm.</p>
+    /// A member's principal ID to disassociate from a farm.
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
     }
-    /// <p>A member's principal ID to disassociate from a farm.</p>
+    /// A member's principal ID to disassociate from a farm.
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal_id
     }

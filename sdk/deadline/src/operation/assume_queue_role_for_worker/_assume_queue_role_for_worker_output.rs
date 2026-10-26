@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssumeQueueRoleForWorkerOutput {
-    /// <p>The Amazon Web Services credentials for the role that the worker is assuming.</p>
+    /// The Amazon Web Services credentials for the role that the worker is assuming.
     pub credentials: ::std::option::Option<crate::types::AwsCredentials>,
     _request_id: Option<String>,
 }
 impl AssumeQueueRoleForWorkerOutput {
-    /// <p>The Amazon Web Services credentials for the role that the worker is assuming.</p>
+    /// The Amazon Web Services credentials for the role that the worker is assuming.
     pub fn credentials(&self) -> ::std::option::Option<&crate::types::AwsCredentials> {
         self.credentials.as_ref()
     }
@@ -41,17 +41,17 @@ pub struct AssumeQueueRoleForWorkerOutputBuilder {
     _request_id: Option<String>,
 }
 impl AssumeQueueRoleForWorkerOutputBuilder {
-    /// <p>The Amazon Web Services credentials for the role that the worker is assuming.</p>
+    /// The Amazon Web Services credentials for the role that the worker is assuming.
     pub fn credentials(mut self, input: crate::types::AwsCredentials) -> Self {
         self.credentials = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon Web Services credentials for the role that the worker is assuming.</p>
+    /// The Amazon Web Services credentials for the role that the worker is assuming.
     pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::AwsCredentials>) -> Self {
         self.credentials = input;
         self
     }
-    /// <p>The Amazon Web Services credentials for the role that the worker is assuming.</p>
+    /// The Amazon Web Services credentials for the role that the worker is assuming.
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::AwsCredentials> {
         &self.credentials
     }

@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyJobTemplateInput {
-    /// <p>The farm ID to copy.</p>
+    /// The farm ID to copy.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID to copy.</p>
+    /// The queue ID to copy.
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The job ID to copy.</p>
+    /// The job ID to copy.
     pub job_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon S3 bucket name and key where you would like to add a copy of the job template.</p>
+    /// The Amazon S3 bucket name and key where you would like to add a copy of the job template.
     pub target_s3_location: ::std::option::Option<crate::types::S3Location>,
 }
 impl CopyJobTemplateInput {
-    /// <p>The farm ID to copy.</p>
+    /// The farm ID to copy.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The queue ID to copy.</p>
+    /// The queue ID to copy.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The job ID to copy.</p>
+    /// The job ID to copy.
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The Amazon S3 bucket name and key where you would like to add a copy of the job template.</p>
+    /// The Amazon S3 bucket name and key where you would like to add a copy of the job template.
     pub fn target_s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.target_s3_location.as_ref()
     }
@@ -47,63 +47,63 @@ pub struct CopyJobTemplateInputBuilder {
     pub(crate) target_s3_location: ::std::option::Option<crate::types::S3Location>,
 }
 impl CopyJobTemplateInputBuilder {
-    /// <p>The farm ID to copy.</p>
+    /// The farm ID to copy.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID to copy.</p>
+    /// The farm ID to copy.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID to copy.</p>
+    /// The farm ID to copy.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The queue ID to copy.</p>
+    /// The queue ID to copy.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue ID to copy.</p>
+    /// The queue ID to copy.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The queue ID to copy.</p>
+    /// The queue ID to copy.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The job ID to copy.</p>
+    /// The job ID to copy.
     /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The job ID to copy.</p>
+    /// The job ID to copy.
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The job ID to copy.</p>
+    /// The job ID to copy.
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
-    /// <p>The Amazon S3 bucket name and key where you would like to add a copy of the job template.</p>
+    /// The Amazon S3 bucket name and key where you would like to add a copy of the job template.
     /// This field is required.
     pub fn target_s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.target_s3_location = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon S3 bucket name and key where you would like to add a copy of the job template.</p>
+    /// The Amazon S3 bucket name and key where you would like to add a copy of the job template.
     pub fn set_target_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.target_s3_location = input;
         self
     }
-    /// <p>The Amazon S3 bucket name and key where you would like to add a copy of the job template.</p>
+    /// The Amazon S3 bucket name and key where you would like to add a copy of the job template.
     pub fn get_target_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
         &self.target_s3_location
     }

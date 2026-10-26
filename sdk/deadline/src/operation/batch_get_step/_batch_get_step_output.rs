@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetStepOutput {
-    /// <p>A list of steps that were successfully retrieved.</p>
+    /// A list of steps that were successfully retrieved.
     pub steps: ::std::vec::Vec<crate::types::BatchGetStepItem>,
-    /// <p>A list of errors for steps that could not be retrieved.</p>
+    /// A list of errors for steps that could not be retrieved.
     pub errors: ::std::vec::Vec<crate::types::BatchGetStepError>,
     _request_id: Option<String>,
 }
 impl BatchGetStepOutput {
-    /// <p>A list of steps that were successfully retrieved.</p>
+    /// A list of steps that were successfully retrieved.
     pub fn steps(&self) -> &[crate::types::BatchGetStepItem] {
         use std::ops::Deref;
         self.steps.deref()
     }
-    /// <p>A list of errors for steps that could not be retrieved.</p>
+    /// A list of errors for steps that could not be retrieved.
     pub fn errors(&self) -> &[crate::types::BatchGetStepError] {
         use std::ops::Deref;
         self.errors.deref()
@@ -46,19 +46,19 @@ impl BatchGetStepOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_steps`](Self::set_steps).
     ///
-    /// <p>A list of steps that were successfully retrieved.</p>
+    /// A list of steps that were successfully retrieved.
     pub fn steps(mut self, input: crate::types::BatchGetStepItem) -> Self {
         let mut v = self.steps.unwrap_or_default();
         v.push(input);
         self.steps = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of steps that were successfully retrieved.</p>
+    /// A list of steps that were successfully retrieved.
     pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetStepItem>>) -> Self {
         self.steps = input;
         self
     }
-    /// <p>A list of steps that were successfully retrieved.</p>
+    /// A list of steps that were successfully retrieved.
     pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetStepItem>> {
         &self.steps
     }
@@ -66,19 +66,19 @@ impl BatchGetStepOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>A list of errors for steps that could not be retrieved.</p>
+    /// A list of errors for steps that could not be retrieved.
     pub fn errors(mut self, input: crate::types::BatchGetStepError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of errors for steps that could not be retrieved.</p>
+    /// A list of errors for steps that could not be retrieved.
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetStepError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>A list of errors for steps that could not be retrieved.</p>
+    /// A list of errors for steps that could not be retrieved.
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetStepError>> {
         &self.errors
     }

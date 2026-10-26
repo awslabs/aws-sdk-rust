@@ -27,6 +27,8 @@ pub struct UpdateChannelInput {
     pub container_format: ::std::option::Option<crate::types::ContainerFormat>,
     /// <p>ARN of the ad configuration associated with the channel.</p>
     pub ad_configuration_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Failover-slate-configuration ARN. A valid ARN value here both specifies the ARN and enables failover slate. If this is set to an empty string, failover slate configuration is disabled.</p>
+    pub failover_slate_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateChannelInput {
     /// <p>ARN of the channel to be updated.</p>
@@ -77,6 +79,10 @@ impl UpdateChannelInput {
     pub fn ad_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.ad_configuration_arn.as_deref()
     }
+    /// <p>Failover-slate-configuration ARN. A valid ARN value here both specifies the ARN and enables failover slate. If this is set to an empty string, failover slate configuration is disabled.</p>
+    pub fn failover_slate_configuration_arn(&self) -> ::std::option::Option<&str> {
+        self.failover_slate_configuration_arn.as_deref()
+    }
 }
 impl UpdateChannelInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
@@ -101,6 +107,7 @@ pub struct UpdateChannelInputBuilder {
     pub(crate) multitrack_input_configuration: ::std::option::Option<crate::types::MultitrackInputConfiguration>,
     pub(crate) container_format: ::std::option::Option<crate::types::ContainerFormat>,
     pub(crate) ad_configuration_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) failover_slate_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateChannelInputBuilder {
     /// <p>ARN of the channel to be updated.</p>
@@ -272,6 +279,20 @@ impl UpdateChannelInputBuilder {
     pub fn get_ad_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ad_configuration_arn
     }
+    /// <p>Failover-slate-configuration ARN. A valid ARN value here both specifies the ARN and enables failover slate. If this is set to an empty string, failover slate configuration is disabled.</p>
+    pub fn failover_slate_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failover_slate_configuration_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Failover-slate-configuration ARN. A valid ARN value here both specifies the ARN and enables failover slate. If this is set to an empty string, failover slate configuration is disabled.</p>
+    pub fn set_failover_slate_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failover_slate_configuration_arn = input;
+        self
+    }
+    /// <p>Failover-slate-configuration ARN. A valid ARN value here both specifies the ARN and enables failover slate. If this is set to an empty string, failover slate configuration is disabled.</p>
+    pub fn get_failover_slate_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failover_slate_configuration_arn
+    }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(
         self,
@@ -289,6 +310,7 @@ impl UpdateChannelInputBuilder {
             multitrack_input_configuration: self.multitrack_input_configuration,
             container_format: self.container_format,
             ad_configuration_arn: self.ad_configuration_arn,
+            failover_slate_configuration_arn: self.failover_slate_configuration_arn,
         })
     }
 }

@@ -5,6 +5,14 @@
 pub struct CreateCloudVmClusterInput {
     /// <p>The unique identifier of the Exadata infrastructure for this VM cluster.</p>
     pub cloud_exadata_infrastructure_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of the Exascale storage vault to use for the VM cluster. Specify this value to create a VM cluster that uses Exascale storage on dedicated Exadata infrastructure.</p>
+    pub exascale_db_storage_vault_id: ::std::option::Option<::std::string::String>,
+    /// <p>The type of storage to use for the VM file systems. Specify <code>EXASCALE</code> to store the VM file systems in Exascale storage on the storage servers, or <code>LOCAL</code> to store them on the database servers.</p>
+    pub vm_file_system_storage_type: ::std::option::Option<crate::types::VmStorageType>,
+    /// <p>The type of storage to use for VM backups. Specify <code>EXASCALE</code> to store VM backups in Exascale storage on the storage servers, or <code>LOCAL</code> to store them on the database servers.</p>
+    pub vm_backup_storage_type: ::std::option::Option<crate::types::VmStorageType>,
+    /// <p>The list of file system configurations for the VM cluster. Each entry specifies the mount point of a file system and its size, in gigabytes (GB).</p>
+    pub file_system_configuration_details: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfigurationDetails>>,
     /// <p>The number of CPU cores to enable on the VM cluster.</p>
     pub cpu_core_count: ::std::option::Option<i32>,
     /// <p>A user-friendly name for the VM cluster.</p>
@@ -66,6 +74,24 @@ impl CreateCloudVmClusterInput {
     /// <p>The unique identifier of the Exadata infrastructure for this VM cluster.</p>
     pub fn cloud_exadata_infrastructure_id(&self) -> ::std::option::Option<&str> {
         self.cloud_exadata_infrastructure_id.as_deref()
+    }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of the Exascale storage vault to use for the VM cluster. Specify this value to create a VM cluster that uses Exascale storage on dedicated Exadata infrastructure.</p>
+    pub fn exascale_db_storage_vault_id(&self) -> ::std::option::Option<&str> {
+        self.exascale_db_storage_vault_id.as_deref()
+    }
+    /// <p>The type of storage to use for the VM file systems. Specify <code>EXASCALE</code> to store the VM file systems in Exascale storage on the storage servers, or <code>LOCAL</code> to store them on the database servers.</p>
+    pub fn vm_file_system_storage_type(&self) -> ::std::option::Option<&crate::types::VmStorageType> {
+        self.vm_file_system_storage_type.as_ref()
+    }
+    /// <p>The type of storage to use for VM backups. Specify <code>EXASCALE</code> to store VM backups in Exascale storage on the storage servers, or <code>LOCAL</code> to store them on the database servers.</p>
+    pub fn vm_backup_storage_type(&self) -> ::std::option::Option<&crate::types::VmStorageType> {
+        self.vm_backup_storage_type.as_ref()
+    }
+    /// <p>The list of file system configurations for the VM cluster. Each entry specifies the mount point of a file system and its size, in gigabytes (GB).</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_configuration_details.is_none()`.
+    pub fn file_system_configuration_details(&self) -> &[crate::types::FileSystemConfigurationDetails] {
+        self.file_system_configuration_details.as_deref().unwrap_or_default()
     }
     /// <p>The number of CPU cores to enable on the VM cluster.</p>
     pub fn cpu_core_count(&self) -> ::std::option::Option<i32> {
@@ -180,6 +206,10 @@ impl CreateCloudVmClusterInput {
 #[non_exhaustive]
 pub struct CreateCloudVmClusterInputBuilder {
     pub(crate) cloud_exadata_infrastructure_id: ::std::option::Option<::std::string::String>,
+    pub(crate) exascale_db_storage_vault_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vm_file_system_storage_type: ::std::option::Option<crate::types::VmStorageType>,
+    pub(crate) vm_backup_storage_type: ::std::option::Option<crate::types::VmStorageType>,
+    pub(crate) file_system_configuration_details: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfigurationDetails>>,
     pub(crate) cpu_core_count: ::std::option::Option<i32>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) gi_version: ::std::option::Option<::std::string::String>,
@@ -216,6 +246,71 @@ impl CreateCloudVmClusterInputBuilder {
     /// <p>The unique identifier of the Exadata infrastructure for this VM cluster.</p>
     pub fn get_cloud_exadata_infrastructure_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_exadata_infrastructure_id
+    }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of the Exascale storage vault to use for the VM cluster. Specify this value to create a VM cluster that uses Exascale storage on dedicated Exadata infrastructure.</p>
+    pub fn exascale_db_storage_vault_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.exascale_db_storage_vault_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of the Exascale storage vault to use for the VM cluster. Specify this value to create a VM cluster that uses Exascale storage on dedicated Exadata infrastructure.</p>
+    pub fn set_exascale_db_storage_vault_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.exascale_db_storage_vault_id = input;
+        self
+    }
+    /// <p>The unique identifier or Amazon Resource Name (ARN) of the Exascale storage vault to use for the VM cluster. Specify this value to create a VM cluster that uses Exascale storage on dedicated Exadata infrastructure.</p>
+    pub fn get_exascale_db_storage_vault_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exascale_db_storage_vault_id
+    }
+    /// <p>The type of storage to use for the VM file systems. Specify <code>EXASCALE</code> to store the VM file systems in Exascale storage on the storage servers, or <code>LOCAL</code> to store them on the database servers.</p>
+    pub fn vm_file_system_storage_type(mut self, input: crate::types::VmStorageType) -> Self {
+        self.vm_file_system_storage_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of storage to use for the VM file systems. Specify <code>EXASCALE</code> to store the VM file systems in Exascale storage on the storage servers, or <code>LOCAL</code> to store them on the database servers.</p>
+    pub fn set_vm_file_system_storage_type(mut self, input: ::std::option::Option<crate::types::VmStorageType>) -> Self {
+        self.vm_file_system_storage_type = input;
+        self
+    }
+    /// <p>The type of storage to use for the VM file systems. Specify <code>EXASCALE</code> to store the VM file systems in Exascale storage on the storage servers, or <code>LOCAL</code> to store them on the database servers.</p>
+    pub fn get_vm_file_system_storage_type(&self) -> &::std::option::Option<crate::types::VmStorageType> {
+        &self.vm_file_system_storage_type
+    }
+    /// <p>The type of storage to use for VM backups. Specify <code>EXASCALE</code> to store VM backups in Exascale storage on the storage servers, or <code>LOCAL</code> to store them on the database servers.</p>
+    pub fn vm_backup_storage_type(mut self, input: crate::types::VmStorageType) -> Self {
+        self.vm_backup_storage_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of storage to use for VM backups. Specify <code>EXASCALE</code> to store VM backups in Exascale storage on the storage servers, or <code>LOCAL</code> to store them on the database servers.</p>
+    pub fn set_vm_backup_storage_type(mut self, input: ::std::option::Option<crate::types::VmStorageType>) -> Self {
+        self.vm_backup_storage_type = input;
+        self
+    }
+    /// <p>The type of storage to use for VM backups. Specify <code>EXASCALE</code> to store VM backups in Exascale storage on the storage servers, or <code>LOCAL</code> to store them on the database servers.</p>
+    pub fn get_vm_backup_storage_type(&self) -> &::std::option::Option<crate::types::VmStorageType> {
+        &self.vm_backup_storage_type
+    }
+    /// Appends an item to `file_system_configuration_details`.
+    ///
+    /// To override the contents of this collection use [`set_file_system_configuration_details`](Self::set_file_system_configuration_details).
+    ///
+    /// <p>The list of file system configurations for the VM cluster. Each entry specifies the mount point of a file system and its size, in gigabytes (GB).</p>
+    pub fn file_system_configuration_details(mut self, input: crate::types::FileSystemConfigurationDetails) -> Self {
+        let mut v = self.file_system_configuration_details.unwrap_or_default();
+        v.push(input);
+        self.file_system_configuration_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of file system configurations for the VM cluster. Each entry specifies the mount point of a file system and its size, in gigabytes (GB).</p>
+    pub fn set_file_system_configuration_details(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfigurationDetails>>,
+    ) -> Self {
+        self.file_system_configuration_details = input;
+        self
+    }
+    /// <p>The list of file system configurations for the VM cluster. Each entry specifies the mount point of a file system and its size, in gigabytes (GB).</p>
+    pub fn get_file_system_configuration_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfigurationDetails>> {
+        &self.file_system_configuration_details
     }
     /// <p>The number of CPU cores to enable on the VM cluster.</p>
     /// This field is required.
@@ -575,6 +670,10 @@ impl CreateCloudVmClusterInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::create_cloud_vm_cluster::CreateCloudVmClusterInput {
             cloud_exadata_infrastructure_id: self.cloud_exadata_infrastructure_id,
+            exascale_db_storage_vault_id: self.exascale_db_storage_vault_id,
+            vm_file_system_storage_type: self.vm_file_system_storage_type,
+            vm_backup_storage_type: self.vm_backup_storage_type,
+            file_system_configuration_details: self.file_system_configuration_details,
             cpu_core_count: self.cpu_core_count,
             display_name: self.display_name,
             gi_version: self.gi_version,

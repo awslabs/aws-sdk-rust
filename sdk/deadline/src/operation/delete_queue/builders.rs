@@ -110,31 +110,31 @@ impl DeleteQueueFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the farm from which to remove the queue.</p>
+    /// The ID of the farm from which to remove the queue.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The ID of the farm from which to remove the queue.</p>
+    /// The ID of the farm from which to remove the queue.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The ID of the farm from which to remove the queue.</p>
+    /// The ID of the farm from which to remove the queue.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The queue ID of the queue to delete.</p>
+    /// The queue ID of the queue to delete.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
         self
     }
-    /// <p>The queue ID of the queue to delete.</p>
+    /// The queue ID of the queue to delete.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_id(input);
         self
     }
-    /// <p>The queue ID of the queue to delete.</p>
+    /// The queue ID of the queue to delete.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }

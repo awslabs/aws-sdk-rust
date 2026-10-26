@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutMeteredProduct`](crate::operation::put_metered_product::builders::PutMeteredProductFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`license_endpoint_id(impl Into<String>)`](crate::operation::put_metered_product::builders::PutMeteredProductFluentBuilder::license_endpoint_id) / [`set_license_endpoint_id(Option<String>)`](crate::operation::put_metered_product::builders::PutMeteredProductFluentBuilder::set_license_endpoint_id):<br>required: **true**<br><p>The license endpoint ID to add to the metered product.</p><br>
-    ///   - [`product_id(impl Into<String>)`](crate::operation::put_metered_product::builders::PutMeteredProductFluentBuilder::product_id) / [`set_product_id(Option<String>)`](crate::operation::put_metered_product::builders::PutMeteredProductFluentBuilder::set_product_id):<br>required: **true**<br><p>The product ID to add to the metered product.</p><br>
+    ///   - [`license_endpoint_id(impl Into<String>)`](crate::operation::put_metered_product::builders::PutMeteredProductFluentBuilder::license_endpoint_id) / [`set_license_endpoint_id(Option<String>)`](crate::operation::put_metered_product::builders::PutMeteredProductFluentBuilder::set_license_endpoint_id):<br>required: **true**<br>The license endpoint ID to add to the metered product.<br>
+    ///   - [`product_id(impl Into<String>)`](crate::operation::put_metered_product::builders::PutMeteredProductFluentBuilder::product_id) / [`set_product_id(Option<String>)`](crate::operation::put_metered_product::builders::PutMeteredProductFluentBuilder::set_product_id):<br>required: **true**<br>The product ID to add to the metered product.<br>
     /// - On success, responds with [`PutMeteredProductOutput`](crate::operation::put_metered_product::PutMeteredProductOutput)
     /// - On failure, responds with [`SdkError<PutMeteredProductError>`](crate::operation::put_metered_product::PutMeteredProductError)
     pub fn put_metered_product(&self) -> crate::operation::put_metered_product::builders::PutMeteredProductFluentBuilder {

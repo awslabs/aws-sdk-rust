@@ -22,7 +22,7 @@ impl crate::operation::delete_volume::builders::DeleteVolumeInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteVolume`.
 ///
-/// <p>Deletes a persistent volume.</p>
+/// Deletes a persistent volume.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVolumeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl DeleteVolumeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the farm that contains the fleet.</p>
+    /// The farm ID of the farm that contains the fleet.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the farm that contains the fleet.</p>
+    /// The farm ID of the farm that contains the fleet.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the farm that contains the fleet.</p>
+    /// The farm ID of the farm that contains the fleet.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The fleet ID of the fleet that contains the volume.</p>
+    /// The fleet ID of the fleet that contains the volume.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>The fleet ID of the fleet that contains the volume.</p>
+    /// The fleet ID of the fleet that contains the volume.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>The fleet ID of the fleet that contains the volume.</p>
+    /// The fleet ID of the fleet that contains the volume.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>The volume ID of the volume to delete.</p>
+    /// The volume ID of the volume to delete.
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.volume_id(input.into());
         self
     }
-    /// <p>The volume ID of the volume to delete.</p>
+    /// The volume ID of the volume to delete.
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_volume_id(input);
         self
     }
-    /// <p>The volume ID of the volume to delete.</p>
+    /// The volume ID of the volume to delete.
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_volume_id()
     }

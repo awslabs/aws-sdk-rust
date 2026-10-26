@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateQueueLimitAssociationInput {
-    /// <p>The unique identifier of the farm that contains the associated queues and limits.</p>
+    /// The unique identifier of the farm that contains the associated queues and limits.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the queue associated to the limit.</p>
+    /// The unique identifier of the queue associated to the limit.
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the limit associated to the queue.</p>
+    /// The unique identifier of the limit associated to the queue.
     pub limit_id: ::std::option::Option<::std::string::String>,
     /// <p>Sets the status of the limit. You can mark the limit active, or you can stop usage of the limit and either complete existing tasks or cancel any existing tasks immediately.</p>
     pub status: ::std::option::Option<crate::types::UpdateQueueLimitAssociationStatus>,
 }
 impl UpdateQueueLimitAssociationInput {
-    /// <p>The unique identifier of the farm that contains the associated queues and limits.</p>
+    /// The unique identifier of the farm that contains the associated queues and limits.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The unique identifier of the queue associated to the limit.</p>
+    /// The unique identifier of the queue associated to the limit.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The unique identifier of the limit associated to the queue.</p>
+    /// The unique identifier of the limit associated to the queue.
     pub fn limit_id(&self) -> ::std::option::Option<&str> {
         self.limit_id.as_deref()
     }
@@ -47,48 +47,48 @@ pub struct UpdateQueueLimitAssociationInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::UpdateQueueLimitAssociationStatus>,
 }
 impl UpdateQueueLimitAssociationInputBuilder {
-    /// <p>The unique identifier of the farm that contains the associated queues and limits.</p>
+    /// The unique identifier of the farm that contains the associated queues and limits.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the farm that contains the associated queues and limits.</p>
+    /// The unique identifier of the farm that contains the associated queues and limits.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The unique identifier of the farm that contains the associated queues and limits.</p>
+    /// The unique identifier of the farm that contains the associated queues and limits.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The unique identifier of the queue associated to the limit.</p>
+    /// The unique identifier of the queue associated to the limit.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the queue associated to the limit.</p>
+    /// The unique identifier of the queue associated to the limit.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The unique identifier of the queue associated to the limit.</p>
+    /// The unique identifier of the queue associated to the limit.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The unique identifier of the limit associated to the queue.</p>
+    /// The unique identifier of the limit associated to the queue.
     /// This field is required.
     pub fn limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.limit_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the limit associated to the queue.</p>
+    /// The unique identifier of the limit associated to the queue.
     pub fn set_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.limit_id = input;
         self
     }
-    /// <p>The unique identifier of the limit associated to the queue.</p>
+    /// The unique identifier of the limit associated to the queue.
     pub fn get_limit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.limit_id
     }

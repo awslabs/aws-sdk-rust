@@ -22,7 +22,7 @@ impl crate::operation::create_queue_limit_association::builders::CreateQueueLimi
 }
 /// Fluent builder constructing a request to `CreateQueueLimitAssociation`.
 ///
-/// <p>Associates a limit with a particular queue. After the limit is associated, all workers for jobs that specify the limit associated with the queue are subject to the limit. You can't associate two limits with the same <code>amountRequirementName</code> to the same queue.</p>
+/// Associates a limit with a particular queue. After the limit is associated, all workers for jobs that specify the limit associated with the queue are subject to the limit. You can't associate two limits with the same <code>amountRequirementName</code> to the same queue.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateQueueLimitAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl CreateQueueLimitAssociationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the farm that contains the queue and limit to associate.</p>
+    /// The unique identifier of the farm that contains the queue and limit to associate.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The unique identifier of the farm that contains the queue and limit to associate.</p>
+    /// The unique identifier of the farm that contains the queue and limit to associate.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The unique identifier of the farm that contains the queue and limit to associate.</p>
+    /// The unique identifier of the farm that contains the queue and limit to associate.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The unique identifier of the queue to associate with the limit.</p>
+    /// The unique identifier of the queue to associate with the limit.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
         self
     }
-    /// <p>The unique identifier of the queue to associate with the limit.</p>
+    /// The unique identifier of the queue to associate with the limit.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_id(input);
         self
     }
-    /// <p>The unique identifier of the queue to associate with the limit.</p>
+    /// The unique identifier of the queue to associate with the limit.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }
-    /// <p>The unique identifier of the limit to associate with the queue.</p>
+    /// The unique identifier of the limit to associate with the queue.
     pub fn limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.limit_id(input.into());
         self
     }
-    /// <p>The unique identifier of the limit to associate with the queue.</p>
+    /// The unique identifier of the limit to associate with the queue.
     pub fn set_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_limit_id(input);
         self
     }
-    /// <p>The unique identifier of the limit to associate with the queue.</p>
+    /// The unique identifier of the limit to associate with the queue.
     pub fn get_limit_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_limit_id()
     }

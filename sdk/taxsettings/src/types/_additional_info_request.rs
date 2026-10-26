@@ -55,6 +55,10 @@ pub struct AdditionalInfoRequest {
     pub france_additional_info: ::std::option::Option<crate::types::FranceAdditionalInfo>,
     /// <p>Additional tax information to specify for a TRN in Monaco.</p>
     pub monaco_additional_info: ::std::option::Option<crate::types::MonacoAdditionalInfo>,
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in Germany.</p>
+    pub germany_additional_info: ::std::option::Option<crate::types::GermanyAdditionalInfo>,
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in Mexico.</p>
+    pub mexico_additional_info: ::std::option::Option<crate::types::MexicoAdditionalInfo>,
 }
 impl AdditionalInfoRequest {
     /// <p>Additional tax information to specify for a TRN in Malaysia.</p>
@@ -153,6 +157,14 @@ impl AdditionalInfoRequest {
     pub fn monaco_additional_info(&self) -> ::std::option::Option<&crate::types::MonacoAdditionalInfo> {
         self.monaco_additional_info.as_ref()
     }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in Germany.</p>
+    pub fn germany_additional_info(&self) -> ::std::option::Option<&crate::types::GermanyAdditionalInfo> {
+        self.germany_additional_info.as_ref()
+    }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in Mexico.</p>
+    pub fn mexico_additional_info(&self) -> ::std::option::Option<&crate::types::MexicoAdditionalInfo> {
+        self.mexico_additional_info.as_ref()
+    }
 }
 impl AdditionalInfoRequest {
     /// Creates a new builder-style object to manufacture [`AdditionalInfoRequest`](crate::types::AdditionalInfoRequest).
@@ -189,6 +201,8 @@ pub struct AdditionalInfoRequestBuilder {
     pub(crate) chile_additional_info: ::std::option::Option<crate::types::ChileAdditionalInfo>,
     pub(crate) france_additional_info: ::std::option::Option<crate::types::FranceAdditionalInfo>,
     pub(crate) monaco_additional_info: ::std::option::Option<crate::types::MonacoAdditionalInfo>,
+    pub(crate) germany_additional_info: ::std::option::Option<crate::types::GermanyAdditionalInfo>,
+    pub(crate) mexico_additional_info: ::std::option::Option<crate::types::MexicoAdditionalInfo>,
 }
 impl AdditionalInfoRequestBuilder {
     /// <p>Additional tax information to specify for a TRN in Malaysia.</p>
@@ -527,6 +541,34 @@ impl AdditionalInfoRequestBuilder {
     pub fn get_monaco_additional_info(&self) -> &::std::option::Option<crate::types::MonacoAdditionalInfo> {
         &self.monaco_additional_info
     }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in Germany.</p>
+    pub fn germany_additional_info(mut self, input: crate::types::GermanyAdditionalInfo) -> Self {
+        self.germany_additional_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in Germany.</p>
+    pub fn set_germany_additional_info(mut self, input: ::std::option::Option<crate::types::GermanyAdditionalInfo>) -> Self {
+        self.germany_additional_info = input;
+        self
+    }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in Germany.</p>
+    pub fn get_germany_additional_info(&self) -> &::std::option::Option<crate::types::GermanyAdditionalInfo> {
+        &self.germany_additional_info
+    }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in Mexico.</p>
+    pub fn mexico_additional_info(mut self, input: crate::types::MexicoAdditionalInfo) -> Self {
+        self.mexico_additional_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in Mexico.</p>
+    pub fn set_mexico_additional_info(mut self, input: ::std::option::Option<crate::types::MexicoAdditionalInfo>) -> Self {
+        self.mexico_additional_info = input;
+        self
+    }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in Mexico.</p>
+    pub fn get_mexico_additional_info(&self) -> &::std::option::Option<crate::types::MexicoAdditionalInfo> {
+        &self.mexico_additional_info
+    }
     /// Consumes the builder and constructs a [`AdditionalInfoRequest`](crate::types::AdditionalInfoRequest).
     pub fn build(self) -> crate::types::AdditionalInfoRequest {
         crate::types::AdditionalInfoRequest {
@@ -554,6 +596,8 @@ impl AdditionalInfoRequestBuilder {
             chile_additional_info: self.chile_additional_info,
             france_additional_info: self.france_additional_info,
             monaco_additional_info: self.monaco_additional_info,
+            germany_additional_info: self.germany_additional_info,
+            mexico_additional_info: self.mexico_additional_info,
         }
     }
 }

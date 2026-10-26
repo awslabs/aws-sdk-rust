@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetJobEntityOutput {
-    /// <p>A list of the job entities, or details, in the batch.</p>
+    /// A list of the job entities, or details, in the batch.
     pub entities: ::std::vec::Vec<crate::types::JobEntity>,
-    /// <p>A list of errors from the job error logs for the batch.</p>
+    /// A list of errors from the job error logs for the batch.
     pub errors: ::std::vec::Vec<crate::types::GetJobEntityError>,
     _request_id: Option<String>,
 }
 impl BatchGetJobEntityOutput {
-    /// <p>A list of the job entities, or details, in the batch.</p>
+    /// A list of the job entities, or details, in the batch.
     pub fn entities(&self) -> &[crate::types::JobEntity] {
         use std::ops::Deref;
         self.entities.deref()
     }
-    /// <p>A list of errors from the job error logs for the batch.</p>
+    /// A list of errors from the job error logs for the batch.
     pub fn errors(&self) -> &[crate::types::GetJobEntityError] {
         use std::ops::Deref;
         self.errors.deref()
@@ -46,19 +46,19 @@ impl BatchGetJobEntityOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_entities`](Self::set_entities).
     ///
-    /// <p>A list of the job entities, or details, in the batch.</p>
+    /// A list of the job entities, or details, in the batch.
     pub fn entities(mut self, input: crate::types::JobEntity) -> Self {
         let mut v = self.entities.unwrap_or_default();
         v.push(input);
         self.entities = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the job entities, or details, in the batch.</p>
+    /// A list of the job entities, or details, in the batch.
     pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobEntity>>) -> Self {
         self.entities = input;
         self
     }
-    /// <p>A list of the job entities, or details, in the batch.</p>
+    /// A list of the job entities, or details, in the batch.
     pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobEntity>> {
         &self.entities
     }
@@ -66,19 +66,19 @@ impl BatchGetJobEntityOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>A list of errors from the job error logs for the batch.</p>
+    /// A list of errors from the job error logs for the batch.
     pub fn errors(mut self, input: crate::types::GetJobEntityError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of errors from the job error logs for the batch.</p>
+    /// A list of errors from the job error logs for the batch.
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetJobEntityError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>A list of errors from the job error logs for the batch.</p>
+    /// A list of errors from the job error logs for the batch.
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetJobEntityError>> {
         &self.errors
     }

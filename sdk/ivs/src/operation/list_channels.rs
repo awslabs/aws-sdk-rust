@@ -202,6 +202,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListChannelsT
                 captured.insert("filterByAdConfigurationArn", value);
             }
         }
+        if requested.should_capture("filterByFailoverSlateConfigurationArn") {
+            if let ::std::option::Option::Some(value) = input.filter_by_failover_slate_configuration_arn.as_deref() {
+                captured.insert("filterByFailoverSlateConfigurationArn", value);
+            }
+        }
         if requested.should_capture("nextToken") {
             if let ::std::option::Option::Some(value) = input.next_token.as_deref() {
                 captured.insert("nextToken", value);

@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkerInput {
-    /// <p>The farm ID for the worker.</p>
+    /// The farm ID for the worker.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The fleet ID of the worker.</p>
+    /// The fleet ID of the worker.
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The worker ID.</p>
+    /// The worker ID.
     pub worker_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkerInput {
-    /// <p>The farm ID for the worker.</p>
+    /// The farm ID for the worker.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The fleet ID of the worker.</p>
+    /// The fleet ID of the worker.
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The worker ID.</p>
+    /// The worker ID.
     pub fn worker_id(&self) -> ::std::option::Option<&str> {
         self.worker_id.as_deref()
     }
@@ -40,48 +40,48 @@ pub struct GetWorkerInputBuilder {
     pub(crate) worker_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkerInputBuilder {
-    /// <p>The farm ID for the worker.</p>
+    /// The farm ID for the worker.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID for the worker.</p>
+    /// The farm ID for the worker.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID for the worker.</p>
+    /// The farm ID for the worker.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The fleet ID of the worker.</p>
+    /// The fleet ID of the worker.
     /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The fleet ID of the worker.</p>
+    /// The fleet ID of the worker.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p>The fleet ID of the worker.</p>
+    /// The fleet ID of the worker.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>The worker ID.</p>
+    /// The worker ID.
     /// This field is required.
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The worker ID.</p>
+    /// The worker ID.
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.worker_id = input;
         self
     }
-    /// <p>The worker ID.</p>
+    /// The worker ID.
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.worker_id
     }

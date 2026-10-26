@@ -22,7 +22,7 @@ impl crate::operation::create_queue::builders::CreateQueueInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateQueue`.
 ///
-/// <p>Creates a queue to coordinate the order in which jobs run on a farm. A queue can also specify where to pull resources and indicate where to output completed jobs.</p>
+/// Creates a queue to coordinate the order in which jobs run on a farm. A queue can also specify where to pull resources and indicate where to output completed jobs.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateQueueFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl CreateQueueFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the farm to connect to the queue.</p>
+    /// The farm ID of the farm to connect to the queue.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the farm to connect to the queue.</p>
+    /// The farm ID of the farm to connect to the queue.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the farm to connect to the queue.</p>
+    /// The farm ID of the farm to connect to the queue.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -176,59 +176,59 @@ impl CreateQueueFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The default action to take on a queue if a budget isn't configured.</p>
+    /// The default action to take on a queue if a budget isn't configured.
     pub fn default_budget_action(mut self, input: crate::types::DefaultQueueBudgetAction) -> Self {
         self.inner = self.inner.default_budget_action(input);
         self
     }
-    /// <p>The default action to take on a queue if a budget isn't configured.</p>
+    /// The default action to take on a queue if a budget isn't configured.
     pub fn set_default_budget_action(mut self, input: ::std::option::Option<crate::types::DefaultQueueBudgetAction>) -> Self {
         self.inner = self.inner.set_default_budget_action(input);
         self
     }
-    /// <p>The default action to take on a queue if a budget isn't configured.</p>
+    /// The default action to take on a queue if a budget isn't configured.
     pub fn get_default_budget_action(&self) -> &::std::option::Option<crate::types::DefaultQueueBudgetAction> {
         self.inner.get_default_budget_action()
     }
-    /// <p>The job attachment settings for the queue. These are the Amazon S3 bucket name and the Amazon S3 prefix.</p>
+    /// The job attachment settings for the queue. These are the Amazon S3 bucket name and the Amazon S3 prefix.
     pub fn job_attachment_settings(mut self, input: crate::types::JobAttachmentSettings) -> Self {
         self.inner = self.inner.job_attachment_settings(input);
         self
     }
-    /// <p>The job attachment settings for the queue. These are the Amazon S3 bucket name and the Amazon S3 prefix.</p>
+    /// The job attachment settings for the queue. These are the Amazon S3 bucket name and the Amazon S3 prefix.
     pub fn set_job_attachment_settings(mut self, input: ::std::option::Option<crate::types::JobAttachmentSettings>) -> Self {
         self.inner = self.inner.set_job_attachment_settings(input);
         self
     }
-    /// <p>The job attachment settings for the queue. These are the Amazon S3 bucket name and the Amazon S3 prefix.</p>
+    /// The job attachment settings for the queue. These are the Amazon S3 bucket name and the Amazon S3 prefix.
     pub fn get_job_attachment_settings(&self) -> &::std::option::Option<crate::types::JobAttachmentSettings> {
         self.inner.get_job_attachment_settings()
     }
-    /// <p>The IAM role ARN that workers will use while running jobs for this queue.</p>
+    /// The IAM role ARN that workers will use while running jobs for this queue.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The IAM role ARN that workers will use while running jobs for this queue.</p>
+    /// The IAM role ARN that workers will use while running jobs for this queue.
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The IAM role ARN that workers will use while running jobs for this queue.</p>
+    /// The IAM role ARN that workers will use while running jobs for this queue.
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
-    /// <p>The jobs in the queue run as the specified POSIX user.</p>
+    /// The jobs in the queue run as the specified POSIX user.
     pub fn job_run_as_user(mut self, input: crate::types::JobRunAsUser) -> Self {
         self.inner = self.inner.job_run_as_user(input);
         self
     }
-    /// <p>The jobs in the queue run as the specified POSIX user.</p>
+    /// The jobs in the queue run as the specified POSIX user.
     pub fn set_job_run_as_user(mut self, input: ::std::option::Option<crate::types::JobRunAsUser>) -> Self {
         self.inner = self.inner.set_job_run_as_user(input);
         self
     }
-    /// <p>The jobs in the queue run as the specified POSIX user.</p>
+    /// The jobs in the queue run as the specified POSIX user.
     pub fn get_job_run_as_user(&self) -> &::std::option::Option<crate::types::JobRunAsUser> {
         self.inner.get_job_run_as_user()
     }
@@ -237,17 +237,17 @@ impl CreateQueueFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_required_file_system_location_names`](Self::set_required_file_system_location_names).
     ///
-    /// <p>The file system location name to include in the queue.</p>
+    /// The file system location name to include in the queue.
     pub fn required_file_system_location_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.required_file_system_location_names(input.into());
         self
     }
-    /// <p>The file system location name to include in the queue.</p>
+    /// The file system location name to include in the queue.
     pub fn set_required_file_system_location_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_required_file_system_location_names(input);
         self
     }
-    /// <p>The file system location name to include in the queue.</p>
+    /// The file system location name to include in the queue.
     pub fn get_required_file_system_location_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_required_file_system_location_names()
     }
@@ -256,17 +256,17 @@ impl CreateQueueFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_storage_profile_ids`](Self::set_allowed_storage_profile_ids).
     ///
-    /// <p>The storage profile IDs to include in the queue.</p>
+    /// The storage profile IDs to include in the queue.
     pub fn allowed_storage_profile_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allowed_storage_profile_ids(input.into());
         self
     }
-    /// <p>The storage profile IDs to include in the queue.</p>
+    /// The storage profile IDs to include in the queue.
     pub fn set_allowed_storage_profile_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_allowed_storage_profile_ids(input);
         self
     }
-    /// <p>The storage profile IDs to include in the queue.</p>
+    /// The storage profile IDs to include in the queue.
     pub fn get_allowed_storage_profile_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_allowed_storage_profile_ids()
     }
@@ -275,34 +275,31 @@ impl CreateQueueFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    /// Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    /// Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    /// Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
-    /// <p>If not specified, the queue defaults to the <code>priorityFifo</code> scheduling configuration.</p>
+    /// The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue. If not specified, the queue defaults to the <code>priorityFifo</code> scheduling configuration.
     pub fn scheduling_configuration(mut self, input: crate::types::SchedulingConfiguration) -> Self {
         self.inner = self.inner.scheduling_configuration(input);
         self
     }
-    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
-    /// <p>If not specified, the queue defaults to the <code>priorityFifo</code> scheduling configuration.</p>
+    /// The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue. If not specified, the queue defaults to the <code>priorityFifo</code> scheduling configuration.
     pub fn set_scheduling_configuration(mut self, input: ::std::option::Option<crate::types::SchedulingConfiguration>) -> Self {
         self.inner = self.inner.set_scheduling_configuration(input);
         self
     }
-    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
-    /// <p>If not specified, the queue defaults to the <code>priorityFifo</code> scheduling configuration.</p>
+    /// The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue. If not specified, the queue defaults to the <code>priorityFifo</code> scheduling configuration.
     pub fn get_scheduling_configuration(&self) -> &::std::option::Option<crate::types::SchedulingConfiguration> {
         self.inner.get_scheduling_configuration()
     }

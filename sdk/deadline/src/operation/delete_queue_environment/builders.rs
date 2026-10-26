@@ -22,7 +22,7 @@ impl crate::operation::delete_queue_environment::builders::DeleteQueueEnvironmen
 }
 /// Fluent builder constructing a request to `DeleteQueueEnvironment`.
 ///
-/// <p>Deletes a queue environment.</p>
+/// Deletes a queue environment.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteQueueEnvironmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl DeleteQueueEnvironmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the farm from which to remove the queue environment.</p>
+    /// The farm ID of the farm from which to remove the queue environment.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the farm from which to remove the queue environment.</p>
+    /// The farm ID of the farm from which to remove the queue environment.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the farm from which to remove the queue environment.</p>
+    /// The farm ID of the farm from which to remove the queue environment.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The queue ID of the queue environment to delete.</p>
+    /// The queue ID of the queue environment to delete.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
         self
     }
-    /// <p>The queue ID of the queue environment to delete.</p>
+    /// The queue ID of the queue environment to delete.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_id(input);
         self
     }
-    /// <p>The queue ID of the queue environment to delete.</p>
+    /// The queue ID of the queue environment to delete.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }
-    /// <p>The queue environment ID of the queue environment to delete.</p>
+    /// The queue environment ID of the queue environment to delete.
     pub fn queue_environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_environment_id(input.into());
         self
     }
-    /// <p>The queue environment ID of the queue environment to delete.</p>
+    /// The queue environment ID of the queue environment to delete.
     pub fn set_queue_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_environment_id(input);
         self
     }
-    /// <p>The queue environment ID of the queue environment to delete.</p>
+    /// The queue environment ID of the queue environment to delete.
     pub fn get_queue_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_environment_id()
     }

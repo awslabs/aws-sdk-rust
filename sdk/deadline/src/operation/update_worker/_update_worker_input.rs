@@ -3,41 +3,41 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkerInput {
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The fleet ID to update.</p>
+    /// The fleet ID to update.
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The worker ID to update.</p>
+    /// The worker ID to update.
     pub worker_id: ::std::option::Option<::std::string::String>,
-    /// <p>The worker status to update.</p>
+    /// The worker status to update.
     pub status: ::std::option::Option<crate::types::UpdatedWorkerStatus>,
-    /// <p>The worker capabilities to update.</p>
+    /// The worker capabilities to update.
     pub capabilities: ::std::option::Option<crate::types::WorkerCapabilities>,
-    /// <p>The host properties to update.</p>
+    /// The host properties to update.
     pub host_properties: ::std::option::Option<crate::types::HostPropertiesRequest>,
 }
 impl UpdateWorkerInput {
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The fleet ID to update.</p>
+    /// The fleet ID to update.
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The worker ID to update.</p>
+    /// The worker ID to update.
     pub fn worker_id(&self) -> ::std::option::Option<&str> {
         self.worker_id.as_deref()
     }
-    /// <p>The worker status to update.</p>
+    /// The worker status to update.
     pub fn status(&self) -> ::std::option::Option<&crate::types::UpdatedWorkerStatus> {
         self.status.as_ref()
     }
-    /// <p>The worker capabilities to update.</p>
+    /// The worker capabilities to update.
     pub fn capabilities(&self) -> ::std::option::Option<&crate::types::WorkerCapabilities> {
         self.capabilities.as_ref()
     }
-    /// <p>The host properties to update.</p>
+    /// The host properties to update.
     pub fn host_properties(&self) -> ::std::option::Option<&crate::types::HostPropertiesRequest> {
         self.host_properties.as_ref()
     }
@@ -61,90 +61,90 @@ pub struct UpdateWorkerInputBuilder {
     pub(crate) host_properties: ::std::option::Option<crate::types::HostPropertiesRequest>,
 }
 impl UpdateWorkerInputBuilder {
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The fleet ID to update.</p>
+    /// The fleet ID to update.
     /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The fleet ID to update.</p>
+    /// The fleet ID to update.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p>The fleet ID to update.</p>
+    /// The fleet ID to update.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>The worker ID to update.</p>
+    /// The worker ID to update.
     /// This field is required.
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The worker ID to update.</p>
+    /// The worker ID to update.
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.worker_id = input;
         self
     }
-    /// <p>The worker ID to update.</p>
+    /// The worker ID to update.
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.worker_id
     }
-    /// <p>The worker status to update.</p>
+    /// The worker status to update.
     pub fn status(mut self, input: crate::types::UpdatedWorkerStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The worker status to update.</p>
+    /// The worker status to update.
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::UpdatedWorkerStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The worker status to update.</p>
+    /// The worker status to update.
     pub fn get_status(&self) -> &::std::option::Option<crate::types::UpdatedWorkerStatus> {
         &self.status
     }
-    /// <p>The worker capabilities to update.</p>
+    /// The worker capabilities to update.
     pub fn capabilities(mut self, input: crate::types::WorkerCapabilities) -> Self {
         self.capabilities = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The worker capabilities to update.</p>
+    /// The worker capabilities to update.
     pub fn set_capabilities(mut self, input: ::std::option::Option<crate::types::WorkerCapabilities>) -> Self {
         self.capabilities = input;
         self
     }
-    /// <p>The worker capabilities to update.</p>
+    /// The worker capabilities to update.
     pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::WorkerCapabilities> {
         &self.capabilities
     }
-    /// <p>The host properties to update.</p>
+    /// The host properties to update.
     pub fn host_properties(mut self, input: crate::types::HostPropertiesRequest) -> Self {
         self.host_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The host properties to update.</p>
+    /// The host properties to update.
     pub fn set_host_properties(mut self, input: ::std::option::Option<crate::types::HostPropertiesRequest>) -> Self {
         self.host_properties = input;
         self
     }
-    /// <p>The host properties to update.</p>
+    /// The host properties to update.
     pub fn get_host_properties(&self) -> &::std::option::Option<crate::types::HostPropertiesRequest> {
         &self.host_properties
     }

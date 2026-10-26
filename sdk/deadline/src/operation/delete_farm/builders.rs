@@ -22,7 +22,7 @@ impl crate::operation::delete_farm::builders::DeleteFarmInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteFarm`.
 ///
-/// <p>Deletes a farm.</p>
+/// Deletes a farm.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFarmFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteFarmFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the farm to delete.</p>
+    /// The farm ID of the farm to delete.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the farm to delete.</p>
+    /// The farm ID of the farm to delete.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the farm to delete.</p>
+    /// The farm ID of the farm to delete.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }

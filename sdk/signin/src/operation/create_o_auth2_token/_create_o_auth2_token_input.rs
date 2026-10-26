@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOAuth2TokenInput {
-    /// Flattened token operation inputs The specific operation is determined by grant_type in the request body
+    /// Flattened token operation inputs. The "grant_type" in the request body determines the specific operation.
     pub token_input: ::std::option::Option<crate::types::CreateOAuth2TokenRequestBody>,
 }
 impl CreateOAuth2TokenInput {
-    /// Flattened token operation inputs The specific operation is determined by grant_type in the request body
+    /// Flattened token operation inputs. The "grant_type" in the request body determines the specific operation.
     pub fn token_input(&self) -> ::std::option::Option<&crate::types::CreateOAuth2TokenRequestBody> {
         self.token_input.as_ref()
     }
@@ -27,18 +27,18 @@ pub struct CreateOAuth2TokenInputBuilder {
     pub(crate) token_input: ::std::option::Option<crate::types::CreateOAuth2TokenRequestBody>,
 }
 impl CreateOAuth2TokenInputBuilder {
-    /// Flattened token operation inputs The specific operation is determined by grant_type in the request body
+    /// Flattened token operation inputs. The "grant_type" in the request body determines the specific operation.
     /// This field is required.
     pub fn token_input(mut self, input: crate::types::CreateOAuth2TokenRequestBody) -> Self {
         self.token_input = ::std::option::Option::Some(input);
         self
     }
-    /// Flattened token operation inputs The specific operation is determined by grant_type in the request body
+    /// Flattened token operation inputs. The "grant_type" in the request body determines the specific operation.
     pub fn set_token_input(mut self, input: ::std::option::Option<crate::types::CreateOAuth2TokenRequestBody>) -> Self {
         self.token_input = input;
         self
     }
-    /// Flattened token operation inputs The specific operation is determined by grant_type in the request body
+    /// Flattened token operation inputs. The "grant_type" in the request body determines the specific operation.
     pub fn get_token_input(&self) -> &::std::option::Option<crate::types::CreateOAuth2TokenRequestBody> {
         &self.token_input
     }

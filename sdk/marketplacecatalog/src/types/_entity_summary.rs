@@ -34,6 +34,8 @@ pub struct EntitySummary {
     pub offer_set_summary: ::std::option::Option<crate::types::OfferSetSummary>,
     /// <p>An object that contains summary information about the express private offer configuration.</p>
     pub express_private_offer_configuration_summary: ::std::option::Option<crate::types::ExpressPrivateOfferConfigurationSummary>,
+    /// <p>An object that contains summary information about the subsidiary authorization, such as its status and authorized resource, when the entity type is <code>SubsidiaryAuthorization</code>.</p>
+    pub subsidiary_authorization_summary: ::std::option::Option<crate::types::SubsidiaryAuthorizationSummary>,
 }
 impl EntitySummary {
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
@@ -96,6 +98,10 @@ impl EntitySummary {
     pub fn express_private_offer_configuration_summary(&self) -> ::std::option::Option<&crate::types::ExpressPrivateOfferConfigurationSummary> {
         self.express_private_offer_configuration_summary.as_ref()
     }
+    /// <p>An object that contains summary information about the subsidiary authorization, such as its status and authorized resource, when the entity type is <code>SubsidiaryAuthorization</code>.</p>
+    pub fn subsidiary_authorization_summary(&self) -> ::std::option::Option<&crate::types::SubsidiaryAuthorizationSummary> {
+        self.subsidiary_authorization_summary.as_ref()
+    }
 }
 impl EntitySummary {
     /// Creates a new builder-style object to manufacture [`EntitySummary`](crate::types::EntitySummary).
@@ -123,6 +129,7 @@ pub struct EntitySummaryBuilder {
     pub(crate) machine_learning_product_summary: ::std::option::Option<crate::types::MachineLearningProductSummary>,
     pub(crate) offer_set_summary: ::std::option::Option<crate::types::OfferSetSummary>,
     pub(crate) express_private_offer_configuration_summary: ::std::option::Option<crate::types::ExpressPrivateOfferConfigurationSummary>,
+    pub(crate) subsidiary_authorization_summary: ::std::option::Option<crate::types::SubsidiaryAuthorizationSummary>,
 }
 impl EntitySummaryBuilder {
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
@@ -338,6 +345,20 @@ impl EntitySummaryBuilder {
     pub fn get_express_private_offer_configuration_summary(&self) -> &::std::option::Option<crate::types::ExpressPrivateOfferConfigurationSummary> {
         &self.express_private_offer_configuration_summary
     }
+    /// <p>An object that contains summary information about the subsidiary authorization, such as its status and authorized resource, when the entity type is <code>SubsidiaryAuthorization</code>.</p>
+    pub fn subsidiary_authorization_summary(mut self, input: crate::types::SubsidiaryAuthorizationSummary) -> Self {
+        self.subsidiary_authorization_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains summary information about the subsidiary authorization, such as its status and authorized resource, when the entity type is <code>SubsidiaryAuthorization</code>.</p>
+    pub fn set_subsidiary_authorization_summary(mut self, input: ::std::option::Option<crate::types::SubsidiaryAuthorizationSummary>) -> Self {
+        self.subsidiary_authorization_summary = input;
+        self
+    }
+    /// <p>An object that contains summary information about the subsidiary authorization, such as its status and authorized resource, when the entity type is <code>SubsidiaryAuthorization</code>.</p>
+    pub fn get_subsidiary_authorization_summary(&self) -> &::std::option::Option<crate::types::SubsidiaryAuthorizationSummary> {
+        &self.subsidiary_authorization_summary
+    }
     /// Consumes the builder and constructs a [`EntitySummary`](crate::types::EntitySummary).
     pub fn build(self) -> crate::types::EntitySummary {
         crate::types::EntitySummary {
@@ -356,6 +377,7 @@ impl EntitySummaryBuilder {
             machine_learning_product_summary: self.machine_learning_product_summary,
             offer_set_summary: self.offer_set_summary,
             express_private_offer_configuration_summary: self.express_private_offer_configuration_summary,
+            subsidiary_authorization_summary: self.subsidiary_authorization_summary,
         }
     }
 }

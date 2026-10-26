@@ -12,8 +12,10 @@
 /// ```text
 /// # let keylastusagetrackingoperation = unimplemented!();
 /// match keylastusagetrackingoperation {
+///     KeyLastUsageTrackingOperation::Decapsulate => { /* ... */ },
 ///     KeyLastUsageTrackingOperation::Decrypt => { /* ... */ },
 ///     KeyLastUsageTrackingOperation::DeriveSharedSecret => { /* ... */ },
+///     KeyLastUsageTrackingOperation::Encapsulate => { /* ... */ },
 ///     KeyLastUsageTrackingOperation::Encrypt => { /* ... */ },
 ///     KeyLastUsageTrackingOperation::GenerateDataKey => { /* ... */ },
 ///     KeyLastUsageTrackingOperation::GenerateDataKeyPair => { /* ... */ },
@@ -53,9 +55,13 @@
 )]
 pub enum KeyLastUsageTrackingOperation {
     #[allow(missing_docs)] // documentation missing in model
+    Decapsulate,
+    #[allow(missing_docs)] // documentation missing in model
     Decrypt,
     #[allow(missing_docs)] // documentation missing in model
     DeriveSharedSecret,
+    #[allow(missing_docs)] // documentation missing in model
+    Encapsulate,
     #[allow(missing_docs)] // documentation missing in model
     Encrypt,
     #[allow(missing_docs)] // documentation missing in model
@@ -83,8 +89,10 @@ pub enum KeyLastUsageTrackingOperation {
 impl ::std::convert::From<&str> for KeyLastUsageTrackingOperation {
     fn from(s: &str) -> Self {
         match s {
+            "Decapsulate" => KeyLastUsageTrackingOperation::Decapsulate,
             "Decrypt" => KeyLastUsageTrackingOperation::Decrypt,
             "DeriveSharedSecret" => KeyLastUsageTrackingOperation::DeriveSharedSecret,
+            "Encapsulate" => KeyLastUsageTrackingOperation::Encapsulate,
             "Encrypt" => KeyLastUsageTrackingOperation::Encrypt,
             "GenerateDataKey" => KeyLastUsageTrackingOperation::GenerateDataKey,
             "GenerateDataKeyPair" => KeyLastUsageTrackingOperation::GenerateDataKeyPair,
@@ -110,8 +118,10 @@ impl KeyLastUsageTrackingOperation {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            KeyLastUsageTrackingOperation::Decapsulate => "Decapsulate",
             KeyLastUsageTrackingOperation::Decrypt => "Decrypt",
             KeyLastUsageTrackingOperation::DeriveSharedSecret => "DeriveSharedSecret",
+            KeyLastUsageTrackingOperation::Encapsulate => "Encapsulate",
             KeyLastUsageTrackingOperation::Encrypt => "Encrypt",
             KeyLastUsageTrackingOperation::GenerateDataKey => "GenerateDataKey",
             KeyLastUsageTrackingOperation::GenerateDataKeyPair => "GenerateDataKeyPair",
@@ -128,8 +138,10 @@ impl KeyLastUsageTrackingOperation {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "Decapsulate",
             "Decrypt",
             "DeriveSharedSecret",
+            "Encapsulate",
             "Encrypt",
             "GenerateDataKey",
             "GenerateDataKeyPair",
@@ -163,8 +175,10 @@ impl KeyLastUsageTrackingOperation {
 impl ::std::fmt::Display for KeyLastUsageTrackingOperation {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            KeyLastUsageTrackingOperation::Decapsulate => write!(f, "Decapsulate"),
             KeyLastUsageTrackingOperation::Decrypt => write!(f, "Decrypt"),
             KeyLastUsageTrackingOperation::DeriveSharedSecret => write!(f, "DeriveSharedSecret"),
+            KeyLastUsageTrackingOperation::Encapsulate => write!(f, "Encapsulate"),
             KeyLastUsageTrackingOperation::Encrypt => write!(f, "Encrypt"),
             KeyLastUsageTrackingOperation::GenerateDataKey => write!(f, "GenerateDataKey"),
             KeyLastUsageTrackingOperation::GenerateDataKeyPair => write!(f, "GenerateDataKeyPair"),

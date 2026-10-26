@@ -61,6 +61,8 @@ pub use crate::types::error::_image_not_found_exception::ImageNotFoundExceptionB
 
 pub use crate::types::error::_scan_not_found_exception::ScanNotFoundExceptionBuilder;
 
+pub use crate::types::error::_replication_backfill_not_found_exception::ReplicationBackfillNotFoundExceptionBuilder;
+
 pub use crate::types::error::_layer_inaccessible_exception::LayerInaccessibleExceptionBuilder;
 
 pub use crate::types::error::_layers_not_found_exception::LayersNotFoundExceptionBuilder;
@@ -88,6 +90,10 @@ pub use crate::types::error::_image_archived_exception::ImageArchivedExceptionBu
 pub use crate::types::error::_unsupported_image_type_exception::UnsupportedImageTypeExceptionBuilder;
 
 pub use crate::types::error::_lifecycle_policy_preview_in_progress_exception::LifecyclePolicyPreviewInProgressExceptionBuilder;
+
+pub use crate::types::error::_replication_backfill_in_progress_exception::ReplicationBackfillInProgressExceptionBuilder;
+
+pub use crate::types::error::_replication_backfill_invalid_status_exception::ReplicationBackfillInvalidStatusExceptionBuilder;
 
 pub use crate::types::error::_image_storage_class_update_not_supported_exception::ImageStorageClassUpdateNotSupportedExceptionBuilder;
 

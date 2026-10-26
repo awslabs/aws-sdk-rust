@@ -54,6 +54,12 @@ where
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MediaLiveInput' cannot be null"))?
                                 ))
                             }
+                            "sourceEndpoint" => {
+                                Some(crate::types::RouterOutputStreamDetails::SourceEndpoint(
+                                    crate::protocol_serde::shape_source_endpoint_router_output_stream_details::de_source_endpoint_router_output_stream_details(tokens, _value, depth + 1)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SourceEndpoint' cannot be null"))?
+                                ))
+                            }
                             _ => {
                                                                               ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                                                                               Some(crate::types::RouterOutputStreamDetails::Unknown)

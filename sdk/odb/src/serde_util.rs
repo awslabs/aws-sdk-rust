@@ -557,6 +557,15 @@ pub(crate) fn update_exadb_vm_cluster_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_exascale_cloud_exadata_infrastructure_output_output_correct_errors(
+    mut builder: crate::operation::update_exascale_cloud_exadata_infrastructure::builders::UpdateExascaleCloudExadataInfrastructureOutputBuilder,
+) -> crate::operation::update_exascale_cloud_exadata_infrastructure::builders::UpdateExascaleCloudExadataInfrastructureOutputBuilder {
+    if builder.cloud_exadata_infrastructure_id.is_none() {
+        builder.cloud_exadata_infrastructure_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_exascale_db_storage_vault_output_output_correct_errors(
     mut builder: crate::operation::update_exascale_db_storage_vault::builders::UpdateExascaleDbStorageVaultOutputBuilder,
 ) -> crate::operation::update_exascale_db_storage_vault::builders::UpdateExascaleDbStorageVaultOutputBuilder {

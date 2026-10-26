@@ -33,6 +33,8 @@ pub(crate) mod shape_create_ad_configuration;
 
 pub(crate) mod shape_create_channel;
 
+pub(crate) mod shape_create_failover_slate_configuration;
+
 pub(crate) mod shape_create_playback_restriction_policy;
 
 pub(crate) mod shape_create_recording_configuration;
@@ -42,6 +44,8 @@ pub(crate) mod shape_create_stream_key;
 pub(crate) mod shape_delete_ad_configuration;
 
 pub(crate) mod shape_delete_channel;
+
+pub(crate) mod shape_delete_failover_slate_configuration;
 
 pub(crate) mod shape_delete_playback_key_pair;
 
@@ -54,6 +58,8 @@ pub(crate) mod shape_delete_stream_key;
 pub(crate) mod shape_get_ad_configuration;
 
 pub(crate) mod shape_get_channel;
+
+pub(crate) mod shape_get_failover_slate_configuration;
 
 pub(crate) mod shape_get_playback_key_pair;
 
@@ -74,6 +80,8 @@ pub(crate) mod shape_insert_ad_break;
 pub(crate) mod shape_list_ad_configurations;
 
 pub(crate) mod shape_list_channels;
+
+pub(crate) mod shape_list_failover_slate_configurations;
 
 pub(crate) mod shape_list_playback_key_pairs;
 
@@ -102,6 +110,8 @@ pub(crate) mod shape_untag_resource;
 pub(crate) mod shape_update_ad_configuration;
 
 pub(crate) mod shape_update_channel;
+
+pub(crate) mod shape_update_failover_slate_configuration;
 
 pub(crate) mod shape_update_playback_restriction_policy;
 
@@ -135,6 +145,8 @@ pub(crate) mod shape_create_ad_configuration_input;
 
 pub(crate) mod shape_create_channel_input;
 
+pub(crate) mod shape_create_failover_slate_configuration_input;
+
 pub(crate) mod shape_create_playback_restriction_policy_input;
 
 pub(crate) mod shape_create_recording_configuration_input;
@@ -144,6 +156,8 @@ pub(crate) mod shape_create_stream_key_input;
 pub(crate) mod shape_delete_ad_configuration_input;
 
 pub(crate) mod shape_delete_channel_input;
+
+pub(crate) mod shape_delete_failover_slate_configuration_input;
 
 pub(crate) mod shape_delete_playback_key_pair_input;
 
@@ -156,6 +170,8 @@ pub(crate) mod shape_delete_stream_key_input;
 pub(crate) mod shape_get_ad_configuration_input;
 
 pub(crate) mod shape_get_channel_input;
+
+pub(crate) mod shape_get_failover_slate_configuration_input;
 
 pub(crate) mod shape_get_playback_key_pair_input;
 
@@ -178,6 +194,8 @@ pub(crate) mod shape_internal_server_exception;
 pub(crate) mod shape_list_ad_configurations_input;
 
 pub(crate) mod shape_list_channels_input;
+
+pub(crate) mod shape_list_failover_slate_configurations_input;
 
 pub(crate) mod shape_list_playback_key_pairs_input;
 
@@ -215,6 +233,8 @@ pub(crate) mod shape_update_ad_configuration_input;
 
 pub(crate) mod shape_update_channel_input;
 
+pub(crate) mod shape_update_failover_slate_configuration_input;
+
 pub(crate) mod shape_update_playback_restriction_policy_input;
 
 pub(crate) mod shape_validation_exception;
@@ -236,6 +256,10 @@ pub(crate) mod shape_channel_list;
 pub(crate) mod shape_channels;
 
 pub(crate) mod shape_destination_configuration;
+
+pub(crate) mod shape_failover_slate_configuration;
+
+pub(crate) mod shape_failover_slate_configuration_list;
 
 pub(crate) mod shape_media_tailor_playback_configuration;
 
@@ -284,6 +308,8 @@ pub(crate) mod shape_batch_error;
 pub(crate) mod shape_batch_start_viewer_session_revocation_error;
 
 pub(crate) mod shape_channel_summary;
+
+pub(crate) mod shape_failover_slate_configuration_summary;
 
 pub(crate) mod shape_ingest_configuration;
 

@@ -146,6 +146,8 @@ mod create_ad_configuration;
 
 mod create_channel;
 
+mod create_failover_slate_configuration;
+
 mod create_playback_restriction_policy;
 
 mod create_recording_configuration;
@@ -183,6 +185,8 @@ mod delete_ad_configuration;
 
 mod delete_channel;
 
+mod delete_failover_slate_configuration;
+
 mod delete_playback_key_pair;
 
 mod delete_playback_restriction_policy;
@@ -194,6 +198,8 @@ mod delete_stream_key;
 mod get_ad_configuration;
 
 mod get_channel;
+
+mod get_failover_slate_configuration;
 
 mod get_playback_key_pair;
 
@@ -214,6 +220,8 @@ mod insert_ad_break;
 mod list_ad_configurations;
 
 mod list_channels;
+
+mod list_failover_slate_configurations;
 
 mod list_playback_key_pairs;
 
@@ -242,5 +250,7 @@ mod untag_resource;
 mod update_ad_configuration;
 
 mod update_channel;
+
+mod update_failover_slate_configuration;
 
 mod update_playback_restriction_policy;

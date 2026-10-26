@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSessionActionInput {
-    /// <p>The farm ID for the session action.</p>
+    /// The farm ID for the session action.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID for the session action.</p>
+    /// The queue ID for the session action.
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The job ID for the session.</p>
+    /// The job ID for the session.
     pub job_id: ::std::option::Option<::std::string::String>,
-    /// <p>The session action ID for the session.</p>
+    /// The session action ID for the session.
     pub session_action_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSessionActionInput {
-    /// <p>The farm ID for the session action.</p>
+    /// The farm ID for the session action.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The queue ID for the session action.</p>
+    /// The queue ID for the session action.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The job ID for the session.</p>
+    /// The job ID for the session.
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The session action ID for the session.</p>
+    /// The session action ID for the session.
     pub fn session_action_id(&self) -> ::std::option::Option<&str> {
         self.session_action_id.as_deref()
     }
@@ -47,63 +47,63 @@ pub struct GetSessionActionInputBuilder {
     pub(crate) session_action_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSessionActionInputBuilder {
-    /// <p>The farm ID for the session action.</p>
+    /// The farm ID for the session action.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID for the session action.</p>
+    /// The farm ID for the session action.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID for the session action.</p>
+    /// The farm ID for the session action.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The queue ID for the session action.</p>
+    /// The queue ID for the session action.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue ID for the session action.</p>
+    /// The queue ID for the session action.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The queue ID for the session action.</p>
+    /// The queue ID for the session action.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The job ID for the session.</p>
+    /// The job ID for the session.
     /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The job ID for the session.</p>
+    /// The job ID for the session.
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The job ID for the session.</p>
+    /// The job ID for the session.
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
-    /// <p>The session action ID for the session.</p>
+    /// The session action ID for the session.
     /// This field is required.
     pub fn session_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_action_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The session action ID for the session.</p>
+    /// The session action ID for the session.
     pub fn set_session_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_action_id = input;
         self
     }
-    /// <p>The session action ID for the session.</p>
+    /// The session action ID for the session.
     pub fn get_session_action_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_action_id
     }

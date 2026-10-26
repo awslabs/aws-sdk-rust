@@ -70,6 +70,50 @@ where
                                     .transpose()?,
                             );
                         }
+                        "exascaleDbStorageVaultId" => {
+                            builder = builder.set_exascale_db_storage_vault_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "exascaleDbStorageVaultArn" => {
+                            builder = builder.set_exascale_db_storage_vault_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "storageManagementType" => {
+                            builder = builder.set_storage_management_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::StorageManagementType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "vmFileSystemStorageType" => {
+                            builder = builder.set_vm_file_system_storage_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::VmStorageType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "vmBackupStorageType" => {
+                            builder = builder.set_vm_backup_storage_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::VmStorageType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "fileSystemConfigurationDetails" => {
+                            builder = builder.set_file_system_configuration_details(
+                                crate::protocol_serde::shape_file_system_configuration_details_list::de_file_system_configuration_details_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "clusterName" => {
                             builder = builder.set_cluster_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

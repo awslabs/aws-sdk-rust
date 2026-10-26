@@ -8,6 +8,8 @@ pub enum RouterOutputStreamDetails {
     MediaConnectFlow(crate::types::MediaConnectFlowRouterOutputStreamDetails),
     /// <p>Configuration details for a MediaLive input when used as a router output destination.</p>
     MediaLiveInput(crate::types::MediaLiveInputRouterOutputStreamDetails),
+    /// <p>Configuration details for a router output stream that is represented by a source endpoint.</p>
+    SourceEndpoint(crate::types::SourceEndpointRouterOutputStreamDetails),
     /// <p>Configuration details for a standard router output stream type. Contains information about the destination IP address and connection state for basic output routing.</p>
     Standard(crate::types::StandardRouterOutputStreamDetails),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -46,6 +48,19 @@ impl RouterOutputStreamDetails {
     /// Returns true if this is a [`MediaLiveInput`](crate::types::RouterOutputStreamDetails::MediaLiveInput).
     pub fn is_media_live_input(&self) -> bool {
         self.as_media_live_input().is_ok()
+    }
+    /// Tries to convert the enum instance into [`SourceEndpoint`](crate::types::RouterOutputStreamDetails::SourceEndpoint), extracting the inner [`SourceEndpointRouterOutputStreamDetails`](crate::types::SourceEndpointRouterOutputStreamDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_source_endpoint(&self) -> ::std::result::Result<&crate::types::SourceEndpointRouterOutputStreamDetails, &Self> {
+        if let RouterOutputStreamDetails::SourceEndpoint(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SourceEndpoint`](crate::types::RouterOutputStreamDetails::SourceEndpoint).
+    pub fn is_source_endpoint(&self) -> bool {
+        self.as_source_endpoint().is_ok()
     }
     /// Tries to convert the enum instance into [`Standard`](crate::types::RouterOutputStreamDetails::Standard), extracting the inner [`StandardRouterOutputStreamDetails`](crate::types::StandardRouterOutputStreamDetails).
     /// Returns `Err(&Self)` if it can't be converted.

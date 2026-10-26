@@ -175,6 +175,8 @@ mod create_key;
 /// ```
 pub mod customize;
 
+mod decapsulate;
+
 mod decrypt;
 
 mod delete_alias;
@@ -198,6 +200,8 @@ mod disconnect_custom_key_store;
 mod enable_key;
 
 mod enable_key_rotation;
+
+mod encapsulate;
 
 mod encrypt;
 

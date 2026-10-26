@@ -51,6 +51,8 @@ pub struct KeyMetadata {
     pub signing_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>>,
     /// <p>The key agreement algorithm used to derive a shared secret.</p>
     pub key_agreement_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::KeyAgreementAlgorithmSpec>>,
+    /// <p>The key encapsulation algorithm that the KMS key supports. This field appears only for KMS keys with a <code>KeyUsage</code> value of <code>ENCAPSULATE_DECAPSULATE</code>.</p>
+    pub encapsulation_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::EncapsulationAlgorithmSpec>>,
     /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
     /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub multi_region: ::std::option::Option<bool>,
@@ -171,6 +173,12 @@ impl KeyMetadata {
     pub fn key_agreement_algorithms(&self) -> &[crate::types::KeyAgreementAlgorithmSpec] {
         self.key_agreement_algorithms.as_deref().unwrap_or_default()
     }
+    /// <p>The key encapsulation algorithm that the KMS key supports. This field appears only for KMS keys with a <code>KeyUsage</code> value of <code>ENCAPSULATE_DECAPSULATE</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.encapsulation_algorithms.is_none()`.
+    pub fn encapsulation_algorithms(&self) -> &[crate::types::EncapsulationAlgorithmSpec] {
+        self.encapsulation_algorithms.as_deref().unwrap_or_default()
+    }
     /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
     /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn multi_region(&self) -> ::std::option::Option<bool> {
@@ -242,6 +250,7 @@ pub struct KeyMetadataBuilder {
     pub(crate) encryption_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithmSpec>>,
     pub(crate) signing_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::SigningAlgorithmSpec>>,
     pub(crate) key_agreement_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::KeyAgreementAlgorithmSpec>>,
+    pub(crate) encapsulation_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::EncapsulationAlgorithmSpec>>,
     pub(crate) multi_region: ::std::option::Option<bool>,
     pub(crate) multi_region_configuration: ::std::option::Option<crate::types::MultiRegionConfiguration>,
     pub(crate) pending_deletion_window_in_days: ::std::option::Option<i32>,
@@ -567,6 +576,26 @@ impl KeyMetadataBuilder {
     pub fn get_key_agreement_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyAgreementAlgorithmSpec>> {
         &self.key_agreement_algorithms
     }
+    /// Appends an item to `encapsulation_algorithms`.
+    ///
+    /// To override the contents of this collection use [`set_encapsulation_algorithms`](Self::set_encapsulation_algorithms).
+    ///
+    /// <p>The key encapsulation algorithm that the KMS key supports. This field appears only for KMS keys with a <code>KeyUsage</code> value of <code>ENCAPSULATE_DECAPSULATE</code>.</p>
+    pub fn encapsulation_algorithms(mut self, input: crate::types::EncapsulationAlgorithmSpec) -> Self {
+        let mut v = self.encapsulation_algorithms.unwrap_or_default();
+        v.push(input);
+        self.encapsulation_algorithms = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The key encapsulation algorithm that the KMS key supports. This field appears only for KMS keys with a <code>KeyUsage</code> value of <code>ENCAPSULATE_DECAPSULATE</code>.</p>
+    pub fn set_encapsulation_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EncapsulationAlgorithmSpec>>) -> Self {
+        self.encapsulation_algorithms = input;
+        self
+    }
+    /// <p>The key encapsulation algorithm that the KMS key supports. This field appears only for KMS keys with a <code>KeyUsage</code> value of <code>ENCAPSULATE_DECAPSULATE</code>.</p>
+    pub fn get_encapsulation_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncapsulationAlgorithmSpec>> {
+        &self.encapsulation_algorithms
+    }
     /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
     /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn multi_region(mut self, input: bool) -> Self {
@@ -726,6 +755,7 @@ impl KeyMetadataBuilder {
             encryption_algorithms: self.encryption_algorithms,
             signing_algorithms: self.signing_algorithms,
             key_agreement_algorithms: self.key_agreement_algorithms,
+            encapsulation_algorithms: self.encapsulation_algorithms,
             multi_region: self.multi_region,
             multi_region_configuration: self.multi_region_configuration,
             pending_deletion_window_in_days: self.pending_deletion_window_in_days,

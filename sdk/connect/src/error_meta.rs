@@ -13627,6 +13627,58 @@ impl From<crate::operation::update_notification_content::UpdateNotificationConte
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_outbound_email_contact_message::UpdateOutboundEmailContactMessageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_outbound_email_contact_message::UpdateOutboundEmailContactMessageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_outbound_email_contact_message::UpdateOutboundEmailContactMessageError> for Error {
+    fn from(err: crate::operation::update_outbound_email_contact_message::UpdateOutboundEmailContactMessageError) -> Self {
+        match err {
+            crate::operation::update_outbound_email_contact_message::UpdateOutboundEmailContactMessageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_outbound_email_contact_message::UpdateOutboundEmailContactMessageError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_outbound_email_contact_message::UpdateOutboundEmailContactMessageError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_outbound_email_contact_message::UpdateOutboundEmailContactMessageError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::update_outbound_email_contact_message::UpdateOutboundEmailContactMessageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_outbound_email_contact_message::UpdateOutboundEmailContactMessageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_outbound_email_contact_message::UpdateOutboundEmailContactMessageError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_participant_authentication::UpdateParticipantAuthenticationError,
             R,
         >,

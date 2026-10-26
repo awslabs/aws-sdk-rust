@@ -94,6 +94,8 @@ mod create_o_auth2_token;
 
 mod create_o_auth2_token_with_iam;
 
+mod create_o_auth2_token_with_token_exchange;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized

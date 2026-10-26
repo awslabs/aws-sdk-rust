@@ -1023,6 +1023,8 @@ pub use crate::types::_h264_temporal_aq::H264TemporalAq;
 
 pub use crate::types::_h264_timecode_insertion_behavior::H264TimecodeInsertionBehavior;
 
+pub use crate::types::_h264_allow_explicit_weighted_prediction::H264AllowExplicitWeightedPrediction;
+
 pub use crate::types::_h265_adaptive_quantization::H265AdaptiveQuantization;
 
 pub use crate::types::_h265_alternative_transfer_function::H265AlternativeTransferFunction;
@@ -1104,6 +1106,8 @@ pub use crate::types::_av1_temporal_aq::Av1TemporalAq;
 pub use crate::types::_av1_timecode_insertion_behavior::Av1TimecodeInsertionBehavior;
 
 pub use crate::types::_av1_bit_depth::Av1BitDepth;
+
+pub use crate::types::_av1_filter_settings::Av1FilterSettings;
 
 pub use crate::types::_failover_condition_settings::FailoverConditionSettings;
 
@@ -1199,6 +1203,12 @@ pub use crate::types::_temporal_filter_settings::TemporalFilterSettings;
 
 pub use crate::types::_bandwidth_reduction_filter_settings::BandwidthReductionFilterSettings;
 
+pub use crate::types::_auto_filter_settings::AutoFilterSettings;
+
+pub use crate::types::_none_filter_settings::NoneFilterSettings;
+
+pub use crate::types::_perceptual_filter_settings::PerceptualFilterSettings;
+
 pub use crate::types::_dolby_vision81_settings::DolbyVision81Settings;
 
 pub use crate::types::_hlg2020_settings::Hlg2020Settings;
@@ -1290,6 +1300,8 @@ pub use crate::types::_temporal_filter_strength::TemporalFilterStrength;
 pub use crate::types::_bandwidth_reduction_post_filter_sharpening::BandwidthReductionPostFilterSharpening;
 
 pub use crate::types::_bandwidth_reduction_filter_strength::BandwidthReductionFilterStrength;
+
+pub use crate::types::_perceptual_filter_strength::PerceptualFilterStrength;
 
 pub use crate::types::_audio_language_selection_policy::AudioLanguageSelectionPolicy;
 
@@ -1541,11 +1553,15 @@ mod _audio_watermark_settings;
 
 mod _authentication_scheme;
 
+mod _auto_filter_settings;
+
 mod _automatic_input_failover_settings;
 
 mod _av1_bit_depth;
 
 mod _av1_color_space_settings;
+
+mod _av1_filter_settings;
 
 mod _av1_gop_size_units;
 
@@ -1904,6 +1920,8 @@ mod _global_configuration_output_locking_mode;
 mod _global_configuration_output_timing_source;
 
 mod _h264_adaptive_quantization;
+
+mod _h264_allow_explicit_weighted_prediction;
 
 mod _h264_color_metadata;
 
@@ -2483,6 +2501,8 @@ mod _node_role;
 
 mod _node_state;
 
+mod _none_filter_settings;
+
 mod _offering;
 
 mod _offering_duration_units;
@@ -2510,6 +2530,10 @@ mod _output_usage;
 mod _pass_through_settings;
 
 mod _pause_state_schedule_action_settings;
+
+mod _perceptual_filter_settings;
+
+mod _perceptual_filter_strength;
 
 mod _pipeline_detail;
 

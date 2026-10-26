@@ -3,23 +3,23 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBudget`](crate::operation::get_budget::builders::GetBudgetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_budget::builders::GetBudgetFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_budget::builders::GetBudgetFluentBuilder::set_farm_id):<br>required: **true**<br><p>The farm ID of the farm connected to the budget.</p><br>
-    ///   - [`budget_id(impl Into<String>)`](crate::operation::get_budget::builders::GetBudgetFluentBuilder::budget_id) / [`set_budget_id(Option<String>)`](crate::operation::get_budget::builders::GetBudgetFluentBuilder::set_budget_id):<br>required: **true**<br><p>The budget ID.</p><br>
+    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_budget::builders::GetBudgetFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_budget::builders::GetBudgetFluentBuilder::set_farm_id):<br>required: **true**<br>The farm ID of the farm connected to the budget.<br>
+    ///   - [`budget_id(impl Into<String>)`](crate::operation::get_budget::builders::GetBudgetFluentBuilder::budget_id) / [`set_budget_id(Option<String>)`](crate::operation::get_budget::builders::GetBudgetFluentBuilder::set_budget_id):<br>required: **true**<br>The budget ID.<br>
     /// - On success, responds with [`GetBudgetOutput`](crate::operation::get_budget::GetBudgetOutput) with field(s):
-    ///   - [`budget_id(String)`](crate::operation::get_budget::GetBudgetOutput::budget_id): <p>The budget ID.</p>
-    ///   - [`usage_tracking_resource(Option<UsageTrackingResource>)`](crate::operation::get_budget::GetBudgetOutput::usage_tracking_resource): <p>The resource that the budget is tracking usage for.</p>
+    ///   - [`budget_id(String)`](crate::operation::get_budget::GetBudgetOutput::budget_id): The budget ID.
+    ///   - [`usage_tracking_resource(Option<UsageTrackingResource>)`](crate::operation::get_budget::GetBudgetOutput::usage_tracking_resource): The resource that the budget is tracking usage for.
     ///   - [`status(BudgetStatus)`](crate::operation::get_budget::GetBudgetOutput::status): <p>The status of the budget.</p> <ul>  <li>   <p><code>ACTIVE</code>–Get a budget being evaluated.</p></li>  <li>   <p><code>INACTIVE</code>–Get an inactive budget. This can include expired, canceled, or deleted statuses.</p></li> </ul>
     ///   - [`display_name(String)`](crate::operation::get_budget::GetBudgetOutput::display_name): <p>The display name of the budget.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
-    ///   - [`approximate_dollar_limit(f32)`](crate::operation::get_budget::GetBudgetOutput::approximate_dollar_limit): <p>The consumed usage limit for the budget.</p>
-    ///   - [`usages(Option<ConsumedUsages>)`](crate::operation::get_budget::GetBudgetOutput::usages): <p>The usages of the budget.</p>
-    ///   - [`created_by(String)`](crate::operation::get_budget::GetBudgetOutput::created_by): <p>The user or system that created this resource.</p>
-    ///   - [`created_at(DateTime)`](crate::operation::get_budget::GetBudgetOutput::created_at): <p>The date and time the resource was created.</p>
-    ///   - [`updated_by(Option<String>)`](crate::operation::get_budget::GetBudgetOutput::updated_by): <p>The user or system that updated this resource.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_budget::GetBudgetOutput::updated_at): <p>The date and time the resource was updated.</p>
+    ///   - [`approximate_dollar_limit(f32)`](crate::operation::get_budget::GetBudgetOutput::approximate_dollar_limit): The consumed usage limit for the budget.
+    ///   - [`usages(Option<ConsumedUsages>)`](crate::operation::get_budget::GetBudgetOutput::usages): The usages of the budget.
+    ///   - [`created_by(String)`](crate::operation::get_budget::GetBudgetOutput::created_by): The user or system that created this resource.
+    ///   - [`created_at(DateTime)`](crate::operation::get_budget::GetBudgetOutput::created_at): The date and time the resource was created.
+    ///   - [`updated_by(Option<String>)`](crate::operation::get_budget::GetBudgetOutput::updated_by): The user or system that updated this resource.
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_budget::GetBudgetOutput::updated_at): The date and time the resource was updated.
     ///   - [`description(Option<String>)`](crate::operation::get_budget::GetBudgetOutput::description): <p>The description of the budget.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
-    ///   - [`actions(Vec::<ResponseBudgetAction>)`](crate::operation::get_budget::GetBudgetOutput::actions): <p>The budget actions for the budget.</p>
-    ///   - [`schedule(Option<BudgetSchedule>)`](crate::operation::get_budget::GetBudgetOutput::schedule): <p>The budget schedule.</p>
-    ///   - [`queue_stopped_at(Option<DateTime>)`](crate::operation::get_budget::GetBudgetOutput::queue_stopped_at): <p>The date and time the queue stopped.</p>
+    ///   - [`actions(Vec::<ResponseBudgetAction>)`](crate::operation::get_budget::GetBudgetOutput::actions): The budget actions for the budget.
+    ///   - [`schedule(Option<BudgetSchedule>)`](crate::operation::get_budget::GetBudgetOutput::schedule): The budget schedule.
+    ///   - [`queue_stopped_at(Option<DateTime>)`](crate::operation::get_budget::GetBudgetOutput::queue_stopped_at): The date and time the queue stopped.
     /// - On failure, responds with [`SdkError<GetBudgetError>`](crate::operation::get_budget::GetBudgetError)
     pub fn get_budget(&self) -> crate::operation::get_budget::builders::GetBudgetFluentBuilder {
         crate::operation::get_budget::builders::GetBudgetFluentBuilder::new(self.handle.clone())

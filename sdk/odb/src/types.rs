@@ -75,6 +75,8 @@ pub use crate::types::_cloud_exadata_infrastructure_unallocated_resources::Cloud
 
 pub use crate::types::_db_server::DbServer;
 
+pub use crate::types::_vm_storage_type::VmStorageType;
+
 pub use crate::types::_data_collection_options::DataCollectionOptions;
 
 pub use crate::types::_cloud_vm_cluster::CloudVmCluster;
@@ -88,6 +90,8 @@ pub use crate::types::_shape_attribute::ShapeAttribute;
 pub use crate::types::_exadb_vm_cluster::ExadbVmCluster;
 
 pub use crate::types::_update_action::UpdateAction;
+
+pub use crate::types::_exascale_db_storage_vault_type::ExascaleDbStorageVaultType;
 
 pub use crate::types::_exascale_db_storage_vault::ExascaleDbStorageVault;
 
@@ -191,11 +195,17 @@ pub use crate::types::_autonomous_virtual_machine_summary::AutonomousVirtualMach
 
 pub use crate::types::_cloud_exadata_infrastructure_summary::CloudExadataInfrastructureSummary;
 
+pub use crate::types::_exascale_configuration::ExascaleConfiguration;
+
 pub use crate::types::_db_server_patching_details::DbServerPatchingDetails;
 
 pub use crate::types::_db_server_summary::DbServerSummary;
 
 pub use crate::types::_cloud_vm_cluster_summary::CloudVmClusterSummary;
+
+pub use crate::types::_file_system_configuration_details::FileSystemConfigurationDetails;
+
+pub use crate::types::_storage_management_type::StorageManagementType;
 
 pub use crate::types::_disk_redundancy::DiskRedundancy;
 
@@ -447,13 +457,19 @@ mod _exadb_vm_cluster_storage_details;
 
 mod _exadb_vm_cluster_summary;
 
+mod _exascale_configuration;
+
 mod _exascale_db_storage_details;
 
 mod _exascale_db_storage_vault;
 
 mod _exascale_db_storage_vault_summary;
 
+mod _exascale_db_storage_vault_type;
+
 mod _external_id_type;
+
+mod _file_system_configuration_details;
 
 mod _flex_component_summary;
 
@@ -557,6 +573,8 @@ mod _source_type;
 
 mod _standby_allowlisted_ips_source;
 
+mod _storage_management_type;
+
 mod _sts_access;
 
 mod _subscription_error;
@@ -572,6 +590,8 @@ mod _update_action;
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _vm_storage_type;
 
 mod _vpc_endpoint_type;
 

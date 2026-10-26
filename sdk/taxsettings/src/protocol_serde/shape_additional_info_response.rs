@@ -155,6 +155,16 @@ where
                                 crate::protocol_serde::shape_monaco_additional_info::de_monaco_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
+                        "germanyAdditionalInfo" => {
+                            builder = builder.set_germany_additional_info(
+                                crate::protocol_serde::shape_germany_additional_info::de_germany_additional_info(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "mexicoAdditionalInfo" => {
+                            builder = builder.set_mexico_additional_info(
+                                crate::protocol_serde::shape_mexico_additional_info::de_mexico_additional_info(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

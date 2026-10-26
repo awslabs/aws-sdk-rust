@@ -947,6 +947,15 @@ pub(crate) fn multiplex_output_settings_correct_errors(
     builder
 }
 
+pub(crate) fn perceptual_filter_settings_correct_errors(
+    mut builder: crate::types::builders::PerceptualFilterSettingsBuilder,
+) -> crate::types::builders::PerceptualFilterSettingsBuilder {
+    if builder.strength.is_none() {
+        builder.strength = "no value was set".parse::<crate::types::PerceptualFilterStrength>().ok()
+    }
+    builder
+}
+
 pub(crate) fn rtmp_output_settings_correct_errors(
     mut builder: crate::types::builders::RtmpOutputSettingsBuilder,
 ) -> crate::types::builders::RtmpOutputSettingsBuilder {

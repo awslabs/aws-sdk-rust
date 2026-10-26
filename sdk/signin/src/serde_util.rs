@@ -74,6 +74,57 @@ pub(crate) fn create_o_auth2_token_with_iam_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn invalid_grant_exception_correct_errors(
+    mut builder: crate::types::error::builders::InvalidGrantExceptionBuilder,
+) -> crate::types::error::builders::InvalidGrantExceptionBuilder {
+    if builder.error.is_none() {
+        builder.error = "no value was set".parse::<crate::types::OAuth2ErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn invalid_scope_exception_correct_errors(
+    mut builder: crate::types::error::builders::InvalidScopeExceptionBuilder,
+) -> crate::types::error::builders::InvalidScopeExceptionBuilder {
+    if builder.error.is_none() {
+        builder.error = "no value was set".parse::<crate::types::OAuth2ErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_unavailable_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceUnavailableExceptionBuilder,
+) -> crate::types::error::builders::ServiceUnavailableExceptionBuilder {
+    if builder.error.is_none() {
+        builder.error = "no value was set".parse::<crate::types::OAuth2ErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_o_auth2_token_with_token_exchange_output_output_correct_errors(
+    mut builder: crate::operation::create_o_auth2_token_with_token_exchange::builders::CreateOAuth2TokenWithTokenExchangeOutputBuilder,
+) -> crate::operation::create_o_auth2_token_with_token_exchange::builders::CreateOAuth2TokenWithTokenExchangeOutputBuilder {
+    if builder.access_token.is_none() {
+        builder.access_token = Some(Default::default())
+    }
+    if builder.token_type.is_none() {
+        builder.token_type = Some(Default::default())
+    }
+    if builder.expires_in.is_none() {
+        builder.expires_in = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn resource_not_found_exception_correct_errors(
     mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
 ) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {

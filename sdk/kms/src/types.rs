@@ -17,6 +17,8 @@ pub use crate::types::_origin_type::OriginType;
 
 pub use crate::types::_key_metadata::KeyMetadata;
 
+pub use crate::types::_encapsulation_algorithm_spec::EncapsulationAlgorithmSpec;
+
 pub use crate::types::_encryption_algorithm_spec::EncryptionAlgorithmSpec;
 
 pub use crate::types::_recipient_info::RecipientInfo;
@@ -108,6 +110,8 @@ mod _data_key_pair_spec;
 mod _data_key_spec;
 
 mod _dry_run_modifier_type;
+
+mod _encapsulation_algorithm_spec;
 
 mod _encryption_algorithm_spec;
 

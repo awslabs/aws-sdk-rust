@@ -22,7 +22,7 @@ impl crate::operation::associate_member_to_fleet::builders::AssociateMemberToFle
 }
 /// Fluent builder constructing a request to `AssociateMemberToFleet`.
 ///
-/// <p>Assigns a fleet membership level to a member.</p>
+/// Assigns a fleet membership level to a member.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateMemberToFleetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,101 +108,101 @@ impl AssociateMemberToFleetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the fleet to associate with the member.</p>
+    /// The farm ID of the fleet to associate with the member.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the fleet to associate with the member.</p>
+    /// The farm ID of the fleet to associate with the member.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the fleet to associate with the member.</p>
+    /// The farm ID of the fleet to associate with the member.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The ID of the fleet to associate with a member.</p>
+    /// The ID of the fleet to associate with a member.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>The ID of the fleet to associate with a member.</p>
+    /// The ID of the fleet to associate with a member.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>The ID of the fleet to associate with a member.</p>
+    /// The ID of the fleet to associate with a member.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>The member's principal type to associate with the fleet.</p>
+    /// The member's principal type to associate with the fleet.
     pub fn principal_type(mut self, input: crate::types::DeadlinePrincipalType) -> Self {
         self.inner = self.inner.principal_type(input);
         self
     }
-    /// <p>The member's principal type to associate with the fleet.</p>
+    /// The member's principal type to associate with the fleet.
     pub fn set_principal_type(mut self, input: ::std::option::Option<crate::types::DeadlinePrincipalType>) -> Self {
         self.inner = self.inner.set_principal_type(input);
         self
     }
-    /// <p>The member's principal type to associate with the fleet.</p>
+    /// The member's principal type to associate with the fleet.
     pub fn get_principal_type(&self) -> &::std::option::Option<crate::types::DeadlinePrincipalType> {
         self.inner.get_principal_type()
     }
-    /// <p>The member's identity store ID to associate with the fleet.</p>
+    /// The member's identity store ID to associate with the fleet.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_store_id(input.into());
         self
     }
-    /// <p>The member's identity store ID to associate with the fleet.</p>
+    /// The member's identity store ID to associate with the fleet.
     pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
-    /// <p>The member's identity store ID to associate with the fleet.</p>
+    /// The member's identity store ID to associate with the fleet.
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_store_id()
     }
-    /// <p>The principal's membership level for the associated fleet.</p>
+    /// The principal's membership level for the associated fleet.
     pub fn membership_level(mut self, input: crate::types::MembershipLevel) -> Self {
         self.inner = self.inner.membership_level(input);
         self
     }
-    /// <p>The principal's membership level for the associated fleet.</p>
+    /// The principal's membership level for the associated fleet.
     pub fn set_membership_level(mut self, input: ::std::option::Option<crate::types::MembershipLevel>) -> Self {
         self.inner = self.inner.set_membership_level(input);
         self
     }
-    /// <p>The principal's membership level for the associated fleet.</p>
+    /// The principal's membership level for the associated fleet.
     pub fn get_membership_level(&self) -> &::std::option::Option<crate::types::MembershipLevel> {
         self.inner.get_membership_level()
     }
-    /// <p>The member's principal ID to associate with a fleet.</p>
+    /// The member's principal ID to associate with a fleet.
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_id(input.into());
         self
     }
-    /// <p>The member's principal ID to associate with a fleet.</p>
+    /// The member's principal ID to associate with a fleet.
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_id(input);
         self
     }
-    /// <p>The member's principal ID to associate with a fleet.</p>
+    /// The member's principal ID to associate with a fleet.
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_principal_id()
     }
-    /// <p>The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.</p>
+    /// The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.
     pub fn identity_center_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_center_region(input.into());
         self
     }
-    /// <p>The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.</p>
+    /// The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.
     pub fn set_identity_center_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_center_region(input);
         self
     }
-    /// <p>The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.</p>
+    /// The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.
     pub fn get_identity_center_region(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_center_region()
     }

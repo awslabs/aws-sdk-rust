@@ -112,17 +112,17 @@ impl BatchUpdateJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -131,17 +131,17 @@ impl BatchUpdateJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
     ///
-    /// <p>The list of jobs to update. You can specify up to 100 jobs per request.</p>
+    /// The list of jobs to update. You can specify up to 100 jobs per request.
     pub fn jobs(mut self, input: crate::types::BatchUpdateJobItem) -> Self {
         self.inner = self.inner.jobs(input);
         self
     }
-    /// <p>The list of jobs to update. You can specify up to 100 jobs per request.</p>
+    /// The list of jobs to update. You can specify up to 100 jobs per request.
     pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateJobItem>>) -> Self {
         self.inner = self.inner.set_jobs(input);
         self
     }
-    /// <p>The list of jobs to update. You can specify up to 100 jobs per request.</p>
+    /// The list of jobs to update. You can specify up to 100 jobs per request.
     pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateJobItem>> {
         self.inner.get_jobs()
     }

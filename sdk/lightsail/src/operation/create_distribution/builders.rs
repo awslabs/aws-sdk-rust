@@ -342,4 +342,67 @@ impl CreateDistributionFluentBuilder {
     pub fn get_custom_error_responses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DistributionCustomErrorResponse>> {
         self.inner.get_custom_error_responses()
     }
+    /// <p>Specifies whether to enable Web Application Firewall (WAF) for the distribution. WAF inspects viewer requests and blocks requests that match the WAF rule groups that you enable.</p>
+    /// <p>When you enable WAF without specifying the <code>wafRules</code> parameter, the distribution has no WAF rule groups enabled and doesn't block any requests.</p><note>
+    /// <p>WAF is available only for distributions that use the <code>medium_1_0</code> or <code>large_1_0</code> bundle.</p>
+    /// </note>
+    pub fn enable_waf(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_waf(input);
+        self
+    }
+    /// <p>Specifies whether to enable Web Application Firewall (WAF) for the distribution. WAF inspects viewer requests and blocks requests that match the WAF rule groups that you enable.</p>
+    /// <p>When you enable WAF without specifying the <code>wafRules</code> parameter, the distribution has no WAF rule groups enabled and doesn't block any requests.</p><note>
+    /// <p>WAF is available only for distributions that use the <code>medium_1_0</code> or <code>large_1_0</code> bundle.</p>
+    /// </note>
+    pub fn set_enable_waf(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_waf(input);
+        self
+    }
+    /// <p>Specifies whether to enable Web Application Firewall (WAF) for the distribution. WAF inspects viewer requests and blocks requests that match the WAF rule groups that you enable.</p>
+    /// <p>When you enable WAF without specifying the <code>wafRules</code> parameter, the distribution has no WAF rule groups enabled and doesn't block any requests.</p><note>
+    /// <p>WAF is available only for distributions that use the <code>medium_1_0</code> or <code>large_1_0</code> bundle.</p>
+    /// </note>
+    pub fn get_enable_waf(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_waf()
+    }
+    ///
+    /// Appends an item to `wafRules`.
+    ///
+    /// To override the contents of this collection use [`set_waf_rules`](Self::set_waf_rules).
+    ///
+    /// <p>An array of objects that describe the WAF rule groups to enable for the distribution.</p>
+    /// <p>The WAF rule groups that you can specify depend on the bundle of the distribution:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>medium_1_0</code> – Supports the <code>AWSManagedRulesCommonRuleSet</code>, <code>AWSManagedRulesKnownBadInputsRuleSet</code>, and <code>AWSManagedRulesAnonymousIpList</code> rule groups.</p></li>
+    /// <li>
+    /// <p><code>large_1_0</code> – Supports the rule groups for <code>medium_1_0</code>, plus <code>AWSManagedRulesAdminProtectionRuleSet</code>, <code>AWSManagedRulesSQLiRuleSet</code>, <code>AWSManagedRulesLinuxRuleSet</code>, <code>AWSManagedRulesUnixRuleSet</code>, <code>AWSManagedRulesWindowsRuleSet</code>, <code>AWSManagedRulesPHPRuleSet</code>, <code>AWSManagedRulesWordPressRuleSet</code>, <code>AWSManagedRulesAmazonIpReputationList</code>, <code>AWSManagedRulesATPRuleSet</code>, <code>AWSManagedRulesACFPRuleSet</code>, and <code>AWSManagedRulesBotControlRuleSet</code> rule groups.</p></li>
+    /// </ul>
+    pub fn waf_rules(mut self, input: crate::types::WafRule) -> Self {
+        self.inner = self.inner.waf_rules(input);
+        self
+    }
+    /// <p>An array of objects that describe the WAF rule groups to enable for the distribution.</p>
+    /// <p>The WAF rule groups that you can specify depend on the bundle of the distribution:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>medium_1_0</code> – Supports the <code>AWSManagedRulesCommonRuleSet</code>, <code>AWSManagedRulesKnownBadInputsRuleSet</code>, and <code>AWSManagedRulesAnonymousIpList</code> rule groups.</p></li>
+    /// <li>
+    /// <p><code>large_1_0</code> – Supports the rule groups for <code>medium_1_0</code>, plus <code>AWSManagedRulesAdminProtectionRuleSet</code>, <code>AWSManagedRulesSQLiRuleSet</code>, <code>AWSManagedRulesLinuxRuleSet</code>, <code>AWSManagedRulesUnixRuleSet</code>, <code>AWSManagedRulesWindowsRuleSet</code>, <code>AWSManagedRulesPHPRuleSet</code>, <code>AWSManagedRulesWordPressRuleSet</code>, <code>AWSManagedRulesAmazonIpReputationList</code>, <code>AWSManagedRulesATPRuleSet</code>, <code>AWSManagedRulesACFPRuleSet</code>, and <code>AWSManagedRulesBotControlRuleSet</code> rule groups.</p></li>
+    /// </ul>
+    pub fn set_waf_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WafRule>>) -> Self {
+        self.inner = self.inner.set_waf_rules(input);
+        self
+    }
+    /// <p>An array of objects that describe the WAF rule groups to enable for the distribution.</p>
+    /// <p>The WAF rule groups that you can specify depend on the bundle of the distribution:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>medium_1_0</code> – Supports the <code>AWSManagedRulesCommonRuleSet</code>, <code>AWSManagedRulesKnownBadInputsRuleSet</code>, and <code>AWSManagedRulesAnonymousIpList</code> rule groups.</p></li>
+    /// <li>
+    /// <p><code>large_1_0</code> – Supports the rule groups for <code>medium_1_0</code>, plus <code>AWSManagedRulesAdminProtectionRuleSet</code>, <code>AWSManagedRulesSQLiRuleSet</code>, <code>AWSManagedRulesLinuxRuleSet</code>, <code>AWSManagedRulesUnixRuleSet</code>, <code>AWSManagedRulesWindowsRuleSet</code>, <code>AWSManagedRulesPHPRuleSet</code>, <code>AWSManagedRulesWordPressRuleSet</code>, <code>AWSManagedRulesAmazonIpReputationList</code>, <code>AWSManagedRulesATPRuleSet</code>, <code>AWSManagedRulesACFPRuleSet</code>, and <code>AWSManagedRulesBotControlRuleSet</code> rule groups.</p></li>
+    /// </ul>
+    pub fn get_waf_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WafRule>> {
+        self.inner.get_waf_rules()
+    }
 }

@@ -52,6 +52,8 @@ pub struct Av1Settings {
     pub timecode_insertion: ::std::option::Option<crate::types::Av1TimecodeInsertionBehavior>,
     /// Specifies the bit depth for the output encode. Choose a value. Or leave the field empty to use the default, which is 8 bit.
     pub bit_depth: ::std::option::Option<crate::types::Av1BitDepth>,
+    /// Optional filters that you can apply to an encode.
+    pub filter_settings: ::std::option::Option<crate::types::Av1FilterSettings>,
 }
 impl Av1Settings {
     /// Configures whether MediaLive will write AFD values into the video. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: the AFD value will be the value configured in the fixedAfd parameter. NONE: MediaLive won't write AFD into the video
@@ -150,6 +152,10 @@ impl Av1Settings {
     pub fn bit_depth(&self) -> ::std::option::Option<&crate::types::Av1BitDepth> {
         self.bit_depth.as_ref()
     }
+    /// Optional filters that you can apply to an encode.
+    pub fn filter_settings(&self) -> ::std::option::Option<&crate::types::Av1FilterSettings> {
+        self.filter_settings.as_ref()
+    }
 }
 impl Av1Settings {
     /// Creates a new builder-style object to manufacture [`Av1Settings`](crate::types::Av1Settings).
@@ -186,6 +192,7 @@ pub struct Av1SettingsBuilder {
     pub(crate) temporal_aq: ::std::option::Option<crate::types::Av1TemporalAq>,
     pub(crate) timecode_insertion: ::std::option::Option<crate::types::Av1TimecodeInsertionBehavior>,
     pub(crate) bit_depth: ::std::option::Option<crate::types::Av1BitDepth>,
+    pub(crate) filter_settings: ::std::option::Option<crate::types::Av1FilterSettings>,
 }
 impl Av1SettingsBuilder {
     /// Configures whether MediaLive will write AFD values into the video. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: the AFD value will be the value configured in the fixedAfd parameter. NONE: MediaLive won't write AFD into the video
@@ -526,6 +533,20 @@ impl Av1SettingsBuilder {
     pub fn get_bit_depth(&self) -> &::std::option::Option<crate::types::Av1BitDepth> {
         &self.bit_depth
     }
+    /// Optional filters that you can apply to an encode.
+    pub fn filter_settings(mut self, input: crate::types::Av1FilterSettings) -> Self {
+        self.filter_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optional filters that you can apply to an encode.
+    pub fn set_filter_settings(mut self, input: ::std::option::Option<crate::types::Av1FilterSettings>) -> Self {
+        self.filter_settings = input;
+        self
+    }
+    /// Optional filters that you can apply to an encode.
+    pub fn get_filter_settings(&self) -> &::std::option::Option<crate::types::Av1FilterSettings> {
+        &self.filter_settings
+    }
     /// Consumes the builder and constructs a [`Av1Settings`](crate::types::Av1Settings).
     pub fn build(self) -> crate::types::Av1Settings {
         crate::types::Av1Settings {
@@ -553,6 +574,7 @@ impl Av1SettingsBuilder {
             temporal_aq: self.temporal_aq,
             timecode_insertion: self.timecode_insertion,
             bit_depth: self.bit_depth,
+            filter_settings: self.filter_settings,
         }
     }
 }

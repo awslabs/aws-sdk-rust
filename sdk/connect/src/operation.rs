@@ -1090,6 +1090,9 @@ pub mod update_metric_metadata;
 /// Types for the `UpdateNotificationContent` operation.
 pub mod update_notification_content;
 
+/// Types for the `UpdateOutboundEmailContactMessage` operation.
+pub mod update_outbound_email_contact_message;
+
 /// Types for the `UpdateParticipantAuthentication` operation.
 pub mod update_participant_authentication;
 

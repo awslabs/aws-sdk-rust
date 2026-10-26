@@ -22,7 +22,7 @@ impl crate::operation::update_queue::builders::UpdateQueueInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateQueue`.
 ///
-/// <p>Updates a queue.</p>
+/// Updates a queue.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateQueueFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdateQueueFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID to update in the queue.</p>
+    /// The farm ID to update in the queue.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID to update in the queue.</p>
+    /// The farm ID to update in the queue.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID to update in the queue.</p>
+    /// The farm ID to update in the queue.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The queue ID to update.</p>
+    /// The queue ID to update.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
         self
     }
-    /// <p>The queue ID to update.</p>
+    /// The queue ID to update.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_id(input);
         self
     }
-    /// <p>The queue ID to update.</p>
+    /// The queue ID to update.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }
-    /// <p>The idempotency token to update in the queue.</p>
+    /// The idempotency token to update in the queue.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>The idempotency token to update in the queue.</p>
+    /// The idempotency token to update in the queue.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The idempotency token to update in the queue.</p>
+    /// The idempotency token to update in the queue.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -190,59 +190,59 @@ impl UpdateQueueFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The default action to take for a queue update if a budget isn't configured.</p>
+    /// The default action to take for a queue update if a budget isn't configured.
     pub fn default_budget_action(mut self, input: crate::types::DefaultQueueBudgetAction) -> Self {
         self.inner = self.inner.default_budget_action(input);
         self
     }
-    /// <p>The default action to take for a queue update if a budget isn't configured.</p>
+    /// The default action to take for a queue update if a budget isn't configured.
     pub fn set_default_budget_action(mut self, input: ::std::option::Option<crate::types::DefaultQueueBudgetAction>) -> Self {
         self.inner = self.inner.set_default_budget_action(input);
         self
     }
-    /// <p>The default action to take for a queue update if a budget isn't configured.</p>
+    /// The default action to take for a queue update if a budget isn't configured.
     pub fn get_default_budget_action(&self) -> &::std::option::Option<crate::types::DefaultQueueBudgetAction> {
         self.inner.get_default_budget_action()
     }
-    /// <p>The job attachment settings to update for the queue.</p>
+    /// The job attachment settings to update for the queue.
     pub fn job_attachment_settings(mut self, input: crate::types::JobAttachmentSettings) -> Self {
         self.inner = self.inner.job_attachment_settings(input);
         self
     }
-    /// <p>The job attachment settings to update for the queue.</p>
+    /// The job attachment settings to update for the queue.
     pub fn set_job_attachment_settings(mut self, input: ::std::option::Option<crate::types::JobAttachmentSettings>) -> Self {
         self.inner = self.inner.set_job_attachment_settings(input);
         self
     }
-    /// <p>The job attachment settings to update for the queue.</p>
+    /// The job attachment settings to update for the queue.
     pub fn get_job_attachment_settings(&self) -> &::std::option::Option<crate::types::JobAttachmentSettings> {
         self.inner.get_job_attachment_settings()
     }
-    /// <p>The IAM role ARN that's used to run jobs from this queue.</p>
+    /// The IAM role ARN that's used to run jobs from this queue.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The IAM role ARN that's used to run jobs from this queue.</p>
+    /// The IAM role ARN that's used to run jobs from this queue.
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The IAM role ARN that's used to run jobs from this queue.</p>
+    /// The IAM role ARN that's used to run jobs from this queue.
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
-    /// <p>Update the jobs in the queue to run as a specified POSIX user.</p>
+    /// Update the jobs in the queue to run as a specified POSIX user.
     pub fn job_run_as_user(mut self, input: crate::types::JobRunAsUser) -> Self {
         self.inner = self.inner.job_run_as_user(input);
         self
     }
-    /// <p>Update the jobs in the queue to run as a specified POSIX user.</p>
+    /// Update the jobs in the queue to run as a specified POSIX user.
     pub fn set_job_run_as_user(mut self, input: ::std::option::Option<crate::types::JobRunAsUser>) -> Self {
         self.inner = self.inner.set_job_run_as_user(input);
         self
     }
-    /// <p>Update the jobs in the queue to run as a specified POSIX user.</p>
+    /// Update the jobs in the queue to run as a specified POSIX user.
     pub fn get_job_run_as_user(&self) -> &::std::option::Option<crate::types::JobRunAsUser> {
         self.inner.get_job_run_as_user()
     }
@@ -251,17 +251,17 @@ impl UpdateQueueFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_required_file_system_location_names_to_add`](Self::set_required_file_system_location_names_to_add).
     ///
-    /// <p>The required file system location names to add to the queue.</p>
+    /// The required file system location names to add to the queue.
     pub fn required_file_system_location_names_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.required_file_system_location_names_to_add(input.into());
         self
     }
-    /// <p>The required file system location names to add to the queue.</p>
+    /// The required file system location names to add to the queue.
     pub fn set_required_file_system_location_names_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_required_file_system_location_names_to_add(input);
         self
     }
-    /// <p>The required file system location names to add to the queue.</p>
+    /// The required file system location names to add to the queue.
     pub fn get_required_file_system_location_names_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_required_file_system_location_names_to_add()
     }
@@ -270,17 +270,17 @@ impl UpdateQueueFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_required_file_system_location_names_to_remove`](Self::set_required_file_system_location_names_to_remove).
     ///
-    /// <p>The required file system location names to remove from the queue.</p>
+    /// The required file system location names to remove from the queue.
     pub fn required_file_system_location_names_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.required_file_system_location_names_to_remove(input.into());
         self
     }
-    /// <p>The required file system location names to remove from the queue.</p>
+    /// The required file system location names to remove from the queue.
     pub fn set_required_file_system_location_names_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_required_file_system_location_names_to_remove(input);
         self
     }
-    /// <p>The required file system location names to remove from the queue.</p>
+    /// The required file system location names to remove from the queue.
     pub fn get_required_file_system_location_names_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_required_file_system_location_names_to_remove()
     }
@@ -289,17 +289,17 @@ impl UpdateQueueFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_storage_profile_ids_to_add`](Self::set_allowed_storage_profile_ids_to_add).
     ///
-    /// <p>The storage profile IDs to add.</p>
+    /// The storage profile IDs to add.
     pub fn allowed_storage_profile_ids_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allowed_storage_profile_ids_to_add(input.into());
         self
     }
-    /// <p>The storage profile IDs to add.</p>
+    /// The storage profile IDs to add.
     pub fn set_allowed_storage_profile_ids_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_allowed_storage_profile_ids_to_add(input);
         self
     }
-    /// <p>The storage profile IDs to add.</p>
+    /// The storage profile IDs to add.
     pub fn get_allowed_storage_profile_ids_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_allowed_storage_profile_ids_to_add()
     }
@@ -308,37 +308,31 @@ impl UpdateQueueFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_storage_profile_ids_to_remove`](Self::set_allowed_storage_profile_ids_to_remove).
     ///
-    /// <p>The storage profile ID to remove.</p>
+    /// The storage profile ID to remove.
     pub fn allowed_storage_profile_ids_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allowed_storage_profile_ids_to_remove(input.into());
         self
     }
-    /// <p>The storage profile ID to remove.</p>
+    /// The storage profile ID to remove.
     pub fn set_allowed_storage_profile_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_allowed_storage_profile_ids_to_remove(input);
         self
     }
-    /// <p>The storage profile ID to remove.</p>
+    /// The storage profile ID to remove.
     pub fn get_allowed_storage_profile_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_allowed_storage_profile_ids_to_remove()
     }
-    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
-    /// <p>When updating the scheduling configuration, the entire configuration is replaced.</p>
-    /// <p>In-progress tasks run to completion before the new scheduling configuration takes effect.</p>
+    /// The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue. When updating the scheduling configuration, the entire configuration is replaced. In-progress tasks run to completion before the new scheduling configuration takes effect.
     pub fn scheduling_configuration(mut self, input: crate::types::SchedulingConfiguration) -> Self {
         self.inner = self.inner.scheduling_configuration(input);
         self
     }
-    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
-    /// <p>When updating the scheduling configuration, the entire configuration is replaced.</p>
-    /// <p>In-progress tasks run to completion before the new scheduling configuration takes effect.</p>
+    /// The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue. When updating the scheduling configuration, the entire configuration is replaced. In-progress tasks run to completion before the new scheduling configuration takes effect.
     pub fn set_scheduling_configuration(mut self, input: ::std::option::Option<crate::types::SchedulingConfiguration>) -> Self {
         self.inner = self.inner.set_scheduling_configuration(input);
         self
     }
-    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
-    /// <p>When updating the scheduling configuration, the entire configuration is replaced.</p>
-    /// <p>In-progress tasks run to completion before the new scheduling configuration takes effect.</p>
+    /// The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue. When updating the scheduling configuration, the entire configuration is replaced. In-progress tasks run to completion before the new scheduling configuration takes effect.
     pub fn get_scheduling_configuration(&self) -> &::std::option::Option<crate::types::SchedulingConfiguration> {
         self.inner.get_scheduling_configuration()
     }

@@ -22,7 +22,7 @@ impl crate::operation::disassociate_member_from_queue::builders::DisassociateMem
 }
 /// Fluent builder constructing a request to `DisassociateMemberFromQueue`.
 ///
-/// <p>Disassociates a member from a queue.</p>
+/// Disassociates a member from a queue.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateMemberFromQueueFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl DisassociateMemberFromQueueFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID for the queue to disassociate from a member.</p>
+    /// The farm ID for the queue to disassociate from a member.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID for the queue to disassociate from a member.</p>
+    /// The farm ID for the queue to disassociate from a member.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID for the queue to disassociate from a member.</p>
+    /// The farm ID for the queue to disassociate from a member.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The queue ID of the queue in which you're disassociating from a member.</p>
+    /// The queue ID of the queue in which you're disassociating from a member.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
         self
     }
-    /// <p>The queue ID of the queue in which you're disassociating from a member.</p>
+    /// The queue ID of the queue in which you're disassociating from a member.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_id(input);
         self
     }
-    /// <p>The queue ID of the queue in which you're disassociating from a member.</p>
+    /// The queue ID of the queue in which you're disassociating from a member.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }
-    /// <p>A member's principal ID to disassociate from a queue.</p>
+    /// A member's principal ID to disassociate from a queue.
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_id(input.into());
         self
     }
-    /// <p>A member's principal ID to disassociate from a queue.</p>
+    /// A member's principal ID to disassociate from a queue.
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_id(input);
         self
     }
-    /// <p>A member's principal ID to disassociate from a queue.</p>
+    /// A member's principal ID to disassociate from a queue.
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_principal_id()
     }

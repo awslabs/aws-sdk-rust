@@ -198,6 +198,9 @@ pub fn ser_h264_settings(
             ::aws_smithy_types::Number::NegInt((*var_47).into()),
         );
     }
+    if let Some(var_48) = &input.allow_explicit_weighted_prediction {
+        object.key("allowExplicitWeightedPrediction").string(var_48.as_str());
+    }
     Ok(())
 }
 
@@ -521,6 +524,16 @@ where
                             builder = builder.set_min_bitrate(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "allowExplicitWeightedPrediction" => {
+                            builder = builder.set_allow_explicit_weighted_prediction(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::H264AllowExplicitWeightedPrediction::from(u.as_ref()))
+                                    })
                                     .transpose()?,
                             );
                         }

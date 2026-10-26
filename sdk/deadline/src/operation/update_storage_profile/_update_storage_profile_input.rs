@@ -3,33 +3,33 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStorageProfileInput {
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The storage profile ID to update.</p>
+    /// The storage profile ID to update.
     pub storage_profile_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the storage profile to update.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The OS system to update.</p>
+    /// The OS system to update.
     pub os_family: ::std::option::Option<crate::types::StorageProfileOperatingSystemFamily>,
-    /// <p>The file system location names to add.</p>
+    /// The file system location names to add.
     pub file_system_locations_to_add: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>>,
-    /// <p>The file system location names to remove.</p>
+    /// The file system location names to remove.
     pub file_system_locations_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>>,
 }
 impl UpdateStorageProfileInput {
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The storage profile ID to update.</p>
+    /// The storage profile ID to update.
     pub fn storage_profile_id(&self) -> ::std::option::Option<&str> {
         self.storage_profile_id.as_deref()
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -39,17 +39,17 @@ impl UpdateStorageProfileInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The OS system to update.</p>
+    /// The OS system to update.
     pub fn os_family(&self) -> ::std::option::Option<&crate::types::StorageProfileOperatingSystemFamily> {
         self.os_family.as_ref()
     }
-    /// <p>The file system location names to add.</p>
+    /// The file system location names to add.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_locations_to_add.is_none()`.
     pub fn file_system_locations_to_add(&self) -> &[crate::types::FileSystemLocation] {
         self.file_system_locations_to_add.as_deref().unwrap_or_default()
     }
-    /// <p>The file system location names to remove.</p>
+    /// The file system location names to remove.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_locations_to_remove.is_none()`.
     pub fn file_system_locations_to_remove(&self) -> &[crate::types::FileSystemLocation] {
@@ -76,47 +76,47 @@ pub struct UpdateStorageProfileInputBuilder {
     pub(crate) file_system_locations_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>>,
 }
 impl UpdateStorageProfileInputBuilder {
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The storage profile ID to update.</p>
+    /// The storage profile ID to update.
     /// This field is required.
     pub fn storage_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_profile_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The storage profile ID to update.</p>
+    /// The storage profile ID to update.
     pub fn set_storage_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_profile_id = input;
         self
     }
-    /// <p>The storage profile ID to update.</p>
+    /// The storage profile ID to update.
     pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_profile_id
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
@@ -140,17 +140,17 @@ impl UpdateStorageProfileInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The OS system to update.</p>
+    /// The OS system to update.
     pub fn os_family(mut self, input: crate::types::StorageProfileOperatingSystemFamily) -> Self {
         self.os_family = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The OS system to update.</p>
+    /// The OS system to update.
     pub fn set_os_family(mut self, input: ::std::option::Option<crate::types::StorageProfileOperatingSystemFamily>) -> Self {
         self.os_family = input;
         self
     }
-    /// <p>The OS system to update.</p>
+    /// The OS system to update.
     pub fn get_os_family(&self) -> &::std::option::Option<crate::types::StorageProfileOperatingSystemFamily> {
         &self.os_family
     }
@@ -158,19 +158,19 @@ impl UpdateStorageProfileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_file_system_locations_to_add`](Self::set_file_system_locations_to_add).
     ///
-    /// <p>The file system location names to add.</p>
+    /// The file system location names to add.
     pub fn file_system_locations_to_add(mut self, input: crate::types::FileSystemLocation) -> Self {
         let mut v = self.file_system_locations_to_add.unwrap_or_default();
         v.push(input);
         self.file_system_locations_to_add = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The file system location names to add.</p>
+    /// The file system location names to add.
     pub fn set_file_system_locations_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>>) -> Self {
         self.file_system_locations_to_add = input;
         self
     }
-    /// <p>The file system location names to add.</p>
+    /// The file system location names to add.
     pub fn get_file_system_locations_to_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>> {
         &self.file_system_locations_to_add
     }
@@ -178,19 +178,19 @@ impl UpdateStorageProfileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_file_system_locations_to_remove`](Self::set_file_system_locations_to_remove).
     ///
-    /// <p>The file system location names to remove.</p>
+    /// The file system location names to remove.
     pub fn file_system_locations_to_remove(mut self, input: crate::types::FileSystemLocation) -> Self {
         let mut v = self.file_system_locations_to_remove.unwrap_or_default();
         v.push(input);
         self.file_system_locations_to_remove = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The file system location names to remove.</p>
+    /// The file system location names to remove.
     pub fn set_file_system_locations_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>>) -> Self {
         self.file_system_locations_to_remove = input;
         self
     }
-    /// <p>The file system location names to remove.</p>
+    /// The file system location names to remove.
     pub fn get_file_system_locations_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>> {
         &self.file_system_locations_to_remove
     }

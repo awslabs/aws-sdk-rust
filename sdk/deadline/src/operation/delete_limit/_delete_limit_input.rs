@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLimitInput {
-    /// <p>The unique identifier of the farm that contains the limit to delete.</p>
+    /// The unique identifier of the farm that contains the limit to delete.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the limit to delete.</p>
+    /// The unique identifier of the limit to delete.
     pub limit_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLimitInput {
-    /// <p>The unique identifier of the farm that contains the limit to delete.</p>
+    /// The unique identifier of the farm that contains the limit to delete.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The unique identifier of the limit to delete.</p>
+    /// The unique identifier of the limit to delete.
     pub fn limit_id(&self) -> ::std::option::Option<&str> {
         self.limit_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DeleteLimitInputBuilder {
     pub(crate) limit_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLimitInputBuilder {
-    /// <p>The unique identifier of the farm that contains the limit to delete.</p>
+    /// The unique identifier of the farm that contains the limit to delete.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the farm that contains the limit to delete.</p>
+    /// The unique identifier of the farm that contains the limit to delete.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The unique identifier of the farm that contains the limit to delete.</p>
+    /// The unique identifier of the farm that contains the limit to delete.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The unique identifier of the limit to delete.</p>
+    /// The unique identifier of the limit to delete.
     /// This field is required.
     pub fn limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.limit_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the limit to delete.</p>
+    /// The unique identifier of the limit to delete.
     pub fn set_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.limit_id = input;
         self
     }
-    /// <p>The unique identifier of the limit to delete.</p>
+    /// The unique identifier of the limit to delete.
     pub fn get_limit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.limit_id
     }

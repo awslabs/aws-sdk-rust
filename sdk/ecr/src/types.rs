@@ -25,6 +25,14 @@ pub use crate::types::_image_scan_findings::ImageScanFindings;
 
 pub use crate::types::_replication_configuration::ReplicationConfiguration;
 
+pub use crate::types::_replication_backfill_result_status::ReplicationBackfillResultStatus;
+
+pub use crate::types::_replication_destination::ReplicationDestination;
+
+pub use crate::types::_replication_backfill_status::ReplicationBackfillStatus;
+
+pub use crate::types::_replication_backfill_progress::ReplicationBackfillProgress;
+
 pub use crate::types::_lifecycle_policy_preview_filter::LifecyclePolicyPreviewFilter;
 
 pub use crate::types::_lifecycle_policy_preview_status::LifecyclePolicyPreviewStatus;
@@ -79,6 +87,8 @@ pub use crate::types::_image_signing_status::ImageSigningStatus;
 
 pub use crate::types::_pull_through_cache_rule::PullThroughCacheRule;
 
+pub use crate::types::_replication_backfill_result::ReplicationBackfillResult;
+
 pub use crate::types::_authorization_data::AuthorizationData;
 
 pub use crate::types::_lifecycle_policy_preview_result::LifecyclePolicyPreviewResult;
@@ -86,6 +96,8 @@ pub use crate::types::_lifecycle_policy_preview_result::LifecyclePolicyPreviewRe
 pub use crate::types::_artifact_status_filter::ArtifactStatusFilter;
 
 pub use crate::types::_image_referrer::ImageReferrer;
+
+pub use crate::types::_replication_backfill_summary::ReplicationBackfillSummary;
 
 pub use crate::types::_registry_scanning_rule::RegistryScanningRule;
 
@@ -148,8 +160,6 @@ pub use crate::types::_recommendation::Recommendation;
 pub use crate::types::_resource::Resource;
 
 pub use crate::types::_cvss_score_details::CvssScoreDetails;
-
-pub use crate::types::_replication_destination::ReplicationDestination;
 
 pub use crate::types::_repository_filter::RepositoryFilter;
 
@@ -272,6 +282,16 @@ mod _registry_scanning_configuration;
 mod _registry_scanning_rule;
 
 mod _remediation;
+
+mod _replication_backfill_progress;
+
+mod _replication_backfill_result;
+
+mod _replication_backfill_result_status;
+
+mod _replication_backfill_status;
+
+mod _replication_backfill_summary;
 
 mod _replication_configuration;
 

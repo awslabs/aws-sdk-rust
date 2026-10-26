@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntrospectOAuth2TokenWithIamOutput {
-    /// Indicates whether the token is currently active. `true` only when the token is valid, has not expired, has not been revoked, and belongs to the caller's account.
+    /// Indicates whether the token is currently active. Returns "true" only when the token is valid, has not expired, has not been revoked, and belongs to the caller's account.
     pub active: bool,
     /// Client identifier for the OAuth 2.0 client that requested the token.
     pub client_id: ::std::option::Option<::std::string::String>,
-    /// User identifier matching sts:GetCallerIdentity's `UserId` field for the token's subject principal (e.g. "AIDAEXAMPLE" for an IAM user, or "AROAEXAMPLE:session-name" for an assumed role).
+    /// User identifier matching the "UserId" field from "sts:GetCallerIdentity" for the token's subject principal.
     pub user_id: ::std::option::Option<::std::string::String>,
     /// Indicates which kind of token was introspected. One of "access_token" or "refresh_token".
     pub token_type: ::std::option::Option<::std::string::String>,
@@ -18,9 +18,9 @@ pub struct IntrospectOAuth2TokenWithIamOutput {
     pub iat: ::std::option::Option<i64>,
     /// Token "not before" time as a NumericDate (Unix epoch seconds).
     pub nbf: ::std::option::Option<i64>,
-    /// Subject of the token: the IAM principal ARN. For assumed-role sessions, this is the session ARN (matches sts:GetCallerIdentity's `Arn` field), e.g. arn:aws:sts::123456789012:assumed-role/MyRole/session-name.
+    /// The IAM principal Amazon Resource Name (ARN). For assumed-role sessions, this is the session ARN.
     pub sub: ::std::option::Option<::std::string::String>,
-    /// Audience of the token: the OAuth resource the token is scoped to (for example, "aws-mcp.amazonaws.com"). Omitted for refresh tokens.
+    /// The OAuth resource the token is scoped to. Omitted for refresh tokens. Example: "aws-mcp.amazonaws.com".
     pub aud: ::std::option::Option<::std::string::String>,
     /// Issuer of the token. Always "signin.amazonaws.com" for AWS Sign-In.
     pub iss: ::std::option::Option<::std::string::String>,
@@ -30,12 +30,12 @@ pub struct IntrospectOAuth2TokenWithIamOutput {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// AWS Sign-In session ARN bound to the token, of the form arn:aws:signin:{region}:{account}:session/{uuid}.
     pub signin_session: ::std::option::Option<::std::string::String>,
-    /// The OAuth resource the token is scoped to during Human OAuth flow. Only present for refresh token introspection.
+    /// The OAuth resource the token is scoped to. Only present for refresh token introspection.
     pub resource: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl IntrospectOAuth2TokenWithIamOutput {
-    /// Indicates whether the token is currently active. `true` only when the token is valid, has not expired, has not been revoked, and belongs to the caller's account.
+    /// Indicates whether the token is currently active. Returns "true" only when the token is valid, has not expired, has not been revoked, and belongs to the caller's account.
     pub fn active(&self) -> bool {
         self.active
     }
@@ -43,7 +43,7 @@ impl IntrospectOAuth2TokenWithIamOutput {
     pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// User identifier matching sts:GetCallerIdentity's `UserId` field for the token's subject principal (e.g. "AIDAEXAMPLE" for an IAM user, or "AROAEXAMPLE:session-name" for an assumed role).
+    /// User identifier matching the "UserId" field from "sts:GetCallerIdentity" for the token's subject principal.
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -63,11 +63,11 @@ impl IntrospectOAuth2TokenWithIamOutput {
     pub fn nbf(&self) -> ::std::option::Option<i64> {
         self.nbf
     }
-    /// Subject of the token: the IAM principal ARN. For assumed-role sessions, this is the session ARN (matches sts:GetCallerIdentity's `Arn` field), e.g. arn:aws:sts::123456789012:assumed-role/MyRole/session-name.
+    /// The IAM principal Amazon Resource Name (ARN). For assumed-role sessions, this is the session ARN.
     pub fn sub(&self) -> ::std::option::Option<&str> {
         self.sub.as_deref()
     }
-    /// Audience of the token: the OAuth resource the token is scoped to (for example, "aws-mcp.amazonaws.com"). Omitted for refresh tokens.
+    /// The OAuth resource the token is scoped to. Omitted for refresh tokens. Example: "aws-mcp.amazonaws.com".
     pub fn aud(&self) -> ::std::option::Option<&str> {
         self.aud.as_deref()
     }
@@ -87,7 +87,7 @@ impl IntrospectOAuth2TokenWithIamOutput {
     pub fn signin_session(&self) -> ::std::option::Option<&str> {
         self.signin_session.as_deref()
     }
-    /// The OAuth resource the token is scoped to during Human OAuth flow. Only present for refresh token introspection.
+    /// The OAuth resource the token is scoped to. Only present for refresh token introspection.
     pub fn resource(&self) -> ::std::option::Option<&str> {
         self.resource.as_deref()
     }
@@ -125,18 +125,18 @@ pub struct IntrospectOAuth2TokenWithIamOutputBuilder {
     _request_id: Option<String>,
 }
 impl IntrospectOAuth2TokenWithIamOutputBuilder {
-    /// Indicates whether the token is currently active. `true` only when the token is valid, has not expired, has not been revoked, and belongs to the caller's account.
+    /// Indicates whether the token is currently active. Returns "true" only when the token is valid, has not expired, has not been revoked, and belongs to the caller's account.
     /// This field is required.
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
         self
     }
-    /// Indicates whether the token is currently active. `true` only when the token is valid, has not expired, has not been revoked, and belongs to the caller's account.
+    /// Indicates whether the token is currently active. Returns "true" only when the token is valid, has not expired, has not been revoked, and belongs to the caller's account.
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.active = input;
         self
     }
-    /// Indicates whether the token is currently active. `true` only when the token is valid, has not expired, has not been revoked, and belongs to the caller's account.
+    /// Indicates whether the token is currently active. Returns "true" only when the token is valid, has not expired, has not been revoked, and belongs to the caller's account.
     pub fn get_active(&self) -> &::std::option::Option<bool> {
         &self.active
     }
@@ -154,17 +154,17 @@ impl IntrospectOAuth2TokenWithIamOutputBuilder {
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_id
     }
-    /// User identifier matching sts:GetCallerIdentity's `UserId` field for the token's subject principal (e.g. "AIDAEXAMPLE" for an IAM user, or "AROAEXAMPLE:session-name" for an assumed role).
+    /// User identifier matching the "UserId" field from "sts:GetCallerIdentity" for the token's subject principal.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// User identifier matching sts:GetCallerIdentity's `UserId` field for the token's subject principal (e.g. "AIDAEXAMPLE" for an IAM user, or "AROAEXAMPLE:session-name" for an assumed role).
+    /// User identifier matching the "UserId" field from "sts:GetCallerIdentity" for the token's subject principal.
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
-    /// User identifier matching sts:GetCallerIdentity's `UserId` field for the token's subject principal (e.g. "AIDAEXAMPLE" for an IAM user, or "AROAEXAMPLE:session-name" for an assumed role).
+    /// User identifier matching the "UserId" field from "sts:GetCallerIdentity" for the token's subject principal.
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
@@ -224,31 +224,31 @@ impl IntrospectOAuth2TokenWithIamOutputBuilder {
     pub fn get_nbf(&self) -> &::std::option::Option<i64> {
         &self.nbf
     }
-    /// Subject of the token: the IAM principal ARN. For assumed-role sessions, this is the session ARN (matches sts:GetCallerIdentity's `Arn` field), e.g. arn:aws:sts::123456789012:assumed-role/MyRole/session-name.
+    /// The IAM principal Amazon Resource Name (ARN). For assumed-role sessions, this is the session ARN.
     pub fn sub(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub = ::std::option::Option::Some(input.into());
         self
     }
-    /// Subject of the token: the IAM principal ARN. For assumed-role sessions, this is the session ARN (matches sts:GetCallerIdentity's `Arn` field), e.g. arn:aws:sts::123456789012:assumed-role/MyRole/session-name.
+    /// The IAM principal Amazon Resource Name (ARN). For assumed-role sessions, this is the session ARN.
     pub fn set_sub(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub = input;
         self
     }
-    /// Subject of the token: the IAM principal ARN. For assumed-role sessions, this is the session ARN (matches sts:GetCallerIdentity's `Arn` field), e.g. arn:aws:sts::123456789012:assumed-role/MyRole/session-name.
+    /// The IAM principal Amazon Resource Name (ARN). For assumed-role sessions, this is the session ARN.
     pub fn get_sub(&self) -> &::std::option::Option<::std::string::String> {
         &self.sub
     }
-    /// Audience of the token: the OAuth resource the token is scoped to (for example, "aws-mcp.amazonaws.com"). Omitted for refresh tokens.
+    /// The OAuth resource the token is scoped to. Omitted for refresh tokens. Example: "aws-mcp.amazonaws.com".
     pub fn aud(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aud = ::std::option::Option::Some(input.into());
         self
     }
-    /// Audience of the token: the OAuth resource the token is scoped to (for example, "aws-mcp.amazonaws.com"). Omitted for refresh tokens.
+    /// The OAuth resource the token is scoped to. Omitted for refresh tokens. Example: "aws-mcp.amazonaws.com".
     pub fn set_aud(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aud = input;
         self
     }
-    /// Audience of the token: the OAuth resource the token is scoped to (for example, "aws-mcp.amazonaws.com"). Omitted for refresh tokens.
+    /// The OAuth resource the token is scoped to. Omitted for refresh tokens. Example: "aws-mcp.amazonaws.com".
     pub fn get_aud(&self) -> &::std::option::Option<::std::string::String> {
         &self.aud
     }
@@ -308,17 +308,17 @@ impl IntrospectOAuth2TokenWithIamOutputBuilder {
     pub fn get_signin_session(&self) -> &::std::option::Option<::std::string::String> {
         &self.signin_session
     }
-    /// The OAuth resource the token is scoped to during Human OAuth flow. Only present for refresh token introspection.
+    /// The OAuth resource the token is scoped to. Only present for refresh token introspection.
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
         self
     }
-    /// The OAuth resource the token is scoped to during Human OAuth flow. Only present for refresh token introspection.
+    /// The OAuth resource the token is scoped to. Only present for refresh token introspection.
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource = input;
         self
     }
-    /// The OAuth resource the token is scoped to during Human OAuth flow. Only present for refresh token introspection.
+    /// The OAuth resource the token is scoped to. Only present for refresh token introspection.
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource
     }

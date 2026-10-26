@@ -15,6 +15,24 @@ pub fn ser_h264_filter_settings(
         crate::protocol_serde::shape_bandwidth_reduction_filter_settings::ser_bandwidth_reduction_filter_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.auto_filter_settings {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("autoFilterSettings").start_object();
+        crate::protocol_serde::shape_auto_filter_settings::ser_auto_filter_settings(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.none_filter_settings {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("noneFilterSettings").start_object();
+        crate::protocol_serde::shape_none_filter_settings::ser_none_filter_settings(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.perceptual_filter_settings {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("perceptualFilterSettings").start_object();
+        crate::protocol_serde::shape_perceptual_filter_settings::ser_perceptual_filter_settings(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }
 
@@ -52,6 +70,25 @@ where
                                     _value,
                                     depth + 1,
                                 )?,
+                            );
+                        }
+                        "autoFilterSettings" => {
+                            builder = builder.set_auto_filter_settings(crate::protocol_serde::shape_auto_filter_settings::de_auto_filter_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "noneFilterSettings" => {
+                            builder = builder.set_none_filter_settings(crate::protocol_serde::shape_none_filter_settings::de_none_filter_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "perceptualFilterSettings" => {
+                            builder = builder.set_perceptual_filter_settings(
+                                crate::protocol_serde::shape_perceptual_filter_settings::de_perceptual_filter_settings(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

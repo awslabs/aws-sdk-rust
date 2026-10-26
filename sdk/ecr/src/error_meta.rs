@@ -57,6 +57,12 @@ pub enum Error {
     ReferencedImagesNotFoundException(crate::types::error::ReferencedImagesNotFoundException),
     /// <p>The registry doesn't have an associated registry policy.</p>
     RegistryPolicyNotFoundException(crate::types::error::RegistryPolicyNotFoundException),
+    /// <p>A replication backfill is already in progress for the specified destination Region. This occurs because only one replication backfill can be in progress for a given destination Region at a time. Wait for the in progress backfill to reach a terminal status, or stop it with the <code>StopReplicationBackfill</code> operation, before starting another one.</p>
+    ReplicationBackfillInProgressException(crate::types::error::ReplicationBackfillInProgressException),
+    /// <p>The requested operation can't be performed on the replication backfill because it is not in a valid status for that operation. For example, you can't stop a replication backfill that has already reached a terminal status. Use the <code>DescribeReplicationBackfillResults</code> operation to check the current status before retrying.</p>
+    ReplicationBackfillInvalidStatusException(crate::types::error::ReplicationBackfillInvalidStatusException),
+    /// <p>The specified replication backfill could not be found. Check the specified replication backfill ID and ensure that you are operating on the correct registry.</p>
+    ReplicationBackfillNotFoundException(crate::types::error::ReplicationBackfillNotFoundException),
     /// <p>The specified repository already exists in the specified registry.</p>
     RepositoryAlreadyExistsException(crate::types::error::RepositoryAlreadyExistsException),
     /// <p>The specified repository contains images. To delete a repository that contains images, you must force the deletion with the <code>force</code> parameter.</p>
@@ -136,6 +142,9 @@ impl ::std::fmt::Display for Error {
             Error::PullThroughCacheRuleNotFoundException(inner) => inner.fmt(f),
             Error::ReferencedImagesNotFoundException(inner) => inner.fmt(f),
             Error::RegistryPolicyNotFoundException(inner) => inner.fmt(f),
+            Error::ReplicationBackfillInProgressException(inner) => inner.fmt(f),
+            Error::ReplicationBackfillInvalidStatusException(inner) => inner.fmt(f),
+            Error::ReplicationBackfillNotFoundException(inner) => inner.fmt(f),
             Error::RepositoryAlreadyExistsException(inner) => inner.fmt(f),
             Error::RepositoryNotEmptyException(inner) => inner.fmt(f),
             Error::RepositoryNotFoundException(inner) => inner.fmt(f),
@@ -204,6 +213,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::PullThroughCacheRuleNotFoundException(inner) => inner.meta(),
             Self::ReferencedImagesNotFoundException(inner) => inner.meta(),
             Self::RegistryPolicyNotFoundException(inner) => inner.meta(),
+            Self::ReplicationBackfillInProgressException(inner) => inner.meta(),
+            Self::ReplicationBackfillInvalidStatusException(inner) => inner.meta(),
+            Self::ReplicationBackfillNotFoundException(inner) => inner.meta(),
             Self::RepositoryAlreadyExistsException(inner) => inner.meta(),
             Self::RepositoryNotEmptyException(inner) => inner.meta(),
             Self::RepositoryNotFoundException(inner) => inner.meta(),
@@ -1028,6 +1040,42 @@ impl From<crate::operation::describe_registry::DescribeRegistryError> for Error 
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_replication_backfill_results::DescribeReplicationBackfillResultsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_replication_backfill_results::DescribeReplicationBackfillResultsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_replication_backfill_results::DescribeReplicationBackfillResultsError> for Error {
+    fn from(err: crate::operation::describe_replication_backfill_results::DescribeReplicationBackfillResultsError) -> Self {
+        match err {
+            crate::operation::describe_replication_backfill_results::DescribeReplicationBackfillResultsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_replication_backfill_results::DescribeReplicationBackfillResultsError::ReplicationBackfillNotFoundException(inner) => Error::ReplicationBackfillNotFoundException(inner),
+            crate::operation::describe_replication_backfill_results::DescribeReplicationBackfillResultsError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::describe_replication_backfill_results::DescribeReplicationBackfillResultsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_replication_backfill_results::DescribeReplicationBackfillResultsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_repositories::DescribeRepositoriesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1521,6 +1569,37 @@ impl From<crate::operation::list_pull_time_update_exclusions::ListPullTimeUpdate
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_replication_backfills::ListReplicationBackfillsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_replication_backfills::ListReplicationBackfillsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_replication_backfills::ListReplicationBackfillsError> for Error {
+    fn from(err: crate::operation::list_replication_backfills::ListReplicationBackfillsError) -> Self {
+        match err {
+            crate::operation::list_replication_backfills::ListReplicationBackfillsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_replication_backfills::ListReplicationBackfillsError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::list_replication_backfills::ListReplicationBackfillsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_replication_backfills::ListReplicationBackfillsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1993,6 +2072,80 @@ impl From<crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicy
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_replication_backfill::StartReplicationBackfillError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_replication_backfill::StartReplicationBackfillError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_replication_backfill::StartReplicationBackfillError> for Error {
+    fn from(err: crate::operation::start_replication_backfill::StartReplicationBackfillError) -> Self {
+        match err {
+            crate::operation::start_replication_backfill::StartReplicationBackfillError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::start_replication_backfill::StartReplicationBackfillError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::start_replication_backfill::StartReplicationBackfillError::ReplicationBackfillInProgressException(inner) => {
+                Error::ReplicationBackfillInProgressException(inner)
+            }
+            crate::operation::start_replication_backfill::StartReplicationBackfillError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::start_replication_backfill::StartReplicationBackfillError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_replication_backfill::StartReplicationBackfillError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_replication_backfill::StopReplicationBackfillError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_replication_backfill::StopReplicationBackfillError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_replication_backfill::StopReplicationBackfillError> for Error {
+    fn from(err: crate::operation::stop_replication_backfill::StopReplicationBackfillError) -> Self {
+        match err {
+            crate::operation::stop_replication_backfill::StopReplicationBackfillError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::stop_replication_backfill::StopReplicationBackfillError::ReplicationBackfillInvalidStatusException(inner) => {
+                Error::ReplicationBackfillInvalidStatusException(inner)
+            }
+            crate::operation::stop_replication_backfill::StopReplicationBackfillError::ReplicationBackfillNotFoundException(inner) => {
+                Error::ReplicationBackfillNotFoundException(inner)
+            }
+            crate::operation::stop_replication_backfill::StopReplicationBackfillError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::stop_replication_backfill::StopReplicationBackfillError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::stop_replication_backfill::StopReplicationBackfillError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2286,6 +2439,9 @@ impl ::std::error::Error for Error {
             Error::PullThroughCacheRuleNotFoundException(inner) => inner.source(),
             Error::ReferencedImagesNotFoundException(inner) => inner.source(),
             Error::RegistryPolicyNotFoundException(inner) => inner.source(),
+            Error::ReplicationBackfillInProgressException(inner) => inner.source(),
+            Error::ReplicationBackfillInvalidStatusException(inner) => inner.source(),
+            Error::ReplicationBackfillNotFoundException(inner) => inner.source(),
             Error::RepositoryAlreadyExistsException(inner) => inner.source(),
             Error::RepositoryNotEmptyException(inner) => inner.source(),
             Error::RepositoryNotFoundException(inner) => inner.source(),
@@ -2340,6 +2496,9 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::PullThroughCacheRuleNotFoundException(e) => e.request_id(),
             Self::ReferencedImagesNotFoundException(e) => e.request_id(),
             Self::RegistryPolicyNotFoundException(e) => e.request_id(),
+            Self::ReplicationBackfillInProgressException(e) => e.request_id(),
+            Self::ReplicationBackfillInvalidStatusException(e) => e.request_id(),
+            Self::ReplicationBackfillNotFoundException(e) => e.request_id(),
             Self::RepositoryAlreadyExistsException(e) => e.request_id(),
             Self::RepositoryNotEmptyException(e) => e.request_id(),
             Self::RepositoryNotFoundException(e) => e.request_id(),

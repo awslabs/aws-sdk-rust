@@ -22,7 +22,7 @@ impl crate::operation::associate_member_to_job::builders::AssociateMemberToJobIn
 }
 /// Fluent builder constructing a request to `AssociateMemberToJob`.
 ///
-/// <p>Assigns a job membership level to a member</p>
+/// Assigns a job membership level to a member
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateMemberToJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,115 +108,115 @@ impl AssociateMemberToJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID of the job to associate with the member.</p>
+    /// The farm ID of the job to associate with the member.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID of the job to associate with the member.</p>
+    /// The farm ID of the job to associate with the member.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID of the job to associate with the member.</p>
+    /// The farm ID of the job to associate with the member.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The queue ID to associate to the member.</p>
+    /// The queue ID to associate to the member.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
         self
     }
-    /// <p>The queue ID to associate to the member.</p>
+    /// The queue ID to associate to the member.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_id(input);
         self
     }
-    /// <p>The queue ID to associate to the member.</p>
+    /// The queue ID to associate to the member.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }
-    /// <p>The job ID to associate with the member.</p>
+    /// The job ID to associate with the member.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
         self
     }
-    /// <p>The job ID to associate with the member.</p>
+    /// The job ID to associate with the member.
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
     }
-    /// <p>The job ID to associate with the member.</p>
+    /// The job ID to associate with the member.
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_id()
     }
-    /// <p>The member's principal type to associate with the job.</p>
+    /// The member's principal type to associate with the job.
     pub fn principal_type(mut self, input: crate::types::DeadlinePrincipalType) -> Self {
         self.inner = self.inner.principal_type(input);
         self
     }
-    /// <p>The member's principal type to associate with the job.</p>
+    /// The member's principal type to associate with the job.
     pub fn set_principal_type(mut self, input: ::std::option::Option<crate::types::DeadlinePrincipalType>) -> Self {
         self.inner = self.inner.set_principal_type(input);
         self
     }
-    /// <p>The member's principal type to associate with the job.</p>
+    /// The member's principal type to associate with the job.
     pub fn get_principal_type(&self) -> &::std::option::Option<crate::types::DeadlinePrincipalType> {
         self.inner.get_principal_type()
     }
-    /// <p>The member's identity store ID to associate with the job.</p>
+    /// The member's identity store ID to associate with the job.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_store_id(input.into());
         self
     }
-    /// <p>The member's identity store ID to associate with the job.</p>
+    /// The member's identity store ID to associate with the job.
     pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
-    /// <p>The member's identity store ID to associate with the job.</p>
+    /// The member's identity store ID to associate with the job.
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_store_id()
     }
-    /// <p>The principal's membership level for the associated job.</p>
+    /// The principal's membership level for the associated job.
     pub fn membership_level(mut self, input: crate::types::MembershipLevel) -> Self {
         self.inner = self.inner.membership_level(input);
         self
     }
-    /// <p>The principal's membership level for the associated job.</p>
+    /// The principal's membership level for the associated job.
     pub fn set_membership_level(mut self, input: ::std::option::Option<crate::types::MembershipLevel>) -> Self {
         self.inner = self.inner.set_membership_level(input);
         self
     }
-    /// <p>The principal's membership level for the associated job.</p>
+    /// The principal's membership level for the associated job.
     pub fn get_membership_level(&self) -> &::std::option::Option<crate::types::MembershipLevel> {
         self.inner.get_membership_level()
     }
-    /// <p>The member's principal ID to associate with the job.</p>
+    /// The member's principal ID to associate with the job.
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_id(input.into());
         self
     }
-    /// <p>The member's principal ID to associate with the job.</p>
+    /// The member's principal ID to associate with the job.
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_id(input);
         self
     }
-    /// <p>The member's principal ID to associate with the job.</p>
+    /// The member's principal ID to associate with the job.
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_principal_id()
     }
-    /// <p>The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.</p>
+    /// The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.
     pub fn identity_center_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_center_region(input.into());
         self
     }
-    /// <p>The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.</p>
+    /// The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.
     pub fn set_identity_center_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_center_region(input);
         self
     }
-    /// <p>The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.</p>
+    /// The Region of the IAM Identity Center instance. If not provided, the service defaults to the Region of the farm.
     pub fn get_identity_center_region(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_center_region()
     }

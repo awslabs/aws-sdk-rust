@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMonitorSettingsInput {
-    /// <p>The unique identifier of the monitor to update settings for.</p>
+    /// The unique identifier of the monitor to update settings for.
     pub monitor_id: ::std::option::Option<::std::string::String>,
-    /// <p>The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.</p>
+    /// The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.
     pub settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateMonitorSettingsInput {
-    /// <p>The unique identifier of the monitor to update settings for.</p>
+    /// The unique identifier of the monitor to update settings for.
     pub fn monitor_id(&self) -> ::std::option::Option<&str> {
         self.monitor_id.as_deref()
     }
-    /// <p>The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.</p>
+    /// The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.
     pub fn settings(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.settings.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct UpdateMonitorSettingsInputBuilder {
     pub(crate) settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateMonitorSettingsInputBuilder {
-    /// <p>The unique identifier of the monitor to update settings for.</p>
+    /// The unique identifier of the monitor to update settings for.
     /// This field is required.
     pub fn monitor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the monitor to update settings for.</p>
+    /// The unique identifier of the monitor to update settings for.
     pub fn set_monitor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_id = input;
         self
     }
-    /// <p>The unique identifier of the monitor to update settings for.</p>
+    /// The unique identifier of the monitor to update settings for.
     pub fn get_monitor_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_id
     }
@@ -52,19 +52,19 @@ impl UpdateMonitorSettingsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_settings`](Self::set_settings).
     ///
-    /// <p>The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.</p>
+    /// The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.
     pub fn settings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.settings.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.settings = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.</p>
+    /// The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.
     pub fn set_settings(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.settings = input;
         self
     }
-    /// <p>The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.</p>
+    /// The monitor settings to update as key-value pairs. Keys present in the request are upserted; keys absent are left unchanged. Send an empty string value to delete a key.
     pub fn get_settings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.settings
     }

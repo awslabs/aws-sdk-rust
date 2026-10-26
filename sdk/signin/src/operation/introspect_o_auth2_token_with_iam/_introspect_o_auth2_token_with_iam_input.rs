@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IntrospectOAuth2TokenWithIamInput {
-    /// The string value of the token to introspect. May be either an access_token or a refresh_token issued by AWS Sign-In.
+    /// The access token or refresh token issued by AWS Sign-In.
     pub token: ::std::option::Option<::std::string::String>,
-    /// Optional hint about the type of the token submitted for introspection. The server uses this hint to optimize lookup, but still falls back to the other token type on miss. Allowed values: access_token, refresh_token.
+    /// An optional hint about the type of the token submitted for introspection, as defined in RFC 7662 §2.1. The server checks both token types regardless of the hint. Allowed values: "access_token", "refresh_token".
     pub token_type_hint: ::std::option::Option<::std::string::String>,
 }
 impl IntrospectOAuth2TokenWithIamInput {
-    /// The string value of the token to introspect. May be either an access_token or a refresh_token issued by AWS Sign-In.
+    /// The access token or refresh token issued by AWS Sign-In.
     pub fn token(&self) -> ::std::option::Option<&str> {
         self.token.as_deref()
     }
-    /// Optional hint about the type of the token submitted for introspection. The server uses this hint to optimize lookup, but still falls back to the other token type on miss. Allowed values: access_token, refresh_token.
+    /// An optional hint about the type of the token submitted for introspection, as defined in RFC 7662 §2.1. The server checks both token types regardless of the hint. Allowed values: "access_token", "refresh_token".
     pub fn token_type_hint(&self) -> ::std::option::Option<&str> {
         self.token_type_hint.as_deref()
     }
@@ -42,32 +42,32 @@ pub struct IntrospectOAuth2TokenWithIamInputBuilder {
     pub(crate) token_type_hint: ::std::option::Option<::std::string::String>,
 }
 impl IntrospectOAuth2TokenWithIamInputBuilder {
-    /// The string value of the token to introspect. May be either an access_token or a refresh_token issued by AWS Sign-In.
+    /// The access token or refresh token issued by AWS Sign-In.
     /// This field is required.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
         self
     }
-    /// The string value of the token to introspect. May be either an access_token or a refresh_token issued by AWS Sign-In.
+    /// The access token or refresh token issued by AWS Sign-In.
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token = input;
         self
     }
-    /// The string value of the token to introspect. May be either an access_token or a refresh_token issued by AWS Sign-In.
+    /// The access token or refresh token issued by AWS Sign-In.
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.token
     }
-    /// Optional hint about the type of the token submitted for introspection. The server uses this hint to optimize lookup, but still falls back to the other token type on miss. Allowed values: access_token, refresh_token.
+    /// An optional hint about the type of the token submitted for introspection, as defined in RFC 7662 §2.1. The server checks both token types regardless of the hint. Allowed values: "access_token", "refresh_token".
     pub fn token_type_hint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_type_hint = ::std::option::Option::Some(input.into());
         self
     }
-    /// Optional hint about the type of the token submitted for introspection. The server uses this hint to optimize lookup, but still falls back to the other token type on miss. Allowed values: access_token, refresh_token.
+    /// An optional hint about the type of the token submitted for introspection, as defined in RFC 7662 §2.1. The server checks both token types regardless of the hint. Allowed values: "access_token", "refresh_token".
     pub fn set_token_type_hint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_type_hint = input;
         self
     }
-    /// Optional hint about the type of the token submitted for introspection. The server uses this hint to optimize lookup, but still falls back to the other token type on miss. Allowed values: access_token, refresh_token.
+    /// An optional hint about the type of the token submitted for introspection, as defined in RFC 7662 §2.1. The server checks both token types regardless of the hint. Allowed values: "access_token", "refresh_token".
     pub fn get_token_type_hint(&self) -> &::std::option::Option<::std::string::String> {
         &self.token_type_hint
     }

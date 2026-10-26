@@ -3,64 +3,64 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetQueueEnvironmentOutput {
-    /// <p>The queue environment ID.</p>
+    /// The queue environment ID.
     pub queue_environment_id: ::std::string::String,
-    /// <p>The name of the queue environment.</p>
+    /// The name of the queue environment.
     pub name: ::std::string::String,
-    /// <p>The priority of the queue environment.</p>
+    /// The priority of the queue environment.
     pub priority: i32,
-    /// <p>The type of template for the queue environment.</p>
+    /// The type of template for the queue environment.
     pub template_type: crate::types::EnvironmentTemplateType,
-    /// <p>The template for the queue environment.</p>
+    /// The template for the queue environment.
     pub template: ::std::string::String,
-    /// <p>The date and time the resource was created.</p>
+    /// The date and time the resource was created.
     pub created_at: ::aws_smithy_types::DateTime,
-    /// <p>The user or system that created this resource.&gt;</p>
+    /// The user or system that created this resource.&gt;
     pub created_by: ::std::string::String,
-    /// <p>The date and time the resource was updated.</p>
+    /// The date and time the resource was updated.
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The user or system that updated this resource.</p>
+    /// The user or system that updated this resource.
     pub updated_by: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetQueueEnvironmentOutput {
-    /// <p>The queue environment ID.</p>
+    /// The queue environment ID.
     pub fn queue_environment_id(&self) -> &str {
         use std::ops::Deref;
         self.queue_environment_id.deref()
     }
-    /// <p>The name of the queue environment.</p>
+    /// The name of the queue environment.
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The priority of the queue environment.</p>
+    /// The priority of the queue environment.
     pub fn priority(&self) -> i32 {
         self.priority
     }
-    /// <p>The type of template for the queue environment.</p>
+    /// The type of template for the queue environment.
     pub fn template_type(&self) -> &crate::types::EnvironmentTemplateType {
         &self.template_type
     }
-    /// <p>The template for the queue environment.</p>
+    /// The template for the queue environment.
     pub fn template(&self) -> &str {
         use std::ops::Deref;
         self.template.deref()
     }
-    /// <p>The date and time the resource was created.</p>
+    /// The date and time the resource was created.
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
-    /// <p>The user or system that created this resource.&gt;</p>
+    /// The user or system that created this resource.&gt;
     pub fn created_by(&self) -> &str {
         use std::ops::Deref;
         self.created_by.deref()
     }
-    /// <p>The date and time the resource was updated.</p>
+    /// The date and time the resource was updated.
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>The user or system that updated this resource.</p>
+    /// The user or system that updated this resource.
     pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
@@ -109,136 +109,136 @@ pub struct GetQueueEnvironmentOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetQueueEnvironmentOutputBuilder {
-    /// <p>The queue environment ID.</p>
+    /// The queue environment ID.
     /// This field is required.
     pub fn queue_environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_environment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue environment ID.</p>
+    /// The queue environment ID.
     pub fn set_queue_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_environment_id = input;
         self
     }
-    /// <p>The queue environment ID.</p>
+    /// The queue environment ID.
     pub fn get_queue_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_environment_id
     }
-    /// <p>The name of the queue environment.</p>
+    /// The name of the queue environment.
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the queue environment.</p>
+    /// The name of the queue environment.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the queue environment.</p>
+    /// The name of the queue environment.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The priority of the queue environment.</p>
+    /// The priority of the queue environment.
     /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The priority of the queue environment.</p>
+    /// The priority of the queue environment.
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
-    /// <p>The priority of the queue environment.</p>
+    /// The priority of the queue environment.
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }
-    /// <p>The type of template for the queue environment.</p>
+    /// The type of template for the queue environment.
     /// This field is required.
     pub fn template_type(mut self, input: crate::types::EnvironmentTemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of template for the queue environment.</p>
+    /// The type of template for the queue environment.
     pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::EnvironmentTemplateType>) -> Self {
         self.template_type = input;
         self
     }
-    /// <p>The type of template for the queue environment.</p>
+    /// The type of template for the queue environment.
     pub fn get_template_type(&self) -> &::std::option::Option<crate::types::EnvironmentTemplateType> {
         &self.template_type
     }
-    /// <p>The template for the queue environment.</p>
+    /// The template for the queue environment.
     /// This field is required.
     pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The template for the queue environment.</p>
+    /// The template for the queue environment.
     pub fn set_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template = input;
         self
     }
-    /// <p>The template for the queue environment.</p>
+    /// The template for the queue environment.
     pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.template
     }
-    /// <p>The date and time the resource was created.</p>
+    /// The date and time the resource was created.
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time the resource was created.</p>
+    /// The date and time the resource was created.
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The date and time the resource was created.</p>
+    /// The date and time the resource was created.
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The user or system that created this resource.&gt;</p>
+    /// The user or system that created this resource.&gt;
     /// This field is required.
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user or system that created this resource.&gt;</p>
+    /// The user or system that created this resource.&gt;
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
-    /// <p>The user or system that created this resource.&gt;</p>
+    /// The user or system that created this resource.&gt;
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }
-    /// <p>The date and time the resource was updated.</p>
+    /// The date and time the resource was updated.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time the resource was updated.</p>
+    /// The date and time the resource was updated.
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The date and time the resource was updated.</p>
+    /// The date and time the resource was updated.
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
-    /// <p>The user or system that updated this resource.</p>
+    /// The user or system that updated this resource.
     pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user or system that updated this resource.</p>
+    /// The user or system that updated this resource.
     pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_by = input;
         self
     }
-    /// <p>The user or system that updated this resource.</p>
+    /// The user or system that updated this resource.
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_by
     }

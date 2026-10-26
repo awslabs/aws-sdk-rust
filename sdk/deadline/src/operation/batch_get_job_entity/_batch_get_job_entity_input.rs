@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetJobEntityInput {
-    /// <p>The farm ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.</p>
+    /// The farm ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The fleet ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.</p>
+    /// The fleet ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The worker ID of the worker containing the job details to get.</p>
+    /// The worker ID of the worker containing the job details to get.
     pub worker_id: ::std::option::Option<::std::string::String>,
-    /// <p>The job identifiers to include within the job entity batch details.</p>
+    /// The job identifiers to include within the job entity batch details.
     pub identifiers: ::std::option::Option<::std::vec::Vec<crate::types::JobEntityIdentifiersUnion>>,
 }
 impl BatchGetJobEntityInput {
-    /// <p>The farm ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.</p>
+    /// The farm ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The fleet ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.</p>
+    /// The fleet ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The worker ID of the worker containing the job details to get.</p>
+    /// The worker ID of the worker containing the job details to get.
     pub fn worker_id(&self) -> ::std::option::Option<&str> {
         self.worker_id.as_deref()
     }
-    /// <p>The job identifiers to include within the job entity batch details.</p>
+    /// The job identifiers to include within the job entity batch details.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identifiers.is_none()`.
     pub fn identifiers(&self) -> &[crate::types::JobEntityIdentifiersUnion] {
@@ -49,48 +49,48 @@ pub struct BatchGetJobEntityInputBuilder {
     pub(crate) identifiers: ::std::option::Option<::std::vec::Vec<crate::types::JobEntityIdentifiersUnion>>,
 }
 impl BatchGetJobEntityInputBuilder {
-    /// <p>The farm ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.</p>
+    /// The farm ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.</p>
+    /// The farm ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.</p>
+    /// The farm ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The fleet ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.</p>
+    /// The fleet ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.
     /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The fleet ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.</p>
+    /// The fleet ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p>The fleet ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.</p>
+    /// The fleet ID of the worker that's fetching job details. The worker must have an assignment on a job to fetch job details.
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>The worker ID of the worker containing the job details to get.</p>
+    /// The worker ID of the worker containing the job details to get.
     /// This field is required.
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The worker ID of the worker containing the job details to get.</p>
+    /// The worker ID of the worker containing the job details to get.
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.worker_id = input;
         self
     }
-    /// <p>The worker ID of the worker containing the job details to get.</p>
+    /// The worker ID of the worker containing the job details to get.
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.worker_id
     }
@@ -98,19 +98,19 @@ impl BatchGetJobEntityInputBuilder {
     ///
     /// To override the contents of this collection use [`set_identifiers`](Self::set_identifiers).
     ///
-    /// <p>The job identifiers to include within the job entity batch details.</p>
+    /// The job identifiers to include within the job entity batch details.
     pub fn identifiers(mut self, input: crate::types::JobEntityIdentifiersUnion) -> Self {
         let mut v = self.identifiers.unwrap_or_default();
         v.push(input);
         self.identifiers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The job identifiers to include within the job entity batch details.</p>
+    /// The job identifiers to include within the job entity batch details.
     pub fn set_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobEntityIdentifiersUnion>>) -> Self {
         self.identifiers = input;
         self
     }
-    /// <p>The job identifiers to include within the job entity batch details.</p>
+    /// The job identifiers to include within the job entity batch details.
     pub fn get_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobEntityIdentifiersUnion>> {
         &self.identifiers
     }

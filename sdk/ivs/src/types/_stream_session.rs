@@ -21,6 +21,8 @@ pub struct StreamSession {
     pub recording_configuration: ::std::option::Option<crate::types::RecordingConfiguration>,
     /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
     pub truncated_events: ::std::option::Option<::std::vec::Vec<crate::types::StreamEvent>>,
+    /// <p>The properties of the failover slate configuration at the time of going live.</p>
+    pub failover_slate_configuration: ::std::option::Option<crate::types::FailoverSlateConfiguration>,
 }
 impl StreamSession {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
@@ -58,6 +60,10 @@ impl StreamSession {
     pub fn truncated_events(&self) -> &[crate::types::StreamEvent] {
         self.truncated_events.as_deref().unwrap_or_default()
     }
+    /// <p>The properties of the failover slate configuration at the time of going live.</p>
+    pub fn failover_slate_configuration(&self) -> ::std::option::Option<&crate::types::FailoverSlateConfiguration> {
+        self.failover_slate_configuration.as_ref()
+    }
 }
 impl StreamSession {
     /// Creates a new builder-style object to manufacture [`StreamSession`](crate::types::StreamSession).
@@ -78,6 +84,7 @@ pub struct StreamSessionBuilder {
     pub(crate) ingest_configurations: ::std::option::Option<crate::types::IngestConfigurations>,
     pub(crate) recording_configuration: ::std::option::Option<crate::types::RecordingConfiguration>,
     pub(crate) truncated_events: ::std::option::Option<::std::vec::Vec<crate::types::StreamEvent>>,
+    pub(crate) failover_slate_configuration: ::std::option::Option<crate::types::FailoverSlateConfiguration>,
 }
 impl StreamSessionBuilder {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
@@ -201,6 +208,20 @@ impl StreamSessionBuilder {
     pub fn get_truncated_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamEvent>> {
         &self.truncated_events
     }
+    /// <p>The properties of the failover slate configuration at the time of going live.</p>
+    pub fn failover_slate_configuration(mut self, input: crate::types::FailoverSlateConfiguration) -> Self {
+        self.failover_slate_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The properties of the failover slate configuration at the time of going live.</p>
+    pub fn set_failover_slate_configuration(mut self, input: ::std::option::Option<crate::types::FailoverSlateConfiguration>) -> Self {
+        self.failover_slate_configuration = input;
+        self
+    }
+    /// <p>The properties of the failover slate configuration at the time of going live.</p>
+    pub fn get_failover_slate_configuration(&self) -> &::std::option::Option<crate::types::FailoverSlateConfiguration> {
+        &self.failover_slate_configuration
+    }
     /// Consumes the builder and constructs a [`StreamSession`](crate::types::StreamSession).
     pub fn build(self) -> crate::types::StreamSession {
         crate::types::StreamSession {
@@ -212,6 +233,7 @@ impl StreamSessionBuilder {
             ingest_configurations: self.ingest_configurations,
             recording_configuration: self.recording_configuration,
             truncated_events: self.truncated_events,
+            failover_slate_configuration: self.failover_slate_configuration,
         }
     }
 }

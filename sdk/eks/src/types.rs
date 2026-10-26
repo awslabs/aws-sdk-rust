@@ -279,6 +279,8 @@ pub use crate::types::_argo_cd_config_response::ArgoCdConfigResponse;
 
 pub use crate::types::_ack_config_response::AckConfigResponse;
 
+pub use crate::types::_gateway_api_configuration::GatewayApiConfiguration;
+
 pub use crate::types::_log_setup::LogSetup;
 
 pub use crate::types::_spread_level::SpreadLevel;
@@ -330,6 +332,8 @@ pub use crate::types::_argo_cd_aws_idc_config_response::ArgoCdAwsIdcConfigRespon
 pub use crate::types::_argo_cd_network_access_config_response::ArgoCdNetworkAccessConfigResponse;
 
 pub use crate::types::_capability_issue::CapabilityIssue;
+
+pub use crate::types::_crd_management_configuration::CrdManagementConfiguration;
 
 pub use crate::types::_scoring_strategy_type::ScoringStrategyType;
 
@@ -565,6 +569,8 @@ mod _control_plane_scaling_config;
 
 mod _control_plane_scaling_tier_info;
 
+mod _crd_management_configuration;
+
 mod _create_access_config_request;
 
 mod _deprecation_detail;
@@ -606,6 +612,8 @@ mod _fargate_profile_issue_code;
 mod _fargate_profile_selector;
 
 mod _fargate_profile_status;
+
+mod _gateway_api_configuration;
 
 mod _horizontal_pod_autoscaler_controller_config_request;
 

@@ -22,7 +22,7 @@ impl crate::operation::list_budgets::builders::ListBudgetsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListBudgets`.
 ///
-/// <p>A list of budgets in a farm.</p>
+/// A list of budgets in a farm.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBudgetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,59 +114,59 @@ impl ListBudgetsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_budgets::paginator::ListBudgetsPaginator {
         crate::operation::list_budgets::paginator::ListBudgetsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The farm ID associated with the budgets.</p>
+    /// The farm ID associated with the budgets.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID associated with the budgets.</p>
+    /// The farm ID associated with the budgets.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID associated with the budgets.</p>
+    /// The farm ID associated with the budgets.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    /// The token for the next set of results, or <code>null</code> to start from the beginning.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The status to list for the budgets.</p>
+    /// The status to list for the budgets.
     pub fn status(mut self, input: crate::types::BudgetStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>The status to list for the budgets.</p>
+    /// The status to list for the budgets.
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BudgetStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>The status to list for the budgets.</p>
+    /// The status to list for the budgets.
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BudgetStatus> {
         self.inner.get_status()
     }

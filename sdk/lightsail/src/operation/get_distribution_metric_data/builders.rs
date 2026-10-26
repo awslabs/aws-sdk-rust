@@ -153,6 +153,14 @@ impl GetDistributionMetricDataFluentBuilder {
     /// <p><b> <code>5xxErrorRate</code> </b> - The percentage of all viewer requests for which the response's HTTP status code was 5xx. In these cases, the origin server did not satisfy the requests. For example, a status code of 503 (Service Unavailable) means that the origin server is currently unavailable.</p>
     /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
     /// <p><code>Unit</code>: The published unit is <code>Percent</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>WafAllowedRequests</code> </b> - The number of viewer requests that Web Application Firewall (WAF) allowed. This metric is available only when WAF is enabled for the distribution.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>None</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>WafBlockedRequests</code> </b> - The number of viewer requests that WAF blocked. This metric is available only when WAF is enabled for the distribution.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>None</code>.</p></li>
     /// </ul>
     pub fn metric_name(mut self, input: crate::types::DistributionMetricName) -> Self {
         self.inner = self.inner.metric_name(input);
@@ -185,6 +193,14 @@ impl GetDistributionMetricDataFluentBuilder {
     /// <p><b> <code>5xxErrorRate</code> </b> - The percentage of all viewer requests for which the response's HTTP status code was 5xx. In these cases, the origin server did not satisfy the requests. For example, a status code of 503 (Service Unavailable) means that the origin server is currently unavailable.</p>
     /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
     /// <p><code>Unit</code>: The published unit is <code>Percent</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>WafAllowedRequests</code> </b> - The number of viewer requests that Web Application Firewall (WAF) allowed. This metric is available only when WAF is enabled for the distribution.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>None</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>WafBlockedRequests</code> </b> - The number of viewer requests that WAF blocked. This metric is available only when WAF is enabled for the distribution.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>None</code>.</p></li>
     /// </ul>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::DistributionMetricName>) -> Self {
         self.inner = self.inner.set_metric_name(input);
@@ -217,6 +233,14 @@ impl GetDistributionMetricDataFluentBuilder {
     /// <p><b> <code>5xxErrorRate</code> </b> - The percentage of all viewer requests for which the response's HTTP status code was 5xx. In these cases, the origin server did not satisfy the requests. For example, a status code of 503 (Service Unavailable) means that the origin server is currently unavailable.</p>
     /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
     /// <p><code>Unit</code>: The published unit is <code>Percent</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>WafAllowedRequests</code> </b> - The number of viewer requests that Web Application Firewall (WAF) allowed. This metric is available only when WAF is enabled for the distribution.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>None</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>WafBlockedRequests</code> </b> - The number of viewer requests that WAF blocked. This metric is available only when WAF is enabled for the distribution.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>None</code>.</p></li>
     /// </ul>
     pub fn get_metric_name(&self) -> &::std::option::Option<crate::types::DistributionMetricName> {
         self.inner.get_metric_name()

@@ -3,28 +3,28 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStorageProfileOutput {
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     pub storage_profile_id: ::std::string::String,
     /// <p>The display name of the storage profile.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
     pub display_name: ::std::string::String,
-    /// <p>The operating system (OS) for the storage profile.</p>
+    /// The operating system (OS) for the storage profile.
     pub os_family: crate::types::StorageProfileOperatingSystemFamily,
-    /// <p>The date and time the resource was created.</p>
+    /// The date and time the resource was created.
     pub created_at: ::aws_smithy_types::DateTime,
-    /// <p>The user or system that created this resource.</p>
+    /// The user or system that created this resource.
     pub created_by: ::std::string::String,
-    /// <p>The date and time the resource was updated.</p>
+    /// The date and time the resource was updated.
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The user or system that updated this resource.</p>
+    /// The user or system that updated this resource.
     pub updated_by: ::std::option::Option<::std::string::String>,
-    /// <p>The location of the files for the storage profile.</p>
+    /// The location of the files for the storage profile.
     pub file_system_locations: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>>,
     _request_id: Option<String>,
 }
 impl GetStorageProfileOutput {
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     pub fn storage_profile_id(&self) -> &str {
         use std::ops::Deref;
         self.storage_profile_id.deref()
@@ -36,28 +36,28 @@ impl GetStorageProfileOutput {
         use std::ops::Deref;
         self.display_name.deref()
     }
-    /// <p>The operating system (OS) for the storage profile.</p>
+    /// The operating system (OS) for the storage profile.
     pub fn os_family(&self) -> &crate::types::StorageProfileOperatingSystemFamily {
         &self.os_family
     }
-    /// <p>The date and time the resource was created.</p>
+    /// The date and time the resource was created.
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
-    /// <p>The user or system that created this resource.</p>
+    /// The user or system that created this resource.
     pub fn created_by(&self) -> &str {
         use std::ops::Deref;
         self.created_by.deref()
     }
-    /// <p>The date and time the resource was updated.</p>
+    /// The date and time the resource was updated.
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>The user or system that updated this resource.</p>
+    /// The user or system that updated this resource.
     pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
-    /// <p>The location of the files for the storage profile.</p>
+    /// The location of the files for the storage profile.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_locations.is_none()`.
     pub fn file_system_locations(&self) -> &[crate::types::FileSystemLocation] {
@@ -91,18 +91,18 @@ pub struct GetStorageProfileOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetStorageProfileOutputBuilder {
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     /// This field is required.
     pub fn storage_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_profile_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     pub fn set_storage_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_profile_id = input;
         self
     }
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_profile_id
     }
@@ -127,76 +127,76 @@ impl GetStorageProfileOutputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The operating system (OS) for the storage profile.</p>
+    /// The operating system (OS) for the storage profile.
     /// This field is required.
     pub fn os_family(mut self, input: crate::types::StorageProfileOperatingSystemFamily) -> Self {
         self.os_family = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The operating system (OS) for the storage profile.</p>
+    /// The operating system (OS) for the storage profile.
     pub fn set_os_family(mut self, input: ::std::option::Option<crate::types::StorageProfileOperatingSystemFamily>) -> Self {
         self.os_family = input;
         self
     }
-    /// <p>The operating system (OS) for the storage profile.</p>
+    /// The operating system (OS) for the storage profile.
     pub fn get_os_family(&self) -> &::std::option::Option<crate::types::StorageProfileOperatingSystemFamily> {
         &self.os_family
     }
-    /// <p>The date and time the resource was created.</p>
+    /// The date and time the resource was created.
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time the resource was created.</p>
+    /// The date and time the resource was created.
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The date and time the resource was created.</p>
+    /// The date and time the resource was created.
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The user or system that created this resource.</p>
+    /// The user or system that created this resource.
     /// This field is required.
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user or system that created this resource.</p>
+    /// The user or system that created this resource.
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
-    /// <p>The user or system that created this resource.</p>
+    /// The user or system that created this resource.
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }
-    /// <p>The date and time the resource was updated.</p>
+    /// The date and time the resource was updated.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time the resource was updated.</p>
+    /// The date and time the resource was updated.
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The date and time the resource was updated.</p>
+    /// The date and time the resource was updated.
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
-    /// <p>The user or system that updated this resource.</p>
+    /// The user or system that updated this resource.
     pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user or system that updated this resource.</p>
+    /// The user or system that updated this resource.
     pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_by = input;
         self
     }
-    /// <p>The user or system that updated this resource.</p>
+    /// The user or system that updated this resource.
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_by
     }
@@ -204,19 +204,19 @@ impl GetStorageProfileOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_file_system_locations`](Self::set_file_system_locations).
     ///
-    /// <p>The location of the files for the storage profile.</p>
+    /// The location of the files for the storage profile.
     pub fn file_system_locations(mut self, input: crate::types::FileSystemLocation) -> Self {
         let mut v = self.file_system_locations.unwrap_or_default();
         v.push(input);
         self.file_system_locations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The location of the files for the storage profile.</p>
+    /// The location of the files for the storage profile.
     pub fn set_file_system_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>>) -> Self {
         self.file_system_locations = input;
         self
     }
-    /// <p>The location of the files for the storage profile.</p>
+    /// The location of the files for the storage profile.
     pub fn get_file_system_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>> {
         &self.file_system_locations
     }

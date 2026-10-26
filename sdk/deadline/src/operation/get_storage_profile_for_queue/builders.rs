@@ -22,7 +22,7 @@ impl crate::operation::get_storage_profile_for_queue::builders::GetStorageProfil
 }
 /// Fluent builder constructing a request to `GetStorageProfileForQueue`.
 ///
-/// <p>Gets a storage profile for a queue.</p>
+/// Gets a storage profile for a queue.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetStorageProfileForQueueFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl GetStorageProfileForQueueFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID for the queue in storage profile.</p>
+    /// The farm ID for the queue in storage profile.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID for the queue in storage profile.</p>
+    /// The farm ID for the queue in storage profile.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID for the queue in storage profile.</p>
+    /// The farm ID for the queue in storage profile.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The queue ID the queue in the storage profile.</p>
+    /// The queue ID the queue in the storage profile.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
         self
     }
-    /// <p>The queue ID the queue in the storage profile.</p>
+    /// The queue ID the queue in the storage profile.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_id(input);
         self
     }
-    /// <p>The queue ID the queue in the storage profile.</p>
+    /// The queue ID the queue in the storage profile.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }
-    /// <p>The storage profile ID for the storage profile in the queue.</p>
+    /// The storage profile ID for the storage profile in the queue.
     pub fn storage_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_profile_id(input.into());
         self
     }
-    /// <p>The storage profile ID for the storage profile in the queue.</p>
+    /// The storage profile ID for the storage profile in the queue.
     pub fn set_storage_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_profile_id(input);
         self
     }
-    /// <p>The storage profile ID for the storage profile in the queue.</p>
+    /// The storage profile ID for the storage profile in the queue.
     pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_profile_id()
     }

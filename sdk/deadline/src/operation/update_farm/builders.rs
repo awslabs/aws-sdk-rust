@@ -22,7 +22,7 @@ impl crate::operation::update_farm::builders::UpdateFarmInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateFarm`.
 ///
-/// <p>Updates a farm.</p>
+/// Updates a farm.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFarmFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UpdateFarmFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
         self
     }
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_farm_id(input);
         self
     }
-    /// <p>The farm ID to update.</p>
+    /// The farm ID to update.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
@@ -162,17 +162,17 @@ impl UpdateFarmFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment.</p>
+    /// A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment.
     pub fn cost_scale_factor(mut self, input: f32) -> Self {
         self.inner = self.inner.cost_scale_factor(input);
         self
     }
-    /// <p>A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment.</p>
+    /// A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment.
     pub fn set_cost_scale_factor(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_cost_scale_factor(input);
         self
     }
-    /// <p>A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment.</p>
+    /// A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment.
     pub fn get_cost_scale_factor(&self) -> &::std::option::Option<f32> {
         self.inner.get_cost_scale_factor()
     }

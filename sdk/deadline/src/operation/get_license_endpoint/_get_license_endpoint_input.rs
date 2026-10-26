@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLicenseEndpointInput {
-    /// <p>The license endpoint ID.</p>
+    /// The license endpoint ID.
     pub license_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLicenseEndpointInput {
-    /// <p>The license endpoint ID.</p>
+    /// The license endpoint ID.
     pub fn license_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.license_endpoint_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetLicenseEndpointInputBuilder {
     pub(crate) license_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLicenseEndpointInputBuilder {
-    /// <p>The license endpoint ID.</p>
+    /// The license endpoint ID.
     /// This field is required.
     pub fn license_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The license endpoint ID.</p>
+    /// The license endpoint ID.
     pub fn set_license_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_endpoint_id = input;
         self
     }
-    /// <p>The license endpoint ID.</p>
+    /// The license endpoint ID.
     pub fn get_license_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_endpoint_id
     }

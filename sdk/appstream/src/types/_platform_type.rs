@@ -17,6 +17,7 @@
 ///     PlatformType::RockyLinux8 => { /* ... */ },
 ///     PlatformType::UbuntuPro2404 => { /* ... */ },
 ///     PlatformType::Windows => { /* ... */ },
+///     PlatformType::Windows11 => { /* ... */ },
 ///     PlatformType::WindowsServer2016 => { /* ... */ },
 ///     PlatformType::WindowsServer2019 => { /* ... */ },
 ///     PlatformType::WindowsServer2022 => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum PlatformType {
     #[allow(missing_docs)] // documentation missing in model
     Windows,
     #[allow(missing_docs)] // documentation missing in model
+    Windows11,
+    #[allow(missing_docs)] // documentation missing in model
     WindowsServer2016,
     #[allow(missing_docs)] // documentation missing in model
     WindowsServer2019,
@@ -79,6 +82,7 @@ impl ::std::convert::From<&str> for PlatformType {
             "ROCKY_LINUX8" => PlatformType::RockyLinux8,
             "UBUNTU_PRO_2404" => PlatformType::UbuntuPro2404,
             "WINDOWS" => PlatformType::Windows,
+            "WINDOWS_11" => PlatformType::Windows11,
             "WINDOWS_SERVER_2016" => PlatformType::WindowsServer2016,
             "WINDOWS_SERVER_2019" => PlatformType::WindowsServer2019,
             "WINDOWS_SERVER_2022" => PlatformType::WindowsServer2022,
@@ -103,6 +107,7 @@ impl PlatformType {
             PlatformType::RockyLinux8 => "ROCKY_LINUX8",
             PlatformType::UbuntuPro2404 => "UBUNTU_PRO_2404",
             PlatformType::Windows => "WINDOWS",
+            PlatformType::Windows11 => "WINDOWS_11",
             PlatformType::WindowsServer2016 => "WINDOWS_SERVER_2016",
             PlatformType::WindowsServer2019 => "WINDOWS_SERVER_2019",
             PlatformType::WindowsServer2022 => "WINDOWS_SERVER_2022",
@@ -118,6 +123,7 @@ impl PlatformType {
             "ROCKY_LINUX8",
             "UBUNTU_PRO_2404",
             "WINDOWS",
+            "WINDOWS_11",
             "WINDOWS_SERVER_2016",
             "WINDOWS_SERVER_2019",
             "WINDOWS_SERVER_2022",
@@ -150,6 +156,7 @@ impl ::std::fmt::Display for PlatformType {
             PlatformType::RockyLinux8 => write!(f, "ROCKY_LINUX8"),
             PlatformType::UbuntuPro2404 => write!(f, "UBUNTU_PRO_2404"),
             PlatformType::Windows => write!(f, "WINDOWS"),
+            PlatformType::Windows11 => write!(f, "WINDOWS_11"),
             PlatformType::WindowsServer2016 => write!(f, "WINDOWS_SERVER_2016"),
             PlatformType::WindowsServer2019 => write!(f, "WINDOWS_SERVER_2019"),
             PlatformType::WindowsServer2022 => write!(f, "WINDOWS_SERVER_2022"),

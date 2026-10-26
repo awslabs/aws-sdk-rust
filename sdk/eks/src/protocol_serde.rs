@@ -549,6 +549,8 @@ pub(crate) mod shape_etcd_placement_response;
 
 pub(crate) mod shape_fargate_profile_issue_list;
 
+pub(crate) mod shape_gateway_api_configuration;
+
 pub(crate) mod shape_horizontal_pod_autoscaler_controller_config_response;
 
 pub(crate) mod shape_insight_resource_detail;
@@ -598,6 +600,8 @@ pub(crate) mod shape_capability_issue;
 pub(crate) mod shape_cluster_issue;
 
 pub(crate) mod shape_control_plane_scaling_tier_info;
+
+pub(crate) mod shape_crd_management_configuration;
 
 pub(crate) mod shape_deprecation_detail;
 

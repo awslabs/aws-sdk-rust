@@ -749,6 +749,8 @@ pub(crate) mod shape_update_metric_metadata;
 
 pub(crate) mod shape_update_notification_content;
 
+pub(crate) mod shape_update_outbound_email_contact_message;
+
 pub(crate) mod shape_update_participant_authentication;
 
 pub(crate) mod shape_update_participant_role_config;
@@ -1283,6 +1285,8 @@ pub(crate) mod shape_update_metric_metadata_input;
 
 pub(crate) mod shape_update_notification_content_input;
 
+pub(crate) mod shape_update_outbound_email_contact_message_input;
+
 pub(crate) mod shape_update_participant_authentication_input;
 
 pub(crate) mod shape_update_participant_role_config_input;
@@ -1749,6 +1753,8 @@ pub(crate) mod shape_notification_search_summary_list;
 
 pub(crate) mod shape_notification_summary_list;
 
+pub(crate) mod shape_nullable_additional_recipients;
+
 pub(crate) mod shape_observation_summary;
 
 pub(crate) mod shape_origins_list;
@@ -1964,6 +1970,8 @@ pub(crate) mod shape_traffic_distribution_group;
 pub(crate) mod shape_traffic_distribution_group_summary_list;
 
 pub(crate) mod shape_traffic_distribution_group_user_summary_list;
+
+pub(crate) mod shape_update_outbound_email_content;
 
 pub(crate) mod shape_update_participant_role_config_channel_info;
 
@@ -2520,6 +2528,8 @@ pub(crate) mod shape_traffic_distribution_group_summary;
 pub(crate) mod shape_traffic_distribution_group_user_summary;
 
 pub(crate) mod shape_update_case_action_definition;
+
+pub(crate) mod shape_update_outbound_raw_message;
 
 pub(crate) mod shape_url_metadata_signed_headers;
 

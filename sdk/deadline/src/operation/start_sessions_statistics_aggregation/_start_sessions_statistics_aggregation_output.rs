@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSessionsStatisticsAggregationOutput {
-    /// <p>A unique identifier for the aggregated statistics. Use this identifier with the <code>GetAggregatedStatisticsForSessions</code> operation to return the statistics.</p>
+    /// A unique identifier for the aggregated statistics. Use this identifier with the <code>GetAggregatedStatisticsForSessions</code> operation to return the statistics.
     pub aggregation_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl StartSessionsStatisticsAggregationOutput {
-    /// <p>A unique identifier for the aggregated statistics. Use this identifier with the <code>GetAggregatedStatisticsForSessions</code> operation to return the statistics.</p>
+    /// A unique identifier for the aggregated statistics. Use this identifier with the <code>GetAggregatedStatisticsForSessions</code> operation to return the statistics.
     pub fn aggregation_id(&self) -> &str {
         use std::ops::Deref;
         self.aggregation_id.deref()
@@ -34,18 +34,18 @@ pub struct StartSessionsStatisticsAggregationOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartSessionsStatisticsAggregationOutputBuilder {
-    /// <p>A unique identifier for the aggregated statistics. Use this identifier with the <code>GetAggregatedStatisticsForSessions</code> operation to return the statistics.</p>
+    /// A unique identifier for the aggregated statistics. Use this identifier with the <code>GetAggregatedStatisticsForSessions</code> operation to return the statistics.
     /// This field is required.
     pub fn aggregation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aggregation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the aggregated statistics. Use this identifier with the <code>GetAggregatedStatisticsForSessions</code> operation to return the statistics.</p>
+    /// A unique identifier for the aggregated statistics. Use this identifier with the <code>GetAggregatedStatisticsForSessions</code> operation to return the statistics.
     pub fn set_aggregation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aggregation_id = input;
         self
     }
-    /// <p>A unique identifier for the aggregated statistics. Use this identifier with the <code>GetAggregatedStatisticsForSessions</code> operation to return the statistics.</p>
+    /// A unique identifier for the aggregated statistics. Use this identifier with the <code>GetAggregatedStatisticsForSessions</code> operation to return the statistics.
     pub fn get_aggregation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aggregation_id
     }

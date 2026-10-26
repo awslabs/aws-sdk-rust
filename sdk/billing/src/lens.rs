@@ -49,6 +49,46 @@ pub(crate) fn reflens_list_business_support_subscription_history_output_output_n
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_contracts_output_output_next_token(
+    input: &crate::operation::list_contracts::ListContractsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_contractual_investment_attestations_output_output_next_token(
+    input: &crate::operation::list_contractual_investment_attestations::ListContractualInvestmentAttestationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_contractual_investment_summaries_output_output_next_token(
+    input: &crate::operation::list_contractual_investment_summaries::ListContractualInvestmentSummariesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_contractual_investments_output_output_next_token(
+    input: &crate::operation::list_contractual_investments::ListContractualInvestmentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_enterprise_support_linked_account_charges_output_output_next_token(
     input: &crate::operation::list_enterprise_support_linked_account_charges::ListEnterpriseSupportLinkedAccountChargesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -101,6 +141,34 @@ pub(crate) fn lens_list_business_support_subscription_history_output_output_subs
     input: crate::operation::list_business_support_subscription_history::ListBusinessSupportSubscriptionHistoryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BusinessSupportSubscriptionContract>> {
     let input = input.subscription_contracts;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_contracts_output_output_items(
+    input: crate::operation::list_contracts::ListContractsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ContractSummary>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_contractual_investment_attestations_output_output_items(
+    input: crate::operation::list_contractual_investment_attestations::ListContractualInvestmentAttestationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::InvestmentAttestation>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_contractual_investment_summaries_output_output_items(
+    input: crate::operation::list_contractual_investment_summaries::ListContractualInvestmentSummariesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::InvestmentSummary>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_contractual_investments_output_output_items(
+    input: crate::operation::list_contractual_investments::ListContractualInvestmentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Investment>> {
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 

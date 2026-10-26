@@ -22,7 +22,7 @@ impl crate::operation::put_metered_product::builders::PutMeteredProductInputBuil
 }
 /// Fluent builder constructing a request to `PutMeteredProduct`.
 ///
-/// <p>Adds a metered product.</p>
+/// Adds a metered product.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutMeteredProductFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl PutMeteredProductFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The license endpoint ID to add to the metered product.</p>
+    /// The license endpoint ID to add to the metered product.
     pub fn license_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_endpoint_id(input.into());
         self
     }
-    /// <p>The license endpoint ID to add to the metered product.</p>
+    /// The license endpoint ID to add to the metered product.
     pub fn set_license_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_endpoint_id(input);
         self
     }
-    /// <p>The license endpoint ID to add to the metered product.</p>
+    /// The license endpoint ID to add to the metered product.
     pub fn get_license_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_license_endpoint_id()
     }
-    /// <p>The product ID to add to the metered product.</p>
+    /// The product ID to add to the metered product.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_id(input.into());
         self
     }
-    /// <p>The product ID to add to the metered product.</p>
+    /// The product ID to add to the metered product.
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product_id(input);
         self
     }
-    /// <p>The product ID to add to the metered product.</p>
+    /// The product ID to add to the metered product.
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_product_id()
     }

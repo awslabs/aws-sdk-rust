@@ -107,11 +107,15 @@ pub use crate::types::_autonomous_virtual_machine_summary::AutonomousVirtualMach
 
 pub use crate::types::_cloud_exadata_infrastructure_summary::CloudExadataInfrastructureSummaryBuilder;
 
+pub use crate::types::_exascale_configuration::ExascaleConfigurationBuilder;
+
 pub use crate::types::_db_server_patching_details::DbServerPatchingDetailsBuilder;
 
 pub use crate::types::_db_server_summary::DbServerSummaryBuilder;
 
 pub use crate::types::_cloud_vm_cluster_summary::CloudVmClusterSummaryBuilder;
+
+pub use crate::types::_file_system_configuration_details::FileSystemConfigurationDetailsBuilder;
 
 pub use crate::types::_exadata_iorm_config::ExadataIormConfigBuilder;
 

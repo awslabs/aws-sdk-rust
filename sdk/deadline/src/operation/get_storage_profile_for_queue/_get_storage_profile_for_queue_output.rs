@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStorageProfileForQueueOutput {
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     pub storage_profile_id: ::std::string::String,
     /// <p>The display name of the storage profile connected to a queue.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
     pub display_name: ::std::string::String,
-    /// <p>The operating system of the storage profile in the queue.</p>
+    /// The operating system of the storage profile in the queue.
     pub os_family: crate::types::StorageProfileOperatingSystemFamily,
-    /// <p>The location of the files for the storage profile within the queue.</p>
+    /// The location of the files for the storage profile within the queue.
     pub file_system_locations: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>>,
     _request_id: Option<String>,
 }
 impl GetStorageProfileForQueueOutput {
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     pub fn storage_profile_id(&self) -> &str {
         use std::ops::Deref;
         self.storage_profile_id.deref()
@@ -28,11 +28,11 @@ impl GetStorageProfileForQueueOutput {
         use std::ops::Deref;
         self.display_name.deref()
     }
-    /// <p>The operating system of the storage profile in the queue.</p>
+    /// The operating system of the storage profile in the queue.
     pub fn os_family(&self) -> &crate::types::StorageProfileOperatingSystemFamily {
         &self.os_family
     }
-    /// <p>The location of the files for the storage profile within the queue.</p>
+    /// The location of the files for the storage profile within the queue.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_locations.is_none()`.
     pub fn file_system_locations(&self) -> &[crate::types::FileSystemLocation] {
@@ -62,18 +62,18 @@ pub struct GetStorageProfileForQueueOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetStorageProfileForQueueOutputBuilder {
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     /// This field is required.
     pub fn storage_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_profile_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     pub fn set_storage_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_profile_id = input;
         self
     }
-    /// <p>The storage profile ID.</p>
+    /// The storage profile ID.
     pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_profile_id
     }
@@ -98,18 +98,18 @@ impl GetStorageProfileForQueueOutputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The operating system of the storage profile in the queue.</p>
+    /// The operating system of the storage profile in the queue.
     /// This field is required.
     pub fn os_family(mut self, input: crate::types::StorageProfileOperatingSystemFamily) -> Self {
         self.os_family = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The operating system of the storage profile in the queue.</p>
+    /// The operating system of the storage profile in the queue.
     pub fn set_os_family(mut self, input: ::std::option::Option<crate::types::StorageProfileOperatingSystemFamily>) -> Self {
         self.os_family = input;
         self
     }
-    /// <p>The operating system of the storage profile in the queue.</p>
+    /// The operating system of the storage profile in the queue.
     pub fn get_os_family(&self) -> &::std::option::Option<crate::types::StorageProfileOperatingSystemFamily> {
         &self.os_family
     }
@@ -117,19 +117,19 @@ impl GetStorageProfileForQueueOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_file_system_locations`](Self::set_file_system_locations).
     ///
-    /// <p>The location of the files for the storage profile within the queue.</p>
+    /// The location of the files for the storage profile within the queue.
     pub fn file_system_locations(mut self, input: crate::types::FileSystemLocation) -> Self {
         let mut v = self.file_system_locations.unwrap_or_default();
         v.push(input);
         self.file_system_locations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The location of the files for the storage profile within the queue.</p>
+    /// The location of the files for the storage profile within the queue.
     pub fn set_file_system_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>>) -> Self {
         self.file_system_locations = input;
         self
     }
-    /// <p>The location of the files for the storage profile within the queue.</p>
+    /// The location of the files for the storage profile within the queue.
     pub fn get_file_system_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>> {
         &self.file_system_locations
     }

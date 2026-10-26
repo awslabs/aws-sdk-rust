@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetJobOutput {
-    /// <p>A list of jobs that were successfully retrieved.</p>
+    /// A list of jobs that were successfully retrieved.
     pub jobs: ::std::vec::Vec<crate::types::BatchGetJobItem>,
-    /// <p>A list of errors for jobs that could not be retrieved.</p>
+    /// A list of errors for jobs that could not be retrieved.
     pub errors: ::std::vec::Vec<crate::types::BatchGetJobError>,
     _request_id: Option<String>,
 }
 impl BatchGetJobOutput {
-    /// <p>A list of jobs that were successfully retrieved.</p>
+    /// A list of jobs that were successfully retrieved.
     pub fn jobs(&self) -> &[crate::types::BatchGetJobItem] {
         use std::ops::Deref;
         self.jobs.deref()
     }
-    /// <p>A list of errors for jobs that could not be retrieved.</p>
+    /// A list of errors for jobs that could not be retrieved.
     pub fn errors(&self) -> &[crate::types::BatchGetJobError] {
         use std::ops::Deref;
         self.errors.deref()
@@ -46,19 +46,19 @@ impl BatchGetJobOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
     ///
-    /// <p>A list of jobs that were successfully retrieved.</p>
+    /// A list of jobs that were successfully retrieved.
     pub fn jobs(mut self, input: crate::types::BatchGetJobItem) -> Self {
         let mut v = self.jobs.unwrap_or_default();
         v.push(input);
         self.jobs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of jobs that were successfully retrieved.</p>
+    /// A list of jobs that were successfully retrieved.
     pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetJobItem>>) -> Self {
         self.jobs = input;
         self
     }
-    /// <p>A list of jobs that were successfully retrieved.</p>
+    /// A list of jobs that were successfully retrieved.
     pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetJobItem>> {
         &self.jobs
     }
@@ -66,19 +66,19 @@ impl BatchGetJobOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>A list of errors for jobs that could not be retrieved.</p>
+    /// A list of errors for jobs that could not be retrieved.
     pub fn errors(mut self, input: crate::types::BatchGetJobError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of errors for jobs that could not be retrieved.</p>
+    /// A list of errors for jobs that could not be retrieved.
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetJobError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>A list of errors for jobs that could not be retrieved.</p>
+    /// A list of errors for jobs that could not be retrieved.
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetJobError>> {
         &self.errors
     }

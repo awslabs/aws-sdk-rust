@@ -746,6 +746,15 @@ pub(crate) fn update_evaluation_form_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_outbound_email_contact_message_output_output_correct_errors(
+    mut builder: crate::operation::update_outbound_email_contact_message::builders::UpdateOutboundEmailContactMessageOutputBuilder,
+) -> crate::operation::update_outbound_email_contact_message::builders::UpdateOutboundEmailContactMessageOutputBuilder {
+    if builder.contact_id.is_none() {
+        builder.contact_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn attached_files_configuration_correct_errors(
     mut builder: crate::types::builders::AttachedFilesConfigurationBuilder,
 ) -> crate::types::builders::AttachedFilesConfigurationBuilder {

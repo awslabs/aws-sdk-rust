@@ -203,6 +203,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateChannel
                 captured.insert("adConfigurationArn", value);
             }
         }
+        if requested.should_capture("failoverSlateConfigurationArn") {
+            if let ::std::option::Option::Some(value) = input.failover_slate_configuration_arn.as_deref() {
+                captured.insert("failoverSlateConfigurationArn", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

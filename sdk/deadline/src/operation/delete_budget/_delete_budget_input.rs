@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBudgetInput {
-    /// <p>The farm ID of the farm to remove from the budget.</p>
+    /// The farm ID of the farm to remove from the budget.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The budget ID of the budget to delete.</p>
+    /// The budget ID of the budget to delete.
     pub budget_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBudgetInput {
-    /// <p>The farm ID of the farm to remove from the budget.</p>
+    /// The farm ID of the farm to remove from the budget.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The budget ID of the budget to delete.</p>
+    /// The budget ID of the budget to delete.
     pub fn budget_id(&self) -> ::std::option::Option<&str> {
         self.budget_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DeleteBudgetInputBuilder {
     pub(crate) budget_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBudgetInputBuilder {
-    /// <p>The farm ID of the farm to remove from the budget.</p>
+    /// The farm ID of the farm to remove from the budget.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID of the farm to remove from the budget.</p>
+    /// The farm ID of the farm to remove from the budget.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID of the farm to remove from the budget.</p>
+    /// The farm ID of the farm to remove from the budget.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The budget ID of the budget to delete.</p>
+    /// The budget ID of the budget to delete.
     /// This field is required.
     pub fn budget_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The budget ID of the budget to delete.</p>
+    /// The budget ID of the budget to delete.
     pub fn set_budget_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_id = input;
         self
     }
-    /// <p>The budget ID of the budget to delete.</p>
+    /// The budget ID of the budget to delete.
     pub fn get_budget_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.budget_id
     }

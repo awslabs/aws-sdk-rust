@@ -3,33 +3,33 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetJob`](crate::operation::get_job::builders::GetJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_farm_id):<br>required: **true**<br><p>The farm ID of the farm in the job.</p><br>
-    ///   - [`queue_id(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::queue_id) / [`set_queue_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_queue_id):<br>required: **true**<br><p>The queue ID associated with the job.</p><br>
-    ///   - [`job_id(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The job ID.</p><br>
+    ///   - [`farm_id(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::farm_id) / [`set_farm_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_farm_id):<br>required: **true**<br>The farm ID of the farm in the job.<br>
+    ///   - [`queue_id(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::queue_id) / [`set_queue_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_queue_id):<br>required: **true**<br>The queue ID associated with the job.<br>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_job_id):<br>required: **true**<br>The job ID.<br>
     /// - On success, responds with [`GetJobOutput`](crate::operation::get_job::GetJobOutput) with field(s):
-    ///   - [`job_id(String)`](crate::operation::get_job::GetJobOutput::job_id): <p>The job ID.</p>
-    ///   - [`name(String)`](crate::operation::get_job::GetJobOutput::name): <p>The name of the job.</p>
+    ///   - [`job_id(String)`](crate::operation::get_job::GetJobOutput::job_id): The job ID.
+    ///   - [`name(String)`](crate::operation::get_job::GetJobOutput::name): The name of the job.
     ///   - [`lifecycle_status(JobLifecycleStatus)`](crate::operation::get_job::GetJobOutput::lifecycle_status): <p>The life cycle status for the job.</p>
-    ///   - [`lifecycle_status_message(String)`](crate::operation::get_job::GetJobOutput::lifecycle_status_message): <p>A message that communicates the status of the life cycle for the job.</p>
-    ///   - [`priority(i32)`](crate::operation::get_job::GetJobOutput::priority): <p>The job priority.</p>
-    ///   - [`created_at(DateTime)`](crate::operation::get_job::GetJobOutput::created_at): <p>The date and time the resource was created.</p>
-    ///   - [`created_by(String)`](crate::operation::get_job::GetJobOutput::created_by): <p>The user or system that created this resource.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_job::GetJobOutput::updated_at): <p>The date and time the resource was updated.</p>
-    ///   - [`updated_by(Option<String>)`](crate::operation::get_job::GetJobOutput::updated_by): <p>The user or system that updated this resource.</p>
-    ///   - [`started_at(Option<DateTime>)`](crate::operation::get_job::GetJobOutput::started_at): <p>The date and time the resource started running.</p>
-    ///   - [`ended_at(Option<DateTime>)`](crate::operation::get_job::GetJobOutput::ended_at): <p>The date and time the resource ended running.</p>
-    ///   - [`task_run_status(Option<TaskRunStatus>)`](crate::operation::get_job::GetJobOutput::task_run_status): <p>The task run status for the job.</p>
-    ///   - [`target_task_run_status(Option<JobTargetTaskRunStatus>)`](crate::operation::get_job::GetJobOutput::target_task_run_status): <p>The task status with which the job started.</p>
-    ///   - [`task_run_status_counts(Option<HashMap::<TaskRunStatus, i32>>)`](crate::operation::get_job::GetJobOutput::task_run_status_counts): <p>The number of tasks running on the job.</p>
-    ///   - [`task_failure_retry_count(Option<i32>)`](crate::operation::get_job::GetJobOutput::task_failure_retry_count): <p>The total number of times tasks from the job failed and were retried.</p>
-    ///   - [`storage_profile_id(Option<String>)`](crate::operation::get_job::GetJobOutput::storage_profile_id): <p>The storage profile ID associated with the job.</p>
-    ///   - [`max_failed_tasks_count(Option<i32>)`](crate::operation::get_job::GetJobOutput::max_failed_tasks_count): <p>The number of task failures before the job stops running and is marked as <code>FAILED</code>.</p>
-    ///   - [`max_retries_per_task(Option<i32>)`](crate::operation::get_job::GetJobOutput::max_retries_per_task): <p>The maximum number of retries per failed tasks.</p>
-    ///   - [`parameters(Option<HashMap::<String, JobParameter>>)`](crate::operation::get_job::GetJobOutput::parameters): <p>The parameters for the job.</p>
-    ///   - [`attachments(Option<Attachments>)`](crate::operation::get_job::GetJobOutput::attachments): <p>The attachments for the job.</p>
+    ///   - [`lifecycle_status_message(String)`](crate::operation::get_job::GetJobOutput::lifecycle_status_message): A message that communicates the status of the life cycle for the job.
+    ///   - [`priority(i32)`](crate::operation::get_job::GetJobOutput::priority): The job priority.
+    ///   - [`created_at(DateTime)`](crate::operation::get_job::GetJobOutput::created_at): The date and time the resource was created.
+    ///   - [`created_by(String)`](crate::operation::get_job::GetJobOutput::created_by): The user or system that created this resource.
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_job::GetJobOutput::updated_at): The date and time the resource was updated.
+    ///   - [`updated_by(Option<String>)`](crate::operation::get_job::GetJobOutput::updated_by): The user or system that updated this resource.
+    ///   - [`started_at(Option<DateTime>)`](crate::operation::get_job::GetJobOutput::started_at): The date and time the resource started running.
+    ///   - [`ended_at(Option<DateTime>)`](crate::operation::get_job::GetJobOutput::ended_at): The date and time the resource ended running.
+    ///   - [`task_run_status(Option<TaskRunStatus>)`](crate::operation::get_job::GetJobOutput::task_run_status): The task run status for the job.
+    ///   - [`target_task_run_status(Option<JobTargetTaskRunStatus>)`](crate::operation::get_job::GetJobOutput::target_task_run_status): The task status with which the job started.
+    ///   - [`task_run_status_counts(Option<HashMap::<TaskRunStatus, i32>>)`](crate::operation::get_job::GetJobOutput::task_run_status_counts): The number of tasks running on the job.
+    ///   - [`task_failure_retry_count(Option<i32>)`](crate::operation::get_job::GetJobOutput::task_failure_retry_count): The total number of times tasks from the job failed and were retried.
+    ///   - [`storage_profile_id(Option<String>)`](crate::operation::get_job::GetJobOutput::storage_profile_id): The storage profile ID associated with the job.
+    ///   - [`max_failed_tasks_count(Option<i32>)`](crate::operation::get_job::GetJobOutput::max_failed_tasks_count): The number of task failures before the job stops running and is marked as <code>FAILED</code>.
+    ///   - [`max_retries_per_task(Option<i32>)`](crate::operation::get_job::GetJobOutput::max_retries_per_task): The maximum number of retries per failed tasks.
+    ///   - [`parameters(Option<HashMap::<String, JobParameter>>)`](crate::operation::get_job::GetJobOutput::parameters): The parameters for the job.
+    ///   - [`attachments(Option<Attachments>)`](crate::operation::get_job::GetJobOutput::attachments): The attachments for the job.
     ///   - [`description(Option<String>)`](crate::operation::get_job::GetJobOutput::description): <p>The description of the job.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
-    ///   - [`max_worker_count(Option<i32>)`](crate::operation::get_job::GetJobOutput::max_worker_count): <p>The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers.</p> <p>If you don't set the <code>maxWorkerCount</code> when you create a job, this value is not returned in the response.</p>
-    ///   - [`source_job_id(Option<String>)`](crate::operation::get_job::GetJobOutput::source_job_id): <p>The job ID for the source job.</p>
+    ///   - [`max_worker_count(Option<i32>)`](crate::operation::get_job::GetJobOutput::max_worker_count): The maximum number of worker hosts that can concurrently process a job. When the <code>maxWorkerCount</code> is reached, no more workers will be assigned to process the job, even if the fleets assigned to the job's queue has available workers. If you don't set the <code>maxWorkerCount</code> when you create a job, this value is not returned in the response.
+    ///   - [`source_job_id(Option<String>)`](crate::operation::get_job::GetJobOutput::source_job_id): The job ID for the source job.
     /// - On failure, responds with [`SdkError<GetJobError>`](crate::operation::get_job::GetJobError)
     pub fn get_job(&self) -> crate::operation::get_job::builders::GetJobFluentBuilder {
         crate::operation::get_job::builders::GetJobFluentBuilder::new(self.handle.clone())

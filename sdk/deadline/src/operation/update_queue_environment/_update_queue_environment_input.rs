@@ -3,47 +3,47 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateQueueEnvironmentInput {
-    /// <p>The farm ID of the queue environment to update.</p>
+    /// The farm ID of the queue environment to update.
     pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID of the queue environment to update.</p>
+    /// The queue ID of the queue environment to update.
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue environment ID to update.</p>
+    /// The queue environment ID to update.
     pub queue_environment_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The priority to update.</p>
+    /// The priority to update.
     pub priority: ::std::option::Option<i32>,
-    /// <p>The template type to update.</p>
+    /// The template type to update.
     pub template_type: ::std::option::Option<crate::types::EnvironmentTemplateType>,
-    /// <p>The template to update.</p>
+    /// The template to update.
     pub template: ::std::option::Option<::std::string::String>,
 }
 impl UpdateQueueEnvironmentInput {
-    /// <p>The farm ID of the queue environment to update.</p>
+    /// The farm ID of the queue environment to update.
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
     }
-    /// <p>The queue ID of the queue environment to update.</p>
+    /// The queue ID of the queue environment to update.
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The queue environment ID to update.</p>
+    /// The queue environment ID to update.
     pub fn queue_environment_id(&self) -> ::std::option::Option<&str> {
         self.queue_environment_id.as_deref()
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The priority to update.</p>
+    /// The priority to update.
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
-    /// <p>The template type to update.</p>
+    /// The template type to update.
     pub fn template_type(&self) -> ::std::option::Option<&crate::types::EnvironmentTemplateType> {
         self.template_type.as_ref()
     }
-    /// <p>The template to update.</p>
+    /// The template to update.
     pub fn template(&self) -> ::std::option::Option<&str> {
         self.template.as_deref()
     }
@@ -81,104 +81,104 @@ pub struct UpdateQueueEnvironmentInputBuilder {
     pub(crate) template: ::std::option::Option<::std::string::String>,
 }
 impl UpdateQueueEnvironmentInputBuilder {
-    /// <p>The farm ID of the queue environment to update.</p>
+    /// The farm ID of the queue environment to update.
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The farm ID of the queue environment to update.</p>
+    /// The farm ID of the queue environment to update.
     pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.farm_id = input;
         self
     }
-    /// <p>The farm ID of the queue environment to update.</p>
+    /// The farm ID of the queue environment to update.
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.farm_id
     }
-    /// <p>The queue ID of the queue environment to update.</p>
+    /// The queue ID of the queue environment to update.
     /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue ID of the queue environment to update.</p>
+    /// The queue ID of the queue environment to update.
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The queue ID of the queue environment to update.</p>
+    /// The queue ID of the queue environment to update.
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The queue environment ID to update.</p>
+    /// The queue environment ID to update.
     /// This field is required.
     pub fn queue_environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_environment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The queue environment ID to update.</p>
+    /// The queue environment ID to update.
     pub fn set_queue_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_environment_id = input;
         self
     }
-    /// <p>The queue environment ID to update.</p>
+    /// The queue environment ID to update.
     pub fn get_queue_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_environment_id
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    /// The unique token which the server uses to recognize retries of the same request.
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The priority to update.</p>
+    /// The priority to update.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The priority to update.</p>
+    /// The priority to update.
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
-    /// <p>The priority to update.</p>
+    /// The priority to update.
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }
-    /// <p>The template type to update.</p>
+    /// The template type to update.
     pub fn template_type(mut self, input: crate::types::EnvironmentTemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The template type to update.</p>
+    /// The template type to update.
     pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::EnvironmentTemplateType>) -> Self {
         self.template_type = input;
         self
     }
-    /// <p>The template type to update.</p>
+    /// The template type to update.
     pub fn get_template_type(&self) -> &::std::option::Option<crate::types::EnvironmentTemplateType> {
         &self.template_type
     }
-    /// <p>The template to update.</p>
+    /// The template to update.
     pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The template to update.</p>
+    /// The template to update.
     pub fn set_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template = input;
         self
     }
-    /// <p>The template to update.</p>
+    /// The template to update.
     pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.template
     }

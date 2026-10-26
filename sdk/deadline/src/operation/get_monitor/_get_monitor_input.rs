@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMonitorInput {
-    /// <p>The unique identifier for the monitor. This ID is returned by the <code>CreateMonitor</code> operation.</p>
+    /// The unique identifier for the monitor. This ID is returned by the <code>CreateMonitor</code> operation.
     pub monitor_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMonitorInput {
-    /// <p>The unique identifier for the monitor. This ID is returned by the <code>CreateMonitor</code> operation.</p>
+    /// The unique identifier for the monitor. This ID is returned by the <code>CreateMonitor</code> operation.
     pub fn monitor_id(&self) -> ::std::option::Option<&str> {
         self.monitor_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetMonitorInputBuilder {
     pub(crate) monitor_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMonitorInputBuilder {
-    /// <p>The unique identifier for the monitor. This ID is returned by the <code>CreateMonitor</code> operation.</p>
+    /// The unique identifier for the monitor. This ID is returned by the <code>CreateMonitor</code> operation.
     /// This field is required.
     pub fn monitor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the monitor. This ID is returned by the <code>CreateMonitor</code> operation.</p>
+    /// The unique identifier for the monitor. This ID is returned by the <code>CreateMonitor</code> operation.
     pub fn set_monitor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_id = input;
         self
     }
-    /// <p>The unique identifier for the monitor. This ID is returned by the <code>CreateMonitor</code> operation.</p>
+    /// The unique identifier for the monitor. This ID is returned by the <code>CreateMonitor</code> operation.
     pub fn get_monitor_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_id
     }
