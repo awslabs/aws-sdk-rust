@@ -51,6 +51,8 @@ pub use crate::types::_worker_configuration_revision_description::WorkerConfigur
 
 pub use crate::types::_capacity_update::CapacityUpdate;
 
+pub use crate::types::_worker_configuration_update::WorkerConfigurationUpdate;
+
 pub use crate::types::_auto_scaling::AutoScaling;
 
 pub use crate::types::_provisioned_capacity::ProvisionedCapacity;
@@ -95,6 +97,8 @@ pub use crate::types::_auto_scaling_update::AutoScalingUpdate;
 
 pub use crate::types::_provisioned_capacity_update::ProvisionedCapacityUpdate;
 
+pub use crate::types::_plugin_update::PluginUpdate;
+
 pub use crate::types::_scale_in_policy::ScaleInPolicy;
 
 pub use crate::types::_scale_out_policy::ScaleOutPolicy;
@@ -132,6 +136,8 @@ pub use crate::types::_s3_location_description::S3LocationDescription;
 pub use crate::types::_scale_in_policy_update::ScaleInPolicyUpdate;
 
 pub use crate::types::_scale_out_policy_update::ScaleOutPolicyUpdate;
+
+pub use crate::types::_custom_plugin_update::CustomPluginUpdate;
 
 mod _apache_kafka_cluster;
 
@@ -187,6 +193,8 @@ mod _custom_plugin_state;
 
 mod _custom_plugin_summary;
 
+mod _custom_plugin_update;
+
 mod _firehose_log_delivery;
 
 mod _firehose_log_delivery_description;
@@ -216,6 +224,8 @@ mod _network_type;
 mod _plugin;
 
 mod _plugin_description;
+
+mod _plugin_update;
 
 mod _provisioned_capacity;
 
@@ -260,6 +270,8 @@ mod _worker_configuration_revision_summary;
 mod _worker_configuration_state;
 
 mod _worker_configuration_summary;
+
+mod _worker_configuration_update;
 
 mod _worker_log_delivery;
 

@@ -22,7 +22,7 @@ impl crate::operation::update_connector::builders::UpdateConnectorInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateConnector`.
 ///
-/// <p>Updates the specified connector. For request body, specify only one parameter: either <code>capacity</code> or <code>connectorConfiguration</code>.</p>
+/// <p>Updates the specified connector. In the request body, you can update either the connector's worker setting or its connector configuration, but not both in the same request. To update the worker setting, specify one or more of <code>capacity</code>, <code>plugins</code>, <code>workerConfiguration</code>, or <code>useDefaultWorkerConfiguration</code>. To update the connector configuration, specify only <code>connectorConfiguration</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConnectorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -189,5 +189,61 @@ impl UpdateConnectorFluentBuilder {
     /// <p>The current version of the connector that you want to update.</p>
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_current_version()
+    }
+    ///
+    /// Appends an item to `plugins`.
+    ///
+    /// To override the contents of this collection use [`set_plugins`](Self::set_plugins).
+    ///
+    /// <important>
+    /// <p>Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one plugin for your connector, you can create a single custom plugin using a ZIP file that bundles multiple plugins together.</p>
+    /// </important>
+    /// <p>Specifies which plugin to use for the connector. You must specify a single-element list containing one <code>customPlugin</code> object. If you don't specify this parameter, the connector keeps its current plugin.</p>
+    pub fn plugins(mut self, input: crate::types::PluginUpdate) -> Self {
+        self.inner = self.inner.plugins(input);
+        self
+    }
+    /// <important>
+    /// <p>Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one plugin for your connector, you can create a single custom plugin using a ZIP file that bundles multiple plugins together.</p>
+    /// </important>
+    /// <p>Specifies which plugin to use for the connector. You must specify a single-element list containing one <code>customPlugin</code> object. If you don't specify this parameter, the connector keeps its current plugin.</p>
+    pub fn set_plugins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PluginUpdate>>) -> Self {
+        self.inner = self.inner.set_plugins(input);
+        self
+    }
+    /// <important>
+    /// <p>Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one plugin for your connector, you can create a single custom plugin using a ZIP file that bundles multiple plugins together.</p>
+    /// </important>
+    /// <p>Specifies which plugin to use for the connector. You must specify a single-element list containing one <code>customPlugin</code> object. If you don't specify this parameter, the connector keeps its current plugin.</p>
+    pub fn get_plugins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PluginUpdate>> {
+        self.inner.get_plugins()
+    }
+    /// <p>The worker configuration to use with the connector. Specify the Amazon Resource Name (ARN) and the revision of the worker configuration. You can't specify both <code>workerConfiguration</code> and <code>useDefaultWorkerConfiguration</code> in the same request. If you specify neither parameter, the connector keeps its current worker configuration.</p>
+    pub fn worker_configuration(mut self, input: crate::types::WorkerConfigurationUpdate) -> Self {
+        self.inner = self.inner.worker_configuration(input);
+        self
+    }
+    /// <p>The worker configuration to use with the connector. Specify the Amazon Resource Name (ARN) and the revision of the worker configuration. You can't specify both <code>workerConfiguration</code> and <code>useDefaultWorkerConfiguration</code> in the same request. If you specify neither parameter, the connector keeps its current worker configuration.</p>
+    pub fn set_worker_configuration(mut self, input: ::std::option::Option<crate::types::WorkerConfigurationUpdate>) -> Self {
+        self.inner = self.inner.set_worker_configuration(input);
+        self
+    }
+    /// <p>The worker configuration to use with the connector. Specify the Amazon Resource Name (ARN) and the revision of the worker configuration. You can't specify both <code>workerConfiguration</code> and <code>useDefaultWorkerConfiguration</code> in the same request. If you specify neither parameter, the connector keeps its current worker configuration.</p>
+    pub fn get_worker_configuration(&self) -> &::std::option::Option<crate::types::WorkerConfigurationUpdate> {
+        self.inner.get_worker_configuration()
+    }
+    /// <p>Specifies whether to switch the connector to the default worker configuration that Amazon MSK Connect provides. If <code>true</code>, the connector stops using its custom worker configuration and uses the default worker configuration instead. If <code>false</code> or not specified, the connector keeps its current worker configuration. You can't specify both <code>useDefaultWorkerConfiguration</code> and <code>workerConfiguration</code> in the same request.</p>
+    pub fn use_default_worker_configuration(mut self, input: bool) -> Self {
+        self.inner = self.inner.use_default_worker_configuration(input);
+        self
+    }
+    /// <p>Specifies whether to switch the connector to the default worker configuration that Amazon MSK Connect provides. If <code>true</code>, the connector stops using its custom worker configuration and uses the default worker configuration instead. If <code>false</code> or not specified, the connector keeps its current worker configuration. You can't specify both <code>useDefaultWorkerConfiguration</code> and <code>workerConfiguration</code> in the same request.</p>
+    pub fn set_use_default_worker_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_use_default_worker_configuration(input);
+        self
+    }
+    /// <p>Specifies whether to switch the connector to the default worker configuration that Amazon MSK Connect provides. If <code>true</code>, the connector stops using its custom worker configuration and uses the default worker configuration instead. If <code>false</code> or not specified, the connector keeps its current worker configuration. You can't specify both <code>useDefaultWorkerConfiguration</code> and <code>workerConfiguration</code> in the same request.</p>
+    pub fn get_use_default_worker_configuration(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_default_worker_configuration()
     }
 }

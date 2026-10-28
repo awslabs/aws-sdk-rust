@@ -20,7 +20,7 @@ pub struct InquiryDetail {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>Timestamp indicating when the resource was last modified.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Support mode for this inquiry. AI_ONLY provides AI-generated responses. FULL_SUPPORT includes human expert review.</p>
+    /// <p>Support mode for this inquiry. AI_ONLY provides AI-generated responses.</p>
     pub support_mode: ::std::option::Option<crate::types::InquirySupportMode>,
 }
 impl InquiryDetail {
@@ -59,7 +59,7 @@ impl InquiryDetail {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>Support mode for this inquiry. AI_ONLY provides AI-generated responses. FULL_SUPPORT includes human expert review.</p>
+    /// <p>Support mode for this inquiry. AI_ONLY provides AI-generated responses.</p>
     pub fn support_mode(&self) -> ::std::option::Option<&crate::types::InquirySupportMode> {
         self.support_mode.as_ref()
     }
@@ -205,17 +205,17 @@ impl InquiryDetailBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
-    /// <p>Support mode for this inquiry. AI_ONLY provides AI-generated responses. FULL_SUPPORT includes human expert review.</p>
+    /// <p>Support mode for this inquiry. AI_ONLY provides AI-generated responses.</p>
     pub fn support_mode(mut self, input: crate::types::InquirySupportMode) -> Self {
         self.support_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Support mode for this inquiry. AI_ONLY provides AI-generated responses. FULL_SUPPORT includes human expert review.</p>
+    /// <p>Support mode for this inquiry. AI_ONLY provides AI-generated responses.</p>
     pub fn set_support_mode(mut self, input: ::std::option::Option<crate::types::InquirySupportMode>) -> Self {
         self.support_mode = input;
         self
     }
-    /// <p>Support mode for this inquiry. AI_ONLY provides AI-generated responses. FULL_SUPPORT includes human expert review.</p>
+    /// <p>Support mode for this inquiry. AI_ONLY provides AI-generated responses.</p>
     pub fn get_support_mode(&self) -> &::std::option::Option<crate::types::InquirySupportMode> {
         &self.support_mode
     }

@@ -209,9 +209,39 @@ pub(crate) fn unsupported_operation_exception_correct_errors(
     builder
 }
 
-pub(crate) fn bulk_load_id_not_found_exception_correct_errors(
-    mut builder: crate::types::error::builders::BulkLoadIdNotFoundExceptionBuilder,
-) -> crate::types::error::builders::BulkLoadIdNotFoundExceptionBuilder {
+pub(crate) fn access_denied_exception_correct_errors(
+    mut builder: crate::types::error::builders::AccessDeniedExceptionBuilder,
+) -> crate::types::error::builders::AccessDeniedExceptionBuilder {
+    if builder.detailed_message.is_none() {
+        builder.detailed_message = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cancelled_by_maintenance_exception_correct_errors(
+    mut builder: crate::types::error::builders::CancelledByMaintenanceExceptionBuilder,
+) -> crate::types::error::builders::CancelledByMaintenanceExceptionBuilder {
+    if builder.detailed_message.is_none() {
+        builder.detailed_message = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cancelled_by_user_exception_correct_errors(
+    mut builder: crate::types::error::builders::CancelledByUserExceptionBuilder,
+) -> crate::types::error::builders::CancelledByUserExceptionBuilder {
     if builder.detailed_message.is_none() {
         builder.detailed_message = Some(Default::default())
     }
@@ -227,6 +257,96 @@ pub(crate) fn bulk_load_id_not_found_exception_correct_errors(
 pub(crate) fn internal_failure_exception_correct_errors(
     mut builder: crate::types::error::builders::InternalFailureExceptionBuilder,
 ) -> crate::types::error::builders::InternalFailureExceptionBuilder {
+    if builder.detailed_message.is_none() {
+        builder.detailed_message = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn method_not_allowed_exception_correct_errors(
+    mut builder: crate::types::error::builders::MethodNotAllowedExceptionBuilder,
+) -> crate::types::error::builders::MethodNotAllowedExceptionBuilder {
+    if builder.detailed_message.is_none() {
+        builder.detailed_message = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn read_only_violation_exception_correct_errors(
+    mut builder: crate::types::error::builders::ReadOnlyViolationExceptionBuilder,
+) -> crate::types::error::builders::ReadOnlyViolationExceptionBuilder {
+    if builder.detailed_message.is_none() {
+        builder.detailed_message = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn server_shutdown_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServerShutdownExceptionBuilder,
+) -> crate::types::error::builders::ServerShutdownExceptionBuilder {
+    if builder.detailed_message.is_none() {
+        builder.detailed_message = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn validation_exception_correct_errors(
+    mut builder: crate::types::error::builders::ValidationExceptionBuilder,
+) -> crate::types::error::builders::ValidationExceptionBuilder {
+    if builder.detailed_message.is_none() {
+        builder.detailed_message = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cancel_index_rebuild_output_output_correct_errors(
+    mut builder: crate::operation::cancel_index_rebuild::builders::CancelIndexRebuildOutputBuilder,
+) -> crate::operation::cancel_index_rebuild::builders::CancelIndexRebuildOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RebuildStatus>().ok()
+    }
+    if builder.concurrency.is_none() {
+        builder.concurrency = Some(Default::default())
+    }
+    if builder.write_buffer_size.is_none() {
+        builder.write_buffer_size = "no value was set".parse::<crate::types::WriteBufferSize>().ok()
+    }
+    builder
+}
+
+pub(crate) fn bulk_load_id_not_found_exception_correct_errors(
+    mut builder: crate::types::error::builders::BulkLoadIdNotFoundExceptionBuilder,
+) -> crate::types::error::builders::BulkLoadIdNotFoundExceptionBuilder {
     if builder.detailed_message.is_none() {
         builder.detailed_message = Some(Default::default())
     }
@@ -284,69 +404,9 @@ pub(crate) fn invalid_numeric_data_exception_correct_errors(
     builder
 }
 
-pub(crate) fn access_denied_exception_correct_errors(
-    mut builder: crate::types::error::builders::AccessDeniedExceptionBuilder,
-) -> crate::types::error::builders::AccessDeniedExceptionBuilder {
-    if builder.detailed_message.is_none() {
-        builder.detailed_message = Some(Default::default())
-    }
-    if builder.request_id.is_none() {
-        builder.request_id = Some(Default::default())
-    }
-    if builder.code.is_none() {
-        builder.code = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn read_only_violation_exception_correct_errors(
-    mut builder: crate::types::error::builders::ReadOnlyViolationExceptionBuilder,
-) -> crate::types::error::builders::ReadOnlyViolationExceptionBuilder {
-    if builder.detailed_message.is_none() {
-        builder.detailed_message = Some(Default::default())
-    }
-    if builder.request_id.is_none() {
-        builder.request_id = Some(Default::default())
-    }
-    if builder.code.is_none() {
-        builder.code = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn statistics_not_available_exception_correct_errors(
     mut builder: crate::types::error::builders::StatisticsNotAvailableExceptionBuilder,
 ) -> crate::types::error::builders::StatisticsNotAvailableExceptionBuilder {
-    if builder.detailed_message.is_none() {
-        builder.detailed_message = Some(Default::default())
-    }
-    if builder.request_id.is_none() {
-        builder.request_id = Some(Default::default())
-    }
-    if builder.code.is_none() {
-        builder.code = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn method_not_allowed_exception_correct_errors(
-    mut builder: crate::types::error::builders::MethodNotAllowedExceptionBuilder,
-) -> crate::types::error::builders::MethodNotAllowedExceptionBuilder {
-    if builder.detailed_message.is_none() {
-        builder.detailed_message = Some(Default::default())
-    }
-    if builder.request_id.is_none() {
-        builder.request_id = Some(Default::default())
-    }
-    if builder.code.is_none() {
-        builder.code = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn server_shutdown_exception_correct_errors(
-    mut builder: crate::types::error::builders::ServerShutdownExceptionBuilder,
-) -> crate::types::error::builders::ServerShutdownExceptionBuilder {
     if builder.detailed_message.is_none() {
         builder.detailed_message = Some(Default::default())
     }
@@ -364,21 +424,6 @@ pub(crate) fn execute_fast_reset_output_output_correct_errors(
 ) -> crate::operation::execute_fast_reset::builders::ExecuteFastResetOutputBuilder {
     if builder.status.is_none() {
         builder.status = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn cancelled_by_user_exception_correct_errors(
-    mut builder: crate::types::error::builders::CancelledByUserExceptionBuilder,
-) -> crate::types::error::builders::CancelledByUserExceptionBuilder {
-    if builder.detailed_message.is_none() {
-        builder.detailed_message = Some(Default::default())
-    }
-    if builder.request_id.is_none() {
-        builder.request_id = Some(Default::default())
-    }
-    if builder.code.is_none() {
-        builder.code = Some(Default::default())
     }
     builder
 }
@@ -472,6 +517,30 @@ pub(crate) fn execute_open_cypher_query_output_output_correct_errors(
 ) -> crate::operation::execute_open_cypher_query::builders::ExecuteOpenCypherQueryOutputBuilder {
     if builder.results.is_none() {
         builder.results = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_index_rebuild_status_output_output_correct_errors(
+    mut builder: crate::operation::get_index_rebuild_status::builders::GetIndexRebuildStatusOutputBuilder,
+) -> crate::operation::get_index_rebuild_status::builders::GetIndexRebuildStatusOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RebuildStatus>().ok()
+    }
+    if builder.scope.is_none() {
+        builder.scope = "no value was set".parse::<crate::types::Scope>().ok()
+    }
+    if builder.concurrency.is_none() {
+        builder.concurrency = Some(Default::default())
+    }
+    if builder.write_buffer_size.is_none() {
+        builder.write_buffer_size = "no value was set".parse::<crate::types::WriteBufferSize>().ok()
+    }
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.progress_percentage.is_none() {
+        builder.progress_percentage = Some(Default::default())
     }
     builder
 }
@@ -605,6 +674,15 @@ pub(crate) fn get_sparql_stream_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_index_rebuilds_output_output_correct_errors(
+    mut builder: crate::operation::list_index_rebuilds::builders::ListIndexRebuildsOutputBuilder,
+) -> crate::operation::list_index_rebuilds::builders::ListIndexRebuildsOutputBuilder {
+    if builder.rebuild_ids.is_none() {
+        builder.rebuild_ids = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_loader_jobs_output_output_correct_errors(
     mut builder: crate::operation::list_loader_jobs::builders::ListLoaderJobsOutputBuilder,
 ) -> crate::operation::list_loader_jobs::builders::ListLoaderJobsOutputBuilder {
@@ -634,6 +712,42 @@ pub(crate) fn manage_sparql_statistics_output_output_correct_errors(
 ) -> crate::operation::manage_sparql_statistics::builders::ManageSparqlStatisticsOutputBuilder {
     if builder.status.is_none() {
         builder.status = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn resource_not_found_exception_correct_errors(
+    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
+) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
+    if builder.detailed_message.is_none() {
+        builder.detailed_message = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_index_rebuild_output_output_correct_errors(
+    mut builder: crate::operation::start_index_rebuild::builders::StartIndexRebuildOutputBuilder,
+) -> crate::operation::start_index_rebuild::builders::StartIndexRebuildOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RebuildStatus>().ok()
+    }
+    if builder.rebuild_id.is_none() {
+        builder.rebuild_id = Some(Default::default())
+    }
+    if builder.scope.is_none() {
+        builder.scope = "no value was set".parse::<crate::types::Scope>().ok()
+    }
+    if builder.concurrency.is_none() {
+        builder.concurrency = Some(Default::default())
+    }
+    if builder.write_buffer_size.is_none() {
+        builder.write_buffer_size = "no value was set".parse::<crate::types::WriteBufferSize>().ok()
     }
     builder
 }
@@ -670,6 +784,30 @@ pub(crate) fn query_language_version_correct_errors(
 ) -> crate::types::builders::QueryLanguageVersionBuilder {
     if builder.version.is_none() {
         builder.version = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn storage_metrics_correct_errors(
+    mut builder: crate::types::builders::StorageMetricsBuilder,
+) -> crate::types::builders::StorageMetricsBuilder {
+    if builder.size_in_bytes.is_none() {
+        builder.size_in_bytes = Some(Default::default())
+    }
+    if builder.count.is_none() {
+        builder.count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn undo_logs_metrics_correct_errors(
+    mut builder: crate::types::builders::UndoLogsMetricsBuilder,
+) -> crate::types::builders::UndoLogsMetricsBuilder {
+    if builder.size_in_bytes.is_none() {
+        builder.size_in_bytes = Some(Default::default())
+    }
+    if builder.list_size.is_none() {
+        builder.list_size = Some(Default::default())
     }
     builder
 }

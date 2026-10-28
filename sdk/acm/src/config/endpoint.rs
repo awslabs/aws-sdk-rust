@@ -967,7 +967,7 @@ mod test {
         );
     }
 
-    /// ACM-ACME in us-gov-west-1 returns partition error
+    /// ACM-ACME standard endpoint for us-gov-west-1
     #[test]
     fn test_46() {
         let params = crate::config::endpoint::Params::builder()
@@ -979,15 +979,39 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: ACME operations are only available in commercial AWS partitions [ACM-ACME in us-gov-west-1 returns partition error]",
+        let endpoint = endpoint.expect("Expected valid endpoint: https://acm-acme.us-gov-west-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://acm-acme.us-gov-west-1.api.aws")
+                .build()
         );
-        assert_eq!(format!("{}", error), "ACME operations are only available in commercial AWS partitions")
+    }
+
+    /// ACM-ACME standard endpoint for us-gov-east-1
+    #[test]
+    fn test_47() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .service_type("ACM-ACME".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://acm-acme.us-gov-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://acm-acme.us-gov-east-1.api.aws")
+                .build()
+        );
     }
 
     /// ACM-ACME in cn-north-1 returns partition error
     #[test]
-    fn test_47() {
+    fn test_48() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
             .use_fips(false)
@@ -997,10 +1021,68 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: ACME operations are only available in commercial AWS partitions [ACM-ACME in cn-north-1 returns partition error]",
+        let error = endpoint.expect_err("expected error: ACME operations are only available in the aws and aws-us-gov partitions [ACM-ACME in cn-north-1 returns partition error]");
+        assert_eq!(
+            format!("{}", error),
+            "ACME operations are only available in the aws and aws-us-gov partitions"
+        )
+    }
+
+    /// ACM-ACME in cn-northwest-1 returns partition error
+    #[test]
+    fn test_49() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("cn-northwest-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .service_type("ACM-ACME".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: ACME operations are only available in the aws and aws-us-gov partitions [ACM-ACME in cn-northwest-1 returns partition error]");
+        assert_eq!(
+            format!("{}", error),
+            "ACME operations are only available in the aws and aws-us-gov partitions"
+        )
+    }
+
+    /// ACM-ACME with DualStack enabled for us-gov-west-1
+    #[test]
+    fn test_50() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .service_type("ACM-ACME".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://acm-acme.us-gov-west-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://acm-acme.us-gov-west-1.api.aws")
+                .build()
         );
-        assert_eq!(format!("{}", error), "ACME operations are only available in commercial AWS partitions")
+    }
+
+    /// ACM-ACME FIPS in us-gov-west-1 returns error
+    #[test]
+    fn test_51() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .service_type("ACM-ACME".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint
+            .expect_err("expected error: FIPS endpoints are not available for ACME operations [ACM-ACME FIPS in us-gov-west-1 returns error]");
+        assert_eq!(format!("{}", error), "FIPS endpoints are not available for ACME operations")
     }
 }
 
@@ -1122,7 +1204,7 @@ impl DefaultResolver {
                             )
                         }
                         4 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                            "ACME operations are only available in commercial AWS partitions".to_string(),
+                            "ACME operations are only available in the aws and aws-us-gov partitions".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
                         5 => {
                             let region = &params.region;
@@ -1244,7 +1326,8 @@ impl DefaultResolver {
                             let partition_resolver = &self.partition_resolver;
                             (service_type) == ("ACM-ACME")
                         })(&mut _diagnostic_collector),
-                        3 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        3 => (use_fips) == (&true),
+                        4 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_result = &context.partition_result;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = partition_result {
@@ -1253,7 +1336,6 @@ impl DefaultResolver {
                                 return false;
                             }) == ("aws")
                         })(&mut _diagnostic_collector),
-                        4 => (use_fips) == (&true),
                         5 => (use_dual_stack) == (&true),
                         6 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_result = &context.partition_result;
@@ -1290,7 +1372,7 @@ impl crate::config::endpoint::ResolveEndpoint for DefaultResolver {
         ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(result)
     }
 }
-const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 10] = [
+const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 13] = [
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: -1,
         high_ref: 1,
@@ -1312,7 +1394,7 @@ const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 10] = [
         low_ref: 5,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 4,
+        condition_index: 3,
         high_ref: 7,
         low_ref: 6,
     },
@@ -1333,13 +1415,28 @@ const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 10] = [
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 3,
-        high_ref: 10,
+        high_ref: 12,
+        low_ref: 10,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 4,
+        high_ref: 100000003,
+        low_ref: 11,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 6,
+        high_ref: 100000003,
         low_ref: 100000004,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 4,
         high_ref: 100000002,
-        low_ref: 100000003,
+        low_ref: 13,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 6,
+        high_ref: 100000002,
+        low_ref: 100000004,
     },
 ];
 // These are all optional since they are set by conditions and will

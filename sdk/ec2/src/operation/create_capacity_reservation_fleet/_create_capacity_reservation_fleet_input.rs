@@ -10,6 +10,12 @@ pub struct CreateCapacityReservationFleetInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the instance types for which to reserve the capacity.</p>
     pub instance_type_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReservationFleetInstanceSpecification>>,
+    /// <p>Reserved for internal use.</p>
+    pub instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
+    /// <p>Reserved for internal use.</p>
+    pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>Reserved for internal use.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the tenancy of the Capacity Reservation Fleet. All Capacity Reservations in the Fleet inherit this tenancy. The Capacity Reservation Fleet can have one of the following tenancy settings:</p>
     /// <ul>
     /// <li>
@@ -46,6 +52,18 @@ impl CreateCapacityReservationFleetInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_type_specifications.is_none()`.
     pub fn instance_type_specifications(&self) -> &[crate::types::ReservationFleetInstanceSpecification] {
         self.instance_type_specifications.as_deref().unwrap_or_default()
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirementsRequest> {
+        self.instance_requirements.as_ref()
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
     }
     /// <p>Indicates the tenancy of the Capacity Reservation Fleet. All Capacity Reservations in the Fleet inherit this tenancy. The Capacity Reservation Fleet can have one of the following tenancy settings:</p>
     /// <ul>
@@ -96,6 +114,9 @@ pub struct CreateCapacityReservationFleetInputBuilder {
     pub(crate) allocation_strategy: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReservationFleetInstanceSpecification>>,
+    pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) tenancy: ::std::option::Option<crate::types::FleetCapacityReservationTenancy>,
     pub(crate) total_target_capacity: ::std::option::Option<i32>,
     pub(crate) end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -157,6 +178,48 @@ impl CreateCapacityReservationFleetInputBuilder {
     /// <p>Information about the instance types for which to reserve the capacity.</p>
     pub fn get_instance_type_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservationFleetInstanceSpecification>> {
         &self.instance_type_specifications
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn instance_requirements(mut self, input: crate::types::InstanceRequirementsRequest) -> Self {
+        self.instance_requirements = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn set_instance_requirements(mut self, input: ::std::option::Option<crate::types::InstanceRequirementsRequest>) -> Self {
+        self.instance_requirements = input;
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::InstanceRequirementsRequest> {
+        &self.instance_requirements
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone = input;
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
     }
     /// <p>Indicates the tenancy of the Capacity Reservation Fleet. All Capacity Reservations in the Fleet inherit this tenancy. The Capacity Reservation Fleet can have one of the following tenancy settings:</p>
     /// <ul>
@@ -284,6 +347,9 @@ impl CreateCapacityReservationFleetInputBuilder {
             allocation_strategy: self.allocation_strategy,
             client_token: self.client_token,
             instance_type_specifications: self.instance_type_specifications,
+            instance_requirements: self.instance_requirements,
+            availability_zone: self.availability_zone,
+            availability_zone_id: self.availability_zone_id,
             tenancy: self.tenancy,
             total_target_capacity: self.total_target_capacity,
             end_date: self.end_date,

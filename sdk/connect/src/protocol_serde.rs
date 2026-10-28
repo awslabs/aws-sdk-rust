@@ -1939,6 +1939,8 @@ pub(crate) mod shape_task_attachment;
 
 pub(crate) mod shape_task_template_constraints;
 
+pub(crate) mod shape_task_template_contact_hooks;
+
 pub(crate) mod shape_task_template_defaults;
 
 pub(crate) mod shape_task_template_field;

@@ -13,13 +13,13 @@ pub use crate::types::error::_internal_exception::InternalException;
 
 pub use crate::types::error::_validation_exception::ValidationException;
 
+pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsException;
+
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_invalid_type_exception::InvalidTypeException;
-
-pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsException;
 
 pub use crate::types::error::_throttling_exception::ThrottlingException;
 

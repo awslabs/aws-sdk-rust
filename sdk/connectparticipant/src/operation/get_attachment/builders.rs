@@ -159,4 +159,60 @@ impl GetAttachmentFluentBuilder {
     pub fn get_url_expiry_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_url_expiry_in_seconds()
     }
+    /// <p>Specifies how a browser handles the file at the pre-signed URL. The following values are valid:</p>
+    /// <dl>
+    /// <dt>
+    /// INLINE
+    /// </dt>
+    /// <dd>
+    /// <p>Displays the file in the browser.</p>
+    /// </dd>
+    /// <dt>
+    /// ATTACHMENT
+    /// </dt>
+    /// <dd>
+    /// <p>Downloads the file. This is the default behavior.</p>
+    /// </dd>
+    /// </dl>
+    pub fn url_content_disposition(mut self, input: crate::types::ContentDisposition) -> Self {
+        self.inner = self.inner.url_content_disposition(input);
+        self
+    }
+    /// <p>Specifies how a browser handles the file at the pre-signed URL. The following values are valid:</p>
+    /// <dl>
+    /// <dt>
+    /// INLINE
+    /// </dt>
+    /// <dd>
+    /// <p>Displays the file in the browser.</p>
+    /// </dd>
+    /// <dt>
+    /// ATTACHMENT
+    /// </dt>
+    /// <dd>
+    /// <p>Downloads the file. This is the default behavior.</p>
+    /// </dd>
+    /// </dl>
+    pub fn set_url_content_disposition(mut self, input: ::std::option::Option<crate::types::ContentDisposition>) -> Self {
+        self.inner = self.inner.set_url_content_disposition(input);
+        self
+    }
+    /// <p>Specifies how a browser handles the file at the pre-signed URL. The following values are valid:</p>
+    /// <dl>
+    /// <dt>
+    /// INLINE
+    /// </dt>
+    /// <dd>
+    /// <p>Displays the file in the browser.</p>
+    /// </dd>
+    /// <dt>
+    /// ATTACHMENT
+    /// </dt>
+    /// <dd>
+    /// <p>Downloads the file. This is the default behavior.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_url_content_disposition(&self) -> &::std::option::Option<crate::types::ContentDisposition> {
+        self.inner.get_url_content_disposition()
+    }
 }

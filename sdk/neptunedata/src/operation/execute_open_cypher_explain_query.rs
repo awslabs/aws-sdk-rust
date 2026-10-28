@@ -329,6 +329,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ExecuteOpenCy
 pub enum ExecuteOpenCypherExplainQueryError {
     /// <p>Raised when a request is submitted that cannot be processed.</p>
     BadRequestException(crate::types::error::BadRequestException),
+    /// <p>Raised when a request is cancelled because the storage layer entered maintenance mode. This typically happens during a customer-initiated operation such as an index rebuild. It should be treated like <code>ConcurrentModificationException</code>.</p>
+    CancelledByMaintenanceException(crate::types::error::CancelledByMaintenanceException),
     /// <p>Raised when a user cancelled a request.</p>
     CancelledByUserException(crate::types::error::CancelledByUserException),
     /// <p>Raised when a request timed out in the client.</p>
@@ -403,6 +405,7 @@ impl ExecuteOpenCypherExplainQueryError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BadRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::CancelledByMaintenanceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CancelledByUserException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClientTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConcurrentModificationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -429,6 +432,10 @@ impl ExecuteOpenCypherExplainQueryError {
     /// Returns `true` if the error kind is `ExecuteOpenCypherExplainQueryError::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(self, Self::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `ExecuteOpenCypherExplainQueryError::CancelledByMaintenanceException`.
+    pub fn is_cancelled_by_maintenance_exception(&self) -> bool {
+        matches!(self, Self::CancelledByMaintenanceException(_))
     }
     /// Returns `true` if the error kind is `ExecuteOpenCypherExplainQueryError::CancelledByUserException`.
     pub fn is_cancelled_by_user_exception(&self) -> bool {
@@ -515,6 +522,7 @@ impl ::std::error::Error for ExecuteOpenCypherExplainQueryError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::BadRequestException(_inner) => ::std::option::Option::Some(_inner),
+            Self::CancelledByMaintenanceException(_inner) => ::std::option::Option::Some(_inner),
             Self::CancelledByUserException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClientTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConcurrentModificationException(_inner) => ::std::option::Option::Some(_inner),
@@ -543,6 +551,7 @@ impl ::std::fmt::Display for ExecuteOpenCypherExplainQueryError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::BadRequestException(_inner) => _inner.fmt(f),
+            Self::CancelledByMaintenanceException(_inner) => _inner.fmt(f),
             Self::CancelledByUserException(_inner) => _inner.fmt(f),
             Self::ClientTimeoutException(_inner) => _inner.fmt(f),
             Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
@@ -579,6 +588,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ExecuteOpenCypherExplainQue
     }
     fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
         match self {
+            Self::CancelledByMaintenanceException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
             Self::ClientTimeoutException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
             Self::ConcurrentModificationException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
             Self::ConstraintViolationException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
@@ -595,6 +605,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ExecuteOpenCy
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CancelledByMaintenanceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CancelledByUserException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClientTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConcurrentModificationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

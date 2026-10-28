@@ -8,6 +8,10 @@ pub struct MulticastSourceUpdateRequest {
     pub source_ip: ::std::option::Option<::std::string::String>,
     /// This represents the customer's source URL where multicast stream is pulled from.
     pub url: ::std::option::Option<::std::string::String>,
+    /// This represents the ip address of the device sending the secondary multicast stream.
+    pub secondary_source_ip: ::std::option::Option<::std::string::String>,
+    /// This represents the customer's secondary source URL where the redundant multicast stream (SMPTE 2022-7) is pulled from.
+    pub secondary_url: ::std::option::Option<::std::string::String>,
 }
 impl MulticastSourceUpdateRequest {
     /// This represents the ip address of the device sending the multicast stream.
@@ -17,6 +21,14 @@ impl MulticastSourceUpdateRequest {
     /// This represents the customer's source URL where multicast stream is pulled from.
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
+    }
+    /// This represents the ip address of the device sending the secondary multicast stream.
+    pub fn secondary_source_ip(&self) -> ::std::option::Option<&str> {
+        self.secondary_source_ip.as_deref()
+    }
+    /// This represents the customer's secondary source URL where the redundant multicast stream (SMPTE 2022-7) is pulled from.
+    pub fn secondary_url(&self) -> ::std::option::Option<&str> {
+        self.secondary_url.as_deref()
     }
 }
 impl MulticastSourceUpdateRequest {
@@ -32,6 +44,8 @@ impl MulticastSourceUpdateRequest {
 pub struct MulticastSourceUpdateRequestBuilder {
     pub(crate) source_ip: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
+    pub(crate) secondary_source_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) secondary_url: ::std::option::Option<::std::string::String>,
 }
 impl MulticastSourceUpdateRequestBuilder {
     /// This represents the ip address of the device sending the multicast stream.
@@ -63,11 +77,41 @@ impl MulticastSourceUpdateRequestBuilder {
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }
+    /// This represents the ip address of the device sending the secondary multicast stream.
+    pub fn secondary_source_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secondary_source_ip = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// This represents the ip address of the device sending the secondary multicast stream.
+    pub fn set_secondary_source_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.secondary_source_ip = input;
+        self
+    }
+    /// This represents the ip address of the device sending the secondary multicast stream.
+    pub fn get_secondary_source_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secondary_source_ip
+    }
+    /// This represents the customer's secondary source URL where the redundant multicast stream (SMPTE 2022-7) is pulled from.
+    pub fn secondary_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secondary_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// This represents the customer's secondary source URL where the redundant multicast stream (SMPTE 2022-7) is pulled from.
+    pub fn set_secondary_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.secondary_url = input;
+        self
+    }
+    /// This represents the customer's secondary source URL where the redundant multicast stream (SMPTE 2022-7) is pulled from.
+    pub fn get_secondary_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secondary_url
+    }
     /// Consumes the builder and constructs a [`MulticastSourceUpdateRequest`](crate::types::MulticastSourceUpdateRequest).
     pub fn build(self) -> crate::types::MulticastSourceUpdateRequest {
         crate::types::MulticastSourceUpdateRequest {
             source_ip: self.source_ip,
             url: self.url,
+            secondary_source_ip: self.secondary_source_ip,
+            secondary_url: self.secondary_url,
         }
     }
 }

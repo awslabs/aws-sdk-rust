@@ -5,6 +5,8 @@ pub use crate::types::_data_source_type::DataSourceType;
 
 pub use crate::types::_direct_query_data_source_type::DirectQueryDataSourceType;
 
+pub use crate::types::_replication_status::ReplicationStatus;
+
 pub use crate::types::_package_association_configuration::PackageAssociationConfiguration;
 
 pub use crate::types::_domain_package_details::DomainPackageDetails;
@@ -105,6 +107,8 @@ pub use crate::types::_master_node_status::MasterNodeStatus;
 
 pub use crate::types::_domain_health::DomainHealth;
 
+pub use crate::types::_replication_role::ReplicationRole;
+
 pub use crate::types::_dry_run_progress_status::DryRunProgressStatus;
 
 pub use crate::types::_dry_run_results::DryRunResults;
@@ -190,6 +194,8 @@ pub use crate::types::_principal_type::PrincipalType;
 pub use crate::types::_cancelled_change_property::CancelledChangeProperty;
 
 pub use crate::types::_deployment_status::DeploymentStatus;
+
+pub use crate::types::_category_diff_result::CategoryDiffResult;
 
 pub use crate::types::_data_source::DataSource;
 
@@ -321,6 +327,8 @@ pub use crate::types::_environment_info::EnvironmentInfo;
 
 pub use crate::types::_domain_nodes_status::DomainNodesStatus;
 
+pub use crate::types::_replication_peer::ReplicationPeer;
+
 pub use crate::types::_filter::Filter;
 
 pub use crate::types::_insight_entity_type::InsightEntityType;
@@ -380,6 +388,10 @@ pub use crate::types::_scheduled_by::ScheduledBy;
 pub use crate::types::_action_status::ActionStatus;
 
 pub use crate::types::_inbound_connection_status_code::InboundConnectionStatusCode;
+
+pub use crate::types::_diff_status::DiffStatus;
+
+pub use crate::types::_diff_items::DiffItems;
 
 pub use crate::types::_app_config_type::AppConfigType;
 
@@ -473,6 +485,8 @@ pub use crate::types::_upgrade_step_item::UpgradeStepItem;
 
 pub use crate::types::_saved_object_identifier::SavedObjectIdentifier;
 
+pub use crate::types::_divergent_item::DivergentItem;
+
 pub use crate::types::_time_unit::TimeUnit;
 
 pub use crate::types::_scheduled_auto_tune_action_type::ScheduledAutoTuneActionType;
@@ -482,6 +496,10 @@ pub use crate::types::_scheduled_auto_tune_severity_type::ScheduledAutoTuneSever
 pub use crate::types::_zone_status::ZoneStatus;
 
 pub use crate::types::_storage_type_limit::StorageTypeLimit;
+
+pub use crate::types::_divergent_field::DivergentField;
+
+pub use crate::types::_diff_field_policy::DiffFieldPolicy;
 
 mod _access_policies_status;
 
@@ -567,6 +585,8 @@ mod _capability_failure_reason;
 
 mod _capability_status;
 
+mod _category_diff_result;
+
 mod _change_progress_details;
 
 mod _change_progress_stage;
@@ -619,9 +639,19 @@ mod _describe_packages_filter;
 
 mod _describe_packages_filter_name;
 
+mod _diff_field_policy;
+
+mod _diff_items;
+
+mod _diff_status;
+
 mod _direct_query_data_source;
 
 mod _direct_query_data_source_type;
+
+mod _divergent_field;
+
+mod _divergent_item;
 
 mod _domain_config;
 
@@ -856,6 +886,12 @@ mod _prometheus_direct_query_data_source;
 mod _property_value_type;
 
 mod _recurring_charge;
+
+mod _replication_peer;
+
+mod _replication_role;
+
+mod _replication_status;
 
 mod _requirement_level;
 

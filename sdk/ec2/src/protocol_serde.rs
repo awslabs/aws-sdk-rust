@@ -2267,6 +2267,10 @@ pub(crate) mod shape_get_capacity_manager_monitored_tag_keys;
 
 pub(crate) mod shape_get_capacity_manager_monitored_tag_keys_input;
 
+pub(crate) mod shape_get_capacity_manager_supportability_scores;
+
+pub(crate) mod shape_get_capacity_manager_supportability_scores_input;
+
 pub(crate) mod shape_get_capacity_reservation_usage;
 
 pub(crate) mod shape_get_capacity_reservation_usage_input;
@@ -3671,6 +3675,8 @@ pub(crate) mod shape_capacity_manager_data_export_response_set;
 
 pub(crate) mod shape_capacity_manager_monitored_tag_key_list;
 
+pub(crate) mod shape_capacity_manager_supportability_score_set;
+
 pub(crate) mod shape_capacity_reservation;
 
 pub(crate) mod shape_capacity_reservation_adjustment_details;
@@ -4742,6 +4748,8 @@ pub(crate) mod shape_capacity_manager_data_export_response;
 pub(crate) mod shape_capacity_manager_dimension;
 
 pub(crate) mod shape_capacity_manager_monitored_tag_key;
+
+pub(crate) mod shape_capacity_manager_supportability_score;
 
 pub(crate) mod shape_capacity_reservation_billing_request;
 
@@ -6242,6 +6250,8 @@ pub(crate) mod shape_network_card_interface_type_list;
 pub(crate) mod shape_neuron_device_core_info;
 
 pub(crate) mod shape_neuron_device_memory_info;
+
+pub(crate) mod shape_performance_factor_reference_set_request;
 
 pub(crate) mod shape_phase1_dh_group_numbers_list_value;
 

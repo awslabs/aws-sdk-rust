@@ -209,6 +209,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateCapacit
                 captured.insert("ClientToken", value);
             }
         }
+        if requested.should_capture("AvailabilityZone") {
+            if let ::std::option::Option::Some(value) = input.availability_zone.as_deref() {
+                captured.insert("AvailabilityZone", value);
+            }
+        }
+        if requested.should_capture("AvailabilityZoneId") {
+            if let ::std::option::Option::Some(value) = input.availability_zone_id.as_deref() {
+                captured.insert("AvailabilityZoneId", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

@@ -14,6 +14,8 @@ pub struct CreateTaskTemplateInput {
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
     /// <p>The ContactFlowId for the flow that will be run if this template is used to create a self-assigned task.</p>
     pub self_assign_flow_id: ::std::option::Option<::std::string::String>,
+    /// <p>The event hooks that are set on tasks created by using this template.</p>
+    pub contact_hooks: ::std::option::Option<crate::types::TaskTemplateContactHooks>,
     /// <p>Constraints that are applicable to the fields listed. Although this parameter is marked as optional in the API model, the service requires it when calling <code>CreateTaskTemplate</code> or <code>UpdateTaskTemplate</code>. The <code>RequiredFields</code> array must contain at least one element, and the field of type <code>NAME</code> must be included in <code>RequiredFields</code>.</p>
     pub constraints: ::std::option::Option<crate::types::TaskTemplateConstraints>,
     /// <p>The default values for fields when a task is created by referencing this template.</p>
@@ -47,6 +49,10 @@ impl CreateTaskTemplateInput {
     /// <p>The ContactFlowId for the flow that will be run if this template is used to create a self-assigned task.</p>
     pub fn self_assign_flow_id(&self) -> ::std::option::Option<&str> {
         self.self_assign_flow_id.as_deref()
+    }
+    /// <p>The event hooks that are set on tasks created by using this template.</p>
+    pub fn contact_hooks(&self) -> ::std::option::Option<&crate::types::TaskTemplateContactHooks> {
+        self.contact_hooks.as_ref()
     }
     /// <p>Constraints that are applicable to the fields listed. Although this parameter is marked as optional in the API model, the service requires it when calling <code>CreateTaskTemplate</code> or <code>UpdateTaskTemplate</code>. The <code>RequiredFields</code> array must contain at least one element, and the field of type <code>NAME</code> must be included in <code>RequiredFields</code>.</p>
     pub fn constraints(&self) -> ::std::option::Option<&crate::types::TaskTemplateConstraints> {
@@ -88,6 +94,7 @@ pub struct CreateTaskTemplateInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) contact_flow_id: ::std::option::Option<::std::string::String>,
     pub(crate) self_assign_flow_id: ::std::option::Option<::std::string::String>,
+    pub(crate) contact_hooks: ::std::option::Option<crate::types::TaskTemplateContactHooks>,
     pub(crate) constraints: ::std::option::Option<crate::types::TaskTemplateConstraints>,
     pub(crate) defaults: ::std::option::Option<crate::types::TaskTemplateDefaults>,
     pub(crate) status: ::std::option::Option<crate::types::TaskTemplateStatus>,
@@ -169,6 +176,20 @@ impl CreateTaskTemplateInputBuilder {
     /// <p>The ContactFlowId for the flow that will be run if this template is used to create a self-assigned task.</p>
     pub fn get_self_assign_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.self_assign_flow_id
+    }
+    /// <p>The event hooks that are set on tasks created by using this template.</p>
+    pub fn contact_hooks(mut self, input: crate::types::TaskTemplateContactHooks) -> Self {
+        self.contact_hooks = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The event hooks that are set on tasks created by using this template.</p>
+    pub fn set_contact_hooks(mut self, input: ::std::option::Option<crate::types::TaskTemplateContactHooks>) -> Self {
+        self.contact_hooks = input;
+        self
+    }
+    /// <p>The event hooks that are set on tasks created by using this template.</p>
+    pub fn get_contact_hooks(&self) -> &::std::option::Option<crate::types::TaskTemplateContactHooks> {
+        &self.contact_hooks
     }
     /// <p>Constraints that are applicable to the fields listed. Although this parameter is marked as optional in the API model, the service requires it when calling <code>CreateTaskTemplate</code> or <code>UpdateTaskTemplate</code>. The <code>RequiredFields</code> array must contain at least one element, and the field of type <code>NAME</code> must be included in <code>RequiredFields</code>.</p>
     pub fn constraints(mut self, input: crate::types::TaskTemplateConstraints) -> Self {
@@ -260,6 +281,7 @@ impl CreateTaskTemplateInputBuilder {
             description: self.description,
             contact_flow_id: self.contact_flow_id,
             self_assign_flow_id: self.self_assign_flow_id,
+            contact_hooks: self.contact_hooks,
             constraints: self.constraints,
             defaults: self.defaults,
             status: self.status,

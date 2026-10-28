@@ -5,8 +5,11 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`channel_arn(impl Into<String>)`](crate::operation::insert_ad_break::builders::InsertAdBreakFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::insert_ad_break::builders::InsertAdBreakFluentBuilder::set_channel_arn):<br>required: **true**<br><p>ARN of the channel into which the ad break is inserted.</p><br>
     ///   - [`duration_seconds(i32)`](crate::operation::insert_ad_break::builders::InsertAdBreakFluentBuilder::duration_seconds) / [`set_duration_seconds(Option<i32>)`](crate::operation::insert_ad_break::builders::InsertAdBreakFluentBuilder::set_duration_seconds):<br>required: **true**<br><p>Duration of the ad break, in seconds.</p><br>
+    ///   - [`ad_break_id(impl Into<String>)`](crate::operation::insert_ad_break::builders::InsertAdBreakFluentBuilder::ad_break_id) / [`set_ad_break_id(Option<String>)`](crate::operation::insert_ad_break::builders::InsertAdBreakFluentBuilder::set_ad_break_id):<br>required: **false**<br><p>Caller-specified unique identifier for the ad break to insert into the playlist.</p><br>
+    ///   - [`target_start_at(DateTime)`](crate::operation::insert_ad_break::builders::InsertAdBreakFluentBuilder::target_start_at) / [`set_target_start_at(Option<DateTime>)`](crate::operation::insert_ad_break::builders::InsertAdBreakFluentBuilder::set_target_start_at):<br>required: **false**<br><p>Target time at which the ad break starts.</p><br>
     /// - On success, responds with [`InsertAdBreakOutput`](crate::operation::insert_ad_break::InsertAdBreakOutput) with field(s):
     ///   - [`ad_break_id(Option<String>)`](crate::operation::insert_ad_break::InsertAdBreakOutput::ad_break_id): <p>Unique identifier for the ad break that was inserted into the playlist.</p>
+    ///   - [`target_start_at(Option<DateTime>)`](crate::operation::insert_ad_break::InsertAdBreakOutput::target_start_at): <p>Target start time for the inserted ad break.</p>
     /// - On failure, responds with [`SdkError<InsertAdBreakError>`](crate::operation::insert_ad_break::InsertAdBreakError)
     pub fn insert_ad_break(&self) -> crate::operation::insert_ad_break::builders::InsertAdBreakFluentBuilder {
         crate::operation::insert_ad_break::builders::InsertAdBreakFluentBuilder::new(self.handle.clone())

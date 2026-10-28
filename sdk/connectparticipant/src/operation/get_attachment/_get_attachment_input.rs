@@ -9,6 +9,22 @@ pub struct GetAttachmentInput {
     pub connection_token: ::std::option::Option<::std::string::String>,
     /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub url_expiry_in_seconds: ::std::option::Option<i32>,
+    /// <p>Specifies how a browser handles the file at the pre-signed URL. The following values are valid:</p>
+    /// <dl>
+    /// <dt>
+    /// INLINE
+    /// </dt>
+    /// <dd>
+    /// <p>Displays the file in the browser.</p>
+    /// </dd>
+    /// <dt>
+    /// ATTACHMENT
+    /// </dt>
+    /// <dd>
+    /// <p>Downloads the file. This is the default behavior.</p>
+    /// </dd>
+    /// </dl>
+    pub url_content_disposition: ::std::option::Option<crate::types::ContentDisposition>,
 }
 impl GetAttachmentInput {
     /// <p>A unique identifier for the attachment.</p>
@@ -22,6 +38,24 @@ impl GetAttachmentInput {
     /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn url_expiry_in_seconds(&self) -> ::std::option::Option<i32> {
         self.url_expiry_in_seconds
+    }
+    /// <p>Specifies how a browser handles the file at the pre-signed URL. The following values are valid:</p>
+    /// <dl>
+    /// <dt>
+    /// INLINE
+    /// </dt>
+    /// <dd>
+    /// <p>Displays the file in the browser.</p>
+    /// </dd>
+    /// <dt>
+    /// ATTACHMENT
+    /// </dt>
+    /// <dd>
+    /// <p>Downloads the file. This is the default behavior.</p>
+    /// </dd>
+    /// </dl>
+    pub fn url_content_disposition(&self) -> ::std::option::Option<&crate::types::ContentDisposition> {
+        self.url_content_disposition.as_ref()
     }
 }
 impl GetAttachmentInput {
@@ -38,6 +72,7 @@ pub struct GetAttachmentInputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_token: ::std::option::Option<::std::string::String>,
     pub(crate) url_expiry_in_seconds: ::std::option::Option<i32>,
+    pub(crate) url_content_disposition: ::std::option::Option<crate::types::ContentDisposition>,
 }
 impl GetAttachmentInputBuilder {
     /// <p>A unique identifier for the attachment.</p>
@@ -84,6 +119,62 @@ impl GetAttachmentInputBuilder {
     pub fn get_url_expiry_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.url_expiry_in_seconds
     }
+    /// <p>Specifies how a browser handles the file at the pre-signed URL. The following values are valid:</p>
+    /// <dl>
+    /// <dt>
+    /// INLINE
+    /// </dt>
+    /// <dd>
+    /// <p>Displays the file in the browser.</p>
+    /// </dd>
+    /// <dt>
+    /// ATTACHMENT
+    /// </dt>
+    /// <dd>
+    /// <p>Downloads the file. This is the default behavior.</p>
+    /// </dd>
+    /// </dl>
+    pub fn url_content_disposition(mut self, input: crate::types::ContentDisposition) -> Self {
+        self.url_content_disposition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how a browser handles the file at the pre-signed URL. The following values are valid:</p>
+    /// <dl>
+    /// <dt>
+    /// INLINE
+    /// </dt>
+    /// <dd>
+    /// <p>Displays the file in the browser.</p>
+    /// </dd>
+    /// <dt>
+    /// ATTACHMENT
+    /// </dt>
+    /// <dd>
+    /// <p>Downloads the file. This is the default behavior.</p>
+    /// </dd>
+    /// </dl>
+    pub fn set_url_content_disposition(mut self, input: ::std::option::Option<crate::types::ContentDisposition>) -> Self {
+        self.url_content_disposition = input;
+        self
+    }
+    /// <p>Specifies how a browser handles the file at the pre-signed URL. The following values are valid:</p>
+    /// <dl>
+    /// <dt>
+    /// INLINE
+    /// </dt>
+    /// <dd>
+    /// <p>Displays the file in the browser.</p>
+    /// </dd>
+    /// <dt>
+    /// ATTACHMENT
+    /// </dt>
+    /// <dd>
+    /// <p>Downloads the file. This is the default behavior.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_url_content_disposition(&self) -> &::std::option::Option<crate::types::ContentDisposition> {
+        &self.url_content_disposition
+    }
     /// Consumes the builder and constructs a [`GetAttachmentInput`](crate::operation::get_attachment::GetAttachmentInput).
     pub fn build(
         self,
@@ -92,6 +183,7 @@ impl GetAttachmentInputBuilder {
             attachment_id: self.attachment_id,
             connection_token: self.connection_token,
             url_expiry_in_seconds: self.url_expiry_in_seconds,
+            url_content_disposition: self.url_content_disposition,
         })
     }
 }

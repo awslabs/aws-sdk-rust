@@ -10,6 +10,9 @@ pub mod add_data_source;
 /// Types for the `AddDirectQueryDataSource` operation.
 pub mod add_direct_query_data_source;
 
+/// Types for the `AddReplicationPeer` operation.
+pub mod add_replication_peer;
+
 /// Types for the `AddTags` operation.
 pub mod add_tags;
 
@@ -30,6 +33,9 @@ pub mod cancel_domain_config_change;
 
 /// Types for the `CancelServiceSoftwareUpdate` operation.
 pub mod cancel_service_software_update;
+
+/// Types for the `CompareDomainConfiguration` operation.
+pub mod compare_domain_configuration;
 
 /// Types for the `CreateApplication` operation.
 pub mod create_application;
@@ -100,6 +106,9 @@ pub mod describe_domain_health;
 /// Types for the `DescribeDomainNodes` operation.
 pub mod describe_domain_nodes;
 
+/// Types for the `DescribeDomainReplication` operation.
+pub mod describe_domain_replication;
+
 /// Types for the `DescribeDomains` operation.
 pub mod describe_domains;
 
@@ -138,6 +147,9 @@ pub mod dissociate_package;
 
 /// Types for the `DissociatePackages` operation.
 pub mod dissociate_packages;
+
+/// Types for the `FailoverReplication` operation.
+pub mod failover_replication;
 
 /// Types for the `GetApplication` operation.
 pub mod get_application;
@@ -241,6 +253,9 @@ pub mod register_capability;
 /// Types for the `RejectInboundConnection` operation.
 pub mod reject_inbound_connection;
 
+/// Types for the `RemoveReplicationPeer` operation.
+pub mod remove_replication_peer;
+
 /// Types for the `RemoveTags` operation.
 pub mod remove_tags;
 
@@ -258,6 +273,9 @@ pub mod start_migration;
 
 /// Types for the `StartServiceSoftwareUpdate` operation.
 pub mod start_service_software_update;
+
+/// Types for the `SwitchoverReplication` operation.
+pub mod switchover_replication;
 
 /// Types for the `UpdateApplication` operation.
 pub mod update_application;

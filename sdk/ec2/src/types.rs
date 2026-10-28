@@ -109,6 +109,8 @@ pub use crate::types::_capacity_reservation_cancellation_quote::CapacityReservat
 
 pub use crate::types::_capacity_reservation_modification_quote::CapacityReservationModificationQuote;
 
+pub use crate::types::_instance_requirements_request::InstanceRequirementsRequest;
+
 pub use crate::types::_fleet_capacity_reservation_tenancy::FleetCapacityReservationTenancy;
 
 pub use crate::types::_fleet_instance_match_criteria::FleetInstanceMatchCriteria;
@@ -589,6 +591,14 @@ pub use crate::types::_managed_by::ManagedBy;
 
 pub use crate::types::_ingestion_status::IngestionStatus;
 
+pub use crate::types::_supportability_market_type::SupportabilityMarketType;
+
+pub use crate::types::_capacity_unit::CapacityUnit;
+
+pub use crate::types::_instance_requirements_with_metadata_request::InstanceRequirementsWithMetadataRequest;
+
+pub use crate::types::_supportability_score::SupportabilityScore;
+
 pub use crate::types::_capacity_reservation_state::CapacityReservationState;
 
 pub use crate::types::_interruptible_capacity_allocation::InterruptibleCapacityAllocation;
@@ -613,8 +623,6 @@ pub use crate::types::_ek_pub_key_type::EkPubKeyType;
 
 pub use crate::types::_ek_pub_key_format::EkPubKeyFormat;
 
-pub use crate::types::_instance_requirements_request::InstanceRequirementsRequest;
-
 pub use crate::types::_ipam_policy_resource_type::IpamPolicyResourceType;
 
 pub use crate::types::_ipam_resource_type::IpamResourceType;
@@ -632,8 +640,6 @@ pub use crate::types::_analysis_status::AnalysisStatus;
 pub use crate::types::_reservation_value::ReservationValue;
 
 pub use crate::types::_target_capacity_unit_type::TargetCapacityUnitType;
-
-pub use crate::types::_instance_requirements_with_metadata_request::InstanceRequirementsWithMetadataRequest;
 
 pub use crate::types::_transit_gateway_attachment_nat_gateway_support_state::TransitGatewayAttachmentNatGatewaySupportState;
 
@@ -994,6 +1000,32 @@ pub use crate::types::_modification_quote_current_configuration::ModificationQuo
 pub use crate::types::_modification_terms::ModificationTerms;
 
 pub use crate::types::_reservation_fleet_instance_specification::ReservationFleetInstanceSpecification;
+
+pub use crate::types::_v_cpu_count_range_request::VCpuCountRangeRequest;
+
+pub use crate::types::_memory_mib_request::MemoryMiBRequest;
+
+pub use crate::types::_memory_gib_per_v_cpu_request::MemoryGiBPerVCpuRequest;
+
+pub use crate::types::_bare_metal::BareMetal;
+
+pub use crate::types::_burstable_performance::BurstablePerformance;
+
+pub use crate::types::_network_interface_count_request::NetworkInterfaceCountRequest;
+
+pub use crate::types::_local_storage::LocalStorage;
+
+pub use crate::types::_total_local_storage_gb_request::TotalLocalStorageGbRequest;
+
+pub use crate::types::_baseline_ebs_bandwidth_mbps_request::BaselineEbsBandwidthMbpsRequest;
+
+pub use crate::types::_accelerator_count_request::AcceleratorCountRequest;
+
+pub use crate::types::_accelerator_total_memory_mib_request::AcceleratorTotalMemoryMiBRequest;
+
+pub use crate::types::_network_bandwidth_gbps_request::NetworkBandwidthGbpsRequest;
+
+pub use crate::types::_baseline_performance_factors_request::BaselinePerformanceFactorsRequest;
 
 pub use crate::types::_fleet_capacity_reservation::FleetCapacityReservation;
 
@@ -1593,6 +1625,8 @@ pub use crate::types::_capacity_manager_dimension::CapacityManagerDimension;
 
 pub use crate::types::_capacity_manager_monitored_tag_key::CapacityManagerMonitoredTagKey;
 
+pub use crate::types::_capacity_manager_supportability_score::CapacityManagerSupportabilityScore;
+
 pub use crate::types::_instance_usage::InstanceUsage;
 
 pub use crate::types::_coip_address_usage::CoipAddressUsage;
@@ -1612,32 +1646,6 @@ pub use crate::types::_http_tokens_enforced_state::HttpTokensEnforcedState;
 pub use crate::types::_architecture_type::ArchitectureType;
 
 pub use crate::types::_virtualization_type::VirtualizationType;
-
-pub use crate::types::_v_cpu_count_range_request::VCpuCountRangeRequest;
-
-pub use crate::types::_memory_mib_request::MemoryMiBRequest;
-
-pub use crate::types::_memory_gib_per_v_cpu_request::MemoryGiBPerVCpuRequest;
-
-pub use crate::types::_bare_metal::BareMetal;
-
-pub use crate::types::_burstable_performance::BurstablePerformance;
-
-pub use crate::types::_network_interface_count_request::NetworkInterfaceCountRequest;
-
-pub use crate::types::_local_storage::LocalStorage;
-
-pub use crate::types::_total_local_storage_gb_request::TotalLocalStorageGbRequest;
-
-pub use crate::types::_baseline_ebs_bandwidth_mbps_request::BaselineEbsBandwidthMbpsRequest;
-
-pub use crate::types::_accelerator_count_request::AcceleratorCountRequest;
-
-pub use crate::types::_accelerator_total_memory_mib_request::AcceleratorTotalMemoryMiBRequest;
-
-pub use crate::types::_network_bandwidth_gbps_request::NetworkBandwidthGbpsRequest;
-
-pub use crate::types::_baseline_performance_factors_request::BaselinePerformanceFactorsRequest;
 
 pub use crate::types::_instance_type_info_from_instance_requirements::InstanceTypeInfoFromInstanceRequirements;
 
@@ -1920,6 +1928,20 @@ pub use crate::types::_capacity_allocation::CapacityAllocation;
 pub use crate::types::_cancellation_terms::CancellationTerms;
 
 pub use crate::types::_modification_reservation_update::ModificationReservationUpdate;
+
+pub use crate::types::_cpu_manufacturer::CpuManufacturer;
+
+pub use crate::types::_instance_generation::InstanceGeneration;
+
+pub use crate::types::_local_storage_type::LocalStorageType;
+
+pub use crate::types::_accelerator_type::AcceleratorType;
+
+pub use crate::types::_accelerator_manufacturer::AcceleratorManufacturer;
+
+pub use crate::types::_accelerator_name::AcceleratorName;
+
+pub use crate::types::_cpu_performance_factor_request::CpuPerformanceFactorRequest;
 
 pub use crate::types::_client_vpn_authentication_type::ClientVpnAuthenticationType;
 
@@ -2282,20 +2304,6 @@ pub use crate::types::_capacity_manager_monitored_tag_key_status::CapacityManage
 pub use crate::types::_athena_integration::AthenaIntegration;
 
 pub use crate::types::_severity_label::SeverityLabel;
-
-pub use crate::types::_cpu_manufacturer::CpuManufacturer;
-
-pub use crate::types::_instance_generation::InstanceGeneration;
-
-pub use crate::types::_local_storage_type::LocalStorageType;
-
-pub use crate::types::_accelerator_type::AcceleratorType;
-
-pub use crate::types::_accelerator_manufacturer::AcceleratorManufacturer;
-
-pub use crate::types::_accelerator_name::AcceleratorName;
-
-pub use crate::types::_cpu_performance_factor_request::CpuPerformanceFactorRequest;
 
 pub use crate::types::_ipam_address_history_resource_type::IpamAddressHistoryResourceType;
 
@@ -2747,6 +2755,8 @@ pub use crate::types::_health_check_path_destination_response_object::HealthChec
 
 pub use crate::types::_capacity_allocation_metadata_entry::CapacityAllocationMetadataEntry;
 
+pub use crate::types::_performance_factor_reference_request::PerformanceFactorReferenceRequest;
+
 pub use crate::types::_fleet_iam_instance_profile_specification_request::FleetIamInstanceProfileSpecificationRequest;
 
 pub use crate::types::_fleet_instance_metadata_options_request::FleetInstanceMetadataOptionsRequest;
@@ -2824,8 +2834,6 @@ pub use crate::types::_volume_status_details::VolumeStatusDetails;
 pub use crate::types::_disable_fast_snapshot_restore_state_error::DisableFastSnapshotRestoreStateError;
 
 pub use crate::types::_enable_fast_snapshot_restore_state_error::EnableFastSnapshotRestoreStateError;
-
-pub use crate::types::_performance_factor_reference_request::PerformanceFactorReferenceRequest;
 
 pub use crate::types::_ipam_public_address_tag::IpamPublicAddressTag;
 
@@ -3233,6 +3241,8 @@ mod _capacity_manager_monitored_tag_key_status;
 
 mod _capacity_manager_status;
 
+mod _capacity_manager_supportability_score;
+
 mod _capacity_manager_tag_dimension;
 
 mod _capacity_reservation;
@@ -3298,6 +3308,8 @@ mod _capacity_reservation_topology;
 mod _capacity_reservation_type;
 
 mod _capacity_tenancy;
+
+mod _capacity_unit;
 
 mod _carrier_gateway;
 
@@ -5382,6 +5394,10 @@ mod _successful_queued_purchase_deletion;
 mod _successful_suppression_response_object;
 
 mod _summary_status;
+
+mod _supportability_market_type;
+
+mod _supportability_score;
 
 mod _supported_additional_processor_feature;
 

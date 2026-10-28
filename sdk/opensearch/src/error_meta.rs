@@ -201,6 +201,38 @@ impl From<crate::operation::add_direct_query_data_source::AddDirectQueryDataSour
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_replication_peer::AddReplicationPeerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_replication_peer::AddReplicationPeerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::add_replication_peer::AddReplicationPeerError> for Error {
+    fn from(err: crate::operation::add_replication_peer::AddReplicationPeerError) -> Self {
+        match err {
+            crate::operation::add_replication_peer::AddReplicationPeerError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::add_replication_peer::AddReplicationPeerError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::add_replication_peer::AddReplicationPeerError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::operation::add_replication_peer::AddReplicationPeerError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::add_replication_peer::AddReplicationPeerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::add_replication_peer::AddReplicationPeerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_tags::AddTagsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -421,6 +453,42 @@ impl From<crate::operation::cancel_service_software_update::CancelServiceSoftwar
                 Error::ValidationException(inner)
             }
             crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::compare_domain_configuration::CompareDomainConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::compare_domain_configuration::CompareDomainConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::compare_domain_configuration::CompareDomainConfigurationError> for Error {
+    fn from(err: crate::operation::compare_domain_configuration::CompareDomainConfigurationError) -> Self {
+        match err {
+            crate::operation::compare_domain_configuration::CompareDomainConfigurationError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::compare_domain_configuration::CompareDomainConfigurationError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::compare_domain_configuration::CompareDomainConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::compare_domain_configuration::CompareDomainConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::compare_domain_configuration::CompareDomainConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1133,6 +1201,42 @@ impl From<crate::operation::describe_domain_nodes::DescribeDomainNodesError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_domain_replication::DescribeDomainReplicationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_domain_replication::DescribeDomainReplicationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_domain_replication::DescribeDomainReplicationError> for Error {
+    fn from(err: crate::operation::describe_domain_replication::DescribeDomainReplicationError) -> Self {
+        match err {
+            crate::operation::describe_domain_replication::DescribeDomainReplicationError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::describe_domain_replication::DescribeDomainReplicationError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::describe_domain_replication::DescribeDomainReplicationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_domain_replication::DescribeDomainReplicationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_domain_replication::DescribeDomainReplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_domains::DescribeDomainsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1544,6 +1648,35 @@ impl From<crate::operation::dissociate_packages::DissociatePackagesError> for Er
             }
             crate::operation::dissociate_packages::DissociatePackagesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::dissociate_packages::DissociatePackagesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::failover_replication::FailoverReplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::failover_replication::FailoverReplicationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::failover_replication::FailoverReplicationError> for Error {
+    fn from(err: crate::operation::failover_replication::FailoverReplicationError) -> Self {
+        match err {
+            crate::operation::failover_replication::FailoverReplicationError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::failover_replication::FailoverReplicationError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::failover_replication::FailoverReplicationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::failover_replication::FailoverReplicationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::failover_replication::FailoverReplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2605,6 +2738,37 @@ impl From<crate::operation::reject_inbound_connection::RejectInboundConnectionEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_replication_peer::RemoveReplicationPeerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_replication_peer::RemoveReplicationPeerError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::remove_replication_peer::RemoveReplicationPeerError> for Error {
+    fn from(err: crate::operation::remove_replication_peer::RemoveReplicationPeerError) -> Self {
+        match err {
+            crate::operation::remove_replication_peer::RemoveReplicationPeerError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::remove_replication_peer::RemoveReplicationPeerError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::remove_replication_peer::RemoveReplicationPeerError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::remove_replication_peer::RemoveReplicationPeerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::remove_replication_peer::RemoveReplicationPeerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_tags::RemoveTagsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2798,6 +2962,37 @@ impl From<crate::operation::start_service_software_update::StartServiceSoftwareU
                 Error::ValidationException(inner)
             }
             crate::operation::start_service_software_update::StartServiceSoftwareUpdateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::switchover_replication::SwitchoverReplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::switchover_replication::SwitchoverReplicationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::switchover_replication::SwitchoverReplicationError> for Error {
+    fn from(err: crate::operation::switchover_replication::SwitchoverReplicationError) -> Self {
+        match err {
+            crate::operation::switchover_replication::SwitchoverReplicationError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::switchover_replication::SwitchoverReplicationError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::switchover_replication::SwitchoverReplicationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::switchover_replication::SwitchoverReplicationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::switchover_replication::SwitchoverReplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

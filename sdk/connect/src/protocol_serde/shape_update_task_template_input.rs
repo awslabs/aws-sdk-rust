@@ -12,35 +12,41 @@ pub fn ser_update_task_template_input_input(
     if let Some(var_3) = &input.contact_flow_id {
         object.key("ContactFlowId").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.defaults {
+    if let Some(var_4) = &input.contact_hooks {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Defaults").start_object();
-        crate::protocol_serde::shape_task_template_defaults::ser_task_template_defaults(&mut object_5, var_4)?;
+        let mut object_5 = object.key("ContactHooks").start_object();
+        crate::protocol_serde::shape_task_template_contact_hooks::ser_task_template_contact_hooks(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.description {
-        object.key("Description").string(var_6.as_str());
+    if let Some(var_6) = &input.defaults {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("Defaults").start_object();
+        crate::protocol_serde::shape_task_template_defaults::ser_task_template_defaults(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.fields {
-        let mut array_8 = object.key("Fields").start_array();
-        for item_9 in var_7 {
+    if let Some(var_8) = &input.description {
+        object.key("Description").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.fields {
+        let mut array_10 = object.key("Fields").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_task_template_field::ser_task_template_field(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_task_template_field::ser_task_template_field(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_8.finish();
+        array_10.finish();
     }
-    if let Some(var_11) = &input.name {
-        object.key("Name").string(var_11.as_str());
+    if let Some(var_13) = &input.name {
+        object.key("Name").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.self_assign_flow_id {
-        object.key("SelfAssignFlowId").string(var_12.as_str());
+    if let Some(var_14) = &input.self_assign_flow_id {
+        object.key("SelfAssignFlowId").string(var_14.as_str());
     }
-    if let Some(var_13) = &input.status {
-        object.key("Status").string(var_13.as_str());
+    if let Some(var_15) = &input.status {
+        object.key("Status").string(var_15.as_str());
     }
     Ok(())
 }

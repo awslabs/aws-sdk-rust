@@ -187,6 +187,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InsertAdBreak
                 captured.insert("channelArn", value);
             }
         }
+        if requested.should_capture("adBreakId") {
+            if let ::std::option::Option::Some(value) = input.ad_break_id.as_deref() {
+                captured.insert("adBreakId", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

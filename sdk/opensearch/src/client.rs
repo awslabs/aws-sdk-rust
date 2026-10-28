@@ -142,6 +142,8 @@ mod add_data_source;
 
 mod add_direct_query_data_source;
 
+mod add_replication_peer;
+
 mod add_tags;
 
 mod associate_package;
@@ -155,6 +157,8 @@ mod authorize_vpc_endpoint_access;
 mod cancel_domain_config_change;
 
 mod cancel_service_software_update;
+
+mod compare_domain_configuration;
 
 mod create_application;
 
@@ -229,6 +233,8 @@ mod describe_domain_health;
 
 mod describe_domain_nodes;
 
+mod describe_domain_replication;
+
 mod describe_domains;
 
 mod describe_dry_run_progress;
@@ -254,6 +260,8 @@ mod detach_data_source;
 mod dissociate_package;
 
 mod dissociate_packages;
+
+mod failover_replication;
 
 mod get_application;
 
@@ -323,6 +331,8 @@ mod register_capability;
 
 mod reject_inbound_connection;
 
+mod remove_replication_peer;
+
 mod remove_tags;
 
 mod revoke_vpc_endpoint_access;
@@ -334,6 +344,8 @@ mod start_domain_maintenance;
 mod start_migration;
 
 mod start_service_software_update;
+
+mod switchover_replication;
 
 mod update_application;
 

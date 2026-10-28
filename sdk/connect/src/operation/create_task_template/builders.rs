@@ -181,6 +181,20 @@ impl CreateTaskTemplateFluentBuilder {
     pub fn get_self_assign_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_self_assign_flow_id()
     }
+    /// <p>The event hooks that are set on tasks created by using this template.</p>
+    pub fn contact_hooks(mut self, input: crate::types::TaskTemplateContactHooks) -> Self {
+        self.inner = self.inner.contact_hooks(input);
+        self
+    }
+    /// <p>The event hooks that are set on tasks created by using this template.</p>
+    pub fn set_contact_hooks(mut self, input: ::std::option::Option<crate::types::TaskTemplateContactHooks>) -> Self {
+        self.inner = self.inner.set_contact_hooks(input);
+        self
+    }
+    /// <p>The event hooks that are set on tasks created by using this template.</p>
+    pub fn get_contact_hooks(&self) -> &::std::option::Option<crate::types::TaskTemplateContactHooks> {
+        self.inner.get_contact_hooks()
+    }
     /// <p>Constraints that are applicable to the fields listed. Although this parameter is marked as optional in the API model, the service requires it when calling <code>CreateTaskTemplate</code> or <code>UpdateTaskTemplate</code>. The <code>RequiredFields</code> array must contain at least one element, and the field of type <code>NAME</code> must be included in <code>RequiredFields</code>.</p>
     pub fn constraints(mut self, input: crate::types::TaskTemplateConstraints) -> Self {
         self.inner = self.inner.constraints(input);

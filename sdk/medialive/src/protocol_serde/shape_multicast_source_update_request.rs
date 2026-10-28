@@ -9,5 +9,11 @@ pub fn ser_multicast_source_update_request(
     if let Some(var_2) = &input.url {
         object.key("url").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.secondary_source_ip {
+        object.key("secondarySourceIp").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.secondary_url {
+        object.key("secondaryUrl").string(var_4.as_str());
+    }
     Ok(())
 }

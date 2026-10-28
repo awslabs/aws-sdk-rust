@@ -37,6 +37,8 @@ pub use crate::types::_worker_configuration_revision_description::WorkerConfigur
 
 pub use crate::types::_capacity_update::CapacityUpdateBuilder;
 
+pub use crate::types::_worker_configuration_update::WorkerConfigurationUpdateBuilder;
+
 pub use crate::types::_auto_scaling::AutoScalingBuilder;
 
 pub use crate::types::_provisioned_capacity::ProvisionedCapacityBuilder;
@@ -77,6 +79,8 @@ pub use crate::types::_auto_scaling_update::AutoScalingUpdateBuilder;
 
 pub use crate::types::_provisioned_capacity_update::ProvisionedCapacityUpdateBuilder;
 
+pub use crate::types::_plugin_update::PluginUpdateBuilder;
+
 pub use crate::types::_scale_in_policy::ScaleInPolicyBuilder;
 
 pub use crate::types::_scale_out_policy::ScaleOutPolicyBuilder;
@@ -110,3 +114,5 @@ pub use crate::types::_s3_location_description::S3LocationDescriptionBuilder;
 pub use crate::types::_scale_in_policy_update::ScaleInPolicyUpdateBuilder;
 
 pub use crate::types::_scale_out_policy_update::ScaleOutPolicyUpdateBuilder;
+
+pub use crate::types::_custom_plugin_update::CustomPluginUpdateBuilder;

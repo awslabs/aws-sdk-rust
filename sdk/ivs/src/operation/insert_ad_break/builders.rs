@@ -137,4 +137,32 @@ impl InsertAdBreakFluentBuilder {
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_duration_seconds()
     }
+    /// <p>Caller-specified unique identifier for the ad break to insert into the playlist.</p>
+    pub fn ad_break_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ad_break_id(input.into());
+        self
+    }
+    /// <p>Caller-specified unique identifier for the ad break to insert into the playlist.</p>
+    pub fn set_ad_break_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ad_break_id(input);
+        self
+    }
+    /// <p>Caller-specified unique identifier for the ad break to insert into the playlist.</p>
+    pub fn get_ad_break_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ad_break_id()
+    }
+    /// <p>Target time at which the ad break starts.</p>
+    pub fn target_start_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.inner = self.inner.target_start_at(input);
+        self
+    }
+    /// <p>Target time at which the ad break starts.</p>
+    pub fn set_target_start_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.inner = self.inner.set_target_start_at(input);
+        self
+    }
+    /// <p>Target time at which the ad break starts.</p>
+    pub fn get_target_start_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_target_start_at()
+    }
 }

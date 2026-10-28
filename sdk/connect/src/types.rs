@@ -119,6 +119,8 @@ pub use crate::types::_pre_evaluation_filters::PreEvaluationFilters;
 
 pub use crate::types::_granular_access_control_configuration::GranularAccessControlConfiguration;
 
+pub use crate::types::_task_template_contact_hooks::TaskTemplateContactHooks;
+
 pub use crate::types::_task_template_constraints::TaskTemplateConstraints;
 
 pub use crate::types::_task_template_defaults::TaskTemplateDefaults;
@@ -3030,6 +3032,8 @@ mod _task_action_definition;
 mod _task_attachment;
 
 mod _task_template_constraints;
+
+mod _task_template_contact_hooks;
 
 mod _task_template_default_field_value;
 

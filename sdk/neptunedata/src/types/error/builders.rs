@@ -27,9 +27,23 @@ pub use crate::types::error::_too_many_requests_exception::TooManyRequestsExcept
 
 pub use crate::types::error::_unsupported_operation_exception::UnsupportedOperationExceptionBuilder;
 
-pub use crate::types::error::_bulk_load_id_not_found_exception::BulkLoadIdNotFoundExceptionBuilder;
+pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
+
+pub use crate::types::error::_cancelled_by_maintenance_exception::CancelledByMaintenanceExceptionBuilder;
+
+pub use crate::types::error::_cancelled_by_user_exception::CancelledByUserExceptionBuilder;
 
 pub use crate::types::error::_internal_failure_exception::InternalFailureExceptionBuilder;
+
+pub use crate::types::error::_method_not_allowed_exception::MethodNotAllowedExceptionBuilder;
+
+pub use crate::types::error::_read_only_violation_exception::ReadOnlyViolationExceptionBuilder;
+
+pub use crate::types::error::_server_shutdown_exception::ServerShutdownExceptionBuilder;
+
+pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
+
+pub use crate::types::error::_bulk_load_id_not_found_exception::BulkLoadIdNotFoundExceptionBuilder;
 
 pub use crate::types::error::_load_url_access_denied_exception::LoadUrlAccessDeniedExceptionBuilder;
 
@@ -37,17 +51,7 @@ pub use crate::types::error::_ml_resource_not_found_exception::MlResourceNotFoun
 
 pub use crate::types::error::_invalid_numeric_data_exception::InvalidNumericDataExceptionBuilder;
 
-pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
-
-pub use crate::types::error::_read_only_violation_exception::ReadOnlyViolationExceptionBuilder;
-
 pub use crate::types::error::_statistics_not_available_exception::StatisticsNotAvailableExceptionBuilder;
-
-pub use crate::types::error::_method_not_allowed_exception::MethodNotAllowedExceptionBuilder;
-
-pub use crate::types::error::_server_shutdown_exception::ServerShutdownExceptionBuilder;
-
-pub use crate::types::error::_cancelled_by_user_exception::CancelledByUserExceptionBuilder;
 
 pub use crate::types::error::_malformed_query_exception::MalformedQueryExceptionBuilder;
 
@@ -64,5 +68,7 @@ pub use crate::types::error::_expired_stream_exception::ExpiredStreamExceptionBu
 pub use crate::types::error::_stream_records_not_found_exception::StreamRecordsNotFoundExceptionBuilder;
 
 pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
+
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
 
 pub use crate::types::error::_s3_exception::S3ExceptionBuilder;

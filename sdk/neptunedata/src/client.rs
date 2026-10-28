@@ -138,6 +138,8 @@ impl Client {
 
 mod cancel_gremlin_query;
 
+mod cancel_index_rebuild;
+
 mod cancel_loader_job;
 
 mod cancel_ml_data_processing_job;
@@ -199,6 +201,8 @@ mod get_engine_status;
 
 mod get_gremlin_query_status;
 
+mod get_index_rebuild_status;
+
 mod get_loader_job_status;
 
 mod get_ml_data_processing_job;
@@ -223,7 +227,11 @@ mod get_sparql_statistics;
 
 mod get_sparql_stream;
 
+mod get_storage_info;
+
 mod list_gremlin_queries;
+
+mod list_index_rebuilds;
 
 mod list_loader_jobs;
 
@@ -240,6 +248,8 @@ mod list_open_cypher_queries;
 mod manage_propertygraph_statistics;
 
 mod manage_sparql_statistics;
+
+mod start_index_rebuild;
 
 mod start_loader_job;
 

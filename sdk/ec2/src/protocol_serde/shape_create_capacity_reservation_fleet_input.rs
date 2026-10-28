@@ -29,45 +29,60 @@ pub fn ser_create_capacity_reservation_fleet_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("Tenancy");
-    if let Some(var_11) = &input.tenancy {
-        scope_10.string(var_11.as_str());
+    let mut scope_10 = writer.prefix("InstanceRequirements");
+    if let Some(var_11) = &input.instance_requirements {
+        crate::protocol_serde::shape_instance_requirements_request::ser_instance_requirements_request(scope_10, var_11)?;
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("TotalTargetCapacity");
-    if let Some(var_13) = &input.total_target_capacity {
-        scope_12.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
-        );
+    let mut scope_12 = writer.prefix("AvailabilityZone");
+    if let Some(var_13) = &input.availability_zone {
+        scope_12.string(var_13);
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("EndDate");
-    if let Some(var_15) = &input.end_date {
-        scope_14.date_time(var_15, ::aws_smithy_types::date_time::Format::DateTime)?;
+    let mut scope_14 = writer.prefix("AvailabilityZoneId");
+    if let Some(var_15) = &input.availability_zone_id {
+        scope_14.string(var_15);
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("InstanceMatchCriteria");
-    if let Some(var_17) = &input.instance_match_criteria {
+    let mut scope_16 = writer.prefix("Tenancy");
+    if let Some(var_17) = &input.tenancy {
         scope_16.string(var_17.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("TagSpecification");
-    if let Some(var_19) = &input.tag_specifications {
-        if !var_19.is_empty() {
-            let mut list_21 = scope_18.start_list(true, Some("item"));
-            for item_20 in var_19 {
+    let mut scope_18 = writer.prefix("TotalTargetCapacity");
+    if let Some(var_19) = &input.total_target_capacity {
+        scope_18.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_20 = writer.prefix("EndDate");
+    if let Some(var_21) = &input.end_date {
+        scope_20.date_time(var_21, ::aws_smithy_types::date_time::Format::DateTime)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("InstanceMatchCriteria");
+    if let Some(var_23) = &input.instance_match_criteria {
+        scope_22.string(var_23.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_24 = writer.prefix("TagSpecification");
+    if let Some(var_25) = &input.tag_specifications {
+        if !var_25.is_empty() {
+            let mut list_27 = scope_24.start_list(true, Some("item"));
+            for item_26 in var_25 {
                 #[allow(unused_mut)]
-                let mut entry_22 = list_21.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_22, item_20)?;
+                let mut entry_28 = list_27.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_28, item_26)?;
             }
-            list_21.finish();
+            list_27.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_23 = writer.prefix("DryRun");
-    if let Some(var_24) = &input.dry_run {
-        scope_23.boolean(*var_24);
+    let mut scope_29 = writer.prefix("DryRun");
+    if let Some(var_30) = &input.dry_run {
+        scope_29.boolean(*var_30);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

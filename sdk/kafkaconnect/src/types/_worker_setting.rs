@@ -4,13 +4,33 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkerSetting {
-    /// <p>A description of the connector's capacity.</p>
+    /// <p>Specifies the compute capacity settings of the connector.</p>
     pub capacity: ::std::option::Option<crate::types::CapacityDescription>,
+    /// <p>Specifies which plugins the connector uses.</p>
+    pub plugins: ::std::option::Option<::std::vec::Vec<crate::types::PluginDescription>>,
+    /// <p>Specifies which worker configuration the connector uses.</p>
+    pub worker_configuration: ::std::option::Option<crate::types::WorkerConfigurationDescription>,
+    /// <p>Specifies whether the connector uses the default worker configuration instead of a custom worker configuration.</p>
+    pub use_default_worker_configuration: bool,
 }
 impl WorkerSetting {
-    /// <p>A description of the connector's capacity.</p>
+    /// <p>Specifies the compute capacity settings of the connector.</p>
     pub fn capacity(&self) -> ::std::option::Option<&crate::types::CapacityDescription> {
         self.capacity.as_ref()
+    }
+    /// <p>Specifies which plugins the connector uses.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.plugins.is_none()`.
+    pub fn plugins(&self) -> &[crate::types::PluginDescription] {
+        self.plugins.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies which worker configuration the connector uses.</p>
+    pub fn worker_configuration(&self) -> ::std::option::Option<&crate::types::WorkerConfigurationDescription> {
+        self.worker_configuration.as_ref()
+    }
+    /// <p>Specifies whether the connector uses the default worker configuration instead of a custom worker configuration.</p>
+    pub fn use_default_worker_configuration(&self) -> bool {
+        self.use_default_worker_configuration
     }
 }
 impl WorkerSetting {
@@ -25,24 +45,80 @@ impl WorkerSetting {
 #[non_exhaustive]
 pub struct WorkerSettingBuilder {
     pub(crate) capacity: ::std::option::Option<crate::types::CapacityDescription>,
+    pub(crate) plugins: ::std::option::Option<::std::vec::Vec<crate::types::PluginDescription>>,
+    pub(crate) worker_configuration: ::std::option::Option<crate::types::WorkerConfigurationDescription>,
+    pub(crate) use_default_worker_configuration: ::std::option::Option<bool>,
 }
 impl WorkerSettingBuilder {
-    /// <p>A description of the connector's capacity.</p>
+    /// <p>Specifies the compute capacity settings of the connector.</p>
     pub fn capacity(mut self, input: crate::types::CapacityDescription) -> Self {
         self.capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A description of the connector's capacity.</p>
+    /// <p>Specifies the compute capacity settings of the connector.</p>
     pub fn set_capacity(mut self, input: ::std::option::Option<crate::types::CapacityDescription>) -> Self {
         self.capacity = input;
         self
     }
-    /// <p>A description of the connector's capacity.</p>
+    /// <p>Specifies the compute capacity settings of the connector.</p>
     pub fn get_capacity(&self) -> &::std::option::Option<crate::types::CapacityDescription> {
         &self.capacity
     }
+    /// Appends an item to `plugins`.
+    ///
+    /// To override the contents of this collection use [`set_plugins`](Self::set_plugins).
+    ///
+    /// <p>Specifies which plugins the connector uses.</p>
+    pub fn plugins(mut self, input: crate::types::PluginDescription) -> Self {
+        let mut v = self.plugins.unwrap_or_default();
+        v.push(input);
+        self.plugins = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies which plugins the connector uses.</p>
+    pub fn set_plugins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PluginDescription>>) -> Self {
+        self.plugins = input;
+        self
+    }
+    /// <p>Specifies which plugins the connector uses.</p>
+    pub fn get_plugins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PluginDescription>> {
+        &self.plugins
+    }
+    /// <p>Specifies which worker configuration the connector uses.</p>
+    pub fn worker_configuration(mut self, input: crate::types::WorkerConfigurationDescription) -> Self {
+        self.worker_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies which worker configuration the connector uses.</p>
+    pub fn set_worker_configuration(mut self, input: ::std::option::Option<crate::types::WorkerConfigurationDescription>) -> Self {
+        self.worker_configuration = input;
+        self
+    }
+    /// <p>Specifies which worker configuration the connector uses.</p>
+    pub fn get_worker_configuration(&self) -> &::std::option::Option<crate::types::WorkerConfigurationDescription> {
+        &self.worker_configuration
+    }
+    /// <p>Specifies whether the connector uses the default worker configuration instead of a custom worker configuration.</p>
+    pub fn use_default_worker_configuration(mut self, input: bool) -> Self {
+        self.use_default_worker_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the connector uses the default worker configuration instead of a custom worker configuration.</p>
+    pub fn set_use_default_worker_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_default_worker_configuration = input;
+        self
+    }
+    /// <p>Specifies whether the connector uses the default worker configuration instead of a custom worker configuration.</p>
+    pub fn get_use_default_worker_configuration(&self) -> &::std::option::Option<bool> {
+        &self.use_default_worker_configuration
+    }
     /// Consumes the builder and constructs a [`WorkerSetting`](crate::types::WorkerSetting).
     pub fn build(self) -> crate::types::WorkerSetting {
-        crate::types::WorkerSetting { capacity: self.capacity }
+        crate::types::WorkerSetting {
+            capacity: self.capacity,
+            plugins: self.plugins,
+            worker_configuration: self.worker_configuration,
+            use_default_worker_configuration: self.use_default_worker_configuration.unwrap_or_default(),
+        }
     }
 }

@@ -12,6 +12,11 @@
 /// ```text
 /// # let metric = unimplemented!();
 /// match metric {
+///     Metric::AvgInstAzCountPerRequestedVcpu => { /* ... */ },
+///     Metric::CapacityRequestFulfillmentRate => { /* ... */ },
+///     Metric::CapacityTotalFulfilledVcpu => { /* ... */ },
+///     Metric::CapacityTotalRequestedVcpu => { /* ... */ },
+///     Metric::InstAzFulfillmentRate => { /* ... */ },
 ///     Metric::ReservationAvgCommittedSizeInst => { /* ... */ },
 ///     Metric::ReservationAvgCommittedSizeVcpu => { /* ... */ },
 ///     Metric::ReservationAvgFutureSizeInst => { /* ... */ },
@@ -46,7 +51,12 @@
 ///     Metric::ReservedTotalEstimatedCost => { /* ... */ },
 ///     Metric::ReservedTotalUsageHrsInst => { /* ... */ },
 ///     Metric::ReservedTotalUsageHrsVcpu => { /* ... */ },
+///     Metric::SpotAvgInstAzCountPerRequestedVcpu => { /* ... */ },
 ///     Metric::SpotAvgRunTimeBeforeInterruptionInst => { /* ... */ },
+///     Metric::SpotCapacityRequestFulfillmentRate => { /* ... */ },
+///     Metric::SpotCapacityTotalFulfilledVcpu => { /* ... */ },
+///     Metric::SpotCapacityTotalRequestedVcpu => { /* ... */ },
+///     Metric::SpotInstAzFulfillmentRate => { /* ... */ },
 ///     Metric::SpotInterruptionRateInst => { /* ... */ },
 ///     Metric::SpotInterruptionRateVcpu => { /* ... */ },
 ///     Metric::SpotMaxRunTimeBeforeInterruptionInst => { /* ... */ },
@@ -89,6 +99,16 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Metric {
+    #[allow(missing_docs)] // documentation missing in model
+    AvgInstAzCountPerRequestedVcpu,
+    #[allow(missing_docs)] // documentation missing in model
+    CapacityRequestFulfillmentRate,
+    #[allow(missing_docs)] // documentation missing in model
+    CapacityTotalFulfilledVcpu,
+    #[allow(missing_docs)] // documentation missing in model
+    CapacityTotalRequestedVcpu,
+    #[allow(missing_docs)] // documentation missing in model
+    InstAzFulfillmentRate,
     #[allow(missing_docs)] // documentation missing in model
     ReservationAvgCommittedSizeInst,
     #[allow(missing_docs)] // documentation missing in model
@@ -158,7 +178,17 @@ pub enum Metric {
     #[allow(missing_docs)] // documentation missing in model
     ReservedTotalUsageHrsVcpu,
     #[allow(missing_docs)] // documentation missing in model
+    SpotAvgInstAzCountPerRequestedVcpu,
+    #[allow(missing_docs)] // documentation missing in model
     SpotAvgRunTimeBeforeInterruptionInst,
+    #[allow(missing_docs)] // documentation missing in model
+    SpotCapacityRequestFulfillmentRate,
+    #[allow(missing_docs)] // documentation missing in model
+    SpotCapacityTotalFulfilledVcpu,
+    #[allow(missing_docs)] // documentation missing in model
+    SpotCapacityTotalRequestedVcpu,
+    #[allow(missing_docs)] // documentation missing in model
+    SpotInstAzFulfillmentRate,
     #[allow(missing_docs)] // documentation missing in model
     SpotInterruptionRateInst,
     #[allow(missing_docs)] // documentation missing in model
@@ -194,6 +224,11 @@ pub enum Metric {
 impl ::std::convert::From<&str> for Metric {
     fn from(s: &str) -> Self {
         match s {
+            "avg-inst-az-count-per-requested-vcpu" => Metric::AvgInstAzCountPerRequestedVcpu,
+            "capacity-request-fulfillment-rate" => Metric::CapacityRequestFulfillmentRate,
+            "capacity-total-fulfilled-vcpu" => Metric::CapacityTotalFulfilledVcpu,
+            "capacity-total-requested-vcpu" => Metric::CapacityTotalRequestedVcpu,
+            "inst-az-fulfillment-rate" => Metric::InstAzFulfillmentRate,
             "reservation-avg-committed-size-inst" => Metric::ReservationAvgCommittedSizeInst,
             "reservation-avg-committed-size-vcpu" => Metric::ReservationAvgCommittedSizeVcpu,
             "reservation-avg-future-size-inst" => Metric::ReservationAvgFutureSizeInst,
@@ -228,7 +263,12 @@ impl ::std::convert::From<&str> for Metric {
             "reserved-total-estimated-cost" => Metric::ReservedTotalEstimatedCost,
             "reserved-total-usage-hrs-inst" => Metric::ReservedTotalUsageHrsInst,
             "reserved-total-usage-hrs-vcpu" => Metric::ReservedTotalUsageHrsVcpu,
+            "spot-avg-inst-az-count-per-requested-vcpu" => Metric::SpotAvgInstAzCountPerRequestedVcpu,
             "spot-avg-run-time-before-interruption-inst" => Metric::SpotAvgRunTimeBeforeInterruptionInst,
+            "spot-capacity-request-fulfillment-rate" => Metric::SpotCapacityRequestFulfillmentRate,
+            "spot-capacity-total-fulfilled-vcpu" => Metric::SpotCapacityTotalFulfilledVcpu,
+            "spot-capacity-total-requested-vcpu" => Metric::SpotCapacityTotalRequestedVcpu,
+            "spot-inst-az-fulfillment-rate" => Metric::SpotInstAzFulfillmentRate,
             "spot-interruption-rate-inst" => Metric::SpotInterruptionRateInst,
             "spot-interruption-rate-vcpu" => Metric::SpotInterruptionRateVcpu,
             "spot-max-run-time-before-interruption-inst" => Metric::SpotMaxRunTimeBeforeInterruptionInst,
@@ -258,6 +298,11 @@ impl Metric {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Metric::AvgInstAzCountPerRequestedVcpu => "avg-inst-az-count-per-requested-vcpu",
+            Metric::CapacityRequestFulfillmentRate => "capacity-request-fulfillment-rate",
+            Metric::CapacityTotalFulfilledVcpu => "capacity-total-fulfilled-vcpu",
+            Metric::CapacityTotalRequestedVcpu => "capacity-total-requested-vcpu",
+            Metric::InstAzFulfillmentRate => "inst-az-fulfillment-rate",
             Metric::ReservationAvgCommittedSizeInst => "reservation-avg-committed-size-inst",
             Metric::ReservationAvgCommittedSizeVcpu => "reservation-avg-committed-size-vcpu",
             Metric::ReservationAvgFutureSizeInst => "reservation-avg-future-size-inst",
@@ -292,7 +337,12 @@ impl Metric {
             Metric::ReservedTotalEstimatedCost => "reserved-total-estimated-cost",
             Metric::ReservedTotalUsageHrsInst => "reserved-total-usage-hrs-inst",
             Metric::ReservedTotalUsageHrsVcpu => "reserved-total-usage-hrs-vcpu",
+            Metric::SpotAvgInstAzCountPerRequestedVcpu => "spot-avg-inst-az-count-per-requested-vcpu",
             Metric::SpotAvgRunTimeBeforeInterruptionInst => "spot-avg-run-time-before-interruption-inst",
+            Metric::SpotCapacityRequestFulfillmentRate => "spot-capacity-request-fulfillment-rate",
+            Metric::SpotCapacityTotalFulfilledVcpu => "spot-capacity-total-fulfilled-vcpu",
+            Metric::SpotCapacityTotalRequestedVcpu => "spot-capacity-total-requested-vcpu",
+            Metric::SpotInstAzFulfillmentRate => "spot-inst-az-fulfillment-rate",
             Metric::SpotInterruptionRateInst => "spot-interruption-rate-inst",
             Metric::SpotInterruptionRateVcpu => "spot-interruption-rate-vcpu",
             Metric::SpotMaxRunTimeBeforeInterruptionInst => "spot-max-run-time-before-interruption-inst",
@@ -313,6 +363,11 @@ impl Metric {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "avg-inst-az-count-per-requested-vcpu",
+            "capacity-request-fulfillment-rate",
+            "capacity-total-fulfilled-vcpu",
+            "capacity-total-requested-vcpu",
+            "inst-az-fulfillment-rate",
             "reservation-avg-committed-size-inst",
             "reservation-avg-committed-size-vcpu",
             "reservation-avg-future-size-inst",
@@ -347,7 +402,12 @@ impl Metric {
             "reserved-total-estimated-cost",
             "reserved-total-usage-hrs-inst",
             "reserved-total-usage-hrs-vcpu",
+            "spot-avg-inst-az-count-per-requested-vcpu",
             "spot-avg-run-time-before-interruption-inst",
+            "spot-capacity-request-fulfillment-rate",
+            "spot-capacity-total-fulfilled-vcpu",
+            "spot-capacity-total-requested-vcpu",
+            "spot-inst-az-fulfillment-rate",
             "spot-interruption-rate-inst",
             "spot-interruption-rate-vcpu",
             "spot-max-run-time-before-interruption-inst",
@@ -385,6 +445,11 @@ impl Metric {
 impl ::std::fmt::Display for Metric {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            Metric::AvgInstAzCountPerRequestedVcpu => write!(f, "avg-inst-az-count-per-requested-vcpu"),
+            Metric::CapacityRequestFulfillmentRate => write!(f, "capacity-request-fulfillment-rate"),
+            Metric::CapacityTotalFulfilledVcpu => write!(f, "capacity-total-fulfilled-vcpu"),
+            Metric::CapacityTotalRequestedVcpu => write!(f, "capacity-total-requested-vcpu"),
+            Metric::InstAzFulfillmentRate => write!(f, "inst-az-fulfillment-rate"),
             Metric::ReservationAvgCommittedSizeInst => write!(f, "reservation-avg-committed-size-inst"),
             Metric::ReservationAvgCommittedSizeVcpu => write!(f, "reservation-avg-committed-size-vcpu"),
             Metric::ReservationAvgFutureSizeInst => write!(f, "reservation-avg-future-size-inst"),
@@ -419,7 +484,12 @@ impl ::std::fmt::Display for Metric {
             Metric::ReservedTotalEstimatedCost => write!(f, "reserved-total-estimated-cost"),
             Metric::ReservedTotalUsageHrsInst => write!(f, "reserved-total-usage-hrs-inst"),
             Metric::ReservedTotalUsageHrsVcpu => write!(f, "reserved-total-usage-hrs-vcpu"),
+            Metric::SpotAvgInstAzCountPerRequestedVcpu => write!(f, "spot-avg-inst-az-count-per-requested-vcpu"),
             Metric::SpotAvgRunTimeBeforeInterruptionInst => write!(f, "spot-avg-run-time-before-interruption-inst"),
+            Metric::SpotCapacityRequestFulfillmentRate => write!(f, "spot-capacity-request-fulfillment-rate"),
+            Metric::SpotCapacityTotalFulfilledVcpu => write!(f, "spot-capacity-total-fulfilled-vcpu"),
+            Metric::SpotCapacityTotalRequestedVcpu => write!(f, "spot-capacity-total-requested-vcpu"),
+            Metric::SpotInstAzFulfillmentRate => write!(f, "spot-inst-az-fulfillment-rate"),
             Metric::SpotInterruptionRateInst => write!(f, "spot-interruption-rate-inst"),
             Metric::SpotInterruptionRateVcpu => write!(f, "spot-interruption-rate-vcpu"),
             Metric::SpotMaxRunTimeBeforeInterruptionInst => write!(f, "spot-max-run-time-before-interruption-inst"),

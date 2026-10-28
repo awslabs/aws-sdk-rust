@@ -9,6 +9,8 @@ pub enum Error {
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>Raised when a specified bulk-load job ID cannot be found.</p>
     BulkLoadIdNotFoundException(crate::types::error::BulkLoadIdNotFoundException),
+    /// <p>Raised when a request is cancelled because the storage layer entered maintenance mode. This typically happens during a customer-initiated operation such as an index rebuild. It should be treated like <code>ConcurrentModificationException</code>.</p>
+    CancelledByMaintenanceException(crate::types::error::CancelledByMaintenanceException),
     /// <p>Raised when a user cancelled a request.</p>
     CancelledByUserException(crate::types::error::CancelledByUserException),
     /// <p>Raised when a request timed out in the client.</p>
@@ -55,6 +57,8 @@ pub enum Error {
     QueryTooLargeException(crate::types::error::QueryTooLargeException),
     /// <p>Raised when a request attempts to write to a read-only resource.</p>
     ReadOnlyViolationException(crate::types::error::ReadOnlyViolationException),
+    /// <p>Raised when the specified resource could not be found. The resource might have been deleted or the identifier might be incorrect.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Raised when there is a problem accessing Amazon S3.</p>
     S3Exception(crate::types::error::S3Exception),
     /// <p>Raised when the server shuts down while processing a request.</p>
@@ -71,6 +75,8 @@ pub enum Error {
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>Raised when a request attempts to initiate an operation that is not supported.</p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
+    /// <p>Raised when a parameter value is not valid or is malformed.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -86,6 +92,7 @@ impl ::std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::BadRequestException(inner) => inner.fmt(f),
             Error::BulkLoadIdNotFoundException(inner) => inner.fmt(f),
+            Error::CancelledByMaintenanceException(inner) => inner.fmt(f),
             Error::CancelledByUserException(inner) => inner.fmt(f),
             Error::ClientTimeoutException(inner) => inner.fmt(f),
             Error::ConcurrentModificationException(inner) => inner.fmt(f),
@@ -109,6 +116,7 @@ impl ::std::fmt::Display for Error {
             Error::QueryLimitException(inner) => inner.fmt(f),
             Error::QueryTooLargeException(inner) => inner.fmt(f),
             Error::ReadOnlyViolationException(inner) => inner.fmt(f),
+            Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::S3Exception(inner) => inner.fmt(f),
             Error::ServerShutdownException(inner) => inner.fmt(f),
             Error::StatisticsNotAvailableException(inner) => inner.fmt(f),
@@ -117,6 +125,7 @@ impl ::std::fmt::Display for Error {
             Error::TimeLimitExceededException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::UnsupportedOperationException(inner) => inner.fmt(f),
+            Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -141,6 +150,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::BadRequestException(inner) => inner.meta(),
             Self::BulkLoadIdNotFoundException(inner) => inner.meta(),
+            Self::CancelledByMaintenanceException(inner) => inner.meta(),
             Self::CancelledByUserException(inner) => inner.meta(),
             Self::ClientTimeoutException(inner) => inner.meta(),
             Self::ConcurrentModificationException(inner) => inner.meta(),
@@ -164,6 +174,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::QueryLimitException(inner) => inner.meta(),
             Self::QueryTooLargeException(inner) => inner.meta(),
             Self::ReadOnlyViolationException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::S3Exception(inner) => inner.meta(),
             Self::ServerShutdownException(inner) => inner.meta(),
             Self::StatisticsNotAvailableException(inner) => inner.meta(),
@@ -172,6 +183,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::TimeLimitExceededException(inner) => inner.meta(),
             Self::TooManyRequestsException(inner) => inner.meta(),
             Self::UnsupportedOperationException(inner) => inner.meta(),
+            Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -228,6 +240,67 @@ impl From<crate::operation::cancel_gremlin_query::CancelGremlinQueryError> for E
                 Error::UnsupportedOperationException(inner)
             }
             crate::operation::cancel_gremlin_query::CancelGremlinQueryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_index_rebuild::CancelIndexRebuildError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_index_rebuild::CancelIndexRebuildError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_index_rebuild::CancelIndexRebuildError> for Error {
+    fn from(err: crate::operation::cancel_index_rebuild::CancelIndexRebuildError) -> Self {
+        match err {
+            crate::operation::cancel_index_rebuild::CancelIndexRebuildError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::cancel_index_rebuild::CancelIndexRebuildError::CancelledByMaintenanceException(inner) => {
+                Error::CancelledByMaintenanceException(inner)
+            }
+            crate::operation::cancel_index_rebuild::CancelIndexRebuildError::CancelledByUserException(inner) => {
+                Error::CancelledByUserException(inner)
+            }
+            crate::operation::cancel_index_rebuild::CancelIndexRebuildError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::cancel_index_rebuild::CancelIndexRebuildError::ConstraintViolationException(inner) => {
+                Error::ConstraintViolationException(inner)
+            }
+            crate::operation::cancel_index_rebuild::CancelIndexRebuildError::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::operation::cancel_index_rebuild::CancelIndexRebuildError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::cancel_index_rebuild::CancelIndexRebuildError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::cancel_index_rebuild::CancelIndexRebuildError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::cancel_index_rebuild::CancelIndexRebuildError::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::operation::cancel_index_rebuild::CancelIndexRebuildError::PreconditionsFailedException(inner) => {
+                Error::PreconditionsFailedException(inner)
+            }
+            crate::operation::cancel_index_rebuild::CancelIndexRebuildError::ReadOnlyViolationException(inner) => {
+                Error::ReadOnlyViolationException(inner)
+            }
+            crate::operation::cancel_index_rebuild::CancelIndexRebuildError::ServerShutdownException(inner) => Error::ServerShutdownException(inner),
+            crate::operation::cancel_index_rebuild::CancelIndexRebuildError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::cancel_index_rebuild::CancelIndexRebuildError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::cancel_index_rebuild::CancelIndexRebuildError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_index_rebuild::CancelIndexRebuildError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -782,6 +855,9 @@ impl From<crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplain
             crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::CancelledByMaintenanceException(inner) => {
+                Error::CancelledByMaintenanceException(inner)
+            }
             crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::CancelledByUserException(inner) => {
                 Error::CancelledByUserException(inner)
             }
@@ -866,6 +942,9 @@ impl From<crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfile
             crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::CancelledByMaintenanceException(inner) => {
+                Error::CancelledByMaintenanceException(inner)
+            }
             crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::CancelledByUserException(inner) => {
                 Error::CancelledByUserException(inner)
             }
@@ -945,6 +1024,9 @@ impl From<crate::operation::execute_gremlin_query::ExecuteGremlinQueryError> for
     fn from(err: crate::operation::execute_gremlin_query::ExecuteGremlinQueryError) -> Self {
         match err {
             crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::CancelledByMaintenanceException(inner) => {
+                Error::CancelledByMaintenanceException(inner)
+            }
             crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::CancelledByUserException(inner) => {
                 Error::CancelledByUserException(inner)
             }
@@ -1028,6 +1110,9 @@ impl From<crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypher
         match err {
             crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
+            }
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::CancelledByMaintenanceException(inner) => {
+                Error::CancelledByMaintenanceException(inner)
             }
             crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::CancelledByUserException(inner) => {
                 Error::CancelledByUserException(inner)
@@ -1114,6 +1199,9 @@ impl From<crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryErr
     fn from(err: crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError) -> Self {
         match err {
             crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::CancelledByMaintenanceException(inner) => {
+                Error::CancelledByMaintenanceException(inner)
+            }
             crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::CancelledByUserException(inner) => {
                 Error::CancelledByUserException(inner)
             }
@@ -1273,6 +1361,63 @@ impl From<crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError
                 Error::UnsupportedOperationException(inner)
             }
             crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_index_rebuild_status::GetIndexRebuildStatusError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_index_rebuild_status::GetIndexRebuildStatusError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_index_rebuild_status::GetIndexRebuildStatusError> for Error {
+    fn from(err: crate::operation::get_index_rebuild_status::GetIndexRebuildStatusError) -> Self {
+        match err {
+            crate::operation::get_index_rebuild_status::GetIndexRebuildStatusError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_index_rebuild_status::GetIndexRebuildStatusError::ClientTimeoutException(inner) => {
+                Error::ClientTimeoutException(inner)
+            }
+            crate::operation::get_index_rebuild_status::GetIndexRebuildStatusError::ConstraintViolationException(inner) => {
+                Error::ConstraintViolationException(inner)
+            }
+            crate::operation::get_index_rebuild_status::GetIndexRebuildStatusError::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::operation::get_index_rebuild_status::GetIndexRebuildStatusError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::get_index_rebuild_status::GetIndexRebuildStatusError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::get_index_rebuild_status::GetIndexRebuildStatusError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_index_rebuild_status::GetIndexRebuildStatusError::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::operation::get_index_rebuild_status::GetIndexRebuildStatusError::PreconditionsFailedException(inner) => {
+                Error::PreconditionsFailedException(inner)
+            }
+            crate::operation::get_index_rebuild_status::GetIndexRebuildStatusError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_index_rebuild_status::GetIndexRebuildStatusError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::get_index_rebuild_status::GetIndexRebuildStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_index_rebuild_status::GetIndexRebuildStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1941,6 +2086,45 @@ impl From<crate::operation::get_sparql_stream::GetSparqlStreamError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_storage_info::GetStorageInfoError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_storage_info::GetStorageInfoError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_storage_info::GetStorageInfoError> for Error {
+    fn from(err: crate::operation::get_storage_info::GetStorageInfoError) -> Self {
+        match err {
+            crate::operation::get_storage_info::GetStorageInfoError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_storage_info::GetStorageInfoError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::get_storage_info::GetStorageInfoError::ConstraintViolationException(inner) => {
+                Error::ConstraintViolationException(inner)
+            }
+            crate::operation::get_storage_info::GetStorageInfoError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::get_storage_info::GetStorageInfoError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_storage_info::GetStorageInfoError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_storage_info::GetStorageInfoError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_storage_info::GetStorageInfoError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_storage_info::GetStorageInfoError::PreconditionsFailedException(inner) => {
+                Error::PreconditionsFailedException(inner)
+            }
+            crate::operation::get_storage_info::GetStorageInfoError::ServerShutdownException(inner) => Error::ServerShutdownException(inner),
+            crate::operation::get_storage_info::GetStorageInfoError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_storage_info::GetStorageInfoError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::get_storage_info::GetStorageInfoError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_gremlin_queries::ListGremlinQueriesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1997,6 +2181,48 @@ impl From<crate::operation::list_gremlin_queries::ListGremlinQueriesError> for E
                 Error::UnsupportedOperationException(inner)
             }
             crate::operation::list_gremlin_queries::ListGremlinQueriesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_index_rebuilds::ListIndexRebuildsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_index_rebuilds::ListIndexRebuildsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_index_rebuilds::ListIndexRebuildsError> for Error {
+    fn from(err: crate::operation::list_index_rebuilds::ListIndexRebuildsError) -> Self {
+        match err {
+            crate::operation::list_index_rebuilds::ListIndexRebuildsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_index_rebuilds::ListIndexRebuildsError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::list_index_rebuilds::ListIndexRebuildsError::ConstraintViolationException(inner) => {
+                Error::ConstraintViolationException(inner)
+            }
+            crate::operation::list_index_rebuilds::ListIndexRebuildsError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::list_index_rebuilds::ListIndexRebuildsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_index_rebuilds::ListIndexRebuildsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::list_index_rebuilds::ListIndexRebuildsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_index_rebuilds::ListIndexRebuildsError::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::operation::list_index_rebuilds::ListIndexRebuildsError::PreconditionsFailedException(inner) => {
+                Error::PreconditionsFailedException(inner)
+            }
+            crate::operation::list_index_rebuilds::ListIndexRebuildsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_index_rebuilds::ListIndexRebuildsError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::list_index_rebuilds::ListIndexRebuildsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2449,6 +2675,61 @@ impl From<crate::operation::manage_sparql_statistics::ManageSparqlStatisticsErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_index_rebuild::StartIndexRebuildError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_index_rebuild::StartIndexRebuildError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_index_rebuild::StartIndexRebuildError> for Error {
+    fn from(err: crate::operation::start_index_rebuild::StartIndexRebuildError) -> Self {
+        match err {
+            crate::operation::start_index_rebuild::StartIndexRebuildError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_index_rebuild::StartIndexRebuildError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::start_index_rebuild::StartIndexRebuildError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::start_index_rebuild::StartIndexRebuildError::ConstraintViolationException(inner) => {
+                Error::ConstraintViolationException(inner)
+            }
+            crate::operation::start_index_rebuild::StartIndexRebuildError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::start_index_rebuild::StartIndexRebuildError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::start_index_rebuild::StartIndexRebuildError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::start_index_rebuild::StartIndexRebuildError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::start_index_rebuild::StartIndexRebuildError::MemoryLimitExceededException(inner) => {
+                Error::MemoryLimitExceededException(inner)
+            }
+            crate::operation::start_index_rebuild::StartIndexRebuildError::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::operation::start_index_rebuild::StartIndexRebuildError::PreconditionsFailedException(inner) => {
+                Error::PreconditionsFailedException(inner)
+            }
+            crate::operation::start_index_rebuild::StartIndexRebuildError::ReadOnlyViolationException(inner) => {
+                Error::ReadOnlyViolationException(inner)
+            }
+            crate::operation::start_index_rebuild::StartIndexRebuildError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_index_rebuild::StartIndexRebuildError::ServerShutdownException(inner) => Error::ServerShutdownException(inner),
+            crate::operation::start_index_rebuild::StartIndexRebuildError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::start_index_rebuild::StartIndexRebuildError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::start_index_rebuild::StartIndexRebuildError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_loader_job::StartLoaderJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2669,6 +2950,7 @@ impl ::std::error::Error for Error {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::BadRequestException(inner) => inner.source(),
             Error::BulkLoadIdNotFoundException(inner) => inner.source(),
+            Error::CancelledByMaintenanceException(inner) => inner.source(),
             Error::CancelledByUserException(inner) => inner.source(),
             Error::ClientTimeoutException(inner) => inner.source(),
             Error::ConcurrentModificationException(inner) => inner.source(),
@@ -2692,6 +2974,7 @@ impl ::std::error::Error for Error {
             Error::QueryLimitException(inner) => inner.source(),
             Error::QueryTooLargeException(inner) => inner.source(),
             Error::ReadOnlyViolationException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
             Error::S3Exception(inner) => inner.source(),
             Error::ServerShutdownException(inner) => inner.source(),
             Error::StatisticsNotAvailableException(inner) => inner.source(),
@@ -2700,6 +2983,7 @@ impl ::std::error::Error for Error {
             Error::TimeLimitExceededException(inner) => inner.source(),
             Error::TooManyRequestsException(inner) => inner.source(),
             Error::UnsupportedOperationException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -2710,6 +2994,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => ::std::option::Option::Some(e.request_id()),
             Self::BadRequestException(e) => ::std::option::Option::Some(e.request_id()),
             Self::BulkLoadIdNotFoundException(e) => ::std::option::Option::Some(e.request_id()),
+            Self::CancelledByMaintenanceException(e) => ::std::option::Option::Some(e.request_id()),
             Self::CancelledByUserException(e) => ::std::option::Option::Some(e.request_id()),
             Self::ClientTimeoutException(e) => ::std::option::Option::Some(e.request_id()),
             Self::ConcurrentModificationException(e) => ::std::option::Option::Some(e.request_id()),
@@ -2733,6 +3018,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::QueryLimitException(e) => ::std::option::Option::Some(e.request_id()),
             Self::QueryTooLargeException(e) => ::std::option::Option::Some(e.request_id()),
             Self::ReadOnlyViolationException(e) => ::std::option::Option::Some(e.request_id()),
+            Self::ResourceNotFoundException(e) => ::std::option::Option::Some(e.request_id()),
             Self::S3Exception(e) => ::std::option::Option::Some(e.request_id()),
             Self::ServerShutdownException(e) => ::std::option::Option::Some(e.request_id()),
             Self::StatisticsNotAvailableException(e) => ::std::option::Option::Some(e.request_id()),
@@ -2741,6 +3027,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::TimeLimitExceededException(e) => ::std::option::Option::Some(e.request_id()),
             Self::TooManyRequestsException(e) => ::std::option::Option::Some(e.request_id()),
             Self::UnsupportedOperationException(e) => ::std::option::Option::Some(e.request_id()),
+            Self::ValidationException(e) => ::std::option::Option::Some(e.request_id()),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

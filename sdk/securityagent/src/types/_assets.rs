@@ -16,6 +16,8 @@ pub struct Assets {
     pub integrated_repositories: ::std::option::Option<::std::vec::Vec<crate::types::IntegratedRepository>>,
     /// <p>The trust anchors used to validate target endpoint TLS certificates. Provide these for endpoints served by a private or internal certificate authority (CA), an intermediate CA, or a self-signed certificate.</p>
     pub trusted_ca_certificates: ::std::option::Option<::std::vec::Vec<crate::types::TrustedCaCertificate>>,
+    /// <p>The client certificates for mutual TLS (mTLS) authentication to target hosts. Each certificate is stored in Secrets Manager and scoped to specific target origins.</p>
+    pub client_certificates: ::std::option::Option<::std::vec::Vec<crate::types::ClientCertificate>>,
 }
 impl Assets {
     /// <p>The list of endpoints to test during the pentest.</p>
@@ -54,6 +56,12 @@ impl Assets {
     pub fn trusted_ca_certificates(&self) -> &[crate::types::TrustedCaCertificate] {
         self.trusted_ca_certificates.as_deref().unwrap_or_default()
     }
+    /// <p>The client certificates for mutual TLS (mTLS) authentication to target hosts. Each certificate is stored in Secrets Manager and scoped to specific target origins.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_certificates.is_none()`.
+    pub fn client_certificates(&self) -> &[crate::types::ClientCertificate] {
+        self.client_certificates.as_deref().unwrap_or_default()
+    }
 }
 impl Assets {
     /// Creates a new builder-style object to manufacture [`Assets`](crate::types::Assets).
@@ -72,6 +80,7 @@ pub struct AssetsBuilder {
     pub(crate) source_code: ::std::option::Option<::std::vec::Vec<crate::types::SourceCodeRepository>>,
     pub(crate) integrated_repositories: ::std::option::Option<::std::vec::Vec<crate::types::IntegratedRepository>>,
     pub(crate) trusted_ca_certificates: ::std::option::Option<::std::vec::Vec<crate::types::TrustedCaCertificate>>,
+    pub(crate) client_certificates: ::std::option::Option<::std::vec::Vec<crate::types::ClientCertificate>>,
 }
 impl AssetsBuilder {
     /// Appends an item to `endpoints`.
@@ -194,6 +203,26 @@ impl AssetsBuilder {
     pub fn get_trusted_ca_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrustedCaCertificate>> {
         &self.trusted_ca_certificates
     }
+    /// Appends an item to `client_certificates`.
+    ///
+    /// To override the contents of this collection use [`set_client_certificates`](Self::set_client_certificates).
+    ///
+    /// <p>The client certificates for mutual TLS (mTLS) authentication to target hosts. Each certificate is stored in Secrets Manager and scoped to specific target origins.</p>
+    pub fn client_certificates(mut self, input: crate::types::ClientCertificate) -> Self {
+        let mut v = self.client_certificates.unwrap_or_default();
+        v.push(input);
+        self.client_certificates = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The client certificates for mutual TLS (mTLS) authentication to target hosts. Each certificate is stored in Secrets Manager and scoped to specific target origins.</p>
+    pub fn set_client_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClientCertificate>>) -> Self {
+        self.client_certificates = input;
+        self
+    }
+    /// <p>The client certificates for mutual TLS (mTLS) authentication to target hosts. Each certificate is stored in Secrets Manager and scoped to specific target origins.</p>
+    pub fn get_client_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientCertificate>> {
+        &self.client_certificates
+    }
     /// Consumes the builder and constructs a [`Assets`](crate::types::Assets).
     pub fn build(self) -> crate::types::Assets {
         crate::types::Assets {
@@ -203,6 +232,7 @@ impl AssetsBuilder {
             source_code: self.source_code,
             integrated_repositories: self.integrated_repositories,
             trusted_ca_certificates: self.trusted_ca_certificates,
+            client_certificates: self.client_certificates,
         }
     }
 }

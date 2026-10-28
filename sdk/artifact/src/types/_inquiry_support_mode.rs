@@ -13,7 +13,6 @@
 /// # let inquirysupportmode = unimplemented!();
 /// match inquirysupportmode {
 ///     InquirySupportMode::AiOnly => { /* ... */ },
-///     InquirySupportMode::FullSupport => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -44,8 +43,6 @@
 pub enum InquirySupportMode {
     #[allow(missing_docs)] // documentation missing in model
     AiOnly,
-    #[allow(missing_docs)] // documentation missing in model
-    FullSupport,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,7 +51,6 @@ impl ::std::convert::From<&str> for InquirySupportMode {
     fn from(s: &str) -> Self {
         match s {
             "AI_ONLY" => InquirySupportMode::AiOnly,
-            "FULL_SUPPORT" => InquirySupportMode::FullSupport,
             other => InquirySupportMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,13 +67,12 @@ impl InquirySupportMode {
     pub fn as_str(&self) -> &str {
         match self {
             InquirySupportMode::AiOnly => "AI_ONLY",
-            InquirySupportMode::FullSupport => "FULL_SUPPORT",
             InquirySupportMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AI_ONLY", "FULL_SUPPORT"]
+        &["AI_ONLY"]
     }
 }
 impl ::std::convert::AsRef<str> for InquirySupportMode {
@@ -101,7 +96,6 @@ impl ::std::fmt::Display for InquirySupportMode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             InquirySupportMode::AiOnly => write!(f, "AI_ONLY"),
-            InquirySupportMode::FullSupport => write!(f, "FULL_SUPPORT"),
             InquirySupportMode::Unknown(value) => write!(f, "{value}"),
         }
     }

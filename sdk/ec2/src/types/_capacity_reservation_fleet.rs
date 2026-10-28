@@ -53,6 +53,12 @@ pub struct CapacityReservationFleet {
     pub allocation_strategy: ::std::option::Option<::std::string::String>,
     /// <p>Information about the instance types for which to reserve the capacity.</p>
     pub instance_type_specifications: ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacityReservation>>,
+    /// <p>Reserved for internal use.</p>
+    pub instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
+    /// <p>Reserved for internal use.</p>
+    pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>Reserved for internal use.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -130,6 +136,18 @@ impl CapacityReservationFleet {
     pub fn instance_type_specifications(&self) -> &[crate::types::FleetCapacityReservation] {
         self.instance_type_specifications.as_deref().unwrap_or_default()
     }
+    /// <p>Reserved for internal use.</p>
+    pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirementsRequest> {
+        self.instance_requirements.as_ref()
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -159,6 +177,9 @@ pub struct CapacityReservationFleetBuilder {
     pub(crate) instance_match_criteria: ::std::option::Option<crate::types::FleetInstanceMatchCriteria>,
     pub(crate) allocation_strategy: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type_specifications: ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacityReservation>>,
+    pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CapacityReservationFleetBuilder {
@@ -403,6 +424,48 @@ impl CapacityReservationFleetBuilder {
     pub fn get_instance_type_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetCapacityReservation>> {
         &self.instance_type_specifications
     }
+    /// <p>Reserved for internal use.</p>
+    pub fn instance_requirements(mut self, input: crate::types::InstanceRequirementsRequest) -> Self {
+        self.instance_requirements = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn set_instance_requirements(mut self, input: ::std::option::Option<crate::types::InstanceRequirementsRequest>) -> Self {
+        self.instance_requirements = input;
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::InstanceRequirementsRequest> {
+        &self.instance_requirements
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone = input;
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -437,6 +500,9 @@ impl CapacityReservationFleetBuilder {
             instance_match_criteria: self.instance_match_criteria,
             allocation_strategy: self.allocation_strategy,
             instance_type_specifications: self.instance_type_specifications,
+            instance_requirements: self.instance_requirements,
+            availability_zone: self.availability_zone,
+            availability_zone_id: self.availability_zone_id,
             tags: self.tags,
         }
     }

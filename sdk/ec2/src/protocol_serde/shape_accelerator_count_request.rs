@@ -22,3 +22,51 @@ pub fn ser_accelerator_count_request(
     }
     Ok(())
 }
+
+#[allow(clippy::needless_question_mark)]
+pub fn de_accelerator_count_request(
+    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
+) -> ::std::result::Result<crate::types::AcceleratorCountRequest, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
+    #[allow(unused_mut)]
+    let mut builder = crate::types::AcceleratorCountRequest::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("Min") /* Min com.amazonaws.ec2#AcceleratorCountRequest$Min */ =>  {
+                let var_5 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_min(var_5);
+            }
+            ,
+            s if s.matches("Max") /* Max com.amazonaws.ec2#AcceleratorCountRequest$Max */ =>  {
+                let var_6 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max(var_6);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}

@@ -1521,6 +1521,12 @@ pub(crate) fn de_insert_ad_break(
                             .transpose()?,
                     );
                 }
+                "targetStartAt" => {
+                    builder = builder.set_target_start_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

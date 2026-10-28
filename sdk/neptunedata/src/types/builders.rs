@@ -19,6 +19,14 @@ pub use crate::types::_propertygraph_summary_value_map::PropertygraphSummaryValu
 
 pub use crate::types::_rdf_graph_summary_value_map::RdfGraphSummaryValueMapBuilder;
 
+pub use crate::types::_quads_indexes_info::QuadsIndexesInfoBuilder;
+
+pub use crate::types::_dictionaries_info::DictionariesInfoBuilder;
+
+pub use crate::types::_undo_logs_metrics::UndoLogsMetricsBuilder;
+
+pub use crate::types::_storage_metrics::StorageMetricsBuilder;
+
 pub use crate::types::_loader_id_result::LoaderIdResultBuilder;
 
 pub use crate::types::_refresh_statistics_id_map::RefreshStatisticsIdMapBuilder;
@@ -36,6 +44,8 @@ pub use crate::types::_propertygraph_summary::PropertygraphSummaryBuilder;
 pub use crate::types::_rdf_graph_summary::RdfGraphSummaryBuilder;
 
 pub use crate::types::_sparql_record::SparqlRecordBuilder;
+
+pub use crate::types::_quads_info::QuadsInfoBuilder;
 
 pub use crate::types::_gremlin_query_status::GremlinQueryStatusBuilder;
 

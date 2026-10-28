@@ -141,6 +141,8 @@ pub(crate) mod shape_log_delivery_description;
 
 pub(crate) mod shape_plugin;
 
+pub(crate) mod shape_plugin_update;
+
 pub(crate) mod shape_state_description;
 
 pub(crate) mod shape_tags;
@@ -152,6 +154,8 @@ pub(crate) mod shape_worker_configuration_description;
 pub(crate) mod shape_worker_configuration_revision_description;
 
 pub(crate) mod shape_worker_configuration_revision_summary;
+
+pub(crate) mod shape_worker_configuration_update;
 
 pub(crate) mod shape_worker_setting;
 
@@ -178,6 +182,8 @@ pub(crate) mod shape_custom_plugin_file_description;
 pub(crate) mod shape_custom_plugin_location_description;
 
 pub(crate) mod shape_custom_plugin_summary;
+
+pub(crate) mod shape_custom_plugin_update;
 
 pub(crate) mod shape_plugin_description;
 

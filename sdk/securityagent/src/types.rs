@@ -265,6 +265,8 @@ pub use crate::types::_integrated_repository::IntegratedRepository;
 
 pub use crate::types::_trusted_ca_certificate::TrustedCaCertificate;
 
+pub use crate::types::_client_certificate::ClientCertificate;
+
 pub use crate::types::_user_role::UserRole;
 
 pub use crate::types::_network_traffic_rule::NetworkTrafficRule;
@@ -436,6 +438,8 @@ mod _category;
 mod _ci_cd_configuration;
 
 mod _clean_up_strategy;
+
+mod _client_certificate;
 
 mod _cloud_watch_log;
 

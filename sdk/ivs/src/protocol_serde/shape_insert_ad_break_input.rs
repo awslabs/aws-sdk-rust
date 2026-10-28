@@ -3,14 +3,22 @@ pub fn ser_insert_ad_break_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::insert_ad_break::InsertAdBreakInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.channel_arn {
-        object.key("channelArn").string(var_1.as_str());
+    if let Some(var_1) = &input.ad_break_id {
+        object.key("adBreakId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.duration_seconds {
+    if let Some(var_2) = &input.channel_arn {
+        object.key("channelArn").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.duration_seconds {
         object.key("durationSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
+    }
+    if let Some(var_4) = &input.target_start_at {
+        object
+            .key("targetStartAt")
+            .date_time(var_4, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
     Ok(())
 }

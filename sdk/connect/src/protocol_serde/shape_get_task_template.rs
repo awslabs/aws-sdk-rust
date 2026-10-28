@@ -131,101 +131,108 @@ pub(crate) fn de_get_task_template(
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "Arn" => {
-                    builder = builder.set_arn(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "Arn" => {
+                        builder = builder.set_arn(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "Constraints" => {
+                        builder = builder.set_constraints(crate::protocol_serde::shape_task_template_constraints::de_task_template_constraints(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "ContactFlowId" => {
+                        builder = builder.set_contact_flow_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "ContactHooks" => {
+                        builder = builder.set_contact_hooks(
+                            crate::protocol_serde::shape_task_template_contact_hooks::de_task_template_contact_hooks(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "CreatedTime" => {
+                        builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::EpochSeconds,
+                        )?);
+                    }
+                    "Defaults" => {
+                        builder = builder.set_defaults(crate::protocol_serde::shape_task_template_defaults::de_task_template_defaults(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "Description" => {
+                        builder = builder.set_description(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "Fields" => {
+                        builder = builder.set_fields(crate::protocol_serde::shape_task_template_fields::de_task_template_fields(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
+                    "Id" => {
+                        builder = builder.set_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "InstanceId" => {
+                        builder = builder.set_instance_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "LastModifiedTime" => {
+                        builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::EpochSeconds,
+                        )?);
+                    }
+                    "Name" => {
+                        builder = builder.set_name(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "SelfAssignFlowId" => {
+                        builder = builder.set_self_assign_flow_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "Status" => {
+                        builder = builder.set_status(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::TaskTemplateStatus::from(u.as_ref())))
+                                .transpose()?,
+                        );
+                    }
+                    "Tags" => {
+                        builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "Constraints" => {
-                    builder = builder.set_constraints(crate::protocol_serde::shape_task_template_constraints::de_task_template_constraints(
-                        tokens,
-                        _value,
-                        depth + 1,
-                    )?);
-                }
-                "ContactFlowId" => {
-                    builder = builder.set_contact_flow_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "CreatedTime" => {
-                    builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::EpochSeconds,
-                    )?);
-                }
-                "Defaults" => {
-                    builder = builder.set_defaults(crate::protocol_serde::shape_task_template_defaults::de_task_template_defaults(
-                        tokens,
-                        _value,
-                        depth + 1,
-                    )?);
-                }
-                "Description" => {
-                    builder = builder.set_description(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "Fields" => {
-                    builder = builder.set_fields(crate::protocol_serde::shape_task_template_fields::de_task_template_fields(
-                        tokens,
-                        _value,
-                        depth + 1,
-                    )?);
-                }
-                "Id" => {
-                    builder = builder.set_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "InstanceId" => {
-                    builder = builder.set_instance_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "LastModifiedTime" => {
-                    builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::EpochSeconds,
-                    )?);
-                }
-                "Name" => {
-                    builder = builder.set_name(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "SelfAssignFlowId" => {
-                    builder = builder.set_self_assign_flow_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "Status" => {
-                    builder = builder.set_status(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::TaskTemplateStatus::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

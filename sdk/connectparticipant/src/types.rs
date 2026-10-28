@@ -9,6 +9,8 @@ pub use crate::types::_view::View;
 
 pub use crate::types::_resource_type::ResourceType;
 
+pub use crate::types::_content_disposition::ContentDisposition;
+
 pub use crate::types::_scan_direction::ScanDirection;
 
 pub use crate::types::_sort_key::SortKey;
@@ -64,6 +66,8 @@ mod _chat_item_type;
 mod _connection_credentials;
 
 mod _connection_type;
+
+mod _content_disposition;
 
 mod _item;
 

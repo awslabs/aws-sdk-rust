@@ -136,45 +136,45 @@ impl UpdateFailoverSlateConfigurationFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Number of seconds of ingest interruption before the failover slate activates. Minimum: <code>3</code>. Maximum: <code>5</code>. Default: <code>3</code>.</p>
+    /// <p>Number of seconds of ingest interruption before the failover slate activates. Default: <code>3</code>.</p>
     pub fn activation_threshold_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.activation_threshold_seconds(input);
         self
     }
-    /// <p>Number of seconds of ingest interruption before the failover slate activates. Minimum: <code>3</code>. Maximum: <code>5</code>. Default: <code>3</code>.</p>
+    /// <p>Number of seconds of ingest interruption before the failover slate activates. Default: <code>3</code>.</p>
     pub fn set_activation_threshold_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_activation_threshold_seconds(input);
         self
     }
-    /// <p>Number of seconds of ingest interruption before the failover slate activates. Minimum: <code>3</code>. Maximum: <code>5</code>. Default: <code>3</code>.</p>
+    /// <p>Number of seconds of ingest interruption before the failover slate activates. Default: <code>3</code>.</p>
     pub fn get_activation_threshold_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_activation_threshold_seconds()
     }
-    /// <p>Minimum number of seconds that the failover slate displays after activation. Minimum: <code>3</code>. Maximum: <code>10</code>. Default: <code>3</code>.</p>
+    /// <p>Minimum number of seconds that the failover slate displays after activation. Default: <code>3</code>.</p>
     pub fn min_slate_display_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.min_slate_display_seconds(input);
         self
     }
-    /// <p>Minimum number of seconds that the failover slate displays after activation. Minimum: <code>3</code>. Maximum: <code>10</code>. Default: <code>3</code>.</p>
+    /// <p>Minimum number of seconds that the failover slate displays after activation. Default: <code>3</code>.</p>
     pub fn set_min_slate_display_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_min_slate_display_seconds(input);
         self
     }
-    /// <p>Minimum number of seconds that the failover slate displays after activation. Minimum: <code>3</code>. Maximum: <code>10</code>. Default: <code>3</code>.</p>
+    /// <p>Minimum number of seconds that the failover slate displays after activation. Default: <code>3</code>.</p>
     pub fn get_min_slate_display_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_min_slate_display_seconds()
     }
-    /// <p>Maximum number of seconds that the failover slate displays. Minimum: <code>60</code>. Maximum: <code>180</code>. Default: <code>60</code>.</p>
+    /// <p>Maximum number of seconds that the failover slate displays. Default: <code>60</code>.</p>
     pub fn max_slate_display_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.max_slate_display_seconds(input);
         self
     }
-    /// <p>Maximum number of seconds that the failover slate displays. Minimum: <code>60</code>. Maximum: <code>180</code>. Default: <code>60</code>.</p>
+    /// <p>Maximum number of seconds that the failover slate displays. Default: <code>60</code>.</p>
     pub fn set_max_slate_display_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_slate_display_seconds(input);
         self
     }
-    /// <p>Maximum number of seconds that the failover slate displays. Minimum: <code>60</code>. Maximum: <code>180</code>. Default: <code>60</code>.</p>
+    /// <p>Maximum number of seconds that the failover slate displays. Default: <code>60</code>.</p>
     pub fn get_max_slate_display_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_slate_display_seconds()
     }

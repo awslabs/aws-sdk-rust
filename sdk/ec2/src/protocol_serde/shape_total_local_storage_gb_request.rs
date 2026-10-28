@@ -22,3 +22,51 @@ pub fn ser_total_local_storage_gb_request(
     }
     Ok(())
 }
+
+#[allow(clippy::needless_question_mark)]
+pub fn de_total_local_storage_gb_request(
+    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
+) -> ::std::result::Result<crate::types::TotalLocalStorageGbRequest, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
+    #[allow(unused_mut)]
+    let mut builder = crate::types::TotalLocalStorageGbRequest::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("Min") /* Min com.amazonaws.ec2#TotalLocalStorageGBRequest$Min */ =>  {
+                let var_5 =
+                    Some(
+                         {
+                            <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (double: `com.amazonaws.ec2#Double`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_min(var_5);
+            }
+            ,
+            s if s.matches("Max") /* Max com.amazonaws.ec2#TotalLocalStorageGBRequest$Max */ =>  {
+                let var_6 =
+                    Some(
+                         {
+                            <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (double: `com.amazonaws.ec2#Double`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max(var_6);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}

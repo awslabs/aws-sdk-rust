@@ -183,6 +183,8 @@ pub use crate::types::_integrated_repository::IntegratedRepositoryBuilder;
 
 pub use crate::types::_trusted_ca_certificate::TrustedCaCertificateBuilder;
 
+pub use crate::types::_client_certificate::ClientCertificateBuilder;
+
 pub use crate::types::_network_traffic_rule::NetworkTrafficRuleBuilder;
 
 pub use crate::types::_custom_header::CustomHeaderBuilder;

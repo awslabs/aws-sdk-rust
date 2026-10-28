@@ -27,9 +27,23 @@ pub use crate::types::error::_too_many_requests_exception::TooManyRequestsExcept
 
 pub use crate::types::error::_unsupported_operation_exception::UnsupportedOperationException;
 
-pub use crate::types::error::_bulk_load_id_not_found_exception::BulkLoadIdNotFoundException;
+pub use crate::types::error::_access_denied_exception::AccessDeniedException;
+
+pub use crate::types::error::_cancelled_by_maintenance_exception::CancelledByMaintenanceException;
+
+pub use crate::types::error::_cancelled_by_user_exception::CancelledByUserException;
 
 pub use crate::types::error::_internal_failure_exception::InternalFailureException;
+
+pub use crate::types::error::_method_not_allowed_exception::MethodNotAllowedException;
+
+pub use crate::types::error::_read_only_violation_exception::ReadOnlyViolationException;
+
+pub use crate::types::error::_server_shutdown_exception::ServerShutdownException;
+
+pub use crate::types::error::_validation_exception::ValidationException;
+
+pub use crate::types::error::_bulk_load_id_not_found_exception::BulkLoadIdNotFoundException;
 
 pub use crate::types::error::_load_url_access_denied_exception::LoadUrlAccessDeniedException;
 
@@ -37,17 +51,7 @@ pub use crate::types::error::_ml_resource_not_found_exception::MlResourceNotFoun
 
 pub use crate::types::error::_invalid_numeric_data_exception::InvalidNumericDataException;
 
-pub use crate::types::error::_access_denied_exception::AccessDeniedException;
-
-pub use crate::types::error::_read_only_violation_exception::ReadOnlyViolationException;
-
 pub use crate::types::error::_statistics_not_available_exception::StatisticsNotAvailableException;
-
-pub use crate::types::error::_method_not_allowed_exception::MethodNotAllowedException;
-
-pub use crate::types::error::_server_shutdown_exception::ServerShutdownException;
-
-pub use crate::types::error::_cancelled_by_user_exception::CancelledByUserException;
 
 pub use crate::types::error::_malformed_query_exception::MalformedQueryException;
 
@@ -65,6 +69,8 @@ pub use crate::types::error::_stream_records_not_found_exception::StreamRecordsN
 
 pub use crate::types::error::_throttling_exception::ThrottlingException;
 
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
+
 pub use crate::types::error::_s3_exception::S3Exception;
 
 mod _access_denied_exception;
@@ -72,6 +78,8 @@ mod _access_denied_exception;
 mod _bad_request_exception;
 
 mod _bulk_load_id_not_found_exception;
+
+mod _cancelled_by_maintenance_exception;
 
 mod _cancelled_by_user_exception;
 
@@ -119,6 +127,8 @@ mod _query_too_large_exception;
 
 mod _read_only_violation_exception;
 
+mod _resource_not_found_exception;
+
 mod _s3_exception;
 
 mod _server_shutdown_exception;
@@ -134,6 +144,8 @@ mod _time_limit_exceeded_exception;
 mod _too_many_requests_exception;
 
 mod _unsupported_operation_exception;
+
+mod _validation_exception;
 
 /// Builders
 pub mod builders;

@@ -55,6 +55,8 @@ pub use crate::types::_pre_evaluation_filters::PreEvaluationFiltersBuilder;
 
 pub use crate::types::_granular_access_control_configuration::GranularAccessControlConfigurationBuilder;
 
+pub use crate::types::_task_template_contact_hooks::TaskTemplateContactHooksBuilder;
+
 pub use crate::types::_task_template_constraints::TaskTemplateConstraintsBuilder;
 
 pub use crate::types::_task_template_defaults::TaskTemplateDefaultsBuilder;

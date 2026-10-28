@@ -1552,6 +1552,8 @@ mod get_capacity_manager_metric_dimensions;
 
 mod get_capacity_manager_monitored_tag_keys;
 
+mod get_capacity_manager_supportability_scores;
+
 mod get_capacity_reservation_usage;
 
 mod get_client_vpn_endpoint_authorization_policy;

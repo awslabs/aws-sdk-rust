@@ -37,11 +37,7 @@ where
                         }
                         "HeadersToInclude" => {
                             builder = builder.set_headers_to_include(
-                                crate::protocol_serde::shape_upload_metadata_signed_headers::de_upload_metadata_signed_headers(
-                                    tokens,
-                                    _value,
-                                    depth + 1,
-                                )?,
+                                crate::protocol_serde::shape_url_metadata_signed_headers::de_url_metadata_signed_headers(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

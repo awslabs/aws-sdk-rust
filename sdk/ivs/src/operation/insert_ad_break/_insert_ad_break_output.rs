@@ -5,12 +5,18 @@
 pub struct InsertAdBreakOutput {
     /// <p>Unique identifier for the ad break that was inserted into the playlist.</p>
     pub ad_break_id: ::std::option::Option<::std::string::String>,
+    /// <p>Target start time for the inserted ad break.</p>
+    pub target_start_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl InsertAdBreakOutput {
     /// <p>Unique identifier for the ad break that was inserted into the playlist.</p>
     pub fn ad_break_id(&self) -> ::std::option::Option<&str> {
         self.ad_break_id.as_deref()
+    }
+    /// <p>Target start time for the inserted ad break.</p>
+    pub fn target_start_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.target_start_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for InsertAdBreakOutput {
@@ -30,6 +36,7 @@ impl InsertAdBreakOutput {
 #[non_exhaustive]
 pub struct InsertAdBreakOutputBuilder {
     pub(crate) ad_break_id: ::std::option::Option<::std::string::String>,
+    pub(crate) target_start_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl InsertAdBreakOutputBuilder {
@@ -47,6 +54,20 @@ impl InsertAdBreakOutputBuilder {
     pub fn get_ad_break_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ad_break_id
     }
+    /// <p>Target start time for the inserted ad break.</p>
+    pub fn target_start_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.target_start_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Target start time for the inserted ad break.</p>
+    pub fn set_target_start_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.target_start_at = input;
+        self
+    }
+    /// <p>Target start time for the inserted ad break.</p>
+    pub fn get_target_start_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.target_start_at
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl InsertAdBreakOutputBuilder {
     pub fn build(self) -> crate::operation::insert_ad_break::InsertAdBreakOutput {
         crate::operation::insert_ad_break::InsertAdBreakOutput {
             ad_break_id: self.ad_break_id,
+            target_start_at: self.target_start_at,
             _request_id: self._request_id,
         }
     }

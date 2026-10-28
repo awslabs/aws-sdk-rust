@@ -11,3 +11,34 @@ pub fn ser_performance_factor_reference_request(
     }
     Ok(())
 }
+
+#[allow(clippy::needless_question_mark)]
+pub fn de_performance_factor_reference_request(
+    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
+) -> ::std::result::Result<crate::types::PerformanceFactorReferenceRequest, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
+    #[allow(unused_mut)]
+    let mut builder = crate::types::PerformanceFactorReferenceRequest::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("InstanceFamily") /* InstanceFamily com.amazonaws.ec2#PerformanceFactorReferenceRequest$InstanceFamily */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_instance_family(var_3);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}

@@ -107,7 +107,7 @@ pub(crate) mod shape_attendee;
 
 pub(crate) mod shape_item;
 
-pub(crate) mod shape_upload_metadata_signed_headers;
+pub(crate) mod shape_url_metadata_signed_headers;
 
 pub(crate) mod shape_view_content;
 

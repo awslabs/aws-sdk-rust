@@ -7,6 +7,10 @@ pub struct InsertAdBreakInput {
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>Duration of the ad break, in seconds.</p>
     pub duration_seconds: ::std::option::Option<i32>,
+    /// <p>Caller-specified unique identifier for the ad break to insert into the playlist.</p>
+    pub ad_break_id: ::std::option::Option<::std::string::String>,
+    /// <p>Target time at which the ad break starts.</p>
+    pub target_start_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl InsertAdBreakInput {
     /// <p>ARN of the channel into which the ad break is inserted.</p>
@@ -16,6 +20,14 @@ impl InsertAdBreakInput {
     /// <p>Duration of the ad break, in seconds.</p>
     pub fn duration_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_seconds
+    }
+    /// <p>Caller-specified unique identifier for the ad break to insert into the playlist.</p>
+    pub fn ad_break_id(&self) -> ::std::option::Option<&str> {
+        self.ad_break_id.as_deref()
+    }
+    /// <p>Target time at which the ad break starts.</p>
+    pub fn target_start_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.target_start_at.as_ref()
     }
 }
 impl InsertAdBreakInput {
@@ -31,6 +43,8 @@ impl InsertAdBreakInput {
 pub struct InsertAdBreakInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) duration_seconds: ::std::option::Option<i32>,
+    pub(crate) ad_break_id: ::std::option::Option<::std::string::String>,
+    pub(crate) target_start_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl InsertAdBreakInputBuilder {
     /// <p>ARN of the channel into which the ad break is inserted.</p>
@@ -63,6 +77,34 @@ impl InsertAdBreakInputBuilder {
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
         &self.duration_seconds
     }
+    /// <p>Caller-specified unique identifier for the ad break to insert into the playlist.</p>
+    pub fn ad_break_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ad_break_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Caller-specified unique identifier for the ad break to insert into the playlist.</p>
+    pub fn set_ad_break_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ad_break_id = input;
+        self
+    }
+    /// <p>Caller-specified unique identifier for the ad break to insert into the playlist.</p>
+    pub fn get_ad_break_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ad_break_id
+    }
+    /// <p>Target time at which the ad break starts.</p>
+    pub fn target_start_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.target_start_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Target time at which the ad break starts.</p>
+    pub fn set_target_start_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.target_start_at = input;
+        self
+    }
+    /// <p>Target time at which the ad break starts.</p>
+    pub fn get_target_start_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.target_start_at
+    }
     /// Consumes the builder and constructs a [`InsertAdBreakInput`](crate::operation::insert_ad_break::InsertAdBreakInput).
     pub fn build(
         self,
@@ -70,6 +112,8 @@ impl InsertAdBreakInputBuilder {
         ::std::result::Result::Ok(crate::operation::insert_ad_break::InsertAdBreakInput {
             channel_arn: self.channel_arn,
             duration_seconds: self.duration_seconds,
+            ad_break_id: self.ad_break_id,
+            target_start_at: self.target_start_at,
         })
     }
 }

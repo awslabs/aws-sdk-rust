@@ -160,14 +160,50 @@ pub fn de_capacity_reservation_fleet(
                 builder = builder.set_instance_type_specifications(var_11);
             }
             ,
-            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#CapacityReservationFleet$Tags */ =>  {
+            s if s.matches("instanceRequirements") /* InstanceRequirements com.amazonaws.ec2#CapacityReservationFleet$InstanceRequirements */ =>  {
                 let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_instance_requirements_request::de_instance_requirements_request(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_instance_requirements(var_12);
+            }
+            ,
+            s if s.matches("availabilityZone") /* AvailabilityZone com.amazonaws.ec2#CapacityReservationFleet$AvailabilityZone */ =>  {
+                let var_13 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone(var_13);
+            }
+            ,
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#CapacityReservationFleet$AvailabilityZoneId */ =>  {
+                let var_14 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_id(var_14);
+            }
+            ,
+            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#CapacityReservationFleet$Tags */ =>  {
+                let var_15 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_12);
+                builder = builder.set_tags(var_15);
             }
             ,
             _ => {}

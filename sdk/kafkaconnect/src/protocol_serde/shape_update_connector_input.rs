@@ -19,8 +19,29 @@ pub fn ser_update_connector_input_input(
         }
         object_4.finish();
     }
-    if let Some(var_7) = &input.skip_health_validation {
-        object.key("skipHealthValidation").boolean(*var_7);
+    if let Some(var_7) = &input.plugins {
+        let mut array_8 = object.key("plugins").start_array();
+        for item_9 in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_plugin_update::ser_plugin_update(&mut object_10, item_9)?;
+                object_10.finish();
+            }
+        }
+        array_8.finish();
+    }
+    if let Some(var_11) = &input.skip_health_validation {
+        object.key("skipHealthValidation").boolean(*var_11);
+    }
+    if let Some(var_12) = &input.use_default_worker_configuration {
+        object.key("useDefaultWorkerConfiguration").boolean(*var_12);
+    }
+    if let Some(var_13) = &input.worker_configuration {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("workerConfiguration").start_object();
+        crate::protocol_serde::shape_worker_configuration_update::ser_worker_configuration_update(&mut object_14, var_13)?;
+        object_14.finish();
     }
     Ok(())
 }

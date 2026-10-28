@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_cancel_gremlin_query;
 
+pub(crate) mod shape_cancel_index_rebuild;
+
 pub(crate) mod shape_cancel_loader_job;
 
 pub(crate) mod shape_cancel_ml_data_processing_job;
@@ -59,6 +61,8 @@ pub(crate) mod shape_get_engine_status;
 
 pub(crate) mod shape_get_gremlin_query_status;
 
+pub(crate) mod shape_get_index_rebuild_status;
+
 pub(crate) mod shape_get_loader_job_status;
 
 pub(crate) mod shape_get_ml_data_processing_job;
@@ -83,7 +87,11 @@ pub(crate) mod shape_get_sparql_statistics;
 
 pub(crate) mod shape_get_sparql_stream;
 
+pub(crate) mod shape_get_storage_info;
+
 pub(crate) mod shape_list_gremlin_queries;
+
+pub(crate) mod shape_list_index_rebuilds;
 
 pub(crate) mod shape_list_loader_jobs;
 
@@ -100,6 +108,8 @@ pub(crate) mod shape_list_open_cypher_queries;
 pub(crate) mod shape_manage_propertygraph_statistics;
 
 pub(crate) mod shape_manage_sparql_statistics;
+
+pub(crate) mod shape_start_index_rebuild;
 
 pub(crate) mod shape_start_loader_job;
 
@@ -122,6 +132,8 @@ pub(crate) mod shape_access_denied_exception;
 pub(crate) mod shape_bad_request_exception;
 
 pub(crate) mod shape_bulk_load_id_not_found_exception;
+
+pub(crate) mod shape_cancelled_by_maintenance_exception;
 
 pub(crate) mod shape_cancelled_by_user_exception;
 
@@ -193,9 +205,13 @@ pub(crate) mod shape_query_too_large_exception;
 
 pub(crate) mod shape_read_only_violation_exception;
 
+pub(crate) mod shape_resource_not_found_exception;
+
 pub(crate) mod shape_s3_exception;
 
 pub(crate) mod shape_server_shutdown_exception;
+
+pub(crate) mod shape_start_index_rebuild_input;
 
 pub(crate) mod shape_start_loader_job_input;
 
@@ -217,11 +233,15 @@ pub(crate) mod shape_too_many_requests_exception;
 
 pub(crate) mod shape_unsupported_operation_exception;
 
+pub(crate) mod shape_validation_exception;
+
 pub(crate) mod shape_custom_model_training_parameters;
 
 pub(crate) mod shape_custom_model_transform_parameters;
 
 pub(crate) mod shape_delete_statistics_value_map;
+
+pub(crate) mod shape_dictionaries_info;
 
 pub(crate) mod shape_document_valued_map;
 
@@ -247,11 +267,15 @@ pub(crate) mod shape_propertygraph_records_list;
 
 pub(crate) mod shape_propertygraph_summary_value_map;
 
+pub(crate) mod shape_quads_indexes_info;
+
 pub(crate) mod shape_query_eval_stats;
 
 pub(crate) mod shape_query_language_version;
 
 pub(crate) mod shape_rdf_graph_summary_value_map;
+
+pub(crate) mod shape_rebuild_id_list;
 
 pub(crate) mod shape_refresh_statistics_id_map;
 
@@ -259,15 +283,21 @@ pub(crate) mod shape_sparql_records_list;
 
 pub(crate) mod shape_statistics;
 
+pub(crate) mod shape_storage_metrics;
+
 pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_string_valued_map;
+
+pub(crate) mod shape_undo_logs_metrics;
 
 pub(crate) mod shape_gremlin_query_status;
 
 pub(crate) mod shape_propertygraph_record;
 
 pub(crate) mod shape_propertygraph_summary;
+
+pub(crate) mod shape_quads_info;
 
 pub(crate) mod shape_rdf_graph_summary;
 

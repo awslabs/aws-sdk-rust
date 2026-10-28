@@ -29,6 +29,8 @@ pub(crate) mod shape_add_data_source;
 
 pub(crate) mod shape_add_direct_query_data_source;
 
+pub(crate) mod shape_add_replication_peer;
+
 pub(crate) mod shape_add_tags;
 
 pub(crate) mod shape_associate_package;
@@ -42,6 +44,8 @@ pub(crate) mod shape_authorize_vpc_endpoint_access;
 pub(crate) mod shape_cancel_domain_config_change;
 
 pub(crate) mod shape_cancel_service_software_update;
+
+pub(crate) mod shape_compare_domain_configuration;
 
 pub(crate) mod shape_create_application;
 
@@ -89,6 +93,8 @@ pub(crate) mod shape_describe_domain_health;
 
 pub(crate) mod shape_describe_domain_nodes;
 
+pub(crate) mod shape_describe_domain_replication;
+
 pub(crate) mod shape_describe_domains;
 
 pub(crate) mod shape_describe_dry_run_progress;
@@ -114,6 +120,8 @@ pub(crate) mod shape_detach_data_source;
 pub(crate) mod shape_dissociate_package;
 
 pub(crate) mod shape_dissociate_packages;
+
+pub(crate) mod shape_failover_replication;
 
 pub(crate) mod shape_get_application;
 
@@ -183,6 +191,8 @@ pub(crate) mod shape_register_capability;
 
 pub(crate) mod shape_reject_inbound_connection;
 
+pub(crate) mod shape_remove_replication_peer;
+
 pub(crate) mod shape_remove_tags;
 
 pub(crate) mod shape_revoke_vpc_endpoint_access;
@@ -194,6 +204,8 @@ pub(crate) mod shape_start_domain_maintenance;
 pub(crate) mod shape_start_migration;
 
 pub(crate) mod shape_start_service_software_update;
+
+pub(crate) mod shape_switchover_replication;
 
 pub(crate) mod shape_update_application;
 
@@ -229,6 +241,8 @@ pub(crate) mod shape_add_data_source_input;
 
 pub(crate) mod shape_add_direct_query_data_source_input;
 
+pub(crate) mod shape_add_replication_peer_input;
+
 pub(crate) mod shape_add_tags_input;
 
 pub(crate) mod shape_associate_package_input;
@@ -244,6 +258,8 @@ pub(crate) mod shape_base_exception;
 pub(crate) mod shape_cancel_domain_config_change_input;
 
 pub(crate) mod shape_cancel_service_software_update_input;
+
+pub(crate) mod shape_compare_domain_configuration_input;
 
 pub(crate) mod shape_conflict_exception;
 
@@ -281,6 +297,8 @@ pub(crate) mod shape_disabled_operation_exception;
 
 pub(crate) mod shape_dissociate_packages_input;
 
+pub(crate) mod shape_failover_replication_input;
+
 pub(crate) mod shape_insight_feedback_input;
 
 pub(crate) mod shape_internal_exception;
@@ -301,6 +319,8 @@ pub(crate) mod shape_put_default_application_setting_input;
 
 pub(crate) mod shape_register_capability_input;
 
+pub(crate) mod shape_remove_replication_peer_input;
+
 pub(crate) mod shape_remove_tags_input;
 
 pub(crate) mod shape_resource_already_exists_exception;
@@ -320,6 +340,8 @@ pub(crate) mod shape_start_domain_maintenance_input;
 pub(crate) mod shape_start_migration_input;
 
 pub(crate) mod shape_start_service_software_update_input;
+
+pub(crate) mod shape_switchover_replication_input;
 
 pub(crate) mod shape_throttling_exception;
 
@@ -386,6 +408,8 @@ pub(crate) mod shape_change_progress_status_details;
 pub(crate) mod shape_cluster_config;
 
 pub(crate) mod shape_cognito_options;
+
+pub(crate) mod shape_compare_domain_configuration_category_map;
 
 pub(crate) mod shape_compatible_versions_list;
 
@@ -509,6 +533,8 @@ pub(crate) mod shape_package_vending_options;
 
 pub(crate) mod shape_package_version_history_list;
 
+pub(crate) mod shape_replication_peer_list;
+
 pub(crate) mod shape_reserved_instance_list;
 
 pub(crate) mod shape_reserved_instance_offering_list;
@@ -586,6 +612,8 @@ pub(crate) mod shape_aws_domain_information;
 pub(crate) mod shape_cancelled_change_property;
 
 pub(crate) mod shape_capability_failure;
+
+pub(crate) mod shape_category_diff_result;
 
 pub(crate) mod shape_change_progress_stage_list;
 
@@ -683,6 +711,8 @@ pub(crate) mod shape_plugin_properties;
 
 pub(crate) mod shape_prometheus_direct_query_data_source;
 
+pub(crate) mod shape_replication_peer;
+
 pub(crate) mod shape_reserved_instance;
 
 pub(crate) mod shape_reserved_instance_offering;
@@ -731,6 +761,8 @@ pub(crate) mod shape_availability_zone_list;
 
 pub(crate) mod shape_change_progress_stage;
 
+pub(crate) mod shape_diff_items;
+
 pub(crate) mod shape_duration;
 
 pub(crate) mod shape_iam_federation_options_output;
@@ -775,6 +807,10 @@ pub(crate) mod shape_auto_tune_maintenance_schedule_list;
 
 pub(crate) mod shape_availability_zone_info;
 
+pub(crate) mod shape_diff_item_name_list;
+
+pub(crate) mod shape_divergent_item_list;
+
 pub(crate) mod shape_instance_count_limits;
 
 pub(crate) mod shape_recurring_charge;
@@ -785,10 +821,16 @@ pub(crate) mod shape_storage_type;
 
 pub(crate) mod shape_upgrade_step_item;
 
+pub(crate) mod shape_divergent_item;
+
 pub(crate) mod shape_issues;
 
 pub(crate) mod shape_limit_value_list;
 
 pub(crate) mod shape_storage_type_limit_list;
 
+pub(crate) mod shape_divergent_field_list;
+
 pub(crate) mod shape_storage_type_limit;
+
+pub(crate) mod shape_divergent_field;

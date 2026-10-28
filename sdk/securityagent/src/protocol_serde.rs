@@ -645,6 +645,10 @@ pub(crate) mod shape_bitbucket_data_center_integration_input;
 
 pub(crate) mod shape_bitbucket_integration_input;
 
+pub(crate) mod shape_client_certificate;
+
+pub(crate) mod shape_client_certificate_list;
+
 pub(crate) mod shape_code_review;
 
 pub(crate) mod shape_code_review_job;
@@ -846,6 +850,8 @@ pub(crate) mod shape_azure_dev_ops_repository_metadata;
 pub(crate) mod shape_bitbucket_repository_metadata;
 
 pub(crate) mod shape_category;
+
+pub(crate) mod shape_client_certificate_origin_list;
 
 pub(crate) mod shape_code_location;
 

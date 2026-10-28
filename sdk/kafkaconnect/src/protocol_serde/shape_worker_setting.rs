@@ -28,6 +28,26 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "plugins" => {
+                            builder = builder.set_plugins(crate::protocol_serde::shape_list_of_plugin_description::de_list_of_plugin_description(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "workerConfiguration" => {
+                            builder = builder.set_worker_configuration(
+                                crate::protocol_serde::shape_worker_configuration_description::de_worker_configuration_description(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "useDefaultWorkerConfiguration" => {
+                            builder = builder
+                                .set_use_default_worker_configuration(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

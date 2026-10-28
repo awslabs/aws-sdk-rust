@@ -161,6 +161,48 @@ impl CreateCapacityReservationFleetFluentBuilder {
     pub fn get_instance_type_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservationFleetInstanceSpecification>> {
         self.inner.get_instance_type_specifications()
     }
+    /// <p>Reserved for internal use.</p>
+    pub fn instance_requirements(mut self, input: crate::types::InstanceRequirementsRequest) -> Self {
+        self.inner = self.inner.instance_requirements(input);
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn set_instance_requirements(mut self, input: ::std::option::Option<crate::types::InstanceRequirementsRequest>) -> Self {
+        self.inner = self.inner.set_instance_requirements(input);
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::InstanceRequirementsRequest> {
+        self.inner.get_instance_requirements()
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.availability_zone(input.into());
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_availability_zone(input);
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone()
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.availability_zone_id(input.into());
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_availability_zone_id(input);
+        self
+    }
+    /// <p>Reserved for internal use.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone_id()
+    }
     /// <p>Indicates the tenancy of the Capacity Reservation Fleet. All Capacity Reservations in the Fleet inherit this tenancy. The Capacity Reservation Fleet can have one of the following tenancy settings:</p>
     /// <ul>
     /// <li>

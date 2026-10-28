@@ -1684,6 +1684,9 @@ pub mod get_capacity_manager_metric_dimensions;
 /// Types for the `GetCapacityManagerMonitoredTagKeys` operation.
 pub mod get_capacity_manager_monitored_tag_keys;
 
+/// Types for the `GetCapacityManagerSupportabilityScores` operation.
+pub mod get_capacity_manager_supportability_scores;
+
 /// Types for the `GetCapacityReservationUsage` operation.
 pub mod get_capacity_reservation_usage;
 

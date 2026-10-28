@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CancelGremlinQuery` operation.
 pub mod cancel_gremlin_query;
 
+/// Types for the `CancelIndexRebuild` operation.
+pub mod cancel_index_rebuild;
+
 /// Types for the `CancelLoaderJob` operation.
 pub mod cancel_loader_job;
 
@@ -55,6 +58,9 @@ pub mod get_engine_status;
 /// Types for the `GetGremlinQueryStatus` operation.
 pub mod get_gremlin_query_status;
 
+/// Types for the `GetIndexRebuildStatus` operation.
+pub mod get_index_rebuild_status;
+
 /// Types for the `GetLoaderJobStatus` operation.
 pub mod get_loader_job_status;
 
@@ -91,8 +97,14 @@ pub mod get_sparql_statistics;
 /// Types for the `GetSparqlStream` operation.
 pub mod get_sparql_stream;
 
+/// Types for the `GetStorageInfo` operation.
+pub mod get_storage_info;
+
 /// Types for the `ListGremlinQueries` operation.
 pub mod list_gremlin_queries;
+
+/// Types for the `ListIndexRebuilds` operation.
+pub mod list_index_rebuilds;
 
 /// Types for the `ListLoaderJobs` operation.
 pub mod list_loader_jobs;
@@ -117,6 +129,9 @@ pub mod manage_propertygraph_statistics;
 
 /// Types for the `ManageSparqlStatistics` operation.
 pub mod manage_sparql_statistics;
+
+/// Types for the `StartIndexRebuild` operation.
+pub mod start_index_rebuild;
 
 /// Types for the `StartLoaderJob` operation.
 pub mod start_loader_job;

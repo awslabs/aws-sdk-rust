@@ -38,6 +38,26 @@ pub fn de_execute_gremlin_query_http_error(
             }
             tmp
         }),
+        "CancelledByMaintenanceException" => crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::CancelledByMaintenanceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CancelledByMaintenanceExceptionBuilder::default();
+                output = crate::protocol_serde::shape_cancelled_by_maintenance_exception::de_cancelled_by_maintenance_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::cancelled_by_maintenance_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::unhandled)?
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "CancelledByUserException" => crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::CancelledByUserException({
             #[allow(unused_mut)]
             let mut tmp = {

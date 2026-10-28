@@ -71,6 +71,8 @@ pub use crate::types::_capacity_reservation_cancellation_quote::CapacityReservat
 
 pub use crate::types::_capacity_reservation_modification_quote::CapacityReservationModificationQuoteBuilder;
 
+pub use crate::types::_instance_requirements_request::InstanceRequirementsRequestBuilder;
+
 pub use crate::types::_carrier_gateway::CarrierGatewayBuilder;
 
 pub use crate::types::_connection_log_options::ConnectionLogOptionsBuilder;
@@ -371,6 +373,8 @@ pub use crate::types::_verified_access_instance_user_trust_provider_client_confi
 
 pub use crate::types::_active_vpn_tunnel_status::ActiveVpnTunnelStatusBuilder;
 
+pub use crate::types::_instance_requirements_with_metadata_request::InstanceRequirementsWithMetadataRequestBuilder;
+
 pub use crate::types::_interruptible_capacity_allocation::InterruptibleCapacityAllocationBuilder;
 
 pub use crate::types::_interruption_info::InterruptionInfoBuilder;
@@ -381,8 +385,6 @@ pub use crate::types::_integrate_services::IntegrateServicesBuilder;
 
 pub use crate::types::_instance_metadata_defaults_response::InstanceMetadataDefaultsResponseBuilder;
 
-pub use crate::types::_instance_requirements_request::InstanceRequirementsRequestBuilder;
-
 pub use crate::types::_request_ipam_resource_tag::RequestIpamResourceTagBuilder;
 
 pub use crate::types::_response_launch_template_data::ResponseLaunchTemplateDataBuilder;
@@ -390,8 +392,6 @@ pub use crate::types::_response_launch_template_data::ResponseLaunchTemplateData
 pub use crate::types::_managed_resource_visibility_settings::ManagedResourceVisibilitySettingsBuilder;
 
 pub use crate::types::_reservation_value::ReservationValueBuilder;
-
-pub use crate::types::_instance_requirements_with_metadata_request::InstanceRequirementsWithMetadataRequestBuilder;
 
 pub use crate::types::_maintenance_details::MaintenanceDetailsBuilder;
 
@@ -602,6 +602,26 @@ pub use crate::types::_modification_quote_current_configuration::ModificationQuo
 pub use crate::types::_modification_terms::ModificationTermsBuilder;
 
 pub use crate::types::_reservation_fleet_instance_specification::ReservationFleetInstanceSpecificationBuilder;
+
+pub use crate::types::_v_cpu_count_range_request::VCpuCountRangeRequestBuilder;
+
+pub use crate::types::_memory_mib_request::MemoryMiBRequestBuilder;
+
+pub use crate::types::_memory_gib_per_v_cpu_request::MemoryGiBPerVCpuRequestBuilder;
+
+pub use crate::types::_network_interface_count_request::NetworkInterfaceCountRequestBuilder;
+
+pub use crate::types::_total_local_storage_gb_request::TotalLocalStorageGbRequestBuilder;
+
+pub use crate::types::_baseline_ebs_bandwidth_mbps_request::BaselineEbsBandwidthMbpsRequestBuilder;
+
+pub use crate::types::_accelerator_count_request::AcceleratorCountRequestBuilder;
+
+pub use crate::types::_accelerator_total_memory_mib_request::AcceleratorTotalMemoryMiBRequestBuilder;
+
+pub use crate::types::_network_bandwidth_gbps_request::NetworkBandwidthGbpsRequestBuilder;
+
+pub use crate::types::_baseline_performance_factors_request::BaselinePerformanceFactorsRequestBuilder;
 
 pub use crate::types::_fleet_capacity_reservation::FleetCapacityReservationBuilder;
 
@@ -999,6 +1019,8 @@ pub use crate::types::_capacity_manager_dimension::CapacityManagerDimensionBuild
 
 pub use crate::types::_capacity_manager_monitored_tag_key::CapacityManagerMonitoredTagKeyBuilder;
 
+pub use crate::types::_capacity_manager_supportability_score::CapacityManagerSupportabilityScoreBuilder;
+
 pub use crate::types::_instance_usage::InstanceUsageBuilder;
 
 pub use crate::types::_coip_address_usage::CoipAddressUsageBuilder;
@@ -1012,26 +1034,6 @@ pub use crate::types::_purchase::PurchaseBuilder;
 pub use crate::types::_image_ancestry_entry::ImageAncestryEntryBuilder;
 
 pub use crate::types::_image_finding::ImageFindingBuilder;
-
-pub use crate::types::_v_cpu_count_range_request::VCpuCountRangeRequestBuilder;
-
-pub use crate::types::_memory_mib_request::MemoryMiBRequestBuilder;
-
-pub use crate::types::_memory_gib_per_v_cpu_request::MemoryGiBPerVCpuRequestBuilder;
-
-pub use crate::types::_network_interface_count_request::NetworkInterfaceCountRequestBuilder;
-
-pub use crate::types::_total_local_storage_gb_request::TotalLocalStorageGbRequestBuilder;
-
-pub use crate::types::_baseline_ebs_bandwidth_mbps_request::BaselineEbsBandwidthMbpsRequestBuilder;
-
-pub use crate::types::_accelerator_count_request::AcceleratorCountRequestBuilder;
-
-pub use crate::types::_accelerator_total_memory_mib_request::AcceleratorTotalMemoryMiBRequestBuilder;
-
-pub use crate::types::_network_bandwidth_gbps_request::NetworkBandwidthGbpsRequestBuilder;
-
-pub use crate::types::_baseline_performance_factors_request::BaselinePerformanceFactorsRequestBuilder;
 
 pub use crate::types::_instance_type_info_from_instance_requirements::InstanceTypeInfoFromInstanceRequirementsBuilder;
 
@@ -1263,6 +1265,8 @@ pub use crate::types::_cancellation_terms::CancellationTermsBuilder;
 
 pub use crate::types::_modification_reservation_update::ModificationReservationUpdateBuilder;
 
+pub use crate::types::_cpu_performance_factor_request::CpuPerformanceFactorRequestBuilder;
+
 pub use crate::types::_directory_service_authentication_request::DirectoryServiceAuthenticationRequestBuilder;
 
 pub use crate::types::_certificate_authentication_request::CertificateAuthenticationRequestBuilder;
@@ -1480,8 +1484,6 @@ pub use crate::types::_scan_result_condition::ScanResultConditionBuilder;
 pub use crate::types::_dimension_condition::DimensionConditionBuilder;
 
 pub use crate::types::_athena_integration::AthenaIntegrationBuilder;
-
-pub use crate::types::_cpu_performance_factor_request::CpuPerformanceFactorRequestBuilder;
 
 pub use crate::types::_ipam_discovery_failure_reason::IpamDiscoveryFailureReasonBuilder;
 
@@ -1807,6 +1809,8 @@ pub use crate::types::_health_check_path_destination_response_object::HealthChec
 
 pub use crate::types::_capacity_allocation_metadata_entry::CapacityAllocationMetadataEntryBuilder;
 
+pub use crate::types::_performance_factor_reference_request::PerformanceFactorReferenceRequestBuilder;
+
 pub use crate::types::_fleet_iam_instance_profile_specification_request::FleetIamInstanceProfileSpecificationRequestBuilder;
 
 pub use crate::types::_fleet_instance_metadata_options_request::FleetInstanceMetadataOptionsRequestBuilder;
@@ -1864,8 +1868,6 @@ pub use crate::types::_volume_status_details::VolumeStatusDetailsBuilder;
 pub use crate::types::_disable_fast_snapshot_restore_state_error::DisableFastSnapshotRestoreStateErrorBuilder;
 
 pub use crate::types::_enable_fast_snapshot_restore_state_error::EnableFastSnapshotRestoreStateErrorBuilder;
-
-pub use crate::types::_performance_factor_reference_request::PerformanceFactorReferenceRequestBuilder;
 
 pub use crate::types::_ipam_public_address_tag::IpamPublicAddressTagBuilder;
 

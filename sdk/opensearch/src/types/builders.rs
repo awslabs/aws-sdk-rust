@@ -121,6 +121,8 @@ pub use crate::types::_package_details_for_association::PackageDetailsForAssocia
 
 pub use crate::types::_cancelled_change_property::CancelledChangePropertyBuilder;
 
+pub use crate::types::_category_diff_result::CategoryDiffResultBuilder;
+
 pub use crate::types::_data_source::DataSourceBuilder;
 
 pub use crate::types::_app_config::AppConfigBuilder;
@@ -217,6 +219,8 @@ pub use crate::types::_environment_info::EnvironmentInfoBuilder;
 
 pub use crate::types::_domain_nodes_status::DomainNodesStatusBuilder;
 
+pub use crate::types::_replication_peer::ReplicationPeerBuilder;
+
 pub use crate::types::_filter::FilterBuilder;
 
 pub use crate::types::_insight_field::InsightFieldBuilder;
@@ -262,6 +266,8 @@ pub use crate::types::_migration_summary::MigrationSummaryBuilder;
 pub use crate::types::_migration_workspace::MigrationWorkspaceBuilder;
 
 pub use crate::types::_export_options::ExportOptionsBuilder;
+
+pub use crate::types::_diff_items::DiffItemsBuilder;
 
 pub use crate::types::_node_option::NodeOptionBuilder;
 
@@ -313,4 +319,8 @@ pub use crate::types::_upgrade_step_item::UpgradeStepItemBuilder;
 
 pub use crate::types::_saved_object_identifier::SavedObjectIdentifierBuilder;
 
+pub use crate::types::_divergent_item::DivergentItemBuilder;
+
 pub use crate::types::_storage_type_limit::StorageTypeLimitBuilder;
+
+pub use crate::types::_divergent_field::DivergentFieldBuilder;
