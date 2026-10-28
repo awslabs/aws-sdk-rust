@@ -2807,6 +2807,10 @@ source_hash = '2b6934e1e69a4fc11ef50e74a43a03213e505cf1c74b7ac112df28fdbe92628e'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '484ac8814dc06739c5b28ff9ef294f81487d2cc348776e1e51dafd7b15d0890e'
+
+[release]
+tag = 'release-2026-10-28.2'
+
 [release.crates]
 aws-sdk-acm = '1.125.0'
 aws-sdk-artifact = '1.111.0'
