@@ -32,6 +32,148 @@ impl FirewallRuleType {
         self.dns_threat_protection.as_ref()
     }
 }
+static FIREWALLRULETYPE_MEMBER_PARTNER_THREAT_PROTECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleType$PartnerThreatProtection",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PartnerThreatProtection",
+    0,
+);
+static FIREWALLRULETYPE_MEMBER_FIREWALL_ADVANCED_CONTENT_CATEGORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleType$FirewallAdvancedContentCategory",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FirewallAdvancedContentCategory",
+    1,
+);
+static FIREWALLRULETYPE_MEMBER_FIREWALL_ADVANCED_THREAT_CATEGORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleType$FirewallAdvancedThreatCategory",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FirewallAdvancedThreatCategory",
+    2,
+);
+static FIREWALLRULETYPE_MEMBER_DNS_THREAT_PROTECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleType$DnsThreatProtection",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DnsThreatProtection",
+    3,
+);
+static FIREWALLRULETYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleType",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FIREWALLRULETYPE_MEMBER_PARTNER_THREAT_PROTECTION,
+        &FIREWALLRULETYPE_MEMBER_FIREWALL_ADVANCED_CONTENT_CATEGORY,
+        &FIREWALLRULETYPE_MEMBER_FIREWALL_ADVANCED_THREAT_CATEGORY,
+        &FIREWALLRULETYPE_MEMBER_DNS_THREAT_PROTECTION,
+    ],
+);
+impl FirewallRuleType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FIREWALLRULETYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FirewallRuleType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.partner_threat_protection {
+            ser.write_struct(&FIREWALLRULETYPE_MEMBER_PARTNER_THREAT_PROTECTION, val)?;
+        }
+        if let Some(ref val) = self.firewall_advanced_content_category {
+            ser.write_struct(&FIREWALLRULETYPE_MEMBER_FIREWALL_ADVANCED_CONTENT_CATEGORY, val)?;
+        }
+        if let Some(ref val) = self.firewall_advanced_threat_category {
+            ser.write_struct(&FIREWALLRULETYPE_MEMBER_FIREWALL_ADVANCED_THREAT_CATEGORY, val)?;
+        }
+        if let Some(ref val) = self.dns_threat_protection {
+            ser.write_struct(&FIREWALLRULETYPE_MEMBER_DNS_THREAT_PROTECTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FirewallRuleTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FIREWALLRULETYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.partner_threat_protection = Some(crate::types::PartnerThreatProtectionConfig::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firewall_advanced_content_category = Some(crate::types::FirewallAdvancedContentCategoryConfig::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firewall_advanced_threat_category = Some(crate::types::FirewallAdvancedThreatCategoryConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_threat_protection = Some(crate::types::DnsThreatProtectionRuleTypeConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FirewallRuleType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FirewallRuleType {
     /// Creates a new builder-style object to manufacture [`FirewallRuleType`](crate::types::FirewallRuleType).
     pub fn builder() -> crate::types::builders::FirewallRuleTypeBuilder {

@@ -49,6 +49,211 @@ impl UpdatedExpressGatewayService {
         self.updated_at.as_ref()
     }
 }
+static UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_SERVICE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#UpdatedExpressGatewayService$serviceArn",
+        "com.amazonaws.ecs",
+        "UpdatedExpressGatewayService",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceArn",
+    0,
+);
+static UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_CLUSTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#UpdatedExpressGatewayService$cluster",
+        "com.amazonaws.ecs",
+        "UpdatedExpressGatewayService",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cluster",
+    1,
+);
+static UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_SERVICE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#UpdatedExpressGatewayService$serviceName",
+        "com.amazonaws.ecs",
+        "UpdatedExpressGatewayService",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceName",
+    2,
+);
+static UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#UpdatedExpressGatewayService$status",
+        "com.amazonaws.ecs",
+        "UpdatedExpressGatewayService",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "status",
+    3,
+);
+static UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_TARGET_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#UpdatedExpressGatewayService$targetConfiguration",
+        "com.amazonaws.ecs",
+        "UpdatedExpressGatewayService",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "targetConfiguration",
+    4,
+);
+static UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#UpdatedExpressGatewayService$createdAt",
+        "com.amazonaws.ecs",
+        "UpdatedExpressGatewayService",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    5,
+);
+static UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_UPDATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#UpdatedExpressGatewayService$updatedAt",
+        "com.amazonaws.ecs",
+        "UpdatedExpressGatewayService",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "updatedAt",
+    6,
+);
+static UPDATEDEXPRESSGATEWAYSERVICE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#UpdatedExpressGatewayService",
+        "com.amazonaws.ecs",
+        "UpdatedExpressGatewayService",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_SERVICE_ARN,
+        &UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_CLUSTER,
+        &UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_SERVICE_NAME,
+        &UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_STATUS,
+        &UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_TARGET_CONFIGURATION,
+        &UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_CREATED_AT,
+        &UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_UPDATED_AT,
+    ],
+);
+impl UpdatedExpressGatewayService {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEDEXPRESSGATEWAYSERVICE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdatedExpressGatewayService {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.service_arn {
+            ser.write_string(&UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_SERVICE_ARN, val)?;
+        }
+        if let Some(ref val) = self.cluster {
+            ser.write_string(&UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_CLUSTER, val)?;
+        }
+        if let Some(ref val) = self.service_name {
+            ser.write_string(&UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_SERVICE_NAME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_struct(&UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_STATUS, val)?;
+        }
+        if let Some(ref val) = self.target_configuration {
+            ser.write_struct(&UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_TARGET_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.updated_at {
+            ser.write_timestamp(&UPDATEDEXPRESSGATEWAYSERVICE_MEMBER_UPDATED_AT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UpdatedExpressGatewayServiceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEDEXPRESSGATEWAYSERVICE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::ExpressGatewayServiceStatus::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_configuration = Some(crate::types::ExpressGatewayServiceConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.updated_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdatedExpressGatewayService {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl UpdatedExpressGatewayService {
     /// Creates a new builder-style object to manufacture [`UpdatedExpressGatewayService`](crate::types::UpdatedExpressGatewayService).
     pub fn builder() -> crate::types::builders::UpdatedExpressGatewayServiceBuilder {

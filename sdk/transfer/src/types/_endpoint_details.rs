@@ -109,6 +109,218 @@ impl EndpointDetails {
         self.security_group_ids.as_deref().unwrap_or_default()
     }
 }
+static ENDPOINTDETAILS_MEMBER_ADDRESS_ALLOCATION_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#AddressAllocationIds$member",
+        "com.amazonaws.transfer",
+        "AddressAllocationIds",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ENDPOINTDETAILS_MEMBER_ADDRESS_ALLOCATION_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#EndpointDetails$AddressAllocationIds",
+        "com.amazonaws.transfer",
+        "EndpointDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AddressAllocationIds",
+    0,
+)
+.with_list_member(&ENDPOINTDETAILS_MEMBER_ADDRESS_ALLOCATION_IDS_MEMBER);
+static ENDPOINTDETAILS_MEMBER_SUBNET_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#SubnetIds$member", "com.amazonaws.transfer", "SubnetIds"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ENDPOINTDETAILS_MEMBER_SUBNET_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#EndpointDetails$SubnetIds",
+        "com.amazonaws.transfer",
+        "EndpointDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SubnetIds",
+    1,
+)
+.with_list_member(&ENDPOINTDETAILS_MEMBER_SUBNET_IDS_MEMBER);
+static ENDPOINTDETAILS_MEMBER_VPC_ENDPOINT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#EndpointDetails$VpcEndpointId",
+        "com.amazonaws.transfer",
+        "EndpointDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VpcEndpointId",
+    2,
+);
+static ENDPOINTDETAILS_MEMBER_VPC_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#EndpointDetails$VpcId",
+        "com.amazonaws.transfer",
+        "EndpointDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VpcId",
+    3,
+);
+static ENDPOINTDETAILS_MEMBER_SECURITY_GROUP_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#SecurityGroupIds$member",
+        "com.amazonaws.transfer",
+        "SecurityGroupIds",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ENDPOINTDETAILS_MEMBER_SECURITY_GROUP_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#EndpointDetails$SecurityGroupIds",
+        "com.amazonaws.transfer",
+        "EndpointDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecurityGroupIds",
+    4,
+)
+.with_list_member(&ENDPOINTDETAILS_MEMBER_SECURITY_GROUP_IDS_MEMBER);
+static ENDPOINTDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#EndpointDetails", "com.amazonaws.transfer", "EndpointDetails"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENDPOINTDETAILS_MEMBER_ADDRESS_ALLOCATION_IDS,
+        &ENDPOINTDETAILS_MEMBER_SUBNET_IDS,
+        &ENDPOINTDETAILS_MEMBER_VPC_ENDPOINT_ID,
+        &ENDPOINTDETAILS_MEMBER_VPC_ID,
+        &ENDPOINTDETAILS_MEMBER_SECURITY_GROUP_IDS,
+    ],
+);
+impl EndpointDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENDPOINTDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EndpointDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.address_allocation_ids {
+            ser.write_list(
+                &ENDPOINTDETAILS_MEMBER_ADDRESS_ALLOCATION_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.subnet_ids {
+            ser.write_list(
+                &ENDPOINTDETAILS_MEMBER_SUBNET_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.vpc_endpoint_id {
+            ser.write_string(&ENDPOINTDETAILS_MEMBER_VPC_ENDPOINT_ID, val)?;
+        }
+        if let Some(ref val) = self.vpc_id {
+            ser.write_string(&ENDPOINTDETAILS_MEMBER_VPC_ID, val)?;
+        }
+        if let Some(ref val) = self.security_group_ids {
+            ser.write_list(
+                &ENDPOINTDETAILS_MEMBER_SECURITY_GROUP_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EndpointDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENDPOINTDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.address_allocation_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subnet_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_endpoint_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_group_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EndpointDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EndpointDetails {
     /// Creates a new builder-style object to manufacture [`EndpointDetails`](crate::types::EndpointDetails).
     pub fn builder() -> crate::types::builders::EndpointDetailsBuilder {

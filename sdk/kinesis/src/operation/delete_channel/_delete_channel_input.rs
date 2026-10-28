@@ -12,6 +12,86 @@ impl DeleteChannelInput {
         self.channel_arn.as_deref()
     }
 }
+static DELETECHANNELINPUT_MEMBER_CHANNEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DeleteChannelInput$ChannelARN",
+        "com.amazonaws.kinesis.synthetic",
+        "DeleteChannelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChannelARN",
+    0,
+);
+static DELETECHANNELINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DeleteChannelInput",
+        "com.amazonaws.kinesis.synthetic",
+        "DeleteChannelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELETECHANNELINPUT_MEMBER_CHANNEL_ARN],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteChannelInput");
+impl DeleteChannelInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETECHANNELINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteChannelInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.channel_arn {
+            ser.write_string(&DELETECHANNELINPUT_MEMBER_CHANNEL_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_channel::builders::DeleteChannelInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETECHANNELINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.channel_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteChannelInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.channel_arn = builder.channel_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteChannelInput {
     /// Creates a new builder-style object to manufacture [`DeleteChannelInput`](crate::operation::delete_channel::DeleteChannelInput).
     pub fn builder() -> crate::operation::delete_channel::builders::DeleteChannelInputBuilder {

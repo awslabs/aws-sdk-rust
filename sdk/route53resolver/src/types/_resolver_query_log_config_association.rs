@@ -83,6 +83,216 @@ impl ResolverQueryLogConfigAssociation {
         self.creation_time.as_deref()
     }
 }
+static RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverQueryLogConfigAssociation$Id",
+        "com.amazonaws.route53resolver",
+        "ResolverQueryLogConfigAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    0,
+);
+static RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_RESOLVER_QUERY_LOG_CONFIG_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.route53resolver#ResolverQueryLogConfigAssociation$ResolverQueryLogConfigId",
+            "com.amazonaws.route53resolver",
+            "ResolverQueryLogConfigAssociation",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ResolverQueryLogConfigId",
+        1,
+    );
+static RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverQueryLogConfigAssociation$ResourceId",
+        "com.amazonaws.route53resolver",
+        "ResolverQueryLogConfigAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceId",
+    2,
+);
+static RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverQueryLogConfigAssociation$Status",
+        "com.amazonaws.route53resolver",
+        "ResolverQueryLogConfigAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    3,
+);
+static RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_ERROR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverQueryLogConfigAssociation$Error",
+        "com.amazonaws.route53resolver",
+        "ResolverQueryLogConfigAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Error",
+    4,
+);
+static RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverQueryLogConfigAssociation$ErrorMessage",
+        "com.amazonaws.route53resolver",
+        "ResolverQueryLogConfigAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorMessage",
+    5,
+);
+static RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverQueryLogConfigAssociation$CreationTime",
+        "com.amazonaws.route53resolver",
+        "ResolverQueryLogConfigAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreationTime",
+    6,
+);
+static RESOLVERQUERYLOGCONFIGASSOCIATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverQueryLogConfigAssociation",
+        "com.amazonaws.route53resolver",
+        "ResolverQueryLogConfigAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_ID,
+        &RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_RESOLVER_QUERY_LOG_CONFIG_ID,
+        &RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_RESOURCE_ID,
+        &RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_STATUS,
+        &RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_ERROR,
+        &RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_ERROR_MESSAGE,
+        &RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_CREATION_TIME,
+    ],
+);
+impl ResolverQueryLogConfigAssociation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOLVERQUERYLOGCONFIGASSOCIATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResolverQueryLogConfigAssociation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.resolver_query_log_config_id {
+            ser.write_string(&RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_RESOLVER_QUERY_LOG_CONFIG_ID, val)?;
+        }
+        if let Some(ref val) = self.resource_id {
+            ser.write_string(&RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.error {
+            ser.write_string(&RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_ERROR, val.as_str())?;
+        }
+        if let Some(ref val) = self.error_message {
+            ser.write_string(&RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_ERROR_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_string(&RESOLVERQUERYLOGCONFIGASSOCIATION_MEMBER_CREATION_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ResolverQueryLogConfigAssociationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESOLVERQUERYLOGCONFIGASSOCIATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolver_query_log_config_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::ResolverQueryLogConfigAssociationStatus::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error = Some(crate::types::ResolverQueryLogConfigAssociationError::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResolverQueryLogConfigAssociation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ResolverQueryLogConfigAssociation {
     /// Creates a new builder-style object to manufacture [`ResolverQueryLogConfigAssociation`](crate::types::ResolverQueryLogConfigAssociation).
     pub fn builder() -> crate::types::builders::ResolverQueryLogConfigAssociationBuilder {

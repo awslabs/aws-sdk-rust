@@ -13,6 +13,73 @@ impl Record {
         &self.data
     }
 }
+static RECORD_MEMBER_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#Record$Data", "com.amazonaws.firehose", "Record"),
+    ::aws_smithy_schema::ShapeType::Blob,
+    "Data",
+    0,
+);
+static RECORD_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#Record", "com.amazonaws.firehose", "Record"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&RECORD_MEMBER_DATA],
+);
+impl Record {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RECORD_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Record {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.data;
+            ser.write_blob(&RECORD_MEMBER_DATA, val.clone())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RecordBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RECORD_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.data = Some(deser.read_blob(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Record {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.data = builder.data.or(Some(::aws_smithy_types::Blob::new("")));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl Record {
     /// Creates a new builder-style object to manufacture [`Record`](crate::types::Record).
     pub fn builder() -> crate::types::builders::RecordBuilder {

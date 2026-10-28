@@ -23,6 +23,133 @@ impl ListResolverConfigsOutput {
         self.resolver_configs.as_deref().unwrap_or_default()
     }
 }
+static LISTRESOLVERCONFIGSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#ListResolverConfigsOutput$NextToken",
+        "com.amazonaws.route53resolver.synthetic",
+        "ListResolverConfigsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    0,
+);
+static LISTRESOLVERCONFIGSOUTPUT_MEMBER_RESOLVER_CONFIGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverConfigList$member",
+        "com.amazonaws.route53resolver",
+        "ResolverConfigList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LISTRESOLVERCONFIGSOUTPUT_MEMBER_RESOLVER_CONFIGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#ListResolverConfigsOutput$ResolverConfigs",
+        "com.amazonaws.route53resolver.synthetic",
+        "ListResolverConfigsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ResolverConfigs",
+    1,
+)
+.with_list_member(&LISTRESOLVERCONFIGSOUTPUT_MEMBER_RESOLVER_CONFIGS_MEMBER);
+static LISTRESOLVERCONFIGSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#ListResolverConfigsOutput",
+        "com.amazonaws.route53resolver.synthetic",
+        "ListResolverConfigsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTRESOLVERCONFIGSOUTPUT_MEMBER_NEXT_TOKEN,
+        &LISTRESOLVERCONFIGSOUTPUT_MEMBER_RESOLVER_CONFIGS,
+    ],
+)
+.with_original_name("ListResolverConfigsResponse");
+impl ListResolverConfigsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTRESOLVERCONFIGSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListResolverConfigsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTRESOLVERCONFIGSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.resolver_configs {
+            ser.write_list(
+                &LISTRESOLVERCONFIGSOUTPUT_MEMBER_RESOLVER_CONFIGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ResolverConfig::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_resolver_configs::builders::ListResolverConfigsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTRESOLVERCONFIGSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolver_configs = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ResolverConfig::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListResolverConfigsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListResolverConfigsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

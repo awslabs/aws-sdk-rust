@@ -46,6 +46,192 @@ impl ListServicesInput {
         self.resource_management_type.as_ref()
     }
 }
+static LISTSERVICESINPUT_MEMBER_CLUSTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListServicesInput$cluster",
+        "com.amazonaws.ecs.synthetic",
+        "ListServicesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cluster",
+    0,
+);
+static LISTSERVICESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListServicesInput$nextToken",
+        "com.amazonaws.ecs.synthetic",
+        "ListServicesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    1,
+);
+static LISTSERVICESINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListServicesInput$maxResults",
+        "com.amazonaws.ecs.synthetic",
+        "ListServicesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxResults",
+    2,
+);
+static LISTSERVICESINPUT_MEMBER_LAUNCH_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListServicesInput$launchType",
+        "com.amazonaws.ecs.synthetic",
+        "ListServicesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "launchType",
+    3,
+);
+static LISTSERVICESINPUT_MEMBER_SCHEDULING_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListServicesInput$schedulingStrategy",
+        "com.amazonaws.ecs.synthetic",
+        "ListServicesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "schedulingStrategy",
+    4,
+);
+static LISTSERVICESINPUT_MEMBER_RESOURCE_MANAGEMENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListServicesInput$resourceManagementType",
+        "com.amazonaws.ecs.synthetic",
+        "ListServicesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceManagementType",
+    5,
+);
+static LISTSERVICESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListServicesInput",
+        "com.amazonaws.ecs.synthetic",
+        "ListServicesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTSERVICESINPUT_MEMBER_CLUSTER,
+        &LISTSERVICESINPUT_MEMBER_NEXT_TOKEN,
+        &LISTSERVICESINPUT_MEMBER_MAX_RESULTS,
+        &LISTSERVICESINPUT_MEMBER_LAUNCH_TYPE,
+        &LISTSERVICESINPUT_MEMBER_SCHEDULING_STRATEGY,
+        &LISTSERVICESINPUT_MEMBER_RESOURCE_MANAGEMENT_TYPE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListServicesRequest");
+impl ListServicesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTSERVICESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListServicesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster {
+            ser.write_string(&LISTSERVICESINPUT_MEMBER_CLUSTER, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTSERVICESINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTSERVICESINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.launch_type {
+            ser.write_string(&LISTSERVICESINPUT_MEMBER_LAUNCH_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.scheduling_strategy {
+            ser.write_string(&LISTSERVICESINPUT_MEMBER_SCHEDULING_STRATEGY, val.as_str())?;
+        }
+        if let Some(ref val) = self.resource_management_type {
+            ser.write_string(&LISTSERVICESINPUT_MEMBER_RESOURCE_MANAGEMENT_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_services::builders::ListServicesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTSERVICESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.launch_type = Some(crate::types::LaunchType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scheduling_strategy = Some(crate::types::SchedulingStrategy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_management_type = Some(crate::types::ResourceManagementType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListServicesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListServicesInput {
     /// Creates a new builder-style object to manufacture [`ListServicesInput`](crate::operation::list_services::ListServicesInput).
     pub fn builder() -> crate::operation::list_services::builders::ListServicesInputBuilder {

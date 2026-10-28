@@ -19,6 +19,103 @@ impl ModificationState {
         self.state.as_ref()
     }
 }
+static MODIFICATIONSTATE_MEMBER_RESOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ModificationState$Resource",
+        "com.amazonaws.workspaces",
+        "ModificationState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Resource",
+    0,
+);
+static MODIFICATIONSTATE_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ModificationState$State",
+        "com.amazonaws.workspaces",
+        "ModificationState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    1,
+);
+static MODIFICATIONSTATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ModificationState",
+        "com.amazonaws.workspaces",
+        "ModificationState",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&MODIFICATIONSTATE_MEMBER_RESOURCE, &MODIFICATIONSTATE_MEMBER_STATE],
+);
+impl ModificationState {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODIFICATIONSTATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModificationState {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource {
+            ser.write_string(&MODIFICATIONSTATE_MEMBER_RESOURCE, val.as_str())?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&MODIFICATIONSTATE_MEMBER_STATE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ModificationStateBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODIFICATIONSTATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource = Some(crate::types::ModificationResourceEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::ModificationStateEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModificationState {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ModificationState {
     /// Creates a new builder-style object to manufacture [`ModificationState`](crate::types::ModificationState).
     pub fn builder() -> crate::types::builders::ModificationStateBuilder {

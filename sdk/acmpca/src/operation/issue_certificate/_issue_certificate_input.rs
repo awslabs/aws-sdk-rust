@@ -88,6 +88,236 @@ impl IssueCertificateInput {
         self.idempotency_token.as_deref()
     }
 }
+static ISSUECERTIFICATEINPUT_MEMBER_API_PASSTHROUGH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#IssueCertificateInput$ApiPassthrough",
+        "com.amazonaws.acmpca.synthetic",
+        "IssueCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ApiPassthrough",
+    0,
+);
+static ISSUECERTIFICATEINPUT_MEMBER_CERTIFICATE_AUTHORITY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#IssueCertificateInput$CertificateAuthorityArn",
+        "com.amazonaws.acmpca.synthetic",
+        "IssueCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertificateAuthorityArn",
+    1,
+);
+static ISSUECERTIFICATEINPUT_MEMBER_CSR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#IssueCertificateInput$Csr",
+        "com.amazonaws.acmpca.synthetic",
+        "IssueCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Blob,
+    "Csr",
+    2,
+);
+static ISSUECERTIFICATEINPUT_MEMBER_SIGNING_ALGORITHM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#IssueCertificateInput$SigningAlgorithm",
+        "com.amazonaws.acmpca.synthetic",
+        "IssueCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SigningAlgorithm",
+    3,
+);
+static ISSUECERTIFICATEINPUT_MEMBER_TEMPLATE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#IssueCertificateInput$TemplateArn",
+        "com.amazonaws.acmpca.synthetic",
+        "IssueCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TemplateArn",
+    4,
+);
+static ISSUECERTIFICATEINPUT_MEMBER_VALIDITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#IssueCertificateInput$Validity",
+        "com.amazonaws.acmpca.synthetic",
+        "IssueCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Validity",
+    5,
+);
+static ISSUECERTIFICATEINPUT_MEMBER_VALIDITY_NOT_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#IssueCertificateInput$ValidityNotBefore",
+        "com.amazonaws.acmpca.synthetic",
+        "IssueCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ValidityNotBefore",
+    6,
+);
+static ISSUECERTIFICATEINPUT_MEMBER_IDEMPOTENCY_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#IssueCertificateInput$IdempotencyToken",
+        "com.amazonaws.acmpca.synthetic",
+        "IssueCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdempotencyToken",
+    7,
+);
+static ISSUECERTIFICATEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#IssueCertificateInput",
+        "com.amazonaws.acmpca.synthetic",
+        "IssueCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ISSUECERTIFICATEINPUT_MEMBER_API_PASSTHROUGH,
+        &ISSUECERTIFICATEINPUT_MEMBER_CERTIFICATE_AUTHORITY_ARN,
+        &ISSUECERTIFICATEINPUT_MEMBER_CSR,
+        &ISSUECERTIFICATEINPUT_MEMBER_SIGNING_ALGORITHM,
+        &ISSUECERTIFICATEINPUT_MEMBER_TEMPLATE_ARN,
+        &ISSUECERTIFICATEINPUT_MEMBER_VALIDITY,
+        &ISSUECERTIFICATEINPUT_MEMBER_VALIDITY_NOT_BEFORE,
+        &ISSUECERTIFICATEINPUT_MEMBER_IDEMPOTENCY_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("IssueCertificateRequest");
+impl IssueCertificateInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ISSUECERTIFICATEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for IssueCertificateInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.api_passthrough {
+            ser.write_struct(&ISSUECERTIFICATEINPUT_MEMBER_API_PASSTHROUGH, val)?;
+        }
+        if let Some(ref val) = self.certificate_authority_arn {
+            ser.write_string(&ISSUECERTIFICATEINPUT_MEMBER_CERTIFICATE_AUTHORITY_ARN, val)?;
+        }
+        if let Some(ref val) = self.csr {
+            ser.write_blob(&ISSUECERTIFICATEINPUT_MEMBER_CSR, val.clone())?;
+        }
+        if let Some(ref val) = self.signing_algorithm {
+            ser.write_string(&ISSUECERTIFICATEINPUT_MEMBER_SIGNING_ALGORITHM, val.as_str())?;
+        }
+        if let Some(ref val) = self.template_arn {
+            ser.write_string(&ISSUECERTIFICATEINPUT_MEMBER_TEMPLATE_ARN, val)?;
+        }
+        if let Some(ref val) = self.validity {
+            ser.write_struct(&ISSUECERTIFICATEINPUT_MEMBER_VALIDITY, val)?;
+        }
+        if let Some(ref val) = self.validity_not_before {
+            ser.write_struct(&ISSUECERTIFICATEINPUT_MEMBER_VALIDITY_NOT_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.idempotency_token {
+            ser.write_string(&ISSUECERTIFICATEINPUT_MEMBER_IDEMPOTENCY_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::issue_certificate::builders::IssueCertificateInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ISSUECERTIFICATEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.api_passthrough = Some(crate::types::ApiPassthrough::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_authority_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.csr = Some(deser.read_blob(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.signing_algorithm = Some(crate::types::SigningAlgorithm::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.template_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validity = Some(crate::types::Validity::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validity_not_before = Some(crate::types::Validity::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idempotency_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl IssueCertificateInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.certificate_authority_arn = builder.certificate_authority_arn.or(Some(String::new()));
+        builder.csr = builder.csr.or(Some(::aws_smithy_types::Blob::new("")));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl IssueCertificateInput {
     /// Creates a new builder-style object to manufacture [`IssueCertificateInput`](crate::operation::issue_certificate::IssueCertificateInput).
     pub fn builder() -> crate::operation::issue_certificate::builders::IssueCertificateInputBuilder {

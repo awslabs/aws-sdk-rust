@@ -18,6 +18,109 @@ impl CountPendingActivityTasksInput {
         self.task_list.as_ref()
     }
 }
+static COUNTPENDINGACTIVITYTASKSINPUT_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#CountPendingActivityTasksInput$domain",
+        "com.amazonaws.swf.synthetic",
+        "CountPendingActivityTasksInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domain",
+    0,
+);
+static COUNTPENDINGACTIVITYTASKSINPUT_MEMBER_TASK_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#CountPendingActivityTasksInput$taskList",
+        "com.amazonaws.swf.synthetic",
+        "CountPendingActivityTasksInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "taskList",
+    1,
+);
+static COUNTPENDINGACTIVITYTASKSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#CountPendingActivityTasksInput",
+        "com.amazonaws.swf.synthetic",
+        "CountPendingActivityTasksInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &COUNTPENDINGACTIVITYTASKSINPUT_MEMBER_DOMAIN,
+        &COUNTPENDINGACTIVITYTASKSINPUT_MEMBER_TASK_LIST,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CountPendingActivityTasksInput");
+impl CountPendingActivityTasksInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COUNTPENDINGACTIVITYTASKSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CountPendingActivityTasksInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain {
+            ser.write_string(&COUNTPENDINGACTIVITYTASKSINPUT_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.task_list {
+            ser.write_struct(&COUNTPENDINGACTIVITYTASKSINPUT_MEMBER_TASK_LIST, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COUNTPENDINGACTIVITYTASKSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_list = Some(crate::types::TaskList::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CountPendingActivityTasksInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain = builder.domain.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CountPendingActivityTasksInput {
     /// Creates a new builder-style object to manufacture [`CountPendingActivityTasksInput`](crate::operation::count_pending_activity_tasks::CountPendingActivityTasksInput).
     pub fn builder() -> crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksInputBuilder {

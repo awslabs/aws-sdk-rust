@@ -57,6 +57,258 @@ impl AuthEventType {
         self.event_feedback.as_ref()
     }
 }
+static AUTHEVENTTYPE_MEMBER_EVENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AuthEventType$EventId",
+        "com.amazonaws.cognitoidentityprovider",
+        "AuthEventType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EventId",
+    0,
+);
+static AUTHEVENTTYPE_MEMBER_EVENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AuthEventType$EventType",
+        "com.amazonaws.cognitoidentityprovider",
+        "AuthEventType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EventType",
+    1,
+);
+static AUTHEVENTTYPE_MEMBER_CREATION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AuthEventType$CreationDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "AuthEventType",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationDate",
+    2,
+);
+static AUTHEVENTTYPE_MEMBER_EVENT_RESPONSE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AuthEventType$EventResponse",
+        "com.amazonaws.cognitoidentityprovider",
+        "AuthEventType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EventResponse",
+    3,
+);
+static AUTHEVENTTYPE_MEMBER_EVENT_RISK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AuthEventType$EventRisk",
+        "com.amazonaws.cognitoidentityprovider",
+        "AuthEventType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EventRisk",
+    4,
+);
+static AUTHEVENTTYPE_MEMBER_CHALLENGE_RESPONSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ChallengeResponseListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "ChallengeResponseListType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static AUTHEVENTTYPE_MEMBER_CHALLENGE_RESPONSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AuthEventType$ChallengeResponses",
+        "com.amazonaws.cognitoidentityprovider",
+        "AuthEventType",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ChallengeResponses",
+    5,
+)
+.with_list_member(&AUTHEVENTTYPE_MEMBER_CHALLENGE_RESPONSES_MEMBER);
+static AUTHEVENTTYPE_MEMBER_EVENT_CONTEXT_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AuthEventType$EventContextData",
+        "com.amazonaws.cognitoidentityprovider",
+        "AuthEventType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EventContextData",
+    6,
+);
+static AUTHEVENTTYPE_MEMBER_EVENT_FEEDBACK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AuthEventType$EventFeedback",
+        "com.amazonaws.cognitoidentityprovider",
+        "AuthEventType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EventFeedback",
+    7,
+);
+static AUTHEVENTTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AuthEventType",
+        "com.amazonaws.cognitoidentityprovider",
+        "AuthEventType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AUTHEVENTTYPE_MEMBER_EVENT_ID,
+        &AUTHEVENTTYPE_MEMBER_EVENT_TYPE,
+        &AUTHEVENTTYPE_MEMBER_CREATION_DATE,
+        &AUTHEVENTTYPE_MEMBER_EVENT_RESPONSE,
+        &AUTHEVENTTYPE_MEMBER_EVENT_RISK,
+        &AUTHEVENTTYPE_MEMBER_CHALLENGE_RESPONSES,
+        &AUTHEVENTTYPE_MEMBER_EVENT_CONTEXT_DATA,
+        &AUTHEVENTTYPE_MEMBER_EVENT_FEEDBACK,
+    ],
+);
+impl AuthEventType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AUTHEVENTTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AuthEventType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.event_id {
+            ser.write_string(&AUTHEVENTTYPE_MEMBER_EVENT_ID, val)?;
+        }
+        if let Some(ref val) = self.event_type {
+            ser.write_string(&AUTHEVENTTYPE_MEMBER_EVENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.creation_date {
+            ser.write_timestamp(&AUTHEVENTTYPE_MEMBER_CREATION_DATE, val)?;
+        }
+        if let Some(ref val) = self.event_response {
+            ser.write_string(&AUTHEVENTTYPE_MEMBER_EVENT_RESPONSE, val.as_str())?;
+        }
+        if let Some(ref val) = self.event_risk {
+            ser.write_struct(&AUTHEVENTTYPE_MEMBER_EVENT_RISK, val)?;
+        }
+        if let Some(ref val) = self.challenge_responses {
+            ser.write_list(
+                &AUTHEVENTTYPE_MEMBER_CHALLENGE_RESPONSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ChallengeResponseType::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.event_context_data {
+            ser.write_struct(&AUTHEVENTTYPE_MEMBER_EVENT_CONTEXT_DATA, val)?;
+        }
+        if let Some(ref val) = self.event_feedback {
+            ser.write_struct(&AUTHEVENTTYPE_MEMBER_EVENT_FEEDBACK, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AuthEventTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AUTHEVENTTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_type = Some(crate::types::EventType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_response = Some(crate::types::EventResponseType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_risk = Some(crate::types::EventRiskType::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.challenge_responses = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ChallengeResponseType::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_context_data = Some(crate::types::EventContextDataType::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_feedback = Some(crate::types::EventFeedbackType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AuthEventType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AuthEventType {
     /// Creates a new builder-style object to manufacture [`AuthEventType`](crate::types::AuthEventType).
     pub fn builder() -> crate::types::builders::AuthEventTypeBuilder {

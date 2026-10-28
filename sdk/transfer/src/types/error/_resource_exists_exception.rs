@@ -24,6 +24,121 @@ impl ResourceExistsException {
         self.resource_type.deref()
     }
 }
+static RESOURCEEXISTSEXCEPTION_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ResourceExistsException$Message",
+        "com.amazonaws.transfer",
+        "ResourceExistsException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    0,
+);
+static RESOURCEEXISTSEXCEPTION_MEMBER_RESOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ResourceExistsException$Resource",
+        "com.amazonaws.transfer",
+        "ResourceExistsException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Resource",
+    1,
+);
+static RESOURCEEXISTSEXCEPTION_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ResourceExistsException$ResourceType",
+        "com.amazonaws.transfer",
+        "ResourceExistsException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceType",
+    2,
+);
+static RESOURCEEXISTSEXCEPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ResourceExistsException",
+        "com.amazonaws.transfer",
+        "ResourceExistsException",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESOURCEEXISTSEXCEPTION_MEMBER_MESSAGE,
+        &RESOURCEEXISTSEXCEPTION_MEMBER_RESOURCE,
+        &RESOURCEEXISTSEXCEPTION_MEMBER_RESOURCE_TYPE,
+    ],
+);
+impl ResourceExistsException {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOURCEEXISTSEXCEPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResourceExistsException {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.message;
+            ser.write_string(&RESOURCEEXISTSEXCEPTION_MEMBER_MESSAGE, val)?;
+        }
+        {
+            let val = &self.resource;
+            ser.write_string(&RESOURCEEXISTSEXCEPTION_MEMBER_RESOURCE, val)?;
+        }
+        {
+            let val = &self.resource_type;
+            ser.write_string(&RESOURCEEXISTSEXCEPTION_MEMBER_RESOURCE_TYPE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::error::builders::ResourceExistsExceptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESOURCEEXISTSEXCEPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.message = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.resource = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.resource_type = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResourceExistsException {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.message = builder.message.or(Some(String::new()));
+        builder.resource = builder.resource.or(Some(String::new()));
+        builder.resource_type = builder.resource_type.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ResourceExistsException {
     /// Returns the error message.
     pub fn message(&self) -> &str {

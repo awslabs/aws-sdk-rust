@@ -23,6 +23,106 @@ impl WindowsFsrmConfiguration {
         self.event_log_destination.as_deref()
     }
 }
+static WINDOWSFSRMCONFIGURATION_MEMBER_FSRM_SERVICE_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#WindowsFsrmConfiguration$FsrmServiceEnabled",
+        "com.amazonaws.fsx",
+        "WindowsFsrmConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "FsrmServiceEnabled",
+    0,
+);
+static WINDOWSFSRMCONFIGURATION_MEMBER_EVENT_LOG_DESTINATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#WindowsFsrmConfiguration$EventLogDestination",
+        "com.amazonaws.fsx",
+        "WindowsFsrmConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EventLogDestination",
+    1,
+);
+static WINDOWSFSRMCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#WindowsFsrmConfiguration",
+        "com.amazonaws.fsx",
+        "WindowsFsrmConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WINDOWSFSRMCONFIGURATION_MEMBER_FSRM_SERVICE_ENABLED,
+        &WINDOWSFSRMCONFIGURATION_MEMBER_EVENT_LOG_DESTINATION,
+    ],
+);
+impl WindowsFsrmConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WINDOWSFSRMCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WindowsFsrmConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.fsrm_service_enabled {
+            ser.write_boolean(&WINDOWSFSRMCONFIGURATION_MEMBER_FSRM_SERVICE_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.event_log_destination {
+            ser.write_string(&WINDOWSFSRMCONFIGURATION_MEMBER_EVENT_LOG_DESTINATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WindowsFsrmConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WINDOWSFSRMCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fsrm_service_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_log_destination = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WindowsFsrmConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl WindowsFsrmConfiguration {
     /// Creates a new builder-style object to manufacture [`WindowsFsrmConfiguration`](crate::types::WindowsFsrmConfiguration).
     pub fn builder() -> crate::types::builders::WindowsFsrmConfigurationBuilder {

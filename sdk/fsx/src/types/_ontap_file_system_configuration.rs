@@ -189,6 +189,378 @@ impl ::std::fmt::Debug for OntapFileSystemConfiguration {
         formatter.finish()
     }
 }
+static ONTAPFILESYSTEMCONFIGURATION_MEMBER_AUTOMATIC_BACKUP_RETENTION_DAYS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#OntapFileSystemConfiguration$AutomaticBackupRetentionDays",
+            "com.amazonaws.fsx",
+            "OntapFileSystemConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "AutomaticBackupRetentionDays",
+        0,
+    );
+static ONTAPFILESYSTEMCONFIGURATION_MEMBER_DAILY_AUTOMATIC_BACKUP_START_TIME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#OntapFileSystemConfiguration$DailyAutomaticBackupStartTime",
+            "com.amazonaws.fsx",
+            "OntapFileSystemConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "DailyAutomaticBackupStartTime",
+        1,
+    );
+static ONTAPFILESYSTEMCONFIGURATION_MEMBER_DEPLOYMENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OntapFileSystemConfiguration$DeploymentType",
+        "com.amazonaws.fsx",
+        "OntapFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeploymentType",
+    2,
+);
+static ONTAPFILESYSTEMCONFIGURATION_MEMBER_ENDPOINT_IP_ADDRESS_RANGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OntapFileSystemConfiguration$EndpointIpAddressRange",
+        "com.amazonaws.fsx",
+        "OntapFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointIpAddressRange",
+    3,
+);
+static ONTAPFILESYSTEMCONFIGURATION_MEMBER_ENDPOINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OntapFileSystemConfiguration$Endpoints",
+        "com.amazonaws.fsx",
+        "OntapFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Endpoints",
+    4,
+);
+static ONTAPFILESYSTEMCONFIGURATION_MEMBER_DISK_IOPS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OntapFileSystemConfiguration$DiskIopsConfiguration",
+        "com.amazonaws.fsx",
+        "OntapFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DiskIopsConfiguration",
+    5,
+);
+static ONTAPFILESYSTEMCONFIGURATION_MEMBER_PREFERRED_SUBNET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OntapFileSystemConfiguration$PreferredSubnetId",
+        "com.amazonaws.fsx",
+        "OntapFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreferredSubnetId",
+    6,
+);
+static ONTAPFILESYSTEMCONFIGURATION_MEMBER_ROUTE_TABLE_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#RouteTableIds$member", "com.amazonaws.fsx", "RouteTableIds"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ONTAPFILESYSTEMCONFIGURATION_MEMBER_ROUTE_TABLE_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OntapFileSystemConfiguration$RouteTableIds",
+        "com.amazonaws.fsx",
+        "OntapFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "RouteTableIds",
+    7,
+)
+.with_list_member(&ONTAPFILESYSTEMCONFIGURATION_MEMBER_ROUTE_TABLE_IDS_MEMBER);
+static ONTAPFILESYSTEMCONFIGURATION_MEMBER_THROUGHPUT_CAPACITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OntapFileSystemConfiguration$ThroughputCapacity",
+        "com.amazonaws.fsx",
+        "OntapFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ThroughputCapacity",
+    8,
+);
+static ONTAPFILESYSTEMCONFIGURATION_MEMBER_WEEKLY_MAINTENANCE_START_TIME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#OntapFileSystemConfiguration$WeeklyMaintenanceStartTime",
+            "com.amazonaws.fsx",
+            "OntapFileSystemConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "WeeklyMaintenanceStartTime",
+        9,
+    );
+static ONTAPFILESYSTEMCONFIGURATION_MEMBER_FSX_ADMIN_PASSWORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OntapFileSystemConfiguration$FsxAdminPassword",
+        "com.amazonaws.fsx",
+        "OntapFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FsxAdminPassword",
+    10,
+);
+static ONTAPFILESYSTEMCONFIGURATION_MEMBER_HA_PAIRS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OntapFileSystemConfiguration$HAPairs",
+        "com.amazonaws.fsx",
+        "OntapFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "HAPairs",
+    11,
+);
+static ONTAPFILESYSTEMCONFIGURATION_MEMBER_THROUGHPUT_CAPACITY_PER_HA_PAIR: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#OntapFileSystemConfiguration$ThroughputCapacityPerHAPair",
+            "com.amazonaws.fsx",
+            "OntapFileSystemConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "ThroughputCapacityPerHAPair",
+        12,
+    );
+static ONTAPFILESYSTEMCONFIGURATION_MEMBER_ENDPOINT_IPV6_ADDRESS_RANGE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#OntapFileSystemConfiguration$EndpointIpv6AddressRange",
+            "com.amazonaws.fsx",
+            "OntapFileSystemConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "EndpointIpv6AddressRange",
+        13,
+    );
+static ONTAPFILESYSTEMCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OntapFileSystemConfiguration",
+        "com.amazonaws.fsx",
+        "OntapFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ONTAPFILESYSTEMCONFIGURATION_MEMBER_AUTOMATIC_BACKUP_RETENTION_DAYS,
+        &ONTAPFILESYSTEMCONFIGURATION_MEMBER_DAILY_AUTOMATIC_BACKUP_START_TIME,
+        &ONTAPFILESYSTEMCONFIGURATION_MEMBER_DEPLOYMENT_TYPE,
+        &ONTAPFILESYSTEMCONFIGURATION_MEMBER_ENDPOINT_IP_ADDRESS_RANGE,
+        &ONTAPFILESYSTEMCONFIGURATION_MEMBER_ENDPOINTS,
+        &ONTAPFILESYSTEMCONFIGURATION_MEMBER_DISK_IOPS_CONFIGURATION,
+        &ONTAPFILESYSTEMCONFIGURATION_MEMBER_PREFERRED_SUBNET_ID,
+        &ONTAPFILESYSTEMCONFIGURATION_MEMBER_ROUTE_TABLE_IDS,
+        &ONTAPFILESYSTEMCONFIGURATION_MEMBER_THROUGHPUT_CAPACITY,
+        &ONTAPFILESYSTEMCONFIGURATION_MEMBER_WEEKLY_MAINTENANCE_START_TIME,
+        &ONTAPFILESYSTEMCONFIGURATION_MEMBER_FSX_ADMIN_PASSWORD,
+        &ONTAPFILESYSTEMCONFIGURATION_MEMBER_HA_PAIRS,
+        &ONTAPFILESYSTEMCONFIGURATION_MEMBER_THROUGHPUT_CAPACITY_PER_HA_PAIR,
+        &ONTAPFILESYSTEMCONFIGURATION_MEMBER_ENDPOINT_IPV6_ADDRESS_RANGE,
+    ],
+);
+impl OntapFileSystemConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ONTAPFILESYSTEMCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OntapFileSystemConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.automatic_backup_retention_days {
+            ser.write_integer(&ONTAPFILESYSTEMCONFIGURATION_MEMBER_AUTOMATIC_BACKUP_RETENTION_DAYS, *val)?;
+        }
+        if let Some(ref val) = self.daily_automatic_backup_start_time {
+            ser.write_string(&ONTAPFILESYSTEMCONFIGURATION_MEMBER_DAILY_AUTOMATIC_BACKUP_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.deployment_type {
+            ser.write_string(&ONTAPFILESYSTEMCONFIGURATION_MEMBER_DEPLOYMENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.endpoint_ip_address_range {
+            ser.write_string(&ONTAPFILESYSTEMCONFIGURATION_MEMBER_ENDPOINT_IP_ADDRESS_RANGE, val)?;
+        }
+        if let Some(ref val) = self.endpoints {
+            ser.write_struct(&ONTAPFILESYSTEMCONFIGURATION_MEMBER_ENDPOINTS, val)?;
+        }
+        if let Some(ref val) = self.disk_iops_configuration {
+            ser.write_struct(&ONTAPFILESYSTEMCONFIGURATION_MEMBER_DISK_IOPS_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.preferred_subnet_id {
+            ser.write_string(&ONTAPFILESYSTEMCONFIGURATION_MEMBER_PREFERRED_SUBNET_ID, val)?;
+        }
+        if let Some(ref val) = self.route_table_ids {
+            ser.write_list(
+                &ONTAPFILESYSTEMCONFIGURATION_MEMBER_ROUTE_TABLE_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.throughput_capacity {
+            ser.write_integer(&ONTAPFILESYSTEMCONFIGURATION_MEMBER_THROUGHPUT_CAPACITY, *val)?;
+        }
+        if let Some(ref val) = self.weekly_maintenance_start_time {
+            ser.write_string(&ONTAPFILESYSTEMCONFIGURATION_MEMBER_WEEKLY_MAINTENANCE_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.fsx_admin_password {
+            ser.write_string(&ONTAPFILESYSTEMCONFIGURATION_MEMBER_FSX_ADMIN_PASSWORD, val)?;
+        }
+        if let Some(ref val) = self.ha_pairs {
+            ser.write_integer(&ONTAPFILESYSTEMCONFIGURATION_MEMBER_HA_PAIRS, *val)?;
+        }
+        if let Some(ref val) = self.throughput_capacity_per_ha_pair {
+            ser.write_integer(&ONTAPFILESYSTEMCONFIGURATION_MEMBER_THROUGHPUT_CAPACITY_PER_HA_PAIR, *val)?;
+        }
+        if let Some(ref val) = self.endpoint_ipv6_address_range {
+            ser.write_string(&ONTAPFILESYSTEMCONFIGURATION_MEMBER_ENDPOINT_IPV6_ADDRESS_RANGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OntapFileSystemConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ONTAPFILESYSTEMCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.automatic_backup_retention_days = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.daily_automatic_backup_start_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_type = Some(crate::types::OntapDeploymentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_ip_address_range = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoints = Some(crate::types::FileSystemEndpoints::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disk_iops_configuration = Some(crate::types::DiskIopsConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preferred_subnet_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.route_table_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.throughput_capacity = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.weekly_maintenance_start_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fsx_admin_password = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ha_pairs = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.throughput_capacity_per_ha_pair = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_ipv6_address_range = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OntapFileSystemConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl OntapFileSystemConfiguration {
     /// Creates a new builder-style object to manufacture [`OntapFileSystemConfiguration`](crate::types::OntapFileSystemConfiguration).
     pub fn builder() -> crate::types::builders::OntapFileSystemConfigurationBuilder {

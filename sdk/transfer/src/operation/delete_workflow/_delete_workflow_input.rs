@@ -12,6 +12,86 @@ impl DeleteWorkflowInput {
         self.workflow_id.as_deref()
     }
 }
+static DELETEWORKFLOWINPUT_MEMBER_WORKFLOW_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#DeleteWorkflowInput$WorkflowId",
+        "com.amazonaws.transfer.synthetic",
+        "DeleteWorkflowInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkflowId",
+    0,
+);
+static DELETEWORKFLOWINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#DeleteWorkflowInput",
+        "com.amazonaws.transfer.synthetic",
+        "DeleteWorkflowInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELETEWORKFLOWINPUT_MEMBER_WORKFLOW_ID],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteWorkflowRequest");
+impl DeleteWorkflowInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEWORKFLOWINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteWorkflowInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.workflow_id {
+            ser.write_string(&DELETEWORKFLOWINPUT_MEMBER_WORKFLOW_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_workflow::builders::DeleteWorkflowInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEWORKFLOWINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteWorkflowInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.workflow_id = builder.workflow_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteWorkflowInput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkflowInput`](crate::operation::delete_workflow::DeleteWorkflowInput).
     pub fn builder() -> crate::operation::delete_workflow::builders::DeleteWorkflowInputBuilder {

@@ -297,6 +297,8 @@ pub(crate) mod shape_list_workload_identities;
 
 pub(crate) mod shape_put_resource_policy;
 
+pub(crate) mod shape_reset_token_vault_key_material;
+
 pub(crate) mod shape_rotate_payment_connector_credentials;
 
 pub(crate) mod shape_set_token_vault_cmk;
@@ -488,6 +490,8 @@ pub(crate) mod shape_list_payment_credential_providers_input;
 pub(crate) mod shape_list_workload_identities_input;
 
 pub(crate) mod shape_put_resource_policy_input;
+
+pub(crate) mod shape_reset_token_vault_key_material_input;
 
 pub(crate) mod shape_resource_limit_exceeded_exception;
 
@@ -1468,6 +1472,8 @@ pub(crate) mod shape_numerical_scale_definition;
 pub(crate) mod shape_numerical_scale_definitions;
 
 pub(crate) mod shape_oauth2_authorization_server_metadata;
+
+pub(crate) mod shape_on_behalf_of_authentication_config;
 
 pub(crate) mod shape_open_responses_evaluator_model_config;
 

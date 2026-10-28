@@ -12,6 +12,86 @@ impl InvalidateProjectCacheInput {
         self.project_name.as_deref()
     }
 }
+static INVALIDATEPROJECTCACHEINPUT_MEMBER_PROJECT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#InvalidateProjectCacheInput$projectName",
+        "com.amazonaws.codebuild.synthetic",
+        "InvalidateProjectCacheInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "projectName",
+    0,
+);
+static INVALIDATEPROJECTCACHEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#InvalidateProjectCacheInput",
+        "com.amazonaws.codebuild.synthetic",
+        "InvalidateProjectCacheInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&INVALIDATEPROJECTCACHEINPUT_MEMBER_PROJECT_NAME],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("InvalidateProjectCacheInput");
+impl InvalidateProjectCacheInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INVALIDATEPROJECTCACHEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InvalidateProjectCacheInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.project_name {
+            ser.write_string(&INVALIDATEPROJECTCACHEINPUT_MEMBER_PROJECT_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INVALIDATEPROJECTCACHEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InvalidateProjectCacheInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.project_name = builder.project_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl InvalidateProjectCacheInput {
     /// Creates a new builder-style object to manufacture [`InvalidateProjectCacheInput`](crate::operation::invalidate_project_cache::InvalidateProjectCacheInput).
     pub fn builder() -> crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheInputBuilder {

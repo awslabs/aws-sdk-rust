@@ -54,6 +54,265 @@ impl UpdateContentInput {
         self.upload_id.as_deref()
     }
 }
+static UPDATECONTENTINPUT_MEMBER_KNOWLEDGE_BASE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateContentInput$knowledgeBaseId",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "knowledgeBaseId",
+    0,
+)
+.with_http_label();
+static UPDATECONTENTINPUT_MEMBER_CONTENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateContentInput$contentId",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "contentId",
+    1,
+)
+.with_http_label();
+static UPDATECONTENTINPUT_MEMBER_REVISION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateContentInput$revisionId",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "revisionId",
+    2,
+);
+static UPDATECONTENTINPUT_MEMBER_TITLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateContentInput$title",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "title",
+    3,
+);
+static UPDATECONTENTINPUT_MEMBER_OVERRIDE_LINK_OUT_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateContentInput$overrideLinkOutUri",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "overrideLinkOutUri",
+    4,
+);
+static UPDATECONTENTINPUT_MEMBER_REMOVE_OVERRIDE_LINK_OUT_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateContentInput$removeOverrideLinkOutUri",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "removeOverrideLinkOutUri",
+    5,
+);
+static UPDATECONTENTINPUT_MEMBER_METADATA_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentMetadata$key", "com.amazonaws.wisdom", "ContentMetadata"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static UPDATECONTENTINPUT_MEMBER_METADATA_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentMetadata$value", "com.amazonaws.wisdom", "ContentMetadata"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static UPDATECONTENTINPUT_MEMBER_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateContentInput$metadata",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "metadata",
+    6,
+)
+.with_map_members(&UPDATECONTENTINPUT_MEMBER_METADATA_KEY, &UPDATECONTENTINPUT_MEMBER_METADATA_VALUE);
+static UPDATECONTENTINPUT_MEMBER_UPLOAD_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateContentInput$uploadId",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "uploadId",
+    7,
+);
+static UPDATECONTENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateContentInput",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATECONTENTINPUT_MEMBER_KNOWLEDGE_BASE_ID,
+        &UPDATECONTENTINPUT_MEMBER_CONTENT_ID,
+        &UPDATECONTENTINPUT_MEMBER_REVISION_ID,
+        &UPDATECONTENTINPUT_MEMBER_TITLE,
+        &UPDATECONTENTINPUT_MEMBER_OVERRIDE_LINK_OUT_URI,
+        &UPDATECONTENTINPUT_MEMBER_REMOVE_OVERRIDE_LINK_OUT_URI,
+        &UPDATECONTENTINPUT_MEMBER_METADATA,
+        &UPDATECONTENTINPUT_MEMBER_UPLOAD_ID,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/knowledgeBases/{knowledgeBaseId}/contents/{contentId}",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateContentRequest");
+impl UpdateContentInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATECONTENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateContentInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.knowledge_base_id {
+            ser.write_string(&UPDATECONTENTINPUT_MEMBER_KNOWLEDGE_BASE_ID, val)?;
+        }
+        if let Some(ref val) = self.content_id {
+            ser.write_string(&UPDATECONTENTINPUT_MEMBER_CONTENT_ID, val)?;
+        }
+        if let Some(ref val) = self.revision_id {
+            ser.write_string(&UPDATECONTENTINPUT_MEMBER_REVISION_ID, val)?;
+        }
+        if let Some(ref val) = self.title {
+            ser.write_string(&UPDATECONTENTINPUT_MEMBER_TITLE, val)?;
+        }
+        if let Some(ref val) = self.override_link_out_uri {
+            ser.write_string(&UPDATECONTENTINPUT_MEMBER_OVERRIDE_LINK_OUT_URI, val)?;
+        }
+        if let Some(ref val) = self.remove_override_link_out_uri {
+            ser.write_boolean(&UPDATECONTENTINPUT_MEMBER_REMOVE_OVERRIDE_LINK_OUT_URI, *val)?;
+        }
+        if let Some(ref val) = self.metadata {
+            ser.write_map(
+                &UPDATECONTENTINPUT_MEMBER_METADATA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.upload_id {
+            ser.write_string(&UPDATECONTENTINPUT_MEMBER_UPLOAD_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_content::builders::UpdateContentInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATECONTENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.knowledge_base_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revision_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.title = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.override_link_out_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.remove_override_link_out_uri = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metadata = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.upload_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateContentInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.knowledge_base_id = builder.knowledge_base_id.or(Some(String::new()));
+        builder.content_id = builder.content_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateContentInput {
     /// Creates a new builder-style object to manufacture [`UpdateContentInput`](crate::operation::update_content::UpdateContentInput).
     pub fn builder() -> crate::operation::update_content::builders::UpdateContentInputBuilder {

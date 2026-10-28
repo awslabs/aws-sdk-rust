@@ -39,6 +39,191 @@ impl ConnectionAlias {
         self.associations.as_deref().unwrap_or_default()
     }
 }
+static CONNECTIONALIAS_MEMBER_CONNECTION_STRING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ConnectionAlias$ConnectionString",
+        "com.amazonaws.workspaces",
+        "ConnectionAlias",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConnectionString",
+    0,
+);
+static CONNECTIONALIAS_MEMBER_ALIAS_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ConnectionAlias$AliasId",
+        "com.amazonaws.workspaces",
+        "ConnectionAlias",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AliasId",
+    1,
+);
+static CONNECTIONALIAS_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ConnectionAlias$State",
+        "com.amazonaws.workspaces",
+        "ConnectionAlias",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    2,
+);
+static CONNECTIONALIAS_MEMBER_OWNER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ConnectionAlias$OwnerAccountId",
+        "com.amazonaws.workspaces",
+        "ConnectionAlias",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OwnerAccountId",
+    3,
+);
+static CONNECTIONALIAS_MEMBER_ASSOCIATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ConnectionAliasAssociationList$member",
+        "com.amazonaws.workspaces",
+        "ConnectionAliasAssociationList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONNECTIONALIAS_MEMBER_ASSOCIATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ConnectionAlias$Associations",
+        "com.amazonaws.workspaces",
+        "ConnectionAlias",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Associations",
+    4,
+)
+.with_list_member(&CONNECTIONALIAS_MEMBER_ASSOCIATIONS_MEMBER);
+static CONNECTIONALIAS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#ConnectionAlias", "com.amazonaws.workspaces", "ConnectionAlias"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONNECTIONALIAS_MEMBER_CONNECTION_STRING,
+        &CONNECTIONALIAS_MEMBER_ALIAS_ID,
+        &CONNECTIONALIAS_MEMBER_STATE,
+        &CONNECTIONALIAS_MEMBER_OWNER_ACCOUNT_ID,
+        &CONNECTIONALIAS_MEMBER_ASSOCIATIONS,
+    ],
+);
+impl ConnectionAlias {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONNECTIONALIAS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConnectionAlias {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.connection_string {
+            ser.write_string(&CONNECTIONALIAS_MEMBER_CONNECTION_STRING, val)?;
+        }
+        if let Some(ref val) = self.alias_id {
+            ser.write_string(&CONNECTIONALIAS_MEMBER_ALIAS_ID, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&CONNECTIONALIAS_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.owner_account_id {
+            ser.write_string(&CONNECTIONALIAS_MEMBER_OWNER_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.associations {
+            ser.write_list(
+                &CONNECTIONALIAS_MEMBER_ASSOCIATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ConnectionAliasAssociation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConnectionAliasBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONNECTIONALIAS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.connection_string = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.alias_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::ConnectionAliasState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.owner_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.associations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ConnectionAliasAssociation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConnectionAlias {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ConnectionAlias {
     /// Creates a new builder-style object to manufacture [`ConnectionAlias`](crate::types::ConnectionAlias).
     pub fn builder() -> crate::types::builders::ConnectionAliasBuilder {

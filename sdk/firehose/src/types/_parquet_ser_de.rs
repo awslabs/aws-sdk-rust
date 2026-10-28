@@ -43,6 +43,186 @@ impl ParquetSerDe {
         self.writer_version.as_ref()
     }
 }
+static PARQUETSERDE_MEMBER_BLOCK_SIZE_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ParquetSerDe$BlockSizeBytes",
+        "com.amazonaws.firehose",
+        "ParquetSerDe",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "BlockSizeBytes",
+    0,
+);
+static PARQUETSERDE_MEMBER_PAGE_SIZE_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ParquetSerDe$PageSizeBytes",
+        "com.amazonaws.firehose",
+        "ParquetSerDe",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "PageSizeBytes",
+    1,
+);
+static PARQUETSERDE_MEMBER_COMPRESSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ParquetSerDe$Compression",
+        "com.amazonaws.firehose",
+        "ParquetSerDe",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Compression",
+    2,
+);
+static PARQUETSERDE_MEMBER_ENABLE_DICTIONARY_COMPRESSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ParquetSerDe$EnableDictionaryCompression",
+        "com.amazonaws.firehose",
+        "ParquetSerDe",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableDictionaryCompression",
+    3,
+);
+static PARQUETSERDE_MEMBER_MAX_PADDING_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ParquetSerDe$MaxPaddingBytes",
+        "com.amazonaws.firehose",
+        "ParquetSerDe",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxPaddingBytes",
+    4,
+);
+static PARQUETSERDE_MEMBER_WRITER_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ParquetSerDe$WriterVersion",
+        "com.amazonaws.firehose",
+        "ParquetSerDe",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WriterVersion",
+    5,
+);
+static PARQUETSERDE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#ParquetSerDe", "com.amazonaws.firehose", "ParquetSerDe"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PARQUETSERDE_MEMBER_BLOCK_SIZE_BYTES,
+        &PARQUETSERDE_MEMBER_PAGE_SIZE_BYTES,
+        &PARQUETSERDE_MEMBER_COMPRESSION,
+        &PARQUETSERDE_MEMBER_ENABLE_DICTIONARY_COMPRESSION,
+        &PARQUETSERDE_MEMBER_MAX_PADDING_BYTES,
+        &PARQUETSERDE_MEMBER_WRITER_VERSION,
+    ],
+);
+impl ParquetSerDe {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PARQUETSERDE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ParquetSerDe {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.block_size_bytes {
+            ser.write_integer(&PARQUETSERDE_MEMBER_BLOCK_SIZE_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.page_size_bytes {
+            ser.write_integer(&PARQUETSERDE_MEMBER_PAGE_SIZE_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.compression {
+            ser.write_string(&PARQUETSERDE_MEMBER_COMPRESSION, val.as_str())?;
+        }
+        if let Some(ref val) = self.enable_dictionary_compression {
+            ser.write_boolean(&PARQUETSERDE_MEMBER_ENABLE_DICTIONARY_COMPRESSION, *val)?;
+        }
+        if let Some(ref val) = self.max_padding_bytes {
+            ser.write_integer(&PARQUETSERDE_MEMBER_MAX_PADDING_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.writer_version {
+            ser.write_string(&PARQUETSERDE_MEMBER_WRITER_VERSION, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ParquetSerDeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PARQUETSERDE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.block_size_bytes = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.page_size_bytes = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compression = Some(crate::types::ParquetCompression::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_dictionary_compression = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_padding_bytes = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.writer_version = Some(crate::types::ParquetWriterVersion::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ParquetSerDe {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ParquetSerDe {
     /// Creates a new builder-style object to manufacture [`ParquetSerDe`](crate::types::ParquetSerDe).
     pub fn builder() -> crate::types::builders::ParquetSerDeBuilder {

@@ -13,6 +13,75 @@ impl ProjectFleet {
         self.fleet_arn.as_deref()
     }
 }
+static PROJECTFLEET_MEMBER_FLEET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#ProjectFleet$fleetArn", "com.amazonaws.codebuild", "ProjectFleet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "fleetArn",
+    0,
+);
+static PROJECTFLEET_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#ProjectFleet", "com.amazonaws.codebuild", "ProjectFleet"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&PROJECTFLEET_MEMBER_FLEET_ARN],
+);
+impl ProjectFleet {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PROJECTFLEET_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProjectFleet {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.fleet_arn {
+            ser.write_string(&PROJECTFLEET_MEMBER_FLEET_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProjectFleetBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PROJECTFLEET_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fleet_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProjectFleet {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ProjectFleet {
     /// Creates a new builder-style object to manufacture [`ProjectFleet`](crate::types::ProjectFleet).
     pub fn builder() -> crate::types::builders::ProjectFleetBuilder {

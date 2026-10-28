@@ -20,6 +20,125 @@ impl UntagDeliveryStreamInput {
         self.tag_keys.as_deref().unwrap_or_default()
     }
 }
+static UNTAGDELIVERYSTREAMINPUT_MEMBER_DELIVERY_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#UntagDeliveryStreamInput$DeliveryStreamName",
+        "com.amazonaws.firehose.synthetic",
+        "UntagDeliveryStreamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeliveryStreamName",
+    0,
+);
+static UNTAGDELIVERYSTREAMINPUT_MEMBER_TAG_KEYS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#TagKeyList$member", "com.amazonaws.firehose", "TagKeyList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UNTAGDELIVERYSTREAMINPUT_MEMBER_TAG_KEYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#UntagDeliveryStreamInput$TagKeys",
+        "com.amazonaws.firehose.synthetic",
+        "UntagDeliveryStreamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TagKeys",
+    1,
+)
+.with_list_member(&UNTAGDELIVERYSTREAMINPUT_MEMBER_TAG_KEYS_MEMBER);
+static UNTAGDELIVERYSTREAMINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#UntagDeliveryStreamInput",
+        "com.amazonaws.firehose.synthetic",
+        "UntagDeliveryStreamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UNTAGDELIVERYSTREAMINPUT_MEMBER_DELIVERY_STREAM_NAME,
+        &UNTAGDELIVERYSTREAMINPUT_MEMBER_TAG_KEYS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UntagDeliveryStreamInput");
+impl UntagDeliveryStreamInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UNTAGDELIVERYSTREAMINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UntagDeliveryStreamInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.delivery_stream_name {
+            ser.write_string(&UNTAGDELIVERYSTREAMINPUT_MEMBER_DELIVERY_STREAM_NAME, val)?;
+        }
+        if let Some(ref val) = self.tag_keys {
+            ser.write_list(
+                &UNTAGDELIVERYSTREAMINPUT_MEMBER_TAG_KEYS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UNTAGDELIVERYSTREAMINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delivery_stream_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_keys = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UntagDeliveryStreamInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.delivery_stream_name = builder.delivery_stream_name.or(Some(String::new()));
+        builder.tag_keys = builder.tag_keys.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UntagDeliveryStreamInput {
     /// Creates a new builder-style object to manufacture [`UntagDeliveryStreamInput`](crate::operation::untag_delivery_stream::UntagDeliveryStreamInput).
     pub fn builder() -> crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamInputBuilder {

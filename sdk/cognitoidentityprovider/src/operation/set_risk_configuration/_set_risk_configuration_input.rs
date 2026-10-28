@@ -52,6 +52,175 @@ impl ::std::fmt::Debug for SetRiskConfigurationInput {
         formatter.finish()
     }
 }
+static SETRISKCONFIGURATIONINPUT_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#SetRiskConfigurationInput$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "SetRiskConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    0,
+);
+static SETRISKCONFIGURATIONINPUT_MEMBER_CLIENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#SetRiskConfigurationInput$ClientId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "SetRiskConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientId",
+    1,
+);
+static SETRISKCONFIGURATIONINPUT_MEMBER_COMPROMISED_CREDENTIALS_RISK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentityprovider.synthetic#SetRiskConfigurationInput$CompromisedCredentialsRiskConfiguration",
+            "com.amazonaws.cognitoidentityprovider.synthetic",
+            "SetRiskConfigurationInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "CompromisedCredentialsRiskConfiguration",
+        2,
+    );
+static SETRISKCONFIGURATIONINPUT_MEMBER_ACCOUNT_TAKEOVER_RISK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentityprovider.synthetic#SetRiskConfigurationInput$AccountTakeoverRiskConfiguration",
+            "com.amazonaws.cognitoidentityprovider.synthetic",
+            "SetRiskConfigurationInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "AccountTakeoverRiskConfiguration",
+        3,
+    );
+static SETRISKCONFIGURATIONINPUT_MEMBER_RISK_EXCEPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#SetRiskConfigurationInput$RiskExceptionConfiguration",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "SetRiskConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RiskExceptionConfiguration",
+    4,
+);
+static SETRISKCONFIGURATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#SetRiskConfigurationInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "SetRiskConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SETRISKCONFIGURATIONINPUT_MEMBER_USER_POOL_ID,
+        &SETRISKCONFIGURATIONINPUT_MEMBER_CLIENT_ID,
+        &SETRISKCONFIGURATIONINPUT_MEMBER_COMPROMISED_CREDENTIALS_RISK_CONFIGURATION,
+        &SETRISKCONFIGURATIONINPUT_MEMBER_ACCOUNT_TAKEOVER_RISK_CONFIGURATION,
+        &SETRISKCONFIGURATIONINPUT_MEMBER_RISK_EXCEPTION_CONFIGURATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("SetRiskConfigurationRequest");
+impl SetRiskConfigurationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SETRISKCONFIGURATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SetRiskConfigurationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&SETRISKCONFIGURATIONINPUT_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.client_id {
+            ser.write_string(&SETRISKCONFIGURATIONINPUT_MEMBER_CLIENT_ID, val)?;
+        }
+        if let Some(ref val) = self.compromised_credentials_risk_configuration {
+            ser.write_struct(&SETRISKCONFIGURATIONINPUT_MEMBER_COMPROMISED_CREDENTIALS_RISK_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.account_takeover_risk_configuration {
+            ser.write_struct(&SETRISKCONFIGURATIONINPUT_MEMBER_ACCOUNT_TAKEOVER_RISK_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.risk_exception_configuration {
+            ser.write_struct(&SETRISKCONFIGURATIONINPUT_MEMBER_RISK_EXCEPTION_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::set_risk_configuration::builders::SetRiskConfigurationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SETRISKCONFIGURATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compromised_credentials_risk_configuration =
+                            Some(crate::types::CompromisedCredentialsRiskConfigurationType::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_takeover_risk_configuration = Some(crate::types::AccountTakeoverRiskConfigurationType::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.risk_exception_configuration = Some(crate::types::RiskExceptionConfigurationType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SetRiskConfigurationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_pool_id = builder.user_pool_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SetRiskConfigurationInput {
     /// Creates a new builder-style object to manufacture [`SetRiskConfigurationInput`](crate::operation::set_risk_configuration::SetRiskConfigurationInput).
     pub fn builder() -> crate::operation::set_risk_configuration::builders::SetRiskConfigurationInputBuilder {

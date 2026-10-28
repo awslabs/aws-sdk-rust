@@ -51,6 +51,200 @@ impl ManagedApplicationAutoScalingPolicy {
         self.metric.deref()
     }
 }
+static MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedApplicationAutoScalingPolicy$arn",
+        "com.amazonaws.ecs",
+        "ManagedApplicationAutoScalingPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    0,
+);
+static MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedApplicationAutoScalingPolicy$status",
+        "com.amazonaws.ecs",
+        "ManagedApplicationAutoScalingPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    1,
+);
+static MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_STATUS_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedApplicationAutoScalingPolicy$statusReason",
+        "com.amazonaws.ecs",
+        "ManagedApplicationAutoScalingPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "statusReason",
+    2,
+);
+static MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_UPDATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedApplicationAutoScalingPolicy$updatedAt",
+        "com.amazonaws.ecs",
+        "ManagedApplicationAutoScalingPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "updatedAt",
+    3,
+);
+static MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_POLICY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedApplicationAutoScalingPolicy$policyType",
+        "com.amazonaws.ecs",
+        "ManagedApplicationAutoScalingPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "policyType",
+    4,
+);
+static MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_TARGET_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedApplicationAutoScalingPolicy$targetValue",
+        "com.amazonaws.ecs",
+        "ManagedApplicationAutoScalingPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "targetValue",
+    5,
+);
+static MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_METRIC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedApplicationAutoScalingPolicy$metric",
+        "com.amazonaws.ecs",
+        "ManagedApplicationAutoScalingPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "metric",
+    6,
+);
+static MANAGEDAPPLICATIONAUTOSCALINGPOLICY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedApplicationAutoScalingPolicy",
+        "com.amazonaws.ecs",
+        "ManagedApplicationAutoScalingPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_ARN,
+        &MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_STATUS,
+        &MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_STATUS_REASON,
+        &MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_UPDATED_AT,
+        &MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_POLICY_TYPE,
+        &MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_TARGET_VALUE,
+        &MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_METRIC,
+    ],
+);
+impl ManagedApplicationAutoScalingPolicy {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MANAGEDAPPLICATIONAUTOSCALINGPOLICY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ManagedApplicationAutoScalingPolicy {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_ARN, val)?;
+        }
+        {
+            let val = &self.status;
+            ser.write_string(&MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_reason {
+            ser.write_string(&MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_STATUS_REASON, val)?;
+        }
+        {
+            let val = &self.updated_at;
+            ser.write_timestamp(&MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_UPDATED_AT, val)?;
+        }
+        {
+            let val = &self.policy_type;
+            ser.write_string(&MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_POLICY_TYPE, val)?;
+        }
+        {
+            let val = &self.target_value;
+            ser.write_double(&MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_TARGET_VALUE, *val)?;
+        }
+        {
+            let val = &self.metric;
+            ser.write_string(&MANAGEDAPPLICATIONAUTOSCALINGPOLICY_MEMBER_METRIC, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ManagedApplicationAutoScalingPolicyBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MANAGEDAPPLICATIONAUTOSCALINGPOLICY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.status = Some(crate::types::ManagedResourceStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    self.updated_at = Some(deser.read_timestamp(member)?);
+                }
+                Some(4) => {
+                    self.policy_type = Some(deser.read_string(member)?);
+                }
+                Some(5) => {
+                    self.target_value = Some(deser.read_double(member)?);
+                }
+                Some(6) => {
+                    self.metric = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ManagedApplicationAutoScalingPolicy {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.updated_at = builder.updated_at.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.policy_type = builder.policy_type.or(Some(String::new()));
+        builder.target_value = builder.target_value.or(Some(0.0f64));
+        builder.metric = builder.metric.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ManagedApplicationAutoScalingPolicy {
     /// Creates a new builder-style object to manufacture [`ManagedApplicationAutoScalingPolicy`](crate::types::ManagedApplicationAutoScalingPolicy).
     pub fn builder() -> crate::types::builders::ManagedApplicationAutoScalingPolicyBuilder {

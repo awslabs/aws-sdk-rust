@@ -19,6 +19,99 @@ impl EfsAuthorizationConfig {
         self.iam.as_ref()
     }
 }
+static EFSAUTHORIZATIONCONFIG_MEMBER_ACCESS_POINT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#EFSAuthorizationConfig$accessPointId",
+        "com.amazonaws.ecs",
+        "EFSAuthorizationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "accessPointId",
+    0,
+);
+static EFSAUTHORIZATIONCONFIG_MEMBER_IAM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#EFSAuthorizationConfig$iam",
+        "com.amazonaws.ecs",
+        "EFSAuthorizationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "iam",
+    1,
+);
+static EFSAUTHORIZATIONCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#EFSAuthorizationConfig", "com.amazonaws.ecs", "EFSAuthorizationConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&EFSAUTHORIZATIONCONFIG_MEMBER_ACCESS_POINT_ID, &EFSAUTHORIZATIONCONFIG_MEMBER_IAM],
+);
+impl EfsAuthorizationConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EFSAUTHORIZATIONCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EfsAuthorizationConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.access_point_id {
+            ser.write_string(&EFSAUTHORIZATIONCONFIG_MEMBER_ACCESS_POINT_ID, val)?;
+        }
+        if let Some(ref val) = self.iam {
+            ser.write_string(&EFSAUTHORIZATIONCONFIG_MEMBER_IAM, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EfsAuthorizationConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EFSAUTHORIZATIONCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_point_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.iam = Some(crate::types::EfsAuthorizationConfigIam::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EfsAuthorizationConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EfsAuthorizationConfig {
     /// Creates a new builder-style object to manufacture [`EfsAuthorizationConfig`](crate::types::EfsAuthorizationConfig).
     pub fn builder() -> crate::types::builders::EfsAuthorizationConfigBuilder {

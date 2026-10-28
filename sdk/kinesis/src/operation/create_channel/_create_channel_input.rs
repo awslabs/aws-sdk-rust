@@ -56,6 +56,285 @@ impl CreateChannelInput {
         self.logging_configuration.as_ref()
     }
 }
+static CREATECHANNELINPUT_MEMBER_CHANNEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#CreateChannelInput$ChannelName",
+        "com.amazonaws.kinesis.synthetic",
+        "CreateChannelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChannelName",
+    0,
+);
+static CREATECHANNELINPUT_MEMBER_SERVICE_EXECUTION_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#CreateChannelInput$ServiceExecutionRoleARN",
+        "com.amazonaws.kinesis.synthetic",
+        "CreateChannelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServiceExecutionRoleARN",
+    1,
+);
+static CREATECHANNELINPUT_MEMBER_STREAM_CONFIGURATION_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelStreamConfigurationList$member",
+        "com.amazonaws.kinesis",
+        "ChannelStreamConfigurationList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATECHANNELINPUT_MEMBER_STREAM_CONFIGURATION_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#CreateChannelInput$StreamConfigurationList",
+        "com.amazonaws.kinesis.synthetic",
+        "CreateChannelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "StreamConfigurationList",
+    2,
+)
+.with_list_member(&CREATECHANNELINPUT_MEMBER_STREAM_CONFIGURATION_LIST_MEMBER);
+static CREATECHANNELINPUT_MEMBER_S3_DESTINATION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#CreateChannelInput$S3DestinationConfiguration",
+        "com.amazonaws.kinesis.synthetic",
+        "CreateChannelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3DestinationConfiguration",
+    3,
+);
+static CREATECHANNELINPUT_MEMBER_S3_TABLES_DESTINATION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#CreateChannelInput$S3TablesDestinationConfiguration",
+        "com.amazonaws.kinesis.synthetic",
+        "CreateChannelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3TablesDestinationConfiguration",
+    4,
+);
+static CREATECHANNELINPUT_MEMBER_ENCRYPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#CreateChannelInput$EncryptionConfiguration",
+        "com.amazonaws.kinesis.synthetic",
+        "CreateChannelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EncryptionConfiguration",
+    5,
+);
+static CREATECHANNELINPUT_MEMBER_TAGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#TagMap$key", "com.amazonaws.kinesis", "TagMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATECHANNELINPUT_MEMBER_TAGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#TagMap$value", "com.amazonaws.kinesis", "TagMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATECHANNELINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#CreateChannelInput$Tags",
+        "com.amazonaws.kinesis.synthetic",
+        "CreateChannelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Tags",
+    6,
+)
+.with_map_members(&CREATECHANNELINPUT_MEMBER_TAGS_KEY, &CREATECHANNELINPUT_MEMBER_TAGS_VALUE);
+static CREATECHANNELINPUT_MEMBER_LOGGING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#CreateChannelInput$LoggingConfiguration",
+        "com.amazonaws.kinesis.synthetic",
+        "CreateChannelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LoggingConfiguration",
+    7,
+);
+static CREATECHANNELINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#CreateChannelInput",
+        "com.amazonaws.kinesis.synthetic",
+        "CreateChannelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATECHANNELINPUT_MEMBER_CHANNEL_NAME,
+        &CREATECHANNELINPUT_MEMBER_SERVICE_EXECUTION_ROLE_ARN,
+        &CREATECHANNELINPUT_MEMBER_STREAM_CONFIGURATION_LIST,
+        &CREATECHANNELINPUT_MEMBER_S3_DESTINATION_CONFIGURATION,
+        &CREATECHANNELINPUT_MEMBER_S3_TABLES_DESTINATION_CONFIGURATION,
+        &CREATECHANNELINPUT_MEMBER_ENCRYPTION_CONFIGURATION,
+        &CREATECHANNELINPUT_MEMBER_TAGS,
+        &CREATECHANNELINPUT_MEMBER_LOGGING_CONFIGURATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateChannelInput");
+impl CreateChannelInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATECHANNELINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateChannelInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.channel_name {
+            ser.write_string(&CREATECHANNELINPUT_MEMBER_CHANNEL_NAME, val)?;
+        }
+        if let Some(ref val) = self.service_execution_role_arn {
+            ser.write_string(&CREATECHANNELINPUT_MEMBER_SERVICE_EXECUTION_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.stream_configuration_list {
+            ser.write_list(
+                &CREATECHANNELINPUT_MEMBER_STREAM_CONFIGURATION_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ChannelStreamConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.s3_destination_configuration {
+            ser.write_struct(&CREATECHANNELINPUT_MEMBER_S3_DESTINATION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.s3_tables_destination_configuration {
+            ser.write_struct(&CREATECHANNELINPUT_MEMBER_S3_TABLES_DESTINATION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.encryption_configuration {
+            ser.write_struct(&CREATECHANNELINPUT_MEMBER_ENCRYPTION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_map(
+                &CREATECHANNELINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.logging_configuration {
+            ser.write_struct(&CREATECHANNELINPUT_MEMBER_LOGGING_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_channel::builders::CreateChannelInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATECHANNELINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.channel_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_execution_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_configuration_list = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ChannelStreamConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_destination_configuration = Some(crate::types::S3DestinationConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_tables_destination_configuration = Some(crate::types::S3TablesDestinationConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_configuration = Some(crate::types::ChannelEncryptionConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logging_configuration = Some(crate::types::ChannelLoggingConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateChannelInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.channel_name = builder.channel_name.or(Some(String::new()));
+        builder.service_execution_role_arn = builder.service_execution_role_arn.or(Some(String::new()));
+        builder.stream_configuration_list = builder.stream_configuration_list.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateChannelInput {
     /// Creates a new builder-style object to manufacture [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
     pub fn builder() -> crate::operation::create_channel::builders::CreateChannelInputBuilder {

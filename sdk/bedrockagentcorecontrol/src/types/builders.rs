@@ -309,6 +309,8 @@ pub use crate::types::_oauth2_authorization_server_metadata::Oauth2Authorization
 
 pub use crate::types::_token_exchange_grant_type_config_type::TokenExchangeGrantTypeConfigTypeBuilder;
 
+pub use crate::types::_on_behalf_of_authentication_config::OnBehalfOfAuthenticationConfigBuilder;
+
 pub use crate::types::_private_endpoint_override::PrivateEndpointOverrideBuilder;
 
 pub use crate::types::_payment_connector_summary::PaymentConnectorSummaryBuilder;

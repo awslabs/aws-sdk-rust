@@ -58,6 +58,211 @@ impl SchemaAttributeType {
         self.string_attribute_constraints.as_ref()
     }
 }
+static SCHEMAATTRIBUTETYPE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SchemaAttributeType$Name",
+        "com.amazonaws.cognitoidentityprovider",
+        "SchemaAttributeType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static SCHEMAATTRIBUTETYPE_MEMBER_ATTRIBUTE_DATA_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SchemaAttributeType$AttributeDataType",
+        "com.amazonaws.cognitoidentityprovider",
+        "SchemaAttributeType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AttributeDataType",
+    1,
+);
+static SCHEMAATTRIBUTETYPE_MEMBER_DEVELOPER_ONLY_ATTRIBUTE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SchemaAttributeType$DeveloperOnlyAttribute",
+        "com.amazonaws.cognitoidentityprovider",
+        "SchemaAttributeType",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "DeveloperOnlyAttribute",
+    2,
+);
+static SCHEMAATTRIBUTETYPE_MEMBER_MUTABLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SchemaAttributeType$Mutable",
+        "com.amazonaws.cognitoidentityprovider",
+        "SchemaAttributeType",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Mutable",
+    3,
+);
+static SCHEMAATTRIBUTETYPE_MEMBER_REQUIRED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SchemaAttributeType$Required",
+        "com.amazonaws.cognitoidentityprovider",
+        "SchemaAttributeType",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Required",
+    4,
+);
+static SCHEMAATTRIBUTETYPE_MEMBER_NUMBER_ATTRIBUTE_CONSTRAINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SchemaAttributeType$NumberAttributeConstraints",
+        "com.amazonaws.cognitoidentityprovider",
+        "SchemaAttributeType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NumberAttributeConstraints",
+    5,
+);
+static SCHEMAATTRIBUTETYPE_MEMBER_STRING_ATTRIBUTE_CONSTRAINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SchemaAttributeType$StringAttributeConstraints",
+        "com.amazonaws.cognitoidentityprovider",
+        "SchemaAttributeType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StringAttributeConstraints",
+    6,
+);
+static SCHEMAATTRIBUTETYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SchemaAttributeType",
+        "com.amazonaws.cognitoidentityprovider",
+        "SchemaAttributeType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SCHEMAATTRIBUTETYPE_MEMBER_NAME,
+        &SCHEMAATTRIBUTETYPE_MEMBER_ATTRIBUTE_DATA_TYPE,
+        &SCHEMAATTRIBUTETYPE_MEMBER_DEVELOPER_ONLY_ATTRIBUTE,
+        &SCHEMAATTRIBUTETYPE_MEMBER_MUTABLE,
+        &SCHEMAATTRIBUTETYPE_MEMBER_REQUIRED,
+        &SCHEMAATTRIBUTETYPE_MEMBER_NUMBER_ATTRIBUTE_CONSTRAINTS,
+        &SCHEMAATTRIBUTETYPE_MEMBER_STRING_ATTRIBUTE_CONSTRAINTS,
+    ],
+);
+impl SchemaAttributeType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SCHEMAATTRIBUTETYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SchemaAttributeType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&SCHEMAATTRIBUTETYPE_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.attribute_data_type {
+            ser.write_string(&SCHEMAATTRIBUTETYPE_MEMBER_ATTRIBUTE_DATA_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.developer_only_attribute {
+            ser.write_boolean(&SCHEMAATTRIBUTETYPE_MEMBER_DEVELOPER_ONLY_ATTRIBUTE, *val)?;
+        }
+        if let Some(ref val) = self.mutable {
+            ser.write_boolean(&SCHEMAATTRIBUTETYPE_MEMBER_MUTABLE, *val)?;
+        }
+        if let Some(ref val) = self.required {
+            ser.write_boolean(&SCHEMAATTRIBUTETYPE_MEMBER_REQUIRED, *val)?;
+        }
+        if let Some(ref val) = self.number_attribute_constraints {
+            ser.write_struct(&SCHEMAATTRIBUTETYPE_MEMBER_NUMBER_ATTRIBUTE_CONSTRAINTS, val)?;
+        }
+        if let Some(ref val) = self.string_attribute_constraints {
+            ser.write_struct(&SCHEMAATTRIBUTETYPE_MEMBER_STRING_ATTRIBUTE_CONSTRAINTS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SchemaAttributeTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SCHEMAATTRIBUTETYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attribute_data_type = Some(crate::types::AttributeDataType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.developer_only_attribute = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mutable = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.required = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.number_attribute_constraints = Some(crate::types::NumberAttributeConstraintsType::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.string_attribute_constraints = Some(crate::types::StringAttributeConstraintsType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SchemaAttributeType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SchemaAttributeType {
     /// Creates a new builder-style object to manufacture [`SchemaAttributeType`](crate::types::SchemaAttributeType).
     pub fn builder() -> crate::types::builders::SchemaAttributeTypeBuilder {

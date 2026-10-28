@@ -35,6 +35,188 @@ impl DaemonLinuxParameters {
         self.tmpfs.as_deref().unwrap_or_default()
     }
 }
+static DAEMONLINUXPARAMETERS_MEMBER_CAPABILITIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonLinuxParameters$capabilities",
+        "com.amazonaws.ecs",
+        "DaemonLinuxParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "capabilities",
+    0,
+);
+static DAEMONLINUXPARAMETERS_MEMBER_DEVICES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#DevicesList$member", "com.amazonaws.ecs", "DevicesList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DAEMONLINUXPARAMETERS_MEMBER_DEVICES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonLinuxParameters$devices",
+        "com.amazonaws.ecs",
+        "DaemonLinuxParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "devices",
+    1,
+)
+.with_list_member(&DAEMONLINUXPARAMETERS_MEMBER_DEVICES_MEMBER);
+static DAEMONLINUXPARAMETERS_MEMBER_INIT_PROCESS_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonLinuxParameters$initProcessEnabled",
+        "com.amazonaws.ecs",
+        "DaemonLinuxParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "initProcessEnabled",
+    2,
+);
+static DAEMONLINUXPARAMETERS_MEMBER_TMPFS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#TmpfsList$member", "com.amazonaws.ecs", "TmpfsList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DAEMONLINUXPARAMETERS_MEMBER_TMPFS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonLinuxParameters$tmpfs",
+        "com.amazonaws.ecs",
+        "DaemonLinuxParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tmpfs",
+    3,
+)
+.with_list_member(&DAEMONLINUXPARAMETERS_MEMBER_TMPFS_MEMBER);
+static DAEMONLINUXPARAMETERS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#DaemonLinuxParameters", "com.amazonaws.ecs", "DaemonLinuxParameters"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DAEMONLINUXPARAMETERS_MEMBER_CAPABILITIES,
+        &DAEMONLINUXPARAMETERS_MEMBER_DEVICES,
+        &DAEMONLINUXPARAMETERS_MEMBER_INIT_PROCESS_ENABLED,
+        &DAEMONLINUXPARAMETERS_MEMBER_TMPFS,
+    ],
+);
+impl DaemonLinuxParameters {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DAEMONLINUXPARAMETERS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DaemonLinuxParameters {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.capabilities {
+            ser.write_struct(&DAEMONLINUXPARAMETERS_MEMBER_CAPABILITIES, val)?;
+        }
+        if let Some(ref val) = self.devices {
+            ser.write_list(
+                &DAEMONLINUXPARAMETERS_MEMBER_DEVICES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Device::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.init_process_enabled {
+            ser.write_boolean(&DAEMONLINUXPARAMETERS_MEMBER_INIT_PROCESS_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.tmpfs {
+            ser.write_list(
+                &DAEMONLINUXPARAMETERS_MEMBER_TMPFS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tmpfs::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DaemonLinuxParametersBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DAEMONLINUXPARAMETERS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capabilities = Some(crate::types::KernelCapabilities::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.devices = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Device::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.init_process_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tmpfs = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tmpfs::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DaemonLinuxParameters {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DaemonLinuxParameters {
     /// Creates a new builder-style object to manufacture [`DaemonLinuxParameters`](crate::types::DaemonLinuxParameters).
     pub fn builder() -> crate::types::builders::DaemonLinuxParametersBuilder {

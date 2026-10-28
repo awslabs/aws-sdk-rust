@@ -126,6 +126,342 @@ impl RequestCertificateInput {
         self.managed_by.as_ref()
     }
 }
+static REQUESTCERTIFICATEINPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#RequestCertificateInput$DomainName",
+        "com.amazonaws.acm.synthetic",
+        "RequestCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static REQUESTCERTIFICATEINPUT_MEMBER_VALIDATION_METHOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#RequestCertificateInput$ValidationMethod",
+        "com.amazonaws.acm.synthetic",
+        "RequestCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ValidationMethod",
+    1,
+);
+static REQUESTCERTIFICATEINPUT_MEMBER_SUBJECT_ALTERNATIVE_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DomainList$member", "com.amazonaws.acm", "DomainList"),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static REQUESTCERTIFICATEINPUT_MEMBER_SUBJECT_ALTERNATIVE_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#RequestCertificateInput$SubjectAlternativeNames",
+        "com.amazonaws.acm.synthetic",
+        "RequestCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SubjectAlternativeNames",
+    2,
+)
+.with_list_member(&REQUESTCERTIFICATEINPUT_MEMBER_SUBJECT_ALTERNATIVE_NAMES_MEMBER);
+static REQUESTCERTIFICATEINPUT_MEMBER_IDEMPOTENCY_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#RequestCertificateInput$IdempotencyToken",
+        "com.amazonaws.acm.synthetic",
+        "RequestCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdempotencyToken",
+    3,
+);
+static REQUESTCERTIFICATEINPUT_MEMBER_DOMAIN_VALIDATION_OPTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.acm#DomainValidationOptionList$member",
+            "com.amazonaws.acm",
+            "DomainValidationOptionList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static REQUESTCERTIFICATEINPUT_MEMBER_DOMAIN_VALIDATION_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#RequestCertificateInput$DomainValidationOptions",
+        "com.amazonaws.acm.synthetic",
+        "RequestCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DomainValidationOptions",
+    4,
+)
+.with_list_member(&REQUESTCERTIFICATEINPUT_MEMBER_DOMAIN_VALIDATION_OPTIONS_MEMBER);
+static REQUESTCERTIFICATEINPUT_MEMBER_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#RequestCertificateInput$Options",
+        "com.amazonaws.acm.synthetic",
+        "RequestCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Options",
+    5,
+);
+static REQUESTCERTIFICATEINPUT_MEMBER_CERTIFICATE_AUTHORITY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#RequestCertificateInput$CertificateAuthorityArn",
+        "com.amazonaws.acm.synthetic",
+        "RequestCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertificateAuthorityArn",
+    6,
+);
+static REQUESTCERTIFICATEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#TagList$member", "com.amazonaws.acm", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static REQUESTCERTIFICATEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#RequestCertificateInput$Tags",
+        "com.amazonaws.acm.synthetic",
+        "RequestCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    7,
+)
+.with_list_member(&REQUESTCERTIFICATEINPUT_MEMBER_TAGS_MEMBER);
+static REQUESTCERTIFICATEINPUT_MEMBER_KEY_ALGORITHM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#RequestCertificateInput$KeyAlgorithm",
+        "com.amazonaws.acm.synthetic",
+        "RequestCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KeyAlgorithm",
+    8,
+);
+static REQUESTCERTIFICATEINPUT_MEMBER_MANAGED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#RequestCertificateInput$ManagedBy",
+        "com.amazonaws.acm.synthetic",
+        "RequestCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ManagedBy",
+    9,
+);
+static REQUESTCERTIFICATEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#RequestCertificateInput",
+        "com.amazonaws.acm.synthetic",
+        "RequestCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REQUESTCERTIFICATEINPUT_MEMBER_DOMAIN_NAME,
+        &REQUESTCERTIFICATEINPUT_MEMBER_VALIDATION_METHOD,
+        &REQUESTCERTIFICATEINPUT_MEMBER_SUBJECT_ALTERNATIVE_NAMES,
+        &REQUESTCERTIFICATEINPUT_MEMBER_IDEMPOTENCY_TOKEN,
+        &REQUESTCERTIFICATEINPUT_MEMBER_DOMAIN_VALIDATION_OPTIONS,
+        &REQUESTCERTIFICATEINPUT_MEMBER_OPTIONS,
+        &REQUESTCERTIFICATEINPUT_MEMBER_CERTIFICATE_AUTHORITY_ARN,
+        &REQUESTCERTIFICATEINPUT_MEMBER_TAGS,
+        &REQUESTCERTIFICATEINPUT_MEMBER_KEY_ALGORITHM,
+        &REQUESTCERTIFICATEINPUT_MEMBER_MANAGED_BY,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RequestCertificateRequest");
+impl RequestCertificateInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REQUESTCERTIFICATEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RequestCertificateInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&REQUESTCERTIFICATEINPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.validation_method {
+            ser.write_string(&REQUESTCERTIFICATEINPUT_MEMBER_VALIDATION_METHOD, val.as_str())?;
+        }
+        if let Some(ref val) = self.subject_alternative_names {
+            ser.write_list(
+                &REQUESTCERTIFICATEINPUT_MEMBER_SUBJECT_ALTERNATIVE_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.idempotency_token {
+            ser.write_string(&REQUESTCERTIFICATEINPUT_MEMBER_IDEMPOTENCY_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.domain_validation_options {
+            ser.write_list(
+                &REQUESTCERTIFICATEINPUT_MEMBER_DOMAIN_VALIDATION_OPTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DomainValidationOption::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.options {
+            ser.write_struct(&REQUESTCERTIFICATEINPUT_MEMBER_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.certificate_authority_arn {
+            ser.write_string(&REQUESTCERTIFICATEINPUT_MEMBER_CERTIFICATE_AUTHORITY_ARN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &REQUESTCERTIFICATEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.key_algorithm {
+            ser.write_string(&REQUESTCERTIFICATEINPUT_MEMBER_KEY_ALGORITHM, val.as_str())?;
+        }
+        if let Some(ref val) = self.managed_by {
+            ser.write_string(&REQUESTCERTIFICATEINPUT_MEMBER_MANAGED_BY, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::request_certificate::builders::RequestCertificateInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REQUESTCERTIFICATEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_method = Some(crate::types::ValidationMethod::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subject_alternative_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idempotency_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_validation_options = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DomainValidationOption::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.options = Some(crate::types::CertificateOptions::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_authority_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_algorithm = Some(crate::types::KeyAlgorithm::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_by = Some(crate::types::CertificateManagedBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RequestCertificateInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_name = builder.domain_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RequestCertificateInput {
     /// Creates a new builder-style object to manufacture [`RequestCertificateInput`](crate::operation::request_certificate::RequestCertificateInput).
     pub fn builder() -> crate::operation::request_certificate::builders::RequestCertificateInputBuilder {

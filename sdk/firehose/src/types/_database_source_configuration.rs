@@ -124,6 +124,308 @@ impl DatabaseSourceConfiguration {
         self.database_source_vpc_configuration.as_ref()
     }
 }
+static DATABASESOURCECONFIGURATION_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSourceConfiguration$Type",
+        "com.amazonaws.firehose",
+        "DatabaseSourceConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    0,
+);
+static DATABASESOURCECONFIGURATION_MEMBER_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSourceConfiguration$Endpoint",
+        "com.amazonaws.firehose",
+        "DatabaseSourceConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Endpoint",
+    1,
+);
+static DATABASESOURCECONFIGURATION_MEMBER_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSourceConfiguration$Port",
+        "com.amazonaws.firehose",
+        "DatabaseSourceConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Port",
+    2,
+);
+static DATABASESOURCECONFIGURATION_MEMBER_SSL_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSourceConfiguration$SSLMode",
+        "com.amazonaws.firehose",
+        "DatabaseSourceConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SSLMode",
+    3,
+);
+static DATABASESOURCECONFIGURATION_MEMBER_DATABASES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSourceConfiguration$Databases",
+        "com.amazonaws.firehose",
+        "DatabaseSourceConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Databases",
+    4,
+);
+static DATABASESOURCECONFIGURATION_MEMBER_TABLES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSourceConfiguration$Tables",
+        "com.amazonaws.firehose",
+        "DatabaseSourceConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Tables",
+    5,
+);
+static DATABASESOURCECONFIGURATION_MEMBER_COLUMNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSourceConfiguration$Columns",
+        "com.amazonaws.firehose",
+        "DatabaseSourceConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Columns",
+    6,
+);
+static DATABASESOURCECONFIGURATION_MEMBER_SURROGATE_KEYS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSurrogateKeyList$member",
+        "com.amazonaws.firehose",
+        "DatabaseSurrogateKeyList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DATABASESOURCECONFIGURATION_MEMBER_SURROGATE_KEYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSourceConfiguration$SurrogateKeys",
+        "com.amazonaws.firehose",
+        "DatabaseSourceConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SurrogateKeys",
+    7,
+)
+.with_list_member(&DATABASESOURCECONFIGURATION_MEMBER_SURROGATE_KEYS_MEMBER);
+static DATABASESOURCECONFIGURATION_MEMBER_SNAPSHOT_WATERMARK_TABLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSourceConfiguration$SnapshotWatermarkTable",
+        "com.amazonaws.firehose",
+        "DatabaseSourceConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SnapshotWatermarkTable",
+    8,
+);
+static DATABASESOURCECONFIGURATION_MEMBER_DATABASE_SOURCE_AUTHENTICATION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#DatabaseSourceConfiguration$DatabaseSourceAuthenticationConfiguration",
+            "com.amazonaws.firehose",
+            "DatabaseSourceConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DatabaseSourceAuthenticationConfiguration",
+        9,
+    );
+static DATABASESOURCECONFIGURATION_MEMBER_DATABASE_SOURCE_VPC_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#DatabaseSourceConfiguration$DatabaseSourceVPCConfiguration",
+            "com.amazonaws.firehose",
+            "DatabaseSourceConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DatabaseSourceVPCConfiguration",
+        10,
+    );
+static DATABASESOURCECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSourceConfiguration",
+        "com.amazonaws.firehose",
+        "DatabaseSourceConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DATABASESOURCECONFIGURATION_MEMBER_TYPE,
+        &DATABASESOURCECONFIGURATION_MEMBER_ENDPOINT,
+        &DATABASESOURCECONFIGURATION_MEMBER_PORT,
+        &DATABASESOURCECONFIGURATION_MEMBER_SSL_MODE,
+        &DATABASESOURCECONFIGURATION_MEMBER_DATABASES,
+        &DATABASESOURCECONFIGURATION_MEMBER_TABLES,
+        &DATABASESOURCECONFIGURATION_MEMBER_COLUMNS,
+        &DATABASESOURCECONFIGURATION_MEMBER_SURROGATE_KEYS,
+        &DATABASESOURCECONFIGURATION_MEMBER_SNAPSHOT_WATERMARK_TABLE,
+        &DATABASESOURCECONFIGURATION_MEMBER_DATABASE_SOURCE_AUTHENTICATION_CONFIGURATION,
+        &DATABASESOURCECONFIGURATION_MEMBER_DATABASE_SOURCE_VPC_CONFIGURATION,
+    ],
+);
+impl DatabaseSourceConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DATABASESOURCECONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DatabaseSourceConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.r#type;
+            ser.write_string(&DATABASESOURCECONFIGURATION_MEMBER_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.endpoint;
+            ser.write_string(&DATABASESOURCECONFIGURATION_MEMBER_ENDPOINT, val)?;
+        }
+        {
+            let val = &self.port;
+            ser.write_integer(&DATABASESOURCECONFIGURATION_MEMBER_PORT, *val)?;
+        }
+        if let Some(ref val) = self.ssl_mode {
+            ser.write_string(&DATABASESOURCECONFIGURATION_MEMBER_SSL_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.databases {
+            ser.write_struct(&DATABASESOURCECONFIGURATION_MEMBER_DATABASES, val)?;
+        }
+        if let Some(ref val) = self.tables {
+            ser.write_struct(&DATABASESOURCECONFIGURATION_MEMBER_TABLES, val)?;
+        }
+        if let Some(ref val) = self.columns {
+            ser.write_struct(&DATABASESOURCECONFIGURATION_MEMBER_COLUMNS, val)?;
+        }
+        if let Some(ref val) = self.surrogate_keys {
+            ser.write_list(
+                &DATABASESOURCECONFIGURATION_MEMBER_SURROGATE_KEYS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.snapshot_watermark_table;
+            ser.write_string(&DATABASESOURCECONFIGURATION_MEMBER_SNAPSHOT_WATERMARK_TABLE, val)?;
+        }
+        if let Some(ref val) = self.database_source_authentication_configuration {
+            ser.write_struct(&DATABASESOURCECONFIGURATION_MEMBER_DATABASE_SOURCE_AUTHENTICATION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.database_source_vpc_configuration {
+            ser.write_struct(&DATABASESOURCECONFIGURATION_MEMBER_DATABASE_SOURCE_VPC_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DatabaseSourceConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DATABASESOURCECONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.r#type = Some(crate::types::DatabaseType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    self.endpoint = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.port = Some(deser.read_integer(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ssl_mode = Some(crate::types::SslMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.databases = Some(crate::types::DatabaseList::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tables = Some(crate::types::DatabaseTableList::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.columns = Some(crate::types::DatabaseColumnList::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.surrogate_keys = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(8) => {
+                    self.snapshot_watermark_table = Some(deser.read_string(member)?);
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.database_source_authentication_configuration =
+                            Some(crate::types::DatabaseSourceAuthenticationConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.database_source_vpc_configuration = Some(crate::types::DatabaseSourceVpcConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DatabaseSourceConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.endpoint = builder.endpoint.or(Some(String::new()));
+        builder.port = builder.port.or(Some(0i32));
+        builder.snapshot_watermark_table = builder.snapshot_watermark_table.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DatabaseSourceConfiguration {
     /// Creates a new builder-style object to manufacture [`DatabaseSourceConfiguration`](crate::types::DatabaseSourceConfiguration).
     pub fn builder() -> crate::types::builders::DatabaseSourceConfigurationBuilder {

@@ -28,6 +28,8 @@ pub struct CoverageFilterCriteria {
     pub lambda_function_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
     /// <p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by runtime.</p>
     pub lambda_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    /// <p>The machine image tags to filter coverage results by.</p>
+    pub machine_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
     /// <p>Filters Amazon Web Services resources based on whether Amazon Inspector has checked them for vulnerabilities within the specified time range.</p>
     pub last_scanned_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
     /// <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code>, <code>EC2_AGENTLESS</code>, and <code>EC2_INSPECTOR_AGENT_BASED</code>.</p>
@@ -141,6 +143,12 @@ impl CoverageFilterCriteria {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_runtime.is_none()`.
     pub fn lambda_function_runtime(&self) -> &[crate::types::CoverageStringFilter] {
         self.lambda_function_runtime.as_deref().unwrap_or_default()
+    }
+    /// <p>The machine image tags to filter coverage results by.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.machine_image_tags.is_none()`.
+    pub fn machine_image_tags(&self) -> &[crate::types::CoverageMapFilter] {
+        self.machine_image_tags.as_deref().unwrap_or_default()
     }
     /// <p>Filters Amazon Web Services resources based on whether Amazon Inspector has checked them for vulnerabilities within the specified time range.</p>
     ///
@@ -286,6 +294,7 @@ pub struct CoverageFilterCriteriaBuilder {
     pub(crate) lambda_function_name: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     pub(crate) lambda_function_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
     pub(crate) lambda_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) machine_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
     pub(crate) last_scanned_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
     pub(crate) scan_mode: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     pub(crate) image_pulled_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
@@ -547,6 +556,26 @@ impl CoverageFilterCriteriaBuilder {
     /// <p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by runtime.</p>
     pub fn get_lambda_function_runtime(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.lambda_function_runtime
+    }
+    /// Appends an item to `machine_image_tags`.
+    ///
+    /// To override the contents of this collection use [`set_machine_image_tags`](Self::set_machine_image_tags).
+    ///
+    /// <p>The machine image tags to filter coverage results by.</p>
+    pub fn machine_image_tags(mut self, input: crate::types::CoverageMapFilter) -> Self {
+        let mut v = self.machine_image_tags.unwrap_or_default();
+        v.push(input);
+        self.machine_image_tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The machine image tags to filter coverage results by.</p>
+    pub fn set_machine_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>) -> Self {
+        self.machine_image_tags = input;
+        self
+    }
+    /// <p>The machine image tags to filter coverage results by.</p>
+    pub fn get_machine_image_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>> {
+        &self.machine_image_tags
     }
     /// Appends an item to `last_scanned_at`.
     ///
@@ -969,6 +998,7 @@ impl CoverageFilterCriteriaBuilder {
             lambda_function_name: self.lambda_function_name,
             lambda_function_tags: self.lambda_function_tags,
             lambda_function_runtime: self.lambda_function_runtime,
+            machine_image_tags: self.machine_image_tags,
             last_scanned_at: self.last_scanned_at,
             scan_mode: self.scan_mode,
             image_pulled_at: self.image_pulled_at,

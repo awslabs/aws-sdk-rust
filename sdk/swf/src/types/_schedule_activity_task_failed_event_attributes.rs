@@ -36,6 +36,142 @@ impl ScheduleActivityTaskFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+static SCHEDULEACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_ACTIVITY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ScheduleActivityTaskFailedEventAttributes$activityType",
+        "com.amazonaws.swf",
+        "ScheduleActivityTaskFailedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "activityType",
+    0,
+);
+static SCHEDULEACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_ACTIVITY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ScheduleActivityTaskFailedEventAttributes$activityId",
+        "com.amazonaws.swf",
+        "ScheduleActivityTaskFailedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "activityId",
+    1,
+);
+static SCHEDULEACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_CAUSE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ScheduleActivityTaskFailedEventAttributes$cause",
+        "com.amazonaws.swf",
+        "ScheduleActivityTaskFailedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cause",
+    2,
+);
+static SCHEDULEACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ScheduleActivityTaskFailedEventAttributes$decisionTaskCompletedEventId",
+            "com.amazonaws.swf",
+            "ScheduleActivityTaskFailedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "decisionTaskCompletedEventId",
+        3,
+    );
+static SCHEDULEACTIVITYTASKFAILEDEVENTATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ScheduleActivityTaskFailedEventAttributes",
+        "com.amazonaws.swf",
+        "ScheduleActivityTaskFailedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SCHEDULEACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_ACTIVITY_TYPE,
+        &SCHEDULEACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_ACTIVITY_ID,
+        &SCHEDULEACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_CAUSE,
+        &SCHEDULEACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID,
+    ],
+);
+impl ScheduleActivityTaskFailedEventAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SCHEDULEACTIVITYTASKFAILEDEVENTATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ScheduleActivityTaskFailedEventAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.activity_type {
+            ser.write_struct(&SCHEDULEACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_ACTIVITY_TYPE, val)?;
+        }
+        {
+            let val = &self.activity_id;
+            ser.write_string(&SCHEDULEACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_ACTIVITY_ID, val)?;
+        }
+        {
+            let val = &self.cause;
+            ser.write_string(&SCHEDULEACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_CAUSE, val.as_str())?;
+        }
+        {
+            let val = &self.decision_task_completed_event_id;
+            ser.write_long(&SCHEDULEACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ScheduleActivityTaskFailedEventAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SCHEDULEACTIVITYTASKFAILEDEVENTATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.activity_type = Some(crate::types::ActivityType::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    self.activity_id = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.cause = Some(crate::types::ScheduleActivityTaskFailedCause::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    self.decision_task_completed_event_id = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ScheduleActivityTaskFailedEventAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.activity_id = builder.activity_id.or(Some(String::new()));
+        builder.decision_task_completed_event_id = builder.decision_task_completed_event_id.or(Some(0i64));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ScheduleActivityTaskFailedEventAttributes {
     /// Creates a new builder-style object to manufacture [`ScheduleActivityTaskFailedEventAttributes`](crate::types::ScheduleActivityTaskFailedEventAttributes).
     pub fn builder() -> crate::types::builders::ScheduleActivityTaskFailedEventAttributesBuilder {

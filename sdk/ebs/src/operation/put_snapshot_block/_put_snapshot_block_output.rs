@@ -19,6 +19,106 @@ impl PutSnapshotBlockOutput {
         self.checksum_algorithm.as_ref()
     }
 }
+static PUTSNAPSHOTBLOCKOUTPUT_MEMBER_CHECKSUM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#PutSnapshotBlockOutput$Checksum",
+        "com.amazonaws.ebs.synthetic",
+        "PutSnapshotBlockOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Checksum",
+    0,
+)
+.with_http_header("x-amz-Checksum");
+static PUTSNAPSHOTBLOCKOUTPUT_MEMBER_CHECKSUM_ALGORITHM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#PutSnapshotBlockOutput$ChecksumAlgorithm",
+        "com.amazonaws.ebs.synthetic",
+        "PutSnapshotBlockOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChecksumAlgorithm",
+    1,
+)
+.with_http_header("x-amz-Checksum-Algorithm");
+static PUTSNAPSHOTBLOCKOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#PutSnapshotBlockOutput",
+        "com.amazonaws.ebs.synthetic",
+        "PutSnapshotBlockOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&PUTSNAPSHOTBLOCKOUTPUT_MEMBER_CHECKSUM, &PUTSNAPSHOTBLOCKOUTPUT_MEMBER_CHECKSUM_ALGORITHM],
+)
+.with_original_name("PutSnapshotBlockResponse");
+impl PutSnapshotBlockOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTSNAPSHOTBLOCKOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutSnapshotBlockOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.checksum {
+            ser.write_string(&PUTSNAPSHOTBLOCKOUTPUT_MEMBER_CHECKSUM, val)?;
+        }
+        if let Some(ref val) = self.checksum_algorithm {
+            ser.write_string(&PUTSNAPSHOTBLOCKOUTPUT_MEMBER_CHECKSUM_ALGORITHM, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_snapshot_block::builders::PutSnapshotBlockOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTSNAPSHOTBLOCKOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.checksum = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.checksum_algorithm = Some(crate::types::ChecksumAlgorithm::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutSnapshotBlockOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for PutSnapshotBlockOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

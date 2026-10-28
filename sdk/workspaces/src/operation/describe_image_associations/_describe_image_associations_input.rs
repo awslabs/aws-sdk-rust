@@ -20,6 +20,140 @@ impl DescribeImageAssociationsInput {
         self.associated_resource_types.as_deref().unwrap_or_default()
     }
 }
+static DESCRIBEIMAGEASSOCIATIONSINPUT_MEMBER_IMAGE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeImageAssociationsInput$ImageId",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeImageAssociationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageId",
+    0,
+);
+static DESCRIBEIMAGEASSOCIATIONSINPUT_MEMBER_ASSOCIATED_RESOURCE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces#ImageAssociatedResourceTypeList$member",
+            "com.amazonaws.workspaces",
+            "ImageAssociatedResourceTypeList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static DESCRIBEIMAGEASSOCIATIONSINPUT_MEMBER_ASSOCIATED_RESOURCE_TYPES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces.synthetic#DescribeImageAssociationsInput$AssociatedResourceTypes",
+            "com.amazonaws.workspaces.synthetic",
+            "DescribeImageAssociationsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "AssociatedResourceTypes",
+        1,
+    )
+    .with_list_member(&DESCRIBEIMAGEASSOCIATIONSINPUT_MEMBER_ASSOCIATED_RESOURCE_TYPES_MEMBER);
+static DESCRIBEIMAGEASSOCIATIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeImageAssociationsInput",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeImageAssociationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEIMAGEASSOCIATIONSINPUT_MEMBER_IMAGE_ID,
+        &DESCRIBEIMAGEASSOCIATIONSINPUT_MEMBER_ASSOCIATED_RESOURCE_TYPES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeImageAssociationsRequest");
+impl DescribeImageAssociationsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEIMAGEASSOCIATIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeImageAssociationsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.image_id {
+            ser.write_string(&DESCRIBEIMAGEASSOCIATIONSINPUT_MEMBER_IMAGE_ID, val)?;
+        }
+        if let Some(ref val) = self.associated_resource_types {
+            ser.write_list(
+                &DESCRIBEIMAGEASSOCIATIONSINPUT_MEMBER_ASSOCIATED_RESOURCE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_image_associations::builders::DescribeImageAssociationsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEIMAGEASSOCIATIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.associated_resource_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ImageAssociatedResourceType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeImageAssociationsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.image_id = builder.image_id.or(Some(String::new()));
+        builder.associated_resource_types = builder.associated_resource_types.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeImageAssociationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeImageAssociationsInput`](crate::operation::describe_image_associations::DescribeImageAssociationsInput).
     pub fn builder() -> crate::operation::describe_image_associations::builders::DescribeImageAssociationsInputBuilder {

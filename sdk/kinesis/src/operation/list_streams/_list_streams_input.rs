@@ -25,6 +25,129 @@ impl ListStreamsInput {
         self.next_token.as_deref()
     }
 }
+static LISTSTREAMSINPUT_MEMBER_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#ListStreamsInput$Limit",
+        "com.amazonaws.kinesis.synthetic",
+        "ListStreamsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Limit",
+    0,
+);
+static LISTSTREAMSINPUT_MEMBER_EXCLUSIVE_START_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#ListStreamsInput$ExclusiveStartStreamName",
+        "com.amazonaws.kinesis.synthetic",
+        "ListStreamsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExclusiveStartStreamName",
+    1,
+);
+static LISTSTREAMSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#ListStreamsInput$NextToken",
+        "com.amazonaws.kinesis.synthetic",
+        "ListStreamsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    2,
+);
+static LISTSTREAMSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#ListStreamsInput",
+        "com.amazonaws.kinesis.synthetic",
+        "ListStreamsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTSTREAMSINPUT_MEMBER_LIMIT,
+        &LISTSTREAMSINPUT_MEMBER_EXCLUSIVE_START_STREAM_NAME,
+        &LISTSTREAMSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListStreamsInput");
+impl ListStreamsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTSTREAMSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListStreamsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.limit {
+            ser.write_integer(&LISTSTREAMSINPUT_MEMBER_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.exclusive_start_stream_name {
+            ser.write_string(&LISTSTREAMSINPUT_MEMBER_EXCLUSIVE_START_STREAM_NAME, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTSTREAMSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_streams::builders::ListStreamsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTSTREAMSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.exclusive_start_stream_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListStreamsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListStreamsInput {
     /// Creates a new builder-style object to manufacture [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
     pub fn builder() -> crate::operation::list_streams::builders::ListStreamsInputBuilder {

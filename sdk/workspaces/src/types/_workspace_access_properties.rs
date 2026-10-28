@@ -67,6 +67,275 @@ impl WorkspaceAccessProperties {
         self.access_endpoint_config.as_ref()
     }
 }
+static WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_WINDOWS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceAccessProperties$DeviceTypeWindows",
+        "com.amazonaws.workspaces",
+        "WorkspaceAccessProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceTypeWindows",
+    0,
+);
+static WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_OSX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceAccessProperties$DeviceTypeOsx",
+        "com.amazonaws.workspaces",
+        "WorkspaceAccessProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceTypeOsx",
+    1,
+);
+static WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_WEB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceAccessProperties$DeviceTypeWeb",
+        "com.amazonaws.workspaces",
+        "WorkspaceAccessProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceTypeWeb",
+    2,
+);
+static WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_IOS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceAccessProperties$DeviceTypeIos",
+        "com.amazonaws.workspaces",
+        "WorkspaceAccessProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceTypeIos",
+    3,
+);
+static WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_ANDROID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceAccessProperties$DeviceTypeAndroid",
+        "com.amazonaws.workspaces",
+        "WorkspaceAccessProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceTypeAndroid",
+    4,
+);
+static WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_CHROME_OS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceAccessProperties$DeviceTypeChromeOs",
+        "com.amazonaws.workspaces",
+        "WorkspaceAccessProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceTypeChromeOs",
+    5,
+);
+static WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_ZERO_CLIENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceAccessProperties$DeviceTypeZeroClient",
+        "com.amazonaws.workspaces",
+        "WorkspaceAccessProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceTypeZeroClient",
+    6,
+);
+static WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_LINUX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceAccessProperties$DeviceTypeLinux",
+        "com.amazonaws.workspaces",
+        "WorkspaceAccessProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceTypeLinux",
+    7,
+);
+static WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_WORK_SPACES_THIN_CLIENT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces#WorkspaceAccessProperties$DeviceTypeWorkSpacesThinClient",
+            "com.amazonaws.workspaces",
+            "WorkspaceAccessProperties",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "DeviceTypeWorkSpacesThinClient",
+        8,
+    );
+static WORKSPACEACCESSPROPERTIES_MEMBER_ACCESS_ENDPOINT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceAccessProperties$AccessEndpointConfig",
+        "com.amazonaws.workspaces",
+        "WorkspaceAccessProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AccessEndpointConfig",
+    9,
+);
+static WORKSPACEACCESSPROPERTIES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceAccessProperties",
+        "com.amazonaws.workspaces",
+        "WorkspaceAccessProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_WINDOWS,
+        &WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_OSX,
+        &WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_WEB,
+        &WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_IOS,
+        &WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_ANDROID,
+        &WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_CHROME_OS,
+        &WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_ZERO_CLIENT,
+        &WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_LINUX,
+        &WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_WORK_SPACES_THIN_CLIENT,
+        &WORKSPACEACCESSPROPERTIES_MEMBER_ACCESS_ENDPOINT_CONFIG,
+    ],
+);
+impl WorkspaceAccessProperties {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKSPACEACCESSPROPERTIES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WorkspaceAccessProperties {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.device_type_windows {
+            ser.write_string(&WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_WINDOWS, val.as_str())?;
+        }
+        if let Some(ref val) = self.device_type_osx {
+            ser.write_string(&WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_OSX, val.as_str())?;
+        }
+        if let Some(ref val) = self.device_type_web {
+            ser.write_string(&WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_WEB, val.as_str())?;
+        }
+        if let Some(ref val) = self.device_type_ios {
+            ser.write_string(&WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_IOS, val.as_str())?;
+        }
+        if let Some(ref val) = self.device_type_android {
+            ser.write_string(&WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_ANDROID, val.as_str())?;
+        }
+        if let Some(ref val) = self.device_type_chrome_os {
+            ser.write_string(&WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_CHROME_OS, val.as_str())?;
+        }
+        if let Some(ref val) = self.device_type_zero_client {
+            ser.write_string(&WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_ZERO_CLIENT, val.as_str())?;
+        }
+        if let Some(ref val) = self.device_type_linux {
+            ser.write_string(&WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_LINUX, val.as_str())?;
+        }
+        if let Some(ref val) = self.device_type_work_spaces_thin_client {
+            ser.write_string(&WORKSPACEACCESSPROPERTIES_MEMBER_DEVICE_TYPE_WORK_SPACES_THIN_CLIENT, val.as_str())?;
+        }
+        if let Some(ref val) = self.access_endpoint_config {
+            ser.write_struct(&WORKSPACEACCESSPROPERTIES_MEMBER_ACCESS_ENDPOINT_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkspaceAccessPropertiesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKSPACEACCESSPROPERTIES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_type_windows = Some(crate::types::AccessPropertyValue::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_type_osx = Some(crate::types::AccessPropertyValue::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_type_web = Some(crate::types::AccessPropertyValue::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_type_ios = Some(crate::types::AccessPropertyValue::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_type_android = Some(crate::types::AccessPropertyValue::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_type_chrome_os = Some(crate::types::AccessPropertyValue::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_type_zero_client = Some(crate::types::AccessPropertyValue::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_type_linux = Some(crate::types::AccessPropertyValue::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_type_work_spaces_thin_client = Some(crate::types::AccessPropertyValue::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_endpoint_config = Some(crate::types::AccessEndpointConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WorkspaceAccessProperties {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl WorkspaceAccessProperties {
     /// Creates a new builder-style object to manufacture [`WorkspaceAccessProperties`](crate::types::WorkspaceAccessProperties).
     pub fn builder() -> crate::types::builders::WorkspaceAccessPropertiesBuilder {

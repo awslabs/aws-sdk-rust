@@ -55,6 +55,190 @@ impl S3ReportExportConfig {
         self.encryption_disabled
     }
 }
+static S3REPORTEXPORTCONFIG_MEMBER_BUCKET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#S3ReportExportConfig$bucket",
+        "com.amazonaws.codebuild",
+        "S3ReportExportConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "bucket",
+    0,
+);
+static S3REPORTEXPORTCONFIG_MEMBER_BUCKET_OWNER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#S3ReportExportConfig$bucketOwner",
+        "com.amazonaws.codebuild",
+        "S3ReportExportConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "bucketOwner",
+    1,
+);
+static S3REPORTEXPORTCONFIG_MEMBER_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#S3ReportExportConfig$path",
+        "com.amazonaws.codebuild",
+        "S3ReportExportConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "path",
+    2,
+);
+static S3REPORTEXPORTCONFIG_MEMBER_PACKAGING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#S3ReportExportConfig$packaging",
+        "com.amazonaws.codebuild",
+        "S3ReportExportConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "packaging",
+    3,
+);
+static S3REPORTEXPORTCONFIG_MEMBER_ENCRYPTION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#S3ReportExportConfig$encryptionKey",
+        "com.amazonaws.codebuild",
+        "S3ReportExportConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "encryptionKey",
+    4,
+);
+static S3REPORTEXPORTCONFIG_MEMBER_ENCRYPTION_DISABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#S3ReportExportConfig$encryptionDisabled",
+        "com.amazonaws.codebuild",
+        "S3ReportExportConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "encryptionDisabled",
+    5,
+);
+static S3REPORTEXPORTCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#S3ReportExportConfig",
+        "com.amazonaws.codebuild",
+        "S3ReportExportConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &S3REPORTEXPORTCONFIG_MEMBER_BUCKET,
+        &S3REPORTEXPORTCONFIG_MEMBER_BUCKET_OWNER,
+        &S3REPORTEXPORTCONFIG_MEMBER_PATH,
+        &S3REPORTEXPORTCONFIG_MEMBER_PACKAGING,
+        &S3REPORTEXPORTCONFIG_MEMBER_ENCRYPTION_KEY,
+        &S3REPORTEXPORTCONFIG_MEMBER_ENCRYPTION_DISABLED,
+    ],
+);
+impl S3ReportExportConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &S3REPORTEXPORTCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for S3ReportExportConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.bucket {
+            ser.write_string(&S3REPORTEXPORTCONFIG_MEMBER_BUCKET, val)?;
+        }
+        if let Some(ref val) = self.bucket_owner {
+            ser.write_string(&S3REPORTEXPORTCONFIG_MEMBER_BUCKET_OWNER, val)?;
+        }
+        if let Some(ref val) = self.path {
+            ser.write_string(&S3REPORTEXPORTCONFIG_MEMBER_PATH, val)?;
+        }
+        if let Some(ref val) = self.packaging {
+            ser.write_string(&S3REPORTEXPORTCONFIG_MEMBER_PACKAGING, val.as_str())?;
+        }
+        if let Some(ref val) = self.encryption_key {
+            ser.write_string(&S3REPORTEXPORTCONFIG_MEMBER_ENCRYPTION_KEY, val)?;
+        }
+        if let Some(ref val) = self.encryption_disabled {
+            ser.write_boolean(&S3REPORTEXPORTCONFIG_MEMBER_ENCRYPTION_DISABLED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::S3ReportExportConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&S3REPORTEXPORTCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bucket = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bucket_owner = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.packaging = Some(crate::types::ReportPackagingType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_disabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl S3ReportExportConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl S3ReportExportConfig {
     /// Creates a new builder-style object to manufacture [`S3ReportExportConfig`](crate::types::S3ReportExportConfig).
     pub fn builder() -> crate::types::builders::S3ReportExportConfigBuilder {

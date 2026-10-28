@@ -70,6 +70,153 @@ impl VpcConfiguration {
         self.security_group_ids.deref()
     }
 }
+static VPCCONFIGURATION_MEMBER_SUBNET_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#SubnetIdList$member", "com.amazonaws.firehose", "SubnetIdList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static VPCCONFIGURATION_MEMBER_SUBNET_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#VpcConfiguration$SubnetIds",
+        "com.amazonaws.firehose",
+        "VpcConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SubnetIds",
+    0,
+)
+.with_list_member(&VPCCONFIGURATION_MEMBER_SUBNET_IDS_MEMBER);
+static VPCCONFIGURATION_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#VpcConfiguration$RoleARN",
+        "com.amazonaws.firehose",
+        "VpcConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleARN",
+    1,
+);
+static VPCCONFIGURATION_MEMBER_SECURITY_GROUP_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SecurityGroupIdList$member",
+        "com.amazonaws.firehose",
+        "SecurityGroupIdList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static VPCCONFIGURATION_MEMBER_SECURITY_GROUP_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#VpcConfiguration$SecurityGroupIds",
+        "com.amazonaws.firehose",
+        "VpcConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecurityGroupIds",
+    2,
+)
+.with_list_member(&VPCCONFIGURATION_MEMBER_SECURITY_GROUP_IDS_MEMBER);
+static VPCCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#VpcConfiguration", "com.amazonaws.firehose", "VpcConfiguration"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &VPCCONFIGURATION_MEMBER_SUBNET_IDS,
+        &VPCCONFIGURATION_MEMBER_ROLE_ARN,
+        &VPCCONFIGURATION_MEMBER_SECURITY_GROUP_IDS,
+    ],
+);
+impl VpcConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &VPCCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for VpcConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.subnet_ids;
+
+            ser.write_list(
+                &VPCCONFIGURATION_MEMBER_SUBNET_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.role_arn;
+            ser.write_string(&VPCCONFIGURATION_MEMBER_ROLE_ARN, val)?;
+        }
+        {
+            let val = &self.security_group_ids;
+
+            ser.write_list(
+                &VPCCONFIGURATION_MEMBER_SECURITY_GROUP_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::VpcConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&VPCCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.subnet_ids = Some(deser.read_string_list(member)?);
+                }
+                Some(1) => {
+                    self.role_arn = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.security_group_ids = Some(deser.read_string_list(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl VpcConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.subnet_ids = builder.subnet_ids.or(Some(Vec::new()));
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.security_group_ids = builder.security_group_ids.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl VpcConfiguration {
     /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::types::VpcConfiguration).
     pub fn builder() -> crate::types::builders::VpcConfigurationBuilder {

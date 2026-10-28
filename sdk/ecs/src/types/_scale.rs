@@ -19,6 +19,88 @@ impl Scale {
         self.unit.as_ref()
     }
 }
+static SCALE_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Scale$value", "com.amazonaws.ecs", "Scale"),
+    ::aws_smithy_schema::ShapeType::Double,
+    "value",
+    0,
+);
+static SCALE_MEMBER_UNIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Scale$unit", "com.amazonaws.ecs", "Scale"),
+    ::aws_smithy_schema::ShapeType::String,
+    "unit",
+    1,
+);
+static SCALE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Scale", "com.amazonaws.ecs", "Scale"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&SCALE_MEMBER_VALUE, &SCALE_MEMBER_UNIT],
+);
+impl Scale {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SCALE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Scale {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.value;
+            ser.write_double(&SCALE_MEMBER_VALUE, *val)?;
+        }
+        if let Some(ref val) = self.unit {
+            ser.write_string(&SCALE_MEMBER_UNIT, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ScaleBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SCALE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.value = Some(deser.read_double(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.unit = Some(crate::types::ScaleUnit::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Scale {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Scale {
     /// Creates a new builder-style object to manufacture [`Scale`](crate::types::Scale).
     pub fn builder() -> crate::types::builders::ScaleBuilder {

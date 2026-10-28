@@ -24,6 +24,107 @@ impl DescribeAccessInput {
         self.external_id.as_deref()
     }
 }
+static DESCRIBEACCESSINPUT_MEMBER_SERVER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#DescribeAccessInput$ServerId",
+        "com.amazonaws.transfer.synthetic",
+        "DescribeAccessInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServerId",
+    0,
+);
+static DESCRIBEACCESSINPUT_MEMBER_EXTERNAL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#DescribeAccessInput$ExternalId",
+        "com.amazonaws.transfer.synthetic",
+        "DescribeAccessInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExternalId",
+    1,
+);
+static DESCRIBEACCESSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#DescribeAccessInput",
+        "com.amazonaws.transfer.synthetic",
+        "DescribeAccessInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESCRIBEACCESSINPUT_MEMBER_SERVER_ID, &DESCRIBEACCESSINPUT_MEMBER_EXTERNAL_ID],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeAccessRequest");
+impl DescribeAccessInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEACCESSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeAccessInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.server_id {
+            ser.write_string(&DESCRIBEACCESSINPUT_MEMBER_SERVER_ID, val)?;
+        }
+        if let Some(ref val) = self.external_id {
+            ser.write_string(&DESCRIBEACCESSINPUT_MEMBER_EXTERNAL_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_access::builders::DescribeAccessInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEACCESSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.server_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeAccessInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.server_id = builder.server_id.or(Some(String::new()));
+        builder.external_id = builder.external_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeAccessInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccessInput`](crate::operation::describe_access::DescribeAccessInput).
     pub fn builder() -> crate::operation::describe_access::builders::DescribeAccessInputBuilder {

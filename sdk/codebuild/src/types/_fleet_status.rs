@@ -73,6 +73,107 @@ impl FleetStatus {
         self.message.as_deref()
     }
 }
+static FLEETSTATUS_MEMBER_STATUS_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#FleetStatus$statusCode", "com.amazonaws.codebuild", "FleetStatus"),
+    ::aws_smithy_schema::ShapeType::String,
+    "statusCode",
+    0,
+);
+static FLEETSTATUS_MEMBER_CONTEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#FleetStatus$context", "com.amazonaws.codebuild", "FleetStatus"),
+    ::aws_smithy_schema::ShapeType::String,
+    "context",
+    1,
+);
+static FLEETSTATUS_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#FleetStatus$message", "com.amazonaws.codebuild", "FleetStatus"),
+    ::aws_smithy_schema::ShapeType::String,
+    "message",
+    2,
+);
+static FLEETSTATUS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#FleetStatus", "com.amazonaws.codebuild", "FleetStatus"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&FLEETSTATUS_MEMBER_STATUS_CODE, &FLEETSTATUS_MEMBER_CONTEXT, &FLEETSTATUS_MEMBER_MESSAGE],
+);
+impl FleetStatus {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FLEETSTATUS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FleetStatus {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.status_code {
+            ser.write_string(&FLEETSTATUS_MEMBER_STATUS_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.context {
+            ser.write_string(&FLEETSTATUS_MEMBER_CONTEXT, val.as_str())?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&FLEETSTATUS_MEMBER_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FleetStatusBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FLEETSTATUS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_code = Some(crate::types::FleetStatusCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.context = Some(crate::types::FleetContextCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FleetStatus {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FleetStatus {
     /// Creates a new builder-style object to manufacture [`FleetStatus`](crate::types::FleetStatus).
     pub fn builder() -> crate::types::builders::FleetStatusBuilder {

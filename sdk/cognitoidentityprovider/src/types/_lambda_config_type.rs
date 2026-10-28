@@ -99,6 +99,379 @@ impl LambdaConfigType {
         self.inbound_federation.as_ref()
     }
 }
+static LAMBDACONFIGTYPE_MEMBER_PRE_SIGN_UP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LambdaConfigType$PreSignUp",
+        "com.amazonaws.cognitoidentityprovider",
+        "LambdaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreSignUp",
+    0,
+);
+static LAMBDACONFIGTYPE_MEMBER_CUSTOM_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LambdaConfigType$CustomMessage",
+        "com.amazonaws.cognitoidentityprovider",
+        "LambdaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CustomMessage",
+    1,
+);
+static LAMBDACONFIGTYPE_MEMBER_POST_CONFIRMATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LambdaConfigType$PostConfirmation",
+        "com.amazonaws.cognitoidentityprovider",
+        "LambdaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PostConfirmation",
+    2,
+);
+static LAMBDACONFIGTYPE_MEMBER_PRE_AUTHENTICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LambdaConfigType$PreAuthentication",
+        "com.amazonaws.cognitoidentityprovider",
+        "LambdaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreAuthentication",
+    3,
+);
+static LAMBDACONFIGTYPE_MEMBER_POST_AUTHENTICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LambdaConfigType$PostAuthentication",
+        "com.amazonaws.cognitoidentityprovider",
+        "LambdaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PostAuthentication",
+    4,
+);
+static LAMBDACONFIGTYPE_MEMBER_DEFINE_AUTH_CHALLENGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LambdaConfigType$DefineAuthChallenge",
+        "com.amazonaws.cognitoidentityprovider",
+        "LambdaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DefineAuthChallenge",
+    5,
+);
+static LAMBDACONFIGTYPE_MEMBER_CREATE_AUTH_CHALLENGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LambdaConfigType$CreateAuthChallenge",
+        "com.amazonaws.cognitoidentityprovider",
+        "LambdaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreateAuthChallenge",
+    6,
+);
+static LAMBDACONFIGTYPE_MEMBER_VERIFY_AUTH_CHALLENGE_RESPONSE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LambdaConfigType$VerifyAuthChallengeResponse",
+        "com.amazonaws.cognitoidentityprovider",
+        "LambdaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VerifyAuthChallengeResponse",
+    7,
+);
+static LAMBDACONFIGTYPE_MEMBER_PRE_TOKEN_GENERATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LambdaConfigType$PreTokenGeneration",
+        "com.amazonaws.cognitoidentityprovider",
+        "LambdaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreTokenGeneration",
+    8,
+);
+static LAMBDACONFIGTYPE_MEMBER_USER_MIGRATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LambdaConfigType$UserMigration",
+        "com.amazonaws.cognitoidentityprovider",
+        "LambdaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserMigration",
+    9,
+);
+static LAMBDACONFIGTYPE_MEMBER_PRE_TOKEN_GENERATION_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LambdaConfigType$PreTokenGenerationConfig",
+        "com.amazonaws.cognitoidentityprovider",
+        "LambdaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PreTokenGenerationConfig",
+    10,
+);
+static LAMBDACONFIGTYPE_MEMBER_CUSTOM_SMS_SENDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LambdaConfigType$CustomSMSSender",
+        "com.amazonaws.cognitoidentityprovider",
+        "LambdaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CustomSMSSender",
+    11,
+);
+static LAMBDACONFIGTYPE_MEMBER_CUSTOM_EMAIL_SENDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LambdaConfigType$CustomEmailSender",
+        "com.amazonaws.cognitoidentityprovider",
+        "LambdaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CustomEmailSender",
+    12,
+);
+static LAMBDACONFIGTYPE_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LambdaConfigType$KMSKeyID",
+        "com.amazonaws.cognitoidentityprovider",
+        "LambdaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KMSKeyID",
+    13,
+);
+static LAMBDACONFIGTYPE_MEMBER_INBOUND_FEDERATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LambdaConfigType$InboundFederation",
+        "com.amazonaws.cognitoidentityprovider",
+        "LambdaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InboundFederation",
+    14,
+);
+static LAMBDACONFIGTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LambdaConfigType",
+        "com.amazonaws.cognitoidentityprovider",
+        "LambdaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LAMBDACONFIGTYPE_MEMBER_PRE_SIGN_UP,
+        &LAMBDACONFIGTYPE_MEMBER_CUSTOM_MESSAGE,
+        &LAMBDACONFIGTYPE_MEMBER_POST_CONFIRMATION,
+        &LAMBDACONFIGTYPE_MEMBER_PRE_AUTHENTICATION,
+        &LAMBDACONFIGTYPE_MEMBER_POST_AUTHENTICATION,
+        &LAMBDACONFIGTYPE_MEMBER_DEFINE_AUTH_CHALLENGE,
+        &LAMBDACONFIGTYPE_MEMBER_CREATE_AUTH_CHALLENGE,
+        &LAMBDACONFIGTYPE_MEMBER_VERIFY_AUTH_CHALLENGE_RESPONSE,
+        &LAMBDACONFIGTYPE_MEMBER_PRE_TOKEN_GENERATION,
+        &LAMBDACONFIGTYPE_MEMBER_USER_MIGRATION,
+        &LAMBDACONFIGTYPE_MEMBER_PRE_TOKEN_GENERATION_CONFIG,
+        &LAMBDACONFIGTYPE_MEMBER_CUSTOM_SMS_SENDER,
+        &LAMBDACONFIGTYPE_MEMBER_CUSTOM_EMAIL_SENDER,
+        &LAMBDACONFIGTYPE_MEMBER_KMS_KEY_ID,
+        &LAMBDACONFIGTYPE_MEMBER_INBOUND_FEDERATION,
+    ],
+);
+impl LambdaConfigType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LAMBDACONFIGTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LambdaConfigType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pre_sign_up {
+            ser.write_string(&LAMBDACONFIGTYPE_MEMBER_PRE_SIGN_UP, val)?;
+        }
+        if let Some(ref val) = self.custom_message {
+            ser.write_string(&LAMBDACONFIGTYPE_MEMBER_CUSTOM_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.post_confirmation {
+            ser.write_string(&LAMBDACONFIGTYPE_MEMBER_POST_CONFIRMATION, val)?;
+        }
+        if let Some(ref val) = self.pre_authentication {
+            ser.write_string(&LAMBDACONFIGTYPE_MEMBER_PRE_AUTHENTICATION, val)?;
+        }
+        if let Some(ref val) = self.post_authentication {
+            ser.write_string(&LAMBDACONFIGTYPE_MEMBER_POST_AUTHENTICATION, val)?;
+        }
+        if let Some(ref val) = self.define_auth_challenge {
+            ser.write_string(&LAMBDACONFIGTYPE_MEMBER_DEFINE_AUTH_CHALLENGE, val)?;
+        }
+        if let Some(ref val) = self.create_auth_challenge {
+            ser.write_string(&LAMBDACONFIGTYPE_MEMBER_CREATE_AUTH_CHALLENGE, val)?;
+        }
+        if let Some(ref val) = self.verify_auth_challenge_response {
+            ser.write_string(&LAMBDACONFIGTYPE_MEMBER_VERIFY_AUTH_CHALLENGE_RESPONSE, val)?;
+        }
+        if let Some(ref val) = self.pre_token_generation {
+            ser.write_string(&LAMBDACONFIGTYPE_MEMBER_PRE_TOKEN_GENERATION, val)?;
+        }
+        if let Some(ref val) = self.user_migration {
+            ser.write_string(&LAMBDACONFIGTYPE_MEMBER_USER_MIGRATION, val)?;
+        }
+        if let Some(ref val) = self.pre_token_generation_config {
+            ser.write_struct(&LAMBDACONFIGTYPE_MEMBER_PRE_TOKEN_GENERATION_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.custom_sms_sender {
+            ser.write_struct(&LAMBDACONFIGTYPE_MEMBER_CUSTOM_SMS_SENDER, val)?;
+        }
+        if let Some(ref val) = self.custom_email_sender {
+            ser.write_struct(&LAMBDACONFIGTYPE_MEMBER_CUSTOM_EMAIL_SENDER, val)?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&LAMBDACONFIGTYPE_MEMBER_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.inbound_federation {
+            ser.write_struct(&LAMBDACONFIGTYPE_MEMBER_INBOUND_FEDERATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LambdaConfigTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LAMBDACONFIGTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pre_sign_up = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.post_confirmation = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pre_authentication = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.post_authentication = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.define_auth_challenge = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_auth_challenge = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.verify_auth_challenge_response = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pre_token_generation = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_migration = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pre_token_generation_config = Some(crate::types::PreTokenGenerationVersionConfigType::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_sms_sender = Some(crate::types::CustomSmsLambdaVersionConfigType::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_email_sender = Some(crate::types::CustomEmailLambdaVersionConfigType::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inbound_federation = Some(crate::types::InboundFederationLambdaType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LambdaConfigType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LambdaConfigType {
     /// Creates a new builder-style object to manufacture [`LambdaConfigType`](crate::types::LambdaConfigType).
     pub fn builder() -> crate::types::builders::LambdaConfigTypeBuilder {

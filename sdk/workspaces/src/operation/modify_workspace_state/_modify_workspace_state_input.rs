@@ -18,6 +18,109 @@ impl ModifyWorkspaceStateInput {
         self.workspace_state.as_ref()
     }
 }
+static MODIFYWORKSPACESTATEINPUT_MEMBER_WORKSPACE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifyWorkspaceStateInput$WorkspaceId",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifyWorkspaceStateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkspaceId",
+    0,
+);
+static MODIFYWORKSPACESTATEINPUT_MEMBER_WORKSPACE_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifyWorkspaceStateInput$WorkspaceState",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifyWorkspaceStateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkspaceState",
+    1,
+);
+static MODIFYWORKSPACESTATEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifyWorkspaceStateInput",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifyWorkspaceStateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODIFYWORKSPACESTATEINPUT_MEMBER_WORKSPACE_ID,
+        &MODIFYWORKSPACESTATEINPUT_MEMBER_WORKSPACE_STATE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ModifyWorkspaceStateRequest");
+impl ModifyWorkspaceStateInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODIFYWORKSPACESTATEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModifyWorkspaceStateInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.workspace_id {
+            ser.write_string(&MODIFYWORKSPACESTATEINPUT_MEMBER_WORKSPACE_ID, val)?;
+        }
+        if let Some(ref val) = self.workspace_state {
+            ser.write_string(&MODIFYWORKSPACESTATEINPUT_MEMBER_WORKSPACE_STATE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODIFYWORKSPACESTATEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_state = Some(crate::types::TargetWorkspaceState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModifyWorkspaceStateInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.workspace_id = builder.workspace_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ModifyWorkspaceStateInput {
     /// Creates a new builder-style object to manufacture [`ModifyWorkspaceStateInput`](crate::operation::modify_workspace_state::ModifyWorkspaceStateInput).
     pub fn builder() -> crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateInputBuilder {

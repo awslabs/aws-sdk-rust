@@ -19,6 +19,99 @@ impl AccessMethod {
         self.access_method_type.as_ref()
     }
 }
+static ACCESSMETHOD_MEMBER_CUSTOM_OBJECT_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#AccessMethod$CustomObjectIdentifier",
+        "com.amazonaws.acmpca",
+        "AccessMethod",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CustomObjectIdentifier",
+    0,
+);
+static ACCESSMETHOD_MEMBER_ACCESS_METHOD_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#AccessMethod$AccessMethodType",
+        "com.amazonaws.acmpca",
+        "AccessMethod",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccessMethodType",
+    1,
+);
+static ACCESSMETHOD_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#AccessMethod", "com.amazonaws.acmpca", "AccessMethod"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ACCESSMETHOD_MEMBER_CUSTOM_OBJECT_IDENTIFIER, &ACCESSMETHOD_MEMBER_ACCESS_METHOD_TYPE],
+);
+impl AccessMethod {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACCESSMETHOD_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AccessMethod {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.custom_object_identifier {
+            ser.write_string(&ACCESSMETHOD_MEMBER_CUSTOM_OBJECT_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.access_method_type {
+            ser.write_string(&ACCESSMETHOD_MEMBER_ACCESS_METHOD_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AccessMethodBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACCESSMETHOD_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_object_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_method_type = Some(crate::types::AccessMethodType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AccessMethod {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AccessMethod {
     /// Creates a new builder-style object to manufacture [`AccessMethod`](crate::types::AccessMethod).
     pub fn builder() -> crate::types::builders::AccessMethodBuilder {

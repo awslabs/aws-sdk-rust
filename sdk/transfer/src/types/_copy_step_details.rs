@@ -73,6 +73,140 @@ impl CopyStepDetails {
         self.source_file_location.as_deref()
     }
 }
+static COPYSTEPDETAILS_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#CopyStepDetails$Name", "com.amazonaws.transfer", "CopyStepDetails"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static COPYSTEPDETAILS_MEMBER_DESTINATION_FILE_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#CopyStepDetails$DestinationFileLocation",
+        "com.amazonaws.transfer",
+        "CopyStepDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DestinationFileLocation",
+    1,
+);
+static COPYSTEPDETAILS_MEMBER_OVERWRITE_EXISTING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#CopyStepDetails$OverwriteExisting",
+        "com.amazonaws.transfer",
+        "CopyStepDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OverwriteExisting",
+    2,
+);
+static COPYSTEPDETAILS_MEMBER_SOURCE_FILE_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#CopyStepDetails$SourceFileLocation",
+        "com.amazonaws.transfer",
+        "CopyStepDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceFileLocation",
+    3,
+);
+static COPYSTEPDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#CopyStepDetails", "com.amazonaws.transfer", "CopyStepDetails"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &COPYSTEPDETAILS_MEMBER_NAME,
+        &COPYSTEPDETAILS_MEMBER_DESTINATION_FILE_LOCATION,
+        &COPYSTEPDETAILS_MEMBER_OVERWRITE_EXISTING,
+        &COPYSTEPDETAILS_MEMBER_SOURCE_FILE_LOCATION,
+    ],
+);
+impl CopyStepDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COPYSTEPDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CopyStepDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&COPYSTEPDETAILS_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.destination_file_location {
+            ser.write_struct(&COPYSTEPDETAILS_MEMBER_DESTINATION_FILE_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.overwrite_existing {
+            ser.write_string(&COPYSTEPDETAILS_MEMBER_OVERWRITE_EXISTING, val.as_str())?;
+        }
+        if let Some(ref val) = self.source_file_location {
+            ser.write_string(&COPYSTEPDETAILS_MEMBER_SOURCE_FILE_LOCATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CopyStepDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COPYSTEPDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_file_location = Some(crate::types::InputFileLocation::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.overwrite_existing = Some(crate::types::OverwriteExisting::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_file_location = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CopyStepDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CopyStepDetails {
     /// Creates a new builder-style object to manufacture [`CopyStepDetails`](crate::types::CopyStepDetails).
     pub fn builder() -> crate::types::builders::CopyStepDetailsBuilder {

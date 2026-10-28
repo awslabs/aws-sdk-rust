@@ -9,6 +9,8 @@ pub struct UpdateConfigurationInput {
     pub ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
     /// <p>Specifies how the Amazon EC2 automated scan will be updated for your environment.</p>
     pub ec2_configuration: ::std::option::Option<crate::types::Ec2Configuration>,
+    /// <p>The Amazon Machine Image (AMI) scan configuration to apply to the account.</p>
+    pub ami_configuration: ::std::option::Option<crate::types::AmiConfiguration>,
     /// <p>Specifies which scan-type configurations to reset to the delegated administrator's inherited values for the targeted member account. Each member of this structure is independently optional. When specified, <code>ec2Configuration</code> and <code>ecrConfiguration</code> must be absent, and <code>accountId</code> must also be present. Only <code>INHERIT_FROM_ADMIN</code> is valid for each member. If not specified, the operation uses the <code>ec2Configuration</code> and <code>ecrConfiguration</code> parameters instead.</p>
     pub update_configuration_inheritance: ::std::option::Option<crate::types::UpdateConfigurationInheritance>,
 }
@@ -24,6 +26,10 @@ impl UpdateConfigurationInput {
     /// <p>Specifies how the Amazon EC2 automated scan will be updated for your environment.</p>
     pub fn ec2_configuration(&self) -> ::std::option::Option<&crate::types::Ec2Configuration> {
         self.ec2_configuration.as_ref()
+    }
+    /// <p>The Amazon Machine Image (AMI) scan configuration to apply to the account.</p>
+    pub fn ami_configuration(&self) -> ::std::option::Option<&crate::types::AmiConfiguration> {
+        self.ami_configuration.as_ref()
     }
     /// <p>Specifies which scan-type configurations to reset to the delegated administrator's inherited values for the targeted member account. Each member of this structure is independently optional. When specified, <code>ec2Configuration</code> and <code>ecrConfiguration</code> must be absent, and <code>accountId</code> must also be present. Only <code>INHERIT_FROM_ADMIN</code> is valid for each member. If not specified, the operation uses the <code>ec2Configuration</code> and <code>ecrConfiguration</code> parameters instead.</p>
     pub fn update_configuration_inheritance(&self) -> ::std::option::Option<&crate::types::UpdateConfigurationInheritance> {
@@ -44,6 +50,7 @@ pub struct UpdateConfigurationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
     pub(crate) ec2_configuration: ::std::option::Option<crate::types::Ec2Configuration>,
+    pub(crate) ami_configuration: ::std::option::Option<crate::types::AmiConfiguration>,
     pub(crate) update_configuration_inheritance: ::std::option::Option<crate::types::UpdateConfigurationInheritance>,
 }
 impl UpdateConfigurationInputBuilder {
@@ -89,6 +96,20 @@ impl UpdateConfigurationInputBuilder {
     pub fn get_ec2_configuration(&self) -> &::std::option::Option<crate::types::Ec2Configuration> {
         &self.ec2_configuration
     }
+    /// <p>The Amazon Machine Image (AMI) scan configuration to apply to the account.</p>
+    pub fn ami_configuration(mut self, input: crate::types::AmiConfiguration) -> Self {
+        self.ami_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon Machine Image (AMI) scan configuration to apply to the account.</p>
+    pub fn set_ami_configuration(mut self, input: ::std::option::Option<crate::types::AmiConfiguration>) -> Self {
+        self.ami_configuration = input;
+        self
+    }
+    /// <p>The Amazon Machine Image (AMI) scan configuration to apply to the account.</p>
+    pub fn get_ami_configuration(&self) -> &::std::option::Option<crate::types::AmiConfiguration> {
+        &self.ami_configuration
+    }
     /// <p>Specifies which scan-type configurations to reset to the delegated administrator's inherited values for the targeted member account. Each member of this structure is independently optional. When specified, <code>ec2Configuration</code> and <code>ecrConfiguration</code> must be absent, and <code>accountId</code> must also be present. Only <code>INHERIT_FROM_ADMIN</code> is valid for each member. If not specified, the operation uses the <code>ec2Configuration</code> and <code>ecrConfiguration</code> parameters instead.</p>
     pub fn update_configuration_inheritance(mut self, input: crate::types::UpdateConfigurationInheritance) -> Self {
         self.update_configuration_inheritance = ::std::option::Option::Some(input);
@@ -112,6 +133,7 @@ impl UpdateConfigurationInputBuilder {
             account_id: self.account_id,
             ecr_configuration: self.ecr_configuration,
             ec2_configuration: self.ec2_configuration,
+            ami_configuration: self.ami_configuration,
             update_configuration_inheritance: self.update_configuration_inheritance,
         })
     }

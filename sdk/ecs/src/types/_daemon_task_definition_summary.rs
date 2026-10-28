@@ -37,6 +37,169 @@ impl DaemonTaskDefinitionSummary {
         self.status.as_ref()
     }
 }
+static DAEMONTASKDEFINITIONSUMMARY_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinitionSummary$arn",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinitionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    0,
+);
+static DAEMONTASKDEFINITIONSUMMARY_MEMBER_REGISTERED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinitionSummary$registeredAt",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinitionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "registeredAt",
+    1,
+);
+static DAEMONTASKDEFINITIONSUMMARY_MEMBER_REGISTERED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinitionSummary$registeredBy",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinitionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "registeredBy",
+    2,
+);
+static DAEMONTASKDEFINITIONSUMMARY_MEMBER_DELETE_REQUESTED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinitionSummary$deleteRequestedAt",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinitionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "deleteRequestedAt",
+    3,
+);
+static DAEMONTASKDEFINITIONSUMMARY_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinitionSummary$status",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinitionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    4,
+);
+static DAEMONTASKDEFINITIONSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinitionSummary",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinitionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DAEMONTASKDEFINITIONSUMMARY_MEMBER_ARN,
+        &DAEMONTASKDEFINITIONSUMMARY_MEMBER_REGISTERED_AT,
+        &DAEMONTASKDEFINITIONSUMMARY_MEMBER_REGISTERED_BY,
+        &DAEMONTASKDEFINITIONSUMMARY_MEMBER_DELETE_REQUESTED_AT,
+        &DAEMONTASKDEFINITIONSUMMARY_MEMBER_STATUS,
+    ],
+);
+impl DaemonTaskDefinitionSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DAEMONTASKDEFINITIONSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DaemonTaskDefinitionSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&DAEMONTASKDEFINITIONSUMMARY_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.registered_at {
+            ser.write_timestamp(&DAEMONTASKDEFINITIONSUMMARY_MEMBER_REGISTERED_AT, val)?;
+        }
+        if let Some(ref val) = self.registered_by {
+            ser.write_string(&DAEMONTASKDEFINITIONSUMMARY_MEMBER_REGISTERED_BY, val)?;
+        }
+        if let Some(ref val) = self.delete_requested_at {
+            ser.write_timestamp(&DAEMONTASKDEFINITIONSUMMARY_MEMBER_DELETE_REQUESTED_AT, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DAEMONTASKDEFINITIONSUMMARY_MEMBER_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DaemonTaskDefinitionSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DAEMONTASKDEFINITIONSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registered_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registered_by = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delete_requested_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::DaemonTaskDefinitionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DaemonTaskDefinitionSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DaemonTaskDefinitionSummary {
     /// Creates a new builder-style object to manufacture [`DaemonTaskDefinitionSummary`](crate::types::DaemonTaskDefinitionSummary).
     pub fn builder() -> crate::types::builders::DaemonTaskDefinitionSummaryBuilder {

@@ -92,6 +92,341 @@ impl WorkspacesPool {
         &self.running_mode
     }
 }
+static WORKSPACESPOOL_MEMBER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPool$PoolId",
+        "com.amazonaws.workspaces",
+        "WorkspacesPool",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PoolId",
+    0,
+);
+static WORKSPACESPOOL_MEMBER_POOL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPool$PoolArn",
+        "com.amazonaws.workspaces",
+        "WorkspacesPool",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PoolArn",
+    1,
+);
+static WORKSPACESPOOL_MEMBER_CAPACITY_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPool$CapacityStatus",
+        "com.amazonaws.workspaces",
+        "WorkspacesPool",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CapacityStatus",
+    2,
+);
+static WORKSPACESPOOL_MEMBER_POOL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPool$PoolName",
+        "com.amazonaws.workspaces",
+        "WorkspacesPool",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PoolName",
+    3,
+);
+static WORKSPACESPOOL_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPool$Description",
+        "com.amazonaws.workspaces",
+        "WorkspacesPool",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    4,
+);
+static WORKSPACESPOOL_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPool$State",
+        "com.amazonaws.workspaces",
+        "WorkspacesPool",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    5,
+);
+static WORKSPACESPOOL_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPool$CreatedAt",
+        "com.amazonaws.workspaces",
+        "WorkspacesPool",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAt",
+    6,
+);
+static WORKSPACESPOOL_MEMBER_BUNDLE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPool$BundleId",
+        "com.amazonaws.workspaces",
+        "WorkspacesPool",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BundleId",
+    7,
+);
+static WORKSPACESPOOL_MEMBER_DIRECTORY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPool$DirectoryId",
+        "com.amazonaws.workspaces",
+        "WorkspacesPool",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DirectoryId",
+    8,
+);
+static WORKSPACESPOOL_MEMBER_ERRORS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPoolErrors$member",
+        "com.amazonaws.workspaces",
+        "WorkspacesPoolErrors",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static WORKSPACESPOOL_MEMBER_ERRORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPool$Errors",
+        "com.amazonaws.workspaces",
+        "WorkspacesPool",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Errors",
+    9,
+)
+.with_list_member(&WORKSPACESPOOL_MEMBER_ERRORS_MEMBER);
+static WORKSPACESPOOL_MEMBER_APPLICATION_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPool$ApplicationSettings",
+        "com.amazonaws.workspaces",
+        "WorkspacesPool",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ApplicationSettings",
+    10,
+);
+static WORKSPACESPOOL_MEMBER_TIMEOUT_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPool$TimeoutSettings",
+        "com.amazonaws.workspaces",
+        "WorkspacesPool",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TimeoutSettings",
+    11,
+);
+static WORKSPACESPOOL_MEMBER_RUNNING_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPool$RunningMode",
+        "com.amazonaws.workspaces",
+        "WorkspacesPool",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RunningMode",
+    12,
+);
+static WORKSPACESPOOL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#WorkspacesPool", "com.amazonaws.workspaces", "WorkspacesPool"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKSPACESPOOL_MEMBER_POOL_ID,
+        &WORKSPACESPOOL_MEMBER_POOL_ARN,
+        &WORKSPACESPOOL_MEMBER_CAPACITY_STATUS,
+        &WORKSPACESPOOL_MEMBER_POOL_NAME,
+        &WORKSPACESPOOL_MEMBER_DESCRIPTION,
+        &WORKSPACESPOOL_MEMBER_STATE,
+        &WORKSPACESPOOL_MEMBER_CREATED_AT,
+        &WORKSPACESPOOL_MEMBER_BUNDLE_ID,
+        &WORKSPACESPOOL_MEMBER_DIRECTORY_ID,
+        &WORKSPACESPOOL_MEMBER_ERRORS,
+        &WORKSPACESPOOL_MEMBER_APPLICATION_SETTINGS,
+        &WORKSPACESPOOL_MEMBER_TIMEOUT_SETTINGS,
+        &WORKSPACESPOOL_MEMBER_RUNNING_MODE,
+    ],
+);
+impl WorkspacesPool {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKSPACESPOOL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WorkspacesPool {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.pool_id;
+            ser.write_string(&WORKSPACESPOOL_MEMBER_POOL_ID, val)?;
+        }
+        {
+            let val = &self.pool_arn;
+            ser.write_string(&WORKSPACESPOOL_MEMBER_POOL_ARN, val)?;
+        }
+        if let Some(ref val) = self.capacity_status {
+            ser.write_struct(&WORKSPACESPOOL_MEMBER_CAPACITY_STATUS, val)?;
+        }
+        {
+            let val = &self.pool_name;
+            ser.write_string(&WORKSPACESPOOL_MEMBER_POOL_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&WORKSPACESPOOL_MEMBER_DESCRIPTION, val)?;
+        }
+        {
+            let val = &self.state;
+            ser.write_string(&WORKSPACESPOOL_MEMBER_STATE, val.as_str())?;
+        }
+        {
+            let val = &self.created_at;
+            ser.write_timestamp(&WORKSPACESPOOL_MEMBER_CREATED_AT, val)?;
+        }
+        {
+            let val = &self.bundle_id;
+            ser.write_string(&WORKSPACESPOOL_MEMBER_BUNDLE_ID, val)?;
+        }
+        {
+            let val = &self.directory_id;
+            ser.write_string(&WORKSPACESPOOL_MEMBER_DIRECTORY_ID, val)?;
+        }
+        if let Some(ref val) = self.errors {
+            ser.write_list(
+                &WORKSPACESPOOL_MEMBER_ERRORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::WorkspacesPoolError::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.application_settings {
+            ser.write_struct(&WORKSPACESPOOL_MEMBER_APPLICATION_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.timeout_settings {
+            ser.write_struct(&WORKSPACESPOOL_MEMBER_TIMEOUT_SETTINGS, val)?;
+        }
+        {
+            let val = &self.running_mode;
+            ser.write_string(&WORKSPACESPOOL_MEMBER_RUNNING_MODE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkspacesPoolBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKSPACESPOOL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.pool_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.pool_arn = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_status = Some(crate::types::CapacityStatus::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    self.pool_name = Some(deser.read_string(member)?);
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    self.state = Some(crate::types::WorkspacesPoolState::from(deser.read_string(member)?.as_str()));
+                }
+                Some(6) => {
+                    self.created_at = Some(deser.read_timestamp(member)?);
+                }
+                Some(7) => {
+                    self.bundle_id = Some(deser.read_string(member)?);
+                }
+                Some(8) => {
+                    self.directory_id = Some(deser.read_string(member)?);
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.errors = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::WorkspacesPoolError::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.application_settings = Some(crate::types::ApplicationSettingsResponse::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.timeout_settings = Some(crate::types::TimeoutSettings::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    self.running_mode = Some(crate::types::PoolsRunningMode::from(deser.read_string(member)?.as_str()));
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WorkspacesPool {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pool_id = builder.pool_id.or(Some(String::new()));
+        builder.pool_arn = builder.pool_arn.or(Some(String::new()));
+        builder.pool_name = builder.pool_name.or(Some(String::new()));
+        builder.created_at = builder.created_at.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.bundle_id = builder.bundle_id.or(Some(String::new()));
+        builder.directory_id = builder.directory_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl WorkspacesPool {
     /// Creates a new builder-style object to manufacture [`WorkspacesPool`](crate::types::WorkspacesPool).
     pub fn builder() -> crate::types::builders::WorkspacesPoolBuilder {

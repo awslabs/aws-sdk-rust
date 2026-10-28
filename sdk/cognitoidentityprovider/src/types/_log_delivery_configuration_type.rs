@@ -21,6 +21,129 @@ impl LogDeliveryConfigurationType {
         self.log_configurations.deref()
     }
 }
+static LOGDELIVERYCONFIGURATIONTYPE_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LogDeliveryConfigurationType$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider",
+        "LogDeliveryConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    0,
+);
+static LOGDELIVERYCONFIGURATIONTYPE_MEMBER_LOG_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LogConfigurationListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "LogConfigurationListType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LOGDELIVERYCONFIGURATIONTYPE_MEMBER_LOG_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LogDeliveryConfigurationType$LogConfigurations",
+        "com.amazonaws.cognitoidentityprovider",
+        "LogDeliveryConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "LogConfigurations",
+    1,
+)
+.with_list_member(&LOGDELIVERYCONFIGURATIONTYPE_MEMBER_LOG_CONFIGURATIONS_MEMBER);
+static LOGDELIVERYCONFIGURATIONTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LogDeliveryConfigurationType",
+        "com.amazonaws.cognitoidentityprovider",
+        "LogDeliveryConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LOGDELIVERYCONFIGURATIONTYPE_MEMBER_USER_POOL_ID,
+        &LOGDELIVERYCONFIGURATIONTYPE_MEMBER_LOG_CONFIGURATIONS,
+    ],
+);
+impl LogDeliveryConfigurationType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LOGDELIVERYCONFIGURATIONTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LogDeliveryConfigurationType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.user_pool_id;
+            ser.write_string(&LOGDELIVERYCONFIGURATIONTYPE_MEMBER_USER_POOL_ID, val)?;
+        }
+        {
+            let val = &self.log_configurations;
+
+            ser.write_list(
+                &LOGDELIVERYCONFIGURATIONTYPE_MEMBER_LOG_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::LogConfigurationType::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LogDeliveryConfigurationTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LOGDELIVERYCONFIGURATIONTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.user_pool_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.log_configurations = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::LogConfigurationType::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LogDeliveryConfigurationType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_pool_id = builder.user_pool_id.or(Some(String::new()));
+        builder.log_configurations = builder.log_configurations.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl LogDeliveryConfigurationType {
     /// Creates a new builder-style object to manufacture [`LogDeliveryConfigurationType`](crate::types::LogDeliveryConfigurationType).
     pub fn builder() -> crate::types::builders::LogDeliveryConfigurationTypeBuilder {

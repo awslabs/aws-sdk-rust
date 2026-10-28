@@ -272,6 +272,334 @@ impl ProjectEnvironment {
         self.host_kernel.as_ref()
     }
 }
+static PROJECTENVIRONMENT_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectEnvironment$type",
+        "com.amazonaws.codebuild",
+        "ProjectEnvironment",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "type",
+    0,
+);
+static PROJECTENVIRONMENT_MEMBER_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectEnvironment$image",
+        "com.amazonaws.codebuild",
+        "ProjectEnvironment",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "image",
+    1,
+);
+static PROJECTENVIRONMENT_MEMBER_COMPUTE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectEnvironment$computeType",
+        "com.amazonaws.codebuild",
+        "ProjectEnvironment",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "computeType",
+    2,
+);
+static PROJECTENVIRONMENT_MEMBER_COMPUTE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectEnvironment$computeConfiguration",
+        "com.amazonaws.codebuild",
+        "ProjectEnvironment",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "computeConfiguration",
+    3,
+);
+static PROJECTENVIRONMENT_MEMBER_FLEET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectEnvironment$fleet",
+        "com.amazonaws.codebuild",
+        "ProjectEnvironment",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "fleet",
+    4,
+);
+static PROJECTENVIRONMENT_MEMBER_ENVIRONMENT_VARIABLES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#EnvironmentVariables$member",
+        "com.amazonaws.codebuild",
+        "EnvironmentVariables",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PROJECTENVIRONMENT_MEMBER_ENVIRONMENT_VARIABLES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectEnvironment$environmentVariables",
+        "com.amazonaws.codebuild",
+        "ProjectEnvironment",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "environmentVariables",
+    5,
+)
+.with_list_member(&PROJECTENVIRONMENT_MEMBER_ENVIRONMENT_VARIABLES_MEMBER);
+static PROJECTENVIRONMENT_MEMBER_PRIVILEGED_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectEnvironment$privilegedMode",
+        "com.amazonaws.codebuild",
+        "ProjectEnvironment",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "privilegedMode",
+    6,
+);
+static PROJECTENVIRONMENT_MEMBER_CERTIFICATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectEnvironment$certificate",
+        "com.amazonaws.codebuild",
+        "ProjectEnvironment",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "certificate",
+    7,
+);
+static PROJECTENVIRONMENT_MEMBER_REGISTRY_CREDENTIAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectEnvironment$registryCredential",
+        "com.amazonaws.codebuild",
+        "ProjectEnvironment",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "registryCredential",
+    8,
+);
+static PROJECTENVIRONMENT_MEMBER_IMAGE_PULL_CREDENTIALS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectEnvironment$imagePullCredentialsType",
+        "com.amazonaws.codebuild",
+        "ProjectEnvironment",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "imagePullCredentialsType",
+    9,
+);
+static PROJECTENVIRONMENT_MEMBER_DOCKER_SERVER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectEnvironment$dockerServer",
+        "com.amazonaws.codebuild",
+        "ProjectEnvironment",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "dockerServer",
+    10,
+);
+static PROJECTENVIRONMENT_MEMBER_HOST_KERNEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectEnvironment$hostKernel",
+        "com.amazonaws.codebuild",
+        "ProjectEnvironment",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "hostKernel",
+    11,
+);
+static PROJECTENVIRONMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectEnvironment",
+        "com.amazonaws.codebuild",
+        "ProjectEnvironment",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PROJECTENVIRONMENT_MEMBER_TYPE,
+        &PROJECTENVIRONMENT_MEMBER_IMAGE,
+        &PROJECTENVIRONMENT_MEMBER_COMPUTE_TYPE,
+        &PROJECTENVIRONMENT_MEMBER_COMPUTE_CONFIGURATION,
+        &PROJECTENVIRONMENT_MEMBER_FLEET,
+        &PROJECTENVIRONMENT_MEMBER_ENVIRONMENT_VARIABLES,
+        &PROJECTENVIRONMENT_MEMBER_PRIVILEGED_MODE,
+        &PROJECTENVIRONMENT_MEMBER_CERTIFICATE,
+        &PROJECTENVIRONMENT_MEMBER_REGISTRY_CREDENTIAL,
+        &PROJECTENVIRONMENT_MEMBER_IMAGE_PULL_CREDENTIALS_TYPE,
+        &PROJECTENVIRONMENT_MEMBER_DOCKER_SERVER,
+        &PROJECTENVIRONMENT_MEMBER_HOST_KERNEL,
+    ],
+);
+impl ProjectEnvironment {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PROJECTENVIRONMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProjectEnvironment {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.r#type;
+            ser.write_string(&PROJECTENVIRONMENT_MEMBER_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.image;
+            ser.write_string(&PROJECTENVIRONMENT_MEMBER_IMAGE, val)?;
+        }
+        {
+            let val = &self.compute_type;
+            ser.write_string(&PROJECTENVIRONMENT_MEMBER_COMPUTE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.compute_configuration {
+            ser.write_struct(&PROJECTENVIRONMENT_MEMBER_COMPUTE_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.fleet {
+            ser.write_struct(&PROJECTENVIRONMENT_MEMBER_FLEET, val)?;
+        }
+        if let Some(ref val) = self.environment_variables {
+            ser.write_list(
+                &PROJECTENVIRONMENT_MEMBER_ENVIRONMENT_VARIABLES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EnvironmentVariable::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.privileged_mode {
+            ser.write_boolean(&PROJECTENVIRONMENT_MEMBER_PRIVILEGED_MODE, *val)?;
+        }
+        if let Some(ref val) = self.certificate {
+            ser.write_string(&PROJECTENVIRONMENT_MEMBER_CERTIFICATE, val)?;
+        }
+        if let Some(ref val) = self.registry_credential {
+            ser.write_struct(&PROJECTENVIRONMENT_MEMBER_REGISTRY_CREDENTIAL, val)?;
+        }
+        if let Some(ref val) = self.image_pull_credentials_type {
+            ser.write_string(&PROJECTENVIRONMENT_MEMBER_IMAGE_PULL_CREDENTIALS_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.docker_server {
+            ser.write_struct(&PROJECTENVIRONMENT_MEMBER_DOCKER_SERVER, val)?;
+        }
+        if let Some(ref val) = self.host_kernel {
+            ser.write_string(&PROJECTENVIRONMENT_MEMBER_HOST_KERNEL, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProjectEnvironmentBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PROJECTENVIRONMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.r#type = Some(crate::types::EnvironmentType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    self.image = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.compute_type = Some(crate::types::ComputeType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_configuration = Some(crate::types::ComputeConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fleet = Some(crate::types::ProjectFleet::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment_variables = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EnvironmentVariable::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.privileged_mode = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registry_credential = Some(crate::types::RegistryCredential::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_pull_credentials_type = Some(crate::types::ImagePullCredentialsType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.docker_server = Some(crate::types::DockerServer::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.host_kernel = Some(crate::types::HostKernel::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProjectEnvironment {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.image = builder.image.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ProjectEnvironment {
     /// Creates a new builder-style object to manufacture [`ProjectEnvironment`](crate::types::ProjectEnvironment).
     pub fn builder() -> crate::types::builders::ProjectEnvironmentBuilder {

@@ -37,6 +37,140 @@ impl ScheduleLambdaFunctionFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+static SCHEDULELAMBDAFUNCTIONFAILEDEVENTATTRIBUTES_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ScheduleLambdaFunctionFailedEventAttributes$id",
+        "com.amazonaws.swf",
+        "ScheduleLambdaFunctionFailedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "id",
+    0,
+);
+static SCHEDULELAMBDAFUNCTIONFAILEDEVENTATTRIBUTES_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ScheduleLambdaFunctionFailedEventAttributes$name",
+        "com.amazonaws.swf",
+        "ScheduleLambdaFunctionFailedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    1,
+);
+static SCHEDULELAMBDAFUNCTIONFAILEDEVENTATTRIBUTES_MEMBER_CAUSE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ScheduleLambdaFunctionFailedEventAttributes$cause",
+        "com.amazonaws.swf",
+        "ScheduleLambdaFunctionFailedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cause",
+    2,
+);
+static SCHEDULELAMBDAFUNCTIONFAILEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ScheduleLambdaFunctionFailedEventAttributes$decisionTaskCompletedEventId",
+            "com.amazonaws.swf",
+            "ScheduleLambdaFunctionFailedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "decisionTaskCompletedEventId",
+        3,
+    );
+static SCHEDULELAMBDAFUNCTIONFAILEDEVENTATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ScheduleLambdaFunctionFailedEventAttributes",
+        "com.amazonaws.swf",
+        "ScheduleLambdaFunctionFailedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SCHEDULELAMBDAFUNCTIONFAILEDEVENTATTRIBUTES_MEMBER_ID,
+        &SCHEDULELAMBDAFUNCTIONFAILEDEVENTATTRIBUTES_MEMBER_NAME,
+        &SCHEDULELAMBDAFUNCTIONFAILEDEVENTATTRIBUTES_MEMBER_CAUSE,
+        &SCHEDULELAMBDAFUNCTIONFAILEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID,
+    ],
+);
+impl ScheduleLambdaFunctionFailedEventAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SCHEDULELAMBDAFUNCTIONFAILEDEVENTATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ScheduleLambdaFunctionFailedEventAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.id;
+            ser.write_string(&SCHEDULELAMBDAFUNCTIONFAILEDEVENTATTRIBUTES_MEMBER_ID, val)?;
+        }
+        {
+            let val = &self.name;
+            ser.write_string(&SCHEDULELAMBDAFUNCTIONFAILEDEVENTATTRIBUTES_MEMBER_NAME, val)?;
+        }
+        {
+            let val = &self.cause;
+            ser.write_string(&SCHEDULELAMBDAFUNCTIONFAILEDEVENTATTRIBUTES_MEMBER_CAUSE, val.as_str())?;
+        }
+        {
+            let val = &self.decision_task_completed_event_id;
+            ser.write_long(&SCHEDULELAMBDAFUNCTIONFAILEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ScheduleLambdaFunctionFailedEventAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SCHEDULELAMBDAFUNCTIONFAILEDEVENTATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.cause = Some(crate::types::ScheduleLambdaFunctionFailedCause::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    self.decision_task_completed_event_id = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ScheduleLambdaFunctionFailedEventAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.id = builder.id.or(Some(String::new()));
+        builder.name = builder.name.or(Some(String::new()));
+        builder.decision_task_completed_event_id = builder.decision_task_completed_event_id.or(Some(0i64));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ScheduleLambdaFunctionFailedEventAttributes {
     /// Creates a new builder-style object to manufacture [`ScheduleLambdaFunctionFailedEventAttributes`](crate::types::ScheduleLambdaFunctionFailedEventAttributes).
     pub fn builder() -> crate::types::builders::ScheduleLambdaFunctionFailedEventAttributesBuilder {

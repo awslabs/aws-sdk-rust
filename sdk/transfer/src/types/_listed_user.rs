@@ -60,6 +60,168 @@ impl ListedUser {
         self.user_name.as_deref()
     }
 }
+static LISTEDUSER_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ListedUser$Arn", "com.amazonaws.transfer", "ListedUser"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    0,
+);
+static LISTEDUSER_MEMBER_HOME_DIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ListedUser$HomeDirectory", "com.amazonaws.transfer", "ListedUser"),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeDirectory",
+    1,
+);
+static LISTEDUSER_MEMBER_HOME_DIRECTORY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedUser$HomeDirectoryType",
+        "com.amazonaws.transfer",
+        "ListedUser",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeDirectoryType",
+    2,
+);
+static LISTEDUSER_MEMBER_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ListedUser$Role", "com.amazonaws.transfer", "ListedUser"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Role",
+    3,
+);
+static LISTEDUSER_MEMBER_SSH_PUBLIC_KEY_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedUser$SshPublicKeyCount",
+        "com.amazonaws.transfer",
+        "ListedUser",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "SshPublicKeyCount",
+    4,
+);
+static LISTEDUSER_MEMBER_USER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ListedUser$UserName", "com.amazonaws.transfer", "ListedUser"),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserName",
+    5,
+);
+static LISTEDUSER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ListedUser", "com.amazonaws.transfer", "ListedUser"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTEDUSER_MEMBER_ARN,
+        &LISTEDUSER_MEMBER_HOME_DIRECTORY,
+        &LISTEDUSER_MEMBER_HOME_DIRECTORY_TYPE,
+        &LISTEDUSER_MEMBER_ROLE,
+        &LISTEDUSER_MEMBER_SSH_PUBLIC_KEY_COUNT,
+        &LISTEDUSER_MEMBER_USER_NAME,
+    ],
+);
+impl ListedUser {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTEDUSER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListedUser {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.arn;
+            ser.write_string(&LISTEDUSER_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.home_directory {
+            ser.write_string(&LISTEDUSER_MEMBER_HOME_DIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.home_directory_type {
+            ser.write_string(&LISTEDUSER_MEMBER_HOME_DIRECTORY_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.role {
+            ser.write_string(&LISTEDUSER_MEMBER_ROLE, val)?;
+        }
+        if let Some(ref val) = self.ssh_public_key_count {
+            ser.write_integer(&LISTEDUSER_MEMBER_SSH_PUBLIC_KEY_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.user_name {
+            ser.write_string(&LISTEDUSER_MEMBER_USER_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ListedUserBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTEDUSER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_directory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_directory_type = Some(crate::types::HomeDirectoryType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ssh_public_key_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListedUser {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.arn = builder.arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListedUser {
     /// Creates a new builder-style object to manufacture [`ListedUser`](crate::types::ListedUser).
     pub fn builder() -> crate::types::builders::ListedUserBuilder {

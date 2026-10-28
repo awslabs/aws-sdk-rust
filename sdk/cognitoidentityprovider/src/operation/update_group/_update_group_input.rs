@@ -40,6 +40,173 @@ impl UpdateGroupInput {
         self.precedence
     }
 }
+static UPDATEGROUPINPUT_MEMBER_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateGroupInput$GroupName",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GroupName",
+    0,
+);
+static UPDATEGROUPINPUT_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateGroupInput$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    1,
+);
+static UPDATEGROUPINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateGroupInput$Description",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static UPDATEGROUPINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateGroupInput$RoleArn",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    3,
+);
+static UPDATEGROUPINPUT_MEMBER_PRECEDENCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateGroupInput$Precedence",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Precedence",
+    4,
+);
+static UPDATEGROUPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateGroupInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEGROUPINPUT_MEMBER_GROUP_NAME,
+        &UPDATEGROUPINPUT_MEMBER_USER_POOL_ID,
+        &UPDATEGROUPINPUT_MEMBER_DESCRIPTION,
+        &UPDATEGROUPINPUT_MEMBER_ROLE_ARN,
+        &UPDATEGROUPINPUT_MEMBER_PRECEDENCE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateGroupRequest");
+impl UpdateGroupInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEGROUPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateGroupInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.group_name {
+            ser.write_string(&UPDATEGROUPINPUT_MEMBER_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&UPDATEGROUPINPUT_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATEGROUPINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&UPDATEGROUPINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.precedence {
+            ser.write_integer(&UPDATEGROUPINPUT_MEMBER_PRECEDENCE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_group::builders::UpdateGroupInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEGROUPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.precedence = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateGroupInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.group_name = builder.group_name.or(Some(String::new()));
+        builder.user_pool_id = builder.user_pool_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
     pub fn builder() -> crate::operation::update_group::builders::UpdateGroupInputBuilder {

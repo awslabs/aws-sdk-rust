@@ -25,6 +25,127 @@ impl BatchDeleteFirewallRuleError {
         self.message.as_deref()
     }
 }
+static BATCHDELETEFIREWALLRULEERROR_MEMBER_FIREWALL_RULE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#BatchDeleteFirewallRuleError$FirewallRule",
+        "com.amazonaws.route53resolver",
+        "BatchDeleteFirewallRuleError",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FirewallRule",
+    0,
+);
+static BATCHDELETEFIREWALLRULEERROR_MEMBER_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#BatchDeleteFirewallRuleError$Code",
+        "com.amazonaws.route53resolver",
+        "BatchDeleteFirewallRuleError",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Code",
+    1,
+);
+static BATCHDELETEFIREWALLRULEERROR_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#BatchDeleteFirewallRuleError$Message",
+        "com.amazonaws.route53resolver",
+        "BatchDeleteFirewallRuleError",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    2,
+);
+static BATCHDELETEFIREWALLRULEERROR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#BatchDeleteFirewallRuleError",
+        "com.amazonaws.route53resolver",
+        "BatchDeleteFirewallRuleError",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHDELETEFIREWALLRULEERROR_MEMBER_FIREWALL_RULE,
+        &BATCHDELETEFIREWALLRULEERROR_MEMBER_CODE,
+        &BATCHDELETEFIREWALLRULEERROR_MEMBER_MESSAGE,
+    ],
+);
+impl BatchDeleteFirewallRuleError {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHDELETEFIREWALLRULEERROR_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchDeleteFirewallRuleError {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.firewall_rule {
+            ser.write_struct(&BATCHDELETEFIREWALLRULEERROR_MEMBER_FIREWALL_RULE, val)?;
+        }
+        if let Some(ref val) = self.code {
+            ser.write_string(&BATCHDELETEFIREWALLRULEERROR_MEMBER_CODE, val)?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&BATCHDELETEFIREWALLRULEERROR_MEMBER_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BatchDeleteFirewallRuleErrorBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHDELETEFIREWALLRULEERROR_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firewall_rule = Some(crate::types::DeleteFirewallRuleEntry::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchDeleteFirewallRuleError {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl BatchDeleteFirewallRuleError {
     /// Creates a new builder-style object to manufacture [`BatchDeleteFirewallRuleError`](crate::types::BatchDeleteFirewallRuleError).
     pub fn builder() -> crate::types::builders::BatchDeleteFirewallRuleErrorBuilder {

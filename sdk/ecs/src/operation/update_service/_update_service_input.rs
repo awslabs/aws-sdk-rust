@@ -304,6 +304,768 @@ impl UpdateServiceInput {
         self.monitoring.as_ref()
     }
 }
+static UPDATESERVICEINPUT_MEMBER_CLUSTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$cluster",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cluster",
+    0,
+);
+static UPDATESERVICEINPUT_MEMBER_SERVICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$service",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "service",
+    1,
+);
+static UPDATESERVICEINPUT_MEMBER_DESIRED_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$desiredCount",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "desiredCount",
+    2,
+);
+static UPDATESERVICEINPUT_MEMBER_TASK_DEFINITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$taskDefinition",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskDefinition",
+    3,
+);
+static UPDATESERVICEINPUT_MEMBER_CAPACITY_PROVIDER_STRATEGY_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#CapacityProviderStrategy$member",
+        "com.amazonaws.ecs",
+        "CapacityProviderStrategy",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATESERVICEINPUT_MEMBER_CAPACITY_PROVIDER_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$capacityProviderStrategy",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "capacityProviderStrategy",
+    4,
+)
+.with_list_member(&UPDATESERVICEINPUT_MEMBER_CAPACITY_PROVIDER_STRATEGY_MEMBER);
+static UPDATESERVICEINPUT_MEMBER_DEPLOYMENT_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$deploymentConfiguration",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "deploymentConfiguration",
+    5,
+);
+static UPDATESERVICEINPUT_MEMBER_AVAILABILITY_ZONE_REBALANCING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$availabilityZoneRebalancing",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "availabilityZoneRebalancing",
+    6,
+);
+static UPDATESERVICEINPUT_MEMBER_NETWORK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$networkConfiguration",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "networkConfiguration",
+    7,
+);
+static UPDATESERVICEINPUT_MEMBER_PLACEMENT_CONSTRAINTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#PlacementConstraints$member",
+        "com.amazonaws.ecs",
+        "PlacementConstraints",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATESERVICEINPUT_MEMBER_PLACEMENT_CONSTRAINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$placementConstraints",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "placementConstraints",
+    8,
+)
+.with_list_member(&UPDATESERVICEINPUT_MEMBER_PLACEMENT_CONSTRAINTS_MEMBER);
+static UPDATESERVICEINPUT_MEMBER_PLACEMENT_STRATEGY_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#PlacementStrategies$member", "com.amazonaws.ecs", "PlacementStrategies"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATESERVICEINPUT_MEMBER_PLACEMENT_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$placementStrategy",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "placementStrategy",
+    9,
+)
+.with_list_member(&UPDATESERVICEINPUT_MEMBER_PLACEMENT_STRATEGY_MEMBER);
+static UPDATESERVICEINPUT_MEMBER_PLATFORM_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$platformVersion",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "platformVersion",
+    10,
+);
+static UPDATESERVICEINPUT_MEMBER_FORCE_NEW_DEPLOYMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$forceNewDeployment",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "forceNewDeployment",
+    11,
+);
+static UPDATESERVICEINPUT_MEMBER_HEALTH_CHECK_GRACE_PERIOD_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$healthCheckGracePeriodSeconds",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "healthCheckGracePeriodSeconds",
+    12,
+);
+static UPDATESERVICEINPUT_MEMBER_DEPLOYMENT_CONTROLLER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$deploymentController",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "deploymentController",
+    13,
+);
+static UPDATESERVICEINPUT_MEMBER_ENABLE_EXECUTE_COMMAND: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$enableExecuteCommand",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "enableExecuteCommand",
+    14,
+);
+static UPDATESERVICEINPUT_MEMBER_ENABLE_ECS_MANAGED_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$enableECSManagedTags",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "enableECSManagedTags",
+    15,
+);
+static UPDATESERVICEINPUT_MEMBER_LOAD_BALANCERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#LoadBalancers$member", "com.amazonaws.ecs", "LoadBalancers"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATESERVICEINPUT_MEMBER_LOAD_BALANCERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$loadBalancers",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "loadBalancers",
+    16,
+)
+.with_list_member(&UPDATESERVICEINPUT_MEMBER_LOAD_BALANCERS_MEMBER);
+static UPDATESERVICEINPUT_MEMBER_PROPAGATE_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$propagateTags",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "propagateTags",
+    17,
+);
+static UPDATESERVICEINPUT_MEMBER_SERVICE_REGISTRIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRegistries$member", "com.amazonaws.ecs", "ServiceRegistries"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATESERVICEINPUT_MEMBER_SERVICE_REGISTRIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$serviceRegistries",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "serviceRegistries",
+    18,
+)
+.with_list_member(&UPDATESERVICEINPUT_MEMBER_SERVICE_REGISTRIES_MEMBER);
+static UPDATESERVICEINPUT_MEMBER_SERVICE_CONNECT_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$serviceConnectConfiguration",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "serviceConnectConfiguration",
+    19,
+);
+static UPDATESERVICEINPUT_MEMBER_VOLUME_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceVolumeConfigurations$member",
+        "com.amazonaws.ecs",
+        "ServiceVolumeConfigurations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATESERVICEINPUT_MEMBER_VOLUME_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$volumeConfigurations",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "volumeConfigurations",
+    20,
+)
+.with_list_member(&UPDATESERVICEINPUT_MEMBER_VOLUME_CONFIGURATIONS_MEMBER);
+static UPDATESERVICEINPUT_MEMBER_VPC_LATTICE_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#VpcLatticeConfigurations$member",
+        "com.amazonaws.ecs",
+        "VpcLatticeConfigurations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATESERVICEINPUT_MEMBER_VPC_LATTICE_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$vpcLatticeConfigurations",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "vpcLatticeConfigurations",
+    21,
+)
+.with_list_member(&UPDATESERVICEINPUT_MEMBER_VPC_LATTICE_CONFIGURATIONS_MEMBER);
+static UPDATESERVICEINPUT_MEMBER_GATEWAY_CONNECTORS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayConnectorList$member",
+        "com.amazonaws.ecs",
+        "GatewayConnectorList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATESERVICEINPUT_MEMBER_GATEWAY_CONNECTORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$gatewayConnectors",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "gatewayConnectors",
+    22,
+)
+.with_list_member(&UPDATESERVICEINPUT_MEMBER_GATEWAY_CONNECTORS_MEMBER);
+static UPDATESERVICEINPUT_MEMBER_MONITORING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput$monitoring",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "monitoring",
+    23,
+);
+static UPDATESERVICEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#UpdateServiceInput",
+        "com.amazonaws.ecs.synthetic",
+        "UpdateServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATESERVICEINPUT_MEMBER_CLUSTER,
+        &UPDATESERVICEINPUT_MEMBER_SERVICE,
+        &UPDATESERVICEINPUT_MEMBER_DESIRED_COUNT,
+        &UPDATESERVICEINPUT_MEMBER_TASK_DEFINITION,
+        &UPDATESERVICEINPUT_MEMBER_CAPACITY_PROVIDER_STRATEGY,
+        &UPDATESERVICEINPUT_MEMBER_DEPLOYMENT_CONFIGURATION,
+        &UPDATESERVICEINPUT_MEMBER_AVAILABILITY_ZONE_REBALANCING,
+        &UPDATESERVICEINPUT_MEMBER_NETWORK_CONFIGURATION,
+        &UPDATESERVICEINPUT_MEMBER_PLACEMENT_CONSTRAINTS,
+        &UPDATESERVICEINPUT_MEMBER_PLACEMENT_STRATEGY,
+        &UPDATESERVICEINPUT_MEMBER_PLATFORM_VERSION,
+        &UPDATESERVICEINPUT_MEMBER_FORCE_NEW_DEPLOYMENT,
+        &UPDATESERVICEINPUT_MEMBER_HEALTH_CHECK_GRACE_PERIOD_SECONDS,
+        &UPDATESERVICEINPUT_MEMBER_DEPLOYMENT_CONTROLLER,
+        &UPDATESERVICEINPUT_MEMBER_ENABLE_EXECUTE_COMMAND,
+        &UPDATESERVICEINPUT_MEMBER_ENABLE_ECS_MANAGED_TAGS,
+        &UPDATESERVICEINPUT_MEMBER_LOAD_BALANCERS,
+        &UPDATESERVICEINPUT_MEMBER_PROPAGATE_TAGS,
+        &UPDATESERVICEINPUT_MEMBER_SERVICE_REGISTRIES,
+        &UPDATESERVICEINPUT_MEMBER_SERVICE_CONNECT_CONFIGURATION,
+        &UPDATESERVICEINPUT_MEMBER_VOLUME_CONFIGURATIONS,
+        &UPDATESERVICEINPUT_MEMBER_VPC_LATTICE_CONFIGURATIONS,
+        &UPDATESERVICEINPUT_MEMBER_GATEWAY_CONNECTORS,
+        &UPDATESERVICEINPUT_MEMBER_MONITORING,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateServiceRequest");
+impl UpdateServiceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATESERVICEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateServiceInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster {
+            ser.write_string(&UPDATESERVICEINPUT_MEMBER_CLUSTER, val)?;
+        }
+        if let Some(ref val) = self.service {
+            ser.write_string(&UPDATESERVICEINPUT_MEMBER_SERVICE, val)?;
+        }
+        if let Some(ref val) = self.desired_count {
+            ser.write_integer(&UPDATESERVICEINPUT_MEMBER_DESIRED_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.task_definition {
+            ser.write_string(&UPDATESERVICEINPUT_MEMBER_TASK_DEFINITION, val)?;
+        }
+        if let Some(ref val) = self.capacity_provider_strategy {
+            ser.write_list(
+                &UPDATESERVICEINPUT_MEMBER_CAPACITY_PROVIDER_STRATEGY,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CapacityProviderStrategyItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.deployment_configuration {
+            ser.write_struct(&UPDATESERVICEINPUT_MEMBER_DEPLOYMENT_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.availability_zone_rebalancing {
+            ser.write_string(&UPDATESERVICEINPUT_MEMBER_AVAILABILITY_ZONE_REBALANCING, val.as_str())?;
+        }
+        if let Some(ref val) = self.network_configuration {
+            ser.write_struct(&UPDATESERVICEINPUT_MEMBER_NETWORK_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.placement_constraints {
+            ser.write_list(
+                &UPDATESERVICEINPUT_MEMBER_PLACEMENT_CONSTRAINTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PlacementConstraint::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.placement_strategy {
+            ser.write_list(
+                &UPDATESERVICEINPUT_MEMBER_PLACEMENT_STRATEGY,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PlacementStrategy::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.platform_version {
+            ser.write_string(&UPDATESERVICEINPUT_MEMBER_PLATFORM_VERSION, val)?;
+        }
+        if let Some(ref val) = self.force_new_deployment {
+            ser.write_boolean(&UPDATESERVICEINPUT_MEMBER_FORCE_NEW_DEPLOYMENT, *val)?;
+        }
+        if let Some(ref val) = self.health_check_grace_period_seconds {
+            ser.write_integer(&UPDATESERVICEINPUT_MEMBER_HEALTH_CHECK_GRACE_PERIOD_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.deployment_controller {
+            ser.write_struct(&UPDATESERVICEINPUT_MEMBER_DEPLOYMENT_CONTROLLER, val)?;
+        }
+        if let Some(ref val) = self.enable_execute_command {
+            ser.write_boolean(&UPDATESERVICEINPUT_MEMBER_ENABLE_EXECUTE_COMMAND, *val)?;
+        }
+        if let Some(ref val) = self.enable_ecs_managed_tags {
+            ser.write_boolean(&UPDATESERVICEINPUT_MEMBER_ENABLE_ECS_MANAGED_TAGS, *val)?;
+        }
+        if let Some(ref val) = self.load_balancers {
+            ser.write_list(
+                &UPDATESERVICEINPUT_MEMBER_LOAD_BALANCERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::LoadBalancer::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.propagate_tags {
+            ser.write_string(&UPDATESERVICEINPUT_MEMBER_PROPAGATE_TAGS, val.as_str())?;
+        }
+        if let Some(ref val) = self.service_registries {
+            ser.write_list(
+                &UPDATESERVICEINPUT_MEMBER_SERVICE_REGISTRIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ServiceRegistry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.service_connect_configuration {
+            ser.write_struct(&UPDATESERVICEINPUT_MEMBER_SERVICE_CONNECT_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.volume_configurations {
+            ser.write_list(
+                &UPDATESERVICEINPUT_MEMBER_VOLUME_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ServiceVolumeConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.vpc_lattice_configurations {
+            ser.write_list(
+                &UPDATESERVICEINPUT_MEMBER_VPC_LATTICE_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::VpcLatticeConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.gateway_connectors {
+            ser.write_list(
+                &UPDATESERVICEINPUT_MEMBER_GATEWAY_CONNECTORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::GatewayConnector::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.monitoring {
+            ser.write_struct(&UPDATESERVICEINPUT_MEMBER_MONITORING, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_service::builders::UpdateServiceInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATESERVICEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.desired_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_definition = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_provider_strategy = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CapacityProviderStrategyItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_configuration = Some(crate::types::DeploymentConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.availability_zone_rebalancing =
+                            Some(crate::types::AvailabilityZoneRebalancing::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_configuration = Some(crate::types::NetworkConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.placement_constraints = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PlacementConstraint::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.placement_strategy = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PlacementStrategy::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.force_new_deployment = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check_grace_period_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_controller = Some(crate::types::DeploymentController::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_execute_command = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_ecs_managed_tags = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.load_balancers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LoadBalancer::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.propagate_tags = Some(crate::types::PropagateTags::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_registries = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ServiceRegistry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_connect_configuration = Some(crate::types::ServiceConnectConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ServiceVolumeConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_lattice_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::VpcLatticeConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_connectors = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::GatewayConnector::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring = Some(crate::types::MonitoringConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateServiceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.service = builder.service.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateServiceInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
     pub fn builder() -> crate::operation::update_service::builders::UpdateServiceInputBuilder {

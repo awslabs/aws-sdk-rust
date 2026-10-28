@@ -69,6 +69,231 @@ impl TaskOverride {
         self.ephemeral_storage.as_ref()
     }
 }
+static TASKOVERRIDE_MEMBER_CONTAINER_OVERRIDES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerOverrides$member", "com.amazonaws.ecs", "ContainerOverrides"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TASKOVERRIDE_MEMBER_CONTAINER_OVERRIDES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#TaskOverride$containerOverrides", "com.amazonaws.ecs", "TaskOverride"),
+    ::aws_smithy_schema::ShapeType::List,
+    "containerOverrides",
+    0,
+)
+.with_list_member(&TASKOVERRIDE_MEMBER_CONTAINER_OVERRIDES_MEMBER);
+static TASKOVERRIDE_MEMBER_CPU: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#TaskOverride$cpu", "com.amazonaws.ecs", "TaskOverride"),
+    ::aws_smithy_schema::ShapeType::String,
+    "cpu",
+    1,
+);
+static TASKOVERRIDE_MEMBER_INFERENCE_ACCELERATOR_OVERRIDES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InferenceAcceleratorOverrides$member",
+        "com.amazonaws.ecs",
+        "InferenceAcceleratorOverrides",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TASKOVERRIDE_MEMBER_INFERENCE_ACCELERATOR_OVERRIDES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#TaskOverride$inferenceAcceleratorOverrides",
+        "com.amazonaws.ecs",
+        "TaskOverride",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "inferenceAcceleratorOverrides",
+    2,
+)
+.with_list_member(&TASKOVERRIDE_MEMBER_INFERENCE_ACCELERATOR_OVERRIDES_MEMBER);
+static TASKOVERRIDE_MEMBER_EXECUTION_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#TaskOverride$executionRoleArn", "com.amazonaws.ecs", "TaskOverride"),
+    ::aws_smithy_schema::ShapeType::String,
+    "executionRoleArn",
+    3,
+);
+static TASKOVERRIDE_MEMBER_MEMORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#TaskOverride$memory", "com.amazonaws.ecs", "TaskOverride"),
+    ::aws_smithy_schema::ShapeType::String,
+    "memory",
+    4,
+);
+static TASKOVERRIDE_MEMBER_TASK_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#TaskOverride$taskRoleArn", "com.amazonaws.ecs", "TaskOverride"),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskRoleArn",
+    5,
+);
+static TASKOVERRIDE_MEMBER_EPHEMERAL_STORAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#TaskOverride$ephemeralStorage", "com.amazonaws.ecs", "TaskOverride"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ephemeralStorage",
+    6,
+);
+static TASKOVERRIDE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#TaskOverride", "com.amazonaws.ecs", "TaskOverride"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TASKOVERRIDE_MEMBER_CONTAINER_OVERRIDES,
+        &TASKOVERRIDE_MEMBER_CPU,
+        &TASKOVERRIDE_MEMBER_INFERENCE_ACCELERATOR_OVERRIDES,
+        &TASKOVERRIDE_MEMBER_EXECUTION_ROLE_ARN,
+        &TASKOVERRIDE_MEMBER_MEMORY,
+        &TASKOVERRIDE_MEMBER_TASK_ROLE_ARN,
+        &TASKOVERRIDE_MEMBER_EPHEMERAL_STORAGE,
+    ],
+);
+impl TaskOverride {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TASKOVERRIDE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TaskOverride {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.container_overrides {
+            ser.write_list(
+                &TASKOVERRIDE_MEMBER_CONTAINER_OVERRIDES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ContainerOverride::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.cpu {
+            ser.write_string(&TASKOVERRIDE_MEMBER_CPU, val)?;
+        }
+        if let Some(ref val) = self.inference_accelerator_overrides {
+            ser.write_list(
+                &TASKOVERRIDE_MEMBER_INFERENCE_ACCELERATOR_OVERRIDES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::InferenceAcceleratorOverride::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.execution_role_arn {
+            ser.write_string(&TASKOVERRIDE_MEMBER_EXECUTION_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.memory {
+            ser.write_string(&TASKOVERRIDE_MEMBER_MEMORY, val)?;
+        }
+        if let Some(ref val) = self.task_role_arn {
+            ser.write_string(&TASKOVERRIDE_MEMBER_TASK_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.ephemeral_storage {
+            ser.write_struct(&TASKOVERRIDE_MEMBER_EPHEMERAL_STORAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TaskOverrideBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TASKOVERRIDE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_overrides = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ContainerOverride::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cpu = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_accelerator_overrides = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InferenceAcceleratorOverride::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.memory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ephemeral_storage = Some(crate::types::EphemeralStorage::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TaskOverride {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TaskOverride {
     /// Creates a new builder-style object to manufacture [`TaskOverride`](crate::types::TaskOverride).
     pub fn builder() -> crate::types::builders::TaskOverrideBuilder {

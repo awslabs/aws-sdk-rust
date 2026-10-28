@@ -185,3 +185,221 @@ impl AcmCertificateMetadataFilter {
         matches!(self, Self::Unknown)
     }
 }
+static ACMCERTIFICATEMETADATAFILTER_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadataFilter$Status",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadataFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    0,
+);
+static ACMCERTIFICATEMETADATAFILTER_MEMBER_RENEWALSTATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadataFilter$RenewalStatus",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadataFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RenewalStatus",
+    1,
+);
+static ACMCERTIFICATEMETADATAFILTER_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadataFilter$Type",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadataFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    2,
+);
+static ACMCERTIFICATEMETADATAFILTER_MEMBER_INUSE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadataFilter$InUse",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadataFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "InUse",
+    3,
+);
+static ACMCERTIFICATEMETADATAFILTER_MEMBER_EXPORTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadataFilter$Exported",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadataFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Exported",
+    4,
+);
+static ACMCERTIFICATEMETADATAFILTER_MEMBER_EXPORTOPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadataFilter$ExportOption",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadataFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExportOption",
+    5,
+);
+static ACMCERTIFICATEMETADATAFILTER_MEMBER_MANAGEDBY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadataFilter$ManagedBy",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadataFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ManagedBy",
+    6,
+);
+static ACMCERTIFICATEMETADATAFILTER_MEMBER_VALIDATIONMETHOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadataFilter$ValidationMethod",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadataFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ValidationMethod",
+    7,
+);
+static ACMCERTIFICATEMETADATAFILTER_MEMBER_CERTIFICATEKEYPAIRORIGIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadataFilter$CertificateKeyPairOrigin",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadataFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertificateKeyPairOrigin",
+    8,
+);
+static ACMCERTIFICATEMETADATAFILTER_MEMBER_ACMEENDPOINTARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadataFilter$AcmeEndpointArn",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadataFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcmeEndpointArn",
+    9,
+);
+static ACMCERTIFICATEMETADATAFILTER_MEMBER_ACMEACCOUNTID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadataFilter$AcmeAccountId",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadataFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcmeAccountId",
+    10,
+);
+static ACMCERTIFICATEMETADATAFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadataFilter",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadataFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    &[
+        &ACMCERTIFICATEMETADATAFILTER_MEMBER_STATUS,
+        &ACMCERTIFICATEMETADATAFILTER_MEMBER_RENEWALSTATUS,
+        &ACMCERTIFICATEMETADATAFILTER_MEMBER_TYPE,
+        &ACMCERTIFICATEMETADATAFILTER_MEMBER_INUSE,
+        &ACMCERTIFICATEMETADATAFILTER_MEMBER_EXPORTED,
+        &ACMCERTIFICATEMETADATAFILTER_MEMBER_EXPORTOPTION,
+        &ACMCERTIFICATEMETADATAFILTER_MEMBER_MANAGEDBY,
+        &ACMCERTIFICATEMETADATAFILTER_MEMBER_VALIDATIONMETHOD,
+        &ACMCERTIFICATEMETADATAFILTER_MEMBER_CERTIFICATEKEYPAIRORIGIN,
+        &ACMCERTIFICATEMETADATAFILTER_MEMBER_ACMEENDPOINTARN,
+        &ACMCERTIFICATEMETADATAFILTER_MEMBER_ACMEACCOUNTID,
+    ],
+);
+impl AcmCertificateMetadataFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACMCERTIFICATEMETADATAFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AcmCertificateMetadataFilter {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        match self {
+            Self::Status(val) => {
+                ser.write_string(&ACMCERTIFICATEMETADATAFILTER_MEMBER_STATUS, val.as_str())?;
+            }
+            Self::RenewalStatus(val) => {
+                ser.write_string(&ACMCERTIFICATEMETADATAFILTER_MEMBER_RENEWALSTATUS, val.as_str())?;
+            }
+            Self::Type(val) => {
+                ser.write_string(&ACMCERTIFICATEMETADATAFILTER_MEMBER_TYPE, val.as_str())?;
+            }
+            Self::InUse(val) => {
+                ser.write_boolean(&ACMCERTIFICATEMETADATAFILTER_MEMBER_INUSE, *val)?;
+            }
+            Self::Exported(val) => {
+                ser.write_boolean(&ACMCERTIFICATEMETADATAFILTER_MEMBER_EXPORTED, *val)?;
+            }
+            Self::ExportOption(val) => {
+                ser.write_string(&ACMCERTIFICATEMETADATAFILTER_MEMBER_EXPORTOPTION, val.as_str())?;
+            }
+            Self::ManagedBy(val) => {
+                ser.write_string(&ACMCERTIFICATEMETADATAFILTER_MEMBER_MANAGEDBY, val.as_str())?;
+            }
+            Self::ValidationMethod(val) => {
+                ser.write_string(&ACMCERTIFICATEMETADATAFILTER_MEMBER_VALIDATIONMETHOD, val.as_str())?;
+            }
+            Self::CertificateKeyPairOrigin(val) => {
+                ser.write_string(&ACMCERTIFICATEMETADATAFILTER_MEMBER_CERTIFICATEKEYPAIRORIGIN, val.as_str())?;
+            }
+            Self::AcmeEndpointArn(val) => {
+                ser.write_string(&ACMCERTIFICATEMETADATAFILTER_MEMBER_ACMEENDPOINTARN, val)?;
+            }
+            Self::AcmeAccountId(val) => {
+                ser.write_string(&ACMCERTIFICATEMETADATAFILTER_MEMBER_ACMEACCOUNTID, val)?;
+            }
+            Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
+        }
+        Ok(())
+    }
+}
+impl AcmCertificateMetadataFilter {
+    /// Deserializes this union from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut result: ::std::option::Option<Self> = ::std::option::Option::None;
+        #[allow(unused_variables, unreachable_code, clippy::single_match, clippy::match_single_binding)]
+        deserializer.read_struct(&ACMCERTIFICATEMETADATAFILTER_SCHEMA, &mut |member, deser| {
+            // A union holds exactly one member; the deserializer reports every key
+            // (known or not), so a second one is an error whatever it names.
+            if result.is_some() {
+                return Err(::aws_smithy_schema::serde::SerdeError::invalid_input(
+                    "encountered mixed variants in union",
+                ));
+            }
+            result = ::std::option::Option::Some(match member.member_index() {
+                Some(0) => Self::Status(crate::types::CertificateStatus::from(deser.read_string(member)?.as_str())),
+                Some(1) => Self::RenewalStatus(crate::types::RenewalStatus::from(deser.read_string(member)?.as_str())),
+                Some(2) => Self::Type(crate::types::CertificateType::from(deser.read_string(member)?.as_str())),
+                Some(3) => Self::InUse(deser.read_boolean(member)?),
+                Some(4) => Self::Exported(deser.read_boolean(member)?),
+                Some(5) => Self::ExportOption(crate::types::CertificateExport::from(deser.read_string(member)?.as_str())),
+                Some(6) => Self::ManagedBy(crate::types::CertificateManagedBy::from(deser.read_string(member)?.as_str())),
+                Some(7) => Self::ValidationMethod(crate::types::ValidationMethod::from(deser.read_string(member)?.as_str())),
+                Some(8) => Self::CertificateKeyPairOrigin(crate::types::CertificateKeyPairOrigin::from(deser.read_string(member)?.as_str())),
+                Some(9) => Self::AcmeEndpointArn(deser.read_string(member)?),
+                Some(10) => Self::AcmeAccountId(deser.read_string(member)?),
+                _ => Self::Unknown,
+            });
+            Ok(())
+        })?;
+        result.ok_or_else(|| ::aws_smithy_schema::serde::SerdeError::custom("expected a union variant"))
+    }
+}

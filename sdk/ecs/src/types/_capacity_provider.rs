@@ -145,6 +145,268 @@ impl CapacityProvider {
         self.r#type.as_ref()
     }
 }
+static CAPACITYPROVIDER_MEMBER_CAPACITY_PROVIDER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#CapacityProvider$capacityProviderArn",
+        "com.amazonaws.ecs",
+        "CapacityProvider",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "capacityProviderArn",
+    0,
+);
+static CAPACITYPROVIDER_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#CapacityProvider$name", "com.amazonaws.ecs", "CapacityProvider"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    1,
+);
+static CAPACITYPROVIDER_MEMBER_CLUSTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#CapacityProvider$cluster", "com.amazonaws.ecs", "CapacityProvider"),
+    ::aws_smithy_schema::ShapeType::String,
+    "cluster",
+    2,
+);
+static CAPACITYPROVIDER_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#CapacityProvider$status", "com.amazonaws.ecs", "CapacityProvider"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    3,
+);
+static CAPACITYPROVIDER_MEMBER_AUTO_SCALING_GROUP_PROVIDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#CapacityProvider$autoScalingGroupProvider",
+        "com.amazonaws.ecs",
+        "CapacityProvider",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "autoScalingGroupProvider",
+    4,
+);
+static CAPACITYPROVIDER_MEMBER_MANAGED_INSTANCES_PROVIDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#CapacityProvider$managedInstancesProvider",
+        "com.amazonaws.ecs",
+        "CapacityProvider",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "managedInstancesProvider",
+    5,
+);
+static CAPACITYPROVIDER_MEMBER_UPDATE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#CapacityProvider$updateStatus", "com.amazonaws.ecs", "CapacityProvider"),
+    ::aws_smithy_schema::ShapeType::String,
+    "updateStatus",
+    6,
+);
+static CAPACITYPROVIDER_MEMBER_UPDATE_STATUS_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#CapacityProvider$updateStatusReason",
+        "com.amazonaws.ecs",
+        "CapacityProvider",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "updateStatusReason",
+    7,
+);
+static CAPACITYPROVIDER_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Tags$member", "com.amazonaws.ecs", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CAPACITYPROVIDER_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#CapacityProvider$tags", "com.amazonaws.ecs", "CapacityProvider"),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    8,
+)
+.with_list_member(&CAPACITYPROVIDER_MEMBER_TAGS_MEMBER);
+static CAPACITYPROVIDER_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#CapacityProvider$type", "com.amazonaws.ecs", "CapacityProvider"),
+    ::aws_smithy_schema::ShapeType::String,
+    "type",
+    9,
+);
+static CAPACITYPROVIDER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#CapacityProvider", "com.amazonaws.ecs", "CapacityProvider"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CAPACITYPROVIDER_MEMBER_CAPACITY_PROVIDER_ARN,
+        &CAPACITYPROVIDER_MEMBER_NAME,
+        &CAPACITYPROVIDER_MEMBER_CLUSTER,
+        &CAPACITYPROVIDER_MEMBER_STATUS,
+        &CAPACITYPROVIDER_MEMBER_AUTO_SCALING_GROUP_PROVIDER,
+        &CAPACITYPROVIDER_MEMBER_MANAGED_INSTANCES_PROVIDER,
+        &CAPACITYPROVIDER_MEMBER_UPDATE_STATUS,
+        &CAPACITYPROVIDER_MEMBER_UPDATE_STATUS_REASON,
+        &CAPACITYPROVIDER_MEMBER_TAGS,
+        &CAPACITYPROVIDER_MEMBER_TYPE,
+    ],
+);
+impl CapacityProvider {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CAPACITYPROVIDER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CapacityProvider {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.capacity_provider_arn {
+            ser.write_string(&CAPACITYPROVIDER_MEMBER_CAPACITY_PROVIDER_ARN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&CAPACITYPROVIDER_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.cluster {
+            ser.write_string(&CAPACITYPROVIDER_MEMBER_CLUSTER, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&CAPACITYPROVIDER_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.auto_scaling_group_provider {
+            ser.write_struct(&CAPACITYPROVIDER_MEMBER_AUTO_SCALING_GROUP_PROVIDER, val)?;
+        }
+        if let Some(ref val) = self.managed_instances_provider {
+            ser.write_struct(&CAPACITYPROVIDER_MEMBER_MANAGED_INSTANCES_PROVIDER, val)?;
+        }
+        if let Some(ref val) = self.update_status {
+            ser.write_string(&CAPACITYPROVIDER_MEMBER_UPDATE_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.update_status_reason {
+            ser.write_string(&CAPACITYPROVIDER_MEMBER_UPDATE_STATUS_REASON, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CAPACITYPROVIDER_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&CAPACITYPROVIDER_MEMBER_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CapacityProviderBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CAPACITYPROVIDER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_provider_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::CapacityProviderStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_scaling_group_provider = Some(crate::types::AutoScalingGroupProvider::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_instances_provider = Some(crate::types::ManagedInstancesProvider::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.update_status = Some(crate::types::CapacityProviderUpdateStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.update_status_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::CapacityProviderType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CapacityProvider {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CapacityProvider {
     /// Creates a new builder-style object to manufacture [`CapacityProvider`](crate::types::CapacityProvider).
     pub fn builder() -> crate::types::builders::CapacityProviderBuilder {

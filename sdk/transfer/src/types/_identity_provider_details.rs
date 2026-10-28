@@ -57,6 +57,169 @@ impl IdentityProviderDetails {
         self.sftp_authentication_methods.as_ref()
     }
 }
+static IDENTITYPROVIDERDETAILS_MEMBER_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#IdentityProviderDetails$Url",
+        "com.amazonaws.transfer",
+        "IdentityProviderDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Url",
+    0,
+);
+static IDENTITYPROVIDERDETAILS_MEMBER_INVOCATION_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#IdentityProviderDetails$InvocationRole",
+        "com.amazonaws.transfer",
+        "IdentityProviderDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InvocationRole",
+    1,
+);
+static IDENTITYPROVIDERDETAILS_MEMBER_DIRECTORY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#IdentityProviderDetails$DirectoryId",
+        "com.amazonaws.transfer",
+        "IdentityProviderDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DirectoryId",
+    2,
+);
+static IDENTITYPROVIDERDETAILS_MEMBER_FUNCTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#IdentityProviderDetails$Function",
+        "com.amazonaws.transfer",
+        "IdentityProviderDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Function",
+    3,
+);
+static IDENTITYPROVIDERDETAILS_MEMBER_SFTP_AUTHENTICATION_METHODS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#IdentityProviderDetails$SftpAuthenticationMethods",
+        "com.amazonaws.transfer",
+        "IdentityProviderDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SftpAuthenticationMethods",
+    4,
+);
+static IDENTITYPROVIDERDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#IdentityProviderDetails",
+        "com.amazonaws.transfer",
+        "IdentityProviderDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &IDENTITYPROVIDERDETAILS_MEMBER_URL,
+        &IDENTITYPROVIDERDETAILS_MEMBER_INVOCATION_ROLE,
+        &IDENTITYPROVIDERDETAILS_MEMBER_DIRECTORY_ID,
+        &IDENTITYPROVIDERDETAILS_MEMBER_FUNCTION,
+        &IDENTITYPROVIDERDETAILS_MEMBER_SFTP_AUTHENTICATION_METHODS,
+    ],
+);
+impl IdentityProviderDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &IDENTITYPROVIDERDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for IdentityProviderDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.url {
+            ser.write_string(&IDENTITYPROVIDERDETAILS_MEMBER_URL, val)?;
+        }
+        if let Some(ref val) = self.invocation_role {
+            ser.write_string(&IDENTITYPROVIDERDETAILS_MEMBER_INVOCATION_ROLE, val)?;
+        }
+        if let Some(ref val) = self.directory_id {
+            ser.write_string(&IDENTITYPROVIDERDETAILS_MEMBER_DIRECTORY_ID, val)?;
+        }
+        if let Some(ref val) = self.function {
+            ser.write_string(&IDENTITYPROVIDERDETAILS_MEMBER_FUNCTION, val)?;
+        }
+        if let Some(ref val) = self.sftp_authentication_methods {
+            ser.write_string(&IDENTITYPROVIDERDETAILS_MEMBER_SFTP_AUTHENTICATION_METHODS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::IdentityProviderDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&IDENTITYPROVIDERDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.invocation_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.directory_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.function = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sftp_authentication_methods = Some(crate::types::SftpAuthenticationMethods::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl IdentityProviderDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl IdentityProviderDetails {
     /// Creates a new builder-style object to manufacture [`IdentityProviderDetails`](crate::types::IdentityProviderDetails).
     pub fn builder() -> crate::types::builders::IdentityProviderDetailsBuilder {

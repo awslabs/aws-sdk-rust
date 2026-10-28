@@ -43,6 +43,17 @@ const _: () = assert!(
     "OverriddenHooks uses a u32 bitmask; widen to u64 in interceptors.rs if more hooks are needed"
 );
 
+/// Expands to the canonical list of interceptor hook names, in lifecycle order.
+///
+/// A proc-macro crate cannot export a `const`, so this is how `KNOWN_HOOKS` is made available to
+/// callers -- notably the hook expectation matrix test, which asserts its rows against this list so
+/// that adding a hook cannot silently leave it untested.
+#[proc_macro]
+pub fn known_hooks(_input: TokenStream) -> TokenStream {
+    let names = KNOWN_HOOKS.iter();
+    quote::quote! { &[#(#names),*] }.into()
+}
+
 /// Automatically generates an `overridden_hooks()` method on an `impl Intercept` block
 /// based on which hook methods are overridden.
 ///

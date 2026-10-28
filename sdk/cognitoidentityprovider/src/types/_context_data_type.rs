@@ -41,6 +41,188 @@ impl ContextDataType {
         self.encoded_data.as_deref()
     }
 }
+static CONTEXTDATATYPE_MEMBER_IP_ADDRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ContextDataType$IpAddress",
+        "com.amazonaws.cognitoidentityprovider",
+        "ContextDataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IpAddress",
+    0,
+);
+static CONTEXTDATATYPE_MEMBER_SERVER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ContextDataType$ServerName",
+        "com.amazonaws.cognitoidentityprovider",
+        "ContextDataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServerName",
+    1,
+);
+static CONTEXTDATATYPE_MEMBER_SERVER_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ContextDataType$ServerPath",
+        "com.amazonaws.cognitoidentityprovider",
+        "ContextDataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServerPath",
+    2,
+);
+static CONTEXTDATATYPE_MEMBER_HTTP_HEADERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#HttpHeaderList$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "HttpHeaderList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTEXTDATATYPE_MEMBER_HTTP_HEADERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ContextDataType$HttpHeaders",
+        "com.amazonaws.cognitoidentityprovider",
+        "ContextDataType",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "HttpHeaders",
+    3,
+)
+.with_list_member(&CONTEXTDATATYPE_MEMBER_HTTP_HEADERS_MEMBER);
+static CONTEXTDATATYPE_MEMBER_ENCODED_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ContextDataType$EncodedData",
+        "com.amazonaws.cognitoidentityprovider",
+        "ContextDataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EncodedData",
+    4,
+);
+static CONTEXTDATATYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ContextDataType",
+        "com.amazonaws.cognitoidentityprovider",
+        "ContextDataType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTEXTDATATYPE_MEMBER_IP_ADDRESS,
+        &CONTEXTDATATYPE_MEMBER_SERVER_NAME,
+        &CONTEXTDATATYPE_MEMBER_SERVER_PATH,
+        &CONTEXTDATATYPE_MEMBER_HTTP_HEADERS,
+        &CONTEXTDATATYPE_MEMBER_ENCODED_DATA,
+    ],
+);
+impl ContextDataType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTEXTDATATYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContextDataType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.ip_address;
+            ser.write_string(&CONTEXTDATATYPE_MEMBER_IP_ADDRESS, val)?;
+        }
+        {
+            let val = &self.server_name;
+            ser.write_string(&CONTEXTDATATYPE_MEMBER_SERVER_NAME, val)?;
+        }
+        {
+            let val = &self.server_path;
+            ser.write_string(&CONTEXTDATATYPE_MEMBER_SERVER_PATH, val)?;
+        }
+        {
+            let val = &self.http_headers;
+
+            ser.write_list(
+                &CONTEXTDATATYPE_MEMBER_HTTP_HEADERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::HttpHeader::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.encoded_data {
+            ser.write_string(&CONTEXTDATATYPE_MEMBER_ENCODED_DATA, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContextDataTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTEXTDATATYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.ip_address = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.server_name = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.server_path = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.http_headers = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::HttpHeader::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encoded_data = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContextDataType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.ip_address = builder.ip_address.or(Some(String::new()));
+        builder.server_name = builder.server_name.or(Some(String::new()));
+        builder.server_path = builder.server_path.or(Some(String::new()));
+        builder.http_headers = builder.http_headers.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ContextDataType {
     /// Creates a new builder-style object to manufacture [`ContextDataType`](crate::types::ContextDataType).
     pub fn builder() -> crate::types::builders::ContextDataTypeBuilder {

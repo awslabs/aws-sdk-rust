@@ -19,6 +19,103 @@ impl LoggingConfiguration {
         self.log_group_name.as_deref()
     }
 }
+static LOGGINGCONFIGURATION_MEMBER_LOGGING_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#LoggingConfiguration$LoggingRole",
+        "com.amazonaws.transfer",
+        "LoggingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LoggingRole",
+    0,
+);
+static LOGGINGCONFIGURATION_MEMBER_LOG_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#LoggingConfiguration$LogGroupName",
+        "com.amazonaws.transfer",
+        "LoggingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LogGroupName",
+    1,
+);
+static LOGGINGCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#LoggingConfiguration",
+        "com.amazonaws.transfer",
+        "LoggingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&LOGGINGCONFIGURATION_MEMBER_LOGGING_ROLE, &LOGGINGCONFIGURATION_MEMBER_LOG_GROUP_NAME],
+);
+impl LoggingConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LOGGINGCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LoggingConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.logging_role {
+            ser.write_string(&LOGGINGCONFIGURATION_MEMBER_LOGGING_ROLE, val)?;
+        }
+        if let Some(ref val) = self.log_group_name {
+            ser.write_string(&LOGGINGCONFIGURATION_MEMBER_LOG_GROUP_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LoggingConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LOGGINGCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logging_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LoggingConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LoggingConfiguration {
     /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::types::LoggingConfiguration).
     pub fn builder() -> crate::types::builders::LoggingConfigurationBuilder {

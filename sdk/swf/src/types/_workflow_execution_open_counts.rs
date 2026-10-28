@@ -37,6 +37,155 @@ impl WorkflowExecutionOpenCounts {
         self.open_lambda_functions
     }
 }
+static WORKFLOWEXECUTIONOPENCOUNTS_MEMBER_OPEN_ACTIVITY_TASKS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionOpenCounts$openActivityTasks",
+        "com.amazonaws.swf",
+        "WorkflowExecutionOpenCounts",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "openActivityTasks",
+    0,
+);
+static WORKFLOWEXECUTIONOPENCOUNTS_MEMBER_OPEN_DECISION_TASKS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionOpenCounts$openDecisionTasks",
+        "com.amazonaws.swf",
+        "WorkflowExecutionOpenCounts",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "openDecisionTasks",
+    1,
+);
+static WORKFLOWEXECUTIONOPENCOUNTS_MEMBER_OPEN_TIMERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionOpenCounts$openTimers",
+        "com.amazonaws.swf",
+        "WorkflowExecutionOpenCounts",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "openTimers",
+    2,
+);
+static WORKFLOWEXECUTIONOPENCOUNTS_MEMBER_OPEN_CHILD_WORKFLOW_EXECUTIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#WorkflowExecutionOpenCounts$openChildWorkflowExecutions",
+            "com.amazonaws.swf",
+            "WorkflowExecutionOpenCounts",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "openChildWorkflowExecutions",
+        3,
+    );
+static WORKFLOWEXECUTIONOPENCOUNTS_MEMBER_OPEN_LAMBDA_FUNCTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionOpenCounts$openLambdaFunctions",
+        "com.amazonaws.swf",
+        "WorkflowExecutionOpenCounts",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "openLambdaFunctions",
+    4,
+);
+static WORKFLOWEXECUTIONOPENCOUNTS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionOpenCounts",
+        "com.amazonaws.swf",
+        "WorkflowExecutionOpenCounts",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKFLOWEXECUTIONOPENCOUNTS_MEMBER_OPEN_ACTIVITY_TASKS,
+        &WORKFLOWEXECUTIONOPENCOUNTS_MEMBER_OPEN_DECISION_TASKS,
+        &WORKFLOWEXECUTIONOPENCOUNTS_MEMBER_OPEN_TIMERS,
+        &WORKFLOWEXECUTIONOPENCOUNTS_MEMBER_OPEN_CHILD_WORKFLOW_EXECUTIONS,
+        &WORKFLOWEXECUTIONOPENCOUNTS_MEMBER_OPEN_LAMBDA_FUNCTIONS,
+    ],
+);
+impl WorkflowExecutionOpenCounts {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKFLOWEXECUTIONOPENCOUNTS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WorkflowExecutionOpenCounts {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.open_activity_tasks;
+            ser.write_integer(&WORKFLOWEXECUTIONOPENCOUNTS_MEMBER_OPEN_ACTIVITY_TASKS, *val)?;
+        }
+        {
+            let val = &self.open_decision_tasks;
+            ser.write_integer(&WORKFLOWEXECUTIONOPENCOUNTS_MEMBER_OPEN_DECISION_TASKS, *val)?;
+        }
+        {
+            let val = &self.open_timers;
+            ser.write_integer(&WORKFLOWEXECUTIONOPENCOUNTS_MEMBER_OPEN_TIMERS, *val)?;
+        }
+        {
+            let val = &self.open_child_workflow_executions;
+            ser.write_integer(&WORKFLOWEXECUTIONOPENCOUNTS_MEMBER_OPEN_CHILD_WORKFLOW_EXECUTIONS, *val)?;
+        }
+        {
+            let val = &self.open_lambda_functions;
+            ser.write_integer(&WORKFLOWEXECUTIONOPENCOUNTS_MEMBER_OPEN_LAMBDA_FUNCTIONS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkflowExecutionOpenCountsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKFLOWEXECUTIONOPENCOUNTS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.open_activity_tasks = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    self.open_decision_tasks = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    self.open_timers = Some(deser.read_integer(member)?);
+                }
+                Some(3) => {
+                    self.open_child_workflow_executions = Some(deser.read_integer(member)?);
+                }
+                Some(4) => {
+                    self.open_lambda_functions = Some(deser.read_integer(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WorkflowExecutionOpenCounts {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl WorkflowExecutionOpenCounts {
     /// Creates a new builder-style object to manufacture [`WorkflowExecutionOpenCounts`](crate::types::WorkflowExecutionOpenCounts).
     pub fn builder() -> crate::types::builders::WorkflowExecutionOpenCountsBuilder {

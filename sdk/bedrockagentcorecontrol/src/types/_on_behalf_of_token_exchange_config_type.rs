@@ -8,6 +8,8 @@ pub struct OnBehalfOfTokenExchangeConfigType {
     pub grant_type: crate::types::OnBehalfOfTokenExchangeGrantTypeType,
     /// <p>Configuration specific to the TOKEN_EXCHANGE grant type (RFC 8693).</p>
     pub token_exchange_grant_type_config: ::std::option::Option<crate::types::TokenExchangeGrantTypeConfigType>,
+    /// <p>Specify the client authentication configuration to use for the on-behalf-of token exchange. With this configuration, you override the provider level client authentication method for the on-behalf-of exchange with the identity provider. If you don't specify this configuration, we use the provider level client authentication method.</p>
+    pub on_behalf_of_authentication_config: ::std::option::Option<crate::types::OnBehalfOfAuthenticationConfig>,
 }
 impl OnBehalfOfTokenExchangeConfigType {
     /// <p>The grant type for the on-behalf-of token exchange.</p>
@@ -17,6 +19,10 @@ impl OnBehalfOfTokenExchangeConfigType {
     /// <p>Configuration specific to the TOKEN_EXCHANGE grant type (RFC 8693).</p>
     pub fn token_exchange_grant_type_config(&self) -> ::std::option::Option<&crate::types::TokenExchangeGrantTypeConfigType> {
         self.token_exchange_grant_type_config.as_ref()
+    }
+    /// <p>Specify the client authentication configuration to use for the on-behalf-of token exchange. With this configuration, you override the provider level client authentication method for the on-behalf-of exchange with the identity provider. If you don't specify this configuration, we use the provider level client authentication method.</p>
+    pub fn on_behalf_of_authentication_config(&self) -> ::std::option::Option<&crate::types::OnBehalfOfAuthenticationConfig> {
+        self.on_behalf_of_authentication_config.as_ref()
     }
 }
 impl OnBehalfOfTokenExchangeConfigType {
@@ -32,6 +38,7 @@ impl OnBehalfOfTokenExchangeConfigType {
 pub struct OnBehalfOfTokenExchangeConfigTypeBuilder {
     pub(crate) grant_type: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeGrantTypeType>,
     pub(crate) token_exchange_grant_type_config: ::std::option::Option<crate::types::TokenExchangeGrantTypeConfigType>,
+    pub(crate) on_behalf_of_authentication_config: ::std::option::Option<crate::types::OnBehalfOfAuthenticationConfig>,
 }
 impl OnBehalfOfTokenExchangeConfigTypeBuilder {
     /// <p>The grant type for the on-behalf-of token exchange.</p>
@@ -63,6 +70,20 @@ impl OnBehalfOfTokenExchangeConfigTypeBuilder {
     pub fn get_token_exchange_grant_type_config(&self) -> &::std::option::Option<crate::types::TokenExchangeGrantTypeConfigType> {
         &self.token_exchange_grant_type_config
     }
+    /// <p>Specify the client authentication configuration to use for the on-behalf-of token exchange. With this configuration, you override the provider level client authentication method for the on-behalf-of exchange with the identity provider. If you don't specify this configuration, we use the provider level client authentication method.</p>
+    pub fn on_behalf_of_authentication_config(mut self, input: crate::types::OnBehalfOfAuthenticationConfig) -> Self {
+        self.on_behalf_of_authentication_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify the client authentication configuration to use for the on-behalf-of token exchange. With this configuration, you override the provider level client authentication method for the on-behalf-of exchange with the identity provider. If you don't specify this configuration, we use the provider level client authentication method.</p>
+    pub fn set_on_behalf_of_authentication_config(mut self, input: ::std::option::Option<crate::types::OnBehalfOfAuthenticationConfig>) -> Self {
+        self.on_behalf_of_authentication_config = input;
+        self
+    }
+    /// <p>Specify the client authentication configuration to use for the on-behalf-of token exchange. With this configuration, you override the provider level client authentication method for the on-behalf-of exchange with the identity provider. If you don't specify this configuration, we use the provider level client authentication method.</p>
+    pub fn get_on_behalf_of_authentication_config(&self) -> &::std::option::Option<crate::types::OnBehalfOfAuthenticationConfig> {
+        &self.on_behalf_of_authentication_config
+    }
     /// Consumes the builder and constructs a [`OnBehalfOfTokenExchangeConfigType`](crate::types::OnBehalfOfTokenExchangeConfigType).
     /// This method will fail if any of the following fields are not set:
     /// - [`grant_type`](crate::types::builders::OnBehalfOfTokenExchangeConfigTypeBuilder::grant_type)
@@ -75,6 +96,7 @@ impl OnBehalfOfTokenExchangeConfigTypeBuilder {
                 )
             })?,
             token_exchange_grant_type_config: self.token_exchange_grant_type_config,
+            on_behalf_of_authentication_config: self.on_behalf_of_authentication_config,
         })
     }
 }

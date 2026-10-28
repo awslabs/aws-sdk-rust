@@ -19,6 +19,106 @@ impl RevocationConfiguration {
         self.ocsp_configuration.as_ref()
     }
 }
+static REVOCATIONCONFIGURATION_MEMBER_CRL_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#RevocationConfiguration$CrlConfiguration",
+        "com.amazonaws.acmpca",
+        "RevocationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CrlConfiguration",
+    0,
+);
+static REVOCATIONCONFIGURATION_MEMBER_OCSP_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#RevocationConfiguration$OcspConfiguration",
+        "com.amazonaws.acmpca",
+        "RevocationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OcspConfiguration",
+    1,
+);
+static REVOCATIONCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#RevocationConfiguration",
+        "com.amazonaws.acmpca",
+        "RevocationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REVOCATIONCONFIGURATION_MEMBER_CRL_CONFIGURATION,
+        &REVOCATIONCONFIGURATION_MEMBER_OCSP_CONFIGURATION,
+    ],
+);
+impl RevocationConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REVOCATIONCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RevocationConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.crl_configuration {
+            ser.write_struct(&REVOCATIONCONFIGURATION_MEMBER_CRL_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.ocsp_configuration {
+            ser.write_struct(&REVOCATIONCONFIGURATION_MEMBER_OCSP_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RevocationConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REVOCATIONCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.crl_configuration = Some(crate::types::CrlConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ocsp_configuration = Some(crate::types::OcspConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RevocationConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RevocationConfiguration {
     /// Creates a new builder-style object to manufacture [`RevocationConfiguration`](crate::types::RevocationConfiguration).
     pub fn builder() -> crate::types::builders::RevocationConfigurationBuilder {

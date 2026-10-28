@@ -219,6 +219,8 @@ pub use crate::types::_key_value_pair::KeyValuePairBuilder;
 
 pub use crate::types::_attachment::AttachmentBuilder;
 
+pub use crate::types::_gpu_device::GpuDeviceBuilder;
+
 pub use crate::types::_daemon_deployment_revision_detail::DaemonDeploymentRevisionDetailBuilder;
 
 pub use crate::types::_daemon_circuit_breaker::DaemonCircuitBreakerBuilder;
@@ -422,6 +424,8 @@ pub use crate::types::_gateway_connection::GatewayConnectionBuilder;
 pub use crate::types::_network_interface::NetworkInterfaceBuilder;
 
 pub use crate::types::_managed_agent::ManagedAgentBuilder;
+
+pub use crate::types::_nvidia_mps_allocation::NvidiaMpsAllocationBuilder;
 
 pub use crate::types::_gateway_route_load_balancer_security_group::GatewayRouteLoadBalancerSecurityGroupBuilder;
 

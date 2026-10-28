@@ -68,6 +68,302 @@ impl ImportCustomWorkspaceImageInput {
         self.image_validation_mode.as_ref()
     }
 }
+static IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_IMAGE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ImportCustomWorkspaceImageInput$ImageName",
+        "com.amazonaws.workspaces.synthetic",
+        "ImportCustomWorkspaceImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageName",
+    0,
+);
+static IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_IMAGE_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ImportCustomWorkspaceImageInput$ImageDescription",
+        "com.amazonaws.workspaces.synthetic",
+        "ImportCustomWorkspaceImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageDescription",
+    1,
+);
+static IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_COMPUTE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ImportCustomWorkspaceImageInput$ComputeType",
+        "com.amazonaws.workspaces.synthetic",
+        "ImportCustomWorkspaceImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComputeType",
+    2,
+);
+static IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_PROTOCOL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ImportCustomWorkspaceImageInput$Protocol",
+        "com.amazonaws.workspaces.synthetic",
+        "ImportCustomWorkspaceImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Protocol",
+    3,
+);
+static IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_IMAGE_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ImportCustomWorkspaceImageInput$ImageSource",
+        "com.amazonaws.workspaces.synthetic",
+        "ImportCustomWorkspaceImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "ImageSource",
+    4,
+);
+static IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_INFRASTRUCTURE_CONFIGURATION_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces.synthetic#ImportCustomWorkspaceImageInput$InfrastructureConfigurationArn",
+            "com.amazonaws.workspaces.synthetic",
+            "ImportCustomWorkspaceImageInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "InfrastructureConfigurationArn",
+        5,
+    );
+static IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_PLATFORM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ImportCustomWorkspaceImageInput$Platform",
+        "com.amazonaws.workspaces.synthetic",
+        "ImportCustomWorkspaceImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Platform",
+    6,
+);
+static IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_OS_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ImportCustomWorkspaceImageInput$OsVersion",
+        "com.amazonaws.workspaces.synthetic",
+        "ImportCustomWorkspaceImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OsVersion",
+    7,
+);
+static IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#TagList$member", "com.amazonaws.workspaces", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ImportCustomWorkspaceImageInput$Tags",
+        "com.amazonaws.workspaces.synthetic",
+        "ImportCustomWorkspaceImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    8,
+)
+.with_list_member(&IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_TAGS_MEMBER);
+static IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_IMAGE_VALIDATION_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ImportCustomWorkspaceImageInput$ImageValidationMode",
+        "com.amazonaws.workspaces.synthetic",
+        "ImportCustomWorkspaceImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageValidationMode",
+    9,
+);
+static IMPORTCUSTOMWORKSPACEIMAGEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ImportCustomWorkspaceImageInput",
+        "com.amazonaws.workspaces.synthetic",
+        "ImportCustomWorkspaceImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_IMAGE_NAME,
+        &IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_IMAGE_DESCRIPTION,
+        &IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_COMPUTE_TYPE,
+        &IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_PROTOCOL,
+        &IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_IMAGE_SOURCE,
+        &IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_INFRASTRUCTURE_CONFIGURATION_ARN,
+        &IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_PLATFORM,
+        &IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_OS_VERSION,
+        &IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_TAGS,
+        &IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_IMAGE_VALIDATION_MODE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ImportCustomWorkspaceImageRequest");
+impl ImportCustomWorkspaceImageInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &IMPORTCUSTOMWORKSPACEIMAGEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ImportCustomWorkspaceImageInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.image_name {
+            ser.write_string(&IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_IMAGE_NAME, val)?;
+        }
+        if let Some(ref val) = self.image_description {
+            ser.write_string(&IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_IMAGE_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.compute_type {
+            ser.write_string(&IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_COMPUTE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.protocol {
+            ser.write_string(&IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_PROTOCOL, val.as_str())?;
+        }
+        if let Some(ref val) = self.image_source {
+            ser.write_struct(&IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_IMAGE_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.infrastructure_configuration_arn {
+            ser.write_string(&IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_INFRASTRUCTURE_CONFIGURATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.platform {
+            ser.write_string(&IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_PLATFORM, val.as_str())?;
+        }
+        if let Some(ref val) = self.os_version {
+            ser.write_string(&IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_OS_VERSION, val.as_str())?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.image_validation_mode {
+            ser.write_string(&IMPORTCUSTOMWORKSPACEIMAGEINPUT_MEMBER_IMAGE_VALIDATION_MODE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::import_custom_workspace_image::builders::ImportCustomWorkspaceImageInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&IMPORTCUSTOMWORKSPACEIMAGEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_type = Some(crate::types::ImageComputeType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocol = Some(crate::types::CustomImageProtocol::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_source = Some(crate::types::ImageSourceIdentifier::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.infrastructure_configuration_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform = Some(crate::types::Platform::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.os_version = Some(crate::types::OsVersion::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_validation_mode = Some(crate::types::ImageValidationMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ImportCustomWorkspaceImageInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.image_name = builder.image_name.or(Some(String::new()));
+        builder.image_description = builder.image_description.or(Some(String::new()));
+        builder.infrastructure_configuration_arn = builder.infrastructure_configuration_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ImportCustomWorkspaceImageInput {
     /// Creates a new builder-style object to manufacture [`ImportCustomWorkspaceImageInput`](crate::operation::import_custom_workspace_image::ImportCustomWorkspaceImageInput).
     pub fn builder() -> crate::operation::import_custom_workspace_image::builders::ImportCustomWorkspaceImageInputBuilder {

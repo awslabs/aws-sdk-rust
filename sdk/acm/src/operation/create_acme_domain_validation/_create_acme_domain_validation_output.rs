@@ -14,6 +14,83 @@ impl CreateAcmeDomainValidationOutput {
         self.acme_domain_validation_arn.deref()
     }
 }
+static CREATEACMEDOMAINVALIDATIONOUTPUT_MEMBER_ACME_DOMAIN_VALIDATION_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.acm.synthetic#CreateAcmeDomainValidationOutput$AcmeDomainValidationArn",
+            "com.amazonaws.acm.synthetic",
+            "CreateAcmeDomainValidationOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "AcmeDomainValidationArn",
+        0,
+    );
+static CREATEACMEDOMAINVALIDATIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeDomainValidationOutput",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeDomainValidationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CREATEACMEDOMAINVALIDATIONOUTPUT_MEMBER_ACME_DOMAIN_VALIDATION_ARN],
+)
+.with_original_name("CreateAcmeDomainValidationResponse");
+impl CreateAcmeDomainValidationOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEACMEDOMAINVALIDATIONOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAcmeDomainValidationOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.acme_domain_validation_arn;
+            ser.write_string(&CREATEACMEDOMAINVALIDATIONOUTPUT_MEMBER_ACME_DOMAIN_VALIDATION_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_acme_domain_validation::builders::CreateAcmeDomainValidationOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEACMEDOMAINVALIDATIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.acme_domain_validation_arn = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateAcmeDomainValidationOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.acme_domain_validation_arn = builder.acme_domain_validation_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for CreateAcmeDomainValidationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

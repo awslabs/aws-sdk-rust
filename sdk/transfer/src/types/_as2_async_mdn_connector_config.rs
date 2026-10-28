@@ -21,6 +21,122 @@ impl As2AsyncMdnConnectorConfig {
         self.server_ids.as_deref().unwrap_or_default()
     }
 }
+static AS2ASYNCMDNCONNECTORCONFIG_MEMBER_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#As2AsyncMdnConnectorConfig$Url",
+        "com.amazonaws.transfer",
+        "As2AsyncMdnConnectorConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Url",
+    0,
+);
+static AS2ASYNCMDNCONNECTORCONFIG_MEMBER_SERVER_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#As2AsyncMdnServerIds$member",
+        "com.amazonaws.transfer",
+        "As2AsyncMdnServerIds",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static AS2ASYNCMDNCONNECTORCONFIG_MEMBER_SERVER_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#As2AsyncMdnConnectorConfig$ServerIds",
+        "com.amazonaws.transfer",
+        "As2AsyncMdnConnectorConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ServerIds",
+    1,
+)
+.with_list_member(&AS2ASYNCMDNCONNECTORCONFIG_MEMBER_SERVER_IDS_MEMBER);
+static AS2ASYNCMDNCONNECTORCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#As2AsyncMdnConnectorConfig",
+        "com.amazonaws.transfer",
+        "As2AsyncMdnConnectorConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&AS2ASYNCMDNCONNECTORCONFIG_MEMBER_URL, &AS2ASYNCMDNCONNECTORCONFIG_MEMBER_SERVER_IDS],
+);
+impl As2AsyncMdnConnectorConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AS2ASYNCMDNCONNECTORCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for As2AsyncMdnConnectorConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.url {
+            ser.write_string(&AS2ASYNCMDNCONNECTORCONFIG_MEMBER_URL, val)?;
+        }
+        if let Some(ref val) = self.server_ids {
+            ser.write_list(
+                &AS2ASYNCMDNCONNECTORCONFIG_MEMBER_SERVER_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::As2AsyncMdnConnectorConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AS2ASYNCMDNCONNECTORCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.server_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl As2AsyncMdnConnectorConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl As2AsyncMdnConnectorConfig {
     /// Creates a new builder-style object to manufacture [`As2AsyncMdnConnectorConfig`](crate::types::As2AsyncMdnConnectorConfig).
     pub fn builder() -> crate::types::builders::As2AsyncMdnConnectorConfigBuilder {

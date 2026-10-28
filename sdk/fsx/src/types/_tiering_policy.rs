@@ -56,6 +56,91 @@ impl TieringPolicy {
         self.name.as_ref()
     }
 }
+static TIERINGPOLICY_MEMBER_COOLING_PERIOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#TieringPolicy$CoolingPeriod", "com.amazonaws.fsx", "TieringPolicy"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "CoolingPeriod",
+    0,
+);
+static TIERINGPOLICY_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#TieringPolicy$Name", "com.amazonaws.fsx", "TieringPolicy"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static TIERINGPOLICY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#TieringPolicy", "com.amazonaws.fsx", "TieringPolicy"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&TIERINGPOLICY_MEMBER_COOLING_PERIOD, &TIERINGPOLICY_MEMBER_NAME],
+);
+impl TieringPolicy {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TIERINGPOLICY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TieringPolicy {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cooling_period {
+            ser.write_integer(&TIERINGPOLICY_MEMBER_COOLING_PERIOD, *val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&TIERINGPOLICY_MEMBER_NAME, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TieringPolicyBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TIERINGPOLICY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cooling_period = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(crate::types::TieringPolicyName::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TieringPolicy {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TieringPolicy {
     /// Creates a new builder-style object to manufacture [`TieringPolicy`](crate::types::TieringPolicy).
     pub fn builder() -> crate::types::builders::TieringPolicyBuilder {

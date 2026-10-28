@@ -31,6 +31,150 @@ impl WorkspaceConnectionStatus {
         self.last_known_user_connection_timestamp.as_ref()
     }
 }
+static WORKSPACECONNECTIONSTATUS_MEMBER_WORKSPACE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceConnectionStatus$WorkspaceId",
+        "com.amazonaws.workspaces",
+        "WorkspaceConnectionStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkspaceId",
+    0,
+);
+static WORKSPACECONNECTIONSTATUS_MEMBER_CONNECTION_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceConnectionStatus$ConnectionState",
+        "com.amazonaws.workspaces",
+        "WorkspaceConnectionStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConnectionState",
+    1,
+);
+static WORKSPACECONNECTIONSTATUS_MEMBER_CONNECTION_STATE_CHECK_TIMESTAMP: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces#WorkspaceConnectionStatus$ConnectionStateCheckTimestamp",
+            "com.amazonaws.workspaces",
+            "WorkspaceConnectionStatus",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "ConnectionStateCheckTimestamp",
+        2,
+    );
+static WORKSPACECONNECTIONSTATUS_MEMBER_LAST_KNOWN_USER_CONNECTION_TIMESTAMP: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces#WorkspaceConnectionStatus$LastKnownUserConnectionTimestamp",
+            "com.amazonaws.workspaces",
+            "WorkspaceConnectionStatus",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "LastKnownUserConnectionTimestamp",
+        3,
+    );
+static WORKSPACECONNECTIONSTATUS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceConnectionStatus",
+        "com.amazonaws.workspaces",
+        "WorkspaceConnectionStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKSPACECONNECTIONSTATUS_MEMBER_WORKSPACE_ID,
+        &WORKSPACECONNECTIONSTATUS_MEMBER_CONNECTION_STATE,
+        &WORKSPACECONNECTIONSTATUS_MEMBER_CONNECTION_STATE_CHECK_TIMESTAMP,
+        &WORKSPACECONNECTIONSTATUS_MEMBER_LAST_KNOWN_USER_CONNECTION_TIMESTAMP,
+    ],
+);
+impl WorkspaceConnectionStatus {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKSPACECONNECTIONSTATUS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WorkspaceConnectionStatus {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.workspace_id {
+            ser.write_string(&WORKSPACECONNECTIONSTATUS_MEMBER_WORKSPACE_ID, val)?;
+        }
+        if let Some(ref val) = self.connection_state {
+            ser.write_string(&WORKSPACECONNECTIONSTATUS_MEMBER_CONNECTION_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.connection_state_check_timestamp {
+            ser.write_timestamp(&WORKSPACECONNECTIONSTATUS_MEMBER_CONNECTION_STATE_CHECK_TIMESTAMP, val)?;
+        }
+        if let Some(ref val) = self.last_known_user_connection_timestamp {
+            ser.write_timestamp(&WORKSPACECONNECTIONSTATUS_MEMBER_LAST_KNOWN_USER_CONNECTION_TIMESTAMP, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkspaceConnectionStatusBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKSPACECONNECTIONSTATUS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.connection_state = Some(crate::types::ConnectionState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.connection_state_check_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_known_user_connection_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WorkspaceConnectionStatus {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl WorkspaceConnectionStatus {
     /// Creates a new builder-style object to manufacture [`WorkspaceConnectionStatus`](crate::types::WorkspaceConnectionStatus).
     pub fn builder() -> crate::types::builders::WorkspaceConnectionStatusBuilder {

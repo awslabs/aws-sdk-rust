@@ -1236,6 +1236,7 @@ impl From<crate::operation::create_workload_identity::CreateWorkloadIdentityErro
             crate::operation::create_workload_identity::CreateWorkloadIdentityError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::create_workload_identity::CreateWorkloadIdentityError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_workload_identity::CreateWorkloadIdentityError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -4684,6 +4685,51 @@ impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reset_token_vault_key_material::ResetTokenVaultKeyMaterialError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reset_token_vault_key_material::ResetTokenVaultKeyMaterialError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reset_token_vault_key_material::ResetTokenVaultKeyMaterialError> for Error {
+    fn from(err: crate::operation::reset_token_vault_key_material::ResetTokenVaultKeyMaterialError) -> Self {
+        match err {
+            crate::operation::reset_token_vault_key_material::ResetTokenVaultKeyMaterialError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::reset_token_vault_key_material::ResetTokenVaultKeyMaterialError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::reset_token_vault_key_material::ResetTokenVaultKeyMaterialError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::reset_token_vault_key_material::ResetTokenVaultKeyMaterialError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::reset_token_vault_key_material::ResetTokenVaultKeyMaterialError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::reset_token_vault_key_material::ResetTokenVaultKeyMaterialError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::reset_token_vault_key_material::ResetTokenVaultKeyMaterialError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::reset_token_vault_key_material::ResetTokenVaultKeyMaterialError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -4757,6 +4803,7 @@ impl From<crate::operation::set_token_vault_cmk::SetTokenVaultCMKError> for Erro
             crate::operation::set_token_vault_cmk::SetTokenVaultCMKError::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
             }
+            crate::operation::set_token_vault_cmk::SetTokenVaultCMKError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::set_token_vault_cmk::SetTokenVaultCMKError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::set_token_vault_cmk::SetTokenVaultCMKError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::set_token_vault_cmk::SetTokenVaultCMKError::ThrottlingException(inner) => Error::ThrottlingException(inner),
@@ -5949,6 +5996,7 @@ impl From<crate::operation::update_workload_identity::UpdateWorkloadIdentityErro
             crate::operation::update_workload_identity::UpdateWorkloadIdentityError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::update_workload_identity::UpdateWorkloadIdentityError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_workload_identity::UpdateWorkloadIdentityError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }

@@ -44,6 +44,193 @@ impl ListActivityTypesInput {
         self.reverse_order
     }
 }
+static LISTACTIVITYTYPESINPUT_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#ListActivityTypesInput$domain",
+        "com.amazonaws.swf.synthetic",
+        "ListActivityTypesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domain",
+    0,
+);
+static LISTACTIVITYTYPESINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#ListActivityTypesInput$name",
+        "com.amazonaws.swf.synthetic",
+        "ListActivityTypesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    1,
+);
+static LISTACTIVITYTYPESINPUT_MEMBER_REGISTRATION_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#ListActivityTypesInput$registrationStatus",
+        "com.amazonaws.swf.synthetic",
+        "ListActivityTypesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "registrationStatus",
+    2,
+);
+static LISTACTIVITYTYPESINPUT_MEMBER_NEXT_PAGE_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#ListActivityTypesInput$nextPageToken",
+        "com.amazonaws.swf.synthetic",
+        "ListActivityTypesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextPageToken",
+    3,
+);
+static LISTACTIVITYTYPESINPUT_MEMBER_MAXIMUM_PAGE_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#ListActivityTypesInput$maximumPageSize",
+        "com.amazonaws.swf.synthetic",
+        "ListActivityTypesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maximumPageSize",
+    4,
+);
+static LISTACTIVITYTYPESINPUT_MEMBER_REVERSE_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#ListActivityTypesInput$reverseOrder",
+        "com.amazonaws.swf.synthetic",
+        "ListActivityTypesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "reverseOrder",
+    5,
+);
+static LISTACTIVITYTYPESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#ListActivityTypesInput",
+        "com.amazonaws.swf.synthetic",
+        "ListActivityTypesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTACTIVITYTYPESINPUT_MEMBER_DOMAIN,
+        &LISTACTIVITYTYPESINPUT_MEMBER_NAME,
+        &LISTACTIVITYTYPESINPUT_MEMBER_REGISTRATION_STATUS,
+        &LISTACTIVITYTYPESINPUT_MEMBER_NEXT_PAGE_TOKEN,
+        &LISTACTIVITYTYPESINPUT_MEMBER_MAXIMUM_PAGE_SIZE,
+        &LISTACTIVITYTYPESINPUT_MEMBER_REVERSE_ORDER,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListActivityTypesInput");
+impl ListActivityTypesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTACTIVITYTYPESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListActivityTypesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain {
+            ser.write_string(&LISTACTIVITYTYPESINPUT_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&LISTACTIVITYTYPESINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.registration_status {
+            ser.write_string(&LISTACTIVITYTYPESINPUT_MEMBER_REGISTRATION_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.next_page_token {
+            ser.write_string(&LISTACTIVITYTYPESINPUT_MEMBER_NEXT_PAGE_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.maximum_page_size {
+            ser.write_integer(&LISTACTIVITYTYPESINPUT_MEMBER_MAXIMUM_PAGE_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.reverse_order {
+            ser.write_boolean(&LISTACTIVITYTYPESINPUT_MEMBER_REVERSE_ORDER, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_activity_types::builders::ListActivityTypesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTACTIVITYTYPESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registration_status = Some(crate::types::RegistrationStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_page_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.maximum_page_size = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reverse_order = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListActivityTypesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain = builder.domain.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListActivityTypesInput {
     /// Creates a new builder-style object to manufacture [`ListActivityTypesInput`](crate::operation::list_activity_types::ListActivityTypesInput).
     pub fn builder() -> crate::operation::list_activity_types::builders::ListActivityTypesInputBuilder {

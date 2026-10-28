@@ -20,6 +20,134 @@ impl ListAssistantAssociationsOutput {
         self.next_token.as_deref()
     }
 }
+static LISTASSISTANTASSOCIATIONSOUTPUT_MEMBER_ASSISTANT_ASSOCIATION_SUMMARIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.wisdom#AssistantAssociationSummaryList$member",
+            "com.amazonaws.wisdom",
+            "AssistantAssociationSummaryList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static LISTASSISTANTASSOCIATIONSOUTPUT_MEMBER_ASSISTANT_ASSOCIATION_SUMMARIES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.wisdom.synthetic#ListAssistantAssociationsOutput$assistantAssociationSummaries",
+            "com.amazonaws.wisdom.synthetic",
+            "ListAssistantAssociationsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "assistantAssociationSummaries",
+        0,
+    )
+    .with_list_member(&LISTASSISTANTASSOCIATIONSOUTPUT_MEMBER_ASSISTANT_ASSOCIATION_SUMMARIES_MEMBER);
+static LISTASSISTANTASSOCIATIONSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#ListAssistantAssociationsOutput$nextToken",
+        "com.amazonaws.wisdom.synthetic",
+        "ListAssistantAssociationsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    1,
+);
+static LISTASSISTANTASSOCIATIONSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#ListAssistantAssociationsOutput",
+        "com.amazonaws.wisdom.synthetic",
+        "ListAssistantAssociationsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTASSISTANTASSOCIATIONSOUTPUT_MEMBER_ASSISTANT_ASSOCIATION_SUMMARIES,
+        &LISTASSISTANTASSOCIATIONSOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("ListAssistantAssociationsResponse");
+impl ListAssistantAssociationsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTASSISTANTASSOCIATIONSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListAssistantAssociationsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.assistant_association_summaries;
+
+            ser.write_list(
+                &LISTASSISTANTASSOCIATIONSOUTPUT_MEMBER_ASSISTANT_ASSOCIATION_SUMMARIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AssistantAssociationSummary::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTASSISTANTASSOCIATIONSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_assistant_associations::builders::ListAssistantAssociationsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTASSISTANTASSOCIATIONSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.assistant_association_summaries = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::AssistantAssociationSummary::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListAssistantAssociationsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.assistant_association_summaries = builder.assistant_association_summaries.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for ListAssistantAssociationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -115,6 +115,187 @@ impl BuildSummary {
         self.secondary_artifacts.as_deref().unwrap_or_default()
     }
 }
+static BUILDSUMMARY_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildSummary$arn", "com.amazonaws.codebuild", "BuildSummary"),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    0,
+);
+static BUILDSUMMARY_MEMBER_REQUESTED_ON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildSummary$requestedOn",
+        "com.amazonaws.codebuild",
+        "BuildSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "requestedOn",
+    1,
+);
+static BUILDSUMMARY_MEMBER_BUILD_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildSummary$buildStatus",
+        "com.amazonaws.codebuild",
+        "BuildSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "buildStatus",
+    2,
+);
+static BUILDSUMMARY_MEMBER_PRIMARY_ARTIFACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildSummary$primaryArtifact",
+        "com.amazonaws.codebuild",
+        "BuildSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "primaryArtifact",
+    3,
+);
+static BUILDSUMMARY_MEMBER_SECONDARY_ARTIFACTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ResolvedSecondaryArtifacts$member",
+        "com.amazonaws.codebuild",
+        "ResolvedSecondaryArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BUILDSUMMARY_MEMBER_SECONDARY_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildSummary$secondaryArtifacts",
+        "com.amazonaws.codebuild",
+        "BuildSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "secondaryArtifacts",
+    4,
+)
+.with_list_member(&BUILDSUMMARY_MEMBER_SECONDARY_ARTIFACTS_MEMBER);
+static BUILDSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildSummary", "com.amazonaws.codebuild", "BuildSummary"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BUILDSUMMARY_MEMBER_ARN,
+        &BUILDSUMMARY_MEMBER_REQUESTED_ON,
+        &BUILDSUMMARY_MEMBER_BUILD_STATUS,
+        &BUILDSUMMARY_MEMBER_PRIMARY_ARTIFACT,
+        &BUILDSUMMARY_MEMBER_SECONDARY_ARTIFACTS,
+    ],
+);
+impl BuildSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BUILDSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BuildSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&BUILDSUMMARY_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.requested_on {
+            ser.write_timestamp(&BUILDSUMMARY_MEMBER_REQUESTED_ON, val)?;
+        }
+        if let Some(ref val) = self.build_status {
+            ser.write_string(&BUILDSUMMARY_MEMBER_BUILD_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.primary_artifact {
+            ser.write_struct(&BUILDSUMMARY_MEMBER_PRIMARY_ARTIFACT, val)?;
+        }
+        if let Some(ref val) = self.secondary_artifacts {
+            ser.write_list(
+                &BUILDSUMMARY_MEMBER_SECONDARY_ARTIFACTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ResolvedArtifact::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BuildSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BUILDSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.requested_on = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.build_status = Some(crate::types::StatusType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.primary_artifact = Some(crate::types::ResolvedArtifact::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_artifacts = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ResolvedArtifact::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BuildSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl BuildSummary {
     /// Creates a new builder-style object to manufacture [`BuildSummary`](crate::types::BuildSummary).
     pub fn builder() -> crate::types::builders::BuildSummaryBuilder {

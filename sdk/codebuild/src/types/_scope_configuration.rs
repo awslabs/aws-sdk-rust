@@ -26,6 +26,122 @@ impl ScopeConfiguration {
         &self.scope
     }
 }
+static SCOPECONFIGURATION_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ScopeConfiguration$name",
+        "com.amazonaws.codebuild",
+        "ScopeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static SCOPECONFIGURATION_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ScopeConfiguration$domain",
+        "com.amazonaws.codebuild",
+        "ScopeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domain",
+    1,
+);
+static SCOPECONFIGURATION_MEMBER_SCOPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ScopeConfiguration$scope",
+        "com.amazonaws.codebuild",
+        "ScopeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "scope",
+    2,
+);
+static SCOPECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ScopeConfiguration",
+        "com.amazonaws.codebuild",
+        "ScopeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SCOPECONFIGURATION_MEMBER_NAME,
+        &SCOPECONFIGURATION_MEMBER_DOMAIN,
+        &SCOPECONFIGURATION_MEMBER_SCOPE,
+    ],
+);
+impl ScopeConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SCOPECONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ScopeConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&SCOPECONFIGURATION_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.domain {
+            ser.write_string(&SCOPECONFIGURATION_MEMBER_DOMAIN, val)?;
+        }
+        {
+            let val = &self.scope;
+            ser.write_string(&SCOPECONFIGURATION_MEMBER_SCOPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ScopeConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SCOPECONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.scope = Some(crate::types::WebhookScopeType::from(deser.read_string(member)?.as_str()));
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ScopeConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ScopeConfiguration {
     /// Creates a new builder-style object to manufacture [`ScopeConfiguration`](crate::types::ScopeConfiguration).
     pub fn builder() -> crate::types::builders::ScopeConfigurationBuilder {

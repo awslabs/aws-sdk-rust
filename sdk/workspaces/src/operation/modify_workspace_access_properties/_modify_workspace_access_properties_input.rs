@@ -18,6 +18,110 @@ impl ModifyWorkspaceAccessPropertiesInput {
         self.workspace_access_properties.as_ref()
     }
 }
+static MODIFYWORKSPACEACCESSPROPERTIESINPUT_MEMBER_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifyWorkspaceAccessPropertiesInput$ResourceId",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifyWorkspaceAccessPropertiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceId",
+    0,
+);
+static MODIFYWORKSPACEACCESSPROPERTIESINPUT_MEMBER_WORKSPACE_ACCESS_PROPERTIES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces.synthetic#ModifyWorkspaceAccessPropertiesInput$WorkspaceAccessProperties",
+            "com.amazonaws.workspaces.synthetic",
+            "ModifyWorkspaceAccessPropertiesInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "WorkspaceAccessProperties",
+        1,
+    );
+static MODIFYWORKSPACEACCESSPROPERTIESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifyWorkspaceAccessPropertiesInput",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifyWorkspaceAccessPropertiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODIFYWORKSPACEACCESSPROPERTIESINPUT_MEMBER_RESOURCE_ID,
+        &MODIFYWORKSPACEACCESSPROPERTIESINPUT_MEMBER_WORKSPACE_ACCESS_PROPERTIES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ModifyWorkspaceAccessPropertiesRequest");
+impl ModifyWorkspaceAccessPropertiesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODIFYWORKSPACEACCESSPROPERTIESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModifyWorkspaceAccessPropertiesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_id {
+            ser.write_string(&MODIFYWORKSPACEACCESSPROPERTIESINPUT_MEMBER_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.workspace_access_properties {
+            ser.write_struct(&MODIFYWORKSPACEACCESSPROPERTIESINPUT_MEMBER_WORKSPACE_ACCESS_PROPERTIES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::modify_workspace_access_properties::builders::ModifyWorkspaceAccessPropertiesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODIFYWORKSPACEACCESSPROPERTIESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_access_properties = Some(crate::types::WorkspaceAccessProperties::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModifyWorkspaceAccessPropertiesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.resource_id = builder.resource_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ModifyWorkspaceAccessPropertiesInput {
     /// Creates a new builder-style object to manufacture [`ModifyWorkspaceAccessPropertiesInput`](crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesInput).
     pub fn builder() -> crate::operation::modify_workspace_access_properties::builders::ModifyWorkspaceAccessPropertiesInputBuilder {

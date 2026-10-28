@@ -20,6 +20,101 @@ impl TaskVolumeConfiguration {
         self.managed_ebs_volume.as_ref()
     }
 }
+static TASKVOLUMECONFIGURATION_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#TaskVolumeConfiguration$name",
+        "com.amazonaws.ecs",
+        "TaskVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static TASKVOLUMECONFIGURATION_MEMBER_MANAGED_EBS_VOLUME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#TaskVolumeConfiguration$managedEBSVolume",
+        "com.amazonaws.ecs",
+        "TaskVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "managedEBSVolume",
+    1,
+);
+static TASKVOLUMECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#TaskVolumeConfiguration",
+        "com.amazonaws.ecs",
+        "TaskVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&TASKVOLUMECONFIGURATION_MEMBER_NAME, &TASKVOLUMECONFIGURATION_MEMBER_MANAGED_EBS_VOLUME],
+);
+impl TaskVolumeConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TASKVOLUMECONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TaskVolumeConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&TASKVOLUMECONFIGURATION_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.managed_ebs_volume {
+            ser.write_struct(&TASKVOLUMECONFIGURATION_MEMBER_MANAGED_EBS_VOLUME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TaskVolumeConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TASKVOLUMECONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_ebs_volume = Some(crate::types::TaskManagedEbsVolumeConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TaskVolumeConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl TaskVolumeConfiguration {
     /// Creates a new builder-style object to manufacture [`TaskVolumeConfiguration`](crate::types::TaskVolumeConfiguration).
     pub fn builder() -> crate::types::builders::TaskVolumeConfigurationBuilder {

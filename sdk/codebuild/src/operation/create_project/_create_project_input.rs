@@ -190,6 +190,656 @@ impl CreateProjectInput {
         self.auto_retry_limit
     }
 }
+static CREATEPROJECTINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$name",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static CREATEPROJECTINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$description",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    1,
+);
+static CREATEPROJECTINPUT_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$source",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "source",
+    2,
+);
+static CREATEPROJECTINPUT_MEMBER_SECONDARY_SOURCES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectSources$member",
+        "com.amazonaws.codebuild",
+        "ProjectSources",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEPROJECTINPUT_MEMBER_SECONDARY_SOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$secondarySources",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "secondarySources",
+    3,
+)
+.with_list_member(&CREATEPROJECTINPUT_MEMBER_SECONDARY_SOURCES_MEMBER);
+static CREATEPROJECTINPUT_MEMBER_SOURCE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$sourceVersion",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sourceVersion",
+    4,
+);
+static CREATEPROJECTINPUT_MEMBER_SECONDARY_SOURCE_VERSIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectSecondarySourceVersions$member",
+        "com.amazonaws.codebuild",
+        "ProjectSecondarySourceVersions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEPROJECTINPUT_MEMBER_SECONDARY_SOURCE_VERSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$secondarySourceVersions",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "secondarySourceVersions",
+    5,
+)
+.with_list_member(&CREATEPROJECTINPUT_MEMBER_SECONDARY_SOURCE_VERSIONS_MEMBER);
+static CREATEPROJECTINPUT_MEMBER_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$artifacts",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "artifacts",
+    6,
+);
+static CREATEPROJECTINPUT_MEMBER_SECONDARY_ARTIFACTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectArtifactsList$member",
+        "com.amazonaws.codebuild",
+        "ProjectArtifactsList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEPROJECTINPUT_MEMBER_SECONDARY_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$secondaryArtifacts",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "secondaryArtifacts",
+    7,
+)
+.with_list_member(&CREATEPROJECTINPUT_MEMBER_SECONDARY_ARTIFACTS_MEMBER);
+static CREATEPROJECTINPUT_MEMBER_CACHE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$cache",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "cache",
+    8,
+);
+static CREATEPROJECTINPUT_MEMBER_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$environment",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "environment",
+    9,
+);
+static CREATEPROJECTINPUT_MEMBER_SERVICE_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$serviceRole",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceRole",
+    10,
+);
+static CREATEPROJECTINPUT_MEMBER_TIMEOUT_IN_MINUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$timeoutInMinutes",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "timeoutInMinutes",
+    11,
+);
+static CREATEPROJECTINPUT_MEMBER_QUEUED_TIMEOUT_IN_MINUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$queuedTimeoutInMinutes",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "queuedTimeoutInMinutes",
+    12,
+);
+static CREATEPROJECTINPUT_MEMBER_ENCRYPTION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$encryptionKey",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "encryptionKey",
+    13,
+);
+static CREATEPROJECTINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#TagList$member", "com.amazonaws.codebuild", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEPROJECTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$tags",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    14,
+)
+.with_list_member(&CREATEPROJECTINPUT_MEMBER_TAGS_MEMBER);
+static CREATEPROJECTINPUT_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$vpcConfig",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "vpcConfig",
+    15,
+);
+static CREATEPROJECTINPUT_MEMBER_BADGE_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$badgeEnabled",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "badgeEnabled",
+    16,
+);
+static CREATEPROJECTINPUT_MEMBER_LOGS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$logsConfig",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "logsConfig",
+    17,
+);
+static CREATEPROJECTINPUT_MEMBER_FILE_SYSTEM_LOCATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectFileSystemLocations$member",
+        "com.amazonaws.codebuild",
+        "ProjectFileSystemLocations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEPROJECTINPUT_MEMBER_FILE_SYSTEM_LOCATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$fileSystemLocations",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "fileSystemLocations",
+    18,
+)
+.with_list_member(&CREATEPROJECTINPUT_MEMBER_FILE_SYSTEM_LOCATIONS_MEMBER);
+static CREATEPROJECTINPUT_MEMBER_BUILD_BATCH_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$buildBatchConfig",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "buildBatchConfig",
+    19,
+);
+static CREATEPROJECTINPUT_MEMBER_CONCURRENT_BUILD_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$concurrentBuildLimit",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "concurrentBuildLimit",
+    20,
+);
+static CREATEPROJECTINPUT_MEMBER_AUTO_RETRY_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput$autoRetryLimit",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "autoRetryLimit",
+    21,
+);
+static CREATEPROJECTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateProjectInput",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEPROJECTINPUT_MEMBER_NAME,
+        &CREATEPROJECTINPUT_MEMBER_DESCRIPTION,
+        &CREATEPROJECTINPUT_MEMBER_SOURCE,
+        &CREATEPROJECTINPUT_MEMBER_SECONDARY_SOURCES,
+        &CREATEPROJECTINPUT_MEMBER_SOURCE_VERSION,
+        &CREATEPROJECTINPUT_MEMBER_SECONDARY_SOURCE_VERSIONS,
+        &CREATEPROJECTINPUT_MEMBER_ARTIFACTS,
+        &CREATEPROJECTINPUT_MEMBER_SECONDARY_ARTIFACTS,
+        &CREATEPROJECTINPUT_MEMBER_CACHE,
+        &CREATEPROJECTINPUT_MEMBER_ENVIRONMENT,
+        &CREATEPROJECTINPUT_MEMBER_SERVICE_ROLE,
+        &CREATEPROJECTINPUT_MEMBER_TIMEOUT_IN_MINUTES,
+        &CREATEPROJECTINPUT_MEMBER_QUEUED_TIMEOUT_IN_MINUTES,
+        &CREATEPROJECTINPUT_MEMBER_ENCRYPTION_KEY,
+        &CREATEPROJECTINPUT_MEMBER_TAGS,
+        &CREATEPROJECTINPUT_MEMBER_VPC_CONFIG,
+        &CREATEPROJECTINPUT_MEMBER_BADGE_ENABLED,
+        &CREATEPROJECTINPUT_MEMBER_LOGS_CONFIG,
+        &CREATEPROJECTINPUT_MEMBER_FILE_SYSTEM_LOCATIONS,
+        &CREATEPROJECTINPUT_MEMBER_BUILD_BATCH_CONFIG,
+        &CREATEPROJECTINPUT_MEMBER_CONCURRENT_BUILD_LIMIT,
+        &CREATEPROJECTINPUT_MEMBER_AUTO_RETRY_LIMIT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateProjectInput");
+impl CreateProjectInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEPROJECTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateProjectInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATEPROJECTINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATEPROJECTINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.source {
+            ser.write_struct(&CREATEPROJECTINPUT_MEMBER_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.secondary_sources {
+            ser.write_list(
+                &CREATEPROJECTINPUT_MEMBER_SECONDARY_SOURCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProjectSource::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.source_version {
+            ser.write_string(&CREATEPROJECTINPUT_MEMBER_SOURCE_VERSION, val)?;
+        }
+        if let Some(ref val) = self.secondary_source_versions {
+            ser.write_list(
+                &CREATEPROJECTINPUT_MEMBER_SECONDARY_SOURCE_VERSIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProjectSourceVersion::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.artifacts {
+            ser.write_struct(&CREATEPROJECTINPUT_MEMBER_ARTIFACTS, val)?;
+        }
+        if let Some(ref val) = self.secondary_artifacts {
+            ser.write_list(
+                &CREATEPROJECTINPUT_MEMBER_SECONDARY_ARTIFACTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProjectArtifacts::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.cache {
+            ser.write_struct(&CREATEPROJECTINPUT_MEMBER_CACHE, val)?;
+        }
+        if let Some(ref val) = self.environment {
+            ser.write_struct(&CREATEPROJECTINPUT_MEMBER_ENVIRONMENT, val)?;
+        }
+        if let Some(ref val) = self.service_role {
+            ser.write_string(&CREATEPROJECTINPUT_MEMBER_SERVICE_ROLE, val)?;
+        }
+        if let Some(ref val) = self.timeout_in_minutes {
+            ser.write_integer(&CREATEPROJECTINPUT_MEMBER_TIMEOUT_IN_MINUTES, *val)?;
+        }
+        if let Some(ref val) = self.queued_timeout_in_minutes {
+            ser.write_integer(&CREATEPROJECTINPUT_MEMBER_QUEUED_TIMEOUT_IN_MINUTES, *val)?;
+        }
+        if let Some(ref val) = self.encryption_key {
+            ser.write_string(&CREATEPROJECTINPUT_MEMBER_ENCRYPTION_KEY, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEPROJECTINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&CREATEPROJECTINPUT_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.badge_enabled {
+            ser.write_boolean(&CREATEPROJECTINPUT_MEMBER_BADGE_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.logs_config {
+            ser.write_struct(&CREATEPROJECTINPUT_MEMBER_LOGS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.file_system_locations {
+            ser.write_list(
+                &CREATEPROJECTINPUT_MEMBER_FILE_SYSTEM_LOCATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProjectFileSystemLocation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.build_batch_config {
+            ser.write_struct(&CREATEPROJECTINPUT_MEMBER_BUILD_BATCH_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.concurrent_build_limit {
+            ser.write_integer(&CREATEPROJECTINPUT_MEMBER_CONCURRENT_BUILD_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.auto_retry_limit {
+            ser.write_integer(&CREATEPROJECTINPUT_MEMBER_AUTO_RETRY_LIMIT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_project::builders::CreateProjectInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEPROJECTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source = Some(crate::types::ProjectSource::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_sources = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProjectSource::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_source_versions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProjectSourceVersion::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifacts = Some(crate::types::ProjectArtifacts::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_artifacts = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProjectArtifacts::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cache = Some(crate::types::ProjectCache::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment = Some(crate::types::ProjectEnvironment::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.timeout_in_minutes = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.queued_timeout_in_minutes = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.badge_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logs_config = Some(crate::types::LogsConfig::deserialize(deser)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_locations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProjectFileSystemLocation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.build_batch_config = Some(crate::types::ProjectBuildBatchConfig::deserialize(deser)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.concurrent_build_limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_retry_limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateProjectInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.service_role = builder.service_role.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateProjectInput {
     /// Creates a new builder-style object to manufacture [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn builder() -> crate::operation::create_project::builders::CreateProjectInputBuilder {

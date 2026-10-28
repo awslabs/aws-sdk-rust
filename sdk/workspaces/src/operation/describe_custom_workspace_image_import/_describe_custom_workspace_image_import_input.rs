@@ -12,6 +12,86 @@ impl DescribeCustomWorkspaceImageImportInput {
         self.image_id.as_deref()
     }
 }
+static DESCRIBECUSTOMWORKSPACEIMAGEIMPORTINPUT_MEMBER_IMAGE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeCustomWorkspaceImageImportInput$ImageId",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeCustomWorkspaceImageImportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageId",
+    0,
+);
+static DESCRIBECUSTOMWORKSPACEIMAGEIMPORTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeCustomWorkspaceImageImportInput",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeCustomWorkspaceImageImportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESCRIBECUSTOMWORKSPACEIMAGEIMPORTINPUT_MEMBER_IMAGE_ID],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeCustomWorkspaceImageImportRequest");
+impl DescribeCustomWorkspaceImageImportInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECUSTOMWORKSPACEIMAGEIMPORTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeCustomWorkspaceImageImportInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.image_id {
+            ser.write_string(&DESCRIBECUSTOMWORKSPACEIMAGEIMPORTINPUT_MEMBER_IMAGE_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_custom_workspace_image_import::builders::DescribeCustomWorkspaceImageImportInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECUSTOMWORKSPACEIMAGEIMPORTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeCustomWorkspaceImageImportInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.image_id = builder.image_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeCustomWorkspaceImageImportInput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomWorkspaceImageImportInput`](crate::operation::describe_custom_workspace_image_import::DescribeCustomWorkspaceImageImportInput).
     pub fn builder() -> crate::operation::describe_custom_workspace_image_import::builders::DescribeCustomWorkspaceImageImportInputBuilder {

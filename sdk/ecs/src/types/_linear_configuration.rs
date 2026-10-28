@@ -19,6 +19,102 @@ impl LinearConfiguration {
         self.step_bake_time_in_minutes
     }
 }
+static LINEARCONFIGURATION_MEMBER_STEP_PERCENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#LinearConfiguration$stepPercent",
+        "com.amazonaws.ecs",
+        "LinearConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "stepPercent",
+    0,
+);
+static LINEARCONFIGURATION_MEMBER_STEP_BAKE_TIME_IN_MINUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#LinearConfiguration$stepBakeTimeInMinutes",
+        "com.amazonaws.ecs",
+        "LinearConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "stepBakeTimeInMinutes",
+    1,
+);
+static LINEARCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#LinearConfiguration", "com.amazonaws.ecs", "LinearConfiguration"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LINEARCONFIGURATION_MEMBER_STEP_PERCENT,
+        &LINEARCONFIGURATION_MEMBER_STEP_BAKE_TIME_IN_MINUTES,
+    ],
+);
+impl LinearConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LINEARCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LinearConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.step_percent {
+            ser.write_double(&LINEARCONFIGURATION_MEMBER_STEP_PERCENT, *val)?;
+        }
+        if let Some(ref val) = self.step_bake_time_in_minutes {
+            ser.write_integer(&LINEARCONFIGURATION_MEMBER_STEP_BAKE_TIME_IN_MINUTES, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LinearConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LINEARCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.step_percent = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.step_bake_time_in_minutes = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LinearConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LinearConfiguration {
     /// Creates a new builder-style object to manufacture [`LinearConfiguration`](crate::types::LinearConfiguration).
     pub fn builder() -> crate::types::builders::LinearConfigurationBuilder {

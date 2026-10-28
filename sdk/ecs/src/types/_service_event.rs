@@ -25,6 +25,107 @@ impl ServiceEvent {
         self.message.as_deref()
     }
 }
+static SERVICEEVENT_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceEvent$id", "com.amazonaws.ecs", "ServiceEvent"),
+    ::aws_smithy_schema::ShapeType::String,
+    "id",
+    0,
+);
+static SERVICEEVENT_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceEvent$createdAt", "com.amazonaws.ecs", "ServiceEvent"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    1,
+);
+static SERVICEEVENT_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceEvent$message", "com.amazonaws.ecs", "ServiceEvent"),
+    ::aws_smithy_schema::ShapeType::String,
+    "message",
+    2,
+);
+static SERVICEEVENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceEvent", "com.amazonaws.ecs", "ServiceEvent"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&SERVICEEVENT_MEMBER_ID, &SERVICEEVENT_MEMBER_CREATED_AT, &SERVICEEVENT_MEMBER_MESSAGE],
+);
+impl ServiceEvent {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SERVICEEVENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ServiceEvent {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&SERVICEEVENT_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&SERVICEEVENT_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&SERVICEEVENT_MEMBER_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ServiceEventBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SERVICEEVENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ServiceEvent {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ServiceEvent {
     /// Creates a new builder-style object to manufacture [`ServiceEvent`](crate::types::ServiceEvent).
     pub fn builder() -> crate::types::builders::ServiceEventBuilder {

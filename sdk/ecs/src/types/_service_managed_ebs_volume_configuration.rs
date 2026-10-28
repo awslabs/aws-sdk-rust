@@ -163,6 +163,322 @@ impl ServiceManagedEbsVolumeConfiguration {
         self.filesystem_type.as_ref()
     }
 }
+static SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_ENCRYPTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceManagedEBSVolumeConfiguration$encrypted",
+        "com.amazonaws.ecs",
+        "ServiceManagedEBSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "encrypted",
+    0,
+);
+static SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceManagedEBSVolumeConfiguration$kmsKeyId",
+        "com.amazonaws.ecs",
+        "ServiceManagedEBSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "kmsKeyId",
+    1,
+);
+static SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_VOLUME_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceManagedEBSVolumeConfiguration$volumeType",
+        "com.amazonaws.ecs",
+        "ServiceManagedEBSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "volumeType",
+    2,
+);
+static SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_SIZE_IN_GIB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceManagedEBSVolumeConfiguration$sizeInGiB",
+        "com.amazonaws.ecs",
+        "ServiceManagedEBSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "sizeInGiB",
+    3,
+);
+static SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_SNAPSHOT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceManagedEBSVolumeConfiguration$snapshotId",
+        "com.amazonaws.ecs",
+        "ServiceManagedEBSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "snapshotId",
+    4,
+);
+static SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_VOLUME_INITIALIZATION_RATE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#ServiceManagedEBSVolumeConfiguration$volumeInitializationRate",
+            "com.amazonaws.ecs",
+            "ServiceManagedEBSVolumeConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "volumeInitializationRate",
+        5,
+    );
+static SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_IOPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceManagedEBSVolumeConfiguration$iops",
+        "com.amazonaws.ecs",
+        "ServiceManagedEBSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "iops",
+    6,
+);
+static SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_THROUGHPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceManagedEBSVolumeConfiguration$throughput",
+        "com.amazonaws.ecs",
+        "ServiceManagedEBSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "throughput",
+    7,
+);
+static SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_TAG_SPECIFICATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#EBSTagSpecifications$member",
+            "com.amazonaws.ecs",
+            "EBSTagSpecifications",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_TAG_SPECIFICATIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#ServiceManagedEBSVolumeConfiguration$tagSpecifications",
+            "com.amazonaws.ecs",
+            "ServiceManagedEBSVolumeConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "tagSpecifications",
+        8,
+    )
+    .with_list_member(&SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_TAG_SPECIFICATIONS_MEMBER);
+static SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceManagedEBSVolumeConfiguration$roleArn",
+        "com.amazonaws.ecs",
+        "ServiceManagedEBSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "roleArn",
+    9,
+);
+static SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_FILESYSTEM_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceManagedEBSVolumeConfiguration$filesystemType",
+        "com.amazonaws.ecs",
+        "ServiceManagedEBSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "filesystemType",
+    10,
+);
+static SERVICEMANAGEDEBSVOLUMECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceManagedEBSVolumeConfiguration",
+        "com.amazonaws.ecs",
+        "ServiceManagedEBSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_ENCRYPTED,
+        &SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_KMS_KEY_ID,
+        &SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_VOLUME_TYPE,
+        &SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_SIZE_IN_GIB,
+        &SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_SNAPSHOT_ID,
+        &SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_VOLUME_INITIALIZATION_RATE,
+        &SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_IOPS,
+        &SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_THROUGHPUT,
+        &SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_TAG_SPECIFICATIONS,
+        &SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_ROLE_ARN,
+        &SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_FILESYSTEM_TYPE,
+    ],
+);
+impl ServiceManagedEbsVolumeConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SERVICEMANAGEDEBSVOLUMECONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ServiceManagedEbsVolumeConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.encrypted {
+            ser.write_boolean(&SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_ENCRYPTED, *val)?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.volume_type {
+            ser.write_string(&SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_VOLUME_TYPE, val)?;
+        }
+        if let Some(ref val) = self.size_in_gib {
+            ser.write_integer(&SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_SIZE_IN_GIB, *val)?;
+        }
+        if let Some(ref val) = self.snapshot_id {
+            ser.write_string(&SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_SNAPSHOT_ID, val)?;
+        }
+        if let Some(ref val) = self.volume_initialization_rate {
+            ser.write_integer(&SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_VOLUME_INITIALIZATION_RATE, *val)?;
+        }
+        if let Some(ref val) = self.iops {
+            ser.write_integer(&SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_IOPS, *val)?;
+        }
+        if let Some(ref val) = self.throughput {
+            ser.write_integer(&SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_THROUGHPUT, *val)?;
+        }
+        if let Some(ref val) = self.tag_specifications {
+            ser.write_list(
+                &SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_TAG_SPECIFICATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EbsTagSpecification::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.role_arn;
+            ser.write_string(&SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.filesystem_type {
+            ser.write_string(&SERVICEMANAGEDEBSVOLUMECONFIGURATION_MEMBER_FILESYSTEM_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ServiceManagedEbsVolumeConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SERVICEMANAGEDEBSVOLUMECONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encrypted = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.size_in_gib = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.snapshot_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_initialization_rate = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.iops = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.throughput = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_specifications = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EbsTagSpecification::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    self.role_arn = Some(deser.read_string(member)?);
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filesystem_type = Some(crate::types::TaskFilesystemType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ServiceManagedEbsVolumeConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ServiceManagedEbsVolumeConfiguration {
     /// Creates a new builder-style object to manufacture [`ServiceManagedEbsVolumeConfiguration`](crate::types::ServiceManagedEbsVolumeConfiguration).
     pub fn builder() -> crate::types::builders::ServiceManagedEbsVolumeConfigurationBuilder {

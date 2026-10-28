@@ -49,6 +49,145 @@ impl WorkflowExecutionTerminatedEventAttributes {
         self.cause.as_ref()
     }
 }
+static WORKFLOWEXECUTIONTERMINATEDEVENTATTRIBUTES_MEMBER_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionTerminatedEventAttributes$reason",
+        "com.amazonaws.swf",
+        "WorkflowExecutionTerminatedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "reason",
+    0,
+);
+static WORKFLOWEXECUTIONTERMINATEDEVENTATTRIBUTES_MEMBER_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionTerminatedEventAttributes$details",
+        "com.amazonaws.swf",
+        "WorkflowExecutionTerminatedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "details",
+    1,
+);
+static WORKFLOWEXECUTIONTERMINATEDEVENTATTRIBUTES_MEMBER_CHILD_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionTerminatedEventAttributes$childPolicy",
+        "com.amazonaws.swf",
+        "WorkflowExecutionTerminatedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "childPolicy",
+    2,
+);
+static WORKFLOWEXECUTIONTERMINATEDEVENTATTRIBUTES_MEMBER_CAUSE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionTerminatedEventAttributes$cause",
+        "com.amazonaws.swf",
+        "WorkflowExecutionTerminatedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cause",
+    3,
+);
+static WORKFLOWEXECUTIONTERMINATEDEVENTATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionTerminatedEventAttributes",
+        "com.amazonaws.swf",
+        "WorkflowExecutionTerminatedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKFLOWEXECUTIONTERMINATEDEVENTATTRIBUTES_MEMBER_REASON,
+        &WORKFLOWEXECUTIONTERMINATEDEVENTATTRIBUTES_MEMBER_DETAILS,
+        &WORKFLOWEXECUTIONTERMINATEDEVENTATTRIBUTES_MEMBER_CHILD_POLICY,
+        &WORKFLOWEXECUTIONTERMINATEDEVENTATTRIBUTES_MEMBER_CAUSE,
+    ],
+);
+impl WorkflowExecutionTerminatedEventAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKFLOWEXECUTIONTERMINATEDEVENTATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WorkflowExecutionTerminatedEventAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.reason {
+            ser.write_string(&WORKFLOWEXECUTIONTERMINATEDEVENTATTRIBUTES_MEMBER_REASON, val)?;
+        }
+        if let Some(ref val) = self.details {
+            ser.write_string(&WORKFLOWEXECUTIONTERMINATEDEVENTATTRIBUTES_MEMBER_DETAILS, val)?;
+        }
+        {
+            let val = &self.child_policy;
+            ser.write_string(&WORKFLOWEXECUTIONTERMINATEDEVENTATTRIBUTES_MEMBER_CHILD_POLICY, val.as_str())?;
+        }
+        if let Some(ref val) = self.cause {
+            ser.write_string(&WORKFLOWEXECUTIONTERMINATEDEVENTATTRIBUTES_MEMBER_CAUSE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkflowExecutionTerminatedEventAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKFLOWEXECUTIONTERMINATEDEVENTATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.details = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.child_policy = Some(crate::types::ChildPolicy::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cause = Some(crate::types::WorkflowExecutionTerminatedCause::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WorkflowExecutionTerminatedEventAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl WorkflowExecutionTerminatedEventAttributes {
     /// Creates a new builder-style object to manufacture [`WorkflowExecutionTerminatedEventAttributes`](crate::types::WorkflowExecutionTerminatedEventAttributes).
     pub fn builder() -> crate::types::builders::WorkflowExecutionTerminatedEventAttributesBuilder {

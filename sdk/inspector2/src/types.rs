@@ -57,6 +57,8 @@ pub use crate::types::_ecr_configuration_state::EcrConfigurationState;
 
 pub use crate::types::_ec2_configuration_state::Ec2ConfigurationState;
 
+pub use crate::types::_ami_configuration_state::AmiConfigurationState;
+
 pub use crate::types::_delegated_admin::DelegatedAdmin;
 
 pub use crate::types::_ec2_deep_inspection_status::Ec2DeepInspectionStatus;
@@ -70,6 +72,12 @@ pub use crate::types::_external_report_status::ExternalReportStatus;
 pub use crate::types::_reporting_error_code::ReportingErrorCode;
 
 pub use crate::types::_member::Member;
+
+pub use crate::types::_on_demand_resource_type::OnDemandResourceType;
+
+pub use crate::types::_on_demand_scan_status::OnDemandScanStatus;
+
+pub use crate::types::_on_demand_scan_status_reason::OnDemandScanStatusReason;
 
 pub use crate::types::_service::Service;
 
@@ -116,6 +124,8 @@ pub use crate::types::_update_integration_details::UpdateIntegrationDetails;
 pub use crate::types::_ecr_configuration::EcrConfiguration;
 
 pub use crate::types::_ec2_configuration::Ec2Configuration;
+
+pub use crate::types::_ami_configuration::AmiConfiguration;
 
 pub use crate::types::_update_configuration_inheritance::UpdateConfigurationInheritance;
 
@@ -187,6 +197,12 @@ pub use crate::types::_ec2_scan_mode_state::Ec2ScanModeState;
 
 pub use crate::types::_vm_scanner_state::VmScannerState;
 
+pub use crate::types::_ami_scan_duration::AmiScanDuration;
+
+pub use crate::types::_ami_scan_mode_configuration::AmiScanModeConfiguration;
+
+pub use crate::types::_ami_configuration_status::AmiConfigurationStatus;
+
 pub use crate::types::_relationship_status::RelationshipStatus;
 
 pub use crate::types::_permission::Permission;
@@ -256,6 +272,8 @@ pub use crate::types::_sort_field::SortField;
 pub use crate::types::_sort_order::SortOrder;
 
 pub use crate::types::_finding::Finding;
+
+pub use crate::types::_on_demand_scan::OnDemandScan;
 
 pub use crate::types::_usage_total::UsageTotal;
 
@@ -346,6 +364,8 @@ pub use crate::types::_ecr_rescan_duration_status::EcrRescanDurationStatus;
 pub use crate::types::_ec2_scan_mode_status::Ec2ScanModeStatus;
 
 pub use crate::types::_vm_scanner_status::VmScannerStatus;
+
+pub use crate::types::_ami_scan_mode::AmiScanMode;
 
 pub use crate::types::_operation::Operation;
 
@@ -541,6 +561,8 @@ pub use crate::types::_cis_security_level_comparison::CisSecurityLevelComparison
 
 pub use crate::types::_cluster_details::ClusterDetails;
 
+pub use crate::types::_ami_tag_filter::AmiTagFilter;
+
 pub use crate::types::_tag_comparison::TagComparison;
 
 pub use crate::types::_cis_result_status_comparison::CisResultStatusComparison;
@@ -593,6 +615,10 @@ pub use crate::types::_container_registry_metadata::ContainerRegistryMetadata;
 
 pub use crate::types::_serverless_function_metadata::ServerlessFunctionMetadata;
 
+pub use crate::types::_machine_image_metadata::MachineImageMetadata;
+
+pub use crate::types::_scan_source::ScanSource;
+
 pub use crate::types::_severity_counts::SeverityCounts;
 
 pub use crate::types::_recommendation::Recommendation;
@@ -635,6 +661,8 @@ pub use crate::types::_code_repository_on_demand_scan::CodeRepositoryOnDemandSca
 
 pub use crate::types::_vm_platform::VmPlatform;
 
+pub use crate::types::_machine_image_platform::MachineImagePlatform;
+
 pub use crate::types::_resource_details::ResourceDetails;
 
 pub use crate::types::_vulnerable_package::VulnerablePackage;
@@ -656,6 +684,8 @@ pub use crate::types::_aws_ecr_container_image_details::AwsEcrContainerImageDeta
 pub use crate::types::_aws_lambda_function_details::AwsLambdaFunctionDetails;
 
 pub use crate::types::_code_repository_details::CodeRepositoryDetails;
+
+pub use crate::types::_machine_image_details::MachineImageDetails;
 
 pub use crate::types::_vm::Vm;
 
@@ -679,9 +709,9 @@ pub use crate::types::_package_type::PackageType;
 
 pub use crate::types::_code_repository_provider_type::CodeRepositoryProviderType;
 
-pub use crate::types::_aws_eks_workload_info::AwsEksWorkloadInfo;
-
 pub use crate::types::_architecture::Architecture;
+
+pub use crate::types::_aws_eks_workload_info::AwsEksWorkloadInfo;
 
 mod _account;
 
@@ -707,7 +737,21 @@ mod _ami_aggregation;
 
 mod _ami_aggregation_response;
 
+mod _ami_configuration;
+
+mod _ami_configuration_state;
+
+mod _ami_configuration_status;
+
+mod _ami_scan_duration;
+
+mod _ami_scan_mode;
+
+mod _ami_scan_mode_configuration;
+
 mod _ami_sort_by;
+
+mod _ami_tag_filter;
 
 mod _architecture;
 
@@ -1129,6 +1173,12 @@ mod _list_cis_scans_filter_criteria;
 
 mod _list_cis_scans_sort_by;
 
+mod _machine_image_details;
+
+mod _machine_image_metadata;
+
+mod _machine_image_platform;
+
 mod _map_comparison;
 
 mod _map_filter;
@@ -1148,6 +1198,14 @@ mod _network_protocol;
 mod _network_reachability_details;
 
 mod _number_filter;
+
+mod _on_demand_resource_type;
+
+mod _on_demand_scan;
+
+mod _on_demand_scan_status;
+
+mod _on_demand_scan_status_reason;
 
 mod _one_time_schedule;
 
@@ -1242,6 +1300,8 @@ mod _runtime;
 mod _sbom_report_format;
 
 mod _scan_mode;
+
+mod _scan_source;
 
 mod _scan_status;
 

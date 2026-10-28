@@ -29,6 +29,178 @@ impl DeleteFileSystemOpenZfsConfiguration {
         self.options.as_deref().unwrap_or_default()
     }
 }
+static DELETEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_SKIP_FINAL_BACKUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DeleteFileSystemOpenZFSConfiguration$SkipFinalBackup",
+        "com.amazonaws.fsx",
+        "DeleteFileSystemOpenZFSConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "SkipFinalBackup",
+    0,
+);
+static DELETEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_FINAL_BACKUP_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Tags$member", "com.amazonaws.fsx", "Tags"),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static DELETEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_FINAL_BACKUP_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DeleteFileSystemOpenZFSConfiguration$FinalBackupTags",
+        "com.amazonaws.fsx",
+        "DeleteFileSystemOpenZFSConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "FinalBackupTags",
+    1,
+)
+.with_list_member(&DELETEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_FINAL_BACKUP_TAGS_MEMBER);
+static DELETEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_OPTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DeleteFileSystemOpenZFSOptions$member",
+        "com.amazonaws.fsx",
+        "DeleteFileSystemOpenZFSOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DELETEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DeleteFileSystemOpenZFSConfiguration$Options",
+        "com.amazonaws.fsx",
+        "DeleteFileSystemOpenZFSConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Options",
+    2,
+)
+.with_list_member(&DELETEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_OPTIONS_MEMBER);
+static DELETEFILESYSTEMOPENZFSCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DeleteFileSystemOpenZFSConfiguration",
+        "com.amazonaws.fsx",
+        "DeleteFileSystemOpenZFSConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELETEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_SKIP_FINAL_BACKUP,
+        &DELETEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_FINAL_BACKUP_TAGS,
+        &DELETEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_OPTIONS,
+    ],
+);
+impl DeleteFileSystemOpenZfsConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEFILESYSTEMOPENZFSCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteFileSystemOpenZfsConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.skip_final_backup {
+            ser.write_boolean(&DELETEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_SKIP_FINAL_BACKUP, *val)?;
+        }
+        if let Some(ref val) = self.final_backup_tags {
+            ser.write_list(
+                &DELETEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_FINAL_BACKUP_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.options {
+            ser.write_list(
+                &DELETEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_OPTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeleteFileSystemOpenZfsConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEFILESYSTEMOPENZFSCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.skip_final_backup = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.final_backup_tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.options = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DeleteFileSystemOpenZfsOption::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteFileSystemOpenZfsConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeleteFileSystemOpenZfsConfiguration {
     /// Creates a new builder-style object to manufacture [`DeleteFileSystemOpenZfsConfiguration`](crate::types::DeleteFileSystemOpenZfsConfiguration).
     pub fn builder() -> crate::types::builders::DeleteFileSystemOpenZfsConfigurationBuilder {

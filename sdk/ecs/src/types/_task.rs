@@ -325,6 +325,785 @@ impl Task {
         self.fargate_ephemeral_storage.as_ref()
     }
 }
+static TASK_MEMBER_ATTACHMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Attachments$member", "com.amazonaws.ecs", "Attachments"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TASK_MEMBER_ATTACHMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$attachments", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::List,
+    "attachments",
+    0,
+)
+.with_list_member(&TASK_MEMBER_ATTACHMENTS_MEMBER);
+static TASK_MEMBER_ATTRIBUTES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Attributes$member", "com.amazonaws.ecs", "Attributes"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TASK_MEMBER_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$attributes", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::List,
+    "attributes",
+    1,
+)
+.with_list_member(&TASK_MEMBER_ATTRIBUTES_MEMBER);
+static TASK_MEMBER_AVAILABILITY_ZONE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$availabilityZone", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "availabilityZone",
+    2,
+);
+static TASK_MEMBER_CAPACITY_PROVIDER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$capacityProviderName", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "capacityProviderName",
+    3,
+);
+static TASK_MEMBER_CLUSTER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$clusterArn", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "clusterArn",
+    4,
+);
+static TASK_MEMBER_CONNECTIVITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$connectivity", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "connectivity",
+    5,
+);
+static TASK_MEMBER_CONNECTIVITY_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$connectivityAt", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "connectivityAt",
+    6,
+);
+static TASK_MEMBER_CONTAINER_INSTANCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$containerInstanceArn", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "containerInstanceArn",
+    7,
+);
+static TASK_MEMBER_CONTAINERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Containers$member", "com.amazonaws.ecs", "Containers"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TASK_MEMBER_CONTAINERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$containers", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::List,
+    "containers",
+    8,
+)
+.with_list_member(&TASK_MEMBER_CONTAINERS_MEMBER);
+static TASK_MEMBER_CPU: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$cpu", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "cpu",
+    9,
+);
+static TASK_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$createdAt", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    10,
+);
+static TASK_MEMBER_DESIRED_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$desiredStatus", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "desiredStatus",
+    11,
+);
+static TASK_MEMBER_ENABLE_EXECUTE_COMMAND: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$enableExecuteCommand", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "enableExecuteCommand",
+    12,
+);
+static TASK_MEMBER_EXECUTION_STOPPED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$executionStoppedAt", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "executionStoppedAt",
+    13,
+);
+static TASK_MEMBER_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$group", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "group",
+    14,
+);
+static TASK_MEMBER_HEALTH_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$healthStatus", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "healthStatus",
+    15,
+);
+static TASK_MEMBER_INFERENCE_ACCELERATORS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InferenceAccelerators$member",
+        "com.amazonaws.ecs",
+        "InferenceAccelerators",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TASK_MEMBER_INFERENCE_ACCELERATORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$inferenceAccelerators", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::List,
+    "inferenceAccelerators",
+    16,
+)
+.with_list_member(&TASK_MEMBER_INFERENCE_ACCELERATORS_MEMBER);
+static TASK_MEMBER_LAST_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$lastStatus", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "lastStatus",
+    17,
+);
+static TASK_MEMBER_LAUNCH_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$launchType", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "launchType",
+    18,
+);
+static TASK_MEMBER_MEMORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$memory", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "memory",
+    19,
+);
+static TASK_MEMBER_OVERRIDES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$overrides", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "overrides",
+    20,
+);
+static TASK_MEMBER_PLATFORM_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$platformVersion", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "platformVersion",
+    21,
+);
+static TASK_MEMBER_PLATFORM_FAMILY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$platformFamily", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "platformFamily",
+    22,
+);
+static TASK_MEMBER_PULL_STARTED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$pullStartedAt", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "pullStartedAt",
+    23,
+);
+static TASK_MEMBER_PULL_STOPPED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$pullStoppedAt", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "pullStoppedAt",
+    24,
+);
+static TASK_MEMBER_STARTED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$startedAt", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "startedAt",
+    25,
+);
+static TASK_MEMBER_STARTED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$startedBy", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "startedBy",
+    26,
+);
+static TASK_MEMBER_STOP_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$stopCode", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "stopCode",
+    27,
+);
+static TASK_MEMBER_STOPPED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$stoppedAt", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "stoppedAt",
+    28,
+);
+static TASK_MEMBER_STOPPED_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$stoppedReason", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "stoppedReason",
+    29,
+);
+static TASK_MEMBER_STOPPING_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$stoppingAt", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "stoppingAt",
+    30,
+);
+static TASK_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Tags$member", "com.amazonaws.ecs", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TASK_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$tags", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    31,
+)
+.with_list_member(&TASK_MEMBER_TAGS_MEMBER);
+static TASK_MEMBER_TASK_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$taskArn", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskArn",
+    32,
+);
+static TASK_MEMBER_TASK_DEFINITION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$taskDefinitionArn", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskDefinitionArn",
+    33,
+);
+static TASK_MEMBER_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$version", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "version",
+    34,
+);
+static TASK_MEMBER_EPHEMERAL_STORAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$ephemeralStorage", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ephemeralStorage",
+    35,
+);
+static TASK_MEMBER_FARGATE_EPHEMERAL_STORAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task$fargateEphemeralStorage", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "fargateEphemeralStorage",
+    36,
+);
+static TASK_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Task", "com.amazonaws.ecs", "Task"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TASK_MEMBER_ATTACHMENTS,
+        &TASK_MEMBER_ATTRIBUTES,
+        &TASK_MEMBER_AVAILABILITY_ZONE,
+        &TASK_MEMBER_CAPACITY_PROVIDER_NAME,
+        &TASK_MEMBER_CLUSTER_ARN,
+        &TASK_MEMBER_CONNECTIVITY,
+        &TASK_MEMBER_CONNECTIVITY_AT,
+        &TASK_MEMBER_CONTAINER_INSTANCE_ARN,
+        &TASK_MEMBER_CONTAINERS,
+        &TASK_MEMBER_CPU,
+        &TASK_MEMBER_CREATED_AT,
+        &TASK_MEMBER_DESIRED_STATUS,
+        &TASK_MEMBER_ENABLE_EXECUTE_COMMAND,
+        &TASK_MEMBER_EXECUTION_STOPPED_AT,
+        &TASK_MEMBER_GROUP,
+        &TASK_MEMBER_HEALTH_STATUS,
+        &TASK_MEMBER_INFERENCE_ACCELERATORS,
+        &TASK_MEMBER_LAST_STATUS,
+        &TASK_MEMBER_LAUNCH_TYPE,
+        &TASK_MEMBER_MEMORY,
+        &TASK_MEMBER_OVERRIDES,
+        &TASK_MEMBER_PLATFORM_VERSION,
+        &TASK_MEMBER_PLATFORM_FAMILY,
+        &TASK_MEMBER_PULL_STARTED_AT,
+        &TASK_MEMBER_PULL_STOPPED_AT,
+        &TASK_MEMBER_STARTED_AT,
+        &TASK_MEMBER_STARTED_BY,
+        &TASK_MEMBER_STOP_CODE,
+        &TASK_MEMBER_STOPPED_AT,
+        &TASK_MEMBER_STOPPED_REASON,
+        &TASK_MEMBER_STOPPING_AT,
+        &TASK_MEMBER_TAGS,
+        &TASK_MEMBER_TASK_ARN,
+        &TASK_MEMBER_TASK_DEFINITION_ARN,
+        &TASK_MEMBER_VERSION,
+        &TASK_MEMBER_EPHEMERAL_STORAGE,
+        &TASK_MEMBER_FARGATE_EPHEMERAL_STORAGE,
+    ],
+);
+impl Task {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TASK_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Task {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.attachments {
+            ser.write_list(&TASK_MEMBER_ATTACHMENTS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Attachment::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.attributes {
+            ser.write_list(&TASK_MEMBER_ATTRIBUTES, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Attribute::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.availability_zone {
+            ser.write_string(&TASK_MEMBER_AVAILABILITY_ZONE, val)?;
+        }
+        if let Some(ref val) = self.capacity_provider_name {
+            ser.write_string(&TASK_MEMBER_CAPACITY_PROVIDER_NAME, val)?;
+        }
+        if let Some(ref val) = self.cluster_arn {
+            ser.write_string(&TASK_MEMBER_CLUSTER_ARN, val)?;
+        }
+        if let Some(ref val) = self.connectivity {
+            ser.write_string(&TASK_MEMBER_CONNECTIVITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.connectivity_at {
+            ser.write_timestamp(&TASK_MEMBER_CONNECTIVITY_AT, val)?;
+        }
+        if let Some(ref val) = self.container_instance_arn {
+            ser.write_string(&TASK_MEMBER_CONTAINER_INSTANCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.containers {
+            ser.write_list(&TASK_MEMBER_CONTAINERS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Container::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.cpu {
+            ser.write_string(&TASK_MEMBER_CPU, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&TASK_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.desired_status {
+            ser.write_string(&TASK_MEMBER_DESIRED_STATUS, val)?;
+        }
+        {
+            let val = &self.enable_execute_command;
+            ser.write_boolean(&TASK_MEMBER_ENABLE_EXECUTE_COMMAND, *val)?;
+        }
+        if let Some(ref val) = self.execution_stopped_at {
+            ser.write_timestamp(&TASK_MEMBER_EXECUTION_STOPPED_AT, val)?;
+        }
+        if let Some(ref val) = self.group {
+            ser.write_string(&TASK_MEMBER_GROUP, val)?;
+        }
+        if let Some(ref val) = self.health_status {
+            ser.write_string(&TASK_MEMBER_HEALTH_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.inference_accelerators {
+            ser.write_list(
+                &TASK_MEMBER_INFERENCE_ACCELERATORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::InferenceAccelerator::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.last_status {
+            ser.write_string(&TASK_MEMBER_LAST_STATUS, val)?;
+        }
+        if let Some(ref val) = self.launch_type {
+            ser.write_string(&TASK_MEMBER_LAUNCH_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.memory {
+            ser.write_string(&TASK_MEMBER_MEMORY, val)?;
+        }
+        if let Some(ref val) = self.overrides {
+            ser.write_struct(&TASK_MEMBER_OVERRIDES, val)?;
+        }
+        if let Some(ref val) = self.platform_version {
+            ser.write_string(&TASK_MEMBER_PLATFORM_VERSION, val)?;
+        }
+        if let Some(ref val) = self.platform_family {
+            ser.write_string(&TASK_MEMBER_PLATFORM_FAMILY, val)?;
+        }
+        if let Some(ref val) = self.pull_started_at {
+            ser.write_timestamp(&TASK_MEMBER_PULL_STARTED_AT, val)?;
+        }
+        if let Some(ref val) = self.pull_stopped_at {
+            ser.write_timestamp(&TASK_MEMBER_PULL_STOPPED_AT, val)?;
+        }
+        if let Some(ref val) = self.started_at {
+            ser.write_timestamp(&TASK_MEMBER_STARTED_AT, val)?;
+        }
+        if let Some(ref val) = self.started_by {
+            ser.write_string(&TASK_MEMBER_STARTED_BY, val)?;
+        }
+        if let Some(ref val) = self.stop_code {
+            ser.write_string(&TASK_MEMBER_STOP_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.stopped_at {
+            ser.write_timestamp(&TASK_MEMBER_STOPPED_AT, val)?;
+        }
+        if let Some(ref val) = self.stopped_reason {
+            ser.write_string(&TASK_MEMBER_STOPPED_REASON, val)?;
+        }
+        if let Some(ref val) = self.stopping_at {
+            ser.write_timestamp(&TASK_MEMBER_STOPPING_AT, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(&TASK_MEMBER_TAGS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.task_arn {
+            ser.write_string(&TASK_MEMBER_TASK_ARN, val)?;
+        }
+        if let Some(ref val) = self.task_definition_arn {
+            ser.write_string(&TASK_MEMBER_TASK_DEFINITION_ARN, val)?;
+        }
+        {
+            let val = &self.version;
+            ser.write_long(&TASK_MEMBER_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.ephemeral_storage {
+            ser.write_struct(&TASK_MEMBER_EPHEMERAL_STORAGE, val)?;
+        }
+        if let Some(ref val) = self.fargate_ephemeral_storage {
+            ser.write_struct(&TASK_MEMBER_FARGATE_EPHEMERAL_STORAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TaskBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TASK_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attachments = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Attachment::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attributes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Attribute::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.availability_zone = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_provider_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.connectivity = Some(crate::types::Connectivity::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.connectivity_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_instance_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.containers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Container::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cpu = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.desired_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    self.enable_execute_command = Some(deser.read_boolean(member)?);
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_stopped_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.group = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_status = Some(crate::types::HealthStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_accelerators = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InferenceAccelerator::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.launch_type = Some(crate::types::LaunchType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.memory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.overrides = Some(crate::types::TaskOverride::deserialize(deser)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform_family = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_started_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_stopped_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(25) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.started_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(26) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.started_by = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(27) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stop_code = Some(crate::types::TaskStopCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(28) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stopped_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(29) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stopped_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(30) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stopping_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(31) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(32) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(33) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_definition_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(34) => {
+                    self.version = Some(deser.read_long(member)?);
+                }
+                Some(35) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ephemeral_storage = Some(crate::types::EphemeralStorage::deserialize(deser)?);
+                    }
+                }
+                Some(36) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fargate_ephemeral_storage = Some(crate::types::TaskEphemeralStorage::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Task {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Task {
     /// Creates a new builder-style object to manufacture [`Task`](crate::types::Task).
     pub fn builder() -> crate::types::builders::TaskBuilder {

@@ -81,6 +81,254 @@ impl UpdateOntapVolumeConfiguration {
         self.size_in_bytes
     }
 }
+static UPDATEONTAPVOLUMECONFIGURATION_MEMBER_JUNCTION_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#UpdateOntapVolumeConfiguration$JunctionPath",
+        "com.amazonaws.fsx",
+        "UpdateOntapVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JunctionPath",
+    0,
+);
+static UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SECURITY_STYLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#UpdateOntapVolumeConfiguration$SecurityStyle",
+        "com.amazonaws.fsx",
+        "UpdateOntapVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecurityStyle",
+    1,
+);
+static UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SIZE_IN_MEGABYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#UpdateOntapVolumeConfiguration$SizeInMegabytes",
+        "com.amazonaws.fsx",
+        "UpdateOntapVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "SizeInMegabytes",
+    2,
+);
+static UPDATEONTAPVOLUMECONFIGURATION_MEMBER_STORAGE_EFFICIENCY_ENABLED: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#UpdateOntapVolumeConfiguration$StorageEfficiencyEnabled",
+            "com.amazonaws.fsx",
+            "UpdateOntapVolumeConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "StorageEfficiencyEnabled",
+        3,
+    );
+static UPDATEONTAPVOLUMECONFIGURATION_MEMBER_TIERING_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#UpdateOntapVolumeConfiguration$TieringPolicy",
+        "com.amazonaws.fsx",
+        "UpdateOntapVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TieringPolicy",
+    4,
+);
+static UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SNAPSHOT_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#UpdateOntapVolumeConfiguration$SnapshotPolicy",
+        "com.amazonaws.fsx",
+        "UpdateOntapVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SnapshotPolicy",
+    5,
+);
+static UPDATEONTAPVOLUMECONFIGURATION_MEMBER_COPY_TAGS_TO_BACKUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#UpdateOntapVolumeConfiguration$CopyTagsToBackups",
+        "com.amazonaws.fsx",
+        "UpdateOntapVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "CopyTagsToBackups",
+    6,
+);
+static UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SNAPLOCK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#UpdateOntapVolumeConfiguration$SnaplockConfiguration",
+        "com.amazonaws.fsx",
+        "UpdateOntapVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SnaplockConfiguration",
+    7,
+);
+static UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SIZE_IN_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#UpdateOntapVolumeConfiguration$SizeInBytes",
+        "com.amazonaws.fsx",
+        "UpdateOntapVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "SizeInBytes",
+    8,
+);
+static UPDATEONTAPVOLUMECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#UpdateOntapVolumeConfiguration",
+        "com.amazonaws.fsx",
+        "UpdateOntapVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEONTAPVOLUMECONFIGURATION_MEMBER_JUNCTION_PATH,
+        &UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SECURITY_STYLE,
+        &UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SIZE_IN_MEGABYTES,
+        &UPDATEONTAPVOLUMECONFIGURATION_MEMBER_STORAGE_EFFICIENCY_ENABLED,
+        &UPDATEONTAPVOLUMECONFIGURATION_MEMBER_TIERING_POLICY,
+        &UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SNAPSHOT_POLICY,
+        &UPDATEONTAPVOLUMECONFIGURATION_MEMBER_COPY_TAGS_TO_BACKUPS,
+        &UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SNAPLOCK_CONFIGURATION,
+        &UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SIZE_IN_BYTES,
+    ],
+);
+impl UpdateOntapVolumeConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEONTAPVOLUMECONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateOntapVolumeConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.junction_path {
+            ser.write_string(&UPDATEONTAPVOLUMECONFIGURATION_MEMBER_JUNCTION_PATH, val)?;
+        }
+        if let Some(ref val) = self.security_style {
+            ser.write_string(&UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SECURITY_STYLE, val.as_str())?;
+        }
+        if let Some(ref val) = self.size_in_megabytes {
+            ser.write_integer(&UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SIZE_IN_MEGABYTES, *val)?;
+        }
+        if let Some(ref val) = self.storage_efficiency_enabled {
+            ser.write_boolean(&UPDATEONTAPVOLUMECONFIGURATION_MEMBER_STORAGE_EFFICIENCY_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.tiering_policy {
+            ser.write_struct(&UPDATEONTAPVOLUMECONFIGURATION_MEMBER_TIERING_POLICY, val)?;
+        }
+        if let Some(ref val) = self.snapshot_policy {
+            ser.write_string(&UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SNAPSHOT_POLICY, val)?;
+        }
+        if let Some(ref val) = self.copy_tags_to_backups {
+            ser.write_boolean(&UPDATEONTAPVOLUMECONFIGURATION_MEMBER_COPY_TAGS_TO_BACKUPS, *val)?;
+        }
+        if let Some(ref val) = self.snaplock_configuration {
+            ser.write_struct(&UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SNAPLOCK_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.size_in_bytes {
+            ser.write_long(&UPDATEONTAPVOLUMECONFIGURATION_MEMBER_SIZE_IN_BYTES, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UpdateOntapVolumeConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEONTAPVOLUMECONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.junction_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_style = Some(crate::types::SecurityStyle::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.size_in_megabytes = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.storage_efficiency_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tiering_policy = Some(crate::types::TieringPolicy::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.snapshot_policy = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.copy_tags_to_backups = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.snaplock_configuration = Some(crate::types::UpdateSnaplockConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.size_in_bytes = Some(deser.read_long(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateOntapVolumeConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl UpdateOntapVolumeConfiguration {
     /// Creates a new builder-style object to manufacture [`UpdateOntapVolumeConfiguration`](crate::types::UpdateOntapVolumeConfiguration).
     pub fn builder() -> crate::types::builders::UpdateOntapVolumeConfigurationBuilder {

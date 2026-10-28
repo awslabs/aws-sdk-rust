@@ -21,6 +21,102 @@ impl ResourceServerScopeType {
         self.scope_description.deref()
     }
 }
+static RESOURCESERVERSCOPETYPE_MEMBER_SCOPE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ResourceServerScopeType$ScopeName",
+        "com.amazonaws.cognitoidentityprovider",
+        "ResourceServerScopeType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ScopeName",
+    0,
+);
+static RESOURCESERVERSCOPETYPE_MEMBER_SCOPE_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ResourceServerScopeType$ScopeDescription",
+        "com.amazonaws.cognitoidentityprovider",
+        "ResourceServerScopeType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ScopeDescription",
+    1,
+);
+static RESOURCESERVERSCOPETYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ResourceServerScopeType",
+        "com.amazonaws.cognitoidentityprovider",
+        "ResourceServerScopeType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESOURCESERVERSCOPETYPE_MEMBER_SCOPE_NAME,
+        &RESOURCESERVERSCOPETYPE_MEMBER_SCOPE_DESCRIPTION,
+    ],
+);
+impl ResourceServerScopeType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOURCESERVERSCOPETYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResourceServerScopeType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.scope_name;
+            ser.write_string(&RESOURCESERVERSCOPETYPE_MEMBER_SCOPE_NAME, val)?;
+        }
+        {
+            let val = &self.scope_description;
+            ser.write_string(&RESOURCESERVERSCOPETYPE_MEMBER_SCOPE_DESCRIPTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ResourceServerScopeTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESOURCESERVERSCOPETYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.scope_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.scope_description = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResourceServerScopeType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.scope_name = builder.scope_name.or(Some(String::new()));
+        builder.scope_description = builder.scope_description.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ResourceServerScopeType {
     /// Creates a new builder-style object to manufacture [`ResourceServerScopeType`](crate::types::ResourceServerScopeType).
     pub fn builder() -> crate::types::builders::ResourceServerScopeTypeBuilder {

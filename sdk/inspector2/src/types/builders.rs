@@ -21,6 +21,8 @@ pub use crate::types::_ecr_configuration_state::EcrConfigurationStateBuilder;
 
 pub use crate::types::_ec2_configuration_state::Ec2ConfigurationStateBuilder;
 
+pub use crate::types::_ami_configuration_state::AmiConfigurationStateBuilder;
+
 pub use crate::types::_delegated_admin::DelegatedAdminBuilder;
 
 pub use crate::types::_member::MemberBuilder;
@@ -50,6 +52,8 @@ pub use crate::types::_update_cis_targets::UpdateCisTargetsBuilder;
 pub use crate::types::_ecr_configuration::EcrConfigurationBuilder;
 
 pub use crate::types::_ec2_configuration::Ec2ConfigurationBuilder;
+
+pub use crate::types::_ami_configuration::AmiConfigurationBuilder;
 
 pub use crate::types::_update_configuration_inheritance::UpdateConfigurationInheritanceBuilder;
 
@@ -115,6 +119,8 @@ pub use crate::types::_ec2_scan_mode_state::Ec2ScanModeStateBuilder;
 
 pub use crate::types::_vm_scanner_state::VmScannerStateBuilder;
 
+pub use crate::types::_ami_scan_mode_configuration::AmiScanModeConfigurationBuilder;
+
 pub use crate::types::_permission::PermissionBuilder;
 
 pub use crate::types::_cis_scan_configuration::CisScanConfigurationBuilder;
@@ -176,6 +182,8 @@ pub use crate::types::_container_image_aggregation::ContainerImageAggregationBui
 pub use crate::types::_serverless_function_aggregation::ServerlessFunctionAggregationBuilder;
 
 pub use crate::types::_finding::FindingBuilder;
+
+pub use crate::types::_on_demand_scan::OnDemandScanBuilder;
 
 pub use crate::types::_usage_total::UsageTotalBuilder;
 
@@ -337,6 +345,8 @@ pub use crate::types::_scope_configuration_input::ScopeConfigurationInputBuilder
 
 pub use crate::types::_cluster_details::ClusterDetailsBuilder;
 
+pub use crate::types::_ami_tag_filter::AmiTagFilterBuilder;
+
 pub use crate::types::_scope_configuration::ScopeConfigurationBuilder;
 
 pub use crate::types::_ecr_repository_metadata::EcrRepositoryMetadataBuilder;
@@ -358,6 +368,8 @@ pub use crate::types::_container_repository_metadata::ContainerRepositoryMetadat
 pub use crate::types::_container_registry_metadata::ContainerRegistryMetadataBuilder;
 
 pub use crate::types::_serverless_function_metadata::ServerlessFunctionMetadataBuilder;
+
+pub use crate::types::_machine_image_metadata::MachineImageMetadataBuilder;
 
 pub use crate::types::_severity_counts::SeverityCountsBuilder;
 
@@ -396,6 +408,8 @@ pub use crate::types::_aws_ecr_container_image_details::AwsEcrContainerImageDeta
 pub use crate::types::_aws_lambda_function_details::AwsLambdaFunctionDetailsBuilder;
 
 pub use crate::types::_code_repository_details::CodeRepositoryDetailsBuilder;
+
+pub use crate::types::_machine_image_details::MachineImageDetailsBuilder;
 
 pub use crate::types::_vm::VmBuilder;
 

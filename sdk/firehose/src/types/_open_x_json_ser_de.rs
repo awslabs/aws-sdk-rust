@@ -27,6 +27,156 @@ impl OpenXJsonSerDe {
         self.column_to_json_key_mappings.as_ref()
     }
 }
+static OPENXJSONSERDE_MEMBER_CONVERT_DOTS_IN_JSON_KEYS_TO_UNDERSCORES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#OpenXJsonSerDe$ConvertDotsInJsonKeysToUnderscores",
+        "com.amazonaws.firehose",
+        "OpenXJsonSerDe",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ConvertDotsInJsonKeysToUnderscores",
+    0,
+);
+static OPENXJSONSERDE_MEMBER_CASE_INSENSITIVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#OpenXJsonSerDe$CaseInsensitive",
+        "com.amazonaws.firehose",
+        "OpenXJsonSerDe",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "CaseInsensitive",
+    1,
+);
+static OPENXJSONSERDE_MEMBER_COLUMN_TO_JSON_KEY_MAPPINGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ColumnToJsonKeyMappings$key",
+        "com.amazonaws.firehose",
+        "ColumnToJsonKeyMappings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static OPENXJSONSERDE_MEMBER_COLUMN_TO_JSON_KEY_MAPPINGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ColumnToJsonKeyMappings$value",
+        "com.amazonaws.firehose",
+        "ColumnToJsonKeyMappings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static OPENXJSONSERDE_MEMBER_COLUMN_TO_JSON_KEY_MAPPINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#OpenXJsonSerDe$ColumnToJsonKeyMappings",
+        "com.amazonaws.firehose",
+        "OpenXJsonSerDe",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "ColumnToJsonKeyMappings",
+    2,
+)
+.with_map_members(
+    &OPENXJSONSERDE_MEMBER_COLUMN_TO_JSON_KEY_MAPPINGS_KEY,
+    &OPENXJSONSERDE_MEMBER_COLUMN_TO_JSON_KEY_MAPPINGS_VALUE,
+);
+static OPENXJSONSERDE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#OpenXJsonSerDe", "com.amazonaws.firehose", "OpenXJsonSerDe"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &OPENXJSONSERDE_MEMBER_CONVERT_DOTS_IN_JSON_KEYS_TO_UNDERSCORES,
+        &OPENXJSONSERDE_MEMBER_CASE_INSENSITIVE,
+        &OPENXJSONSERDE_MEMBER_COLUMN_TO_JSON_KEY_MAPPINGS,
+    ],
+);
+impl OpenXJsonSerDe {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OPENXJSONSERDE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OpenXJsonSerDe {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.convert_dots_in_json_keys_to_underscores {
+            ser.write_boolean(&OPENXJSONSERDE_MEMBER_CONVERT_DOTS_IN_JSON_KEYS_TO_UNDERSCORES, *val)?;
+        }
+        if let Some(ref val) = self.case_insensitive {
+            ser.write_boolean(&OPENXJSONSERDE_MEMBER_CASE_INSENSITIVE, *val)?;
+        }
+        if let Some(ref val) = self.column_to_json_key_mappings {
+            ser.write_map(
+                &OPENXJSONSERDE_MEMBER_COLUMN_TO_JSON_KEY_MAPPINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OpenXJsonSerDeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&OPENXJSONSERDE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.convert_dots_in_json_keys_to_underscores = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.case_insensitive = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.column_to_json_key_mappings = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OpenXJsonSerDe {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl OpenXJsonSerDe {
     /// Creates a new builder-style object to manufacture [`OpenXJsonSerDe`](crate::types::OpenXJsonSerDe).
     pub fn builder() -> crate::types::builders::OpenXJsonSerDeBuilder {

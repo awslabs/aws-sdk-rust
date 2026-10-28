@@ -44,6 +44,221 @@ impl ListServiceDeploymentsInput {
         self.max_results
     }
 }
+static LISTSERVICEDEPLOYMENTSINPUT_MEMBER_SERVICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListServiceDeploymentsInput$service",
+        "com.amazonaws.ecs.synthetic",
+        "ListServiceDeploymentsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "service",
+    0,
+);
+static LISTSERVICEDEPLOYMENTSINPUT_MEMBER_CLUSTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListServiceDeploymentsInput$cluster",
+        "com.amazonaws.ecs.synthetic",
+        "ListServiceDeploymentsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cluster",
+    1,
+);
+static LISTSERVICEDEPLOYMENTSINPUT_MEMBER_STATUS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceDeploymentStatusList$member",
+        "com.amazonaws.ecs",
+        "ServiceDeploymentStatusList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LISTSERVICEDEPLOYMENTSINPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListServiceDeploymentsInput$status",
+        "com.amazonaws.ecs.synthetic",
+        "ListServiceDeploymentsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "status",
+    2,
+)
+.with_list_member(&LISTSERVICEDEPLOYMENTSINPUT_MEMBER_STATUS_MEMBER);
+static LISTSERVICEDEPLOYMENTSINPUT_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListServiceDeploymentsInput$createdAt",
+        "com.amazonaws.ecs.synthetic",
+        "ListServiceDeploymentsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "createdAt",
+    3,
+);
+static LISTSERVICEDEPLOYMENTSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListServiceDeploymentsInput$nextToken",
+        "com.amazonaws.ecs.synthetic",
+        "ListServiceDeploymentsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    4,
+);
+static LISTSERVICEDEPLOYMENTSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListServiceDeploymentsInput$maxResults",
+        "com.amazonaws.ecs.synthetic",
+        "ListServiceDeploymentsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxResults",
+    5,
+);
+static LISTSERVICEDEPLOYMENTSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListServiceDeploymentsInput",
+        "com.amazonaws.ecs.synthetic",
+        "ListServiceDeploymentsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTSERVICEDEPLOYMENTSINPUT_MEMBER_SERVICE,
+        &LISTSERVICEDEPLOYMENTSINPUT_MEMBER_CLUSTER,
+        &LISTSERVICEDEPLOYMENTSINPUT_MEMBER_STATUS,
+        &LISTSERVICEDEPLOYMENTSINPUT_MEMBER_CREATED_AT,
+        &LISTSERVICEDEPLOYMENTSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTSERVICEDEPLOYMENTSINPUT_MEMBER_MAX_RESULTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListServiceDeploymentsRequest");
+impl ListServiceDeploymentsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTSERVICEDEPLOYMENTSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListServiceDeploymentsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.service {
+            ser.write_string(&LISTSERVICEDEPLOYMENTSINPUT_MEMBER_SERVICE, val)?;
+        }
+        if let Some(ref val) = self.cluster {
+            ser.write_string(&LISTSERVICEDEPLOYMENTSINPUT_MEMBER_CLUSTER, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_list(
+                &LISTSERVICEDEPLOYMENTSINPUT_MEMBER_STATUS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_struct(&LISTSERVICEDEPLOYMENTSINPUT_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTSERVICEDEPLOYMENTSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTSERVICEDEPLOYMENTSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_service_deployments::builders::ListServiceDeploymentsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTSERVICEDEPLOYMENTSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ServiceDeploymentStatus::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(crate::types::CreatedAt::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListServiceDeploymentsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.service = builder.service.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListServiceDeploymentsInput {
     /// Creates a new builder-style object to manufacture [`ListServiceDeploymentsInput`](crate::operation::list_service_deployments::ListServiceDeploymentsInput).
     pub fn builder() -> crate::operation::list_service_deployments::builders::ListServiceDeploymentsInputBuilder {

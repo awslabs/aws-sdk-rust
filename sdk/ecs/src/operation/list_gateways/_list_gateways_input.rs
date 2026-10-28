@@ -34,6 +34,189 @@ impl ListGatewaysInput {
         self.next_token.as_deref()
     }
 }
+static LISTGATEWAYSINPUT_MEMBER_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LISTGATEWAYSINPUT_MEMBER_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListGatewaysInput$names",
+        "com.amazonaws.ecs.synthetic",
+        "ListGatewaysInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "names",
+    0,
+)
+.with_list_member(&LISTGATEWAYSINPUT_MEMBER_NAMES_MEMBER);
+static LISTGATEWAYSINPUT_MEMBER_STATUS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#GatewayStatusList$member", "com.amazonaws.ecs", "GatewayStatusList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LISTGATEWAYSINPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListGatewaysInput$status",
+        "com.amazonaws.ecs.synthetic",
+        "ListGatewaysInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "status",
+    1,
+)
+.with_list_member(&LISTGATEWAYSINPUT_MEMBER_STATUS_MEMBER);
+static LISTGATEWAYSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListGatewaysInput$maxResults",
+        "com.amazonaws.ecs.synthetic",
+        "ListGatewaysInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxResults",
+    2,
+);
+static LISTGATEWAYSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListGatewaysInput$nextToken",
+        "com.amazonaws.ecs.synthetic",
+        "ListGatewaysInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    3,
+);
+static LISTGATEWAYSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListGatewaysInput",
+        "com.amazonaws.ecs.synthetic",
+        "ListGatewaysInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTGATEWAYSINPUT_MEMBER_NAMES,
+        &LISTGATEWAYSINPUT_MEMBER_STATUS,
+        &LISTGATEWAYSINPUT_MEMBER_MAX_RESULTS,
+        &LISTGATEWAYSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListGatewaysRequest");
+impl ListGatewaysInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTGATEWAYSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListGatewaysInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.names {
+            ser.write_list(
+                &LISTGATEWAYSINPUT_MEMBER_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_list(
+                &LISTGATEWAYSINPUT_MEMBER_STATUS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTGATEWAYSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTGATEWAYSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_gateways::builders::ListGatewaysInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTGATEWAYSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::GatewayStatus::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListGatewaysInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListGatewaysInput {
     /// Creates a new builder-style object to manufacture [`ListGatewaysInput`](crate::operation::list_gateways::ListGatewaysInput).
     pub fn builder() -> crate::operation::list_gateways::builders::ListGatewaysInputBuilder {

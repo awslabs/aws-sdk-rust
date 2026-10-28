@@ -24,6 +24,8 @@ pub struct ResourceScanMetadata {
     pub container_registry: ::std::option::Option<crate::types::ContainerRegistryMetadata>,
     /// <p>The serverless function metadata associated with a covered resource.</p>
     pub serverless_function: ::std::option::Option<crate::types::ServerlessFunctionMetadata>,
+    /// <p>The machine image metadata associated with a covered resource.</p>
+    pub machine_image: ::std::option::Option<crate::types::MachineImageMetadata>,
 }
 impl ResourceScanMetadata {
     /// <p>An object that contains details about the repository an Amazon ECR image resides in.</p>
@@ -66,6 +68,10 @@ impl ResourceScanMetadata {
     pub fn serverless_function(&self) -> ::std::option::Option<&crate::types::ServerlessFunctionMetadata> {
         self.serverless_function.as_ref()
     }
+    /// <p>The machine image metadata associated with a covered resource.</p>
+    pub fn machine_image(&self) -> ::std::option::Option<&crate::types::MachineImageMetadata> {
+        self.machine_image.as_ref()
+    }
 }
 impl ResourceScanMetadata {
     /// Creates a new builder-style object to manufacture [`ResourceScanMetadata`](crate::types::ResourceScanMetadata).
@@ -88,6 +94,7 @@ pub struct ResourceScanMetadataBuilder {
     pub(crate) container_repository: ::std::option::Option<crate::types::ContainerRepositoryMetadata>,
     pub(crate) container_registry: ::std::option::Option<crate::types::ContainerRegistryMetadata>,
     pub(crate) serverless_function: ::std::option::Option<crate::types::ServerlessFunctionMetadata>,
+    pub(crate) machine_image: ::std::option::Option<crate::types::MachineImageMetadata>,
 }
 impl ResourceScanMetadataBuilder {
     /// <p>An object that contains details about the repository an Amazon ECR image resides in.</p>
@@ -230,6 +237,20 @@ impl ResourceScanMetadataBuilder {
     pub fn get_serverless_function(&self) -> &::std::option::Option<crate::types::ServerlessFunctionMetadata> {
         &self.serverless_function
     }
+    /// <p>The machine image metadata associated with a covered resource.</p>
+    pub fn machine_image(mut self, input: crate::types::MachineImageMetadata) -> Self {
+        self.machine_image = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The machine image metadata associated with a covered resource.</p>
+    pub fn set_machine_image(mut self, input: ::std::option::Option<crate::types::MachineImageMetadata>) -> Self {
+        self.machine_image = input;
+        self
+    }
+    /// <p>The machine image metadata associated with a covered resource.</p>
+    pub fn get_machine_image(&self) -> &::std::option::Option<crate::types::MachineImageMetadata> {
+        &self.machine_image
+    }
     /// Consumes the builder and constructs a [`ResourceScanMetadata`](crate::types::ResourceScanMetadata).
     pub fn build(self) -> crate::types::ResourceScanMetadata {
         crate::types::ResourceScanMetadata {
@@ -243,6 +264,7 @@ impl ResourceScanMetadataBuilder {
             container_repository: self.container_repository,
             container_registry: self.container_registry,
             serverless_function: self.serverless_function,
+            machine_image: self.machine_image,
         }
     }
 }

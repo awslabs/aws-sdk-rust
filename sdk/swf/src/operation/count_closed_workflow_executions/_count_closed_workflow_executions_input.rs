@@ -72,6 +72,214 @@ impl CountClosedWorkflowExecutionsInput {
         self.close_status_filter.as_ref()
     }
 }
+static COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#CountClosedWorkflowExecutionsInput$domain",
+        "com.amazonaws.swf.synthetic",
+        "CountClosedWorkflowExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domain",
+    0,
+);
+static COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_START_TIME_FILTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#CountClosedWorkflowExecutionsInput$startTimeFilter",
+        "com.amazonaws.swf.synthetic",
+        "CountClosedWorkflowExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "startTimeFilter",
+    1,
+);
+static COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_CLOSE_TIME_FILTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#CountClosedWorkflowExecutionsInput$closeTimeFilter",
+        "com.amazonaws.swf.synthetic",
+        "CountClosedWorkflowExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "closeTimeFilter",
+    2,
+);
+static COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_EXECUTION_FILTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#CountClosedWorkflowExecutionsInput$executionFilter",
+        "com.amazonaws.swf.synthetic",
+        "CountClosedWorkflowExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "executionFilter",
+    3,
+);
+static COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_TYPE_FILTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#CountClosedWorkflowExecutionsInput$typeFilter",
+        "com.amazonaws.swf.synthetic",
+        "CountClosedWorkflowExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "typeFilter",
+    4,
+);
+static COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_TAG_FILTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#CountClosedWorkflowExecutionsInput$tagFilter",
+        "com.amazonaws.swf.synthetic",
+        "CountClosedWorkflowExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "tagFilter",
+    5,
+);
+static COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_CLOSE_STATUS_FILTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#CountClosedWorkflowExecutionsInput$closeStatusFilter",
+        "com.amazonaws.swf.synthetic",
+        "CountClosedWorkflowExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "closeStatusFilter",
+    6,
+);
+static COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#CountClosedWorkflowExecutionsInput",
+        "com.amazonaws.swf.synthetic",
+        "CountClosedWorkflowExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_DOMAIN,
+        &COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_START_TIME_FILTER,
+        &COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_CLOSE_TIME_FILTER,
+        &COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_EXECUTION_FILTER,
+        &COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_TYPE_FILTER,
+        &COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_TAG_FILTER,
+        &COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_CLOSE_STATUS_FILTER,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CountClosedWorkflowExecutionsInput");
+impl CountClosedWorkflowExecutionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CountClosedWorkflowExecutionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain {
+            ser.write_string(&COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.start_time_filter {
+            ser.write_struct(&COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_START_TIME_FILTER, val)?;
+        }
+        if let Some(ref val) = self.close_time_filter {
+            ser.write_struct(&COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_CLOSE_TIME_FILTER, val)?;
+        }
+        if let Some(ref val) = self.execution_filter {
+            ser.write_struct(&COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_EXECUTION_FILTER, val)?;
+        }
+        if let Some(ref val) = self.type_filter {
+            ser.write_struct(&COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_TYPE_FILTER, val)?;
+        }
+        if let Some(ref val) = self.tag_filter {
+            ser.write_struct(&COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_TAG_FILTER, val)?;
+        }
+        if let Some(ref val) = self.close_status_filter {
+            ser.write_struct(&COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_MEMBER_CLOSE_STATUS_FILTER, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::count_closed_workflow_executions::builders::CountClosedWorkflowExecutionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COUNTCLOSEDWORKFLOWEXECUTIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time_filter = Some(crate::types::ExecutionTimeFilter::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.close_time_filter = Some(crate::types::ExecutionTimeFilter::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_filter = Some(crate::types::WorkflowExecutionFilter::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.type_filter = Some(crate::types::WorkflowTypeFilter::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_filter = Some(crate::types::TagFilter::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.close_status_filter = Some(crate::types::CloseStatusFilter::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CountClosedWorkflowExecutionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain = builder.domain.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CountClosedWorkflowExecutionsInput {
     /// Creates a new builder-style object to manufacture [`CountClosedWorkflowExecutionsInput`](crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsInput).
     pub fn builder() -> crate::operation::count_closed_workflow_executions::builders::CountClosedWorkflowExecutionsInputBuilder {

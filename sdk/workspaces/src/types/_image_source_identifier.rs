@@ -65,3 +65,101 @@ impl ImageSourceIdentifier {
         matches!(self, Self::Unknown)
     }
 }
+static IMAGESOURCEIDENTIFIER_MEMBER_EC2IMPORTTASKID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ImageSourceIdentifier$Ec2ImportTaskId",
+        "com.amazonaws.workspaces",
+        "ImageSourceIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Ec2ImportTaskId",
+    0,
+);
+static IMAGESOURCEIDENTIFIER_MEMBER_IMAGEBUILDVERSIONARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ImageSourceIdentifier$ImageBuildVersionArn",
+        "com.amazonaws.workspaces",
+        "ImageSourceIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageBuildVersionArn",
+    1,
+);
+static IMAGESOURCEIDENTIFIER_MEMBER_EC2IMAGEID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ImageSourceIdentifier$Ec2ImageId",
+        "com.amazonaws.workspaces",
+        "ImageSourceIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Ec2ImageId",
+    2,
+);
+static IMAGESOURCEIDENTIFIER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ImageSourceIdentifier",
+        "com.amazonaws.workspaces",
+        "ImageSourceIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    &[
+        &IMAGESOURCEIDENTIFIER_MEMBER_EC2IMPORTTASKID,
+        &IMAGESOURCEIDENTIFIER_MEMBER_IMAGEBUILDVERSIONARN,
+        &IMAGESOURCEIDENTIFIER_MEMBER_EC2IMAGEID,
+    ],
+);
+impl ImageSourceIdentifier {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &IMAGESOURCEIDENTIFIER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ImageSourceIdentifier {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        match self {
+            Self::Ec2ImportTaskId(val) => {
+                ser.write_string(&IMAGESOURCEIDENTIFIER_MEMBER_EC2IMPORTTASKID, val)?;
+            }
+            Self::ImageBuildVersionArn(val) => {
+                ser.write_string(&IMAGESOURCEIDENTIFIER_MEMBER_IMAGEBUILDVERSIONARN, val)?;
+            }
+            Self::Ec2ImageId(val) => {
+                ser.write_string(&IMAGESOURCEIDENTIFIER_MEMBER_EC2IMAGEID, val)?;
+            }
+            Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
+        }
+        Ok(())
+    }
+}
+impl ImageSourceIdentifier {
+    /// Deserializes this union from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut result: ::std::option::Option<Self> = ::std::option::Option::None;
+        #[allow(unused_variables, unreachable_code, clippy::single_match, clippy::match_single_binding)]
+        deserializer.read_struct(&IMAGESOURCEIDENTIFIER_SCHEMA, &mut |member, deser| {
+            // A union holds exactly one member; the deserializer reports every key
+            // (known or not), so a second one is an error whatever it names.
+            if result.is_some() {
+                return Err(::aws_smithy_schema::serde::SerdeError::invalid_input(
+                    "encountered mixed variants in union",
+                ));
+            }
+            result = ::std::option::Option::Some(match member.member_index() {
+                Some(0) => Self::Ec2ImportTaskId(deser.read_string(member)?),
+                Some(1) => Self::ImageBuildVersionArn(deser.read_string(member)?),
+                Some(2) => Self::Ec2ImageId(deser.read_string(member)?),
+                _ => Self::Unknown,
+            });
+            Ok(())
+        })?;
+        result.ok_or_else(|| ::aws_smithy_schema::serde::SerdeError::custom("expected a union variant"))
+    }
+}

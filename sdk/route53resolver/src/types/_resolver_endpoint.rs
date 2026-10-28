@@ -241,6 +241,531 @@ impl ResolverEndpoint {
         self.ipv6_internet_access_enabled
     }
 }
+static RESOLVERENDPOINT_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$Id",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    0,
+);
+static RESOLVERENDPOINT_MEMBER_CREATOR_REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$CreatorRequestId",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreatorRequestId",
+    1,
+);
+static RESOLVERENDPOINT_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$Arn",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    2,
+);
+static RESOLVERENDPOINT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$Name",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    3,
+);
+static RESOLVERENDPOINT_MEMBER_SECURITY_GROUP_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#SecurityGroupIds$member",
+        "com.amazonaws.route53resolver",
+        "SecurityGroupIds",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static RESOLVERENDPOINT_MEMBER_SECURITY_GROUP_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$SecurityGroupIds",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecurityGroupIds",
+    4,
+)
+.with_list_member(&RESOLVERENDPOINT_MEMBER_SECURITY_GROUP_IDS_MEMBER);
+static RESOLVERENDPOINT_MEMBER_DIRECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$Direction",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Direction",
+    5,
+);
+static RESOLVERENDPOINT_MEMBER_IP_ADDRESS_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$IpAddressCount",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "IpAddressCount",
+    6,
+);
+static RESOLVERENDPOINT_MEMBER_HOST_VPC_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$HostVPCId",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HostVPCId",
+    7,
+);
+static RESOLVERENDPOINT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$Status",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    8,
+);
+static RESOLVERENDPOINT_MEMBER_STATUS_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$StatusMessage",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusMessage",
+    9,
+);
+static RESOLVERENDPOINT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$CreationTime",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreationTime",
+    10,
+);
+static RESOLVERENDPOINT_MEMBER_MODIFICATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$ModificationTime",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModificationTime",
+    11,
+);
+static RESOLVERENDPOINT_MEMBER_OUTPOST_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$OutpostArn",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutpostArn",
+    12,
+);
+static RESOLVERENDPOINT_MEMBER_PREFERRED_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$PreferredInstanceType",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreferredInstanceType",
+    13,
+);
+static RESOLVERENDPOINT_MEMBER_RESOLVER_ENDPOINT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$ResolverEndpointType",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResolverEndpointType",
+    14,
+);
+static RESOLVERENDPOINT_MEMBER_PROTOCOLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ProtocolList$member",
+        "com.amazonaws.route53resolver",
+        "ProtocolList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static RESOLVERENDPOINT_MEMBER_PROTOCOLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$Protocols",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Protocols",
+    15,
+)
+.with_list_member(&RESOLVERENDPOINT_MEMBER_PROTOCOLS_MEMBER);
+static RESOLVERENDPOINT_MEMBER_RNI_ENHANCED_METRICS_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$RniEnhancedMetricsEnabled",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "RniEnhancedMetricsEnabled",
+    16,
+);
+static RESOLVERENDPOINT_MEMBER_TARGET_NAME_SERVER_METRICS_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$TargetNameServerMetricsEnabled",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "TargetNameServerMetricsEnabled",
+    17,
+);
+static RESOLVERENDPOINT_MEMBER_DNS64_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$Dns64Enabled",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Dns64Enabled",
+    18,
+);
+static RESOLVERENDPOINT_MEMBER_IPV6_INTERNET_ACCESS_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint$Ipv6InternetAccessEnabled",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Ipv6InternetAccessEnabled",
+    19,
+);
+static RESOLVERENDPOINT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverEndpoint",
+        "com.amazonaws.route53resolver",
+        "ResolverEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESOLVERENDPOINT_MEMBER_ID,
+        &RESOLVERENDPOINT_MEMBER_CREATOR_REQUEST_ID,
+        &RESOLVERENDPOINT_MEMBER_ARN,
+        &RESOLVERENDPOINT_MEMBER_NAME,
+        &RESOLVERENDPOINT_MEMBER_SECURITY_GROUP_IDS,
+        &RESOLVERENDPOINT_MEMBER_DIRECTION,
+        &RESOLVERENDPOINT_MEMBER_IP_ADDRESS_COUNT,
+        &RESOLVERENDPOINT_MEMBER_HOST_VPC_ID,
+        &RESOLVERENDPOINT_MEMBER_STATUS,
+        &RESOLVERENDPOINT_MEMBER_STATUS_MESSAGE,
+        &RESOLVERENDPOINT_MEMBER_CREATION_TIME,
+        &RESOLVERENDPOINT_MEMBER_MODIFICATION_TIME,
+        &RESOLVERENDPOINT_MEMBER_OUTPOST_ARN,
+        &RESOLVERENDPOINT_MEMBER_PREFERRED_INSTANCE_TYPE,
+        &RESOLVERENDPOINT_MEMBER_RESOLVER_ENDPOINT_TYPE,
+        &RESOLVERENDPOINT_MEMBER_PROTOCOLS,
+        &RESOLVERENDPOINT_MEMBER_RNI_ENHANCED_METRICS_ENABLED,
+        &RESOLVERENDPOINT_MEMBER_TARGET_NAME_SERVER_METRICS_ENABLED,
+        &RESOLVERENDPOINT_MEMBER_DNS64_ENABLED,
+        &RESOLVERENDPOINT_MEMBER_IPV6_INTERNET_ACCESS_ENABLED,
+    ],
+);
+impl ResolverEndpoint {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOLVERENDPOINT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResolverEndpoint {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&RESOLVERENDPOINT_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.creator_request_id {
+            ser.write_string(&RESOLVERENDPOINT_MEMBER_CREATOR_REQUEST_ID, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&RESOLVERENDPOINT_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&RESOLVERENDPOINT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.security_group_ids {
+            ser.write_list(
+                &RESOLVERENDPOINT_MEMBER_SECURITY_GROUP_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.direction {
+            ser.write_string(&RESOLVERENDPOINT_MEMBER_DIRECTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.ip_address_count {
+            ser.write_integer(&RESOLVERENDPOINT_MEMBER_IP_ADDRESS_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.host_vpc_id {
+            ser.write_string(&RESOLVERENDPOINT_MEMBER_HOST_VPC_ID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&RESOLVERENDPOINT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_message {
+            ser.write_string(&RESOLVERENDPOINT_MEMBER_STATUS_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_string(&RESOLVERENDPOINT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.modification_time {
+            ser.write_string(&RESOLVERENDPOINT_MEMBER_MODIFICATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.outpost_arn {
+            ser.write_string(&RESOLVERENDPOINT_MEMBER_OUTPOST_ARN, val)?;
+        }
+        if let Some(ref val) = self.preferred_instance_type {
+            ser.write_string(&RESOLVERENDPOINT_MEMBER_PREFERRED_INSTANCE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.resolver_endpoint_type {
+            ser.write_string(&RESOLVERENDPOINT_MEMBER_RESOLVER_ENDPOINT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.protocols {
+            ser.write_list(
+                &RESOLVERENDPOINT_MEMBER_PROTOCOLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.rni_enhanced_metrics_enabled {
+            ser.write_boolean(&RESOLVERENDPOINT_MEMBER_RNI_ENHANCED_METRICS_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.target_name_server_metrics_enabled {
+            ser.write_boolean(&RESOLVERENDPOINT_MEMBER_TARGET_NAME_SERVER_METRICS_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.dns64_enabled {
+            ser.write_boolean(&RESOLVERENDPOINT_MEMBER_DNS64_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.ipv6_internet_access_enabled {
+            ser.write_boolean(&RESOLVERENDPOINT_MEMBER_IPV6_INTERNET_ACCESS_ENABLED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ResolverEndpointBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESOLVERENDPOINT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creator_request_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_group_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.direction = Some(crate::types::ResolverEndpointDirection::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.host_vpc_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::ResolverEndpointStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.modification_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.outpost_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preferred_instance_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolver_endpoint_type = Some(crate::types::ResolverEndpointType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocols = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Protocol::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rni_enhanced_metrics_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_name_server_metrics_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns64_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ipv6_internet_access_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResolverEndpoint {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ResolverEndpoint {
     /// Creates a new builder-style object to manufacture [`ResolverEndpoint`](crate::types::ResolverEndpoint).
     pub fn builder() -> crate::types::builders::ResolverEndpointBuilder {

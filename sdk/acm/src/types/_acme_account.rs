@@ -57,6 +57,181 @@ impl ::std::fmt::Debug for AcmeAccount {
         formatter.finish()
     }
 }
+static ACMEACCOUNT_MEMBER_ACCOUNT_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmeAccount$AccountUrl", "com.amazonaws.acm", "AcmeAccount"),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccountUrl",
+    0,
+);
+static ACMEACCOUNT_MEMBER_PUBLIC_KEY_THUMBPRINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmeAccount$PublicKeyThumbprint", "com.amazonaws.acm", "AcmeAccount"),
+    ::aws_smithy_schema::ShapeType::String,
+    "PublicKeyThumbprint",
+    1,
+);
+static ACMEACCOUNT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmeAccount$Status", "com.amazonaws.acm", "AcmeAccount"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    2,
+);
+static ACMEACCOUNT_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmeAccount$CreatedAt", "com.amazonaws.acm", "AcmeAccount"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAt",
+    3,
+);
+static ACMEACCOUNT_MEMBER_ACME_EXTERNAL_ACCOUNT_BINDING_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeAccount$AcmeExternalAccountBindingArn",
+        "com.amazonaws.acm",
+        "AcmeAccount",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcmeExternalAccountBindingArn",
+    4,
+);
+static ACMEACCOUNT_MEMBER_CONTACTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#ContactList$member", "com.amazonaws.acm", "ContactList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ACMEACCOUNT_MEMBER_CONTACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmeAccount$Contacts", "com.amazonaws.acm", "AcmeAccount"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Contacts",
+    5,
+)
+.with_list_member(&ACMEACCOUNT_MEMBER_CONTACTS_MEMBER);
+static ACMEACCOUNT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmeAccount", "com.amazonaws.acm", "AcmeAccount"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACMEACCOUNT_MEMBER_ACCOUNT_URL,
+        &ACMEACCOUNT_MEMBER_PUBLIC_KEY_THUMBPRINT,
+        &ACMEACCOUNT_MEMBER_STATUS,
+        &ACMEACCOUNT_MEMBER_CREATED_AT,
+        &ACMEACCOUNT_MEMBER_ACME_EXTERNAL_ACCOUNT_BINDING_ARN,
+        &ACMEACCOUNT_MEMBER_CONTACTS,
+    ],
+);
+impl AcmeAccount {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACMEACCOUNT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AcmeAccount {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.account_url {
+            ser.write_string(&ACMEACCOUNT_MEMBER_ACCOUNT_URL, val)?;
+        }
+        if let Some(ref val) = self.public_key_thumbprint {
+            ser.write_string(&ACMEACCOUNT_MEMBER_PUBLIC_KEY_THUMBPRINT, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&ACMEACCOUNT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&ACMEACCOUNT_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.acme_external_account_binding_arn {
+            ser.write_string(&ACMEACCOUNT_MEMBER_ACME_EXTERNAL_ACCOUNT_BINDING_ARN, val)?;
+        }
+        if let Some(ref val) = self.contacts {
+            ser.write_list(
+                &ACMEACCOUNT_MEMBER_CONTACTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AcmeAccountBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACMEACCOUNT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.public_key_thumbprint = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::AcmeAccountStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.acme_external_account_binding_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.contacts = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AcmeAccount {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AcmeAccount {
     /// Creates a new builder-style object to manufacture [`AcmeAccount`](crate::types::AcmeAccount).
     pub fn builder() -> crate::types::builders::AcmeAccountBuilder {

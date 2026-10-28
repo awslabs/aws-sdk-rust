@@ -174,6 +174,370 @@ impl ::std::fmt::Debug for AdminCreateUserInput {
         formatter.finish()
     }
 }
+static ADMINCREATEUSERINPUT_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminCreateUserInput$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminCreateUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    0,
+);
+static ADMINCREATEUSERINPUT_MEMBER_USERNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminCreateUserInput$Username",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminCreateUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Username",
+    1,
+);
+static ADMINCREATEUSERINPUT_MEMBER_USER_ATTRIBUTES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AttributeListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "AttributeListType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ADMINCREATEUSERINPUT_MEMBER_USER_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminCreateUserInput$UserAttributes",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminCreateUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "UserAttributes",
+    2,
+)
+.with_list_member(&ADMINCREATEUSERINPUT_MEMBER_USER_ATTRIBUTES_MEMBER);
+static ADMINCREATEUSERINPUT_MEMBER_VALIDATION_DATA_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AttributeListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "AttributeListType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ADMINCREATEUSERINPUT_MEMBER_VALIDATION_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminCreateUserInput$ValidationData",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminCreateUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ValidationData",
+    3,
+)
+.with_list_member(&ADMINCREATEUSERINPUT_MEMBER_VALIDATION_DATA_MEMBER);
+static ADMINCREATEUSERINPUT_MEMBER_TEMPORARY_PASSWORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminCreateUserInput$TemporaryPassword",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminCreateUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TemporaryPassword",
+    4,
+);
+static ADMINCREATEUSERINPUT_MEMBER_FORCE_ALIAS_CREATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminCreateUserInput$ForceAliasCreation",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminCreateUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ForceAliasCreation",
+    5,
+);
+static ADMINCREATEUSERINPUT_MEMBER_MESSAGE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminCreateUserInput$MessageAction",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminCreateUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MessageAction",
+    6,
+);
+static ADMINCREATEUSERINPUT_MEMBER_DESIRED_DELIVERY_MEDIUMS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DeliveryMediumListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "DeliveryMediumListType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ADMINCREATEUSERINPUT_MEMBER_DESIRED_DELIVERY_MEDIUMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminCreateUserInput$DesiredDeliveryMediums",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminCreateUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DesiredDeliveryMediums",
+    7,
+)
+.with_list_member(&ADMINCREATEUSERINPUT_MEMBER_DESIRED_DELIVERY_MEDIUMS_MEMBER);
+static ADMINCREATEUSERINPUT_MEMBER_CLIENT_METADATA_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ClientMetadataType$key",
+        "com.amazonaws.cognitoidentityprovider",
+        "ClientMetadataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static ADMINCREATEUSERINPUT_MEMBER_CLIENT_METADATA_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ClientMetadataType$value",
+        "com.amazonaws.cognitoidentityprovider",
+        "ClientMetadataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static ADMINCREATEUSERINPUT_MEMBER_CLIENT_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminCreateUserInput$ClientMetadata",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminCreateUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "ClientMetadata",
+    8,
+)
+.with_map_members(
+    &ADMINCREATEUSERINPUT_MEMBER_CLIENT_METADATA_KEY,
+    &ADMINCREATEUSERINPUT_MEMBER_CLIENT_METADATA_VALUE,
+);
+static ADMINCREATEUSERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminCreateUserInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminCreateUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ADMINCREATEUSERINPUT_MEMBER_USER_POOL_ID,
+        &ADMINCREATEUSERINPUT_MEMBER_USERNAME,
+        &ADMINCREATEUSERINPUT_MEMBER_USER_ATTRIBUTES,
+        &ADMINCREATEUSERINPUT_MEMBER_VALIDATION_DATA,
+        &ADMINCREATEUSERINPUT_MEMBER_TEMPORARY_PASSWORD,
+        &ADMINCREATEUSERINPUT_MEMBER_FORCE_ALIAS_CREATION,
+        &ADMINCREATEUSERINPUT_MEMBER_MESSAGE_ACTION,
+        &ADMINCREATEUSERINPUT_MEMBER_DESIRED_DELIVERY_MEDIUMS,
+        &ADMINCREATEUSERINPUT_MEMBER_CLIENT_METADATA,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("AdminCreateUserRequest");
+impl AdminCreateUserInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ADMINCREATEUSERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AdminCreateUserInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&ADMINCREATEUSERINPUT_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.username {
+            ser.write_string(&ADMINCREATEUSERINPUT_MEMBER_USERNAME, val)?;
+        }
+        if let Some(ref val) = self.user_attributes {
+            ser.write_list(
+                &ADMINCREATEUSERINPUT_MEMBER_USER_ATTRIBUTES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AttributeType::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.validation_data {
+            ser.write_list(
+                &ADMINCREATEUSERINPUT_MEMBER_VALIDATION_DATA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AttributeType::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.temporary_password {
+            ser.write_string(&ADMINCREATEUSERINPUT_MEMBER_TEMPORARY_PASSWORD, val)?;
+        }
+        if let Some(ref val) = self.force_alias_creation {
+            ser.write_boolean(&ADMINCREATEUSERINPUT_MEMBER_FORCE_ALIAS_CREATION, *val)?;
+        }
+        if let Some(ref val) = self.message_action {
+            ser.write_string(&ADMINCREATEUSERINPUT_MEMBER_MESSAGE_ACTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.desired_delivery_mediums {
+            ser.write_list(
+                &ADMINCREATEUSERINPUT_MEMBER_DESIRED_DELIVERY_MEDIUMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.client_metadata {
+            ser.write_map(
+                &ADMINCREATEUSERINPUT_MEMBER_CLIENT_METADATA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::admin_create_user::builders::AdminCreateUserInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ADMINCREATEUSERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.username = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_attributes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AttributeType::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_data = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AttributeType::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.temporary_password = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.force_alias_creation = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message_action = Some(crate::types::MessageActionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.desired_delivery_mediums = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DeliveryMediumType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_metadata = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AdminCreateUserInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_pool_id = builder.user_pool_id.or(Some(String::new()));
+        builder.username = builder.username.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AdminCreateUserInput {
     /// Creates a new builder-style object to manufacture [`AdminCreateUserInput`](crate::operation::admin_create_user::AdminCreateUserInput).
     pub fn builder() -> crate::operation::admin_create_user::builders::AdminCreateUserInputBuilder {

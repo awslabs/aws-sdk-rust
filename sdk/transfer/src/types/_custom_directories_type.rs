@@ -42,6 +42,159 @@ impl CustomDirectoriesType {
         self.temporary_files_directory.deref()
     }
 }
+static CUSTOMDIRECTORIESTYPE_MEMBER_FAILED_FILES_DIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#CustomDirectoriesType$FailedFilesDirectory",
+        "com.amazonaws.transfer",
+        "CustomDirectoriesType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailedFilesDirectory",
+    0,
+);
+static CUSTOMDIRECTORIESTYPE_MEMBER_MDN_FILES_DIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#CustomDirectoriesType$MdnFilesDirectory",
+        "com.amazonaws.transfer",
+        "CustomDirectoriesType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MdnFilesDirectory",
+    1,
+);
+static CUSTOMDIRECTORIESTYPE_MEMBER_PAYLOAD_FILES_DIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#CustomDirectoriesType$PayloadFilesDirectory",
+        "com.amazonaws.transfer",
+        "CustomDirectoriesType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PayloadFilesDirectory",
+    2,
+);
+static CUSTOMDIRECTORIESTYPE_MEMBER_STATUS_FILES_DIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#CustomDirectoriesType$StatusFilesDirectory",
+        "com.amazonaws.transfer",
+        "CustomDirectoriesType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusFilesDirectory",
+    3,
+);
+static CUSTOMDIRECTORIESTYPE_MEMBER_TEMPORARY_FILES_DIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#CustomDirectoriesType$TemporaryFilesDirectory",
+        "com.amazonaws.transfer",
+        "CustomDirectoriesType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TemporaryFilesDirectory",
+    4,
+);
+static CUSTOMDIRECTORIESTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#CustomDirectoriesType",
+        "com.amazonaws.transfer",
+        "CustomDirectoriesType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CUSTOMDIRECTORIESTYPE_MEMBER_FAILED_FILES_DIRECTORY,
+        &CUSTOMDIRECTORIESTYPE_MEMBER_MDN_FILES_DIRECTORY,
+        &CUSTOMDIRECTORIESTYPE_MEMBER_PAYLOAD_FILES_DIRECTORY,
+        &CUSTOMDIRECTORIESTYPE_MEMBER_STATUS_FILES_DIRECTORY,
+        &CUSTOMDIRECTORIESTYPE_MEMBER_TEMPORARY_FILES_DIRECTORY,
+    ],
+);
+impl CustomDirectoriesType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CUSTOMDIRECTORIESTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CustomDirectoriesType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.failed_files_directory;
+            ser.write_string(&CUSTOMDIRECTORIESTYPE_MEMBER_FAILED_FILES_DIRECTORY, val)?;
+        }
+        {
+            let val = &self.mdn_files_directory;
+            ser.write_string(&CUSTOMDIRECTORIESTYPE_MEMBER_MDN_FILES_DIRECTORY, val)?;
+        }
+        {
+            let val = &self.payload_files_directory;
+            ser.write_string(&CUSTOMDIRECTORIESTYPE_MEMBER_PAYLOAD_FILES_DIRECTORY, val)?;
+        }
+        {
+            let val = &self.status_files_directory;
+            ser.write_string(&CUSTOMDIRECTORIESTYPE_MEMBER_STATUS_FILES_DIRECTORY, val)?;
+        }
+        {
+            let val = &self.temporary_files_directory;
+            ser.write_string(&CUSTOMDIRECTORIESTYPE_MEMBER_TEMPORARY_FILES_DIRECTORY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CustomDirectoriesTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CUSTOMDIRECTORIESTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.failed_files_directory = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.mdn_files_directory = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.payload_files_directory = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.status_files_directory = Some(deser.read_string(member)?);
+                }
+                Some(4) => {
+                    self.temporary_files_directory = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CustomDirectoriesType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.failed_files_directory = builder.failed_files_directory.or(Some(String::new()));
+        builder.mdn_files_directory = builder.mdn_files_directory.or(Some(String::new()));
+        builder.payload_files_directory = builder.payload_files_directory.or(Some(String::new()));
+        builder.status_files_directory = builder.status_files_directory.or(Some(String::new()));
+        builder.temporary_files_directory = builder.temporary_files_directory.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CustomDirectoriesType {
     /// Creates a new builder-style object to manufacture [`CustomDirectoriesType`](crate::types::CustomDirectoriesType).
     pub fn builder() -> crate::types::builders::CustomDirectoriesTypeBuilder {

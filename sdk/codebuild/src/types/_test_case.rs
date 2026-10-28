@@ -61,6 +61,217 @@ impl TestCase {
         self.test_suite_name.as_deref()
     }
 }
+static TESTCASE_MEMBER_REPORT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#TestCase$reportArn", "com.amazonaws.codebuild", "TestCase"),
+    ::aws_smithy_schema::ShapeType::String,
+    "reportArn",
+    0,
+);
+static TESTCASE_MEMBER_TEST_RAW_DATA_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#TestCase$testRawDataPath", "com.amazonaws.codebuild", "TestCase"),
+    ::aws_smithy_schema::ShapeType::String,
+    "testRawDataPath",
+    1,
+);
+static TESTCASE_MEMBER_PREFIX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#TestCase$prefix", "com.amazonaws.codebuild", "TestCase"),
+    ::aws_smithy_schema::ShapeType::String,
+    "prefix",
+    2,
+);
+static TESTCASE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#TestCase$name", "com.amazonaws.codebuild", "TestCase"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    3,
+);
+static TESTCASE_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#TestCase$status", "com.amazonaws.codebuild", "TestCase"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    4,
+);
+static TESTCASE_MEMBER_DURATION_IN_NANO_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#TestCase$durationInNanoSeconds",
+        "com.amazonaws.codebuild",
+        "TestCase",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "durationInNanoSeconds",
+    5,
+);
+static TESTCASE_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#TestCase$message", "com.amazonaws.codebuild", "TestCase"),
+    ::aws_smithy_schema::ShapeType::String,
+    "message",
+    6,
+);
+static TESTCASE_MEMBER_EXPIRED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#TestCase$expired", "com.amazonaws.codebuild", "TestCase"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "expired",
+    7,
+);
+static TESTCASE_MEMBER_TEST_SUITE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#TestCase$testSuiteName", "com.amazonaws.codebuild", "TestCase"),
+    ::aws_smithy_schema::ShapeType::String,
+    "testSuiteName",
+    8,
+);
+static TESTCASE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#TestCase", "com.amazonaws.codebuild", "TestCase"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TESTCASE_MEMBER_REPORT_ARN,
+        &TESTCASE_MEMBER_TEST_RAW_DATA_PATH,
+        &TESTCASE_MEMBER_PREFIX,
+        &TESTCASE_MEMBER_NAME,
+        &TESTCASE_MEMBER_STATUS,
+        &TESTCASE_MEMBER_DURATION_IN_NANO_SECONDS,
+        &TESTCASE_MEMBER_MESSAGE,
+        &TESTCASE_MEMBER_EXPIRED,
+        &TESTCASE_MEMBER_TEST_SUITE_NAME,
+    ],
+);
+impl TestCase {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TESTCASE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TestCase {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.report_arn {
+            ser.write_string(&TESTCASE_MEMBER_REPORT_ARN, val)?;
+        }
+        if let Some(ref val) = self.test_raw_data_path {
+            ser.write_string(&TESTCASE_MEMBER_TEST_RAW_DATA_PATH, val)?;
+        }
+        if let Some(ref val) = self.prefix {
+            ser.write_string(&TESTCASE_MEMBER_PREFIX, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&TESTCASE_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&TESTCASE_MEMBER_STATUS, val)?;
+        }
+        if let Some(ref val) = self.duration_in_nano_seconds {
+            ser.write_long(&TESTCASE_MEMBER_DURATION_IN_NANO_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&TESTCASE_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.expired {
+            ser.write_timestamp(&TESTCASE_MEMBER_EXPIRED, val)?;
+        }
+        if let Some(ref val) = self.test_suite_name {
+            ser.write_string(&TESTCASE_MEMBER_TEST_SUITE_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TestCaseBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TESTCASE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.test_raw_data_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.prefix = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.duration_in_nano_seconds = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expired = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.test_suite_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TestCase {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TestCase {
     /// Creates a new builder-style object to manufacture [`TestCase`](crate::types::TestCase).
     pub fn builder() -> crate::types::builders::TestCaseBuilder {

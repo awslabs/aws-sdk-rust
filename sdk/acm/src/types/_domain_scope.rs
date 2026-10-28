@@ -25,6 +25,111 @@ impl DomainScope {
         self.wildcards.as_ref()
     }
 }
+static DOMAINSCOPE_MEMBER_EXACT_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DomainScope$ExactDomain", "com.amazonaws.acm", "DomainScope"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExactDomain",
+    0,
+);
+static DOMAINSCOPE_MEMBER_SUBDOMAINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DomainScope$Subdomains", "com.amazonaws.acm", "DomainScope"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Subdomains",
+    1,
+);
+static DOMAINSCOPE_MEMBER_WILDCARDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DomainScope$Wildcards", "com.amazonaws.acm", "DomainScope"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Wildcards",
+    2,
+);
+static DOMAINSCOPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DomainScope", "com.amazonaws.acm", "DomainScope"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DOMAINSCOPE_MEMBER_EXACT_DOMAIN,
+        &DOMAINSCOPE_MEMBER_SUBDOMAINS,
+        &DOMAINSCOPE_MEMBER_WILDCARDS,
+    ],
+);
+impl DomainScope {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOMAINSCOPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DomainScope {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.exact_domain {
+            ser.write_string(&DOMAINSCOPE_MEMBER_EXACT_DOMAIN, val.as_str())?;
+        }
+        if let Some(ref val) = self.subdomains {
+            ser.write_string(&DOMAINSCOPE_MEMBER_SUBDOMAINS, val.as_str())?;
+        }
+        if let Some(ref val) = self.wildcards {
+            ser.write_string(&DOMAINSCOPE_MEMBER_WILDCARDS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DomainScopeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOMAINSCOPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.exact_domain = Some(crate::types::DomainScopeOption::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subdomains = Some(crate::types::DomainScopeOption::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.wildcards = Some(crate::types::DomainScopeOption::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DomainScope {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DomainScope {
     /// Creates a new builder-style object to manufacture [`DomainScope`](crate::types::DomainScope).
     pub fn builder() -> crate::types::builders::DomainScopeBuilder {

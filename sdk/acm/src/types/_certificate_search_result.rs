@@ -25,6 +25,127 @@ impl CertificateSearchResult {
         self.certificate_metadata.as_ref()
     }
 }
+static CERTIFICATESEARCHRESULT_MEMBER_CERTIFICATE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSearchResult$CertificateArn",
+        "com.amazonaws.acm",
+        "CertificateSearchResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertificateArn",
+    0,
+);
+static CERTIFICATESEARCHRESULT_MEMBER_X509_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSearchResult$X509Attributes",
+        "com.amazonaws.acm",
+        "CertificateSearchResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "X509Attributes",
+    1,
+);
+static CERTIFICATESEARCHRESULT_MEMBER_CERTIFICATE_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSearchResult$CertificateMetadata",
+        "com.amazonaws.acm",
+        "CertificateSearchResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "CertificateMetadata",
+    2,
+);
+static CERTIFICATESEARCHRESULT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSearchResult",
+        "com.amazonaws.acm",
+        "CertificateSearchResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CERTIFICATESEARCHRESULT_MEMBER_CERTIFICATE_ARN,
+        &CERTIFICATESEARCHRESULT_MEMBER_X509_ATTRIBUTES,
+        &CERTIFICATESEARCHRESULT_MEMBER_CERTIFICATE_METADATA,
+    ],
+);
+impl CertificateSearchResult {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CERTIFICATESEARCHRESULT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CertificateSearchResult {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.certificate_arn {
+            ser.write_string(&CERTIFICATESEARCHRESULT_MEMBER_CERTIFICATE_ARN, val)?;
+        }
+        if let Some(ref val) = self.x509_attributes {
+            ser.write_struct(&CERTIFICATESEARCHRESULT_MEMBER_X509_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.certificate_metadata {
+            ser.write_struct(&CERTIFICATESEARCHRESULT_MEMBER_CERTIFICATE_METADATA, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CertificateSearchResultBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CERTIFICATESEARCHRESULT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.x509_attributes = Some(crate::types::X509Attributes::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_metadata = Some(crate::types::CertificateMetadata::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CertificateSearchResult {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CertificateSearchResult {
     /// Creates a new builder-style object to manufacture [`CertificateSearchResult`](crate::types::CertificateSearchResult).
     pub fn builder() -> crate::types::builders::CertificateSearchResultBuilder {

@@ -25,6 +25,127 @@ impl CodeDeliveryDetailsType {
         self.attribute_name.as_deref()
     }
 }
+static CODEDELIVERYDETAILSTYPE_MEMBER_DESTINATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#CodeDeliveryDetailsType$Destination",
+        "com.amazonaws.cognitoidentityprovider",
+        "CodeDeliveryDetailsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Destination",
+    0,
+);
+static CODEDELIVERYDETAILSTYPE_MEMBER_DELIVERY_MEDIUM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#CodeDeliveryDetailsType$DeliveryMedium",
+        "com.amazonaws.cognitoidentityprovider",
+        "CodeDeliveryDetailsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeliveryMedium",
+    1,
+);
+static CODEDELIVERYDETAILSTYPE_MEMBER_ATTRIBUTE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#CodeDeliveryDetailsType$AttributeName",
+        "com.amazonaws.cognitoidentityprovider",
+        "CodeDeliveryDetailsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AttributeName",
+    2,
+);
+static CODEDELIVERYDETAILSTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#CodeDeliveryDetailsType",
+        "com.amazonaws.cognitoidentityprovider",
+        "CodeDeliveryDetailsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CODEDELIVERYDETAILSTYPE_MEMBER_DESTINATION,
+        &CODEDELIVERYDETAILSTYPE_MEMBER_DELIVERY_MEDIUM,
+        &CODEDELIVERYDETAILSTYPE_MEMBER_ATTRIBUTE_NAME,
+    ],
+);
+impl CodeDeliveryDetailsType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CODEDELIVERYDETAILSTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CodeDeliveryDetailsType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.destination {
+            ser.write_string(&CODEDELIVERYDETAILSTYPE_MEMBER_DESTINATION, val)?;
+        }
+        if let Some(ref val) = self.delivery_medium {
+            ser.write_string(&CODEDELIVERYDETAILSTYPE_MEMBER_DELIVERY_MEDIUM, val.as_str())?;
+        }
+        if let Some(ref val) = self.attribute_name {
+            ser.write_string(&CODEDELIVERYDETAILSTYPE_MEMBER_ATTRIBUTE_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CodeDeliveryDetailsTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CODEDELIVERYDETAILSTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delivery_medium = Some(crate::types::DeliveryMediumType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attribute_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CodeDeliveryDetailsType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CodeDeliveryDetailsType {
     /// Creates a new builder-style object to manufacture [`CodeDeliveryDetailsType`](crate::types::CodeDeliveryDetailsType).
     pub fn builder() -> crate::types::builders::CodeDeliveryDetailsTypeBuilder {

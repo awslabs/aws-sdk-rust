@@ -135,6 +135,386 @@ impl CreateFileSystemOpenZfsConfiguration {
         self.read_cache_configuration.as_ref()
     }
 }
+static CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_AUTOMATIC_BACKUP_RETENTION_DAYS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemOpenZFSConfiguration$AutomaticBackupRetentionDays",
+            "com.amazonaws.fsx",
+            "CreateFileSystemOpenZFSConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "AutomaticBackupRetentionDays",
+        0,
+    );
+static CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_COPY_TAGS_TO_BACKUPS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemOpenZFSConfiguration$CopyTagsToBackups",
+            "com.amazonaws.fsx",
+            "CreateFileSystemOpenZFSConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "CopyTagsToBackups",
+        1,
+    );
+static CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_COPY_TAGS_TO_VOLUMES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemOpenZFSConfiguration$CopyTagsToVolumes",
+            "com.amazonaws.fsx",
+            "CreateFileSystemOpenZFSConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "CopyTagsToVolumes",
+        2,
+    );
+static CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_DAILY_AUTOMATIC_BACKUP_START_TIME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemOpenZFSConfiguration$DailyAutomaticBackupStartTime",
+            "com.amazonaws.fsx",
+            "CreateFileSystemOpenZFSConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "DailyAutomaticBackupStartTime",
+        3,
+    );
+static CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_DEPLOYMENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateFileSystemOpenZFSConfiguration$DeploymentType",
+        "com.amazonaws.fsx",
+        "CreateFileSystemOpenZFSConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeploymentType",
+    4,
+);
+static CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_THROUGHPUT_CAPACITY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemOpenZFSConfiguration$ThroughputCapacity",
+            "com.amazonaws.fsx",
+            "CreateFileSystemOpenZFSConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "ThroughputCapacity",
+        5,
+    );
+static CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_WEEKLY_MAINTENANCE_START_TIME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemOpenZFSConfiguration$WeeklyMaintenanceStartTime",
+            "com.amazonaws.fsx",
+            "CreateFileSystemOpenZFSConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "WeeklyMaintenanceStartTime",
+        6,
+    );
+static CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_DISK_IOPS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemOpenZFSConfiguration$DiskIopsConfiguration",
+            "com.amazonaws.fsx",
+            "CreateFileSystemOpenZFSConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DiskIopsConfiguration",
+        7,
+    );
+static CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_ROOT_VOLUME_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemOpenZFSConfiguration$RootVolumeConfiguration",
+            "com.amazonaws.fsx",
+            "CreateFileSystemOpenZFSConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "RootVolumeConfiguration",
+        8,
+    );
+static CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_PREFERRED_SUBNET_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemOpenZFSConfiguration$PreferredSubnetId",
+            "com.amazonaws.fsx",
+            "CreateFileSystemOpenZFSConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "PreferredSubnetId",
+        9,
+    );
+static CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_ENDPOINT_IP_ADDRESS_RANGE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemOpenZFSConfiguration$EndpointIpAddressRange",
+            "com.amazonaws.fsx",
+            "CreateFileSystemOpenZFSConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "EndpointIpAddressRange",
+        10,
+    );
+static CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_ENDPOINT_IPV6_ADDRESS_RANGE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemOpenZFSConfiguration$EndpointIpv6AddressRange",
+            "com.amazonaws.fsx",
+            "CreateFileSystemOpenZFSConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "EndpointIpv6AddressRange",
+        11,
+    );
+static CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_ROUTE_TABLE_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#RouteTableIds$member", "com.amazonaws.fsx", "RouteTableIds"),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_ROUTE_TABLE_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateFileSystemOpenZFSConfiguration$RouteTableIds",
+        "com.amazonaws.fsx",
+        "CreateFileSystemOpenZFSConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "RouteTableIds",
+    12,
+)
+.with_list_member(&CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_ROUTE_TABLE_IDS_MEMBER);
+static CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_READ_CACHE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemOpenZFSConfiguration$ReadCacheConfiguration",
+            "com.amazonaws.fsx",
+            "CreateFileSystemOpenZFSConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ReadCacheConfiguration",
+        13,
+    );
+static CREATEFILESYSTEMOPENZFSCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateFileSystemOpenZFSConfiguration",
+        "com.amazonaws.fsx",
+        "CreateFileSystemOpenZFSConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_AUTOMATIC_BACKUP_RETENTION_DAYS,
+        &CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_COPY_TAGS_TO_BACKUPS,
+        &CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_COPY_TAGS_TO_VOLUMES,
+        &CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_DAILY_AUTOMATIC_BACKUP_START_TIME,
+        &CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_DEPLOYMENT_TYPE,
+        &CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_THROUGHPUT_CAPACITY,
+        &CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_WEEKLY_MAINTENANCE_START_TIME,
+        &CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_DISK_IOPS_CONFIGURATION,
+        &CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_ROOT_VOLUME_CONFIGURATION,
+        &CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_PREFERRED_SUBNET_ID,
+        &CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_ENDPOINT_IP_ADDRESS_RANGE,
+        &CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_ENDPOINT_IPV6_ADDRESS_RANGE,
+        &CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_ROUTE_TABLE_IDS,
+        &CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_READ_CACHE_CONFIGURATION,
+    ],
+);
+impl CreateFileSystemOpenZfsConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEFILESYSTEMOPENZFSCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateFileSystemOpenZfsConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.automatic_backup_retention_days {
+            ser.write_integer(&CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_AUTOMATIC_BACKUP_RETENTION_DAYS, *val)?;
+        }
+        if let Some(ref val) = self.copy_tags_to_backups {
+            ser.write_boolean(&CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_COPY_TAGS_TO_BACKUPS, *val)?;
+        }
+        if let Some(ref val) = self.copy_tags_to_volumes {
+            ser.write_boolean(&CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_COPY_TAGS_TO_VOLUMES, *val)?;
+        }
+        if let Some(ref val) = self.daily_automatic_backup_start_time {
+            ser.write_string(&CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_DAILY_AUTOMATIC_BACKUP_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.deployment_type {
+            ser.write_string(&CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_DEPLOYMENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.throughput_capacity {
+            ser.write_integer(&CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_THROUGHPUT_CAPACITY, *val)?;
+        }
+        if let Some(ref val) = self.weekly_maintenance_start_time {
+            ser.write_string(&CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_WEEKLY_MAINTENANCE_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.disk_iops_configuration {
+            ser.write_struct(&CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_DISK_IOPS_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.root_volume_configuration {
+            ser.write_struct(&CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_ROOT_VOLUME_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.preferred_subnet_id {
+            ser.write_string(&CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_PREFERRED_SUBNET_ID, val)?;
+        }
+        if let Some(ref val) = self.endpoint_ip_address_range {
+            ser.write_string(&CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_ENDPOINT_IP_ADDRESS_RANGE, val)?;
+        }
+        if let Some(ref val) = self.endpoint_ipv6_address_range {
+            ser.write_string(&CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_ENDPOINT_IPV6_ADDRESS_RANGE, val)?;
+        }
+        if let Some(ref val) = self.route_table_ids {
+            ser.write_list(
+                &CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_ROUTE_TABLE_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.read_cache_configuration {
+            ser.write_struct(&CREATEFILESYSTEMOPENZFSCONFIGURATION_MEMBER_READ_CACHE_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CreateFileSystemOpenZfsConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEFILESYSTEMOPENZFSCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.automatic_backup_retention_days = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.copy_tags_to_backups = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.copy_tags_to_volumes = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.daily_automatic_backup_start_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_type = Some(crate::types::OpenZfsDeploymentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.throughput_capacity = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.weekly_maintenance_start_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disk_iops_configuration = Some(crate::types::DiskIopsConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.root_volume_configuration = Some(crate::types::OpenZfsCreateRootVolumeConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preferred_subnet_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_ip_address_range = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_ipv6_address_range = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.route_table_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.read_cache_configuration = Some(crate::types::OpenZfsReadCacheConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateFileSystemOpenZfsConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CreateFileSystemOpenZfsConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateFileSystemOpenZfsConfiguration`](crate::types::CreateFileSystemOpenZfsConfiguration).
     pub fn builder() -> crate::types::builders::CreateFileSystemOpenZfsConfigurationBuilder {

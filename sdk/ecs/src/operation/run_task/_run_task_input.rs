@@ -214,6 +214,581 @@ impl RunTaskInput {
         self.volume_configurations.as_deref().unwrap_or_default()
     }
 }
+static RUNTASKINPUT_MEMBER_CAPACITY_PROVIDER_STRATEGY_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#CapacityProviderStrategy$member",
+        "com.amazonaws.ecs",
+        "CapacityProviderStrategy",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static RUNTASKINPUT_MEMBER_CAPACITY_PROVIDER_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$capacityProviderStrategy",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "capacityProviderStrategy",
+    0,
+)
+.with_list_member(&RUNTASKINPUT_MEMBER_CAPACITY_PROVIDER_STRATEGY_MEMBER);
+static RUNTASKINPUT_MEMBER_CLUSTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$cluster",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cluster",
+    1,
+);
+static RUNTASKINPUT_MEMBER_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$count",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "count",
+    2,
+);
+static RUNTASKINPUT_MEMBER_ENABLE_ECS_MANAGED_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$enableECSManagedTags",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "enableECSManagedTags",
+    3,
+);
+static RUNTASKINPUT_MEMBER_ENABLE_EXECUTE_COMMAND: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$enableExecuteCommand",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "enableExecuteCommand",
+    4,
+);
+static RUNTASKINPUT_MEMBER_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$group",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "group",
+    5,
+);
+static RUNTASKINPUT_MEMBER_LAUNCH_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$launchType",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "launchType",
+    6,
+);
+static RUNTASKINPUT_MEMBER_NETWORK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$networkConfiguration",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "networkConfiguration",
+    7,
+);
+static RUNTASKINPUT_MEMBER_OVERRIDES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$overrides",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "overrides",
+    8,
+);
+static RUNTASKINPUT_MEMBER_PLACEMENT_CONSTRAINTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#PlacementConstraints$member",
+        "com.amazonaws.ecs",
+        "PlacementConstraints",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static RUNTASKINPUT_MEMBER_PLACEMENT_CONSTRAINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$placementConstraints",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "placementConstraints",
+    9,
+)
+.with_list_member(&RUNTASKINPUT_MEMBER_PLACEMENT_CONSTRAINTS_MEMBER);
+static RUNTASKINPUT_MEMBER_PLACEMENT_STRATEGY_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#PlacementStrategies$member", "com.amazonaws.ecs", "PlacementStrategies"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static RUNTASKINPUT_MEMBER_PLACEMENT_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$placementStrategy",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "placementStrategy",
+    10,
+)
+.with_list_member(&RUNTASKINPUT_MEMBER_PLACEMENT_STRATEGY_MEMBER);
+static RUNTASKINPUT_MEMBER_PLATFORM_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$platformVersion",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "platformVersion",
+    11,
+);
+static RUNTASKINPUT_MEMBER_PROPAGATE_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$propagateTags",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "propagateTags",
+    12,
+);
+static RUNTASKINPUT_MEMBER_REFERENCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$referenceId",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "referenceId",
+    13,
+);
+static RUNTASKINPUT_MEMBER_STARTED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$startedBy",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "startedBy",
+    14,
+);
+static RUNTASKINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Tags$member", "com.amazonaws.ecs", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static RUNTASKINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$tags",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    15,
+)
+.with_list_member(&RUNTASKINPUT_MEMBER_TAGS_MEMBER);
+static RUNTASKINPUT_MEMBER_TASK_DEFINITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$taskDefinition",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskDefinition",
+    16,
+);
+static RUNTASKINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$clientToken",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "clientToken",
+    17,
+);
+static RUNTASKINPUT_MEMBER_VOLUME_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#TaskVolumeConfigurations$member",
+        "com.amazonaws.ecs",
+        "TaskVolumeConfigurations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static RUNTASKINPUT_MEMBER_VOLUME_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RunTaskInput$volumeConfigurations",
+        "com.amazonaws.ecs.synthetic",
+        "RunTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "volumeConfigurations",
+    18,
+)
+.with_list_member(&RUNTASKINPUT_MEMBER_VOLUME_CONFIGURATIONS_MEMBER);
+static RUNTASKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs.synthetic#RunTaskInput", "com.amazonaws.ecs.synthetic", "RunTaskInput"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RUNTASKINPUT_MEMBER_CAPACITY_PROVIDER_STRATEGY,
+        &RUNTASKINPUT_MEMBER_CLUSTER,
+        &RUNTASKINPUT_MEMBER_COUNT,
+        &RUNTASKINPUT_MEMBER_ENABLE_ECS_MANAGED_TAGS,
+        &RUNTASKINPUT_MEMBER_ENABLE_EXECUTE_COMMAND,
+        &RUNTASKINPUT_MEMBER_GROUP,
+        &RUNTASKINPUT_MEMBER_LAUNCH_TYPE,
+        &RUNTASKINPUT_MEMBER_NETWORK_CONFIGURATION,
+        &RUNTASKINPUT_MEMBER_OVERRIDES,
+        &RUNTASKINPUT_MEMBER_PLACEMENT_CONSTRAINTS,
+        &RUNTASKINPUT_MEMBER_PLACEMENT_STRATEGY,
+        &RUNTASKINPUT_MEMBER_PLATFORM_VERSION,
+        &RUNTASKINPUT_MEMBER_PROPAGATE_TAGS,
+        &RUNTASKINPUT_MEMBER_REFERENCE_ID,
+        &RUNTASKINPUT_MEMBER_STARTED_BY,
+        &RUNTASKINPUT_MEMBER_TAGS,
+        &RUNTASKINPUT_MEMBER_TASK_DEFINITION,
+        &RUNTASKINPUT_MEMBER_CLIENT_TOKEN,
+        &RUNTASKINPUT_MEMBER_VOLUME_CONFIGURATIONS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RunTaskRequest");
+impl RunTaskInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RUNTASKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RunTaskInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.capacity_provider_strategy {
+            ser.write_list(
+                &RUNTASKINPUT_MEMBER_CAPACITY_PROVIDER_STRATEGY,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CapacityProviderStrategyItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.cluster {
+            ser.write_string(&RUNTASKINPUT_MEMBER_CLUSTER, val)?;
+        }
+        if let Some(ref val) = self.count {
+            ser.write_integer(&RUNTASKINPUT_MEMBER_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.enable_ecs_managed_tags {
+            ser.write_boolean(&RUNTASKINPUT_MEMBER_ENABLE_ECS_MANAGED_TAGS, *val)?;
+        }
+        if let Some(ref val) = self.enable_execute_command {
+            ser.write_boolean(&RUNTASKINPUT_MEMBER_ENABLE_EXECUTE_COMMAND, *val)?;
+        }
+        if let Some(ref val) = self.group {
+            ser.write_string(&RUNTASKINPUT_MEMBER_GROUP, val)?;
+        }
+        if let Some(ref val) = self.launch_type {
+            ser.write_string(&RUNTASKINPUT_MEMBER_LAUNCH_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.network_configuration {
+            ser.write_struct(&RUNTASKINPUT_MEMBER_NETWORK_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.overrides {
+            ser.write_struct(&RUNTASKINPUT_MEMBER_OVERRIDES, val)?;
+        }
+        if let Some(ref val) = self.placement_constraints {
+            ser.write_list(
+                &RUNTASKINPUT_MEMBER_PLACEMENT_CONSTRAINTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PlacementConstraint::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.placement_strategy {
+            ser.write_list(
+                &RUNTASKINPUT_MEMBER_PLACEMENT_STRATEGY,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PlacementStrategy::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.platform_version {
+            ser.write_string(&RUNTASKINPUT_MEMBER_PLATFORM_VERSION, val)?;
+        }
+        if let Some(ref val) = self.propagate_tags {
+            ser.write_string(&RUNTASKINPUT_MEMBER_PROPAGATE_TAGS, val.as_str())?;
+        }
+        if let Some(ref val) = self.reference_id {
+            ser.write_string(&RUNTASKINPUT_MEMBER_REFERENCE_ID, val)?;
+        }
+        if let Some(ref val) = self.started_by {
+            ser.write_string(&RUNTASKINPUT_MEMBER_STARTED_BY, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(&RUNTASKINPUT_MEMBER_TAGS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.task_definition {
+            ser.write_string(&RUNTASKINPUT_MEMBER_TASK_DEFINITION, val)?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&RUNTASKINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.volume_configurations {
+            ser.write_list(
+                &RUNTASKINPUT_MEMBER_VOLUME_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TaskVolumeConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::run_task::builders::RunTaskInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RUNTASKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_provider_strategy = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CapacityProviderStrategyItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_ecs_managed_tags = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_execute_command = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.group = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.launch_type = Some(crate::types::LaunchType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_configuration = Some(crate::types::NetworkConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.overrides = Some(crate::types::TaskOverride::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.placement_constraints = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PlacementConstraint::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.placement_strategy = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PlacementStrategy::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.propagate_tags = Some(crate::types::PropagateTags::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reference_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.started_by = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_definition = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TaskVolumeConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RunTaskInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.task_definition = builder.task_definition.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RunTaskInput {
     /// Creates a new builder-style object to manufacture [`RunTaskInput`](crate::operation::run_task::RunTaskInput).
     pub fn builder() -> crate::operation::run_task::builders::RunTaskInputBuilder {

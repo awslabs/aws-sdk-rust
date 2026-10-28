@@ -24,6 +24,132 @@ impl InitializeClusterInput {
         self.trust_anchor.as_deref()
     }
 }
+static INITIALIZECLUSTERINPUT_MEMBER_CLUSTER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#InitializeClusterInput$ClusterId",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "InitializeClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterId",
+    0,
+);
+static INITIALIZECLUSTERINPUT_MEMBER_SIGNED_CERT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#InitializeClusterInput$SignedCert",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "InitializeClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SignedCert",
+    1,
+);
+static INITIALIZECLUSTERINPUT_MEMBER_TRUST_ANCHOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#InitializeClusterInput$TrustAnchor",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "InitializeClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrustAnchor",
+    2,
+);
+static INITIALIZECLUSTERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#InitializeClusterInput",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "InitializeClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INITIALIZECLUSTERINPUT_MEMBER_CLUSTER_ID,
+        &INITIALIZECLUSTERINPUT_MEMBER_SIGNED_CERT,
+        &INITIALIZECLUSTERINPUT_MEMBER_TRUST_ANCHOR,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("InitializeClusterRequest");
+impl InitializeClusterInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INITIALIZECLUSTERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InitializeClusterInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster_id {
+            ser.write_string(&INITIALIZECLUSTERINPUT_MEMBER_CLUSTER_ID, val)?;
+        }
+        if let Some(ref val) = self.signed_cert {
+            ser.write_string(&INITIALIZECLUSTERINPUT_MEMBER_SIGNED_CERT, val)?;
+        }
+        if let Some(ref val) = self.trust_anchor {
+            ser.write_string(&INITIALIZECLUSTERINPUT_MEMBER_TRUST_ANCHOR, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::initialize_cluster::builders::InitializeClusterInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INITIALIZECLUSTERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.signed_cert = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.trust_anchor = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InitializeClusterInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.cluster_id = builder.cluster_id.or(Some(String::new()));
+        builder.signed_cert = builder.signed_cert.or(Some(String::new()));
+        builder.trust_anchor = builder.trust_anchor.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl InitializeClusterInput {
     /// Creates a new builder-style object to manufacture [`InitializeClusterInput`](crate::operation::initialize_cluster::InitializeClusterInput).
     pub fn builder() -> crate::operation::initialize_cluster::builders::InitializeClusterInputBuilder {

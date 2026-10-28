@@ -140,3 +140,172 @@ impl X509AttributeFilter {
         matches!(self, Self::Unknown)
     }
 }
+static X509ATTRIBUTEFILTER_MEMBER_SUBJECT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#X509AttributeFilter$Subject",
+        "com.amazonaws.acm",
+        "X509AttributeFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "Subject",
+    0,
+);
+static X509ATTRIBUTEFILTER_MEMBER_SUBJECTALTERNATIVENAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#X509AttributeFilter$SubjectAlternativeName",
+        "com.amazonaws.acm",
+        "X509AttributeFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "SubjectAlternativeName",
+    1,
+);
+static X509ATTRIBUTEFILTER_MEMBER_EXTENDEDKEYUSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#X509AttributeFilter$ExtendedKeyUsage",
+        "com.amazonaws.acm",
+        "X509AttributeFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExtendedKeyUsage",
+    2,
+);
+static X509ATTRIBUTEFILTER_MEMBER_KEYUSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#X509AttributeFilter$KeyUsage",
+        "com.amazonaws.acm",
+        "X509AttributeFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KeyUsage",
+    3,
+);
+static X509ATTRIBUTEFILTER_MEMBER_KEYALGORITHM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#X509AttributeFilter$KeyAlgorithm",
+        "com.amazonaws.acm",
+        "X509AttributeFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KeyAlgorithm",
+    4,
+);
+static X509ATTRIBUTEFILTER_MEMBER_SERIALNUMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#X509AttributeFilter$SerialNumber",
+        "com.amazonaws.acm",
+        "X509AttributeFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SerialNumber",
+    5,
+);
+static X509ATTRIBUTEFILTER_MEMBER_NOTAFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#X509AttributeFilter$NotAfter",
+        "com.amazonaws.acm",
+        "X509AttributeFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NotAfter",
+    6,
+);
+static X509ATTRIBUTEFILTER_MEMBER_NOTBEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#X509AttributeFilter$NotBefore",
+        "com.amazonaws.acm",
+        "X509AttributeFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NotBefore",
+    7,
+);
+static X509ATTRIBUTEFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#X509AttributeFilter", "com.amazonaws.acm", "X509AttributeFilter"),
+    ::aws_smithy_schema::ShapeType::Union,
+    &[
+        &X509ATTRIBUTEFILTER_MEMBER_SUBJECT,
+        &X509ATTRIBUTEFILTER_MEMBER_SUBJECTALTERNATIVENAME,
+        &X509ATTRIBUTEFILTER_MEMBER_EXTENDEDKEYUSAGE,
+        &X509ATTRIBUTEFILTER_MEMBER_KEYUSAGE,
+        &X509ATTRIBUTEFILTER_MEMBER_KEYALGORITHM,
+        &X509ATTRIBUTEFILTER_MEMBER_SERIALNUMBER,
+        &X509ATTRIBUTEFILTER_MEMBER_NOTAFTER,
+        &X509ATTRIBUTEFILTER_MEMBER_NOTBEFORE,
+    ],
+);
+impl X509AttributeFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &X509ATTRIBUTEFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for X509AttributeFilter {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        match self {
+            Self::Subject(val) => {
+                ser.write_struct(&X509ATTRIBUTEFILTER_MEMBER_SUBJECT, val)?;
+            }
+            Self::SubjectAlternativeName(val) => {
+                ser.write_struct(&X509ATTRIBUTEFILTER_MEMBER_SUBJECTALTERNATIVENAME, val)?;
+            }
+            Self::ExtendedKeyUsage(val) => {
+                ser.write_string(&X509ATTRIBUTEFILTER_MEMBER_EXTENDEDKEYUSAGE, val.as_str())?;
+            }
+            Self::KeyUsage(val) => {
+                ser.write_string(&X509ATTRIBUTEFILTER_MEMBER_KEYUSAGE, val.as_str())?;
+            }
+            Self::KeyAlgorithm(val) => {
+                ser.write_string(&X509ATTRIBUTEFILTER_MEMBER_KEYALGORITHM, val.as_str())?;
+            }
+            Self::SerialNumber(val) => {
+                ser.write_string(&X509ATTRIBUTEFILTER_MEMBER_SERIALNUMBER, val)?;
+            }
+            Self::NotAfter(val) => {
+                ser.write_struct(&X509ATTRIBUTEFILTER_MEMBER_NOTAFTER, val)?;
+            }
+            Self::NotBefore(val) => {
+                ser.write_struct(&X509ATTRIBUTEFILTER_MEMBER_NOTBEFORE, val)?;
+            }
+            Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
+        }
+        Ok(())
+    }
+}
+impl X509AttributeFilter {
+    /// Deserializes this union from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut result: ::std::option::Option<Self> = ::std::option::Option::None;
+        #[allow(unused_variables, unreachable_code, clippy::single_match, clippy::match_single_binding)]
+        deserializer.read_struct(&X509ATTRIBUTEFILTER_SCHEMA, &mut |member, deser| {
+            // A union holds exactly one member; the deserializer reports every key
+            // (known or not), so a second one is an error whatever it names.
+            if result.is_some() {
+                return Err(::aws_smithy_schema::serde::SerdeError::invalid_input(
+                    "encountered mixed variants in union",
+                ));
+            }
+            result = ::std::option::Option::Some(match member.member_index() {
+                Some(0) => Self::Subject(crate::types::SubjectFilter::deserialize(deser)?),
+                Some(1) => Self::SubjectAlternativeName(crate::types::SubjectAlternativeNameFilter::deserialize(deser)?),
+                Some(2) => Self::ExtendedKeyUsage(crate::types::ExtendedKeyUsageName::from(deser.read_string(member)?.as_str())),
+                Some(3) => Self::KeyUsage(crate::types::KeyUsageName::from(deser.read_string(member)?.as_str())),
+                Some(4) => Self::KeyAlgorithm(crate::types::KeyAlgorithm::from(deser.read_string(member)?.as_str())),
+                Some(5) => Self::SerialNumber(deser.read_string(member)?),
+                Some(6) => Self::NotAfter(crate::types::TimestampRange::deserialize(deser)?),
+                Some(7) => Self::NotBefore(crate::types::TimestampRange::deserialize(deser)?),
+                _ => Self::Unknown,
+            });
+            Ok(())
+        })?;
+        result.ok_or_else(|| ::aws_smithy_schema::serde::SerdeError::custom("expected a union variant"))
+    }
+}

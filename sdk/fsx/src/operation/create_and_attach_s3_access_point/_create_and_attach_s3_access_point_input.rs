@@ -42,6 +42,194 @@ impl CreateAndAttachS3AccessPointInput {
         self.s3_access_point.as_ref()
     }
 }
+static CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateAndAttachS3AccessPointInput$ClientRequestToken",
+        "com.amazonaws.fsx.synthetic",
+        "CreateAndAttachS3AccessPointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    0,
+);
+static CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateAndAttachS3AccessPointInput$Name",
+        "com.amazonaws.fsx.synthetic",
+        "CreateAndAttachS3AccessPointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateAndAttachS3AccessPointInput$Type",
+        "com.amazonaws.fsx.synthetic",
+        "CreateAndAttachS3AccessPointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    2,
+);
+static CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_OPEN_ZFS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx.synthetic#CreateAndAttachS3AccessPointInput$OpenZFSConfiguration",
+            "com.amazonaws.fsx.synthetic",
+            "CreateAndAttachS3AccessPointInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "OpenZFSConfiguration",
+        3,
+    );
+static CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_ONTAP_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateAndAttachS3AccessPointInput$OntapConfiguration",
+        "com.amazonaws.fsx.synthetic",
+        "CreateAndAttachS3AccessPointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OntapConfiguration",
+    4,
+);
+static CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_S3_ACCESS_POINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateAndAttachS3AccessPointInput$S3AccessPoint",
+        "com.amazonaws.fsx.synthetic",
+        "CreateAndAttachS3AccessPointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3AccessPoint",
+    5,
+);
+static CREATEANDATTACHS3ACCESSPOINTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateAndAttachS3AccessPointInput",
+        "com.amazonaws.fsx.synthetic",
+        "CreateAndAttachS3AccessPointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_NAME,
+        &CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_TYPE,
+        &CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_OPEN_ZFS_CONFIGURATION,
+        &CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_ONTAP_CONFIGURATION,
+        &CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_S3_ACCESS_POINT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateAndAttachS3AccessPointRequest");
+impl CreateAndAttachS3AccessPointInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEANDATTACHS3ACCESSPOINTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAndAttachS3AccessPointInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.open_zfs_configuration {
+            ser.write_struct(&CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_OPEN_ZFS_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.ontap_configuration {
+            ser.write_struct(&CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_ONTAP_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.s3_access_point {
+            ser.write_struct(&CREATEANDATTACHS3ACCESSPOINTINPUT_MEMBER_S3_ACCESS_POINT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_and_attach_s3_access_point::builders::CreateAndAttachS3AccessPointInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEANDATTACHS3ACCESSPOINTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::S3AccessPointAttachmentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.open_zfs_configuration = Some(crate::types::CreateAndAttachS3AccessPointOpenZfsConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ontap_configuration = Some(crate::types::CreateAndAttachS3AccessPointOntapConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_access_point = Some(crate::types::CreateAndAttachS3AccessPointS3Configuration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateAndAttachS3AccessPointInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateAndAttachS3AccessPointInput {
     /// Creates a new builder-style object to manufacture [`CreateAndAttachS3AccessPointInput`](crate::operation::create_and_attach_s3_access_point::CreateAndAttachS3AccessPointInput).
     pub fn builder() -> crate::operation::create_and_attach_s3_access_point::builders::CreateAndAttachS3AccessPointInputBuilder {

@@ -71,6 +71,16 @@ pub fn de_image_criterion(
                 builder = builder.set_image_watermarks(var_6);
             }
             ,
+            s if s.matches("scanResultCondition") /* ScanResultCondition com.amazonaws.ec2#ImageCriterion$ScanResultCondition */ =>  {
+                let var_7 =
+                    Some(
+                        crate::protocol_serde::shape_scan_result_condition::de_scan_result_condition(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_scan_result_condition(var_7);
+            }
+            ,
             _ => {}
         }
     }

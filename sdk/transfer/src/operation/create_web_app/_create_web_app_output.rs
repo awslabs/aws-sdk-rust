@@ -14,6 +14,82 @@ impl CreateWebAppOutput {
         self.web_app_id.deref()
     }
 }
+static CREATEWEBAPPOUTPUT_MEMBER_WEB_APP_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateWebAppOutput$WebAppId",
+        "com.amazonaws.transfer.synthetic",
+        "CreateWebAppOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WebAppId",
+    0,
+);
+static CREATEWEBAPPOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateWebAppOutput",
+        "com.amazonaws.transfer.synthetic",
+        "CreateWebAppOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CREATEWEBAPPOUTPUT_MEMBER_WEB_APP_ID],
+)
+.with_original_name("CreateWebAppResponse");
+impl CreateWebAppOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEWEBAPPOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateWebAppOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.web_app_id;
+            ser.write_string(&CREATEWEBAPPOUTPUT_MEMBER_WEB_APP_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_web_app::builders::CreateWebAppOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEWEBAPPOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.web_app_id = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateWebAppOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.web_app_id = builder.web_app_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for CreateWebAppOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

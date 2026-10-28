@@ -5,6 +5,8 @@ pub use crate::types::_digital_signature_method::DigitalSignatureMethod;
 
 pub use crate::types::_checkout_type::CheckoutType;
 
+pub use crate::types::_grant_type::GrantType;
+
 pub use crate::types::_options::Options;
 
 pub use crate::types::_issuer::Issuer;
@@ -196,6 +198,8 @@ mod _filter;
 mod _grant;
 
 mod _grant_status;
+
+mod _grant_type;
 
 mod _granted_license;
 

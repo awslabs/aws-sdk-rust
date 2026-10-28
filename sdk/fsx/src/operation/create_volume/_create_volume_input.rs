@@ -44,6 +44,215 @@ impl CreateVolumeInput {
         self.open_zfs_configuration.as_ref()
     }
 }
+static CREATEVOLUMEINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateVolumeInput$ClientRequestToken",
+        "com.amazonaws.fsx.synthetic",
+        "CreateVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    0,
+);
+static CREATEVOLUMEINPUT_MEMBER_VOLUME_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateVolumeInput$VolumeType",
+        "com.amazonaws.fsx.synthetic",
+        "CreateVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeType",
+    1,
+);
+static CREATEVOLUMEINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateVolumeInput$Name",
+        "com.amazonaws.fsx.synthetic",
+        "CreateVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    2,
+);
+static CREATEVOLUMEINPUT_MEMBER_ONTAP_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateVolumeInput$OntapConfiguration",
+        "com.amazonaws.fsx.synthetic",
+        "CreateVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OntapConfiguration",
+    3,
+);
+static CREATEVOLUMEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Tags$member", "com.amazonaws.fsx", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEVOLUMEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateVolumeInput$Tags",
+        "com.amazonaws.fsx.synthetic",
+        "CreateVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    4,
+)
+.with_list_member(&CREATEVOLUMEINPUT_MEMBER_TAGS_MEMBER);
+static CREATEVOLUMEINPUT_MEMBER_OPEN_ZFS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateVolumeInput$OpenZFSConfiguration",
+        "com.amazonaws.fsx.synthetic",
+        "CreateVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OpenZFSConfiguration",
+    5,
+);
+static CREATEVOLUMEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateVolumeInput",
+        "com.amazonaws.fsx.synthetic",
+        "CreateVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEVOLUMEINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &CREATEVOLUMEINPUT_MEMBER_VOLUME_TYPE,
+        &CREATEVOLUMEINPUT_MEMBER_NAME,
+        &CREATEVOLUMEINPUT_MEMBER_ONTAP_CONFIGURATION,
+        &CREATEVOLUMEINPUT_MEMBER_TAGS,
+        &CREATEVOLUMEINPUT_MEMBER_OPEN_ZFS_CONFIGURATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateVolumeRequest");
+impl CreateVolumeInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEVOLUMEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateVolumeInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&CREATEVOLUMEINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.volume_type {
+            ser.write_string(&CREATEVOLUMEINPUT_MEMBER_VOLUME_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATEVOLUMEINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.ontap_configuration {
+            ser.write_struct(&CREATEVOLUMEINPUT_MEMBER_ONTAP_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEVOLUMEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.open_zfs_configuration {
+            ser.write_struct(&CREATEVOLUMEINPUT_MEMBER_OPEN_ZFS_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_volume::builders::CreateVolumeInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEVOLUMEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_type = Some(crate::types::VolumeType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ontap_configuration = Some(crate::types::CreateOntapVolumeConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.open_zfs_configuration = Some(crate::types::CreateOpenZfsVolumeConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateVolumeInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateVolumeInput {
     /// Creates a new builder-style object to manufacture [`CreateVolumeInput`](crate::operation::create_volume::CreateVolumeInput).
     pub fn builder() -> crate::operation::create_volume::builders::CreateVolumeInputBuilder {

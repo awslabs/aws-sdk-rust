@@ -37,6 +37,151 @@ impl WorkflowDetails {
         self.on_partial_upload.as_deref().unwrap_or_default()
     }
 }
+static WORKFLOWDETAILS_MEMBER_ON_UPLOAD_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#OnUploadWorkflowDetails$member",
+        "com.amazonaws.transfer",
+        "OnUploadWorkflowDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static WORKFLOWDETAILS_MEMBER_ON_UPLOAD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#WorkflowDetails$OnUpload",
+        "com.amazonaws.transfer",
+        "WorkflowDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "OnUpload",
+    0,
+)
+.with_list_member(&WORKFLOWDETAILS_MEMBER_ON_UPLOAD_MEMBER);
+static WORKFLOWDETAILS_MEMBER_ON_PARTIAL_UPLOAD_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#OnPartialUploadWorkflowDetails$member",
+        "com.amazonaws.transfer",
+        "OnPartialUploadWorkflowDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static WORKFLOWDETAILS_MEMBER_ON_PARTIAL_UPLOAD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#WorkflowDetails$OnPartialUpload",
+        "com.amazonaws.transfer",
+        "WorkflowDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "OnPartialUpload",
+    1,
+)
+.with_list_member(&WORKFLOWDETAILS_MEMBER_ON_PARTIAL_UPLOAD_MEMBER);
+static WORKFLOWDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#WorkflowDetails", "com.amazonaws.transfer", "WorkflowDetails"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&WORKFLOWDETAILS_MEMBER_ON_UPLOAD, &WORKFLOWDETAILS_MEMBER_ON_PARTIAL_UPLOAD],
+);
+impl WorkflowDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKFLOWDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WorkflowDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.on_upload {
+            ser.write_list(
+                &WORKFLOWDETAILS_MEMBER_ON_UPLOAD,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::WorkflowDetail::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.on_partial_upload {
+            ser.write_list(
+                &WORKFLOWDETAILS_MEMBER_ON_PARTIAL_UPLOAD,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::WorkflowDetail::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkflowDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKFLOWDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.on_upload = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::WorkflowDetail::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.on_partial_upload = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::WorkflowDetail::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WorkflowDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl WorkflowDetails {
     /// Creates a new builder-style object to manufacture [`WorkflowDetails`](crate::types::WorkflowDetails).
     pub fn builder() -> crate::types::builders::WorkflowDetailsBuilder {

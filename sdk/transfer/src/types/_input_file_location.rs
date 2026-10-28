@@ -19,6 +19,99 @@ impl InputFileLocation {
         self.efs_file_location.as_ref()
     }
 }
+static INPUTFILELOCATION_MEMBER_S3_FILE_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#InputFileLocation$S3FileLocation",
+        "com.amazonaws.transfer",
+        "InputFileLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3FileLocation",
+    0,
+);
+static INPUTFILELOCATION_MEMBER_EFS_FILE_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#InputFileLocation$EfsFileLocation",
+        "com.amazonaws.transfer",
+        "InputFileLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EfsFileLocation",
+    1,
+);
+static INPUTFILELOCATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#InputFileLocation", "com.amazonaws.transfer", "InputFileLocation"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&INPUTFILELOCATION_MEMBER_S3_FILE_LOCATION, &INPUTFILELOCATION_MEMBER_EFS_FILE_LOCATION],
+);
+impl InputFileLocation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INPUTFILELOCATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InputFileLocation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3_file_location {
+            ser.write_struct(&INPUTFILELOCATION_MEMBER_S3_FILE_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.efs_file_location {
+            ser.write_struct(&INPUTFILELOCATION_MEMBER_EFS_FILE_LOCATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InputFileLocationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INPUTFILELOCATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_file_location = Some(crate::types::S3InputFileLocation::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.efs_file_location = Some(crate::types::EfsFileLocation::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InputFileLocation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InputFileLocation {
     /// Creates a new builder-style object to manufacture [`InputFileLocation`](crate::types::InputFileLocation).
     pub fn builder() -> crate::types::builders::InputFileLocationBuilder {

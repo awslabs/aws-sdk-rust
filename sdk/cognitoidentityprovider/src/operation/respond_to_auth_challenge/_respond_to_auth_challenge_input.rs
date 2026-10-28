@@ -404,6 +404,280 @@ impl ::std::fmt::Debug for RespondToAuthChallengeInput {
         formatter.finish()
     }
 }
+static RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CLIENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#RespondToAuthChallengeInput$ClientId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "RespondToAuthChallengeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientId",
+    0,
+);
+static RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CHALLENGE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#RespondToAuthChallengeInput$ChallengeName",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "RespondToAuthChallengeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChallengeName",
+    1,
+);
+static RESPONDTOAUTHCHALLENGEINPUT_MEMBER_SESSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#RespondToAuthChallengeInput$Session",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "RespondToAuthChallengeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Session",
+    2,
+);
+static RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CHALLENGE_RESPONSES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ChallengeResponsesType$key",
+        "com.amazonaws.cognitoidentityprovider",
+        "ChallengeResponsesType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CHALLENGE_RESPONSES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ChallengeResponsesType$value",
+        "com.amazonaws.cognitoidentityprovider",
+        "ChallengeResponsesType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CHALLENGE_RESPONSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#RespondToAuthChallengeInput$ChallengeResponses",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "RespondToAuthChallengeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "ChallengeResponses",
+    3,
+)
+.with_map_members(
+    &RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CHALLENGE_RESPONSES_KEY,
+    &RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CHALLENGE_RESPONSES_VALUE,
+);
+static RESPONDTOAUTHCHALLENGEINPUT_MEMBER_ANALYTICS_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#RespondToAuthChallengeInput$AnalyticsMetadata",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "RespondToAuthChallengeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AnalyticsMetadata",
+    4,
+);
+static RESPONDTOAUTHCHALLENGEINPUT_MEMBER_USER_CONTEXT_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#RespondToAuthChallengeInput$UserContextData",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "RespondToAuthChallengeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "UserContextData",
+    5,
+);
+static RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CLIENT_METADATA_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ClientMetadataType$key",
+        "com.amazonaws.cognitoidentityprovider",
+        "ClientMetadataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CLIENT_METADATA_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ClientMetadataType$value",
+        "com.amazonaws.cognitoidentityprovider",
+        "ClientMetadataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CLIENT_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#RespondToAuthChallengeInput$ClientMetadata",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "RespondToAuthChallengeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "ClientMetadata",
+    6,
+)
+.with_map_members(
+    &RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CLIENT_METADATA_KEY,
+    &RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CLIENT_METADATA_VALUE,
+);
+static RESPONDTOAUTHCHALLENGEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#RespondToAuthChallengeInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "RespondToAuthChallengeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CLIENT_ID,
+        &RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CHALLENGE_NAME,
+        &RESPONDTOAUTHCHALLENGEINPUT_MEMBER_SESSION,
+        &RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CHALLENGE_RESPONSES,
+        &RESPONDTOAUTHCHALLENGEINPUT_MEMBER_ANALYTICS_METADATA,
+        &RESPONDTOAUTHCHALLENGEINPUT_MEMBER_USER_CONTEXT_DATA,
+        &RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CLIENT_METADATA,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RespondToAuthChallengeRequest");
+impl RespondToAuthChallengeInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESPONDTOAUTHCHALLENGEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RespondToAuthChallengeInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.client_id {
+            ser.write_string(&RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CLIENT_ID, val)?;
+        }
+        if let Some(ref val) = self.challenge_name {
+            ser.write_string(&RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CHALLENGE_NAME, val.as_str())?;
+        }
+        if let Some(ref val) = self.session {
+            ser.write_string(&RESPONDTOAUTHCHALLENGEINPUT_MEMBER_SESSION, val)?;
+        }
+        if let Some(ref val) = self.challenge_responses {
+            ser.write_map(
+                &RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CHALLENGE_RESPONSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.analytics_metadata {
+            ser.write_struct(&RESPONDTOAUTHCHALLENGEINPUT_MEMBER_ANALYTICS_METADATA, val)?;
+        }
+        if let Some(ref val) = self.user_context_data {
+            ser.write_struct(&RESPONDTOAUTHCHALLENGEINPUT_MEMBER_USER_CONTEXT_DATA, val)?;
+        }
+        if let Some(ref val) = self.client_metadata {
+            ser.write_map(
+                &RESPONDTOAUTHCHALLENGEINPUT_MEMBER_CLIENT_METADATA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::respond_to_auth_challenge::builders::RespondToAuthChallengeInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESPONDTOAUTHCHALLENGEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.challenge_name = Some(crate::types::ChallengeNameType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.session = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.challenge_responses = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.analytics_metadata = Some(crate::types::AnalyticsMetadataType::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_context_data = Some(crate::types::UserContextDataType::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_metadata = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RespondToAuthChallengeInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.client_id = builder.client_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RespondToAuthChallengeInput {
     /// Creates a new builder-style object to manufacture [`RespondToAuthChallengeInput`](crate::operation::respond_to_auth_challenge::RespondToAuthChallengeInput).
     pub fn builder() -> crate::operation::respond_to_auth_challenge::builders::RespondToAuthChallengeInputBuilder {

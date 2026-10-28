@@ -92,6 +92,263 @@ impl CreateAccessInput {
         self.external_id.as_deref()
     }
 }
+static CREATEACCESSINPUT_MEMBER_HOME_DIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateAccessInput$HomeDirectory",
+        "com.amazonaws.transfer.synthetic",
+        "CreateAccessInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeDirectory",
+    0,
+);
+static CREATEACCESSINPUT_MEMBER_HOME_DIRECTORY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateAccessInput$HomeDirectoryType",
+        "com.amazonaws.transfer.synthetic",
+        "CreateAccessInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeDirectoryType",
+    1,
+);
+static CREATEACCESSINPUT_MEMBER_HOME_DIRECTORY_MAPPINGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#HomeDirectoryMappings$member",
+        "com.amazonaws.transfer",
+        "HomeDirectoryMappings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEACCESSINPUT_MEMBER_HOME_DIRECTORY_MAPPINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateAccessInput$HomeDirectoryMappings",
+        "com.amazonaws.transfer.synthetic",
+        "CreateAccessInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "HomeDirectoryMappings",
+    2,
+)
+.with_list_member(&CREATEACCESSINPUT_MEMBER_HOME_DIRECTORY_MAPPINGS_MEMBER);
+static CREATEACCESSINPUT_MEMBER_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateAccessInput$Policy",
+        "com.amazonaws.transfer.synthetic",
+        "CreateAccessInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Policy",
+    3,
+);
+static CREATEACCESSINPUT_MEMBER_POSIX_PROFILE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateAccessInput$PosixProfile",
+        "com.amazonaws.transfer.synthetic",
+        "CreateAccessInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PosixProfile",
+    4,
+);
+static CREATEACCESSINPUT_MEMBER_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateAccessInput$Role",
+        "com.amazonaws.transfer.synthetic",
+        "CreateAccessInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Role",
+    5,
+);
+static CREATEACCESSINPUT_MEMBER_SERVER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateAccessInput$ServerId",
+        "com.amazonaws.transfer.synthetic",
+        "CreateAccessInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServerId",
+    6,
+);
+static CREATEACCESSINPUT_MEMBER_EXTERNAL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateAccessInput$ExternalId",
+        "com.amazonaws.transfer.synthetic",
+        "CreateAccessInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExternalId",
+    7,
+);
+static CREATEACCESSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateAccessInput",
+        "com.amazonaws.transfer.synthetic",
+        "CreateAccessInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEACCESSINPUT_MEMBER_HOME_DIRECTORY,
+        &CREATEACCESSINPUT_MEMBER_HOME_DIRECTORY_TYPE,
+        &CREATEACCESSINPUT_MEMBER_HOME_DIRECTORY_MAPPINGS,
+        &CREATEACCESSINPUT_MEMBER_POLICY,
+        &CREATEACCESSINPUT_MEMBER_POSIX_PROFILE,
+        &CREATEACCESSINPUT_MEMBER_ROLE,
+        &CREATEACCESSINPUT_MEMBER_SERVER_ID,
+        &CREATEACCESSINPUT_MEMBER_EXTERNAL_ID,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateAccessRequest");
+impl CreateAccessInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEACCESSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAccessInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.home_directory {
+            ser.write_string(&CREATEACCESSINPUT_MEMBER_HOME_DIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.home_directory_type {
+            ser.write_string(&CREATEACCESSINPUT_MEMBER_HOME_DIRECTORY_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.home_directory_mappings {
+            ser.write_list(
+                &CREATEACCESSINPUT_MEMBER_HOME_DIRECTORY_MAPPINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::HomeDirectoryMapEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.policy {
+            ser.write_string(&CREATEACCESSINPUT_MEMBER_POLICY, val)?;
+        }
+        if let Some(ref val) = self.posix_profile {
+            ser.write_struct(&CREATEACCESSINPUT_MEMBER_POSIX_PROFILE, val)?;
+        }
+        if let Some(ref val) = self.role {
+            ser.write_string(&CREATEACCESSINPUT_MEMBER_ROLE, val)?;
+        }
+        if let Some(ref val) = self.server_id {
+            ser.write_string(&CREATEACCESSINPUT_MEMBER_SERVER_ID, val)?;
+        }
+        if let Some(ref val) = self.external_id {
+            ser.write_string(&CREATEACCESSINPUT_MEMBER_EXTERNAL_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_access::builders::CreateAccessInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEACCESSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_directory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_directory_type = Some(crate::types::HomeDirectoryType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_directory_mappings = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::HomeDirectoryMapEntry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.policy = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.posix_profile = Some(crate::types::PosixProfile::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.server_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateAccessInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.role = builder.role.or(Some(String::new()));
+        builder.server_id = builder.server_id.or(Some(String::new()));
+        builder.external_id = builder.external_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateAccessInput {
     /// Creates a new builder-style object to manufacture [`CreateAccessInput`](crate::operation::create_access::CreateAccessInput).
     pub fn builder() -> crate::operation::create_access::builders::CreateAccessInputBuilder {

@@ -69,6 +69,185 @@ impl WorkflowExecutionConfiguration {
         self.lambda_role.as_deref()
     }
 }
+static WORKFLOWEXECUTIONCONFIGURATION_MEMBER_TASK_START_TO_CLOSE_TIMEOUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#WorkflowExecutionConfiguration$taskStartToCloseTimeout",
+            "com.amazonaws.swf",
+            "WorkflowExecutionConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "taskStartToCloseTimeout",
+        0,
+    );
+static WORKFLOWEXECUTIONCONFIGURATION_MEMBER_EXECUTION_START_TO_CLOSE_TIMEOUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#WorkflowExecutionConfiguration$executionStartToCloseTimeout",
+            "com.amazonaws.swf",
+            "WorkflowExecutionConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "executionStartToCloseTimeout",
+        1,
+    );
+static WORKFLOWEXECUTIONCONFIGURATION_MEMBER_TASK_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionConfiguration$taskList",
+        "com.amazonaws.swf",
+        "WorkflowExecutionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "taskList",
+    2,
+);
+static WORKFLOWEXECUTIONCONFIGURATION_MEMBER_TASK_PRIORITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionConfiguration$taskPriority",
+        "com.amazonaws.swf",
+        "WorkflowExecutionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskPriority",
+    3,
+);
+static WORKFLOWEXECUTIONCONFIGURATION_MEMBER_CHILD_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionConfiguration$childPolicy",
+        "com.amazonaws.swf",
+        "WorkflowExecutionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "childPolicy",
+    4,
+);
+static WORKFLOWEXECUTIONCONFIGURATION_MEMBER_LAMBDA_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionConfiguration$lambdaRole",
+        "com.amazonaws.swf",
+        "WorkflowExecutionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "lambdaRole",
+    5,
+);
+static WORKFLOWEXECUTIONCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionConfiguration",
+        "com.amazonaws.swf",
+        "WorkflowExecutionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKFLOWEXECUTIONCONFIGURATION_MEMBER_TASK_START_TO_CLOSE_TIMEOUT,
+        &WORKFLOWEXECUTIONCONFIGURATION_MEMBER_EXECUTION_START_TO_CLOSE_TIMEOUT,
+        &WORKFLOWEXECUTIONCONFIGURATION_MEMBER_TASK_LIST,
+        &WORKFLOWEXECUTIONCONFIGURATION_MEMBER_TASK_PRIORITY,
+        &WORKFLOWEXECUTIONCONFIGURATION_MEMBER_CHILD_POLICY,
+        &WORKFLOWEXECUTIONCONFIGURATION_MEMBER_LAMBDA_ROLE,
+    ],
+);
+impl WorkflowExecutionConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKFLOWEXECUTIONCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WorkflowExecutionConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.task_start_to_close_timeout;
+            ser.write_string(&WORKFLOWEXECUTIONCONFIGURATION_MEMBER_TASK_START_TO_CLOSE_TIMEOUT, val)?;
+        }
+        {
+            let val = &self.execution_start_to_close_timeout;
+            ser.write_string(&WORKFLOWEXECUTIONCONFIGURATION_MEMBER_EXECUTION_START_TO_CLOSE_TIMEOUT, val)?;
+        }
+        if let Some(ref val) = self.task_list {
+            ser.write_struct(&WORKFLOWEXECUTIONCONFIGURATION_MEMBER_TASK_LIST, val)?;
+        }
+        if let Some(ref val) = self.task_priority {
+            ser.write_string(&WORKFLOWEXECUTIONCONFIGURATION_MEMBER_TASK_PRIORITY, val)?;
+        }
+        {
+            let val = &self.child_policy;
+            ser.write_string(&WORKFLOWEXECUTIONCONFIGURATION_MEMBER_CHILD_POLICY, val.as_str())?;
+        }
+        if let Some(ref val) = self.lambda_role {
+            ser.write_string(&WORKFLOWEXECUTIONCONFIGURATION_MEMBER_LAMBDA_ROLE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkflowExecutionConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKFLOWEXECUTIONCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.task_start_to_close_timeout = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.execution_start_to_close_timeout = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_list = Some(crate::types::TaskList::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_priority = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    self.child_policy = Some(crate::types::ChildPolicy::from(deser.read_string(member)?.as_str()));
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lambda_role = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WorkflowExecutionConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.task_start_to_close_timeout = builder.task_start_to_close_timeout.or(Some(String::new()));
+        builder.execution_start_to_close_timeout = builder.execution_start_to_close_timeout.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl WorkflowExecutionConfiguration {
     /// Creates a new builder-style object to manufacture [`WorkflowExecutionConfiguration`](crate::types::WorkflowExecutionConfiguration).
     pub fn builder() -> crate::types::builders::WorkflowExecutionConfigurationBuilder {

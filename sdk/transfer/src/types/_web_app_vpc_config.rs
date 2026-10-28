@@ -35,6 +35,178 @@ impl WebAppVpcConfig {
         self.ip_address_type.as_ref()
     }
 }
+static WEBAPPVPCCONFIG_MEMBER_SUBNET_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#SubnetIds$member", "com.amazonaws.transfer", "SubnetIds"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static WEBAPPVPCCONFIG_MEMBER_SUBNET_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#WebAppVpcConfig$SubnetIds",
+        "com.amazonaws.transfer",
+        "WebAppVpcConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SubnetIds",
+    0,
+)
+.with_list_member(&WEBAPPVPCCONFIG_MEMBER_SUBNET_IDS_MEMBER);
+static WEBAPPVPCCONFIG_MEMBER_VPC_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#WebAppVpcConfig$VpcId",
+        "com.amazonaws.transfer",
+        "WebAppVpcConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VpcId",
+    1,
+);
+static WEBAPPVPCCONFIG_MEMBER_SECURITY_GROUP_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#SecurityGroupIds$member",
+        "com.amazonaws.transfer",
+        "SecurityGroupIds",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static WEBAPPVPCCONFIG_MEMBER_SECURITY_GROUP_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#WebAppVpcConfig$SecurityGroupIds",
+        "com.amazonaws.transfer",
+        "WebAppVpcConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecurityGroupIds",
+    2,
+)
+.with_list_member(&WEBAPPVPCCONFIG_MEMBER_SECURITY_GROUP_IDS_MEMBER);
+static WEBAPPVPCCONFIG_MEMBER_IP_ADDRESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#WebAppVpcConfig$IpAddressType",
+        "com.amazonaws.transfer",
+        "WebAppVpcConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IpAddressType",
+    3,
+);
+static WEBAPPVPCCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#WebAppVpcConfig", "com.amazonaws.transfer", "WebAppVpcConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WEBAPPVPCCONFIG_MEMBER_SUBNET_IDS,
+        &WEBAPPVPCCONFIG_MEMBER_VPC_ID,
+        &WEBAPPVPCCONFIG_MEMBER_SECURITY_GROUP_IDS,
+        &WEBAPPVPCCONFIG_MEMBER_IP_ADDRESS_TYPE,
+    ],
+);
+impl WebAppVpcConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WEBAPPVPCCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WebAppVpcConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.subnet_ids {
+            ser.write_list(
+                &WEBAPPVPCCONFIG_MEMBER_SUBNET_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.vpc_id {
+            ser.write_string(&WEBAPPVPCCONFIG_MEMBER_VPC_ID, val)?;
+        }
+        if let Some(ref val) = self.security_group_ids {
+            ser.write_list(
+                &WEBAPPVPCCONFIG_MEMBER_SECURITY_GROUP_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ip_address_type {
+            ser.write_string(&WEBAPPVPCCONFIG_MEMBER_IP_ADDRESS_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WebAppVpcConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WEBAPPVPCCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subnet_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_group_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_type = Some(crate::types::WebAppVpcEndpointIpAddressType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WebAppVpcConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl WebAppVpcConfig {
     /// Creates a new builder-style object to manufacture [`WebAppVpcConfig`](crate::types::WebAppVpcConfig).
     pub fn builder() -> crate::types::builders::WebAppVpcConfigBuilder {

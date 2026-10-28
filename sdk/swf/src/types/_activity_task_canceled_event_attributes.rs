@@ -31,6 +31,140 @@ impl ActivityTaskCanceledEventAttributes {
         self.latest_cancel_requested_event_id
     }
 }
+static ACTIVITYTASKCANCELEDEVENTATTRIBUTES_MEMBER_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ActivityTaskCanceledEventAttributes$details",
+        "com.amazonaws.swf",
+        "ActivityTaskCanceledEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "details",
+    0,
+);
+static ACTIVITYTASKCANCELEDEVENTATTRIBUTES_MEMBER_SCHEDULED_EVENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ActivityTaskCanceledEventAttributes$scheduledEventId",
+        "com.amazonaws.swf",
+        "ActivityTaskCanceledEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "scheduledEventId",
+    1,
+);
+static ACTIVITYTASKCANCELEDEVENTATTRIBUTES_MEMBER_STARTED_EVENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ActivityTaskCanceledEventAttributes$startedEventId",
+        "com.amazonaws.swf",
+        "ActivityTaskCanceledEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "startedEventId",
+    2,
+);
+static ACTIVITYTASKCANCELEDEVENTATTRIBUTES_MEMBER_LATEST_CANCEL_REQUESTED_EVENT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ActivityTaskCanceledEventAttributes$latestCancelRequestedEventId",
+            "com.amazonaws.swf",
+            "ActivityTaskCanceledEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "latestCancelRequestedEventId",
+        3,
+    );
+static ACTIVITYTASKCANCELEDEVENTATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ActivityTaskCanceledEventAttributes",
+        "com.amazonaws.swf",
+        "ActivityTaskCanceledEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACTIVITYTASKCANCELEDEVENTATTRIBUTES_MEMBER_DETAILS,
+        &ACTIVITYTASKCANCELEDEVENTATTRIBUTES_MEMBER_SCHEDULED_EVENT_ID,
+        &ACTIVITYTASKCANCELEDEVENTATTRIBUTES_MEMBER_STARTED_EVENT_ID,
+        &ACTIVITYTASKCANCELEDEVENTATTRIBUTES_MEMBER_LATEST_CANCEL_REQUESTED_EVENT_ID,
+    ],
+);
+impl ActivityTaskCanceledEventAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACTIVITYTASKCANCELEDEVENTATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ActivityTaskCanceledEventAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.details {
+            ser.write_string(&ACTIVITYTASKCANCELEDEVENTATTRIBUTES_MEMBER_DETAILS, val)?;
+        }
+        {
+            let val = &self.scheduled_event_id;
+            ser.write_long(&ACTIVITYTASKCANCELEDEVENTATTRIBUTES_MEMBER_SCHEDULED_EVENT_ID, *val)?;
+        }
+        {
+            let val = &self.started_event_id;
+            ser.write_long(&ACTIVITYTASKCANCELEDEVENTATTRIBUTES_MEMBER_STARTED_EVENT_ID, *val)?;
+        }
+        {
+            let val = &self.latest_cancel_requested_event_id;
+            ser.write_long(&ACTIVITYTASKCANCELEDEVENTATTRIBUTES_MEMBER_LATEST_CANCEL_REQUESTED_EVENT_ID, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ActivityTaskCanceledEventAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACTIVITYTASKCANCELEDEVENTATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.details = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.scheduled_event_id = Some(deser.read_long(member)?);
+                }
+                Some(2) => {
+                    self.started_event_id = Some(deser.read_long(member)?);
+                }
+                Some(3) => {
+                    self.latest_cancel_requested_event_id = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ActivityTaskCanceledEventAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ActivityTaskCanceledEventAttributes {
     /// Creates a new builder-style object to manufacture [`ActivityTaskCanceledEventAttributes`](crate::types::ActivityTaskCanceledEventAttributes).
     pub fn builder() -> crate::types::builders::ActivityTaskCanceledEventAttributesBuilder {

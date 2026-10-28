@@ -14,6 +14,78 @@ impl DomainConfiguration {
         self.workflow_execution_retention_period_in_days.deref()
     }
 }
+static DOMAINCONFIGURATION_MEMBER_WORKFLOW_EXECUTION_RETENTION_PERIOD_IN_DAYS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#DomainConfiguration$workflowExecutionRetentionPeriodInDays",
+            "com.amazonaws.swf",
+            "DomainConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "workflowExecutionRetentionPeriodInDays",
+        0,
+    );
+static DOMAINCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.swf#DomainConfiguration", "com.amazonaws.swf", "DomainConfiguration"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DOMAINCONFIGURATION_MEMBER_WORKFLOW_EXECUTION_RETENTION_PERIOD_IN_DAYS],
+);
+impl DomainConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOMAINCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DomainConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.workflow_execution_retention_period_in_days;
+            ser.write_string(&DOMAINCONFIGURATION_MEMBER_WORKFLOW_EXECUTION_RETENTION_PERIOD_IN_DAYS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DomainConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOMAINCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.workflow_execution_retention_period_in_days = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DomainConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.workflow_execution_retention_period_in_days = builder.workflow_execution_retention_period_in_days.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DomainConfiguration {
     /// Creates a new builder-style object to manufacture [`DomainConfiguration`](crate::types::DomainConfiguration).
     pub fn builder() -> crate::types::builders::DomainConfigurationBuilder {

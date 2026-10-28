@@ -29,6 +29,161 @@ impl BatchRestrictions {
         self.fleets_allowed.as_deref().unwrap_or_default()
     }
 }
+static BATCHRESTRICTIONS_MEMBER_MAXIMUM_BUILDS_ALLOWED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BatchRestrictions$maximumBuildsAllowed",
+        "com.amazonaws.codebuild",
+        "BatchRestrictions",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maximumBuildsAllowed",
+    0,
+);
+static BATCHRESTRICTIONS_MEMBER_COMPUTE_TYPES_ALLOWED_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ComputeTypesAllowed$member",
+        "com.amazonaws.codebuild",
+        "ComputeTypesAllowed",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static BATCHRESTRICTIONS_MEMBER_COMPUTE_TYPES_ALLOWED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BatchRestrictions$computeTypesAllowed",
+        "com.amazonaws.codebuild",
+        "BatchRestrictions",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "computeTypesAllowed",
+    1,
+)
+.with_list_member(&BATCHRESTRICTIONS_MEMBER_COMPUTE_TYPES_ALLOWED_MEMBER);
+static BATCHRESTRICTIONS_MEMBER_FLEETS_ALLOWED_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#FleetsAllowed$member", "com.amazonaws.codebuild", "FleetsAllowed"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static BATCHRESTRICTIONS_MEMBER_FLEETS_ALLOWED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BatchRestrictions$fleetsAllowed",
+        "com.amazonaws.codebuild",
+        "BatchRestrictions",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "fleetsAllowed",
+    2,
+)
+.with_list_member(&BATCHRESTRICTIONS_MEMBER_FLEETS_ALLOWED_MEMBER);
+static BATCHRESTRICTIONS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BatchRestrictions",
+        "com.amazonaws.codebuild",
+        "BatchRestrictions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHRESTRICTIONS_MEMBER_MAXIMUM_BUILDS_ALLOWED,
+        &BATCHRESTRICTIONS_MEMBER_COMPUTE_TYPES_ALLOWED,
+        &BATCHRESTRICTIONS_MEMBER_FLEETS_ALLOWED,
+    ],
+);
+impl BatchRestrictions {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHRESTRICTIONS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchRestrictions {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.maximum_builds_allowed {
+            ser.write_integer(&BATCHRESTRICTIONS_MEMBER_MAXIMUM_BUILDS_ALLOWED, *val)?;
+        }
+        if let Some(ref val) = self.compute_types_allowed {
+            ser.write_list(
+                &BATCHRESTRICTIONS_MEMBER_COMPUTE_TYPES_ALLOWED,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.fleets_allowed {
+            ser.write_list(
+                &BATCHRESTRICTIONS_MEMBER_FLEETS_ALLOWED,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BatchRestrictionsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHRESTRICTIONS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.maximum_builds_allowed = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_types_allowed = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fleets_allowed = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchRestrictions {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl BatchRestrictions {
     /// Creates a new builder-style object to manufacture [`BatchRestrictions`](crate::types::BatchRestrictions).
     pub fn builder() -> crate::types::builders::BatchRestrictionsBuilder {

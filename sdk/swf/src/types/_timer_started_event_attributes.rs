@@ -35,6 +35,143 @@ impl TimerStartedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+static TIMERSTARTEDEVENTATTRIBUTES_MEMBER_TIMER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#TimerStartedEventAttributes$timerId",
+        "com.amazonaws.swf",
+        "TimerStartedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "timerId",
+    0,
+);
+static TIMERSTARTEDEVENTATTRIBUTES_MEMBER_CONTROL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#TimerStartedEventAttributes$control",
+        "com.amazonaws.swf",
+        "TimerStartedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "control",
+    1,
+);
+static TIMERSTARTEDEVENTATTRIBUTES_MEMBER_START_TO_FIRE_TIMEOUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#TimerStartedEventAttributes$startToFireTimeout",
+        "com.amazonaws.swf",
+        "TimerStartedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "startToFireTimeout",
+    2,
+);
+static TIMERSTARTEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#TimerStartedEventAttributes$decisionTaskCompletedEventId",
+            "com.amazonaws.swf",
+            "TimerStartedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "decisionTaskCompletedEventId",
+        3,
+    );
+static TIMERSTARTEDEVENTATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#TimerStartedEventAttributes",
+        "com.amazonaws.swf",
+        "TimerStartedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TIMERSTARTEDEVENTATTRIBUTES_MEMBER_TIMER_ID,
+        &TIMERSTARTEDEVENTATTRIBUTES_MEMBER_CONTROL,
+        &TIMERSTARTEDEVENTATTRIBUTES_MEMBER_START_TO_FIRE_TIMEOUT,
+        &TIMERSTARTEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID,
+    ],
+);
+impl TimerStartedEventAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TIMERSTARTEDEVENTATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TimerStartedEventAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.timer_id;
+            ser.write_string(&TIMERSTARTEDEVENTATTRIBUTES_MEMBER_TIMER_ID, val)?;
+        }
+        if let Some(ref val) = self.control {
+            ser.write_string(&TIMERSTARTEDEVENTATTRIBUTES_MEMBER_CONTROL, val)?;
+        }
+        {
+            let val = &self.start_to_fire_timeout;
+            ser.write_string(&TIMERSTARTEDEVENTATTRIBUTES_MEMBER_START_TO_FIRE_TIMEOUT, val)?;
+        }
+        {
+            let val = &self.decision_task_completed_event_id;
+            ser.write_long(&TIMERSTARTEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TimerStartedEventAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TIMERSTARTEDEVENTATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.timer_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.control = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.start_to_fire_timeout = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.decision_task_completed_event_id = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TimerStartedEventAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.timer_id = builder.timer_id.or(Some(String::new()));
+        builder.start_to_fire_timeout = builder.start_to_fire_timeout.or(Some(String::new()));
+        builder.decision_task_completed_event_id = builder.decision_task_completed_event_id.or(Some(0i64));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl TimerStartedEventAttributes {
     /// Creates a new builder-style object to manufacture [`TimerStartedEventAttributes`](crate::types::TimerStartedEventAttributes).
     pub fn builder() -> crate::types::builders::TimerStartedEventAttributesBuilder {

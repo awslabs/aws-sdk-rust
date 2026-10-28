@@ -66,6 +66,241 @@ impl ::std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdates {
         formatter.finish()
     }
 }
+static SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_USER_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#SelfManagedActiveDirectoryConfigurationUpdates$UserName",
+            "com.amazonaws.fsx",
+            "SelfManagedActiveDirectoryConfigurationUpdates",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "UserName",
+        0,
+    );
+static SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_PASSWORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#SelfManagedActiveDirectoryConfigurationUpdates$Password",
+        "com.amazonaws.fsx",
+        "SelfManagedActiveDirectoryConfigurationUpdates",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Password",
+    1,
+);
+static SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_DNS_IPS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#DnsIps$member", "com.amazonaws.fsx", "DnsIps"),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_DNS_IPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#SelfManagedActiveDirectoryConfigurationUpdates$DnsIps",
+        "com.amazonaws.fsx",
+        "SelfManagedActiveDirectoryConfigurationUpdates",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DnsIps",
+    2,
+)
+.with_list_member(&SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_DNS_IPS_MEMBER);
+static SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#SelfManagedActiveDirectoryConfigurationUpdates$DomainName",
+            "com.amazonaws.fsx",
+            "SelfManagedActiveDirectoryConfigurationUpdates",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "DomainName",
+        3,
+    );
+static SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_ORGANIZATIONAL_UNIT_DISTINGUISHED_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#SelfManagedActiveDirectoryConfigurationUpdates$OrganizationalUnitDistinguishedName",
+            "com.amazonaws.fsx",
+            "SelfManagedActiveDirectoryConfigurationUpdates",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "OrganizationalUnitDistinguishedName",
+        4,
+    );
+static SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_FILE_SYSTEM_ADMINISTRATORS_GROUP: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#SelfManagedActiveDirectoryConfigurationUpdates$FileSystemAdministratorsGroup",
+            "com.amazonaws.fsx",
+            "SelfManagedActiveDirectoryConfigurationUpdates",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "FileSystemAdministratorsGroup",
+        5,
+    );
+static SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_DOMAIN_JOIN_SERVICE_ACCOUNT_SECRET: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#SelfManagedActiveDirectoryConfigurationUpdates$DomainJoinServiceAccountSecret",
+            "com.amazonaws.fsx",
+            "SelfManagedActiveDirectoryConfigurationUpdates",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "DomainJoinServiceAccountSecret",
+        6,
+    );
+static SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#SelfManagedActiveDirectoryConfigurationUpdates",
+        "com.amazonaws.fsx",
+        "SelfManagedActiveDirectoryConfigurationUpdates",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_USER_NAME,
+        &SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_PASSWORD,
+        &SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_DNS_IPS,
+        &SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_DOMAIN_NAME,
+        &SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_ORGANIZATIONAL_UNIT_DISTINGUISHED_NAME,
+        &SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_FILE_SYSTEM_ADMINISTRATORS_GROUP,
+        &SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_DOMAIN_JOIN_SERVICE_ACCOUNT_SECRET,
+    ],
+);
+impl SelfManagedActiveDirectoryConfigurationUpdates {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SelfManagedActiveDirectoryConfigurationUpdates {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_name {
+            ser.write_string(&SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_USER_NAME, val)?;
+        }
+        if let Some(ref val) = self.password {
+            ser.write_string(&SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_PASSWORD, val)?;
+        }
+        if let Some(ref val) = self.dns_ips {
+            ser.write_list(
+                &SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_DNS_IPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.organizational_unit_distinguished_name {
+            ser.write_string(
+                &SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_ORGANIZATIONAL_UNIT_DISTINGUISHED_NAME,
+                val,
+            )?;
+        }
+        if let Some(ref val) = self.file_system_administrators_group {
+            ser.write_string(
+                &SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_FILE_SYSTEM_ADMINISTRATORS_GROUP,
+                val,
+            )?;
+        }
+        if let Some(ref val) = self.domain_join_service_account_secret {
+            ser.write_string(
+                &SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_MEMBER_DOMAIN_JOIN_SERVICE_ACCOUNT_SECRET,
+                val,
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SelfManagedActiveDirectoryConfigurationUpdatesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SELFMANAGEDACTIVEDIRECTORYCONFIGURATIONUPDATES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.password = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_ips = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.organizational_unit_distinguished_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_administrators_group = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_join_service_account_secret = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SelfManagedActiveDirectoryConfigurationUpdates {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SelfManagedActiveDirectoryConfigurationUpdates {
     /// Creates a new builder-style object to manufacture [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::types::SelfManagedActiveDirectoryConfigurationUpdates).
     pub fn builder() -> crate::types::builders::SelfManagedActiveDirectoryConfigurationUpdatesBuilder {

@@ -3,8 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::unescape::unescape;
+use crate::unescape::{unescape, validate_references};
 use std::borrow::Cow;
+use std::collections::HashSet;
 use std::error::Error;
 use std::fmt::{Display, Formatter};
 use xmlparser::{ElementEnd, Token, Tokenizer};
@@ -188,6 +189,13 @@ impl<'a> StartEl<'a> {
 pub struct Document<'a> {
     tokenizer: Tokenizer<'a>,
     depth: Depth,
+    /// `Some` once [`check_well_formedness`](Self::check_well_formedness) is enabled: the
+    /// `(prefix, local)` names of the currently open elements.
+    open_elements: Option<Vec<(&'a str, &'a str)>>,
+    /// Attribute names on the current start tag, populated only in checking mode.
+    attribute_names: Option<HashSet<(&'a str, &'a str)>>,
+    /// First well-formedness violation found while checking. Once set, iteration stops.
+    malformed: Option<String>,
 }
 
 impl<'a> TryFrom<&'a [u8]> for Document<'a> {
@@ -205,7 +213,48 @@ impl<'inp> Document<'inp> {
         Document {
             tokenizer: Tokenizer::from(doc),
             depth: 0,
+            open_elements: None,
+            attribute_names: None,
+            malformed: None,
         }
+    }
+
+    /// Track open elements so that ill-formed input is detected: a close tag whose name does
+    /// not match the open element, an element left unclosed at the end of input, or a tokenizer
+    /// error. Also reject duplicate attributes and invalid references, including in skipped
+    /// content. Without this, the decoder recovers from such input silently, which is the legacy
+    /// behavior. Must be called before any token is read.
+    ///
+    /// The first violation stops iteration (as a tokenizer error does). Call
+    /// [`finish_well_formed`](Self::finish_well_formed) after decoding to surface it.
+    pub(crate) fn check_well_formedness(&mut self) {
+        self.open_elements = Some(Vec::new());
+        self.attribute_names = Some(HashSet::new());
+    }
+
+    /// Read the rest of the document and return the first well-formedness violation, if any.
+    /// Only meaningful after [`check_well_formedness`](Self::check_well_formedness).
+    pub(crate) fn finish_well_formed(&mut self) -> Result<(), XmlDecodeError> {
+        for _ in self.by_ref() {}
+        match self.malformed.take() {
+            Some(msg) => Err(XmlDecodeError::custom(msg)),
+            None => Ok(()),
+        }
+    }
+
+    /// Record a well-formedness violation (checking mode only) and return it as an error token.
+    /// Cold and out of line so the error formatting stays off `next()`'s hot path.
+    #[cold]
+    #[inline(never)]
+    fn record_malformed(&mut self, what: &str, prefix: &str, local: &str) -> XmlDecodeError {
+        let msg = if prefix.is_empty() {
+            format!("{what} `{local}`")
+        } else {
+            format!("{what} `{prefix}:{local}`")
+        };
+        let err = XmlDecodeError::custom(msg.clone());
+        self.malformed = Some(msg);
+        err
     }
 
     /// "Depth first" iterator
@@ -251,6 +300,11 @@ impl<'inp> Document<'inp> {
             terminated: false,
         }
     }
+
+    /// Byte offset into the document of the first byte the tokenizer has not yet consumed.
+    fn offset(&self) -> usize {
+        self.tokenizer.stream().pos()
+    }
 }
 
 /// A new-type wrapper around `Token` to prevent the wrapped third party type from showing up in
@@ -271,24 +325,96 @@ pub struct XmlToken<'inp>(Token<'inp>);
 impl<'inp> Iterator for Document<'inp> {
     type Item = Result<(XmlToken<'inp>, Depth), XmlDecodeError>;
     fn next<'a>(&'a mut self) -> Option<Result<(XmlToken<'inp>, Depth), XmlDecodeError>> {
-        let tok = self.tokenizer.next()?;
+        if self.malformed.is_some() {
+            return None;
+        }
+        let tok = match self.tokenizer.next() {
+            Some(tok) => tok,
+            None => {
+                let unclosed = self.open_elements.as_ref().and_then(|o| o.last()).copied();
+                return unclosed.map(|(prefix, local)| {
+                    Err(self.record_malformed("unclosed element", prefix, local))
+                });
+            }
+        };
         let tok = match tok {
-            Err(e) => return Some(Err(XmlDecodeError::invalid_xml(e))),
+            Err(e) => {
+                if self.open_elements.is_some() {
+                    self.malformed = Some(e.to_string());
+                }
+                return Some(Err(XmlDecodeError::invalid_xml(e)));
+            }
             Ok(tok) => tok,
         };
+        if let Some(attributes) = self.attribute_names.as_mut() {
+            let references = match tok {
+                Token::Attribute {
+                    prefix,
+                    local,
+                    value,
+                    ..
+                } => {
+                    let name = (prefix.as_str(), local.as_str());
+                    if !attributes.insert(name) {
+                        return Some(Err(self.record_malformed(
+                            "duplicate attribute",
+                            name.0,
+                            name.1,
+                        )));
+                    }
+                    Some(value.as_str())
+                }
+                Token::Text { text } => Some(text.as_str()),
+                _ => None,
+            };
+            if let Some(text) = references {
+                if let Err(error) = validate_references(text) {
+                    self.malformed = Some(error.to_string());
+                    return Some(Err(error));
+                }
+            }
+        }
         // depth bookkeeping
         match tok {
             Token::ElementEnd {
-                end: ElementEnd::Close(_, _),
+                end: ElementEnd::Close(prefix, local),
                 ..
             } => {
+                if let Some(open) = self.open_elements.as_mut() {
+                    let (prefix, local) = (prefix.as_str(), local.as_str());
+                    // Almost every tag is unprefixed. Short-circuiting the empty-prefix case
+                    // matters: comparing the two empty `prefix` slices directly more than
+                    // doubled the cost of a tokenizer pass on a benchmark payload, whereas
+                    // this form adds ~3%.
+                    let matches = |(p, l): (&str, &str)| {
+                        l == local && ((p.is_empty() && prefix.is_empty()) || p == prefix)
+                    };
+                    if !open.pop().is_some_and(matches) {
+                        return Some(Err(self.record_malformed(
+                            "mismatched end tag",
+                            prefix,
+                            local,
+                        )));
+                    }
+                }
                 self.depth -= 1;
             }
             Token::ElementEnd {
                 end: ElementEnd::Empty,
                 ..
-            } => self.depth -= 1,
-            t @ Token::ElementStart { .. } => {
+            } => {
+                if let Some(open) = self.open_elements.as_mut() {
+                    open.pop();
+                }
+                self.depth -= 1
+            }
+            t @ Token::ElementStart { prefix, local, .. } => {
+                if let Some(open) = self.open_elements.as_mut() {
+                    open.push((prefix.as_str(), local.as_str()));
+                }
+                if let Some(attributes) = self.attribute_names.as_mut() {
+                    attributes.clear();
+                }
                 self.depth += 1;
                 // We want the startel and endel to have the same depth, but after the opener,
                 // the parser will be at depth 1. Return the previous depth:
@@ -322,6 +448,17 @@ impl<'inp> ScopedDecoder<'inp, '_> {
     /// The start element for this scope
     pub fn start_el<'a>(&'a self) -> &'a StartEl<'inp> {
         &self.start_el
+    }
+
+    /// Consume the rest of this scope and return the byte offset just past the element's close
+    /// tag (or past `/>` for a self-closing element).
+    ///
+    /// The offset comes from the tokenizer itself, so comments, CDATA, processing instructions and
+    /// attribute values can never be mistaken for markup. If the document ends or fails to
+    /// tokenize before the close tag, this is where the tokenizer stopped.
+    pub(crate) fn end_offset(mut self) -> usize {
+        for _ in &mut self {}
+        self.doc.offset()
     }
 
     /// Returns the next top-level tag in this scope

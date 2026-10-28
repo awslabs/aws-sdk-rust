@@ -19,6 +19,97 @@ impl StorageConnector {
         &self.status
     }
 }
+static STORAGECONNECTOR_MEMBER_CONNECTOR_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#StorageConnector$ConnectorType",
+        "com.amazonaws.workspaces",
+        "StorageConnector",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConnectorType",
+    0,
+);
+static STORAGECONNECTOR_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#StorageConnector$Status",
+        "com.amazonaws.workspaces",
+        "StorageConnector",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    1,
+);
+static STORAGECONNECTOR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#StorageConnector",
+        "com.amazonaws.workspaces",
+        "StorageConnector",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&STORAGECONNECTOR_MEMBER_CONNECTOR_TYPE, &STORAGECONNECTOR_MEMBER_STATUS],
+);
+impl StorageConnector {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STORAGECONNECTOR_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StorageConnector {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.connector_type;
+            ser.write_string(&STORAGECONNECTOR_MEMBER_CONNECTOR_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.status;
+            ser.write_string(&STORAGECONNECTOR_MEMBER_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::StorageConnectorBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STORAGECONNECTOR_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.connector_type = Some(crate::types::StorageConnectorTypeEnum::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    self.status = Some(crate::types::StorageConnectorStatusEnum::from(deser.read_string(member)?.as_str()));
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StorageConnector {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StorageConnector {
     /// Creates a new builder-style object to manufacture [`StorageConnector`](crate::types::StorageConnector).
     pub fn builder() -> crate::types::builders::StorageConnectorBuilder {

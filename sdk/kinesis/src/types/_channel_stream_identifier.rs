@@ -20,6 +20,102 @@ impl ChannelStreamIdentifier {
         &self.stream_creation_timestamp
     }
 }
+static CHANNELSTREAMIDENTIFIER_MEMBER_STREAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelStreamIdentifier$StreamARN",
+        "com.amazonaws.kinesis",
+        "ChannelStreamIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamARN",
+    0,
+);
+static CHANNELSTREAMIDENTIFIER_MEMBER_STREAM_CREATION_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelStreamIdentifier$StreamCreationTimestamp",
+        "com.amazonaws.kinesis",
+        "ChannelStreamIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StreamCreationTimestamp",
+    1,
+);
+static CHANNELSTREAMIDENTIFIER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelStreamIdentifier",
+        "com.amazonaws.kinesis",
+        "ChannelStreamIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CHANNELSTREAMIDENTIFIER_MEMBER_STREAM_ARN,
+        &CHANNELSTREAMIDENTIFIER_MEMBER_STREAM_CREATION_TIMESTAMP,
+    ],
+);
+impl ChannelStreamIdentifier {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CHANNELSTREAMIDENTIFIER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ChannelStreamIdentifier {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.stream_arn;
+            ser.write_string(&CHANNELSTREAMIDENTIFIER_MEMBER_STREAM_ARN, val)?;
+        }
+        {
+            let val = &self.stream_creation_timestamp;
+            ser.write_timestamp(&CHANNELSTREAMIDENTIFIER_MEMBER_STREAM_CREATION_TIMESTAMP, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ChannelStreamIdentifierBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CHANNELSTREAMIDENTIFIER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.stream_arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.stream_creation_timestamp = Some(deser.read_timestamp(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ChannelStreamIdentifier {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.stream_arn = builder.stream_arn.or(Some(String::new()));
+        builder.stream_creation_timestamp = builder.stream_creation_timestamp.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ChannelStreamIdentifier {
     /// Creates a new builder-style object to manufacture [`ChannelStreamIdentifier`](crate::types::ChannelStreamIdentifier).
     pub fn builder() -> crate::types::builders::ChannelStreamIdentifierBuilder {

@@ -52,6 +52,130 @@ impl UpdateProjectVisibilityInput {
         self.resource_access_role.as_deref()
     }
 }
+static UPDATEPROJECTVISIBILITYINPUT_MEMBER_PROJECT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateProjectVisibilityInput$projectArn",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateProjectVisibilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "projectArn",
+    0,
+);
+static UPDATEPROJECTVISIBILITYINPUT_MEMBER_PROJECT_VISIBILITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateProjectVisibilityInput$projectVisibility",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateProjectVisibilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "projectVisibility",
+    1,
+);
+static UPDATEPROJECTVISIBILITYINPUT_MEMBER_RESOURCE_ACCESS_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateProjectVisibilityInput$resourceAccessRole",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateProjectVisibilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceAccessRole",
+    2,
+);
+static UPDATEPROJECTVISIBILITYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateProjectVisibilityInput",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateProjectVisibilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEPROJECTVISIBILITYINPUT_MEMBER_PROJECT_ARN,
+        &UPDATEPROJECTVISIBILITYINPUT_MEMBER_PROJECT_VISIBILITY,
+        &UPDATEPROJECTVISIBILITYINPUT_MEMBER_RESOURCE_ACCESS_ROLE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateProjectVisibilityInput");
+impl UpdateProjectVisibilityInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEPROJECTVISIBILITYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateProjectVisibilityInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.project_arn {
+            ser.write_string(&UPDATEPROJECTVISIBILITYINPUT_MEMBER_PROJECT_ARN, val)?;
+        }
+        if let Some(ref val) = self.project_visibility {
+            ser.write_string(&UPDATEPROJECTVISIBILITYINPUT_MEMBER_PROJECT_VISIBILITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.resource_access_role {
+            ser.write_string(&UPDATEPROJECTVISIBILITYINPUT_MEMBER_RESOURCE_ACCESS_ROLE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_project_visibility::builders::UpdateProjectVisibilityInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEPROJECTVISIBILITYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project_visibility = Some(crate::types::ProjectVisibilityType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_access_role = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateProjectVisibilityInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.project_arn = builder.project_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateProjectVisibilityInput {
     /// Creates a new builder-style object to manufacture [`UpdateProjectVisibilityInput`](crate::operation::update_project_visibility::UpdateProjectVisibilityInput).
     pub fn builder() -> crate::operation::update_project_visibility::builders::UpdateProjectVisibilityInputBuilder {

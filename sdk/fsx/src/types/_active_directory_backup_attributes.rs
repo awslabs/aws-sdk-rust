@@ -25,6 +25,127 @@ impl ActiveDirectoryBackupAttributes {
         self.resource_arn.as_deref()
     }
 }
+static ACTIVEDIRECTORYBACKUPATTRIBUTES_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#ActiveDirectoryBackupAttributes$DomainName",
+        "com.amazonaws.fsx",
+        "ActiveDirectoryBackupAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static ACTIVEDIRECTORYBACKUPATTRIBUTES_MEMBER_ACTIVE_DIRECTORY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#ActiveDirectoryBackupAttributes$ActiveDirectoryId",
+        "com.amazonaws.fsx",
+        "ActiveDirectoryBackupAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ActiveDirectoryId",
+    1,
+);
+static ACTIVEDIRECTORYBACKUPATTRIBUTES_MEMBER_RESOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#ActiveDirectoryBackupAttributes$ResourceARN",
+        "com.amazonaws.fsx",
+        "ActiveDirectoryBackupAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceARN",
+    2,
+);
+static ACTIVEDIRECTORYBACKUPATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#ActiveDirectoryBackupAttributes",
+        "com.amazonaws.fsx",
+        "ActiveDirectoryBackupAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACTIVEDIRECTORYBACKUPATTRIBUTES_MEMBER_DOMAIN_NAME,
+        &ACTIVEDIRECTORYBACKUPATTRIBUTES_MEMBER_ACTIVE_DIRECTORY_ID,
+        &ACTIVEDIRECTORYBACKUPATTRIBUTES_MEMBER_RESOURCE_ARN,
+    ],
+);
+impl ActiveDirectoryBackupAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACTIVEDIRECTORYBACKUPATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ActiveDirectoryBackupAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&ACTIVEDIRECTORYBACKUPATTRIBUTES_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.active_directory_id {
+            ser.write_string(&ACTIVEDIRECTORYBACKUPATTRIBUTES_MEMBER_ACTIVE_DIRECTORY_ID, val)?;
+        }
+        if let Some(ref val) = self.resource_arn {
+            ser.write_string(&ACTIVEDIRECTORYBACKUPATTRIBUTES_MEMBER_RESOURCE_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ActiveDirectoryBackupAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACTIVEDIRECTORYBACKUPATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.active_directory_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ActiveDirectoryBackupAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ActiveDirectoryBackupAttributes {
     /// Creates a new builder-style object to manufacture [`ActiveDirectoryBackupAttributes`](crate::types::ActiveDirectoryBackupAttributes).
     pub fn builder() -> crate::types::builders::ActiveDirectoryBackupAttributesBuilder {

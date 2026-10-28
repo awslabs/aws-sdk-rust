@@ -36,6 +36,145 @@ impl TestIdentityProviderOutput {
         self.url.deref()
     }
 }
+static TESTIDENTITYPROVIDEROUTPUT_MEMBER_RESPONSE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#TestIdentityProviderOutput$Response",
+        "com.amazonaws.transfer.synthetic",
+        "TestIdentityProviderOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Response",
+    0,
+);
+static TESTIDENTITYPROVIDEROUTPUT_MEMBER_STATUS_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#TestIdentityProviderOutput$StatusCode",
+        "com.amazonaws.transfer.synthetic",
+        "TestIdentityProviderOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "StatusCode",
+    1,
+);
+static TESTIDENTITYPROVIDEROUTPUT_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#TestIdentityProviderOutput$Message",
+        "com.amazonaws.transfer.synthetic",
+        "TestIdentityProviderOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    2,
+);
+static TESTIDENTITYPROVIDEROUTPUT_MEMBER_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#TestIdentityProviderOutput$Url",
+        "com.amazonaws.transfer.synthetic",
+        "TestIdentityProviderOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Url",
+    3,
+);
+static TESTIDENTITYPROVIDEROUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#TestIdentityProviderOutput",
+        "com.amazonaws.transfer.synthetic",
+        "TestIdentityProviderOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TESTIDENTITYPROVIDEROUTPUT_MEMBER_RESPONSE,
+        &TESTIDENTITYPROVIDEROUTPUT_MEMBER_STATUS_CODE,
+        &TESTIDENTITYPROVIDEROUTPUT_MEMBER_MESSAGE,
+        &TESTIDENTITYPROVIDEROUTPUT_MEMBER_URL,
+    ],
+)
+.with_original_name("TestIdentityProviderResponse");
+impl TestIdentityProviderOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TESTIDENTITYPROVIDEROUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TestIdentityProviderOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.response {
+            ser.write_string(&TESTIDENTITYPROVIDEROUTPUT_MEMBER_RESPONSE, val)?;
+        }
+        {
+            let val = &self.status_code;
+            ser.write_integer(&TESTIDENTITYPROVIDEROUTPUT_MEMBER_STATUS_CODE, *val)?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&TESTIDENTITYPROVIDEROUTPUT_MEMBER_MESSAGE, val)?;
+        }
+        {
+            let val = &self.url;
+            ser.write_string(&TESTIDENTITYPROVIDEROUTPUT_MEMBER_URL, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::test_identity_provider::builders::TestIdentityProviderOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TESTIDENTITYPROVIDEROUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.response = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.status_code = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    self.url = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TestIdentityProviderOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.status_code = builder.status_code.or(Some(0i32));
+        builder.url = builder.url.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for TestIdentityProviderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

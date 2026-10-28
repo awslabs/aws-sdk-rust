@@ -36,6 +36,174 @@ impl SignalWorkflowExecutionInput {
         self.input.as_deref()
     }
 }
+static SIGNALWORKFLOWEXECUTIONINPUT_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#SignalWorkflowExecutionInput$domain",
+        "com.amazonaws.swf.synthetic",
+        "SignalWorkflowExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domain",
+    0,
+);
+static SIGNALWORKFLOWEXECUTIONINPUT_MEMBER_WORKFLOW_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#SignalWorkflowExecutionInput$workflowId",
+        "com.amazonaws.swf.synthetic",
+        "SignalWorkflowExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "workflowId",
+    1,
+);
+static SIGNALWORKFLOWEXECUTIONINPUT_MEMBER_RUN_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#SignalWorkflowExecutionInput$runId",
+        "com.amazonaws.swf.synthetic",
+        "SignalWorkflowExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "runId",
+    2,
+);
+static SIGNALWORKFLOWEXECUTIONINPUT_MEMBER_SIGNAL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#SignalWorkflowExecutionInput$signalName",
+        "com.amazonaws.swf.synthetic",
+        "SignalWorkflowExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "signalName",
+    3,
+);
+static SIGNALWORKFLOWEXECUTIONINPUT_MEMBER_INPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#SignalWorkflowExecutionInput$input",
+        "com.amazonaws.swf.synthetic",
+        "SignalWorkflowExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "input",
+    4,
+);
+static SIGNALWORKFLOWEXECUTIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#SignalWorkflowExecutionInput",
+        "com.amazonaws.swf.synthetic",
+        "SignalWorkflowExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SIGNALWORKFLOWEXECUTIONINPUT_MEMBER_DOMAIN,
+        &SIGNALWORKFLOWEXECUTIONINPUT_MEMBER_WORKFLOW_ID,
+        &SIGNALWORKFLOWEXECUTIONINPUT_MEMBER_RUN_ID,
+        &SIGNALWORKFLOWEXECUTIONINPUT_MEMBER_SIGNAL_NAME,
+        &SIGNALWORKFLOWEXECUTIONINPUT_MEMBER_INPUT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("SignalWorkflowExecutionInput");
+impl SignalWorkflowExecutionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SIGNALWORKFLOWEXECUTIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SignalWorkflowExecutionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain {
+            ser.write_string(&SIGNALWORKFLOWEXECUTIONINPUT_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.workflow_id {
+            ser.write_string(&SIGNALWORKFLOWEXECUTIONINPUT_MEMBER_WORKFLOW_ID, val)?;
+        }
+        if let Some(ref val) = self.run_id {
+            ser.write_string(&SIGNALWORKFLOWEXECUTIONINPUT_MEMBER_RUN_ID, val)?;
+        }
+        if let Some(ref val) = self.signal_name {
+            ser.write_string(&SIGNALWORKFLOWEXECUTIONINPUT_MEMBER_SIGNAL_NAME, val)?;
+        }
+        if let Some(ref val) = self.input {
+            ser.write_string(&SIGNALWORKFLOWEXECUTIONINPUT_MEMBER_INPUT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SIGNALWORKFLOWEXECUTIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.run_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.signal_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SignalWorkflowExecutionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain = builder.domain.or(Some(String::new()));
+        builder.workflow_id = builder.workflow_id.or(Some(String::new()));
+        builder.signal_name = builder.signal_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SignalWorkflowExecutionInput {
     /// Creates a new builder-style object to manufacture [`SignalWorkflowExecutionInput`](crate::operation::signal_workflow_execution::SignalWorkflowExecutionInput).
     pub fn builder() -> crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionInputBuilder {

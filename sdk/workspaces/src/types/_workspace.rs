@@ -209,6 +209,514 @@ impl Workspace {
         self.standby_workspaces_properties.as_deref().unwrap_or_default()
     }
 }
+static WORKSPACE_MEMBER_WORKSPACE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#Workspace$WorkspaceId", "com.amazonaws.workspaces", "Workspace"),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkspaceId",
+    0,
+);
+static WORKSPACE_MEMBER_DIRECTORY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#Workspace$DirectoryId", "com.amazonaws.workspaces", "Workspace"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DirectoryId",
+    1,
+);
+static WORKSPACE_MEMBER_USER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#Workspace$UserName", "com.amazonaws.workspaces", "Workspace"),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserName",
+    2,
+);
+static WORKSPACE_MEMBER_IP_ADDRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#Workspace$IpAddress", "com.amazonaws.workspaces", "Workspace"),
+    ::aws_smithy_schema::ShapeType::String,
+    "IpAddress",
+    3,
+);
+static WORKSPACE_MEMBER_IPV6_ADDRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#Workspace$Ipv6Address", "com.amazonaws.workspaces", "Workspace"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Ipv6Address",
+    4,
+);
+static WORKSPACE_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#Workspace$State", "com.amazonaws.workspaces", "Workspace"),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    5,
+);
+static WORKSPACE_MEMBER_BUNDLE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#Workspace$BundleId", "com.amazonaws.workspaces", "Workspace"),
+    ::aws_smithy_schema::ShapeType::String,
+    "BundleId",
+    6,
+);
+static WORKSPACE_MEMBER_SUBNET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#Workspace$SubnetId", "com.amazonaws.workspaces", "Workspace"),
+    ::aws_smithy_schema::ShapeType::String,
+    "SubnetId",
+    7,
+);
+static WORKSPACE_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#Workspace$ErrorMessage", "com.amazonaws.workspaces", "Workspace"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorMessage",
+    8,
+);
+static WORKSPACE_MEMBER_ERROR_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#Workspace$ErrorCode", "com.amazonaws.workspaces", "Workspace"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorCode",
+    9,
+);
+static WORKSPACE_MEMBER_COMPUTER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#Workspace$ComputerName", "com.amazonaws.workspaces", "Workspace"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComputerName",
+    10,
+);
+static WORKSPACE_MEMBER_VOLUME_ENCRYPTION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#Workspace$VolumeEncryptionKey",
+        "com.amazonaws.workspaces",
+        "Workspace",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeEncryptionKey",
+    11,
+);
+static WORKSPACE_MEMBER_USER_VOLUME_ENCRYPTION_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#Workspace$UserVolumeEncryptionEnabled",
+        "com.amazonaws.workspaces",
+        "Workspace",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "UserVolumeEncryptionEnabled",
+    12,
+);
+static WORKSPACE_MEMBER_ROOT_VOLUME_ENCRYPTION_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#Workspace$RootVolumeEncryptionEnabled",
+        "com.amazonaws.workspaces",
+        "Workspace",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "RootVolumeEncryptionEnabled",
+    13,
+);
+static WORKSPACE_MEMBER_WORKSPACE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#Workspace$WorkspaceName",
+        "com.amazonaws.workspaces",
+        "Workspace",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkspaceName",
+    14,
+);
+static WORKSPACE_MEMBER_WORKSPACE_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#Workspace$WorkspaceProperties",
+        "com.amazonaws.workspaces",
+        "Workspace",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WorkspaceProperties",
+    15,
+);
+static WORKSPACE_MEMBER_MODIFICATION_STATES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ModificationStateList$member",
+        "com.amazonaws.workspaces",
+        "ModificationStateList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static WORKSPACE_MEMBER_MODIFICATION_STATES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#Workspace$ModificationStates",
+        "com.amazonaws.workspaces",
+        "Workspace",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ModificationStates",
+    16,
+)
+.with_list_member(&WORKSPACE_MEMBER_MODIFICATION_STATES_MEMBER);
+static WORKSPACE_MEMBER_RELATED_WORKSPACES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#RelatedWorkspaces$member",
+        "com.amazonaws.workspaces",
+        "RelatedWorkspaces",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static WORKSPACE_MEMBER_RELATED_WORKSPACES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#Workspace$RelatedWorkspaces",
+        "com.amazonaws.workspaces",
+        "Workspace",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "RelatedWorkspaces",
+    17,
+)
+.with_list_member(&WORKSPACE_MEMBER_RELATED_WORKSPACES_MEMBER);
+static WORKSPACE_MEMBER_DATA_REPLICATION_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#Workspace$DataReplicationSettings",
+        "com.amazonaws.workspaces",
+        "Workspace",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DataReplicationSettings",
+    18,
+);
+static WORKSPACE_MEMBER_STANDBY_WORKSPACES_PROPERTIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#StandbyWorkspacesPropertiesList$member",
+        "com.amazonaws.workspaces",
+        "StandbyWorkspacesPropertiesList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static WORKSPACE_MEMBER_STANDBY_WORKSPACES_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#Workspace$StandbyWorkspacesProperties",
+        "com.amazonaws.workspaces",
+        "Workspace",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "StandbyWorkspacesProperties",
+    19,
+)
+.with_list_member(&WORKSPACE_MEMBER_STANDBY_WORKSPACES_PROPERTIES_MEMBER);
+static WORKSPACE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#Workspace", "com.amazonaws.workspaces", "Workspace"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKSPACE_MEMBER_WORKSPACE_ID,
+        &WORKSPACE_MEMBER_DIRECTORY_ID,
+        &WORKSPACE_MEMBER_USER_NAME,
+        &WORKSPACE_MEMBER_IP_ADDRESS,
+        &WORKSPACE_MEMBER_IPV6_ADDRESS,
+        &WORKSPACE_MEMBER_STATE,
+        &WORKSPACE_MEMBER_BUNDLE_ID,
+        &WORKSPACE_MEMBER_SUBNET_ID,
+        &WORKSPACE_MEMBER_ERROR_MESSAGE,
+        &WORKSPACE_MEMBER_ERROR_CODE,
+        &WORKSPACE_MEMBER_COMPUTER_NAME,
+        &WORKSPACE_MEMBER_VOLUME_ENCRYPTION_KEY,
+        &WORKSPACE_MEMBER_USER_VOLUME_ENCRYPTION_ENABLED,
+        &WORKSPACE_MEMBER_ROOT_VOLUME_ENCRYPTION_ENABLED,
+        &WORKSPACE_MEMBER_WORKSPACE_NAME,
+        &WORKSPACE_MEMBER_WORKSPACE_PROPERTIES,
+        &WORKSPACE_MEMBER_MODIFICATION_STATES,
+        &WORKSPACE_MEMBER_RELATED_WORKSPACES,
+        &WORKSPACE_MEMBER_DATA_REPLICATION_SETTINGS,
+        &WORKSPACE_MEMBER_STANDBY_WORKSPACES_PROPERTIES,
+    ],
+);
+impl Workspace {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKSPACE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Workspace {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.workspace_id {
+            ser.write_string(&WORKSPACE_MEMBER_WORKSPACE_ID, val)?;
+        }
+        if let Some(ref val) = self.directory_id {
+            ser.write_string(&WORKSPACE_MEMBER_DIRECTORY_ID, val)?;
+        }
+        if let Some(ref val) = self.user_name {
+            ser.write_string(&WORKSPACE_MEMBER_USER_NAME, val)?;
+        }
+        if let Some(ref val) = self.ip_address {
+            ser.write_string(&WORKSPACE_MEMBER_IP_ADDRESS, val)?;
+        }
+        if let Some(ref val) = self.ipv6_address {
+            ser.write_string(&WORKSPACE_MEMBER_IPV6_ADDRESS, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&WORKSPACE_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.bundle_id {
+            ser.write_string(&WORKSPACE_MEMBER_BUNDLE_ID, val)?;
+        }
+        if let Some(ref val) = self.subnet_id {
+            ser.write_string(&WORKSPACE_MEMBER_SUBNET_ID, val)?;
+        }
+        if let Some(ref val) = self.error_message {
+            ser.write_string(&WORKSPACE_MEMBER_ERROR_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.error_code {
+            ser.write_string(&WORKSPACE_MEMBER_ERROR_CODE, val)?;
+        }
+        if let Some(ref val) = self.computer_name {
+            ser.write_string(&WORKSPACE_MEMBER_COMPUTER_NAME, val)?;
+        }
+        if let Some(ref val) = self.volume_encryption_key {
+            ser.write_string(&WORKSPACE_MEMBER_VOLUME_ENCRYPTION_KEY, val)?;
+        }
+        if let Some(ref val) = self.user_volume_encryption_enabled {
+            ser.write_boolean(&WORKSPACE_MEMBER_USER_VOLUME_ENCRYPTION_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.root_volume_encryption_enabled {
+            ser.write_boolean(&WORKSPACE_MEMBER_ROOT_VOLUME_ENCRYPTION_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.workspace_name {
+            ser.write_string(&WORKSPACE_MEMBER_WORKSPACE_NAME, val)?;
+        }
+        if let Some(ref val) = self.workspace_properties {
+            ser.write_struct(&WORKSPACE_MEMBER_WORKSPACE_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.modification_states {
+            ser.write_list(
+                &WORKSPACE_MEMBER_MODIFICATION_STATES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ModificationState::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.related_workspaces {
+            ser.write_list(
+                &WORKSPACE_MEMBER_RELATED_WORKSPACES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::RelatedWorkspaceProperties::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.data_replication_settings {
+            ser.write_struct(&WORKSPACE_MEMBER_DATA_REPLICATION_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.standby_workspaces_properties {
+            ser.write_list(
+                &WORKSPACE_MEMBER_STANDBY_WORKSPACES_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::StandbyWorkspacesProperties::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkspaceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKSPACE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.directory_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ipv6_address = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::WorkspaceState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bundle_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subnet_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.computer_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_encryption_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_volume_encryption_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.root_volume_encryption_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_properties = Some(crate::types::WorkspaceProperties::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.modification_states = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ModificationState::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.related_workspaces = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::RelatedWorkspaceProperties::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_replication_settings = Some(crate::types::DataReplicationSettings::deserialize(deser)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.standby_workspaces_properties = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::StandbyWorkspacesProperties::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Workspace {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Workspace {
     /// Creates a new builder-style object to manufacture [`Workspace`](crate::types::Workspace).
     pub fn builder() -> crate::types::builders::WorkspaceBuilder {

@@ -37,6 +37,169 @@ impl DataRepositoryTaskStatus {
         self.released_capacity
     }
 }
+static DATAREPOSITORYTASKSTATUS_MEMBER_TOTAL_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryTaskStatus$TotalCount",
+        "com.amazonaws.fsx",
+        "DataRepositoryTaskStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "TotalCount",
+    0,
+);
+static DATAREPOSITORYTASKSTATUS_MEMBER_SUCCEEDED_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryTaskStatus$SucceededCount",
+        "com.amazonaws.fsx",
+        "DataRepositoryTaskStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "SucceededCount",
+    1,
+);
+static DATAREPOSITORYTASKSTATUS_MEMBER_FAILED_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryTaskStatus$FailedCount",
+        "com.amazonaws.fsx",
+        "DataRepositoryTaskStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "FailedCount",
+    2,
+);
+static DATAREPOSITORYTASKSTATUS_MEMBER_LAST_UPDATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryTaskStatus$LastUpdatedTime",
+        "com.amazonaws.fsx",
+        "DataRepositoryTaskStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastUpdatedTime",
+    3,
+);
+static DATAREPOSITORYTASKSTATUS_MEMBER_RELEASED_CAPACITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryTaskStatus$ReleasedCapacity",
+        "com.amazonaws.fsx",
+        "DataRepositoryTaskStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "ReleasedCapacity",
+    4,
+);
+static DATAREPOSITORYTASKSTATUS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryTaskStatus",
+        "com.amazonaws.fsx",
+        "DataRepositoryTaskStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DATAREPOSITORYTASKSTATUS_MEMBER_TOTAL_COUNT,
+        &DATAREPOSITORYTASKSTATUS_MEMBER_SUCCEEDED_COUNT,
+        &DATAREPOSITORYTASKSTATUS_MEMBER_FAILED_COUNT,
+        &DATAREPOSITORYTASKSTATUS_MEMBER_LAST_UPDATED_TIME,
+        &DATAREPOSITORYTASKSTATUS_MEMBER_RELEASED_CAPACITY,
+    ],
+);
+impl DataRepositoryTaskStatus {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DATAREPOSITORYTASKSTATUS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DataRepositoryTaskStatus {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.total_count {
+            ser.write_long(&DATAREPOSITORYTASKSTATUS_MEMBER_TOTAL_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.succeeded_count {
+            ser.write_long(&DATAREPOSITORYTASKSTATUS_MEMBER_SUCCEEDED_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.failed_count {
+            ser.write_long(&DATAREPOSITORYTASKSTATUS_MEMBER_FAILED_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.last_updated_time {
+            ser.write_timestamp(&DATAREPOSITORYTASKSTATUS_MEMBER_LAST_UPDATED_TIME, val)?;
+        }
+        if let Some(ref val) = self.released_capacity {
+            ser.write_long(&DATAREPOSITORYTASKSTATUS_MEMBER_RELEASED_CAPACITY, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DataRepositoryTaskStatusBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DATAREPOSITORYTASKSTATUS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.total_count = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.succeeded_count = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failed_count = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_updated_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.released_capacity = Some(deser.read_long(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DataRepositoryTaskStatus {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DataRepositoryTaskStatus {
     /// Creates a new builder-style object to manufacture [`DataRepositoryTaskStatus`](crate::types::DataRepositoryTaskStatus).
     pub fn builder() -> crate::types::builders::DataRepositoryTaskStatusBuilder {

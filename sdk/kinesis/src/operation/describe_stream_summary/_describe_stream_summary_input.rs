@@ -24,6 +24,129 @@ impl DescribeStreamSummaryInput {
         self.stream_id.as_deref()
     }
 }
+static DESCRIBESTREAMSUMMARYINPUT_MEMBER_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DescribeStreamSummaryInput$StreamName",
+        "com.amazonaws.kinesis.synthetic",
+        "DescribeStreamSummaryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamName",
+    0,
+);
+static DESCRIBESTREAMSUMMARYINPUT_MEMBER_STREAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DescribeStreamSummaryInput$StreamARN",
+        "com.amazonaws.kinesis.synthetic",
+        "DescribeStreamSummaryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamARN",
+    1,
+);
+static DESCRIBESTREAMSUMMARYINPUT_MEMBER_STREAM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DescribeStreamSummaryInput$StreamId",
+        "com.amazonaws.kinesis.synthetic",
+        "DescribeStreamSummaryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamId",
+    2,
+);
+static DESCRIBESTREAMSUMMARYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DescribeStreamSummaryInput",
+        "com.amazonaws.kinesis.synthetic",
+        "DescribeStreamSummaryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBESTREAMSUMMARYINPUT_MEMBER_STREAM_NAME,
+        &DESCRIBESTREAMSUMMARYINPUT_MEMBER_STREAM_ARN,
+        &DESCRIBESTREAMSUMMARYINPUT_MEMBER_STREAM_ID,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeStreamSummaryInput");
+impl DescribeStreamSummaryInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBESTREAMSUMMARYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeStreamSummaryInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stream_name {
+            ser.write_string(&DESCRIBESTREAMSUMMARYINPUT_MEMBER_STREAM_NAME, val)?;
+        }
+        if let Some(ref val) = self.stream_arn {
+            ser.write_string(&DESCRIBESTREAMSUMMARYINPUT_MEMBER_STREAM_ARN, val)?;
+        }
+        if let Some(ref val) = self.stream_id {
+            ser.write_string(&DESCRIBESTREAMSUMMARYINPUT_MEMBER_STREAM_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_stream_summary::builders::DescribeStreamSummaryInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBESTREAMSUMMARYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeStreamSummaryInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeStreamSummaryInput {
     /// Creates a new builder-style object to manufacture [`DescribeStreamSummaryInput`](crate::operation::describe_stream_summary::DescribeStreamSummaryInput).
     pub fn builder() -> crate::operation::describe_stream_summary::builders::DescribeStreamSummaryInputBuilder {

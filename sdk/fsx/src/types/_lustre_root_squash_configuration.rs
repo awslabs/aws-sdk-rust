@@ -48,6 +48,121 @@ impl LustreRootSquashConfiguration {
         self.no_squash_nids.as_deref().unwrap_or_default()
     }
 }
+static LUSTREROOTSQUASHCONFIGURATION_MEMBER_ROOT_SQUASH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#LustreRootSquashConfiguration$RootSquash",
+        "com.amazonaws.fsx",
+        "LustreRootSquashConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RootSquash",
+    0,
+);
+static LUSTREROOTSQUASHCONFIGURATION_MEMBER_NO_SQUASH_NIDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#LustreNoSquashNids$member", "com.amazonaws.fsx", "LustreNoSquashNids"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LUSTREROOTSQUASHCONFIGURATION_MEMBER_NO_SQUASH_NIDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#LustreRootSquashConfiguration$NoSquashNids",
+        "com.amazonaws.fsx",
+        "LustreRootSquashConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "NoSquashNids",
+    1,
+)
+.with_list_member(&LUSTREROOTSQUASHCONFIGURATION_MEMBER_NO_SQUASH_NIDS_MEMBER);
+static LUSTREROOTSQUASHCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#LustreRootSquashConfiguration",
+        "com.amazonaws.fsx",
+        "LustreRootSquashConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LUSTREROOTSQUASHCONFIGURATION_MEMBER_ROOT_SQUASH,
+        &LUSTREROOTSQUASHCONFIGURATION_MEMBER_NO_SQUASH_NIDS,
+    ],
+);
+impl LustreRootSquashConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LUSTREROOTSQUASHCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LustreRootSquashConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.root_squash {
+            ser.write_string(&LUSTREROOTSQUASHCONFIGURATION_MEMBER_ROOT_SQUASH, val)?;
+        }
+        if let Some(ref val) = self.no_squash_nids {
+            ser.write_list(
+                &LUSTREROOTSQUASHCONFIGURATION_MEMBER_NO_SQUASH_NIDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LustreRootSquashConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LUSTREROOTSQUASHCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.root_squash = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.no_squash_nids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LustreRootSquashConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LustreRootSquashConfiguration {
     /// Creates a new builder-style object to manufacture [`LustreRootSquashConfiguration`](crate::types::LustreRootSquashConfiguration).
     pub fn builder() -> crate::types::builders::LustreRootSquashConfigurationBuilder {

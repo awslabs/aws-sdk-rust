@@ -22,6 +22,103 @@ impl FSxWindowsFileServerAuthorizationConfig {
         self.domain.deref()
     }
 }
+static FSXWINDOWSFILESERVERAUTHORIZATIONCONFIG_MEMBER_CREDENTIALS_PARAMETER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#FSxWindowsFileServerAuthorizationConfig$credentialsParameter",
+            "com.amazonaws.ecs",
+            "FSxWindowsFileServerAuthorizationConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "credentialsParameter",
+        0,
+    );
+static FSXWINDOWSFILESERVERAUTHORIZATIONCONFIG_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#FSxWindowsFileServerAuthorizationConfig$domain",
+        "com.amazonaws.ecs",
+        "FSxWindowsFileServerAuthorizationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domain",
+    1,
+);
+static FSXWINDOWSFILESERVERAUTHORIZATIONCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#FSxWindowsFileServerAuthorizationConfig",
+        "com.amazonaws.ecs",
+        "FSxWindowsFileServerAuthorizationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FSXWINDOWSFILESERVERAUTHORIZATIONCONFIG_MEMBER_CREDENTIALS_PARAMETER,
+        &FSXWINDOWSFILESERVERAUTHORIZATIONCONFIG_MEMBER_DOMAIN,
+    ],
+);
+impl FSxWindowsFileServerAuthorizationConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FSXWINDOWSFILESERVERAUTHORIZATIONCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FSxWindowsFileServerAuthorizationConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.credentials_parameter;
+            ser.write_string(&FSXWINDOWSFILESERVERAUTHORIZATIONCONFIG_MEMBER_CREDENTIALS_PARAMETER, val)?;
+        }
+        {
+            let val = &self.domain;
+            ser.write_string(&FSXWINDOWSFILESERVERAUTHORIZATIONCONFIG_MEMBER_DOMAIN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FSxWindowsFileServerAuthorizationConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FSXWINDOWSFILESERVERAUTHORIZATIONCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.credentials_parameter = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.domain = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FSxWindowsFileServerAuthorizationConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.credentials_parameter = builder.credentials_parameter.or(Some(String::new()));
+        builder.domain = builder.domain.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl FSxWindowsFileServerAuthorizationConfig {
     /// Creates a new builder-style object to manufacture [`FSxWindowsFileServerAuthorizationConfig`](crate::types::FSxWindowsFileServerAuthorizationConfig).
     pub fn builder() -> crate::types::builders::FSxWindowsFileServerAuthorizationConfigBuilder {

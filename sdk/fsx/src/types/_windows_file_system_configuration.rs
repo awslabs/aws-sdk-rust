@@ -139,6 +139,480 @@ impl WindowsFileSystemConfiguration {
         self.fsrm_configuration.as_ref()
     }
 }
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_ACTIVE_DIRECTORY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#WindowsFileSystemConfiguration$ActiveDirectoryId",
+        "com.amazonaws.fsx",
+        "WindowsFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ActiveDirectoryId",
+    0,
+);
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_SELF_MANAGED_ACTIVE_DIRECTORY_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#WindowsFileSystemConfiguration$SelfManagedActiveDirectoryConfiguration",
+            "com.amazonaws.fsx",
+            "WindowsFileSystemConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "SelfManagedActiveDirectoryConfiguration",
+        1,
+    );
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_DEPLOYMENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#WindowsFileSystemConfiguration$DeploymentType",
+        "com.amazonaws.fsx",
+        "WindowsFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeploymentType",
+    2,
+);
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_REMOTE_ADMINISTRATION_ENDPOINT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#WindowsFileSystemConfiguration$RemoteAdministrationEndpoint",
+            "com.amazonaws.fsx",
+            "WindowsFileSystemConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "RemoteAdministrationEndpoint",
+        3,
+    );
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_PREFERRED_SUBNET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#WindowsFileSystemConfiguration$PreferredSubnetId",
+        "com.amazonaws.fsx",
+        "WindowsFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreferredSubnetId",
+    4,
+);
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_PREFERRED_FILE_SERVER_IP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#WindowsFileSystemConfiguration$PreferredFileServerIp",
+        "com.amazonaws.fsx",
+        "WindowsFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreferredFileServerIp",
+    5,
+);
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_THROUGHPUT_CAPACITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#WindowsFileSystemConfiguration$ThroughputCapacity",
+        "com.amazonaws.fsx",
+        "WindowsFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ThroughputCapacity",
+    6,
+);
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_MAINTENANCE_OPERATIONS_IN_PROGRESS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#FileSystemMaintenanceOperations$member",
+            "com.amazonaws.fsx",
+            "FileSystemMaintenanceOperations",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_MAINTENANCE_OPERATIONS_IN_PROGRESS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#WindowsFileSystemConfiguration$MaintenanceOperationsInProgress",
+            "com.amazonaws.fsx",
+            "WindowsFileSystemConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "MaintenanceOperationsInProgress",
+        7,
+    )
+    .with_list_member(&WINDOWSFILESYSTEMCONFIGURATION_MEMBER_MAINTENANCE_OPERATIONS_IN_PROGRESS_MEMBER);
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_WEEKLY_MAINTENANCE_START_TIME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#WindowsFileSystemConfiguration$WeeklyMaintenanceStartTime",
+            "com.amazonaws.fsx",
+            "WindowsFileSystemConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "WeeklyMaintenanceStartTime",
+        8,
+    );
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_DAILY_AUTOMATIC_BACKUP_START_TIME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#WindowsFileSystemConfiguration$DailyAutomaticBackupStartTime",
+            "com.amazonaws.fsx",
+            "WindowsFileSystemConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "DailyAutomaticBackupStartTime",
+        9,
+    );
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_AUTOMATIC_BACKUP_RETENTION_DAYS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#WindowsFileSystemConfiguration$AutomaticBackupRetentionDays",
+            "com.amazonaws.fsx",
+            "WindowsFileSystemConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "AutomaticBackupRetentionDays",
+        10,
+    );
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_COPY_TAGS_TO_BACKUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#WindowsFileSystemConfiguration$CopyTagsToBackups",
+        "com.amazonaws.fsx",
+        "WindowsFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "CopyTagsToBackups",
+    11,
+);
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_ALIASES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Aliases$member", "com.amazonaws.fsx", "Aliases"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_ALIASES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#WindowsFileSystemConfiguration$Aliases",
+        "com.amazonaws.fsx",
+        "WindowsFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Aliases",
+    12,
+)
+.with_list_member(&WINDOWSFILESYSTEMCONFIGURATION_MEMBER_ALIASES_MEMBER);
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_AUDIT_LOG_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#WindowsFileSystemConfiguration$AuditLogConfiguration",
+        "com.amazonaws.fsx",
+        "WindowsFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AuditLogConfiguration",
+    13,
+);
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_DISK_IOPS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#WindowsFileSystemConfiguration$DiskIopsConfiguration",
+        "com.amazonaws.fsx",
+        "WindowsFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DiskIopsConfiguration",
+    14,
+);
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_PREFERRED_FILE_SERVER_IPV6: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#WindowsFileSystemConfiguration$PreferredFileServerIpv6",
+            "com.amazonaws.fsx",
+            "WindowsFileSystemConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "PreferredFileServerIpv6",
+        15,
+    );
+static WINDOWSFILESYSTEMCONFIGURATION_MEMBER_FSRM_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#WindowsFileSystemConfiguration$FsrmConfiguration",
+        "com.amazonaws.fsx",
+        "WindowsFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FsrmConfiguration",
+    16,
+);
+static WINDOWSFILESYSTEMCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#WindowsFileSystemConfiguration",
+        "com.amazonaws.fsx",
+        "WindowsFileSystemConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_ACTIVE_DIRECTORY_ID,
+        &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_SELF_MANAGED_ACTIVE_DIRECTORY_CONFIGURATION,
+        &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_DEPLOYMENT_TYPE,
+        &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_REMOTE_ADMINISTRATION_ENDPOINT,
+        &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_PREFERRED_SUBNET_ID,
+        &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_PREFERRED_FILE_SERVER_IP,
+        &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_THROUGHPUT_CAPACITY,
+        &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_MAINTENANCE_OPERATIONS_IN_PROGRESS,
+        &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_WEEKLY_MAINTENANCE_START_TIME,
+        &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_DAILY_AUTOMATIC_BACKUP_START_TIME,
+        &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_AUTOMATIC_BACKUP_RETENTION_DAYS,
+        &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_COPY_TAGS_TO_BACKUPS,
+        &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_ALIASES,
+        &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_AUDIT_LOG_CONFIGURATION,
+        &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_DISK_IOPS_CONFIGURATION,
+        &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_PREFERRED_FILE_SERVER_IPV6,
+        &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_FSRM_CONFIGURATION,
+    ],
+);
+impl WindowsFileSystemConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WINDOWSFILESYSTEMCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WindowsFileSystemConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.active_directory_id {
+            ser.write_string(&WINDOWSFILESYSTEMCONFIGURATION_MEMBER_ACTIVE_DIRECTORY_ID, val)?;
+        }
+        if let Some(ref val) = self.self_managed_active_directory_configuration {
+            ser.write_struct(&WINDOWSFILESYSTEMCONFIGURATION_MEMBER_SELF_MANAGED_ACTIVE_DIRECTORY_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.deployment_type {
+            ser.write_string(&WINDOWSFILESYSTEMCONFIGURATION_MEMBER_DEPLOYMENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.remote_administration_endpoint {
+            ser.write_string(&WINDOWSFILESYSTEMCONFIGURATION_MEMBER_REMOTE_ADMINISTRATION_ENDPOINT, val)?;
+        }
+        if let Some(ref val) = self.preferred_subnet_id {
+            ser.write_string(&WINDOWSFILESYSTEMCONFIGURATION_MEMBER_PREFERRED_SUBNET_ID, val)?;
+        }
+        if let Some(ref val) = self.preferred_file_server_ip {
+            ser.write_string(&WINDOWSFILESYSTEMCONFIGURATION_MEMBER_PREFERRED_FILE_SERVER_IP, val)?;
+        }
+        if let Some(ref val) = self.throughput_capacity {
+            ser.write_integer(&WINDOWSFILESYSTEMCONFIGURATION_MEMBER_THROUGHPUT_CAPACITY, *val)?;
+        }
+        if let Some(ref val) = self.maintenance_operations_in_progress {
+            ser.write_list(
+                &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_MAINTENANCE_OPERATIONS_IN_PROGRESS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.weekly_maintenance_start_time {
+            ser.write_string(&WINDOWSFILESYSTEMCONFIGURATION_MEMBER_WEEKLY_MAINTENANCE_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.daily_automatic_backup_start_time {
+            ser.write_string(&WINDOWSFILESYSTEMCONFIGURATION_MEMBER_DAILY_AUTOMATIC_BACKUP_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.automatic_backup_retention_days {
+            ser.write_integer(&WINDOWSFILESYSTEMCONFIGURATION_MEMBER_AUTOMATIC_BACKUP_RETENTION_DAYS, *val)?;
+        }
+        if let Some(ref val) = self.copy_tags_to_backups {
+            ser.write_boolean(&WINDOWSFILESYSTEMCONFIGURATION_MEMBER_COPY_TAGS_TO_BACKUPS, *val)?;
+        }
+        if let Some(ref val) = self.aliases {
+            ser.write_list(
+                &WINDOWSFILESYSTEMCONFIGURATION_MEMBER_ALIASES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Alias::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.audit_log_configuration {
+            ser.write_struct(&WINDOWSFILESYSTEMCONFIGURATION_MEMBER_AUDIT_LOG_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.disk_iops_configuration {
+            ser.write_struct(&WINDOWSFILESYSTEMCONFIGURATION_MEMBER_DISK_IOPS_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.preferred_file_server_ipv6 {
+            ser.write_string(&WINDOWSFILESYSTEMCONFIGURATION_MEMBER_PREFERRED_FILE_SERVER_IPV6, val)?;
+        }
+        if let Some(ref val) = self.fsrm_configuration {
+            ser.write_struct(&WINDOWSFILESYSTEMCONFIGURATION_MEMBER_FSRM_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WindowsFileSystemConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WINDOWSFILESYSTEMCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.active_directory_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.self_managed_active_directory_configuration =
+                            Some(crate::types::SelfManagedActiveDirectoryAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_type = Some(crate::types::WindowsDeploymentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.remote_administration_endpoint = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preferred_subnet_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preferred_file_server_ip = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.throughput_capacity = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.maintenance_operations_in_progress = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::FileSystemMaintenanceOperation::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.weekly_maintenance_start_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.daily_automatic_backup_start_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.automatic_backup_retention_days = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.copy_tags_to_backups = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.aliases = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Alias::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.audit_log_configuration = Some(crate::types::WindowsAuditLogConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disk_iops_configuration = Some(crate::types::DiskIopsConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preferred_file_server_ipv6 = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fsrm_configuration = Some(crate::types::WindowsFsrmConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WindowsFileSystemConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl WindowsFileSystemConfiguration {
     /// Creates a new builder-style object to manufacture [`WindowsFileSystemConfiguration`](crate::types::WindowsFileSystemConfiguration).
     pub fn builder() -> crate::types::builders::WindowsFileSystemConfigurationBuilder {

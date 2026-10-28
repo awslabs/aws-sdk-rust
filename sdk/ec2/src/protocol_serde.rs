@@ -2327,6 +2327,10 @@ pub(crate) mod shape_get_image_block_public_access_state;
 
 pub(crate) mod shape_get_image_block_public_access_state_input;
 
+pub(crate) mod shape_get_image_findings;
+
+pub(crate) mod shape_get_image_findings_input;
+
 pub(crate) mod shape_get_instance_metadata_defaults;
 
 pub(crate) mod shape_get_instance_metadata_defaults_input;
@@ -3851,6 +3855,8 @@ pub(crate) mod shape_fpga_image_attribute;
 
 pub(crate) mod shape_fpga_image_list;
 
+pub(crate) mod shape_get_image_findings_entry_set;
+
 pub(crate) mod shape_group_identifier_list;
 
 pub(crate) mod shape_health_check_path_destination_request_object;
@@ -4320,6 +4326,8 @@ pub(crate) mod shape_route_table_association_state;
 pub(crate) mod shape_route_table_list;
 
 pub(crate) mod shape_s3_storage;
+
+pub(crate) mod shape_scan_result_condition_request;
 
 pub(crate) mod shape_scheduled_instance_availability_set;
 
@@ -4870,6 +4878,8 @@ pub(crate) mod shape_image;
 pub(crate) mod shape_image_ancestry_entry;
 
 pub(crate) mod shape_image_criterion;
+
+pub(crate) mod shape_image_finding;
 
 pub(crate) mod shape_image_recycle_bin_info;
 
@@ -5511,6 +5521,8 @@ pub(crate) mod shape_host_instance_list;
 
 pub(crate) mod shape_host_properties;
 
+pub(crate) mod shape_image_finding_path_set;
+
 pub(crate) mod shape_image_metadata;
 
 pub(crate) mod shape_image_name_list;
@@ -5720,6 +5732,10 @@ pub(crate) mod shape_route;
 pub(crate) mod shape_route_server_route_installation_details;
 
 pub(crate) mod shape_route_table_association;
+
+pub(crate) mod shape_scan_result_condition;
+
+pub(crate) mod shape_scan_results;
 
 pub(crate) mod shape_scheduled_instance_recurrence;
 

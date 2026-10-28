@@ -26,6 +26,153 @@ impl CopyBackupToRegionInput {
         self.tag_list.as_deref().unwrap_or_default()
     }
 }
+static COPYBACKUPTOREGIONINPUT_MEMBER_DESTINATION_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#CopyBackupToRegionInput$DestinationRegion",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "CopyBackupToRegionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DestinationRegion",
+    0,
+);
+static COPYBACKUPTOREGIONINPUT_MEMBER_BACKUP_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#CopyBackupToRegionInput$BackupId",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "CopyBackupToRegionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BackupId",
+    1,
+);
+static COPYBACKUPTOREGIONINPUT_MEMBER_TAG_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#TagList$member", "com.amazonaws.cloudhsmv2", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static COPYBACKUPTOREGIONINPUT_MEMBER_TAG_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#CopyBackupToRegionInput$TagList",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "CopyBackupToRegionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TagList",
+    2,
+)
+.with_list_member(&COPYBACKUPTOREGIONINPUT_MEMBER_TAG_LIST_MEMBER);
+static COPYBACKUPTOREGIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#CopyBackupToRegionInput",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "CopyBackupToRegionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &COPYBACKUPTOREGIONINPUT_MEMBER_DESTINATION_REGION,
+        &COPYBACKUPTOREGIONINPUT_MEMBER_BACKUP_ID,
+        &COPYBACKUPTOREGIONINPUT_MEMBER_TAG_LIST,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CopyBackupToRegionRequest");
+impl CopyBackupToRegionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COPYBACKUPTOREGIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CopyBackupToRegionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.destination_region {
+            ser.write_string(&COPYBACKUPTOREGIONINPUT_MEMBER_DESTINATION_REGION, val)?;
+        }
+        if let Some(ref val) = self.backup_id {
+            ser.write_string(&COPYBACKUPTOREGIONINPUT_MEMBER_BACKUP_ID, val)?;
+        }
+        if let Some(ref val) = self.tag_list {
+            ser.write_list(
+                &COPYBACKUPTOREGIONINPUT_MEMBER_TAG_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::copy_backup_to_region::builders::CopyBackupToRegionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COPYBACKUPTOREGIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.backup_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_list = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CopyBackupToRegionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.destination_region = builder.destination_region.or(Some(String::new()));
+        builder.backup_id = builder.backup_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CopyBackupToRegionInput {
     /// Creates a new builder-style object to manufacture [`CopyBackupToRegionInput`](crate::operation::copy_backup_to_region::CopyBackupToRegionInput).
     pub fn builder() -> crate::operation::copy_backup_to_region::builders::CopyBackupToRegionInputBuilder {

@@ -17,6 +17,84 @@ impl StopBuildOutput {
         self.build_value.as_ref()
     }
 }
+static STOPBUILDOUTPUT_MEMBER_BUILD_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StopBuildOutput$build",
+        "com.amazonaws.codebuild.synthetic",
+        "StopBuildOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "build",
+    0,
+);
+static STOPBUILDOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StopBuildOutput",
+        "com.amazonaws.codebuild.synthetic",
+        "StopBuildOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&STOPBUILDOUTPUT_MEMBER_BUILD_VALUE],
+)
+.with_original_name("StopBuildOutput");
+impl StopBuildOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STOPBUILDOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StopBuildOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.build_value {
+            ser.write_struct(&STOPBUILDOUTPUT_MEMBER_BUILD_VALUE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::stop_build::builders::StopBuildOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STOPBUILDOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.build_value = Some(crate::types::Build::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StopBuildOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for StopBuildOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

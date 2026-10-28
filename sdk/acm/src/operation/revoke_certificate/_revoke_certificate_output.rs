@@ -13,6 +13,84 @@ impl RevokeCertificateOutput {
         self.certificate_arn.as_deref()
     }
 }
+static REVOKECERTIFICATEOUTPUT_MEMBER_CERTIFICATE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#RevokeCertificateOutput$CertificateArn",
+        "com.amazonaws.acm.synthetic",
+        "RevokeCertificateOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertificateArn",
+    0,
+);
+static REVOKECERTIFICATEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#RevokeCertificateOutput",
+        "com.amazonaws.acm.synthetic",
+        "RevokeCertificateOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&REVOKECERTIFICATEOUTPUT_MEMBER_CERTIFICATE_ARN],
+)
+.with_original_name("RevokeCertificateResponse");
+impl RevokeCertificateOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REVOKECERTIFICATEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RevokeCertificateOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.certificate_arn {
+            ser.write_string(&REVOKECERTIFICATEOUTPUT_MEMBER_CERTIFICATE_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::revoke_certificate::builders::RevokeCertificateOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REVOKECERTIFICATEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RevokeCertificateOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for RevokeCertificateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

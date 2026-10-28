@@ -50,6 +50,152 @@ impl AwsVpcConfiguration {
         self.assign_public_ip.as_ref()
     }
 }
+static AWSVPCCONFIGURATION_MEMBER_SUBNETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static AWSVPCCONFIGURATION_MEMBER_SUBNETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#AwsVpcConfiguration$subnets",
+        "com.amazonaws.ecs",
+        "AwsVpcConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "subnets",
+    0,
+)
+.with_list_member(&AWSVPCCONFIGURATION_MEMBER_SUBNETS_MEMBER);
+static AWSVPCCONFIGURATION_MEMBER_SECURITY_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static AWSVPCCONFIGURATION_MEMBER_SECURITY_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#AwsVpcConfiguration$securityGroups",
+        "com.amazonaws.ecs",
+        "AwsVpcConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "securityGroups",
+    1,
+)
+.with_list_member(&AWSVPCCONFIGURATION_MEMBER_SECURITY_GROUPS_MEMBER);
+static AWSVPCCONFIGURATION_MEMBER_ASSIGN_PUBLIC_IP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#AwsVpcConfiguration$assignPublicIp",
+        "com.amazonaws.ecs",
+        "AwsVpcConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "assignPublicIp",
+    2,
+);
+static AWSVPCCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#AwsVpcConfiguration", "com.amazonaws.ecs", "AwsVpcConfiguration"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AWSVPCCONFIGURATION_MEMBER_SUBNETS,
+        &AWSVPCCONFIGURATION_MEMBER_SECURITY_GROUPS,
+        &AWSVPCCONFIGURATION_MEMBER_ASSIGN_PUBLIC_IP,
+    ],
+);
+impl AwsVpcConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AWSVPCCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AwsVpcConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.subnets;
+
+            ser.write_list(
+                &AWSVPCCONFIGURATION_MEMBER_SUBNETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.security_groups {
+            ser.write_list(
+                &AWSVPCCONFIGURATION_MEMBER_SECURITY_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.assign_public_ip {
+            ser.write_string(&AWSVPCCONFIGURATION_MEMBER_ASSIGN_PUBLIC_IP, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AwsVpcConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AWSVPCCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.subnets = Some(deser.read_string_list(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_groups = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.assign_public_ip = Some(crate::types::AssignPublicIp::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AwsVpcConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.subnets = builder.subnets.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AwsVpcConfiguration {
     /// Creates a new builder-style object to manufacture [`AwsVpcConfiguration`](crate::types::AwsVpcConfiguration).
     pub fn builder() -> crate::types::builders::AwsVpcConfigurationBuilder {

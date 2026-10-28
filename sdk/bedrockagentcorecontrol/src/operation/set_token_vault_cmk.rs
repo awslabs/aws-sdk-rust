@@ -320,6 +320,8 @@ pub enum SetTokenVaultCMKError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Exception thrown when a resource is modified concurrently by multiple requests.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
+    /// <p>This exception is thrown when there is a conflict performing an operation</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>This exception is thrown if there was an unexpected error during processing of request</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>This exception is thrown when a resource referenced by the operation does not exist</p>
@@ -365,6 +367,7 @@ impl SetTokenVaultCMKError {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConcurrentModificationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -380,6 +383,10 @@ impl SetTokenVaultCMKError {
     /// Returns `true` if the error kind is `SetTokenVaultCMKError::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(self, Self::ConcurrentModificationException(_))
+    }
+    /// Returns `true` if the error kind is `SetTokenVaultCMKError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `SetTokenVaultCMKError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
@@ -407,6 +414,7 @@ impl ::std::error::Error for SetTokenVaultCMKError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConcurrentModificationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
@@ -421,6 +429,7 @@ impl ::std::fmt::Display for SetTokenVaultCMKError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
@@ -449,6 +458,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for SetTokenVault
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConcurrentModificationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

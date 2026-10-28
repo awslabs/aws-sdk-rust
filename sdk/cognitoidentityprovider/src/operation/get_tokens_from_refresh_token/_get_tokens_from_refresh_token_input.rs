@@ -73,6 +73,206 @@ impl ::std::fmt::Debug for GetTokensFromRefreshTokenInput {
         formatter.finish()
     }
 }
+static GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_REFRESH_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetTokensFromRefreshTokenInput$RefreshToken",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetTokensFromRefreshTokenInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RefreshToken",
+    0,
+);
+static GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_CLIENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetTokensFromRefreshTokenInput$ClientId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetTokensFromRefreshTokenInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientId",
+    1,
+);
+static GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_CLIENT_SECRET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetTokensFromRefreshTokenInput$ClientSecret",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetTokensFromRefreshTokenInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientSecret",
+    2,
+);
+static GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_DEVICE_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetTokensFromRefreshTokenInput$DeviceKey",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetTokensFromRefreshTokenInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceKey",
+    3,
+);
+static GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_CLIENT_METADATA_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ClientMetadataType$key",
+        "com.amazonaws.cognitoidentityprovider",
+        "ClientMetadataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_CLIENT_METADATA_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ClientMetadataType$value",
+        "com.amazonaws.cognitoidentityprovider",
+        "ClientMetadataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_CLIENT_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetTokensFromRefreshTokenInput$ClientMetadata",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetTokensFromRefreshTokenInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "ClientMetadata",
+    4,
+)
+.with_map_members(
+    &GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_CLIENT_METADATA_KEY,
+    &GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_CLIENT_METADATA_VALUE,
+);
+static GETTOKENSFROMREFRESHTOKENINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetTokensFromRefreshTokenInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetTokensFromRefreshTokenInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_REFRESH_TOKEN,
+        &GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_CLIENT_ID,
+        &GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_CLIENT_SECRET,
+        &GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_DEVICE_KEY,
+        &GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_CLIENT_METADATA,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetTokensFromRefreshTokenRequest");
+impl GetTokensFromRefreshTokenInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETTOKENSFROMREFRESHTOKENINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetTokensFromRefreshTokenInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.refresh_token {
+            ser.write_string(&GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_REFRESH_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.client_id {
+            ser.write_string(&GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_CLIENT_ID, val)?;
+        }
+        if let Some(ref val) = self.client_secret {
+            ser.write_string(&GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_CLIENT_SECRET, val)?;
+        }
+        if let Some(ref val) = self.device_key {
+            ser.write_string(&GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_DEVICE_KEY, val)?;
+        }
+        if let Some(ref val) = self.client_metadata {
+            ser.write_map(
+                &GETTOKENSFROMREFRESHTOKENINPUT_MEMBER_CLIENT_METADATA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_tokens_from_refresh_token::builders::GetTokensFromRefreshTokenInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETTOKENSFROMREFRESHTOKENINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.refresh_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_secret = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_metadata = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetTokensFromRefreshTokenInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.refresh_token = builder.refresh_token.or(Some(String::new()));
+        builder.client_id = builder.client_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetTokensFromRefreshTokenInput {
     /// Creates a new builder-style object to manufacture [`GetTokensFromRefreshTokenInput`](crate::operation::get_tokens_from_refresh_token::GetTokensFromRefreshTokenInput).
     pub fn builder() -> crate::operation::get_tokens_from_refresh_token::builders::GetTokensFromRefreshTokenInputBuilder {

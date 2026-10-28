@@ -109,6 +109,232 @@ impl ProtocolDetails {
         self.proxy_config.as_ref()
     }
 }
+static PROTOCOLDETAILS_MEMBER_PASSIVE_IP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ProtocolDetails$PassiveIp",
+        "com.amazonaws.transfer",
+        "ProtocolDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PassiveIp",
+    0,
+);
+static PROTOCOLDETAILS_MEMBER_TLS_SESSION_RESUMPTION_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ProtocolDetails$TlsSessionResumptionMode",
+        "com.amazonaws.transfer",
+        "ProtocolDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TlsSessionResumptionMode",
+    1,
+);
+static PROTOCOLDETAILS_MEMBER_SET_STAT_OPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ProtocolDetails$SetStatOption",
+        "com.amazonaws.transfer",
+        "ProtocolDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SetStatOption",
+    2,
+);
+static PROTOCOLDETAILS_MEMBER_SFTP_PORTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#SftpPorts$member", "com.amazonaws.transfer", "SftpPorts"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PROTOCOLDETAILS_MEMBER_SFTP_PORTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ProtocolDetails$SftpPorts",
+        "com.amazonaws.transfer",
+        "ProtocolDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SftpPorts",
+    3,
+)
+.with_list_member(&PROTOCOLDETAILS_MEMBER_SFTP_PORTS_MEMBER);
+static PROTOCOLDETAILS_MEMBER_AS2_TRANSPORTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#As2Transports$member", "com.amazonaws.transfer", "As2Transports"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static PROTOCOLDETAILS_MEMBER_AS2_TRANSPORTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ProtocolDetails$As2Transports",
+        "com.amazonaws.transfer",
+        "ProtocolDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "As2Transports",
+    4,
+)
+.with_list_member(&PROTOCOLDETAILS_MEMBER_AS2_TRANSPORTS_MEMBER);
+static PROTOCOLDETAILS_MEMBER_PROXY_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ProtocolDetails$ProxyConfig",
+        "com.amazonaws.transfer",
+        "ProtocolDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ProxyConfig",
+    5,
+);
+static PROTOCOLDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ProtocolDetails", "com.amazonaws.transfer", "ProtocolDetails"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PROTOCOLDETAILS_MEMBER_PASSIVE_IP,
+        &PROTOCOLDETAILS_MEMBER_TLS_SESSION_RESUMPTION_MODE,
+        &PROTOCOLDETAILS_MEMBER_SET_STAT_OPTION,
+        &PROTOCOLDETAILS_MEMBER_SFTP_PORTS,
+        &PROTOCOLDETAILS_MEMBER_AS2_TRANSPORTS,
+        &PROTOCOLDETAILS_MEMBER_PROXY_CONFIG,
+    ],
+);
+impl ProtocolDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PROTOCOLDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProtocolDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.passive_ip {
+            ser.write_string(&PROTOCOLDETAILS_MEMBER_PASSIVE_IP, val)?;
+        }
+        if let Some(ref val) = self.tls_session_resumption_mode {
+            ser.write_string(&PROTOCOLDETAILS_MEMBER_TLS_SESSION_RESUMPTION_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.set_stat_option {
+            ser.write_string(&PROTOCOLDETAILS_MEMBER_SET_STAT_OPTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.sftp_ports {
+            ser.write_list(
+                &PROTOCOLDETAILS_MEMBER_SFTP_PORTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::SftpPortWithOptions::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.as2_transports {
+            ser.write_list(
+                &PROTOCOLDETAILS_MEMBER_AS2_TRANSPORTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.proxy_config {
+            ser.write_struct(&PROTOCOLDETAILS_MEMBER_PROXY_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProtocolDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PROTOCOLDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.passive_ip = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tls_session_resumption_mode = Some(crate::types::TlsSessionResumptionMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.set_stat_option = Some(crate::types::SetStatOption::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sftp_ports = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SftpPortWithOptions::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.as2_transports = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::As2Transport::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.proxy_config = Some(crate::types::ProxyConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProtocolDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ProtocolDetails {
     /// Creates a new builder-style object to manufacture [`ProtocolDetails`](crate::types::ProtocolDetails).
     pub fn builder() -> crate::types::builders::ProtocolDetailsBuilder {

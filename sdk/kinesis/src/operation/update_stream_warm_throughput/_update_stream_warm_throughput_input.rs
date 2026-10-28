@@ -30,6 +30,151 @@ impl UpdateStreamWarmThroughputInput {
         self.warm_throughput_mibps
     }
 }
+static UPDATESTREAMWARMTHROUGHPUTINPUT_MEMBER_STREAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#UpdateStreamWarmThroughputInput$StreamARN",
+        "com.amazonaws.kinesis.synthetic",
+        "UpdateStreamWarmThroughputInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamARN",
+    0,
+);
+static UPDATESTREAMWARMTHROUGHPUTINPUT_MEMBER_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#UpdateStreamWarmThroughputInput$StreamName",
+        "com.amazonaws.kinesis.synthetic",
+        "UpdateStreamWarmThroughputInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamName",
+    1,
+);
+static UPDATESTREAMWARMTHROUGHPUTINPUT_MEMBER_STREAM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#UpdateStreamWarmThroughputInput$StreamId",
+        "com.amazonaws.kinesis.synthetic",
+        "UpdateStreamWarmThroughputInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamId",
+    2,
+);
+static UPDATESTREAMWARMTHROUGHPUTINPUT_MEMBER_WARM_THROUGHPUT_MIBPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#UpdateStreamWarmThroughputInput$WarmThroughputMiBps",
+        "com.amazonaws.kinesis.synthetic",
+        "UpdateStreamWarmThroughputInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "WarmThroughputMiBps",
+    3,
+);
+static UPDATESTREAMWARMTHROUGHPUTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#UpdateStreamWarmThroughputInput",
+        "com.amazonaws.kinesis.synthetic",
+        "UpdateStreamWarmThroughputInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATESTREAMWARMTHROUGHPUTINPUT_MEMBER_STREAM_ARN,
+        &UPDATESTREAMWARMTHROUGHPUTINPUT_MEMBER_STREAM_NAME,
+        &UPDATESTREAMWARMTHROUGHPUTINPUT_MEMBER_STREAM_ID,
+        &UPDATESTREAMWARMTHROUGHPUTINPUT_MEMBER_WARM_THROUGHPUT_MIBPS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateStreamWarmThroughputInput");
+impl UpdateStreamWarmThroughputInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATESTREAMWARMTHROUGHPUTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateStreamWarmThroughputInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stream_arn {
+            ser.write_string(&UPDATESTREAMWARMTHROUGHPUTINPUT_MEMBER_STREAM_ARN, val)?;
+        }
+        if let Some(ref val) = self.stream_name {
+            ser.write_string(&UPDATESTREAMWARMTHROUGHPUTINPUT_MEMBER_STREAM_NAME, val)?;
+        }
+        if let Some(ref val) = self.stream_id {
+            ser.write_string(&UPDATESTREAMWARMTHROUGHPUTINPUT_MEMBER_STREAM_ID, val)?;
+        }
+        if let Some(ref val) = self.warm_throughput_mibps {
+            ser.write_integer(&UPDATESTREAMWARMTHROUGHPUTINPUT_MEMBER_WARM_THROUGHPUT_MIBPS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_stream_warm_throughput::builders::UpdateStreamWarmThroughputInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATESTREAMWARMTHROUGHPUTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.warm_throughput_mibps = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateStreamWarmThroughputInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.warm_throughput_mibps = builder.warm_throughput_mibps.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateStreamWarmThroughputInput {
     /// Creates a new builder-style object to manufacture [`UpdateStreamWarmThroughputInput`](crate::operation::update_stream_warm_throughput::UpdateStreamWarmThroughputInput).
     pub fn builder() -> crate::operation::update_stream_warm_throughput::builders::UpdateStreamWarmThroughputInputBuilder {

@@ -21,6 +21,103 @@ impl StartDirectoryListingOutput {
         self.output_file_name.deref()
     }
 }
+static STARTDIRECTORYLISTINGOUTPUT_MEMBER_LISTING_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#StartDirectoryListingOutput$ListingId",
+        "com.amazonaws.transfer.synthetic",
+        "StartDirectoryListingOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ListingId",
+    0,
+);
+static STARTDIRECTORYLISTINGOUTPUT_MEMBER_OUTPUT_FILE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#StartDirectoryListingOutput$OutputFileName",
+        "com.amazonaws.transfer.synthetic",
+        "StartDirectoryListingOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputFileName",
+    1,
+);
+static STARTDIRECTORYLISTINGOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#StartDirectoryListingOutput",
+        "com.amazonaws.transfer.synthetic",
+        "StartDirectoryListingOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTDIRECTORYLISTINGOUTPUT_MEMBER_LISTING_ID,
+        &STARTDIRECTORYLISTINGOUTPUT_MEMBER_OUTPUT_FILE_NAME,
+    ],
+)
+.with_original_name("StartDirectoryListingResponse");
+impl StartDirectoryListingOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTDIRECTORYLISTINGOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartDirectoryListingOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.listing_id;
+            ser.write_string(&STARTDIRECTORYLISTINGOUTPUT_MEMBER_LISTING_ID, val)?;
+        }
+        {
+            let val = &self.output_file_name;
+            ser.write_string(&STARTDIRECTORYLISTINGOUTPUT_MEMBER_OUTPUT_FILE_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_directory_listing::builders::StartDirectoryListingOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTDIRECTORYLISTINGOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.listing_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.output_file_name = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartDirectoryListingOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.listing_id = builder.listing_id.or(Some(String::new()));
+        builder.output_file_name = builder.output_file_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for StartDirectoryListingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -20,6 +20,102 @@ impl CanaryConfiguration {
         self.canary_bake_time_in_minutes
     }
 }
+static CANARYCONFIGURATION_MEMBER_CANARY_PERCENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#CanaryConfiguration$canaryPercent",
+        "com.amazonaws.ecs",
+        "CanaryConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "canaryPercent",
+    0,
+);
+static CANARYCONFIGURATION_MEMBER_CANARY_BAKE_TIME_IN_MINUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#CanaryConfiguration$canaryBakeTimeInMinutes",
+        "com.amazonaws.ecs",
+        "CanaryConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "canaryBakeTimeInMinutes",
+    1,
+);
+static CANARYCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#CanaryConfiguration", "com.amazonaws.ecs", "CanaryConfiguration"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CANARYCONFIGURATION_MEMBER_CANARY_PERCENT,
+        &CANARYCONFIGURATION_MEMBER_CANARY_BAKE_TIME_IN_MINUTES,
+    ],
+);
+impl CanaryConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CANARYCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CanaryConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.canary_percent {
+            ser.write_double(&CANARYCONFIGURATION_MEMBER_CANARY_PERCENT, *val)?;
+        }
+        if let Some(ref val) = self.canary_bake_time_in_minutes {
+            ser.write_integer(&CANARYCONFIGURATION_MEMBER_CANARY_BAKE_TIME_IN_MINUTES, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CanaryConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CANARYCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.canary_percent = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.canary_bake_time_in_minutes = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CanaryConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CanaryConfiguration {
     /// Creates a new builder-style object to manufacture [`CanaryConfiguration`](crate::types::CanaryConfiguration).
     pub fn builder() -> crate::types::builders::CanaryConfigurationBuilder {

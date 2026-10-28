@@ -20,6 +20,122 @@ impl UntagResourceInput {
         self.tag_key_list.as_deref().unwrap_or_default()
     }
 }
+static UNTAGRESOURCEINPUT_MEMBER_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#UntagResourceInput$ResourceId",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "UntagResourceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceId",
+    0,
+);
+static UNTAGRESOURCEINPUT_MEMBER_TAG_KEY_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#TagKeyList$member", "com.amazonaws.cloudhsmv2", "TagKeyList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UNTAGRESOURCEINPUT_MEMBER_TAG_KEY_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#UntagResourceInput$TagKeyList",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "UntagResourceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TagKeyList",
+    1,
+)
+.with_list_member(&UNTAGRESOURCEINPUT_MEMBER_TAG_KEY_LIST_MEMBER);
+static UNTAGRESOURCEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#UntagResourceInput",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "UntagResourceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&UNTAGRESOURCEINPUT_MEMBER_RESOURCE_ID, &UNTAGRESOURCEINPUT_MEMBER_TAG_KEY_LIST],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UntagResourceRequest");
+impl UntagResourceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UNTAGRESOURCEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UntagResourceInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_id {
+            ser.write_string(&UNTAGRESOURCEINPUT_MEMBER_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.tag_key_list {
+            ser.write_list(
+                &UNTAGRESOURCEINPUT_MEMBER_TAG_KEY_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::untag_resource::builders::UntagResourceInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UNTAGRESOURCEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_key_list = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UntagResourceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.resource_id = builder.resource_id.or(Some(String::new()));
+        builder.tag_key_list = builder.tag_key_list.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UntagResourceInput {
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
     pub fn builder() -> crate::operation::untag_resource::builders::UntagResourceInputBuilder {

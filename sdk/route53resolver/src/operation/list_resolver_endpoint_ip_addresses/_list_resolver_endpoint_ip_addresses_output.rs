@@ -27,6 +27,155 @@ impl ListResolverEndpointIpAddressesOutput {
         self.ip_addresses.as_deref().unwrap_or_default()
     }
 }
+static LISTRESOLVERENDPOINTIPADDRESSESOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#ListResolverEndpointIpAddressesOutput$NextToken",
+        "com.amazonaws.route53resolver.synthetic",
+        "ListResolverEndpointIpAddressesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    0,
+);
+static LISTRESOLVERENDPOINTIPADDRESSESOUTPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#ListResolverEndpointIpAddressesOutput$MaxResults",
+        "com.amazonaws.route53resolver.synthetic",
+        "ListResolverEndpointIpAddressesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    1,
+);
+static LISTRESOLVERENDPOINTIPADDRESSESOUTPUT_MEMBER_IP_ADDRESSES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.route53resolver#IpAddressesResponse$member",
+            "com.amazonaws.route53resolver",
+            "IpAddressesResponse",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static LISTRESOLVERENDPOINTIPADDRESSESOUTPUT_MEMBER_IP_ADDRESSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#ListResolverEndpointIpAddressesOutput$IpAddresses",
+        "com.amazonaws.route53resolver.synthetic",
+        "ListResolverEndpointIpAddressesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "IpAddresses",
+    2,
+)
+.with_list_member(&LISTRESOLVERENDPOINTIPADDRESSESOUTPUT_MEMBER_IP_ADDRESSES_MEMBER);
+static LISTRESOLVERENDPOINTIPADDRESSESOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#ListResolverEndpointIpAddressesOutput",
+        "com.amazonaws.route53resolver.synthetic",
+        "ListResolverEndpointIpAddressesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTRESOLVERENDPOINTIPADDRESSESOUTPUT_MEMBER_NEXT_TOKEN,
+        &LISTRESOLVERENDPOINTIPADDRESSESOUTPUT_MEMBER_MAX_RESULTS,
+        &LISTRESOLVERENDPOINTIPADDRESSESOUTPUT_MEMBER_IP_ADDRESSES,
+    ],
+)
+.with_original_name("ListResolverEndpointIpAddressesResponse");
+impl ListResolverEndpointIpAddressesOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTRESOLVERENDPOINTIPADDRESSESOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListResolverEndpointIpAddressesOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTRESOLVERENDPOINTIPADDRESSESOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTRESOLVERENDPOINTIPADDRESSESOUTPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.ip_addresses {
+            ser.write_list(
+                &LISTRESOLVERENDPOINTIPADDRESSESOUTPUT_MEMBER_IP_ADDRESSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::IpAddressResponse::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_resolver_endpoint_ip_addresses::builders::ListResolverEndpointIpAddressesOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTRESOLVERENDPOINTIPADDRESSESOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_addresses = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::IpAddressResponse::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListResolverEndpointIpAddressesOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListResolverEndpointIpAddressesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

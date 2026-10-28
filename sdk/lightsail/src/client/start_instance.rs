@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_name(impl Into<String>)`](crate::operation::start_instance::builders::StartInstanceFluentBuilder::instance_name) / [`set_instance_name(Option<String>)`](crate::operation::start_instance::builders::StartInstanceFluentBuilder::set_instance_name):<br>required: **true**<br><p>The name of the instance (a virtual private server) to start.</p><br>
+    ///   - [`attribute_updates(InstanceAttributeUpdates)`](crate::operation::start_instance::builders::StartInstanceFluentBuilder::attribute_updates) / [`set_attribute_updates(Option<InstanceAttributeUpdates>)`](crate::operation::start_instance::builders::StartInstanceFluentBuilder::set_attribute_updates):<br>required: **false**<br><p>An object that describes the attributes to update on the instance before it starts.</p><br>
     /// - On success, responds with [`StartInstanceOutput`](crate::operation::start_instance::StartInstanceOutput) with field(s):
     ///   - [`operations(Option<Vec::<Operation>>)`](crate::operation::start_instance::StartInstanceOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<StartInstanceError>`](crate::operation::start_instance::StartInstanceError)

@@ -235,6 +235,860 @@ impl ::std::fmt::Debug for DaemonContainerDefinition {
         formatter.finish()
     }
 }
+static DAEMONCONTAINERDEFINITION_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$name",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$image",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "image",
+    1,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_MEMORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$memory",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "memory",
+    2,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_MEMORY_RESERVATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$memoryReservation",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "memoryReservation",
+    3,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_REPOSITORY_CREDENTIALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$repositoryCredentials",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "repositoryCredentials",
+    4,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_HEALTH_CHECK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$healthCheck",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "healthCheck",
+    5,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_CPU: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$cpu",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "cpu",
+    6,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_ESSENTIAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$essential",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "essential",
+    7,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_ENTRY_POINT_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_ENTRY_POINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$entryPoint",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "entryPoint",
+    8,
+)
+.with_list_member(&DAEMONCONTAINERDEFINITION_MEMBER_ENTRY_POINT_MEMBER);
+static DAEMONCONTAINERDEFINITION_MEMBER_COMMAND_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_COMMAND: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$command",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "command",
+    9,
+)
+.with_list_member(&DAEMONCONTAINERDEFINITION_MEMBER_COMMAND_MEMBER);
+static DAEMONCONTAINERDEFINITION_MEMBER_WORKING_DIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$workingDirectory",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "workingDirectory",
+    10,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_ENVIRONMENT_FILES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#EnvironmentFiles$member", "com.amazonaws.ecs", "EnvironmentFiles"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_ENVIRONMENT_FILES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$environmentFiles",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "environmentFiles",
+    11,
+)
+.with_list_member(&DAEMONCONTAINERDEFINITION_MEMBER_ENVIRONMENT_FILES_MEMBER);
+static DAEMONCONTAINERDEFINITION_MEMBER_ENVIRONMENT_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#EnvironmentVariables$member",
+        "com.amazonaws.ecs",
+        "EnvironmentVariables",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$environment",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "environment",
+    12,
+)
+.with_list_member(&DAEMONCONTAINERDEFINITION_MEMBER_ENVIRONMENT_MEMBER);
+static DAEMONCONTAINERDEFINITION_MEMBER_SECRETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#SecretList$member", "com.amazonaws.ecs", "SecretList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_SECRETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$secrets",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "secrets",
+    13,
+)
+.with_list_member(&DAEMONCONTAINERDEFINITION_MEMBER_SECRETS_MEMBER);
+static DAEMONCONTAINERDEFINITION_MEMBER_READONLY_ROOT_FILESYSTEM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$readonlyRootFilesystem",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "readonlyRootFilesystem",
+    14,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_MOUNT_POINTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#MountPointList$member", "com.amazonaws.ecs", "MountPointList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_MOUNT_POINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$mountPoints",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "mountPoints",
+    15,
+)
+.with_list_member(&DAEMONCONTAINERDEFINITION_MEMBER_MOUNT_POINTS_MEMBER);
+static DAEMONCONTAINERDEFINITION_MEMBER_LOG_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$logConfiguration",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "logConfiguration",
+    16,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_FIRELENS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$firelensConfiguration",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "firelensConfiguration",
+    17,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_PRIVILEGED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$privileged",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "privileged",
+    18,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_USER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$user",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "user",
+    19,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_ULIMITS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#UlimitList$member", "com.amazonaws.ecs", "UlimitList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_ULIMITS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$ulimits",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ulimits",
+    20,
+)
+.with_list_member(&DAEMONCONTAINERDEFINITION_MEMBER_ULIMITS_MEMBER);
+static DAEMONCONTAINERDEFINITION_MEMBER_LINUX_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$linuxParameters",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "linuxParameters",
+    21,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_DEPENDS_ON_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDependencies$member",
+        "com.amazonaws.ecs",
+        "ContainerDependencies",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_DEPENDS_ON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$dependsOn",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "dependsOn",
+    22,
+)
+.with_list_member(&DAEMONCONTAINERDEFINITION_MEMBER_DEPENDS_ON_MEMBER);
+static DAEMONCONTAINERDEFINITION_MEMBER_START_TIMEOUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$startTimeout",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "startTimeout",
+    23,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_STOP_TIMEOUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$stopTimeout",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "stopTimeout",
+    24,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_SYSTEM_CONTROLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#SystemControls$member", "com.amazonaws.ecs", "SystemControls"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_SYSTEM_CONTROLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$systemControls",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "systemControls",
+    25,
+)
+.with_list_member(&DAEMONCONTAINERDEFINITION_MEMBER_SYSTEM_CONTROLS_MEMBER);
+static DAEMONCONTAINERDEFINITION_MEMBER_INTERACTIVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$interactive",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "interactive",
+    26,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_PSEUDO_TERMINAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$pseudoTerminal",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "pseudoTerminal",
+    27,
+);
+static DAEMONCONTAINERDEFINITION_MEMBER_RESTART_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition$restartPolicy",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "restartPolicy",
+    28,
+);
+static DAEMONCONTAINERDEFINITION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinition",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DAEMONCONTAINERDEFINITION_MEMBER_NAME,
+        &DAEMONCONTAINERDEFINITION_MEMBER_IMAGE,
+        &DAEMONCONTAINERDEFINITION_MEMBER_MEMORY,
+        &DAEMONCONTAINERDEFINITION_MEMBER_MEMORY_RESERVATION,
+        &DAEMONCONTAINERDEFINITION_MEMBER_REPOSITORY_CREDENTIALS,
+        &DAEMONCONTAINERDEFINITION_MEMBER_HEALTH_CHECK,
+        &DAEMONCONTAINERDEFINITION_MEMBER_CPU,
+        &DAEMONCONTAINERDEFINITION_MEMBER_ESSENTIAL,
+        &DAEMONCONTAINERDEFINITION_MEMBER_ENTRY_POINT,
+        &DAEMONCONTAINERDEFINITION_MEMBER_COMMAND,
+        &DAEMONCONTAINERDEFINITION_MEMBER_WORKING_DIRECTORY,
+        &DAEMONCONTAINERDEFINITION_MEMBER_ENVIRONMENT_FILES,
+        &DAEMONCONTAINERDEFINITION_MEMBER_ENVIRONMENT,
+        &DAEMONCONTAINERDEFINITION_MEMBER_SECRETS,
+        &DAEMONCONTAINERDEFINITION_MEMBER_READONLY_ROOT_FILESYSTEM,
+        &DAEMONCONTAINERDEFINITION_MEMBER_MOUNT_POINTS,
+        &DAEMONCONTAINERDEFINITION_MEMBER_LOG_CONFIGURATION,
+        &DAEMONCONTAINERDEFINITION_MEMBER_FIRELENS_CONFIGURATION,
+        &DAEMONCONTAINERDEFINITION_MEMBER_PRIVILEGED,
+        &DAEMONCONTAINERDEFINITION_MEMBER_USER,
+        &DAEMONCONTAINERDEFINITION_MEMBER_ULIMITS,
+        &DAEMONCONTAINERDEFINITION_MEMBER_LINUX_PARAMETERS,
+        &DAEMONCONTAINERDEFINITION_MEMBER_DEPENDS_ON,
+        &DAEMONCONTAINERDEFINITION_MEMBER_START_TIMEOUT,
+        &DAEMONCONTAINERDEFINITION_MEMBER_STOP_TIMEOUT,
+        &DAEMONCONTAINERDEFINITION_MEMBER_SYSTEM_CONTROLS,
+        &DAEMONCONTAINERDEFINITION_MEMBER_INTERACTIVE,
+        &DAEMONCONTAINERDEFINITION_MEMBER_PSEUDO_TERMINAL,
+        &DAEMONCONTAINERDEFINITION_MEMBER_RESTART_POLICY,
+    ],
+);
+impl DaemonContainerDefinition {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DAEMONCONTAINERDEFINITION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DaemonContainerDefinition {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&DAEMONCONTAINERDEFINITION_MEMBER_NAME, val)?;
+        }
+        {
+            let val = &self.image;
+            ser.write_string(&DAEMONCONTAINERDEFINITION_MEMBER_IMAGE, val)?;
+        }
+        if let Some(ref val) = self.memory {
+            ser.write_integer(&DAEMONCONTAINERDEFINITION_MEMBER_MEMORY, *val)?;
+        }
+        if let Some(ref val) = self.memory_reservation {
+            ser.write_integer(&DAEMONCONTAINERDEFINITION_MEMBER_MEMORY_RESERVATION, *val)?;
+        }
+        if let Some(ref val) = self.repository_credentials {
+            ser.write_struct(&DAEMONCONTAINERDEFINITION_MEMBER_REPOSITORY_CREDENTIALS, val)?;
+        }
+        if let Some(ref val) = self.health_check {
+            ser.write_struct(&DAEMONCONTAINERDEFINITION_MEMBER_HEALTH_CHECK, val)?;
+        }
+        {
+            let val = &self.cpu;
+            ser.write_integer(&DAEMONCONTAINERDEFINITION_MEMBER_CPU, *val)?;
+        }
+        if let Some(ref val) = self.essential {
+            ser.write_boolean(&DAEMONCONTAINERDEFINITION_MEMBER_ESSENTIAL, *val)?;
+        }
+        if let Some(ref val) = self.entry_point {
+            ser.write_list(
+                &DAEMONCONTAINERDEFINITION_MEMBER_ENTRY_POINT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.command {
+            ser.write_list(
+                &DAEMONCONTAINERDEFINITION_MEMBER_COMMAND,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.working_directory {
+            ser.write_string(&DAEMONCONTAINERDEFINITION_MEMBER_WORKING_DIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.environment_files {
+            ser.write_list(
+                &DAEMONCONTAINERDEFINITION_MEMBER_ENVIRONMENT_FILES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EnvironmentFile::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.environment {
+            ser.write_list(
+                &DAEMONCONTAINERDEFINITION_MEMBER_ENVIRONMENT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::KeyValuePair::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.secrets {
+            ser.write_list(
+                &DAEMONCONTAINERDEFINITION_MEMBER_SECRETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Secret::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.readonly_root_filesystem {
+            ser.write_boolean(&DAEMONCONTAINERDEFINITION_MEMBER_READONLY_ROOT_FILESYSTEM, *val)?;
+        }
+        if let Some(ref val) = self.mount_points {
+            ser.write_list(
+                &DAEMONCONTAINERDEFINITION_MEMBER_MOUNT_POINTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::MountPoint::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.log_configuration {
+            ser.write_struct(&DAEMONCONTAINERDEFINITION_MEMBER_LOG_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.firelens_configuration {
+            ser.write_struct(&DAEMONCONTAINERDEFINITION_MEMBER_FIRELENS_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.privileged {
+            ser.write_boolean(&DAEMONCONTAINERDEFINITION_MEMBER_PRIVILEGED, *val)?;
+        }
+        if let Some(ref val) = self.user {
+            ser.write_string(&DAEMONCONTAINERDEFINITION_MEMBER_USER, val)?;
+        }
+        if let Some(ref val) = self.ulimits {
+            ser.write_list(
+                &DAEMONCONTAINERDEFINITION_MEMBER_ULIMITS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Ulimit::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.linux_parameters {
+            ser.write_struct(&DAEMONCONTAINERDEFINITION_MEMBER_LINUX_PARAMETERS, val)?;
+        }
+        if let Some(ref val) = self.depends_on {
+            ser.write_list(
+                &DAEMONCONTAINERDEFINITION_MEMBER_DEPENDS_ON,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ContainerDependency::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.start_timeout {
+            ser.write_integer(&DAEMONCONTAINERDEFINITION_MEMBER_START_TIMEOUT, *val)?;
+        }
+        if let Some(ref val) = self.stop_timeout {
+            ser.write_integer(&DAEMONCONTAINERDEFINITION_MEMBER_STOP_TIMEOUT, *val)?;
+        }
+        if let Some(ref val) = self.system_controls {
+            ser.write_list(
+                &DAEMONCONTAINERDEFINITION_MEMBER_SYSTEM_CONTROLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::SystemControl::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.interactive {
+            ser.write_boolean(&DAEMONCONTAINERDEFINITION_MEMBER_INTERACTIVE, *val)?;
+        }
+        if let Some(ref val) = self.pseudo_terminal {
+            ser.write_boolean(&DAEMONCONTAINERDEFINITION_MEMBER_PSEUDO_TERMINAL, *val)?;
+        }
+        if let Some(ref val) = self.restart_policy {
+            ser.write_struct(&DAEMONCONTAINERDEFINITION_MEMBER_RESTART_POLICY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DaemonContainerDefinitionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DAEMONCONTAINERDEFINITION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.image = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.memory = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.memory_reservation = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_credentials = Some(crate::types::RepositoryCredentials::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check = Some(crate::types::HealthCheck::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    self.cpu = Some(deser.read_integer(member)?);
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.essential = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.entry_point = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.command = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.working_directory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment_files = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EnvironmentFile::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::KeyValuePair::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secrets = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Secret::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.readonly_root_filesystem = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mount_points = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MountPoint::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_configuration = Some(crate::types::LogConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firelens_configuration = Some(crate::types::FirelensConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.privileged = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ulimits = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Ulimit::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.linux_parameters = Some(crate::types::DaemonLinuxParameters::deserialize(deser)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.depends_on = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ContainerDependency::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_timeout = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stop_timeout = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(25) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.system_controls = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SystemControl::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(26) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.interactive = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(27) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pseudo_terminal = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(28) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.restart_policy = Some(crate::types::ContainerRestartPolicy::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DaemonContainerDefinition {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.image = builder.image.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DaemonContainerDefinition {
     /// Creates a new builder-style object to manufacture [`DaemonContainerDefinition`](crate::types::DaemonContainerDefinition).
     pub fn builder() -> crate::types::builders::DaemonContainerDefinitionBuilder {

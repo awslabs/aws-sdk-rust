@@ -25,6 +25,127 @@ impl AccountTakeoverActionsType {
         self.high_action.as_ref()
     }
 }
+static ACCOUNTTAKEOVERACTIONSTYPE_MEMBER_LOW_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AccountTakeoverActionsType$LowAction",
+        "com.amazonaws.cognitoidentityprovider",
+        "AccountTakeoverActionsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LowAction",
+    0,
+);
+static ACCOUNTTAKEOVERACTIONSTYPE_MEMBER_MEDIUM_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AccountTakeoverActionsType$MediumAction",
+        "com.amazonaws.cognitoidentityprovider",
+        "AccountTakeoverActionsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MediumAction",
+    1,
+);
+static ACCOUNTTAKEOVERACTIONSTYPE_MEMBER_HIGH_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AccountTakeoverActionsType$HighAction",
+        "com.amazonaws.cognitoidentityprovider",
+        "AccountTakeoverActionsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "HighAction",
+    2,
+);
+static ACCOUNTTAKEOVERACTIONSTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AccountTakeoverActionsType",
+        "com.amazonaws.cognitoidentityprovider",
+        "AccountTakeoverActionsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACCOUNTTAKEOVERACTIONSTYPE_MEMBER_LOW_ACTION,
+        &ACCOUNTTAKEOVERACTIONSTYPE_MEMBER_MEDIUM_ACTION,
+        &ACCOUNTTAKEOVERACTIONSTYPE_MEMBER_HIGH_ACTION,
+    ],
+);
+impl AccountTakeoverActionsType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACCOUNTTAKEOVERACTIONSTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AccountTakeoverActionsType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.low_action {
+            ser.write_struct(&ACCOUNTTAKEOVERACTIONSTYPE_MEMBER_LOW_ACTION, val)?;
+        }
+        if let Some(ref val) = self.medium_action {
+            ser.write_struct(&ACCOUNTTAKEOVERACTIONSTYPE_MEMBER_MEDIUM_ACTION, val)?;
+        }
+        if let Some(ref val) = self.high_action {
+            ser.write_struct(&ACCOUNTTAKEOVERACTIONSTYPE_MEMBER_HIGH_ACTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AccountTakeoverActionsTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACCOUNTTAKEOVERACTIONSTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.low_action = Some(crate::types::AccountTakeoverActionType::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.medium_action = Some(crate::types::AccountTakeoverActionType::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.high_action = Some(crate::types::AccountTakeoverActionType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AccountTakeoverActionsType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AccountTakeoverActionsType {
     /// Creates a new builder-style object to manufacture [`AccountTakeoverActionsType`](crate::types::AccountTakeoverActionsType).
     pub fn builder() -> crate::types::builders::AccountTakeoverActionsTypeBuilder {

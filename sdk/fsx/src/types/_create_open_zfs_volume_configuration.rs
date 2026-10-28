@@ -91,6 +91,325 @@ impl CreateOpenZfsVolumeConfiguration {
         self.user_and_group_quotas.as_deref().unwrap_or_default()
     }
 }
+static CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_PARENT_VOLUME_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateOpenZFSVolumeConfiguration$ParentVolumeId",
+        "com.amazonaws.fsx",
+        "CreateOpenZFSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ParentVolumeId",
+    0,
+);
+static CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_STORAGE_CAPACITY_RESERVATION_GIB: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateOpenZFSVolumeConfiguration$StorageCapacityReservationGiB",
+            "com.amazonaws.fsx",
+            "CreateOpenZFSVolumeConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "StorageCapacityReservationGiB",
+        1,
+    );
+static CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_STORAGE_CAPACITY_QUOTA_GIB: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateOpenZFSVolumeConfiguration$StorageCapacityQuotaGiB",
+            "com.amazonaws.fsx",
+            "CreateOpenZFSVolumeConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "StorageCapacityQuotaGiB",
+        2,
+    );
+static CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_RECORD_SIZE_KIB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateOpenZFSVolumeConfiguration$RecordSizeKiB",
+        "com.amazonaws.fsx",
+        "CreateOpenZFSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "RecordSizeKiB",
+    3,
+);
+static CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_DATA_COMPRESSION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateOpenZFSVolumeConfiguration$DataCompressionType",
+        "com.amazonaws.fsx",
+        "CreateOpenZFSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataCompressionType",
+    4,
+);
+static CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_COPY_TAGS_TO_SNAPSHOTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateOpenZFSVolumeConfiguration$CopyTagsToSnapshots",
+        "com.amazonaws.fsx",
+        "CreateOpenZFSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "CopyTagsToSnapshots",
+    5,
+);
+static CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_ORIGIN_SNAPSHOT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateOpenZFSVolumeConfiguration$OriginSnapshot",
+        "com.amazonaws.fsx",
+        "CreateOpenZFSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OriginSnapshot",
+    6,
+);
+static CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_READ_ONLY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateOpenZFSVolumeConfiguration$ReadOnly",
+        "com.amazonaws.fsx",
+        "CreateOpenZFSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ReadOnly",
+    7,
+);
+static CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_NFS_EXPORTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#OpenZFSNfsExports$member", "com.amazonaws.fsx", "OpenZFSNfsExports"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_NFS_EXPORTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateOpenZFSVolumeConfiguration$NfsExports",
+        "com.amazonaws.fsx",
+        "CreateOpenZFSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "NfsExports",
+    8,
+)
+.with_list_member(&CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_NFS_EXPORTS_MEMBER);
+static CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_USER_AND_GROUP_QUOTAS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#OpenZFSUserAndGroupQuotas$member",
+            "com.amazonaws.fsx",
+            "OpenZFSUserAndGroupQuotas",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_USER_AND_GROUP_QUOTAS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateOpenZFSVolumeConfiguration$UserAndGroupQuotas",
+        "com.amazonaws.fsx",
+        "CreateOpenZFSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "UserAndGroupQuotas",
+    9,
+)
+.with_list_member(&CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_USER_AND_GROUP_QUOTAS_MEMBER);
+static CREATEOPENZFSVOLUMECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateOpenZFSVolumeConfiguration",
+        "com.amazonaws.fsx",
+        "CreateOpenZFSVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_PARENT_VOLUME_ID,
+        &CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_STORAGE_CAPACITY_RESERVATION_GIB,
+        &CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_STORAGE_CAPACITY_QUOTA_GIB,
+        &CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_RECORD_SIZE_KIB,
+        &CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_DATA_COMPRESSION_TYPE,
+        &CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_COPY_TAGS_TO_SNAPSHOTS,
+        &CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_ORIGIN_SNAPSHOT,
+        &CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_READ_ONLY,
+        &CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_NFS_EXPORTS,
+        &CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_USER_AND_GROUP_QUOTAS,
+    ],
+);
+impl CreateOpenZfsVolumeConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEOPENZFSVOLUMECONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateOpenZfsVolumeConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.parent_volume_id {
+            ser.write_string(&CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_PARENT_VOLUME_ID, val)?;
+        }
+        if let Some(ref val) = self.storage_capacity_reservation_gib {
+            ser.write_integer(&CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_STORAGE_CAPACITY_RESERVATION_GIB, *val)?;
+        }
+        if let Some(ref val) = self.storage_capacity_quota_gib {
+            ser.write_integer(&CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_STORAGE_CAPACITY_QUOTA_GIB, *val)?;
+        }
+        if let Some(ref val) = self.record_size_kib {
+            ser.write_integer(&CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_RECORD_SIZE_KIB, *val)?;
+        }
+        if let Some(ref val) = self.data_compression_type {
+            ser.write_string(&CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_DATA_COMPRESSION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.copy_tags_to_snapshots {
+            ser.write_boolean(&CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_COPY_TAGS_TO_SNAPSHOTS, *val)?;
+        }
+        if let Some(ref val) = self.origin_snapshot {
+            ser.write_struct(&CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_ORIGIN_SNAPSHOT, val)?;
+        }
+        if let Some(ref val) = self.read_only {
+            ser.write_boolean(&CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_READ_ONLY, *val)?;
+        }
+        if let Some(ref val) = self.nfs_exports {
+            ser.write_list(
+                &CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_NFS_EXPORTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::OpenZfsNfsExport::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.user_and_group_quotas {
+            ser.write_list(
+                &CREATEOPENZFSVOLUMECONFIGURATION_MEMBER_USER_AND_GROUP_QUOTAS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::OpenZfsUserOrGroupQuota::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CreateOpenZfsVolumeConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEOPENZFSVOLUMECONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parent_volume_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.storage_capacity_reservation_gib = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.storage_capacity_quota_gib = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.record_size_kib = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_compression_type = Some(crate::types::OpenZfsDataCompressionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.copy_tags_to_snapshots = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.origin_snapshot = Some(crate::types::CreateOpenZfsOriginSnapshotConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.read_only = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.nfs_exports = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::OpenZfsNfsExport::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_and_group_quotas = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::OpenZfsUserOrGroupQuota::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateOpenZfsVolumeConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CreateOpenZfsVolumeConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateOpenZfsVolumeConfiguration`](crate::types::CreateOpenZfsVolumeConfiguration).
     pub fn builder() -> crate::types::builders::CreateOpenZfsVolumeConfigurationBuilder {

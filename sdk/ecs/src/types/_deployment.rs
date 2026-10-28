@@ -197,6 +197,513 @@ impl Deployment {
         self.vpc_lattice_configurations.as_deref().unwrap_or_default()
     }
 }
+static DEPLOYMENT_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$id", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::String,
+    "id",
+    0,
+);
+static DEPLOYMENT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$status", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    1,
+);
+static DEPLOYMENT_MEMBER_TASK_DEFINITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$taskDefinition", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskDefinition",
+    2,
+);
+static DEPLOYMENT_MEMBER_DESIRED_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$desiredCount", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "desiredCount",
+    3,
+);
+static DEPLOYMENT_MEMBER_PENDING_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$pendingCount", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "pendingCount",
+    4,
+);
+static DEPLOYMENT_MEMBER_RUNNING_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$runningCount", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "runningCount",
+    5,
+);
+static DEPLOYMENT_MEMBER_FAILED_TASKS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$failedTasks", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "failedTasks",
+    6,
+);
+static DEPLOYMENT_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$createdAt", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    7,
+);
+static DEPLOYMENT_MEMBER_UPDATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$updatedAt", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "updatedAt",
+    8,
+);
+static DEPLOYMENT_MEMBER_CAPACITY_PROVIDER_STRATEGY_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#CapacityProviderStrategy$member",
+        "com.amazonaws.ecs",
+        "CapacityProviderStrategy",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DEPLOYMENT_MEMBER_CAPACITY_PROVIDER_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$capacityProviderStrategy", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::List,
+    "capacityProviderStrategy",
+    9,
+)
+.with_list_member(&DEPLOYMENT_MEMBER_CAPACITY_PROVIDER_STRATEGY_MEMBER);
+static DEPLOYMENT_MEMBER_LAUNCH_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$launchType", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::String,
+    "launchType",
+    10,
+);
+static DEPLOYMENT_MEMBER_PLATFORM_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$platformVersion", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::String,
+    "platformVersion",
+    11,
+);
+static DEPLOYMENT_MEMBER_PLATFORM_FAMILY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$platformFamily", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::String,
+    "platformFamily",
+    12,
+);
+static DEPLOYMENT_MEMBER_NETWORK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$networkConfiguration", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "networkConfiguration",
+    13,
+);
+static DEPLOYMENT_MEMBER_ROLLOUT_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$rolloutState", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::String,
+    "rolloutState",
+    14,
+);
+static DEPLOYMENT_MEMBER_ROLLOUT_STATE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$rolloutStateReason", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::String,
+    "rolloutStateReason",
+    15,
+);
+static DEPLOYMENT_MEMBER_SERVICE_CONNECT_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#Deployment$serviceConnectConfiguration",
+        "com.amazonaws.ecs",
+        "Deployment",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "serviceConnectConfiguration",
+    16,
+);
+static DEPLOYMENT_MEMBER_SERVICE_CONNECT_RESOURCES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceConnectServiceResourceList$member",
+        "com.amazonaws.ecs",
+        "ServiceConnectServiceResourceList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DEPLOYMENT_MEMBER_SERVICE_CONNECT_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$serviceConnectResources", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::List,
+    "serviceConnectResources",
+    17,
+)
+.with_list_member(&DEPLOYMENT_MEMBER_SERVICE_CONNECT_RESOURCES_MEMBER);
+static DEPLOYMENT_MEMBER_VOLUME_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceVolumeConfigurations$member",
+        "com.amazonaws.ecs",
+        "ServiceVolumeConfigurations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DEPLOYMENT_MEMBER_VOLUME_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$volumeConfigurations", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::List,
+    "volumeConfigurations",
+    18,
+)
+.with_list_member(&DEPLOYMENT_MEMBER_VOLUME_CONFIGURATIONS_MEMBER);
+static DEPLOYMENT_MEMBER_FARGATE_EPHEMERAL_STORAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$fargateEphemeralStorage", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "fargateEphemeralStorage",
+    19,
+);
+static DEPLOYMENT_MEMBER_VPC_LATTICE_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#VpcLatticeConfigurations$member",
+        "com.amazonaws.ecs",
+        "VpcLatticeConfigurations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DEPLOYMENT_MEMBER_VPC_LATTICE_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment$vpcLatticeConfigurations", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::List,
+    "vpcLatticeConfigurations",
+    20,
+)
+.with_list_member(&DEPLOYMENT_MEMBER_VPC_LATTICE_CONFIGURATIONS_MEMBER);
+static DEPLOYMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Deployment", "com.amazonaws.ecs", "Deployment"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEPLOYMENT_MEMBER_ID,
+        &DEPLOYMENT_MEMBER_STATUS,
+        &DEPLOYMENT_MEMBER_TASK_DEFINITION,
+        &DEPLOYMENT_MEMBER_DESIRED_COUNT,
+        &DEPLOYMENT_MEMBER_PENDING_COUNT,
+        &DEPLOYMENT_MEMBER_RUNNING_COUNT,
+        &DEPLOYMENT_MEMBER_FAILED_TASKS,
+        &DEPLOYMENT_MEMBER_CREATED_AT,
+        &DEPLOYMENT_MEMBER_UPDATED_AT,
+        &DEPLOYMENT_MEMBER_CAPACITY_PROVIDER_STRATEGY,
+        &DEPLOYMENT_MEMBER_LAUNCH_TYPE,
+        &DEPLOYMENT_MEMBER_PLATFORM_VERSION,
+        &DEPLOYMENT_MEMBER_PLATFORM_FAMILY,
+        &DEPLOYMENT_MEMBER_NETWORK_CONFIGURATION,
+        &DEPLOYMENT_MEMBER_ROLLOUT_STATE,
+        &DEPLOYMENT_MEMBER_ROLLOUT_STATE_REASON,
+        &DEPLOYMENT_MEMBER_SERVICE_CONNECT_CONFIGURATION,
+        &DEPLOYMENT_MEMBER_SERVICE_CONNECT_RESOURCES,
+        &DEPLOYMENT_MEMBER_VOLUME_CONFIGURATIONS,
+        &DEPLOYMENT_MEMBER_FARGATE_EPHEMERAL_STORAGE,
+        &DEPLOYMENT_MEMBER_VPC_LATTICE_CONFIGURATIONS,
+    ],
+);
+impl Deployment {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEPLOYMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Deployment {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&DEPLOYMENT_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DEPLOYMENT_MEMBER_STATUS, val)?;
+        }
+        if let Some(ref val) = self.task_definition {
+            ser.write_string(&DEPLOYMENT_MEMBER_TASK_DEFINITION, val)?;
+        }
+        {
+            let val = &self.desired_count;
+            ser.write_integer(&DEPLOYMENT_MEMBER_DESIRED_COUNT, *val)?;
+        }
+        {
+            let val = &self.pending_count;
+            ser.write_integer(&DEPLOYMENT_MEMBER_PENDING_COUNT, *val)?;
+        }
+        {
+            let val = &self.running_count;
+            ser.write_integer(&DEPLOYMENT_MEMBER_RUNNING_COUNT, *val)?;
+        }
+        {
+            let val = &self.failed_tasks;
+            ser.write_integer(&DEPLOYMENT_MEMBER_FAILED_TASKS, *val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&DEPLOYMENT_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.updated_at {
+            ser.write_timestamp(&DEPLOYMENT_MEMBER_UPDATED_AT, val)?;
+        }
+        if let Some(ref val) = self.capacity_provider_strategy {
+            ser.write_list(
+                &DEPLOYMENT_MEMBER_CAPACITY_PROVIDER_STRATEGY,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CapacityProviderStrategyItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.launch_type {
+            ser.write_string(&DEPLOYMENT_MEMBER_LAUNCH_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.platform_version {
+            ser.write_string(&DEPLOYMENT_MEMBER_PLATFORM_VERSION, val)?;
+        }
+        if let Some(ref val) = self.platform_family {
+            ser.write_string(&DEPLOYMENT_MEMBER_PLATFORM_FAMILY, val)?;
+        }
+        if let Some(ref val) = self.network_configuration {
+            ser.write_struct(&DEPLOYMENT_MEMBER_NETWORK_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.rollout_state {
+            ser.write_string(&DEPLOYMENT_MEMBER_ROLLOUT_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.rollout_state_reason {
+            ser.write_string(&DEPLOYMENT_MEMBER_ROLLOUT_STATE_REASON, val)?;
+        }
+        if let Some(ref val) = self.service_connect_configuration {
+            ser.write_struct(&DEPLOYMENT_MEMBER_SERVICE_CONNECT_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.service_connect_resources {
+            ser.write_list(
+                &DEPLOYMENT_MEMBER_SERVICE_CONNECT_RESOURCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ServiceConnectServiceResource::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.volume_configurations {
+            ser.write_list(
+                &DEPLOYMENT_MEMBER_VOLUME_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ServiceVolumeConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.fargate_ephemeral_storage {
+            ser.write_struct(&DEPLOYMENT_MEMBER_FARGATE_EPHEMERAL_STORAGE, val)?;
+        }
+        if let Some(ref val) = self.vpc_lattice_configurations {
+            ser.write_list(
+                &DEPLOYMENT_MEMBER_VPC_LATTICE_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::VpcLatticeConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeploymentBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEPLOYMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_definition = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    self.desired_count = Some(deser.read_integer(member)?);
+                }
+                Some(4) => {
+                    self.pending_count = Some(deser.read_integer(member)?);
+                }
+                Some(5) => {
+                    self.running_count = Some(deser.read_integer(member)?);
+                }
+                Some(6) => {
+                    self.failed_tasks = Some(deser.read_integer(member)?);
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.updated_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_provider_strategy = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CapacityProviderStrategyItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.launch_type = Some(crate::types::LaunchType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform_family = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_configuration = Some(crate::types::NetworkConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rollout_state = Some(crate::types::DeploymentRolloutState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rollout_state_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_connect_configuration = Some(crate::types::ServiceConnectConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_connect_resources = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ServiceConnectServiceResource::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ServiceVolumeConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fargate_ephemeral_storage = Some(crate::types::DeploymentEphemeralStorage::deserialize(deser)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_lattice_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::VpcLatticeConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Deployment {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Deployment {
     /// Creates a new builder-style object to manufacture [`Deployment`](crate::types::Deployment).
     pub fn builder() -> crate::types::builders::DeploymentBuilder {

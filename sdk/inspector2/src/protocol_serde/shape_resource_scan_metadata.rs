@@ -85,6 +85,13 @@ where
                                 )?,
                             );
                         }
+                        "machineImage" => {
+                            builder = builder.set_machine_image(crate::protocol_serde::shape_machine_image_metadata::de_machine_image_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

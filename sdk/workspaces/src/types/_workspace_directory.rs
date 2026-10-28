@@ -189,6 +189,745 @@ impl WorkspaceDirectory {
         self.error_message.as_deref()
     }
 }
+static WORKSPACEDIRECTORY_MEMBER_DIRECTORY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$DirectoryId",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DirectoryId",
+    0,
+);
+static WORKSPACEDIRECTORY_MEMBER_ALIAS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$Alias",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Alias",
+    1,
+);
+static WORKSPACEDIRECTORY_MEMBER_DIRECTORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$DirectoryName",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DirectoryName",
+    2,
+);
+static WORKSPACEDIRECTORY_MEMBER_REGISTRATION_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$RegistrationCode",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RegistrationCode",
+    3,
+);
+static WORKSPACEDIRECTORY_MEMBER_SUBNET_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#SubnetIds$member", "com.amazonaws.workspaces", "SubnetIds"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static WORKSPACEDIRECTORY_MEMBER_SUBNET_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$SubnetIds",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SubnetIds",
+    4,
+)
+.with_list_member(&WORKSPACEDIRECTORY_MEMBER_SUBNET_IDS_MEMBER);
+static WORKSPACEDIRECTORY_MEMBER_DNS_IP_ADDRESSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#DnsIpAddresses$member",
+        "com.amazonaws.workspaces",
+        "DnsIpAddresses",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static WORKSPACEDIRECTORY_MEMBER_DNS_IP_ADDRESSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$DnsIpAddresses",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DnsIpAddresses",
+    5,
+)
+.with_list_member(&WORKSPACEDIRECTORY_MEMBER_DNS_IP_ADDRESSES_MEMBER);
+static WORKSPACEDIRECTORY_MEMBER_DNS_IPV6_ADDRESSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#DnsIpv6Addresses$member",
+        "com.amazonaws.workspaces",
+        "DnsIpv6Addresses",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static WORKSPACEDIRECTORY_MEMBER_DNS_IPV6_ADDRESSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$DnsIpv6Addresses",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DnsIpv6Addresses",
+    6,
+)
+.with_list_member(&WORKSPACEDIRECTORY_MEMBER_DNS_IPV6_ADDRESSES_MEMBER);
+static WORKSPACEDIRECTORY_MEMBER_CUSTOMER_USER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$CustomerUserName",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CustomerUserName",
+    7,
+);
+static WORKSPACEDIRECTORY_MEMBER_IAM_ROLE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$IamRoleId",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IamRoleId",
+    8,
+);
+static WORKSPACEDIRECTORY_MEMBER_DIRECTORY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$DirectoryType",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DirectoryType",
+    9,
+);
+static WORKSPACEDIRECTORY_MEMBER_WORKSPACE_SECURITY_GROUP_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$WorkspaceSecurityGroupId",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkspaceSecurityGroupId",
+    10,
+);
+static WORKSPACEDIRECTORY_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$State",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    11,
+);
+static WORKSPACEDIRECTORY_MEMBER_WORKSPACE_CREATION_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$WorkspaceCreationProperties",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WorkspaceCreationProperties",
+    12,
+);
+static WORKSPACEDIRECTORY_MEMBER_IP_GROUP_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#IpGroupIdList$member",
+        "com.amazonaws.workspaces",
+        "IpGroupIdList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static WORKSPACEDIRECTORY_MEMBER_IP_GROUP_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$ipGroupIds",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ipGroupIds",
+    13,
+)
+.with_list_member(&WORKSPACEDIRECTORY_MEMBER_IP_GROUP_IDS_MEMBER);
+static WORKSPACEDIRECTORY_MEMBER_WORKSPACE_ACCESS_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$WorkspaceAccessProperties",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WorkspaceAccessProperties",
+    14,
+);
+static WORKSPACEDIRECTORY_MEMBER_TENANCY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$Tenancy",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Tenancy",
+    15,
+);
+static WORKSPACEDIRECTORY_MEMBER_SELFSERVICE_PERMISSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$SelfservicePermissions",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SelfservicePermissions",
+    16,
+);
+static WORKSPACEDIRECTORY_MEMBER_SAML_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$SamlProperties",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SamlProperties",
+    17,
+);
+static WORKSPACEDIRECTORY_MEMBER_CERTIFICATE_BASED_AUTH_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$CertificateBasedAuthProperties",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CertificateBasedAuthProperties",
+    18,
+);
+static WORKSPACEDIRECTORY_MEMBER_ENDPOINT_ENCRYPTION_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$EndpointEncryptionMode",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointEncryptionMode",
+    19,
+);
+static WORKSPACEDIRECTORY_MEMBER_MICROSOFT_ENTRA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$MicrosoftEntraConfig",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MicrosoftEntraConfig",
+    20,
+);
+static WORKSPACEDIRECTORY_MEMBER_WORKSPACE_DIRECTORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$WorkspaceDirectoryName",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkspaceDirectoryName",
+    21,
+);
+static WORKSPACEDIRECTORY_MEMBER_WORKSPACE_DIRECTORY_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$WorkspaceDirectoryDescription",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkspaceDirectoryDescription",
+    22,
+);
+static WORKSPACEDIRECTORY_MEMBER_USER_IDENTITY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$UserIdentityType",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserIdentityType",
+    23,
+);
+static WORKSPACEDIRECTORY_MEMBER_WORKSPACE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$WorkspaceType",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkspaceType",
+    24,
+);
+static WORKSPACEDIRECTORY_MEMBER_IDC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$IDCConfig",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "IDCConfig",
+    25,
+);
+static WORKSPACEDIRECTORY_MEMBER_ACTIVE_DIRECTORY_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$ActiveDirectoryConfig",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ActiveDirectoryConfig",
+    26,
+);
+static WORKSPACEDIRECTORY_MEMBER_STREAMING_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$StreamingProperties",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StreamingProperties",
+    27,
+);
+static WORKSPACEDIRECTORY_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$ErrorMessage",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorMessage",
+    28,
+);
+static WORKSPACEDIRECTORY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKSPACEDIRECTORY_MEMBER_DIRECTORY_ID,
+        &WORKSPACEDIRECTORY_MEMBER_ALIAS,
+        &WORKSPACEDIRECTORY_MEMBER_DIRECTORY_NAME,
+        &WORKSPACEDIRECTORY_MEMBER_REGISTRATION_CODE,
+        &WORKSPACEDIRECTORY_MEMBER_SUBNET_IDS,
+        &WORKSPACEDIRECTORY_MEMBER_DNS_IP_ADDRESSES,
+        &WORKSPACEDIRECTORY_MEMBER_DNS_IPV6_ADDRESSES,
+        &WORKSPACEDIRECTORY_MEMBER_CUSTOMER_USER_NAME,
+        &WORKSPACEDIRECTORY_MEMBER_IAM_ROLE_ID,
+        &WORKSPACEDIRECTORY_MEMBER_DIRECTORY_TYPE,
+        &WORKSPACEDIRECTORY_MEMBER_WORKSPACE_SECURITY_GROUP_ID,
+        &WORKSPACEDIRECTORY_MEMBER_STATE,
+        &WORKSPACEDIRECTORY_MEMBER_WORKSPACE_CREATION_PROPERTIES,
+        &WORKSPACEDIRECTORY_MEMBER_IP_GROUP_IDS,
+        &WORKSPACEDIRECTORY_MEMBER_WORKSPACE_ACCESS_PROPERTIES,
+        &WORKSPACEDIRECTORY_MEMBER_TENANCY,
+        &WORKSPACEDIRECTORY_MEMBER_SELFSERVICE_PERMISSIONS,
+        &WORKSPACEDIRECTORY_MEMBER_SAML_PROPERTIES,
+        &WORKSPACEDIRECTORY_MEMBER_CERTIFICATE_BASED_AUTH_PROPERTIES,
+        &WORKSPACEDIRECTORY_MEMBER_ENDPOINT_ENCRYPTION_MODE,
+        &WORKSPACEDIRECTORY_MEMBER_MICROSOFT_ENTRA_CONFIG,
+        &WORKSPACEDIRECTORY_MEMBER_WORKSPACE_DIRECTORY_NAME,
+        &WORKSPACEDIRECTORY_MEMBER_WORKSPACE_DIRECTORY_DESCRIPTION,
+        &WORKSPACEDIRECTORY_MEMBER_USER_IDENTITY_TYPE,
+        &WORKSPACEDIRECTORY_MEMBER_WORKSPACE_TYPE,
+        &WORKSPACEDIRECTORY_MEMBER_IDC_CONFIG,
+        &WORKSPACEDIRECTORY_MEMBER_ACTIVE_DIRECTORY_CONFIG,
+        &WORKSPACEDIRECTORY_MEMBER_STREAMING_PROPERTIES,
+        &WORKSPACEDIRECTORY_MEMBER_ERROR_MESSAGE,
+    ],
+);
+impl WorkspaceDirectory {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKSPACEDIRECTORY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WorkspaceDirectory {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.directory_id {
+            ser.write_string(&WORKSPACEDIRECTORY_MEMBER_DIRECTORY_ID, val)?;
+        }
+        if let Some(ref val) = self.alias {
+            ser.write_string(&WORKSPACEDIRECTORY_MEMBER_ALIAS, val)?;
+        }
+        if let Some(ref val) = self.directory_name {
+            ser.write_string(&WORKSPACEDIRECTORY_MEMBER_DIRECTORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.registration_code {
+            ser.write_string(&WORKSPACEDIRECTORY_MEMBER_REGISTRATION_CODE, val)?;
+        }
+        if let Some(ref val) = self.subnet_ids {
+            ser.write_list(
+                &WORKSPACEDIRECTORY_MEMBER_SUBNET_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.dns_ip_addresses {
+            ser.write_list(
+                &WORKSPACEDIRECTORY_MEMBER_DNS_IP_ADDRESSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.dns_ipv6_addresses {
+            ser.write_list(
+                &WORKSPACEDIRECTORY_MEMBER_DNS_IPV6_ADDRESSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.customer_user_name {
+            ser.write_string(&WORKSPACEDIRECTORY_MEMBER_CUSTOMER_USER_NAME, val)?;
+        }
+        if let Some(ref val) = self.iam_role_id {
+            ser.write_string(&WORKSPACEDIRECTORY_MEMBER_IAM_ROLE_ID, val)?;
+        }
+        if let Some(ref val) = self.directory_type {
+            ser.write_string(&WORKSPACEDIRECTORY_MEMBER_DIRECTORY_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.workspace_security_group_id {
+            ser.write_string(&WORKSPACEDIRECTORY_MEMBER_WORKSPACE_SECURITY_GROUP_ID, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&WORKSPACEDIRECTORY_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.workspace_creation_properties {
+            ser.write_struct(&WORKSPACEDIRECTORY_MEMBER_WORKSPACE_CREATION_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.ip_group_ids {
+            ser.write_list(
+                &WORKSPACEDIRECTORY_MEMBER_IP_GROUP_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.workspace_access_properties {
+            ser.write_struct(&WORKSPACEDIRECTORY_MEMBER_WORKSPACE_ACCESS_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.tenancy {
+            ser.write_string(&WORKSPACEDIRECTORY_MEMBER_TENANCY, val.as_str())?;
+        }
+        if let Some(ref val) = self.selfservice_permissions {
+            ser.write_struct(&WORKSPACEDIRECTORY_MEMBER_SELFSERVICE_PERMISSIONS, val)?;
+        }
+        if let Some(ref val) = self.saml_properties {
+            ser.write_struct(&WORKSPACEDIRECTORY_MEMBER_SAML_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.certificate_based_auth_properties {
+            ser.write_struct(&WORKSPACEDIRECTORY_MEMBER_CERTIFICATE_BASED_AUTH_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.endpoint_encryption_mode {
+            ser.write_string(&WORKSPACEDIRECTORY_MEMBER_ENDPOINT_ENCRYPTION_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.microsoft_entra_config {
+            ser.write_struct(&WORKSPACEDIRECTORY_MEMBER_MICROSOFT_ENTRA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.workspace_directory_name {
+            ser.write_string(&WORKSPACEDIRECTORY_MEMBER_WORKSPACE_DIRECTORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.workspace_directory_description {
+            ser.write_string(&WORKSPACEDIRECTORY_MEMBER_WORKSPACE_DIRECTORY_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.user_identity_type {
+            ser.write_string(&WORKSPACEDIRECTORY_MEMBER_USER_IDENTITY_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.workspace_type {
+            ser.write_string(&WORKSPACEDIRECTORY_MEMBER_WORKSPACE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.idc_config {
+            ser.write_struct(&WORKSPACEDIRECTORY_MEMBER_IDC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.active_directory_config {
+            ser.write_struct(&WORKSPACEDIRECTORY_MEMBER_ACTIVE_DIRECTORY_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.streaming_properties {
+            ser.write_struct(&WORKSPACEDIRECTORY_MEMBER_STREAMING_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.error_message {
+            ser.write_string(&WORKSPACEDIRECTORY_MEMBER_ERROR_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkspaceDirectoryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKSPACEDIRECTORY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.directory_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.alias = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.directory_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registration_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subnet_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_ip_addresses = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_ipv6_addresses = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.customer_user_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.iam_role_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.directory_type = Some(crate::types::WorkspaceDirectoryType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_security_group_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::WorkspaceDirectoryState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_creation_properties = Some(crate::types::DefaultWorkspaceCreationProperties::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_group_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_access_properties = Some(crate::types::WorkspaceAccessProperties::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tenancy = Some(crate::types::Tenancy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.selfservice_permissions = Some(crate::types::SelfservicePermissions::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.saml_properties = Some(crate::types::SamlProperties::deserialize(deser)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_based_auth_properties = Some(crate::types::CertificateBasedAuthProperties::deserialize(deser)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_encryption_mode = Some(crate::types::EndpointEncryptionMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.microsoft_entra_config = Some(crate::types::MicrosoftEntraConfig::deserialize(deser)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_directory_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_directory_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_identity_type = Some(crate::types::UserIdentityType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_type = Some(crate::types::WorkspaceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(25) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idc_config = Some(crate::types::IdcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(26) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.active_directory_config = Some(crate::types::ActiveDirectoryConfig::deserialize(deser)?);
+                    }
+                }
+                Some(27) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.streaming_properties = Some(crate::types::StreamingProperties::deserialize(deser)?);
+                    }
+                }
+                Some(28) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WorkspaceDirectory {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl WorkspaceDirectory {
     /// Creates a new builder-style object to manufacture [`WorkspaceDirectory`](crate::types::WorkspaceDirectory).
     pub fn builder() -> crate::types::builders::WorkspaceDirectoryBuilder {

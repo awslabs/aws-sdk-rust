@@ -29,6 +29,157 @@ impl FileSystemEndpoint {
         self.ipv6_addresses.as_deref().unwrap_or_default()
     }
 }
+static FILESYSTEMENDPOINT_MEMBER_DNS_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#FileSystemEndpoint$DNSName", "com.amazonaws.fsx", "FileSystemEndpoint"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DNSName",
+    0,
+);
+static FILESYSTEMENDPOINT_MEMBER_IP_ADDRESSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OntapEndpointIpAddresses$member",
+        "com.amazonaws.fsx",
+        "OntapEndpointIpAddresses",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static FILESYSTEMENDPOINT_MEMBER_IP_ADDRESSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#FileSystemEndpoint$IpAddresses",
+        "com.amazonaws.fsx",
+        "FileSystemEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "IpAddresses",
+    1,
+)
+.with_list_member(&FILESYSTEMENDPOINT_MEMBER_IP_ADDRESSES_MEMBER);
+static FILESYSTEMENDPOINT_MEMBER_IPV6_ADDRESSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OntapEndpointIpAddresses$member",
+        "com.amazonaws.fsx",
+        "OntapEndpointIpAddresses",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static FILESYSTEMENDPOINT_MEMBER_IPV6_ADDRESSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#FileSystemEndpoint$Ipv6Addresses",
+        "com.amazonaws.fsx",
+        "FileSystemEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Ipv6Addresses",
+    2,
+)
+.with_list_member(&FILESYSTEMENDPOINT_MEMBER_IPV6_ADDRESSES_MEMBER);
+static FILESYSTEMENDPOINT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#FileSystemEndpoint", "com.amazonaws.fsx", "FileSystemEndpoint"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FILESYSTEMENDPOINT_MEMBER_DNS_NAME,
+        &FILESYSTEMENDPOINT_MEMBER_IP_ADDRESSES,
+        &FILESYSTEMENDPOINT_MEMBER_IPV6_ADDRESSES,
+    ],
+);
+impl FileSystemEndpoint {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FILESYSTEMENDPOINT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FileSystemEndpoint {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.dns_name {
+            ser.write_string(&FILESYSTEMENDPOINT_MEMBER_DNS_NAME, val)?;
+        }
+        if let Some(ref val) = self.ip_addresses {
+            ser.write_list(
+                &FILESYSTEMENDPOINT_MEMBER_IP_ADDRESSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ipv6_addresses {
+            ser.write_list(
+                &FILESYSTEMENDPOINT_MEMBER_IPV6_ADDRESSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FileSystemEndpointBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FILESYSTEMENDPOINT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_addresses = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ipv6_addresses = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FileSystemEndpoint {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FileSystemEndpoint {
     /// Creates a new builder-style object to manufacture [`FileSystemEndpoint`](crate::types::FileSystemEndpoint).
     pub fn builder() -> crate::types::builders::FileSystemEndpointBuilder {

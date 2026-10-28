@@ -123,6 +123,312 @@ impl Webhook {
         self.pull_request_build_policy.as_ref()
     }
 }
+static WEBHOOK_MEMBER_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Webhook$url", "com.amazonaws.codebuild", "Webhook"),
+    ::aws_smithy_schema::ShapeType::String,
+    "url",
+    0,
+);
+static WEBHOOK_MEMBER_PAYLOAD_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Webhook$payloadUrl", "com.amazonaws.codebuild", "Webhook"),
+    ::aws_smithy_schema::ShapeType::String,
+    "payloadUrl",
+    1,
+);
+static WEBHOOK_MEMBER_SECRET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Webhook$secret", "com.amazonaws.codebuild", "Webhook"),
+    ::aws_smithy_schema::ShapeType::String,
+    "secret",
+    2,
+);
+static WEBHOOK_MEMBER_BRANCH_FILTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Webhook$branchFilter", "com.amazonaws.codebuild", "Webhook"),
+    ::aws_smithy_schema::ShapeType::String,
+    "branchFilter",
+    3,
+);
+static WEBHOOK_MEMBER_FILTER_GROUPS_MEMBER_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#FilterGroup$member", "com.amazonaws.codebuild", "FilterGroup"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static WEBHOOK_MEMBER_FILTER_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#FilterGroups$member", "com.amazonaws.codebuild", "FilterGroups"),
+    ::aws_smithy_schema::ShapeType::List,
+    "member",
+    0,
+)
+.with_list_member(&WEBHOOK_MEMBER_FILTER_GROUPS_MEMBER_MEMBER);
+static WEBHOOK_MEMBER_FILTER_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Webhook$filterGroups", "com.amazonaws.codebuild", "Webhook"),
+    ::aws_smithy_schema::ShapeType::List,
+    "filterGroups",
+    4,
+)
+.with_list_member(&WEBHOOK_MEMBER_FILTER_GROUPS_MEMBER);
+static WEBHOOK_MEMBER_BUILD_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Webhook$buildType", "com.amazonaws.codebuild", "Webhook"),
+    ::aws_smithy_schema::ShapeType::String,
+    "buildType",
+    5,
+);
+static WEBHOOK_MEMBER_MANUAL_CREATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Webhook$manualCreation", "com.amazonaws.codebuild", "Webhook"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "manualCreation",
+    6,
+);
+static WEBHOOK_MEMBER_LAST_MODIFIED_SECRET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Webhook$lastModifiedSecret", "com.amazonaws.codebuild", "Webhook"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastModifiedSecret",
+    7,
+);
+static WEBHOOK_MEMBER_SCOPE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Webhook$scopeConfiguration", "com.amazonaws.codebuild", "Webhook"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "scopeConfiguration",
+    8,
+);
+static WEBHOOK_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Webhook$status", "com.amazonaws.codebuild", "Webhook"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    9,
+);
+static WEBHOOK_MEMBER_STATUS_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Webhook$statusMessage", "com.amazonaws.codebuild", "Webhook"),
+    ::aws_smithy_schema::ShapeType::String,
+    "statusMessage",
+    10,
+);
+static WEBHOOK_MEMBER_PULL_REQUEST_BUILD_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#Webhook$pullRequestBuildPolicy",
+        "com.amazonaws.codebuild",
+        "Webhook",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "pullRequestBuildPolicy",
+    11,
+);
+static WEBHOOK_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Webhook", "com.amazonaws.codebuild", "Webhook"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WEBHOOK_MEMBER_URL,
+        &WEBHOOK_MEMBER_PAYLOAD_URL,
+        &WEBHOOK_MEMBER_SECRET,
+        &WEBHOOK_MEMBER_BRANCH_FILTER,
+        &WEBHOOK_MEMBER_FILTER_GROUPS,
+        &WEBHOOK_MEMBER_BUILD_TYPE,
+        &WEBHOOK_MEMBER_MANUAL_CREATION,
+        &WEBHOOK_MEMBER_LAST_MODIFIED_SECRET,
+        &WEBHOOK_MEMBER_SCOPE_CONFIGURATION,
+        &WEBHOOK_MEMBER_STATUS,
+        &WEBHOOK_MEMBER_STATUS_MESSAGE,
+        &WEBHOOK_MEMBER_PULL_REQUEST_BUILD_POLICY,
+    ],
+);
+impl Webhook {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WEBHOOK_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Webhook {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.url {
+            ser.write_string(&WEBHOOK_MEMBER_URL, val)?;
+        }
+        if let Some(ref val) = self.payload_url {
+            ser.write_string(&WEBHOOK_MEMBER_PAYLOAD_URL, val)?;
+        }
+        if let Some(ref val) = self.secret {
+            ser.write_string(&WEBHOOK_MEMBER_SECRET, val)?;
+        }
+        if let Some(ref val) = self.branch_filter {
+            ser.write_string(&WEBHOOK_MEMBER_BRANCH_FILTER, val)?;
+        }
+        if let Some(ref val) = self.filter_groups {
+            ser.write_list(
+                &WEBHOOK_MEMBER_FILTER_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_list(
+                            &WEBHOOK_MEMBER_FILTER_GROUPS_MEMBER,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for item in item {
+                                    ser.write_struct(crate::types::WebhookFilter::SCHEMA, item)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.build_type {
+            ser.write_string(&WEBHOOK_MEMBER_BUILD_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.manual_creation {
+            ser.write_boolean(&WEBHOOK_MEMBER_MANUAL_CREATION, *val)?;
+        }
+        if let Some(ref val) = self.last_modified_secret {
+            ser.write_timestamp(&WEBHOOK_MEMBER_LAST_MODIFIED_SECRET, val)?;
+        }
+        if let Some(ref val) = self.scope_configuration {
+            ser.write_struct(&WEBHOOK_MEMBER_SCOPE_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&WEBHOOK_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_message {
+            ser.write_string(&WEBHOOK_MEMBER_STATUS_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.pull_request_build_policy {
+            ser.write_struct(&WEBHOOK_MEMBER_PULL_REQUEST_BUILD_POLICY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WebhookBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WEBHOOK_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.payload_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secret = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.branch_filter = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filter_groups = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push({
+                                    let mut list = Vec::new();
+                                    deser.read_list(&WEBHOOK_MEMBER_FILTER_GROUPS_MEMBER, &mut |deser| {
+                                        list.push(crate::types::WebhookFilter::deserialize(deser)?);
+                                        Ok(())
+                                    })?;
+                                    list
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.build_type = Some(crate::types::WebhookBuildType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.manual_creation = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_secret = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scope_configuration = Some(crate::types::ScopeConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::WebhookStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_request_build_policy = Some(crate::types::PullRequestBuildPolicy::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Webhook {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Webhook {
     /// Creates a new builder-style object to manufacture [`Webhook`](crate::types::Webhook).
     pub fn builder() -> crate::types::builders::WebhookBuilder {

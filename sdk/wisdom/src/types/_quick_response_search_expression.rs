@@ -29,6 +29,179 @@ impl QuickResponseSearchExpression {
         self.order_on_field.as_ref()
     }
 }
+static QUICKRESPONSESEARCHEXPRESSION_MEMBER_QUERIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseQueryFieldList$member",
+        "com.amazonaws.wisdom",
+        "QuickResponseQueryFieldList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static QUICKRESPONSESEARCHEXPRESSION_MEMBER_QUERIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseSearchExpression$queries",
+        "com.amazonaws.wisdom",
+        "QuickResponseSearchExpression",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "queries",
+    0,
+)
+.with_list_member(&QUICKRESPONSESEARCHEXPRESSION_MEMBER_QUERIES_MEMBER);
+static QUICKRESPONSESEARCHEXPRESSION_MEMBER_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseFilterFieldList$member",
+        "com.amazonaws.wisdom",
+        "QuickResponseFilterFieldList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static QUICKRESPONSESEARCHEXPRESSION_MEMBER_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseSearchExpression$filters",
+        "com.amazonaws.wisdom",
+        "QuickResponseSearchExpression",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "filters",
+    1,
+)
+.with_list_member(&QUICKRESPONSESEARCHEXPRESSION_MEMBER_FILTERS_MEMBER);
+static QUICKRESPONSESEARCHEXPRESSION_MEMBER_ORDER_ON_FIELD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseSearchExpression$orderOnField",
+        "com.amazonaws.wisdom",
+        "QuickResponseSearchExpression",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "orderOnField",
+    2,
+);
+static QUICKRESPONSESEARCHEXPRESSION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseSearchExpression",
+        "com.amazonaws.wisdom",
+        "QuickResponseSearchExpression",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &QUICKRESPONSESEARCHEXPRESSION_MEMBER_QUERIES,
+        &QUICKRESPONSESEARCHEXPRESSION_MEMBER_FILTERS,
+        &QUICKRESPONSESEARCHEXPRESSION_MEMBER_ORDER_ON_FIELD,
+    ],
+);
+impl QuickResponseSearchExpression {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &QUICKRESPONSESEARCHEXPRESSION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for QuickResponseSearchExpression {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.queries {
+            ser.write_list(
+                &QUICKRESPONSESEARCHEXPRESSION_MEMBER_QUERIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::QuickResponseQueryField::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.filters {
+            ser.write_list(
+                &QUICKRESPONSESEARCHEXPRESSION_MEMBER_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::QuickResponseFilterField::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.order_on_field {
+            ser.write_struct(&QUICKRESPONSESEARCHEXPRESSION_MEMBER_ORDER_ON_FIELD, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::QuickResponseSearchExpressionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&QUICKRESPONSESEARCHEXPRESSION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.queries = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::QuickResponseQueryField::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::QuickResponseFilterField::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.order_on_field = Some(crate::types::QuickResponseOrderField::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl QuickResponseSearchExpression {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl QuickResponseSearchExpression {
     /// Creates a new builder-style object to manufacture [`QuickResponseSearchExpression`](crate::types::QuickResponseSearchExpression).
     pub fn builder() -> crate::types::builders::QuickResponseSearchExpressionBuilder {

@@ -40,6 +40,147 @@ impl AutoScalingGroupProvider {
         self.managed_draining.as_ref()
     }
 }
+static AUTOSCALINGGROUPPROVIDER_MEMBER_AUTO_SCALING_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#AutoScalingGroupProvider$autoScalingGroupArn",
+        "com.amazonaws.ecs",
+        "AutoScalingGroupProvider",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "autoScalingGroupArn",
+    0,
+);
+static AUTOSCALINGGROUPPROVIDER_MEMBER_MANAGED_SCALING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#AutoScalingGroupProvider$managedScaling",
+        "com.amazonaws.ecs",
+        "AutoScalingGroupProvider",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "managedScaling",
+    1,
+);
+static AUTOSCALINGGROUPPROVIDER_MEMBER_MANAGED_TERMINATION_PROTECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#AutoScalingGroupProvider$managedTerminationProtection",
+        "com.amazonaws.ecs",
+        "AutoScalingGroupProvider",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "managedTerminationProtection",
+    2,
+);
+static AUTOSCALINGGROUPPROVIDER_MEMBER_MANAGED_DRAINING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#AutoScalingGroupProvider$managedDraining",
+        "com.amazonaws.ecs",
+        "AutoScalingGroupProvider",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "managedDraining",
+    3,
+);
+static AUTOSCALINGGROUPPROVIDER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#AutoScalingGroupProvider",
+        "com.amazonaws.ecs",
+        "AutoScalingGroupProvider",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AUTOSCALINGGROUPPROVIDER_MEMBER_AUTO_SCALING_GROUP_ARN,
+        &AUTOSCALINGGROUPPROVIDER_MEMBER_MANAGED_SCALING,
+        &AUTOSCALINGGROUPPROVIDER_MEMBER_MANAGED_TERMINATION_PROTECTION,
+        &AUTOSCALINGGROUPPROVIDER_MEMBER_MANAGED_DRAINING,
+    ],
+);
+impl AutoScalingGroupProvider {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AUTOSCALINGGROUPPROVIDER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AutoScalingGroupProvider {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.auto_scaling_group_arn;
+            ser.write_string(&AUTOSCALINGGROUPPROVIDER_MEMBER_AUTO_SCALING_GROUP_ARN, val)?;
+        }
+        if let Some(ref val) = self.managed_scaling {
+            ser.write_struct(&AUTOSCALINGGROUPPROVIDER_MEMBER_MANAGED_SCALING, val)?;
+        }
+        if let Some(ref val) = self.managed_termination_protection {
+            ser.write_string(&AUTOSCALINGGROUPPROVIDER_MEMBER_MANAGED_TERMINATION_PROTECTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.managed_draining {
+            ser.write_string(&AUTOSCALINGGROUPPROVIDER_MEMBER_MANAGED_DRAINING, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AutoScalingGroupProviderBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AUTOSCALINGGROUPPROVIDER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.auto_scaling_group_arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_scaling = Some(crate::types::ManagedScaling::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_termination_protection =
+                            Some(crate::types::ManagedTerminationProtection::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_draining = Some(crate::types::ManagedDraining::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AutoScalingGroupProvider {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.auto_scaling_group_arn = builder.auto_scaling_group_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AutoScalingGroupProvider {
     /// Creates a new builder-style object to manufacture [`AutoScalingGroupProvider`](crate::types::AutoScalingGroupProvider).
     pub fn builder() -> crate::types::builders::AutoScalingGroupProviderBuilder {

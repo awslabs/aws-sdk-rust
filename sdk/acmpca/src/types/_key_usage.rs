@@ -61,6 +61,186 @@ impl KeyUsage {
         self.decipher_only
     }
 }
+static KEYUSAGE_MEMBER_DIGITAL_SIGNATURE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#KeyUsage$DigitalSignature", "com.amazonaws.acmpca", "KeyUsage"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "DigitalSignature",
+    0,
+);
+static KEYUSAGE_MEMBER_NON_REPUDIATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#KeyUsage$NonRepudiation", "com.amazonaws.acmpca", "KeyUsage"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "NonRepudiation",
+    1,
+);
+static KEYUSAGE_MEMBER_KEY_ENCIPHERMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#KeyUsage$KeyEncipherment", "com.amazonaws.acmpca", "KeyUsage"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "KeyEncipherment",
+    2,
+);
+static KEYUSAGE_MEMBER_DATA_ENCIPHERMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#KeyUsage$DataEncipherment", "com.amazonaws.acmpca", "KeyUsage"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "DataEncipherment",
+    3,
+);
+static KEYUSAGE_MEMBER_KEY_AGREEMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#KeyUsage$KeyAgreement", "com.amazonaws.acmpca", "KeyUsage"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "KeyAgreement",
+    4,
+);
+static KEYUSAGE_MEMBER_KEY_CERT_SIGN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#KeyUsage$KeyCertSign", "com.amazonaws.acmpca", "KeyUsage"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "KeyCertSign",
+    5,
+);
+static KEYUSAGE_MEMBER_CRL_SIGN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#KeyUsage$CRLSign", "com.amazonaws.acmpca", "KeyUsage"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "CRLSign",
+    6,
+);
+static KEYUSAGE_MEMBER_ENCIPHER_ONLY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#KeyUsage$EncipherOnly", "com.amazonaws.acmpca", "KeyUsage"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EncipherOnly",
+    7,
+);
+static KEYUSAGE_MEMBER_DECIPHER_ONLY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#KeyUsage$DecipherOnly", "com.amazonaws.acmpca", "KeyUsage"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "DecipherOnly",
+    8,
+);
+static KEYUSAGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#KeyUsage", "com.amazonaws.acmpca", "KeyUsage"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &KEYUSAGE_MEMBER_DIGITAL_SIGNATURE,
+        &KEYUSAGE_MEMBER_NON_REPUDIATION,
+        &KEYUSAGE_MEMBER_KEY_ENCIPHERMENT,
+        &KEYUSAGE_MEMBER_DATA_ENCIPHERMENT,
+        &KEYUSAGE_MEMBER_KEY_AGREEMENT,
+        &KEYUSAGE_MEMBER_KEY_CERT_SIGN,
+        &KEYUSAGE_MEMBER_CRL_SIGN,
+        &KEYUSAGE_MEMBER_ENCIPHER_ONLY,
+        &KEYUSAGE_MEMBER_DECIPHER_ONLY,
+    ],
+);
+impl KeyUsage {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &KEYUSAGE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for KeyUsage {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.digital_signature;
+            ser.write_boolean(&KEYUSAGE_MEMBER_DIGITAL_SIGNATURE, *val)?;
+        }
+        {
+            let val = &self.non_repudiation;
+            ser.write_boolean(&KEYUSAGE_MEMBER_NON_REPUDIATION, *val)?;
+        }
+        {
+            let val = &self.key_encipherment;
+            ser.write_boolean(&KEYUSAGE_MEMBER_KEY_ENCIPHERMENT, *val)?;
+        }
+        {
+            let val = &self.data_encipherment;
+            ser.write_boolean(&KEYUSAGE_MEMBER_DATA_ENCIPHERMENT, *val)?;
+        }
+        {
+            let val = &self.key_agreement;
+            ser.write_boolean(&KEYUSAGE_MEMBER_KEY_AGREEMENT, *val)?;
+        }
+        {
+            let val = &self.key_cert_sign;
+            ser.write_boolean(&KEYUSAGE_MEMBER_KEY_CERT_SIGN, *val)?;
+        }
+        {
+            let val = &self.crl_sign;
+            ser.write_boolean(&KEYUSAGE_MEMBER_CRL_SIGN, *val)?;
+        }
+        {
+            let val = &self.encipher_only;
+            ser.write_boolean(&KEYUSAGE_MEMBER_ENCIPHER_ONLY, *val)?;
+        }
+        {
+            let val = &self.decipher_only;
+            ser.write_boolean(&KEYUSAGE_MEMBER_DECIPHER_ONLY, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::KeyUsageBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&KEYUSAGE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.digital_signature = Some(deser.read_boolean(member)?);
+                }
+                Some(1) => {
+                    self.non_repudiation = Some(deser.read_boolean(member)?);
+                }
+                Some(2) => {
+                    self.key_encipherment = Some(deser.read_boolean(member)?);
+                }
+                Some(3) => {
+                    self.data_encipherment = Some(deser.read_boolean(member)?);
+                }
+                Some(4) => {
+                    self.key_agreement = Some(deser.read_boolean(member)?);
+                }
+                Some(5) => {
+                    self.key_cert_sign = Some(deser.read_boolean(member)?);
+                }
+                Some(6) => {
+                    self.crl_sign = Some(deser.read_boolean(member)?);
+                }
+                Some(7) => {
+                    self.encipher_only = Some(deser.read_boolean(member)?);
+                }
+                Some(8) => {
+                    self.decipher_only = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl KeyUsage {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl KeyUsage {
     /// Creates a new builder-style object to manufacture [`KeyUsage`](crate::types::KeyUsage).
     pub fn builder() -> crate::types::builders::KeyUsageBuilder {

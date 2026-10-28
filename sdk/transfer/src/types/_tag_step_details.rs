@@ -40,6 +40,137 @@ impl TagStepDetails {
         self.source_file_location.as_deref()
     }
 }
+static TAGSTEPDETAILS_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#TagStepDetails$Name", "com.amazonaws.transfer", "TagStepDetails"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static TAGSTEPDETAILS_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#S3Tags$member", "com.amazonaws.transfer", "S3Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TAGSTEPDETAILS_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#TagStepDetails$Tags", "com.amazonaws.transfer", "TagStepDetails"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    1,
+)
+.with_list_member(&TAGSTEPDETAILS_MEMBER_TAGS_MEMBER);
+static TAGSTEPDETAILS_MEMBER_SOURCE_FILE_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#TagStepDetails$SourceFileLocation",
+        "com.amazonaws.transfer",
+        "TagStepDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceFileLocation",
+    2,
+);
+static TAGSTEPDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#TagStepDetails", "com.amazonaws.transfer", "TagStepDetails"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TAGSTEPDETAILS_MEMBER_NAME,
+        &TAGSTEPDETAILS_MEMBER_TAGS,
+        &TAGSTEPDETAILS_MEMBER_SOURCE_FILE_LOCATION,
+    ],
+);
+impl TagStepDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TAGSTEPDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TagStepDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&TAGSTEPDETAILS_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &TAGSTEPDETAILS_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::S3Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.source_file_location {
+            ser.write_string(&TAGSTEPDETAILS_MEMBER_SOURCE_FILE_LOCATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TagStepDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TAGSTEPDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::S3Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_file_location = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TagStepDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TagStepDetails {
     /// Creates a new builder-style object to manufacture [`TagStepDetails`](crate::types::TagStepDetails).
     pub fn builder() -> crate::types::builders::TagStepDetailsBuilder {

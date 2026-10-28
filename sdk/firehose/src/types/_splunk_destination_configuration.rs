@@ -76,6 +76,293 @@ impl SplunkDestinationConfiguration {
         self.secrets_manager_configuration.as_ref()
     }
 }
+static SPLUNKDESTINATIONCONFIGURATION_MEMBER_HEC_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SplunkDestinationConfiguration$HECEndpoint",
+        "com.amazonaws.firehose",
+        "SplunkDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HECEndpoint",
+    0,
+);
+static SPLUNKDESTINATIONCONFIGURATION_MEMBER_HEC_ENDPOINT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SplunkDestinationConfiguration$HECEndpointType",
+        "com.amazonaws.firehose",
+        "SplunkDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HECEndpointType",
+    1,
+);
+static SPLUNKDESTINATIONCONFIGURATION_MEMBER_HEC_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SplunkDestinationConfiguration$HECToken",
+        "com.amazonaws.firehose",
+        "SplunkDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HECToken",
+    2,
+);
+static SPLUNKDESTINATIONCONFIGURATION_MEMBER_HEC_ACKNOWLEDGMENT_TIMEOUT_IN_SECONDS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#SplunkDestinationConfiguration$HECAcknowledgmentTimeoutInSeconds",
+            "com.amazonaws.firehose",
+            "SplunkDestinationConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "HECAcknowledgmentTimeoutInSeconds",
+        3,
+    );
+static SPLUNKDESTINATIONCONFIGURATION_MEMBER_RETRY_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SplunkDestinationConfiguration$RetryOptions",
+        "com.amazonaws.firehose",
+        "SplunkDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RetryOptions",
+    4,
+);
+static SPLUNKDESTINATIONCONFIGURATION_MEMBER_S3_BACKUP_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SplunkDestinationConfiguration$S3BackupMode",
+        "com.amazonaws.firehose",
+        "SplunkDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3BackupMode",
+    5,
+);
+static SPLUNKDESTINATIONCONFIGURATION_MEMBER_S3_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SplunkDestinationConfiguration$S3Configuration",
+        "com.amazonaws.firehose",
+        "SplunkDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3Configuration",
+    6,
+);
+static SPLUNKDESTINATIONCONFIGURATION_MEMBER_PROCESSING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SplunkDestinationConfiguration$ProcessingConfiguration",
+        "com.amazonaws.firehose",
+        "SplunkDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ProcessingConfiguration",
+    7,
+);
+static SPLUNKDESTINATIONCONFIGURATION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#SplunkDestinationConfiguration$CloudWatchLoggingOptions",
+            "com.amazonaws.firehose",
+            "SplunkDestinationConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "CloudWatchLoggingOptions",
+        8,
+    );
+static SPLUNKDESTINATIONCONFIGURATION_MEMBER_BUFFERING_HINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SplunkDestinationConfiguration$BufferingHints",
+        "com.amazonaws.firehose",
+        "SplunkDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BufferingHints",
+    9,
+);
+static SPLUNKDESTINATIONCONFIGURATION_MEMBER_SECRETS_MANAGER_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#SplunkDestinationConfiguration$SecretsManagerConfiguration",
+            "com.amazonaws.firehose",
+            "SplunkDestinationConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "SecretsManagerConfiguration",
+        10,
+    );
+static SPLUNKDESTINATIONCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SplunkDestinationConfiguration",
+        "com.amazonaws.firehose",
+        "SplunkDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SPLUNKDESTINATIONCONFIGURATION_MEMBER_HEC_ENDPOINT,
+        &SPLUNKDESTINATIONCONFIGURATION_MEMBER_HEC_ENDPOINT_TYPE,
+        &SPLUNKDESTINATIONCONFIGURATION_MEMBER_HEC_TOKEN,
+        &SPLUNKDESTINATIONCONFIGURATION_MEMBER_HEC_ACKNOWLEDGMENT_TIMEOUT_IN_SECONDS,
+        &SPLUNKDESTINATIONCONFIGURATION_MEMBER_RETRY_OPTIONS,
+        &SPLUNKDESTINATIONCONFIGURATION_MEMBER_S3_BACKUP_MODE,
+        &SPLUNKDESTINATIONCONFIGURATION_MEMBER_S3_CONFIGURATION,
+        &SPLUNKDESTINATIONCONFIGURATION_MEMBER_PROCESSING_CONFIGURATION,
+        &SPLUNKDESTINATIONCONFIGURATION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS,
+        &SPLUNKDESTINATIONCONFIGURATION_MEMBER_BUFFERING_HINTS,
+        &SPLUNKDESTINATIONCONFIGURATION_MEMBER_SECRETS_MANAGER_CONFIGURATION,
+    ],
+);
+impl SplunkDestinationConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SPLUNKDESTINATIONCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SplunkDestinationConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.hec_endpoint;
+            ser.write_string(&SPLUNKDESTINATIONCONFIGURATION_MEMBER_HEC_ENDPOINT, val)?;
+        }
+        {
+            let val = &self.hec_endpoint_type;
+            ser.write_string(&SPLUNKDESTINATIONCONFIGURATION_MEMBER_HEC_ENDPOINT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.hec_token {
+            ser.write_string(&SPLUNKDESTINATIONCONFIGURATION_MEMBER_HEC_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.hec_acknowledgment_timeout_in_seconds {
+            ser.write_integer(&SPLUNKDESTINATIONCONFIGURATION_MEMBER_HEC_ACKNOWLEDGMENT_TIMEOUT_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.retry_options {
+            ser.write_struct(&SPLUNKDESTINATIONCONFIGURATION_MEMBER_RETRY_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.s3_backup_mode {
+            ser.write_string(&SPLUNKDESTINATIONCONFIGURATION_MEMBER_S3_BACKUP_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_configuration {
+            ser.write_struct(&SPLUNKDESTINATIONCONFIGURATION_MEMBER_S3_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.processing_configuration {
+            ser.write_struct(&SPLUNKDESTINATIONCONFIGURATION_MEMBER_PROCESSING_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.cloud_watch_logging_options {
+            ser.write_struct(&SPLUNKDESTINATIONCONFIGURATION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.buffering_hints {
+            ser.write_struct(&SPLUNKDESTINATIONCONFIGURATION_MEMBER_BUFFERING_HINTS, val)?;
+        }
+        if let Some(ref val) = self.secrets_manager_configuration {
+            ser.write_struct(&SPLUNKDESTINATIONCONFIGURATION_MEMBER_SECRETS_MANAGER_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SplunkDestinationConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SPLUNKDESTINATIONCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.hec_endpoint = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.hec_endpoint_type = Some(crate::types::HecEndpointType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hec_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hec_acknowledgment_timeout_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retry_options = Some(crate::types::SplunkRetryOptions::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_backup_mode = Some(crate::types::SplunkS3BackupMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_configuration = Some(crate::types::S3DestinationConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.processing_configuration = Some(crate::types::ProcessingConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_watch_logging_options = Some(crate::types::CloudWatchLoggingOptions::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.buffering_hints = Some(crate::types::SplunkBufferingHints::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secrets_manager_configuration = Some(crate::types::SecretsManagerConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SplunkDestinationConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.hec_endpoint = builder.hec_endpoint.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SplunkDestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`SplunkDestinationConfiguration`](crate::types::SplunkDestinationConfiguration).
     pub fn builder() -> crate::types::builders::SplunkDestinationConfigurationBuilder {

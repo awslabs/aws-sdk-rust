@@ -64,6 +64,247 @@ impl WorkspacesPoolSession {
         self.user_id.deref()
     }
 }
+static WORKSPACESPOOLSESSION_MEMBER_AUTHENTICATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPoolSession$AuthenticationType",
+        "com.amazonaws.workspaces",
+        "WorkspacesPoolSession",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthenticationType",
+    0,
+);
+static WORKSPACESPOOLSESSION_MEMBER_CONNECTION_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPoolSession$ConnectionState",
+        "com.amazonaws.workspaces",
+        "WorkspacesPoolSession",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConnectionState",
+    1,
+);
+static WORKSPACESPOOLSESSION_MEMBER_SESSION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPoolSession$SessionId",
+        "com.amazonaws.workspaces",
+        "WorkspacesPoolSession",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SessionId",
+    2,
+);
+static WORKSPACESPOOLSESSION_MEMBER_INSTANCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPoolSession$InstanceId",
+        "com.amazonaws.workspaces",
+        "WorkspacesPoolSession",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceId",
+    3,
+);
+static WORKSPACESPOOLSESSION_MEMBER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPoolSession$PoolId",
+        "com.amazonaws.workspaces",
+        "WorkspacesPoolSession",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PoolId",
+    4,
+);
+static WORKSPACESPOOLSESSION_MEMBER_EXPIRATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPoolSession$ExpirationTime",
+        "com.amazonaws.workspaces",
+        "WorkspacesPoolSession",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ExpirationTime",
+    5,
+);
+static WORKSPACESPOOLSESSION_MEMBER_NETWORK_ACCESS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPoolSession$NetworkAccessConfiguration",
+        "com.amazonaws.workspaces",
+        "WorkspacesPoolSession",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NetworkAccessConfiguration",
+    6,
+);
+static WORKSPACESPOOLSESSION_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPoolSession$StartTime",
+        "com.amazonaws.workspaces",
+        "WorkspacesPoolSession",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    7,
+);
+static WORKSPACESPOOLSESSION_MEMBER_USER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPoolSession$UserId",
+        "com.amazonaws.workspaces",
+        "WorkspacesPoolSession",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserId",
+    8,
+);
+static WORKSPACESPOOLSESSION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspacesPoolSession",
+        "com.amazonaws.workspaces",
+        "WorkspacesPoolSession",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKSPACESPOOLSESSION_MEMBER_AUTHENTICATION_TYPE,
+        &WORKSPACESPOOLSESSION_MEMBER_CONNECTION_STATE,
+        &WORKSPACESPOOLSESSION_MEMBER_SESSION_ID,
+        &WORKSPACESPOOLSESSION_MEMBER_INSTANCE_ID,
+        &WORKSPACESPOOLSESSION_MEMBER_POOL_ID,
+        &WORKSPACESPOOLSESSION_MEMBER_EXPIRATION_TIME,
+        &WORKSPACESPOOLSESSION_MEMBER_NETWORK_ACCESS_CONFIGURATION,
+        &WORKSPACESPOOLSESSION_MEMBER_START_TIME,
+        &WORKSPACESPOOLSESSION_MEMBER_USER_ID,
+    ],
+);
+impl WorkspacesPoolSession {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKSPACESPOOLSESSION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WorkspacesPoolSession {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.authentication_type {
+            ser.write_string(&WORKSPACESPOOLSESSION_MEMBER_AUTHENTICATION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.connection_state {
+            ser.write_string(&WORKSPACESPOOLSESSION_MEMBER_CONNECTION_STATE, val.as_str())?;
+        }
+        {
+            let val = &self.session_id;
+            ser.write_string(&WORKSPACESPOOLSESSION_MEMBER_SESSION_ID, val)?;
+        }
+        if let Some(ref val) = self.instance_id {
+            ser.write_string(&WORKSPACESPOOLSESSION_MEMBER_INSTANCE_ID, val)?;
+        }
+        {
+            let val = &self.pool_id;
+            ser.write_string(&WORKSPACESPOOLSESSION_MEMBER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.expiration_time {
+            ser.write_timestamp(&WORKSPACESPOOLSESSION_MEMBER_EXPIRATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.network_access_configuration {
+            ser.write_struct(&WORKSPACESPOOLSESSION_MEMBER_NETWORK_ACCESS_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&WORKSPACESPOOLSESSION_MEMBER_START_TIME, val)?;
+        }
+        {
+            let val = &self.user_id;
+            ser.write_string(&WORKSPACESPOOLSESSION_MEMBER_USER_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkspacesPoolSessionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKSPACESPOOLSESSION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authentication_type = Some(crate::types::AuthenticationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.connection_state = Some(crate::types::SessionConnectionState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    self.session_id = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    self.pool_id = Some(deser.read_string(member)?);
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expiration_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_access_configuration = Some(crate::types::NetworkAccessConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    self.user_id = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WorkspacesPoolSession {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.session_id = builder.session_id.or(Some(String::new()));
+        builder.pool_id = builder.pool_id.or(Some(String::new()));
+        builder.user_id = builder.user_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl WorkspacesPoolSession {
     /// Creates a new builder-style object to manufacture [`WorkspacesPoolSession`](crate::types::WorkspacesPoolSession).
     pub fn builder() -> crate::types::builders::WorkspacesPoolSessionBuilder {

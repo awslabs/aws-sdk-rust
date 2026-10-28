@@ -1429,6 +1429,16 @@ pub(crate) fn reflens_get_groups_for_capacity_reservation_output_output_next_tok
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_image_findings_output_output_next_token(
+    input: &crate::operation::get_image_findings::GetImageFindingsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_instance_types_from_instance_requirements_output_output_next_token(
     input: &crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -2707,6 +2717,13 @@ pub(crate) fn lens_get_groups_for_capacity_reservation_output_output_capacity_re
     input: crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationGroup>> {
     let input = input.capacity_reservation_groups?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_image_findings_output_output_image_findings(
+    input: crate::operation::get_image_findings::GetImageFindingsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ImageFinding>> {
+    let input = input.image_findings?;
     ::std::option::Option::Some(input)
 }
 

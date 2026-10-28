@@ -43,6 +43,166 @@ impl GatewayRoute {
         self.resources.as_ref()
     }
 }
+static GATEWAYROUTE_MEMBER_GATEWAY_ROUTE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#GatewayRoute$gatewayRouteArn", "com.amazonaws.ecs", "GatewayRoute"),
+    ::aws_smithy_schema::ShapeType::String,
+    "gatewayRouteArn",
+    0,
+);
+static GATEWAYROUTE_MEMBER_SERVICE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#GatewayRoute$serviceArn", "com.amazonaws.ecs", "GatewayRoute"),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceArn",
+    1,
+);
+static GATEWAYROUTE_MEMBER_SERVICE_CONTAINER_PORT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayRoute$serviceContainerPortName",
+        "com.amazonaws.ecs",
+        "GatewayRoute",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceContainerPortName",
+    2,
+);
+static GATEWAYROUTE_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#GatewayRoute$status", "com.amazonaws.ecs", "GatewayRoute"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    3,
+);
+static GATEWAYROUTE_MEMBER_SERVICE_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#GatewayRoute$serviceUrl", "com.amazonaws.ecs", "GatewayRoute"),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceUrl",
+    4,
+);
+static GATEWAYROUTE_MEMBER_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#GatewayRoute$resources", "com.amazonaws.ecs", "GatewayRoute"),
+    ::aws_smithy_schema::ShapeType::Union,
+    "resources",
+    5,
+);
+static GATEWAYROUTE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#GatewayRoute", "com.amazonaws.ecs", "GatewayRoute"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GATEWAYROUTE_MEMBER_GATEWAY_ROUTE_ARN,
+        &GATEWAYROUTE_MEMBER_SERVICE_ARN,
+        &GATEWAYROUTE_MEMBER_SERVICE_CONTAINER_PORT_NAME,
+        &GATEWAYROUTE_MEMBER_STATUS,
+        &GATEWAYROUTE_MEMBER_SERVICE_URL,
+        &GATEWAYROUTE_MEMBER_RESOURCES,
+    ],
+);
+impl GatewayRoute {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GATEWAYROUTE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GatewayRoute {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.gateway_route_arn {
+            ser.write_string(&GATEWAYROUTE_MEMBER_GATEWAY_ROUTE_ARN, val)?;
+        }
+        if let Some(ref val) = self.service_arn {
+            ser.write_string(&GATEWAYROUTE_MEMBER_SERVICE_ARN, val)?;
+        }
+        if let Some(ref val) = self.service_container_port_name {
+            ser.write_string(&GATEWAYROUTE_MEMBER_SERVICE_CONTAINER_PORT_NAME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&GATEWAYROUTE_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.service_url {
+            ser.write_string(&GATEWAYROUTE_MEMBER_SERVICE_URL, val)?;
+        }
+        if let Some(ref val) = self.resources {
+            ser.write_struct(&GATEWAYROUTE_MEMBER_RESOURCES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::GatewayRouteBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GATEWAYROUTE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_route_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_container_port_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::GatewayRouteStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resources = Some(crate::types::GatewayRouteResources::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GatewayRoute {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl GatewayRoute {
     /// Creates a new builder-style object to manufacture [`GatewayRoute`](crate::types::GatewayRoute).
     pub fn builder() -> crate::types::builders::GatewayRouteBuilder {

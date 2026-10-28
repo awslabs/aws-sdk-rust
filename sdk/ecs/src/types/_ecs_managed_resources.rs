@@ -53,6 +53,304 @@ impl EcsManagedResources {
         self.gateway_connections.as_deref().unwrap_or_default()
     }
 }
+static ECSMANAGEDRESOURCES_MEMBER_INGRESS_PATHS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ManagedIngressPaths$member", "com.amazonaws.ecs", "ManagedIngressPaths"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ECSMANAGEDRESOURCES_MEMBER_INGRESS_PATHS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ECSManagedResources$ingressPaths",
+        "com.amazonaws.ecs",
+        "ECSManagedResources",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ingressPaths",
+    0,
+)
+.with_list_member(&ECSMANAGEDRESOURCES_MEMBER_INGRESS_PATHS_MEMBER);
+static ECSMANAGEDRESOURCES_MEMBER_AUTO_SCALING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ECSManagedResources$autoScaling",
+        "com.amazonaws.ecs",
+        "ECSManagedResources",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "autoScaling",
+    1,
+);
+static ECSMANAGEDRESOURCES_MEMBER_METRIC_ALARMS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ManagedMetricAlarms$member", "com.amazonaws.ecs", "ManagedMetricAlarms"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ECSMANAGEDRESOURCES_MEMBER_METRIC_ALARMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ECSManagedResources$metricAlarms",
+        "com.amazonaws.ecs",
+        "ECSManagedResources",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "metricAlarms",
+    2,
+)
+.with_list_member(&ECSMANAGEDRESOURCES_MEMBER_METRIC_ALARMS_MEMBER);
+static ECSMANAGEDRESOURCES_MEMBER_SERVICE_SECURITY_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedSecurityGroups$member",
+        "com.amazonaws.ecs",
+        "ManagedSecurityGroups",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ECSMANAGEDRESOURCES_MEMBER_SERVICE_SECURITY_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ECSManagedResources$serviceSecurityGroups",
+        "com.amazonaws.ecs",
+        "ECSManagedResources",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "serviceSecurityGroups",
+    3,
+)
+.with_list_member(&ECSMANAGEDRESOURCES_MEMBER_SERVICE_SECURITY_GROUPS_MEMBER);
+static ECSMANAGEDRESOURCES_MEMBER_LOG_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ManagedLogGroups$member", "com.amazonaws.ecs", "ManagedLogGroups"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ECSMANAGEDRESOURCES_MEMBER_LOG_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ECSManagedResources$logGroups",
+        "com.amazonaws.ecs",
+        "ECSManagedResources",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "logGroups",
+    4,
+)
+.with_list_member(&ECSMANAGEDRESOURCES_MEMBER_LOG_GROUPS_MEMBER);
+static ECSMANAGEDRESOURCES_MEMBER_GATEWAY_CONNECTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayConnectionList$member",
+        "com.amazonaws.ecs",
+        "GatewayConnectionList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ECSMANAGEDRESOURCES_MEMBER_GATEWAY_CONNECTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ECSManagedResources$gatewayConnections",
+        "com.amazonaws.ecs",
+        "ECSManagedResources",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "gatewayConnections",
+    5,
+)
+.with_list_member(&ECSMANAGEDRESOURCES_MEMBER_GATEWAY_CONNECTIONS_MEMBER);
+static ECSMANAGEDRESOURCES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ECSManagedResources", "com.amazonaws.ecs", "ECSManagedResources"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ECSMANAGEDRESOURCES_MEMBER_INGRESS_PATHS,
+        &ECSMANAGEDRESOURCES_MEMBER_AUTO_SCALING,
+        &ECSMANAGEDRESOURCES_MEMBER_METRIC_ALARMS,
+        &ECSMANAGEDRESOURCES_MEMBER_SERVICE_SECURITY_GROUPS,
+        &ECSMANAGEDRESOURCES_MEMBER_LOG_GROUPS,
+        &ECSMANAGEDRESOURCES_MEMBER_GATEWAY_CONNECTIONS,
+    ],
+);
+impl EcsManagedResources {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ECSMANAGEDRESOURCES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EcsManagedResources {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ingress_paths {
+            ser.write_list(
+                &ECSMANAGEDRESOURCES_MEMBER_INGRESS_PATHS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ManagedIngressPath::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.auto_scaling {
+            ser.write_struct(&ECSMANAGEDRESOURCES_MEMBER_AUTO_SCALING, val)?;
+        }
+        if let Some(ref val) = self.metric_alarms {
+            ser.write_list(
+                &ECSMANAGEDRESOURCES_MEMBER_METRIC_ALARMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ManagedMetricAlarm::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.service_security_groups {
+            ser.write_list(
+                &ECSMANAGEDRESOURCES_MEMBER_SERVICE_SECURITY_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ManagedSecurityGroup::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.log_groups {
+            ser.write_list(
+                &ECSMANAGEDRESOURCES_MEMBER_LOG_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ManagedLogGroup::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.gateway_connections {
+            ser.write_list(
+                &ECSMANAGEDRESOURCES_MEMBER_GATEWAY_CONNECTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::GatewayConnection::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EcsManagedResourcesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ECSMANAGEDRESOURCES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ingress_paths = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ManagedIngressPath::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_scaling = Some(crate::types::ManagedAutoScaling::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metric_alarms = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ManagedMetricAlarm::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_security_groups = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ManagedSecurityGroup::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_groups = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ManagedLogGroup::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_connections = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::GatewayConnection::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EcsManagedResources {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EcsManagedResources {
     /// Creates a new builder-style object to manufacture [`EcsManagedResources`](crate::types::EcsManagedResources).
     pub fn builder() -> crate::types::builders::EcsManagedResourcesBuilder {

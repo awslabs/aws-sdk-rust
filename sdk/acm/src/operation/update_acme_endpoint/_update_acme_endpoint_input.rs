@@ -30,6 +30,151 @@ impl UpdateAcmeEndpointInput {
         self.certificate_authority.as_ref()
     }
 }
+static UPDATEACMEENDPOINTINPUT_MEMBER_ACME_ENDPOINT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#UpdateAcmeEndpointInput$AcmeEndpointArn",
+        "com.amazonaws.acm.synthetic",
+        "UpdateAcmeEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcmeEndpointArn",
+    0,
+);
+static UPDATEACMEENDPOINTINPUT_MEMBER_AUTHORIZATION_BEHAVIOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#UpdateAcmeEndpointInput$AuthorizationBehavior",
+        "com.amazonaws.acm.synthetic",
+        "UpdateAcmeEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthorizationBehavior",
+    1,
+);
+static UPDATEACMEENDPOINTINPUT_MEMBER_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#UpdateAcmeEndpointInput$Contact",
+        "com.amazonaws.acm.synthetic",
+        "UpdateAcmeEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Contact",
+    2,
+);
+static UPDATEACMEENDPOINTINPUT_MEMBER_CERTIFICATE_AUTHORITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#UpdateAcmeEndpointInput$CertificateAuthority",
+        "com.amazonaws.acm.synthetic",
+        "UpdateAcmeEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "CertificateAuthority",
+    3,
+);
+static UPDATEACMEENDPOINTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#UpdateAcmeEndpointInput",
+        "com.amazonaws.acm.synthetic",
+        "UpdateAcmeEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEACMEENDPOINTINPUT_MEMBER_ACME_ENDPOINT_ARN,
+        &UPDATEACMEENDPOINTINPUT_MEMBER_AUTHORIZATION_BEHAVIOR,
+        &UPDATEACMEENDPOINTINPUT_MEMBER_CONTACT,
+        &UPDATEACMEENDPOINTINPUT_MEMBER_CERTIFICATE_AUTHORITY,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateAcmeEndpointRequest");
+impl UpdateAcmeEndpointInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEACMEENDPOINTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateAcmeEndpointInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.acme_endpoint_arn {
+            ser.write_string(&UPDATEACMEENDPOINTINPUT_MEMBER_ACME_ENDPOINT_ARN, val)?;
+        }
+        if let Some(ref val) = self.authorization_behavior {
+            ser.write_string(&UPDATEACMEENDPOINTINPUT_MEMBER_AUTHORIZATION_BEHAVIOR, val.as_str())?;
+        }
+        if let Some(ref val) = self.contact {
+            ser.write_string(&UPDATEACMEENDPOINTINPUT_MEMBER_CONTACT, val.as_str())?;
+        }
+        if let Some(ref val) = self.certificate_authority {
+            ser.write_struct(&UPDATEACMEENDPOINTINPUT_MEMBER_CERTIFICATE_AUTHORITY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_acme_endpoint::builders::UpdateAcmeEndpointInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEACMEENDPOINTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.acme_endpoint_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authorization_behavior = Some(crate::types::AcmeAuthorizationBehavior::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.contact = Some(crate::types::AcmeContact::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_authority = Some(crate::types::CertificateAuthority::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateAcmeEndpointInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.acme_endpoint_arn = builder.acme_endpoint_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateAcmeEndpointInput {
     /// Creates a new builder-style object to manufacture [`UpdateAcmeEndpointInput`](crate::operation::update_acme_endpoint::UpdateAcmeEndpointInput).
     pub fn builder() -> crate::operation::update_acme_endpoint::builders::UpdateAcmeEndpointInputBuilder {

@@ -57,6 +57,235 @@ impl PutRecordInput {
         self.dry_run
     }
 }
+static PUTRECORDINPUT_MEMBER_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#PutRecordInput$StreamName",
+        "com.amazonaws.kinesis.synthetic",
+        "PutRecordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamName",
+    0,
+);
+static PUTRECORDINPUT_MEMBER_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#PutRecordInput$Data",
+        "com.amazonaws.kinesis.synthetic",
+        "PutRecordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Blob,
+    "Data",
+    1,
+);
+static PUTRECORDINPUT_MEMBER_PARTITION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#PutRecordInput$PartitionKey",
+        "com.amazonaws.kinesis.synthetic",
+        "PutRecordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PartitionKey",
+    2,
+);
+static PUTRECORDINPUT_MEMBER_EXPLICIT_HASH_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#PutRecordInput$ExplicitHashKey",
+        "com.amazonaws.kinesis.synthetic",
+        "PutRecordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExplicitHashKey",
+    3,
+);
+static PUTRECORDINPUT_MEMBER_SEQUENCE_NUMBER_FOR_ORDERING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#PutRecordInput$SequenceNumberForOrdering",
+        "com.amazonaws.kinesis.synthetic",
+        "PutRecordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SequenceNumberForOrdering",
+    4,
+);
+static PUTRECORDINPUT_MEMBER_STREAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#PutRecordInput$StreamARN",
+        "com.amazonaws.kinesis.synthetic",
+        "PutRecordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamARN",
+    5,
+);
+static PUTRECORDINPUT_MEMBER_STREAM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#PutRecordInput$StreamId",
+        "com.amazonaws.kinesis.synthetic",
+        "PutRecordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamId",
+    6,
+);
+static PUTRECORDINPUT_MEMBER_DRY_RUN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#PutRecordInput$DryRun",
+        "com.amazonaws.kinesis.synthetic",
+        "PutRecordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "DryRun",
+    7,
+);
+static PUTRECORDINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#PutRecordInput",
+        "com.amazonaws.kinesis.synthetic",
+        "PutRecordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTRECORDINPUT_MEMBER_STREAM_NAME,
+        &PUTRECORDINPUT_MEMBER_DATA,
+        &PUTRECORDINPUT_MEMBER_PARTITION_KEY,
+        &PUTRECORDINPUT_MEMBER_EXPLICIT_HASH_KEY,
+        &PUTRECORDINPUT_MEMBER_SEQUENCE_NUMBER_FOR_ORDERING,
+        &PUTRECORDINPUT_MEMBER_STREAM_ARN,
+        &PUTRECORDINPUT_MEMBER_STREAM_ID,
+        &PUTRECORDINPUT_MEMBER_DRY_RUN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutRecordInput");
+impl PutRecordInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTRECORDINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutRecordInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stream_name {
+            ser.write_string(&PUTRECORDINPUT_MEMBER_STREAM_NAME, val)?;
+        }
+        if let Some(ref val) = self.data {
+            ser.write_blob(&PUTRECORDINPUT_MEMBER_DATA, val.clone())?;
+        }
+        if let Some(ref val) = self.partition_key {
+            ser.write_string(&PUTRECORDINPUT_MEMBER_PARTITION_KEY, val)?;
+        }
+        if let Some(ref val) = self.explicit_hash_key {
+            ser.write_string(&PUTRECORDINPUT_MEMBER_EXPLICIT_HASH_KEY, val)?;
+        }
+        if let Some(ref val) = self.sequence_number_for_ordering {
+            ser.write_string(&PUTRECORDINPUT_MEMBER_SEQUENCE_NUMBER_FOR_ORDERING, val)?;
+        }
+        if let Some(ref val) = self.stream_arn {
+            ser.write_string(&PUTRECORDINPUT_MEMBER_STREAM_ARN, val)?;
+        }
+        if let Some(ref val) = self.stream_id {
+            ser.write_string(&PUTRECORDINPUT_MEMBER_STREAM_ID, val)?;
+        }
+        if let Some(ref val) = self.dry_run {
+            ser.write_boolean(&PUTRECORDINPUT_MEMBER_DRY_RUN, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_record::builders::PutRecordInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTRECORDINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data = Some(deser.read_blob(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.partition_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.explicit_hash_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sequence_number_for_ordering = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dry_run = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutRecordInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.data = builder.data.or(Some(::aws_smithy_types::Blob::new("")));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutRecordInput {
     /// Creates a new builder-style object to manufacture [`PutRecordInput`](crate::operation::put_record::PutRecordInput).
     pub fn builder() -> crate::operation::put_record::builders::PutRecordInputBuilder {

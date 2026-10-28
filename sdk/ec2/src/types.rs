@@ -1605,6 +1605,8 @@ pub use crate::types::_purchase::Purchase;
 
 pub use crate::types::_image_ancestry_entry::ImageAncestryEntry;
 
+pub use crate::types::_image_finding::ImageFinding;
+
 pub use crate::types::_http_tokens_enforced_state::HttpTokensEnforcedState;
 
 pub use crate::types::_architecture_type::ArchitectureType;
@@ -2163,6 +2165,8 @@ pub use crate::types::_hypervisor_type::HypervisorType;
 
 pub use crate::types::_device_type::DeviceType;
 
+pub use crate::types::_scan_results::ScanResults;
+
 pub use crate::types::_instance_type_specification::InstanceTypeSpecification;
 
 pub use crate::types::_image_state::ImageState;
@@ -2263,6 +2267,8 @@ pub use crate::types::_deprecation_time_condition::DeprecationTimeCondition;
 
 pub use crate::types::_creation_date_condition::CreationDateCondition;
 
+pub use crate::types::_scan_result_condition::ScanResultCondition;
+
 pub use crate::types::_dimension_condition::DimensionCondition;
 
 pub use crate::types::_reservation_type::ReservationType;
@@ -2274,6 +2280,8 @@ pub use crate::types::_capacity_tenancy::CapacityTenancy;
 pub use crate::types::_capacity_manager_monitored_tag_key_status::CapacityManagerMonitoredTagKeyStatus;
 
 pub use crate::types::_athena_integration::AthenaIntegration;
+
+pub use crate::types::_severity_label::SeverityLabel;
 
 pub use crate::types::_cpu_manufacturer::CpuManufacturer;
 
@@ -2406,6 +2414,8 @@ pub use crate::types::_monitoring::Monitoring;
 pub use crate::types::_deprecation_time_condition_request::DeprecationTimeConditionRequest;
 
 pub use crate::types::_creation_date_condition_request::CreationDateConditionRequest;
+
+pub use crate::types::_scan_result_condition_request::ScanResultConditionRequest;
 
 pub use crate::types::_spot_capacity_rebalance::SpotCapacityRebalance;
 
@@ -3919,6 +3929,8 @@ mod _image_criterion_request;
 
 mod _image_disk_container;
 
+mod _image_finding;
+
 mod _image_metadata;
 
 mod _image_recycle_bin_info;
@@ -5121,6 +5133,12 @@ mod _s3_object_tag;
 
 mod _s3_storage;
 
+mod _scan_result_condition;
+
+mod _scan_result_condition_request;
+
+mod _scan_results;
+
 mod _schedule;
 
 mod _scheduled_instance;
@@ -5226,6 +5244,8 @@ mod _service_state;
 mod _service_type;
 
 mod _service_type_detail;
+
+mod _severity_label;
 
 mod _shutdown_behavior;
 

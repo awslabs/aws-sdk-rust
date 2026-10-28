@@ -64,6 +64,206 @@ impl ListedServer {
         self.user_count
     }
 }
+static LISTEDSERVER_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ListedServer$Arn", "com.amazonaws.transfer", "ListedServer"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    0,
+);
+static LISTEDSERVER_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ListedServer$Domain", "com.amazonaws.transfer", "ListedServer"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Domain",
+    1,
+);
+static LISTEDSERVER_MEMBER_IDENTITY_PROVIDER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedServer$IdentityProviderType",
+        "com.amazonaws.transfer",
+        "ListedServer",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdentityProviderType",
+    2,
+);
+static LISTEDSERVER_MEMBER_ENDPOINT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedServer$EndpointType",
+        "com.amazonaws.transfer",
+        "ListedServer",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointType",
+    3,
+);
+static LISTEDSERVER_MEMBER_LOGGING_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedServer$LoggingRole",
+        "com.amazonaws.transfer",
+        "ListedServer",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LoggingRole",
+    4,
+);
+static LISTEDSERVER_MEMBER_SERVER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ListedServer$ServerId", "com.amazonaws.transfer", "ListedServer"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServerId",
+    5,
+);
+static LISTEDSERVER_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ListedServer$State", "com.amazonaws.transfer", "ListedServer"),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    6,
+);
+static LISTEDSERVER_MEMBER_USER_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ListedServer$UserCount", "com.amazonaws.transfer", "ListedServer"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "UserCount",
+    7,
+);
+static LISTEDSERVER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ListedServer", "com.amazonaws.transfer", "ListedServer"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTEDSERVER_MEMBER_ARN,
+        &LISTEDSERVER_MEMBER_DOMAIN,
+        &LISTEDSERVER_MEMBER_IDENTITY_PROVIDER_TYPE,
+        &LISTEDSERVER_MEMBER_ENDPOINT_TYPE,
+        &LISTEDSERVER_MEMBER_LOGGING_ROLE,
+        &LISTEDSERVER_MEMBER_SERVER_ID,
+        &LISTEDSERVER_MEMBER_STATE,
+        &LISTEDSERVER_MEMBER_USER_COUNT,
+    ],
+);
+impl ListedServer {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTEDSERVER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListedServer {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.arn;
+            ser.write_string(&LISTEDSERVER_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.domain {
+            ser.write_string(&LISTEDSERVER_MEMBER_DOMAIN, val.as_str())?;
+        }
+        if let Some(ref val) = self.identity_provider_type {
+            ser.write_string(&LISTEDSERVER_MEMBER_IDENTITY_PROVIDER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.endpoint_type {
+            ser.write_string(&LISTEDSERVER_MEMBER_ENDPOINT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.logging_role {
+            ser.write_string(&LISTEDSERVER_MEMBER_LOGGING_ROLE, val)?;
+        }
+        if let Some(ref val) = self.server_id {
+            ser.write_string(&LISTEDSERVER_MEMBER_SERVER_ID, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&LISTEDSERVER_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.user_count {
+            ser.write_integer(&LISTEDSERVER_MEMBER_USER_COUNT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ListedServerBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTEDSERVER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(crate::types::Domain::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity_provider_type = Some(crate::types::IdentityProviderType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_type = Some(crate::types::EndpointType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logging_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.server_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::State::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListedServer {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.arn = builder.arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListedServer {
     /// Creates a new builder-style object to manufacture [`ListedServer`](crate::types::ListedServer).
     pub fn builder() -> crate::types::builders::ListedServerBuilder {

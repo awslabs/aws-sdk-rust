@@ -29,6 +29,16 @@ pub struct CreateGrantInput {
     pub allowed_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
     /// <p>Tags to add to the grant. For more information about tagging support in License Manager, see the <a href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a> operation.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The type of grant to create. For more information about each type, see the preceding description of this operation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - The default grant type if you don't specify a value. Conveys the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives the grantee read-only visibility into the licenses and grants that you have distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub grant_type: ::std::option::Option<crate::types::GrantType>,
+    /// <p>The options for the grant: the status to set after creation, and how activating the grant affects other active grants for the same product.</p>
+    pub options: ::std::option::Option<crate::types::Options>,
 }
 impl CreateGrantInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -76,6 +86,20 @@ impl CreateGrantInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
+    }
+    /// <p>The type of grant to create. For more information about each type, see the preceding description of this operation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - The default grant type if you don't specify a value. Conveys the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives the grantee read-only visibility into the licenses and grants that you have distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub fn grant_type(&self) -> ::std::option::Option<&crate::types::GrantType> {
+        self.grant_type.as_ref()
+    }
+    /// <p>The options for the grant: the status to set after creation, and how activating the grant affects other active grants for the same product.</p>
+    pub fn options(&self) -> ::std::option::Option<&crate::types::Options> {
+        self.options.as_ref()
     }
 }
 static CREATEGRANTINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -177,6 +201,26 @@ static CREATEGRANTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aw
     6,
 )
 .with_list_member(&CREATEGRANTINPUT_MEMBER_TAGS_MEMBER);
+static CREATEGRANTINPUT_MEMBER_GRANT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantInput$GrantType",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GrantType",
+    7,
+);
+static CREATEGRANTINPUT_MEMBER_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantInput$Options",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Options",
+    8,
+);
 static CREATEGRANTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.licensemanager.synthetic#CreateGrantInput",
@@ -192,6 +236,8 @@ static CREATEGRANTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smi
         &CREATEGRANTINPUT_MEMBER_HOME_REGION,
         &CREATEGRANTINPUT_MEMBER_ALLOWED_OPERATIONS,
         &CREATEGRANTINPUT_MEMBER_TAGS,
+        &CREATEGRANTINPUT_MEMBER_GRANT_TYPE,
+        &CREATEGRANTINPUT_MEMBER_OPTIONS,
     ],
 )
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
@@ -254,6 +300,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for CreateGrantInput {
                     Ok(())
                 },
             )?;
+        }
+        if let Some(ref val) = self.grant_type {
+            ser.write_string(&CREATEGRANTINPUT_MEMBER_GRANT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.options {
+            ser.write_struct(&CREATEGRANTINPUT_MEMBER_OPTIONS, val)?;
         }
         Ok(())
     }
@@ -337,6 +389,20 @@ impl crate::operation::create_grant::builders::CreateGrantInputBuilder {
                         });
                     }
                 }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.grant_type = Some(crate::types::GrantType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.options = Some(crate::types::Options::deserialize(deser)?);
+                    }
+                }
                 _ => {}
             }
             Ok(())
@@ -378,6 +444,8 @@ pub struct CreateGrantInputBuilder {
     pub(crate) home_region: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) grant_type: ::std::option::Option<crate::types::GrantType>,
+    pub(crate) options: ::std::option::Option<crate::types::Options>,
 }
 impl CreateGrantInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -536,6 +604,52 @@ impl CreateGrantInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The type of grant to create. For more information about each type, see the preceding description of this operation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - The default grant type if you don't specify a value. Conveys the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives the grantee read-only visibility into the licenses and grants that you have distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub fn grant_type(mut self, input: crate::types::GrantType) -> Self {
+        self.grant_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of grant to create. For more information about each type, see the preceding description of this operation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - The default grant type if you don't specify a value. Conveys the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives the grantee read-only visibility into the licenses and grants that you have distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub fn set_grant_type(mut self, input: ::std::option::Option<crate::types::GrantType>) -> Self {
+        self.grant_type = input;
+        self
+    }
+    /// <p>The type of grant to create. For more information about each type, see the preceding description of this operation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - The default grant type if you don't specify a value. Conveys the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives the grantee read-only visibility into the licenses and grants that you have distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub fn get_grant_type(&self) -> &::std::option::Option<crate::types::GrantType> {
+        &self.grant_type
+    }
+    /// <p>The options for the grant: the status to set after creation, and how activating the grant affects other active grants for the same product.</p>
+    pub fn options(mut self, input: crate::types::Options) -> Self {
+        self.options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The options for the grant: the status to set after creation, and how activating the grant affects other active grants for the same product.</p>
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
+        self.options = input;
+        self
+    }
+    /// <p>The options for the grant: the status to set after creation, and how activating the grant affects other active grants for the same product.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::Options> {
+        &self.options
+    }
     /// Consumes the builder and constructs a [`CreateGrantInput`](crate::operation::create_grant::CreateGrantInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_grant::CreateGrantInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_grant::CreateGrantInput {
@@ -546,6 +660,8 @@ impl CreateGrantInputBuilder {
             home_region: self.home_region,
             allowed_operations: self.allowed_operations,
             tags: self.tags,
+            grant_type: self.grant_type,
+            options: self.options,
         })
     }
 }

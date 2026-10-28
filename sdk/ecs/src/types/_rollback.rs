@@ -25,6 +25,111 @@ impl Rollback {
         self.service_revision_arn.as_deref()
     }
 }
+static ROLLBACK_MEMBER_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Rollback$reason", "com.amazonaws.ecs", "Rollback"),
+    ::aws_smithy_schema::ShapeType::String,
+    "reason",
+    0,
+);
+static ROLLBACK_MEMBER_STARTED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Rollback$startedAt", "com.amazonaws.ecs", "Rollback"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "startedAt",
+    1,
+);
+static ROLLBACK_MEMBER_SERVICE_REVISION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Rollback$serviceRevisionArn", "com.amazonaws.ecs", "Rollback"),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceRevisionArn",
+    2,
+);
+static ROLLBACK_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Rollback", "com.amazonaws.ecs", "Rollback"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ROLLBACK_MEMBER_REASON,
+        &ROLLBACK_MEMBER_STARTED_AT,
+        &ROLLBACK_MEMBER_SERVICE_REVISION_ARN,
+    ],
+);
+impl Rollback {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ROLLBACK_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Rollback {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.reason {
+            ser.write_string(&ROLLBACK_MEMBER_REASON, val)?;
+        }
+        if let Some(ref val) = self.started_at {
+            ser.write_timestamp(&ROLLBACK_MEMBER_STARTED_AT, val)?;
+        }
+        if let Some(ref val) = self.service_revision_arn {
+            ser.write_string(&ROLLBACK_MEMBER_SERVICE_REVISION_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RollbackBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ROLLBACK_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.started_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_revision_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Rollback {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Rollback {
     /// Creates a new builder-style object to manufacture [`Rollback`](crate::types::Rollback).
     pub fn builder() -> crate::types::builders::RollbackBuilder {

@@ -44,6 +44,127 @@ impl ::std::fmt::Debug for ClientSecretDescriptorType {
         formatter.finish()
     }
 }
+static CLIENTSECRETDESCRIPTORTYPE_MEMBER_CLIENT_SECRET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ClientSecretDescriptorType$ClientSecretId",
+        "com.amazonaws.cognitoidentityprovider",
+        "ClientSecretDescriptorType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientSecretId",
+    0,
+);
+static CLIENTSECRETDESCRIPTORTYPE_MEMBER_CLIENT_SECRET_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ClientSecretDescriptorType$ClientSecretValue",
+        "com.amazonaws.cognitoidentityprovider",
+        "ClientSecretDescriptorType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientSecretValue",
+    1,
+);
+static CLIENTSECRETDESCRIPTORTYPE_MEMBER_CLIENT_SECRET_CREATE_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ClientSecretDescriptorType$ClientSecretCreateDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "ClientSecretDescriptorType",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ClientSecretCreateDate",
+    2,
+);
+static CLIENTSECRETDESCRIPTORTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ClientSecretDescriptorType",
+        "com.amazonaws.cognitoidentityprovider",
+        "ClientSecretDescriptorType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLIENTSECRETDESCRIPTORTYPE_MEMBER_CLIENT_SECRET_ID,
+        &CLIENTSECRETDESCRIPTORTYPE_MEMBER_CLIENT_SECRET_VALUE,
+        &CLIENTSECRETDESCRIPTORTYPE_MEMBER_CLIENT_SECRET_CREATE_DATE,
+    ],
+);
+impl ClientSecretDescriptorType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLIENTSECRETDESCRIPTORTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClientSecretDescriptorType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.client_secret_id {
+            ser.write_string(&CLIENTSECRETDESCRIPTORTYPE_MEMBER_CLIENT_SECRET_ID, val)?;
+        }
+        if let Some(ref val) = self.client_secret_value {
+            ser.write_string(&CLIENTSECRETDESCRIPTORTYPE_MEMBER_CLIENT_SECRET_VALUE, val)?;
+        }
+        if let Some(ref val) = self.client_secret_create_date {
+            ser.write_timestamp(&CLIENTSECRETDESCRIPTORTYPE_MEMBER_CLIENT_SECRET_CREATE_DATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClientSecretDescriptorTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLIENTSECRETDESCRIPTORTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_secret_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_secret_value = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_secret_create_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClientSecretDescriptorType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ClientSecretDescriptorType {
     /// Creates a new builder-style object to manufacture [`ClientSecretDescriptorType`](crate::types::ClientSecretDescriptorType).
     pub fn builder() -> crate::types::builders::ClientSecretDescriptorTypeBuilder {

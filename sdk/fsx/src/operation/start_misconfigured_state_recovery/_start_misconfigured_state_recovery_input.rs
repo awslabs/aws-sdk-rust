@@ -18,6 +18,110 @@ impl StartMisconfiguredStateRecoveryInput {
         self.file_system_id.as_deref()
     }
 }
+static STARTMISCONFIGUREDSTATERECOVERYINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx.synthetic#StartMisconfiguredStateRecoveryInput$ClientRequestToken",
+            "com.amazonaws.fsx.synthetic",
+            "StartMisconfiguredStateRecoveryInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ClientRequestToken",
+        0,
+    );
+static STARTMISCONFIGUREDSTATERECOVERYINPUT_MEMBER_FILE_SYSTEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#StartMisconfiguredStateRecoveryInput$FileSystemId",
+        "com.amazonaws.fsx.synthetic",
+        "StartMisconfiguredStateRecoveryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileSystemId",
+    1,
+);
+static STARTMISCONFIGUREDSTATERECOVERYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#StartMisconfiguredStateRecoveryInput",
+        "com.amazonaws.fsx.synthetic",
+        "StartMisconfiguredStateRecoveryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTMISCONFIGUREDSTATERECOVERYINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &STARTMISCONFIGUREDSTATERECOVERYINPUT_MEMBER_FILE_SYSTEM_ID,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartMisconfiguredStateRecoveryRequest");
+impl StartMisconfiguredStateRecoveryInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTMISCONFIGUREDSTATERECOVERYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartMisconfiguredStateRecoveryInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&STARTMISCONFIGUREDSTATERECOVERYINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.file_system_id {
+            ser.write_string(&STARTMISCONFIGUREDSTATERECOVERYINPUT_MEMBER_FILE_SYSTEM_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_misconfigured_state_recovery::builders::StartMisconfiguredStateRecoveryInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTMISCONFIGUREDSTATERECOVERYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartMisconfiguredStateRecoveryInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.file_system_id = builder.file_system_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartMisconfiguredStateRecoveryInput {
     /// Creates a new builder-style object to manufacture [`StartMisconfiguredStateRecoveryInput`](crate::operation::start_misconfigured_state_recovery::StartMisconfiguredStateRecoveryInput).
     pub fn builder() -> crate::operation::start_misconfigured_state_recovery::builders::StartMisconfiguredStateRecoveryInputBuilder {

@@ -125,4 +125,18 @@ impl StartInstanceFluentBuilder {
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_name()
     }
+    /// <p>An object that describes the attributes to update on the instance before it starts.</p>
+    pub fn attribute_updates(mut self, input: crate::types::InstanceAttributeUpdates) -> Self {
+        self.inner = self.inner.attribute_updates(input);
+        self
+    }
+    /// <p>An object that describes the attributes to update on the instance before it starts.</p>
+    pub fn set_attribute_updates(mut self, input: ::std::option::Option<crate::types::InstanceAttributeUpdates>) -> Self {
+        self.inner = self.inner.set_attribute_updates(input);
+        self
+    }
+    /// <p>An object that describes the attributes to update on the instance before it starts.</p>
+    pub fn get_attribute_updates(&self) -> &::std::option::Option<crate::types::InstanceAttributeUpdates> {
+        self.inner.get_attribute_updates()
+    }
 }

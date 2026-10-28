@@ -26,6 +26,128 @@ impl UpdateUserPoolDomainOutput {
         self.routing.as_ref()
     }
 }
+static UPDATEUSERPOOLDOMAINOUTPUT_MEMBER_MANAGED_LOGIN_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateUserPoolDomainOutput$ManagedLoginVersion",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateUserPoolDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ManagedLoginVersion",
+    0,
+);
+static UPDATEUSERPOOLDOMAINOUTPUT_MEMBER_CLOUD_FRONT_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateUserPoolDomainOutput$CloudFrontDomain",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateUserPoolDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CloudFrontDomain",
+    1,
+);
+static UPDATEUSERPOOLDOMAINOUTPUT_MEMBER_ROUTING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateUserPoolDomainOutput$Routing",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateUserPoolDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Routing",
+    2,
+);
+static UPDATEUSERPOOLDOMAINOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateUserPoolDomainOutput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateUserPoolDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEUSERPOOLDOMAINOUTPUT_MEMBER_MANAGED_LOGIN_VERSION,
+        &UPDATEUSERPOOLDOMAINOUTPUT_MEMBER_CLOUD_FRONT_DOMAIN,
+        &UPDATEUSERPOOLDOMAINOUTPUT_MEMBER_ROUTING,
+    ],
+)
+.with_original_name("UpdateUserPoolDomainResponse");
+impl UpdateUserPoolDomainOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEUSERPOOLDOMAINOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateUserPoolDomainOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.managed_login_version {
+            ser.write_integer(&UPDATEUSERPOOLDOMAINOUTPUT_MEMBER_MANAGED_LOGIN_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.cloud_front_domain {
+            ser.write_string(&UPDATEUSERPOOLDOMAINOUTPUT_MEMBER_CLOUD_FRONT_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.routing {
+            ser.write_struct(&UPDATEUSERPOOLDOMAINOUTPUT_MEMBER_ROUTING, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_user_pool_domain::builders::UpdateUserPoolDomainOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEUSERPOOLDOMAINOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_login_version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_front_domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.routing = Some(crate::types::RoutingType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateUserPoolDomainOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for UpdateUserPoolDomainOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

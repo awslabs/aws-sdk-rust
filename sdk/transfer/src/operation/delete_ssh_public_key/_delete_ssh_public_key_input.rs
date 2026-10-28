@@ -24,6 +24,132 @@ impl DeleteSshPublicKeyInput {
         self.user_name.as_deref()
     }
 }
+static DELETESSHPUBLICKEYINPUT_MEMBER_SERVER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#DeleteSshPublicKeyInput$ServerId",
+        "com.amazonaws.transfer.synthetic",
+        "DeleteSshPublicKeyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServerId",
+    0,
+);
+static DELETESSHPUBLICKEYINPUT_MEMBER_SSH_PUBLIC_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#DeleteSshPublicKeyInput$SshPublicKeyId",
+        "com.amazonaws.transfer.synthetic",
+        "DeleteSshPublicKeyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SshPublicKeyId",
+    1,
+);
+static DELETESSHPUBLICKEYINPUT_MEMBER_USER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#DeleteSshPublicKeyInput$UserName",
+        "com.amazonaws.transfer.synthetic",
+        "DeleteSshPublicKeyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserName",
+    2,
+);
+static DELETESSHPUBLICKEYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#DeleteSshPublicKeyInput",
+        "com.amazonaws.transfer.synthetic",
+        "DeleteSshPublicKeyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELETESSHPUBLICKEYINPUT_MEMBER_SERVER_ID,
+        &DELETESSHPUBLICKEYINPUT_MEMBER_SSH_PUBLIC_KEY_ID,
+        &DELETESSHPUBLICKEYINPUT_MEMBER_USER_NAME,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteSshPublicKeyRequest");
+impl DeleteSshPublicKeyInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETESSHPUBLICKEYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteSshPublicKeyInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.server_id {
+            ser.write_string(&DELETESSHPUBLICKEYINPUT_MEMBER_SERVER_ID, val)?;
+        }
+        if let Some(ref val) = self.ssh_public_key_id {
+            ser.write_string(&DELETESSHPUBLICKEYINPUT_MEMBER_SSH_PUBLIC_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.user_name {
+            ser.write_string(&DELETESSHPUBLICKEYINPUT_MEMBER_USER_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETESSHPUBLICKEYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.server_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ssh_public_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteSshPublicKeyInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.server_id = builder.server_id.or(Some(String::new()));
+        builder.ssh_public_key_id = builder.ssh_public_key_id.or(Some(String::new()));
+        builder.user_name = builder.user_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteSshPublicKeyInput {
     /// Creates a new builder-style object to manufacture [`DeleteSshPublicKeyInput`](crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput).
     pub fn builder() -> crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyInputBuilder {

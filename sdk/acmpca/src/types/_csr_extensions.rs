@@ -21,6 +21,121 @@ impl CsrExtensions {
         self.subject_information_access.as_deref().unwrap_or_default()
     }
 }
+static CSREXTENSIONS_MEMBER_KEY_USAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#CsrExtensions$KeyUsage", "com.amazonaws.acmpca", "CsrExtensions"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "KeyUsage",
+    0,
+);
+static CSREXTENSIONS_MEMBER_SUBJECT_INFORMATION_ACCESS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#AccessDescriptionList$member",
+        "com.amazonaws.acmpca",
+        "AccessDescriptionList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CSREXTENSIONS_MEMBER_SUBJECT_INFORMATION_ACCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CsrExtensions$SubjectInformationAccess",
+        "com.amazonaws.acmpca",
+        "CsrExtensions",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SubjectInformationAccess",
+    1,
+)
+.with_list_member(&CSREXTENSIONS_MEMBER_SUBJECT_INFORMATION_ACCESS_MEMBER);
+static CSREXTENSIONS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#CsrExtensions", "com.amazonaws.acmpca", "CsrExtensions"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CSREXTENSIONS_MEMBER_KEY_USAGE, &CSREXTENSIONS_MEMBER_SUBJECT_INFORMATION_ACCESS],
+);
+impl CsrExtensions {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CSREXTENSIONS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CsrExtensions {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.key_usage {
+            ser.write_struct(&CSREXTENSIONS_MEMBER_KEY_USAGE, val)?;
+        }
+        if let Some(ref val) = self.subject_information_access {
+            ser.write_list(
+                &CSREXTENSIONS_MEMBER_SUBJECT_INFORMATION_ACCESS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AccessDescription::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CsrExtensionsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CSREXTENSIONS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_usage = Some(crate::types::KeyUsage::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subject_information_access = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AccessDescription::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CsrExtensions {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CsrExtensions {
     /// Creates a new builder-style object to manufacture [`CsrExtensions`](crate::types::CsrExtensions).
     pub fn builder() -> crate::types::builders::CsrExtensionsBuilder {

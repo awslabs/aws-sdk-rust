@@ -41,6 +41,127 @@ impl ExecuteCommandConfiguration {
         self.log_configuration.as_ref()
     }
 }
+static EXECUTECOMMANDCONFIGURATION_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ExecuteCommandConfiguration$kmsKeyId",
+        "com.amazonaws.ecs",
+        "ExecuteCommandConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "kmsKeyId",
+    0,
+);
+static EXECUTECOMMANDCONFIGURATION_MEMBER_LOGGING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ExecuteCommandConfiguration$logging",
+        "com.amazonaws.ecs",
+        "ExecuteCommandConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "logging",
+    1,
+);
+static EXECUTECOMMANDCONFIGURATION_MEMBER_LOG_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ExecuteCommandConfiguration$logConfiguration",
+        "com.amazonaws.ecs",
+        "ExecuteCommandConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "logConfiguration",
+    2,
+);
+static EXECUTECOMMANDCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ExecuteCommandConfiguration",
+        "com.amazonaws.ecs",
+        "ExecuteCommandConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EXECUTECOMMANDCONFIGURATION_MEMBER_KMS_KEY_ID,
+        &EXECUTECOMMANDCONFIGURATION_MEMBER_LOGGING,
+        &EXECUTECOMMANDCONFIGURATION_MEMBER_LOG_CONFIGURATION,
+    ],
+);
+impl ExecuteCommandConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EXECUTECOMMANDCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ExecuteCommandConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&EXECUTECOMMANDCONFIGURATION_MEMBER_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.logging {
+            ser.write_string(&EXECUTECOMMANDCONFIGURATION_MEMBER_LOGGING, val.as_str())?;
+        }
+        if let Some(ref val) = self.log_configuration {
+            ser.write_struct(&EXECUTECOMMANDCONFIGURATION_MEMBER_LOG_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ExecuteCommandConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EXECUTECOMMANDCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logging = Some(crate::types::ExecuteCommandLogging::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_configuration = Some(crate::types::ExecuteCommandLogConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ExecuteCommandConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ExecuteCommandConfiguration {
     /// Creates a new builder-style object to manufacture [`ExecuteCommandConfiguration`](crate::types::ExecuteCommandConfiguration).
     pub fn builder() -> crate::types::builders::ExecuteCommandConfigurationBuilder {

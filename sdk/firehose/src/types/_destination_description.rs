@@ -78,6 +78,301 @@ impl DestinationDescription {
         self.iceberg_destination_description.as_ref()
     }
 }
+static DESTINATIONDESCRIPTION_MEMBER_DESTINATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DestinationDescription$DestinationId",
+        "com.amazonaws.firehose",
+        "DestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DestinationId",
+    0,
+);
+static DESTINATIONDESCRIPTION_MEMBER_S3_DESTINATION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DestinationDescription$S3DestinationDescription",
+        "com.amazonaws.firehose",
+        "DestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3DestinationDescription",
+    1,
+);
+static DESTINATIONDESCRIPTION_MEMBER_EXTENDED_S3_DESTINATION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#DestinationDescription$ExtendedS3DestinationDescription",
+            "com.amazonaws.firehose",
+            "DestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ExtendedS3DestinationDescription",
+        2,
+    );
+static DESTINATIONDESCRIPTION_MEMBER_REDSHIFT_DESTINATION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DestinationDescription$RedshiftDestinationDescription",
+        "com.amazonaws.firehose",
+        "DestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RedshiftDestinationDescription",
+    3,
+);
+static DESTINATIONDESCRIPTION_MEMBER_ELASTICSEARCH_DESTINATION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#DestinationDescription$ElasticsearchDestinationDescription",
+            "com.amazonaws.firehose",
+            "DestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ElasticsearchDestinationDescription",
+        4,
+    );
+static DESTINATIONDESCRIPTION_MEMBER_AMAZONOPENSEARCHSERVICE_DESTINATION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#DestinationDescription$AmazonopensearchserviceDestinationDescription",
+            "com.amazonaws.firehose",
+            "DestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "AmazonopensearchserviceDestinationDescription",
+        5,
+    );
+static DESTINATIONDESCRIPTION_MEMBER_SPLUNK_DESTINATION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DestinationDescription$SplunkDestinationDescription",
+        "com.amazonaws.firehose",
+        "DestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SplunkDestinationDescription",
+    6,
+);
+static DESTINATIONDESCRIPTION_MEMBER_HTTP_ENDPOINT_DESTINATION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#DestinationDescription$HttpEndpointDestinationDescription",
+            "com.amazonaws.firehose",
+            "DestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "HttpEndpointDestinationDescription",
+        7,
+    );
+static DESTINATIONDESCRIPTION_MEMBER_SNOWFLAKE_DESTINATION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#DestinationDescription$SnowflakeDestinationDescription",
+            "com.amazonaws.firehose",
+            "DestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "SnowflakeDestinationDescription",
+        8,
+    );
+static DESTINATIONDESCRIPTION_MEMBER_AMAZON_OPEN_SEARCH_SERVERLESS_DESTINATION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#DestinationDescription$AmazonOpenSearchServerlessDestinationDescription",
+            "com.amazonaws.firehose",
+            "DestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "AmazonOpenSearchServerlessDestinationDescription",
+        9,
+    );
+static DESTINATIONDESCRIPTION_MEMBER_ICEBERG_DESTINATION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DestinationDescription$IcebergDestinationDescription",
+        "com.amazonaws.firehose",
+        "DestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "IcebergDestinationDescription",
+    10,
+);
+static DESTINATIONDESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DestinationDescription",
+        "com.amazonaws.firehose",
+        "DestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESTINATIONDESCRIPTION_MEMBER_DESTINATION_ID,
+        &DESTINATIONDESCRIPTION_MEMBER_S3_DESTINATION_DESCRIPTION,
+        &DESTINATIONDESCRIPTION_MEMBER_EXTENDED_S3_DESTINATION_DESCRIPTION,
+        &DESTINATIONDESCRIPTION_MEMBER_REDSHIFT_DESTINATION_DESCRIPTION,
+        &DESTINATIONDESCRIPTION_MEMBER_ELASTICSEARCH_DESTINATION_DESCRIPTION,
+        &DESTINATIONDESCRIPTION_MEMBER_AMAZONOPENSEARCHSERVICE_DESTINATION_DESCRIPTION,
+        &DESTINATIONDESCRIPTION_MEMBER_SPLUNK_DESTINATION_DESCRIPTION,
+        &DESTINATIONDESCRIPTION_MEMBER_HTTP_ENDPOINT_DESTINATION_DESCRIPTION,
+        &DESTINATIONDESCRIPTION_MEMBER_SNOWFLAKE_DESTINATION_DESCRIPTION,
+        &DESTINATIONDESCRIPTION_MEMBER_AMAZON_OPEN_SEARCH_SERVERLESS_DESTINATION_DESCRIPTION,
+        &DESTINATIONDESCRIPTION_MEMBER_ICEBERG_DESTINATION_DESCRIPTION,
+    ],
+);
+impl DestinationDescription {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESTINATIONDESCRIPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DestinationDescription {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.destination_id;
+            ser.write_string(&DESTINATIONDESCRIPTION_MEMBER_DESTINATION_ID, val)?;
+        }
+        if let Some(ref val) = self.s3_destination_description {
+            ser.write_struct(&DESTINATIONDESCRIPTION_MEMBER_S3_DESTINATION_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.extended_s3_destination_description {
+            ser.write_struct(&DESTINATIONDESCRIPTION_MEMBER_EXTENDED_S3_DESTINATION_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.redshift_destination_description {
+            ser.write_struct(&DESTINATIONDESCRIPTION_MEMBER_REDSHIFT_DESTINATION_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.elasticsearch_destination_description {
+            ser.write_struct(&DESTINATIONDESCRIPTION_MEMBER_ELASTICSEARCH_DESTINATION_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.amazonopensearchservice_destination_description {
+            ser.write_struct(&DESTINATIONDESCRIPTION_MEMBER_AMAZONOPENSEARCHSERVICE_DESTINATION_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.splunk_destination_description {
+            ser.write_struct(&DESTINATIONDESCRIPTION_MEMBER_SPLUNK_DESTINATION_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.http_endpoint_destination_description {
+            ser.write_struct(&DESTINATIONDESCRIPTION_MEMBER_HTTP_ENDPOINT_DESTINATION_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.snowflake_destination_description {
+            ser.write_struct(&DESTINATIONDESCRIPTION_MEMBER_SNOWFLAKE_DESTINATION_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.amazon_open_search_serverless_destination_description {
+            ser.write_struct(&DESTINATIONDESCRIPTION_MEMBER_AMAZON_OPEN_SEARCH_SERVERLESS_DESTINATION_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.iceberg_destination_description {
+            ser.write_struct(&DESTINATIONDESCRIPTION_MEMBER_ICEBERG_DESTINATION_DESCRIPTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DestinationDescriptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESTINATIONDESCRIPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.destination_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_destination_description = Some(crate::types::S3DestinationDescription::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.extended_s3_destination_description = Some(crate::types::ExtendedS3DestinationDescription::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.redshift_destination_description = Some(crate::types::RedshiftDestinationDescription::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.elasticsearch_destination_description = Some(crate::types::ElasticsearchDestinationDescription::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.amazonopensearchservice_destination_description =
+                            Some(crate::types::AmazonopensearchserviceDestinationDescription::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.splunk_destination_description = Some(crate::types::SplunkDestinationDescription::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.http_endpoint_destination_description = Some(crate::types::HttpEndpointDestinationDescription::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.snowflake_destination_description = Some(crate::types::SnowflakeDestinationDescription::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.amazon_open_search_serverless_destination_description =
+                            Some(crate::types::AmazonOpenSearchServerlessDestinationDescription::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.iceberg_destination_description = Some(crate::types::IcebergDestinationDescription::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DestinationDescription {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.destination_id = builder.destination_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DestinationDescription {
     /// Creates a new builder-style object to manufacture [`DestinationDescription`](crate::types::DestinationDescription).
     pub fn builder() -> crate::types::builders::DestinationDescriptionBuilder {

@@ -115,6 +115,182 @@ impl WorkflowStep {
         self.decrypt_step_details.as_ref()
     }
 }
+static WORKFLOWSTEP_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#WorkflowStep$Type", "com.amazonaws.transfer", "WorkflowStep"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    0,
+);
+static WORKFLOWSTEP_MEMBER_COPY_STEP_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#WorkflowStep$CopyStepDetails",
+        "com.amazonaws.transfer",
+        "WorkflowStep",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CopyStepDetails",
+    1,
+);
+static WORKFLOWSTEP_MEMBER_CUSTOM_STEP_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#WorkflowStep$CustomStepDetails",
+        "com.amazonaws.transfer",
+        "WorkflowStep",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CustomStepDetails",
+    2,
+);
+static WORKFLOWSTEP_MEMBER_DELETE_STEP_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#WorkflowStep$DeleteStepDetails",
+        "com.amazonaws.transfer",
+        "WorkflowStep",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeleteStepDetails",
+    3,
+);
+static WORKFLOWSTEP_MEMBER_TAG_STEP_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#WorkflowStep$TagStepDetails",
+        "com.amazonaws.transfer",
+        "WorkflowStep",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TagStepDetails",
+    4,
+);
+static WORKFLOWSTEP_MEMBER_DECRYPT_STEP_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#WorkflowStep$DecryptStepDetails",
+        "com.amazonaws.transfer",
+        "WorkflowStep",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DecryptStepDetails",
+    5,
+);
+static WORKFLOWSTEP_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#WorkflowStep", "com.amazonaws.transfer", "WorkflowStep"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKFLOWSTEP_MEMBER_TYPE,
+        &WORKFLOWSTEP_MEMBER_COPY_STEP_DETAILS,
+        &WORKFLOWSTEP_MEMBER_CUSTOM_STEP_DETAILS,
+        &WORKFLOWSTEP_MEMBER_DELETE_STEP_DETAILS,
+        &WORKFLOWSTEP_MEMBER_TAG_STEP_DETAILS,
+        &WORKFLOWSTEP_MEMBER_DECRYPT_STEP_DETAILS,
+    ],
+);
+impl WorkflowStep {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKFLOWSTEP_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WorkflowStep {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&WORKFLOWSTEP_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.copy_step_details {
+            ser.write_struct(&WORKFLOWSTEP_MEMBER_COPY_STEP_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.custom_step_details {
+            ser.write_struct(&WORKFLOWSTEP_MEMBER_CUSTOM_STEP_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.delete_step_details {
+            ser.write_struct(&WORKFLOWSTEP_MEMBER_DELETE_STEP_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.tag_step_details {
+            ser.write_struct(&WORKFLOWSTEP_MEMBER_TAG_STEP_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.decrypt_step_details {
+            ser.write_struct(&WORKFLOWSTEP_MEMBER_DECRYPT_STEP_DETAILS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkflowStepBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKFLOWSTEP_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::WorkflowStepType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.copy_step_details = Some(crate::types::CopyStepDetails::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_step_details = Some(crate::types::CustomStepDetails::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delete_step_details = Some(crate::types::DeleteStepDetails::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_step_details = Some(crate::types::TagStepDetails::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.decrypt_step_details = Some(crate::types::DecryptStepDetails::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WorkflowStep {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl WorkflowStep {
     /// Creates a new builder-style object to manufacture [`WorkflowStep`](crate::types::WorkflowStep).
     pub fn builder() -> crate::types::builders::WorkflowStepBuilder {

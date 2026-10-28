@@ -34,6 +34,131 @@ impl ::std::fmt::Debug for ChangePasswordInput {
         formatter.finish()
     }
 }
+static CHANGEPASSWORDINPUT_MEMBER_PREVIOUS_PASSWORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#ChangePasswordInput$PreviousPassword",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "ChangePasswordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreviousPassword",
+    0,
+);
+static CHANGEPASSWORDINPUT_MEMBER_PROPOSED_PASSWORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#ChangePasswordInput$ProposedPassword",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "ChangePasswordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProposedPassword",
+    1,
+);
+static CHANGEPASSWORDINPUT_MEMBER_ACCESS_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#ChangePasswordInput$AccessToken",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "ChangePasswordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccessToken",
+    2,
+);
+static CHANGEPASSWORDINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#ChangePasswordInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "ChangePasswordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CHANGEPASSWORDINPUT_MEMBER_PREVIOUS_PASSWORD,
+        &CHANGEPASSWORDINPUT_MEMBER_PROPOSED_PASSWORD,
+        &CHANGEPASSWORDINPUT_MEMBER_ACCESS_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ChangePasswordRequest");
+impl ChangePasswordInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CHANGEPASSWORDINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ChangePasswordInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.previous_password {
+            ser.write_string(&CHANGEPASSWORDINPUT_MEMBER_PREVIOUS_PASSWORD, val)?;
+        }
+        if let Some(ref val) = self.proposed_password {
+            ser.write_string(&CHANGEPASSWORDINPUT_MEMBER_PROPOSED_PASSWORD, val)?;
+        }
+        if let Some(ref val) = self.access_token {
+            ser.write_string(&CHANGEPASSWORDINPUT_MEMBER_ACCESS_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::change_password::builders::ChangePasswordInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CHANGEPASSWORDINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.previous_password = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.proposed_password = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ChangePasswordInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.proposed_password = builder.proposed_password.or(Some(String::new()));
+        builder.access_token = builder.access_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ChangePasswordInput {
     /// Creates a new builder-style object to manufacture [`ChangePasswordInput`](crate::operation::change_password::ChangePasswordInput).
     pub fn builder() -> crate::operation::change_password::builders::ChangePasswordInputBuilder {

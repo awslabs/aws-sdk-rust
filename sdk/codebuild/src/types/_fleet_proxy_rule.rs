@@ -26,6 +26,131 @@ impl FleetProxyRule {
         self.entities.deref()
     }
 }
+static FLEETPROXYRULE_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#FleetProxyRule$type", "com.amazonaws.codebuild", "FleetProxyRule"),
+    ::aws_smithy_schema::ShapeType::String,
+    "type",
+    0,
+);
+static FLEETPROXYRULE_MEMBER_EFFECT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#FleetProxyRule$effect",
+        "com.amazonaws.codebuild",
+        "FleetProxyRule",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "effect",
+    1,
+);
+static FLEETPROXYRULE_MEMBER_ENTITIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#FleetProxyRuleEntities$member",
+        "com.amazonaws.codebuild",
+        "FleetProxyRuleEntities",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static FLEETPROXYRULE_MEMBER_ENTITIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#FleetProxyRule$entities",
+        "com.amazonaws.codebuild",
+        "FleetProxyRule",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "entities",
+    2,
+)
+.with_list_member(&FLEETPROXYRULE_MEMBER_ENTITIES_MEMBER);
+static FLEETPROXYRULE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#FleetProxyRule", "com.amazonaws.codebuild", "FleetProxyRule"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FLEETPROXYRULE_MEMBER_TYPE,
+        &FLEETPROXYRULE_MEMBER_EFFECT,
+        &FLEETPROXYRULE_MEMBER_ENTITIES,
+    ],
+);
+impl FleetProxyRule {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FLEETPROXYRULE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FleetProxyRule {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.r#type;
+            ser.write_string(&FLEETPROXYRULE_MEMBER_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.effect;
+            ser.write_string(&FLEETPROXYRULE_MEMBER_EFFECT, val.as_str())?;
+        }
+        {
+            let val = &self.entities;
+
+            ser.write_list(
+                &FLEETPROXYRULE_MEMBER_ENTITIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FleetProxyRuleBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FLEETPROXYRULE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.r#type = Some(crate::types::FleetProxyRuleType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    self.effect = Some(crate::types::FleetProxyRuleEffectType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    self.entities = Some(deser.read_string_list(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FleetProxyRule {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.entities = builder.entities.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl FleetProxyRule {
     /// Creates a new builder-style object to manufacture [`FleetProxyRule`](crate::types::FleetProxyRule).
     pub fn builder() -> crate::types::builders::FleetProxyRuleBuilder {

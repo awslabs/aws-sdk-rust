@@ -281,6 +281,267 @@ impl ProjectArtifacts {
         self.bucket_owner_access.as_ref()
     }
 }
+static PROJECTARTIFACTS_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectArtifacts$type",
+        "com.amazonaws.codebuild",
+        "ProjectArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "type",
+    0,
+);
+static PROJECTARTIFACTS_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectArtifacts$location",
+        "com.amazonaws.codebuild",
+        "ProjectArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "location",
+    1,
+);
+static PROJECTARTIFACTS_MEMBER_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectArtifacts$path",
+        "com.amazonaws.codebuild",
+        "ProjectArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "path",
+    2,
+);
+static PROJECTARTIFACTS_MEMBER_NAMESPACE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectArtifacts$namespaceType",
+        "com.amazonaws.codebuild",
+        "ProjectArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "namespaceType",
+    3,
+);
+static PROJECTARTIFACTS_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectArtifacts$name",
+        "com.amazonaws.codebuild",
+        "ProjectArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    4,
+);
+static PROJECTARTIFACTS_MEMBER_PACKAGING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectArtifacts$packaging",
+        "com.amazonaws.codebuild",
+        "ProjectArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "packaging",
+    5,
+);
+static PROJECTARTIFACTS_MEMBER_OVERRIDE_ARTIFACT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectArtifacts$overrideArtifactName",
+        "com.amazonaws.codebuild",
+        "ProjectArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "overrideArtifactName",
+    6,
+);
+static PROJECTARTIFACTS_MEMBER_ENCRYPTION_DISABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectArtifacts$encryptionDisabled",
+        "com.amazonaws.codebuild",
+        "ProjectArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "encryptionDisabled",
+    7,
+);
+static PROJECTARTIFACTS_MEMBER_ARTIFACT_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectArtifacts$artifactIdentifier",
+        "com.amazonaws.codebuild",
+        "ProjectArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "artifactIdentifier",
+    8,
+);
+static PROJECTARTIFACTS_MEMBER_BUCKET_OWNER_ACCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectArtifacts$bucketOwnerAccess",
+        "com.amazonaws.codebuild",
+        "ProjectArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "bucketOwnerAccess",
+    9,
+);
+static PROJECTARTIFACTS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#ProjectArtifacts", "com.amazonaws.codebuild", "ProjectArtifacts"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PROJECTARTIFACTS_MEMBER_TYPE,
+        &PROJECTARTIFACTS_MEMBER_LOCATION,
+        &PROJECTARTIFACTS_MEMBER_PATH,
+        &PROJECTARTIFACTS_MEMBER_NAMESPACE_TYPE,
+        &PROJECTARTIFACTS_MEMBER_NAME,
+        &PROJECTARTIFACTS_MEMBER_PACKAGING,
+        &PROJECTARTIFACTS_MEMBER_OVERRIDE_ARTIFACT_NAME,
+        &PROJECTARTIFACTS_MEMBER_ENCRYPTION_DISABLED,
+        &PROJECTARTIFACTS_MEMBER_ARTIFACT_IDENTIFIER,
+        &PROJECTARTIFACTS_MEMBER_BUCKET_OWNER_ACCESS,
+    ],
+);
+impl ProjectArtifacts {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PROJECTARTIFACTS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProjectArtifacts {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.r#type;
+            ser.write_string(&PROJECTARTIFACTS_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.location {
+            ser.write_string(&PROJECTARTIFACTS_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.path {
+            ser.write_string(&PROJECTARTIFACTS_MEMBER_PATH, val)?;
+        }
+        if let Some(ref val) = self.namespace_type {
+            ser.write_string(&PROJECTARTIFACTS_MEMBER_NAMESPACE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&PROJECTARTIFACTS_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.packaging {
+            ser.write_string(&PROJECTARTIFACTS_MEMBER_PACKAGING, val.as_str())?;
+        }
+        if let Some(ref val) = self.override_artifact_name {
+            ser.write_boolean(&PROJECTARTIFACTS_MEMBER_OVERRIDE_ARTIFACT_NAME, *val)?;
+        }
+        if let Some(ref val) = self.encryption_disabled {
+            ser.write_boolean(&PROJECTARTIFACTS_MEMBER_ENCRYPTION_DISABLED, *val)?;
+        }
+        if let Some(ref val) = self.artifact_identifier {
+            ser.write_string(&PROJECTARTIFACTS_MEMBER_ARTIFACT_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.bucket_owner_access {
+            ser.write_string(&PROJECTARTIFACTS_MEMBER_BUCKET_OWNER_ACCESS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProjectArtifactsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PROJECTARTIFACTS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.r#type = Some(crate::types::ArtifactsType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.namespace_type = Some(crate::types::ArtifactNamespace::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.packaging = Some(crate::types::ArtifactPackaging::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.override_artifact_name = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_disabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifact_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bucket_owner_access = Some(crate::types::BucketOwnerAccess::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProjectArtifacts {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ProjectArtifacts {
     /// Creates a new builder-style object to manufacture [`ProjectArtifacts`](crate::types::ProjectArtifacts).
     pub fn builder() -> crate::types::builders::ProjectArtifactsBuilder {

@@ -11,11 +11,11 @@ pub use crate::types::error::_validation_exception::ValidationException;
 
 pub use crate::types::error::_unauthorized_exception::UnauthorizedException;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 pub use crate::types::error::_concurrent_modification_exception::ConcurrentModificationException;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
-
-pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_decryption_failure::DecryptionFailure;
 

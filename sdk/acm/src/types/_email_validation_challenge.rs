@@ -21,6 +21,121 @@ impl EmailValidationChallenge {
         self.validation_domain.as_deref()
     }
 }
+static EMAILVALIDATIONCHALLENGE_MEMBER_VALIDATION_EMAILS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#ValidationEmailList$member", "com.amazonaws.acm", "ValidationEmailList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static EMAILVALIDATIONCHALLENGE_MEMBER_VALIDATION_EMAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#EmailValidationChallenge$ValidationEmails",
+        "com.amazonaws.acm",
+        "EmailValidationChallenge",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ValidationEmails",
+    0,
+)
+.with_list_member(&EMAILVALIDATIONCHALLENGE_MEMBER_VALIDATION_EMAILS_MEMBER);
+static EMAILVALIDATIONCHALLENGE_MEMBER_VALIDATION_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#EmailValidationChallenge$ValidationDomain",
+        "com.amazonaws.acm",
+        "EmailValidationChallenge",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ValidationDomain",
+    1,
+);
+static EMAILVALIDATIONCHALLENGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#EmailValidationChallenge",
+        "com.amazonaws.acm",
+        "EmailValidationChallenge",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EMAILVALIDATIONCHALLENGE_MEMBER_VALIDATION_EMAILS,
+        &EMAILVALIDATIONCHALLENGE_MEMBER_VALIDATION_DOMAIN,
+    ],
+);
+impl EmailValidationChallenge {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EMAILVALIDATIONCHALLENGE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EmailValidationChallenge {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.validation_emails {
+            ser.write_list(
+                &EMAILVALIDATIONCHALLENGE_MEMBER_VALIDATION_EMAILS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.validation_domain {
+            ser.write_string(&EMAILVALIDATIONCHALLENGE_MEMBER_VALIDATION_DOMAIN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EmailValidationChallengeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EMAILVALIDATIONCHALLENGE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_emails = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_domain = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EmailValidationChallenge {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EmailValidationChallenge {
     /// Creates a new builder-style object to manufacture [`EmailValidationChallenge`](crate::types::EmailValidationChallenge).
     pub fn builder() -> crate::types::builders::EmailValidationChallengeBuilder {

@@ -103,6 +103,133 @@ impl S3LogsConfig {
         self.bucket_owner_access.as_ref()
     }
 }
+static S3LOGSCONFIG_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#S3LogsConfig$status", "com.amazonaws.codebuild", "S3LogsConfig"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    0,
+);
+static S3LOGSCONFIG_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#S3LogsConfig$location", "com.amazonaws.codebuild", "S3LogsConfig"),
+    ::aws_smithy_schema::ShapeType::String,
+    "location",
+    1,
+);
+static S3LOGSCONFIG_MEMBER_ENCRYPTION_DISABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#S3LogsConfig$encryptionDisabled",
+        "com.amazonaws.codebuild",
+        "S3LogsConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "encryptionDisabled",
+    2,
+);
+static S3LOGSCONFIG_MEMBER_BUCKET_OWNER_ACCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#S3LogsConfig$bucketOwnerAccess",
+        "com.amazonaws.codebuild",
+        "S3LogsConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "bucketOwnerAccess",
+    3,
+);
+static S3LOGSCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#S3LogsConfig", "com.amazonaws.codebuild", "S3LogsConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &S3LOGSCONFIG_MEMBER_STATUS,
+        &S3LOGSCONFIG_MEMBER_LOCATION,
+        &S3LOGSCONFIG_MEMBER_ENCRYPTION_DISABLED,
+        &S3LOGSCONFIG_MEMBER_BUCKET_OWNER_ACCESS,
+    ],
+);
+impl S3LogsConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &S3LOGSCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for S3LogsConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.status;
+            ser.write_string(&S3LOGSCONFIG_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.location {
+            ser.write_string(&S3LOGSCONFIG_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.encryption_disabled {
+            ser.write_boolean(&S3LOGSCONFIG_MEMBER_ENCRYPTION_DISABLED, *val)?;
+        }
+        if let Some(ref val) = self.bucket_owner_access {
+            ser.write_string(&S3LOGSCONFIG_MEMBER_BUCKET_OWNER_ACCESS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::S3LogsConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&S3LOGSCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.status = Some(crate::types::LogsConfigStatusType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_disabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bucket_owner_access = Some(crate::types::BucketOwnerAccess::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl S3LogsConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl S3LogsConfig {
     /// Creates a new builder-style object to manufacture [`S3LogsConfig`](crate::types::S3LogsConfig).
     pub fn builder() -> crate::types::builders::S3LogsConfigBuilder {

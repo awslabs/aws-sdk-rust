@@ -38,6 +38,195 @@ impl CreateAcmeDomainValidationInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEACMEDOMAINVALIDATIONINPUT_MEMBER_IDEMPOTENCY_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeDomainValidationInput$IdempotencyToken",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeDomainValidationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdempotencyToken",
+    0,
+);
+static CREATEACMEDOMAINVALIDATIONINPUT_MEMBER_ACME_ENDPOINT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeDomainValidationInput$AcmeEndpointArn",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeDomainValidationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcmeEndpointArn",
+    1,
+);
+static CREATEACMEDOMAINVALIDATIONINPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeDomainValidationInput$DomainName",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeDomainValidationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    2,
+);
+static CREATEACMEDOMAINVALIDATIONINPUT_MEMBER_PREVALIDATION_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeDomainValidationInput$PrevalidationOptions",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeDomainValidationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "PrevalidationOptions",
+    3,
+);
+static CREATEACMEDOMAINVALIDATIONINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#TagList$member", "com.amazonaws.acm", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEACMEDOMAINVALIDATIONINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeDomainValidationInput$Tags",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeDomainValidationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    4,
+)
+.with_list_member(&CREATEACMEDOMAINVALIDATIONINPUT_MEMBER_TAGS_MEMBER);
+static CREATEACMEDOMAINVALIDATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeDomainValidationInput",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeDomainValidationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEACMEDOMAINVALIDATIONINPUT_MEMBER_IDEMPOTENCY_TOKEN,
+        &CREATEACMEDOMAINVALIDATIONINPUT_MEMBER_ACME_ENDPOINT_ARN,
+        &CREATEACMEDOMAINVALIDATIONINPUT_MEMBER_DOMAIN_NAME,
+        &CREATEACMEDOMAINVALIDATIONINPUT_MEMBER_PREVALIDATION_OPTIONS,
+        &CREATEACMEDOMAINVALIDATIONINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateAcmeDomainValidationRequest");
+impl CreateAcmeDomainValidationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEACMEDOMAINVALIDATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAcmeDomainValidationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.idempotency_token {
+            ser.write_string(&CREATEACMEDOMAINVALIDATIONINPUT_MEMBER_IDEMPOTENCY_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.acme_endpoint_arn {
+            ser.write_string(&CREATEACMEDOMAINVALIDATIONINPUT_MEMBER_ACME_ENDPOINT_ARN, val)?;
+        }
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&CREATEACMEDOMAINVALIDATIONINPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.prevalidation_options {
+            ser.write_struct(&CREATEACMEDOMAINVALIDATIONINPUT_MEMBER_PREVALIDATION_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEACMEDOMAINVALIDATIONINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_acme_domain_validation::builders::CreateAcmeDomainValidationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEACMEDOMAINVALIDATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idempotency_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.acme_endpoint_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.prevalidation_options = Some(crate::types::PrevalidationOptions::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateAcmeDomainValidationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.acme_endpoint_arn = builder.acme_endpoint_arn.or(Some(String::new()));
+        builder.domain_name = builder.domain_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateAcmeDomainValidationInput {
     /// Creates a new builder-style object to manufacture [`CreateAcmeDomainValidationInput`](crate::operation::create_acme_domain_validation::CreateAcmeDomainValidationInput).
     pub fn builder() -> crate::operation::create_acme_domain_validation::builders::CreateAcmeDomainValidationInputBuilder {

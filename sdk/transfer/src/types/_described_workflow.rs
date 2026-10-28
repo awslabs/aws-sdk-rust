@@ -64,6 +64,290 @@ impl DescribedWorkflow {
         self.structured_log_destinations.as_deref().unwrap_or_default()
     }
 }
+static DESCRIBEDWORKFLOW_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedWorkflow$Arn",
+        "com.amazonaws.transfer",
+        "DescribedWorkflow",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    0,
+);
+static DESCRIBEDWORKFLOW_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedWorkflow$Description",
+        "com.amazonaws.transfer",
+        "DescribedWorkflow",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static DESCRIBEDWORKFLOW_MEMBER_STEPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#WorkflowSteps$member", "com.amazonaws.transfer", "WorkflowSteps"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEDWORKFLOW_MEMBER_STEPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedWorkflow$Steps",
+        "com.amazonaws.transfer",
+        "DescribedWorkflow",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Steps",
+    2,
+)
+.with_list_member(&DESCRIBEDWORKFLOW_MEMBER_STEPS_MEMBER);
+static DESCRIBEDWORKFLOW_MEMBER_ON_EXCEPTION_STEPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#WorkflowSteps$member", "com.amazonaws.transfer", "WorkflowSteps"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEDWORKFLOW_MEMBER_ON_EXCEPTION_STEPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedWorkflow$OnExceptionSteps",
+        "com.amazonaws.transfer",
+        "DescribedWorkflow",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "OnExceptionSteps",
+    3,
+)
+.with_list_member(&DESCRIBEDWORKFLOW_MEMBER_ON_EXCEPTION_STEPS_MEMBER);
+static DESCRIBEDWORKFLOW_MEMBER_WORKFLOW_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedWorkflow$WorkflowId",
+        "com.amazonaws.transfer",
+        "DescribedWorkflow",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkflowId",
+    4,
+);
+static DESCRIBEDWORKFLOW_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#Tags$member", "com.amazonaws.transfer", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEDWORKFLOW_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedWorkflow$Tags",
+        "com.amazonaws.transfer",
+        "DescribedWorkflow",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&DESCRIBEDWORKFLOW_MEMBER_TAGS_MEMBER);
+static DESCRIBEDWORKFLOW_MEMBER_STRUCTURED_LOG_DESTINATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#StructuredLogDestinations$member",
+        "com.amazonaws.transfer",
+        "StructuredLogDestinations",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEDWORKFLOW_MEMBER_STRUCTURED_LOG_DESTINATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedWorkflow$StructuredLogDestinations",
+        "com.amazonaws.transfer",
+        "DescribedWorkflow",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "StructuredLogDestinations",
+    6,
+)
+.with_list_member(&DESCRIBEDWORKFLOW_MEMBER_STRUCTURED_LOG_DESTINATIONS_MEMBER);
+static DESCRIBEDWORKFLOW_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#DescribedWorkflow", "com.amazonaws.transfer", "DescribedWorkflow"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEDWORKFLOW_MEMBER_ARN,
+        &DESCRIBEDWORKFLOW_MEMBER_DESCRIPTION,
+        &DESCRIBEDWORKFLOW_MEMBER_STEPS,
+        &DESCRIBEDWORKFLOW_MEMBER_ON_EXCEPTION_STEPS,
+        &DESCRIBEDWORKFLOW_MEMBER_WORKFLOW_ID,
+        &DESCRIBEDWORKFLOW_MEMBER_TAGS,
+        &DESCRIBEDWORKFLOW_MEMBER_STRUCTURED_LOG_DESTINATIONS,
+    ],
+);
+impl DescribedWorkflow {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEDWORKFLOW_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribedWorkflow {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.arn;
+            ser.write_string(&DESCRIBEDWORKFLOW_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&DESCRIBEDWORKFLOW_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.steps {
+            ser.write_list(
+                &DESCRIBEDWORKFLOW_MEMBER_STEPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::WorkflowStep::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.on_exception_steps {
+            ser.write_list(
+                &DESCRIBEDWORKFLOW_MEMBER_ON_EXCEPTION_STEPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::WorkflowStep::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.workflow_id {
+            ser.write_string(&DESCRIBEDWORKFLOW_MEMBER_WORKFLOW_ID, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &DESCRIBEDWORKFLOW_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.structured_log_destinations {
+            ser.write_list(
+                &DESCRIBEDWORKFLOW_MEMBER_STRUCTURED_LOG_DESTINATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DescribedWorkflowBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEDWORKFLOW_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.steps = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::WorkflowStep::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.on_exception_steps = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::WorkflowStep::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.structured_log_destinations = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribedWorkflow {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.arn = builder.arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribedWorkflow {
     /// Creates a new builder-style object to manufacture [`DescribedWorkflow`](crate::types::DescribedWorkflow).
     pub fn builder() -> crate::types::builders::DescribedWorkflowBuilder {

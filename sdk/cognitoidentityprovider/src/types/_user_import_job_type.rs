@@ -129,6 +129,349 @@ impl UserImportJobType {
         self.password_hashing_algorithm.as_ref()
     }
 }
+static USERIMPORTJOBTYPE_MEMBER_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserImportJobType$JobName",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserImportJobType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobName",
+    0,
+);
+static USERIMPORTJOBTYPE_MEMBER_JOB_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserImportJobType$JobId",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserImportJobType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobId",
+    1,
+);
+static USERIMPORTJOBTYPE_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserImportJobType$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserImportJobType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    2,
+);
+static USERIMPORTJOBTYPE_MEMBER_PRE_SIGNED_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserImportJobType$PreSignedUrl",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserImportJobType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreSignedUrl",
+    3,
+);
+static USERIMPORTJOBTYPE_MEMBER_CREATION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserImportJobType$CreationDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserImportJobType",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationDate",
+    4,
+);
+static USERIMPORTJOBTYPE_MEMBER_START_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserImportJobType$StartDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserImportJobType",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartDate",
+    5,
+);
+static USERIMPORTJOBTYPE_MEMBER_COMPLETION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserImportJobType$CompletionDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserImportJobType",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CompletionDate",
+    6,
+);
+static USERIMPORTJOBTYPE_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserImportJobType$Status",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserImportJobType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    7,
+);
+static USERIMPORTJOBTYPE_MEMBER_CLOUD_WATCH_LOGS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserImportJobType$CloudWatchLogsRoleArn",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserImportJobType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CloudWatchLogsRoleArn",
+    8,
+);
+static USERIMPORTJOBTYPE_MEMBER_IMPORTED_USERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserImportJobType$ImportedUsers",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserImportJobType",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "ImportedUsers",
+    9,
+);
+static USERIMPORTJOBTYPE_MEMBER_SKIPPED_USERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserImportJobType$SkippedUsers",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserImportJobType",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "SkippedUsers",
+    10,
+);
+static USERIMPORTJOBTYPE_MEMBER_FAILED_USERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserImportJobType$FailedUsers",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserImportJobType",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "FailedUsers",
+    11,
+);
+static USERIMPORTJOBTYPE_MEMBER_COMPLETION_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserImportJobType$CompletionMessage",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserImportJobType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CompletionMessage",
+    12,
+);
+static USERIMPORTJOBTYPE_MEMBER_PASSWORD_HASHING_ALGORITHM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserImportJobType$PasswordHashingAlgorithm",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserImportJobType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PasswordHashingAlgorithm",
+    13,
+);
+static USERIMPORTJOBTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserImportJobType",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserImportJobType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &USERIMPORTJOBTYPE_MEMBER_JOB_NAME,
+        &USERIMPORTJOBTYPE_MEMBER_JOB_ID,
+        &USERIMPORTJOBTYPE_MEMBER_USER_POOL_ID,
+        &USERIMPORTJOBTYPE_MEMBER_PRE_SIGNED_URL,
+        &USERIMPORTJOBTYPE_MEMBER_CREATION_DATE,
+        &USERIMPORTJOBTYPE_MEMBER_START_DATE,
+        &USERIMPORTJOBTYPE_MEMBER_COMPLETION_DATE,
+        &USERIMPORTJOBTYPE_MEMBER_STATUS,
+        &USERIMPORTJOBTYPE_MEMBER_CLOUD_WATCH_LOGS_ROLE_ARN,
+        &USERIMPORTJOBTYPE_MEMBER_IMPORTED_USERS,
+        &USERIMPORTJOBTYPE_MEMBER_SKIPPED_USERS,
+        &USERIMPORTJOBTYPE_MEMBER_FAILED_USERS,
+        &USERIMPORTJOBTYPE_MEMBER_COMPLETION_MESSAGE,
+        &USERIMPORTJOBTYPE_MEMBER_PASSWORD_HASHING_ALGORITHM,
+    ],
+);
+impl UserImportJobType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &USERIMPORTJOBTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UserImportJobType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_name {
+            ser.write_string(&USERIMPORTJOBTYPE_MEMBER_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.job_id {
+            ser.write_string(&USERIMPORTJOBTYPE_MEMBER_JOB_ID, val)?;
+        }
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&USERIMPORTJOBTYPE_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.pre_signed_url {
+            ser.write_string(&USERIMPORTJOBTYPE_MEMBER_PRE_SIGNED_URL, val)?;
+        }
+        if let Some(ref val) = self.creation_date {
+            ser.write_timestamp(&USERIMPORTJOBTYPE_MEMBER_CREATION_DATE, val)?;
+        }
+        if let Some(ref val) = self.start_date {
+            ser.write_timestamp(&USERIMPORTJOBTYPE_MEMBER_START_DATE, val)?;
+        }
+        if let Some(ref val) = self.completion_date {
+            ser.write_timestamp(&USERIMPORTJOBTYPE_MEMBER_COMPLETION_DATE, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&USERIMPORTJOBTYPE_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.cloud_watch_logs_role_arn {
+            ser.write_string(&USERIMPORTJOBTYPE_MEMBER_CLOUD_WATCH_LOGS_ROLE_ARN, val)?;
+        }
+        {
+            let val = &self.imported_users;
+            ser.write_long(&USERIMPORTJOBTYPE_MEMBER_IMPORTED_USERS, *val)?;
+        }
+        {
+            let val = &self.skipped_users;
+            ser.write_long(&USERIMPORTJOBTYPE_MEMBER_SKIPPED_USERS, *val)?;
+        }
+        {
+            let val = &self.failed_users;
+            ser.write_long(&USERIMPORTJOBTYPE_MEMBER_FAILED_USERS, *val)?;
+        }
+        if let Some(ref val) = self.completion_message {
+            ser.write_string(&USERIMPORTJOBTYPE_MEMBER_COMPLETION_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.password_hashing_algorithm {
+            ser.write_string(&USERIMPORTJOBTYPE_MEMBER_PASSWORD_HASHING_ALGORITHM, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UserImportJobTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&USERIMPORTJOBTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pre_signed_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.completion_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::UserImportJobStatusType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_watch_logs_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    self.imported_users = Some(deser.read_long(member)?);
+                }
+                Some(10) => {
+                    self.skipped_users = Some(deser.read_long(member)?);
+                }
+                Some(11) => {
+                    self.failed_users = Some(deser.read_long(member)?);
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.completion_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.password_hashing_algorithm = Some(crate::types::PasswordHashingAlgorithmType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UserImportJobType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl UserImportJobType {
     /// Creates a new builder-style object to manufacture [`UserImportJobType`](crate::types::UserImportJobType).
     pub fn builder() -> crate::types::builders::UserImportJobTypeBuilder {

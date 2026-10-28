@@ -1011,6 +1011,8 @@ pub use crate::types::_purchase::PurchaseBuilder;
 
 pub use crate::types::_image_ancestry_entry::ImageAncestryEntryBuilder;
 
+pub use crate::types::_image_finding::ImageFindingBuilder;
+
 pub use crate::types::_v_cpu_count_range_request::VCpuCountRangeRequestBuilder;
 
 pub use crate::types::_memory_mib_request::MemoryMiBRequestBuilder;
@@ -1409,6 +1411,8 @@ pub use crate::types::_host_properties::HostPropertiesBuilder;
 
 pub use crate::types::_host_cpu_options::HostCpuOptionsBuilder;
 
+pub use crate::types::_scan_results::ScanResultsBuilder;
+
 pub use crate::types::_instance_type_specification::InstanceTypeSpecificationBuilder;
 
 pub use crate::types::_ebs_instance_block_device::EbsInstanceBlockDeviceBuilder;
@@ -1470,6 +1474,8 @@ pub use crate::types::_initialization_status_details::InitializationStatusDetail
 pub use crate::types::_deprecation_time_condition::DeprecationTimeConditionBuilder;
 
 pub use crate::types::_creation_date_condition::CreationDateConditionBuilder;
+
+pub use crate::types::_scan_result_condition::ScanResultConditionBuilder;
 
 pub use crate::types::_dimension_condition::DimensionConditionBuilder;
 
@@ -1566,6 +1572,8 @@ pub use crate::types::_monitoring::MonitoringBuilder;
 pub use crate::types::_deprecation_time_condition_request::DeprecationTimeConditionRequestBuilder;
 
 pub use crate::types::_creation_date_condition_request::CreationDateConditionRequestBuilder;
+
+pub use crate::types::_scan_result_condition_request::ScanResultConditionRequestBuilder;
 
 pub use crate::types::_spot_capacity_rebalance::SpotCapacityRebalanceBuilder;
 

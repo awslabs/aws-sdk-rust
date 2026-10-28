@@ -50,6 +50,215 @@ impl CreateWebAppInput {
         self.endpoint_details.as_ref()
     }
 }
+static CREATEWEBAPPINPUT_MEMBER_IDENTITY_PROVIDER_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateWebAppInput$IdentityProviderDetails",
+        "com.amazonaws.transfer.synthetic",
+        "CreateWebAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "IdentityProviderDetails",
+    0,
+);
+static CREATEWEBAPPINPUT_MEMBER_ACCESS_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateWebAppInput$AccessEndpoint",
+        "com.amazonaws.transfer.synthetic",
+        "CreateWebAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccessEndpoint",
+    1,
+);
+static CREATEWEBAPPINPUT_MEMBER_WEB_APP_UNITS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateWebAppInput$WebAppUnits",
+        "com.amazonaws.transfer.synthetic",
+        "CreateWebAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "WebAppUnits",
+    2,
+);
+static CREATEWEBAPPINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#Tags$member", "com.amazonaws.transfer", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEWEBAPPINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateWebAppInput$Tags",
+        "com.amazonaws.transfer.synthetic",
+        "CreateWebAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    3,
+)
+.with_list_member(&CREATEWEBAPPINPUT_MEMBER_TAGS_MEMBER);
+static CREATEWEBAPPINPUT_MEMBER_WEB_APP_ENDPOINT_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateWebAppInput$WebAppEndpointPolicy",
+        "com.amazonaws.transfer.synthetic",
+        "CreateWebAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WebAppEndpointPolicy",
+    4,
+);
+static CREATEWEBAPPINPUT_MEMBER_ENDPOINT_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateWebAppInput$EndpointDetails",
+        "com.amazonaws.transfer.synthetic",
+        "CreateWebAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "EndpointDetails",
+    5,
+);
+static CREATEWEBAPPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateWebAppInput",
+        "com.amazonaws.transfer.synthetic",
+        "CreateWebAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEWEBAPPINPUT_MEMBER_IDENTITY_PROVIDER_DETAILS,
+        &CREATEWEBAPPINPUT_MEMBER_ACCESS_ENDPOINT,
+        &CREATEWEBAPPINPUT_MEMBER_WEB_APP_UNITS,
+        &CREATEWEBAPPINPUT_MEMBER_TAGS,
+        &CREATEWEBAPPINPUT_MEMBER_WEB_APP_ENDPOINT_POLICY,
+        &CREATEWEBAPPINPUT_MEMBER_ENDPOINT_DETAILS,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new("POST", "/createWebApp", None))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateWebAppRequest");
+impl CreateWebAppInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEWEBAPPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateWebAppInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.identity_provider_details {
+            ser.write_struct(&CREATEWEBAPPINPUT_MEMBER_IDENTITY_PROVIDER_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.access_endpoint {
+            ser.write_string(&CREATEWEBAPPINPUT_MEMBER_ACCESS_ENDPOINT, val)?;
+        }
+        if let Some(ref val) = self.web_app_units {
+            ser.write_struct(&CREATEWEBAPPINPUT_MEMBER_WEB_APP_UNITS, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEWEBAPPINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.web_app_endpoint_policy {
+            ser.write_string(&CREATEWEBAPPINPUT_MEMBER_WEB_APP_ENDPOINT_POLICY, val.as_str())?;
+        }
+        if let Some(ref val) = self.endpoint_details {
+            ser.write_struct(&CREATEWEBAPPINPUT_MEMBER_ENDPOINT_DETAILS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_web_app::builders::CreateWebAppInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEWEBAPPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity_provider_details = Some(crate::types::WebAppIdentityProviderDetails::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_endpoint = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.web_app_units = Some(crate::types::WebAppUnits::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.web_app_endpoint_policy = Some(crate::types::WebAppEndpointPolicy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_details = Some(crate::types::WebAppEndpointDetails::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateWebAppInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateWebAppInput {
     /// Creates a new builder-style object to manufacture [`CreateWebAppInput`](crate::operation::create_web_app::CreateWebAppInput).
     pub fn builder() -> crate::operation::create_web_app::builders::CreateWebAppInputBuilder {

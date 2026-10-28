@@ -19,6 +19,111 @@ impl CreateSvmActiveDirectoryConfiguration {
         self.self_managed_active_directory_configuration.as_ref()
     }
 }
+static CREATESVMACTIVEDIRECTORYCONFIGURATION_MEMBER_NET_BIOS_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateSvmActiveDirectoryConfiguration$NetBiosName",
+        "com.amazonaws.fsx",
+        "CreateSvmActiveDirectoryConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NetBiosName",
+    0,
+);
+static CREATESVMACTIVEDIRECTORYCONFIGURATION_MEMBER_SELF_MANAGED_ACTIVE_DIRECTORY_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateSvmActiveDirectoryConfiguration$SelfManagedActiveDirectoryConfiguration",
+            "com.amazonaws.fsx",
+            "CreateSvmActiveDirectoryConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "SelfManagedActiveDirectoryConfiguration",
+        1,
+    );
+static CREATESVMACTIVEDIRECTORYCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateSvmActiveDirectoryConfiguration",
+        "com.amazonaws.fsx",
+        "CreateSvmActiveDirectoryConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATESVMACTIVEDIRECTORYCONFIGURATION_MEMBER_NET_BIOS_NAME,
+        &CREATESVMACTIVEDIRECTORYCONFIGURATION_MEMBER_SELF_MANAGED_ACTIVE_DIRECTORY_CONFIGURATION,
+    ],
+);
+impl CreateSvmActiveDirectoryConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATESVMACTIVEDIRECTORYCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateSvmActiveDirectoryConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.net_bios_name {
+            ser.write_string(&CREATESVMACTIVEDIRECTORYCONFIGURATION_MEMBER_NET_BIOS_NAME, val)?;
+        }
+        if let Some(ref val) = self.self_managed_active_directory_configuration {
+            ser.write_struct(
+                &CREATESVMACTIVEDIRECTORYCONFIGURATION_MEMBER_SELF_MANAGED_ACTIVE_DIRECTORY_CONFIGURATION,
+                val,
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CreateSvmActiveDirectoryConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATESVMACTIVEDIRECTORYCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.net_bios_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.self_managed_active_directory_configuration =
+                            Some(crate::types::SelfManagedActiveDirectoryConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateSvmActiveDirectoryConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CreateSvmActiveDirectoryConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateSvmActiveDirectoryConfiguration`](crate::types::CreateSvmActiveDirectoryConfiguration).
     pub fn builder() -> crate::types::builders::CreateSvmActiveDirectoryConfigurationBuilder {

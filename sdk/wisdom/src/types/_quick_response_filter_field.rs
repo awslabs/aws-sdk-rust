@@ -61,6 +61,162 @@ impl QuickResponseFilterField {
         self.include_no_existence
     }
 }
+static QUICKRESPONSEFILTERFIELD_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseFilterField$name",
+        "com.amazonaws.wisdom",
+        "QuickResponseFilterField",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static QUICKRESPONSEFILTERFIELD_MEMBER_VALUES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseFilterValueList$member",
+        "com.amazonaws.wisdom",
+        "QuickResponseFilterValueList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static QUICKRESPONSEFILTERFIELD_MEMBER_VALUES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseFilterField$values",
+        "com.amazonaws.wisdom",
+        "QuickResponseFilterField",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "values",
+    1,
+)
+.with_list_member(&QUICKRESPONSEFILTERFIELD_MEMBER_VALUES_MEMBER);
+static QUICKRESPONSEFILTERFIELD_MEMBER_OPERATOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseFilterField$operator",
+        "com.amazonaws.wisdom",
+        "QuickResponseFilterField",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "operator",
+    2,
+);
+static QUICKRESPONSEFILTERFIELD_MEMBER_INCLUDE_NO_EXISTENCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseFilterField$includeNoExistence",
+        "com.amazonaws.wisdom",
+        "QuickResponseFilterField",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "includeNoExistence",
+    3,
+);
+static QUICKRESPONSEFILTERFIELD_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseFilterField",
+        "com.amazonaws.wisdom",
+        "QuickResponseFilterField",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &QUICKRESPONSEFILTERFIELD_MEMBER_NAME,
+        &QUICKRESPONSEFILTERFIELD_MEMBER_VALUES,
+        &QUICKRESPONSEFILTERFIELD_MEMBER_OPERATOR,
+        &QUICKRESPONSEFILTERFIELD_MEMBER_INCLUDE_NO_EXISTENCE,
+    ],
+);
+impl QuickResponseFilterField {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &QUICKRESPONSEFILTERFIELD_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for QuickResponseFilterField {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&QUICKRESPONSEFILTERFIELD_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.values {
+            ser.write_list(
+                &QUICKRESPONSEFILTERFIELD_MEMBER_VALUES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.operator;
+            ser.write_string(&QUICKRESPONSEFILTERFIELD_MEMBER_OPERATOR, val.as_str())?;
+        }
+        if let Some(ref val) = self.include_no_existence {
+            ser.write_boolean(&QUICKRESPONSEFILTERFIELD_MEMBER_INCLUDE_NO_EXISTENCE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::QuickResponseFilterFieldBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&QUICKRESPONSEFILTERFIELD_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.values = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.operator = Some(crate::types::QuickResponseFilterOperator::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.include_no_existence = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl QuickResponseFilterField {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl QuickResponseFilterField {
     /// Creates a new builder-style object to manufacture [`QuickResponseFilterField`](crate::types::QuickResponseFilterField).
     pub fn builder() -> crate::types::builders::QuickResponseFilterFieldBuilder {

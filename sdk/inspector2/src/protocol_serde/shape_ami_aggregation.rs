@@ -21,5 +21,14 @@ pub fn ser_ami_aggregation(
     if let Some(var_6) = &input.sort_by {
         object.key("sortBy").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.scan_sources {
+        let mut array_8 = object.key("scanSources").start_array();
+        for item_9 in var_7 {
+            {
+                array_8.value().string(item_9.as_str());
+            }
+        }
+        array_8.finish();
+    }
     Ok(())
 }

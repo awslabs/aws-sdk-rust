@@ -29,6 +29,107 @@ impl GatewayConnectorFilters {
         self.access_types.as_deref().unwrap_or_default()
     }
 }
+static GATEWAYCONNECTORFILTERS_MEMBER_ACCESS_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#AccessTypeList$member", "com.amazonaws.ecs", "AccessTypeList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static GATEWAYCONNECTORFILTERS_MEMBER_ACCESS_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayConnectorFilters$accessTypes",
+        "com.amazonaws.ecs",
+        "GatewayConnectorFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "accessTypes",
+    0,
+)
+.with_list_member(&GATEWAYCONNECTORFILTERS_MEMBER_ACCESS_TYPES_MEMBER);
+static GATEWAYCONNECTORFILTERS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayConnectorFilters",
+        "com.amazonaws.ecs",
+        "GatewayConnectorFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GATEWAYCONNECTORFILTERS_MEMBER_ACCESS_TYPES],
+);
+impl GatewayConnectorFilters {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GATEWAYCONNECTORFILTERS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GatewayConnectorFilters {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.access_types {
+            ser.write_list(
+                &GATEWAYCONNECTORFILTERS_MEMBER_ACCESS_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::GatewayConnectorFiltersBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GATEWAYCONNECTORFILTERS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AccessType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GatewayConnectorFilters {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl GatewayConnectorFilters {
     /// Creates a new builder-style object to manufacture [`GatewayConnectorFilters`](crate::types::GatewayConnectorFilters).
     pub fn builder() -> crate::types::builders::GatewayConnectorFiltersBuilder {

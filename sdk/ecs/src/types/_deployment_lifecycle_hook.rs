@@ -138,6 +138,218 @@ impl DeploymentLifecycleHook {
         self.timeout_configuration.as_ref()
     }
 }
+static DEPLOYMENTLIFECYCLEHOOK_MEMBER_TARGET_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentLifecycleHook$targetType",
+        "com.amazonaws.ecs",
+        "DeploymentLifecycleHook",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "targetType",
+    0,
+);
+static DEPLOYMENTLIFECYCLEHOOK_MEMBER_HOOK_TARGET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentLifecycleHook$hookTargetArn",
+        "com.amazonaws.ecs",
+        "DeploymentLifecycleHook",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "hookTargetArn",
+    1,
+);
+static DEPLOYMENTLIFECYCLEHOOK_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentLifecycleHook$roleArn",
+        "com.amazonaws.ecs",
+        "DeploymentLifecycleHook",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "roleArn",
+    2,
+);
+static DEPLOYMENTLIFECYCLEHOOK_MEMBER_LIFECYCLE_STAGES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentLifecycleHookStageList$member",
+        "com.amazonaws.ecs",
+        "DeploymentLifecycleHookStageList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DEPLOYMENTLIFECYCLEHOOK_MEMBER_LIFECYCLE_STAGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentLifecycleHook$lifecycleStages",
+        "com.amazonaws.ecs",
+        "DeploymentLifecycleHook",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "lifecycleStages",
+    3,
+)
+.with_list_member(&DEPLOYMENTLIFECYCLEHOOK_MEMBER_LIFECYCLE_STAGES_MEMBER);
+static DEPLOYMENTLIFECYCLEHOOK_MEMBER_HOOK_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentLifecycleHook$hookDetails",
+        "com.amazonaws.ecs",
+        "DeploymentLifecycleHook",
+    ),
+    ::aws_smithy_schema::ShapeType::Document,
+    "hookDetails",
+    4,
+);
+static DEPLOYMENTLIFECYCLEHOOK_MEMBER_TIMEOUT_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentLifecycleHook$timeoutConfiguration",
+        "com.amazonaws.ecs",
+        "DeploymentLifecycleHook",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "timeoutConfiguration",
+    5,
+);
+static DEPLOYMENTLIFECYCLEHOOK_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentLifecycleHook",
+        "com.amazonaws.ecs",
+        "DeploymentLifecycleHook",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEPLOYMENTLIFECYCLEHOOK_MEMBER_TARGET_TYPE,
+        &DEPLOYMENTLIFECYCLEHOOK_MEMBER_HOOK_TARGET_ARN,
+        &DEPLOYMENTLIFECYCLEHOOK_MEMBER_ROLE_ARN,
+        &DEPLOYMENTLIFECYCLEHOOK_MEMBER_LIFECYCLE_STAGES,
+        &DEPLOYMENTLIFECYCLEHOOK_MEMBER_HOOK_DETAILS,
+        &DEPLOYMENTLIFECYCLEHOOK_MEMBER_TIMEOUT_CONFIGURATION,
+    ],
+);
+impl DeploymentLifecycleHook {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEPLOYMENTLIFECYCLEHOOK_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeploymentLifecycleHook {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.target_type {
+            ser.write_string(&DEPLOYMENTLIFECYCLEHOOK_MEMBER_TARGET_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.hook_target_arn {
+            ser.write_string(&DEPLOYMENTLIFECYCLEHOOK_MEMBER_HOOK_TARGET_ARN, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&DEPLOYMENTLIFECYCLEHOOK_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.lifecycle_stages {
+            ser.write_list(
+                &DEPLOYMENTLIFECYCLEHOOK_MEMBER_LIFECYCLE_STAGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.hook_details {
+            ser.write_document(&DEPLOYMENTLIFECYCLEHOOK_MEMBER_HOOK_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.timeout_configuration {
+            ser.write_struct(&DEPLOYMENTLIFECYCLEHOOK_MEMBER_TIMEOUT_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeploymentLifecycleHookBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEPLOYMENTLIFECYCLEHOOK_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_type = Some(crate::types::DeploymentLifecycleHookTargetType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hook_target_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle_stages = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DeploymentLifecycleHookStage::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hook_details = Some(deser.read_document(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.timeout_configuration = Some(crate::types::DeploymentLifecycleHookTimeoutConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeploymentLifecycleHook {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeploymentLifecycleHook {
     /// Creates a new builder-style object to manufacture [`DeploymentLifecycleHook`](crate::types::DeploymentLifecycleHook).
     pub fn builder() -> crate::types::builders::DeploymentLifecycleHookBuilder {

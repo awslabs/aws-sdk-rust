@@ -38,6 +38,131 @@ impl ContinueServiceDeploymentInput {
         self.action.as_ref()
     }
 }
+static CONTINUESERVICEDEPLOYMENTINPUT_MEMBER_SERVICE_DEPLOYMENT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ContinueServiceDeploymentInput$serviceDeploymentArn",
+        "com.amazonaws.ecs.synthetic",
+        "ContinueServiceDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceDeploymentArn",
+    0,
+);
+static CONTINUESERVICEDEPLOYMENTINPUT_MEMBER_HOOK_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ContinueServiceDeploymentInput$hookId",
+        "com.amazonaws.ecs.synthetic",
+        "ContinueServiceDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "hookId",
+    1,
+);
+static CONTINUESERVICEDEPLOYMENTINPUT_MEMBER_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ContinueServiceDeploymentInput$action",
+        "com.amazonaws.ecs.synthetic",
+        "ContinueServiceDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "action",
+    2,
+);
+static CONTINUESERVICEDEPLOYMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ContinueServiceDeploymentInput",
+        "com.amazonaws.ecs.synthetic",
+        "ContinueServiceDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTINUESERVICEDEPLOYMENTINPUT_MEMBER_SERVICE_DEPLOYMENT_ARN,
+        &CONTINUESERVICEDEPLOYMENTINPUT_MEMBER_HOOK_ID,
+        &CONTINUESERVICEDEPLOYMENTINPUT_MEMBER_ACTION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ContinueServiceDeploymentRequest");
+impl ContinueServiceDeploymentInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTINUESERVICEDEPLOYMENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContinueServiceDeploymentInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.service_deployment_arn {
+            ser.write_string(&CONTINUESERVICEDEPLOYMENTINPUT_MEMBER_SERVICE_DEPLOYMENT_ARN, val)?;
+        }
+        if let Some(ref val) = self.hook_id {
+            ser.write_string(&CONTINUESERVICEDEPLOYMENTINPUT_MEMBER_HOOK_ID, val)?;
+        }
+        if let Some(ref val) = self.action {
+            ser.write_string(&CONTINUESERVICEDEPLOYMENTINPUT_MEMBER_ACTION, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::continue_service_deployment::builders::ContinueServiceDeploymentInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTINUESERVICEDEPLOYMENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_deployment_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hook_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action = Some(crate::types::DeploymentLifecycleHookAction::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContinueServiceDeploymentInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.service_deployment_arn = builder.service_deployment_arn.or(Some(String::new()));
+        builder.hook_id = builder.hook_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ContinueServiceDeploymentInput {
     /// Creates a new builder-style object to manufacture [`ContinueServiceDeploymentInput`](crate::operation::continue_service_deployment::ContinueServiceDeploymentInput).
     pub fn builder() -> crate::operation::continue_service_deployment::builders::ContinueServiceDeploymentInputBuilder {

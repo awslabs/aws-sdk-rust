@@ -40,6 +40,158 @@ impl ModifySamlPropertiesInput {
         self.properties_to_delete.as_deref().unwrap_or_default()
     }
 }
+static MODIFYSAMLPROPERTIESINPUT_MEMBER_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifySamlPropertiesInput$ResourceId",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifySamlPropertiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceId",
+    0,
+);
+static MODIFYSAMLPROPERTIESINPUT_MEMBER_SAML_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifySamlPropertiesInput$SamlProperties",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifySamlPropertiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SamlProperties",
+    1,
+);
+static MODIFYSAMLPROPERTIESINPUT_MEMBER_PROPERTIES_TO_DELETE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#DeletableSamlPropertiesList$member",
+        "com.amazonaws.workspaces",
+        "DeletableSamlPropertiesList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static MODIFYSAMLPROPERTIESINPUT_MEMBER_PROPERTIES_TO_DELETE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifySamlPropertiesInput$PropertiesToDelete",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifySamlPropertiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "PropertiesToDelete",
+    2,
+)
+.with_list_member(&MODIFYSAMLPROPERTIESINPUT_MEMBER_PROPERTIES_TO_DELETE_MEMBER);
+static MODIFYSAMLPROPERTIESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifySamlPropertiesInput",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifySamlPropertiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODIFYSAMLPROPERTIESINPUT_MEMBER_RESOURCE_ID,
+        &MODIFYSAMLPROPERTIESINPUT_MEMBER_SAML_PROPERTIES,
+        &MODIFYSAMLPROPERTIESINPUT_MEMBER_PROPERTIES_TO_DELETE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ModifySamlPropertiesRequest");
+impl ModifySamlPropertiesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODIFYSAMLPROPERTIESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModifySamlPropertiesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_id {
+            ser.write_string(&MODIFYSAMLPROPERTIESINPUT_MEMBER_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.saml_properties {
+            ser.write_struct(&MODIFYSAMLPROPERTIESINPUT_MEMBER_SAML_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.properties_to_delete {
+            ser.write_list(
+                &MODIFYSAMLPROPERTIESINPUT_MEMBER_PROPERTIES_TO_DELETE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::modify_saml_properties::builders::ModifySamlPropertiesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODIFYSAMLPROPERTIESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.saml_properties = Some(crate::types::SamlProperties::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.properties_to_delete = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DeletableSamlProperty::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModifySamlPropertiesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.resource_id = builder.resource_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ModifySamlPropertiesInput {
     /// Creates a new builder-style object to manufacture [`ModifySamlPropertiesInput`](crate::operation::modify_saml_properties::ModifySamlPropertiesInput).
     pub fn builder() -> crate::operation::modify_saml_properties::builders::ModifySamlPropertiesInputBuilder {

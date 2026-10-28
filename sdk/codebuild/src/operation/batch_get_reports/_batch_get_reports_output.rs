@@ -23,6 +23,141 @@ impl BatchGetReportsOutput {
         self.reports_not_found.as_deref().unwrap_or_default()
     }
 }
+static BATCHGETREPORTSOUTPUT_MEMBER_REPORTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Reports$member", "com.amazonaws.codebuild", "Reports"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BATCHGETREPORTSOUTPUT_MEMBER_REPORTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#BatchGetReportsOutput$reports",
+        "com.amazonaws.codebuild.synthetic",
+        "BatchGetReportsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "reports",
+    0,
+)
+.with_list_member(&BATCHGETREPORTSOUTPUT_MEMBER_REPORTS_MEMBER);
+static BATCHGETREPORTSOUTPUT_MEMBER_REPORTS_NOT_FOUND_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#ReportArns$member", "com.amazonaws.codebuild", "ReportArns"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static BATCHGETREPORTSOUTPUT_MEMBER_REPORTS_NOT_FOUND: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#BatchGetReportsOutput$reportsNotFound",
+        "com.amazonaws.codebuild.synthetic",
+        "BatchGetReportsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "reportsNotFound",
+    1,
+)
+.with_list_member(&BATCHGETREPORTSOUTPUT_MEMBER_REPORTS_NOT_FOUND_MEMBER);
+static BATCHGETREPORTSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#BatchGetReportsOutput",
+        "com.amazonaws.codebuild.synthetic",
+        "BatchGetReportsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&BATCHGETREPORTSOUTPUT_MEMBER_REPORTS, &BATCHGETREPORTSOUTPUT_MEMBER_REPORTS_NOT_FOUND],
+)
+.with_original_name("BatchGetReportsOutput");
+impl BatchGetReportsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHGETREPORTSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchGetReportsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.reports {
+            ser.write_list(
+                &BATCHGETREPORTSOUTPUT_MEMBER_REPORTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Report::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.reports_not_found {
+            ser.write_list(
+                &BATCHGETREPORTSOUTPUT_MEMBER_REPORTS_NOT_FOUND,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_get_reports::builders::BatchGetReportsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHGETREPORTSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reports = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Report::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reports_not_found = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchGetReportsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for BatchGetReportsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

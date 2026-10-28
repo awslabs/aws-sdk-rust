@@ -37,6 +37,173 @@ impl SplitShardInput {
         self.stream_id.as_deref()
     }
 }
+static SPLITSHARDINPUT_MEMBER_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#SplitShardInput$StreamName",
+        "com.amazonaws.kinesis.synthetic",
+        "SplitShardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamName",
+    0,
+);
+static SPLITSHARDINPUT_MEMBER_SHARD_TO_SPLIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#SplitShardInput$ShardToSplit",
+        "com.amazonaws.kinesis.synthetic",
+        "SplitShardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ShardToSplit",
+    1,
+);
+static SPLITSHARDINPUT_MEMBER_NEW_STARTING_HASH_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#SplitShardInput$NewStartingHashKey",
+        "com.amazonaws.kinesis.synthetic",
+        "SplitShardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NewStartingHashKey",
+    2,
+);
+static SPLITSHARDINPUT_MEMBER_STREAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#SplitShardInput$StreamARN",
+        "com.amazonaws.kinesis.synthetic",
+        "SplitShardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamARN",
+    3,
+);
+static SPLITSHARDINPUT_MEMBER_STREAM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#SplitShardInput$StreamId",
+        "com.amazonaws.kinesis.synthetic",
+        "SplitShardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamId",
+    4,
+);
+static SPLITSHARDINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#SplitShardInput",
+        "com.amazonaws.kinesis.synthetic",
+        "SplitShardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SPLITSHARDINPUT_MEMBER_STREAM_NAME,
+        &SPLITSHARDINPUT_MEMBER_SHARD_TO_SPLIT,
+        &SPLITSHARDINPUT_MEMBER_NEW_STARTING_HASH_KEY,
+        &SPLITSHARDINPUT_MEMBER_STREAM_ARN,
+        &SPLITSHARDINPUT_MEMBER_STREAM_ID,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("SplitShardInput");
+impl SplitShardInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SPLITSHARDINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SplitShardInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stream_name {
+            ser.write_string(&SPLITSHARDINPUT_MEMBER_STREAM_NAME, val)?;
+        }
+        if let Some(ref val) = self.shard_to_split {
+            ser.write_string(&SPLITSHARDINPUT_MEMBER_SHARD_TO_SPLIT, val)?;
+        }
+        if let Some(ref val) = self.new_starting_hash_key {
+            ser.write_string(&SPLITSHARDINPUT_MEMBER_NEW_STARTING_HASH_KEY, val)?;
+        }
+        if let Some(ref val) = self.stream_arn {
+            ser.write_string(&SPLITSHARDINPUT_MEMBER_STREAM_ARN, val)?;
+        }
+        if let Some(ref val) = self.stream_id {
+            ser.write_string(&SPLITSHARDINPUT_MEMBER_STREAM_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::split_shard::builders::SplitShardInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SPLITSHARDINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.shard_to_split = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.new_starting_hash_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SplitShardInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.shard_to_split = builder.shard_to_split.or(Some(String::new()));
+        builder.new_starting_hash_key = builder.new_starting_hash_key.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SplitShardInput {
     /// Creates a new builder-style object to manufacture [`SplitShardInput`](crate::operation::split_shard::SplitShardInput).
     pub fn builder() -> crate::operation::split_shard::builders::SplitShardInputBuilder {

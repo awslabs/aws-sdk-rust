@@ -153,6 +153,300 @@ impl DeploymentConfiguration {
         self.early_success_criteria.as_ref()
     }
 }
+static DEPLOYMENTCONFIGURATION_MEMBER_DEPLOYMENT_CIRCUIT_BREAKER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentConfiguration$deploymentCircuitBreaker",
+        "com.amazonaws.ecs",
+        "DeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "deploymentCircuitBreaker",
+    0,
+);
+static DEPLOYMENTCONFIGURATION_MEMBER_MAXIMUM_PERCENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentConfiguration$maximumPercent",
+        "com.amazonaws.ecs",
+        "DeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maximumPercent",
+    1,
+);
+static DEPLOYMENTCONFIGURATION_MEMBER_MINIMUM_HEALTHY_PERCENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentConfiguration$minimumHealthyPercent",
+        "com.amazonaws.ecs",
+        "DeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "minimumHealthyPercent",
+    2,
+);
+static DEPLOYMENTCONFIGURATION_MEMBER_ALARMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentConfiguration$alarms",
+        "com.amazonaws.ecs",
+        "DeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "alarms",
+    3,
+);
+static DEPLOYMENTCONFIGURATION_MEMBER_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentConfiguration$strategy",
+        "com.amazonaws.ecs",
+        "DeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "strategy",
+    4,
+);
+static DEPLOYMENTCONFIGURATION_MEMBER_BAKE_TIME_IN_MINUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentConfiguration$bakeTimeInMinutes",
+        "com.amazonaws.ecs",
+        "DeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "bakeTimeInMinutes",
+    5,
+);
+static DEPLOYMENTCONFIGURATION_MEMBER_LIFECYCLE_HOOKS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentLifecycleHookList$member",
+        "com.amazonaws.ecs",
+        "DeploymentLifecycleHookList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DEPLOYMENTCONFIGURATION_MEMBER_LIFECYCLE_HOOKS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentConfiguration$lifecycleHooks",
+        "com.amazonaws.ecs",
+        "DeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "lifecycleHooks",
+    6,
+)
+.with_list_member(&DEPLOYMENTCONFIGURATION_MEMBER_LIFECYCLE_HOOKS_MEMBER);
+static DEPLOYMENTCONFIGURATION_MEMBER_LINEAR_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentConfiguration$linearConfiguration",
+        "com.amazonaws.ecs",
+        "DeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "linearConfiguration",
+    7,
+);
+static DEPLOYMENTCONFIGURATION_MEMBER_CANARY_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentConfiguration$canaryConfiguration",
+        "com.amazonaws.ecs",
+        "DeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "canaryConfiguration",
+    8,
+);
+static DEPLOYMENTCONFIGURATION_MEMBER_EARLY_SUCCESS_CRITERIA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentConfiguration$earlySuccessCriteria",
+        "com.amazonaws.ecs",
+        "DeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "earlySuccessCriteria",
+    9,
+);
+static DEPLOYMENTCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentConfiguration",
+        "com.amazonaws.ecs",
+        "DeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEPLOYMENTCONFIGURATION_MEMBER_DEPLOYMENT_CIRCUIT_BREAKER,
+        &DEPLOYMENTCONFIGURATION_MEMBER_MAXIMUM_PERCENT,
+        &DEPLOYMENTCONFIGURATION_MEMBER_MINIMUM_HEALTHY_PERCENT,
+        &DEPLOYMENTCONFIGURATION_MEMBER_ALARMS,
+        &DEPLOYMENTCONFIGURATION_MEMBER_STRATEGY,
+        &DEPLOYMENTCONFIGURATION_MEMBER_BAKE_TIME_IN_MINUTES,
+        &DEPLOYMENTCONFIGURATION_MEMBER_LIFECYCLE_HOOKS,
+        &DEPLOYMENTCONFIGURATION_MEMBER_LINEAR_CONFIGURATION,
+        &DEPLOYMENTCONFIGURATION_MEMBER_CANARY_CONFIGURATION,
+        &DEPLOYMENTCONFIGURATION_MEMBER_EARLY_SUCCESS_CRITERIA,
+    ],
+);
+impl DeploymentConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEPLOYMENTCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeploymentConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.deployment_circuit_breaker {
+            ser.write_struct(&DEPLOYMENTCONFIGURATION_MEMBER_DEPLOYMENT_CIRCUIT_BREAKER, val)?;
+        }
+        if let Some(ref val) = self.maximum_percent {
+            ser.write_integer(&DEPLOYMENTCONFIGURATION_MEMBER_MAXIMUM_PERCENT, *val)?;
+        }
+        if let Some(ref val) = self.minimum_healthy_percent {
+            ser.write_integer(&DEPLOYMENTCONFIGURATION_MEMBER_MINIMUM_HEALTHY_PERCENT, *val)?;
+        }
+        if let Some(ref val) = self.alarms {
+            ser.write_struct(&DEPLOYMENTCONFIGURATION_MEMBER_ALARMS, val)?;
+        }
+        if let Some(ref val) = self.strategy {
+            ser.write_string(&DEPLOYMENTCONFIGURATION_MEMBER_STRATEGY, val.as_str())?;
+        }
+        if let Some(ref val) = self.bake_time_in_minutes {
+            ser.write_integer(&DEPLOYMENTCONFIGURATION_MEMBER_BAKE_TIME_IN_MINUTES, *val)?;
+        }
+        if let Some(ref val) = self.lifecycle_hooks {
+            ser.write_list(
+                &DEPLOYMENTCONFIGURATION_MEMBER_LIFECYCLE_HOOKS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DeploymentLifecycleHook::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.linear_configuration {
+            ser.write_struct(&DEPLOYMENTCONFIGURATION_MEMBER_LINEAR_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.canary_configuration {
+            ser.write_struct(&DEPLOYMENTCONFIGURATION_MEMBER_CANARY_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.early_success_criteria {
+            ser.write_struct(&DEPLOYMENTCONFIGURATION_MEMBER_EARLY_SUCCESS_CRITERIA, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeploymentConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEPLOYMENTCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_circuit_breaker = Some(crate::types::DeploymentCircuitBreaker::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.maximum_percent = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.minimum_healthy_percent = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.alarms = Some(crate::types::DeploymentAlarms::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.strategy = Some(crate::types::DeploymentStrategy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bake_time_in_minutes = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle_hooks = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DeploymentLifecycleHook::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.linear_configuration = Some(crate::types::LinearConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.canary_configuration = Some(crate::types::CanaryConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.early_success_criteria = Some(crate::types::DeploymentEarlySuccessCriteria::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeploymentConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeploymentConfiguration {
     /// Creates a new builder-style object to manufacture [`DeploymentConfiguration`](crate::types::DeploymentConfiguration).
     pub fn builder() -> crate::types::builders::DeploymentConfigurationBuilder {

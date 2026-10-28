@@ -37,6 +37,172 @@ impl GetRecordsInput {
         self.dry_run
     }
 }
+static GETRECORDSINPUT_MEMBER_SHARD_ITERATOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#GetRecordsInput$ShardIterator",
+        "com.amazonaws.kinesis.synthetic",
+        "GetRecordsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ShardIterator",
+    0,
+);
+static GETRECORDSINPUT_MEMBER_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#GetRecordsInput$Limit",
+        "com.amazonaws.kinesis.synthetic",
+        "GetRecordsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Limit",
+    1,
+);
+static GETRECORDSINPUT_MEMBER_STREAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#GetRecordsInput$StreamARN",
+        "com.amazonaws.kinesis.synthetic",
+        "GetRecordsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamARN",
+    2,
+);
+static GETRECORDSINPUT_MEMBER_STREAM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#GetRecordsInput$StreamId",
+        "com.amazonaws.kinesis.synthetic",
+        "GetRecordsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamId",
+    3,
+);
+static GETRECORDSINPUT_MEMBER_DRY_RUN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#GetRecordsInput$DryRun",
+        "com.amazonaws.kinesis.synthetic",
+        "GetRecordsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "DryRun",
+    4,
+);
+static GETRECORDSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#GetRecordsInput",
+        "com.amazonaws.kinesis.synthetic",
+        "GetRecordsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETRECORDSINPUT_MEMBER_SHARD_ITERATOR,
+        &GETRECORDSINPUT_MEMBER_LIMIT,
+        &GETRECORDSINPUT_MEMBER_STREAM_ARN,
+        &GETRECORDSINPUT_MEMBER_STREAM_ID,
+        &GETRECORDSINPUT_MEMBER_DRY_RUN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetRecordsInput");
+impl GetRecordsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETRECORDSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetRecordsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.shard_iterator {
+            ser.write_string(&GETRECORDSINPUT_MEMBER_SHARD_ITERATOR, val)?;
+        }
+        if let Some(ref val) = self.limit {
+            ser.write_integer(&GETRECORDSINPUT_MEMBER_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.stream_arn {
+            ser.write_string(&GETRECORDSINPUT_MEMBER_STREAM_ARN, val)?;
+        }
+        if let Some(ref val) = self.stream_id {
+            ser.write_string(&GETRECORDSINPUT_MEMBER_STREAM_ID, val)?;
+        }
+        if let Some(ref val) = self.dry_run {
+            ser.write_boolean(&GETRECORDSINPUT_MEMBER_DRY_RUN, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_records::builders::GetRecordsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETRECORDSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.shard_iterator = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dry_run = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetRecordsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.shard_iterator = builder.shard_iterator.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetRecordsInput {
     /// Creates a new builder-style object to manufacture [`GetRecordsInput`](crate::operation::get_records::GetRecordsInput).
     pub fn builder() -> crate::operation::get_records::builders::GetRecordsInputBuilder {

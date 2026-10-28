@@ -35,6 +35,192 @@ impl GetRecordsOutput {
         self.child_shards.as_deref().unwrap_or_default()
     }
 }
+static GETRECORDSOUTPUT_MEMBER_RECORDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#RecordList$member", "com.amazonaws.kinesis", "RecordList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETRECORDSOUTPUT_MEMBER_RECORDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#GetRecordsOutput$Records",
+        "com.amazonaws.kinesis.synthetic",
+        "GetRecordsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Records",
+    0,
+)
+.with_list_member(&GETRECORDSOUTPUT_MEMBER_RECORDS_MEMBER);
+static GETRECORDSOUTPUT_MEMBER_NEXT_SHARD_ITERATOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#GetRecordsOutput$NextShardIterator",
+        "com.amazonaws.kinesis.synthetic",
+        "GetRecordsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextShardIterator",
+    1,
+);
+static GETRECORDSOUTPUT_MEMBER_MILLIS_BEHIND_LATEST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#GetRecordsOutput$MillisBehindLatest",
+        "com.amazonaws.kinesis.synthetic",
+        "GetRecordsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "MillisBehindLatest",
+    2,
+);
+static GETRECORDSOUTPUT_MEMBER_CHILD_SHARDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#ChildShardList$member", "com.amazonaws.kinesis", "ChildShardList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETRECORDSOUTPUT_MEMBER_CHILD_SHARDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#GetRecordsOutput$ChildShards",
+        "com.amazonaws.kinesis.synthetic",
+        "GetRecordsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ChildShards",
+    3,
+)
+.with_list_member(&GETRECORDSOUTPUT_MEMBER_CHILD_SHARDS_MEMBER);
+static GETRECORDSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#GetRecordsOutput",
+        "com.amazonaws.kinesis.synthetic",
+        "GetRecordsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETRECORDSOUTPUT_MEMBER_RECORDS,
+        &GETRECORDSOUTPUT_MEMBER_NEXT_SHARD_ITERATOR,
+        &GETRECORDSOUTPUT_MEMBER_MILLIS_BEHIND_LATEST,
+        &GETRECORDSOUTPUT_MEMBER_CHILD_SHARDS,
+    ],
+)
+.with_original_name("GetRecordsOutput");
+impl GetRecordsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETRECORDSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetRecordsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.records;
+
+            ser.write_list(
+                &GETRECORDSOUTPUT_MEMBER_RECORDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Record::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_shard_iterator {
+            ser.write_string(&GETRECORDSOUTPUT_MEMBER_NEXT_SHARD_ITERATOR, val)?;
+        }
+        if let Some(ref val) = self.millis_behind_latest {
+            ser.write_long(&GETRECORDSOUTPUT_MEMBER_MILLIS_BEHIND_LATEST, *val)?;
+        }
+        if let Some(ref val) = self.child_shards {
+            ser.write_list(
+                &GETRECORDSOUTPUT_MEMBER_CHILD_SHARDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ChildShard::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_records::builders::GetRecordsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETRECORDSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.records = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::Record::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_shard_iterator = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.millis_behind_latest = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.child_shards = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ChildShard::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetRecordsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.records = builder.records.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for GetRecordsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -61,6 +61,249 @@ impl AcmeDomainValidation {
         self.updated_at.as_ref()
     }
 }
+static ACMEDOMAINVALIDATION_MEMBER_ACME_DOMAIN_VALIDATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeDomainValidation$AcmeDomainValidationArn",
+        "com.amazonaws.acm",
+        "AcmeDomainValidation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcmeDomainValidationArn",
+    0,
+);
+static ACMEDOMAINVALIDATION_MEMBER_ACME_ENDPOINT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeDomainValidation$AcmeEndpointArn",
+        "com.amazonaws.acm",
+        "AcmeDomainValidation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcmeEndpointArn",
+    1,
+);
+static ACMEDOMAINVALIDATION_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeDomainValidation$DomainName",
+        "com.amazonaws.acm",
+        "AcmeDomainValidation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    2,
+);
+static ACMEDOMAINVALIDATION_MEMBER_PREVALIDATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeDomainValidation$PrevalidationType",
+        "com.amazonaws.acm",
+        "AcmeDomainValidation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PrevalidationType",
+    3,
+);
+static ACMEDOMAINVALIDATION_MEMBER_PREVALIDATION_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeDomainValidation$PrevalidationDetails",
+        "com.amazonaws.acm",
+        "AcmeDomainValidation",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "PrevalidationDetails",
+    4,
+);
+static ACMEDOMAINVALIDATION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeDomainValidation$Status",
+        "com.amazonaws.acm",
+        "AcmeDomainValidation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    5,
+);
+static ACMEDOMAINVALIDATION_MEMBER_FAILURE_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeDomainValidation$FailureDetails",
+        "com.amazonaws.acm",
+        "AcmeDomainValidation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FailureDetails",
+    6,
+);
+static ACMEDOMAINVALIDATION_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeDomainValidation$CreatedAt",
+        "com.amazonaws.acm",
+        "AcmeDomainValidation",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAt",
+    7,
+);
+static ACMEDOMAINVALIDATION_MEMBER_UPDATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeDomainValidation$UpdatedAt",
+        "com.amazonaws.acm",
+        "AcmeDomainValidation",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "UpdatedAt",
+    8,
+);
+static ACMEDOMAINVALIDATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmeDomainValidation", "com.amazonaws.acm", "AcmeDomainValidation"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACMEDOMAINVALIDATION_MEMBER_ACME_DOMAIN_VALIDATION_ARN,
+        &ACMEDOMAINVALIDATION_MEMBER_ACME_ENDPOINT_ARN,
+        &ACMEDOMAINVALIDATION_MEMBER_DOMAIN_NAME,
+        &ACMEDOMAINVALIDATION_MEMBER_PREVALIDATION_TYPE,
+        &ACMEDOMAINVALIDATION_MEMBER_PREVALIDATION_DETAILS,
+        &ACMEDOMAINVALIDATION_MEMBER_STATUS,
+        &ACMEDOMAINVALIDATION_MEMBER_FAILURE_DETAILS,
+        &ACMEDOMAINVALIDATION_MEMBER_CREATED_AT,
+        &ACMEDOMAINVALIDATION_MEMBER_UPDATED_AT,
+    ],
+);
+impl AcmeDomainValidation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACMEDOMAINVALIDATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AcmeDomainValidation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.acme_domain_validation_arn {
+            ser.write_string(&ACMEDOMAINVALIDATION_MEMBER_ACME_DOMAIN_VALIDATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.acme_endpoint_arn {
+            ser.write_string(&ACMEDOMAINVALIDATION_MEMBER_ACME_ENDPOINT_ARN, val)?;
+        }
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&ACMEDOMAINVALIDATION_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.prevalidation_type {
+            ser.write_string(&ACMEDOMAINVALIDATION_MEMBER_PREVALIDATION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.prevalidation_details {
+            ser.write_struct(&ACMEDOMAINVALIDATION_MEMBER_PREVALIDATION_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&ACMEDOMAINVALIDATION_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_details {
+            ser.write_struct(&ACMEDOMAINVALIDATION_MEMBER_FAILURE_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&ACMEDOMAINVALIDATION_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.updated_at {
+            ser.write_timestamp(&ACMEDOMAINVALIDATION_MEMBER_UPDATED_AT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AcmeDomainValidationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACMEDOMAINVALIDATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.acme_domain_validation_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.acme_endpoint_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.prevalidation_type = Some(crate::types::PrevalidationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.prevalidation_details = Some(crate::types::PrevalidationDetails::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::AcmeDomainValidationStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_details = Some(crate::types::FailureDetails::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.updated_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AcmeDomainValidation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AcmeDomainValidation {
     /// Creates a new builder-style object to manufacture [`AcmeDomainValidation`](crate::types::AcmeDomainValidation).
     pub fn builder() -> crate::types::builders::AcmeDomainValidationBuilder {

@@ -146,6 +146,334 @@ impl CreateIdentityProviderInput {
         self.acr_mapping.as_ref()
     }
 }
+static CREATEIDENTITYPROVIDERINPUT_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateIdentityProviderInput$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateIdentityProviderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    0,
+);
+static CREATEIDENTITYPROVIDERINPUT_MEMBER_PROVIDER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateIdentityProviderInput$ProviderName",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateIdentityProviderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProviderName",
+    1,
+);
+static CREATEIDENTITYPROVIDERINPUT_MEMBER_PROVIDER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateIdentityProviderInput$ProviderType",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateIdentityProviderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProviderType",
+    2,
+);
+static CREATEIDENTITYPROVIDERINPUT_MEMBER_PROVIDER_DETAILS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ProviderDetailsType$key",
+        "com.amazonaws.cognitoidentityprovider",
+        "ProviderDetailsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEIDENTITYPROVIDERINPUT_MEMBER_PROVIDER_DETAILS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ProviderDetailsType$value",
+        "com.amazonaws.cognitoidentityprovider",
+        "ProviderDetailsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATEIDENTITYPROVIDERINPUT_MEMBER_PROVIDER_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateIdentityProviderInput$ProviderDetails",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateIdentityProviderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "ProviderDetails",
+    3,
+)
+.with_map_members(
+    &CREATEIDENTITYPROVIDERINPUT_MEMBER_PROVIDER_DETAILS_KEY,
+    &CREATEIDENTITYPROVIDERINPUT_MEMBER_PROVIDER_DETAILS_VALUE,
+);
+static CREATEIDENTITYPROVIDERINPUT_MEMBER_ATTRIBUTE_MAPPING_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AttributeMappingType$key",
+        "com.amazonaws.cognitoidentityprovider",
+        "AttributeMappingType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEIDENTITYPROVIDERINPUT_MEMBER_ATTRIBUTE_MAPPING_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AttributeMappingType$value",
+        "com.amazonaws.cognitoidentityprovider",
+        "AttributeMappingType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATEIDENTITYPROVIDERINPUT_MEMBER_ATTRIBUTE_MAPPING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateIdentityProviderInput$AttributeMapping",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateIdentityProviderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "AttributeMapping",
+    4,
+)
+.with_map_members(
+    &CREATEIDENTITYPROVIDERINPUT_MEMBER_ATTRIBUTE_MAPPING_KEY,
+    &CREATEIDENTITYPROVIDERINPUT_MEMBER_ATTRIBUTE_MAPPING_VALUE,
+);
+static CREATEIDENTITYPROVIDERINPUT_MEMBER_IDP_IDENTIFIERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#IdpIdentifiersListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "IdpIdentifiersListType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEIDENTITYPROVIDERINPUT_MEMBER_IDP_IDENTIFIERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateIdentityProviderInput$IdpIdentifiers",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateIdentityProviderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "IdpIdentifiers",
+    5,
+)
+.with_list_member(&CREATEIDENTITYPROVIDERINPUT_MEMBER_IDP_IDENTIFIERS_MEMBER);
+static CREATEIDENTITYPROVIDERINPUT_MEMBER_ACR_MAPPING_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AcrMappingType$key",
+        "com.amazonaws.cognitoidentityprovider",
+        "AcrMappingType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEIDENTITYPROVIDERINPUT_MEMBER_ACR_MAPPING_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AcrMappingType$value",
+        "com.amazonaws.cognitoidentityprovider",
+        "AcrMappingType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATEIDENTITYPROVIDERINPUT_MEMBER_ACR_MAPPING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateIdentityProviderInput$AcrMapping",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateIdentityProviderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "AcrMapping",
+    6,
+)
+.with_map_members(
+    &CREATEIDENTITYPROVIDERINPUT_MEMBER_ACR_MAPPING_KEY,
+    &CREATEIDENTITYPROVIDERINPUT_MEMBER_ACR_MAPPING_VALUE,
+);
+static CREATEIDENTITYPROVIDERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateIdentityProviderInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateIdentityProviderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEIDENTITYPROVIDERINPUT_MEMBER_USER_POOL_ID,
+        &CREATEIDENTITYPROVIDERINPUT_MEMBER_PROVIDER_NAME,
+        &CREATEIDENTITYPROVIDERINPUT_MEMBER_PROVIDER_TYPE,
+        &CREATEIDENTITYPROVIDERINPUT_MEMBER_PROVIDER_DETAILS,
+        &CREATEIDENTITYPROVIDERINPUT_MEMBER_ATTRIBUTE_MAPPING,
+        &CREATEIDENTITYPROVIDERINPUT_MEMBER_IDP_IDENTIFIERS,
+        &CREATEIDENTITYPROVIDERINPUT_MEMBER_ACR_MAPPING,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateIdentityProviderRequest");
+impl CreateIdentityProviderInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEIDENTITYPROVIDERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateIdentityProviderInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&CREATEIDENTITYPROVIDERINPUT_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.provider_name {
+            ser.write_string(&CREATEIDENTITYPROVIDERINPUT_MEMBER_PROVIDER_NAME, val)?;
+        }
+        if let Some(ref val) = self.provider_type {
+            ser.write_string(&CREATEIDENTITYPROVIDERINPUT_MEMBER_PROVIDER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.provider_details {
+            ser.write_map(
+                &CREATEIDENTITYPROVIDERINPUT_MEMBER_PROVIDER_DETAILS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.attribute_mapping {
+            ser.write_map(
+                &CREATEIDENTITYPROVIDERINPUT_MEMBER_ATTRIBUTE_MAPPING,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.idp_identifiers {
+            ser.write_list(
+                &CREATEIDENTITYPROVIDERINPUT_MEMBER_IDP_IDENTIFIERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.acr_mapping {
+            ser.write_map(
+                &CREATEIDENTITYPROVIDERINPUT_MEMBER_ACR_MAPPING,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_identity_provider::builders::CreateIdentityProviderInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEIDENTITYPROVIDERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.provider_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.provider_type = Some(crate::types::IdentityProviderTypeType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.provider_details = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attribute_mapping = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idp_identifiers = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.acr_mapping = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateIdentityProviderInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_pool_id = builder.user_pool_id.or(Some(String::new()));
+        builder.provider_name = builder.provider_name.or(Some(String::new()));
+        builder.provider_details = builder.provider_details.or(Some(::std::collections::HashMap::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateIdentityProviderInput {
     /// Creates a new builder-style object to manufacture [`CreateIdentityProviderInput`](crate::operation::create_identity_provider::CreateIdentityProviderInput).
     pub fn builder() -> crate::operation::create_identity_provider::builders::CreateIdentityProviderInputBuilder {

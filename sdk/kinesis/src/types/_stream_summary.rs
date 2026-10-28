@@ -39,6 +39,150 @@ impl StreamSummary {
         self.stream_creation_timestamp.as_ref()
     }
 }
+static STREAMSUMMARY_MEMBER_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#StreamSummary$StreamName", "com.amazonaws.kinesis", "StreamSummary"),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamName",
+    0,
+);
+static STREAMSUMMARY_MEMBER_STREAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#StreamSummary$StreamARN", "com.amazonaws.kinesis", "StreamSummary"),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamARN",
+    1,
+);
+static STREAMSUMMARY_MEMBER_STREAM_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#StreamSummary$StreamStatus",
+        "com.amazonaws.kinesis",
+        "StreamSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamStatus",
+    2,
+);
+static STREAMSUMMARY_MEMBER_STREAM_MODE_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#StreamSummary$StreamModeDetails",
+        "com.amazonaws.kinesis",
+        "StreamSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StreamModeDetails",
+    3,
+);
+static STREAMSUMMARY_MEMBER_STREAM_CREATION_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#StreamSummary$StreamCreationTimestamp",
+        "com.amazonaws.kinesis",
+        "StreamSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StreamCreationTimestamp",
+    4,
+);
+static STREAMSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#StreamSummary", "com.amazonaws.kinesis", "StreamSummary"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STREAMSUMMARY_MEMBER_STREAM_NAME,
+        &STREAMSUMMARY_MEMBER_STREAM_ARN,
+        &STREAMSUMMARY_MEMBER_STREAM_STATUS,
+        &STREAMSUMMARY_MEMBER_STREAM_MODE_DETAILS,
+        &STREAMSUMMARY_MEMBER_STREAM_CREATION_TIMESTAMP,
+    ],
+);
+impl StreamSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STREAMSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StreamSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.stream_name;
+            ser.write_string(&STREAMSUMMARY_MEMBER_STREAM_NAME, val)?;
+        }
+        {
+            let val = &self.stream_arn;
+            ser.write_string(&STREAMSUMMARY_MEMBER_STREAM_ARN, val)?;
+        }
+        {
+            let val = &self.stream_status;
+            ser.write_string(&STREAMSUMMARY_MEMBER_STREAM_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.stream_mode_details {
+            ser.write_struct(&STREAMSUMMARY_MEMBER_STREAM_MODE_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.stream_creation_timestamp {
+            ser.write_timestamp(&STREAMSUMMARY_MEMBER_STREAM_CREATION_TIMESTAMP, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::StreamSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STREAMSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.stream_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.stream_arn = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.stream_status = Some(crate::types::StreamStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_mode_details = Some(crate::types::StreamModeDetails::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_creation_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StreamSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.stream_name = builder.stream_name.or(Some(String::new()));
+        builder.stream_arn = builder.stream_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StreamSummary {
     /// Creates a new builder-style object to manufacture [`StreamSummary`](crate::types::StreamSummary).
     pub fn builder() -> crate::types::builders::StreamSummaryBuilder {

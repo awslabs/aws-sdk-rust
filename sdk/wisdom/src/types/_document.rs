@@ -25,6 +25,107 @@ impl Document {
         self.excerpt.as_ref()
     }
 }
+static DOCUMENT_MEMBER_CONTENT_REFERENCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#Document$contentReference", "com.amazonaws.wisdom", "Document"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "contentReference",
+    0,
+);
+static DOCUMENT_MEMBER_TITLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#Document$title", "com.amazonaws.wisdom", "Document"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "title",
+    1,
+);
+static DOCUMENT_MEMBER_EXCERPT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#Document$excerpt", "com.amazonaws.wisdom", "Document"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "excerpt",
+    2,
+);
+static DOCUMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#Document", "com.amazonaws.wisdom", "Document"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DOCUMENT_MEMBER_CONTENT_REFERENCE, &DOCUMENT_MEMBER_TITLE, &DOCUMENT_MEMBER_EXCERPT],
+);
+impl Document {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOCUMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Document {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.content_reference {
+            ser.write_struct(&DOCUMENT_MEMBER_CONTENT_REFERENCE, val)?;
+        }
+        if let Some(ref val) = self.title {
+            ser.write_struct(&DOCUMENT_MEMBER_TITLE, val)?;
+        }
+        if let Some(ref val) = self.excerpt {
+            ser.write_struct(&DOCUMENT_MEMBER_EXCERPT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DocumentBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOCUMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content_reference = Some(crate::types::ContentReference::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.title = Some(crate::types::DocumentText::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.excerpt = Some(crate::types::DocumentText::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Document {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Document {
     /// Creates a new builder-style object to manufacture [`Document`](crate::types::Document).
     pub fn builder() -> crate::types::builders::DocumentBuilder {

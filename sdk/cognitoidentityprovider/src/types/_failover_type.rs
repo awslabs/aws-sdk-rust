@@ -21,6 +21,102 @@ impl FailoverType {
         self.primary_route53_health_check_id.deref()
     }
 }
+static FAILOVERTYPE_MEMBER_SECONDARY_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#FailoverType$SecondaryRegion",
+        "com.amazonaws.cognitoidentityprovider",
+        "FailoverType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecondaryRegion",
+    0,
+);
+static FAILOVERTYPE_MEMBER_PRIMARY_ROUTE53_HEALTH_CHECK_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#FailoverType$PrimaryRoute53HealthCheckId",
+        "com.amazonaws.cognitoidentityprovider",
+        "FailoverType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PrimaryRoute53HealthCheckId",
+    1,
+);
+static FAILOVERTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#FailoverType",
+        "com.amazonaws.cognitoidentityprovider",
+        "FailoverType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FAILOVERTYPE_MEMBER_SECONDARY_REGION,
+        &FAILOVERTYPE_MEMBER_PRIMARY_ROUTE53_HEALTH_CHECK_ID,
+    ],
+);
+impl FailoverType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FAILOVERTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FailoverType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.secondary_region;
+            ser.write_string(&FAILOVERTYPE_MEMBER_SECONDARY_REGION, val)?;
+        }
+        {
+            let val = &self.primary_route53_health_check_id;
+            ser.write_string(&FAILOVERTYPE_MEMBER_PRIMARY_ROUTE53_HEALTH_CHECK_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FailoverTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FAILOVERTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.secondary_region = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.primary_route53_health_check_id = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FailoverType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.secondary_region = builder.secondary_region.or(Some(String::new()));
+        builder.primary_route53_health_check_id = builder.primary_route53_health_check_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl FailoverType {
     /// Creates a new builder-style object to manufacture [`FailoverType`](crate::types::FailoverType).
     pub fn builder() -> crate::types::builders::FailoverTypeBuilder {

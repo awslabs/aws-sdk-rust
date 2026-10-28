@@ -13,6 +13,86 @@ impl CancelDataRepositoryTaskInput {
         self.task_id.as_deref()
     }
 }
+static CANCELDATAREPOSITORYTASKINPUT_MEMBER_TASK_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CancelDataRepositoryTaskInput$TaskId",
+        "com.amazonaws.fsx.synthetic",
+        "CancelDataRepositoryTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TaskId",
+    0,
+);
+static CANCELDATAREPOSITORYTASKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CancelDataRepositoryTaskInput",
+        "com.amazonaws.fsx.synthetic",
+        "CancelDataRepositoryTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CANCELDATAREPOSITORYTASKINPUT_MEMBER_TASK_ID],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CancelDataRepositoryTaskRequest");
+impl CancelDataRepositoryTaskInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CANCELDATAREPOSITORYTASKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CancelDataRepositoryTaskInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.task_id {
+            ser.write_string(&CANCELDATAREPOSITORYTASKINPUT_MEMBER_TASK_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CANCELDATAREPOSITORYTASKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CancelDataRepositoryTaskInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.task_id = builder.task_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CancelDataRepositoryTaskInput {
     /// Creates a new builder-style object to manufacture [`CancelDataRepositoryTaskInput`](crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskInput).
     pub fn builder() -> crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskInputBuilder {

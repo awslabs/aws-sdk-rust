@@ -53,6 +53,211 @@ impl GroupType {
         self.creation_date.as_ref()
     }
 }
+static GROUPTYPE_MEMBER_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#GroupType$GroupName",
+        "com.amazonaws.cognitoidentityprovider",
+        "GroupType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GroupName",
+    0,
+);
+static GROUPTYPE_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#GroupType$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider",
+        "GroupType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    1,
+);
+static GROUPTYPE_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#GroupType$Description",
+        "com.amazonaws.cognitoidentityprovider",
+        "GroupType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static GROUPTYPE_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#GroupType$RoleArn",
+        "com.amazonaws.cognitoidentityprovider",
+        "GroupType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    3,
+);
+static GROUPTYPE_MEMBER_PRECEDENCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#GroupType$Precedence",
+        "com.amazonaws.cognitoidentityprovider",
+        "GroupType",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Precedence",
+    4,
+);
+static GROUPTYPE_MEMBER_LAST_MODIFIED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#GroupType$LastModifiedDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "GroupType",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedDate",
+    5,
+);
+static GROUPTYPE_MEMBER_CREATION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#GroupType$CreationDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "GroupType",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationDate",
+    6,
+);
+static GROUPTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#GroupType",
+        "com.amazonaws.cognitoidentityprovider",
+        "GroupType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GROUPTYPE_MEMBER_GROUP_NAME,
+        &GROUPTYPE_MEMBER_USER_POOL_ID,
+        &GROUPTYPE_MEMBER_DESCRIPTION,
+        &GROUPTYPE_MEMBER_ROLE_ARN,
+        &GROUPTYPE_MEMBER_PRECEDENCE,
+        &GROUPTYPE_MEMBER_LAST_MODIFIED_DATE,
+        &GROUPTYPE_MEMBER_CREATION_DATE,
+    ],
+);
+impl GroupType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GROUPTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GroupType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.group_name {
+            ser.write_string(&GROUPTYPE_MEMBER_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&GROUPTYPE_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&GROUPTYPE_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&GROUPTYPE_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.precedence {
+            ser.write_integer(&GROUPTYPE_MEMBER_PRECEDENCE, *val)?;
+        }
+        if let Some(ref val) = self.last_modified_date {
+            ser.write_timestamp(&GROUPTYPE_MEMBER_LAST_MODIFIED_DATE, val)?;
+        }
+        if let Some(ref val) = self.creation_date {
+            ser.write_timestamp(&GROUPTYPE_MEMBER_CREATION_DATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::GroupTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GROUPTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.precedence = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GroupType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl GroupType {
     /// Creates a new builder-style object to manufacture [`GroupType`](crate::types::GroupType).
     pub fn builder() -> crate::types::builders::GroupTypeBuilder {

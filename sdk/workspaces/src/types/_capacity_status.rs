@@ -35,6 +35,136 @@ impl CapacityStatus {
         self.active_user_sessions
     }
 }
+static CAPACITYSTATUS_MEMBER_AVAILABLE_USER_SESSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#CapacityStatus$AvailableUserSessions",
+        "com.amazonaws.workspaces",
+        "CapacityStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "AvailableUserSessions",
+    0,
+);
+static CAPACITYSTATUS_MEMBER_DESIRED_USER_SESSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#CapacityStatus$DesiredUserSessions",
+        "com.amazonaws.workspaces",
+        "CapacityStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DesiredUserSessions",
+    1,
+);
+static CAPACITYSTATUS_MEMBER_ACTUAL_USER_SESSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#CapacityStatus$ActualUserSessions",
+        "com.amazonaws.workspaces",
+        "CapacityStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ActualUserSessions",
+    2,
+);
+static CAPACITYSTATUS_MEMBER_ACTIVE_USER_SESSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#CapacityStatus$ActiveUserSessions",
+        "com.amazonaws.workspaces",
+        "CapacityStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ActiveUserSessions",
+    3,
+);
+static CAPACITYSTATUS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#CapacityStatus", "com.amazonaws.workspaces", "CapacityStatus"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CAPACITYSTATUS_MEMBER_AVAILABLE_USER_SESSIONS,
+        &CAPACITYSTATUS_MEMBER_DESIRED_USER_SESSIONS,
+        &CAPACITYSTATUS_MEMBER_ACTUAL_USER_SESSIONS,
+        &CAPACITYSTATUS_MEMBER_ACTIVE_USER_SESSIONS,
+    ],
+);
+impl CapacityStatus {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CAPACITYSTATUS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CapacityStatus {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.available_user_sessions;
+            ser.write_integer(&CAPACITYSTATUS_MEMBER_AVAILABLE_USER_SESSIONS, *val)?;
+        }
+        {
+            let val = &self.desired_user_sessions;
+            ser.write_integer(&CAPACITYSTATUS_MEMBER_DESIRED_USER_SESSIONS, *val)?;
+        }
+        {
+            let val = &self.actual_user_sessions;
+            ser.write_integer(&CAPACITYSTATUS_MEMBER_ACTUAL_USER_SESSIONS, *val)?;
+        }
+        {
+            let val = &self.active_user_sessions;
+            ser.write_integer(&CAPACITYSTATUS_MEMBER_ACTIVE_USER_SESSIONS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CapacityStatusBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CAPACITYSTATUS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.available_user_sessions = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    self.desired_user_sessions = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    self.actual_user_sessions = Some(deser.read_integer(member)?);
+                }
+                Some(3) => {
+                    self.active_user_sessions = Some(deser.read_integer(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CapacityStatus {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.available_user_sessions = builder.available_user_sessions.or(Some(0i32));
+        builder.desired_user_sessions = builder.desired_user_sessions.or(Some(0i32));
+        builder.actual_user_sessions = builder.actual_user_sessions.or(Some(0i32));
+        builder.active_user_sessions = builder.active_user_sessions.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CapacityStatus {
     /// Creates a new builder-style object to manufacture [`CapacityStatus`](crate::types::CapacityStatus).
     pub fn builder() -> crate::types::builders::CapacityStatusBuilder {

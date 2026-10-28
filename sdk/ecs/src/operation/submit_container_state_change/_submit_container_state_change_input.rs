@@ -56,6 +56,256 @@ impl SubmitContainerStateChangeInput {
         self.network_bindings.as_deref().unwrap_or_default()
     }
 }
+static SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_CLUSTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#SubmitContainerStateChangeInput$cluster",
+        "com.amazonaws.ecs.synthetic",
+        "SubmitContainerStateChangeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cluster",
+    0,
+);
+static SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_TASK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#SubmitContainerStateChangeInput$task",
+        "com.amazonaws.ecs.synthetic",
+        "SubmitContainerStateChangeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "task",
+    1,
+);
+static SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_CONTAINER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#SubmitContainerStateChangeInput$containerName",
+        "com.amazonaws.ecs.synthetic",
+        "SubmitContainerStateChangeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "containerName",
+    2,
+);
+static SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_RUNTIME_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#SubmitContainerStateChangeInput$runtimeId",
+        "com.amazonaws.ecs.synthetic",
+        "SubmitContainerStateChangeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "runtimeId",
+    3,
+);
+static SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#SubmitContainerStateChangeInput$status",
+        "com.amazonaws.ecs.synthetic",
+        "SubmitContainerStateChangeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    4,
+);
+static SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_EXIT_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#SubmitContainerStateChangeInput$exitCode",
+        "com.amazonaws.ecs.synthetic",
+        "SubmitContainerStateChangeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "exitCode",
+    5,
+);
+static SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#SubmitContainerStateChangeInput$reason",
+        "com.amazonaws.ecs.synthetic",
+        "SubmitContainerStateChangeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "reason",
+    6,
+);
+static SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_NETWORK_BINDINGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#NetworkBindings$member", "com.amazonaws.ecs", "NetworkBindings"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_NETWORK_BINDINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#SubmitContainerStateChangeInput$networkBindings",
+        "com.amazonaws.ecs.synthetic",
+        "SubmitContainerStateChangeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "networkBindings",
+    7,
+)
+.with_list_member(&SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_NETWORK_BINDINGS_MEMBER);
+static SUBMITCONTAINERSTATECHANGEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#SubmitContainerStateChangeInput",
+        "com.amazonaws.ecs.synthetic",
+        "SubmitContainerStateChangeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_CLUSTER,
+        &SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_TASK,
+        &SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_CONTAINER_NAME,
+        &SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_RUNTIME_ID,
+        &SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_STATUS,
+        &SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_EXIT_CODE,
+        &SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_REASON,
+        &SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_NETWORK_BINDINGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("SubmitContainerStateChangeRequest");
+impl SubmitContainerStateChangeInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SUBMITCONTAINERSTATECHANGEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SubmitContainerStateChangeInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster {
+            ser.write_string(&SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_CLUSTER, val)?;
+        }
+        if let Some(ref val) = self.task {
+            ser.write_string(&SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_TASK, val)?;
+        }
+        if let Some(ref val) = self.container_name {
+            ser.write_string(&SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_CONTAINER_NAME, val)?;
+        }
+        if let Some(ref val) = self.runtime_id {
+            ser.write_string(&SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_RUNTIME_ID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_STATUS, val)?;
+        }
+        if let Some(ref val) = self.exit_code {
+            ser.write_integer(&SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_EXIT_CODE, *val)?;
+        }
+        if let Some(ref val) = self.reason {
+            ser.write_string(&SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_REASON, val)?;
+        }
+        if let Some(ref val) = self.network_bindings {
+            ser.write_list(
+                &SUBMITCONTAINERSTATECHANGEINPUT_MEMBER_NETWORK_BINDINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::NetworkBinding::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::submit_container_state_change::builders::SubmitContainerStateChangeInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SUBMITCONTAINERSTATECHANGEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.runtime_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.exit_code = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_bindings = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::NetworkBinding::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SubmitContainerStateChangeInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SubmitContainerStateChangeInput {
     /// Creates a new builder-style object to manufacture [`SubmitContainerStateChangeInput`](crate::operation::submit_container_state_change::SubmitContainerStateChangeInput).
     pub fn builder() -> crate::operation::submit_container_state_change::builders::SubmitContainerStateChangeInputBuilder {

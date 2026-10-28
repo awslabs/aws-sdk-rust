@@ -19,6 +19,97 @@ impl VCpuCountRangeRequest {
         self.max
     }
 }
+static VCPUCOUNTRANGEREQUEST_MEMBER_MIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#VCpuCountRangeRequest$min",
+        "com.amazonaws.ecs",
+        "VCpuCountRangeRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "min",
+    0,
+);
+static VCPUCOUNTRANGEREQUEST_MEMBER_MAX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#VCpuCountRangeRequest$max",
+        "com.amazonaws.ecs",
+        "VCpuCountRangeRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "max",
+    1,
+);
+static VCPUCOUNTRANGEREQUEST_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#VCpuCountRangeRequest", "com.amazonaws.ecs", "VCpuCountRangeRequest"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&VCPUCOUNTRANGEREQUEST_MEMBER_MIN, &VCPUCOUNTRANGEREQUEST_MEMBER_MAX],
+);
+impl VCpuCountRangeRequest {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &VCPUCOUNTRANGEREQUEST_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for VCpuCountRangeRequest {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.min;
+            ser.write_integer(&VCPUCOUNTRANGEREQUEST_MEMBER_MIN, *val)?;
+        }
+        if let Some(ref val) = self.max {
+            ser.write_integer(&VCPUCOUNTRANGEREQUEST_MEMBER_MAX, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::VCpuCountRangeRequestBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&VCPUCOUNTRANGEREQUEST_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.min = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl VCpuCountRangeRequest {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.min = builder.min.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl VCpuCountRangeRequest {
     /// Creates a new builder-style object to manufacture [`VCpuCountRangeRequest`](crate::types::VCpuCountRangeRequest).
     pub fn builder() -> crate::types::builders::VCpuCountRangeRequestBuilder {

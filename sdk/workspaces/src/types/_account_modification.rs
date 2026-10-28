@@ -43,6 +43,194 @@ impl AccountModification {
         self.error_message.as_deref()
     }
 }
+static ACCOUNTMODIFICATION_MEMBER_MODIFICATION_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#AccountModification$ModificationState",
+        "com.amazonaws.workspaces",
+        "AccountModification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModificationState",
+    0,
+);
+static ACCOUNTMODIFICATION_MEMBER_DEDICATED_TENANCY_SUPPORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#AccountModification$DedicatedTenancySupport",
+        "com.amazonaws.workspaces",
+        "AccountModification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DedicatedTenancySupport",
+    1,
+);
+static ACCOUNTMODIFICATION_MEMBER_DEDICATED_TENANCY_MANAGEMENT_CIDR_RANGE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces#AccountModification$DedicatedTenancyManagementCidrRange",
+            "com.amazonaws.workspaces",
+            "AccountModification",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "DedicatedTenancyManagementCidrRange",
+        2,
+    );
+static ACCOUNTMODIFICATION_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#AccountModification$StartTime",
+        "com.amazonaws.workspaces",
+        "AccountModification",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    3,
+);
+static ACCOUNTMODIFICATION_MEMBER_ERROR_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#AccountModification$ErrorCode",
+        "com.amazonaws.workspaces",
+        "AccountModification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorCode",
+    4,
+);
+static ACCOUNTMODIFICATION_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#AccountModification$ErrorMessage",
+        "com.amazonaws.workspaces",
+        "AccountModification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorMessage",
+    5,
+);
+static ACCOUNTMODIFICATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#AccountModification",
+        "com.amazonaws.workspaces",
+        "AccountModification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACCOUNTMODIFICATION_MEMBER_MODIFICATION_STATE,
+        &ACCOUNTMODIFICATION_MEMBER_DEDICATED_TENANCY_SUPPORT,
+        &ACCOUNTMODIFICATION_MEMBER_DEDICATED_TENANCY_MANAGEMENT_CIDR_RANGE,
+        &ACCOUNTMODIFICATION_MEMBER_START_TIME,
+        &ACCOUNTMODIFICATION_MEMBER_ERROR_CODE,
+        &ACCOUNTMODIFICATION_MEMBER_ERROR_MESSAGE,
+    ],
+);
+impl AccountModification {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACCOUNTMODIFICATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AccountModification {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.modification_state {
+            ser.write_string(&ACCOUNTMODIFICATION_MEMBER_MODIFICATION_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.dedicated_tenancy_support {
+            ser.write_string(&ACCOUNTMODIFICATION_MEMBER_DEDICATED_TENANCY_SUPPORT, val.as_str())?;
+        }
+        if let Some(ref val) = self.dedicated_tenancy_management_cidr_range {
+            ser.write_string(&ACCOUNTMODIFICATION_MEMBER_DEDICATED_TENANCY_MANAGEMENT_CIDR_RANGE, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&ACCOUNTMODIFICATION_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.error_code {
+            ser.write_string(&ACCOUNTMODIFICATION_MEMBER_ERROR_CODE, val)?;
+        }
+        if let Some(ref val) = self.error_message {
+            ser.write_string(&ACCOUNTMODIFICATION_MEMBER_ERROR_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AccountModificationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACCOUNTMODIFICATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.modification_state = Some(crate::types::DedicatedTenancyModificationStateEnum::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dedicated_tenancy_support =
+                            Some(crate::types::DedicatedTenancySupportResultEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dedicated_tenancy_management_cidr_range = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AccountModification {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AccountModification {
     /// Creates a new builder-style object to manufacture [`AccountModification`](crate::types::AccountModification).
     pub fn builder() -> crate::types::builders::AccountModificationBuilder {

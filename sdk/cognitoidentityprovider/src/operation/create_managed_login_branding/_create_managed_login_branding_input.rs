@@ -73,6 +73,200 @@ impl ::std::fmt::Debug for CreateManagedLoginBrandingInput {
         formatter.finish()
     }
 }
+static CREATEMANAGEDLOGINBRANDINGINPUT_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateManagedLoginBrandingInput$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateManagedLoginBrandingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    0,
+);
+static CREATEMANAGEDLOGINBRANDINGINPUT_MEMBER_CLIENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateManagedLoginBrandingInput$ClientId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateManagedLoginBrandingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientId",
+    1,
+);
+static CREATEMANAGEDLOGINBRANDINGINPUT_MEMBER_USE_COGNITO_PROVIDED_VALUES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentityprovider.synthetic#CreateManagedLoginBrandingInput$UseCognitoProvidedValues",
+            "com.amazonaws.cognitoidentityprovider.synthetic",
+            "CreateManagedLoginBrandingInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "UseCognitoProvidedValues",
+        2,
+    );
+static CREATEMANAGEDLOGINBRANDINGINPUT_MEMBER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateManagedLoginBrandingInput$Settings",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateManagedLoginBrandingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Document,
+    "Settings",
+    3,
+);
+static CREATEMANAGEDLOGINBRANDINGINPUT_MEMBER_ASSETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AssetListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "AssetListType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEMANAGEDLOGINBRANDINGINPUT_MEMBER_ASSETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateManagedLoginBrandingInput$Assets",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateManagedLoginBrandingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Assets",
+    4,
+)
+.with_list_member(&CREATEMANAGEDLOGINBRANDINGINPUT_MEMBER_ASSETS_MEMBER);
+static CREATEMANAGEDLOGINBRANDINGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateManagedLoginBrandingInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateManagedLoginBrandingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEMANAGEDLOGINBRANDINGINPUT_MEMBER_USER_POOL_ID,
+        &CREATEMANAGEDLOGINBRANDINGINPUT_MEMBER_CLIENT_ID,
+        &CREATEMANAGEDLOGINBRANDINGINPUT_MEMBER_USE_COGNITO_PROVIDED_VALUES,
+        &CREATEMANAGEDLOGINBRANDINGINPUT_MEMBER_SETTINGS,
+        &CREATEMANAGEDLOGINBRANDINGINPUT_MEMBER_ASSETS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateManagedLoginBrandingRequest");
+impl CreateManagedLoginBrandingInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEMANAGEDLOGINBRANDINGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateManagedLoginBrandingInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&CREATEMANAGEDLOGINBRANDINGINPUT_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.client_id {
+            ser.write_string(&CREATEMANAGEDLOGINBRANDINGINPUT_MEMBER_CLIENT_ID, val)?;
+        }
+        if let Some(ref val) = self.use_cognito_provided_values {
+            ser.write_boolean(&CREATEMANAGEDLOGINBRANDINGINPUT_MEMBER_USE_COGNITO_PROVIDED_VALUES, *val)?;
+        }
+        if let Some(ref val) = self.settings {
+            ser.write_document(&CREATEMANAGEDLOGINBRANDINGINPUT_MEMBER_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.assets {
+            ser.write_list(
+                &CREATEMANAGEDLOGINBRANDINGINPUT_MEMBER_ASSETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AssetType::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_managed_login_branding::builders::CreateManagedLoginBrandingInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEMANAGEDLOGINBRANDINGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.use_cognito_provided_values = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.settings = Some(deser.read_document(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.assets = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AssetType::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateManagedLoginBrandingInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_pool_id = builder.user_pool_id.or(Some(String::new()));
+        builder.client_id = builder.client_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateManagedLoginBrandingInput {
     /// Creates a new builder-style object to manufacture [`CreateManagedLoginBrandingInput`](crate::operation::create_managed_login_branding::CreateManagedLoginBrandingInput).
     pub fn builder() -> crate::operation::create_managed_login_branding::builders::CreateManagedLoginBrandingInputBuilder {

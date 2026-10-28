@@ -93,6 +93,318 @@ impl ::std::fmt::Debug for StartSnapshotOutput {
         formatter.finish()
     }
 }
+static STARTSNAPSHOTOUTPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotOutput$Description",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    0,
+);
+static STARTSNAPSHOTOUTPUT_MEMBER_SNAPSHOT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotOutput$SnapshotId",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SnapshotId",
+    1,
+);
+static STARTSNAPSHOTOUTPUT_MEMBER_OWNER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotOutput$OwnerId",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OwnerId",
+    2,
+);
+static STARTSNAPSHOTOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotOutput$Status",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    3,
+);
+static STARTSNAPSHOTOUTPUT_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotOutput$StartTime",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    4,
+);
+static STARTSNAPSHOTOUTPUT_MEMBER_VOLUME_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotOutput$VolumeSize",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "VolumeSize",
+    5,
+);
+static STARTSNAPSHOTOUTPUT_MEMBER_BLOCK_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotOutput$BlockSize",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "BlockSize",
+    6,
+);
+static STARTSNAPSHOTOUTPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ebs#Tags$member", "com.amazonaws.ebs", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTSNAPSHOTOUTPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotOutput$Tags",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    7,
+)
+.with_list_member(&STARTSNAPSHOTOUTPUT_MEMBER_TAGS_MEMBER);
+static STARTSNAPSHOTOUTPUT_MEMBER_PARENT_SNAPSHOT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotOutput$ParentSnapshotId",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ParentSnapshotId",
+    8,
+);
+static STARTSNAPSHOTOUTPUT_MEMBER_KMS_KEY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotOutput$KmsKeyArn",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyArn",
+    9,
+);
+static STARTSNAPSHOTOUTPUT_MEMBER_SSE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotOutput$SseType",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SseType",
+    10,
+);
+static STARTSNAPSHOTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotOutput",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTSNAPSHOTOUTPUT_MEMBER_DESCRIPTION,
+        &STARTSNAPSHOTOUTPUT_MEMBER_SNAPSHOT_ID,
+        &STARTSNAPSHOTOUTPUT_MEMBER_OWNER_ID,
+        &STARTSNAPSHOTOUTPUT_MEMBER_STATUS,
+        &STARTSNAPSHOTOUTPUT_MEMBER_START_TIME,
+        &STARTSNAPSHOTOUTPUT_MEMBER_VOLUME_SIZE,
+        &STARTSNAPSHOTOUTPUT_MEMBER_BLOCK_SIZE,
+        &STARTSNAPSHOTOUTPUT_MEMBER_TAGS,
+        &STARTSNAPSHOTOUTPUT_MEMBER_PARENT_SNAPSHOT_ID,
+        &STARTSNAPSHOTOUTPUT_MEMBER_KMS_KEY_ARN,
+        &STARTSNAPSHOTOUTPUT_MEMBER_SSE_TYPE,
+    ],
+)
+.with_original_name("StartSnapshotResponse");
+impl StartSnapshotOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTSNAPSHOTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartSnapshotOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.description {
+            ser.write_string(&STARTSNAPSHOTOUTPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.snapshot_id {
+            ser.write_string(&STARTSNAPSHOTOUTPUT_MEMBER_SNAPSHOT_ID, val)?;
+        }
+        if let Some(ref val) = self.owner_id {
+            ser.write_string(&STARTSNAPSHOTOUTPUT_MEMBER_OWNER_ID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&STARTSNAPSHOTOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&STARTSNAPSHOTOUTPUT_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.volume_size {
+            ser.write_long(&STARTSNAPSHOTOUTPUT_MEMBER_VOLUME_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.block_size {
+            ser.write_integer(&STARTSNAPSHOTOUTPUT_MEMBER_BLOCK_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &STARTSNAPSHOTOUTPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.parent_snapshot_id {
+            ser.write_string(&STARTSNAPSHOTOUTPUT_MEMBER_PARENT_SNAPSHOT_ID, val)?;
+        }
+        if let Some(ref val) = self.kms_key_arn {
+            ser.write_string(&STARTSNAPSHOTOUTPUT_MEMBER_KMS_KEY_ARN, val)?;
+        }
+        if let Some(ref val) = self.sse_type {
+            ser.write_string(&STARTSNAPSHOTOUTPUT_MEMBER_SSE_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_snapshot::builders::StartSnapshotOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTSNAPSHOTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.snapshot_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.owner_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::Status::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_size = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.block_size = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parent_snapshot_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sse_type = Some(crate::types::SseType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartSnapshotOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for StartSnapshotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

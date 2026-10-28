@@ -33,6 +33,131 @@ impl ::std::fmt::Debug for RevokeTokenInput {
         formatter.finish()
     }
 }
+static REVOKETOKENINPUT_MEMBER_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#RevokeTokenInput$Token",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "RevokeTokenInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Token",
+    0,
+);
+static REVOKETOKENINPUT_MEMBER_CLIENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#RevokeTokenInput$ClientId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "RevokeTokenInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientId",
+    1,
+);
+static REVOKETOKENINPUT_MEMBER_CLIENT_SECRET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#RevokeTokenInput$ClientSecret",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "RevokeTokenInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientSecret",
+    2,
+);
+static REVOKETOKENINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#RevokeTokenInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "RevokeTokenInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REVOKETOKENINPUT_MEMBER_TOKEN,
+        &REVOKETOKENINPUT_MEMBER_CLIENT_ID,
+        &REVOKETOKENINPUT_MEMBER_CLIENT_SECRET,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RevokeTokenRequest");
+impl RevokeTokenInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REVOKETOKENINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RevokeTokenInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.token {
+            ser.write_string(&REVOKETOKENINPUT_MEMBER_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.client_id {
+            ser.write_string(&REVOKETOKENINPUT_MEMBER_CLIENT_ID, val)?;
+        }
+        if let Some(ref val) = self.client_secret {
+            ser.write_string(&REVOKETOKENINPUT_MEMBER_CLIENT_SECRET, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::revoke_token::builders::RevokeTokenInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REVOKETOKENINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_secret = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RevokeTokenInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.token = builder.token.or(Some(String::new()));
+        builder.client_id = builder.client_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RevokeTokenInput {
     /// Creates a new builder-style object to manufacture [`RevokeTokenInput`](crate::operation::revoke_token::RevokeTokenInput).
     pub fn builder() -> crate::operation::revoke_token::builders::RevokeTokenInputBuilder {

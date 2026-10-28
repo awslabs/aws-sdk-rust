@@ -54,6 +54,240 @@ impl AssociateFirewallRuleGroupInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_CREATOR_REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#AssociateFirewallRuleGroupInput$CreatorRequestId",
+        "com.amazonaws.route53resolver.synthetic",
+        "AssociateFirewallRuleGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreatorRequestId",
+    0,
+);
+static ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_FIREWALL_RULE_GROUP_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#AssociateFirewallRuleGroupInput$FirewallRuleGroupId",
+        "com.amazonaws.route53resolver.synthetic",
+        "AssociateFirewallRuleGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FirewallRuleGroupId",
+    1,
+);
+static ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_VPC_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#AssociateFirewallRuleGroupInput$VpcId",
+        "com.amazonaws.route53resolver.synthetic",
+        "AssociateFirewallRuleGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VpcId",
+    2,
+);
+static ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_PRIORITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#AssociateFirewallRuleGroupInput$Priority",
+        "com.amazonaws.route53resolver.synthetic",
+        "AssociateFirewallRuleGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Priority",
+    3,
+);
+static ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#AssociateFirewallRuleGroupInput$Name",
+        "com.amazonaws.route53resolver.synthetic",
+        "AssociateFirewallRuleGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    4,
+);
+static ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_MUTATION_PROTECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#AssociateFirewallRuleGroupInput$MutationProtection",
+        "com.amazonaws.route53resolver.synthetic",
+        "AssociateFirewallRuleGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MutationProtection",
+    5,
+);
+static ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.route53resolver#TagList$member", "com.amazonaws.route53resolver", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#AssociateFirewallRuleGroupInput$Tags",
+        "com.amazonaws.route53resolver.synthetic",
+        "AssociateFirewallRuleGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    6,
+)
+.with_list_member(&ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_TAGS_MEMBER);
+static ASSOCIATEFIREWALLRULEGROUPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#AssociateFirewallRuleGroupInput",
+        "com.amazonaws.route53resolver.synthetic",
+        "AssociateFirewallRuleGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_CREATOR_REQUEST_ID,
+        &ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_FIREWALL_RULE_GROUP_ID,
+        &ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_VPC_ID,
+        &ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_PRIORITY,
+        &ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_NAME,
+        &ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_MUTATION_PROTECTION,
+        &ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("AssociateFirewallRuleGroupRequest");
+impl AssociateFirewallRuleGroupInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ASSOCIATEFIREWALLRULEGROUPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AssociateFirewallRuleGroupInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.creator_request_id {
+            ser.write_string(&ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_CREATOR_REQUEST_ID, val)?;
+        }
+        if let Some(ref val) = self.firewall_rule_group_id {
+            ser.write_string(&ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_FIREWALL_RULE_GROUP_ID, val)?;
+        }
+        if let Some(ref val) = self.vpc_id {
+            ser.write_string(&ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_VPC_ID, val)?;
+        }
+        if let Some(ref val) = self.priority {
+            ser.write_integer(&ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_PRIORITY, *val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.mutation_protection {
+            ser.write_string(&ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_MUTATION_PROTECTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &ASSOCIATEFIREWALLRULEGROUPINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::associate_firewall_rule_group::builders::AssociateFirewallRuleGroupInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ASSOCIATEFIREWALLRULEGROUPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creator_request_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firewall_rule_group_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.priority = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mutation_protection = Some(crate::types::MutationProtectionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AssociateFirewallRuleGroupInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.creator_request_id = builder.creator_request_id.or(Some(String::new()));
+        builder.firewall_rule_group_id = builder.firewall_rule_group_id.or(Some(String::new()));
+        builder.vpc_id = builder.vpc_id.or(Some(String::new()));
+        builder.priority = builder.priority.or(Some(0i32));
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AssociateFirewallRuleGroupInput {
     /// Creates a new builder-style object to manufacture [`AssociateFirewallRuleGroupInput`](crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupInput).
     pub fn builder() -> crate::operation::associate_firewall_rule_group::builders::AssociateFirewallRuleGroupInputBuilder {

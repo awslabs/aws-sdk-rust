@@ -18,6 +18,116 @@ impl UpdateKnowledgeBaseTemplateUriInput {
         self.template_uri.as_deref()
     }
 }
+static UPDATEKNOWLEDGEBASETEMPLATEURIINPUT_MEMBER_KNOWLEDGE_BASE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateKnowledgeBaseTemplateUriInput$knowledgeBaseId",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateKnowledgeBaseTemplateUriInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "knowledgeBaseId",
+    0,
+)
+.with_http_label();
+static UPDATEKNOWLEDGEBASETEMPLATEURIINPUT_MEMBER_TEMPLATE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateKnowledgeBaseTemplateUriInput$templateUri",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateKnowledgeBaseTemplateUriInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "templateUri",
+    1,
+);
+static UPDATEKNOWLEDGEBASETEMPLATEURIINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateKnowledgeBaseTemplateUriInput",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateKnowledgeBaseTemplateUriInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEKNOWLEDGEBASETEMPLATEURIINPUT_MEMBER_KNOWLEDGE_BASE_ID,
+        &UPDATEKNOWLEDGEBASETEMPLATEURIINPUT_MEMBER_TEMPLATE_URI,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/knowledgeBases/{knowledgeBaseId}/templateUri",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateKnowledgeBaseTemplateUriRequest");
+impl UpdateKnowledgeBaseTemplateUriInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEKNOWLEDGEBASETEMPLATEURIINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateKnowledgeBaseTemplateUriInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.knowledge_base_id {
+            ser.write_string(&UPDATEKNOWLEDGEBASETEMPLATEURIINPUT_MEMBER_KNOWLEDGE_BASE_ID, val)?;
+        }
+        if let Some(ref val) = self.template_uri {
+            ser.write_string(&UPDATEKNOWLEDGEBASETEMPLATEURIINPUT_MEMBER_TEMPLATE_URI, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEKNOWLEDGEBASETEMPLATEURIINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.knowledge_base_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.template_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateKnowledgeBaseTemplateUriInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.knowledge_base_id = builder.knowledge_base_id.or(Some(String::new()));
+        builder.template_uri = builder.template_uri.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateKnowledgeBaseTemplateUriInput {
     /// Creates a new builder-style object to manufacture [`UpdateKnowledgeBaseTemplateUriInput`](crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriInput).
     pub fn builder() -> crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriInputBuilder {

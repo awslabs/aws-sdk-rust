@@ -47,6 +47,209 @@ impl ::std::fmt::Debug for SearchQuickResponsesInput {
         formatter.finish()
     }
 }
+static SEARCHQUICKRESPONSESINPUT_MEMBER_KNOWLEDGE_BASE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#SearchQuickResponsesInput$knowledgeBaseId",
+        "com.amazonaws.wisdom.synthetic",
+        "SearchQuickResponsesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "knowledgeBaseId",
+    0,
+)
+.with_http_label();
+static SEARCHQUICKRESPONSESINPUT_MEMBER_SEARCH_EXPRESSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#SearchQuickResponsesInput$searchExpression",
+        "com.amazonaws.wisdom.synthetic",
+        "SearchQuickResponsesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "searchExpression",
+    1,
+);
+static SEARCHQUICKRESPONSESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#SearchQuickResponsesInput$nextToken",
+        "com.amazonaws.wisdom.synthetic",
+        "SearchQuickResponsesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    2,
+)
+.with_http_query("nextToken");
+static SEARCHQUICKRESPONSESINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#SearchQuickResponsesInput$maxResults",
+        "com.amazonaws.wisdom.synthetic",
+        "SearchQuickResponsesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxResults",
+    3,
+)
+.with_http_query("maxResults");
+static SEARCHQUICKRESPONSESINPUT_MEMBER_ATTRIBUTES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContactAttributes$key", "com.amazonaws.wisdom", "ContactAttributes"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static SEARCHQUICKRESPONSESINPUT_MEMBER_ATTRIBUTES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#ContactAttributes$value",
+        "com.amazonaws.wisdom",
+        "ContactAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static SEARCHQUICKRESPONSESINPUT_MEMBER_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#SearchQuickResponsesInput$attributes",
+        "com.amazonaws.wisdom.synthetic",
+        "SearchQuickResponsesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "attributes",
+    4,
+)
+.with_map_members(
+    &SEARCHQUICKRESPONSESINPUT_MEMBER_ATTRIBUTES_KEY,
+    &SEARCHQUICKRESPONSESINPUT_MEMBER_ATTRIBUTES_VALUE,
+);
+static SEARCHQUICKRESPONSESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#SearchQuickResponsesInput",
+        "com.amazonaws.wisdom.synthetic",
+        "SearchQuickResponsesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SEARCHQUICKRESPONSESINPUT_MEMBER_KNOWLEDGE_BASE_ID,
+        &SEARCHQUICKRESPONSESINPUT_MEMBER_SEARCH_EXPRESSION,
+        &SEARCHQUICKRESPONSESINPUT_MEMBER_NEXT_TOKEN,
+        &SEARCHQUICKRESPONSESINPUT_MEMBER_MAX_RESULTS,
+        &SEARCHQUICKRESPONSESINPUT_MEMBER_ATTRIBUTES,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/knowledgeBases/{knowledgeBaseId}/search/quickResponses",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("SearchQuickResponsesRequest");
+impl SearchQuickResponsesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SEARCHQUICKRESPONSESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SearchQuickResponsesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.knowledge_base_id {
+            ser.write_string(&SEARCHQUICKRESPONSESINPUT_MEMBER_KNOWLEDGE_BASE_ID, val)?;
+        }
+        if let Some(ref val) = self.search_expression {
+            ser.write_struct(&SEARCHQUICKRESPONSESINPUT_MEMBER_SEARCH_EXPRESSION, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&SEARCHQUICKRESPONSESINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&SEARCHQUICKRESPONSESINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.attributes {
+            ser.write_map(
+                &SEARCHQUICKRESPONSESINPUT_MEMBER_ATTRIBUTES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::search_quick_responses::builders::SearchQuickResponsesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SEARCHQUICKRESPONSESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.knowledge_base_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.search_expression = Some(crate::types::QuickResponseSearchExpression::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attributes = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SearchQuickResponsesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.knowledge_base_id = builder.knowledge_base_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SearchQuickResponsesInput {
     /// Creates a new builder-style object to manufacture [`SearchQuickResponsesInput`](crate::operation::search_quick_responses::SearchQuickResponsesInput).
     pub fn builder() -> crate::operation::search_quick_responses::builders::SearchQuickResponsesInputBuilder {

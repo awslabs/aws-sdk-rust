@@ -72,6 +72,272 @@ impl ::std::fmt::Debug for ExpressGatewayContainer {
         formatter.finish()
     }
 }
+static EXPRESSGATEWAYCONTAINER_MEMBER_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ExpressGatewayContainer$image",
+        "com.amazonaws.ecs",
+        "ExpressGatewayContainer",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "image",
+    0,
+);
+static EXPRESSGATEWAYCONTAINER_MEMBER_CONTAINER_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ExpressGatewayContainer$containerPort",
+        "com.amazonaws.ecs",
+        "ExpressGatewayContainer",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "containerPort",
+    1,
+);
+static EXPRESSGATEWAYCONTAINER_MEMBER_AWS_LOGS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ExpressGatewayContainer$awsLogsConfiguration",
+        "com.amazonaws.ecs",
+        "ExpressGatewayContainer",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "awsLogsConfiguration",
+    2,
+);
+static EXPRESSGATEWAYCONTAINER_MEMBER_REPOSITORY_CREDENTIALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ExpressGatewayContainer$repositoryCredentials",
+        "com.amazonaws.ecs",
+        "ExpressGatewayContainer",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "repositoryCredentials",
+    3,
+);
+static EXPRESSGATEWAYCONTAINER_MEMBER_COMMAND_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static EXPRESSGATEWAYCONTAINER_MEMBER_COMMAND: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ExpressGatewayContainer$command",
+        "com.amazonaws.ecs",
+        "ExpressGatewayContainer",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "command",
+    4,
+)
+.with_list_member(&EXPRESSGATEWAYCONTAINER_MEMBER_COMMAND_MEMBER);
+static EXPRESSGATEWAYCONTAINER_MEMBER_ENVIRONMENT_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#EnvironmentVariables$member",
+        "com.amazonaws.ecs",
+        "EnvironmentVariables",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static EXPRESSGATEWAYCONTAINER_MEMBER_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ExpressGatewayContainer$environment",
+        "com.amazonaws.ecs",
+        "ExpressGatewayContainer",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "environment",
+    5,
+)
+.with_list_member(&EXPRESSGATEWAYCONTAINER_MEMBER_ENVIRONMENT_MEMBER);
+static EXPRESSGATEWAYCONTAINER_MEMBER_SECRETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#SecretList$member", "com.amazonaws.ecs", "SecretList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static EXPRESSGATEWAYCONTAINER_MEMBER_SECRETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ExpressGatewayContainer$secrets",
+        "com.amazonaws.ecs",
+        "ExpressGatewayContainer",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "secrets",
+    6,
+)
+.with_list_member(&EXPRESSGATEWAYCONTAINER_MEMBER_SECRETS_MEMBER);
+static EXPRESSGATEWAYCONTAINER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ExpressGatewayContainer",
+        "com.amazonaws.ecs",
+        "ExpressGatewayContainer",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EXPRESSGATEWAYCONTAINER_MEMBER_IMAGE,
+        &EXPRESSGATEWAYCONTAINER_MEMBER_CONTAINER_PORT,
+        &EXPRESSGATEWAYCONTAINER_MEMBER_AWS_LOGS_CONFIGURATION,
+        &EXPRESSGATEWAYCONTAINER_MEMBER_REPOSITORY_CREDENTIALS,
+        &EXPRESSGATEWAYCONTAINER_MEMBER_COMMAND,
+        &EXPRESSGATEWAYCONTAINER_MEMBER_ENVIRONMENT,
+        &EXPRESSGATEWAYCONTAINER_MEMBER_SECRETS,
+    ],
+);
+impl ExpressGatewayContainer {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EXPRESSGATEWAYCONTAINER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ExpressGatewayContainer {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.image;
+            ser.write_string(&EXPRESSGATEWAYCONTAINER_MEMBER_IMAGE, val)?;
+        }
+        if let Some(ref val) = self.container_port {
+            ser.write_integer(&EXPRESSGATEWAYCONTAINER_MEMBER_CONTAINER_PORT, *val)?;
+        }
+        if let Some(ref val) = self.aws_logs_configuration {
+            ser.write_struct(&EXPRESSGATEWAYCONTAINER_MEMBER_AWS_LOGS_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.repository_credentials {
+            ser.write_struct(&EXPRESSGATEWAYCONTAINER_MEMBER_REPOSITORY_CREDENTIALS, val)?;
+        }
+        if let Some(ref val) = self.command {
+            ser.write_list(
+                &EXPRESSGATEWAYCONTAINER_MEMBER_COMMAND,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.environment {
+            ser.write_list(
+                &EXPRESSGATEWAYCONTAINER_MEMBER_ENVIRONMENT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::KeyValuePair::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.secrets {
+            ser.write_list(
+                &EXPRESSGATEWAYCONTAINER_MEMBER_SECRETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Secret::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ExpressGatewayContainerBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EXPRESSGATEWAYCONTAINER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.image = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_port = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.aws_logs_configuration = Some(crate::types::ExpressGatewayServiceAwsLogsConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_credentials = Some(crate::types::ExpressGatewayRepositoryCredentials::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.command = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::KeyValuePair::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secrets = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Secret::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ExpressGatewayContainer {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.image = builder.image.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ExpressGatewayContainer {
     /// Creates a new builder-style object to manufacture [`ExpressGatewayContainer`](crate::types::ExpressGatewayContainer).
     pub fn builder() -> crate::types::builders::ExpressGatewayContainerBuilder {

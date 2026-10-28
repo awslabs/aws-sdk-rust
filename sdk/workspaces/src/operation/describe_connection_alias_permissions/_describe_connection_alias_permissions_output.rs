@@ -27,6 +27,156 @@ impl DescribeConnectionAliasPermissionsOutput {
         self.next_token.as_deref()
     }
 }
+static DESCRIBECONNECTIONALIASPERMISSIONSOUTPUT_MEMBER_ALIAS_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeConnectionAliasPermissionsOutput$AliasId",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeConnectionAliasPermissionsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AliasId",
+    0,
+);
+static DESCRIBECONNECTIONALIASPERMISSIONSOUTPUT_MEMBER_CONNECTION_ALIAS_PERMISSIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces#ConnectionAliasPermissions$member",
+            "com.amazonaws.workspaces",
+            "ConnectionAliasPermissions",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static DESCRIBECONNECTIONALIASPERMISSIONSOUTPUT_MEMBER_CONNECTION_ALIAS_PERMISSIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces.synthetic#DescribeConnectionAliasPermissionsOutput$ConnectionAliasPermissions",
+            "com.amazonaws.workspaces.synthetic",
+            "DescribeConnectionAliasPermissionsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "ConnectionAliasPermissions",
+        1,
+    )
+    .with_list_member(&DESCRIBECONNECTIONALIASPERMISSIONSOUTPUT_MEMBER_CONNECTION_ALIAS_PERMISSIONS_MEMBER);
+static DESCRIBECONNECTIONALIASPERMISSIONSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeConnectionAliasPermissionsOutput$NextToken",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeConnectionAliasPermissionsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    2,
+);
+static DESCRIBECONNECTIONALIASPERMISSIONSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeConnectionAliasPermissionsOutput",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeConnectionAliasPermissionsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBECONNECTIONALIASPERMISSIONSOUTPUT_MEMBER_ALIAS_ID,
+        &DESCRIBECONNECTIONALIASPERMISSIONSOUTPUT_MEMBER_CONNECTION_ALIAS_PERMISSIONS,
+        &DESCRIBECONNECTIONALIASPERMISSIONSOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("DescribeConnectionAliasPermissionsResult");
+impl DescribeConnectionAliasPermissionsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECONNECTIONALIASPERMISSIONSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeConnectionAliasPermissionsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.alias_id {
+            ser.write_string(&DESCRIBECONNECTIONALIASPERMISSIONSOUTPUT_MEMBER_ALIAS_ID, val)?;
+        }
+        if let Some(ref val) = self.connection_alias_permissions {
+            ser.write_list(
+                &DESCRIBECONNECTIONALIASPERMISSIONSOUTPUT_MEMBER_CONNECTION_ALIAS_PERMISSIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ConnectionAliasPermission::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&DESCRIBECONNECTIONALIASPERMISSIONSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_connection_alias_permissions::builders::DescribeConnectionAliasPermissionsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECONNECTIONALIASPERMISSIONSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.alias_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.connection_alias_permissions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ConnectionAliasPermission::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeConnectionAliasPermissionsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeConnectionAliasPermissionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

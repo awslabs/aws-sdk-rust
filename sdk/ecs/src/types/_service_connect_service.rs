@@ -58,6 +58,210 @@ impl ServiceConnectService {
         self.tls.as_ref()
     }
 }
+static SERVICECONNECTSERVICE_MEMBER_PORT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceConnectService$portName",
+        "com.amazonaws.ecs",
+        "ServiceConnectService",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "portName",
+    0,
+);
+static SERVICECONNECTSERVICE_MEMBER_DISCOVERY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceConnectService$discoveryName",
+        "com.amazonaws.ecs",
+        "ServiceConnectService",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "discoveryName",
+    1,
+);
+static SERVICECONNECTSERVICE_MEMBER_CLIENT_ALIASES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceConnectClientAliasList$member",
+        "com.amazonaws.ecs",
+        "ServiceConnectClientAliasList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SERVICECONNECTSERVICE_MEMBER_CLIENT_ALIASES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceConnectService$clientAliases",
+        "com.amazonaws.ecs",
+        "ServiceConnectService",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "clientAliases",
+    2,
+)
+.with_list_member(&SERVICECONNECTSERVICE_MEMBER_CLIENT_ALIASES_MEMBER);
+static SERVICECONNECTSERVICE_MEMBER_INGRESS_PORT_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceConnectService$ingressPortOverride",
+        "com.amazonaws.ecs",
+        "ServiceConnectService",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ingressPortOverride",
+    3,
+);
+static SERVICECONNECTSERVICE_MEMBER_TIMEOUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceConnectService$timeout",
+        "com.amazonaws.ecs",
+        "ServiceConnectService",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "timeout",
+    4,
+);
+static SERVICECONNECTSERVICE_MEMBER_TLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceConnectService$tls",
+        "com.amazonaws.ecs",
+        "ServiceConnectService",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "tls",
+    5,
+);
+static SERVICECONNECTSERVICE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceConnectService", "com.amazonaws.ecs", "ServiceConnectService"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SERVICECONNECTSERVICE_MEMBER_PORT_NAME,
+        &SERVICECONNECTSERVICE_MEMBER_DISCOVERY_NAME,
+        &SERVICECONNECTSERVICE_MEMBER_CLIENT_ALIASES,
+        &SERVICECONNECTSERVICE_MEMBER_INGRESS_PORT_OVERRIDE,
+        &SERVICECONNECTSERVICE_MEMBER_TIMEOUT,
+        &SERVICECONNECTSERVICE_MEMBER_TLS,
+    ],
+);
+impl ServiceConnectService {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SERVICECONNECTSERVICE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ServiceConnectService {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.port_name;
+            ser.write_string(&SERVICECONNECTSERVICE_MEMBER_PORT_NAME, val)?;
+        }
+        if let Some(ref val) = self.discovery_name {
+            ser.write_string(&SERVICECONNECTSERVICE_MEMBER_DISCOVERY_NAME, val)?;
+        }
+        if let Some(ref val) = self.client_aliases {
+            ser.write_list(
+                &SERVICECONNECTSERVICE_MEMBER_CLIENT_ALIASES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ServiceConnectClientAlias::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ingress_port_override {
+            ser.write_integer(&SERVICECONNECTSERVICE_MEMBER_INGRESS_PORT_OVERRIDE, *val)?;
+        }
+        if let Some(ref val) = self.timeout {
+            ser.write_struct(&SERVICECONNECTSERVICE_MEMBER_TIMEOUT, val)?;
+        }
+        if let Some(ref val) = self.tls {
+            ser.write_struct(&SERVICECONNECTSERVICE_MEMBER_TLS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ServiceConnectServiceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SERVICECONNECTSERVICE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.port_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.discovery_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_aliases = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ServiceConnectClientAlias::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ingress_port_override = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.timeout = Some(crate::types::TimeoutConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tls = Some(crate::types::ServiceConnectTlsConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ServiceConnectService {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.port_name = builder.port_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ServiceConnectService {
     /// Creates a new builder-style object to manufacture [`ServiceConnectService`](crate::types::ServiceConnectService).
     pub fn builder() -> crate::types::builders::ServiceConnectServiceBuilder {

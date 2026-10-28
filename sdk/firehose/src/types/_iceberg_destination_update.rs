@@ -87,6 +87,344 @@ impl IcebergDestinationUpdate {
         self.s3_configuration.as_ref()
     }
 }
+static ICEBERGDESTINATIONUPDATE_MEMBER_DESTINATION_TABLE_CONFIGURATION_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#DestinationTableConfigurationList$member",
+            "com.amazonaws.firehose",
+            "DestinationTableConfigurationList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static ICEBERGDESTINATIONUPDATE_MEMBER_DESTINATION_TABLE_CONFIGURATION_LIST: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#IcebergDestinationUpdate$DestinationTableConfigurationList",
+            "com.amazonaws.firehose",
+            "IcebergDestinationUpdate",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "DestinationTableConfigurationList",
+        0,
+    )
+    .with_list_member(&ICEBERGDESTINATIONUPDATE_MEMBER_DESTINATION_TABLE_CONFIGURATION_LIST_MEMBER);
+static ICEBERGDESTINATIONUPDATE_MEMBER_SCHEMA_EVOLUTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#IcebergDestinationUpdate$SchemaEvolutionConfiguration",
+        "com.amazonaws.firehose",
+        "IcebergDestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SchemaEvolutionConfiguration",
+    1,
+);
+static ICEBERGDESTINATIONUPDATE_MEMBER_TABLE_CREATION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#IcebergDestinationUpdate$TableCreationConfiguration",
+        "com.amazonaws.firehose",
+        "IcebergDestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TableCreationConfiguration",
+    2,
+);
+static ICEBERGDESTINATIONUPDATE_MEMBER_BUFFERING_HINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#IcebergDestinationUpdate$BufferingHints",
+        "com.amazonaws.firehose",
+        "IcebergDestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BufferingHints",
+    3,
+);
+static ICEBERGDESTINATIONUPDATE_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#IcebergDestinationUpdate$CloudWatchLoggingOptions",
+        "com.amazonaws.firehose",
+        "IcebergDestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CloudWatchLoggingOptions",
+    4,
+);
+static ICEBERGDESTINATIONUPDATE_MEMBER_PROCESSING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#IcebergDestinationUpdate$ProcessingConfiguration",
+        "com.amazonaws.firehose",
+        "IcebergDestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ProcessingConfiguration",
+    5,
+);
+static ICEBERGDESTINATIONUPDATE_MEMBER_S3_BACKUP_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#IcebergDestinationUpdate$S3BackupMode",
+        "com.amazonaws.firehose",
+        "IcebergDestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3BackupMode",
+    6,
+);
+static ICEBERGDESTINATIONUPDATE_MEMBER_RETRY_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#IcebergDestinationUpdate$RetryOptions",
+        "com.amazonaws.firehose",
+        "IcebergDestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RetryOptions",
+    7,
+);
+static ICEBERGDESTINATIONUPDATE_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#IcebergDestinationUpdate$RoleARN",
+        "com.amazonaws.firehose",
+        "IcebergDestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleARN",
+    8,
+);
+static ICEBERGDESTINATIONUPDATE_MEMBER_APPEND_ONLY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#IcebergDestinationUpdate$AppendOnly",
+        "com.amazonaws.firehose",
+        "IcebergDestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "AppendOnly",
+    9,
+);
+static ICEBERGDESTINATIONUPDATE_MEMBER_CATALOG_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#IcebergDestinationUpdate$CatalogConfiguration",
+        "com.amazonaws.firehose",
+        "IcebergDestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CatalogConfiguration",
+    10,
+);
+static ICEBERGDESTINATIONUPDATE_MEMBER_S3_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#IcebergDestinationUpdate$S3Configuration",
+        "com.amazonaws.firehose",
+        "IcebergDestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3Configuration",
+    11,
+);
+static ICEBERGDESTINATIONUPDATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#IcebergDestinationUpdate",
+        "com.amazonaws.firehose",
+        "IcebergDestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ICEBERGDESTINATIONUPDATE_MEMBER_DESTINATION_TABLE_CONFIGURATION_LIST,
+        &ICEBERGDESTINATIONUPDATE_MEMBER_SCHEMA_EVOLUTION_CONFIGURATION,
+        &ICEBERGDESTINATIONUPDATE_MEMBER_TABLE_CREATION_CONFIGURATION,
+        &ICEBERGDESTINATIONUPDATE_MEMBER_BUFFERING_HINTS,
+        &ICEBERGDESTINATIONUPDATE_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS,
+        &ICEBERGDESTINATIONUPDATE_MEMBER_PROCESSING_CONFIGURATION,
+        &ICEBERGDESTINATIONUPDATE_MEMBER_S3_BACKUP_MODE,
+        &ICEBERGDESTINATIONUPDATE_MEMBER_RETRY_OPTIONS,
+        &ICEBERGDESTINATIONUPDATE_MEMBER_ROLE_ARN,
+        &ICEBERGDESTINATIONUPDATE_MEMBER_APPEND_ONLY,
+        &ICEBERGDESTINATIONUPDATE_MEMBER_CATALOG_CONFIGURATION,
+        &ICEBERGDESTINATIONUPDATE_MEMBER_S3_CONFIGURATION,
+    ],
+);
+impl IcebergDestinationUpdate {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ICEBERGDESTINATIONUPDATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for IcebergDestinationUpdate {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.destination_table_configuration_list {
+            ser.write_list(
+                &ICEBERGDESTINATIONUPDATE_MEMBER_DESTINATION_TABLE_CONFIGURATION_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DestinationTableConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.schema_evolution_configuration {
+            ser.write_struct(&ICEBERGDESTINATIONUPDATE_MEMBER_SCHEMA_EVOLUTION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.table_creation_configuration {
+            ser.write_struct(&ICEBERGDESTINATIONUPDATE_MEMBER_TABLE_CREATION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.buffering_hints {
+            ser.write_struct(&ICEBERGDESTINATIONUPDATE_MEMBER_BUFFERING_HINTS, val)?;
+        }
+        if let Some(ref val) = self.cloud_watch_logging_options {
+            ser.write_struct(&ICEBERGDESTINATIONUPDATE_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.processing_configuration {
+            ser.write_struct(&ICEBERGDESTINATIONUPDATE_MEMBER_PROCESSING_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.s3_backup_mode {
+            ser.write_string(&ICEBERGDESTINATIONUPDATE_MEMBER_S3_BACKUP_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.retry_options {
+            ser.write_struct(&ICEBERGDESTINATIONUPDATE_MEMBER_RETRY_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&ICEBERGDESTINATIONUPDATE_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.append_only {
+            ser.write_boolean(&ICEBERGDESTINATIONUPDATE_MEMBER_APPEND_ONLY, *val)?;
+        }
+        if let Some(ref val) = self.catalog_configuration {
+            ser.write_struct(&ICEBERGDESTINATIONUPDATE_MEMBER_CATALOG_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.s3_configuration {
+            ser.write_struct(&ICEBERGDESTINATIONUPDATE_MEMBER_S3_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::IcebergDestinationUpdateBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ICEBERGDESTINATIONUPDATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_table_configuration_list = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DestinationTableConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.schema_evolution_configuration = Some(crate::types::SchemaEvolutionConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.table_creation_configuration = Some(crate::types::TableCreationConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.buffering_hints = Some(crate::types::BufferingHints::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_watch_logging_options = Some(crate::types::CloudWatchLoggingOptions::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.processing_configuration = Some(crate::types::ProcessingConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_backup_mode = Some(crate::types::IcebergS3BackupMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retry_options = Some(crate::types::RetryOptions::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.append_only = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.catalog_configuration = Some(crate::types::CatalogConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_configuration = Some(crate::types::S3DestinationConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl IcebergDestinationUpdate {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl IcebergDestinationUpdate {
     /// Creates a new builder-style object to manufacture [`IcebergDestinationUpdate`](crate::types::IcebergDestinationUpdate).
     pub fn builder() -> crate::types::builders::IcebergDestinationUpdateBuilder {

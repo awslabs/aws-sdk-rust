@@ -58,6 +58,238 @@ impl ::std::fmt::Debug for GetUserOutput {
         formatter.finish()
     }
 }
+static GETUSEROUTPUT_MEMBER_USERNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetUserOutput$Username",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetUserOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Username",
+    0,
+);
+static GETUSEROUTPUT_MEMBER_USER_ATTRIBUTES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AttributeListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "AttributeListType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETUSEROUTPUT_MEMBER_USER_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetUserOutput$UserAttributes",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetUserOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "UserAttributes",
+    1,
+)
+.with_list_member(&GETUSEROUTPUT_MEMBER_USER_ATTRIBUTES_MEMBER);
+static GETUSEROUTPUT_MEMBER_MFA_OPTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#MFAOptionListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "MFAOptionListType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETUSEROUTPUT_MEMBER_MFA_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetUserOutput$MFAOptions",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetUserOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "MFAOptions",
+    2,
+)
+.with_list_member(&GETUSEROUTPUT_MEMBER_MFA_OPTIONS_MEMBER);
+static GETUSEROUTPUT_MEMBER_PREFERRED_MFA_SETTING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetUserOutput$PreferredMfaSetting",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetUserOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreferredMfaSetting",
+    3,
+);
+static GETUSEROUTPUT_MEMBER_USER_MFA_SETTING_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserMFASettingListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserMFASettingListType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static GETUSEROUTPUT_MEMBER_USER_MFA_SETTING_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetUserOutput$UserMFASettingList",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetUserOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "UserMFASettingList",
+    4,
+)
+.with_list_member(&GETUSEROUTPUT_MEMBER_USER_MFA_SETTING_LIST_MEMBER);
+static GETUSEROUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetUserOutput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetUserOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETUSEROUTPUT_MEMBER_USERNAME,
+        &GETUSEROUTPUT_MEMBER_USER_ATTRIBUTES,
+        &GETUSEROUTPUT_MEMBER_MFA_OPTIONS,
+        &GETUSEROUTPUT_MEMBER_PREFERRED_MFA_SETTING,
+        &GETUSEROUTPUT_MEMBER_USER_MFA_SETTING_LIST,
+    ],
+)
+.with_original_name("GetUserResponse");
+impl GetUserOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETUSEROUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetUserOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.username;
+            ser.write_string(&GETUSEROUTPUT_MEMBER_USERNAME, val)?;
+        }
+        {
+            let val = &self.user_attributes;
+
+            ser.write_list(
+                &GETUSEROUTPUT_MEMBER_USER_ATTRIBUTES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AttributeType::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.mfa_options {
+            ser.write_list(
+                &GETUSEROUTPUT_MEMBER_MFA_OPTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::MfaOptionType::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.preferred_mfa_setting {
+            ser.write_string(&GETUSEROUTPUT_MEMBER_PREFERRED_MFA_SETTING, val)?;
+        }
+        if let Some(ref val) = self.user_mfa_setting_list {
+            ser.write_list(
+                &GETUSEROUTPUT_MEMBER_USER_MFA_SETTING_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_user::builders::GetUserOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETUSEROUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.username = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.user_attributes = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::AttributeType::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mfa_options = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MfaOptionType::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preferred_mfa_setting = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_mfa_setting_list = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetUserOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.username = builder.username.or(Some(String::new()));
+        builder.user_attributes = builder.user_attributes.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for GetUserOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

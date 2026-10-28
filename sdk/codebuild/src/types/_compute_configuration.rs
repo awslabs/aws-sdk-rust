@@ -37,6 +37,169 @@ impl ComputeConfiguration {
         self.instance_type.as_deref()
     }
 }
+static COMPUTECONFIGURATION_MEMBER_V_CPU: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ComputeConfiguration$vCpu",
+        "com.amazonaws.codebuild",
+        "ComputeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "vCpu",
+    0,
+);
+static COMPUTECONFIGURATION_MEMBER_MEMORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ComputeConfiguration$memory",
+        "com.amazonaws.codebuild",
+        "ComputeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "memory",
+    1,
+);
+static COMPUTECONFIGURATION_MEMBER_DISK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ComputeConfiguration$disk",
+        "com.amazonaws.codebuild",
+        "ComputeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "disk",
+    2,
+);
+static COMPUTECONFIGURATION_MEMBER_MACHINE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ComputeConfiguration$machineType",
+        "com.amazonaws.codebuild",
+        "ComputeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "machineType",
+    3,
+);
+static COMPUTECONFIGURATION_MEMBER_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ComputeConfiguration$instanceType",
+        "com.amazonaws.codebuild",
+        "ComputeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "instanceType",
+    4,
+);
+static COMPUTECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ComputeConfiguration",
+        "com.amazonaws.codebuild",
+        "ComputeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &COMPUTECONFIGURATION_MEMBER_V_CPU,
+        &COMPUTECONFIGURATION_MEMBER_MEMORY,
+        &COMPUTECONFIGURATION_MEMBER_DISK,
+        &COMPUTECONFIGURATION_MEMBER_MACHINE_TYPE,
+        &COMPUTECONFIGURATION_MEMBER_INSTANCE_TYPE,
+    ],
+);
+impl ComputeConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COMPUTECONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ComputeConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.v_cpu {
+            ser.write_long(&COMPUTECONFIGURATION_MEMBER_V_CPU, *val)?;
+        }
+        if let Some(ref val) = self.memory {
+            ser.write_long(&COMPUTECONFIGURATION_MEMBER_MEMORY, *val)?;
+        }
+        if let Some(ref val) = self.disk {
+            ser.write_long(&COMPUTECONFIGURATION_MEMBER_DISK, *val)?;
+        }
+        if let Some(ref val) = self.machine_type {
+            ser.write_string(&COMPUTECONFIGURATION_MEMBER_MACHINE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.instance_type {
+            ser.write_string(&COMPUTECONFIGURATION_MEMBER_INSTANCE_TYPE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ComputeConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COMPUTECONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.v_cpu = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.memory = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disk = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.machine_type = Some(crate::types::MachineType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ComputeConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ComputeConfiguration {
     /// Creates a new builder-style object to manufacture [`ComputeConfiguration`](crate::types::ComputeConfiguration).
     pub fn builder() -> crate::types::builders::ComputeConfigurationBuilder {

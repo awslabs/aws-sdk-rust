@@ -54,6 +54,235 @@ impl UpdateWorkspacesPoolInput {
         self.running_mode.as_ref()
     }
 }
+static UPDATEWORKSPACESPOOLINPUT_MEMBER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#UpdateWorkspacesPoolInput$PoolId",
+        "com.amazonaws.workspaces.synthetic",
+        "UpdateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PoolId",
+    0,
+);
+static UPDATEWORKSPACESPOOLINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#UpdateWorkspacesPoolInput$Description",
+        "com.amazonaws.workspaces.synthetic",
+        "UpdateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static UPDATEWORKSPACESPOOLINPUT_MEMBER_BUNDLE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#UpdateWorkspacesPoolInput$BundleId",
+        "com.amazonaws.workspaces.synthetic",
+        "UpdateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BundleId",
+    2,
+);
+static UPDATEWORKSPACESPOOLINPUT_MEMBER_DIRECTORY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#UpdateWorkspacesPoolInput$DirectoryId",
+        "com.amazonaws.workspaces.synthetic",
+        "UpdateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DirectoryId",
+    3,
+);
+static UPDATEWORKSPACESPOOLINPUT_MEMBER_CAPACITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#UpdateWorkspacesPoolInput$Capacity",
+        "com.amazonaws.workspaces.synthetic",
+        "UpdateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Capacity",
+    4,
+);
+static UPDATEWORKSPACESPOOLINPUT_MEMBER_APPLICATION_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#UpdateWorkspacesPoolInput$ApplicationSettings",
+        "com.amazonaws.workspaces.synthetic",
+        "UpdateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ApplicationSettings",
+    5,
+);
+static UPDATEWORKSPACESPOOLINPUT_MEMBER_TIMEOUT_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#UpdateWorkspacesPoolInput$TimeoutSettings",
+        "com.amazonaws.workspaces.synthetic",
+        "UpdateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TimeoutSettings",
+    6,
+);
+static UPDATEWORKSPACESPOOLINPUT_MEMBER_RUNNING_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#UpdateWorkspacesPoolInput$RunningMode",
+        "com.amazonaws.workspaces.synthetic",
+        "UpdateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RunningMode",
+    7,
+);
+static UPDATEWORKSPACESPOOLINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#UpdateWorkspacesPoolInput",
+        "com.amazonaws.workspaces.synthetic",
+        "UpdateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEWORKSPACESPOOLINPUT_MEMBER_POOL_ID,
+        &UPDATEWORKSPACESPOOLINPUT_MEMBER_DESCRIPTION,
+        &UPDATEWORKSPACESPOOLINPUT_MEMBER_BUNDLE_ID,
+        &UPDATEWORKSPACESPOOLINPUT_MEMBER_DIRECTORY_ID,
+        &UPDATEWORKSPACESPOOLINPUT_MEMBER_CAPACITY,
+        &UPDATEWORKSPACESPOOLINPUT_MEMBER_APPLICATION_SETTINGS,
+        &UPDATEWORKSPACESPOOLINPUT_MEMBER_TIMEOUT_SETTINGS,
+        &UPDATEWORKSPACESPOOLINPUT_MEMBER_RUNNING_MODE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateWorkspacesPoolRequest");
+impl UpdateWorkspacesPoolInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEWORKSPACESPOOLINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateWorkspacesPoolInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pool_id {
+            ser.write_string(&UPDATEWORKSPACESPOOLINPUT_MEMBER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATEWORKSPACESPOOLINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.bundle_id {
+            ser.write_string(&UPDATEWORKSPACESPOOLINPUT_MEMBER_BUNDLE_ID, val)?;
+        }
+        if let Some(ref val) = self.directory_id {
+            ser.write_string(&UPDATEWORKSPACESPOOLINPUT_MEMBER_DIRECTORY_ID, val)?;
+        }
+        if let Some(ref val) = self.capacity {
+            ser.write_struct(&UPDATEWORKSPACESPOOLINPUT_MEMBER_CAPACITY, val)?;
+        }
+        if let Some(ref val) = self.application_settings {
+            ser.write_struct(&UPDATEWORKSPACESPOOLINPUT_MEMBER_APPLICATION_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.timeout_settings {
+            ser.write_struct(&UPDATEWORKSPACESPOOLINPUT_MEMBER_TIMEOUT_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.running_mode {
+            ser.write_string(&UPDATEWORKSPACESPOOLINPUT_MEMBER_RUNNING_MODE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_workspaces_pool::builders::UpdateWorkspacesPoolInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEWORKSPACESPOOLINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bundle_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.directory_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity = Some(crate::types::Capacity::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.application_settings = Some(crate::types::ApplicationSettingsRequest::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.timeout_settings = Some(crate::types::TimeoutSettings::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.running_mode = Some(crate::types::PoolsRunningMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateWorkspacesPoolInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pool_id = builder.pool_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateWorkspacesPoolInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspacesPoolInput`](crate::operation::update_workspaces_pool::UpdateWorkspacesPoolInput).
     pub fn builder() -> crate::operation::update_workspaces_pool::builders::UpdateWorkspacesPoolInputBuilder {

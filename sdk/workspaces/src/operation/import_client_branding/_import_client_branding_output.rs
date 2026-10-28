@@ -43,6 +43,191 @@ impl ImportClientBrandingOutput {
         self.device_type_web.as_ref()
     }
 }
+static IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_WINDOWS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ImportClientBrandingOutput$DeviceTypeWindows",
+        "com.amazonaws.workspaces.synthetic",
+        "ImportClientBrandingOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeviceTypeWindows",
+    0,
+);
+static IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_OSX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ImportClientBrandingOutput$DeviceTypeOsx",
+        "com.amazonaws.workspaces.synthetic",
+        "ImportClientBrandingOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeviceTypeOsx",
+    1,
+);
+static IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_ANDROID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ImportClientBrandingOutput$DeviceTypeAndroid",
+        "com.amazonaws.workspaces.synthetic",
+        "ImportClientBrandingOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeviceTypeAndroid",
+    2,
+);
+static IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_IOS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ImportClientBrandingOutput$DeviceTypeIos",
+        "com.amazonaws.workspaces.synthetic",
+        "ImportClientBrandingOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeviceTypeIos",
+    3,
+);
+static IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_LINUX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ImportClientBrandingOutput$DeviceTypeLinux",
+        "com.amazonaws.workspaces.synthetic",
+        "ImportClientBrandingOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeviceTypeLinux",
+    4,
+);
+static IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_WEB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ImportClientBrandingOutput$DeviceTypeWeb",
+        "com.amazonaws.workspaces.synthetic",
+        "ImportClientBrandingOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeviceTypeWeb",
+    5,
+);
+static IMPORTCLIENTBRANDINGOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ImportClientBrandingOutput",
+        "com.amazonaws.workspaces.synthetic",
+        "ImportClientBrandingOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_WINDOWS,
+        &IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_OSX,
+        &IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_ANDROID,
+        &IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_IOS,
+        &IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_LINUX,
+        &IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_WEB,
+    ],
+)
+.with_original_name("ImportClientBrandingResult");
+impl ImportClientBrandingOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &IMPORTCLIENTBRANDINGOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ImportClientBrandingOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.device_type_windows {
+            ser.write_struct(&IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_WINDOWS, val)?;
+        }
+        if let Some(ref val) = self.device_type_osx {
+            ser.write_struct(&IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_OSX, val)?;
+        }
+        if let Some(ref val) = self.device_type_android {
+            ser.write_struct(&IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_ANDROID, val)?;
+        }
+        if let Some(ref val) = self.device_type_ios {
+            ser.write_struct(&IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_IOS, val)?;
+        }
+        if let Some(ref val) = self.device_type_linux {
+            ser.write_struct(&IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_LINUX, val)?;
+        }
+        if let Some(ref val) = self.device_type_web {
+            ser.write_struct(&IMPORTCLIENTBRANDINGOUTPUT_MEMBER_DEVICE_TYPE_WEB, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::import_client_branding::builders::ImportClientBrandingOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&IMPORTCLIENTBRANDINGOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_type_windows = Some(crate::types::DefaultClientBrandingAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_type_osx = Some(crate::types::DefaultClientBrandingAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_type_android = Some(crate::types::DefaultClientBrandingAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_type_ios = Some(crate::types::IosClientBrandingAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_type_linux = Some(crate::types::DefaultClientBrandingAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_type_web = Some(crate::types::DefaultClientBrandingAttributes::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ImportClientBrandingOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ImportClientBrandingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

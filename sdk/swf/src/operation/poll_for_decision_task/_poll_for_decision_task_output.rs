@@ -54,6 +54,226 @@ impl PollForDecisionTaskOutput {
         self.previous_started_event_id
     }
 }
+static POLLFORDECISIONTASKOUTPUT_MEMBER_TASK_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForDecisionTaskOutput$taskToken",
+        "com.amazonaws.swf.synthetic",
+        "PollForDecisionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskToken",
+    0,
+);
+static POLLFORDECISIONTASKOUTPUT_MEMBER_STARTED_EVENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForDecisionTaskOutput$startedEventId",
+        "com.amazonaws.swf.synthetic",
+        "PollForDecisionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "startedEventId",
+    1,
+);
+static POLLFORDECISIONTASKOUTPUT_MEMBER_WORKFLOW_EXECUTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForDecisionTaskOutput$workflowExecution",
+        "com.amazonaws.swf.synthetic",
+        "PollForDecisionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "workflowExecution",
+    2,
+);
+static POLLFORDECISIONTASKOUTPUT_MEMBER_WORKFLOW_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForDecisionTaskOutput$workflowType",
+        "com.amazonaws.swf.synthetic",
+        "PollForDecisionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "workflowType",
+    3,
+);
+static POLLFORDECISIONTASKOUTPUT_MEMBER_EVENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.swf#HistoryEventList$member", "com.amazonaws.swf", "HistoryEventList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static POLLFORDECISIONTASKOUTPUT_MEMBER_EVENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForDecisionTaskOutput$events",
+        "com.amazonaws.swf.synthetic",
+        "PollForDecisionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "events",
+    4,
+)
+.with_list_member(&POLLFORDECISIONTASKOUTPUT_MEMBER_EVENTS_MEMBER);
+static POLLFORDECISIONTASKOUTPUT_MEMBER_NEXT_PAGE_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForDecisionTaskOutput$nextPageToken",
+        "com.amazonaws.swf.synthetic",
+        "PollForDecisionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextPageToken",
+    5,
+);
+static POLLFORDECISIONTASKOUTPUT_MEMBER_PREVIOUS_STARTED_EVENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForDecisionTaskOutput$previousStartedEventId",
+        "com.amazonaws.swf.synthetic",
+        "PollForDecisionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "previousStartedEventId",
+    6,
+);
+static POLLFORDECISIONTASKOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForDecisionTaskOutput",
+        "com.amazonaws.swf.synthetic",
+        "PollForDecisionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &POLLFORDECISIONTASKOUTPUT_MEMBER_TASK_TOKEN,
+        &POLLFORDECISIONTASKOUTPUT_MEMBER_STARTED_EVENT_ID,
+        &POLLFORDECISIONTASKOUTPUT_MEMBER_WORKFLOW_EXECUTION,
+        &POLLFORDECISIONTASKOUTPUT_MEMBER_WORKFLOW_TYPE,
+        &POLLFORDECISIONTASKOUTPUT_MEMBER_EVENTS,
+        &POLLFORDECISIONTASKOUTPUT_MEMBER_NEXT_PAGE_TOKEN,
+        &POLLFORDECISIONTASKOUTPUT_MEMBER_PREVIOUS_STARTED_EVENT_ID,
+    ],
+)
+.with_original_name("DecisionTask");
+impl PollForDecisionTaskOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &POLLFORDECISIONTASKOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PollForDecisionTaskOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.task_token;
+            ser.write_string(&POLLFORDECISIONTASKOUTPUT_MEMBER_TASK_TOKEN, val)?;
+        }
+        {
+            let val = &self.started_event_id;
+            ser.write_long(&POLLFORDECISIONTASKOUTPUT_MEMBER_STARTED_EVENT_ID, *val)?;
+        }
+        if let Some(ref val) = self.workflow_execution {
+            ser.write_struct(&POLLFORDECISIONTASKOUTPUT_MEMBER_WORKFLOW_EXECUTION, val)?;
+        }
+        if let Some(ref val) = self.workflow_type {
+            ser.write_struct(&POLLFORDECISIONTASKOUTPUT_MEMBER_WORKFLOW_TYPE, val)?;
+        }
+        {
+            let val = &self.events;
+
+            ser.write_list(
+                &POLLFORDECISIONTASKOUTPUT_MEMBER_EVENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::HistoryEvent::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_page_token {
+            ser.write_string(&POLLFORDECISIONTASKOUTPUT_MEMBER_NEXT_PAGE_TOKEN, val)?;
+        }
+        {
+            let val = &self.previous_started_event_id;
+            ser.write_long(&POLLFORDECISIONTASKOUTPUT_MEMBER_PREVIOUS_STARTED_EVENT_ID, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::poll_for_decision_task::builders::PollForDecisionTaskOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&POLLFORDECISIONTASKOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.task_token = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.started_event_id = Some(deser.read_long(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_execution = Some(crate::types::WorkflowExecution::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_type = Some(crate::types::WorkflowType::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    self.events = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::HistoryEvent::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_page_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    self.previous_started_event_id = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PollForDecisionTaskOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.task_token = builder.task_token.or(Some(String::new()));
+        builder.started_event_id = builder.started_event_id.or(Some(0i64));
+        builder.events = builder.events.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for PollForDecisionTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

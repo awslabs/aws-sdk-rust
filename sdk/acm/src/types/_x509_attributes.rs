@@ -67,6 +67,295 @@ impl X509Attributes {
         self.not_before.as_ref()
     }
 }
+static X509ATTRIBUTES_MEMBER_ISSUER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#X509Attributes$Issuer", "com.amazonaws.acm", "X509Attributes"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Issuer",
+    0,
+);
+static X509ATTRIBUTES_MEMBER_SUBJECT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#X509Attributes$Subject", "com.amazonaws.acm", "X509Attributes"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Subject",
+    1,
+);
+static X509ATTRIBUTES_MEMBER_SUBJECT_ALTERNATIVE_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#GeneralNameList$member", "com.amazonaws.acm", "GeneralNameList"),
+    ::aws_smithy_schema::ShapeType::Union,
+    "member",
+    0,
+);
+static X509ATTRIBUTES_MEMBER_SUBJECT_ALTERNATIVE_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#X509Attributes$SubjectAlternativeNames",
+        "com.amazonaws.acm",
+        "X509Attributes",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SubjectAlternativeNames",
+    2,
+)
+.with_list_member(&X509ATTRIBUTES_MEMBER_SUBJECT_ALTERNATIVE_NAMES_MEMBER);
+static X509ATTRIBUTES_MEMBER_EXTENDED_KEY_USAGES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#ExtendedKeyUsageNames$member",
+        "com.amazonaws.acm",
+        "ExtendedKeyUsageNames",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static X509ATTRIBUTES_MEMBER_EXTENDED_KEY_USAGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#X509Attributes$ExtendedKeyUsages",
+        "com.amazonaws.acm",
+        "X509Attributes",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ExtendedKeyUsages",
+    3,
+)
+.with_list_member(&X509ATTRIBUTES_MEMBER_EXTENDED_KEY_USAGES_MEMBER);
+static X509ATTRIBUTES_MEMBER_KEY_ALGORITHM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#X509Attributes$KeyAlgorithm", "com.amazonaws.acm", "X509Attributes"),
+    ::aws_smithy_schema::ShapeType::String,
+    "KeyAlgorithm",
+    4,
+);
+static X509ATTRIBUTES_MEMBER_KEY_USAGES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#KeyUsageNames$member", "com.amazonaws.acm", "KeyUsageNames"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static X509ATTRIBUTES_MEMBER_KEY_USAGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#X509Attributes$KeyUsages", "com.amazonaws.acm", "X509Attributes"),
+    ::aws_smithy_schema::ShapeType::List,
+    "KeyUsages",
+    5,
+)
+.with_list_member(&X509ATTRIBUTES_MEMBER_KEY_USAGES_MEMBER);
+static X509ATTRIBUTES_MEMBER_SERIAL_NUMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#X509Attributes$SerialNumber", "com.amazonaws.acm", "X509Attributes"),
+    ::aws_smithy_schema::ShapeType::String,
+    "SerialNumber",
+    6,
+);
+static X509ATTRIBUTES_MEMBER_NOT_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#X509Attributes$NotAfter", "com.amazonaws.acm", "X509Attributes"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "NotAfter",
+    7,
+);
+static X509ATTRIBUTES_MEMBER_NOT_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#X509Attributes$NotBefore", "com.amazonaws.acm", "X509Attributes"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "NotBefore",
+    8,
+);
+static X509ATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#X509Attributes", "com.amazonaws.acm", "X509Attributes"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &X509ATTRIBUTES_MEMBER_ISSUER,
+        &X509ATTRIBUTES_MEMBER_SUBJECT,
+        &X509ATTRIBUTES_MEMBER_SUBJECT_ALTERNATIVE_NAMES,
+        &X509ATTRIBUTES_MEMBER_EXTENDED_KEY_USAGES,
+        &X509ATTRIBUTES_MEMBER_KEY_ALGORITHM,
+        &X509ATTRIBUTES_MEMBER_KEY_USAGES,
+        &X509ATTRIBUTES_MEMBER_SERIAL_NUMBER,
+        &X509ATTRIBUTES_MEMBER_NOT_AFTER,
+        &X509ATTRIBUTES_MEMBER_NOT_BEFORE,
+    ],
+);
+impl X509Attributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &X509ATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for X509Attributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.issuer {
+            ser.write_struct(&X509ATTRIBUTES_MEMBER_ISSUER, val)?;
+        }
+        if let Some(ref val) = self.subject {
+            ser.write_struct(&X509ATTRIBUTES_MEMBER_SUBJECT, val)?;
+        }
+        if let Some(ref val) = self.subject_alternative_names {
+            ser.write_list(
+                &X509ATTRIBUTES_MEMBER_SUBJECT_ALTERNATIVE_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::GeneralName::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.extended_key_usages {
+            ser.write_list(
+                &X509ATTRIBUTES_MEMBER_EXTENDED_KEY_USAGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.key_algorithm {
+            ser.write_string(&X509ATTRIBUTES_MEMBER_KEY_ALGORITHM, val.as_str())?;
+        }
+        if let Some(ref val) = self.key_usages {
+            ser.write_list(
+                &X509ATTRIBUTES_MEMBER_KEY_USAGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.serial_number {
+            ser.write_string(&X509ATTRIBUTES_MEMBER_SERIAL_NUMBER, val)?;
+        }
+        if let Some(ref val) = self.not_after {
+            ser.write_timestamp(&X509ATTRIBUTES_MEMBER_NOT_AFTER, val)?;
+        }
+        if let Some(ref val) = self.not_before {
+            ser.write_timestamp(&X509ATTRIBUTES_MEMBER_NOT_BEFORE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::X509AttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&X509ATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.issuer = Some(crate::types::DistinguishedName::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subject = Some(crate::types::DistinguishedName::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subject_alternative_names = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::GeneralName::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.extended_key_usages = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ExtendedKeyUsageName::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_algorithm = Some(crate::types::KeyAlgorithm::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_usages = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::KeyUsageName::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.serial_number = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.not_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.not_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl X509Attributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl X509Attributes {
     /// Creates a new builder-style object to manufacture [`X509Attributes`](crate::types::X509Attributes).
     pub fn builder() -> crate::types::builders::X509AttributesBuilder {

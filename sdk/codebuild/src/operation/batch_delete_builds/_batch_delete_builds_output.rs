@@ -23,6 +23,148 @@ impl BatchDeleteBuildsOutput {
         self.builds_not_deleted.as_deref().unwrap_or_default()
     }
 }
+static BATCHDELETEBUILDSOUTPUT_MEMBER_BUILDS_DELETED_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildIds$member", "com.amazonaws.codebuild", "BuildIds"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static BATCHDELETEBUILDSOUTPUT_MEMBER_BUILDS_DELETED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#BatchDeleteBuildsOutput$buildsDeleted",
+        "com.amazonaws.codebuild.synthetic",
+        "BatchDeleteBuildsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "buildsDeleted",
+    0,
+)
+.with_list_member(&BATCHDELETEBUILDSOUTPUT_MEMBER_BUILDS_DELETED_MEMBER);
+static BATCHDELETEBUILDSOUTPUT_MEMBER_BUILDS_NOT_DELETED_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildsNotDeleted$member",
+        "com.amazonaws.codebuild",
+        "BuildsNotDeleted",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BATCHDELETEBUILDSOUTPUT_MEMBER_BUILDS_NOT_DELETED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#BatchDeleteBuildsOutput$buildsNotDeleted",
+        "com.amazonaws.codebuild.synthetic",
+        "BatchDeleteBuildsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "buildsNotDeleted",
+    1,
+)
+.with_list_member(&BATCHDELETEBUILDSOUTPUT_MEMBER_BUILDS_NOT_DELETED_MEMBER);
+static BATCHDELETEBUILDSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#BatchDeleteBuildsOutput",
+        "com.amazonaws.codebuild.synthetic",
+        "BatchDeleteBuildsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHDELETEBUILDSOUTPUT_MEMBER_BUILDS_DELETED,
+        &BATCHDELETEBUILDSOUTPUT_MEMBER_BUILDS_NOT_DELETED,
+    ],
+)
+.with_original_name("BatchDeleteBuildsOutput");
+impl BatchDeleteBuildsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHDELETEBUILDSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchDeleteBuildsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.builds_deleted {
+            ser.write_list(
+                &BATCHDELETEBUILDSOUTPUT_MEMBER_BUILDS_DELETED,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.builds_not_deleted {
+            ser.write_list(
+                &BATCHDELETEBUILDSOUTPUT_MEMBER_BUILDS_NOT_DELETED,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::BuildNotDeleted::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_delete_builds::builders::BatchDeleteBuildsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHDELETEBUILDSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.builds_deleted = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.builds_not_deleted = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::BuildNotDeleted::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchDeleteBuildsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for BatchDeleteBuildsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

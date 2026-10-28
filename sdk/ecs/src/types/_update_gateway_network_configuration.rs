@@ -13,6 +13,84 @@ impl UpdateGatewayNetworkConfiguration {
         self.inbound_security_group.as_deref()
     }
 }
+static UPDATEGATEWAYNETWORKCONFIGURATION_MEMBER_INBOUND_SECURITY_GROUP: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#UpdateGatewayNetworkConfiguration$inboundSecurityGroup",
+            "com.amazonaws.ecs",
+            "UpdateGatewayNetworkConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "inboundSecurityGroup",
+        0,
+    );
+static UPDATEGATEWAYNETWORKCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#UpdateGatewayNetworkConfiguration",
+        "com.amazonaws.ecs",
+        "UpdateGatewayNetworkConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&UPDATEGATEWAYNETWORKCONFIGURATION_MEMBER_INBOUND_SECURITY_GROUP],
+);
+impl UpdateGatewayNetworkConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEGATEWAYNETWORKCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateGatewayNetworkConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.inbound_security_group {
+            ser.write_string(&UPDATEGATEWAYNETWORKCONFIGURATION_MEMBER_INBOUND_SECURITY_GROUP, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UpdateGatewayNetworkConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEGATEWAYNETWORKCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inbound_security_group = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateGatewayNetworkConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl UpdateGatewayNetworkConfiguration {
     /// Creates a new builder-style object to manufacture [`UpdateGatewayNetworkConfiguration`](crate::types::UpdateGatewayNetworkConfiguration).
     pub fn builder() -> crate::types::builders::UpdateGatewayNetworkConfigurationBuilder {

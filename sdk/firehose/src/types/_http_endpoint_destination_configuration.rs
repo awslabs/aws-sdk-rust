@@ -67,6 +67,279 @@ impl HttpEndpointDestinationConfiguration {
         self.secrets_manager_configuration.as_ref()
     }
 }
+static HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_ENDPOINT_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#HttpEndpointDestinationConfiguration$EndpointConfiguration",
+            "com.amazonaws.firehose",
+            "HttpEndpointDestinationConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "EndpointConfiguration",
+        0,
+    );
+static HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_BUFFERING_HINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#HttpEndpointDestinationConfiguration$BufferingHints",
+        "com.amazonaws.firehose",
+        "HttpEndpointDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BufferingHints",
+    1,
+);
+static HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#HttpEndpointDestinationConfiguration$CloudWatchLoggingOptions",
+            "com.amazonaws.firehose",
+            "HttpEndpointDestinationConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "CloudWatchLoggingOptions",
+        2,
+    );
+static HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_REQUEST_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#HttpEndpointDestinationConfiguration$RequestConfiguration",
+            "com.amazonaws.firehose",
+            "HttpEndpointDestinationConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "RequestConfiguration",
+        3,
+    );
+static HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_PROCESSING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#HttpEndpointDestinationConfiguration$ProcessingConfiguration",
+            "com.amazonaws.firehose",
+            "HttpEndpointDestinationConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ProcessingConfiguration",
+        4,
+    );
+static HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#HttpEndpointDestinationConfiguration$RoleARN",
+        "com.amazonaws.firehose",
+        "HttpEndpointDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleARN",
+    5,
+);
+static HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_RETRY_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#HttpEndpointDestinationConfiguration$RetryOptions",
+        "com.amazonaws.firehose",
+        "HttpEndpointDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RetryOptions",
+    6,
+);
+static HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_S3_BACKUP_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#HttpEndpointDestinationConfiguration$S3BackupMode",
+        "com.amazonaws.firehose",
+        "HttpEndpointDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3BackupMode",
+    7,
+);
+static HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_S3_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#HttpEndpointDestinationConfiguration$S3Configuration",
+        "com.amazonaws.firehose",
+        "HttpEndpointDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3Configuration",
+    8,
+);
+static HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_SECRETS_MANAGER_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#HttpEndpointDestinationConfiguration$SecretsManagerConfiguration",
+            "com.amazonaws.firehose",
+            "HttpEndpointDestinationConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "SecretsManagerConfiguration",
+        9,
+    );
+static HTTPENDPOINTDESTINATIONCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#HttpEndpointDestinationConfiguration",
+        "com.amazonaws.firehose",
+        "HttpEndpointDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_ENDPOINT_CONFIGURATION,
+        &HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_BUFFERING_HINTS,
+        &HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS,
+        &HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_REQUEST_CONFIGURATION,
+        &HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_PROCESSING_CONFIGURATION,
+        &HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_ROLE_ARN,
+        &HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_RETRY_OPTIONS,
+        &HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_S3_BACKUP_MODE,
+        &HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_S3_CONFIGURATION,
+        &HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_SECRETS_MANAGER_CONFIGURATION,
+    ],
+);
+impl HttpEndpointDestinationConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &HTTPENDPOINTDESTINATIONCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for HttpEndpointDestinationConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.endpoint_configuration {
+            ser.write_struct(&HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_ENDPOINT_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.buffering_hints {
+            ser.write_struct(&HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_BUFFERING_HINTS, val)?;
+        }
+        if let Some(ref val) = self.cloud_watch_logging_options {
+            ser.write_struct(&HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.request_configuration {
+            ser.write_struct(&HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_REQUEST_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.processing_configuration {
+            ser.write_struct(&HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_PROCESSING_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.retry_options {
+            ser.write_struct(&HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_RETRY_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.s3_backup_mode {
+            ser.write_string(&HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_S3_BACKUP_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_configuration {
+            ser.write_struct(&HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_S3_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.secrets_manager_configuration {
+            ser.write_struct(&HTTPENDPOINTDESTINATIONCONFIGURATION_MEMBER_SECRETS_MANAGER_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::HttpEndpointDestinationConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&HTTPENDPOINTDESTINATIONCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_configuration = Some(crate::types::HttpEndpointConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.buffering_hints = Some(crate::types::HttpEndpointBufferingHints::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_watch_logging_options = Some(crate::types::CloudWatchLoggingOptions::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.request_configuration = Some(crate::types::HttpEndpointRequestConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.processing_configuration = Some(crate::types::ProcessingConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retry_options = Some(crate::types::HttpEndpointRetryOptions::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_backup_mode = Some(crate::types::HttpEndpointS3BackupMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_configuration = Some(crate::types::S3DestinationConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secrets_manager_configuration = Some(crate::types::SecretsManagerConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl HttpEndpointDestinationConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl HttpEndpointDestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`HttpEndpointDestinationConfiguration`](crate::types::HttpEndpointDestinationConfiguration).
     pub fn builder() -> crate::types::builders::HttpEndpointDestinationConfigurationBuilder {

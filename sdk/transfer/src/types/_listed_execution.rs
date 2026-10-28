@@ -31,6 +31,144 @@ impl ListedExecution {
         self.status.as_ref()
     }
 }
+static LISTEDEXECUTION_MEMBER_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedExecution$ExecutionId",
+        "com.amazonaws.transfer",
+        "ListedExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutionId",
+    0,
+);
+static LISTEDEXECUTION_MEMBER_INITIAL_FILE_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedExecution$InitialFileLocation",
+        "com.amazonaws.transfer",
+        "ListedExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InitialFileLocation",
+    1,
+);
+static LISTEDEXECUTION_MEMBER_SERVICE_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedExecution$ServiceMetadata",
+        "com.amazonaws.transfer",
+        "ListedExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ServiceMetadata",
+    2,
+);
+static LISTEDEXECUTION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedExecution$Status",
+        "com.amazonaws.transfer",
+        "ListedExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    3,
+);
+static LISTEDEXECUTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ListedExecution", "com.amazonaws.transfer", "ListedExecution"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTEDEXECUTION_MEMBER_EXECUTION_ID,
+        &LISTEDEXECUTION_MEMBER_INITIAL_FILE_LOCATION,
+        &LISTEDEXECUTION_MEMBER_SERVICE_METADATA,
+        &LISTEDEXECUTION_MEMBER_STATUS,
+    ],
+);
+impl ListedExecution {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTEDEXECUTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListedExecution {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.execution_id {
+            ser.write_string(&LISTEDEXECUTION_MEMBER_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.initial_file_location {
+            ser.write_struct(&LISTEDEXECUTION_MEMBER_INITIAL_FILE_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.service_metadata {
+            ser.write_struct(&LISTEDEXECUTION_MEMBER_SERVICE_METADATA, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&LISTEDEXECUTION_MEMBER_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ListedExecutionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTEDEXECUTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.initial_file_location = Some(crate::types::FileLocation::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_metadata = Some(crate::types::ServiceMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::ExecutionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListedExecution {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ListedExecution {
     /// Creates a new builder-style object to manufacture [`ListedExecution`](crate::types::ListedExecution).
     pub fn builder() -> crate::types::builders::ListedExecutionBuilder {

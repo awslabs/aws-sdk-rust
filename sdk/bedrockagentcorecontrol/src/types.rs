@@ -517,6 +517,8 @@ pub use crate::types::_on_behalf_of_token_exchange_grant_type_type::OnBehalfOfTo
 
 pub use crate::types::_token_exchange_grant_type_config_type::TokenExchangeGrantTypeConfigType;
 
+pub use crate::types::_on_behalf_of_authentication_config::OnBehalfOfAuthenticationConfig;
+
 pub use crate::types::_private_key_source::PrivateKeySource;
 
 pub use crate::types::_signing_algorithm::SigningAlgorithm;
@@ -696,6 +698,8 @@ pub use crate::types::_updated_custom_descriptor::UpdatedCustomDescriptor;
 pub use crate::types::_updated_agent_skills_descriptor::UpdatedAgentSkillsDescriptor;
 
 pub use crate::types::_actor_token_content_type::ActorTokenContentType;
+
+pub use crate::types::_on_behalf_of_client_authentication_method::OnBehalfOfClientAuthenticationMethod;
 
 pub use crate::types::_kms_key_source_type::KmsKeySourceType;
 
@@ -1748,6 +1752,10 @@ mod _oauth2_discovery;
 mod _oauth2_provider_config_input;
 
 mod _oauth2_provider_config_output;
+
+mod _on_behalf_of_authentication_config;
+
+mod _on_behalf_of_client_authentication_method;
 
 mod _on_behalf_of_token_exchange_config_type;
 

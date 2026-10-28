@@ -78,6 +78,301 @@ impl ::std::fmt::Debug for ContainerOverride {
         formatter.finish()
     }
 }
+static CONTAINEROVERRIDE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerOverride$name", "com.amazonaws.ecs", "ContainerOverride"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static CONTAINEROVERRIDE_MEMBER_COMMAND_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CONTAINEROVERRIDE_MEMBER_COMMAND: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerOverride$command", "com.amazonaws.ecs", "ContainerOverride"),
+    ::aws_smithy_schema::ShapeType::List,
+    "command",
+    1,
+)
+.with_list_member(&CONTAINEROVERRIDE_MEMBER_COMMAND_MEMBER);
+static CONTAINEROVERRIDE_MEMBER_ENVIRONMENT_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#EnvironmentVariables$member",
+        "com.amazonaws.ecs",
+        "EnvironmentVariables",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINEROVERRIDE_MEMBER_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerOverride$environment",
+        "com.amazonaws.ecs",
+        "ContainerOverride",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "environment",
+    2,
+)
+.with_list_member(&CONTAINEROVERRIDE_MEMBER_ENVIRONMENT_MEMBER);
+static CONTAINEROVERRIDE_MEMBER_ENVIRONMENT_FILES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#EnvironmentFiles$member", "com.amazonaws.ecs", "EnvironmentFiles"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINEROVERRIDE_MEMBER_ENVIRONMENT_FILES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerOverride$environmentFiles",
+        "com.amazonaws.ecs",
+        "ContainerOverride",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "environmentFiles",
+    3,
+)
+.with_list_member(&CONTAINEROVERRIDE_MEMBER_ENVIRONMENT_FILES_MEMBER);
+static CONTAINEROVERRIDE_MEMBER_CPU: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerOverride$cpu", "com.amazonaws.ecs", "ContainerOverride"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "cpu",
+    4,
+);
+static CONTAINEROVERRIDE_MEMBER_MEMORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerOverride$memory", "com.amazonaws.ecs", "ContainerOverride"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "memory",
+    5,
+);
+static CONTAINEROVERRIDE_MEMBER_MEMORY_RESERVATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerOverride$memoryReservation",
+        "com.amazonaws.ecs",
+        "ContainerOverride",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "memoryReservation",
+    6,
+);
+static CONTAINEROVERRIDE_MEMBER_RESOURCE_REQUIREMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ResourceRequirements$member",
+        "com.amazonaws.ecs",
+        "ResourceRequirements",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINEROVERRIDE_MEMBER_RESOURCE_REQUIREMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerOverride$resourceRequirements",
+        "com.amazonaws.ecs",
+        "ContainerOverride",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "resourceRequirements",
+    7,
+)
+.with_list_member(&CONTAINEROVERRIDE_MEMBER_RESOURCE_REQUIREMENTS_MEMBER);
+static CONTAINEROVERRIDE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerOverride", "com.amazonaws.ecs", "ContainerOverride"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTAINEROVERRIDE_MEMBER_NAME,
+        &CONTAINEROVERRIDE_MEMBER_COMMAND,
+        &CONTAINEROVERRIDE_MEMBER_ENVIRONMENT,
+        &CONTAINEROVERRIDE_MEMBER_ENVIRONMENT_FILES,
+        &CONTAINEROVERRIDE_MEMBER_CPU,
+        &CONTAINEROVERRIDE_MEMBER_MEMORY,
+        &CONTAINEROVERRIDE_MEMBER_MEMORY_RESERVATION,
+        &CONTAINEROVERRIDE_MEMBER_RESOURCE_REQUIREMENTS,
+    ],
+);
+impl ContainerOverride {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTAINEROVERRIDE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContainerOverride {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CONTAINEROVERRIDE_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.command {
+            ser.write_list(
+                &CONTAINEROVERRIDE_MEMBER_COMMAND,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.environment {
+            ser.write_list(
+                &CONTAINEROVERRIDE_MEMBER_ENVIRONMENT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::KeyValuePair::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.environment_files {
+            ser.write_list(
+                &CONTAINEROVERRIDE_MEMBER_ENVIRONMENT_FILES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EnvironmentFile::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.cpu {
+            ser.write_integer(&CONTAINEROVERRIDE_MEMBER_CPU, *val)?;
+        }
+        if let Some(ref val) = self.memory {
+            ser.write_integer(&CONTAINEROVERRIDE_MEMBER_MEMORY, *val)?;
+        }
+        if let Some(ref val) = self.memory_reservation {
+            ser.write_integer(&CONTAINEROVERRIDE_MEMBER_MEMORY_RESERVATION, *val)?;
+        }
+        if let Some(ref val) = self.resource_requirements {
+            ser.write_list(
+                &CONTAINEROVERRIDE_MEMBER_RESOURCE_REQUIREMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ResourceRequirement::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContainerOverrideBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTAINEROVERRIDE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.command = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::KeyValuePair::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment_files = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EnvironmentFile::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cpu = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.memory = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.memory_reservation = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_requirements = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ResourceRequirement::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContainerOverride {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ContainerOverride {
     /// Creates a new builder-style object to manufacture [`ContainerOverride`](crate::types::ContainerOverride).
     pub fn builder() -> crate::types::builders::ContainerOverrideBuilder {

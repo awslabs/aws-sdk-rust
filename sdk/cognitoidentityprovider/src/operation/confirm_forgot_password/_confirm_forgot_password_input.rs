@@ -95,6 +95,271 @@ impl ::std::fmt::Debug for ConfirmForgotPasswordInput {
         formatter.finish()
     }
 }
+static CONFIRMFORGOTPASSWORDINPUT_MEMBER_CLIENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#ConfirmForgotPasswordInput$ClientId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "ConfirmForgotPasswordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientId",
+    0,
+);
+static CONFIRMFORGOTPASSWORDINPUT_MEMBER_SECRET_HASH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#ConfirmForgotPasswordInput$SecretHash",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "ConfirmForgotPasswordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecretHash",
+    1,
+);
+static CONFIRMFORGOTPASSWORDINPUT_MEMBER_USERNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#ConfirmForgotPasswordInput$Username",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "ConfirmForgotPasswordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Username",
+    2,
+);
+static CONFIRMFORGOTPASSWORDINPUT_MEMBER_CONFIRMATION_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#ConfirmForgotPasswordInput$ConfirmationCode",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "ConfirmForgotPasswordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConfirmationCode",
+    3,
+);
+static CONFIRMFORGOTPASSWORDINPUT_MEMBER_PASSWORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#ConfirmForgotPasswordInput$Password",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "ConfirmForgotPasswordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Password",
+    4,
+);
+static CONFIRMFORGOTPASSWORDINPUT_MEMBER_ANALYTICS_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#ConfirmForgotPasswordInput$AnalyticsMetadata",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "ConfirmForgotPasswordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AnalyticsMetadata",
+    5,
+);
+static CONFIRMFORGOTPASSWORDINPUT_MEMBER_USER_CONTEXT_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#ConfirmForgotPasswordInput$UserContextData",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "ConfirmForgotPasswordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "UserContextData",
+    6,
+);
+static CONFIRMFORGOTPASSWORDINPUT_MEMBER_CLIENT_METADATA_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ClientMetadataType$key",
+        "com.amazonaws.cognitoidentityprovider",
+        "ClientMetadataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CONFIRMFORGOTPASSWORDINPUT_MEMBER_CLIENT_METADATA_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ClientMetadataType$value",
+        "com.amazonaws.cognitoidentityprovider",
+        "ClientMetadataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CONFIRMFORGOTPASSWORDINPUT_MEMBER_CLIENT_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#ConfirmForgotPasswordInput$ClientMetadata",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "ConfirmForgotPasswordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "ClientMetadata",
+    7,
+)
+.with_map_members(
+    &CONFIRMFORGOTPASSWORDINPUT_MEMBER_CLIENT_METADATA_KEY,
+    &CONFIRMFORGOTPASSWORDINPUT_MEMBER_CLIENT_METADATA_VALUE,
+);
+static CONFIRMFORGOTPASSWORDINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#ConfirmForgotPasswordInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "ConfirmForgotPasswordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONFIRMFORGOTPASSWORDINPUT_MEMBER_CLIENT_ID,
+        &CONFIRMFORGOTPASSWORDINPUT_MEMBER_SECRET_HASH,
+        &CONFIRMFORGOTPASSWORDINPUT_MEMBER_USERNAME,
+        &CONFIRMFORGOTPASSWORDINPUT_MEMBER_CONFIRMATION_CODE,
+        &CONFIRMFORGOTPASSWORDINPUT_MEMBER_PASSWORD,
+        &CONFIRMFORGOTPASSWORDINPUT_MEMBER_ANALYTICS_METADATA,
+        &CONFIRMFORGOTPASSWORDINPUT_MEMBER_USER_CONTEXT_DATA,
+        &CONFIRMFORGOTPASSWORDINPUT_MEMBER_CLIENT_METADATA,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ConfirmForgotPasswordRequest");
+impl ConfirmForgotPasswordInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONFIRMFORGOTPASSWORDINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConfirmForgotPasswordInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.client_id {
+            ser.write_string(&CONFIRMFORGOTPASSWORDINPUT_MEMBER_CLIENT_ID, val)?;
+        }
+        if let Some(ref val) = self.secret_hash {
+            ser.write_string(&CONFIRMFORGOTPASSWORDINPUT_MEMBER_SECRET_HASH, val)?;
+        }
+        if let Some(ref val) = self.username {
+            ser.write_string(&CONFIRMFORGOTPASSWORDINPUT_MEMBER_USERNAME, val)?;
+        }
+        if let Some(ref val) = self.confirmation_code {
+            ser.write_string(&CONFIRMFORGOTPASSWORDINPUT_MEMBER_CONFIRMATION_CODE, val)?;
+        }
+        if let Some(ref val) = self.password {
+            ser.write_string(&CONFIRMFORGOTPASSWORDINPUT_MEMBER_PASSWORD, val)?;
+        }
+        if let Some(ref val) = self.analytics_metadata {
+            ser.write_struct(&CONFIRMFORGOTPASSWORDINPUT_MEMBER_ANALYTICS_METADATA, val)?;
+        }
+        if let Some(ref val) = self.user_context_data {
+            ser.write_struct(&CONFIRMFORGOTPASSWORDINPUT_MEMBER_USER_CONTEXT_DATA, val)?;
+        }
+        if let Some(ref val) = self.client_metadata {
+            ser.write_map(
+                &CONFIRMFORGOTPASSWORDINPUT_MEMBER_CLIENT_METADATA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::confirm_forgot_password::builders::ConfirmForgotPasswordInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONFIRMFORGOTPASSWORDINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secret_hash = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.username = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.confirmation_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.password = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.analytics_metadata = Some(crate::types::AnalyticsMetadataType::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_context_data = Some(crate::types::UserContextDataType::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_metadata = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConfirmForgotPasswordInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.client_id = builder.client_id.or(Some(String::new()));
+        builder.username = builder.username.or(Some(String::new()));
+        builder.confirmation_code = builder.confirmation_code.or(Some(String::new()));
+        builder.password = builder.password.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ConfirmForgotPasswordInput {
     /// Creates a new builder-style object to manufacture [`ConfirmForgotPasswordInput`](crate::operation::confirm_forgot_password::ConfirmForgotPasswordInput).
     pub fn builder() -> crate::operation::confirm_forgot_password::builders::ConfirmForgotPasswordInputBuilder {

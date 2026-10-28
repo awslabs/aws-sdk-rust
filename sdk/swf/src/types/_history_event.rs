@@ -500,6 +500,1312 @@ impl HistoryEvent {
         self.start_lambda_function_failed_event_attributes.as_ref()
     }
 }
+static HISTORYEVENT_MEMBER_EVENT_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.swf#HistoryEvent$eventTimestamp", "com.amazonaws.swf", "HistoryEvent"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "eventTimestamp",
+    0,
+);
+static HISTORYEVENT_MEMBER_EVENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.swf#HistoryEvent$eventType", "com.amazonaws.swf", "HistoryEvent"),
+    ::aws_smithy_schema::ShapeType::String,
+    "eventType",
+    1,
+);
+static HISTORYEVENT_MEMBER_EVENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.swf#HistoryEvent$eventId", "com.amazonaws.swf", "HistoryEvent"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "eventId",
+    2,
+);
+static HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_STARTED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$workflowExecutionStartedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "workflowExecutionStartedEventAttributes",
+        3,
+    );
+static HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_COMPLETED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$workflowExecutionCompletedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "workflowExecutionCompletedEventAttributes",
+        4,
+    );
+static HISTORYEVENT_MEMBER_COMPLETE_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$completeWorkflowExecutionFailedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "completeWorkflowExecutionFailedEventAttributes",
+        5,
+    );
+static HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$workflowExecutionFailedEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "workflowExecutionFailedEventAttributes",
+    6,
+);
+static HISTORYEVENT_MEMBER_FAIL_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$failWorkflowExecutionFailedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "failWorkflowExecutionFailedEventAttributes",
+        7,
+    );
+static HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_TIMED_OUT_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$workflowExecutionTimedOutEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "workflowExecutionTimedOutEventAttributes",
+        8,
+    );
+static HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_CANCELED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$workflowExecutionCanceledEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "workflowExecutionCanceledEventAttributes",
+        9,
+    );
+static HISTORYEVENT_MEMBER_CANCEL_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$cancelWorkflowExecutionFailedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "cancelWorkflowExecutionFailedEventAttributes",
+        10,
+    );
+static HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_CONTINUED_AS_NEW_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$workflowExecutionContinuedAsNewEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "workflowExecutionContinuedAsNewEventAttributes",
+        11,
+    );
+static HISTORYEVENT_MEMBER_CONTINUE_AS_NEW_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$continueAsNewWorkflowExecutionFailedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "continueAsNewWorkflowExecutionFailedEventAttributes",
+        12,
+    );
+static HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_TERMINATED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$workflowExecutionTerminatedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "workflowExecutionTerminatedEventAttributes",
+        13,
+    );
+static HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_CANCEL_REQUESTED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$workflowExecutionCancelRequestedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "workflowExecutionCancelRequestedEventAttributes",
+        14,
+    );
+static HISTORYEVENT_MEMBER_DECISION_TASK_SCHEDULED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$decisionTaskScheduledEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "decisionTaskScheduledEventAttributes",
+    15,
+);
+static HISTORYEVENT_MEMBER_DECISION_TASK_STARTED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$decisionTaskStartedEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "decisionTaskStartedEventAttributes",
+    16,
+);
+static HISTORYEVENT_MEMBER_DECISION_TASK_COMPLETED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$decisionTaskCompletedEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "decisionTaskCompletedEventAttributes",
+    17,
+);
+static HISTORYEVENT_MEMBER_DECISION_TASK_TIMED_OUT_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$decisionTaskTimedOutEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "decisionTaskTimedOutEventAttributes",
+    18,
+);
+static HISTORYEVENT_MEMBER_ACTIVITY_TASK_SCHEDULED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$activityTaskScheduledEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "activityTaskScheduledEventAttributes",
+    19,
+);
+static HISTORYEVENT_MEMBER_ACTIVITY_TASK_STARTED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$activityTaskStartedEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "activityTaskStartedEventAttributes",
+    20,
+);
+static HISTORYEVENT_MEMBER_ACTIVITY_TASK_COMPLETED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$activityTaskCompletedEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "activityTaskCompletedEventAttributes",
+    21,
+);
+static HISTORYEVENT_MEMBER_ACTIVITY_TASK_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$activityTaskFailedEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "activityTaskFailedEventAttributes",
+    22,
+);
+static HISTORYEVENT_MEMBER_ACTIVITY_TASK_TIMED_OUT_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$activityTaskTimedOutEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "activityTaskTimedOutEventAttributes",
+    23,
+);
+static HISTORYEVENT_MEMBER_ACTIVITY_TASK_CANCELED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$activityTaskCanceledEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "activityTaskCanceledEventAttributes",
+    24,
+);
+static HISTORYEVENT_MEMBER_ACTIVITY_TASK_CANCEL_REQUESTED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$activityTaskCancelRequestedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "activityTaskCancelRequestedEventAttributes",
+        25,
+    );
+static HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_SIGNALED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$workflowExecutionSignaledEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "workflowExecutionSignaledEventAttributes",
+        26,
+    );
+static HISTORYEVENT_MEMBER_MARKER_RECORDED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$markerRecordedEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "markerRecordedEventAttributes",
+    27,
+);
+static HISTORYEVENT_MEMBER_RECORD_MARKER_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$recordMarkerFailedEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "recordMarkerFailedEventAttributes",
+    28,
+);
+static HISTORYEVENT_MEMBER_TIMER_STARTED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$timerStartedEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "timerStartedEventAttributes",
+    29,
+);
+static HISTORYEVENT_MEMBER_TIMER_FIRED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$timerFiredEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "timerFiredEventAttributes",
+    30,
+);
+static HISTORYEVENT_MEMBER_TIMER_CANCELED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$timerCanceledEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "timerCanceledEventAttributes",
+    31,
+);
+static HISTORYEVENT_MEMBER_START_CHILD_WORKFLOW_EXECUTION_INITIATED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$startChildWorkflowExecutionInitiatedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "startChildWorkflowExecutionInitiatedEventAttributes",
+        32,
+    );
+static HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_STARTED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$childWorkflowExecutionStartedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "childWorkflowExecutionStartedEventAttributes",
+        33,
+    );
+static HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_COMPLETED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$childWorkflowExecutionCompletedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "childWorkflowExecutionCompletedEventAttributes",
+        34,
+    );
+static HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$childWorkflowExecutionFailedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "childWorkflowExecutionFailedEventAttributes",
+        35,
+    );
+static HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_TIMED_OUT_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$childWorkflowExecutionTimedOutEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "childWorkflowExecutionTimedOutEventAttributes",
+        36,
+    );
+static HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_CANCELED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$childWorkflowExecutionCanceledEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "childWorkflowExecutionCanceledEventAttributes",
+        37,
+    );
+static HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_TERMINATED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$childWorkflowExecutionTerminatedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "childWorkflowExecutionTerminatedEventAttributes",
+        38,
+    );
+static HISTORYEVENT_MEMBER_SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$signalExternalWorkflowExecutionInitiatedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "signalExternalWorkflowExecutionInitiatedEventAttributes",
+        39,
+    );
+static HISTORYEVENT_MEMBER_EXTERNAL_WORKFLOW_EXECUTION_SIGNALED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$externalWorkflowExecutionSignaledEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "externalWorkflowExecutionSignaledEventAttributes",
+        40,
+    );
+static HISTORYEVENT_MEMBER_SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$signalExternalWorkflowExecutionFailedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "signalExternalWorkflowExecutionFailedEventAttributes",
+        41,
+    );
+static HISTORYEVENT_MEMBER_EXTERNAL_WORKFLOW_EXECUTION_CANCEL_REQUESTED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$externalWorkflowExecutionCancelRequestedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "externalWorkflowExecutionCancelRequestedEventAttributes",
+        42,
+    );
+static HISTORYEVENT_MEMBER_REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$requestCancelExternalWorkflowExecutionInitiatedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "requestCancelExternalWorkflowExecutionInitiatedEventAttributes",
+        43,
+    );
+static HISTORYEVENT_MEMBER_REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$requestCancelExternalWorkflowExecutionFailedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "requestCancelExternalWorkflowExecutionFailedEventAttributes",
+        44,
+    );
+static HISTORYEVENT_MEMBER_SCHEDULE_ACTIVITY_TASK_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$scheduleActivityTaskFailedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "scheduleActivityTaskFailedEventAttributes",
+        45,
+    );
+static HISTORYEVENT_MEMBER_REQUEST_CANCEL_ACTIVITY_TASK_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$requestCancelActivityTaskFailedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "requestCancelActivityTaskFailedEventAttributes",
+        46,
+    );
+static HISTORYEVENT_MEMBER_START_TIMER_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$startTimerFailedEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "startTimerFailedEventAttributes",
+    47,
+);
+static HISTORYEVENT_MEMBER_CANCEL_TIMER_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$cancelTimerFailedEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "cancelTimerFailedEventAttributes",
+    48,
+);
+static HISTORYEVENT_MEMBER_START_CHILD_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$startChildWorkflowExecutionFailedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "startChildWorkflowExecutionFailedEventAttributes",
+        49,
+    );
+static HISTORYEVENT_MEMBER_LAMBDA_FUNCTION_SCHEDULED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$lambdaFunctionScheduledEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "lambdaFunctionScheduledEventAttributes",
+    50,
+);
+static HISTORYEVENT_MEMBER_LAMBDA_FUNCTION_STARTED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$lambdaFunctionStartedEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "lambdaFunctionStartedEventAttributes",
+    51,
+);
+static HISTORYEVENT_MEMBER_LAMBDA_FUNCTION_COMPLETED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$lambdaFunctionCompletedEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "lambdaFunctionCompletedEventAttributes",
+    52,
+);
+static HISTORYEVENT_MEMBER_LAMBDA_FUNCTION_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$lambdaFunctionFailedEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "lambdaFunctionFailedEventAttributes",
+    53,
+);
+static HISTORYEVENT_MEMBER_LAMBDA_FUNCTION_TIMED_OUT_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#HistoryEvent$lambdaFunctionTimedOutEventAttributes",
+        "com.amazonaws.swf",
+        "HistoryEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "lambdaFunctionTimedOutEventAttributes",
+    54,
+);
+static HISTORYEVENT_MEMBER_SCHEDULE_LAMBDA_FUNCTION_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$scheduleLambdaFunctionFailedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "scheduleLambdaFunctionFailedEventAttributes",
+        55,
+    );
+static HISTORYEVENT_MEMBER_START_LAMBDA_FUNCTION_FAILED_EVENT_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#HistoryEvent$startLambdaFunctionFailedEventAttributes",
+            "com.amazonaws.swf",
+            "HistoryEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "startLambdaFunctionFailedEventAttributes",
+        56,
+    );
+static HISTORYEVENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.swf#HistoryEvent", "com.amazonaws.swf", "HistoryEvent"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &HISTORYEVENT_MEMBER_EVENT_TIMESTAMP,
+        &HISTORYEVENT_MEMBER_EVENT_TYPE,
+        &HISTORYEVENT_MEMBER_EVENT_ID,
+        &HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_STARTED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_COMPLETED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_COMPLETE_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_FAIL_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_TIMED_OUT_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_CANCELED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_CANCEL_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_CONTINUED_AS_NEW_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_CONTINUE_AS_NEW_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_TERMINATED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_CANCEL_REQUESTED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_DECISION_TASK_SCHEDULED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_DECISION_TASK_STARTED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_DECISION_TASK_COMPLETED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_DECISION_TASK_TIMED_OUT_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_ACTIVITY_TASK_SCHEDULED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_ACTIVITY_TASK_STARTED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_ACTIVITY_TASK_COMPLETED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_ACTIVITY_TASK_FAILED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_ACTIVITY_TASK_TIMED_OUT_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_ACTIVITY_TASK_CANCELED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_ACTIVITY_TASK_CANCEL_REQUESTED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_SIGNALED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_MARKER_RECORDED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_RECORD_MARKER_FAILED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_TIMER_STARTED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_TIMER_FIRED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_TIMER_CANCELED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_START_CHILD_WORKFLOW_EXECUTION_INITIATED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_STARTED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_COMPLETED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_TIMED_OUT_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_CANCELED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_TERMINATED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_EXTERNAL_WORKFLOW_EXECUTION_SIGNALED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_EXTERNAL_WORKFLOW_EXECUTION_CANCEL_REQUESTED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_SCHEDULE_ACTIVITY_TASK_FAILED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_REQUEST_CANCEL_ACTIVITY_TASK_FAILED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_START_TIMER_FAILED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_CANCEL_TIMER_FAILED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_START_CHILD_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_LAMBDA_FUNCTION_SCHEDULED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_LAMBDA_FUNCTION_STARTED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_LAMBDA_FUNCTION_COMPLETED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_LAMBDA_FUNCTION_FAILED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_LAMBDA_FUNCTION_TIMED_OUT_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_SCHEDULE_LAMBDA_FUNCTION_FAILED_EVENT_ATTRIBUTES,
+        &HISTORYEVENT_MEMBER_START_LAMBDA_FUNCTION_FAILED_EVENT_ATTRIBUTES,
+    ],
+);
+impl HistoryEvent {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &HISTORYEVENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for HistoryEvent {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.event_timestamp;
+            ser.write_timestamp(&HISTORYEVENT_MEMBER_EVENT_TIMESTAMP, val)?;
+        }
+        {
+            let val = &self.event_type;
+            ser.write_string(&HISTORYEVENT_MEMBER_EVENT_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.event_id;
+            ser.write_long(&HISTORYEVENT_MEMBER_EVENT_ID, *val)?;
+        }
+        if let Some(ref val) = self.workflow_execution_started_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_STARTED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.workflow_execution_completed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_COMPLETED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.complete_workflow_execution_failed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_COMPLETE_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.workflow_execution_failed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.fail_workflow_execution_failed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_FAIL_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.workflow_execution_timed_out_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_TIMED_OUT_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.workflow_execution_canceled_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_CANCELED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.cancel_workflow_execution_failed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_CANCEL_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.workflow_execution_continued_as_new_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_CONTINUED_AS_NEW_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.continue_as_new_workflow_execution_failed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_CONTINUE_AS_NEW_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.workflow_execution_terminated_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_TERMINATED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.workflow_execution_cancel_requested_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_CANCEL_REQUESTED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.decision_task_scheduled_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_DECISION_TASK_SCHEDULED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.decision_task_started_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_DECISION_TASK_STARTED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.decision_task_completed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_DECISION_TASK_COMPLETED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.decision_task_timed_out_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_DECISION_TASK_TIMED_OUT_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.activity_task_scheduled_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_ACTIVITY_TASK_SCHEDULED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.activity_task_started_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_ACTIVITY_TASK_STARTED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.activity_task_completed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_ACTIVITY_TASK_COMPLETED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.activity_task_failed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_ACTIVITY_TASK_FAILED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.activity_task_timed_out_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_ACTIVITY_TASK_TIMED_OUT_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.activity_task_canceled_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_ACTIVITY_TASK_CANCELED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.activity_task_cancel_requested_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_ACTIVITY_TASK_CANCEL_REQUESTED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.workflow_execution_signaled_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_WORKFLOW_EXECUTION_SIGNALED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.marker_recorded_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_MARKER_RECORDED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.record_marker_failed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_RECORD_MARKER_FAILED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.timer_started_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_TIMER_STARTED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.timer_fired_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_TIMER_FIRED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.timer_canceled_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_TIMER_CANCELED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.start_child_workflow_execution_initiated_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_START_CHILD_WORKFLOW_EXECUTION_INITIATED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.child_workflow_execution_started_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_STARTED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.child_workflow_execution_completed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_COMPLETED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.child_workflow_execution_failed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.child_workflow_execution_timed_out_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_TIMED_OUT_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.child_workflow_execution_canceled_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_CANCELED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.child_workflow_execution_terminated_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_CHILD_WORKFLOW_EXECUTION_TERMINATED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.signal_external_workflow_execution_initiated_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.external_workflow_execution_signaled_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_EXTERNAL_WORKFLOW_EXECUTION_SIGNALED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.signal_external_workflow_execution_failed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.external_workflow_execution_cancel_requested_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_EXTERNAL_WORKFLOW_EXECUTION_CANCEL_REQUESTED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.request_cancel_external_workflow_execution_initiated_event_attributes {
+            ser.write_struct(
+                &HISTORYEVENT_MEMBER_REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED_EVENT_ATTRIBUTES,
+                val,
+            )?;
+        }
+        if let Some(ref val) = self.request_cancel_external_workflow_execution_failed_event_attributes {
+            ser.write_struct(
+                &HISTORYEVENT_MEMBER_REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES,
+                val,
+            )?;
+        }
+        if let Some(ref val) = self.schedule_activity_task_failed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_SCHEDULE_ACTIVITY_TASK_FAILED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.request_cancel_activity_task_failed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_REQUEST_CANCEL_ACTIVITY_TASK_FAILED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.start_timer_failed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_START_TIMER_FAILED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.cancel_timer_failed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_CANCEL_TIMER_FAILED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.start_child_workflow_execution_failed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_START_CHILD_WORKFLOW_EXECUTION_FAILED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.lambda_function_scheduled_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_LAMBDA_FUNCTION_SCHEDULED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.lambda_function_started_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_LAMBDA_FUNCTION_STARTED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.lambda_function_completed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_LAMBDA_FUNCTION_COMPLETED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.lambda_function_failed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_LAMBDA_FUNCTION_FAILED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.lambda_function_timed_out_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_LAMBDA_FUNCTION_TIMED_OUT_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.schedule_lambda_function_failed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_SCHEDULE_LAMBDA_FUNCTION_FAILED_EVENT_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.start_lambda_function_failed_event_attributes {
+            ser.write_struct(&HISTORYEVENT_MEMBER_START_LAMBDA_FUNCTION_FAILED_EVENT_ATTRIBUTES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::HistoryEventBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&HISTORYEVENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.event_timestamp = Some(deser.read_timestamp(member)?);
+                }
+                Some(1) => {
+                    self.event_type = Some(crate::types::EventType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    self.event_id = Some(deser.read_long(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_execution_started_event_attributes =
+                            Some(crate::types::WorkflowExecutionStartedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_execution_completed_event_attributes =
+                            Some(crate::types::WorkflowExecutionCompletedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.complete_workflow_execution_failed_event_attributes =
+                            Some(crate::types::CompleteWorkflowExecutionFailedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_execution_failed_event_attributes =
+                            Some(crate::types::WorkflowExecutionFailedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fail_workflow_execution_failed_event_attributes =
+                            Some(crate::types::FailWorkflowExecutionFailedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_execution_timed_out_event_attributes =
+                            Some(crate::types::WorkflowExecutionTimedOutEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_execution_canceled_event_attributes =
+                            Some(crate::types::WorkflowExecutionCanceledEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cancel_workflow_execution_failed_event_attributes =
+                            Some(crate::types::CancelWorkflowExecutionFailedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_execution_continued_as_new_event_attributes =
+                            Some(crate::types::WorkflowExecutionContinuedAsNewEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.continue_as_new_workflow_execution_failed_event_attributes =
+                            Some(crate::types::ContinueAsNewWorkflowExecutionFailedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_execution_terminated_event_attributes =
+                            Some(crate::types::WorkflowExecutionTerminatedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_execution_cancel_requested_event_attributes =
+                            Some(crate::types::WorkflowExecutionCancelRequestedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.decision_task_scheduled_event_attributes = Some(crate::types::DecisionTaskScheduledEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.decision_task_started_event_attributes = Some(crate::types::DecisionTaskStartedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.decision_task_completed_event_attributes = Some(crate::types::DecisionTaskCompletedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.decision_task_timed_out_event_attributes = Some(crate::types::DecisionTaskTimedOutEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.activity_task_scheduled_event_attributes = Some(crate::types::ActivityTaskScheduledEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.activity_task_started_event_attributes = Some(crate::types::ActivityTaskStartedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.activity_task_completed_event_attributes = Some(crate::types::ActivityTaskCompletedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.activity_task_failed_event_attributes = Some(crate::types::ActivityTaskFailedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.activity_task_timed_out_event_attributes = Some(crate::types::ActivityTaskTimedOutEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.activity_task_canceled_event_attributes = Some(crate::types::ActivityTaskCanceledEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(25) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.activity_task_cancel_requested_event_attributes =
+                            Some(crate::types::ActivityTaskCancelRequestedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(26) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_execution_signaled_event_attributes =
+                            Some(crate::types::WorkflowExecutionSignaledEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(27) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.marker_recorded_event_attributes = Some(crate::types::MarkerRecordedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(28) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.record_marker_failed_event_attributes = Some(crate::types::RecordMarkerFailedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(29) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.timer_started_event_attributes = Some(crate::types::TimerStartedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(30) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.timer_fired_event_attributes = Some(crate::types::TimerFiredEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(31) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.timer_canceled_event_attributes = Some(crate::types::TimerCanceledEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(32) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_child_workflow_execution_initiated_event_attributes =
+                            Some(crate::types::StartChildWorkflowExecutionInitiatedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(33) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.child_workflow_execution_started_event_attributes =
+                            Some(crate::types::ChildWorkflowExecutionStartedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(34) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.child_workflow_execution_completed_event_attributes =
+                            Some(crate::types::ChildWorkflowExecutionCompletedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(35) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.child_workflow_execution_failed_event_attributes =
+                            Some(crate::types::ChildWorkflowExecutionFailedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(36) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.child_workflow_execution_timed_out_event_attributes =
+                            Some(crate::types::ChildWorkflowExecutionTimedOutEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(37) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.child_workflow_execution_canceled_event_attributes =
+                            Some(crate::types::ChildWorkflowExecutionCanceledEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(38) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.child_workflow_execution_terminated_event_attributes =
+                            Some(crate::types::ChildWorkflowExecutionTerminatedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(39) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.signal_external_workflow_execution_initiated_event_attributes =
+                            Some(crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(40) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_workflow_execution_signaled_event_attributes =
+                            Some(crate::types::ExternalWorkflowExecutionSignaledEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(41) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.signal_external_workflow_execution_failed_event_attributes =
+                            Some(crate::types::SignalExternalWorkflowExecutionFailedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(42) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_workflow_execution_cancel_requested_event_attributes =
+                            Some(crate::types::ExternalWorkflowExecutionCancelRequestedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(43) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.request_cancel_external_workflow_execution_initiated_event_attributes = Some(
+                            crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes::deserialize(deser)?,
+                        );
+                    }
+                }
+                Some(44) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.request_cancel_external_workflow_execution_failed_event_attributes = Some(
+                            crate::types::RequestCancelExternalWorkflowExecutionFailedEventAttributes::deserialize(deser)?,
+                        );
+                    }
+                }
+                Some(45) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.schedule_activity_task_failed_event_attributes =
+                            Some(crate::types::ScheduleActivityTaskFailedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(46) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.request_cancel_activity_task_failed_event_attributes =
+                            Some(crate::types::RequestCancelActivityTaskFailedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(47) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_timer_failed_event_attributes = Some(crate::types::StartTimerFailedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(48) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cancel_timer_failed_event_attributes = Some(crate::types::CancelTimerFailedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(49) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_child_workflow_execution_failed_event_attributes =
+                            Some(crate::types::StartChildWorkflowExecutionFailedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(50) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lambda_function_scheduled_event_attributes =
+                            Some(crate::types::LambdaFunctionScheduledEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(51) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lambda_function_started_event_attributes = Some(crate::types::LambdaFunctionStartedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(52) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lambda_function_completed_event_attributes =
+                            Some(crate::types::LambdaFunctionCompletedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(53) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lambda_function_failed_event_attributes = Some(crate::types::LambdaFunctionFailedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(54) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lambda_function_timed_out_event_attributes =
+                            Some(crate::types::LambdaFunctionTimedOutEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(55) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.schedule_lambda_function_failed_event_attributes =
+                            Some(crate::types::ScheduleLambdaFunctionFailedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(56) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_lambda_function_failed_event_attributes =
+                            Some(crate::types::StartLambdaFunctionFailedEventAttributes::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl HistoryEvent {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.event_timestamp = builder.event_timestamp.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.event_id = builder.event_id.or(Some(0i64));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl HistoryEvent {
     /// Creates a new builder-style object to manufacture [`HistoryEvent`](crate::types::HistoryEvent).
     pub fn builder() -> crate::types::builders::HistoryEventBuilder {

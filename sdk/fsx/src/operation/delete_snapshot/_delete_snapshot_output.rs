@@ -19,6 +19,104 @@ impl DeleteSnapshotOutput {
         self.lifecycle.as_ref()
     }
 }
+static DELETESNAPSHOTOUTPUT_MEMBER_SNAPSHOT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DeleteSnapshotOutput$SnapshotId",
+        "com.amazonaws.fsx.synthetic",
+        "DeleteSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SnapshotId",
+    0,
+);
+static DELETESNAPSHOTOUTPUT_MEMBER_LIFECYCLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DeleteSnapshotOutput$Lifecycle",
+        "com.amazonaws.fsx.synthetic",
+        "DeleteSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Lifecycle",
+    1,
+);
+static DELETESNAPSHOTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DeleteSnapshotOutput",
+        "com.amazonaws.fsx.synthetic",
+        "DeleteSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELETESNAPSHOTOUTPUT_MEMBER_SNAPSHOT_ID, &DELETESNAPSHOTOUTPUT_MEMBER_LIFECYCLE],
+)
+.with_original_name("DeleteSnapshotResponse");
+impl DeleteSnapshotOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETESNAPSHOTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteSnapshotOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.snapshot_id {
+            ser.write_string(&DELETESNAPSHOTOUTPUT_MEMBER_SNAPSHOT_ID, val)?;
+        }
+        if let Some(ref val) = self.lifecycle {
+            ser.write_string(&DELETESNAPSHOTOUTPUT_MEMBER_LIFECYCLE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_snapshot::builders::DeleteSnapshotOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETESNAPSHOTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.snapshot_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle = Some(crate::types::SnapshotLifecycle::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteSnapshotOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DeleteSnapshotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

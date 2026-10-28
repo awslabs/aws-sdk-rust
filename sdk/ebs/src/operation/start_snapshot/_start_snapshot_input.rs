@@ -110,6 +110,258 @@ impl ::std::fmt::Debug for StartSnapshotInput {
         formatter.finish()
     }
 }
+static STARTSNAPSHOTINPUT_MEMBER_VOLUME_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotInput$VolumeSize",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "VolumeSize",
+    0,
+);
+static STARTSNAPSHOTINPUT_MEMBER_PARENT_SNAPSHOT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotInput$ParentSnapshotId",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ParentSnapshotId",
+    1,
+);
+static STARTSNAPSHOTINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ebs#Tags$member", "com.amazonaws.ebs", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTSNAPSHOTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotInput$Tags",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    2,
+)
+.with_list_member(&STARTSNAPSHOTINPUT_MEMBER_TAGS_MEMBER);
+static STARTSNAPSHOTINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotInput$Description",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    3,
+);
+static STARTSNAPSHOTINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotInput$ClientToken",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    4,
+);
+static STARTSNAPSHOTINPUT_MEMBER_ENCRYPTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotInput$Encrypted",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Encrypted",
+    5,
+);
+static STARTSNAPSHOTINPUT_MEMBER_KMS_KEY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotInput$KmsKeyArn",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyArn",
+    6,
+);
+static STARTSNAPSHOTINPUT_MEMBER_TIMEOUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotInput$Timeout",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Timeout",
+    7,
+);
+static STARTSNAPSHOTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#StartSnapshotInput",
+        "com.amazonaws.ebs.synthetic",
+        "StartSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTSNAPSHOTINPUT_MEMBER_VOLUME_SIZE,
+        &STARTSNAPSHOTINPUT_MEMBER_PARENT_SNAPSHOT_ID,
+        &STARTSNAPSHOTINPUT_MEMBER_TAGS,
+        &STARTSNAPSHOTINPUT_MEMBER_DESCRIPTION,
+        &STARTSNAPSHOTINPUT_MEMBER_CLIENT_TOKEN,
+        &STARTSNAPSHOTINPUT_MEMBER_ENCRYPTED,
+        &STARTSNAPSHOTINPUT_MEMBER_KMS_KEY_ARN,
+        &STARTSNAPSHOTINPUT_MEMBER_TIMEOUT,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new("POST", "/snapshots", Some(201)))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartSnapshotRequest");
+impl StartSnapshotInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTSNAPSHOTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartSnapshotInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.volume_size {
+            ser.write_long(&STARTSNAPSHOTINPUT_MEMBER_VOLUME_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.parent_snapshot_id {
+            ser.write_string(&STARTSNAPSHOTINPUT_MEMBER_PARENT_SNAPSHOT_ID, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &STARTSNAPSHOTINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&STARTSNAPSHOTINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&STARTSNAPSHOTINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.encrypted {
+            ser.write_boolean(&STARTSNAPSHOTINPUT_MEMBER_ENCRYPTED, *val)?;
+        }
+        if let Some(ref val) = self.kms_key_arn {
+            ser.write_string(&STARTSNAPSHOTINPUT_MEMBER_KMS_KEY_ARN, val)?;
+        }
+        if let Some(ref val) = self.timeout {
+            ser.write_integer(&STARTSNAPSHOTINPUT_MEMBER_TIMEOUT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_snapshot::builders::StartSnapshotInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTSNAPSHOTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_size = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parent_snapshot_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encrypted = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.timeout = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartSnapshotInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.volume_size = builder.volume_size.or(Some(0i64));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartSnapshotInput {
     /// Creates a new builder-style object to manufacture [`StartSnapshotInput`](crate::operation::start_snapshot::StartSnapshotInput).
     pub fn builder() -> crate::operation::start_snapshot::builders::StartSnapshotInputBuilder {

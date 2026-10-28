@@ -12,6 +12,86 @@ impl TerminateWorkspacesPoolInput {
         self.pool_id.as_deref()
     }
 }
+static TERMINATEWORKSPACESPOOLINPUT_MEMBER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#TerminateWorkspacesPoolInput$PoolId",
+        "com.amazonaws.workspaces.synthetic",
+        "TerminateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PoolId",
+    0,
+);
+static TERMINATEWORKSPACESPOOLINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#TerminateWorkspacesPoolInput",
+        "com.amazonaws.workspaces.synthetic",
+        "TerminateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&TERMINATEWORKSPACESPOOLINPUT_MEMBER_POOL_ID],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("TerminateWorkspacesPoolRequest");
+impl TerminateWorkspacesPoolInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TERMINATEWORKSPACESPOOLINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TerminateWorkspacesPoolInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pool_id {
+            ser.write_string(&TERMINATEWORKSPACESPOOLINPUT_MEMBER_POOL_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::terminate_workspaces_pool::builders::TerminateWorkspacesPoolInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TERMINATEWORKSPACESPOOLINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TerminateWorkspacesPoolInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pool_id = builder.pool_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl TerminateWorkspacesPoolInput {
     /// Creates a new builder-style object to manufacture [`TerminateWorkspacesPoolInput`](crate::operation::terminate_workspaces_pool::TerminateWorkspacesPoolInput).
     pub fn builder() -> crate::operation::terminate_workspaces_pool::builders::TerminateWorkspacesPoolInputBuilder {

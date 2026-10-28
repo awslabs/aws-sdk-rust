@@ -29,6 +29,75 @@ impl ProxyConfig {
         self.sftp_mode.as_ref()
     }
 }
+static PROXYCONFIG_MEMBER_SFTP_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ProxyConfig$SftpMode", "com.amazonaws.transfer", "ProxyConfig"),
+    ::aws_smithy_schema::ShapeType::String,
+    "SftpMode",
+    0,
+);
+static PROXYCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ProxyConfig", "com.amazonaws.transfer", "ProxyConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&PROXYCONFIG_MEMBER_SFTP_MODE],
+);
+impl ProxyConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PROXYCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProxyConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.sftp_mode {
+            ser.write_string(&PROXYCONFIG_MEMBER_SFTP_MODE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProxyConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PROXYCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sftp_mode = Some(crate::types::ProxyMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProxyConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ProxyConfig {
     /// Creates a new builder-style object to manufacture [`ProxyConfig`](crate::types::ProxyConfig).
     pub fn builder() -> crate::types::builders::ProxyConfigBuilder {

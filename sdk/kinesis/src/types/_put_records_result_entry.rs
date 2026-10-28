@@ -31,6 +31,148 @@ impl PutRecordsResultEntry {
         self.error_message.as_deref()
     }
 }
+static PUTRECORDSRESULTENTRY_MEMBER_SEQUENCE_NUMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#PutRecordsResultEntry$SequenceNumber",
+        "com.amazonaws.kinesis",
+        "PutRecordsResultEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SequenceNumber",
+    0,
+);
+static PUTRECORDSRESULTENTRY_MEMBER_SHARD_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#PutRecordsResultEntry$ShardId",
+        "com.amazonaws.kinesis",
+        "PutRecordsResultEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ShardId",
+    1,
+);
+static PUTRECORDSRESULTENTRY_MEMBER_ERROR_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#PutRecordsResultEntry$ErrorCode",
+        "com.amazonaws.kinesis",
+        "PutRecordsResultEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorCode",
+    2,
+);
+static PUTRECORDSRESULTENTRY_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#PutRecordsResultEntry$ErrorMessage",
+        "com.amazonaws.kinesis",
+        "PutRecordsResultEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorMessage",
+    3,
+);
+static PUTRECORDSRESULTENTRY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#PutRecordsResultEntry",
+        "com.amazonaws.kinesis",
+        "PutRecordsResultEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTRECORDSRESULTENTRY_MEMBER_SEQUENCE_NUMBER,
+        &PUTRECORDSRESULTENTRY_MEMBER_SHARD_ID,
+        &PUTRECORDSRESULTENTRY_MEMBER_ERROR_CODE,
+        &PUTRECORDSRESULTENTRY_MEMBER_ERROR_MESSAGE,
+    ],
+);
+impl PutRecordsResultEntry {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTRECORDSRESULTENTRY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutRecordsResultEntry {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.sequence_number {
+            ser.write_string(&PUTRECORDSRESULTENTRY_MEMBER_SEQUENCE_NUMBER, val)?;
+        }
+        if let Some(ref val) = self.shard_id {
+            ser.write_string(&PUTRECORDSRESULTENTRY_MEMBER_SHARD_ID, val)?;
+        }
+        if let Some(ref val) = self.error_code {
+            ser.write_string(&PUTRECORDSRESULTENTRY_MEMBER_ERROR_CODE, val)?;
+        }
+        if let Some(ref val) = self.error_message {
+            ser.write_string(&PUTRECORDSRESULTENTRY_MEMBER_ERROR_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PutRecordsResultEntryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTRECORDSRESULTENTRY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sequence_number = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.shard_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutRecordsResultEntry {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PutRecordsResultEntry {
     /// Creates a new builder-style object to manufacture [`PutRecordsResultEntry`](crate::types::PutRecordsResultEntry).
     pub fn builder() -> crate::types::builders::PutRecordsResultEntryBuilder {

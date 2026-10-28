@@ -44,6 +44,110 @@ impl PutResolverRulePolicyInput {
         self.resolver_rule_policy.as_deref()
     }
 }
+static PUTRESOLVERRULEPOLICYINPUT_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#PutResolverRulePolicyInput$Arn",
+        "com.amazonaws.route53resolver.synthetic",
+        "PutResolverRulePolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    0,
+);
+static PUTRESOLVERRULEPOLICYINPUT_MEMBER_RESOLVER_RULE_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#PutResolverRulePolicyInput$ResolverRulePolicy",
+        "com.amazonaws.route53resolver.synthetic",
+        "PutResolverRulePolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResolverRulePolicy",
+    1,
+);
+static PUTRESOLVERRULEPOLICYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#PutResolverRulePolicyInput",
+        "com.amazonaws.route53resolver.synthetic",
+        "PutResolverRulePolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTRESOLVERRULEPOLICYINPUT_MEMBER_ARN,
+        &PUTRESOLVERRULEPOLICYINPUT_MEMBER_RESOLVER_RULE_POLICY,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutResolverRulePolicyRequest");
+impl PutResolverRulePolicyInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTRESOLVERRULEPOLICYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutResolverRulePolicyInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&PUTRESOLVERRULEPOLICYINPUT_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.resolver_rule_policy {
+            ser.write_string(&PUTRESOLVERRULEPOLICYINPUT_MEMBER_RESOLVER_RULE_POLICY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTRESOLVERRULEPOLICYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolver_rule_policy = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutResolverRulePolicyInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.arn = builder.arn.or(Some(String::new()));
+        builder.resolver_rule_policy = builder.resolver_rule_policy.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutResolverRulePolicyInput {
     /// Creates a new builder-style object to manufacture [`PutResolverRulePolicyInput`](crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput).
     pub fn builder() -> crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyInputBuilder {

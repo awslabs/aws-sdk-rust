@@ -30,6 +30,123 @@ impl ServiceDeploymentCircuitBreaker {
         self.threshold
     }
 }
+static SERVICEDEPLOYMENTCIRCUITBREAKER_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceDeploymentCircuitBreaker$status",
+        "com.amazonaws.ecs",
+        "ServiceDeploymentCircuitBreaker",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    0,
+);
+static SERVICEDEPLOYMENTCIRCUITBREAKER_MEMBER_FAILURE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceDeploymentCircuitBreaker$failureCount",
+        "com.amazonaws.ecs",
+        "ServiceDeploymentCircuitBreaker",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "failureCount",
+    1,
+);
+static SERVICEDEPLOYMENTCIRCUITBREAKER_MEMBER_THRESHOLD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceDeploymentCircuitBreaker$threshold",
+        "com.amazonaws.ecs",
+        "ServiceDeploymentCircuitBreaker",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "threshold",
+    2,
+);
+static SERVICEDEPLOYMENTCIRCUITBREAKER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceDeploymentCircuitBreaker",
+        "com.amazonaws.ecs",
+        "ServiceDeploymentCircuitBreaker",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SERVICEDEPLOYMENTCIRCUITBREAKER_MEMBER_STATUS,
+        &SERVICEDEPLOYMENTCIRCUITBREAKER_MEMBER_FAILURE_COUNT,
+        &SERVICEDEPLOYMENTCIRCUITBREAKER_MEMBER_THRESHOLD,
+    ],
+);
+impl ServiceDeploymentCircuitBreaker {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SERVICEDEPLOYMENTCIRCUITBREAKER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ServiceDeploymentCircuitBreaker {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.status {
+            ser.write_string(&SERVICEDEPLOYMENTCIRCUITBREAKER_MEMBER_STATUS, val.as_str())?;
+        }
+        {
+            let val = &self.failure_count;
+            ser.write_integer(&SERVICEDEPLOYMENTCIRCUITBREAKER_MEMBER_FAILURE_COUNT, *val)?;
+        }
+        {
+            let val = &self.threshold;
+            ser.write_integer(&SERVICEDEPLOYMENTCIRCUITBREAKER_MEMBER_THRESHOLD, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ServiceDeploymentCircuitBreakerBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SERVICEDEPLOYMENTCIRCUITBREAKER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::ServiceDeploymentRollbackMonitorsStatus::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(1) => {
+                    self.failure_count = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    self.threshold = Some(deser.read_integer(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ServiceDeploymentCircuitBreaker {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ServiceDeploymentCircuitBreaker {
     /// Creates a new builder-style object to manufacture [`ServiceDeploymentCircuitBreaker`](crate::types::ServiceDeploymentCircuitBreaker).
     pub fn builder() -> crate::types::builders::ServiceDeploymentCircuitBreakerBuilder {

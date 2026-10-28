@@ -269,6 +269,27 @@ pub(crate) fn get_encryption_key_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_on_demand_scan_status_output_output_correct_errors(
+    mut builder: crate::operation::get_on_demand_scan_status::builders::GetOnDemandScanStatusOutputBuilder,
+) -> crate::operation::get_on_demand_scan_status::builders::GetOnDemandScanStatusOutputBuilder {
+    if builder.scan_id.is_none() {
+        builder.scan_id = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = "no value was set".parse::<crate::types::OnDemandResourceType>().ok()
+    }
+    if builder.scan_status.is_none() {
+        builder.scan_status = "no value was set".parse::<crate::types::OnDemandScanStatus>().ok()
+    }
+    if builder.started_at.is_none() {
+        builder.started_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn list_account_permissions_output_output_correct_errors(
     mut builder: crate::operation::list_account_permissions::builders::ListAccountPermissionsOutputBuilder,
 ) -> crate::operation::list_account_permissions::builders::ListAccountPermissionsOutputBuilder {
@@ -323,11 +344,29 @@ pub(crate) fn list_finding_aggregations_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_on_demand_scans_output_output_correct_errors(
+    mut builder: crate::operation::list_on_demand_scans::builders::ListOnDemandScansOutputBuilder,
+) -> crate::operation::list_on_demand_scans::builders::ListOnDemandScansOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn search_vulnerabilities_output_output_correct_errors(
     mut builder: crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesOutputBuilder,
 ) -> crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesOutputBuilder {
     if builder.vulnerabilities.is_none() {
         builder.vulnerabilities = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_on_demand_scan_output_output_correct_errors(
+    mut builder: crate::operation::start_on_demand_scan::builders::StartOnDemandScanOutputBuilder,
+) -> crate::operation::start_on_demand_scan::builders::StartOnDemandScanOutputBuilder {
+    if builder.scan_id.is_none() {
+        builder.scan_id = Some(Default::default())
     }
     builder
 }
@@ -434,6 +473,15 @@ pub(crate) fn account_state_correct_errors(mut builder: crate::types::builders::
             let builder = crate::types::builders::ResourceStateBuilder::default();
             Some(crate::serde_util::resource_state_correct_errors(builder).build())
         }
+    }
+    builder
+}
+
+pub(crate) fn ami_scan_mode_configuration_correct_errors(
+    mut builder: crate::types::builders::AmiScanModeConfigurationBuilder,
+) -> crate::types::builders::AmiScanModeConfigurationBuilder {
+    if builder.scan_mode.is_none() {
+        builder.scan_mode = "no value was set".parse::<crate::types::AmiScanMode>().ok()
     }
     builder
 }
@@ -750,6 +798,25 @@ pub(crate) fn member_account_ec2_deep_inspection_status_state_correct_errors(
 ) -> crate::types::builders::MemberAccountEc2DeepInspectionStatusStateBuilder {
     if builder.account_id.is_none() {
         builder.account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn on_demand_scan_correct_errors(mut builder: crate::types::builders::OnDemandScanBuilder) -> crate::types::builders::OnDemandScanBuilder {
+    if builder.scan_id.is_none() {
+        builder.scan_id = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = "no value was set".parse::<crate::types::OnDemandResourceType>().ok()
+    }
+    if builder.scan_status.is_none() {
+        builder.scan_status = "no value was set".parse::<crate::types::OnDemandScanStatus>().ok()
+    }
+    if builder.started_at.is_none() {
+        builder.started_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -1083,6 +1150,13 @@ pub(crate) fn vm_instance_aggregation_response_correct_errors(
     builder
 }
 
+pub(crate) fn ami_tag_filter_correct_errors(mut builder: crate::types::builders::AmiTagFilterBuilder) -> crate::types::builders::AmiTagFilterBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn cluster_details_correct_errors(
     mut builder: crate::types::builders::ClusterDetailsBuilder,
 ) -> crate::types::builders::ClusterDetailsBuilder {
@@ -1337,6 +1411,15 @@ pub(crate) fn cvss_score_adjustment_correct_errors(
     }
     if builder.reason.is_none() {
         builder.reason = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn machine_image_details_correct_errors(
+    mut builder: crate::types::builders::MachineImageDetailsBuilder,
+) -> crate::types::builders::MachineImageDetailsBuilder {
+    if builder.machine_image_id.is_none() {
+        builder.machine_image_id = Some(Default::default())
     }
     builder
 }

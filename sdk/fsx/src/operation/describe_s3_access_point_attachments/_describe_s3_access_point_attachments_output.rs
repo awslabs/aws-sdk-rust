@@ -21,6 +21,135 @@ impl DescribeS3AccessPointAttachmentsOutput {
         self.next_token.as_deref()
     }
 }
+static DESCRIBES3ACCESSPOINTATTACHMENTSOUTPUT_MEMBER_S3_ACCESS_POINT_ATTACHMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#S3AccessPointAttachments$member",
+            "com.amazonaws.fsx",
+            "S3AccessPointAttachments",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static DESCRIBES3ACCESSPOINTATTACHMENTSOUTPUT_MEMBER_S3_ACCESS_POINT_ATTACHMENTS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx.synthetic#DescribeS3AccessPointAttachmentsOutput$S3AccessPointAttachments",
+            "com.amazonaws.fsx.synthetic",
+            "DescribeS3AccessPointAttachmentsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "S3AccessPointAttachments",
+        0,
+    )
+    .with_list_member(&DESCRIBES3ACCESSPOINTATTACHMENTSOUTPUT_MEMBER_S3_ACCESS_POINT_ATTACHMENTS_MEMBER);
+static DESCRIBES3ACCESSPOINTATTACHMENTSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DescribeS3AccessPointAttachmentsOutput$NextToken",
+        "com.amazonaws.fsx.synthetic",
+        "DescribeS3AccessPointAttachmentsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static DESCRIBES3ACCESSPOINTATTACHMENTSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DescribeS3AccessPointAttachmentsOutput",
+        "com.amazonaws.fsx.synthetic",
+        "DescribeS3AccessPointAttachmentsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBES3ACCESSPOINTATTACHMENTSOUTPUT_MEMBER_S3_ACCESS_POINT_ATTACHMENTS,
+        &DESCRIBES3ACCESSPOINTATTACHMENTSOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("DescribeS3AccessPointAttachmentsResponse");
+impl DescribeS3AccessPointAttachmentsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBES3ACCESSPOINTATTACHMENTSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeS3AccessPointAttachmentsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3_access_point_attachments {
+            ser.write_list(
+                &DESCRIBES3ACCESSPOINTATTACHMENTSOUTPUT_MEMBER_S3_ACCESS_POINT_ATTACHMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::S3AccessPointAttachment::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&DESCRIBES3ACCESSPOINTATTACHMENTSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_s3_access_point_attachments::builders::DescribeS3AccessPointAttachmentsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBES3ACCESSPOINTATTACHMENTSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_access_point_attachments = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::S3AccessPointAttachment::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeS3AccessPointAttachmentsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeS3AccessPointAttachmentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

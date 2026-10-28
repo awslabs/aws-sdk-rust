@@ -19,6 +19,103 @@ impl IdentityCenterConfig {
         self.role.as_deref()
     }
 }
+static IDENTITYCENTERCONFIG_MEMBER_INSTANCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#IdentityCenterConfig$InstanceArn",
+        "com.amazonaws.transfer",
+        "IdentityCenterConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceArn",
+    0,
+);
+static IDENTITYCENTERCONFIG_MEMBER_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#IdentityCenterConfig$Role",
+        "com.amazonaws.transfer",
+        "IdentityCenterConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Role",
+    1,
+);
+static IDENTITYCENTERCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#IdentityCenterConfig",
+        "com.amazonaws.transfer",
+        "IdentityCenterConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&IDENTITYCENTERCONFIG_MEMBER_INSTANCE_ARN, &IDENTITYCENTERCONFIG_MEMBER_ROLE],
+);
+impl IdentityCenterConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &IDENTITYCENTERCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for IdentityCenterConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instance_arn {
+            ser.write_string(&IDENTITYCENTERCONFIG_MEMBER_INSTANCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.role {
+            ser.write_string(&IDENTITYCENTERCONFIG_MEMBER_ROLE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::IdentityCenterConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&IDENTITYCENTERCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl IdentityCenterConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl IdentityCenterConfig {
     /// Creates a new builder-style object to manufacture [`IdentityCenterConfig`](crate::types::IdentityCenterConfig).
     pub fn builder() -> crate::types::builders::IdentityCenterConfigBuilder {

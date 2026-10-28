@@ -53,6 +53,196 @@ impl PasswordPolicyType {
         self.temporary_password_validity_days
     }
 }
+static PASSWORDPOLICYTYPE_MEMBER_MINIMUM_LENGTH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#PasswordPolicyType$MinimumLength",
+        "com.amazonaws.cognitoidentityprovider",
+        "PasswordPolicyType",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MinimumLength",
+    0,
+);
+static PASSWORDPOLICYTYPE_MEMBER_REQUIRE_UPPERCASE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#PasswordPolicyType$RequireUppercase",
+        "com.amazonaws.cognitoidentityprovider",
+        "PasswordPolicyType",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "RequireUppercase",
+    1,
+);
+static PASSWORDPOLICYTYPE_MEMBER_REQUIRE_LOWERCASE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#PasswordPolicyType$RequireLowercase",
+        "com.amazonaws.cognitoidentityprovider",
+        "PasswordPolicyType",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "RequireLowercase",
+    2,
+);
+static PASSWORDPOLICYTYPE_MEMBER_REQUIRE_NUMBERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#PasswordPolicyType$RequireNumbers",
+        "com.amazonaws.cognitoidentityprovider",
+        "PasswordPolicyType",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "RequireNumbers",
+    3,
+);
+static PASSWORDPOLICYTYPE_MEMBER_REQUIRE_SYMBOLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#PasswordPolicyType$RequireSymbols",
+        "com.amazonaws.cognitoidentityprovider",
+        "PasswordPolicyType",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "RequireSymbols",
+    4,
+);
+static PASSWORDPOLICYTYPE_MEMBER_PASSWORD_HISTORY_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#PasswordPolicyType$PasswordHistorySize",
+        "com.amazonaws.cognitoidentityprovider",
+        "PasswordPolicyType",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "PasswordHistorySize",
+    5,
+);
+static PASSWORDPOLICYTYPE_MEMBER_TEMPORARY_PASSWORD_VALIDITY_DAYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#PasswordPolicyType$TemporaryPasswordValidityDays",
+        "com.amazonaws.cognitoidentityprovider",
+        "PasswordPolicyType",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TemporaryPasswordValidityDays",
+    6,
+);
+static PASSWORDPOLICYTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#PasswordPolicyType",
+        "com.amazonaws.cognitoidentityprovider",
+        "PasswordPolicyType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PASSWORDPOLICYTYPE_MEMBER_MINIMUM_LENGTH,
+        &PASSWORDPOLICYTYPE_MEMBER_REQUIRE_UPPERCASE,
+        &PASSWORDPOLICYTYPE_MEMBER_REQUIRE_LOWERCASE,
+        &PASSWORDPOLICYTYPE_MEMBER_REQUIRE_NUMBERS,
+        &PASSWORDPOLICYTYPE_MEMBER_REQUIRE_SYMBOLS,
+        &PASSWORDPOLICYTYPE_MEMBER_PASSWORD_HISTORY_SIZE,
+        &PASSWORDPOLICYTYPE_MEMBER_TEMPORARY_PASSWORD_VALIDITY_DAYS,
+    ],
+);
+impl PasswordPolicyType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PASSWORDPOLICYTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PasswordPolicyType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.minimum_length {
+            ser.write_integer(&PASSWORDPOLICYTYPE_MEMBER_MINIMUM_LENGTH, *val)?;
+        }
+        {
+            let val = &self.require_uppercase;
+            ser.write_boolean(&PASSWORDPOLICYTYPE_MEMBER_REQUIRE_UPPERCASE, *val)?;
+        }
+        {
+            let val = &self.require_lowercase;
+            ser.write_boolean(&PASSWORDPOLICYTYPE_MEMBER_REQUIRE_LOWERCASE, *val)?;
+        }
+        {
+            let val = &self.require_numbers;
+            ser.write_boolean(&PASSWORDPOLICYTYPE_MEMBER_REQUIRE_NUMBERS, *val)?;
+        }
+        {
+            let val = &self.require_symbols;
+            ser.write_boolean(&PASSWORDPOLICYTYPE_MEMBER_REQUIRE_SYMBOLS, *val)?;
+        }
+        if let Some(ref val) = self.password_history_size {
+            ser.write_integer(&PASSWORDPOLICYTYPE_MEMBER_PASSWORD_HISTORY_SIZE, *val)?;
+        }
+        {
+            let val = &self.temporary_password_validity_days;
+            ser.write_integer(&PASSWORDPOLICYTYPE_MEMBER_TEMPORARY_PASSWORD_VALIDITY_DAYS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PasswordPolicyTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PASSWORDPOLICYTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.minimum_length = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.require_uppercase = Some(deser.read_boolean(member)?);
+                }
+                Some(2) => {
+                    self.require_lowercase = Some(deser.read_boolean(member)?);
+                }
+                Some(3) => {
+                    self.require_numbers = Some(deser.read_boolean(member)?);
+                }
+                Some(4) => {
+                    self.require_symbols = Some(deser.read_boolean(member)?);
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.password_history_size = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    self.temporary_password_validity_days = Some(deser.read_integer(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PasswordPolicyType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PasswordPolicyType {
     /// Creates a new builder-style object to manufacture [`PasswordPolicyType`](crate::types::PasswordPolicyType).
     pub fn builder() -> crate::types::builders::PasswordPolicyTypeBuilder {

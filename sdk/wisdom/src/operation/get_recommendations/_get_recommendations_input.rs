@@ -30,6 +30,162 @@ impl GetRecommendationsInput {
         self.wait_time_seconds
     }
 }
+static GETRECOMMENDATIONSINPUT_MEMBER_ASSISTANT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#GetRecommendationsInput$assistantId",
+        "com.amazonaws.wisdom.synthetic",
+        "GetRecommendationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "assistantId",
+    0,
+)
+.with_http_label();
+static GETRECOMMENDATIONSINPUT_MEMBER_SESSION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#GetRecommendationsInput$sessionId",
+        "com.amazonaws.wisdom.synthetic",
+        "GetRecommendationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sessionId",
+    1,
+)
+.with_http_label();
+static GETRECOMMENDATIONSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#GetRecommendationsInput$maxResults",
+        "com.amazonaws.wisdom.synthetic",
+        "GetRecommendationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxResults",
+    2,
+)
+.with_http_query("maxResults");
+static GETRECOMMENDATIONSINPUT_MEMBER_WAIT_TIME_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#GetRecommendationsInput$waitTimeSeconds",
+        "com.amazonaws.wisdom.synthetic",
+        "GetRecommendationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "waitTimeSeconds",
+    3,
+)
+.with_http_query("waitTimeSeconds");
+static GETRECOMMENDATIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#GetRecommendationsInput",
+        "com.amazonaws.wisdom.synthetic",
+        "GetRecommendationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETRECOMMENDATIONSINPUT_MEMBER_ASSISTANT_ID,
+        &GETRECOMMENDATIONSINPUT_MEMBER_SESSION_ID,
+        &GETRECOMMENDATIONSINPUT_MEMBER_MAX_RESULTS,
+        &GETRECOMMENDATIONSINPUT_MEMBER_WAIT_TIME_SECONDS,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "GET",
+    "/assistants/{assistantId}/sessions/{sessionId}/recommendations",
+    None,
+))
+.with_no_body_members()
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetRecommendationsRequest");
+impl GetRecommendationsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETRECOMMENDATIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetRecommendationsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.assistant_id {
+            ser.write_string(&GETRECOMMENDATIONSINPUT_MEMBER_ASSISTANT_ID, val)?;
+        }
+        if let Some(ref val) = self.session_id {
+            ser.write_string(&GETRECOMMENDATIONSINPUT_MEMBER_SESSION_ID, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&GETRECOMMENDATIONSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.wait_time_seconds {
+            ser.write_integer(&GETRECOMMENDATIONSINPUT_MEMBER_WAIT_TIME_SECONDS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETRECOMMENDATIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.assistant_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.session_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.wait_time_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetRecommendationsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.assistant_id = builder.assistant_id.or(Some(String::new()));
+        builder.session_id = builder.session_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
     pub fn builder() -> crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder {

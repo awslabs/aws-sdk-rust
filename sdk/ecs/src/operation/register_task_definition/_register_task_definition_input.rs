@@ -282,6 +282,596 @@ impl RegisterTaskDefinitionInput {
         self.enable_fault_injection
     }
 }
+static REGISTERTASKDEFINITIONINPUT_MEMBER_FAMILY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$family",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "family",
+    0,
+);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_TASK_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$taskRoleArn",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskRoleArn",
+    1,
+);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_EXECUTION_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$executionRoleArn",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "executionRoleArn",
+    2,
+);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_NETWORK_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$networkMode",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "networkMode",
+    3,
+);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_CONTAINER_DEFINITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#ContainerDefinitions$member",
+            "com.amazonaws.ecs",
+            "ContainerDefinitions",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static REGISTERTASKDEFINITIONINPUT_MEMBER_CONTAINER_DEFINITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$containerDefinitions",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "containerDefinitions",
+    4,
+)
+.with_list_member(&REGISTERTASKDEFINITIONINPUT_MEMBER_CONTAINER_DEFINITIONS_MEMBER);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_VOLUMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#VolumeList$member", "com.amazonaws.ecs", "VolumeList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_VOLUMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$volumes",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "volumes",
+    5,
+)
+.with_list_member(&REGISTERTASKDEFINITIONINPUT_MEMBER_VOLUMES_MEMBER);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_PLACEMENT_CONSTRAINTS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#TaskDefinitionPlacementConstraints$member",
+            "com.amazonaws.ecs",
+            "TaskDefinitionPlacementConstraints",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static REGISTERTASKDEFINITIONINPUT_MEMBER_PLACEMENT_CONSTRAINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$placementConstraints",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "placementConstraints",
+    6,
+)
+.with_list_member(&REGISTERTASKDEFINITIONINPUT_MEMBER_PLACEMENT_CONSTRAINTS_MEMBER);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_REQUIRES_COMPATIBILITIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#CompatibilityList$member", "com.amazonaws.ecs", "CompatibilityList"),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static REGISTERTASKDEFINITIONINPUT_MEMBER_REQUIRES_COMPATIBILITIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$requiresCompatibilities",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "requiresCompatibilities",
+    7,
+)
+.with_list_member(&REGISTERTASKDEFINITIONINPUT_MEMBER_REQUIRES_COMPATIBILITIES_MEMBER);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_CPU: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$cpu",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cpu",
+    8,
+);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_MEMORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$memory",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "memory",
+    9,
+);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Tags$member", "com.amazonaws.ecs", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$tags",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    10,
+)
+.with_list_member(&REGISTERTASKDEFINITIONINPUT_MEMBER_TAGS_MEMBER);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_PID_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$pidMode",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pidMode",
+    11,
+);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_IPC_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$ipcMode",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ipcMode",
+    12,
+);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_PROXY_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$proxyConfiguration",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "proxyConfiguration",
+    13,
+);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_INFERENCE_ACCELERATORS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#InferenceAccelerators$member",
+            "com.amazonaws.ecs",
+            "InferenceAccelerators",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static REGISTERTASKDEFINITIONINPUT_MEMBER_INFERENCE_ACCELERATORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$inferenceAccelerators",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "inferenceAccelerators",
+    14,
+)
+.with_list_member(&REGISTERTASKDEFINITIONINPUT_MEMBER_INFERENCE_ACCELERATORS_MEMBER);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_EPHEMERAL_STORAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$ephemeralStorage",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ephemeralStorage",
+    15,
+);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_RUNTIME_PLATFORM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$runtimePlatform",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "runtimePlatform",
+    16,
+);
+static REGISTERTASKDEFINITIONINPUT_MEMBER_ENABLE_FAULT_INJECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput$enableFaultInjection",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "enableFaultInjection",
+    17,
+);
+static REGISTERTASKDEFINITIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#RegisterTaskDefinitionInput",
+        "com.amazonaws.ecs.synthetic",
+        "RegisterTaskDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_FAMILY,
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_TASK_ROLE_ARN,
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_EXECUTION_ROLE_ARN,
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_NETWORK_MODE,
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_CONTAINER_DEFINITIONS,
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_VOLUMES,
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_PLACEMENT_CONSTRAINTS,
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_REQUIRES_COMPATIBILITIES,
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_CPU,
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_MEMORY,
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_TAGS,
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_PID_MODE,
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_IPC_MODE,
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_PROXY_CONFIGURATION,
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_INFERENCE_ACCELERATORS,
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_EPHEMERAL_STORAGE,
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_RUNTIME_PLATFORM,
+        &REGISTERTASKDEFINITIONINPUT_MEMBER_ENABLE_FAULT_INJECTION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RegisterTaskDefinitionRequest");
+impl RegisterTaskDefinitionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REGISTERTASKDEFINITIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RegisterTaskDefinitionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.family {
+            ser.write_string(&REGISTERTASKDEFINITIONINPUT_MEMBER_FAMILY, val)?;
+        }
+        if let Some(ref val) = self.task_role_arn {
+            ser.write_string(&REGISTERTASKDEFINITIONINPUT_MEMBER_TASK_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.execution_role_arn {
+            ser.write_string(&REGISTERTASKDEFINITIONINPUT_MEMBER_EXECUTION_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.network_mode {
+            ser.write_string(&REGISTERTASKDEFINITIONINPUT_MEMBER_NETWORK_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.container_definitions {
+            ser.write_list(
+                &REGISTERTASKDEFINITIONINPUT_MEMBER_CONTAINER_DEFINITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ContainerDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.volumes {
+            ser.write_list(
+                &REGISTERTASKDEFINITIONINPUT_MEMBER_VOLUMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Volume::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.placement_constraints {
+            ser.write_list(
+                &REGISTERTASKDEFINITIONINPUT_MEMBER_PLACEMENT_CONSTRAINTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TaskDefinitionPlacementConstraint::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.requires_compatibilities {
+            ser.write_list(
+                &REGISTERTASKDEFINITIONINPUT_MEMBER_REQUIRES_COMPATIBILITIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.cpu {
+            ser.write_string(&REGISTERTASKDEFINITIONINPUT_MEMBER_CPU, val)?;
+        }
+        if let Some(ref val) = self.memory {
+            ser.write_string(&REGISTERTASKDEFINITIONINPUT_MEMBER_MEMORY, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &REGISTERTASKDEFINITIONINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.pid_mode {
+            ser.write_string(&REGISTERTASKDEFINITIONINPUT_MEMBER_PID_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.ipc_mode {
+            ser.write_string(&REGISTERTASKDEFINITIONINPUT_MEMBER_IPC_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.proxy_configuration {
+            ser.write_struct(&REGISTERTASKDEFINITIONINPUT_MEMBER_PROXY_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.inference_accelerators {
+            ser.write_list(
+                &REGISTERTASKDEFINITIONINPUT_MEMBER_INFERENCE_ACCELERATORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::InferenceAccelerator::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ephemeral_storage {
+            ser.write_struct(&REGISTERTASKDEFINITIONINPUT_MEMBER_EPHEMERAL_STORAGE, val)?;
+        }
+        if let Some(ref val) = self.runtime_platform {
+            ser.write_struct(&REGISTERTASKDEFINITIONINPUT_MEMBER_RUNTIME_PLATFORM, val)?;
+        }
+        if let Some(ref val) = self.enable_fault_injection {
+            ser.write_boolean(&REGISTERTASKDEFINITIONINPUT_MEMBER_ENABLE_FAULT_INJECTION, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::register_task_definition::builders::RegisterTaskDefinitionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REGISTERTASKDEFINITIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.family = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_mode = Some(crate::types::NetworkMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_definitions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ContainerDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volumes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Volume::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.placement_constraints = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TaskDefinitionPlacementConstraint::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.requires_compatibilities = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Compatibility::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cpu = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.memory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pid_mode = Some(crate::types::PidMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ipc_mode = Some(crate::types::IpcMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.proxy_configuration = Some(crate::types::ProxyConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_accelerators = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InferenceAccelerator::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ephemeral_storage = Some(crate::types::EphemeralStorage::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.runtime_platform = Some(crate::types::RuntimePlatform::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_fault_injection = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RegisterTaskDefinitionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.family = builder.family.or(Some(String::new()));
+        builder.container_definitions = builder.container_definitions.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RegisterTaskDefinitionInput {
     /// Creates a new builder-style object to manufacture [`RegisterTaskDefinitionInput`](crate::operation::register_task_definition::RegisterTaskDefinitionInput).
     pub fn builder() -> crate::operation::register_task_definition::builders::RegisterTaskDefinitionInputBuilder {

@@ -582,16 +582,21 @@ impl ShapeSerializer for XmlSerializer {
             // surface), consume it here. Only applies at the document root —
             // nested struct calls always have at least one open frame.
             let root_override = if self.frames.is_empty() {
-                self.next_root_xml_name.take()
+                self.next_root_xml_name.take().or_else(|| {
+                    schema
+                        .traits()
+                        .and_then(|traits| traits.get_fqn("smithy.api#error"))
+                        .and(self.settings.error_root_name)
+                        .map(str::to_owned)
+                })
             } else {
                 None
             };
-            let mut inherited_name = None;
-            let name = match &root_override {
-                Some(override_name) => override_name.as_str(),
-                None => self.resolve_name(schema, &mut inherited_name),
-            };
             let saved_list_item = self.list_item_name.take();
+            let name = root_override
+                .as_deref()
+                .or(saved_list_item.as_deref())
+                .unwrap_or_else(|| Self::element_name(schema));
             self.open_element(name);
             self.write_xmlns(schema, None);
             // Two-pass: attributes first (so they land in the still-pending
@@ -1003,10 +1008,179 @@ mod tests {
     }
 
     #[test]
+    fn nested_collections_use_member_and_map_value_schemas() {
+        static CELL: Schema<'static> = Schema::new_member(
+            shape_id!("test", "NestedCollectionsMatrixListMemberList", "member"),
+            ShapeType::Short,
+            "member",
+            0,
+        );
+        static ROW: Schema<'static> = Schema::new_member(
+            shape_id!("test", "NestedCollectionsMatrixList", "member"),
+            ShapeType::List,
+            "member",
+            0,
+        )
+        .with_list_member(&CELL);
+        static MATRIX: Schema<'static> = Schema::new_member(
+            shape_id!("test", "NestedCollections", "matrix"),
+            ShapeType::List,
+            "matrix",
+            0,
+        )
+        .with_list_member(&ROW);
+        static KEY: Schema<'static> = Schema::new_member(
+            shape_id!("test", "NestedCollectionsValuesMap", "key"),
+            ShapeType::String,
+            "key",
+            0,
+        );
+        static FLAG: Schema<'static> = Schema::new_member(
+            shape_id!("test", "NestedCollectionsValuesMapValueList", "member"),
+            ShapeType::Boolean,
+            "member",
+            0,
+        );
+        static VALUE: Schema<'static> = Schema::new_member(
+            shape_id!("test", "NestedCollectionsValuesMap", "value"),
+            ShapeType::List,
+            "value",
+            1,
+        )
+        .with_list_member(&FLAG);
+        static VALUES: Schema<'static> = Schema::new_member(
+            shape_id!("test", "NestedCollections", "values"),
+            ShapeType::Map,
+            "values",
+            1,
+        )
+        .with_map_members(&KEY, &VALUE);
+        static COLLECTIONS: Schema<'static> = Schema::new_struct(
+            shape_id!("test", "NestedCollections"),
+            ShapeType::Structure,
+            &[&MATRIX, &VALUES],
+        );
+        struct NestedCollections {
+            matrix: Vec<Vec<i16>>,
+            values: std::collections::HashMap<String, Vec<bool>>,
+        }
+        impl SerializableStruct for NestedCollections {
+            fn schema(&self) -> &Schema<'_> {
+                &COLLECTIONS
+            }
+
+            fn serialize_members(&self, ser: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
+                ser.write_list(&MATRIX, &|ser| {
+                    for row in &self.matrix {
+                        ser.write_list(&ROW, &|ser| {
+                            for cell in row {
+                                ser.write_short(&CELL, *cell)?;
+                            }
+                            Ok(())
+                        })?;
+                    }
+                    Ok(())
+                })?;
+                ser.write_map(&VALUES, &|ser| {
+                    for (key, flags) in &self.values {
+                        ser.write_string(&KEY, key)?;
+                        ser.write_list(&VALUE, &|ser| {
+                            for flag in flags {
+                                ser.write_boolean(&FLAG, *flag)?;
+                            }
+                            Ok(())
+                        })?;
+                    }
+                    Ok(())
+                })
+            }
+        }
+        let value = NestedCollections {
+            matrix: vec![vec![1, 2]],
+            values: std::collections::HashMap::from([("flags".into(), vec![false, true])]),
+        };
+        let output = serialize(|ser| ser.write_struct(&COLLECTIONS, &value));
+        assert_eq!(output, "<NestedCollections><matrix><member><member>1</member><member>2</member></member></matrix><values><entry><key>flags</key><value><member>false</member><member>true</member></value></entry></values></NestedCollections>");
+    }
+
+    #[test]
     fn struct_with_string_member() {
         let p = Person { name: "Iago" };
         let out = serialize(|ser| ser.write_struct(&PERSON_SCHEMA, &p));
         assert_eq!(out, "<Person><name>Iago</name></Person>");
+    }
+
+    #[test]
+    fn list_item_names_override_union_target_xml_name() {
+        static TEXT: Schema<'static> = Schema::new_member(
+            shape_id!("test", "Choice", "text"),
+            ShapeType::String,
+            "text",
+            0,
+        );
+        static CHOICE: Schema<'static> =
+            Schema::new_struct(shape_id!("test", "Choice"), ShapeType::Union, &[&TEXT])
+                .with_xml_name("ChoiceTargetRoot");
+        struct Choice;
+        impl SerializableStruct for Choice {
+            fn schema(&self) -> &Schema<'_> {
+                &CHOICE
+            }
+
+            fn serialize_members(
+                &self,
+                serializer: &mut dyn ShapeSerializer,
+            ) -> Result<(), SerdeError> {
+                serializer.write_string(&TEXT, "hello")
+            }
+        }
+        let member = Schema::new_member(
+            shape_id!("test", "Choices", "member"),
+            ShapeType::Union,
+            "member",
+            0,
+        );
+        let renamed = Schema::new_member(
+            shape_id!("test", "Choices", "member"),
+            ShapeType::Union,
+            "member",
+            0,
+        )
+        .with_xml_name("item");
+        for (item_schema, flattened, expected) in [
+            (
+                &member,
+                false,
+                "<choices><member><text>hello</text></member></choices>",
+            ),
+            (
+                &renamed,
+                false,
+                "<choices><item><text>hello</text></item></choices>",
+            ),
+            (&member, true, "<choices><text>hello</text></choices>"),
+        ] {
+            let mut list = Schema::new_member(
+                shape_id!("test", "Output", "choices"),
+                ShapeType::List,
+                "choices",
+                0,
+            )
+            .with_list_member(item_schema);
+            if flattened {
+                list = list.with_xml_flattened();
+            }
+            let output = serialize(|serializer| {
+                serializer.write_list(&list, &|serializer| {
+                    serializer.write_struct(&CHOICE, &Choice)
+                })
+            });
+            assert_eq!(output, expected);
+        }
+        assert_eq!(
+            serialize(|serializer| serializer.write_struct(&CHOICE, &Choice)),
+            "<ChoiceTargetRoot><text>hello</text></ChoiceTargetRoot>",
+        );
     }
 
     #[test]

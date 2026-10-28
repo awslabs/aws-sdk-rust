@@ -107,6 +107,397 @@ impl DistinguishedName {
         self.title.as_deref()
     }
 }
+static DISTINGUISHEDNAME_MEMBER_COMMON_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DistinguishedName$CommonName", "com.amazonaws.acm", "DistinguishedName"),
+    ::aws_smithy_schema::ShapeType::String,
+    "CommonName",
+    0,
+);
+static DISTINGUISHEDNAME_MEMBER_DOMAIN_COMPONENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DomainComponentList$member", "com.amazonaws.acm", "DomainComponentList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DISTINGUISHEDNAME_MEMBER_DOMAIN_COMPONENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DistinguishedName$DomainComponents",
+        "com.amazonaws.acm",
+        "DistinguishedName",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DomainComponents",
+    1,
+)
+.with_list_member(&DISTINGUISHEDNAME_MEMBER_DOMAIN_COMPONENTS_MEMBER);
+static DISTINGUISHEDNAME_MEMBER_COUNTRY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DistinguishedName$Country", "com.amazonaws.acm", "DistinguishedName"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Country",
+    2,
+);
+static DISTINGUISHEDNAME_MEMBER_CUSTOM_ATTRIBUTES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#CustomAttributeList$member", "com.amazonaws.acm", "CustomAttributeList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DISTINGUISHEDNAME_MEMBER_CUSTOM_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DistinguishedName$CustomAttributes",
+        "com.amazonaws.acm",
+        "DistinguishedName",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CustomAttributes",
+    3,
+)
+.with_list_member(&DISTINGUISHEDNAME_MEMBER_CUSTOM_ATTRIBUTES_MEMBER);
+static DISTINGUISHEDNAME_MEMBER_DISTINGUISHED_NAME_QUALIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DistinguishedName$DistinguishedNameQualifier",
+        "com.amazonaws.acm",
+        "DistinguishedName",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DistinguishedNameQualifier",
+    4,
+);
+static DISTINGUISHEDNAME_MEMBER_GENERATION_QUALIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DistinguishedName$GenerationQualifier",
+        "com.amazonaws.acm",
+        "DistinguishedName",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GenerationQualifier",
+    5,
+);
+static DISTINGUISHEDNAME_MEMBER_GIVEN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DistinguishedName$GivenName", "com.amazonaws.acm", "DistinguishedName"),
+    ::aws_smithy_schema::ShapeType::String,
+    "GivenName",
+    6,
+);
+static DISTINGUISHEDNAME_MEMBER_INITIALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DistinguishedName$Initials", "com.amazonaws.acm", "DistinguishedName"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Initials",
+    7,
+);
+static DISTINGUISHEDNAME_MEMBER_LOCALITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DistinguishedName$Locality", "com.amazonaws.acm", "DistinguishedName"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Locality",
+    8,
+);
+static DISTINGUISHEDNAME_MEMBER_ORGANIZATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DistinguishedName$Organization",
+        "com.amazonaws.acm",
+        "DistinguishedName",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Organization",
+    9,
+);
+static DISTINGUISHEDNAME_MEMBER_ORGANIZATIONAL_UNIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DistinguishedName$OrganizationalUnit",
+        "com.amazonaws.acm",
+        "DistinguishedName",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OrganizationalUnit",
+    10,
+);
+static DISTINGUISHEDNAME_MEMBER_PSEUDONYM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DistinguishedName$Pseudonym", "com.amazonaws.acm", "DistinguishedName"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Pseudonym",
+    11,
+);
+static DISTINGUISHEDNAME_MEMBER_SERIAL_NUMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DistinguishedName$SerialNumber",
+        "com.amazonaws.acm",
+        "DistinguishedName",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SerialNumber",
+    12,
+);
+static DISTINGUISHEDNAME_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DistinguishedName$State", "com.amazonaws.acm", "DistinguishedName"),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    13,
+);
+static DISTINGUISHEDNAME_MEMBER_SURNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DistinguishedName$Surname", "com.amazonaws.acm", "DistinguishedName"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Surname",
+    14,
+);
+static DISTINGUISHEDNAME_MEMBER_TITLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DistinguishedName$Title", "com.amazonaws.acm", "DistinguishedName"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Title",
+    15,
+);
+static DISTINGUISHEDNAME_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DistinguishedName", "com.amazonaws.acm", "DistinguishedName"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DISTINGUISHEDNAME_MEMBER_COMMON_NAME,
+        &DISTINGUISHEDNAME_MEMBER_DOMAIN_COMPONENTS,
+        &DISTINGUISHEDNAME_MEMBER_COUNTRY,
+        &DISTINGUISHEDNAME_MEMBER_CUSTOM_ATTRIBUTES,
+        &DISTINGUISHEDNAME_MEMBER_DISTINGUISHED_NAME_QUALIFIER,
+        &DISTINGUISHEDNAME_MEMBER_GENERATION_QUALIFIER,
+        &DISTINGUISHEDNAME_MEMBER_GIVEN_NAME,
+        &DISTINGUISHEDNAME_MEMBER_INITIALS,
+        &DISTINGUISHEDNAME_MEMBER_LOCALITY,
+        &DISTINGUISHEDNAME_MEMBER_ORGANIZATION,
+        &DISTINGUISHEDNAME_MEMBER_ORGANIZATIONAL_UNIT,
+        &DISTINGUISHEDNAME_MEMBER_PSEUDONYM,
+        &DISTINGUISHEDNAME_MEMBER_SERIAL_NUMBER,
+        &DISTINGUISHEDNAME_MEMBER_STATE,
+        &DISTINGUISHEDNAME_MEMBER_SURNAME,
+        &DISTINGUISHEDNAME_MEMBER_TITLE,
+    ],
+);
+impl DistinguishedName {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DISTINGUISHEDNAME_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DistinguishedName {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.common_name {
+            ser.write_string(&DISTINGUISHEDNAME_MEMBER_COMMON_NAME, val)?;
+        }
+        if let Some(ref val) = self.domain_components {
+            ser.write_list(
+                &DISTINGUISHEDNAME_MEMBER_DOMAIN_COMPONENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.country {
+            ser.write_string(&DISTINGUISHEDNAME_MEMBER_COUNTRY, val)?;
+        }
+        if let Some(ref val) = self.custom_attributes {
+            ser.write_list(
+                &DISTINGUISHEDNAME_MEMBER_CUSTOM_ATTRIBUTES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CustomAttribute::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.distinguished_name_qualifier {
+            ser.write_string(&DISTINGUISHEDNAME_MEMBER_DISTINGUISHED_NAME_QUALIFIER, val)?;
+        }
+        if let Some(ref val) = self.generation_qualifier {
+            ser.write_string(&DISTINGUISHEDNAME_MEMBER_GENERATION_QUALIFIER, val)?;
+        }
+        if let Some(ref val) = self.given_name {
+            ser.write_string(&DISTINGUISHEDNAME_MEMBER_GIVEN_NAME, val)?;
+        }
+        if let Some(ref val) = self.initials {
+            ser.write_string(&DISTINGUISHEDNAME_MEMBER_INITIALS, val)?;
+        }
+        if let Some(ref val) = self.locality {
+            ser.write_string(&DISTINGUISHEDNAME_MEMBER_LOCALITY, val)?;
+        }
+        if let Some(ref val) = self.organization {
+            ser.write_string(&DISTINGUISHEDNAME_MEMBER_ORGANIZATION, val)?;
+        }
+        if let Some(ref val) = self.organizational_unit {
+            ser.write_string(&DISTINGUISHEDNAME_MEMBER_ORGANIZATIONAL_UNIT, val)?;
+        }
+        if let Some(ref val) = self.pseudonym {
+            ser.write_string(&DISTINGUISHEDNAME_MEMBER_PSEUDONYM, val)?;
+        }
+        if let Some(ref val) = self.serial_number {
+            ser.write_string(&DISTINGUISHEDNAME_MEMBER_SERIAL_NUMBER, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&DISTINGUISHEDNAME_MEMBER_STATE, val)?;
+        }
+        if let Some(ref val) = self.surname {
+            ser.write_string(&DISTINGUISHEDNAME_MEMBER_SURNAME, val)?;
+        }
+        if let Some(ref val) = self.title {
+            ser.write_string(&DISTINGUISHEDNAME_MEMBER_TITLE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DistinguishedNameBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DISTINGUISHEDNAME_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.common_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_components = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.country = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_attributes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CustomAttribute::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.distinguished_name_qualifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.generation_qualifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.given_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.initials = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.locality = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.organization = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.organizational_unit = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pseudonym = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.serial_number = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.surname = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.title = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DistinguishedName {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DistinguishedName {
     /// Creates a new builder-style object to manufacture [`DistinguishedName`](crate::types::DistinguishedName).
     pub fn builder() -> crate::types::builders::DistinguishedNameBuilder {

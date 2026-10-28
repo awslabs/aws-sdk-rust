@@ -52,6 +52,249 @@ impl StartFileTransferInput {
         self.custom_http_headers.as_deref().unwrap_or_default()
     }
 }
+static STARTFILETRANSFERINPUT_MEMBER_CONNECTOR_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#StartFileTransferInput$ConnectorId",
+        "com.amazonaws.transfer.synthetic",
+        "StartFileTransferInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConnectorId",
+    0,
+);
+static STARTFILETRANSFERINPUT_MEMBER_SEND_FILE_PATHS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#FilePaths$member", "com.amazonaws.transfer", "FilePaths"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static STARTFILETRANSFERINPUT_MEMBER_SEND_FILE_PATHS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#StartFileTransferInput$SendFilePaths",
+        "com.amazonaws.transfer.synthetic",
+        "StartFileTransferInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SendFilePaths",
+    1,
+)
+.with_list_member(&STARTFILETRANSFERINPUT_MEMBER_SEND_FILE_PATHS_MEMBER);
+static STARTFILETRANSFERINPUT_MEMBER_RETRIEVE_FILE_PATHS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#FilePaths$member", "com.amazonaws.transfer", "FilePaths"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static STARTFILETRANSFERINPUT_MEMBER_RETRIEVE_FILE_PATHS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#StartFileTransferInput$RetrieveFilePaths",
+        "com.amazonaws.transfer.synthetic",
+        "StartFileTransferInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "RetrieveFilePaths",
+    2,
+)
+.with_list_member(&STARTFILETRANSFERINPUT_MEMBER_RETRIEVE_FILE_PATHS_MEMBER);
+static STARTFILETRANSFERINPUT_MEMBER_LOCAL_DIRECTORY_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#StartFileTransferInput$LocalDirectoryPath",
+        "com.amazonaws.transfer.synthetic",
+        "StartFileTransferInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocalDirectoryPath",
+    3,
+);
+static STARTFILETRANSFERINPUT_MEMBER_REMOTE_DIRECTORY_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#StartFileTransferInput$RemoteDirectoryPath",
+        "com.amazonaws.transfer.synthetic",
+        "StartFileTransferInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RemoteDirectoryPath",
+    4,
+);
+static STARTFILETRANSFERINPUT_MEMBER_CUSTOM_HTTP_HEADERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#CustomHttpHeaders$member",
+        "com.amazonaws.transfer",
+        "CustomHttpHeaders",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTFILETRANSFERINPUT_MEMBER_CUSTOM_HTTP_HEADERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#StartFileTransferInput$CustomHttpHeaders",
+        "com.amazonaws.transfer.synthetic",
+        "StartFileTransferInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CustomHttpHeaders",
+    5,
+)
+.with_list_member(&STARTFILETRANSFERINPUT_MEMBER_CUSTOM_HTTP_HEADERS_MEMBER);
+static STARTFILETRANSFERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#StartFileTransferInput",
+        "com.amazonaws.transfer.synthetic",
+        "StartFileTransferInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTFILETRANSFERINPUT_MEMBER_CONNECTOR_ID,
+        &STARTFILETRANSFERINPUT_MEMBER_SEND_FILE_PATHS,
+        &STARTFILETRANSFERINPUT_MEMBER_RETRIEVE_FILE_PATHS,
+        &STARTFILETRANSFERINPUT_MEMBER_LOCAL_DIRECTORY_PATH,
+        &STARTFILETRANSFERINPUT_MEMBER_REMOTE_DIRECTORY_PATH,
+        &STARTFILETRANSFERINPUT_MEMBER_CUSTOM_HTTP_HEADERS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartFileTransferRequest");
+impl StartFileTransferInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTFILETRANSFERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartFileTransferInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.connector_id {
+            ser.write_string(&STARTFILETRANSFERINPUT_MEMBER_CONNECTOR_ID, val)?;
+        }
+        if let Some(ref val) = self.send_file_paths {
+            ser.write_list(
+                &STARTFILETRANSFERINPUT_MEMBER_SEND_FILE_PATHS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.retrieve_file_paths {
+            ser.write_list(
+                &STARTFILETRANSFERINPUT_MEMBER_RETRIEVE_FILE_PATHS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.local_directory_path {
+            ser.write_string(&STARTFILETRANSFERINPUT_MEMBER_LOCAL_DIRECTORY_PATH, val)?;
+        }
+        if let Some(ref val) = self.remote_directory_path {
+            ser.write_string(&STARTFILETRANSFERINPUT_MEMBER_REMOTE_DIRECTORY_PATH, val)?;
+        }
+        if let Some(ref val) = self.custom_http_headers {
+            ser.write_list(
+                &STARTFILETRANSFERINPUT_MEMBER_CUSTOM_HTTP_HEADERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CustomHttpHeader::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_file_transfer::builders::StartFileTransferInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTFILETRANSFERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.connector_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.send_file_paths = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retrieve_file_paths = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.local_directory_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.remote_directory_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_http_headers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CustomHttpHeader::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartFileTransferInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.connector_id = builder.connector_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartFileTransferInput {
     /// Creates a new builder-style object to manufacture [`StartFileTransferInput`](crate::operation::start_file_transfer::StartFileTransferInput).
     pub fn builder() -> crate::operation::start_file_transfer::builders::StartFileTransferInputBuilder {

@@ -50,6 +50,132 @@ impl ResendValidationEmailInput {
         self.validation_domain.as_deref()
     }
 }
+static RESENDVALIDATIONEMAILINPUT_MEMBER_CERTIFICATE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#ResendValidationEmailInput$CertificateArn",
+        "com.amazonaws.acm.synthetic",
+        "ResendValidationEmailInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertificateArn",
+    0,
+);
+static RESENDVALIDATIONEMAILINPUT_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#ResendValidationEmailInput$Domain",
+        "com.amazonaws.acm.synthetic",
+        "ResendValidationEmailInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Domain",
+    1,
+);
+static RESENDVALIDATIONEMAILINPUT_MEMBER_VALIDATION_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#ResendValidationEmailInput$ValidationDomain",
+        "com.amazonaws.acm.synthetic",
+        "ResendValidationEmailInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ValidationDomain",
+    2,
+);
+static RESENDVALIDATIONEMAILINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#ResendValidationEmailInput",
+        "com.amazonaws.acm.synthetic",
+        "ResendValidationEmailInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESENDVALIDATIONEMAILINPUT_MEMBER_CERTIFICATE_ARN,
+        &RESENDVALIDATIONEMAILINPUT_MEMBER_DOMAIN,
+        &RESENDVALIDATIONEMAILINPUT_MEMBER_VALIDATION_DOMAIN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ResendValidationEmailRequest");
+impl ResendValidationEmailInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESENDVALIDATIONEMAILINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResendValidationEmailInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.certificate_arn {
+            ser.write_string(&RESENDVALIDATIONEMAILINPUT_MEMBER_CERTIFICATE_ARN, val)?;
+        }
+        if let Some(ref val) = self.domain {
+            ser.write_string(&RESENDVALIDATIONEMAILINPUT_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.validation_domain {
+            ser.write_string(&RESENDVALIDATIONEMAILINPUT_MEMBER_VALIDATION_DOMAIN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::resend_validation_email::builders::ResendValidationEmailInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESENDVALIDATIONEMAILINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_domain = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResendValidationEmailInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.certificate_arn = builder.certificate_arn.or(Some(String::new()));
+        builder.domain = builder.domain.or(Some(String::new()));
+        builder.validation_domain = builder.validation_domain.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ResendValidationEmailInput {
     /// Creates a new builder-style object to manufacture [`ResendValidationEmailInput`](crate::operation::resend_validation_email::ResendValidationEmailInput).
     pub fn builder() -> crate::operation::resend_validation_email::builders::ResendValidationEmailInputBuilder {

@@ -20,6 +20,102 @@ impl ConnectionAliasPermission {
         self.allow_association
     }
 }
+static CONNECTIONALIASPERMISSION_MEMBER_SHARED_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ConnectionAliasPermission$SharedAccountId",
+        "com.amazonaws.workspaces",
+        "ConnectionAliasPermission",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SharedAccountId",
+    0,
+);
+static CONNECTIONALIASPERMISSION_MEMBER_ALLOW_ASSOCIATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ConnectionAliasPermission$AllowAssociation",
+        "com.amazonaws.workspaces",
+        "ConnectionAliasPermission",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "AllowAssociation",
+    1,
+);
+static CONNECTIONALIASPERMISSION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ConnectionAliasPermission",
+        "com.amazonaws.workspaces",
+        "ConnectionAliasPermission",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONNECTIONALIASPERMISSION_MEMBER_SHARED_ACCOUNT_ID,
+        &CONNECTIONALIASPERMISSION_MEMBER_ALLOW_ASSOCIATION,
+    ],
+);
+impl ConnectionAliasPermission {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONNECTIONALIASPERMISSION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConnectionAliasPermission {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.shared_account_id;
+            ser.write_string(&CONNECTIONALIASPERMISSION_MEMBER_SHARED_ACCOUNT_ID, val)?;
+        }
+        {
+            let val = &self.allow_association;
+            ser.write_boolean(&CONNECTIONALIASPERMISSION_MEMBER_ALLOW_ASSOCIATION, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConnectionAliasPermissionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONNECTIONALIASPERMISSION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.shared_account_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.allow_association = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConnectionAliasPermission {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.shared_account_id = builder.shared_account_id.or(Some(String::new()));
+        builder.allow_association = builder.allow_association.or(Some(false));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ConnectionAliasPermission {
     /// Creates a new builder-style object to manufacture [`ConnectionAliasPermission`](crate::types::ConnectionAliasPermission).
     pub fn builder() -> crate::types::builders::ConnectionAliasPermissionBuilder {

@@ -91,6 +91,256 @@ impl WorkflowExecutionInfo {
         self.cancel_requested
     }
 }
+static WORKFLOWEXECUTIONINFO_MEMBER_EXECUTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionInfo$execution",
+        "com.amazonaws.swf",
+        "WorkflowExecutionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "execution",
+    0,
+);
+static WORKFLOWEXECUTIONINFO_MEMBER_WORKFLOW_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionInfo$workflowType",
+        "com.amazonaws.swf",
+        "WorkflowExecutionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "workflowType",
+    1,
+);
+static WORKFLOWEXECUTIONINFO_MEMBER_START_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionInfo$startTimestamp",
+        "com.amazonaws.swf",
+        "WorkflowExecutionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "startTimestamp",
+    2,
+);
+static WORKFLOWEXECUTIONINFO_MEMBER_CLOSE_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionInfo$closeTimestamp",
+        "com.amazonaws.swf",
+        "WorkflowExecutionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "closeTimestamp",
+    3,
+);
+static WORKFLOWEXECUTIONINFO_MEMBER_EXECUTION_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionInfo$executionStatus",
+        "com.amazonaws.swf",
+        "WorkflowExecutionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "executionStatus",
+    4,
+);
+static WORKFLOWEXECUTIONINFO_MEMBER_CLOSE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionInfo$closeStatus",
+        "com.amazonaws.swf",
+        "WorkflowExecutionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "closeStatus",
+    5,
+);
+static WORKFLOWEXECUTIONINFO_MEMBER_PARENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionInfo$parent",
+        "com.amazonaws.swf",
+        "WorkflowExecutionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "parent",
+    6,
+);
+static WORKFLOWEXECUTIONINFO_MEMBER_TAG_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.swf#TagList$member", "com.amazonaws.swf", "TagList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static WORKFLOWEXECUTIONINFO_MEMBER_TAG_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionInfo$tagList",
+        "com.amazonaws.swf",
+        "WorkflowExecutionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tagList",
+    7,
+)
+.with_list_member(&WORKFLOWEXECUTIONINFO_MEMBER_TAG_LIST_MEMBER);
+static WORKFLOWEXECUTIONINFO_MEMBER_CANCEL_REQUESTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionInfo$cancelRequested",
+        "com.amazonaws.swf",
+        "WorkflowExecutionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "cancelRequested",
+    8,
+);
+static WORKFLOWEXECUTIONINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.swf#WorkflowExecutionInfo", "com.amazonaws.swf", "WorkflowExecutionInfo"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKFLOWEXECUTIONINFO_MEMBER_EXECUTION,
+        &WORKFLOWEXECUTIONINFO_MEMBER_WORKFLOW_TYPE,
+        &WORKFLOWEXECUTIONINFO_MEMBER_START_TIMESTAMP,
+        &WORKFLOWEXECUTIONINFO_MEMBER_CLOSE_TIMESTAMP,
+        &WORKFLOWEXECUTIONINFO_MEMBER_EXECUTION_STATUS,
+        &WORKFLOWEXECUTIONINFO_MEMBER_CLOSE_STATUS,
+        &WORKFLOWEXECUTIONINFO_MEMBER_PARENT,
+        &WORKFLOWEXECUTIONINFO_MEMBER_TAG_LIST,
+        &WORKFLOWEXECUTIONINFO_MEMBER_CANCEL_REQUESTED,
+    ],
+);
+impl WorkflowExecutionInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKFLOWEXECUTIONINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WorkflowExecutionInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.execution {
+            ser.write_struct(&WORKFLOWEXECUTIONINFO_MEMBER_EXECUTION, val)?;
+        }
+        if let Some(ref val) = self.workflow_type {
+            ser.write_struct(&WORKFLOWEXECUTIONINFO_MEMBER_WORKFLOW_TYPE, val)?;
+        }
+        {
+            let val = &self.start_timestamp;
+            ser.write_timestamp(&WORKFLOWEXECUTIONINFO_MEMBER_START_TIMESTAMP, val)?;
+        }
+        if let Some(ref val) = self.close_timestamp {
+            ser.write_timestamp(&WORKFLOWEXECUTIONINFO_MEMBER_CLOSE_TIMESTAMP, val)?;
+        }
+        {
+            let val = &self.execution_status;
+            ser.write_string(&WORKFLOWEXECUTIONINFO_MEMBER_EXECUTION_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.close_status {
+            ser.write_string(&WORKFLOWEXECUTIONINFO_MEMBER_CLOSE_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.parent {
+            ser.write_struct(&WORKFLOWEXECUTIONINFO_MEMBER_PARENT, val)?;
+        }
+        if let Some(ref val) = self.tag_list {
+            ser.write_list(
+                &WORKFLOWEXECUTIONINFO_MEMBER_TAG_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.cancel_requested;
+            ser.write_boolean(&WORKFLOWEXECUTIONINFO_MEMBER_CANCEL_REQUESTED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkflowExecutionInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKFLOWEXECUTIONINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution = Some(crate::types::WorkflowExecution::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_type = Some(crate::types::WorkflowType::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    self.start_timestamp = Some(deser.read_timestamp(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.close_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    self.execution_status = Some(crate::types::ExecutionStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.close_status = Some(crate::types::CloseStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parent = Some(crate::types::WorkflowExecution::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_list = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(8) => {
+                    self.cancel_requested = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WorkflowExecutionInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.start_timestamp = builder.start_timestamp.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl WorkflowExecutionInfo {
     /// Creates a new builder-style object to manufacture [`WorkflowExecutionInfo`](crate::types::WorkflowExecutionInfo).
     pub fn builder() -> crate::types::builders::WorkflowExecutionInfoBuilder {

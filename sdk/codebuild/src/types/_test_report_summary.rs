@@ -25,6 +25,159 @@ impl TestReportSummary {
         self.duration_in_nano_seconds
     }
 }
+static TESTREPORTSUMMARY_MEMBER_TOTAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#TestReportSummary$total",
+        "com.amazonaws.codebuild",
+        "TestReportSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "total",
+    0,
+);
+static TESTREPORTSUMMARY_MEMBER_STATUS_COUNTS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ReportStatusCounts$key",
+        "com.amazonaws.codebuild",
+        "ReportStatusCounts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static TESTREPORTSUMMARY_MEMBER_STATUS_COUNTS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ReportStatusCounts$value",
+        "com.amazonaws.codebuild",
+        "ReportStatusCounts",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "value",
+    1,
+);
+static TESTREPORTSUMMARY_MEMBER_STATUS_COUNTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#TestReportSummary$statusCounts",
+        "com.amazonaws.codebuild",
+        "TestReportSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "statusCounts",
+    1,
+)
+.with_map_members(&TESTREPORTSUMMARY_MEMBER_STATUS_COUNTS_KEY, &TESTREPORTSUMMARY_MEMBER_STATUS_COUNTS_VALUE);
+static TESTREPORTSUMMARY_MEMBER_DURATION_IN_NANO_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#TestReportSummary$durationInNanoSeconds",
+        "com.amazonaws.codebuild",
+        "TestReportSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "durationInNanoSeconds",
+    2,
+);
+static TESTREPORTSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#TestReportSummary",
+        "com.amazonaws.codebuild",
+        "TestReportSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TESTREPORTSUMMARY_MEMBER_TOTAL,
+        &TESTREPORTSUMMARY_MEMBER_STATUS_COUNTS,
+        &TESTREPORTSUMMARY_MEMBER_DURATION_IN_NANO_SECONDS,
+    ],
+);
+impl TestReportSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TESTREPORTSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TestReportSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.total;
+            ser.write_integer(&TESTREPORTSUMMARY_MEMBER_TOTAL, *val)?;
+        }
+        {
+            let val = &self.status_counts;
+
+            ser.write_map(
+                &TESTREPORTSUMMARY_MEMBER_STATUS_COUNTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_integer(&::aws_smithy_schema::prelude::INTEGER, *value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.duration_in_nano_seconds;
+            ser.write_long(&TESTREPORTSUMMARY_MEMBER_DURATION_IN_NANO_SECONDS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TestReportSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TESTREPORTSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.total = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    self.status_counts = Some({
+                        let mut container = std::collections::HashMap::new();
+                        deser.read_map(member, &mut |key, deser| {
+                            container.insert(key, deser.read_integer(&::aws_smithy_schema::prelude::INTEGER)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(2) => {
+                    self.duration_in_nano_seconds = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TestReportSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.total = builder.total.or(Some(0i32));
+        builder.status_counts = builder.status_counts.or(Some(::std::collections::HashMap::new()));
+        builder.duration_in_nano_seconds = builder.duration_in_nano_seconds.or(Some(0i64));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl TestReportSummary {
     /// Creates a new builder-style object to manufacture [`TestReportSummary`](crate::types::TestReportSummary).
     pub fn builder() -> crate::types::builders::TestReportSummaryBuilder {

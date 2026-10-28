@@ -649,6 +649,1299 @@ impl ::std::fmt::Debug for ContainerDefinition {
         formatter.finish()
     }
 }
+static CONTAINERDEFINITION_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerDefinition$name", "com.amazonaws.ecs", "ContainerDefinition"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerDefinition$image", "com.amazonaws.ecs", "ContainerDefinition"),
+    ::aws_smithy_schema::ShapeType::String,
+    "image",
+    1,
+);
+static CONTAINERDEFINITION_MEMBER_REPOSITORY_CREDENTIALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$repositoryCredentials",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "repositoryCredentials",
+    2,
+);
+static CONTAINERDEFINITION_MEMBER_CPU: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerDefinition$cpu", "com.amazonaws.ecs", "ContainerDefinition"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "cpu",
+    3,
+);
+static CONTAINERDEFINITION_MEMBER_MEMORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerDefinition$memory", "com.amazonaws.ecs", "ContainerDefinition"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "memory",
+    4,
+);
+static CONTAINERDEFINITION_MEMBER_MEMORY_RESERVATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$memoryReservation",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "memoryReservation",
+    5,
+);
+static CONTAINERDEFINITION_MEMBER_LINKS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_LINKS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerDefinition$links", "com.amazonaws.ecs", "ContainerDefinition"),
+    ::aws_smithy_schema::ShapeType::List,
+    "links",
+    6,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_LINKS_MEMBER);
+static CONTAINERDEFINITION_MEMBER_PORT_MAPPINGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#PortMappingList$member", "com.amazonaws.ecs", "PortMappingList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_PORT_MAPPINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$portMappings",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "portMappings",
+    7,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_PORT_MAPPINGS_MEMBER);
+static CONTAINERDEFINITION_MEMBER_ESSENTIAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$essential",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "essential",
+    8,
+);
+static CONTAINERDEFINITION_MEMBER_RESTART_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$restartPolicy",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "restartPolicy",
+    9,
+);
+static CONTAINERDEFINITION_MEMBER_ENTRY_POINT_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_ENTRY_POINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$entryPoint",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "entryPoint",
+    10,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_ENTRY_POINT_MEMBER);
+static CONTAINERDEFINITION_MEMBER_COMMAND_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_COMMAND: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$command",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "command",
+    11,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_COMMAND_MEMBER);
+static CONTAINERDEFINITION_MEMBER_ENVIRONMENT_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#EnvironmentVariables$member",
+        "com.amazonaws.ecs",
+        "EnvironmentVariables",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$environment",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "environment",
+    12,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_ENVIRONMENT_MEMBER);
+static CONTAINERDEFINITION_MEMBER_ENVIRONMENT_FILES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#EnvironmentFiles$member", "com.amazonaws.ecs", "EnvironmentFiles"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_ENVIRONMENT_FILES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$environmentFiles",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "environmentFiles",
+    13,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_ENVIRONMENT_FILES_MEMBER);
+static CONTAINERDEFINITION_MEMBER_MOUNT_POINTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#MountPointList$member", "com.amazonaws.ecs", "MountPointList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_MOUNT_POINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$mountPoints",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "mountPoints",
+    14,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_MOUNT_POINTS_MEMBER);
+static CONTAINERDEFINITION_MEMBER_VOLUMES_FROM_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#VolumeFromList$member", "com.amazonaws.ecs", "VolumeFromList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_VOLUMES_FROM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$volumesFrom",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "volumesFrom",
+    15,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_VOLUMES_FROM_MEMBER);
+static CONTAINERDEFINITION_MEMBER_LINUX_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$linuxParameters",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "linuxParameters",
+    16,
+);
+static CONTAINERDEFINITION_MEMBER_SECRETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#SecretList$member", "com.amazonaws.ecs", "SecretList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_SECRETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$secrets",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "secrets",
+    17,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_SECRETS_MEMBER);
+static CONTAINERDEFINITION_MEMBER_DEPENDS_ON_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDependencies$member",
+        "com.amazonaws.ecs",
+        "ContainerDependencies",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_DEPENDS_ON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$dependsOn",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "dependsOn",
+    18,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_DEPENDS_ON_MEMBER);
+static CONTAINERDEFINITION_MEMBER_START_TIMEOUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$startTimeout",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "startTimeout",
+    19,
+);
+static CONTAINERDEFINITION_MEMBER_STOP_TIMEOUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$stopTimeout",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "stopTimeout",
+    20,
+);
+static CONTAINERDEFINITION_MEMBER_VERSION_CONSISTENCY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$versionConsistency",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "versionConsistency",
+    21,
+);
+static CONTAINERDEFINITION_MEMBER_HOSTNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$hostname",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "hostname",
+    22,
+);
+static CONTAINERDEFINITION_MEMBER_USER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerDefinition$user", "com.amazonaws.ecs", "ContainerDefinition"),
+    ::aws_smithy_schema::ShapeType::String,
+    "user",
+    23,
+);
+static CONTAINERDEFINITION_MEMBER_WORKING_DIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$workingDirectory",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "workingDirectory",
+    24,
+);
+static CONTAINERDEFINITION_MEMBER_DISABLE_NETWORKING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$disableNetworking",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "disableNetworking",
+    25,
+);
+static CONTAINERDEFINITION_MEMBER_PRIVILEGED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$privileged",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "privileged",
+    26,
+);
+static CONTAINERDEFINITION_MEMBER_READONLY_ROOT_FILESYSTEM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$readonlyRootFilesystem",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "readonlyRootFilesystem",
+    27,
+);
+static CONTAINERDEFINITION_MEMBER_DNS_SERVERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_DNS_SERVERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$dnsServers",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "dnsServers",
+    28,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_DNS_SERVERS_MEMBER);
+static CONTAINERDEFINITION_MEMBER_DNS_SEARCH_DOMAINS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_DNS_SEARCH_DOMAINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$dnsSearchDomains",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "dnsSearchDomains",
+    29,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_DNS_SEARCH_DOMAINS_MEMBER);
+static CONTAINERDEFINITION_MEMBER_EXTRA_HOSTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#HostEntryList$member", "com.amazonaws.ecs", "HostEntryList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_EXTRA_HOSTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$extraHosts",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "extraHosts",
+    30,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_EXTRA_HOSTS_MEMBER);
+static CONTAINERDEFINITION_MEMBER_DOCKER_SECURITY_OPTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_DOCKER_SECURITY_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$dockerSecurityOptions",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "dockerSecurityOptions",
+    31,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_DOCKER_SECURITY_OPTIONS_MEMBER);
+static CONTAINERDEFINITION_MEMBER_INTERACTIVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$interactive",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "interactive",
+    32,
+);
+static CONTAINERDEFINITION_MEMBER_PSEUDO_TERMINAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$pseudoTerminal",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "pseudoTerminal",
+    33,
+);
+static CONTAINERDEFINITION_MEMBER_DOCKER_LABELS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#DockerLabelsMap$key", "com.amazonaws.ecs", "DockerLabelsMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_DOCKER_LABELS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#DockerLabelsMap$value", "com.amazonaws.ecs", "DockerLabelsMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CONTAINERDEFINITION_MEMBER_DOCKER_LABELS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$dockerLabels",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "dockerLabels",
+    34,
+)
+.with_map_members(
+    &CONTAINERDEFINITION_MEMBER_DOCKER_LABELS_KEY,
+    &CONTAINERDEFINITION_MEMBER_DOCKER_LABELS_VALUE,
+);
+static CONTAINERDEFINITION_MEMBER_ULIMITS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#UlimitList$member", "com.amazonaws.ecs", "UlimitList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_ULIMITS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$ulimits",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ulimits",
+    35,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_ULIMITS_MEMBER);
+static CONTAINERDEFINITION_MEMBER_LOG_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$logConfiguration",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "logConfiguration",
+    36,
+);
+static CONTAINERDEFINITION_MEMBER_HEALTH_CHECK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$healthCheck",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "healthCheck",
+    37,
+);
+static CONTAINERDEFINITION_MEMBER_SYSTEM_CONTROLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#SystemControls$member", "com.amazonaws.ecs", "SystemControls"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_SYSTEM_CONTROLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$systemControls",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "systemControls",
+    38,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_SYSTEM_CONTROLS_MEMBER);
+static CONTAINERDEFINITION_MEMBER_RESOURCE_REQUIREMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ResourceRequirements$member",
+        "com.amazonaws.ecs",
+        "ResourceRequirements",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_RESOURCE_REQUIREMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$resourceRequirements",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "resourceRequirements",
+    39,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_RESOURCE_REQUIREMENTS_MEMBER);
+static CONTAINERDEFINITION_MEMBER_FIRELENS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$firelensConfiguration",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "firelensConfiguration",
+    40,
+);
+static CONTAINERDEFINITION_MEMBER_CREDENTIAL_SPECS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_CREDENTIAL_SPECS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerDefinition$credentialSpecs",
+        "com.amazonaws.ecs",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "credentialSpecs",
+    41,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_CREDENTIAL_SPECS_MEMBER);
+static CONTAINERDEFINITION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerDefinition", "com.amazonaws.ecs", "ContainerDefinition"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTAINERDEFINITION_MEMBER_NAME,
+        &CONTAINERDEFINITION_MEMBER_IMAGE,
+        &CONTAINERDEFINITION_MEMBER_REPOSITORY_CREDENTIALS,
+        &CONTAINERDEFINITION_MEMBER_CPU,
+        &CONTAINERDEFINITION_MEMBER_MEMORY,
+        &CONTAINERDEFINITION_MEMBER_MEMORY_RESERVATION,
+        &CONTAINERDEFINITION_MEMBER_LINKS,
+        &CONTAINERDEFINITION_MEMBER_PORT_MAPPINGS,
+        &CONTAINERDEFINITION_MEMBER_ESSENTIAL,
+        &CONTAINERDEFINITION_MEMBER_RESTART_POLICY,
+        &CONTAINERDEFINITION_MEMBER_ENTRY_POINT,
+        &CONTAINERDEFINITION_MEMBER_COMMAND,
+        &CONTAINERDEFINITION_MEMBER_ENVIRONMENT,
+        &CONTAINERDEFINITION_MEMBER_ENVIRONMENT_FILES,
+        &CONTAINERDEFINITION_MEMBER_MOUNT_POINTS,
+        &CONTAINERDEFINITION_MEMBER_VOLUMES_FROM,
+        &CONTAINERDEFINITION_MEMBER_LINUX_PARAMETERS,
+        &CONTAINERDEFINITION_MEMBER_SECRETS,
+        &CONTAINERDEFINITION_MEMBER_DEPENDS_ON,
+        &CONTAINERDEFINITION_MEMBER_START_TIMEOUT,
+        &CONTAINERDEFINITION_MEMBER_STOP_TIMEOUT,
+        &CONTAINERDEFINITION_MEMBER_VERSION_CONSISTENCY,
+        &CONTAINERDEFINITION_MEMBER_HOSTNAME,
+        &CONTAINERDEFINITION_MEMBER_USER,
+        &CONTAINERDEFINITION_MEMBER_WORKING_DIRECTORY,
+        &CONTAINERDEFINITION_MEMBER_DISABLE_NETWORKING,
+        &CONTAINERDEFINITION_MEMBER_PRIVILEGED,
+        &CONTAINERDEFINITION_MEMBER_READONLY_ROOT_FILESYSTEM,
+        &CONTAINERDEFINITION_MEMBER_DNS_SERVERS,
+        &CONTAINERDEFINITION_MEMBER_DNS_SEARCH_DOMAINS,
+        &CONTAINERDEFINITION_MEMBER_EXTRA_HOSTS,
+        &CONTAINERDEFINITION_MEMBER_DOCKER_SECURITY_OPTIONS,
+        &CONTAINERDEFINITION_MEMBER_INTERACTIVE,
+        &CONTAINERDEFINITION_MEMBER_PSEUDO_TERMINAL,
+        &CONTAINERDEFINITION_MEMBER_DOCKER_LABELS,
+        &CONTAINERDEFINITION_MEMBER_ULIMITS,
+        &CONTAINERDEFINITION_MEMBER_LOG_CONFIGURATION,
+        &CONTAINERDEFINITION_MEMBER_HEALTH_CHECK,
+        &CONTAINERDEFINITION_MEMBER_SYSTEM_CONTROLS,
+        &CONTAINERDEFINITION_MEMBER_RESOURCE_REQUIREMENTS,
+        &CONTAINERDEFINITION_MEMBER_FIRELENS_CONFIGURATION,
+        &CONTAINERDEFINITION_MEMBER_CREDENTIAL_SPECS,
+    ],
+);
+impl ContainerDefinition {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTAINERDEFINITION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContainerDefinition {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CONTAINERDEFINITION_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.image {
+            ser.write_string(&CONTAINERDEFINITION_MEMBER_IMAGE, val)?;
+        }
+        if let Some(ref val) = self.repository_credentials {
+            ser.write_struct(&CONTAINERDEFINITION_MEMBER_REPOSITORY_CREDENTIALS, val)?;
+        }
+        {
+            let val = &self.cpu;
+            ser.write_integer(&CONTAINERDEFINITION_MEMBER_CPU, *val)?;
+        }
+        if let Some(ref val) = self.memory {
+            ser.write_integer(&CONTAINERDEFINITION_MEMBER_MEMORY, *val)?;
+        }
+        if let Some(ref val) = self.memory_reservation {
+            ser.write_integer(&CONTAINERDEFINITION_MEMBER_MEMORY_RESERVATION, *val)?;
+        }
+        if let Some(ref val) = self.links {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_LINKS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.port_mappings {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_PORT_MAPPINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PortMapping::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.essential {
+            ser.write_boolean(&CONTAINERDEFINITION_MEMBER_ESSENTIAL, *val)?;
+        }
+        if let Some(ref val) = self.restart_policy {
+            ser.write_struct(&CONTAINERDEFINITION_MEMBER_RESTART_POLICY, val)?;
+        }
+        if let Some(ref val) = self.entry_point {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_ENTRY_POINT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.command {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_COMMAND,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.environment {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_ENVIRONMENT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::KeyValuePair::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.environment_files {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_ENVIRONMENT_FILES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EnvironmentFile::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.mount_points {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_MOUNT_POINTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::MountPoint::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.volumes_from {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_VOLUMES_FROM,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::VolumeFrom::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.linux_parameters {
+            ser.write_struct(&CONTAINERDEFINITION_MEMBER_LINUX_PARAMETERS, val)?;
+        }
+        if let Some(ref val) = self.secrets {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_SECRETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Secret::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.depends_on {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_DEPENDS_ON,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ContainerDependency::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.start_timeout {
+            ser.write_integer(&CONTAINERDEFINITION_MEMBER_START_TIMEOUT, *val)?;
+        }
+        if let Some(ref val) = self.stop_timeout {
+            ser.write_integer(&CONTAINERDEFINITION_MEMBER_STOP_TIMEOUT, *val)?;
+        }
+        if let Some(ref val) = self.version_consistency {
+            ser.write_string(&CONTAINERDEFINITION_MEMBER_VERSION_CONSISTENCY, val.as_str())?;
+        }
+        if let Some(ref val) = self.hostname {
+            ser.write_string(&CONTAINERDEFINITION_MEMBER_HOSTNAME, val)?;
+        }
+        if let Some(ref val) = self.user {
+            ser.write_string(&CONTAINERDEFINITION_MEMBER_USER, val)?;
+        }
+        if let Some(ref val) = self.working_directory {
+            ser.write_string(&CONTAINERDEFINITION_MEMBER_WORKING_DIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.disable_networking {
+            ser.write_boolean(&CONTAINERDEFINITION_MEMBER_DISABLE_NETWORKING, *val)?;
+        }
+        if let Some(ref val) = self.privileged {
+            ser.write_boolean(&CONTAINERDEFINITION_MEMBER_PRIVILEGED, *val)?;
+        }
+        if let Some(ref val) = self.readonly_root_filesystem {
+            ser.write_boolean(&CONTAINERDEFINITION_MEMBER_READONLY_ROOT_FILESYSTEM, *val)?;
+        }
+        if let Some(ref val) = self.dns_servers {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_DNS_SERVERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.dns_search_domains {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_DNS_SEARCH_DOMAINS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.extra_hosts {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_EXTRA_HOSTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::HostEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.docker_security_options {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_DOCKER_SECURITY_OPTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.interactive {
+            ser.write_boolean(&CONTAINERDEFINITION_MEMBER_INTERACTIVE, *val)?;
+        }
+        if let Some(ref val) = self.pseudo_terminal {
+            ser.write_boolean(&CONTAINERDEFINITION_MEMBER_PSEUDO_TERMINAL, *val)?;
+        }
+        if let Some(ref val) = self.docker_labels {
+            ser.write_map(
+                &CONTAINERDEFINITION_MEMBER_DOCKER_LABELS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ulimits {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_ULIMITS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Ulimit::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.log_configuration {
+            ser.write_struct(&CONTAINERDEFINITION_MEMBER_LOG_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.health_check {
+            ser.write_struct(&CONTAINERDEFINITION_MEMBER_HEALTH_CHECK, val)?;
+        }
+        if let Some(ref val) = self.system_controls {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_SYSTEM_CONTROLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::SystemControl::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.resource_requirements {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_RESOURCE_REQUIREMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ResourceRequirement::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.firelens_configuration {
+            ser.write_struct(&CONTAINERDEFINITION_MEMBER_FIRELENS_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.credential_specs {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_CREDENTIAL_SPECS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContainerDefinitionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTAINERDEFINITION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_credentials = Some(crate::types::RepositoryCredentials::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    self.cpu = Some(deser.read_integer(member)?);
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.memory = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.memory_reservation = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.links = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.port_mappings = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PortMapping::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.essential = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.restart_policy = Some(crate::types::ContainerRestartPolicy::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.entry_point = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.command = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::KeyValuePair::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment_files = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EnvironmentFile::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mount_points = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MountPoint::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volumes_from = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::VolumeFrom::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.linux_parameters = Some(crate::types::LinuxParameters::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secrets = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Secret::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.depends_on = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ContainerDependency::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_timeout = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stop_timeout = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version_consistency = Some(crate::types::VersionConsistency::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hostname = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.working_directory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(25) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disable_networking = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(26) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.privileged = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(27) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.readonly_root_filesystem = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(28) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_servers = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(29) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_search_domains = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(30) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.extra_hosts = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::HostEntry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(31) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.docker_security_options = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(32) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.interactive = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(33) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pseudo_terminal = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(34) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.docker_labels = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(35) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ulimits = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Ulimit::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(36) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_configuration = Some(crate::types::LogConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(37) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check = Some(crate::types::HealthCheck::deserialize(deser)?);
+                    }
+                }
+                Some(38) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.system_controls = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SystemControl::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(39) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_requirements = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ResourceRequirement::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(40) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firelens_configuration = Some(crate::types::FirelensConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(41) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.credential_specs = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContainerDefinition {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ContainerDefinition {
     /// Creates a new builder-style object to manufacture [`ContainerDefinition`](crate::types::ContainerDefinition).
     pub fn builder() -> crate::types::builders::ContainerDefinitionBuilder {

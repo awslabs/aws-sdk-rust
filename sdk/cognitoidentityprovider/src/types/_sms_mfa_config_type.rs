@@ -21,6 +21,106 @@ impl SmsMfaConfigType {
         self.sms_configuration.as_ref()
     }
 }
+static SMSMFACONFIGTYPE_MEMBER_SMS_AUTHENTICATION_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SmsMfaConfigType$SmsAuthenticationMessage",
+        "com.amazonaws.cognitoidentityprovider",
+        "SmsMfaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SmsAuthenticationMessage",
+    0,
+);
+static SMSMFACONFIGTYPE_MEMBER_SMS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SmsMfaConfigType$SmsConfiguration",
+        "com.amazonaws.cognitoidentityprovider",
+        "SmsMfaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SmsConfiguration",
+    1,
+);
+static SMSMFACONFIGTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SmsMfaConfigType",
+        "com.amazonaws.cognitoidentityprovider",
+        "SmsMfaConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SMSMFACONFIGTYPE_MEMBER_SMS_AUTHENTICATION_MESSAGE,
+        &SMSMFACONFIGTYPE_MEMBER_SMS_CONFIGURATION,
+    ],
+);
+impl SmsMfaConfigType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SMSMFACONFIGTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SmsMfaConfigType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.sms_authentication_message {
+            ser.write_string(&SMSMFACONFIGTYPE_MEMBER_SMS_AUTHENTICATION_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.sms_configuration {
+            ser.write_struct(&SMSMFACONFIGTYPE_MEMBER_SMS_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SmsMfaConfigTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SMSMFACONFIGTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sms_authentication_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sms_configuration = Some(crate::types::SmsConfigurationType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SmsMfaConfigType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SmsMfaConfigType {
     /// Creates a new builder-style object to manufacture [`SmsMfaConfigType`](crate::types::SmsMfaConfigType).
     pub fn builder() -> crate::types::builders::SmsMfaConfigTypeBuilder {

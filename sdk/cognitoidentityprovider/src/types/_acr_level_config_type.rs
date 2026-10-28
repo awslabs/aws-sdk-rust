@@ -14,6 +14,81 @@ impl AcrLevelConfigType {
         self.acr_value.deref()
     }
 }
+static ACRLEVELCONFIGTYPE_MEMBER_ACR_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AcrLevelConfigType$AcrValue",
+        "com.amazonaws.cognitoidentityprovider",
+        "AcrLevelConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcrValue",
+    0,
+);
+static ACRLEVELCONFIGTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AcrLevelConfigType",
+        "com.amazonaws.cognitoidentityprovider",
+        "AcrLevelConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ACRLEVELCONFIGTYPE_MEMBER_ACR_VALUE],
+);
+impl AcrLevelConfigType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACRLEVELCONFIGTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AcrLevelConfigType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.acr_value;
+            ser.write_string(&ACRLEVELCONFIGTYPE_MEMBER_ACR_VALUE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AcrLevelConfigTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACRLEVELCONFIGTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.acr_value = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AcrLevelConfigType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.acr_value = builder.acr_value.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AcrLevelConfigType {
     /// Creates a new builder-style object to manufacture [`AcrLevelConfigType`](crate::types::AcrLevelConfigType).
     pub fn builder() -> crate::types::builders::AcrLevelConfigTypeBuilder {

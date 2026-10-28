@@ -133,6 +133,490 @@ impl Sandbox {
         self.current_session.as_ref()
     }
 }
+static SANDBOX_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox$id", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::String,
+    "id",
+    0,
+);
+static SANDBOX_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox$arn", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    1,
+);
+static SANDBOX_MEMBER_PROJECT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox$projectName", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::String,
+    "projectName",
+    2,
+);
+static SANDBOX_MEMBER_REQUEST_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox$requestTime", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "requestTime",
+    3,
+);
+static SANDBOX_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox$startTime", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "startTime",
+    4,
+);
+static SANDBOX_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox$endTime", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "endTime",
+    5,
+);
+static SANDBOX_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox$status", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    6,
+);
+static SANDBOX_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox$source", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "source",
+    7,
+);
+static SANDBOX_MEMBER_SOURCE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox$sourceVersion", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::String,
+    "sourceVersion",
+    8,
+);
+static SANDBOX_MEMBER_SECONDARY_SOURCES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectSources$member",
+        "com.amazonaws.codebuild",
+        "ProjectSources",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SANDBOX_MEMBER_SECONDARY_SOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox$secondarySources", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::List,
+    "secondarySources",
+    9,
+)
+.with_list_member(&SANDBOX_MEMBER_SECONDARY_SOURCES_MEMBER);
+static SANDBOX_MEMBER_SECONDARY_SOURCE_VERSIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectSecondarySourceVersions$member",
+        "com.amazonaws.codebuild",
+        "ProjectSecondarySourceVersions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SANDBOX_MEMBER_SECONDARY_SOURCE_VERSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#Sandbox$secondarySourceVersions",
+        "com.amazonaws.codebuild",
+        "Sandbox",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "secondarySourceVersions",
+    10,
+)
+.with_list_member(&SANDBOX_MEMBER_SECONDARY_SOURCE_VERSIONS_MEMBER);
+static SANDBOX_MEMBER_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox$environment", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "environment",
+    11,
+);
+static SANDBOX_MEMBER_FILE_SYSTEM_LOCATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectFileSystemLocations$member",
+        "com.amazonaws.codebuild",
+        "ProjectFileSystemLocations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SANDBOX_MEMBER_FILE_SYSTEM_LOCATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#Sandbox$fileSystemLocations",
+        "com.amazonaws.codebuild",
+        "Sandbox",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "fileSystemLocations",
+    12,
+)
+.with_list_member(&SANDBOX_MEMBER_FILE_SYSTEM_LOCATIONS_MEMBER);
+static SANDBOX_MEMBER_TIMEOUT_IN_MINUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox$timeoutInMinutes", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "timeoutInMinutes",
+    13,
+);
+static SANDBOX_MEMBER_QUEUED_TIMEOUT_IN_MINUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#Sandbox$queuedTimeoutInMinutes",
+        "com.amazonaws.codebuild",
+        "Sandbox",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "queuedTimeoutInMinutes",
+    14,
+);
+static SANDBOX_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox$vpcConfig", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "vpcConfig",
+    15,
+);
+static SANDBOX_MEMBER_LOG_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox$logConfig", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "logConfig",
+    16,
+);
+static SANDBOX_MEMBER_ENCRYPTION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox$encryptionKey", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::String,
+    "encryptionKey",
+    17,
+);
+static SANDBOX_MEMBER_SERVICE_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox$serviceRole", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceRole",
+    18,
+);
+static SANDBOX_MEMBER_CURRENT_SESSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox$currentSession", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "currentSession",
+    19,
+);
+static SANDBOX_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Sandbox", "com.amazonaws.codebuild", "Sandbox"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SANDBOX_MEMBER_ID,
+        &SANDBOX_MEMBER_ARN,
+        &SANDBOX_MEMBER_PROJECT_NAME,
+        &SANDBOX_MEMBER_REQUEST_TIME,
+        &SANDBOX_MEMBER_START_TIME,
+        &SANDBOX_MEMBER_END_TIME,
+        &SANDBOX_MEMBER_STATUS,
+        &SANDBOX_MEMBER_SOURCE,
+        &SANDBOX_MEMBER_SOURCE_VERSION,
+        &SANDBOX_MEMBER_SECONDARY_SOURCES,
+        &SANDBOX_MEMBER_SECONDARY_SOURCE_VERSIONS,
+        &SANDBOX_MEMBER_ENVIRONMENT,
+        &SANDBOX_MEMBER_FILE_SYSTEM_LOCATIONS,
+        &SANDBOX_MEMBER_TIMEOUT_IN_MINUTES,
+        &SANDBOX_MEMBER_QUEUED_TIMEOUT_IN_MINUTES,
+        &SANDBOX_MEMBER_VPC_CONFIG,
+        &SANDBOX_MEMBER_LOG_CONFIG,
+        &SANDBOX_MEMBER_ENCRYPTION_KEY,
+        &SANDBOX_MEMBER_SERVICE_ROLE,
+        &SANDBOX_MEMBER_CURRENT_SESSION,
+    ],
+);
+impl Sandbox {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SANDBOX_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Sandbox {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&SANDBOX_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&SANDBOX_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.project_name {
+            ser.write_string(&SANDBOX_MEMBER_PROJECT_NAME, val)?;
+        }
+        if let Some(ref val) = self.request_time {
+            ser.write_timestamp(&SANDBOX_MEMBER_REQUEST_TIME, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&SANDBOX_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&SANDBOX_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&SANDBOX_MEMBER_STATUS, val)?;
+        }
+        if let Some(ref val) = self.source {
+            ser.write_struct(&SANDBOX_MEMBER_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.source_version {
+            ser.write_string(&SANDBOX_MEMBER_SOURCE_VERSION, val)?;
+        }
+        if let Some(ref val) = self.secondary_sources {
+            ser.write_list(
+                &SANDBOX_MEMBER_SECONDARY_SOURCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProjectSource::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.secondary_source_versions {
+            ser.write_list(
+                &SANDBOX_MEMBER_SECONDARY_SOURCE_VERSIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProjectSourceVersion::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.environment {
+            ser.write_struct(&SANDBOX_MEMBER_ENVIRONMENT, val)?;
+        }
+        if let Some(ref val) = self.file_system_locations {
+            ser.write_list(
+                &SANDBOX_MEMBER_FILE_SYSTEM_LOCATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProjectFileSystemLocation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.timeout_in_minutes {
+            ser.write_integer(&SANDBOX_MEMBER_TIMEOUT_IN_MINUTES, *val)?;
+        }
+        if let Some(ref val) = self.queued_timeout_in_minutes {
+            ser.write_integer(&SANDBOX_MEMBER_QUEUED_TIMEOUT_IN_MINUTES, *val)?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&SANDBOX_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.log_config {
+            ser.write_struct(&SANDBOX_MEMBER_LOG_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.encryption_key {
+            ser.write_string(&SANDBOX_MEMBER_ENCRYPTION_KEY, val)?;
+        }
+        if let Some(ref val) = self.service_role {
+            ser.write_string(&SANDBOX_MEMBER_SERVICE_ROLE, val)?;
+        }
+        if let Some(ref val) = self.current_session {
+            ser.write_struct(&SANDBOX_MEMBER_CURRENT_SESSION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SandboxBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SANDBOX_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.request_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source = Some(crate::types::ProjectSource::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_sources = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProjectSource::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_source_versions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProjectSourceVersion::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment = Some(crate::types::ProjectEnvironment::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_locations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProjectFileSystemLocation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.timeout_in_minutes = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.queued_timeout_in_minutes = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_config = Some(crate::types::LogsConfig::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_session = Some(crate::types::SandboxSession::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Sandbox {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Sandbox {
     /// Creates a new builder-style object to manufacture [`Sandbox`](crate::types::Sandbox).
     pub fn builder() -> crate::types::builders::SandboxBuilder {

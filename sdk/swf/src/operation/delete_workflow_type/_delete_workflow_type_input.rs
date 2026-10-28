@@ -18,6 +18,106 @@ impl DeleteWorkflowTypeInput {
         self.workflow_type.as_ref()
     }
 }
+static DELETEWORKFLOWTYPEINPUT_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#DeleteWorkflowTypeInput$domain",
+        "com.amazonaws.swf.synthetic",
+        "DeleteWorkflowTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domain",
+    0,
+);
+static DELETEWORKFLOWTYPEINPUT_MEMBER_WORKFLOW_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#DeleteWorkflowTypeInput$workflowType",
+        "com.amazonaws.swf.synthetic",
+        "DeleteWorkflowTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "workflowType",
+    1,
+);
+static DELETEWORKFLOWTYPEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#DeleteWorkflowTypeInput",
+        "com.amazonaws.swf.synthetic",
+        "DeleteWorkflowTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELETEWORKFLOWTYPEINPUT_MEMBER_DOMAIN, &DELETEWORKFLOWTYPEINPUT_MEMBER_WORKFLOW_TYPE],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteWorkflowTypeInput");
+impl DeleteWorkflowTypeInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEWORKFLOWTYPEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteWorkflowTypeInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain {
+            ser.write_string(&DELETEWORKFLOWTYPEINPUT_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.workflow_type {
+            ser.write_struct(&DELETEWORKFLOWTYPEINPUT_MEMBER_WORKFLOW_TYPE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_workflow_type::builders::DeleteWorkflowTypeInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEWORKFLOWTYPEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_type = Some(crate::types::WorkflowType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteWorkflowTypeInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain = builder.domain.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteWorkflowTypeInput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkflowTypeInput`](crate::operation::delete_workflow_type::DeleteWorkflowTypeInput).
     pub fn builder() -> crate::operation::delete_workflow_type::builders::DeleteWorkflowTypeInputBuilder {

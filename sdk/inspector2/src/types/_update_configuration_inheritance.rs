@@ -8,6 +8,8 @@ pub struct UpdateConfigurationInheritance {
     pub ec2_configuration: ::std::option::Option<crate::types::InheritanceMode>,
     /// <p>The inheritance mode for Amazon ECR scan configuration. Set to <code>INHERIT_FROM_ADMIN</code> to reset the member account's Amazon ECR scan configuration to inherit from the delegated administrator. If omitted, the member account's existing Amazon ECR scan configuration is not changed.</p>
     pub ecr_configuration: ::std::option::Option<crate::types::InheritanceMode>,
+    /// <p>The inheritance behavior for a scan-type configuration. Used with <code>UpdateConfigurationInheritance</code> to reset a member account's configuration to inherit from the delegated administrator. The only valid value is <code>INHERIT_FROM_ADMIN</code>, which resets the member account's configuration so that it inherits scan settings from the delegated administrator.</p>
+    pub ami_configuration: ::std::option::Option<crate::types::InheritanceMode>,
 }
 impl UpdateConfigurationInheritance {
     /// <p>The inheritance mode for Amazon EC2 scan configuration. Set to <code>INHERIT_FROM_ADMIN</code> to reset the member account's Amazon EC2 scan configuration to inherit from the delegated administrator. If omitted, the member account's existing Amazon EC2 scan configuration is not changed.</p>
@@ -17,6 +19,10 @@ impl UpdateConfigurationInheritance {
     /// <p>The inheritance mode for Amazon ECR scan configuration. Set to <code>INHERIT_FROM_ADMIN</code> to reset the member account's Amazon ECR scan configuration to inherit from the delegated administrator. If omitted, the member account's existing Amazon ECR scan configuration is not changed.</p>
     pub fn ecr_configuration(&self) -> ::std::option::Option<&crate::types::InheritanceMode> {
         self.ecr_configuration.as_ref()
+    }
+    /// <p>The inheritance behavior for a scan-type configuration. Used with <code>UpdateConfigurationInheritance</code> to reset a member account's configuration to inherit from the delegated administrator. The only valid value is <code>INHERIT_FROM_ADMIN</code>, which resets the member account's configuration so that it inherits scan settings from the delegated administrator.</p>
+    pub fn ami_configuration(&self) -> ::std::option::Option<&crate::types::InheritanceMode> {
+        self.ami_configuration.as_ref()
     }
 }
 impl UpdateConfigurationInheritance {
@@ -32,6 +38,7 @@ impl UpdateConfigurationInheritance {
 pub struct UpdateConfigurationInheritanceBuilder {
     pub(crate) ec2_configuration: ::std::option::Option<crate::types::InheritanceMode>,
     pub(crate) ecr_configuration: ::std::option::Option<crate::types::InheritanceMode>,
+    pub(crate) ami_configuration: ::std::option::Option<crate::types::InheritanceMode>,
 }
 impl UpdateConfigurationInheritanceBuilder {
     /// <p>The inheritance mode for Amazon EC2 scan configuration. Set to <code>INHERIT_FROM_ADMIN</code> to reset the member account's Amazon EC2 scan configuration to inherit from the delegated administrator. If omitted, the member account's existing Amazon EC2 scan configuration is not changed.</p>
@@ -62,11 +69,26 @@ impl UpdateConfigurationInheritanceBuilder {
     pub fn get_ecr_configuration(&self) -> &::std::option::Option<crate::types::InheritanceMode> {
         &self.ecr_configuration
     }
+    /// <p>The inheritance behavior for a scan-type configuration. Used with <code>UpdateConfigurationInheritance</code> to reset a member account's configuration to inherit from the delegated administrator. The only valid value is <code>INHERIT_FROM_ADMIN</code>, which resets the member account's configuration so that it inherits scan settings from the delegated administrator.</p>
+    pub fn ami_configuration(mut self, input: crate::types::InheritanceMode) -> Self {
+        self.ami_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The inheritance behavior for a scan-type configuration. Used with <code>UpdateConfigurationInheritance</code> to reset a member account's configuration to inherit from the delegated administrator. The only valid value is <code>INHERIT_FROM_ADMIN</code>, which resets the member account's configuration so that it inherits scan settings from the delegated administrator.</p>
+    pub fn set_ami_configuration(mut self, input: ::std::option::Option<crate::types::InheritanceMode>) -> Self {
+        self.ami_configuration = input;
+        self
+    }
+    /// <p>The inheritance behavior for a scan-type configuration. Used with <code>UpdateConfigurationInheritance</code> to reset a member account's configuration to inherit from the delegated administrator. The only valid value is <code>INHERIT_FROM_ADMIN</code>, which resets the member account's configuration so that it inherits scan settings from the delegated administrator.</p>
+    pub fn get_ami_configuration(&self) -> &::std::option::Option<crate::types::InheritanceMode> {
+        &self.ami_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateConfigurationInheritance`](crate::types::UpdateConfigurationInheritance).
     pub fn build(self) -> crate::types::UpdateConfigurationInheritance {
         crate::types::UpdateConfigurationInheritance {
             ec2_configuration: self.ec2_configuration,
             ecr_configuration: self.ecr_configuration,
+            ami_configuration: self.ami_configuration,
         }
     }
 }

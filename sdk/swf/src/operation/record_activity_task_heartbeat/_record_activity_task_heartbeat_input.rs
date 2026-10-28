@@ -22,6 +22,109 @@ impl RecordActivityTaskHeartbeatInput {
         self.details.as_deref()
     }
 }
+static RECORDACTIVITYTASKHEARTBEATINPUT_MEMBER_TASK_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#RecordActivityTaskHeartbeatInput$taskToken",
+        "com.amazonaws.swf.synthetic",
+        "RecordActivityTaskHeartbeatInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskToken",
+    0,
+);
+static RECORDACTIVITYTASKHEARTBEATINPUT_MEMBER_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#RecordActivityTaskHeartbeatInput$details",
+        "com.amazonaws.swf.synthetic",
+        "RecordActivityTaskHeartbeatInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "details",
+    1,
+);
+static RECORDACTIVITYTASKHEARTBEATINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#RecordActivityTaskHeartbeatInput",
+        "com.amazonaws.swf.synthetic",
+        "RecordActivityTaskHeartbeatInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RECORDACTIVITYTASKHEARTBEATINPUT_MEMBER_TASK_TOKEN,
+        &RECORDACTIVITYTASKHEARTBEATINPUT_MEMBER_DETAILS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RecordActivityTaskHeartbeatInput");
+impl RecordActivityTaskHeartbeatInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RECORDACTIVITYTASKHEARTBEATINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RecordActivityTaskHeartbeatInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.task_token {
+            ser.write_string(&RECORDACTIVITYTASKHEARTBEATINPUT_MEMBER_TASK_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.details {
+            ser.write_string(&RECORDACTIVITYTASKHEARTBEATINPUT_MEMBER_DETAILS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::record_activity_task_heartbeat::builders::RecordActivityTaskHeartbeatInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RECORDACTIVITYTASKHEARTBEATINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.details = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RecordActivityTaskHeartbeatInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.task_token = builder.task_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RecordActivityTaskHeartbeatInput {
     /// Creates a new builder-style object to manufacture [`RecordActivityTaskHeartbeatInput`](crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatInput).
     pub fn builder() -> crate::operation::record_activity_task_heartbeat::builders::RecordActivityTaskHeartbeatInputBuilder {

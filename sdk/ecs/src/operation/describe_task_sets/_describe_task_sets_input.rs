@@ -34,6 +34,191 @@ impl DescribeTaskSetsInput {
         self.include.as_deref().unwrap_or_default()
     }
 }
+static DESCRIBETASKSETSINPUT_MEMBER_CLUSTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DescribeTaskSetsInput$cluster",
+        "com.amazonaws.ecs.synthetic",
+        "DescribeTaskSetsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cluster",
+    0,
+);
+static DESCRIBETASKSETSINPUT_MEMBER_SERVICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DescribeTaskSetsInput$service",
+        "com.amazonaws.ecs.synthetic",
+        "DescribeTaskSetsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "service",
+    1,
+);
+static DESCRIBETASKSETSINPUT_MEMBER_TASK_SETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBETASKSETSINPUT_MEMBER_TASK_SETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DescribeTaskSetsInput$taskSets",
+        "com.amazonaws.ecs.synthetic",
+        "DescribeTaskSetsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "taskSets",
+    2,
+)
+.with_list_member(&DESCRIBETASKSETSINPUT_MEMBER_TASK_SETS_MEMBER);
+static DESCRIBETASKSETSINPUT_MEMBER_INCLUDE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#TaskSetFieldList$member", "com.amazonaws.ecs", "TaskSetFieldList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBETASKSETSINPUT_MEMBER_INCLUDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DescribeTaskSetsInput$include",
+        "com.amazonaws.ecs.synthetic",
+        "DescribeTaskSetsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "include",
+    3,
+)
+.with_list_member(&DESCRIBETASKSETSINPUT_MEMBER_INCLUDE_MEMBER);
+static DESCRIBETASKSETSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DescribeTaskSetsInput",
+        "com.amazonaws.ecs.synthetic",
+        "DescribeTaskSetsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBETASKSETSINPUT_MEMBER_CLUSTER,
+        &DESCRIBETASKSETSINPUT_MEMBER_SERVICE,
+        &DESCRIBETASKSETSINPUT_MEMBER_TASK_SETS,
+        &DESCRIBETASKSETSINPUT_MEMBER_INCLUDE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeTaskSetsRequest");
+impl DescribeTaskSetsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBETASKSETSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeTaskSetsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster {
+            ser.write_string(&DESCRIBETASKSETSINPUT_MEMBER_CLUSTER, val)?;
+        }
+        if let Some(ref val) = self.service {
+            ser.write_string(&DESCRIBETASKSETSINPUT_MEMBER_SERVICE, val)?;
+        }
+        if let Some(ref val) = self.task_sets {
+            ser.write_list(
+                &DESCRIBETASKSETSINPUT_MEMBER_TASK_SETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.include {
+            ser.write_list(
+                &DESCRIBETASKSETSINPUT_MEMBER_INCLUDE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_task_sets::builders::DescribeTaskSetsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBETASKSETSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_sets = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.include = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TaskSetField::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeTaskSetsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.cluster = builder.cluster.or(Some(String::new()));
+        builder.service = builder.service.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeTaskSetsInput {
     /// Creates a new builder-style object to manufacture [`DescribeTaskSetsInput`](crate::operation::describe_task_sets::DescribeTaskSetsInput).
     pub fn builder() -> crate::operation::describe_task_sets::builders::DescribeTaskSetsInputBuilder {

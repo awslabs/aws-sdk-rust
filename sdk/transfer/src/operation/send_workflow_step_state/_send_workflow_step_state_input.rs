@@ -30,6 +30,153 @@ impl SendWorkflowStepStateInput {
         self.status.as_ref()
     }
 }
+static SENDWORKFLOWSTEPSTATEINPUT_MEMBER_WORKFLOW_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#SendWorkflowStepStateInput$WorkflowId",
+        "com.amazonaws.transfer.synthetic",
+        "SendWorkflowStepStateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkflowId",
+    0,
+);
+static SENDWORKFLOWSTEPSTATEINPUT_MEMBER_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#SendWorkflowStepStateInput$ExecutionId",
+        "com.amazonaws.transfer.synthetic",
+        "SendWorkflowStepStateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutionId",
+    1,
+);
+static SENDWORKFLOWSTEPSTATEINPUT_MEMBER_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#SendWorkflowStepStateInput$Token",
+        "com.amazonaws.transfer.synthetic",
+        "SendWorkflowStepStateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Token",
+    2,
+);
+static SENDWORKFLOWSTEPSTATEINPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#SendWorkflowStepStateInput$Status",
+        "com.amazonaws.transfer.synthetic",
+        "SendWorkflowStepStateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    3,
+);
+static SENDWORKFLOWSTEPSTATEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#SendWorkflowStepStateInput",
+        "com.amazonaws.transfer.synthetic",
+        "SendWorkflowStepStateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SENDWORKFLOWSTEPSTATEINPUT_MEMBER_WORKFLOW_ID,
+        &SENDWORKFLOWSTEPSTATEINPUT_MEMBER_EXECUTION_ID,
+        &SENDWORKFLOWSTEPSTATEINPUT_MEMBER_TOKEN,
+        &SENDWORKFLOWSTEPSTATEINPUT_MEMBER_STATUS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("SendWorkflowStepStateRequest");
+impl SendWorkflowStepStateInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SENDWORKFLOWSTEPSTATEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SendWorkflowStepStateInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.workflow_id {
+            ser.write_string(&SENDWORKFLOWSTEPSTATEINPUT_MEMBER_WORKFLOW_ID, val)?;
+        }
+        if let Some(ref val) = self.execution_id {
+            ser.write_string(&SENDWORKFLOWSTEPSTATEINPUT_MEMBER_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.token {
+            ser.write_string(&SENDWORKFLOWSTEPSTATEINPUT_MEMBER_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&SENDWORKFLOWSTEPSTATEINPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SENDWORKFLOWSTEPSTATEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::CustomStepStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SendWorkflowStepStateInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.workflow_id = builder.workflow_id.or(Some(String::new()));
+        builder.execution_id = builder.execution_id.or(Some(String::new()));
+        builder.token = builder.token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SendWorkflowStepStateInput {
     /// Creates a new builder-style object to manufacture [`SendWorkflowStepStateInput`](crate::operation::send_workflow_step_state::SendWorkflowStepStateInput).
     pub fn builder() -> crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateInputBuilder {

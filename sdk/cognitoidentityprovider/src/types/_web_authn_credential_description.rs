@@ -47,6 +47,201 @@ impl WebAuthnCredentialDescription {
         &self.created_at
     }
 }
+static WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_CREDENTIAL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#WebAuthnCredentialDescription$CredentialId",
+        "com.amazonaws.cognitoidentityprovider",
+        "WebAuthnCredentialDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CredentialId",
+    0,
+);
+static WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_FRIENDLY_CREDENTIAL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#WebAuthnCredentialDescription$FriendlyCredentialName",
+        "com.amazonaws.cognitoidentityprovider",
+        "WebAuthnCredentialDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FriendlyCredentialName",
+    1,
+);
+static WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_RELYING_PARTY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#WebAuthnCredentialDescription$RelyingPartyId",
+        "com.amazonaws.cognitoidentityprovider",
+        "WebAuthnCredentialDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RelyingPartyId",
+    2,
+);
+static WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_AUTHENTICATOR_ATTACHMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#WebAuthnCredentialDescription$AuthenticatorAttachment",
+        "com.amazonaws.cognitoidentityprovider",
+        "WebAuthnCredentialDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthenticatorAttachment",
+    3,
+);
+static WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_AUTHENTICATOR_TRANSPORTS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentityprovider#WebAuthnAuthenticatorTransportsList$member",
+            "com.amazonaws.cognitoidentityprovider",
+            "WebAuthnAuthenticatorTransportsList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_AUTHENTICATOR_TRANSPORTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#WebAuthnCredentialDescription$AuthenticatorTransports",
+        "com.amazonaws.cognitoidentityprovider",
+        "WebAuthnCredentialDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AuthenticatorTransports",
+    4,
+)
+.with_list_member(&WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_AUTHENTICATOR_TRANSPORTS_MEMBER);
+static WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#WebAuthnCredentialDescription$CreatedAt",
+        "com.amazonaws.cognitoidentityprovider",
+        "WebAuthnCredentialDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAt",
+    5,
+);
+static WEBAUTHNCREDENTIALDESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#WebAuthnCredentialDescription",
+        "com.amazonaws.cognitoidentityprovider",
+        "WebAuthnCredentialDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_CREDENTIAL_ID,
+        &WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_FRIENDLY_CREDENTIAL_NAME,
+        &WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_RELYING_PARTY_ID,
+        &WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_AUTHENTICATOR_ATTACHMENT,
+        &WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_AUTHENTICATOR_TRANSPORTS,
+        &WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_CREATED_AT,
+    ],
+);
+impl WebAuthnCredentialDescription {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WEBAUTHNCREDENTIALDESCRIPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WebAuthnCredentialDescription {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.credential_id;
+            ser.write_string(&WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_CREDENTIAL_ID, val)?;
+        }
+        {
+            let val = &self.friendly_credential_name;
+            ser.write_string(&WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_FRIENDLY_CREDENTIAL_NAME, val)?;
+        }
+        {
+            let val = &self.relying_party_id;
+            ser.write_string(&WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_RELYING_PARTY_ID, val)?;
+        }
+        if let Some(ref val) = self.authenticator_attachment {
+            ser.write_string(&WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_AUTHENTICATOR_ATTACHMENT, val)?;
+        }
+        {
+            let val = &self.authenticator_transports;
+
+            ser.write_list(
+                &WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_AUTHENTICATOR_TRANSPORTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.created_at;
+            ser.write_timestamp(&WEBAUTHNCREDENTIALDESCRIPTION_MEMBER_CREATED_AT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WebAuthnCredentialDescriptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WEBAUTHNCREDENTIALDESCRIPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.credential_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.friendly_credential_name = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.relying_party_id = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authenticator_attachment = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    self.authenticator_transports = Some(deser.read_string_list(member)?);
+                }
+                Some(5) => {
+                    self.created_at = Some(deser.read_timestamp(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WebAuthnCredentialDescription {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.credential_id = builder.credential_id.or(Some(String::new()));
+        builder.friendly_credential_name = builder.friendly_credential_name.or(Some(String::new()));
+        builder.relying_party_id = builder.relying_party_id.or(Some(String::new()));
+        builder.authenticator_transports = builder.authenticator_transports.or(Some(Vec::new()));
+        builder.created_at = builder.created_at.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl WebAuthnCredentialDescription {
     /// Creates a new builder-style object to manufacture [`WebAuthnCredentialDescription`](crate::types::WebAuthnCredentialDescription).
     pub fn builder() -> crate::types::builders::WebAuthnCredentialDescriptionBuilder {

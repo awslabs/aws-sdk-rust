@@ -111,6 +111,8 @@ pub use crate::types::_resource_bucket_access::ResourceBucketAccess;
 
 pub use crate::types::_certificate_provider::CertificateProvider;
 
+pub use crate::types::_instance_attribute_updates::InstanceAttributeUpdates;
+
 pub use crate::types::_alarm_state::AlarmState;
 
 pub use crate::types::_access_rules::AccessRules;
@@ -632,6 +634,8 @@ mod _instance;
 mod _instance_access_details;
 
 mod _instance_access_protocol;
+
+mod _instance_attribute_updates;
 
 mod _instance_entry;
 

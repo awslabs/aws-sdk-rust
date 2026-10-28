@@ -20,6 +20,130 @@ impl BatchGetCommandExecutionsInput {
         self.command_execution_ids.as_deref().unwrap_or_default()
     }
 }
+static BATCHGETCOMMANDEXECUTIONSINPUT_MEMBER_SANDBOX_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#BatchGetCommandExecutionsInput$sandboxId",
+        "com.amazonaws.codebuild.synthetic",
+        "BatchGetCommandExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sandboxId",
+    0,
+);
+static BATCHGETCOMMANDEXECUTIONSINPUT_MEMBER_COMMAND_EXECUTION_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codebuild#CommandExecutionIds$member",
+            "com.amazonaws.codebuild",
+            "CommandExecutionIds",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static BATCHGETCOMMANDEXECUTIONSINPUT_MEMBER_COMMAND_EXECUTION_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#BatchGetCommandExecutionsInput$commandExecutionIds",
+        "com.amazonaws.codebuild.synthetic",
+        "BatchGetCommandExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "commandExecutionIds",
+    1,
+)
+.with_list_member(&BATCHGETCOMMANDEXECUTIONSINPUT_MEMBER_COMMAND_EXECUTION_IDS_MEMBER);
+static BATCHGETCOMMANDEXECUTIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#BatchGetCommandExecutionsInput",
+        "com.amazonaws.codebuild.synthetic",
+        "BatchGetCommandExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHGETCOMMANDEXECUTIONSINPUT_MEMBER_SANDBOX_ID,
+        &BATCHGETCOMMANDEXECUTIONSINPUT_MEMBER_COMMAND_EXECUTION_IDS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("BatchGetCommandExecutionsInput");
+impl BatchGetCommandExecutionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHGETCOMMANDEXECUTIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchGetCommandExecutionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.sandbox_id {
+            ser.write_string(&BATCHGETCOMMANDEXECUTIONSINPUT_MEMBER_SANDBOX_ID, val)?;
+        }
+        if let Some(ref val) = self.command_execution_ids {
+            ser.write_list(
+                &BATCHGETCOMMANDEXECUTIONSINPUT_MEMBER_COMMAND_EXECUTION_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_get_command_executions::builders::BatchGetCommandExecutionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHGETCOMMANDEXECUTIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sandbox_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.command_execution_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchGetCommandExecutionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.sandbox_id = builder.sandbox_id.or(Some(String::new()));
+        builder.command_execution_ids = builder.command_execution_ids.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl BatchGetCommandExecutionsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetCommandExecutionsInput`](crate::operation::batch_get_command_executions::BatchGetCommandExecutionsInput).
     pub fn builder() -> crate::operation::batch_get_command_executions::builders::BatchGetCommandExecutionsInputBuilder {

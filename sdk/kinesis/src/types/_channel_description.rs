@@ -108,6 +108,324 @@ impl ChannelDescription {
         self.logging_configuration.as_ref()
     }
 }
+static CHANNELDESCRIPTION_MEMBER_CHANNEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelDescription$ChannelName",
+        "com.amazonaws.kinesis",
+        "ChannelDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChannelName",
+    0,
+);
+static CHANNELDESCRIPTION_MEMBER_CHANNEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelDescription$ChannelARN",
+        "com.amazonaws.kinesis",
+        "ChannelDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChannelARN",
+    1,
+);
+static CHANNELDESCRIPTION_MEMBER_CHANNEL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelDescription$ChannelId",
+        "com.amazonaws.kinesis",
+        "ChannelDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChannelId",
+    2,
+);
+static CHANNELDESCRIPTION_MEMBER_CHANNEL_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelDescription$ChannelStatus",
+        "com.amazonaws.kinesis",
+        "ChannelDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChannelStatus",
+    3,
+);
+static CHANNELDESCRIPTION_MEMBER_CHANNEL_STATUS_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelDescription$ChannelStatusReason",
+        "com.amazonaws.kinesis",
+        "ChannelDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChannelStatusReason",
+    4,
+);
+static CHANNELDESCRIPTION_MEMBER_CHANNEL_CREATION_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelDescription$ChannelCreationTimestamp",
+        "com.amazonaws.kinesis",
+        "ChannelDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ChannelCreationTimestamp",
+    5,
+);
+static CHANNELDESCRIPTION_MEMBER_SERVICE_EXECUTION_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelDescription$ServiceExecutionRoleARN",
+        "com.amazonaws.kinesis",
+        "ChannelDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServiceExecutionRoleARN",
+    6,
+);
+static CHANNELDESCRIPTION_MEMBER_STREAM_CONFIGURATION_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelStreamDescriptionList$member",
+        "com.amazonaws.kinesis",
+        "ChannelStreamDescriptionList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CHANNELDESCRIPTION_MEMBER_STREAM_CONFIGURATION_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelDescription$StreamConfigurationList",
+        "com.amazonaws.kinesis",
+        "ChannelDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "StreamConfigurationList",
+    7,
+)
+.with_list_member(&CHANNELDESCRIPTION_MEMBER_STREAM_CONFIGURATION_LIST_MEMBER);
+static CHANNELDESCRIPTION_MEMBER_S3_DESTINATION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelDescription$S3DestinationConfiguration",
+        "com.amazonaws.kinesis",
+        "ChannelDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3DestinationConfiguration",
+    8,
+);
+static CHANNELDESCRIPTION_MEMBER_S3_TABLES_DESTINATION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelDescription$S3TablesDestinationConfiguration",
+        "com.amazonaws.kinesis",
+        "ChannelDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3TablesDestinationConfiguration",
+    9,
+);
+static CHANNELDESCRIPTION_MEMBER_ENCRYPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelDescription$EncryptionConfiguration",
+        "com.amazonaws.kinesis",
+        "ChannelDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EncryptionConfiguration",
+    10,
+);
+static CHANNELDESCRIPTION_MEMBER_LOGGING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelDescription$LoggingConfiguration",
+        "com.amazonaws.kinesis",
+        "ChannelDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LoggingConfiguration",
+    11,
+);
+static CHANNELDESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#ChannelDescription", "com.amazonaws.kinesis", "ChannelDescription"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CHANNELDESCRIPTION_MEMBER_CHANNEL_NAME,
+        &CHANNELDESCRIPTION_MEMBER_CHANNEL_ARN,
+        &CHANNELDESCRIPTION_MEMBER_CHANNEL_ID,
+        &CHANNELDESCRIPTION_MEMBER_CHANNEL_STATUS,
+        &CHANNELDESCRIPTION_MEMBER_CHANNEL_STATUS_REASON,
+        &CHANNELDESCRIPTION_MEMBER_CHANNEL_CREATION_TIMESTAMP,
+        &CHANNELDESCRIPTION_MEMBER_SERVICE_EXECUTION_ROLE_ARN,
+        &CHANNELDESCRIPTION_MEMBER_STREAM_CONFIGURATION_LIST,
+        &CHANNELDESCRIPTION_MEMBER_S3_DESTINATION_CONFIGURATION,
+        &CHANNELDESCRIPTION_MEMBER_S3_TABLES_DESTINATION_CONFIGURATION,
+        &CHANNELDESCRIPTION_MEMBER_ENCRYPTION_CONFIGURATION,
+        &CHANNELDESCRIPTION_MEMBER_LOGGING_CONFIGURATION,
+    ],
+);
+impl ChannelDescription {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CHANNELDESCRIPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ChannelDescription {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.channel_name;
+            ser.write_string(&CHANNELDESCRIPTION_MEMBER_CHANNEL_NAME, val)?;
+        }
+        {
+            let val = &self.channel_arn;
+            ser.write_string(&CHANNELDESCRIPTION_MEMBER_CHANNEL_ARN, val)?;
+        }
+        {
+            let val = &self.channel_id;
+            ser.write_string(&CHANNELDESCRIPTION_MEMBER_CHANNEL_ID, val)?;
+        }
+        {
+            let val = &self.channel_status;
+            ser.write_string(&CHANNELDESCRIPTION_MEMBER_CHANNEL_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.channel_status_reason {
+            ser.write_string(&CHANNELDESCRIPTION_MEMBER_CHANNEL_STATUS_REASON, val)?;
+        }
+        {
+            let val = &self.channel_creation_timestamp;
+            ser.write_timestamp(&CHANNELDESCRIPTION_MEMBER_CHANNEL_CREATION_TIMESTAMP, val)?;
+        }
+        {
+            let val = &self.service_execution_role_arn;
+            ser.write_string(&CHANNELDESCRIPTION_MEMBER_SERVICE_EXECUTION_ROLE_ARN, val)?;
+        }
+        {
+            let val = &self.stream_configuration_list;
+
+            ser.write_list(
+                &CHANNELDESCRIPTION_MEMBER_STREAM_CONFIGURATION_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ChannelStreamDescription::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.s3_destination_configuration {
+            ser.write_struct(&CHANNELDESCRIPTION_MEMBER_S3_DESTINATION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.s3_tables_destination_configuration {
+            ser.write_struct(&CHANNELDESCRIPTION_MEMBER_S3_TABLES_DESTINATION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.encryption_configuration {
+            ser.write_struct(&CHANNELDESCRIPTION_MEMBER_ENCRYPTION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.logging_configuration {
+            ser.write_struct(&CHANNELDESCRIPTION_MEMBER_LOGGING_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ChannelDescriptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CHANNELDESCRIPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.channel_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.channel_arn = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.channel_id = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.channel_status = Some(crate::types::ChannelStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.channel_status_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    self.channel_creation_timestamp = Some(deser.read_timestamp(member)?);
+                }
+                Some(6) => {
+                    self.service_execution_role_arn = Some(deser.read_string(member)?);
+                }
+                Some(7) => {
+                    self.stream_configuration_list = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::ChannelStreamDescription::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_destination_configuration = Some(crate::types::S3DestinationDescription::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_tables_destination_configuration = Some(crate::types::S3TablesDestinationDescription::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_configuration = Some(crate::types::ChannelEncryptionConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logging_configuration = Some(crate::types::ChannelLoggingConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ChannelDescription {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.channel_name = builder.channel_name.or(Some(String::new()));
+        builder.channel_arn = builder.channel_arn.or(Some(String::new()));
+        builder.channel_id = builder.channel_id.or(Some(String::new()));
+        builder.channel_creation_timestamp = builder.channel_creation_timestamp.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.service_execution_role_arn = builder.service_execution_role_arn.or(Some(String::new()));
+        builder.stream_configuration_list = builder.stream_configuration_list.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ChannelDescription {
     /// Creates a new builder-style object to manufacture [`ChannelDescription`](crate::types::ChannelDescription).
     pub fn builder() -> crate::types::builders::ChannelDescriptionBuilder {

@@ -208,6 +208,114 @@ impl WebhookFilter {
         self.exclude_matched_pattern
     }
 }
+static WEBHOOKFILTER_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#WebhookFilter$type", "com.amazonaws.codebuild", "WebhookFilter"),
+    ::aws_smithy_schema::ShapeType::String,
+    "type",
+    0,
+);
+static WEBHOOKFILTER_MEMBER_PATTERN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#WebhookFilter$pattern",
+        "com.amazonaws.codebuild",
+        "WebhookFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pattern",
+    1,
+);
+static WEBHOOKFILTER_MEMBER_EXCLUDE_MATCHED_PATTERN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#WebhookFilter$excludeMatchedPattern",
+        "com.amazonaws.codebuild",
+        "WebhookFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "excludeMatchedPattern",
+    2,
+);
+static WEBHOOKFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#WebhookFilter", "com.amazonaws.codebuild", "WebhookFilter"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WEBHOOKFILTER_MEMBER_TYPE,
+        &WEBHOOKFILTER_MEMBER_PATTERN,
+        &WEBHOOKFILTER_MEMBER_EXCLUDE_MATCHED_PATTERN,
+    ],
+);
+impl WebhookFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WEBHOOKFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WebhookFilter {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.r#type;
+            ser.write_string(&WEBHOOKFILTER_MEMBER_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.pattern;
+            ser.write_string(&WEBHOOKFILTER_MEMBER_PATTERN, val)?;
+        }
+        if let Some(ref val) = self.exclude_matched_pattern {
+            ser.write_boolean(&WEBHOOKFILTER_MEMBER_EXCLUDE_MATCHED_PATTERN, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WebhookFilterBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WEBHOOKFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.r#type = Some(crate::types::WebhookFilterType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    self.pattern = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.exclude_matched_pattern = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WebhookFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pattern = builder.pattern.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl WebhookFilter {
     /// Creates a new builder-style object to manufacture [`WebhookFilter`](crate::types::WebhookFilter).
     pub fn builder() -> crate::types::builders::WebhookFilterBuilder {

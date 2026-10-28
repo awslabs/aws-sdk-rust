@@ -199,6 +199,360 @@ impl Decision {
         self.schedule_lambda_function_decision_attributes.as_ref()
     }
 }
+static DECISION_MEMBER_DECISION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.swf#Decision$decisionType", "com.amazonaws.swf", "Decision"),
+    ::aws_smithy_schema::ShapeType::String,
+    "decisionType",
+    0,
+);
+static DECISION_MEMBER_SCHEDULE_ACTIVITY_TASK_DECISION_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#Decision$scheduleActivityTaskDecisionAttributes",
+        "com.amazonaws.swf",
+        "Decision",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "scheduleActivityTaskDecisionAttributes",
+    1,
+);
+static DECISION_MEMBER_REQUEST_CANCEL_ACTIVITY_TASK_DECISION_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#Decision$requestCancelActivityTaskDecisionAttributes",
+            "com.amazonaws.swf",
+            "Decision",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "requestCancelActivityTaskDecisionAttributes",
+        2,
+    );
+static DECISION_MEMBER_COMPLETE_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#Decision$completeWorkflowExecutionDecisionAttributes",
+            "com.amazonaws.swf",
+            "Decision",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "completeWorkflowExecutionDecisionAttributes",
+        3,
+    );
+static DECISION_MEMBER_FAIL_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#Decision$failWorkflowExecutionDecisionAttributes",
+        "com.amazonaws.swf",
+        "Decision",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "failWorkflowExecutionDecisionAttributes",
+    4,
+);
+static DECISION_MEMBER_CANCEL_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#Decision$cancelWorkflowExecutionDecisionAttributes",
+        "com.amazonaws.swf",
+        "Decision",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "cancelWorkflowExecutionDecisionAttributes",
+    5,
+);
+static DECISION_MEMBER_CONTINUE_AS_NEW_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#Decision$continueAsNewWorkflowExecutionDecisionAttributes",
+            "com.amazonaws.swf",
+            "Decision",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "continueAsNewWorkflowExecutionDecisionAttributes",
+        6,
+    );
+static DECISION_MEMBER_RECORD_MARKER_DECISION_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#Decision$recordMarkerDecisionAttributes",
+        "com.amazonaws.swf",
+        "Decision",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "recordMarkerDecisionAttributes",
+    7,
+);
+static DECISION_MEMBER_START_TIMER_DECISION_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.swf#Decision$startTimerDecisionAttributes", "com.amazonaws.swf", "Decision"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "startTimerDecisionAttributes",
+    8,
+);
+static DECISION_MEMBER_CANCEL_TIMER_DECISION_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#Decision$cancelTimerDecisionAttributes",
+        "com.amazonaws.swf",
+        "Decision",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "cancelTimerDecisionAttributes",
+    9,
+);
+static DECISION_MEMBER_SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#Decision$signalExternalWorkflowExecutionDecisionAttributes",
+            "com.amazonaws.swf",
+            "Decision",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "signalExternalWorkflowExecutionDecisionAttributes",
+        10,
+    );
+static DECISION_MEMBER_REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#Decision$requestCancelExternalWorkflowExecutionDecisionAttributes",
+            "com.amazonaws.swf",
+            "Decision",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "requestCancelExternalWorkflowExecutionDecisionAttributes",
+        11,
+    );
+static DECISION_MEMBER_START_CHILD_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#Decision$startChildWorkflowExecutionDecisionAttributes",
+            "com.amazonaws.swf",
+            "Decision",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "startChildWorkflowExecutionDecisionAttributes",
+        12,
+    );
+static DECISION_MEMBER_SCHEDULE_LAMBDA_FUNCTION_DECISION_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#Decision$scheduleLambdaFunctionDecisionAttributes",
+        "com.amazonaws.swf",
+        "Decision",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "scheduleLambdaFunctionDecisionAttributes",
+    13,
+);
+static DECISION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.swf#Decision", "com.amazonaws.swf", "Decision"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DECISION_MEMBER_DECISION_TYPE,
+        &DECISION_MEMBER_SCHEDULE_ACTIVITY_TASK_DECISION_ATTRIBUTES,
+        &DECISION_MEMBER_REQUEST_CANCEL_ACTIVITY_TASK_DECISION_ATTRIBUTES,
+        &DECISION_MEMBER_COMPLETE_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES,
+        &DECISION_MEMBER_FAIL_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES,
+        &DECISION_MEMBER_CANCEL_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES,
+        &DECISION_MEMBER_CONTINUE_AS_NEW_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES,
+        &DECISION_MEMBER_RECORD_MARKER_DECISION_ATTRIBUTES,
+        &DECISION_MEMBER_START_TIMER_DECISION_ATTRIBUTES,
+        &DECISION_MEMBER_CANCEL_TIMER_DECISION_ATTRIBUTES,
+        &DECISION_MEMBER_SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES,
+        &DECISION_MEMBER_REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES,
+        &DECISION_MEMBER_START_CHILD_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES,
+        &DECISION_MEMBER_SCHEDULE_LAMBDA_FUNCTION_DECISION_ATTRIBUTES,
+    ],
+);
+impl Decision {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DECISION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Decision {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.decision_type;
+            ser.write_string(&DECISION_MEMBER_DECISION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.schedule_activity_task_decision_attributes {
+            ser.write_struct(&DECISION_MEMBER_SCHEDULE_ACTIVITY_TASK_DECISION_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.request_cancel_activity_task_decision_attributes {
+            ser.write_struct(&DECISION_MEMBER_REQUEST_CANCEL_ACTIVITY_TASK_DECISION_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.complete_workflow_execution_decision_attributes {
+            ser.write_struct(&DECISION_MEMBER_COMPLETE_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.fail_workflow_execution_decision_attributes {
+            ser.write_struct(&DECISION_MEMBER_FAIL_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.cancel_workflow_execution_decision_attributes {
+            ser.write_struct(&DECISION_MEMBER_CANCEL_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.continue_as_new_workflow_execution_decision_attributes {
+            ser.write_struct(&DECISION_MEMBER_CONTINUE_AS_NEW_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.record_marker_decision_attributes {
+            ser.write_struct(&DECISION_MEMBER_RECORD_MARKER_DECISION_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.start_timer_decision_attributes {
+            ser.write_struct(&DECISION_MEMBER_START_TIMER_DECISION_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.cancel_timer_decision_attributes {
+            ser.write_struct(&DECISION_MEMBER_CANCEL_TIMER_DECISION_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.signal_external_workflow_execution_decision_attributes {
+            ser.write_struct(&DECISION_MEMBER_SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.request_cancel_external_workflow_execution_decision_attributes {
+            ser.write_struct(&DECISION_MEMBER_REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.start_child_workflow_execution_decision_attributes {
+            ser.write_struct(&DECISION_MEMBER_START_CHILD_WORKFLOW_EXECUTION_DECISION_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.schedule_lambda_function_decision_attributes {
+            ser.write_struct(&DECISION_MEMBER_SCHEDULE_LAMBDA_FUNCTION_DECISION_ATTRIBUTES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DecisionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DECISION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.decision_type = Some(crate::types::DecisionType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.schedule_activity_task_decision_attributes =
+                            Some(crate::types::ScheduleActivityTaskDecisionAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.request_cancel_activity_task_decision_attributes =
+                            Some(crate::types::RequestCancelActivityTaskDecisionAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.complete_workflow_execution_decision_attributes =
+                            Some(crate::types::CompleteWorkflowExecutionDecisionAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fail_workflow_execution_decision_attributes =
+                            Some(crate::types::FailWorkflowExecutionDecisionAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cancel_workflow_execution_decision_attributes =
+                            Some(crate::types::CancelWorkflowExecutionDecisionAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.continue_as_new_workflow_execution_decision_attributes =
+                            Some(crate::types::ContinueAsNewWorkflowExecutionDecisionAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.record_marker_decision_attributes = Some(crate::types::RecordMarkerDecisionAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_timer_decision_attributes = Some(crate::types::StartTimerDecisionAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cancel_timer_decision_attributes = Some(crate::types::CancelTimerDecisionAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.signal_external_workflow_execution_decision_attributes =
+                            Some(crate::types::SignalExternalWorkflowExecutionDecisionAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.request_cancel_external_workflow_execution_decision_attributes = Some(
+                            crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes::deserialize(deser)?,
+                        );
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_child_workflow_execution_decision_attributes =
+                            Some(crate::types::StartChildWorkflowExecutionDecisionAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.schedule_lambda_function_decision_attributes =
+                            Some(crate::types::ScheduleLambdaFunctionDecisionAttributes::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Decision {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl Decision {
     /// Creates a new builder-style object to manufacture [`Decision`](crate::types::Decision).
     pub fn builder() -> crate::types::builders::DecisionBuilder {

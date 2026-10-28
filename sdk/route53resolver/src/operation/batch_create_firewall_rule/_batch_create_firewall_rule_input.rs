@@ -14,6 +14,114 @@ impl BatchCreateFirewallRuleInput {
         self.create_firewall_rule_entries.as_deref().unwrap_or_default()
     }
 }
+static BATCHCREATEFIREWALLRULEINPUT_MEMBER_CREATE_FIREWALL_RULE_ENTRIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.route53resolver#CreateFirewallRuleEntries$member",
+            "com.amazonaws.route53resolver",
+            "CreateFirewallRuleEntries",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static BATCHCREATEFIREWALLRULEINPUT_MEMBER_CREATE_FIREWALL_RULE_ENTRIES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.route53resolver.synthetic#BatchCreateFirewallRuleInput$CreateFirewallRuleEntries",
+            "com.amazonaws.route53resolver.synthetic",
+            "BatchCreateFirewallRuleInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "CreateFirewallRuleEntries",
+        0,
+    )
+    .with_list_member(&BATCHCREATEFIREWALLRULEINPUT_MEMBER_CREATE_FIREWALL_RULE_ENTRIES_MEMBER);
+static BATCHCREATEFIREWALLRULEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#BatchCreateFirewallRuleInput",
+        "com.amazonaws.route53resolver.synthetic",
+        "BatchCreateFirewallRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&BATCHCREATEFIREWALLRULEINPUT_MEMBER_CREATE_FIREWALL_RULE_ENTRIES],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("BatchCreateFirewallRuleRequest");
+impl BatchCreateFirewallRuleInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHCREATEFIREWALLRULEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchCreateFirewallRuleInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.create_firewall_rule_entries {
+            ser.write_list(
+                &BATCHCREATEFIREWALLRULEINPUT_MEMBER_CREATE_FIREWALL_RULE_ENTRIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CreateFirewallRuleEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_create_firewall_rule::builders::BatchCreateFirewallRuleInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHCREATEFIREWALLRULEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_firewall_rule_entries = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CreateFirewallRuleEntry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchCreateFirewallRuleInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.create_firewall_rule_entries = builder.create_firewall_rule_entries.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl BatchCreateFirewallRuleInput {
     /// Creates a new builder-style object to manufacture [`BatchCreateFirewallRuleInput`](crate::operation::batch_create_firewall_rule::BatchCreateFirewallRuleInput).
     pub fn builder() -> crate::operation::batch_create_firewall_rule::builders::BatchCreateFirewallRuleInputBuilder {

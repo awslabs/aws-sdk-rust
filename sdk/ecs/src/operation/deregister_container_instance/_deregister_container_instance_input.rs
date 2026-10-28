@@ -26,6 +26,130 @@ impl DeregisterContainerInstanceInput {
         self.force
     }
 }
+static DEREGISTERCONTAINERINSTANCEINPUT_MEMBER_CLUSTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DeregisterContainerInstanceInput$cluster",
+        "com.amazonaws.ecs.synthetic",
+        "DeregisterContainerInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cluster",
+    0,
+);
+static DEREGISTERCONTAINERINSTANCEINPUT_MEMBER_CONTAINER_INSTANCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DeregisterContainerInstanceInput$containerInstance",
+        "com.amazonaws.ecs.synthetic",
+        "DeregisterContainerInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "containerInstance",
+    1,
+);
+static DEREGISTERCONTAINERINSTANCEINPUT_MEMBER_FORCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DeregisterContainerInstanceInput$force",
+        "com.amazonaws.ecs.synthetic",
+        "DeregisterContainerInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "force",
+    2,
+);
+static DEREGISTERCONTAINERINSTANCEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DeregisterContainerInstanceInput",
+        "com.amazonaws.ecs.synthetic",
+        "DeregisterContainerInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEREGISTERCONTAINERINSTANCEINPUT_MEMBER_CLUSTER,
+        &DEREGISTERCONTAINERINSTANCEINPUT_MEMBER_CONTAINER_INSTANCE,
+        &DEREGISTERCONTAINERINSTANCEINPUT_MEMBER_FORCE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeregisterContainerInstanceRequest");
+impl DeregisterContainerInstanceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEREGISTERCONTAINERINSTANCEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeregisterContainerInstanceInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster {
+            ser.write_string(&DEREGISTERCONTAINERINSTANCEINPUT_MEMBER_CLUSTER, val)?;
+        }
+        if let Some(ref val) = self.container_instance {
+            ser.write_string(&DEREGISTERCONTAINERINSTANCEINPUT_MEMBER_CONTAINER_INSTANCE, val)?;
+        }
+        if let Some(ref val) = self.force {
+            ser.write_boolean(&DEREGISTERCONTAINERINSTANCEINPUT_MEMBER_FORCE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::deregister_container_instance::builders::DeregisterContainerInstanceInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEREGISTERCONTAINERINSTANCEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_instance = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.force = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeregisterContainerInstanceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.container_instance = builder.container_instance.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeregisterContainerInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeregisterContainerInstanceInput`](crate::operation::deregister_container_instance::DeregisterContainerInstanceInput).
     pub fn builder() -> crate::operation::deregister_container_instance::builders::DeregisterContainerInstanceInputBuilder {

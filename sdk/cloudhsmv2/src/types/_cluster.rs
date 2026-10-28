@@ -119,6 +119,442 @@ impl Cluster {
         self.mode.as_ref()
     }
 }
+static CLUSTER_MEMBER_BACKUP_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Cluster$BackupPolicy", "com.amazonaws.cloudhsmv2", "Cluster"),
+    ::aws_smithy_schema::ShapeType::String,
+    "BackupPolicy",
+    0,
+);
+static CLUSTER_MEMBER_BACKUP_RETENTION_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2#Cluster$BackupRetentionPolicy",
+        "com.amazonaws.cloudhsmv2",
+        "Cluster",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BackupRetentionPolicy",
+    1,
+);
+static CLUSTER_MEMBER_CLUSTER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Cluster$ClusterId", "com.amazonaws.cloudhsmv2", "Cluster"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterId",
+    2,
+);
+static CLUSTER_MEMBER_CREATE_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Cluster$CreateTimestamp", "com.amazonaws.cloudhsmv2", "Cluster"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreateTimestamp",
+    3,
+);
+static CLUSTER_MEMBER_HSMS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Hsms$member", "com.amazonaws.cloudhsmv2", "Hsms"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CLUSTER_MEMBER_HSMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Cluster$Hsms", "com.amazonaws.cloudhsmv2", "Cluster"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Hsms",
+    4,
+)
+.with_list_member(&CLUSTER_MEMBER_HSMS_MEMBER);
+static CLUSTER_MEMBER_HSM_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Cluster$HsmType", "com.amazonaws.cloudhsmv2", "Cluster"),
+    ::aws_smithy_schema::ShapeType::String,
+    "HsmType",
+    5,
+);
+static CLUSTER_MEMBER_HSM_TYPE_ROLLBACK_EXPIRATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2#Cluster$HsmTypeRollbackExpiration",
+        "com.amazonaws.cloudhsmv2",
+        "Cluster",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "HsmTypeRollbackExpiration",
+    6,
+);
+static CLUSTER_MEMBER_PRE_CO_PASSWORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Cluster$PreCoPassword", "com.amazonaws.cloudhsmv2", "Cluster"),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreCoPassword",
+    7,
+);
+static CLUSTER_MEMBER_SECURITY_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Cluster$SecurityGroup", "com.amazonaws.cloudhsmv2", "Cluster"),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecurityGroup",
+    8,
+);
+static CLUSTER_MEMBER_SOURCE_BACKUP_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Cluster$SourceBackupId", "com.amazonaws.cloudhsmv2", "Cluster"),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceBackupId",
+    9,
+);
+static CLUSTER_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Cluster$State", "com.amazonaws.cloudhsmv2", "Cluster"),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    10,
+);
+static CLUSTER_MEMBER_STATE_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Cluster$StateMessage", "com.amazonaws.cloudhsmv2", "Cluster"),
+    ::aws_smithy_schema::ShapeType::String,
+    "StateMessage",
+    11,
+);
+static CLUSTER_MEMBER_SUBNET_MAPPING_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2#ExternalSubnetMapping$key",
+        "com.amazonaws.cloudhsmv2",
+        "ExternalSubnetMapping",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CLUSTER_MEMBER_SUBNET_MAPPING_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2#ExternalSubnetMapping$value",
+        "com.amazonaws.cloudhsmv2",
+        "ExternalSubnetMapping",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CLUSTER_MEMBER_SUBNET_MAPPING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Cluster$SubnetMapping", "com.amazonaws.cloudhsmv2", "Cluster"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "SubnetMapping",
+    12,
+)
+.with_map_members(&CLUSTER_MEMBER_SUBNET_MAPPING_KEY, &CLUSTER_MEMBER_SUBNET_MAPPING_VALUE);
+static CLUSTER_MEMBER_VPC_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Cluster$VpcId", "com.amazonaws.cloudhsmv2", "Cluster"),
+    ::aws_smithy_schema::ShapeType::String,
+    "VpcId",
+    13,
+);
+static CLUSTER_MEMBER_NETWORK_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Cluster$NetworkType", "com.amazonaws.cloudhsmv2", "Cluster"),
+    ::aws_smithy_schema::ShapeType::String,
+    "NetworkType",
+    14,
+);
+static CLUSTER_MEMBER_CERTIFICATES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Cluster$Certificates", "com.amazonaws.cloudhsmv2", "Cluster"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Certificates",
+    15,
+);
+static CLUSTER_MEMBER_TAG_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#TagList$member", "com.amazonaws.cloudhsmv2", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CLUSTER_MEMBER_TAG_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Cluster$TagList", "com.amazonaws.cloudhsmv2", "Cluster"),
+    ::aws_smithy_schema::ShapeType::List,
+    "TagList",
+    16,
+)
+.with_list_member(&CLUSTER_MEMBER_TAG_LIST_MEMBER);
+static CLUSTER_MEMBER_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Cluster$Mode", "com.amazonaws.cloudhsmv2", "Cluster"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Mode",
+    17,
+);
+static CLUSTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Cluster", "com.amazonaws.cloudhsmv2", "Cluster"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLUSTER_MEMBER_BACKUP_POLICY,
+        &CLUSTER_MEMBER_BACKUP_RETENTION_POLICY,
+        &CLUSTER_MEMBER_CLUSTER_ID,
+        &CLUSTER_MEMBER_CREATE_TIMESTAMP,
+        &CLUSTER_MEMBER_HSMS,
+        &CLUSTER_MEMBER_HSM_TYPE,
+        &CLUSTER_MEMBER_HSM_TYPE_ROLLBACK_EXPIRATION,
+        &CLUSTER_MEMBER_PRE_CO_PASSWORD,
+        &CLUSTER_MEMBER_SECURITY_GROUP,
+        &CLUSTER_MEMBER_SOURCE_BACKUP_ID,
+        &CLUSTER_MEMBER_STATE,
+        &CLUSTER_MEMBER_STATE_MESSAGE,
+        &CLUSTER_MEMBER_SUBNET_MAPPING,
+        &CLUSTER_MEMBER_VPC_ID,
+        &CLUSTER_MEMBER_NETWORK_TYPE,
+        &CLUSTER_MEMBER_CERTIFICATES,
+        &CLUSTER_MEMBER_TAG_LIST,
+        &CLUSTER_MEMBER_MODE,
+    ],
+);
+impl Cluster {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLUSTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Cluster {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.backup_policy {
+            ser.write_string(&CLUSTER_MEMBER_BACKUP_POLICY, val.as_str())?;
+        }
+        if let Some(ref val) = self.backup_retention_policy {
+            ser.write_struct(&CLUSTER_MEMBER_BACKUP_RETENTION_POLICY, val)?;
+        }
+        if let Some(ref val) = self.cluster_id {
+            ser.write_string(&CLUSTER_MEMBER_CLUSTER_ID, val)?;
+        }
+        if let Some(ref val) = self.create_timestamp {
+            ser.write_timestamp(&CLUSTER_MEMBER_CREATE_TIMESTAMP, val)?;
+        }
+        if let Some(ref val) = self.hsms {
+            ser.write_list(&CLUSTER_MEMBER_HSMS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Hsm::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.hsm_type {
+            ser.write_string(&CLUSTER_MEMBER_HSM_TYPE, val)?;
+        }
+        if let Some(ref val) = self.hsm_type_rollback_expiration {
+            ser.write_timestamp(&CLUSTER_MEMBER_HSM_TYPE_ROLLBACK_EXPIRATION, val)?;
+        }
+        if let Some(ref val) = self.pre_co_password {
+            ser.write_string(&CLUSTER_MEMBER_PRE_CO_PASSWORD, val)?;
+        }
+        if let Some(ref val) = self.security_group {
+            ser.write_string(&CLUSTER_MEMBER_SECURITY_GROUP, val)?;
+        }
+        if let Some(ref val) = self.source_backup_id {
+            ser.write_string(&CLUSTER_MEMBER_SOURCE_BACKUP_ID, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&CLUSTER_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.state_message {
+            ser.write_string(&CLUSTER_MEMBER_STATE_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.subnet_mapping {
+            ser.write_map(
+                &CLUSTER_MEMBER_SUBNET_MAPPING,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.vpc_id {
+            ser.write_string(&CLUSTER_MEMBER_VPC_ID, val)?;
+        }
+        if let Some(ref val) = self.network_type {
+            ser.write_string(&CLUSTER_MEMBER_NETWORK_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.certificates {
+            ser.write_struct(&CLUSTER_MEMBER_CERTIFICATES, val)?;
+        }
+        if let Some(ref val) = self.tag_list {
+            ser.write_list(&CLUSTER_MEMBER_TAG_LIST, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.mode {
+            ser.write_string(&CLUSTER_MEMBER_MODE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClusterBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLUSTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.backup_policy = Some(crate::types::BackupPolicy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.backup_retention_policy = Some(crate::types::BackupRetentionPolicy::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hsms = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Hsm::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hsm_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hsm_type_rollback_expiration = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pre_co_password = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_group = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_backup_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::ClusterState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subnet_mapping = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_type = Some(crate::types::NetworkType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificates = Some(crate::types::Certificates::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_list = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mode = Some(crate::types::ClusterMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Cluster {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
     pub fn builder() -> crate::types::builders::ClusterBuilder {

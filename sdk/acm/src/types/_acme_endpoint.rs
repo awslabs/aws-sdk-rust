@@ -69,6 +69,256 @@ impl AcmeEndpoint {
         self.updated_at.as_ref()
     }
 }
+static ACMEENDPOINT_MEMBER_ACME_ENDPOINT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmeEndpoint$AcmeEndpointArn", "com.amazonaws.acm", "AcmeEndpoint"),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcmeEndpointArn",
+    0,
+);
+static ACMEENDPOINT_MEMBER_ENDPOINT_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmeEndpoint$EndpointUrl", "com.amazonaws.acm", "AcmeEndpoint"),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointUrl",
+    1,
+);
+static ACMEENDPOINT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmeEndpoint$Status", "com.amazonaws.acm", "AcmeEndpoint"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    2,
+);
+static ACMEENDPOINT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmeEndpoint$FailureReason", "com.amazonaws.acm", "AcmeEndpoint"),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    3,
+);
+static ACMEENDPOINT_MEMBER_AUTHORIZATION_BEHAVIOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeEndpoint$AuthorizationBehavior",
+        "com.amazonaws.acm",
+        "AcmeEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthorizationBehavior",
+    4,
+);
+static ACMEENDPOINT_MEMBER_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmeEndpoint$Contact", "com.amazonaws.acm", "AcmeEndpoint"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Contact",
+    5,
+);
+static ACMEENDPOINT_MEMBER_CERTIFICATE_AUTHORITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmeEndpoint$CertificateAuthority", "com.amazonaws.acm", "AcmeEndpoint"),
+    ::aws_smithy_schema::ShapeType::Union,
+    "CertificateAuthority",
+    6,
+);
+static ACMEENDPOINT_MEMBER_CERTIFICATE_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#TagList$member", "com.amazonaws.acm", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ACMEENDPOINT_MEMBER_CERTIFICATE_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmeEndpoint$CertificateTags", "com.amazonaws.acm", "AcmeEndpoint"),
+    ::aws_smithy_schema::ShapeType::List,
+    "CertificateTags",
+    7,
+)
+.with_list_member(&ACMEENDPOINT_MEMBER_CERTIFICATE_TAGS_MEMBER);
+static ACMEENDPOINT_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmeEndpoint$CreatedAt", "com.amazonaws.acm", "AcmeEndpoint"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAt",
+    8,
+);
+static ACMEENDPOINT_MEMBER_UPDATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmeEndpoint$UpdatedAt", "com.amazonaws.acm", "AcmeEndpoint"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "UpdatedAt",
+    9,
+);
+static ACMEENDPOINT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmeEndpoint", "com.amazonaws.acm", "AcmeEndpoint"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACMEENDPOINT_MEMBER_ACME_ENDPOINT_ARN,
+        &ACMEENDPOINT_MEMBER_ENDPOINT_URL,
+        &ACMEENDPOINT_MEMBER_STATUS,
+        &ACMEENDPOINT_MEMBER_FAILURE_REASON,
+        &ACMEENDPOINT_MEMBER_AUTHORIZATION_BEHAVIOR,
+        &ACMEENDPOINT_MEMBER_CONTACT,
+        &ACMEENDPOINT_MEMBER_CERTIFICATE_AUTHORITY,
+        &ACMEENDPOINT_MEMBER_CERTIFICATE_TAGS,
+        &ACMEENDPOINT_MEMBER_CREATED_AT,
+        &ACMEENDPOINT_MEMBER_UPDATED_AT,
+    ],
+);
+impl AcmeEndpoint {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACMEENDPOINT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AcmeEndpoint {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.acme_endpoint_arn {
+            ser.write_string(&ACMEENDPOINT_MEMBER_ACME_ENDPOINT_ARN, val)?;
+        }
+        if let Some(ref val) = self.endpoint_url {
+            ser.write_string(&ACMEENDPOINT_MEMBER_ENDPOINT_URL, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&ACMEENDPOINT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&ACMEENDPOINT_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.authorization_behavior {
+            ser.write_string(&ACMEENDPOINT_MEMBER_AUTHORIZATION_BEHAVIOR, val.as_str())?;
+        }
+        if let Some(ref val) = self.contact {
+            ser.write_string(&ACMEENDPOINT_MEMBER_CONTACT, val.as_str())?;
+        }
+        if let Some(ref val) = self.certificate_authority {
+            ser.write_struct(&ACMEENDPOINT_MEMBER_CERTIFICATE_AUTHORITY, val)?;
+        }
+        if let Some(ref val) = self.certificate_tags {
+            ser.write_list(
+                &ACMEENDPOINT_MEMBER_CERTIFICATE_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&ACMEENDPOINT_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.updated_at {
+            ser.write_timestamp(&ACMEENDPOINT_MEMBER_UPDATED_AT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AcmeEndpointBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACMEENDPOINT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.acme_endpoint_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::AcmeEndpointStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authorization_behavior = Some(crate::types::AcmeAuthorizationBehavior::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.contact = Some(crate::types::AcmeContact::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_authority = Some(crate::types::CertificateAuthority::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.updated_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AcmeEndpoint {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AcmeEndpoint {
     /// Creates a new builder-style object to manufacture [`AcmeEndpoint`](crate::types::AcmeEndpoint).
     pub fn builder() -> crate::types::builders::AcmeEndpointBuilder {

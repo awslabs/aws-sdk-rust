@@ -31,6 +31,150 @@ impl DeleteStreamInput {
         self.stream_id.as_deref()
     }
 }
+static DELETESTREAMINPUT_MEMBER_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DeleteStreamInput$StreamName",
+        "com.amazonaws.kinesis.synthetic",
+        "DeleteStreamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamName",
+    0,
+);
+static DELETESTREAMINPUT_MEMBER_ENFORCE_CONSUMER_DELETION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DeleteStreamInput$EnforceConsumerDeletion",
+        "com.amazonaws.kinesis.synthetic",
+        "DeleteStreamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnforceConsumerDeletion",
+    1,
+);
+static DELETESTREAMINPUT_MEMBER_STREAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DeleteStreamInput$StreamARN",
+        "com.amazonaws.kinesis.synthetic",
+        "DeleteStreamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamARN",
+    2,
+);
+static DELETESTREAMINPUT_MEMBER_STREAM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DeleteStreamInput$StreamId",
+        "com.amazonaws.kinesis.synthetic",
+        "DeleteStreamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamId",
+    3,
+);
+static DELETESTREAMINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DeleteStreamInput",
+        "com.amazonaws.kinesis.synthetic",
+        "DeleteStreamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELETESTREAMINPUT_MEMBER_STREAM_NAME,
+        &DELETESTREAMINPUT_MEMBER_ENFORCE_CONSUMER_DELETION,
+        &DELETESTREAMINPUT_MEMBER_STREAM_ARN,
+        &DELETESTREAMINPUT_MEMBER_STREAM_ID,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteStreamInput");
+impl DeleteStreamInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETESTREAMINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteStreamInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stream_name {
+            ser.write_string(&DELETESTREAMINPUT_MEMBER_STREAM_NAME, val)?;
+        }
+        if let Some(ref val) = self.enforce_consumer_deletion {
+            ser.write_boolean(&DELETESTREAMINPUT_MEMBER_ENFORCE_CONSUMER_DELETION, *val)?;
+        }
+        if let Some(ref val) = self.stream_arn {
+            ser.write_string(&DELETESTREAMINPUT_MEMBER_STREAM_ARN, val)?;
+        }
+        if let Some(ref val) = self.stream_id {
+            ser.write_string(&DELETESTREAMINPUT_MEMBER_STREAM_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_stream::builders::DeleteStreamInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETESTREAMINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enforce_consumer_deletion = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteStreamInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteStreamInput {
     /// Creates a new builder-style object to manufacture [`DeleteStreamInput`](crate::operation::delete_stream::DeleteStreamInput).
     pub fn builder() -> crate::operation::delete_stream::builders::DeleteStreamInputBuilder {

@@ -355,6 +355,530 @@ impl ::std::fmt::Debug for CreateServerInput {
         formatter.finish()
     }
 }
+static CREATESERVERINPUT_MEMBER_CERTIFICATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$Certificate",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Certificate",
+    0,
+);
+static CREATESERVERINPUT_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$Domain",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Domain",
+    1,
+);
+static CREATESERVERINPUT_MEMBER_ENDPOINT_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$EndpointDetails",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EndpointDetails",
+    2,
+);
+static CREATESERVERINPUT_MEMBER_ENDPOINT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$EndpointType",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointType",
+    3,
+);
+static CREATESERVERINPUT_MEMBER_HOST_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$HostKey",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HostKey",
+    4,
+);
+static CREATESERVERINPUT_MEMBER_IDENTITY_PROVIDER_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$IdentityProviderDetails",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "IdentityProviderDetails",
+    5,
+);
+static CREATESERVERINPUT_MEMBER_IDENTITY_PROVIDER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$IdentityProviderType",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdentityProviderType",
+    6,
+);
+static CREATESERVERINPUT_MEMBER_LOGGING_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$LoggingRole",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LoggingRole",
+    7,
+);
+static CREATESERVERINPUT_MEMBER_POST_AUTHENTICATION_LOGIN_BANNER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$PostAuthenticationLoginBanner",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PostAuthenticationLoginBanner",
+    8,
+);
+static CREATESERVERINPUT_MEMBER_PRE_AUTHENTICATION_LOGIN_BANNER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$PreAuthenticationLoginBanner",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreAuthenticationLoginBanner",
+    9,
+);
+static CREATESERVERINPUT_MEMBER_PROTOCOLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#Protocols$member", "com.amazonaws.transfer", "Protocols"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATESERVERINPUT_MEMBER_PROTOCOLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$Protocols",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Protocols",
+    10,
+)
+.with_list_member(&CREATESERVERINPUT_MEMBER_PROTOCOLS_MEMBER);
+static CREATESERVERINPUT_MEMBER_PROTOCOL_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$ProtocolDetails",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ProtocolDetails",
+    11,
+);
+static CREATESERVERINPUT_MEMBER_SECURITY_POLICY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$SecurityPolicyName",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecurityPolicyName",
+    12,
+);
+static CREATESERVERINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#Tags$member", "com.amazonaws.transfer", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATESERVERINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$Tags",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    13,
+)
+.with_list_member(&CREATESERVERINPUT_MEMBER_TAGS_MEMBER);
+static CREATESERVERINPUT_MEMBER_WORKFLOW_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$WorkflowDetails",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WorkflowDetails",
+    14,
+);
+static CREATESERVERINPUT_MEMBER_STRUCTURED_LOG_DESTINATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#StructuredLogDestinations$member",
+        "com.amazonaws.transfer",
+        "StructuredLogDestinations",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATESERVERINPUT_MEMBER_STRUCTURED_LOG_DESTINATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$StructuredLogDestinations",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "StructuredLogDestinations",
+    15,
+)
+.with_list_member(&CREATESERVERINPUT_MEMBER_STRUCTURED_LOG_DESTINATIONS_MEMBER);
+static CREATESERVERINPUT_MEMBER_S3_STORAGE_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$S3StorageOptions",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3StorageOptions",
+    16,
+);
+static CREATESERVERINPUT_MEMBER_IP_ADDRESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$IpAddressType",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IpAddressType",
+    17,
+);
+static CREATESERVERINPUT_MEMBER_HOST_KEY_STORAGE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput$HostKeyStorageType",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HostKeyStorageType",
+    18,
+);
+static CREATESERVERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateServerInput",
+        "com.amazonaws.transfer.synthetic",
+        "CreateServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATESERVERINPUT_MEMBER_CERTIFICATE,
+        &CREATESERVERINPUT_MEMBER_DOMAIN,
+        &CREATESERVERINPUT_MEMBER_ENDPOINT_DETAILS,
+        &CREATESERVERINPUT_MEMBER_ENDPOINT_TYPE,
+        &CREATESERVERINPUT_MEMBER_HOST_KEY,
+        &CREATESERVERINPUT_MEMBER_IDENTITY_PROVIDER_DETAILS,
+        &CREATESERVERINPUT_MEMBER_IDENTITY_PROVIDER_TYPE,
+        &CREATESERVERINPUT_MEMBER_LOGGING_ROLE,
+        &CREATESERVERINPUT_MEMBER_POST_AUTHENTICATION_LOGIN_BANNER,
+        &CREATESERVERINPUT_MEMBER_PRE_AUTHENTICATION_LOGIN_BANNER,
+        &CREATESERVERINPUT_MEMBER_PROTOCOLS,
+        &CREATESERVERINPUT_MEMBER_PROTOCOL_DETAILS,
+        &CREATESERVERINPUT_MEMBER_SECURITY_POLICY_NAME,
+        &CREATESERVERINPUT_MEMBER_TAGS,
+        &CREATESERVERINPUT_MEMBER_WORKFLOW_DETAILS,
+        &CREATESERVERINPUT_MEMBER_STRUCTURED_LOG_DESTINATIONS,
+        &CREATESERVERINPUT_MEMBER_S3_STORAGE_OPTIONS,
+        &CREATESERVERINPUT_MEMBER_IP_ADDRESS_TYPE,
+        &CREATESERVERINPUT_MEMBER_HOST_KEY_STORAGE_TYPE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateServerRequest");
+impl CreateServerInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATESERVERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateServerInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.certificate {
+            ser.write_string(&CREATESERVERINPUT_MEMBER_CERTIFICATE, val)?;
+        }
+        if let Some(ref val) = self.domain {
+            ser.write_string(&CREATESERVERINPUT_MEMBER_DOMAIN, val.as_str())?;
+        }
+        if let Some(ref val) = self.endpoint_details {
+            ser.write_struct(&CREATESERVERINPUT_MEMBER_ENDPOINT_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.endpoint_type {
+            ser.write_string(&CREATESERVERINPUT_MEMBER_ENDPOINT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.host_key {
+            ser.write_string(&CREATESERVERINPUT_MEMBER_HOST_KEY, val)?;
+        }
+        if let Some(ref val) = self.identity_provider_details {
+            ser.write_struct(&CREATESERVERINPUT_MEMBER_IDENTITY_PROVIDER_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.identity_provider_type {
+            ser.write_string(&CREATESERVERINPUT_MEMBER_IDENTITY_PROVIDER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.logging_role {
+            ser.write_string(&CREATESERVERINPUT_MEMBER_LOGGING_ROLE, val)?;
+        }
+        if let Some(ref val) = self.post_authentication_login_banner {
+            ser.write_string(&CREATESERVERINPUT_MEMBER_POST_AUTHENTICATION_LOGIN_BANNER, val)?;
+        }
+        if let Some(ref val) = self.pre_authentication_login_banner {
+            ser.write_string(&CREATESERVERINPUT_MEMBER_PRE_AUTHENTICATION_LOGIN_BANNER, val)?;
+        }
+        if let Some(ref val) = self.protocols {
+            ser.write_list(
+                &CREATESERVERINPUT_MEMBER_PROTOCOLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.protocol_details {
+            ser.write_struct(&CREATESERVERINPUT_MEMBER_PROTOCOL_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.security_policy_name {
+            ser.write_string(&CREATESERVERINPUT_MEMBER_SECURITY_POLICY_NAME, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATESERVERINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.workflow_details {
+            ser.write_struct(&CREATESERVERINPUT_MEMBER_WORKFLOW_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.structured_log_destinations {
+            ser.write_list(
+                &CREATESERVERINPUT_MEMBER_STRUCTURED_LOG_DESTINATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.s3_storage_options {
+            ser.write_struct(&CREATESERVERINPUT_MEMBER_S3_STORAGE_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.ip_address_type {
+            ser.write_string(&CREATESERVERINPUT_MEMBER_IP_ADDRESS_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.host_key_storage_type {
+            ser.write_string(&CREATESERVERINPUT_MEMBER_HOST_KEY_STORAGE_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_server::builders::CreateServerInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATESERVERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(crate::types::Domain::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_details = Some(crate::types::EndpointDetails::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_type = Some(crate::types::EndpointType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.host_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity_provider_details = Some(crate::types::IdentityProviderDetails::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity_provider_type = Some(crate::types::IdentityProviderType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logging_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.post_authentication_login_banner = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pre_authentication_login_banner = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocols = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Protocol::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocol_details = Some(crate::types::ProtocolDetails::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_policy_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_details = Some(crate::types::WorkflowDetails::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.structured_log_destinations = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_storage_options = Some(crate::types::S3StorageOptions::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_type = Some(crate::types::IpAddressType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.host_key_storage_type = Some(crate::types::HostKeyStorageType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateServerInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateServerInput {
     /// Creates a new builder-style object to manufacture [`CreateServerInput`](crate::operation::create_server::CreateServerInput).
     pub fn builder() -> crate::operation::create_server::builders::CreateServerInputBuilder {

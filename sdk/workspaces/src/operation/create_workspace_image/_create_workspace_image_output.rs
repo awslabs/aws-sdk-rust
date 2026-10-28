@@ -55,6 +55,233 @@ impl CreateWorkspaceImageOutput {
         self.owner_account_id.as_deref()
     }
 }
+static CREATEWORKSPACEIMAGEOUTPUT_MEMBER_IMAGE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspaceImageOutput$ImageId",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspaceImageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageId",
+    0,
+);
+static CREATEWORKSPACEIMAGEOUTPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspaceImageOutput$Name",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspaceImageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static CREATEWORKSPACEIMAGEOUTPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspaceImageOutput$Description",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspaceImageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static CREATEWORKSPACEIMAGEOUTPUT_MEMBER_OPERATING_SYSTEM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspaceImageOutput$OperatingSystem",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspaceImageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OperatingSystem",
+    3,
+);
+static CREATEWORKSPACEIMAGEOUTPUT_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspaceImageOutput$State",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspaceImageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    4,
+);
+static CREATEWORKSPACEIMAGEOUTPUT_MEMBER_REQUIRED_TENANCY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspaceImageOutput$RequiredTenancy",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspaceImageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RequiredTenancy",
+    5,
+);
+static CREATEWORKSPACEIMAGEOUTPUT_MEMBER_CREATED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspaceImageOutput$Created",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspaceImageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "Created",
+    6,
+);
+static CREATEWORKSPACEIMAGEOUTPUT_MEMBER_OWNER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspaceImageOutput$OwnerAccountId",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspaceImageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OwnerAccountId",
+    7,
+);
+static CREATEWORKSPACEIMAGEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspaceImageOutput",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspaceImageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEWORKSPACEIMAGEOUTPUT_MEMBER_IMAGE_ID,
+        &CREATEWORKSPACEIMAGEOUTPUT_MEMBER_NAME,
+        &CREATEWORKSPACEIMAGEOUTPUT_MEMBER_DESCRIPTION,
+        &CREATEWORKSPACEIMAGEOUTPUT_MEMBER_OPERATING_SYSTEM,
+        &CREATEWORKSPACEIMAGEOUTPUT_MEMBER_STATE,
+        &CREATEWORKSPACEIMAGEOUTPUT_MEMBER_REQUIRED_TENANCY,
+        &CREATEWORKSPACEIMAGEOUTPUT_MEMBER_CREATED,
+        &CREATEWORKSPACEIMAGEOUTPUT_MEMBER_OWNER_ACCOUNT_ID,
+    ],
+)
+.with_original_name("CreateWorkspaceImageResult");
+impl CreateWorkspaceImageOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEWORKSPACEIMAGEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateWorkspaceImageOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.image_id {
+            ser.write_string(&CREATEWORKSPACEIMAGEOUTPUT_MEMBER_IMAGE_ID, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATEWORKSPACEIMAGEOUTPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATEWORKSPACEIMAGEOUTPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.operating_system {
+            ser.write_struct(&CREATEWORKSPACEIMAGEOUTPUT_MEMBER_OPERATING_SYSTEM, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&CREATEWORKSPACEIMAGEOUTPUT_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.required_tenancy {
+            ser.write_string(&CREATEWORKSPACEIMAGEOUTPUT_MEMBER_REQUIRED_TENANCY, val.as_str())?;
+        }
+        if let Some(ref val) = self.created {
+            ser.write_timestamp(&CREATEWORKSPACEIMAGEOUTPUT_MEMBER_CREATED, val)?;
+        }
+        if let Some(ref val) = self.owner_account_id {
+            ser.write_string(&CREATEWORKSPACEIMAGEOUTPUT_MEMBER_OWNER_ACCOUNT_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_workspace_image::builders::CreateWorkspaceImageOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEWORKSPACEIMAGEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operating_system = Some(crate::types::OperatingSystem::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::WorkspaceImageState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.required_tenancy = Some(crate::types::WorkspaceImageRequiredTenancy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.owner_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateWorkspaceImageOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for CreateWorkspaceImageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

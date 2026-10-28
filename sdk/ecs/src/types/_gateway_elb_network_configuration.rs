@@ -27,6 +27,142 @@ impl GatewayElbNetworkConfiguration {
         self.ip_address_type.as_ref()
     }
 }
+static GATEWAYELBNETWORKCONFIGURATION_MEMBER_INBOUND_SECURITY_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayElbNetworkConfiguration$inboundSecurityGroup",
+        "com.amazonaws.ecs",
+        "GatewayElbNetworkConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "inboundSecurityGroup",
+    0,
+);
+static GATEWAYELBNETWORKCONFIGURATION_MEMBER_SUBNETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static GATEWAYELBNETWORKCONFIGURATION_MEMBER_SUBNETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayElbNetworkConfiguration$subnets",
+        "com.amazonaws.ecs",
+        "GatewayElbNetworkConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "subnets",
+    1,
+)
+.with_list_member(&GATEWAYELBNETWORKCONFIGURATION_MEMBER_SUBNETS_MEMBER);
+static GATEWAYELBNETWORKCONFIGURATION_MEMBER_IP_ADDRESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayElbNetworkConfiguration$ipAddressType",
+        "com.amazonaws.ecs",
+        "GatewayElbNetworkConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ipAddressType",
+    2,
+);
+static GATEWAYELBNETWORKCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayElbNetworkConfiguration",
+        "com.amazonaws.ecs",
+        "GatewayElbNetworkConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GATEWAYELBNETWORKCONFIGURATION_MEMBER_INBOUND_SECURITY_GROUP,
+        &GATEWAYELBNETWORKCONFIGURATION_MEMBER_SUBNETS,
+        &GATEWAYELBNETWORKCONFIGURATION_MEMBER_IP_ADDRESS_TYPE,
+    ],
+);
+impl GatewayElbNetworkConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GATEWAYELBNETWORKCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GatewayElbNetworkConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.inbound_security_group {
+            ser.write_string(&GATEWAYELBNETWORKCONFIGURATION_MEMBER_INBOUND_SECURITY_GROUP, val)?;
+        }
+        if let Some(ref val) = self.subnets {
+            ser.write_list(
+                &GATEWAYELBNETWORKCONFIGURATION_MEMBER_SUBNETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ip_address_type {
+            ser.write_string(&GATEWAYELBNETWORKCONFIGURATION_MEMBER_IP_ADDRESS_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::GatewayElbNetworkConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GATEWAYELBNETWORKCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inbound_security_group = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subnets = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_type = Some(crate::types::GatewayElbIpAddressType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GatewayElbNetworkConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl GatewayElbNetworkConfiguration {
     /// Creates a new builder-style object to manufacture [`GatewayElbNetworkConfiguration`](crate::types::GatewayElbNetworkConfiguration).
     pub fn builder() -> crate::types::builders::GatewayElbNetworkConfigurationBuilder {

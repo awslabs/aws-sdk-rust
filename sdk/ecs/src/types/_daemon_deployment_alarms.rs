@@ -29,6 +29,155 @@ impl DaemonDeploymentAlarms {
         self.triggered_alarm_names.as_deref().unwrap_or_default()
     }
 }
+static DAEMONDEPLOYMENTALARMS_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonDeploymentAlarms$status",
+        "com.amazonaws.ecs",
+        "DaemonDeploymentAlarms",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    0,
+);
+static DAEMONDEPLOYMENTALARMS_MEMBER_ALARM_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DAEMONDEPLOYMENTALARMS_MEMBER_ALARM_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonDeploymentAlarms$alarmNames",
+        "com.amazonaws.ecs",
+        "DaemonDeploymentAlarms",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "alarmNames",
+    1,
+)
+.with_list_member(&DAEMONDEPLOYMENTALARMS_MEMBER_ALARM_NAMES_MEMBER);
+static DAEMONDEPLOYMENTALARMS_MEMBER_TRIGGERED_ALARM_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DAEMONDEPLOYMENTALARMS_MEMBER_TRIGGERED_ALARM_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonDeploymentAlarms$triggeredAlarmNames",
+        "com.amazonaws.ecs",
+        "DaemonDeploymentAlarms",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "triggeredAlarmNames",
+    2,
+)
+.with_list_member(&DAEMONDEPLOYMENTALARMS_MEMBER_TRIGGERED_ALARM_NAMES_MEMBER);
+static DAEMONDEPLOYMENTALARMS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#DaemonDeploymentAlarms", "com.amazonaws.ecs", "DaemonDeploymentAlarms"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DAEMONDEPLOYMENTALARMS_MEMBER_STATUS,
+        &DAEMONDEPLOYMENTALARMS_MEMBER_ALARM_NAMES,
+        &DAEMONDEPLOYMENTALARMS_MEMBER_TRIGGERED_ALARM_NAMES,
+    ],
+);
+impl DaemonDeploymentAlarms {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DAEMONDEPLOYMENTALARMS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DaemonDeploymentAlarms {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.status {
+            ser.write_string(&DAEMONDEPLOYMENTALARMS_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.alarm_names {
+            ser.write_list(
+                &DAEMONDEPLOYMENTALARMS_MEMBER_ALARM_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.triggered_alarm_names {
+            ser.write_list(
+                &DAEMONDEPLOYMENTALARMS_MEMBER_TRIGGERED_ALARM_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DaemonDeploymentAlarmsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DAEMONDEPLOYMENTALARMS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::DaemonDeploymentRollbackMonitorsStatus::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.alarm_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.triggered_alarm_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DaemonDeploymentAlarms {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DaemonDeploymentAlarms {
     /// Creates a new builder-style object to manufacture [`DaemonDeploymentAlarms`](crate::types::DaemonDeploymentAlarms).
     pub fn builder() -> crate::types::builders::DaemonDeploymentAlarmsBuilder {

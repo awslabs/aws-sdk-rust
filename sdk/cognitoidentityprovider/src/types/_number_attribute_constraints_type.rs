@@ -19,6 +19,106 @@ impl NumberAttributeConstraintsType {
         self.max_value.as_deref()
     }
 }
+static NUMBERATTRIBUTECONSTRAINTSTYPE_MEMBER_MIN_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#NumberAttributeConstraintsType$MinValue",
+        "com.amazonaws.cognitoidentityprovider",
+        "NumberAttributeConstraintsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MinValue",
+    0,
+);
+static NUMBERATTRIBUTECONSTRAINTSTYPE_MEMBER_MAX_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#NumberAttributeConstraintsType$MaxValue",
+        "com.amazonaws.cognitoidentityprovider",
+        "NumberAttributeConstraintsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxValue",
+    1,
+);
+static NUMBERATTRIBUTECONSTRAINTSTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#NumberAttributeConstraintsType",
+        "com.amazonaws.cognitoidentityprovider",
+        "NumberAttributeConstraintsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &NUMBERATTRIBUTECONSTRAINTSTYPE_MEMBER_MIN_VALUE,
+        &NUMBERATTRIBUTECONSTRAINTSTYPE_MEMBER_MAX_VALUE,
+    ],
+);
+impl NumberAttributeConstraintsType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &NUMBERATTRIBUTECONSTRAINTSTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for NumberAttributeConstraintsType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.min_value {
+            ser.write_string(&NUMBERATTRIBUTECONSTRAINTSTYPE_MEMBER_MIN_VALUE, val)?;
+        }
+        if let Some(ref val) = self.max_value {
+            ser.write_string(&NUMBERATTRIBUTECONSTRAINTSTYPE_MEMBER_MAX_VALUE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::NumberAttributeConstraintsTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&NUMBERATTRIBUTECONSTRAINTSTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.min_value = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_value = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl NumberAttributeConstraintsType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl NumberAttributeConstraintsType {
     /// Creates a new builder-style object to manufacture [`NumberAttributeConstraintsType`](crate::types::NumberAttributeConstraintsType).
     pub fn builder() -> crate::types::builders::NumberAttributeConstraintsTypeBuilder {

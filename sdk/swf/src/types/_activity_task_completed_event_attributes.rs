@@ -25,6 +25,121 @@ impl ActivityTaskCompletedEventAttributes {
         self.started_event_id
     }
 }
+static ACTIVITYTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_RESULT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ActivityTaskCompletedEventAttributes$result",
+        "com.amazonaws.swf",
+        "ActivityTaskCompletedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "result",
+    0,
+);
+static ACTIVITYTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_SCHEDULED_EVENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ActivityTaskCompletedEventAttributes$scheduledEventId",
+        "com.amazonaws.swf",
+        "ActivityTaskCompletedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "scheduledEventId",
+    1,
+);
+static ACTIVITYTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_STARTED_EVENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ActivityTaskCompletedEventAttributes$startedEventId",
+        "com.amazonaws.swf",
+        "ActivityTaskCompletedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "startedEventId",
+    2,
+);
+static ACTIVITYTASKCOMPLETEDEVENTATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ActivityTaskCompletedEventAttributes",
+        "com.amazonaws.swf",
+        "ActivityTaskCompletedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACTIVITYTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_RESULT,
+        &ACTIVITYTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_SCHEDULED_EVENT_ID,
+        &ACTIVITYTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_STARTED_EVENT_ID,
+    ],
+);
+impl ActivityTaskCompletedEventAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACTIVITYTASKCOMPLETEDEVENTATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ActivityTaskCompletedEventAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.result {
+            ser.write_string(&ACTIVITYTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_RESULT, val)?;
+        }
+        {
+            let val = &self.scheduled_event_id;
+            ser.write_long(&ACTIVITYTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_SCHEDULED_EVENT_ID, *val)?;
+        }
+        {
+            let val = &self.started_event_id;
+            ser.write_long(&ACTIVITYTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_STARTED_EVENT_ID, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ActivityTaskCompletedEventAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACTIVITYTASKCOMPLETEDEVENTATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.result = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.scheduled_event_id = Some(deser.read_long(member)?);
+                }
+                Some(2) => {
+                    self.started_event_id = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ActivityTaskCompletedEventAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ActivityTaskCompletedEventAttributes {
     /// Creates a new builder-style object to manufacture [`ActivityTaskCompletedEventAttributes`](crate::types::ActivityTaskCompletedEventAttributes).
     pub fn builder() -> crate::types::builders::ActivityTaskCompletedEventAttributesBuilder {

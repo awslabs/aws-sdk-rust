@@ -130,6 +130,228 @@ impl CrlConfiguration {
         self.custom_path.as_deref()
     }
 }
+static CRLCONFIGURATION_MEMBER_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CrlConfiguration$Enabled",
+        "com.amazonaws.acmpca",
+        "CrlConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Enabled",
+    0,
+);
+static CRLCONFIGURATION_MEMBER_EXPIRATION_IN_DAYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CrlConfiguration$ExpirationInDays",
+        "com.amazonaws.acmpca",
+        "CrlConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ExpirationInDays",
+    1,
+);
+static CRLCONFIGURATION_MEMBER_CUSTOM_CNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CrlConfiguration$CustomCname",
+        "com.amazonaws.acmpca",
+        "CrlConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CustomCname",
+    2,
+);
+static CRLCONFIGURATION_MEMBER_S3_BUCKET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CrlConfiguration$S3BucketName",
+        "com.amazonaws.acmpca",
+        "CrlConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3BucketName",
+    3,
+);
+static CRLCONFIGURATION_MEMBER_S3_OBJECT_ACL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CrlConfiguration$S3ObjectAcl",
+        "com.amazonaws.acmpca",
+        "CrlConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3ObjectAcl",
+    4,
+);
+static CRLCONFIGURATION_MEMBER_CRL_DISTRIBUTION_POINT_EXTENSION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.acmpca#CrlConfiguration$CrlDistributionPointExtensionConfiguration",
+            "com.amazonaws.acmpca",
+            "CrlConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "CrlDistributionPointExtensionConfiguration",
+        5,
+    );
+static CRLCONFIGURATION_MEMBER_CRL_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CrlConfiguration$CrlType",
+        "com.amazonaws.acmpca",
+        "CrlConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CrlType",
+    6,
+);
+static CRLCONFIGURATION_MEMBER_CUSTOM_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CrlConfiguration$CustomPath",
+        "com.amazonaws.acmpca",
+        "CrlConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CustomPath",
+    7,
+);
+static CRLCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#CrlConfiguration", "com.amazonaws.acmpca", "CrlConfiguration"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CRLCONFIGURATION_MEMBER_ENABLED,
+        &CRLCONFIGURATION_MEMBER_EXPIRATION_IN_DAYS,
+        &CRLCONFIGURATION_MEMBER_CUSTOM_CNAME,
+        &CRLCONFIGURATION_MEMBER_S3_BUCKET_NAME,
+        &CRLCONFIGURATION_MEMBER_S3_OBJECT_ACL,
+        &CRLCONFIGURATION_MEMBER_CRL_DISTRIBUTION_POINT_EXTENSION_CONFIGURATION,
+        &CRLCONFIGURATION_MEMBER_CRL_TYPE,
+        &CRLCONFIGURATION_MEMBER_CUSTOM_PATH,
+    ],
+);
+impl CrlConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CRLCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CrlConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.enabled;
+            ser.write_boolean(&CRLCONFIGURATION_MEMBER_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.expiration_in_days {
+            ser.write_integer(&CRLCONFIGURATION_MEMBER_EXPIRATION_IN_DAYS, *val)?;
+        }
+        if let Some(ref val) = self.custom_cname {
+            ser.write_string(&CRLCONFIGURATION_MEMBER_CUSTOM_CNAME, val)?;
+        }
+        if let Some(ref val) = self.s3_bucket_name {
+            ser.write_string(&CRLCONFIGURATION_MEMBER_S3_BUCKET_NAME, val)?;
+        }
+        if let Some(ref val) = self.s3_object_acl {
+            ser.write_string(&CRLCONFIGURATION_MEMBER_S3_OBJECT_ACL, val.as_str())?;
+        }
+        if let Some(ref val) = self.crl_distribution_point_extension_configuration {
+            ser.write_struct(&CRLCONFIGURATION_MEMBER_CRL_DISTRIBUTION_POINT_EXTENSION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.crl_type {
+            ser.write_string(&CRLCONFIGURATION_MEMBER_CRL_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.custom_path {
+            ser.write_string(&CRLCONFIGURATION_MEMBER_CUSTOM_PATH, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CrlConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CRLCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.enabled = Some(deser.read_boolean(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expiration_in_days = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_cname = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_bucket_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_object_acl = Some(crate::types::S3ObjectAcl::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.crl_distribution_point_extension_configuration =
+                            Some(crate::types::CrlDistributionPointExtensionConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.crl_type = Some(crate::types::CrlType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_path = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CrlConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.enabled = builder.enabled.or(Some(false));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CrlConfiguration {
     /// Creates a new builder-style object to manufacture [`CrlConfiguration`](crate::types::CrlConfiguration).
     pub fn builder() -> crate::types::builders::CrlConfigurationBuilder {

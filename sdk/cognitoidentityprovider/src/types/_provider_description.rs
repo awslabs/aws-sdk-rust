@@ -31,6 +31,148 @@ impl ProviderDescription {
         self.creation_date.as_ref()
     }
 }
+static PROVIDERDESCRIPTION_MEMBER_PROVIDER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ProviderDescription$ProviderName",
+        "com.amazonaws.cognitoidentityprovider",
+        "ProviderDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProviderName",
+    0,
+);
+static PROVIDERDESCRIPTION_MEMBER_PROVIDER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ProviderDescription$ProviderType",
+        "com.amazonaws.cognitoidentityprovider",
+        "ProviderDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProviderType",
+    1,
+);
+static PROVIDERDESCRIPTION_MEMBER_LAST_MODIFIED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ProviderDescription$LastModifiedDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "ProviderDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedDate",
+    2,
+);
+static PROVIDERDESCRIPTION_MEMBER_CREATION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ProviderDescription$CreationDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "ProviderDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationDate",
+    3,
+);
+static PROVIDERDESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ProviderDescription",
+        "com.amazonaws.cognitoidentityprovider",
+        "ProviderDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PROVIDERDESCRIPTION_MEMBER_PROVIDER_NAME,
+        &PROVIDERDESCRIPTION_MEMBER_PROVIDER_TYPE,
+        &PROVIDERDESCRIPTION_MEMBER_LAST_MODIFIED_DATE,
+        &PROVIDERDESCRIPTION_MEMBER_CREATION_DATE,
+    ],
+);
+impl ProviderDescription {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PROVIDERDESCRIPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProviderDescription {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.provider_name {
+            ser.write_string(&PROVIDERDESCRIPTION_MEMBER_PROVIDER_NAME, val)?;
+        }
+        if let Some(ref val) = self.provider_type {
+            ser.write_string(&PROVIDERDESCRIPTION_MEMBER_PROVIDER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_modified_date {
+            ser.write_timestamp(&PROVIDERDESCRIPTION_MEMBER_LAST_MODIFIED_DATE, val)?;
+        }
+        if let Some(ref val) = self.creation_date {
+            ser.write_timestamp(&PROVIDERDESCRIPTION_MEMBER_CREATION_DATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProviderDescriptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PROVIDERDESCRIPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.provider_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.provider_type = Some(crate::types::IdentityProviderTypeType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProviderDescription {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ProviderDescription {
     /// Creates a new builder-style object to manufacture [`ProviderDescription`](crate::types::ProviderDescription).
     pub fn builder() -> crate::types::builders::ProviderDescriptionBuilder {

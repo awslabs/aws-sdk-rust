@@ -54,6 +54,195 @@ impl ::std::fmt::Debug for AdminSetUserMfaPreferenceInput {
         formatter.finish()
     }
 }
+static ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_SMS_MFA_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminSetUserMFAPreferenceInput$SMSMfaSettings",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminSetUserMFAPreferenceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SMSMfaSettings",
+    0,
+);
+static ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_SOFTWARE_TOKEN_MFA_SETTINGS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentityprovider.synthetic#AdminSetUserMFAPreferenceInput$SoftwareTokenMfaSettings",
+            "com.amazonaws.cognitoidentityprovider.synthetic",
+            "AdminSetUserMFAPreferenceInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "SoftwareTokenMfaSettings",
+        1,
+    );
+static ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_EMAIL_MFA_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminSetUserMFAPreferenceInput$EmailMfaSettings",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminSetUserMFAPreferenceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EmailMfaSettings",
+    2,
+);
+static ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_WEB_AUTHN_MFA_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminSetUserMFAPreferenceInput$WebAuthnMfaSettings",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminSetUserMFAPreferenceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WebAuthnMfaSettings",
+    3,
+);
+static ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_USERNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminSetUserMFAPreferenceInput$Username",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminSetUserMFAPreferenceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Username",
+    4,
+);
+static ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminSetUserMFAPreferenceInput$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminSetUserMFAPreferenceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    5,
+);
+static ADMINSETUSERMFAPREFERENCEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminSetUserMFAPreferenceInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminSetUserMFAPreferenceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_SMS_MFA_SETTINGS,
+        &ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_SOFTWARE_TOKEN_MFA_SETTINGS,
+        &ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_EMAIL_MFA_SETTINGS,
+        &ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_WEB_AUTHN_MFA_SETTINGS,
+        &ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_USERNAME,
+        &ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_USER_POOL_ID,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("AdminSetUserMFAPreferenceRequest");
+impl AdminSetUserMfaPreferenceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ADMINSETUSERMFAPREFERENCEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AdminSetUserMfaPreferenceInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.sms_mfa_settings {
+            ser.write_struct(&ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_SMS_MFA_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.software_token_mfa_settings {
+            ser.write_struct(&ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_SOFTWARE_TOKEN_MFA_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.email_mfa_settings {
+            ser.write_struct(&ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_EMAIL_MFA_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.web_authn_mfa_settings {
+            ser.write_struct(&ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_WEB_AUTHN_MFA_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.username {
+            ser.write_string(&ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_USERNAME, val)?;
+        }
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&ADMINSETUSERMFAPREFERENCEINPUT_MEMBER_USER_POOL_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMfaPreferenceInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ADMINSETUSERMFAPREFERENCEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sms_mfa_settings = Some(crate::types::SmsMfaSettingsType::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.software_token_mfa_settings = Some(crate::types::SoftwareTokenMfaSettingsType::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email_mfa_settings = Some(crate::types::EmailMfaSettingsType::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.web_authn_mfa_settings = Some(crate::types::WebAuthnMfaSettingsType::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.username = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AdminSetUserMfaPreferenceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.username = builder.username.or(Some(String::new()));
+        builder.user_pool_id = builder.user_pool_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AdminSetUserMfaPreferenceInput {
     /// Creates a new builder-style object to manufacture [`AdminSetUserMfaPreferenceInput`](crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceInput).
     pub fn builder() -> crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMfaPreferenceInputBuilder {

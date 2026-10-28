@@ -49,6 +49,253 @@ impl Extensions {
         self.custom_extensions.as_deref().unwrap_or_default()
     }
 }
+static EXTENSIONS_MEMBER_CERTIFICATE_POLICIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificatePolicyList$member",
+        "com.amazonaws.acmpca",
+        "CertificatePolicyList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static EXTENSIONS_MEMBER_CERTIFICATE_POLICIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#Extensions$CertificatePolicies",
+        "com.amazonaws.acmpca",
+        "Extensions",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CertificatePolicies",
+    0,
+)
+.with_list_member(&EXTENSIONS_MEMBER_CERTIFICATE_POLICIES_MEMBER);
+static EXTENSIONS_MEMBER_EXTENDED_KEY_USAGE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#ExtendedKeyUsageList$member",
+        "com.amazonaws.acmpca",
+        "ExtendedKeyUsageList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static EXTENSIONS_MEMBER_EXTENDED_KEY_USAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#Extensions$ExtendedKeyUsage", "com.amazonaws.acmpca", "Extensions"),
+    ::aws_smithy_schema::ShapeType::List,
+    "ExtendedKeyUsage",
+    1,
+)
+.with_list_member(&EXTENSIONS_MEMBER_EXTENDED_KEY_USAGE_MEMBER);
+static EXTENSIONS_MEMBER_KEY_USAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#Extensions$KeyUsage", "com.amazonaws.acmpca", "Extensions"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "KeyUsage",
+    2,
+);
+static EXTENSIONS_MEMBER_SUBJECT_ALTERNATIVE_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#GeneralNameList$member", "com.amazonaws.acmpca", "GeneralNameList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static EXTENSIONS_MEMBER_SUBJECT_ALTERNATIVE_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#Extensions$SubjectAlternativeNames",
+        "com.amazonaws.acmpca",
+        "Extensions",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SubjectAlternativeNames",
+    3,
+)
+.with_list_member(&EXTENSIONS_MEMBER_SUBJECT_ALTERNATIVE_NAMES_MEMBER);
+static EXTENSIONS_MEMBER_CUSTOM_EXTENSIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CustomExtensionList$member",
+        "com.amazonaws.acmpca",
+        "CustomExtensionList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static EXTENSIONS_MEMBER_CUSTOM_EXTENSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#Extensions$CustomExtensions", "com.amazonaws.acmpca", "Extensions"),
+    ::aws_smithy_schema::ShapeType::List,
+    "CustomExtensions",
+    4,
+)
+.with_list_member(&EXTENSIONS_MEMBER_CUSTOM_EXTENSIONS_MEMBER);
+static EXTENSIONS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#Extensions", "com.amazonaws.acmpca", "Extensions"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EXTENSIONS_MEMBER_CERTIFICATE_POLICIES,
+        &EXTENSIONS_MEMBER_EXTENDED_KEY_USAGE,
+        &EXTENSIONS_MEMBER_KEY_USAGE,
+        &EXTENSIONS_MEMBER_SUBJECT_ALTERNATIVE_NAMES,
+        &EXTENSIONS_MEMBER_CUSTOM_EXTENSIONS,
+    ],
+);
+impl Extensions {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EXTENSIONS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Extensions {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.certificate_policies {
+            ser.write_list(
+                &EXTENSIONS_MEMBER_CERTIFICATE_POLICIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PolicyInformation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.extended_key_usage {
+            ser.write_list(
+                &EXTENSIONS_MEMBER_EXTENDED_KEY_USAGE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ExtendedKeyUsage::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.key_usage {
+            ser.write_struct(&EXTENSIONS_MEMBER_KEY_USAGE, val)?;
+        }
+        if let Some(ref val) = self.subject_alternative_names {
+            ser.write_list(
+                &EXTENSIONS_MEMBER_SUBJECT_ALTERNATIVE_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::GeneralName::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.custom_extensions {
+            ser.write_list(
+                &EXTENSIONS_MEMBER_CUSTOM_EXTENSIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CustomExtension::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ExtensionsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EXTENSIONS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_policies = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PolicyInformation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.extended_key_usage = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ExtendedKeyUsage::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_usage = Some(crate::types::KeyUsage::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subject_alternative_names = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::GeneralName::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_extensions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CustomExtension::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Extensions {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Extensions {
     /// Creates a new builder-style object to manufacture [`Extensions`](crate::types::Extensions).
     pub fn builder() -> crate::types::builders::ExtensionsBuilder {

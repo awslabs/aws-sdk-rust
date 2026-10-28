@@ -37,6 +37,172 @@ impl DeleteFileSystemInput {
         self.open_zfs_configuration.as_ref()
     }
 }
+static DELETEFILESYSTEMINPUT_MEMBER_FILE_SYSTEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DeleteFileSystemInput$FileSystemId",
+        "com.amazonaws.fsx.synthetic",
+        "DeleteFileSystemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileSystemId",
+    0,
+);
+static DELETEFILESYSTEMINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DeleteFileSystemInput$ClientRequestToken",
+        "com.amazonaws.fsx.synthetic",
+        "DeleteFileSystemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    1,
+);
+static DELETEFILESYSTEMINPUT_MEMBER_WINDOWS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DeleteFileSystemInput$WindowsConfiguration",
+        "com.amazonaws.fsx.synthetic",
+        "DeleteFileSystemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WindowsConfiguration",
+    2,
+);
+static DELETEFILESYSTEMINPUT_MEMBER_LUSTRE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DeleteFileSystemInput$LustreConfiguration",
+        "com.amazonaws.fsx.synthetic",
+        "DeleteFileSystemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LustreConfiguration",
+    3,
+);
+static DELETEFILESYSTEMINPUT_MEMBER_OPEN_ZFS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DeleteFileSystemInput$OpenZFSConfiguration",
+        "com.amazonaws.fsx.synthetic",
+        "DeleteFileSystemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OpenZFSConfiguration",
+    4,
+);
+static DELETEFILESYSTEMINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DeleteFileSystemInput",
+        "com.amazonaws.fsx.synthetic",
+        "DeleteFileSystemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELETEFILESYSTEMINPUT_MEMBER_FILE_SYSTEM_ID,
+        &DELETEFILESYSTEMINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &DELETEFILESYSTEMINPUT_MEMBER_WINDOWS_CONFIGURATION,
+        &DELETEFILESYSTEMINPUT_MEMBER_LUSTRE_CONFIGURATION,
+        &DELETEFILESYSTEMINPUT_MEMBER_OPEN_ZFS_CONFIGURATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteFileSystemRequest");
+impl DeleteFileSystemInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEFILESYSTEMINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteFileSystemInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.file_system_id {
+            ser.write_string(&DELETEFILESYSTEMINPUT_MEMBER_FILE_SYSTEM_ID, val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&DELETEFILESYSTEMINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.windows_configuration {
+            ser.write_struct(&DELETEFILESYSTEMINPUT_MEMBER_WINDOWS_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.lustre_configuration {
+            ser.write_struct(&DELETEFILESYSTEMINPUT_MEMBER_LUSTRE_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.open_zfs_configuration {
+            ser.write_struct(&DELETEFILESYSTEMINPUT_MEMBER_OPEN_ZFS_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_file_system::builders::DeleteFileSystemInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEFILESYSTEMINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.windows_configuration = Some(crate::types::DeleteFileSystemWindowsConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lustre_configuration = Some(crate::types::DeleteFileSystemLustreConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.open_zfs_configuration = Some(crate::types::DeleteFileSystemOpenZfsConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteFileSystemInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.file_system_id = builder.file_system_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteFileSystemInput {
     /// Creates a new builder-style object to manufacture [`DeleteFileSystemInput`](crate::operation::delete_file_system::DeleteFileSystemInput).
     pub fn builder() -> crate::operation::delete_file_system::builders::DeleteFileSystemInputBuilder {

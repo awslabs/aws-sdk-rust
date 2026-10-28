@@ -101,6 +101,316 @@ impl ::std::fmt::Debug for RedshiftDestinationConfiguration {
         formatter.finish()
     }
 }
+static REDSHIFTDESTINATIONCONFIGURATION_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#RedshiftDestinationConfiguration$RoleARN",
+        "com.amazonaws.firehose",
+        "RedshiftDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleARN",
+    0,
+);
+static REDSHIFTDESTINATIONCONFIGURATION_MEMBER_CLUSTER_JDBCURL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#RedshiftDestinationConfiguration$ClusterJDBCURL",
+        "com.amazonaws.firehose",
+        "RedshiftDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterJDBCURL",
+    1,
+);
+static REDSHIFTDESTINATIONCONFIGURATION_MEMBER_COPY_COMMAND: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#RedshiftDestinationConfiguration$CopyCommand",
+        "com.amazonaws.firehose",
+        "RedshiftDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CopyCommand",
+    2,
+);
+static REDSHIFTDESTINATIONCONFIGURATION_MEMBER_USERNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#RedshiftDestinationConfiguration$Username",
+        "com.amazonaws.firehose",
+        "RedshiftDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Username",
+    3,
+);
+static REDSHIFTDESTINATIONCONFIGURATION_MEMBER_PASSWORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#RedshiftDestinationConfiguration$Password",
+        "com.amazonaws.firehose",
+        "RedshiftDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Password",
+    4,
+);
+static REDSHIFTDESTINATIONCONFIGURATION_MEMBER_RETRY_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#RedshiftDestinationConfiguration$RetryOptions",
+        "com.amazonaws.firehose",
+        "RedshiftDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RetryOptions",
+    5,
+);
+static REDSHIFTDESTINATIONCONFIGURATION_MEMBER_S3_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#RedshiftDestinationConfiguration$S3Configuration",
+        "com.amazonaws.firehose",
+        "RedshiftDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3Configuration",
+    6,
+);
+static REDSHIFTDESTINATIONCONFIGURATION_MEMBER_PROCESSING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#RedshiftDestinationConfiguration$ProcessingConfiguration",
+            "com.amazonaws.firehose",
+            "RedshiftDestinationConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ProcessingConfiguration",
+        7,
+    );
+static REDSHIFTDESTINATIONCONFIGURATION_MEMBER_S3_BACKUP_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#RedshiftDestinationConfiguration$S3BackupMode",
+        "com.amazonaws.firehose",
+        "RedshiftDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3BackupMode",
+    8,
+);
+static REDSHIFTDESTINATIONCONFIGURATION_MEMBER_S3_BACKUP_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#RedshiftDestinationConfiguration$S3BackupConfiguration",
+            "com.amazonaws.firehose",
+            "RedshiftDestinationConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "S3BackupConfiguration",
+        9,
+    );
+static REDSHIFTDESTINATIONCONFIGURATION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#RedshiftDestinationConfiguration$CloudWatchLoggingOptions",
+            "com.amazonaws.firehose",
+            "RedshiftDestinationConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "CloudWatchLoggingOptions",
+        10,
+    );
+static REDSHIFTDESTINATIONCONFIGURATION_MEMBER_SECRETS_MANAGER_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#RedshiftDestinationConfiguration$SecretsManagerConfiguration",
+            "com.amazonaws.firehose",
+            "RedshiftDestinationConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "SecretsManagerConfiguration",
+        11,
+    );
+static REDSHIFTDESTINATIONCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#RedshiftDestinationConfiguration",
+        "com.amazonaws.firehose",
+        "RedshiftDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REDSHIFTDESTINATIONCONFIGURATION_MEMBER_ROLE_ARN,
+        &REDSHIFTDESTINATIONCONFIGURATION_MEMBER_CLUSTER_JDBCURL,
+        &REDSHIFTDESTINATIONCONFIGURATION_MEMBER_COPY_COMMAND,
+        &REDSHIFTDESTINATIONCONFIGURATION_MEMBER_USERNAME,
+        &REDSHIFTDESTINATIONCONFIGURATION_MEMBER_PASSWORD,
+        &REDSHIFTDESTINATIONCONFIGURATION_MEMBER_RETRY_OPTIONS,
+        &REDSHIFTDESTINATIONCONFIGURATION_MEMBER_S3_CONFIGURATION,
+        &REDSHIFTDESTINATIONCONFIGURATION_MEMBER_PROCESSING_CONFIGURATION,
+        &REDSHIFTDESTINATIONCONFIGURATION_MEMBER_S3_BACKUP_MODE,
+        &REDSHIFTDESTINATIONCONFIGURATION_MEMBER_S3_BACKUP_CONFIGURATION,
+        &REDSHIFTDESTINATIONCONFIGURATION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS,
+        &REDSHIFTDESTINATIONCONFIGURATION_MEMBER_SECRETS_MANAGER_CONFIGURATION,
+    ],
+);
+impl RedshiftDestinationConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REDSHIFTDESTINATIONCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RedshiftDestinationConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.role_arn;
+            ser.write_string(&REDSHIFTDESTINATIONCONFIGURATION_MEMBER_ROLE_ARN, val)?;
+        }
+        {
+            let val = &self.cluster_jdbcurl;
+            ser.write_string(&REDSHIFTDESTINATIONCONFIGURATION_MEMBER_CLUSTER_JDBCURL, val)?;
+        }
+        if let Some(ref val) = self.copy_command {
+            ser.write_struct(&REDSHIFTDESTINATIONCONFIGURATION_MEMBER_COPY_COMMAND, val)?;
+        }
+        if let Some(ref val) = self.username {
+            ser.write_string(&REDSHIFTDESTINATIONCONFIGURATION_MEMBER_USERNAME, val)?;
+        }
+        if let Some(ref val) = self.password {
+            ser.write_string(&REDSHIFTDESTINATIONCONFIGURATION_MEMBER_PASSWORD, val)?;
+        }
+        if let Some(ref val) = self.retry_options {
+            ser.write_struct(&REDSHIFTDESTINATIONCONFIGURATION_MEMBER_RETRY_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.s3_configuration {
+            ser.write_struct(&REDSHIFTDESTINATIONCONFIGURATION_MEMBER_S3_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.processing_configuration {
+            ser.write_struct(&REDSHIFTDESTINATIONCONFIGURATION_MEMBER_PROCESSING_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.s3_backup_mode {
+            ser.write_string(&REDSHIFTDESTINATIONCONFIGURATION_MEMBER_S3_BACKUP_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_backup_configuration {
+            ser.write_struct(&REDSHIFTDESTINATIONCONFIGURATION_MEMBER_S3_BACKUP_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.cloud_watch_logging_options {
+            ser.write_struct(&REDSHIFTDESTINATIONCONFIGURATION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.secrets_manager_configuration {
+            ser.write_struct(&REDSHIFTDESTINATIONCONFIGURATION_MEMBER_SECRETS_MANAGER_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RedshiftDestinationConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REDSHIFTDESTINATIONCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.role_arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.cluster_jdbcurl = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.copy_command = Some(crate::types::CopyCommand::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.username = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.password = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retry_options = Some(crate::types::RedshiftRetryOptions::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_configuration = Some(crate::types::S3DestinationConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.processing_configuration = Some(crate::types::ProcessingConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_backup_mode = Some(crate::types::RedshiftS3BackupMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_backup_configuration = Some(crate::types::S3DestinationConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_watch_logging_options = Some(crate::types::CloudWatchLoggingOptions::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secrets_manager_configuration = Some(crate::types::SecretsManagerConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RedshiftDestinationConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.cluster_jdbcurl = builder.cluster_jdbcurl.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RedshiftDestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`RedshiftDestinationConfiguration`](crate::types::RedshiftDestinationConfiguration).
     pub fn builder() -> crate::types::builders::RedshiftDestinationConfigurationBuilder {

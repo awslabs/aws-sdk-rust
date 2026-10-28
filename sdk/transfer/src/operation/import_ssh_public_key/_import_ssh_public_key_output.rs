@@ -29,6 +29,122 @@ impl ImportSshPublicKeyOutput {
         self.user_name.deref()
     }
 }
+static IMPORTSSHPUBLICKEYOUTPUT_MEMBER_SERVER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#ImportSshPublicKeyOutput$ServerId",
+        "com.amazonaws.transfer.synthetic",
+        "ImportSshPublicKeyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServerId",
+    0,
+);
+static IMPORTSSHPUBLICKEYOUTPUT_MEMBER_SSH_PUBLIC_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#ImportSshPublicKeyOutput$SshPublicKeyId",
+        "com.amazonaws.transfer.synthetic",
+        "ImportSshPublicKeyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SshPublicKeyId",
+    1,
+);
+static IMPORTSSHPUBLICKEYOUTPUT_MEMBER_USER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#ImportSshPublicKeyOutput$UserName",
+        "com.amazonaws.transfer.synthetic",
+        "ImportSshPublicKeyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserName",
+    2,
+);
+static IMPORTSSHPUBLICKEYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#ImportSshPublicKeyOutput",
+        "com.amazonaws.transfer.synthetic",
+        "ImportSshPublicKeyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &IMPORTSSHPUBLICKEYOUTPUT_MEMBER_SERVER_ID,
+        &IMPORTSSHPUBLICKEYOUTPUT_MEMBER_SSH_PUBLIC_KEY_ID,
+        &IMPORTSSHPUBLICKEYOUTPUT_MEMBER_USER_NAME,
+    ],
+)
+.with_original_name("ImportSshPublicKeyResponse");
+impl ImportSshPublicKeyOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &IMPORTSSHPUBLICKEYOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ImportSshPublicKeyOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.server_id;
+            ser.write_string(&IMPORTSSHPUBLICKEYOUTPUT_MEMBER_SERVER_ID, val)?;
+        }
+        {
+            let val = &self.ssh_public_key_id;
+            ser.write_string(&IMPORTSSHPUBLICKEYOUTPUT_MEMBER_SSH_PUBLIC_KEY_ID, val)?;
+        }
+        {
+            let val = &self.user_name;
+            ser.write_string(&IMPORTSSHPUBLICKEYOUTPUT_MEMBER_USER_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&IMPORTSSHPUBLICKEYOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.server_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.ssh_public_key_id = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.user_name = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ImportSshPublicKeyOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.server_id = builder.server_id.or(Some(String::new()));
+        builder.ssh_public_key_id = builder.ssh_public_key_id.or(Some(String::new()));
+        builder.user_name = builder.user_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for ImportSshPublicKeyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -19,6 +19,104 @@ impl InitializeClusterOutput {
         self.state_message.as_deref()
     }
 }
+static INITIALIZECLUSTEROUTPUT_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#InitializeClusterOutput$State",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "InitializeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    0,
+);
+static INITIALIZECLUSTEROUTPUT_MEMBER_STATE_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#InitializeClusterOutput$StateMessage",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "InitializeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StateMessage",
+    1,
+);
+static INITIALIZECLUSTEROUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#InitializeClusterOutput",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "InitializeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&INITIALIZECLUSTEROUTPUT_MEMBER_STATE, &INITIALIZECLUSTEROUTPUT_MEMBER_STATE_MESSAGE],
+)
+.with_original_name("InitializeClusterResponse");
+impl InitializeClusterOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INITIALIZECLUSTEROUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InitializeClusterOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.state {
+            ser.write_string(&INITIALIZECLUSTEROUTPUT_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.state_message {
+            ser.write_string(&INITIALIZECLUSTEROUTPUT_MEMBER_STATE_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::initialize_cluster::builders::InitializeClusterOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INITIALIZECLUSTEROUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::ClusterState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state_message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InitializeClusterOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for InitializeClusterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

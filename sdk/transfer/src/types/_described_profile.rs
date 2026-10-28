@@ -48,6 +48,221 @@ impl DescribedProfile {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static DESCRIBEDPROFILE_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedProfile$Arn",
+        "com.amazonaws.transfer",
+        "DescribedProfile",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    0,
+);
+static DESCRIBEDPROFILE_MEMBER_PROFILE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedProfile$ProfileId",
+        "com.amazonaws.transfer",
+        "DescribedProfile",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProfileId",
+    1,
+);
+static DESCRIBEDPROFILE_MEMBER_PROFILE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedProfile$ProfileType",
+        "com.amazonaws.transfer",
+        "DescribedProfile",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProfileType",
+    2,
+);
+static DESCRIBEDPROFILE_MEMBER_AS2_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedProfile$As2Id",
+        "com.amazonaws.transfer",
+        "DescribedProfile",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "As2Id",
+    3,
+);
+static DESCRIBEDPROFILE_MEMBER_CERTIFICATE_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#CertificateIds$member", "com.amazonaws.transfer", "CertificateIds"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEDPROFILE_MEMBER_CERTIFICATE_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedProfile$CertificateIds",
+        "com.amazonaws.transfer",
+        "DescribedProfile",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CertificateIds",
+    4,
+)
+.with_list_member(&DESCRIBEDPROFILE_MEMBER_CERTIFICATE_IDS_MEMBER);
+static DESCRIBEDPROFILE_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#Tags$member", "com.amazonaws.transfer", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEDPROFILE_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedProfile$Tags",
+        "com.amazonaws.transfer",
+        "DescribedProfile",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&DESCRIBEDPROFILE_MEMBER_TAGS_MEMBER);
+static DESCRIBEDPROFILE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#DescribedProfile", "com.amazonaws.transfer", "DescribedProfile"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEDPROFILE_MEMBER_ARN,
+        &DESCRIBEDPROFILE_MEMBER_PROFILE_ID,
+        &DESCRIBEDPROFILE_MEMBER_PROFILE_TYPE,
+        &DESCRIBEDPROFILE_MEMBER_AS2_ID,
+        &DESCRIBEDPROFILE_MEMBER_CERTIFICATE_IDS,
+        &DESCRIBEDPROFILE_MEMBER_TAGS,
+    ],
+);
+impl DescribedProfile {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEDPROFILE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribedProfile {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.arn;
+            ser.write_string(&DESCRIBEDPROFILE_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.profile_id {
+            ser.write_string(&DESCRIBEDPROFILE_MEMBER_PROFILE_ID, val)?;
+        }
+        if let Some(ref val) = self.profile_type {
+            ser.write_string(&DESCRIBEDPROFILE_MEMBER_PROFILE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.as2_id {
+            ser.write_string(&DESCRIBEDPROFILE_MEMBER_AS2_ID, val)?;
+        }
+        if let Some(ref val) = self.certificate_ids {
+            ser.write_list(
+                &DESCRIBEDPROFILE_MEMBER_CERTIFICATE_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &DESCRIBEDPROFILE_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DescribedProfileBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEDPROFILE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.profile_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.profile_type = Some(crate::types::ProfileType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.as2_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribedProfile {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.arn = builder.arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribedProfile {
     /// Creates a new builder-style object to manufacture [`DescribedProfile`](crate::types::DescribedProfile).
     pub fn builder() -> crate::types::builders::DescribedProfileBuilder {

@@ -95,6 +95,329 @@ impl DeliveryStreamDescription {
         self.has_more_destinations
     }
 }
+static DELIVERYSTREAMDESCRIPTION_MEMBER_DELIVERY_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DeliveryStreamDescription$DeliveryStreamName",
+        "com.amazonaws.firehose",
+        "DeliveryStreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeliveryStreamName",
+    0,
+);
+static DELIVERYSTREAMDESCRIPTION_MEMBER_DELIVERY_STREAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DeliveryStreamDescription$DeliveryStreamARN",
+        "com.amazonaws.firehose",
+        "DeliveryStreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeliveryStreamARN",
+    1,
+);
+static DELIVERYSTREAMDESCRIPTION_MEMBER_DELIVERY_STREAM_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DeliveryStreamDescription$DeliveryStreamStatus",
+        "com.amazonaws.firehose",
+        "DeliveryStreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeliveryStreamStatus",
+    2,
+);
+static DELIVERYSTREAMDESCRIPTION_MEMBER_FAILURE_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DeliveryStreamDescription$FailureDescription",
+        "com.amazonaws.firehose",
+        "DeliveryStreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FailureDescription",
+    3,
+);
+static DELIVERYSTREAMDESCRIPTION_MEMBER_DELIVERY_STREAM_ENCRYPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#DeliveryStreamDescription$DeliveryStreamEncryptionConfiguration",
+            "com.amazonaws.firehose",
+            "DeliveryStreamDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DeliveryStreamEncryptionConfiguration",
+        4,
+    );
+static DELIVERYSTREAMDESCRIPTION_MEMBER_DELIVERY_STREAM_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DeliveryStreamDescription$DeliveryStreamType",
+        "com.amazonaws.firehose",
+        "DeliveryStreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeliveryStreamType",
+    5,
+);
+static DELIVERYSTREAMDESCRIPTION_MEMBER_VERSION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DeliveryStreamDescription$VersionId",
+        "com.amazonaws.firehose",
+        "DeliveryStreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VersionId",
+    6,
+);
+static DELIVERYSTREAMDESCRIPTION_MEMBER_CREATE_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DeliveryStreamDescription$CreateTimestamp",
+        "com.amazonaws.firehose",
+        "DeliveryStreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreateTimestamp",
+    7,
+);
+static DELIVERYSTREAMDESCRIPTION_MEMBER_LAST_UPDATE_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DeliveryStreamDescription$LastUpdateTimestamp",
+        "com.amazonaws.firehose",
+        "DeliveryStreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastUpdateTimestamp",
+    8,
+);
+static DELIVERYSTREAMDESCRIPTION_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DeliveryStreamDescription$Source",
+        "com.amazonaws.firehose",
+        "DeliveryStreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Source",
+    9,
+);
+static DELIVERYSTREAMDESCRIPTION_MEMBER_DESTINATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DestinationDescriptionList$member",
+        "com.amazonaws.firehose",
+        "DestinationDescriptionList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DELIVERYSTREAMDESCRIPTION_MEMBER_DESTINATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DeliveryStreamDescription$Destinations",
+        "com.amazonaws.firehose",
+        "DeliveryStreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Destinations",
+    10,
+)
+.with_list_member(&DELIVERYSTREAMDESCRIPTION_MEMBER_DESTINATIONS_MEMBER);
+static DELIVERYSTREAMDESCRIPTION_MEMBER_HAS_MORE_DESTINATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DeliveryStreamDescription$HasMoreDestinations",
+        "com.amazonaws.firehose",
+        "DeliveryStreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "HasMoreDestinations",
+    11,
+);
+static DELIVERYSTREAMDESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DeliveryStreamDescription",
+        "com.amazonaws.firehose",
+        "DeliveryStreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELIVERYSTREAMDESCRIPTION_MEMBER_DELIVERY_STREAM_NAME,
+        &DELIVERYSTREAMDESCRIPTION_MEMBER_DELIVERY_STREAM_ARN,
+        &DELIVERYSTREAMDESCRIPTION_MEMBER_DELIVERY_STREAM_STATUS,
+        &DELIVERYSTREAMDESCRIPTION_MEMBER_FAILURE_DESCRIPTION,
+        &DELIVERYSTREAMDESCRIPTION_MEMBER_DELIVERY_STREAM_ENCRYPTION_CONFIGURATION,
+        &DELIVERYSTREAMDESCRIPTION_MEMBER_DELIVERY_STREAM_TYPE,
+        &DELIVERYSTREAMDESCRIPTION_MEMBER_VERSION_ID,
+        &DELIVERYSTREAMDESCRIPTION_MEMBER_CREATE_TIMESTAMP,
+        &DELIVERYSTREAMDESCRIPTION_MEMBER_LAST_UPDATE_TIMESTAMP,
+        &DELIVERYSTREAMDESCRIPTION_MEMBER_SOURCE,
+        &DELIVERYSTREAMDESCRIPTION_MEMBER_DESTINATIONS,
+        &DELIVERYSTREAMDESCRIPTION_MEMBER_HAS_MORE_DESTINATIONS,
+    ],
+);
+impl DeliveryStreamDescription {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELIVERYSTREAMDESCRIPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeliveryStreamDescription {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.delivery_stream_name;
+            ser.write_string(&DELIVERYSTREAMDESCRIPTION_MEMBER_DELIVERY_STREAM_NAME, val)?;
+        }
+        {
+            let val = &self.delivery_stream_arn;
+            ser.write_string(&DELIVERYSTREAMDESCRIPTION_MEMBER_DELIVERY_STREAM_ARN, val)?;
+        }
+        {
+            let val = &self.delivery_stream_status;
+            ser.write_string(&DELIVERYSTREAMDESCRIPTION_MEMBER_DELIVERY_STREAM_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_description {
+            ser.write_struct(&DELIVERYSTREAMDESCRIPTION_MEMBER_FAILURE_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.delivery_stream_encryption_configuration {
+            ser.write_struct(&DELIVERYSTREAMDESCRIPTION_MEMBER_DELIVERY_STREAM_ENCRYPTION_CONFIGURATION, val)?;
+        }
+        {
+            let val = &self.delivery_stream_type;
+            ser.write_string(&DELIVERYSTREAMDESCRIPTION_MEMBER_DELIVERY_STREAM_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.version_id;
+            ser.write_string(&DELIVERYSTREAMDESCRIPTION_MEMBER_VERSION_ID, val)?;
+        }
+        if let Some(ref val) = self.create_timestamp {
+            ser.write_timestamp(&DELIVERYSTREAMDESCRIPTION_MEMBER_CREATE_TIMESTAMP, val)?;
+        }
+        if let Some(ref val) = self.last_update_timestamp {
+            ser.write_timestamp(&DELIVERYSTREAMDESCRIPTION_MEMBER_LAST_UPDATE_TIMESTAMP, val)?;
+        }
+        if let Some(ref val) = self.source {
+            ser.write_struct(&DELIVERYSTREAMDESCRIPTION_MEMBER_SOURCE, val)?;
+        }
+        {
+            let val = &self.destinations;
+
+            ser.write_list(
+                &DELIVERYSTREAMDESCRIPTION_MEMBER_DESTINATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DestinationDescription::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.has_more_destinations;
+            ser.write_boolean(&DELIVERYSTREAMDESCRIPTION_MEMBER_HAS_MORE_DESTINATIONS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeliveryStreamDescriptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELIVERYSTREAMDESCRIPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.delivery_stream_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.delivery_stream_arn = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.delivery_stream_status = Some(crate::types::DeliveryStreamStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_description = Some(crate::types::FailureDescription::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delivery_stream_encryption_configuration =
+                            Some(crate::types::DeliveryStreamEncryptionConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    self.delivery_stream_type = Some(crate::types::DeliveryStreamType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(6) => {
+                    self.version_id = Some(deser.read_string(member)?);
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_update_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source = Some(crate::types::SourceDescription::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    self.destinations = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::DestinationDescription::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(11) => {
+                    self.has_more_destinations = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeliveryStreamDescription {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.delivery_stream_name = builder.delivery_stream_name.or(Some(String::new()));
+        builder.delivery_stream_arn = builder.delivery_stream_arn.or(Some(String::new()));
+        builder.version_id = builder.version_id.or(Some(String::new()));
+        builder.destinations = builder.destinations.or(Some(Vec::new()));
+        builder.has_more_destinations = builder.has_more_destinations.or(Some(false));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeliveryStreamDescription {
     /// Creates a new builder-style object to manufacture [`DeliveryStreamDescription`](crate::types::DeliveryStreamDescription).
     pub fn builder() -> crate::types::builders::DeliveryStreamDescriptionBuilder {

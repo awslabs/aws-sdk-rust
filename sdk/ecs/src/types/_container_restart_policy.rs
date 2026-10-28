@@ -27,6 +27,136 @@ impl ContainerRestartPolicy {
         self.restart_attempt_period
     }
 }
+static CONTAINERRESTARTPOLICY_MEMBER_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerRestartPolicy$enabled",
+        "com.amazonaws.ecs",
+        "ContainerRestartPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "enabled",
+    0,
+);
+static CONTAINERRESTARTPOLICY_MEMBER_IGNORED_EXIT_CODES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#IntegerList$member", "com.amazonaws.ecs", "IntegerList"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "member",
+    0,
+);
+static CONTAINERRESTARTPOLICY_MEMBER_IGNORED_EXIT_CODES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerRestartPolicy$ignoredExitCodes",
+        "com.amazonaws.ecs",
+        "ContainerRestartPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ignoredExitCodes",
+    1,
+)
+.with_list_member(&CONTAINERRESTARTPOLICY_MEMBER_IGNORED_EXIT_CODES_MEMBER);
+static CONTAINERRESTARTPOLICY_MEMBER_RESTART_ATTEMPT_PERIOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerRestartPolicy$restartAttemptPeriod",
+        "com.amazonaws.ecs",
+        "ContainerRestartPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "restartAttemptPeriod",
+    2,
+);
+static CONTAINERRESTARTPOLICY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerRestartPolicy", "com.amazonaws.ecs", "ContainerRestartPolicy"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTAINERRESTARTPOLICY_MEMBER_ENABLED,
+        &CONTAINERRESTARTPOLICY_MEMBER_IGNORED_EXIT_CODES,
+        &CONTAINERRESTARTPOLICY_MEMBER_RESTART_ATTEMPT_PERIOD,
+    ],
+);
+impl ContainerRestartPolicy {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTAINERRESTARTPOLICY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContainerRestartPolicy {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.enabled;
+            ser.write_boolean(&CONTAINERRESTARTPOLICY_MEMBER_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.ignored_exit_codes {
+            ser.write_list(
+                &CONTAINERRESTARTPOLICY_MEMBER_IGNORED_EXIT_CODES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_integer(&aws_smithy_schema::prelude::INTEGER, *item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.restart_attempt_period {
+            ser.write_integer(&CONTAINERRESTARTPOLICY_MEMBER_RESTART_ATTEMPT_PERIOD, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContainerRestartPolicyBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTAINERRESTARTPOLICY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.enabled = Some(deser.read_boolean(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ignored_exit_codes = Some(deser.read_integer_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.restart_attempt_period = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContainerRestartPolicy {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.enabled = builder.enabled.or(Some(false));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ContainerRestartPolicy {
     /// Creates a new builder-style object to manufacture [`ContainerRestartPolicy`](crate::types::ContainerRestartPolicy).
     pub fn builder() -> crate::types::builders::ContainerRestartPolicyBuilder {

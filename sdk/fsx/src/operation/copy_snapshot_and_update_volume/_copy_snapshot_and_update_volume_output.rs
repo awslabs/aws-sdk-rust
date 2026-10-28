@@ -27,6 +27,156 @@ impl CopySnapshotAndUpdateVolumeOutput {
         self.administrative_actions.as_deref().unwrap_or_default()
     }
 }
+static COPYSNAPSHOTANDUPDATEVOLUMEOUTPUT_MEMBER_VOLUME_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CopySnapshotAndUpdateVolumeOutput$VolumeId",
+        "com.amazonaws.fsx.synthetic",
+        "CopySnapshotAndUpdateVolumeOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeId",
+    0,
+);
+static COPYSNAPSHOTANDUPDATEVOLUMEOUTPUT_MEMBER_LIFECYCLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CopySnapshotAndUpdateVolumeOutput$Lifecycle",
+        "com.amazonaws.fsx.synthetic",
+        "CopySnapshotAndUpdateVolumeOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Lifecycle",
+    1,
+);
+static COPYSNAPSHOTANDUPDATEVOLUMEOUTPUT_MEMBER_ADMINISTRATIVE_ACTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#AdministrativeActions$member",
+            "com.amazonaws.fsx",
+            "AdministrativeActions",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static COPYSNAPSHOTANDUPDATEVOLUMEOUTPUT_MEMBER_ADMINISTRATIVE_ACTIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx.synthetic#CopySnapshotAndUpdateVolumeOutput$AdministrativeActions",
+            "com.amazonaws.fsx.synthetic",
+            "CopySnapshotAndUpdateVolumeOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "AdministrativeActions",
+        2,
+    )
+    .with_list_member(&COPYSNAPSHOTANDUPDATEVOLUMEOUTPUT_MEMBER_ADMINISTRATIVE_ACTIONS_MEMBER);
+static COPYSNAPSHOTANDUPDATEVOLUMEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CopySnapshotAndUpdateVolumeOutput",
+        "com.amazonaws.fsx.synthetic",
+        "CopySnapshotAndUpdateVolumeOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &COPYSNAPSHOTANDUPDATEVOLUMEOUTPUT_MEMBER_VOLUME_ID,
+        &COPYSNAPSHOTANDUPDATEVOLUMEOUTPUT_MEMBER_LIFECYCLE,
+        &COPYSNAPSHOTANDUPDATEVOLUMEOUTPUT_MEMBER_ADMINISTRATIVE_ACTIONS,
+    ],
+)
+.with_original_name("CopySnapshotAndUpdateVolumeResponse");
+impl CopySnapshotAndUpdateVolumeOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COPYSNAPSHOTANDUPDATEVOLUMEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CopySnapshotAndUpdateVolumeOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.volume_id {
+            ser.write_string(&COPYSNAPSHOTANDUPDATEVOLUMEOUTPUT_MEMBER_VOLUME_ID, val)?;
+        }
+        if let Some(ref val) = self.lifecycle {
+            ser.write_string(&COPYSNAPSHOTANDUPDATEVOLUMEOUTPUT_MEMBER_LIFECYCLE, val.as_str())?;
+        }
+        if let Some(ref val) = self.administrative_actions {
+            ser.write_list(
+                &COPYSNAPSHOTANDUPDATEVOLUMEOUTPUT_MEMBER_ADMINISTRATIVE_ACTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AdministrativeAction::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::copy_snapshot_and_update_volume::builders::CopySnapshotAndUpdateVolumeOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COPYSNAPSHOTANDUPDATEVOLUMEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle = Some(crate::types::VolumeLifecycle::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.administrative_actions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AdministrativeAction::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CopySnapshotAndUpdateVolumeOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for CopySnapshotAndUpdateVolumeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

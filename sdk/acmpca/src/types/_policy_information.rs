@@ -22,6 +22,123 @@ impl PolicyInformation {
         self.policy_qualifiers.as_deref().unwrap_or_default()
     }
 }
+static POLICYINFORMATION_MEMBER_CERT_POLICY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#PolicyInformation$CertPolicyId",
+        "com.amazonaws.acmpca",
+        "PolicyInformation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertPolicyId",
+    0,
+);
+static POLICYINFORMATION_MEMBER_POLICY_QUALIFIERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#PolicyQualifierInfoList$member",
+        "com.amazonaws.acmpca",
+        "PolicyQualifierInfoList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static POLICYINFORMATION_MEMBER_POLICY_QUALIFIERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#PolicyInformation$PolicyQualifiers",
+        "com.amazonaws.acmpca",
+        "PolicyInformation",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "PolicyQualifiers",
+    1,
+)
+.with_list_member(&POLICYINFORMATION_MEMBER_POLICY_QUALIFIERS_MEMBER);
+static POLICYINFORMATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#PolicyInformation", "com.amazonaws.acmpca", "PolicyInformation"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&POLICYINFORMATION_MEMBER_CERT_POLICY_ID, &POLICYINFORMATION_MEMBER_POLICY_QUALIFIERS],
+);
+impl PolicyInformation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &POLICYINFORMATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PolicyInformation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.cert_policy_id;
+            ser.write_string(&POLICYINFORMATION_MEMBER_CERT_POLICY_ID, val)?;
+        }
+        if let Some(ref val) = self.policy_qualifiers {
+            ser.write_list(
+                &POLICYINFORMATION_MEMBER_POLICY_QUALIFIERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PolicyQualifierInfo::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PolicyInformationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&POLICYINFORMATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.cert_policy_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.policy_qualifiers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PolicyQualifierInfo::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PolicyInformation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.cert_policy_id = builder.cert_policy_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PolicyInformation {
     /// Creates a new builder-style object to manufacture [`PolicyInformation`](crate::types::PolicyInformation).
     pub fn builder() -> crate::types::builders::PolicyInformationBuilder {

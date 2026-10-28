@@ -23,6 +23,13 @@ impl crate::operation::create_grant::builders::CreateGrantInputBuilder {
 /// Fluent builder constructing a request to `CreateGrant`.
 ///
 /// <p>Creates a grant for the specified license. A grant shares the use of license entitlements with a specific Amazon Web Services account, an organization, or an organizational unit (OU). For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted licenses in License Manager</a> in the <i>License Manager User Guide</i>.</p>
+/// <p>Set the type of grant with the <code>GrantType</code> field:</p>
+/// <ul>
+/// <li>
+/// <p><code>BuyerGrant</code> - The default grant type, created by the seller when a customer subscribes to a product. The seller creates a license for the subscription and a buyer grant for the customer. With a buyer grant, the customer can use, consume, and distribute the license, according to the permissions the seller sets in the product contract.</p></li>
+/// <li>
+/// <p><code>DelegateGrant</code> - A delegate grant gives the grantee read-only visibility into the licenses and grants that you have distributed to buyers for a product. The grantee can monitor that activity on your behalf, and can also listen for the related Amazon EventBridge events. A delegate grant conveys no entitlement to use the licenses, and its only allowed operation is <code>ListReceivedLicenses</code>. You must create the delegate grant, and its license, from the same Amazon Web Services account that you used to create those buyer licenses and grants.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGrantFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -256,5 +263,51 @@ impl CreateGrantFluentBuilder {
     /// <p>Tags to add to the grant. For more information about tagging support in License Manager, see the <a href="https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html">TagResource</a> operation.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
+    }
+    /// <p>The type of grant to create. For more information about each type, see the preceding description of this operation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - The default grant type if you don't specify a value. Conveys the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives the grantee read-only visibility into the licenses and grants that you have distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub fn grant_type(mut self, input: crate::types::GrantType) -> Self {
+        self.inner = self.inner.grant_type(input);
+        self
+    }
+    /// <p>The type of grant to create. For more information about each type, see the preceding description of this operation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - The default grant type if you don't specify a value. Conveys the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives the grantee read-only visibility into the licenses and grants that you have distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub fn set_grant_type(mut self, input: ::std::option::Option<crate::types::GrantType>) -> Self {
+        self.inner = self.inner.set_grant_type(input);
+        self
+    }
+    /// <p>The type of grant to create. For more information about each type, see the preceding description of this operation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - The default grant type if you don't specify a value. Conveys the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives the grantee read-only visibility into the licenses and grants that you have distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub fn get_grant_type(&self) -> &::std::option::Option<crate::types::GrantType> {
+        self.inner.get_grant_type()
+    }
+    /// <p>The options for the grant: the status to set after creation, and how activating the grant affects other active grants for the same product.</p>
+    pub fn options(mut self, input: crate::types::Options) -> Self {
+        self.inner = self.inner.options(input);
+        self
+    }
+    /// <p>The options for the grant: the status to set after creation, and how activating the grant affects other active grants for the same product.</p>
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
+        self.inner = self.inner.set_options(input);
+        self
+    }
+    /// <p>The options for the grant: the status to set after creation, and how activating the grant affects other active grants for the same product.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::Options> {
+        self.inner.get_options()
     }
 }

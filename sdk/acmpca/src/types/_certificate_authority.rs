@@ -107,6 +107,381 @@ impl CertificateAuthority {
         self.usage_mode.as_ref()
     }
 }
+static CERTIFICATEAUTHORITY_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthority$Arn",
+        "com.amazonaws.acmpca",
+        "CertificateAuthority",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    0,
+);
+static CERTIFICATEAUTHORITY_MEMBER_OWNER_ACCOUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthority$OwnerAccount",
+        "com.amazonaws.acmpca",
+        "CertificateAuthority",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OwnerAccount",
+    1,
+);
+static CERTIFICATEAUTHORITY_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthority$CreatedAt",
+        "com.amazonaws.acmpca",
+        "CertificateAuthority",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAt",
+    2,
+);
+static CERTIFICATEAUTHORITY_MEMBER_LAST_STATE_CHANGE_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthority$LastStateChangeAt",
+        "com.amazonaws.acmpca",
+        "CertificateAuthority",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastStateChangeAt",
+    3,
+);
+static CERTIFICATEAUTHORITY_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthority$Type",
+        "com.amazonaws.acmpca",
+        "CertificateAuthority",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    4,
+);
+static CERTIFICATEAUTHORITY_MEMBER_SERIAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthority$Serial",
+        "com.amazonaws.acmpca",
+        "CertificateAuthority",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Serial",
+    5,
+);
+static CERTIFICATEAUTHORITY_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthority$Status",
+        "com.amazonaws.acmpca",
+        "CertificateAuthority",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    6,
+);
+static CERTIFICATEAUTHORITY_MEMBER_NOT_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthority$NotBefore",
+        "com.amazonaws.acmpca",
+        "CertificateAuthority",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "NotBefore",
+    7,
+);
+static CERTIFICATEAUTHORITY_MEMBER_NOT_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthority$NotAfter",
+        "com.amazonaws.acmpca",
+        "CertificateAuthority",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "NotAfter",
+    8,
+);
+static CERTIFICATEAUTHORITY_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthority$FailureReason",
+        "com.amazonaws.acmpca",
+        "CertificateAuthority",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    9,
+);
+static CERTIFICATEAUTHORITY_MEMBER_CERTIFICATE_AUTHORITY_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.acmpca#CertificateAuthority$CertificateAuthorityConfiguration",
+            "com.amazonaws.acmpca",
+            "CertificateAuthority",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "CertificateAuthorityConfiguration",
+        10,
+    );
+static CERTIFICATEAUTHORITY_MEMBER_REVOCATION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthority$RevocationConfiguration",
+        "com.amazonaws.acmpca",
+        "CertificateAuthority",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RevocationConfiguration",
+    11,
+);
+static CERTIFICATEAUTHORITY_MEMBER_RESTORABLE_UNTIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthority$RestorableUntil",
+        "com.amazonaws.acmpca",
+        "CertificateAuthority",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "RestorableUntil",
+    12,
+);
+static CERTIFICATEAUTHORITY_MEMBER_KEY_STORAGE_SECURITY_STANDARD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthority$KeyStorageSecurityStandard",
+        "com.amazonaws.acmpca",
+        "CertificateAuthority",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KeyStorageSecurityStandard",
+    13,
+);
+static CERTIFICATEAUTHORITY_MEMBER_USAGE_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthority$UsageMode",
+        "com.amazonaws.acmpca",
+        "CertificateAuthority",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UsageMode",
+    14,
+);
+static CERTIFICATEAUTHORITY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthority",
+        "com.amazonaws.acmpca",
+        "CertificateAuthority",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CERTIFICATEAUTHORITY_MEMBER_ARN,
+        &CERTIFICATEAUTHORITY_MEMBER_OWNER_ACCOUNT,
+        &CERTIFICATEAUTHORITY_MEMBER_CREATED_AT,
+        &CERTIFICATEAUTHORITY_MEMBER_LAST_STATE_CHANGE_AT,
+        &CERTIFICATEAUTHORITY_MEMBER_TYPE,
+        &CERTIFICATEAUTHORITY_MEMBER_SERIAL,
+        &CERTIFICATEAUTHORITY_MEMBER_STATUS,
+        &CERTIFICATEAUTHORITY_MEMBER_NOT_BEFORE,
+        &CERTIFICATEAUTHORITY_MEMBER_NOT_AFTER,
+        &CERTIFICATEAUTHORITY_MEMBER_FAILURE_REASON,
+        &CERTIFICATEAUTHORITY_MEMBER_CERTIFICATE_AUTHORITY_CONFIGURATION,
+        &CERTIFICATEAUTHORITY_MEMBER_REVOCATION_CONFIGURATION,
+        &CERTIFICATEAUTHORITY_MEMBER_RESTORABLE_UNTIL,
+        &CERTIFICATEAUTHORITY_MEMBER_KEY_STORAGE_SECURITY_STANDARD,
+        &CERTIFICATEAUTHORITY_MEMBER_USAGE_MODE,
+    ],
+);
+impl CertificateAuthority {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CERTIFICATEAUTHORITY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CertificateAuthority {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&CERTIFICATEAUTHORITY_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.owner_account {
+            ser.write_string(&CERTIFICATEAUTHORITY_MEMBER_OWNER_ACCOUNT, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&CERTIFICATEAUTHORITY_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.last_state_change_at {
+            ser.write_timestamp(&CERTIFICATEAUTHORITY_MEMBER_LAST_STATE_CHANGE_AT, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&CERTIFICATEAUTHORITY_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.serial {
+            ser.write_string(&CERTIFICATEAUTHORITY_MEMBER_SERIAL, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&CERTIFICATEAUTHORITY_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.not_before {
+            ser.write_timestamp(&CERTIFICATEAUTHORITY_MEMBER_NOT_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.not_after {
+            ser.write_timestamp(&CERTIFICATEAUTHORITY_MEMBER_NOT_AFTER, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&CERTIFICATEAUTHORITY_MEMBER_FAILURE_REASON, val.as_str())?;
+        }
+        if let Some(ref val) = self.certificate_authority_configuration {
+            ser.write_struct(&CERTIFICATEAUTHORITY_MEMBER_CERTIFICATE_AUTHORITY_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.revocation_configuration {
+            ser.write_struct(&CERTIFICATEAUTHORITY_MEMBER_REVOCATION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.restorable_until {
+            ser.write_timestamp(&CERTIFICATEAUTHORITY_MEMBER_RESTORABLE_UNTIL, val)?;
+        }
+        if let Some(ref val) = self.key_storage_security_standard {
+            ser.write_string(&CERTIFICATEAUTHORITY_MEMBER_KEY_STORAGE_SECURITY_STANDARD, val.as_str())?;
+        }
+        if let Some(ref val) = self.usage_mode {
+            ser.write_string(&CERTIFICATEAUTHORITY_MEMBER_USAGE_MODE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CertificateAuthorityBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CERTIFICATEAUTHORITY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.owner_account = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_state_change_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::CertificateAuthorityType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.serial = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::CertificateAuthorityStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.not_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.not_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(crate::types::FailureReason::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_authority_configuration = Some(crate::types::CertificateAuthorityConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revocation_configuration = Some(crate::types::RevocationConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.restorable_until = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_storage_security_standard =
+                            Some(crate::types::KeyStorageSecurityStandard::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.usage_mode = Some(crate::types::CertificateAuthorityUsageMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CertificateAuthority {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CertificateAuthority {
     /// Creates a new builder-style object to manufacture [`CertificateAuthority`](crate::types::CertificateAuthority).
     pub fn builder() -> crate::types::builders::CertificateAuthorityBuilder {

@@ -159,21 +159,55 @@ pub async fn invoke_with_stop_point(
         let operation_timeout_config =
             MaybeTimeoutConfig::new(&runtime_components, cfg, TimeoutKind::Operation);
         trace!(operation_timeout_config = ?operation_timeout_config);
-        async {
+
+        // Tracks whether an attempt is mid-flight, so that a cancellation originating *outside*
+        // the retry loop (the operation timeout) can still settle that attempt. Declared out here,
+        // outside the cancellation scope, so it survives the cancellation that destroys `try_op`.
+        let mut attempt_in_flight = false;
+
+        let maybe_timeout = async {
             // If running the pre-execution interceptors failed, then we skip running the op and run the
             // final interceptors instead.
             if !ctx.is_failed() {
-                try_op(&mut ctx, cfg, &runtime_components, stop_point).await;
+                try_op(
+                    &mut ctx,
+                    cfg,
+                    &runtime_components,
+                    stop_point,
+                    &mut attempt_in_flight,
+                )
+                .await;
             }
-            finally_op(&mut ctx, cfg, &runtime_components).await;
-            if ctx.is_failed() {
-                Err(ctx.finalize().expect_err("it is failed"))
-            } else {
-                Ok(ctx)
-            }
+            Result::<_, SdkError<Error, HttpResponse>>::Ok(())
         }
         .maybe_timeout(operation_timeout_config)
         .await
+        .map_err(|err| OrchestratorError::timeout(err.into_source().unwrap()));
+
+        // Record a timeout in the context *before* the finalizers run, so that
+        // `modify_before_completion` and `read_after_execution` observe it.
+        continue_on_err!([ctx] => maybe_timeout);
+
+        // An operation timeout cancels `try_op`, and the retry loop -- including its
+        // attempt-level finalizers -- lives inside it. If the cancellation landed while an
+        // attempt was in flight, that attempt still owes `modify_before_attempt_completion`
+        // and `read_after_attempt`, so settle it before completing the execution.
+        if attempt_in_flight {
+            debug!("operation cancelled mid-attempt; running attempt finalizers");
+            finally_attempt(&mut ctx, cfg, &runtime_components)
+                .instrument(debug_span!("finally_attempt", "attempt" = "cancelled"))
+                .await;
+        }
+
+        // Deliberately outside the operation timeout above. These hooks are documented to
+        // ALWAYS run once per execution, so they must not sit inside a cancellation scope.
+        finally_op(&mut ctx, cfg, &runtime_components).await;
+
+        if ctx.is_failed() {
+            Err(ctx.finalize().expect_err("it is failed"))
+        } else {
+            Ok(ctx)
+        }
     }
     .await
 }
@@ -225,6 +259,7 @@ async fn try_op(
     cfg: &mut ConfigBag,
     runtime_components: &RuntimeComponents,
     stop_point: StopPoint,
+    attempt_in_flight: &mut bool,
 ) {
     // Before serialization
     run_interceptors!(halt_on_err: {
@@ -337,13 +372,11 @@ async fn try_op(
         let attempt_timeout_config =
             MaybeTimeoutConfig::new(runtime_components, cfg, TimeoutKind::OperationAttempt);
         trace!(attempt_timeout_config = ?attempt_timeout_config);
+        *attempt_in_flight = true;
         let maybe_timeout = async {
             debug!("beginning attempt #{i}");
             try_attempt(ctx, cfg, runtime_components, stop_point)
                 .instrument(debug_span!("try_attempt", "attempt" = i))
-                .await;
-            finally_attempt(ctx, cfg, runtime_components)
-                .instrument(debug_span!("finally_attempt", "attempt" = i))
                 .await;
             Result::<_, SdkError<Error, HttpResponse>>::Ok(())
         }
@@ -351,8 +384,17 @@ async fn try_op(
         .await
         .map_err(|err| OrchestratorError::timeout(err.into_source().unwrap()));
 
+        // Record a timeout in the context *before* the finalizers run, so that
+        // `modify_before_attempt_completion` and `read_after_attempt` observe it.
         // We continue when encountering a timeout error. The retry classifier will decide what to do with it.
         continue_on_err!([ctx] => maybe_timeout);
+
+        // Deliberately outside the attempt timeout above. These hooks are documented to ALWAYS
+        // run once `read_before_attempt` has executed, so they must not be cancellable.
+        finally_attempt(ctx, cfg, runtime_components)
+            .instrument(debug_span!("finally_attempt", "attempt" = i))
+            .await;
+        *attempt_in_flight = false;
 
         // If we got a retry strategy from the bag, ask it what to do.
         // If no strategy was set, we won't retry.

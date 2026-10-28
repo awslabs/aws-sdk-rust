@@ -40,6 +40,176 @@ impl PutClusterCapacityProvidersInput {
         self.default_capacity_provider_strategy.as_deref().unwrap_or_default()
     }
 }
+static PUTCLUSTERCAPACITYPROVIDERSINPUT_MEMBER_CLUSTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#PutClusterCapacityProvidersInput$cluster",
+        "com.amazonaws.ecs.synthetic",
+        "PutClusterCapacityProvidersInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cluster",
+    0,
+);
+static PUTCLUSTERCAPACITYPROVIDERSINPUT_MEMBER_CAPACITY_PROVIDERS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static PUTCLUSTERCAPACITYPROVIDERSINPUT_MEMBER_CAPACITY_PROVIDERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#PutClusterCapacityProvidersInput$capacityProviders",
+        "com.amazonaws.ecs.synthetic",
+        "PutClusterCapacityProvidersInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "capacityProviders",
+    1,
+)
+.with_list_member(&PUTCLUSTERCAPACITYPROVIDERSINPUT_MEMBER_CAPACITY_PROVIDERS_MEMBER);
+static PUTCLUSTERCAPACITYPROVIDERSINPUT_MEMBER_DEFAULT_CAPACITY_PROVIDER_STRATEGY_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#CapacityProviderStrategy$member",
+            "com.amazonaws.ecs",
+            "CapacityProviderStrategy",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static PUTCLUSTERCAPACITYPROVIDERSINPUT_MEMBER_DEFAULT_CAPACITY_PROVIDER_STRATEGY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs.synthetic#PutClusterCapacityProvidersInput$defaultCapacityProviderStrategy",
+            "com.amazonaws.ecs.synthetic",
+            "PutClusterCapacityProvidersInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "defaultCapacityProviderStrategy",
+        2,
+    )
+    .with_list_member(&PUTCLUSTERCAPACITYPROVIDERSINPUT_MEMBER_DEFAULT_CAPACITY_PROVIDER_STRATEGY_MEMBER);
+static PUTCLUSTERCAPACITYPROVIDERSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#PutClusterCapacityProvidersInput",
+        "com.amazonaws.ecs.synthetic",
+        "PutClusterCapacityProvidersInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTCLUSTERCAPACITYPROVIDERSINPUT_MEMBER_CLUSTER,
+        &PUTCLUSTERCAPACITYPROVIDERSINPUT_MEMBER_CAPACITY_PROVIDERS,
+        &PUTCLUSTERCAPACITYPROVIDERSINPUT_MEMBER_DEFAULT_CAPACITY_PROVIDER_STRATEGY,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutClusterCapacityProvidersRequest");
+impl PutClusterCapacityProvidersInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTCLUSTERCAPACITYPROVIDERSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutClusterCapacityProvidersInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster {
+            ser.write_string(&PUTCLUSTERCAPACITYPROVIDERSINPUT_MEMBER_CLUSTER, val)?;
+        }
+        if let Some(ref val) = self.capacity_providers {
+            ser.write_list(
+                &PUTCLUSTERCAPACITYPROVIDERSINPUT_MEMBER_CAPACITY_PROVIDERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.default_capacity_provider_strategy {
+            ser.write_list(
+                &PUTCLUSTERCAPACITYPROVIDERSINPUT_MEMBER_DEFAULT_CAPACITY_PROVIDER_STRATEGY,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CapacityProviderStrategyItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTCLUSTERCAPACITYPROVIDERSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_providers = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_capacity_provider_strategy = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CapacityProviderStrategyItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutClusterCapacityProvidersInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.cluster = builder.cluster.or(Some(String::new()));
+        builder.capacity_providers = builder.capacity_providers.or(Some(Vec::new()));
+        builder.default_capacity_provider_strategy = builder.default_capacity_provider_strategy.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutClusterCapacityProvidersInput {
     /// Creates a new builder-style object to manufacture [`PutClusterCapacityProvidersInput`](crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersInput).
     pub fn builder() -> crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersInputBuilder {

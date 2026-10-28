@@ -215,6 +215,817 @@ impl CreateUserPoolInput {
         self.acr_configuration.as_ref()
     }
 }
+static CREATEUSERPOOLINPUT_MEMBER_POOL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$PoolName",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PoolName",
+    0,
+);
+static CREATEUSERPOOLINPUT_MEMBER_POLICIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$Policies",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Policies",
+    1,
+);
+static CREATEUSERPOOLINPUT_MEMBER_DELETION_PROTECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$DeletionProtection",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeletionProtection",
+    2,
+);
+static CREATEUSERPOOLINPUT_MEMBER_LAMBDA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$LambdaConfig",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LambdaConfig",
+    3,
+);
+static CREATEUSERPOOLINPUT_MEMBER_AUTO_VERIFIED_ATTRIBUTES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#VerifiedAttributesListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "VerifiedAttributesListType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEUSERPOOLINPUT_MEMBER_AUTO_VERIFIED_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$AutoVerifiedAttributes",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AutoVerifiedAttributes",
+    4,
+)
+.with_list_member(&CREATEUSERPOOLINPUT_MEMBER_AUTO_VERIFIED_ATTRIBUTES_MEMBER);
+static CREATEUSERPOOLINPUT_MEMBER_ALIAS_ATTRIBUTES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AliasAttributesListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "AliasAttributesListType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEUSERPOOLINPUT_MEMBER_ALIAS_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$AliasAttributes",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AliasAttributes",
+    5,
+)
+.with_list_member(&CREATEUSERPOOLINPUT_MEMBER_ALIAS_ATTRIBUTES_MEMBER);
+static CREATEUSERPOOLINPUT_MEMBER_USERNAME_ATTRIBUTES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UsernameAttributesListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "UsernameAttributesListType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEUSERPOOLINPUT_MEMBER_USERNAME_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$UsernameAttributes",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "UsernameAttributes",
+    6,
+)
+.with_list_member(&CREATEUSERPOOLINPUT_MEMBER_USERNAME_ATTRIBUTES_MEMBER);
+static CREATEUSERPOOLINPUT_MEMBER_SMS_VERIFICATION_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$SmsVerificationMessage",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SmsVerificationMessage",
+    7,
+);
+static CREATEUSERPOOLINPUT_MEMBER_EMAIL_VERIFICATION_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$EmailVerificationMessage",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EmailVerificationMessage",
+    8,
+);
+static CREATEUSERPOOLINPUT_MEMBER_EMAIL_VERIFICATION_SUBJECT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$EmailVerificationSubject",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EmailVerificationSubject",
+    9,
+);
+static CREATEUSERPOOLINPUT_MEMBER_VERIFICATION_MESSAGE_TEMPLATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$VerificationMessageTemplate",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VerificationMessageTemplate",
+    10,
+);
+static CREATEUSERPOOLINPUT_MEMBER_SMS_AUTHENTICATION_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$SmsAuthenticationMessage",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SmsAuthenticationMessage",
+    11,
+);
+static CREATEUSERPOOLINPUT_MEMBER_MFA_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$MfaConfiguration",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MfaConfiguration",
+    12,
+);
+static CREATEUSERPOOLINPUT_MEMBER_USER_ATTRIBUTE_UPDATE_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$UserAttributeUpdateSettings",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "UserAttributeUpdateSettings",
+    13,
+);
+static CREATEUSERPOOLINPUT_MEMBER_DEVICE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$DeviceConfiguration",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeviceConfiguration",
+    14,
+);
+static CREATEUSERPOOLINPUT_MEMBER_EMAIL_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$EmailConfiguration",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EmailConfiguration",
+    15,
+);
+static CREATEUSERPOOLINPUT_MEMBER_SMS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$SmsConfiguration",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SmsConfiguration",
+    16,
+);
+static CREATEUSERPOOLINPUT_MEMBER_USER_POOL_TAGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserPoolTagsType$key",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserPoolTagsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEUSERPOOLINPUT_MEMBER_USER_POOL_TAGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserPoolTagsType$value",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserPoolTagsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATEUSERPOOLINPUT_MEMBER_USER_POOL_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$UserPoolTags",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "UserPoolTags",
+    17,
+)
+.with_map_members(
+    &CREATEUSERPOOLINPUT_MEMBER_USER_POOL_TAGS_KEY,
+    &CREATEUSERPOOLINPUT_MEMBER_USER_POOL_TAGS_VALUE,
+);
+static CREATEUSERPOOLINPUT_MEMBER_ADMIN_CREATE_USER_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$AdminCreateUserConfig",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AdminCreateUserConfig",
+    18,
+);
+static CREATEUSERPOOLINPUT_MEMBER_SCHEMA_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SchemaAttributesListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "SchemaAttributesListType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEUSERPOOLINPUT_MEMBER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$Schema",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Schema",
+    19,
+)
+.with_list_member(&CREATEUSERPOOLINPUT_MEMBER_SCHEMA_MEMBER);
+static CREATEUSERPOOLINPUT_MEMBER_USER_POOL_ADD_ONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$UserPoolAddOns",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "UserPoolAddOns",
+    20,
+);
+static CREATEUSERPOOLINPUT_MEMBER_USERNAME_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$UsernameConfiguration",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "UsernameConfiguration",
+    21,
+);
+static CREATEUSERPOOLINPUT_MEMBER_ACCOUNT_RECOVERY_SETTING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$AccountRecoverySetting",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AccountRecoverySetting",
+    22,
+);
+static CREATEUSERPOOLINPUT_MEMBER_USER_POOL_TIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$UserPoolTier",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolTier",
+    23,
+);
+static CREATEUSERPOOLINPUT_MEMBER_KEY_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$KeyConfiguration",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "KeyConfiguration",
+    24,
+);
+static CREATEUSERPOOLINPUT_MEMBER_ISSUER_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$IssuerConfiguration",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "IssuerConfiguration",
+    25,
+);
+static CREATEUSERPOOLINPUT_MEMBER_ACR_CONFIGURATION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AcrConfigurationType$key",
+        "com.amazonaws.cognitoidentityprovider",
+        "AcrConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEUSERPOOLINPUT_MEMBER_ACR_CONFIGURATION_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AcrConfigurationType$value",
+        "com.amazonaws.cognitoidentityprovider",
+        "AcrConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "value",
+    1,
+);
+static CREATEUSERPOOLINPUT_MEMBER_ACR_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput$AcrConfiguration",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "AcrConfiguration",
+    26,
+)
+.with_map_members(
+    &CREATEUSERPOOLINPUT_MEMBER_ACR_CONFIGURATION_KEY,
+    &CREATEUSERPOOLINPUT_MEMBER_ACR_CONFIGURATION_VALUE,
+);
+static CREATEUSERPOOLINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEUSERPOOLINPUT_MEMBER_POOL_NAME,
+        &CREATEUSERPOOLINPUT_MEMBER_POLICIES,
+        &CREATEUSERPOOLINPUT_MEMBER_DELETION_PROTECTION,
+        &CREATEUSERPOOLINPUT_MEMBER_LAMBDA_CONFIG,
+        &CREATEUSERPOOLINPUT_MEMBER_AUTO_VERIFIED_ATTRIBUTES,
+        &CREATEUSERPOOLINPUT_MEMBER_ALIAS_ATTRIBUTES,
+        &CREATEUSERPOOLINPUT_MEMBER_USERNAME_ATTRIBUTES,
+        &CREATEUSERPOOLINPUT_MEMBER_SMS_VERIFICATION_MESSAGE,
+        &CREATEUSERPOOLINPUT_MEMBER_EMAIL_VERIFICATION_MESSAGE,
+        &CREATEUSERPOOLINPUT_MEMBER_EMAIL_VERIFICATION_SUBJECT,
+        &CREATEUSERPOOLINPUT_MEMBER_VERIFICATION_MESSAGE_TEMPLATE,
+        &CREATEUSERPOOLINPUT_MEMBER_SMS_AUTHENTICATION_MESSAGE,
+        &CREATEUSERPOOLINPUT_MEMBER_MFA_CONFIGURATION,
+        &CREATEUSERPOOLINPUT_MEMBER_USER_ATTRIBUTE_UPDATE_SETTINGS,
+        &CREATEUSERPOOLINPUT_MEMBER_DEVICE_CONFIGURATION,
+        &CREATEUSERPOOLINPUT_MEMBER_EMAIL_CONFIGURATION,
+        &CREATEUSERPOOLINPUT_MEMBER_SMS_CONFIGURATION,
+        &CREATEUSERPOOLINPUT_MEMBER_USER_POOL_TAGS,
+        &CREATEUSERPOOLINPUT_MEMBER_ADMIN_CREATE_USER_CONFIG,
+        &CREATEUSERPOOLINPUT_MEMBER_SCHEMA,
+        &CREATEUSERPOOLINPUT_MEMBER_USER_POOL_ADD_ONS,
+        &CREATEUSERPOOLINPUT_MEMBER_USERNAME_CONFIGURATION,
+        &CREATEUSERPOOLINPUT_MEMBER_ACCOUNT_RECOVERY_SETTING,
+        &CREATEUSERPOOLINPUT_MEMBER_USER_POOL_TIER,
+        &CREATEUSERPOOLINPUT_MEMBER_KEY_CONFIGURATION,
+        &CREATEUSERPOOLINPUT_MEMBER_ISSUER_CONFIGURATION,
+        &CREATEUSERPOOLINPUT_MEMBER_ACR_CONFIGURATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateUserPoolRequest");
+impl CreateUserPoolInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEUSERPOOLINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateUserPoolInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pool_name {
+            ser.write_string(&CREATEUSERPOOLINPUT_MEMBER_POOL_NAME, val)?;
+        }
+        if let Some(ref val) = self.policies {
+            ser.write_struct(&CREATEUSERPOOLINPUT_MEMBER_POLICIES, val)?;
+        }
+        if let Some(ref val) = self.deletion_protection {
+            ser.write_string(&CREATEUSERPOOLINPUT_MEMBER_DELETION_PROTECTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.lambda_config {
+            ser.write_struct(&CREATEUSERPOOLINPUT_MEMBER_LAMBDA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.auto_verified_attributes {
+            ser.write_list(
+                &CREATEUSERPOOLINPUT_MEMBER_AUTO_VERIFIED_ATTRIBUTES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.alias_attributes {
+            ser.write_list(
+                &CREATEUSERPOOLINPUT_MEMBER_ALIAS_ATTRIBUTES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.username_attributes {
+            ser.write_list(
+                &CREATEUSERPOOLINPUT_MEMBER_USERNAME_ATTRIBUTES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.sms_verification_message {
+            ser.write_string(&CREATEUSERPOOLINPUT_MEMBER_SMS_VERIFICATION_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.email_verification_message {
+            ser.write_string(&CREATEUSERPOOLINPUT_MEMBER_EMAIL_VERIFICATION_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.email_verification_subject {
+            ser.write_string(&CREATEUSERPOOLINPUT_MEMBER_EMAIL_VERIFICATION_SUBJECT, val)?;
+        }
+        if let Some(ref val) = self.verification_message_template {
+            ser.write_struct(&CREATEUSERPOOLINPUT_MEMBER_VERIFICATION_MESSAGE_TEMPLATE, val)?;
+        }
+        if let Some(ref val) = self.sms_authentication_message {
+            ser.write_string(&CREATEUSERPOOLINPUT_MEMBER_SMS_AUTHENTICATION_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.mfa_configuration {
+            ser.write_string(&CREATEUSERPOOLINPUT_MEMBER_MFA_CONFIGURATION, val.as_str())?;
+        }
+        if let Some(ref val) = self.user_attribute_update_settings {
+            ser.write_struct(&CREATEUSERPOOLINPUT_MEMBER_USER_ATTRIBUTE_UPDATE_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.device_configuration {
+            ser.write_struct(&CREATEUSERPOOLINPUT_MEMBER_DEVICE_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.email_configuration {
+            ser.write_struct(&CREATEUSERPOOLINPUT_MEMBER_EMAIL_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.sms_configuration {
+            ser.write_struct(&CREATEUSERPOOLINPUT_MEMBER_SMS_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.user_pool_tags {
+            ser.write_map(
+                &CREATEUSERPOOLINPUT_MEMBER_USER_POOL_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.admin_create_user_config {
+            ser.write_struct(&CREATEUSERPOOLINPUT_MEMBER_ADMIN_CREATE_USER_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.schema {
+            ser.write_list(
+                &CREATEUSERPOOLINPUT_MEMBER_SCHEMA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::SchemaAttributeType::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.user_pool_add_ons {
+            ser.write_struct(&CREATEUSERPOOLINPUT_MEMBER_USER_POOL_ADD_ONS, val)?;
+        }
+        if let Some(ref val) = self.username_configuration {
+            ser.write_struct(&CREATEUSERPOOLINPUT_MEMBER_USERNAME_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.account_recovery_setting {
+            ser.write_struct(&CREATEUSERPOOLINPUT_MEMBER_ACCOUNT_RECOVERY_SETTING, val)?;
+        }
+        if let Some(ref val) = self.user_pool_tier {
+            ser.write_string(&CREATEUSERPOOLINPUT_MEMBER_USER_POOL_TIER, val.as_str())?;
+        }
+        if let Some(ref val) = self.key_configuration {
+            ser.write_struct(&CREATEUSERPOOLINPUT_MEMBER_KEY_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.issuer_configuration {
+            ser.write_struct(&CREATEUSERPOOLINPUT_MEMBER_ISSUER_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.acr_configuration {
+            ser.write_map(
+                &CREATEUSERPOOLINPUT_MEMBER_ACR_CONFIGURATION,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_struct(crate::types::AcrLevelConfigType::SCHEMA, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_user_pool::builders::CreateUserPoolInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEUSERPOOLINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pool_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.policies = Some(crate::types::UserPoolPolicyType::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deletion_protection = Some(crate::types::DeletionProtectionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lambda_config = Some(crate::types::LambdaConfigType::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_verified_attributes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::VerifiedAttributeType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.alias_attributes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AliasAttributeType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.username_attributes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::UsernameAttributeType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sms_verification_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email_verification_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email_verification_subject = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.verification_message_template = Some(crate::types::VerificationMessageTemplateType::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sms_authentication_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mfa_configuration = Some(crate::types::UserPoolMfaType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_attribute_update_settings = Some(crate::types::UserAttributeUpdateSettingsType::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_configuration = Some(crate::types::DeviceConfigurationType::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email_configuration = Some(crate::types::EmailConfigurationType::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sms_configuration = Some(crate::types::SmsConfigurationType::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_tags = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.admin_create_user_config = Some(crate::types::AdminCreateUserConfigType::deserialize(deser)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.schema = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SchemaAttributeType::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_add_ons = Some(crate::types::UserPoolAddOnsType::deserialize(deser)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.username_configuration = Some(crate::types::UsernameConfigurationType::deserialize(deser)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_recovery_setting = Some(crate::types::AccountRecoverySettingType::deserialize(deser)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_tier = Some(crate::types::UserPoolTierType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_configuration = Some(crate::types::KeyConfigurationType::deserialize(deser)?);
+                    }
+                }
+                Some(25) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.issuer_configuration = Some(crate::types::IssuerConfigurationType::deserialize(deser)?);
+                    }
+                }
+                Some(26) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.acr_configuration = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, crate::types::AcrLevelConfigType::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateUserPoolInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pool_name = builder.pool_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateUserPoolInput {
     /// Creates a new builder-style object to manufacture [`CreateUserPoolInput`](crate::operation::create_user_pool::CreateUserPoolInput).
     pub fn builder() -> crate::operation::create_user_pool::builders::CreateUserPoolInputBuilder {

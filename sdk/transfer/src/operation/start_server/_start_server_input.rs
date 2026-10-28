@@ -12,6 +12,86 @@ impl StartServerInput {
         self.server_id.as_deref()
     }
 }
+static STARTSERVERINPUT_MEMBER_SERVER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#StartServerInput$ServerId",
+        "com.amazonaws.transfer.synthetic",
+        "StartServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServerId",
+    0,
+);
+static STARTSERVERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#StartServerInput",
+        "com.amazonaws.transfer.synthetic",
+        "StartServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&STARTSERVERINPUT_MEMBER_SERVER_ID],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartServerRequest");
+impl StartServerInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTSERVERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartServerInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.server_id {
+            ser.write_string(&STARTSERVERINPUT_MEMBER_SERVER_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_server::builders::StartServerInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTSERVERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.server_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartServerInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.server_id = builder.server_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartServerInput {
     /// Creates a new builder-style object to manufacture [`StartServerInput`](crate::operation::start_server::StartServerInput).
     pub fn builder() -> crate::operation::start_server::builders::StartServerInputBuilder {

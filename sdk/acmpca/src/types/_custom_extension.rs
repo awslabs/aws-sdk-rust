@@ -35,6 +35,111 @@ impl CustomExtension {
         self.critical
     }
 }
+static CUSTOMEXTENSION_MEMBER_OBJECT_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CustomExtension$ObjectIdentifier",
+        "com.amazonaws.acmpca",
+        "CustomExtension",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ObjectIdentifier",
+    0,
+);
+static CUSTOMEXTENSION_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#CustomExtension$Value", "com.amazonaws.acmpca", "CustomExtension"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Value",
+    1,
+);
+static CUSTOMEXTENSION_MEMBER_CRITICAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#CustomExtension$Critical", "com.amazonaws.acmpca", "CustomExtension"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Critical",
+    2,
+);
+static CUSTOMEXTENSION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#CustomExtension", "com.amazonaws.acmpca", "CustomExtension"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CUSTOMEXTENSION_MEMBER_OBJECT_IDENTIFIER,
+        &CUSTOMEXTENSION_MEMBER_VALUE,
+        &CUSTOMEXTENSION_MEMBER_CRITICAL,
+    ],
+);
+impl CustomExtension {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CUSTOMEXTENSION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CustomExtension {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.object_identifier;
+            ser.write_string(&CUSTOMEXTENSION_MEMBER_OBJECT_IDENTIFIER, val)?;
+        }
+        {
+            let val = &self.value;
+            ser.write_string(&CUSTOMEXTENSION_MEMBER_VALUE, val)?;
+        }
+        if let Some(ref val) = self.critical {
+            ser.write_boolean(&CUSTOMEXTENSION_MEMBER_CRITICAL, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CustomExtensionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CUSTOMEXTENSION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.object_identifier = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.value = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.critical = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CustomExtension {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.object_identifier = builder.object_identifier.or(Some(String::new()));
+        builder.value = builder.value.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CustomExtension {
     /// Creates a new builder-style object to manufacture [`CustomExtension`](crate::types::CustomExtension).
     pub fn builder() -> crate::types::builders::CustomExtensionBuilder {

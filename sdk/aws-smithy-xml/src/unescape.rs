@@ -6,6 +6,47 @@
 use crate::decode::XmlDecodeError;
 use std::borrow::Cow;
 
+/// Validate references without allocating or changing the legacy unescape path.
+///
+/// The codec supports the five predefined entities and XML 1.0 character
+/// references. Check the reference grammar as well as the character range:
+/// `char::from_u32` alone also accepts characters forbidden by XML.
+pub(crate) fn validate_references(s: &str) -> Result<(), XmlDecodeError> {
+    for section in s.split('&').skip(1) {
+        let entity = section
+            .split_once(';')
+            .map(|(entity, _)| entity)
+            .ok_or_else(|| XmlDecodeError::invalid_escape("unterminated pattern"))?;
+        if matches!(entity, "lt" | "gt" | "amp" | "quot" | "apos") {
+            continue;
+        }
+        let (digits, radix) = if let Some(digits) = entity.strip_prefix("#x") {
+            (digits, 16)
+        } else if let Some(digits) = entity.strip_prefix('#') {
+            (digits, 10)
+        } else {
+            return Err(XmlDecodeError::invalid_escape(entity));
+        };
+        if digits.is_empty()
+            || !digits.bytes().all(|b| {
+                if radix == 16 {
+                    b.is_ascii_hexdigit()
+                } else {
+                    b.is_ascii_digit()
+                }
+            })
+        {
+            return Err(XmlDecodeError::invalid_escape(entity));
+        }
+        let code = u32::from_str_radix(digits, radix)
+            .map_err(|_| XmlDecodeError::invalid_escape(entity))?;
+        if !matches!(code, 0x9 | 0xA | 0xD | 0x20..=0xD7FF | 0xE000..=0xFFFD | 0x10000..=0x10FFFF) {
+            return Err(XmlDecodeError::invalid_escape(entity));
+        }
+    }
+    Ok(())
+}
+
 /// Unescape XML encoded characters
 ///
 /// This function will unescape the 4 literal escapes:

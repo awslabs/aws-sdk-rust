@@ -19,6 +19,129 @@ impl LimitDefinitionType {
         &self.attributes
     }
 }
+static LIMITDEFINITIONTYPE_MEMBER_LIMIT_CLASS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LimitDefinitionType$LimitClass",
+        "com.amazonaws.cognitoidentityprovider",
+        "LimitDefinitionType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LimitClass",
+    0,
+);
+static LIMITDEFINITIONTYPE_MEMBER_ATTRIBUTES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#StringToStringMapType$key",
+        "com.amazonaws.cognitoidentityprovider",
+        "StringToStringMapType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static LIMITDEFINITIONTYPE_MEMBER_ATTRIBUTES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#StringToStringMapType$value",
+        "com.amazonaws.cognitoidentityprovider",
+        "StringToStringMapType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static LIMITDEFINITIONTYPE_MEMBER_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LimitDefinitionType$Attributes",
+        "com.amazonaws.cognitoidentityprovider",
+        "LimitDefinitionType",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Attributes",
+    1,
+)
+.with_map_members(&LIMITDEFINITIONTYPE_MEMBER_ATTRIBUTES_KEY, &LIMITDEFINITIONTYPE_MEMBER_ATTRIBUTES_VALUE);
+static LIMITDEFINITIONTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LimitDefinitionType",
+        "com.amazonaws.cognitoidentityprovider",
+        "LimitDefinitionType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&LIMITDEFINITIONTYPE_MEMBER_LIMIT_CLASS, &LIMITDEFINITIONTYPE_MEMBER_ATTRIBUTES],
+);
+impl LimitDefinitionType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LIMITDEFINITIONTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LimitDefinitionType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.limit_class;
+            ser.write_string(&LIMITDEFINITIONTYPE_MEMBER_LIMIT_CLASS, val.as_str())?;
+        }
+        {
+            let val = &self.attributes;
+
+            ser.write_map(
+                &LIMITDEFINITIONTYPE_MEMBER_ATTRIBUTES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LimitDefinitionTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LIMITDEFINITIONTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.limit_class = Some(crate::types::LimitClass::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    self.attributes = Some(deser.read_string_string_map(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LimitDefinitionType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.attributes = builder.attributes.or(Some(::std::collections::HashMap::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl LimitDefinitionType {
     /// Creates a new builder-style object to manufacture [`LimitDefinitionType`](crate::types::LimitDefinitionType).
     pub fn builder() -> crate::types::builders::LimitDefinitionTypeBuilder {

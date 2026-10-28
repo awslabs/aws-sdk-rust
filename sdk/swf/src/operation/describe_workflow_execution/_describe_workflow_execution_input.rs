@@ -18,6 +18,109 @@ impl DescribeWorkflowExecutionInput {
         self.execution.as_ref()
     }
 }
+static DESCRIBEWORKFLOWEXECUTIONINPUT_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#DescribeWorkflowExecutionInput$domain",
+        "com.amazonaws.swf.synthetic",
+        "DescribeWorkflowExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domain",
+    0,
+);
+static DESCRIBEWORKFLOWEXECUTIONINPUT_MEMBER_EXECUTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#DescribeWorkflowExecutionInput$execution",
+        "com.amazonaws.swf.synthetic",
+        "DescribeWorkflowExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "execution",
+    1,
+);
+static DESCRIBEWORKFLOWEXECUTIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#DescribeWorkflowExecutionInput",
+        "com.amazonaws.swf.synthetic",
+        "DescribeWorkflowExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEWORKFLOWEXECUTIONINPUT_MEMBER_DOMAIN,
+        &DESCRIBEWORKFLOWEXECUTIONINPUT_MEMBER_EXECUTION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeWorkflowExecutionInput");
+impl DescribeWorkflowExecutionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEWORKFLOWEXECUTIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeWorkflowExecutionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain {
+            ser.write_string(&DESCRIBEWORKFLOWEXECUTIONINPUT_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.execution {
+            ser.write_struct(&DESCRIBEWORKFLOWEXECUTIONINPUT_MEMBER_EXECUTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_workflow_execution::builders::DescribeWorkflowExecutionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEWORKFLOWEXECUTIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution = Some(crate::types::WorkflowExecution::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeWorkflowExecutionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain = builder.domain.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeWorkflowExecutionInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkflowExecutionInput`](crate::operation::describe_workflow_execution::DescribeWorkflowExecutionInput).
     pub fn builder() -> crate::operation::describe_workflow_execution::builders::DescribeWorkflowExecutionInputBuilder {

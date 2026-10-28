@@ -109,6 +109,136 @@ impl AddCustomAttributesInput {
         self.custom_attributes.as_deref().unwrap_or_default()
     }
 }
+static ADDCUSTOMATTRIBUTESINPUT_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AddCustomAttributesInput$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AddCustomAttributesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    0,
+);
+static ADDCUSTOMATTRIBUTESINPUT_MEMBER_CUSTOM_ATTRIBUTES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#CustomAttributesListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "CustomAttributesListType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ADDCUSTOMATTRIBUTESINPUT_MEMBER_CUSTOM_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AddCustomAttributesInput$CustomAttributes",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AddCustomAttributesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CustomAttributes",
+    1,
+)
+.with_list_member(&ADDCUSTOMATTRIBUTESINPUT_MEMBER_CUSTOM_ATTRIBUTES_MEMBER);
+static ADDCUSTOMATTRIBUTESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AddCustomAttributesInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AddCustomAttributesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ADDCUSTOMATTRIBUTESINPUT_MEMBER_USER_POOL_ID,
+        &ADDCUSTOMATTRIBUTESINPUT_MEMBER_CUSTOM_ATTRIBUTES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("AddCustomAttributesRequest");
+impl AddCustomAttributesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ADDCUSTOMATTRIBUTESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AddCustomAttributesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&ADDCUSTOMATTRIBUTESINPUT_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.custom_attributes {
+            ser.write_list(
+                &ADDCUSTOMATTRIBUTESINPUT_MEMBER_CUSTOM_ATTRIBUTES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::SchemaAttributeType::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::add_custom_attributes::builders::AddCustomAttributesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ADDCUSTOMATTRIBUTESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_attributes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SchemaAttributeType::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AddCustomAttributesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_pool_id = builder.user_pool_id.or(Some(String::new()));
+        builder.custom_attributes = builder.custom_attributes.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AddCustomAttributesInput {
     /// Creates a new builder-style object to manufacture [`AddCustomAttributesInput`](crate::operation::add_custom_attributes::AddCustomAttributesInput).
     pub fn builder() -> crate::operation::add_custom_attributes::builders::AddCustomAttributesInputBuilder {

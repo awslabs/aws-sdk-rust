@@ -51,6 +51,179 @@ impl RecommendationTrigger {
         self.recommendation_ids.deref()
     }
 }
+static RECOMMENDATIONTRIGGER_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#RecommendationTrigger$id",
+        "com.amazonaws.wisdom",
+        "RecommendationTrigger",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "id",
+    0,
+);
+static RECOMMENDATIONTRIGGER_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#RecommendationTrigger$type",
+        "com.amazonaws.wisdom",
+        "RecommendationTrigger",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "type",
+    1,
+);
+static RECOMMENDATIONTRIGGER_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#RecommendationTrigger$source",
+        "com.amazonaws.wisdom",
+        "RecommendationTrigger",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "source",
+    2,
+);
+static RECOMMENDATIONTRIGGER_MEMBER_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#RecommendationTrigger$data",
+        "com.amazonaws.wisdom",
+        "RecommendationTrigger",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "data",
+    3,
+);
+static RECOMMENDATIONTRIGGER_MEMBER_RECOMMENDATION_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#RecommendationIdList$member",
+        "com.amazonaws.wisdom",
+        "RecommendationIdList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static RECOMMENDATIONTRIGGER_MEMBER_RECOMMENDATION_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#RecommendationTrigger$recommendationIds",
+        "com.amazonaws.wisdom",
+        "RecommendationTrigger",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "recommendationIds",
+    4,
+)
+.with_list_member(&RECOMMENDATIONTRIGGER_MEMBER_RECOMMENDATION_IDS_MEMBER);
+static RECOMMENDATIONTRIGGER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#RecommendationTrigger",
+        "com.amazonaws.wisdom",
+        "RecommendationTrigger",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RECOMMENDATIONTRIGGER_MEMBER_ID,
+        &RECOMMENDATIONTRIGGER_MEMBER_TYPE,
+        &RECOMMENDATIONTRIGGER_MEMBER_SOURCE,
+        &RECOMMENDATIONTRIGGER_MEMBER_DATA,
+        &RECOMMENDATIONTRIGGER_MEMBER_RECOMMENDATION_IDS,
+    ],
+);
+impl RecommendationTrigger {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RECOMMENDATIONTRIGGER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RecommendationTrigger {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.id;
+            ser.write_string(&RECOMMENDATIONTRIGGER_MEMBER_ID, val)?;
+        }
+        {
+            let val = &self.r#type;
+            ser.write_string(&RECOMMENDATIONTRIGGER_MEMBER_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.source;
+            ser.write_string(&RECOMMENDATIONTRIGGER_MEMBER_SOURCE, val.as_str())?;
+        }
+        if let Some(ref val) = self.data {
+            ser.write_struct(&RECOMMENDATIONTRIGGER_MEMBER_DATA, val)?;
+        }
+        {
+            let val = &self.recommendation_ids;
+
+            ser.write_list(
+                &RECOMMENDATIONTRIGGER_MEMBER_RECOMMENDATION_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RecommendationTriggerBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RECOMMENDATIONTRIGGER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.r#type = Some(crate::types::RecommendationTriggerType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    self.source = Some(crate::types::RecommendationSourceType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data = Some(crate::types::RecommendationTriggerData::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    self.recommendation_ids = Some(deser.read_string_list(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RecommendationTrigger {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.id = builder.id.or(Some(String::new()));
+        builder.recommendation_ids = builder.recommendation_ids.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RecommendationTrigger {
     /// Creates a new builder-style object to manufacture [`RecommendationTrigger`](crate::types::RecommendationTrigger).
     pub fn builder() -> crate::types::builders::RecommendationTriggerBuilder {

@@ -14,6 +14,81 @@ impl KmsEncryptionConfig {
         self.awskms_key_arn.deref()
     }
 }
+static KMSENCRYPTIONCONFIG_MEMBER_AWSKMS_KEY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#KMSEncryptionConfig$AWSKMSKeyARN",
+        "com.amazonaws.firehose",
+        "KMSEncryptionConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AWSKMSKeyARN",
+    0,
+);
+static KMSENCRYPTIONCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#KMSEncryptionConfig",
+        "com.amazonaws.firehose",
+        "KMSEncryptionConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&KMSENCRYPTIONCONFIG_MEMBER_AWSKMS_KEY_ARN],
+);
+impl KmsEncryptionConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &KMSENCRYPTIONCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for KmsEncryptionConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.awskms_key_arn;
+            ser.write_string(&KMSENCRYPTIONCONFIG_MEMBER_AWSKMS_KEY_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::KmsEncryptionConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&KMSENCRYPTIONCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.awskms_key_arn = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl KmsEncryptionConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.awskms_key_arn = builder.awskms_key_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl KmsEncryptionConfig {
     /// Creates a new builder-style object to manufacture [`KmsEncryptionConfig`](crate::types::KmsEncryptionConfig).
     pub fn builder() -> crate::types::builders::KmsEncryptionConfigBuilder {

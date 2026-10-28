@@ -67,6 +67,196 @@ impl DefaultImportClientBrandingAttributes {
         self.login_message.as_ref()
     }
 }
+static DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_LOGO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#DefaultImportClientBrandingAttributes$Logo",
+        "com.amazonaws.workspaces",
+        "DefaultImportClientBrandingAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Blob,
+    "Logo",
+    0,
+);
+static DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_SUPPORT_EMAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#DefaultImportClientBrandingAttributes$SupportEmail",
+        "com.amazonaws.workspaces",
+        "DefaultImportClientBrandingAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SupportEmail",
+    1,
+);
+static DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_SUPPORT_LINK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#DefaultImportClientBrandingAttributes$SupportLink",
+        "com.amazonaws.workspaces",
+        "DefaultImportClientBrandingAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SupportLink",
+    2,
+);
+static DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_FORGOT_PASSWORD_LINK: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces#DefaultImportClientBrandingAttributes$ForgotPasswordLink",
+            "com.amazonaws.workspaces",
+            "DefaultImportClientBrandingAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ForgotPasswordLink",
+        3,
+    );
+static DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_LOGIN_MESSAGE_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#LoginMessage$key", "com.amazonaws.workspaces", "LoginMessage"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_LOGIN_MESSAGE_VALUE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#LoginMessage$value", "com.amazonaws.workspaces", "LoginMessage"),
+        ::aws_smithy_schema::ShapeType::String,
+        "value",
+        1,
+    );
+static DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_LOGIN_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#DefaultImportClientBrandingAttributes$LoginMessage",
+        "com.amazonaws.workspaces",
+        "DefaultImportClientBrandingAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "LoginMessage",
+    4,
+)
+.with_map_members(
+    &DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_LOGIN_MESSAGE_KEY,
+    &DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_LOGIN_MESSAGE_VALUE,
+);
+static DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#DefaultImportClientBrandingAttributes",
+        "com.amazonaws.workspaces",
+        "DefaultImportClientBrandingAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_LOGO,
+        &DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_SUPPORT_EMAIL,
+        &DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_SUPPORT_LINK,
+        &DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_FORGOT_PASSWORD_LINK,
+        &DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_LOGIN_MESSAGE,
+    ],
+);
+impl DefaultImportClientBrandingAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DefaultImportClientBrandingAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.logo {
+            ser.write_blob(&DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_LOGO, val.clone())?;
+        }
+        if let Some(ref val) = self.support_email {
+            ser.write_string(&DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_SUPPORT_EMAIL, val)?;
+        }
+        if let Some(ref val) = self.support_link {
+            ser.write_string(&DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_SUPPORT_LINK, val)?;
+        }
+        if let Some(ref val) = self.forgot_password_link {
+            ser.write_string(&DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_FORGOT_PASSWORD_LINK, val)?;
+        }
+        if let Some(ref val) = self.login_message {
+            ser.write_map(
+                &DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_MEMBER_LOGIN_MESSAGE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DefaultImportClientBrandingAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEFAULTIMPORTCLIENTBRANDINGATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logo = Some(deser.read_blob(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.support_email = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.support_link = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.forgot_password_link = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.login_message = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DefaultImportClientBrandingAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DefaultImportClientBrandingAttributes {
     /// Creates a new builder-style object to manufacture [`DefaultImportClientBrandingAttributes`](crate::types::DefaultImportClientBrandingAttributes).
     pub fn builder() -> crate::types::builders::DefaultImportClientBrandingAttributesBuilder {

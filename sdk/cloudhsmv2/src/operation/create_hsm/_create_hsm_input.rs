@@ -24,6 +24,131 @@ impl CreateHsmInput {
         self.ip_address.as_deref()
     }
 }
+static CREATEHSMINPUT_MEMBER_CLUSTER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#CreateHsmInput$ClusterId",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "CreateHsmInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterId",
+    0,
+);
+static CREATEHSMINPUT_MEMBER_AVAILABILITY_ZONE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#CreateHsmInput$AvailabilityZone",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "CreateHsmInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AvailabilityZone",
+    1,
+);
+static CREATEHSMINPUT_MEMBER_IP_ADDRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#CreateHsmInput$IpAddress",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "CreateHsmInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IpAddress",
+    2,
+);
+static CREATEHSMINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#CreateHsmInput",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "CreateHsmInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEHSMINPUT_MEMBER_CLUSTER_ID,
+        &CREATEHSMINPUT_MEMBER_AVAILABILITY_ZONE,
+        &CREATEHSMINPUT_MEMBER_IP_ADDRESS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateHsmRequest");
+impl CreateHsmInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEHSMINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateHsmInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster_id {
+            ser.write_string(&CREATEHSMINPUT_MEMBER_CLUSTER_ID, val)?;
+        }
+        if let Some(ref val) = self.availability_zone {
+            ser.write_string(&CREATEHSMINPUT_MEMBER_AVAILABILITY_ZONE, val)?;
+        }
+        if let Some(ref val) = self.ip_address {
+            ser.write_string(&CREATEHSMINPUT_MEMBER_IP_ADDRESS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_hsm::builders::CreateHsmInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEHSMINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.availability_zone = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateHsmInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.cluster_id = builder.cluster_id.or(Some(String::new()));
+        builder.availability_zone = builder.availability_zone.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateHsmInput {
     /// Creates a new builder-style object to manufacture [`CreateHsmInput`](crate::operation::create_hsm::CreateHsmInput).
     pub fn builder() -> crate::operation::create_hsm::builders::CreateHsmInputBuilder {

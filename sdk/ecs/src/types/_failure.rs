@@ -25,6 +25,107 @@ impl Failure {
         self.detail.as_deref()
     }
 }
+static FAILURE_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Failure$arn", "com.amazonaws.ecs", "Failure"),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    0,
+);
+static FAILURE_MEMBER_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Failure$reason", "com.amazonaws.ecs", "Failure"),
+    ::aws_smithy_schema::ShapeType::String,
+    "reason",
+    1,
+);
+static FAILURE_MEMBER_DETAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Failure$detail", "com.amazonaws.ecs", "Failure"),
+    ::aws_smithy_schema::ShapeType::String,
+    "detail",
+    2,
+);
+static FAILURE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Failure", "com.amazonaws.ecs", "Failure"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&FAILURE_MEMBER_ARN, &FAILURE_MEMBER_REASON, &FAILURE_MEMBER_DETAIL],
+);
+impl Failure {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FAILURE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Failure {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&FAILURE_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.reason {
+            ser.write_string(&FAILURE_MEMBER_REASON, val)?;
+        }
+        if let Some(ref val) = self.detail {
+            ser.write_string(&FAILURE_MEMBER_DETAIL, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FailureBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FAILURE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.detail = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Failure {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Failure {
     /// Creates a new builder-style object to manufacture [`Failure`](crate::types::Failure).
     pub fn builder() -> crate::types::builders::FailureBuilder {

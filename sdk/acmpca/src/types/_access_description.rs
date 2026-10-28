@@ -19,6 +19,99 @@ impl AccessDescription {
         self.access_location.as_ref()
     }
 }
+static ACCESSDESCRIPTION_MEMBER_ACCESS_METHOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#AccessDescription$AccessMethod",
+        "com.amazonaws.acmpca",
+        "AccessDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AccessMethod",
+    0,
+);
+static ACCESSDESCRIPTION_MEMBER_ACCESS_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#AccessDescription$AccessLocation",
+        "com.amazonaws.acmpca",
+        "AccessDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AccessLocation",
+    1,
+);
+static ACCESSDESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#AccessDescription", "com.amazonaws.acmpca", "AccessDescription"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ACCESSDESCRIPTION_MEMBER_ACCESS_METHOD, &ACCESSDESCRIPTION_MEMBER_ACCESS_LOCATION],
+);
+impl AccessDescription {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACCESSDESCRIPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AccessDescription {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.access_method {
+            ser.write_struct(&ACCESSDESCRIPTION_MEMBER_ACCESS_METHOD, val)?;
+        }
+        if let Some(ref val) = self.access_location {
+            ser.write_struct(&ACCESSDESCRIPTION_MEMBER_ACCESS_LOCATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AccessDescriptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACCESSDESCRIPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_method = Some(crate::types::AccessMethod::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_location = Some(crate::types::GeneralName::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AccessDescription {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AccessDescription {
     /// Creates a new builder-style object to manufacture [`AccessDescription`](crate::types::AccessDescription).
     pub fn builder() -> crate::types::builders::AccessDescriptionBuilder {

@@ -183,6 +183,13 @@ pub(crate) fn de_get_configuration(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "amiConfiguration" => {
+                    builder = builder.set_ami_configuration(crate::protocol_serde::shape_ami_configuration_state::de_ami_configuration_state(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "ec2Configuration" => {
                     builder = builder.set_ec2_configuration(crate::protocol_serde::shape_ec2_configuration_state::de_ec2_configuration_state(
                         tokens,

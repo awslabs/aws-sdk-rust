@@ -25,6 +25,128 @@ impl WorkflowExecutionCancelRequestedEventAttributes {
         self.cause.as_ref()
     }
 }
+static WORKFLOWEXECUTIONCANCELREQUESTEDEVENTATTRIBUTES_MEMBER_EXTERNAL_WORKFLOW_EXECUTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#WorkflowExecutionCancelRequestedEventAttributes$externalWorkflowExecution",
+            "com.amazonaws.swf",
+            "WorkflowExecutionCancelRequestedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "externalWorkflowExecution",
+        0,
+    );
+static WORKFLOWEXECUTIONCANCELREQUESTEDEVENTATTRIBUTES_MEMBER_EXTERNAL_INITIATED_EVENT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#WorkflowExecutionCancelRequestedEventAttributes$externalInitiatedEventId",
+            "com.amazonaws.swf",
+            "WorkflowExecutionCancelRequestedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "externalInitiatedEventId",
+        1,
+    );
+static WORKFLOWEXECUTIONCANCELREQUESTEDEVENTATTRIBUTES_MEMBER_CAUSE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionCancelRequestedEventAttributes$cause",
+        "com.amazonaws.swf",
+        "WorkflowExecutionCancelRequestedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cause",
+    2,
+);
+static WORKFLOWEXECUTIONCANCELREQUESTEDEVENTATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionCancelRequestedEventAttributes",
+        "com.amazonaws.swf",
+        "WorkflowExecutionCancelRequestedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKFLOWEXECUTIONCANCELREQUESTEDEVENTATTRIBUTES_MEMBER_EXTERNAL_WORKFLOW_EXECUTION,
+        &WORKFLOWEXECUTIONCANCELREQUESTEDEVENTATTRIBUTES_MEMBER_EXTERNAL_INITIATED_EVENT_ID,
+        &WORKFLOWEXECUTIONCANCELREQUESTEDEVENTATTRIBUTES_MEMBER_CAUSE,
+    ],
+);
+impl WorkflowExecutionCancelRequestedEventAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKFLOWEXECUTIONCANCELREQUESTEDEVENTATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WorkflowExecutionCancelRequestedEventAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.external_workflow_execution {
+            ser.write_struct(&WORKFLOWEXECUTIONCANCELREQUESTEDEVENTATTRIBUTES_MEMBER_EXTERNAL_WORKFLOW_EXECUTION, val)?;
+        }
+        {
+            let val = &self.external_initiated_event_id;
+            ser.write_long(&WORKFLOWEXECUTIONCANCELREQUESTEDEVENTATTRIBUTES_MEMBER_EXTERNAL_INITIATED_EVENT_ID, *val)?;
+        }
+        if let Some(ref val) = self.cause {
+            ser.write_string(&WORKFLOWEXECUTIONCANCELREQUESTEDEVENTATTRIBUTES_MEMBER_CAUSE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkflowExecutionCancelRequestedEventAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKFLOWEXECUTIONCANCELREQUESTEDEVENTATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_workflow_execution = Some(crate::types::WorkflowExecution::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    self.external_initiated_event_id = Some(deser.read_long(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cause = Some(crate::types::WorkflowExecutionCancelRequestedCause::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WorkflowExecutionCancelRequestedEventAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl WorkflowExecutionCancelRequestedEventAttributes {
     /// Creates a new builder-style object to manufacture [`WorkflowExecutionCancelRequestedEventAttributes`](crate::types::WorkflowExecutionCancelRequestedEventAttributes).
     pub fn builder() -> crate::types::builders::WorkflowExecutionCancelRequestedEventAttributesBuilder {

@@ -14,6 +14,102 @@ impl DescribeDaemonRevisionsInput {
         self.daemon_revision_arns.as_deref().unwrap_or_default()
     }
 }
+static DESCRIBEDAEMONREVISIONSINPUT_MEMBER_DAEMON_REVISION_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static DESCRIBEDAEMONREVISIONSINPUT_MEMBER_DAEMON_REVISION_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DescribeDaemonRevisionsInput$daemonRevisionArns",
+        "com.amazonaws.ecs.synthetic",
+        "DescribeDaemonRevisionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "daemonRevisionArns",
+    0,
+)
+.with_list_member(&DESCRIBEDAEMONREVISIONSINPUT_MEMBER_DAEMON_REVISION_ARNS_MEMBER);
+static DESCRIBEDAEMONREVISIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DescribeDaemonRevisionsInput",
+        "com.amazonaws.ecs.synthetic",
+        "DescribeDaemonRevisionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESCRIBEDAEMONREVISIONSINPUT_MEMBER_DAEMON_REVISION_ARNS],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeDaemonRevisionsRequest");
+impl DescribeDaemonRevisionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEDAEMONREVISIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeDaemonRevisionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.daemon_revision_arns {
+            ser.write_list(
+                &DESCRIBEDAEMONREVISIONSINPUT_MEMBER_DAEMON_REVISION_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_daemon_revisions::builders::DescribeDaemonRevisionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEDAEMONREVISIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.daemon_revision_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeDaemonRevisionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.daemon_revision_arns = builder.daemon_revision_arns.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeDaemonRevisionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDaemonRevisionsInput`](crate::operation::describe_daemon_revisions::DescribeDaemonRevisionsInput).
     pub fn builder() -> crate::operation::describe_daemon_revisions::builders::DescribeDaemonRevisionsInputBuilder {

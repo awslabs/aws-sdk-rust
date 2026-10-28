@@ -17,6 +17,7 @@
 ///     ResourceType::AwsEcrRepository => { /* ... */ },
 ///     ResourceType::AwsLambdaFunction => { /* ... */ },
 ///     ResourceType::CodeRepository => { /* ... */ },
+///     ResourceType::MachineImage => { /* ... */ },
 ///     ResourceType::MicrosoftComputeVirtualMachines => { /* ... */ },
 ///     ResourceType::MicrosoftContainerRegistryRegistryContainerImage => { /* ... */ },
 ///     ResourceType::MicrosoftWebSites => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     CodeRepository,
     #[allow(missing_docs)] // documentation missing in model
+    MachineImage,
+    #[allow(missing_docs)] // documentation missing in model
     MicrosoftComputeVirtualMachines,
     #[allow(missing_docs)] // documentation missing in model
     MicrosoftContainerRegistryRegistryContainerImage,
@@ -76,6 +79,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS_ECR_REPOSITORY" => ResourceType::AwsEcrRepository,
             "AWS_LAMBDA_FUNCTION" => ResourceType::AwsLambdaFunction,
             "CODE_REPOSITORY" => ResourceType::CodeRepository,
+            "MACHINE_IMAGE" => ResourceType::MachineImage,
             "Microsoft.Compute/virtualMachines" => ResourceType::MicrosoftComputeVirtualMachines,
             "Microsoft.ContainerRegistry/registry/containerImage" => ResourceType::MicrosoftContainerRegistryRegistryContainerImage,
             "Microsoft.Web/sites" => ResourceType::MicrosoftWebSites,
@@ -99,6 +103,7 @@ impl ResourceType {
             ResourceType::AwsEcrRepository => "AWS_ECR_REPOSITORY",
             ResourceType::AwsLambdaFunction => "AWS_LAMBDA_FUNCTION",
             ResourceType::CodeRepository => "CODE_REPOSITORY",
+            ResourceType::MachineImage => "MACHINE_IMAGE",
             ResourceType::MicrosoftComputeVirtualMachines => "Microsoft.Compute/virtualMachines",
             ResourceType::MicrosoftContainerRegistryRegistryContainerImage => "Microsoft.ContainerRegistry/registry/containerImage",
             ResourceType::MicrosoftWebSites => "Microsoft.Web/sites",
@@ -113,6 +118,7 @@ impl ResourceType {
             "AWS_ECR_REPOSITORY",
             "AWS_LAMBDA_FUNCTION",
             "CODE_REPOSITORY",
+            "MACHINE_IMAGE",
             "Microsoft.Compute/virtualMachines",
             "Microsoft.ContainerRegistry/registry/containerImage",
             "Microsoft.Web/sites",
@@ -144,6 +150,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::AwsEcrRepository => write!(f, "AWS_ECR_REPOSITORY"),
             ResourceType::AwsLambdaFunction => write!(f, "AWS_LAMBDA_FUNCTION"),
             ResourceType::CodeRepository => write!(f, "CODE_REPOSITORY"),
+            ResourceType::MachineImage => write!(f, "MACHINE_IMAGE"),
             ResourceType::MicrosoftComputeVirtualMachines => write!(f, "Microsoft.Compute/virtualMachines"),
             ResourceType::MicrosoftContainerRegistryRegistryContainerImage => write!(f, "Microsoft.ContainerRegistry/registry/containerImage"),
             ResourceType::MicrosoftWebSites => write!(f, "Microsoft.Web/sites"),

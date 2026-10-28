@@ -69,6 +69,274 @@ impl DomainDescriptionType {
         self.routing.as_ref()
     }
 }
+static DOMAINDESCRIPTIONTYPE_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DomainDescriptionType$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider",
+        "DomainDescriptionType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    0,
+);
+static DOMAINDESCRIPTIONTYPE_MEMBER_AWS_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DomainDescriptionType$AWSAccountId",
+        "com.amazonaws.cognitoidentityprovider",
+        "DomainDescriptionType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AWSAccountId",
+    1,
+);
+static DOMAINDESCRIPTIONTYPE_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DomainDescriptionType$Domain",
+        "com.amazonaws.cognitoidentityprovider",
+        "DomainDescriptionType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Domain",
+    2,
+);
+static DOMAINDESCRIPTIONTYPE_MEMBER_S3_BUCKET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DomainDescriptionType$S3Bucket",
+        "com.amazonaws.cognitoidentityprovider",
+        "DomainDescriptionType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3Bucket",
+    3,
+);
+static DOMAINDESCRIPTIONTYPE_MEMBER_CLOUD_FRONT_DISTRIBUTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DomainDescriptionType$CloudFrontDistribution",
+        "com.amazonaws.cognitoidentityprovider",
+        "DomainDescriptionType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CloudFrontDistribution",
+    4,
+);
+static DOMAINDESCRIPTIONTYPE_MEMBER_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DomainDescriptionType$Version",
+        "com.amazonaws.cognitoidentityprovider",
+        "DomainDescriptionType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Version",
+    5,
+);
+static DOMAINDESCRIPTIONTYPE_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DomainDescriptionType$Status",
+        "com.amazonaws.cognitoidentityprovider",
+        "DomainDescriptionType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    6,
+);
+static DOMAINDESCRIPTIONTYPE_MEMBER_CUSTOM_DOMAIN_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DomainDescriptionType$CustomDomainConfig",
+        "com.amazonaws.cognitoidentityprovider",
+        "DomainDescriptionType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CustomDomainConfig",
+    7,
+);
+static DOMAINDESCRIPTIONTYPE_MEMBER_MANAGED_LOGIN_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DomainDescriptionType$ManagedLoginVersion",
+        "com.amazonaws.cognitoidentityprovider",
+        "DomainDescriptionType",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ManagedLoginVersion",
+    8,
+);
+static DOMAINDESCRIPTIONTYPE_MEMBER_ROUTING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DomainDescriptionType$Routing",
+        "com.amazonaws.cognitoidentityprovider",
+        "DomainDescriptionType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Routing",
+    9,
+);
+static DOMAINDESCRIPTIONTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DomainDescriptionType",
+        "com.amazonaws.cognitoidentityprovider",
+        "DomainDescriptionType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DOMAINDESCRIPTIONTYPE_MEMBER_USER_POOL_ID,
+        &DOMAINDESCRIPTIONTYPE_MEMBER_AWS_ACCOUNT_ID,
+        &DOMAINDESCRIPTIONTYPE_MEMBER_DOMAIN,
+        &DOMAINDESCRIPTIONTYPE_MEMBER_S3_BUCKET,
+        &DOMAINDESCRIPTIONTYPE_MEMBER_CLOUD_FRONT_DISTRIBUTION,
+        &DOMAINDESCRIPTIONTYPE_MEMBER_VERSION,
+        &DOMAINDESCRIPTIONTYPE_MEMBER_STATUS,
+        &DOMAINDESCRIPTIONTYPE_MEMBER_CUSTOM_DOMAIN_CONFIG,
+        &DOMAINDESCRIPTIONTYPE_MEMBER_MANAGED_LOGIN_VERSION,
+        &DOMAINDESCRIPTIONTYPE_MEMBER_ROUTING,
+    ],
+);
+impl DomainDescriptionType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOMAINDESCRIPTIONTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DomainDescriptionType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&DOMAINDESCRIPTIONTYPE_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.aws_account_id {
+            ser.write_string(&DOMAINDESCRIPTIONTYPE_MEMBER_AWS_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.domain {
+            ser.write_string(&DOMAINDESCRIPTIONTYPE_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.s3_bucket {
+            ser.write_string(&DOMAINDESCRIPTIONTYPE_MEMBER_S3_BUCKET, val)?;
+        }
+        if let Some(ref val) = self.cloud_front_distribution {
+            ser.write_string(&DOMAINDESCRIPTIONTYPE_MEMBER_CLOUD_FRONT_DISTRIBUTION, val)?;
+        }
+        if let Some(ref val) = self.version {
+            ser.write_string(&DOMAINDESCRIPTIONTYPE_MEMBER_VERSION, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DOMAINDESCRIPTIONTYPE_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.custom_domain_config {
+            ser.write_struct(&DOMAINDESCRIPTIONTYPE_MEMBER_CUSTOM_DOMAIN_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.managed_login_version {
+            ser.write_integer(&DOMAINDESCRIPTIONTYPE_MEMBER_MANAGED_LOGIN_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.routing {
+            ser.write_struct(&DOMAINDESCRIPTIONTYPE_MEMBER_ROUTING, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DomainDescriptionTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOMAINDESCRIPTIONTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.aws_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_bucket = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_front_distribution = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::DomainStatusType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_domain_config = Some(crate::types::CustomDomainConfigType::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_login_version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.routing = Some(crate::types::RoutingType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DomainDescriptionType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DomainDescriptionType {
     /// Creates a new builder-style object to manufacture [`DomainDescriptionType`](crate::types::DomainDescriptionType).
     pub fn builder() -> crate::types::builders::DomainDescriptionTypeBuilder {

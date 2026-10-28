@@ -36,6 +36,9 @@ where
                         "codeRepository" => {
                             builder = builder.set_code_repository(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "ami" => {
+                            builder = builder.set_ami(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -73,6 +76,9 @@ pub fn ser_auto_enable(
     }
     if let Some(var_3) = &input.code_repository {
         object.key("codeRepository").boolean(*var_3);
+    }
+    if let Some(var_4) = &input.ami {
+        object.key("ami").boolean(*var_4);
     }
     Ok(())
 }

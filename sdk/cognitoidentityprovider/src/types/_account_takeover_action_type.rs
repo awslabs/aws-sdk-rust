@@ -39,6 +39,98 @@ impl AccountTakeoverActionType {
         &self.event_action
     }
 }
+static ACCOUNTTAKEOVERACTIONTYPE_MEMBER_NOTIFY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AccountTakeoverActionType$Notify",
+        "com.amazonaws.cognitoidentityprovider",
+        "AccountTakeoverActionType",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Notify",
+    0,
+);
+static ACCOUNTTAKEOVERACTIONTYPE_MEMBER_EVENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AccountTakeoverActionType$EventAction",
+        "com.amazonaws.cognitoidentityprovider",
+        "AccountTakeoverActionType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EventAction",
+    1,
+);
+static ACCOUNTTAKEOVERACTIONTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AccountTakeoverActionType",
+        "com.amazonaws.cognitoidentityprovider",
+        "AccountTakeoverActionType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ACCOUNTTAKEOVERACTIONTYPE_MEMBER_NOTIFY, &ACCOUNTTAKEOVERACTIONTYPE_MEMBER_EVENT_ACTION],
+);
+impl AccountTakeoverActionType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACCOUNTTAKEOVERACTIONTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AccountTakeoverActionType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.notify;
+            ser.write_boolean(&ACCOUNTTAKEOVERACTIONTYPE_MEMBER_NOTIFY, *val)?;
+        }
+        {
+            let val = &self.event_action;
+            ser.write_string(&ACCOUNTTAKEOVERACTIONTYPE_MEMBER_EVENT_ACTION, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AccountTakeoverActionTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACCOUNTTAKEOVERACTIONTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.notify = Some(deser.read_boolean(member)?);
+                }
+                Some(1) => {
+                    self.event_action = Some(crate::types::AccountTakeoverEventActionType::from(deser.read_string(member)?.as_str()));
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AccountTakeoverActionType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.notify = builder.notify.or(Some(false));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AccountTakeoverActionType {
     /// Creates a new builder-style object to manufacture [`AccountTakeoverActionType`](crate::types::AccountTakeoverActionType).
     pub fn builder() -> crate::types::builders::AccountTakeoverActionTypeBuilder {

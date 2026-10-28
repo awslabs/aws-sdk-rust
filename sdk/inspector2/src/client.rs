@@ -284,6 +284,8 @@ mod get_findings_report_status;
 
 mod get_member;
 
+mod get_on_demand_scan_status;
+
 mod get_sbom_export;
 
 mod list_account_permissions;
@@ -320,6 +322,8 @@ mod list_findings;
 
 mod list_members;
 
+mod list_on_demand_scans;
+
 mod list_tags_for_resource;
 
 mod list_usage_totals;
@@ -335,6 +339,8 @@ mod send_cis_session_telemetry;
 mod start_cis_session;
 
 mod start_code_security_scan;
+
+mod start_on_demand_scan;
 
 mod stop_cis_session;
 

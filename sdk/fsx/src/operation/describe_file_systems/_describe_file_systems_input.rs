@@ -27,6 +27,144 @@ impl DescribeFileSystemsInput {
         self.next_token.as_deref()
     }
 }
+static DESCRIBEFILESYSTEMSINPUT_MEMBER_FILE_SYSTEM_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#FileSystemIds$member", "com.amazonaws.fsx", "FileSystemIds"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEFILESYSTEMSINPUT_MEMBER_FILE_SYSTEM_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DescribeFileSystemsInput$FileSystemIds",
+        "com.amazonaws.fsx.synthetic",
+        "DescribeFileSystemsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "FileSystemIds",
+    0,
+)
+.with_list_member(&DESCRIBEFILESYSTEMSINPUT_MEMBER_FILE_SYSTEM_IDS_MEMBER);
+static DESCRIBEFILESYSTEMSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DescribeFileSystemsInput$MaxResults",
+        "com.amazonaws.fsx.synthetic",
+        "DescribeFileSystemsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    1,
+);
+static DESCRIBEFILESYSTEMSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DescribeFileSystemsInput$NextToken",
+        "com.amazonaws.fsx.synthetic",
+        "DescribeFileSystemsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    2,
+);
+static DESCRIBEFILESYSTEMSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DescribeFileSystemsInput",
+        "com.amazonaws.fsx.synthetic",
+        "DescribeFileSystemsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEFILESYSTEMSINPUT_MEMBER_FILE_SYSTEM_IDS,
+        &DESCRIBEFILESYSTEMSINPUT_MEMBER_MAX_RESULTS,
+        &DESCRIBEFILESYSTEMSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeFileSystemsRequest");
+impl DescribeFileSystemsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEFILESYSTEMSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeFileSystemsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.file_system_ids {
+            ser.write_list(
+                &DESCRIBEFILESYSTEMSINPUT_MEMBER_FILE_SYSTEM_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&DESCRIBEFILESYSTEMSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&DESCRIBEFILESYSTEMSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_file_systems::builders::DescribeFileSystemsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEFILESYSTEMSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeFileSystemsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeFileSystemsInput {
     /// Creates a new builder-style object to manufacture [`DescribeFileSystemsInput`](crate::operation::describe_file_systems::DescribeFileSystemsInput).
     pub fn builder() -> crate::operation::describe_file_systems::builders::DescribeFileSystemsInputBuilder {

@@ -10,6 +10,8 @@ pub struct Destination {
     pub key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the KMS key used to encrypt data when exporting findings.</p>
     pub kms_key_arn: ::std::string::String,
+    /// <p>The Amazon Web Services account ID of the expected owner of the Amazon S3 bucket. If the actual bucket owner does not match, the export request fails.</p>
+    pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl Destination {
     /// <p>The name of the Amazon S3 bucket to export findings to.</p>
@@ -26,6 +28,10 @@ impl Destination {
         use std::ops::Deref;
         self.kms_key_arn.deref()
     }
+    /// <p>The Amazon Web Services account ID of the expected owner of the Amazon S3 bucket. If the actual bucket owner does not match, the export request fails.</p>
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+        self.expected_bucket_owner.as_deref()
+    }
 }
 impl Destination {
     /// Creates a new builder-style object to manufacture [`Destination`](crate::types::Destination).
@@ -41,6 +47,7 @@ pub struct DestinationBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) key_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl DestinationBuilder {
     /// <p>The name of the Amazon S3 bucket to export findings to.</p>
@@ -87,6 +94,20 @@ impl DestinationBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
+    /// <p>The Amazon Web Services account ID of the expected owner of the Amazon S3 bucket. If the actual bucket owner does not match, the export request fails.</p>
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expected_bucket_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID of the expected owner of the Amazon S3 bucket. If the actual bucket owner does not match, the export request fails.</p>
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expected_bucket_owner = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID of the expected owner of the Amazon S3 bucket. If the actual bucket owner does not match, the export request fails.</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
+    }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_name`](crate::types::builders::DestinationBuilder::bucket_name)
@@ -106,6 +127,7 @@ impl DestinationBuilder {
                     "kms_key_arn was not specified but it is required when building Destination",
                 )
             })?,
+            expected_bucket_owner: self.expected_bucket_owner,
         })
     }
 }

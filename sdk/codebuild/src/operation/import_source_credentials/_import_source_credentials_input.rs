@@ -47,6 +47,172 @@ impl ::std::fmt::Debug for ImportSourceCredentialsInput {
         formatter.finish()
     }
 }
+static IMPORTSOURCECREDENTIALSINPUT_MEMBER_USERNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#ImportSourceCredentialsInput$username",
+        "com.amazonaws.codebuild.synthetic",
+        "ImportSourceCredentialsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "username",
+    0,
+);
+static IMPORTSOURCECREDENTIALSINPUT_MEMBER_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#ImportSourceCredentialsInput$token",
+        "com.amazonaws.codebuild.synthetic",
+        "ImportSourceCredentialsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "token",
+    1,
+);
+static IMPORTSOURCECREDENTIALSINPUT_MEMBER_SERVER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#ImportSourceCredentialsInput$serverType",
+        "com.amazonaws.codebuild.synthetic",
+        "ImportSourceCredentialsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serverType",
+    2,
+);
+static IMPORTSOURCECREDENTIALSINPUT_MEMBER_AUTH_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#ImportSourceCredentialsInput$authType",
+        "com.amazonaws.codebuild.synthetic",
+        "ImportSourceCredentialsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "authType",
+    3,
+);
+static IMPORTSOURCECREDENTIALSINPUT_MEMBER_SHOULD_OVERWRITE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#ImportSourceCredentialsInput$shouldOverwrite",
+        "com.amazonaws.codebuild.synthetic",
+        "ImportSourceCredentialsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "shouldOverwrite",
+    4,
+);
+static IMPORTSOURCECREDENTIALSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#ImportSourceCredentialsInput",
+        "com.amazonaws.codebuild.synthetic",
+        "ImportSourceCredentialsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &IMPORTSOURCECREDENTIALSINPUT_MEMBER_USERNAME,
+        &IMPORTSOURCECREDENTIALSINPUT_MEMBER_TOKEN,
+        &IMPORTSOURCECREDENTIALSINPUT_MEMBER_SERVER_TYPE,
+        &IMPORTSOURCECREDENTIALSINPUT_MEMBER_AUTH_TYPE,
+        &IMPORTSOURCECREDENTIALSINPUT_MEMBER_SHOULD_OVERWRITE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ImportSourceCredentialsInput");
+impl ImportSourceCredentialsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &IMPORTSOURCECREDENTIALSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ImportSourceCredentialsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.username {
+            ser.write_string(&IMPORTSOURCECREDENTIALSINPUT_MEMBER_USERNAME, val)?;
+        }
+        if let Some(ref val) = self.token {
+            ser.write_string(&IMPORTSOURCECREDENTIALSINPUT_MEMBER_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.server_type {
+            ser.write_string(&IMPORTSOURCECREDENTIALSINPUT_MEMBER_SERVER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.auth_type {
+            ser.write_string(&IMPORTSOURCECREDENTIALSINPUT_MEMBER_AUTH_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.should_overwrite {
+            ser.write_boolean(&IMPORTSOURCECREDENTIALSINPUT_MEMBER_SHOULD_OVERWRITE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::import_source_credentials::builders::ImportSourceCredentialsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&IMPORTSOURCECREDENTIALSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.username = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.server_type = Some(crate::types::ServerType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auth_type = Some(crate::types::AuthType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.should_overwrite = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ImportSourceCredentialsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.token = builder.token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ImportSourceCredentialsInput {
     /// Creates a new builder-style object to manufacture [`ImportSourceCredentialsInput`](crate::operation::import_source_credentials::ImportSourceCredentialsInput).
     pub fn builder() -> crate::operation::import_source_credentials::builders::ImportSourceCredentialsInputBuilder {

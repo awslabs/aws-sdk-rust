@@ -25,6 +25,127 @@ impl TokenValidityUnitsType {
         self.refresh_token.as_ref()
     }
 }
+static TOKENVALIDITYUNITSTYPE_MEMBER_ACCESS_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#TokenValidityUnitsType$AccessToken",
+        "com.amazonaws.cognitoidentityprovider",
+        "TokenValidityUnitsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccessToken",
+    0,
+);
+static TOKENVALIDITYUNITSTYPE_MEMBER_ID_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#TokenValidityUnitsType$IdToken",
+        "com.amazonaws.cognitoidentityprovider",
+        "TokenValidityUnitsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdToken",
+    1,
+);
+static TOKENVALIDITYUNITSTYPE_MEMBER_REFRESH_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#TokenValidityUnitsType$RefreshToken",
+        "com.amazonaws.cognitoidentityprovider",
+        "TokenValidityUnitsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RefreshToken",
+    2,
+);
+static TOKENVALIDITYUNITSTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#TokenValidityUnitsType",
+        "com.amazonaws.cognitoidentityprovider",
+        "TokenValidityUnitsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TOKENVALIDITYUNITSTYPE_MEMBER_ACCESS_TOKEN,
+        &TOKENVALIDITYUNITSTYPE_MEMBER_ID_TOKEN,
+        &TOKENVALIDITYUNITSTYPE_MEMBER_REFRESH_TOKEN,
+    ],
+);
+impl TokenValidityUnitsType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TOKENVALIDITYUNITSTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TokenValidityUnitsType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.access_token {
+            ser.write_string(&TOKENVALIDITYUNITSTYPE_MEMBER_ACCESS_TOKEN, val.as_str())?;
+        }
+        if let Some(ref val) = self.id_token {
+            ser.write_string(&TOKENVALIDITYUNITSTYPE_MEMBER_ID_TOKEN, val.as_str())?;
+        }
+        if let Some(ref val) = self.refresh_token {
+            ser.write_string(&TOKENVALIDITYUNITSTYPE_MEMBER_REFRESH_TOKEN, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TokenValidityUnitsTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TOKENVALIDITYUNITSTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_token = Some(crate::types::TimeUnitsType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id_token = Some(crate::types::TimeUnitsType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.refresh_token = Some(crate::types::TimeUnitsType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TokenValidityUnitsType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TokenValidityUnitsType {
     /// Creates a new builder-style object to manufacture [`TokenValidityUnitsType`](crate::types::TokenValidityUnitsType).
     pub fn builder() -> crate::types::builders::TokenValidityUnitsTypeBuilder {

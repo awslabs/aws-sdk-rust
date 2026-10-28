@@ -64,6 +64,8 @@ pub struct ImageCriterionRequest {
     /// <p>The watermark criteria that an AMI must match to be allowed. An AMI is allowed if it carries at least one watermark that satisfies an ImageWatermarkFilter. A watermark satisfies a filter when all specified fields in the ImageWatermarkFilter match the corresponding values on the watermark of the AMI.</p>
     /// <p>Maximum: 50 values</p>
     pub image_watermarks: ::std::option::Option<::std::vec::Vec<crate::types::ImageWatermarkFilterRequest>>,
+    /// <p>The Amazon Inspector scan-result criteria that an AMI must meet to be allowed. The criteria can limit the highest finding severity, the number of days since Amazon Inspector last scanned the AMI, and the number of days since Amazon Inspector reported a fix as available.</p>
+    pub scan_result_condition: ::std::option::Option<crate::types::ScanResultConditionRequest>,
 }
 impl ImageCriterionRequest {
     /// <p>The image providers whose images are allowed.</p>
@@ -129,6 +131,10 @@ impl ImageCriterionRequest {
     pub fn image_watermarks(&self) -> &[crate::types::ImageWatermarkFilterRequest] {
         self.image_watermarks.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Inspector scan-result criteria that an AMI must meet to be allowed. The criteria can limit the highest finding severity, the number of days since Amazon Inspector last scanned the AMI, and the number of days since Amazon Inspector reported a fix as available.</p>
+    pub fn scan_result_condition(&self) -> ::std::option::Option<&crate::types::ScanResultConditionRequest> {
+        self.scan_result_condition.as_ref()
+    }
 }
 impl ImageCriterionRequest {
     /// Creates a new builder-style object to manufacture [`ImageCriterionRequest`](crate::types::ImageCriterionRequest).
@@ -147,6 +153,7 @@ pub struct ImageCriterionRequestBuilder {
     pub(crate) deprecation_time_condition: ::std::option::Option<crate::types::DeprecationTimeConditionRequest>,
     pub(crate) creation_date_condition: ::std::option::Option<crate::types::CreationDateConditionRequest>,
     pub(crate) image_watermarks: ::std::option::Option<::std::vec::Vec<crate::types::ImageWatermarkFilterRequest>>,
+    pub(crate) scan_result_condition: ::std::option::Option<crate::types::ScanResultConditionRequest>,
 }
 impl ImageCriterionRequestBuilder {
     /// Appends an item to `image_providers`.
@@ -350,6 +357,20 @@ impl ImageCriterionRequestBuilder {
     pub fn get_image_watermarks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageWatermarkFilterRequest>> {
         &self.image_watermarks
     }
+    /// <p>The Amazon Inspector scan-result criteria that an AMI must meet to be allowed. The criteria can limit the highest finding severity, the number of days since Amazon Inspector last scanned the AMI, and the number of days since Amazon Inspector reported a fix as available.</p>
+    pub fn scan_result_condition(mut self, input: crate::types::ScanResultConditionRequest) -> Self {
+        self.scan_result_condition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon Inspector scan-result criteria that an AMI must meet to be allowed. The criteria can limit the highest finding severity, the number of days since Amazon Inspector last scanned the AMI, and the number of days since Amazon Inspector reported a fix as available.</p>
+    pub fn set_scan_result_condition(mut self, input: ::std::option::Option<crate::types::ScanResultConditionRequest>) -> Self {
+        self.scan_result_condition = input;
+        self
+    }
+    /// <p>The Amazon Inspector scan-result criteria that an AMI must meet to be allowed. The criteria can limit the highest finding severity, the number of days since Amazon Inspector last scanned the AMI, and the number of days since Amazon Inspector reported a fix as available.</p>
+    pub fn get_scan_result_condition(&self) -> &::std::option::Option<crate::types::ScanResultConditionRequest> {
+        &self.scan_result_condition
+    }
     /// Consumes the builder and constructs a [`ImageCriterionRequest`](crate::types::ImageCriterionRequest).
     pub fn build(self) -> crate::types::ImageCriterionRequest {
         crate::types::ImageCriterionRequest {
@@ -359,6 +380,7 @@ impl ImageCriterionRequestBuilder {
             deprecation_time_condition: self.deprecation_time_condition,
             creation_date_condition: self.creation_date_condition,
             image_watermarks: self.image_watermarks,
+            scan_result_condition: self.scan_result_condition,
         }
     }
 }

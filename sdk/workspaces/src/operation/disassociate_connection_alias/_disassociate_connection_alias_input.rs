@@ -12,6 +12,86 @@ impl DisassociateConnectionAliasInput {
         self.alias_id.as_deref()
     }
 }
+static DISASSOCIATECONNECTIONALIASINPUT_MEMBER_ALIAS_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DisassociateConnectionAliasInput$AliasId",
+        "com.amazonaws.workspaces.synthetic",
+        "DisassociateConnectionAliasInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AliasId",
+    0,
+);
+static DISASSOCIATECONNECTIONALIASINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DisassociateConnectionAliasInput",
+        "com.amazonaws.workspaces.synthetic",
+        "DisassociateConnectionAliasInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DISASSOCIATECONNECTIONALIASINPUT_MEMBER_ALIAS_ID],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DisassociateConnectionAliasRequest");
+impl DisassociateConnectionAliasInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DISASSOCIATECONNECTIONALIASINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DisassociateConnectionAliasInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.alias_id {
+            ser.write_string(&DISASSOCIATECONNECTIONALIASINPUT_MEMBER_ALIAS_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DISASSOCIATECONNECTIONALIASINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.alias_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DisassociateConnectionAliasInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.alias_id = builder.alias_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DisassociateConnectionAliasInput {
     /// Creates a new builder-style object to manufacture [`DisassociateConnectionAliasInput`](crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput).
     pub fn builder() -> crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasInputBuilder {

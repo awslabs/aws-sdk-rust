@@ -40,6 +40,8 @@ pub struct Container {
     pub gpu_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of each Neuron device assigned to the container.</p>
     pub neuron_device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The GPU sharing strategy that the task definition specifies for the container. This field is present only for containers whose resource requirements include <code>sharingStrategy</code>.</p>
+    pub gpu_sharing_strategy: ::std::option::Option<crate::types::SharingStrategy>,
 }
 impl Container {
     /// <p>The Amazon Resource Name (ARN) of the container.</p>
@@ -124,6 +126,480 @@ impl Container {
     pub fn neuron_device_ids(&self) -> &[::std::string::String] {
         self.neuron_device_ids.as_deref().unwrap_or_default()
     }
+    /// <p>The GPU sharing strategy that the task definition specifies for the container. This field is present only for containers whose resource requirements include <code>sharingStrategy</code>.</p>
+    pub fn gpu_sharing_strategy(&self) -> ::std::option::Option<&crate::types::SharingStrategy> {
+        self.gpu_sharing_strategy.as_ref()
+    }
+}
+static CONTAINER_MEMBER_CONTAINER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$containerArn", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::String,
+    "containerArn",
+    0,
+);
+static CONTAINER_MEMBER_TASK_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$taskArn", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskArn",
+    1,
+);
+static CONTAINER_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$name", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    2,
+);
+static CONTAINER_MEMBER_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$image", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::String,
+    "image",
+    3,
+);
+static CONTAINER_MEMBER_IMAGE_DIGEST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$imageDigest", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::String,
+    "imageDigest",
+    4,
+);
+static CONTAINER_MEMBER_RUNTIME_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$runtimeId", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::String,
+    "runtimeId",
+    5,
+);
+static CONTAINER_MEMBER_LAST_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$lastStatus", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::String,
+    "lastStatus",
+    6,
+);
+static CONTAINER_MEMBER_EXIT_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$exitCode", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "exitCode",
+    7,
+);
+static CONTAINER_MEMBER_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$reason", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::String,
+    "reason",
+    8,
+);
+static CONTAINER_MEMBER_NETWORK_BINDINGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#NetworkBindings$member", "com.amazonaws.ecs", "NetworkBindings"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINER_MEMBER_NETWORK_BINDINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$networkBindings", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::List,
+    "networkBindings",
+    9,
+)
+.with_list_member(&CONTAINER_MEMBER_NETWORK_BINDINGS_MEMBER);
+static CONTAINER_MEMBER_NETWORK_INTERFACES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#NetworkInterfaces$member", "com.amazonaws.ecs", "NetworkInterfaces"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINER_MEMBER_NETWORK_INTERFACES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$networkInterfaces", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::List,
+    "networkInterfaces",
+    10,
+)
+.with_list_member(&CONTAINER_MEMBER_NETWORK_INTERFACES_MEMBER);
+static CONTAINER_MEMBER_HEALTH_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$healthStatus", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::String,
+    "healthStatus",
+    11,
+);
+static CONTAINER_MEMBER_MANAGED_AGENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ManagedAgents$member", "com.amazonaws.ecs", "ManagedAgents"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINER_MEMBER_MANAGED_AGENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$managedAgents", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::List,
+    "managedAgents",
+    12,
+)
+.with_list_member(&CONTAINER_MEMBER_MANAGED_AGENTS_MEMBER);
+static CONTAINER_MEMBER_CPU: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$cpu", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::String,
+    "cpu",
+    13,
+);
+static CONTAINER_MEMBER_MEMORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$memory", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::String,
+    "memory",
+    14,
+);
+static CONTAINER_MEMBER_MEMORY_RESERVATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$memoryReservation", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::String,
+    "memoryReservation",
+    15,
+);
+static CONTAINER_MEMBER_GPU_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#GpuIds$member", "com.amazonaws.ecs", "GpuIds"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CONTAINER_MEMBER_GPU_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$gpuIds", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::List,
+    "gpuIds",
+    16,
+)
+.with_list_member(&CONTAINER_MEMBER_GPU_IDS_MEMBER);
+static CONTAINER_MEMBER_NEURON_DEVICE_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#NeuronDeviceIds$member", "com.amazonaws.ecs", "NeuronDeviceIds"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CONTAINER_MEMBER_NEURON_DEVICE_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$neuronDeviceIds", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::List,
+    "neuronDeviceIds",
+    17,
+)
+.with_list_member(&CONTAINER_MEMBER_NEURON_DEVICE_IDS_MEMBER);
+static CONTAINER_MEMBER_GPU_SHARING_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container$gpuSharingStrategy", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::Union,
+    "gpuSharingStrategy",
+    18,
+);
+static CONTAINER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Container", "com.amazonaws.ecs", "Container"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTAINER_MEMBER_CONTAINER_ARN,
+        &CONTAINER_MEMBER_TASK_ARN,
+        &CONTAINER_MEMBER_NAME,
+        &CONTAINER_MEMBER_IMAGE,
+        &CONTAINER_MEMBER_IMAGE_DIGEST,
+        &CONTAINER_MEMBER_RUNTIME_ID,
+        &CONTAINER_MEMBER_LAST_STATUS,
+        &CONTAINER_MEMBER_EXIT_CODE,
+        &CONTAINER_MEMBER_REASON,
+        &CONTAINER_MEMBER_NETWORK_BINDINGS,
+        &CONTAINER_MEMBER_NETWORK_INTERFACES,
+        &CONTAINER_MEMBER_HEALTH_STATUS,
+        &CONTAINER_MEMBER_MANAGED_AGENTS,
+        &CONTAINER_MEMBER_CPU,
+        &CONTAINER_MEMBER_MEMORY,
+        &CONTAINER_MEMBER_MEMORY_RESERVATION,
+        &CONTAINER_MEMBER_GPU_IDS,
+        &CONTAINER_MEMBER_NEURON_DEVICE_IDS,
+        &CONTAINER_MEMBER_GPU_SHARING_STRATEGY,
+    ],
+);
+impl Container {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTAINER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Container {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.container_arn {
+            ser.write_string(&CONTAINER_MEMBER_CONTAINER_ARN, val)?;
+        }
+        if let Some(ref val) = self.task_arn {
+            ser.write_string(&CONTAINER_MEMBER_TASK_ARN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&CONTAINER_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.image {
+            ser.write_string(&CONTAINER_MEMBER_IMAGE, val)?;
+        }
+        if let Some(ref val) = self.image_digest {
+            ser.write_string(&CONTAINER_MEMBER_IMAGE_DIGEST, val)?;
+        }
+        if let Some(ref val) = self.runtime_id {
+            ser.write_string(&CONTAINER_MEMBER_RUNTIME_ID, val)?;
+        }
+        if let Some(ref val) = self.last_status {
+            ser.write_string(&CONTAINER_MEMBER_LAST_STATUS, val)?;
+        }
+        if let Some(ref val) = self.exit_code {
+            ser.write_integer(&CONTAINER_MEMBER_EXIT_CODE, *val)?;
+        }
+        if let Some(ref val) = self.reason {
+            ser.write_string(&CONTAINER_MEMBER_REASON, val)?;
+        }
+        if let Some(ref val) = self.network_bindings {
+            ser.write_list(
+                &CONTAINER_MEMBER_NETWORK_BINDINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::NetworkBinding::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.network_interfaces {
+            ser.write_list(
+                &CONTAINER_MEMBER_NETWORK_INTERFACES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::NetworkInterface::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.health_status {
+            ser.write_string(&CONTAINER_MEMBER_HEALTH_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.managed_agents {
+            ser.write_list(
+                &CONTAINER_MEMBER_MANAGED_AGENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ManagedAgent::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.cpu {
+            ser.write_string(&CONTAINER_MEMBER_CPU, val)?;
+        }
+        if let Some(ref val) = self.memory {
+            ser.write_string(&CONTAINER_MEMBER_MEMORY, val)?;
+        }
+        if let Some(ref val) = self.memory_reservation {
+            ser.write_string(&CONTAINER_MEMBER_MEMORY_RESERVATION, val)?;
+        }
+        if let Some(ref val) = self.gpu_ids {
+            ser.write_list(&CONTAINER_MEMBER_GPU_IDS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.neuron_device_ids {
+            ser.write_list(
+                &CONTAINER_MEMBER_NEURON_DEVICE_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.gpu_sharing_strategy {
+            ser.write_struct(&CONTAINER_MEMBER_GPU_SHARING_STRATEGY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContainerBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTAINER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_digest = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.runtime_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.exit_code = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_bindings = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::NetworkBinding::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_interfaces = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::NetworkInterface::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_status = Some(crate::types::HealthStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_agents = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ManagedAgent::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cpu = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.memory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.memory_reservation = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gpu_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.neuron_device_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gpu_sharing_strategy = Some(crate::types::SharingStrategy::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Container {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
 }
 impl Container {
     /// Creates a new builder-style object to manufacture [`Container`](crate::types::Container).
@@ -154,6 +630,7 @@ pub struct ContainerBuilder {
     pub(crate) memory_reservation: ::std::option::Option<::std::string::String>,
     pub(crate) gpu_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) neuron_device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) gpu_sharing_strategy: ::std::option::Option<crate::types::SharingStrategy>,
 }
 impl ContainerBuilder {
     /// <p>The Amazon Resource Name (ARN) of the container.</p>
@@ -438,6 +915,20 @@ impl ContainerBuilder {
     pub fn get_neuron_device_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.neuron_device_ids
     }
+    /// <p>The GPU sharing strategy that the task definition specifies for the container. This field is present only for containers whose resource requirements include <code>sharingStrategy</code>.</p>
+    pub fn gpu_sharing_strategy(mut self, input: crate::types::SharingStrategy) -> Self {
+        self.gpu_sharing_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The GPU sharing strategy that the task definition specifies for the container. This field is present only for containers whose resource requirements include <code>sharingStrategy</code>.</p>
+    pub fn set_gpu_sharing_strategy(mut self, input: ::std::option::Option<crate::types::SharingStrategy>) -> Self {
+        self.gpu_sharing_strategy = input;
+        self
+    }
+    /// <p>The GPU sharing strategy that the task definition specifies for the container. This field is present only for containers whose resource requirements include <code>sharingStrategy</code>.</p>
+    pub fn get_gpu_sharing_strategy(&self) -> &::std::option::Option<crate::types::SharingStrategy> {
+        &self.gpu_sharing_strategy
+    }
     /// Consumes the builder and constructs a [`Container`](crate::types::Container).
     pub fn build(self) -> crate::types::Container {
         crate::types::Container {
@@ -459,6 +950,7 @@ impl ContainerBuilder {
             memory_reservation: self.memory_reservation,
             gpu_ids: self.gpu_ids,
             neuron_device_ids: self.neuron_device_ids,
+            gpu_sharing_strategy: self.gpu_sharing_strategy,
         }
     }
 }

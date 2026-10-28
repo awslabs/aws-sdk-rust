@@ -18,6 +18,105 @@ impl UpdateWorkspaceBundleInput {
         self.image_id.as_deref()
     }
 }
+static UPDATEWORKSPACEBUNDLEINPUT_MEMBER_BUNDLE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#UpdateWorkspaceBundleInput$BundleId",
+        "com.amazonaws.workspaces.synthetic",
+        "UpdateWorkspaceBundleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BundleId",
+    0,
+);
+static UPDATEWORKSPACEBUNDLEINPUT_MEMBER_IMAGE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#UpdateWorkspaceBundleInput$ImageId",
+        "com.amazonaws.workspaces.synthetic",
+        "UpdateWorkspaceBundleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageId",
+    1,
+);
+static UPDATEWORKSPACEBUNDLEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#UpdateWorkspaceBundleInput",
+        "com.amazonaws.workspaces.synthetic",
+        "UpdateWorkspaceBundleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&UPDATEWORKSPACEBUNDLEINPUT_MEMBER_BUNDLE_ID, &UPDATEWORKSPACEBUNDLEINPUT_MEMBER_IMAGE_ID],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateWorkspaceBundleRequest");
+impl UpdateWorkspaceBundleInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEWORKSPACEBUNDLEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateWorkspaceBundleInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.bundle_id {
+            ser.write_string(&UPDATEWORKSPACEBUNDLEINPUT_MEMBER_BUNDLE_ID, val)?;
+        }
+        if let Some(ref val) = self.image_id {
+            ser.write_string(&UPDATEWORKSPACEBUNDLEINPUT_MEMBER_IMAGE_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEWORKSPACEBUNDLEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bundle_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateWorkspaceBundleInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateWorkspaceBundleInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceBundleInput`](crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput).
     pub fn builder() -> crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleInputBuilder {

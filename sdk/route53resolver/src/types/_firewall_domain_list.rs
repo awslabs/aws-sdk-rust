@@ -80,6 +80,316 @@ impl FirewallDomainList {
         self.managed_list_type.as_ref()
     }
 }
+static FIREWALLDOMAINLIST_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallDomainList$Id",
+        "com.amazonaws.route53resolver",
+        "FirewallDomainList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    0,
+);
+static FIREWALLDOMAINLIST_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallDomainList$Arn",
+        "com.amazonaws.route53resolver",
+        "FirewallDomainList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    1,
+);
+static FIREWALLDOMAINLIST_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallDomainList$Name",
+        "com.amazonaws.route53resolver",
+        "FirewallDomainList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    2,
+);
+static FIREWALLDOMAINLIST_MEMBER_DOMAIN_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallDomainList$DomainCount",
+        "com.amazonaws.route53resolver",
+        "FirewallDomainList",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DomainCount",
+    3,
+);
+static FIREWALLDOMAINLIST_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallDomainList$Status",
+        "com.amazonaws.route53resolver",
+        "FirewallDomainList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    4,
+);
+static FIREWALLDOMAINLIST_MEMBER_STATUS_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallDomainList$StatusMessage",
+        "com.amazonaws.route53resolver",
+        "FirewallDomainList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusMessage",
+    5,
+);
+static FIREWALLDOMAINLIST_MEMBER_MANAGED_OWNER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallDomainList$ManagedOwnerName",
+        "com.amazonaws.route53resolver",
+        "FirewallDomainList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ManagedOwnerName",
+    6,
+);
+static FIREWALLDOMAINLIST_MEMBER_CREATOR_REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallDomainList$CreatorRequestId",
+        "com.amazonaws.route53resolver",
+        "FirewallDomainList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreatorRequestId",
+    7,
+);
+static FIREWALLDOMAINLIST_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallDomainList$CreationTime",
+        "com.amazonaws.route53resolver",
+        "FirewallDomainList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreationTime",
+    8,
+);
+static FIREWALLDOMAINLIST_MEMBER_MODIFICATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallDomainList$ModificationTime",
+        "com.amazonaws.route53resolver",
+        "FirewallDomainList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModificationTime",
+    9,
+);
+static FIREWALLDOMAINLIST_MEMBER_CATEGORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallDomainList$Category",
+        "com.amazonaws.route53resolver",
+        "FirewallDomainList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Category",
+    10,
+);
+static FIREWALLDOMAINLIST_MEMBER_MANAGED_LIST_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallDomainList$ManagedListType",
+        "com.amazonaws.route53resolver",
+        "FirewallDomainList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ManagedListType",
+    11,
+);
+static FIREWALLDOMAINLIST_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallDomainList",
+        "com.amazonaws.route53resolver",
+        "FirewallDomainList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FIREWALLDOMAINLIST_MEMBER_ID,
+        &FIREWALLDOMAINLIST_MEMBER_ARN,
+        &FIREWALLDOMAINLIST_MEMBER_NAME,
+        &FIREWALLDOMAINLIST_MEMBER_DOMAIN_COUNT,
+        &FIREWALLDOMAINLIST_MEMBER_STATUS,
+        &FIREWALLDOMAINLIST_MEMBER_STATUS_MESSAGE,
+        &FIREWALLDOMAINLIST_MEMBER_MANAGED_OWNER_NAME,
+        &FIREWALLDOMAINLIST_MEMBER_CREATOR_REQUEST_ID,
+        &FIREWALLDOMAINLIST_MEMBER_CREATION_TIME,
+        &FIREWALLDOMAINLIST_MEMBER_MODIFICATION_TIME,
+        &FIREWALLDOMAINLIST_MEMBER_CATEGORY,
+        &FIREWALLDOMAINLIST_MEMBER_MANAGED_LIST_TYPE,
+    ],
+);
+impl FirewallDomainList {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FIREWALLDOMAINLIST_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FirewallDomainList {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&FIREWALLDOMAINLIST_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&FIREWALLDOMAINLIST_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&FIREWALLDOMAINLIST_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.domain_count {
+            ser.write_integer(&FIREWALLDOMAINLIST_MEMBER_DOMAIN_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&FIREWALLDOMAINLIST_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_message {
+            ser.write_string(&FIREWALLDOMAINLIST_MEMBER_STATUS_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.managed_owner_name {
+            ser.write_string(&FIREWALLDOMAINLIST_MEMBER_MANAGED_OWNER_NAME, val)?;
+        }
+        if let Some(ref val) = self.creator_request_id {
+            ser.write_string(&FIREWALLDOMAINLIST_MEMBER_CREATOR_REQUEST_ID, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_string(&FIREWALLDOMAINLIST_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.modification_time {
+            ser.write_string(&FIREWALLDOMAINLIST_MEMBER_MODIFICATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.category {
+            ser.write_string(&FIREWALLDOMAINLIST_MEMBER_CATEGORY, val)?;
+        }
+        if let Some(ref val) = self.managed_list_type {
+            ser.write_string(&FIREWALLDOMAINLIST_MEMBER_MANAGED_LIST_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FirewallDomainListBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FIREWALLDOMAINLIST_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::FirewallDomainListStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_owner_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creator_request_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.modification_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.category = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_list_type = Some(crate::types::DomainListType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FirewallDomainList {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FirewallDomainList {
     /// Creates a new builder-style object to manufacture [`FirewallDomainList`](crate::types::FirewallDomainList).
     pub fn builder() -> crate::types::builders::FirewallDomainListBuilder {

@@ -20,6 +20,110 @@ impl DescribeResourceServerInput {
         self.identifier.as_deref()
     }
 }
+static DESCRIBERESOURCESERVERINPUT_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#DescribeResourceServerInput$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "DescribeResourceServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    0,
+);
+static DESCRIBERESOURCESERVERINPUT_MEMBER_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#DescribeResourceServerInput$Identifier",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "DescribeResourceServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Identifier",
+    1,
+);
+static DESCRIBERESOURCESERVERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#DescribeResourceServerInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "DescribeResourceServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBERESOURCESERVERINPUT_MEMBER_USER_POOL_ID,
+        &DESCRIBERESOURCESERVERINPUT_MEMBER_IDENTIFIER,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeResourceServerRequest");
+impl DescribeResourceServerInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBERESOURCESERVERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeResourceServerInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&DESCRIBERESOURCESERVERINPUT_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.identifier {
+            ser.write_string(&DESCRIBERESOURCESERVERINPUT_MEMBER_IDENTIFIER, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_resource_server::builders::DescribeResourceServerInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBERESOURCESERVERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeResourceServerInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_pool_id = builder.user_pool_id.or(Some(String::new()));
+        builder.identifier = builder.identifier.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeResourceServerInput {
     /// Creates a new builder-style object to manufacture [`DescribeResourceServerInput`](crate::operation::describe_resource_server::DescribeResourceServerInput).
     pub fn builder() -> crate::operation::describe_resource_server::builders::DescribeResourceServerInputBuilder {

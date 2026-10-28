@@ -45,6 +45,215 @@ impl Filters {
         self.managed_by.as_ref()
     }
 }
+static FILTERS_MEMBER_EXTENDED_KEY_USAGE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#ExtendedKeyUsageFilterList$member",
+        "com.amazonaws.acm",
+        "ExtendedKeyUsageFilterList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static FILTERS_MEMBER_EXTENDED_KEY_USAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#Filters$extendedKeyUsage", "com.amazonaws.acm", "Filters"),
+    ::aws_smithy_schema::ShapeType::List,
+    "extendedKeyUsage",
+    0,
+)
+.with_list_member(&FILTERS_MEMBER_EXTENDED_KEY_USAGE_MEMBER);
+static FILTERS_MEMBER_KEY_USAGE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#KeyUsageFilterList$member", "com.amazonaws.acm", "KeyUsageFilterList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static FILTERS_MEMBER_KEY_USAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#Filters$keyUsage", "com.amazonaws.acm", "Filters"),
+    ::aws_smithy_schema::ShapeType::List,
+    "keyUsage",
+    1,
+)
+.with_list_member(&FILTERS_MEMBER_KEY_USAGE_MEMBER);
+static FILTERS_MEMBER_KEY_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#KeyAlgorithmList$member", "com.amazonaws.acm", "KeyAlgorithmList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static FILTERS_MEMBER_KEY_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#Filters$keyTypes", "com.amazonaws.acm", "Filters"),
+    ::aws_smithy_schema::ShapeType::List,
+    "keyTypes",
+    2,
+)
+.with_list_member(&FILTERS_MEMBER_KEY_TYPES_MEMBER);
+static FILTERS_MEMBER_EXPORT_OPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#Filters$exportOption", "com.amazonaws.acm", "Filters"),
+    ::aws_smithy_schema::ShapeType::String,
+    "exportOption",
+    3,
+);
+static FILTERS_MEMBER_MANAGED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#Filters$managedBy", "com.amazonaws.acm", "Filters"),
+    ::aws_smithy_schema::ShapeType::String,
+    "managedBy",
+    4,
+);
+static FILTERS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#Filters", "com.amazonaws.acm", "Filters"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FILTERS_MEMBER_EXTENDED_KEY_USAGE,
+        &FILTERS_MEMBER_KEY_USAGE,
+        &FILTERS_MEMBER_KEY_TYPES,
+        &FILTERS_MEMBER_EXPORT_OPTION,
+        &FILTERS_MEMBER_MANAGED_BY,
+    ],
+);
+impl Filters {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FILTERS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Filters {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.extended_key_usage {
+            ser.write_list(
+                &FILTERS_MEMBER_EXTENDED_KEY_USAGE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.key_usage {
+            ser.write_list(&FILTERS_MEMBER_KEY_USAGE, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.key_types {
+            ser.write_list(&FILTERS_MEMBER_KEY_TYPES, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.export_option {
+            ser.write_string(&FILTERS_MEMBER_EXPORT_OPTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.managed_by {
+            ser.write_string(&FILTERS_MEMBER_MANAGED_BY, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FiltersBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FILTERS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.extended_key_usage = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ExtendedKeyUsageName::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_usage = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::KeyUsageName::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::KeyAlgorithm::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.export_option = Some(crate::types::CertificateExport::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_by = Some(crate::types::CertificateManagedBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Filters {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Filters {
     /// Creates a new builder-style object to manufacture [`Filters`](crate::types::Filters).
     pub fn builder() -> crate::types::builders::FiltersBuilder {

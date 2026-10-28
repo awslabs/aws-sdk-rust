@@ -33,6 +33,122 @@ impl OpenZfsClientConfiguration {
         self.options.as_deref().unwrap_or_default()
     }
 }
+static OPENZFSCLIENTCONFIGURATION_MEMBER_CLIENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OpenZFSClientConfiguration$Clients",
+        "com.amazonaws.fsx",
+        "OpenZFSClientConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Clients",
+    0,
+);
+static OPENZFSCLIENTCONFIGURATION_MEMBER_OPTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OpenZFSNfsExportOptions$member",
+        "com.amazonaws.fsx",
+        "OpenZFSNfsExportOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static OPENZFSCLIENTCONFIGURATION_MEMBER_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OpenZFSClientConfiguration$Options",
+        "com.amazonaws.fsx",
+        "OpenZFSClientConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Options",
+    1,
+)
+.with_list_member(&OPENZFSCLIENTCONFIGURATION_MEMBER_OPTIONS_MEMBER);
+static OPENZFSCLIENTCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OpenZFSClientConfiguration",
+        "com.amazonaws.fsx",
+        "OpenZFSClientConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&OPENZFSCLIENTCONFIGURATION_MEMBER_CLIENTS, &OPENZFSCLIENTCONFIGURATION_MEMBER_OPTIONS],
+);
+impl OpenZfsClientConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OPENZFSCLIENTCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OpenZfsClientConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.clients {
+            ser.write_string(&OPENZFSCLIENTCONFIGURATION_MEMBER_CLIENTS, val)?;
+        }
+        if let Some(ref val) = self.options {
+            ser.write_list(
+                &OPENZFSCLIENTCONFIGURATION_MEMBER_OPTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OpenZfsClientConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&OPENZFSCLIENTCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.clients = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.options = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OpenZfsClientConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl OpenZfsClientConfiguration {
     /// Creates a new builder-style object to manufacture [`OpenZfsClientConfiguration`](crate::types::OpenZfsClientConfiguration).
     pub fn builder() -> crate::types::builders::OpenZfsClientConfigurationBuilder {

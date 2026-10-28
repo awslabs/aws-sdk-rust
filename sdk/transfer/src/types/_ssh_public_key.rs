@@ -29,6 +29,117 @@ impl SshPublicKey {
         self.ssh_public_key_id.deref()
     }
 }
+static SSHPUBLICKEY_MEMBER_DATE_IMPORTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#SshPublicKey$DateImported",
+        "com.amazonaws.transfer",
+        "SshPublicKey",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "DateImported",
+    0,
+);
+static SSHPUBLICKEY_MEMBER_SSH_PUBLIC_KEY_BODY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#SshPublicKey$SshPublicKeyBody",
+        "com.amazonaws.transfer",
+        "SshPublicKey",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SshPublicKeyBody",
+    1,
+);
+static SSHPUBLICKEY_MEMBER_SSH_PUBLIC_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#SshPublicKey$SshPublicKeyId",
+        "com.amazonaws.transfer",
+        "SshPublicKey",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SshPublicKeyId",
+    2,
+);
+static SSHPUBLICKEY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#SshPublicKey", "com.amazonaws.transfer", "SshPublicKey"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SSHPUBLICKEY_MEMBER_DATE_IMPORTED,
+        &SSHPUBLICKEY_MEMBER_SSH_PUBLIC_KEY_BODY,
+        &SSHPUBLICKEY_MEMBER_SSH_PUBLIC_KEY_ID,
+    ],
+);
+impl SshPublicKey {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SSHPUBLICKEY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SshPublicKey {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.date_imported;
+            ser.write_timestamp(&SSHPUBLICKEY_MEMBER_DATE_IMPORTED, val)?;
+        }
+        {
+            let val = &self.ssh_public_key_body;
+            ser.write_string(&SSHPUBLICKEY_MEMBER_SSH_PUBLIC_KEY_BODY, val)?;
+        }
+        {
+            let val = &self.ssh_public_key_id;
+            ser.write_string(&SSHPUBLICKEY_MEMBER_SSH_PUBLIC_KEY_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SshPublicKeyBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SSHPUBLICKEY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.date_imported = Some(deser.read_timestamp(member)?);
+                }
+                Some(1) => {
+                    self.ssh_public_key_body = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.ssh_public_key_id = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SshPublicKey {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.date_imported = builder.date_imported.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.ssh_public_key_body = builder.ssh_public_key_body.or(Some(String::new()));
+        builder.ssh_public_key_id = builder.ssh_public_key_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SshPublicKey {
     /// Creates a new builder-style object to manufacture [`SshPublicKey`](crate::types::SshPublicKey).
     pub fn builder() -> crate::types::builders::SshPublicKeyBuilder {

@@ -64,6 +64,190 @@ impl ::std::fmt::Debug for UpdateUserAttributesInput {
         formatter.finish()
     }
 }
+static UPDATEUSERATTRIBUTESINPUT_MEMBER_USER_ATTRIBUTES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AttributeListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "AttributeListType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEUSERATTRIBUTESINPUT_MEMBER_USER_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateUserAttributesInput$UserAttributes",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateUserAttributesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "UserAttributes",
+    0,
+)
+.with_list_member(&UPDATEUSERATTRIBUTESINPUT_MEMBER_USER_ATTRIBUTES_MEMBER);
+static UPDATEUSERATTRIBUTESINPUT_MEMBER_ACCESS_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateUserAttributesInput$AccessToken",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateUserAttributesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccessToken",
+    1,
+);
+static UPDATEUSERATTRIBUTESINPUT_MEMBER_CLIENT_METADATA_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ClientMetadataType$key",
+        "com.amazonaws.cognitoidentityprovider",
+        "ClientMetadataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static UPDATEUSERATTRIBUTESINPUT_MEMBER_CLIENT_METADATA_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ClientMetadataType$value",
+        "com.amazonaws.cognitoidentityprovider",
+        "ClientMetadataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static UPDATEUSERATTRIBUTESINPUT_MEMBER_CLIENT_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateUserAttributesInput$ClientMetadata",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateUserAttributesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "ClientMetadata",
+    2,
+)
+.with_map_members(
+    &UPDATEUSERATTRIBUTESINPUT_MEMBER_CLIENT_METADATA_KEY,
+    &UPDATEUSERATTRIBUTESINPUT_MEMBER_CLIENT_METADATA_VALUE,
+);
+static UPDATEUSERATTRIBUTESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateUserAttributesInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateUserAttributesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEUSERATTRIBUTESINPUT_MEMBER_USER_ATTRIBUTES,
+        &UPDATEUSERATTRIBUTESINPUT_MEMBER_ACCESS_TOKEN,
+        &UPDATEUSERATTRIBUTESINPUT_MEMBER_CLIENT_METADATA,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateUserAttributesRequest");
+impl UpdateUserAttributesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEUSERATTRIBUTESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateUserAttributesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_attributes {
+            ser.write_list(
+                &UPDATEUSERATTRIBUTESINPUT_MEMBER_USER_ATTRIBUTES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AttributeType::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.access_token {
+            ser.write_string(&UPDATEUSERATTRIBUTESINPUT_MEMBER_ACCESS_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.client_metadata {
+            ser.write_map(
+                &UPDATEUSERATTRIBUTESINPUT_MEMBER_CLIENT_METADATA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_user_attributes::builders::UpdateUserAttributesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEUSERATTRIBUTESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_attributes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AttributeType::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_metadata = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateUserAttributesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_attributes = builder.user_attributes.or(Some(Vec::new()));
+        builder.access_token = builder.access_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateUserAttributesInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserAttributesInput`](crate::operation::update_user_attributes::UpdateUserAttributesInput).
     pub fn builder() -> crate::operation::update_user_attributes::builders::UpdateUserAttributesInputBuilder {

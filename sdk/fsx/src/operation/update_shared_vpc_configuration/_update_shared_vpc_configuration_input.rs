@@ -18,6 +18,112 @@ impl UpdateSharedVpcConfigurationInput {
         self.client_request_token.as_deref()
     }
 }
+static UPDATESHAREDVPCCONFIGURATIONINPUT_MEMBER_ENABLE_FSX_ROUTE_TABLE_UPDATES_FROM_PARTICIPANT_ACCOUNTS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx.synthetic#UpdateSharedVpcConfigurationInput$EnableFsxRouteTableUpdatesFromParticipantAccounts",
+            "com.amazonaws.fsx.synthetic",
+            "UpdateSharedVpcConfigurationInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "EnableFsxRouteTableUpdatesFromParticipantAccounts",
+        0,
+    );
+static UPDATESHAREDVPCCONFIGURATIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#UpdateSharedVpcConfigurationInput$ClientRequestToken",
+        "com.amazonaws.fsx.synthetic",
+        "UpdateSharedVpcConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    1,
+);
+static UPDATESHAREDVPCCONFIGURATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#UpdateSharedVpcConfigurationInput",
+        "com.amazonaws.fsx.synthetic",
+        "UpdateSharedVpcConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATESHAREDVPCCONFIGURATIONINPUT_MEMBER_ENABLE_FSX_ROUTE_TABLE_UPDATES_FROM_PARTICIPANT_ACCOUNTS,
+        &UPDATESHAREDVPCCONFIGURATIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateSharedVpcConfigurationRequest");
+impl UpdateSharedVpcConfigurationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATESHAREDVPCCONFIGURATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateSharedVpcConfigurationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.enable_fsx_route_table_updates_from_participant_accounts {
+            ser.write_string(
+                &UPDATESHAREDVPCCONFIGURATIONINPUT_MEMBER_ENABLE_FSX_ROUTE_TABLE_UPDATES_FROM_PARTICIPANT_ACCOUNTS,
+                val,
+            )?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&UPDATESHAREDVPCCONFIGURATIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_shared_vpc_configuration::builders::UpdateSharedVpcConfigurationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATESHAREDVPCCONFIGURATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_fsx_route_table_updates_from_participant_accounts = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateSharedVpcConfigurationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateSharedVpcConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateSharedVpcConfigurationInput`](crate::operation::update_shared_vpc_configuration::UpdateSharedVpcConfigurationInput).
     pub fn builder() -> crate::operation::update_shared_vpc_configuration::builders::UpdateSharedVpcConfigurationInputBuilder {

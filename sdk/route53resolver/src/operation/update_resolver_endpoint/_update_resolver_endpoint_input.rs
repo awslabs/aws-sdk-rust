@@ -136,6 +136,313 @@ impl UpdateResolverEndpointInput {
         self.ipv6_internet_access_enabled
     }
 }
+static UPDATERESOLVERENDPOINTINPUT_MEMBER_RESOLVER_ENDPOINT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#UpdateResolverEndpointInput$ResolverEndpointId",
+        "com.amazonaws.route53resolver.synthetic",
+        "UpdateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResolverEndpointId",
+    0,
+);
+static UPDATERESOLVERENDPOINTINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#UpdateResolverEndpointInput$Name",
+        "com.amazonaws.route53resolver.synthetic",
+        "UpdateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static UPDATERESOLVERENDPOINTINPUT_MEMBER_RESOLVER_ENDPOINT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#UpdateResolverEndpointInput$ResolverEndpointType",
+        "com.amazonaws.route53resolver.synthetic",
+        "UpdateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResolverEndpointType",
+    2,
+);
+static UPDATERESOLVERENDPOINTINPUT_MEMBER_UPDATE_IP_ADDRESSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#UpdateIpAddresses$member",
+        "com.amazonaws.route53resolver",
+        "UpdateIpAddresses",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATERESOLVERENDPOINTINPUT_MEMBER_UPDATE_IP_ADDRESSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#UpdateResolverEndpointInput$UpdateIpAddresses",
+        "com.amazonaws.route53resolver.synthetic",
+        "UpdateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "UpdateIpAddresses",
+    3,
+)
+.with_list_member(&UPDATERESOLVERENDPOINTINPUT_MEMBER_UPDATE_IP_ADDRESSES_MEMBER);
+static UPDATERESOLVERENDPOINTINPUT_MEMBER_PROTOCOLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ProtocolList$member",
+        "com.amazonaws.route53resolver",
+        "ProtocolList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATERESOLVERENDPOINTINPUT_MEMBER_PROTOCOLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#UpdateResolverEndpointInput$Protocols",
+        "com.amazonaws.route53resolver.synthetic",
+        "UpdateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Protocols",
+    4,
+)
+.with_list_member(&UPDATERESOLVERENDPOINTINPUT_MEMBER_PROTOCOLS_MEMBER);
+static UPDATERESOLVERENDPOINTINPUT_MEMBER_RNI_ENHANCED_METRICS_ENABLED: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.route53resolver.synthetic#UpdateResolverEndpointInput$RniEnhancedMetricsEnabled",
+            "com.amazonaws.route53resolver.synthetic",
+            "UpdateResolverEndpointInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "RniEnhancedMetricsEnabled",
+        5,
+    );
+static UPDATERESOLVERENDPOINTINPUT_MEMBER_TARGET_NAME_SERVER_METRICS_ENABLED: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.route53resolver.synthetic#UpdateResolverEndpointInput$TargetNameServerMetricsEnabled",
+            "com.amazonaws.route53resolver.synthetic",
+            "UpdateResolverEndpointInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "TargetNameServerMetricsEnabled",
+        6,
+    );
+static UPDATERESOLVERENDPOINTINPUT_MEMBER_DNS64_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#UpdateResolverEndpointInput$Dns64Enabled",
+        "com.amazonaws.route53resolver.synthetic",
+        "UpdateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Dns64Enabled",
+    7,
+);
+static UPDATERESOLVERENDPOINTINPUT_MEMBER_IPV6_INTERNET_ACCESS_ENABLED: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.route53resolver.synthetic#UpdateResolverEndpointInput$Ipv6InternetAccessEnabled",
+            "com.amazonaws.route53resolver.synthetic",
+            "UpdateResolverEndpointInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "Ipv6InternetAccessEnabled",
+        8,
+    );
+static UPDATERESOLVERENDPOINTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#UpdateResolverEndpointInput",
+        "com.amazonaws.route53resolver.synthetic",
+        "UpdateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATERESOLVERENDPOINTINPUT_MEMBER_RESOLVER_ENDPOINT_ID,
+        &UPDATERESOLVERENDPOINTINPUT_MEMBER_NAME,
+        &UPDATERESOLVERENDPOINTINPUT_MEMBER_RESOLVER_ENDPOINT_TYPE,
+        &UPDATERESOLVERENDPOINTINPUT_MEMBER_UPDATE_IP_ADDRESSES,
+        &UPDATERESOLVERENDPOINTINPUT_MEMBER_PROTOCOLS,
+        &UPDATERESOLVERENDPOINTINPUT_MEMBER_RNI_ENHANCED_METRICS_ENABLED,
+        &UPDATERESOLVERENDPOINTINPUT_MEMBER_TARGET_NAME_SERVER_METRICS_ENABLED,
+        &UPDATERESOLVERENDPOINTINPUT_MEMBER_DNS64_ENABLED,
+        &UPDATERESOLVERENDPOINTINPUT_MEMBER_IPV6_INTERNET_ACCESS_ENABLED,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateResolverEndpointRequest");
+impl UpdateResolverEndpointInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATERESOLVERENDPOINTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateResolverEndpointInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resolver_endpoint_id {
+            ser.write_string(&UPDATERESOLVERENDPOINTINPUT_MEMBER_RESOLVER_ENDPOINT_ID, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&UPDATERESOLVERENDPOINTINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.resolver_endpoint_type {
+            ser.write_string(&UPDATERESOLVERENDPOINTINPUT_MEMBER_RESOLVER_ENDPOINT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.update_ip_addresses {
+            ser.write_list(
+                &UPDATERESOLVERENDPOINTINPUT_MEMBER_UPDATE_IP_ADDRESSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::UpdateIpAddress::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.protocols {
+            ser.write_list(
+                &UPDATERESOLVERENDPOINTINPUT_MEMBER_PROTOCOLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.rni_enhanced_metrics_enabled {
+            ser.write_boolean(&UPDATERESOLVERENDPOINTINPUT_MEMBER_RNI_ENHANCED_METRICS_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.target_name_server_metrics_enabled {
+            ser.write_boolean(&UPDATERESOLVERENDPOINTINPUT_MEMBER_TARGET_NAME_SERVER_METRICS_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.dns64_enabled {
+            ser.write_boolean(&UPDATERESOLVERENDPOINTINPUT_MEMBER_DNS64_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.ipv6_internet_access_enabled {
+            ser.write_boolean(&UPDATERESOLVERENDPOINTINPUT_MEMBER_IPV6_INTERNET_ACCESS_ENABLED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_resolver_endpoint::builders::UpdateResolverEndpointInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATERESOLVERENDPOINTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolver_endpoint_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolver_endpoint_type = Some(crate::types::ResolverEndpointType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.update_ip_addresses = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::UpdateIpAddress::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocols = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Protocol::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rni_enhanced_metrics_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_name_server_metrics_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns64_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ipv6_internet_access_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateResolverEndpointInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.resolver_endpoint_id = builder.resolver_endpoint_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateResolverEndpointInput {
     /// Creates a new builder-style object to manufacture [`UpdateResolverEndpointInput`](crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput).
     pub fn builder() -> crate::operation::update_resolver_endpoint::builders::UpdateResolverEndpointInputBuilder {

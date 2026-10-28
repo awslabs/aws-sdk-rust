@@ -33,6 +33,132 @@ impl ::std::fmt::Debug for DescribeManagedLoginBrandingByClientInput {
         formatter.finish()
     }
 }
+static DESCRIBEMANAGEDLOGINBRANDINGBYCLIENTINPUT_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#DescribeManagedLoginBrandingByClientInput$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "DescribeManagedLoginBrandingByClientInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    0,
+);
+static DESCRIBEMANAGEDLOGINBRANDINGBYCLIENTINPUT_MEMBER_CLIENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#DescribeManagedLoginBrandingByClientInput$ClientId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "DescribeManagedLoginBrandingByClientInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientId",
+    1,
+);
+static DESCRIBEMANAGEDLOGINBRANDINGBYCLIENTINPUT_MEMBER_RETURN_MERGED_RESOURCES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentityprovider.synthetic#DescribeManagedLoginBrandingByClientInput$ReturnMergedResources",
+            "com.amazonaws.cognitoidentityprovider.synthetic",
+            "DescribeManagedLoginBrandingByClientInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "ReturnMergedResources",
+        2,
+    );
+static DESCRIBEMANAGEDLOGINBRANDINGBYCLIENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#DescribeManagedLoginBrandingByClientInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "DescribeManagedLoginBrandingByClientInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEMANAGEDLOGINBRANDINGBYCLIENTINPUT_MEMBER_USER_POOL_ID,
+        &DESCRIBEMANAGEDLOGINBRANDINGBYCLIENTINPUT_MEMBER_CLIENT_ID,
+        &DESCRIBEMANAGEDLOGINBRANDINGBYCLIENTINPUT_MEMBER_RETURN_MERGED_RESOURCES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeManagedLoginBrandingByClientRequest");
+impl DescribeManagedLoginBrandingByClientInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEMANAGEDLOGINBRANDINGBYCLIENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeManagedLoginBrandingByClientInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&DESCRIBEMANAGEDLOGINBRANDINGBYCLIENTINPUT_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.client_id {
+            ser.write_string(&DESCRIBEMANAGEDLOGINBRANDINGBYCLIENTINPUT_MEMBER_CLIENT_ID, val)?;
+        }
+        if let Some(ref val) = self.return_merged_resources {
+            ser.write_boolean(&DESCRIBEMANAGEDLOGINBRANDINGBYCLIENTINPUT_MEMBER_RETURN_MERGED_RESOURCES, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_managed_login_branding_by_client::builders::DescribeManagedLoginBrandingByClientInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEMANAGEDLOGINBRANDINGBYCLIENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.return_merged_resources = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeManagedLoginBrandingByClientInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_pool_id = builder.user_pool_id.or(Some(String::new()));
+        builder.client_id = builder.client_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeManagedLoginBrandingByClientInput {
     /// Creates a new builder-style object to manufacture [`DescribeManagedLoginBrandingByClientInput`](crate::operation::describe_managed_login_branding_by_client::DescribeManagedLoginBrandingByClientInput).
     pub fn builder() -> crate::operation::describe_managed_login_branding_by_client::builders::DescribeManagedLoginBrandingByClientInputBuilder {

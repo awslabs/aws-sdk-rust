@@ -47,6 +47,13 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "machineImage" => {
+                            builder = builder.set_machine_image(crate::protocol_serde::shape_machine_image_details::de_machine_image_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "vm" => {
                             builder = builder.set_vm(crate::protocol_serde::shape_vm::de_vm(tokens, _value, depth + 1)?);
                         }

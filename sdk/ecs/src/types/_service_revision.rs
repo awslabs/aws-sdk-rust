@@ -162,6 +162,674 @@ impl ServiceRevision {
         self.monitoring.as_ref()
     }
 }
+static SERVICEREVISION_MEMBER_SERVICE_REVISION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceRevision$serviceRevisionArn",
+        "com.amazonaws.ecs",
+        "ServiceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceRevisionArn",
+    0,
+);
+static SERVICEREVISION_MEMBER_SERVICE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRevision$serviceArn", "com.amazonaws.ecs", "ServiceRevision"),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceArn",
+    1,
+);
+static SERVICEREVISION_MEMBER_CLUSTER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRevision$clusterArn", "com.amazonaws.ecs", "ServiceRevision"),
+    ::aws_smithy_schema::ShapeType::String,
+    "clusterArn",
+    2,
+);
+static SERVICEREVISION_MEMBER_TASK_DEFINITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRevision$taskDefinition", "com.amazonaws.ecs", "ServiceRevision"),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskDefinition",
+    3,
+);
+static SERVICEREVISION_MEMBER_CAPACITY_PROVIDER_STRATEGY_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#CapacityProviderStrategy$member",
+        "com.amazonaws.ecs",
+        "CapacityProviderStrategy",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SERVICEREVISION_MEMBER_CAPACITY_PROVIDER_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceRevision$capacityProviderStrategy",
+        "com.amazonaws.ecs",
+        "ServiceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "capacityProviderStrategy",
+    4,
+)
+.with_list_member(&SERVICEREVISION_MEMBER_CAPACITY_PROVIDER_STRATEGY_MEMBER);
+static SERVICEREVISION_MEMBER_LAUNCH_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRevision$launchType", "com.amazonaws.ecs", "ServiceRevision"),
+    ::aws_smithy_schema::ShapeType::String,
+    "launchType",
+    5,
+);
+static SERVICEREVISION_MEMBER_PLATFORM_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceRevision$platformVersion",
+        "com.amazonaws.ecs",
+        "ServiceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "platformVersion",
+    6,
+);
+static SERVICEREVISION_MEMBER_PLATFORM_FAMILY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRevision$platformFamily", "com.amazonaws.ecs", "ServiceRevision"),
+    ::aws_smithy_schema::ShapeType::String,
+    "platformFamily",
+    7,
+);
+static SERVICEREVISION_MEMBER_LOAD_BALANCERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#LoadBalancers$member", "com.amazonaws.ecs", "LoadBalancers"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SERVICEREVISION_MEMBER_LOAD_BALANCERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRevision$loadBalancers", "com.amazonaws.ecs", "ServiceRevision"),
+    ::aws_smithy_schema::ShapeType::List,
+    "loadBalancers",
+    8,
+)
+.with_list_member(&SERVICEREVISION_MEMBER_LOAD_BALANCERS_MEMBER);
+static SERVICEREVISION_MEMBER_SERVICE_REGISTRIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRegistries$member", "com.amazonaws.ecs", "ServiceRegistries"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SERVICEREVISION_MEMBER_SERVICE_REGISTRIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceRevision$serviceRegistries",
+        "com.amazonaws.ecs",
+        "ServiceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "serviceRegistries",
+    9,
+)
+.with_list_member(&SERVICEREVISION_MEMBER_SERVICE_REGISTRIES_MEMBER);
+static SERVICEREVISION_MEMBER_NETWORK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceRevision$networkConfiguration",
+        "com.amazonaws.ecs",
+        "ServiceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "networkConfiguration",
+    10,
+);
+static SERVICEREVISION_MEMBER_CONTAINER_IMAGES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerImages$member", "com.amazonaws.ecs", "ContainerImages"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SERVICEREVISION_MEMBER_CONTAINER_IMAGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceRevision$containerImages",
+        "com.amazonaws.ecs",
+        "ServiceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "containerImages",
+    11,
+)
+.with_list_member(&SERVICEREVISION_MEMBER_CONTAINER_IMAGES_MEMBER);
+static SERVICEREVISION_MEMBER_GUARD_DUTY_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceRevision$guardDutyEnabled",
+        "com.amazonaws.ecs",
+        "ServiceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "guardDutyEnabled",
+    12,
+);
+static SERVICEREVISION_MEMBER_SERVICE_CONNECT_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceRevision$serviceConnectConfiguration",
+        "com.amazonaws.ecs",
+        "ServiceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "serviceConnectConfiguration",
+    13,
+);
+static SERVICEREVISION_MEMBER_VOLUME_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceVolumeConfigurations$member",
+        "com.amazonaws.ecs",
+        "ServiceVolumeConfigurations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SERVICEREVISION_MEMBER_VOLUME_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceRevision$volumeConfigurations",
+        "com.amazonaws.ecs",
+        "ServiceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "volumeConfigurations",
+    14,
+)
+.with_list_member(&SERVICEREVISION_MEMBER_VOLUME_CONFIGURATIONS_MEMBER);
+static SERVICEREVISION_MEMBER_FARGATE_EPHEMERAL_STORAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceRevision$fargateEphemeralStorage",
+        "com.amazonaws.ecs",
+        "ServiceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "fargateEphemeralStorage",
+    15,
+);
+static SERVICEREVISION_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRevision$createdAt", "com.amazonaws.ecs", "ServiceRevision"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    16,
+);
+static SERVICEREVISION_MEMBER_VPC_LATTICE_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#VpcLatticeConfigurations$member",
+        "com.amazonaws.ecs",
+        "VpcLatticeConfigurations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SERVICEREVISION_MEMBER_VPC_LATTICE_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceRevision$vpcLatticeConfigurations",
+        "com.amazonaws.ecs",
+        "ServiceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "vpcLatticeConfigurations",
+    17,
+)
+.with_list_member(&SERVICEREVISION_MEMBER_VPC_LATTICE_CONFIGURATIONS_MEMBER);
+static SERVICEREVISION_MEMBER_RESOLVED_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceRevision$resolvedConfiguration",
+        "com.amazonaws.ecs",
+        "ServiceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "resolvedConfiguration",
+    18,
+);
+static SERVICEREVISION_MEMBER_ECS_MANAGED_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceRevision$ecsManagedResources",
+        "com.amazonaws.ecs",
+        "ServiceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ecsManagedResources",
+    19,
+);
+static SERVICEREVISION_MEMBER_OVERRIDES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRevision$overrides", "com.amazonaws.ecs", "ServiceRevision"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "overrides",
+    20,
+);
+static SERVICEREVISION_MEMBER_GATEWAY_CONNECTORS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayConnectorList$member",
+        "com.amazonaws.ecs",
+        "GatewayConnectorList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SERVICEREVISION_MEMBER_GATEWAY_CONNECTORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceRevision$gatewayConnectors",
+        "com.amazonaws.ecs",
+        "ServiceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "gatewayConnectors",
+    21,
+)
+.with_list_member(&SERVICEREVISION_MEMBER_GATEWAY_CONNECTORS_MEMBER);
+static SERVICEREVISION_MEMBER_MONITORING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRevision$monitoring", "com.amazonaws.ecs", "ServiceRevision"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "monitoring",
+    22,
+);
+static SERVICEREVISION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRevision", "com.amazonaws.ecs", "ServiceRevision"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SERVICEREVISION_MEMBER_SERVICE_REVISION_ARN,
+        &SERVICEREVISION_MEMBER_SERVICE_ARN,
+        &SERVICEREVISION_MEMBER_CLUSTER_ARN,
+        &SERVICEREVISION_MEMBER_TASK_DEFINITION,
+        &SERVICEREVISION_MEMBER_CAPACITY_PROVIDER_STRATEGY,
+        &SERVICEREVISION_MEMBER_LAUNCH_TYPE,
+        &SERVICEREVISION_MEMBER_PLATFORM_VERSION,
+        &SERVICEREVISION_MEMBER_PLATFORM_FAMILY,
+        &SERVICEREVISION_MEMBER_LOAD_BALANCERS,
+        &SERVICEREVISION_MEMBER_SERVICE_REGISTRIES,
+        &SERVICEREVISION_MEMBER_NETWORK_CONFIGURATION,
+        &SERVICEREVISION_MEMBER_CONTAINER_IMAGES,
+        &SERVICEREVISION_MEMBER_GUARD_DUTY_ENABLED,
+        &SERVICEREVISION_MEMBER_SERVICE_CONNECT_CONFIGURATION,
+        &SERVICEREVISION_MEMBER_VOLUME_CONFIGURATIONS,
+        &SERVICEREVISION_MEMBER_FARGATE_EPHEMERAL_STORAGE,
+        &SERVICEREVISION_MEMBER_CREATED_AT,
+        &SERVICEREVISION_MEMBER_VPC_LATTICE_CONFIGURATIONS,
+        &SERVICEREVISION_MEMBER_RESOLVED_CONFIGURATION,
+        &SERVICEREVISION_MEMBER_ECS_MANAGED_RESOURCES,
+        &SERVICEREVISION_MEMBER_OVERRIDES,
+        &SERVICEREVISION_MEMBER_GATEWAY_CONNECTORS,
+        &SERVICEREVISION_MEMBER_MONITORING,
+    ],
+);
+impl ServiceRevision {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SERVICEREVISION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ServiceRevision {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.service_revision_arn {
+            ser.write_string(&SERVICEREVISION_MEMBER_SERVICE_REVISION_ARN, val)?;
+        }
+        if let Some(ref val) = self.service_arn {
+            ser.write_string(&SERVICEREVISION_MEMBER_SERVICE_ARN, val)?;
+        }
+        if let Some(ref val) = self.cluster_arn {
+            ser.write_string(&SERVICEREVISION_MEMBER_CLUSTER_ARN, val)?;
+        }
+        if let Some(ref val) = self.task_definition {
+            ser.write_string(&SERVICEREVISION_MEMBER_TASK_DEFINITION, val)?;
+        }
+        if let Some(ref val) = self.capacity_provider_strategy {
+            ser.write_list(
+                &SERVICEREVISION_MEMBER_CAPACITY_PROVIDER_STRATEGY,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CapacityProviderStrategyItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.launch_type {
+            ser.write_string(&SERVICEREVISION_MEMBER_LAUNCH_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.platform_version {
+            ser.write_string(&SERVICEREVISION_MEMBER_PLATFORM_VERSION, val)?;
+        }
+        if let Some(ref val) = self.platform_family {
+            ser.write_string(&SERVICEREVISION_MEMBER_PLATFORM_FAMILY, val)?;
+        }
+        if let Some(ref val) = self.load_balancers {
+            ser.write_list(
+                &SERVICEREVISION_MEMBER_LOAD_BALANCERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::LoadBalancer::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.service_registries {
+            ser.write_list(
+                &SERVICEREVISION_MEMBER_SERVICE_REGISTRIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ServiceRegistry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.network_configuration {
+            ser.write_struct(&SERVICEREVISION_MEMBER_NETWORK_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.container_images {
+            ser.write_list(
+                &SERVICEREVISION_MEMBER_CONTAINER_IMAGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ContainerImage::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.guard_duty_enabled;
+            ser.write_boolean(&SERVICEREVISION_MEMBER_GUARD_DUTY_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.service_connect_configuration {
+            ser.write_struct(&SERVICEREVISION_MEMBER_SERVICE_CONNECT_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.volume_configurations {
+            ser.write_list(
+                &SERVICEREVISION_MEMBER_VOLUME_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ServiceVolumeConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.fargate_ephemeral_storage {
+            ser.write_struct(&SERVICEREVISION_MEMBER_FARGATE_EPHEMERAL_STORAGE, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&SERVICEREVISION_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.vpc_lattice_configurations {
+            ser.write_list(
+                &SERVICEREVISION_MEMBER_VPC_LATTICE_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::VpcLatticeConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.resolved_configuration {
+            ser.write_struct(&SERVICEREVISION_MEMBER_RESOLVED_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.ecs_managed_resources {
+            ser.write_struct(&SERVICEREVISION_MEMBER_ECS_MANAGED_RESOURCES, val)?;
+        }
+        if let Some(ref val) = self.overrides {
+            ser.write_struct(&SERVICEREVISION_MEMBER_OVERRIDES, val)?;
+        }
+        if let Some(ref val) = self.gateway_connectors {
+            ser.write_list(
+                &SERVICEREVISION_MEMBER_GATEWAY_CONNECTORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::GatewayConnector::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.monitoring {
+            ser.write_struct(&SERVICEREVISION_MEMBER_MONITORING, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ServiceRevisionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SERVICEREVISION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_revision_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_definition = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_provider_strategy = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CapacityProviderStrategyItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.launch_type = Some(crate::types::LaunchType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform_family = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.load_balancers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LoadBalancer::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_registries = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ServiceRegistry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_configuration = Some(crate::types::NetworkConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_images = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ContainerImage::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(12) => {
+                    self.guard_duty_enabled = Some(deser.read_boolean(member)?);
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_connect_configuration = Some(crate::types::ServiceConnectConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ServiceVolumeConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fargate_ephemeral_storage = Some(crate::types::DeploymentEphemeralStorage::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_lattice_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::VpcLatticeConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolved_configuration = Some(crate::types::ResolvedConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ecs_managed_resources = Some(crate::types::EcsManagedResources::deserialize(deser)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.overrides = Some(crate::types::ServiceRevisionOverrides::deserialize(deser)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_connectors = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::GatewayConnector::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring = Some(crate::types::MonitoringConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ServiceRevision {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ServiceRevision {
     /// Creates a new builder-style object to manufacture [`ServiceRevision`](crate::types::ServiceRevision).
     pub fn builder() -> crate::types::builders::ServiceRevisionBuilder {

@@ -34,6 +34,177 @@ impl CreatePermissionInput {
         self.actions.as_deref().unwrap_or_default()
     }
 }
+static CREATEPERMISSIONINPUT_MEMBER_CERTIFICATE_AUTHORITY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#CreatePermissionInput$CertificateAuthorityArn",
+        "com.amazonaws.acmpca.synthetic",
+        "CreatePermissionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertificateAuthorityArn",
+    0,
+);
+static CREATEPERMISSIONINPUT_MEMBER_PRINCIPAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#CreatePermissionInput$Principal",
+        "com.amazonaws.acmpca.synthetic",
+        "CreatePermissionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Principal",
+    1,
+);
+static CREATEPERMISSIONINPUT_MEMBER_SOURCE_ACCOUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#CreatePermissionInput$SourceAccount",
+        "com.amazonaws.acmpca.synthetic",
+        "CreatePermissionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceAccount",
+    2,
+);
+static CREATEPERMISSIONINPUT_MEMBER_ACTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#ActionList$member", "com.amazonaws.acmpca", "ActionList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEPERMISSIONINPUT_MEMBER_ACTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#CreatePermissionInput$Actions",
+        "com.amazonaws.acmpca.synthetic",
+        "CreatePermissionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Actions",
+    3,
+)
+.with_list_member(&CREATEPERMISSIONINPUT_MEMBER_ACTIONS_MEMBER);
+static CREATEPERMISSIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#CreatePermissionInput",
+        "com.amazonaws.acmpca.synthetic",
+        "CreatePermissionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEPERMISSIONINPUT_MEMBER_CERTIFICATE_AUTHORITY_ARN,
+        &CREATEPERMISSIONINPUT_MEMBER_PRINCIPAL,
+        &CREATEPERMISSIONINPUT_MEMBER_SOURCE_ACCOUNT,
+        &CREATEPERMISSIONINPUT_MEMBER_ACTIONS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreatePermissionRequest");
+impl CreatePermissionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEPERMISSIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreatePermissionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.certificate_authority_arn {
+            ser.write_string(&CREATEPERMISSIONINPUT_MEMBER_CERTIFICATE_AUTHORITY_ARN, val)?;
+        }
+        if let Some(ref val) = self.principal {
+            ser.write_string(&CREATEPERMISSIONINPUT_MEMBER_PRINCIPAL, val)?;
+        }
+        if let Some(ref val) = self.source_account {
+            ser.write_string(&CREATEPERMISSIONINPUT_MEMBER_SOURCE_ACCOUNT, val)?;
+        }
+        if let Some(ref val) = self.actions {
+            ser.write_list(
+                &CREATEPERMISSIONINPUT_MEMBER_ACTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_permission::builders::CreatePermissionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEPERMISSIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_authority_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.principal = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_account = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.actions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ActionType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreatePermissionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.certificate_authority_arn = builder.certificate_authority_arn.or(Some(String::new()));
+        builder.principal = builder.principal.or(Some(String::new()));
+        builder.actions = builder.actions.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreatePermissionInput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionInput`](crate::operation::create_permission::CreatePermissionInput).
     pub fn builder() -> crate::operation::create_permission::builders::CreatePermissionInputBuilder {

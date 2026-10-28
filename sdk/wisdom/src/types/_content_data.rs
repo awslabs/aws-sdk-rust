@@ -120,6 +120,316 @@ impl ::std::fmt::Debug for ContentData {
         formatter.finish()
     }
 }
+static CONTENTDATA_MEMBER_CONTENT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentData$contentArn", "com.amazonaws.wisdom", "ContentData"),
+    ::aws_smithy_schema::ShapeType::String,
+    "contentArn",
+    0,
+);
+static CONTENTDATA_MEMBER_CONTENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentData$contentId", "com.amazonaws.wisdom", "ContentData"),
+    ::aws_smithy_schema::ShapeType::String,
+    "contentId",
+    1,
+);
+static CONTENTDATA_MEMBER_KNOWLEDGE_BASE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentData$knowledgeBaseArn", "com.amazonaws.wisdom", "ContentData"),
+    ::aws_smithy_schema::ShapeType::String,
+    "knowledgeBaseArn",
+    2,
+);
+static CONTENTDATA_MEMBER_KNOWLEDGE_BASE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentData$knowledgeBaseId", "com.amazonaws.wisdom", "ContentData"),
+    ::aws_smithy_schema::ShapeType::String,
+    "knowledgeBaseId",
+    3,
+);
+static CONTENTDATA_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentData$name", "com.amazonaws.wisdom", "ContentData"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    4,
+);
+static CONTENTDATA_MEMBER_REVISION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentData$revisionId", "com.amazonaws.wisdom", "ContentData"),
+    ::aws_smithy_schema::ShapeType::String,
+    "revisionId",
+    5,
+);
+static CONTENTDATA_MEMBER_TITLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentData$title", "com.amazonaws.wisdom", "ContentData"),
+    ::aws_smithy_schema::ShapeType::String,
+    "title",
+    6,
+);
+static CONTENTDATA_MEMBER_CONTENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentData$contentType", "com.amazonaws.wisdom", "ContentData"),
+    ::aws_smithy_schema::ShapeType::String,
+    "contentType",
+    7,
+);
+static CONTENTDATA_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentData$status", "com.amazonaws.wisdom", "ContentData"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    8,
+);
+static CONTENTDATA_MEMBER_METADATA_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentMetadata$key", "com.amazonaws.wisdom", "ContentMetadata"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CONTENTDATA_MEMBER_METADATA_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentMetadata$value", "com.amazonaws.wisdom", "ContentMetadata"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CONTENTDATA_MEMBER_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentData$metadata", "com.amazonaws.wisdom", "ContentData"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "metadata",
+    9,
+)
+.with_map_members(&CONTENTDATA_MEMBER_METADATA_KEY, &CONTENTDATA_MEMBER_METADATA_VALUE);
+static CONTENTDATA_MEMBER_TAGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#Tags$key", "com.amazonaws.wisdom", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CONTENTDATA_MEMBER_TAGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#Tags$value", "com.amazonaws.wisdom", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CONTENTDATA_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentData$tags", "com.amazonaws.wisdom", "ContentData"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "tags",
+    10,
+)
+.with_map_members(&CONTENTDATA_MEMBER_TAGS_KEY, &CONTENTDATA_MEMBER_TAGS_VALUE);
+static CONTENTDATA_MEMBER_LINK_OUT_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentData$linkOutUri", "com.amazonaws.wisdom", "ContentData"),
+    ::aws_smithy_schema::ShapeType::String,
+    "linkOutUri",
+    11,
+);
+static CONTENTDATA_MEMBER_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentData$url", "com.amazonaws.wisdom", "ContentData"),
+    ::aws_smithy_schema::ShapeType::String,
+    "url",
+    12,
+);
+static CONTENTDATA_MEMBER_URL_EXPIRY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentData$urlExpiry", "com.amazonaws.wisdom", "ContentData"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "urlExpiry",
+    13,
+)
+.with_timestamp_format(aws_smithy_schema::traits::TimestampFormat::EpochSeconds);
+static CONTENTDATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentData", "com.amazonaws.wisdom", "ContentData"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTENTDATA_MEMBER_CONTENT_ARN,
+        &CONTENTDATA_MEMBER_CONTENT_ID,
+        &CONTENTDATA_MEMBER_KNOWLEDGE_BASE_ARN,
+        &CONTENTDATA_MEMBER_KNOWLEDGE_BASE_ID,
+        &CONTENTDATA_MEMBER_NAME,
+        &CONTENTDATA_MEMBER_REVISION_ID,
+        &CONTENTDATA_MEMBER_TITLE,
+        &CONTENTDATA_MEMBER_CONTENT_TYPE,
+        &CONTENTDATA_MEMBER_STATUS,
+        &CONTENTDATA_MEMBER_METADATA,
+        &CONTENTDATA_MEMBER_TAGS,
+        &CONTENTDATA_MEMBER_LINK_OUT_URI,
+        &CONTENTDATA_MEMBER_URL,
+        &CONTENTDATA_MEMBER_URL_EXPIRY,
+    ],
+);
+impl ContentData {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTENTDATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContentData {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.content_arn;
+            ser.write_string(&CONTENTDATA_MEMBER_CONTENT_ARN, val)?;
+        }
+        {
+            let val = &self.content_id;
+            ser.write_string(&CONTENTDATA_MEMBER_CONTENT_ID, val)?;
+        }
+        {
+            let val = &self.knowledge_base_arn;
+            ser.write_string(&CONTENTDATA_MEMBER_KNOWLEDGE_BASE_ARN, val)?;
+        }
+        {
+            let val = &self.knowledge_base_id;
+            ser.write_string(&CONTENTDATA_MEMBER_KNOWLEDGE_BASE_ID, val)?;
+        }
+        {
+            let val = &self.name;
+            ser.write_string(&CONTENTDATA_MEMBER_NAME, val)?;
+        }
+        {
+            let val = &self.revision_id;
+            ser.write_string(&CONTENTDATA_MEMBER_REVISION_ID, val)?;
+        }
+        {
+            let val = &self.title;
+            ser.write_string(&CONTENTDATA_MEMBER_TITLE, val)?;
+        }
+        {
+            let val = &self.content_type;
+            ser.write_string(&CONTENTDATA_MEMBER_CONTENT_TYPE, val)?;
+        }
+        {
+            let val = &self.status;
+            ser.write_string(&CONTENTDATA_MEMBER_STATUS, val.as_str())?;
+        }
+        {
+            let val = &self.metadata;
+
+            ser.write_map(
+                &CONTENTDATA_MEMBER_METADATA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_map(&CONTENTDATA_MEMBER_TAGS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for (key, value) in val {
+                    ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                    ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.link_out_uri {
+            ser.write_string(&CONTENTDATA_MEMBER_LINK_OUT_URI, val)?;
+        }
+        {
+            let val = &self.url;
+            ser.write_string(&CONTENTDATA_MEMBER_URL, val)?;
+        }
+        {
+            let val = &self.url_expiry;
+            ser.write_timestamp(&CONTENTDATA_MEMBER_URL_EXPIRY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContentDataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTENTDATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.content_arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.content_id = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.knowledge_base_arn = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.knowledge_base_id = Some(deser.read_string(member)?);
+                }
+                Some(4) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(5) => {
+                    self.revision_id = Some(deser.read_string(member)?);
+                }
+                Some(6) => {
+                    self.title = Some(deser.read_string(member)?);
+                }
+                Some(7) => {
+                    self.content_type = Some(deser.read_string(member)?);
+                }
+                Some(8) => {
+                    self.status = Some(crate::types::ContentStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(9) => {
+                    self.metadata = Some(deser.read_string_string_map(member)?);
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.link_out_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    self.url = Some(deser.read_string(member)?);
+                }
+                Some(13) => {
+                    self.url_expiry = Some(deser.read_timestamp(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContentData {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.content_arn = builder.content_arn.or(Some(String::new()));
+        builder.content_id = builder.content_id.or(Some(String::new()));
+        builder.knowledge_base_arn = builder.knowledge_base_arn.or(Some(String::new()));
+        builder.knowledge_base_id = builder.knowledge_base_id.or(Some(String::new()));
+        builder.name = builder.name.or(Some(String::new()));
+        builder.revision_id = builder.revision_id.or(Some(String::new()));
+        builder.title = builder.title.or(Some(String::new()));
+        builder.content_type = builder.content_type.or(Some(String::new()));
+        builder.metadata = builder.metadata.or(Some(::std::collections::HashMap::new()));
+        builder.url = builder.url.or(Some(String::new()));
+        builder.url_expiry = builder.url_expiry.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ContentData {
     /// Creates a new builder-style object to manufacture [`ContentData`](crate::types::ContentData).
     pub fn builder() -> crate::types::builders::ContentDataBuilder {

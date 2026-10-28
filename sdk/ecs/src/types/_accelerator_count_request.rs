@@ -19,6 +19,103 @@ impl AcceleratorCountRequest {
         self.max
     }
 }
+static ACCELERATORCOUNTREQUEST_MEMBER_MIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#AcceleratorCountRequest$min",
+        "com.amazonaws.ecs",
+        "AcceleratorCountRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "min",
+    0,
+);
+static ACCELERATORCOUNTREQUEST_MEMBER_MAX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#AcceleratorCountRequest$max",
+        "com.amazonaws.ecs",
+        "AcceleratorCountRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "max",
+    1,
+);
+static ACCELERATORCOUNTREQUEST_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#AcceleratorCountRequest",
+        "com.amazonaws.ecs",
+        "AcceleratorCountRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ACCELERATORCOUNTREQUEST_MEMBER_MIN, &ACCELERATORCOUNTREQUEST_MEMBER_MAX],
+);
+impl AcceleratorCountRequest {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACCELERATORCOUNTREQUEST_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AcceleratorCountRequest {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.min {
+            ser.write_integer(&ACCELERATORCOUNTREQUEST_MEMBER_MIN, *val)?;
+        }
+        if let Some(ref val) = self.max {
+            ser.write_integer(&ACCELERATORCOUNTREQUEST_MEMBER_MAX, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AcceleratorCountRequestBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACCELERATORCOUNTREQUEST_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.min = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AcceleratorCountRequest {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AcceleratorCountRequest {
     /// Creates a new builder-style object to manufacture [`AcceleratorCountRequest`](crate::types::AcceleratorCountRequest).
     pub fn builder() -> crate::types::builders::AcceleratorCountRequestBuilder {

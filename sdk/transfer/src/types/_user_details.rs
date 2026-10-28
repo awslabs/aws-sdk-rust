@@ -27,6 +27,107 @@ impl UserDetails {
         self.session_id.as_deref()
     }
 }
+static USERDETAILS_MEMBER_USER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#UserDetails$UserName", "com.amazonaws.transfer", "UserDetails"),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserName",
+    0,
+);
+static USERDETAILS_MEMBER_SERVER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#UserDetails$ServerId", "com.amazonaws.transfer", "UserDetails"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServerId",
+    1,
+);
+static USERDETAILS_MEMBER_SESSION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#UserDetails$SessionId", "com.amazonaws.transfer", "UserDetails"),
+    ::aws_smithy_schema::ShapeType::String,
+    "SessionId",
+    2,
+);
+static USERDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#UserDetails", "com.amazonaws.transfer", "UserDetails"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &USERDETAILS_MEMBER_USER_NAME,
+        &USERDETAILS_MEMBER_SERVER_ID,
+        &USERDETAILS_MEMBER_SESSION_ID,
+    ],
+);
+impl UserDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &USERDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UserDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.user_name;
+            ser.write_string(&USERDETAILS_MEMBER_USER_NAME, val)?;
+        }
+        {
+            let val = &self.server_id;
+            ser.write_string(&USERDETAILS_MEMBER_SERVER_ID, val)?;
+        }
+        if let Some(ref val) = self.session_id {
+            ser.write_string(&USERDETAILS_MEMBER_SESSION_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UserDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&USERDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.user_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.server_id = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.session_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UserDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_name = builder.user_name.or(Some(String::new()));
+        builder.server_id = builder.server_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UserDetails {
     /// Creates a new builder-style object to manufacture [`UserDetails`](crate::types::UserDetails).
     pub fn builder() -> crate::types::builders::UserDetailsBuilder {

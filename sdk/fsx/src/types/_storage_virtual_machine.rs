@@ -115,6 +115,357 @@ impl StorageVirtualMachine {
         self.root_volume_security_style.as_ref()
     }
 }
+static STORAGEVIRTUALMACHINE_MEMBER_ACTIVE_DIRECTORY_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#StorageVirtualMachine$ActiveDirectoryConfiguration",
+        "com.amazonaws.fsx",
+        "StorageVirtualMachine",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ActiveDirectoryConfiguration",
+    0,
+);
+static STORAGEVIRTUALMACHINE_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#StorageVirtualMachine$CreationTime",
+        "com.amazonaws.fsx",
+        "StorageVirtualMachine",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    1,
+);
+static STORAGEVIRTUALMACHINE_MEMBER_ENDPOINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#StorageVirtualMachine$Endpoints",
+        "com.amazonaws.fsx",
+        "StorageVirtualMachine",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Endpoints",
+    2,
+);
+static STORAGEVIRTUALMACHINE_MEMBER_FILE_SYSTEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#StorageVirtualMachine$FileSystemId",
+        "com.amazonaws.fsx",
+        "StorageVirtualMachine",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileSystemId",
+    3,
+);
+static STORAGEVIRTUALMACHINE_MEMBER_LIFECYCLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#StorageVirtualMachine$Lifecycle",
+        "com.amazonaws.fsx",
+        "StorageVirtualMachine",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Lifecycle",
+    4,
+);
+static STORAGEVIRTUALMACHINE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#StorageVirtualMachine$Name",
+        "com.amazonaws.fsx",
+        "StorageVirtualMachine",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    5,
+);
+static STORAGEVIRTUALMACHINE_MEMBER_RESOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#StorageVirtualMachine$ResourceARN",
+        "com.amazonaws.fsx",
+        "StorageVirtualMachine",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceARN",
+    6,
+);
+static STORAGEVIRTUALMACHINE_MEMBER_STORAGE_VIRTUAL_MACHINE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#StorageVirtualMachine$StorageVirtualMachineId",
+        "com.amazonaws.fsx",
+        "StorageVirtualMachine",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StorageVirtualMachineId",
+    7,
+);
+static STORAGEVIRTUALMACHINE_MEMBER_SUBTYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#StorageVirtualMachine$Subtype",
+        "com.amazonaws.fsx",
+        "StorageVirtualMachine",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Subtype",
+    8,
+);
+static STORAGEVIRTUALMACHINE_MEMBER_UUID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#StorageVirtualMachine$UUID",
+        "com.amazonaws.fsx",
+        "StorageVirtualMachine",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UUID",
+    9,
+);
+static STORAGEVIRTUALMACHINE_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Tags$member", "com.amazonaws.fsx", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STORAGEVIRTUALMACHINE_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#StorageVirtualMachine$Tags",
+        "com.amazonaws.fsx",
+        "StorageVirtualMachine",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    10,
+)
+.with_list_member(&STORAGEVIRTUALMACHINE_MEMBER_TAGS_MEMBER);
+static STORAGEVIRTUALMACHINE_MEMBER_LIFECYCLE_TRANSITION_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#StorageVirtualMachine$LifecycleTransitionReason",
+        "com.amazonaws.fsx",
+        "StorageVirtualMachine",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LifecycleTransitionReason",
+    11,
+);
+static STORAGEVIRTUALMACHINE_MEMBER_ROOT_VOLUME_SECURITY_STYLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#StorageVirtualMachine$RootVolumeSecurityStyle",
+        "com.amazonaws.fsx",
+        "StorageVirtualMachine",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RootVolumeSecurityStyle",
+    12,
+);
+static STORAGEVIRTUALMACHINE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#StorageVirtualMachine", "com.amazonaws.fsx", "StorageVirtualMachine"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STORAGEVIRTUALMACHINE_MEMBER_ACTIVE_DIRECTORY_CONFIGURATION,
+        &STORAGEVIRTUALMACHINE_MEMBER_CREATION_TIME,
+        &STORAGEVIRTUALMACHINE_MEMBER_ENDPOINTS,
+        &STORAGEVIRTUALMACHINE_MEMBER_FILE_SYSTEM_ID,
+        &STORAGEVIRTUALMACHINE_MEMBER_LIFECYCLE,
+        &STORAGEVIRTUALMACHINE_MEMBER_NAME,
+        &STORAGEVIRTUALMACHINE_MEMBER_RESOURCE_ARN,
+        &STORAGEVIRTUALMACHINE_MEMBER_STORAGE_VIRTUAL_MACHINE_ID,
+        &STORAGEVIRTUALMACHINE_MEMBER_SUBTYPE,
+        &STORAGEVIRTUALMACHINE_MEMBER_UUID,
+        &STORAGEVIRTUALMACHINE_MEMBER_TAGS,
+        &STORAGEVIRTUALMACHINE_MEMBER_LIFECYCLE_TRANSITION_REASON,
+        &STORAGEVIRTUALMACHINE_MEMBER_ROOT_VOLUME_SECURITY_STYLE,
+    ],
+);
+impl StorageVirtualMachine {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STORAGEVIRTUALMACHINE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StorageVirtualMachine {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.active_directory_configuration {
+            ser.write_struct(&STORAGEVIRTUALMACHINE_MEMBER_ACTIVE_DIRECTORY_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&STORAGEVIRTUALMACHINE_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.endpoints {
+            ser.write_struct(&STORAGEVIRTUALMACHINE_MEMBER_ENDPOINTS, val)?;
+        }
+        if let Some(ref val) = self.file_system_id {
+            ser.write_string(&STORAGEVIRTUALMACHINE_MEMBER_FILE_SYSTEM_ID, val)?;
+        }
+        if let Some(ref val) = self.lifecycle {
+            ser.write_string(&STORAGEVIRTUALMACHINE_MEMBER_LIFECYCLE, val.as_str())?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&STORAGEVIRTUALMACHINE_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.resource_arn {
+            ser.write_string(&STORAGEVIRTUALMACHINE_MEMBER_RESOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.storage_virtual_machine_id {
+            ser.write_string(&STORAGEVIRTUALMACHINE_MEMBER_STORAGE_VIRTUAL_MACHINE_ID, val)?;
+        }
+        if let Some(ref val) = self.subtype {
+            ser.write_string(&STORAGEVIRTUALMACHINE_MEMBER_SUBTYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.uuid {
+            ser.write_string(&STORAGEVIRTUALMACHINE_MEMBER_UUID, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &STORAGEVIRTUALMACHINE_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.lifecycle_transition_reason {
+            ser.write_struct(&STORAGEVIRTUALMACHINE_MEMBER_LIFECYCLE_TRANSITION_REASON, val)?;
+        }
+        if let Some(ref val) = self.root_volume_security_style {
+            ser.write_string(&STORAGEVIRTUALMACHINE_MEMBER_ROOT_VOLUME_SECURITY_STYLE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::StorageVirtualMachineBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STORAGEVIRTUALMACHINE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.active_directory_configuration = Some(crate::types::SvmActiveDirectoryConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoints = Some(crate::types::SvmEndpoints::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle = Some(crate::types::StorageVirtualMachineLifecycle::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.storage_virtual_machine_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subtype = Some(crate::types::StorageVirtualMachineSubtype::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.uuid = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle_transition_reason = Some(crate::types::LifecycleTransitionReason::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.root_volume_security_style = Some(crate::types::StorageVirtualMachineRootVolumeSecurityStyle::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StorageVirtualMachine {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl StorageVirtualMachine {
     /// Creates a new builder-style object to manufacture [`StorageVirtualMachine`](crate::types::StorageVirtualMachine).
     pub fn builder() -> crate::types::builders::StorageVirtualMachineBuilder {

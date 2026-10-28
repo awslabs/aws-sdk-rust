@@ -1496,6 +1496,40 @@ impl From<crate::operation::get_member::GetMemberError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_on_demand_scan_status::GetOnDemandScanStatusError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_on_demand_scan_status::GetOnDemandScanStatusError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_on_demand_scan_status::GetOnDemandScanStatusError> for Error {
+    fn from(err: crate::operation::get_on_demand_scan_status::GetOnDemandScanStatusError) -> Self {
+        match err {
+            crate::operation::get_on_demand_scan_status::GetOnDemandScanStatusError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_on_demand_scan_status::GetOnDemandScanStatusError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_on_demand_scan_status::GetOnDemandScanStatusError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_on_demand_scan_status::GetOnDemandScanStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_on_demand_scan_status::GetOnDemandScanStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_on_demand_scan_status::GetOnDemandScanStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sbom_export::GetSbomExportError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2086,6 +2120,31 @@ impl From<crate::operation::list_members::ListMembersError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_on_demand_scans::ListOnDemandScansError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_on_demand_scans::ListOnDemandScansError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_on_demand_scans::ListOnDemandScansError> for Error {
+    fn from(err: crate::operation::list_on_demand_scans::ListOnDemandScansError) -> Self {
+        match err {
+            crate::operation::list_on_demand_scans::ListOnDemandScansError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_on_demand_scans::ListOnDemandScansError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_on_demand_scans::ListOnDemandScansError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_on_demand_scans::ListOnDemandScansError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_on_demand_scans::ListOnDemandScansError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2325,6 +2384,32 @@ impl From<crate::operation::start_code_security_scan::StartCodeSecurityScanError
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_on_demand_scan::StartOnDemandScanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_on_demand_scan::StartOnDemandScanError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_on_demand_scan::StartOnDemandScanError> for Error {
+    fn from(err: crate::operation::start_on_demand_scan::StartOnDemandScanError) -> Self {
+        match err {
+            crate::operation::start_on_demand_scan::StartOnDemandScanError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_on_demand_scan::StartOnDemandScanError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_on_demand_scan::StartOnDemandScanError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_on_demand_scan::StartOnDemandScanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_on_demand_scan::StartOnDemandScanError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_on_demand_scan::StartOnDemandScanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_cis_session::StopCisSessionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2558,6 +2643,7 @@ impl From<crate::operation::update_configuration::UpdateConfigurationError> for 
     fn from(err: crate::operation::update_configuration::UpdateConfigurationError) -> Self {
         match err {
             crate::operation::update_configuration::UpdateConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_configuration::UpdateConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_configuration::UpdateConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_configuration::UpdateConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_configuration::UpdateConfigurationError::ValidationException(inner) => Error::ValidationException(inner),

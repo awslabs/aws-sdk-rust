@@ -73,6 +73,295 @@ impl FirewallRuleGroup {
         self.modification_time.as_deref()
     }
 }
+static FIREWALLRULEGROUP_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleGroup$Id",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    0,
+);
+static FIREWALLRULEGROUP_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleGroup$Arn",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    1,
+);
+static FIREWALLRULEGROUP_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleGroup$Name",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    2,
+);
+static FIREWALLRULEGROUP_MEMBER_RULE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleGroup$RuleCount",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "RuleCount",
+    3,
+);
+static FIREWALLRULEGROUP_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleGroup$Status",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    4,
+);
+static FIREWALLRULEGROUP_MEMBER_STATUS_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleGroup$StatusMessage",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusMessage",
+    5,
+);
+static FIREWALLRULEGROUP_MEMBER_OWNER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleGroup$OwnerId",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OwnerId",
+    6,
+);
+static FIREWALLRULEGROUP_MEMBER_CREATOR_REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleGroup$CreatorRequestId",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreatorRequestId",
+    7,
+);
+static FIREWALLRULEGROUP_MEMBER_SHARE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleGroup$ShareStatus",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ShareStatus",
+    8,
+);
+static FIREWALLRULEGROUP_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleGroup$CreationTime",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreationTime",
+    9,
+);
+static FIREWALLRULEGROUP_MEMBER_MODIFICATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleGroup$ModificationTime",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModificationTime",
+    10,
+);
+static FIREWALLRULEGROUP_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleGroup",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FIREWALLRULEGROUP_MEMBER_ID,
+        &FIREWALLRULEGROUP_MEMBER_ARN,
+        &FIREWALLRULEGROUP_MEMBER_NAME,
+        &FIREWALLRULEGROUP_MEMBER_RULE_COUNT,
+        &FIREWALLRULEGROUP_MEMBER_STATUS,
+        &FIREWALLRULEGROUP_MEMBER_STATUS_MESSAGE,
+        &FIREWALLRULEGROUP_MEMBER_OWNER_ID,
+        &FIREWALLRULEGROUP_MEMBER_CREATOR_REQUEST_ID,
+        &FIREWALLRULEGROUP_MEMBER_SHARE_STATUS,
+        &FIREWALLRULEGROUP_MEMBER_CREATION_TIME,
+        &FIREWALLRULEGROUP_MEMBER_MODIFICATION_TIME,
+    ],
+);
+impl FirewallRuleGroup {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FIREWALLRULEGROUP_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FirewallRuleGroup {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&FIREWALLRULEGROUP_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&FIREWALLRULEGROUP_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&FIREWALLRULEGROUP_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.rule_count {
+            ser.write_integer(&FIREWALLRULEGROUP_MEMBER_RULE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&FIREWALLRULEGROUP_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_message {
+            ser.write_string(&FIREWALLRULEGROUP_MEMBER_STATUS_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.owner_id {
+            ser.write_string(&FIREWALLRULEGROUP_MEMBER_OWNER_ID, val)?;
+        }
+        if let Some(ref val) = self.creator_request_id {
+            ser.write_string(&FIREWALLRULEGROUP_MEMBER_CREATOR_REQUEST_ID, val)?;
+        }
+        if let Some(ref val) = self.share_status {
+            ser.write_string(&FIREWALLRULEGROUP_MEMBER_SHARE_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_string(&FIREWALLRULEGROUP_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.modification_time {
+            ser.write_string(&FIREWALLRULEGROUP_MEMBER_MODIFICATION_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FirewallRuleGroupBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FIREWALLRULEGROUP_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rule_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::FirewallRuleGroupStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.owner_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creator_request_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.share_status = Some(crate::types::ShareStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.modification_time = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FirewallRuleGroup {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FirewallRuleGroup {
     /// Creates a new builder-style object to manufacture [`FirewallRuleGroup`](crate::types::FirewallRuleGroup).
     pub fn builder() -> crate::types::builders::FirewallRuleGroupBuilder {

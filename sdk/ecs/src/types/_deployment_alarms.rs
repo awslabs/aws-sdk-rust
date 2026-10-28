@@ -29,6 +29,121 @@ impl DeploymentAlarms {
         self.enable
     }
 }
+static DEPLOYMENTALARMS_MEMBER_ALARM_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DEPLOYMENTALARMS_MEMBER_ALARM_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#DeploymentAlarms$alarmNames", "com.amazonaws.ecs", "DeploymentAlarms"),
+    ::aws_smithy_schema::ShapeType::List,
+    "alarmNames",
+    0,
+)
+.with_list_member(&DEPLOYMENTALARMS_MEMBER_ALARM_NAMES_MEMBER);
+static DEPLOYMENTALARMS_MEMBER_ROLLBACK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#DeploymentAlarms$rollback", "com.amazonaws.ecs", "DeploymentAlarms"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "rollback",
+    1,
+);
+static DEPLOYMENTALARMS_MEMBER_ENABLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#DeploymentAlarms$enable", "com.amazonaws.ecs", "DeploymentAlarms"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "enable",
+    2,
+);
+static DEPLOYMENTALARMS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#DeploymentAlarms", "com.amazonaws.ecs", "DeploymentAlarms"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEPLOYMENTALARMS_MEMBER_ALARM_NAMES,
+        &DEPLOYMENTALARMS_MEMBER_ROLLBACK,
+        &DEPLOYMENTALARMS_MEMBER_ENABLE,
+    ],
+);
+impl DeploymentAlarms {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEPLOYMENTALARMS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeploymentAlarms {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.alarm_names;
+
+            ser.write_list(
+                &DEPLOYMENTALARMS_MEMBER_ALARM_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.rollback;
+            ser.write_boolean(&DEPLOYMENTALARMS_MEMBER_ROLLBACK, *val)?;
+        }
+        {
+            let val = &self.enable;
+            ser.write_boolean(&DEPLOYMENTALARMS_MEMBER_ENABLE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeploymentAlarmsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEPLOYMENTALARMS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.alarm_names = Some(deser.read_string_list(member)?);
+                }
+                Some(1) => {
+                    self.rollback = Some(deser.read_boolean(member)?);
+                }
+                Some(2) => {
+                    self.enable = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeploymentAlarms {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.alarm_names = builder.alarm_names.or(Some(Vec::new()));
+        builder.rollback = builder.rollback.or(Some(false));
+        builder.enable = builder.enable.or(Some(false));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeploymentAlarms {
     /// Creates a new builder-style object to manufacture [`DeploymentAlarms`](crate::types::DeploymentAlarms).
     pub fn builder() -> crate::types::builders::DeploymentAlarmsBuilder {

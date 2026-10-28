@@ -21,6 +21,129 @@ impl EnvironmentLanguage {
         self.images.as_deref().unwrap_or_default()
     }
 }
+static ENVIRONMENTLANGUAGE_MEMBER_LANGUAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#EnvironmentLanguage$language",
+        "com.amazonaws.codebuild",
+        "EnvironmentLanguage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "language",
+    0,
+);
+static ENVIRONMENTLANGUAGE_MEMBER_IMAGES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#EnvironmentImages$member",
+        "com.amazonaws.codebuild",
+        "EnvironmentImages",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ENVIRONMENTLANGUAGE_MEMBER_IMAGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#EnvironmentLanguage$images",
+        "com.amazonaws.codebuild",
+        "EnvironmentLanguage",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "images",
+    1,
+)
+.with_list_member(&ENVIRONMENTLANGUAGE_MEMBER_IMAGES_MEMBER);
+static ENVIRONMENTLANGUAGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#EnvironmentLanguage",
+        "com.amazonaws.codebuild",
+        "EnvironmentLanguage",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ENVIRONMENTLANGUAGE_MEMBER_LANGUAGE, &ENVIRONMENTLANGUAGE_MEMBER_IMAGES],
+);
+impl EnvironmentLanguage {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENVIRONMENTLANGUAGE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EnvironmentLanguage {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.language {
+            ser.write_string(&ENVIRONMENTLANGUAGE_MEMBER_LANGUAGE, val.as_str())?;
+        }
+        if let Some(ref val) = self.images {
+            ser.write_list(
+                &ENVIRONMENTLANGUAGE_MEMBER_IMAGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EnvironmentImage::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EnvironmentLanguageBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENVIRONMENTLANGUAGE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language = Some(crate::types::LanguageType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.images = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EnvironmentImage::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EnvironmentLanguage {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EnvironmentLanguage {
     /// Creates a new builder-style object to manufacture [`EnvironmentLanguage`](crate::types::EnvironmentLanguage).
     pub fn builder() -> crate::types::builders::EnvironmentLanguageBuilder {

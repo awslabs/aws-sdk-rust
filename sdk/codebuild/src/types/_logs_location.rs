@@ -55,6 +55,220 @@ impl LogsLocation {
         self.s3_logs.as_ref()
     }
 }
+static LOGSLOCATION_MEMBER_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#LogsLocation$groupName",
+        "com.amazonaws.codebuild",
+        "LogsLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "groupName",
+    0,
+);
+static LOGSLOCATION_MEMBER_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#LogsLocation$streamName",
+        "com.amazonaws.codebuild",
+        "LogsLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "streamName",
+    1,
+);
+static LOGSLOCATION_MEMBER_DEEP_LINK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#LogsLocation$deepLink", "com.amazonaws.codebuild", "LogsLocation"),
+    ::aws_smithy_schema::ShapeType::String,
+    "deepLink",
+    2,
+);
+static LOGSLOCATION_MEMBER_S3_DEEP_LINK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#LogsLocation$s3DeepLink",
+        "com.amazonaws.codebuild",
+        "LogsLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "s3DeepLink",
+    3,
+);
+static LOGSLOCATION_MEMBER_CLOUD_WATCH_LOGS_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#LogsLocation$cloudWatchLogsArn",
+        "com.amazonaws.codebuild",
+        "LogsLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cloudWatchLogsArn",
+    4,
+);
+static LOGSLOCATION_MEMBER_S3_LOGS_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#LogsLocation$s3LogsArn",
+        "com.amazonaws.codebuild",
+        "LogsLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "s3LogsArn",
+    5,
+);
+static LOGSLOCATION_MEMBER_CLOUD_WATCH_LOGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#LogsLocation$cloudWatchLogs",
+        "com.amazonaws.codebuild",
+        "LogsLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "cloudWatchLogs",
+    6,
+);
+static LOGSLOCATION_MEMBER_S3_LOGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#LogsLocation$s3Logs", "com.amazonaws.codebuild", "LogsLocation"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "s3Logs",
+    7,
+);
+static LOGSLOCATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#LogsLocation", "com.amazonaws.codebuild", "LogsLocation"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LOGSLOCATION_MEMBER_GROUP_NAME,
+        &LOGSLOCATION_MEMBER_STREAM_NAME,
+        &LOGSLOCATION_MEMBER_DEEP_LINK,
+        &LOGSLOCATION_MEMBER_S3_DEEP_LINK,
+        &LOGSLOCATION_MEMBER_CLOUD_WATCH_LOGS_ARN,
+        &LOGSLOCATION_MEMBER_S3_LOGS_ARN,
+        &LOGSLOCATION_MEMBER_CLOUD_WATCH_LOGS,
+        &LOGSLOCATION_MEMBER_S3_LOGS,
+    ],
+);
+impl LogsLocation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LOGSLOCATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LogsLocation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.group_name {
+            ser.write_string(&LOGSLOCATION_MEMBER_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.stream_name {
+            ser.write_string(&LOGSLOCATION_MEMBER_STREAM_NAME, val)?;
+        }
+        if let Some(ref val) = self.deep_link {
+            ser.write_string(&LOGSLOCATION_MEMBER_DEEP_LINK, val)?;
+        }
+        if let Some(ref val) = self.s3_deep_link {
+            ser.write_string(&LOGSLOCATION_MEMBER_S3_DEEP_LINK, val)?;
+        }
+        if let Some(ref val) = self.cloud_watch_logs_arn {
+            ser.write_string(&LOGSLOCATION_MEMBER_CLOUD_WATCH_LOGS_ARN, val)?;
+        }
+        if let Some(ref val) = self.s3_logs_arn {
+            ser.write_string(&LOGSLOCATION_MEMBER_S3_LOGS_ARN, val)?;
+        }
+        if let Some(ref val) = self.cloud_watch_logs {
+            ser.write_struct(&LOGSLOCATION_MEMBER_CLOUD_WATCH_LOGS, val)?;
+        }
+        if let Some(ref val) = self.s3_logs {
+            ser.write_struct(&LOGSLOCATION_MEMBER_S3_LOGS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LogsLocationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LOGSLOCATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deep_link = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_deep_link = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_watch_logs_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_logs_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_watch_logs = Some(crate::types::CloudWatchLogsConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_logs = Some(crate::types::S3LogsConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LogsLocation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LogsLocation {
     /// Creates a new builder-style object to manufacture [`LogsLocation`](crate::types::LogsLocation).
     pub fn builder() -> crate::types::builders::LogsLocationBuilder {

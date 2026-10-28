@@ -21,6 +21,87 @@ impl OtherName {
         self.value.deref()
     }
 }
+static OTHERNAME_MEMBER_TYPE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#OtherName$TypeId", "com.amazonaws.acmpca", "OtherName"),
+    ::aws_smithy_schema::ShapeType::String,
+    "TypeId",
+    0,
+);
+static OTHERNAME_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#OtherName$Value", "com.amazonaws.acmpca", "OtherName"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Value",
+    1,
+);
+static OTHERNAME_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#OtherName", "com.amazonaws.acmpca", "OtherName"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&OTHERNAME_MEMBER_TYPE_ID, &OTHERNAME_MEMBER_VALUE],
+);
+impl OtherName {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OTHERNAME_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OtherName {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.type_id;
+            ser.write_string(&OTHERNAME_MEMBER_TYPE_ID, val)?;
+        }
+        {
+            let val = &self.value;
+            ser.write_string(&OTHERNAME_MEMBER_VALUE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OtherNameBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&OTHERNAME_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.type_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.value = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OtherName {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.type_id = builder.type_id.or(Some(String::new()));
+        builder.value = builder.value.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl OtherName {
     /// Creates a new builder-style object to manufacture [`OtherName`](crate::types::OtherName).
     pub fn builder() -> crate::types::builders::OtherNameBuilder {

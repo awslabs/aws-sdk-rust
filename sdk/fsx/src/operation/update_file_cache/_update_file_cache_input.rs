@@ -24,6 +24,130 @@ impl UpdateFileCacheInput {
         self.lustre_configuration.as_ref()
     }
 }
+static UPDATEFILECACHEINPUT_MEMBER_FILE_CACHE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#UpdateFileCacheInput$FileCacheId",
+        "com.amazonaws.fsx.synthetic",
+        "UpdateFileCacheInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileCacheId",
+    0,
+);
+static UPDATEFILECACHEINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#UpdateFileCacheInput$ClientRequestToken",
+        "com.amazonaws.fsx.synthetic",
+        "UpdateFileCacheInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    1,
+);
+static UPDATEFILECACHEINPUT_MEMBER_LUSTRE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#UpdateFileCacheInput$LustreConfiguration",
+        "com.amazonaws.fsx.synthetic",
+        "UpdateFileCacheInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LustreConfiguration",
+    2,
+);
+static UPDATEFILECACHEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#UpdateFileCacheInput",
+        "com.amazonaws.fsx.synthetic",
+        "UpdateFileCacheInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEFILECACHEINPUT_MEMBER_FILE_CACHE_ID,
+        &UPDATEFILECACHEINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &UPDATEFILECACHEINPUT_MEMBER_LUSTRE_CONFIGURATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateFileCacheRequest");
+impl UpdateFileCacheInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEFILECACHEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateFileCacheInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.file_cache_id {
+            ser.write_string(&UPDATEFILECACHEINPUT_MEMBER_FILE_CACHE_ID, val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&UPDATEFILECACHEINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.lustre_configuration {
+            ser.write_struct(&UPDATEFILECACHEINPUT_MEMBER_LUSTRE_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_file_cache::builders::UpdateFileCacheInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEFILECACHEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_cache_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lustre_configuration = Some(crate::types::UpdateFileCacheLustreConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateFileCacheInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.file_cache_id = builder.file_cache_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateFileCacheInput {
     /// Creates a new builder-style object to manufacture [`UpdateFileCacheInput`](crate::operation::update_file_cache::UpdateFileCacheInput).
     pub fn builder() -> crate::operation::update_file_cache::builders::UpdateFileCacheInputBuilder {

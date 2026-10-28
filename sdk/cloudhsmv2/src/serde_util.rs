@@ -7,27 +7,3 @@ pub(crate) fn list_tags_output_output_correct_errors(
     }
     builder
 }
-
-pub(crate) fn backup_correct_errors(mut builder: crate::types::builders::BackupBuilder) -> crate::types::builders::BackupBuilder {
-    if builder.backup_id.is_none() {
-        builder.backup_id = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn hsm_correct_errors(mut builder: crate::types::builders::HsmBuilder) -> crate::types::builders::HsmBuilder {
-    if builder.hsm_id.is_none() {
-        builder.hsm_id = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
-    if builder.key.is_none() {
-        builder.key = Some(Default::default())
-    }
-    if builder.value.is_none() {
-        builder.value = Some(Default::default())
-    }
-    builder
-}

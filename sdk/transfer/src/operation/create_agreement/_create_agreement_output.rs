@@ -14,6 +14,82 @@ impl CreateAgreementOutput {
         self.agreement_id.deref()
     }
 }
+static CREATEAGREEMENTOUTPUT_MEMBER_AGREEMENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateAgreementOutput$AgreementId",
+        "com.amazonaws.transfer.synthetic",
+        "CreateAgreementOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AgreementId",
+    0,
+);
+static CREATEAGREEMENTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#CreateAgreementOutput",
+        "com.amazonaws.transfer.synthetic",
+        "CreateAgreementOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CREATEAGREEMENTOUTPUT_MEMBER_AGREEMENT_ID],
+)
+.with_original_name("CreateAgreementResponse");
+impl CreateAgreementOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEAGREEMENTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAgreementOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.agreement_id;
+            ser.write_string(&CREATEAGREEMENTOUTPUT_MEMBER_AGREEMENT_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_agreement::builders::CreateAgreementOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEAGREEMENTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.agreement_id = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateAgreementOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.agreement_id = builder.agreement_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for CreateAgreementOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

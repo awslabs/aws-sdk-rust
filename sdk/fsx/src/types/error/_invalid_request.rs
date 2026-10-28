@@ -16,6 +16,92 @@ impl InvalidRequest {
         self.error_code.as_deref()
     }
 }
+static INVALIDREQUEST_MEMBER_ERROR_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#InvalidRequest$ErrorCode", "com.amazonaws.fsx", "InvalidRequest"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorCode",
+    0,
+);
+static INVALIDREQUEST_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#InvalidRequest$Message", "com.amazonaws.fsx", "InvalidRequest"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    1,
+);
+static INVALIDREQUEST_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#InvalidRequest", "com.amazonaws.fsx", "InvalidRequest"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&INVALIDREQUEST_MEMBER_ERROR_CODE, &INVALIDREQUEST_MEMBER_MESSAGE],
+)
+.with_xml_name("Error");
+impl InvalidRequest {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INVALIDREQUEST_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InvalidRequest {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.error_code {
+            ser.write_string(&INVALIDREQUEST_MEMBER_ERROR_CODE, val)?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&INVALIDREQUEST_MEMBER_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::error::builders::InvalidRequestBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INVALIDREQUEST_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InvalidRequest {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InvalidRequest {
     /// Returns the error message.
     pub fn message(&self) -> ::std::option::Option<&str> {

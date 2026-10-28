@@ -55,6 +55,187 @@ impl ::std::fmt::Debug for AuthenticationResultType {
         formatter.finish()
     }
 }
+static AUTHENTICATIONRESULTTYPE_MEMBER_ACCESS_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AuthenticationResultType$AccessToken",
+        "com.amazonaws.cognitoidentityprovider",
+        "AuthenticationResultType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccessToken",
+    0,
+);
+static AUTHENTICATIONRESULTTYPE_MEMBER_EXPIRES_IN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AuthenticationResultType$ExpiresIn",
+        "com.amazonaws.cognitoidentityprovider",
+        "AuthenticationResultType",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ExpiresIn",
+    1,
+);
+static AUTHENTICATIONRESULTTYPE_MEMBER_TOKEN_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AuthenticationResultType$TokenType",
+        "com.amazonaws.cognitoidentityprovider",
+        "AuthenticationResultType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TokenType",
+    2,
+);
+static AUTHENTICATIONRESULTTYPE_MEMBER_REFRESH_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AuthenticationResultType$RefreshToken",
+        "com.amazonaws.cognitoidentityprovider",
+        "AuthenticationResultType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RefreshToken",
+    3,
+);
+static AUTHENTICATIONRESULTTYPE_MEMBER_ID_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AuthenticationResultType$IdToken",
+        "com.amazonaws.cognitoidentityprovider",
+        "AuthenticationResultType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdToken",
+    4,
+);
+static AUTHENTICATIONRESULTTYPE_MEMBER_NEW_DEVICE_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AuthenticationResultType$NewDeviceMetadata",
+        "com.amazonaws.cognitoidentityprovider",
+        "AuthenticationResultType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NewDeviceMetadata",
+    5,
+);
+static AUTHENTICATIONRESULTTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AuthenticationResultType",
+        "com.amazonaws.cognitoidentityprovider",
+        "AuthenticationResultType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AUTHENTICATIONRESULTTYPE_MEMBER_ACCESS_TOKEN,
+        &AUTHENTICATIONRESULTTYPE_MEMBER_EXPIRES_IN,
+        &AUTHENTICATIONRESULTTYPE_MEMBER_TOKEN_TYPE,
+        &AUTHENTICATIONRESULTTYPE_MEMBER_REFRESH_TOKEN,
+        &AUTHENTICATIONRESULTTYPE_MEMBER_ID_TOKEN,
+        &AUTHENTICATIONRESULTTYPE_MEMBER_NEW_DEVICE_METADATA,
+    ],
+);
+impl AuthenticationResultType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AUTHENTICATIONRESULTTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AuthenticationResultType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.access_token {
+            ser.write_string(&AUTHENTICATIONRESULTTYPE_MEMBER_ACCESS_TOKEN, val)?;
+        }
+        {
+            let val = &self.expires_in;
+            ser.write_integer(&AUTHENTICATIONRESULTTYPE_MEMBER_EXPIRES_IN, *val)?;
+        }
+        if let Some(ref val) = self.token_type {
+            ser.write_string(&AUTHENTICATIONRESULTTYPE_MEMBER_TOKEN_TYPE, val)?;
+        }
+        if let Some(ref val) = self.refresh_token {
+            ser.write_string(&AUTHENTICATIONRESULTTYPE_MEMBER_REFRESH_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.id_token {
+            ser.write_string(&AUTHENTICATIONRESULTTYPE_MEMBER_ID_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.new_device_metadata {
+            ser.write_struct(&AUTHENTICATIONRESULTTYPE_MEMBER_NEW_DEVICE_METADATA, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AuthenticationResultTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AUTHENTICATIONRESULTTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.expires_in = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.token_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.refresh_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.new_device_metadata = Some(crate::types::NewDeviceMetadataType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AuthenticationResultType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AuthenticationResultType {
     /// Creates a new builder-style object to manufacture [`AuthenticationResultType`](crate::types::AuthenticationResultType).
     pub fn builder() -> crate::types::builders::AuthenticationResultTypeBuilder {

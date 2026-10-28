@@ -82,6 +82,261 @@ impl ::std::fmt::Debug for TermsType {
         formatter.finish()
     }
 }
+static TERMSTYPE_MEMBER_TERMS_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#TermsType$TermsId",
+        "com.amazonaws.cognitoidentityprovider",
+        "TermsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TermsId",
+    0,
+);
+static TERMSTYPE_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#TermsType$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider",
+        "TermsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    1,
+);
+static TERMSTYPE_MEMBER_CLIENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#TermsType$ClientId",
+        "com.amazonaws.cognitoidentityprovider",
+        "TermsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientId",
+    2,
+);
+static TERMSTYPE_MEMBER_TERMS_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#TermsType$TermsName",
+        "com.amazonaws.cognitoidentityprovider",
+        "TermsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TermsName",
+    3,
+);
+static TERMSTYPE_MEMBER_TERMS_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#TermsType$TermsSource",
+        "com.amazonaws.cognitoidentityprovider",
+        "TermsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TermsSource",
+    4,
+);
+static TERMSTYPE_MEMBER_ENFORCEMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#TermsType$Enforcement",
+        "com.amazonaws.cognitoidentityprovider",
+        "TermsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Enforcement",
+    5,
+);
+static TERMSTYPE_MEMBER_LINKS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LinksType$key",
+        "com.amazonaws.cognitoidentityprovider",
+        "LinksType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static TERMSTYPE_MEMBER_LINKS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LinksType$value",
+        "com.amazonaws.cognitoidentityprovider",
+        "LinksType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static TERMSTYPE_MEMBER_LINKS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#TermsType$Links",
+        "com.amazonaws.cognitoidentityprovider",
+        "TermsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Links",
+    6,
+)
+.with_map_members(&TERMSTYPE_MEMBER_LINKS_KEY, &TERMSTYPE_MEMBER_LINKS_VALUE);
+static TERMSTYPE_MEMBER_CREATION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#TermsType$CreationDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "TermsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationDate",
+    7,
+);
+static TERMSTYPE_MEMBER_LAST_MODIFIED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#TermsType$LastModifiedDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "TermsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedDate",
+    8,
+);
+static TERMSTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#TermsType",
+        "com.amazonaws.cognitoidentityprovider",
+        "TermsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TERMSTYPE_MEMBER_TERMS_ID,
+        &TERMSTYPE_MEMBER_USER_POOL_ID,
+        &TERMSTYPE_MEMBER_CLIENT_ID,
+        &TERMSTYPE_MEMBER_TERMS_NAME,
+        &TERMSTYPE_MEMBER_TERMS_SOURCE,
+        &TERMSTYPE_MEMBER_ENFORCEMENT,
+        &TERMSTYPE_MEMBER_LINKS,
+        &TERMSTYPE_MEMBER_CREATION_DATE,
+        &TERMSTYPE_MEMBER_LAST_MODIFIED_DATE,
+    ],
+);
+impl TermsType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TERMSTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TermsType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.terms_id;
+            ser.write_string(&TERMSTYPE_MEMBER_TERMS_ID, val)?;
+        }
+        {
+            let val = &self.user_pool_id;
+            ser.write_string(&TERMSTYPE_MEMBER_USER_POOL_ID, val)?;
+        }
+        {
+            let val = &self.client_id;
+            ser.write_string(&TERMSTYPE_MEMBER_CLIENT_ID, val)?;
+        }
+        {
+            let val = &self.terms_name;
+            ser.write_string(&TERMSTYPE_MEMBER_TERMS_NAME, val)?;
+        }
+        {
+            let val = &self.terms_source;
+            ser.write_string(&TERMSTYPE_MEMBER_TERMS_SOURCE, val.as_str())?;
+        }
+        {
+            let val = &self.enforcement;
+            ser.write_string(&TERMSTYPE_MEMBER_ENFORCEMENT, val.as_str())?;
+        }
+        {
+            let val = &self.links;
+
+            ser.write_map(&TERMSTYPE_MEMBER_LINKS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for (key, value) in val {
+                    ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                    ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                }
+                Ok(())
+            })?;
+        }
+        {
+            let val = &self.creation_date;
+            ser.write_timestamp(&TERMSTYPE_MEMBER_CREATION_DATE, val)?;
+        }
+        {
+            let val = &self.last_modified_date;
+            ser.write_timestamp(&TERMSTYPE_MEMBER_LAST_MODIFIED_DATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TermsTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TERMSTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.terms_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.user_pool_id = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.client_id = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.terms_name = Some(deser.read_string(member)?);
+                }
+                Some(4) => {
+                    self.terms_source = Some(crate::types::TermsSourceType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(5) => {
+                    self.enforcement = Some(crate::types::TermsEnforcementType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(6) => {
+                    self.links = Some(deser.read_string_string_map(member)?);
+                }
+                Some(7) => {
+                    self.creation_date = Some(deser.read_timestamp(member)?);
+                }
+                Some(8) => {
+                    self.last_modified_date = Some(deser.read_timestamp(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TermsType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.terms_id = builder.terms_id.or(Some(String::new()));
+        builder.user_pool_id = builder.user_pool_id.or(Some(String::new()));
+        builder.client_id = builder.client_id.or(Some(String::new()));
+        builder.terms_name = builder.terms_name.or(Some(String::new()));
+        builder.links = builder.links.or(Some(::std::collections::HashMap::new()));
+        builder.creation_date = builder.creation_date.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.last_modified_date = builder.last_modified_date.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl TermsType {
     /// Creates a new builder-style object to manufacture [`TermsType`](crate::types::TermsType).
     pub fn builder() -> crate::types::builders::TermsTypeBuilder {

@@ -84,6 +84,283 @@ impl RegisterActivityTypeInput {
         self.default_task_schedule_to_close_timeout.as_deref()
     }
 }
+static REGISTERACTIVITYTYPEINPUT_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#RegisterActivityTypeInput$domain",
+        "com.amazonaws.swf.synthetic",
+        "RegisterActivityTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domain",
+    0,
+);
+static REGISTERACTIVITYTYPEINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#RegisterActivityTypeInput$name",
+        "com.amazonaws.swf.synthetic",
+        "RegisterActivityTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    1,
+);
+static REGISTERACTIVITYTYPEINPUT_MEMBER_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#RegisterActivityTypeInput$version",
+        "com.amazonaws.swf.synthetic",
+        "RegisterActivityTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "version",
+    2,
+);
+static REGISTERACTIVITYTYPEINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#RegisterActivityTypeInput$description",
+        "com.amazonaws.swf.synthetic",
+        "RegisterActivityTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    3,
+);
+static REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_START_TO_CLOSE_TIMEOUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf.synthetic#RegisterActivityTypeInput$defaultTaskStartToCloseTimeout",
+            "com.amazonaws.swf.synthetic",
+            "RegisterActivityTypeInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "defaultTaskStartToCloseTimeout",
+        4,
+    );
+static REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_HEARTBEAT_TIMEOUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf.synthetic#RegisterActivityTypeInput$defaultTaskHeartbeatTimeout",
+            "com.amazonaws.swf.synthetic",
+            "RegisterActivityTypeInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "defaultTaskHeartbeatTimeout",
+        5,
+    );
+static REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#RegisterActivityTypeInput$defaultTaskList",
+        "com.amazonaws.swf.synthetic",
+        "RegisterActivityTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "defaultTaskList",
+    6,
+);
+static REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_PRIORITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#RegisterActivityTypeInput$defaultTaskPriority",
+        "com.amazonaws.swf.synthetic",
+        "RegisterActivityTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "defaultTaskPriority",
+    7,
+);
+static REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_SCHEDULE_TO_START_TIMEOUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf.synthetic#RegisterActivityTypeInput$defaultTaskScheduleToStartTimeout",
+            "com.amazonaws.swf.synthetic",
+            "RegisterActivityTypeInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "defaultTaskScheduleToStartTimeout",
+        8,
+    );
+static REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_SCHEDULE_TO_CLOSE_TIMEOUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf.synthetic#RegisterActivityTypeInput$defaultTaskScheduleToCloseTimeout",
+            "com.amazonaws.swf.synthetic",
+            "RegisterActivityTypeInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "defaultTaskScheduleToCloseTimeout",
+        9,
+    );
+static REGISTERACTIVITYTYPEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#RegisterActivityTypeInput",
+        "com.amazonaws.swf.synthetic",
+        "RegisterActivityTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REGISTERACTIVITYTYPEINPUT_MEMBER_DOMAIN,
+        &REGISTERACTIVITYTYPEINPUT_MEMBER_NAME,
+        &REGISTERACTIVITYTYPEINPUT_MEMBER_VERSION,
+        &REGISTERACTIVITYTYPEINPUT_MEMBER_DESCRIPTION,
+        &REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_START_TO_CLOSE_TIMEOUT,
+        &REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_HEARTBEAT_TIMEOUT,
+        &REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_LIST,
+        &REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_PRIORITY,
+        &REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_SCHEDULE_TO_START_TIMEOUT,
+        &REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_SCHEDULE_TO_CLOSE_TIMEOUT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RegisterActivityTypeInput");
+impl RegisterActivityTypeInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REGISTERACTIVITYTYPEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RegisterActivityTypeInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain {
+            ser.write_string(&REGISTERACTIVITYTYPEINPUT_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&REGISTERACTIVITYTYPEINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.version {
+            ser.write_string(&REGISTERACTIVITYTYPEINPUT_MEMBER_VERSION, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&REGISTERACTIVITYTYPEINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.default_task_start_to_close_timeout {
+            ser.write_string(&REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_START_TO_CLOSE_TIMEOUT, val)?;
+        }
+        if let Some(ref val) = self.default_task_heartbeat_timeout {
+            ser.write_string(&REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_HEARTBEAT_TIMEOUT, val)?;
+        }
+        if let Some(ref val) = self.default_task_list {
+            ser.write_struct(&REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_LIST, val)?;
+        }
+        if let Some(ref val) = self.default_task_priority {
+            ser.write_string(&REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_PRIORITY, val)?;
+        }
+        if let Some(ref val) = self.default_task_schedule_to_start_timeout {
+            ser.write_string(&REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_SCHEDULE_TO_START_TIMEOUT, val)?;
+        }
+        if let Some(ref val) = self.default_task_schedule_to_close_timeout {
+            ser.write_string(&REGISTERACTIVITYTYPEINPUT_MEMBER_DEFAULT_TASK_SCHEDULE_TO_CLOSE_TIMEOUT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::register_activity_type::builders::RegisterActivityTypeInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REGISTERACTIVITYTYPEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_task_start_to_close_timeout = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_task_heartbeat_timeout = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_task_list = Some(crate::types::TaskList::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_task_priority = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_task_schedule_to_start_timeout = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_task_schedule_to_close_timeout = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RegisterActivityTypeInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain = builder.domain.or(Some(String::new()));
+        builder.name = builder.name.or(Some(String::new()));
+        builder.version = builder.version.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RegisterActivityTypeInput {
     /// Creates a new builder-style object to manufacture [`RegisterActivityTypeInput`](crate::operation::register_activity_type::RegisterActivityTypeInput).
     pub fn builder() -> crate::operation::register_activity_type::builders::RegisterActivityTypeInputBuilder {

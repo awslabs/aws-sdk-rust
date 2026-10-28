@@ -57,6 +57,127 @@ impl ValidationConfiguration {
         self.validation_status.as_ref()
     }
 }
+static VALIDATIONCONFIGURATION_MEMBER_VALIDATION_METHOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#ValidationConfiguration$ValidationMethod",
+        "com.amazonaws.acm",
+        "ValidationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ValidationMethod",
+    0,
+);
+static VALIDATIONCONFIGURATION_MEMBER_VALIDATION_CHALLENGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#ValidationConfiguration$ValidationChallenge",
+        "com.amazonaws.acm",
+        "ValidationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "ValidationChallenge",
+    1,
+);
+static VALIDATIONCONFIGURATION_MEMBER_VALIDATION_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#ValidationConfiguration$ValidationStatus",
+        "com.amazonaws.acm",
+        "ValidationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ValidationStatus",
+    2,
+);
+static VALIDATIONCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#ValidationConfiguration",
+        "com.amazonaws.acm",
+        "ValidationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &VALIDATIONCONFIGURATION_MEMBER_VALIDATION_METHOD,
+        &VALIDATIONCONFIGURATION_MEMBER_VALIDATION_CHALLENGE,
+        &VALIDATIONCONFIGURATION_MEMBER_VALIDATION_STATUS,
+    ],
+);
+impl ValidationConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &VALIDATIONCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ValidationConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.validation_method {
+            ser.write_string(&VALIDATIONCONFIGURATION_MEMBER_VALIDATION_METHOD, val.as_str())?;
+        }
+        if let Some(ref val) = self.validation_challenge {
+            ser.write_struct(&VALIDATIONCONFIGURATION_MEMBER_VALIDATION_CHALLENGE, val)?;
+        }
+        if let Some(ref val) = self.validation_status {
+            ser.write_string(&VALIDATIONCONFIGURATION_MEMBER_VALIDATION_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ValidationConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&VALIDATIONCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_method = Some(crate::types::ValidationMethod::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_challenge = Some(crate::types::ValidationChallenge::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_status = Some(crate::types::DomainStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ValidationConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ValidationConfiguration {
     /// Creates a new builder-style object to manufacture [`ValidationConfiguration`](crate::types::ValidationConfiguration).
     pub fn builder() -> crate::types::builders::ValidationConfigurationBuilder {

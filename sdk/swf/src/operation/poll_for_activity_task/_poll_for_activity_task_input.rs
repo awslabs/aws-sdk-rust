@@ -26,6 +26,130 @@ impl PollForActivityTaskInput {
         self.identity.as_deref()
     }
 }
+static POLLFORACTIVITYTASKINPUT_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForActivityTaskInput$domain",
+        "com.amazonaws.swf.synthetic",
+        "PollForActivityTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domain",
+    0,
+);
+static POLLFORACTIVITYTASKINPUT_MEMBER_TASK_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForActivityTaskInput$taskList",
+        "com.amazonaws.swf.synthetic",
+        "PollForActivityTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "taskList",
+    1,
+);
+static POLLFORACTIVITYTASKINPUT_MEMBER_IDENTITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForActivityTaskInput$identity",
+        "com.amazonaws.swf.synthetic",
+        "PollForActivityTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "identity",
+    2,
+);
+static POLLFORACTIVITYTASKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForActivityTaskInput",
+        "com.amazonaws.swf.synthetic",
+        "PollForActivityTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &POLLFORACTIVITYTASKINPUT_MEMBER_DOMAIN,
+        &POLLFORACTIVITYTASKINPUT_MEMBER_TASK_LIST,
+        &POLLFORACTIVITYTASKINPUT_MEMBER_IDENTITY,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PollForActivityTaskInput");
+impl PollForActivityTaskInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &POLLFORACTIVITYTASKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PollForActivityTaskInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain {
+            ser.write_string(&POLLFORACTIVITYTASKINPUT_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.task_list {
+            ser.write_struct(&POLLFORACTIVITYTASKINPUT_MEMBER_TASK_LIST, val)?;
+        }
+        if let Some(ref val) = self.identity {
+            ser.write_string(&POLLFORACTIVITYTASKINPUT_MEMBER_IDENTITY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::poll_for_activity_task::builders::PollForActivityTaskInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&POLLFORACTIVITYTASKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_list = Some(crate::types::TaskList::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PollForActivityTaskInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain = builder.domain.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PollForActivityTaskInput {
     /// Creates a new builder-style object to manufacture [`PollForActivityTaskInput`](crate::operation::poll_for_activity_task::PollForActivityTaskInput).
     pub fn builder() -> crate::operation::poll_for_activity_task::builders::PollForActivityTaskInputBuilder {

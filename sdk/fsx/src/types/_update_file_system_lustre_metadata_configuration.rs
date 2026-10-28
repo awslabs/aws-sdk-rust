@@ -59,6 +59,106 @@ impl UpdateFileSystemLustreMetadataConfiguration {
         self.mode.as_ref()
     }
 }
+static UPDATEFILESYSTEMLUSTREMETADATACONFIGURATION_MEMBER_IOPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#UpdateFileSystemLustreMetadataConfiguration$Iops",
+        "com.amazonaws.fsx",
+        "UpdateFileSystemLustreMetadataConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Iops",
+    0,
+);
+static UPDATEFILESYSTEMLUSTREMETADATACONFIGURATION_MEMBER_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#UpdateFileSystemLustreMetadataConfiguration$Mode",
+        "com.amazonaws.fsx",
+        "UpdateFileSystemLustreMetadataConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Mode",
+    1,
+);
+static UPDATEFILESYSTEMLUSTREMETADATACONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#UpdateFileSystemLustreMetadataConfiguration",
+        "com.amazonaws.fsx",
+        "UpdateFileSystemLustreMetadataConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEFILESYSTEMLUSTREMETADATACONFIGURATION_MEMBER_IOPS,
+        &UPDATEFILESYSTEMLUSTREMETADATACONFIGURATION_MEMBER_MODE,
+    ],
+);
+impl UpdateFileSystemLustreMetadataConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEFILESYSTEMLUSTREMETADATACONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateFileSystemLustreMetadataConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.iops {
+            ser.write_integer(&UPDATEFILESYSTEMLUSTREMETADATACONFIGURATION_MEMBER_IOPS, *val)?;
+        }
+        if let Some(ref val) = self.mode {
+            ser.write_string(&UPDATEFILESYSTEMLUSTREMETADATACONFIGURATION_MEMBER_MODE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UpdateFileSystemLustreMetadataConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEFILESYSTEMLUSTREMETADATACONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.iops = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mode = Some(crate::types::MetadataConfigurationMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateFileSystemLustreMetadataConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl UpdateFileSystemLustreMetadataConfiguration {
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemLustreMetadataConfiguration`](crate::types::UpdateFileSystemLustreMetadataConfiguration).
     pub fn builder() -> crate::types::builders::UpdateFileSystemLustreMetadataConfigurationBuilder {

@@ -221,6 +221,452 @@ impl CreateFileSystemLustreConfiguration {
         self.data_read_cache_configuration.as_ref()
     }
 }
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_WEEKLY_MAINTENANCE_START_TIME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$WeeklyMaintenanceStartTime",
+            "com.amazonaws.fsx",
+            "CreateFileSystemLustreConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "WeeklyMaintenanceStartTime",
+        0,
+    );
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_IMPORT_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$ImportPath",
+        "com.amazonaws.fsx",
+        "CreateFileSystemLustreConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImportPath",
+    1,
+);
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_EXPORT_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$ExportPath",
+        "com.amazonaws.fsx",
+        "CreateFileSystemLustreConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExportPath",
+    2,
+);
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_IMPORTED_FILE_CHUNK_SIZE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$ImportedFileChunkSize",
+            "com.amazonaws.fsx",
+            "CreateFileSystemLustreConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "ImportedFileChunkSize",
+        3,
+    );
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_DEPLOYMENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$DeploymentType",
+        "com.amazonaws.fsx",
+        "CreateFileSystemLustreConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeploymentType",
+    4,
+);
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_AUTO_IMPORT_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$AutoImportPolicy",
+        "com.amazonaws.fsx",
+        "CreateFileSystemLustreConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AutoImportPolicy",
+    5,
+);
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_PER_UNIT_STORAGE_THROUGHPUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$PerUnitStorageThroughput",
+            "com.amazonaws.fsx",
+            "CreateFileSystemLustreConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "PerUnitStorageThroughput",
+        6,
+    );
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_DAILY_AUTOMATIC_BACKUP_START_TIME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$DailyAutomaticBackupStartTime",
+            "com.amazonaws.fsx",
+            "CreateFileSystemLustreConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "DailyAutomaticBackupStartTime",
+        7,
+    );
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_AUTOMATIC_BACKUP_RETENTION_DAYS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$AutomaticBackupRetentionDays",
+            "com.amazonaws.fsx",
+            "CreateFileSystemLustreConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "AutomaticBackupRetentionDays",
+        8,
+    );
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_COPY_TAGS_TO_BACKUPS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$CopyTagsToBackups",
+            "com.amazonaws.fsx",
+            "CreateFileSystemLustreConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "CopyTagsToBackups",
+        9,
+    );
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_DRIVE_CACHE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$DriveCacheType",
+        "com.amazonaws.fsx",
+        "CreateFileSystemLustreConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DriveCacheType",
+    10,
+);
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_DATA_COMPRESSION_TYPE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$DataCompressionType",
+            "com.amazonaws.fsx",
+            "CreateFileSystemLustreConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "DataCompressionType",
+        11,
+    );
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_EFA_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$EfaEnabled",
+        "com.amazonaws.fsx",
+        "CreateFileSystemLustreConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EfaEnabled",
+    12,
+);
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_LOG_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$LogConfiguration",
+        "com.amazonaws.fsx",
+        "CreateFileSystemLustreConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LogConfiguration",
+    13,
+);
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_ROOT_SQUASH_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$RootSquashConfiguration",
+            "com.amazonaws.fsx",
+            "CreateFileSystemLustreConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "RootSquashConfiguration",
+        14,
+    );
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_METADATA_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$MetadataConfiguration",
+            "com.amazonaws.fsx",
+            "CreateFileSystemLustreConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "MetadataConfiguration",
+        15,
+    );
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_THROUGHPUT_CAPACITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$ThroughputCapacity",
+        "com.amazonaws.fsx",
+        "CreateFileSystemLustreConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ThroughputCapacity",
+    16,
+);
+static CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_DATA_READ_CACHE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#CreateFileSystemLustreConfiguration$DataReadCacheConfiguration",
+            "com.amazonaws.fsx",
+            "CreateFileSystemLustreConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DataReadCacheConfiguration",
+        17,
+    );
+static CREATEFILESYSTEMLUSTRECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#CreateFileSystemLustreConfiguration",
+        "com.amazonaws.fsx",
+        "CreateFileSystemLustreConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_WEEKLY_MAINTENANCE_START_TIME,
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_IMPORT_PATH,
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_EXPORT_PATH,
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_IMPORTED_FILE_CHUNK_SIZE,
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_DEPLOYMENT_TYPE,
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_AUTO_IMPORT_POLICY,
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_PER_UNIT_STORAGE_THROUGHPUT,
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_DAILY_AUTOMATIC_BACKUP_START_TIME,
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_AUTOMATIC_BACKUP_RETENTION_DAYS,
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_COPY_TAGS_TO_BACKUPS,
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_DRIVE_CACHE_TYPE,
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_DATA_COMPRESSION_TYPE,
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_EFA_ENABLED,
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_LOG_CONFIGURATION,
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_ROOT_SQUASH_CONFIGURATION,
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_METADATA_CONFIGURATION,
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_THROUGHPUT_CAPACITY,
+        &CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_DATA_READ_CACHE_CONFIGURATION,
+    ],
+);
+impl CreateFileSystemLustreConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEFILESYSTEMLUSTRECONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateFileSystemLustreConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.weekly_maintenance_start_time {
+            ser.write_string(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_WEEKLY_MAINTENANCE_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.import_path {
+            ser.write_string(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_IMPORT_PATH, val)?;
+        }
+        if let Some(ref val) = self.export_path {
+            ser.write_string(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_EXPORT_PATH, val)?;
+        }
+        if let Some(ref val) = self.imported_file_chunk_size {
+            ser.write_integer(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_IMPORTED_FILE_CHUNK_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.deployment_type {
+            ser.write_string(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_DEPLOYMENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.auto_import_policy {
+            ser.write_string(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_AUTO_IMPORT_POLICY, val.as_str())?;
+        }
+        if let Some(ref val) = self.per_unit_storage_throughput {
+            ser.write_integer(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_PER_UNIT_STORAGE_THROUGHPUT, *val)?;
+        }
+        if let Some(ref val) = self.daily_automatic_backup_start_time {
+            ser.write_string(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_DAILY_AUTOMATIC_BACKUP_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.automatic_backup_retention_days {
+            ser.write_integer(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_AUTOMATIC_BACKUP_RETENTION_DAYS, *val)?;
+        }
+        if let Some(ref val) = self.copy_tags_to_backups {
+            ser.write_boolean(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_COPY_TAGS_TO_BACKUPS, *val)?;
+        }
+        if let Some(ref val) = self.drive_cache_type {
+            ser.write_string(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_DRIVE_CACHE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.data_compression_type {
+            ser.write_string(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_DATA_COMPRESSION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.efa_enabled {
+            ser.write_boolean(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_EFA_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.log_configuration {
+            ser.write_struct(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_LOG_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.root_squash_configuration {
+            ser.write_struct(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_ROOT_SQUASH_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.metadata_configuration {
+            ser.write_struct(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_METADATA_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.throughput_capacity {
+            ser.write_integer(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_THROUGHPUT_CAPACITY, *val)?;
+        }
+        if let Some(ref val) = self.data_read_cache_configuration {
+            ser.write_struct(&CREATEFILESYSTEMLUSTRECONFIGURATION_MEMBER_DATA_READ_CACHE_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CreateFileSystemLustreConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEFILESYSTEMLUSTRECONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.weekly_maintenance_start_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.import_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.export_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.imported_file_chunk_size = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_type = Some(crate::types::LustreDeploymentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_import_policy = Some(crate::types::AutoImportPolicyType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.per_unit_storage_throughput = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.daily_automatic_backup_start_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.automatic_backup_retention_days = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.copy_tags_to_backups = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.drive_cache_type = Some(crate::types::DriveCacheType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_compression_type = Some(crate::types::DataCompressionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.efa_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_configuration = Some(crate::types::LustreLogCreateConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.root_squash_configuration = Some(crate::types::LustreRootSquashConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metadata_configuration = Some(crate::types::CreateFileSystemLustreMetadataConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.throughput_capacity = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_read_cache_configuration = Some(crate::types::LustreReadCacheConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateFileSystemLustreConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CreateFileSystemLustreConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateFileSystemLustreConfiguration`](crate::types::CreateFileSystemLustreConfiguration).
     pub fn builder() -> crate::types::builders::CreateFileSystemLustreConfigurationBuilder {

@@ -138,6 +138,434 @@ impl CreateTaskSetInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATETASKSETINPUT_MEMBER_SERVICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateTaskSetInput$service",
+        "com.amazonaws.ecs.synthetic",
+        "CreateTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "service",
+    0,
+);
+static CREATETASKSETINPUT_MEMBER_CLUSTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateTaskSetInput$cluster",
+        "com.amazonaws.ecs.synthetic",
+        "CreateTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cluster",
+    1,
+);
+static CREATETASKSETINPUT_MEMBER_EXTERNAL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateTaskSetInput$externalId",
+        "com.amazonaws.ecs.synthetic",
+        "CreateTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "externalId",
+    2,
+);
+static CREATETASKSETINPUT_MEMBER_TASK_DEFINITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateTaskSetInput$taskDefinition",
+        "com.amazonaws.ecs.synthetic",
+        "CreateTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskDefinition",
+    3,
+);
+static CREATETASKSETINPUT_MEMBER_NETWORK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateTaskSetInput$networkConfiguration",
+        "com.amazonaws.ecs.synthetic",
+        "CreateTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "networkConfiguration",
+    4,
+);
+static CREATETASKSETINPUT_MEMBER_LOAD_BALANCERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#LoadBalancers$member", "com.amazonaws.ecs", "LoadBalancers"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATETASKSETINPUT_MEMBER_LOAD_BALANCERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateTaskSetInput$loadBalancers",
+        "com.amazonaws.ecs.synthetic",
+        "CreateTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "loadBalancers",
+    5,
+)
+.with_list_member(&CREATETASKSETINPUT_MEMBER_LOAD_BALANCERS_MEMBER);
+static CREATETASKSETINPUT_MEMBER_SERVICE_REGISTRIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRegistries$member", "com.amazonaws.ecs", "ServiceRegistries"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATETASKSETINPUT_MEMBER_SERVICE_REGISTRIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateTaskSetInput$serviceRegistries",
+        "com.amazonaws.ecs.synthetic",
+        "CreateTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "serviceRegistries",
+    6,
+)
+.with_list_member(&CREATETASKSETINPUT_MEMBER_SERVICE_REGISTRIES_MEMBER);
+static CREATETASKSETINPUT_MEMBER_LAUNCH_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateTaskSetInput$launchType",
+        "com.amazonaws.ecs.synthetic",
+        "CreateTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "launchType",
+    7,
+);
+static CREATETASKSETINPUT_MEMBER_CAPACITY_PROVIDER_STRATEGY_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#CapacityProviderStrategy$member",
+        "com.amazonaws.ecs",
+        "CapacityProviderStrategy",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATETASKSETINPUT_MEMBER_CAPACITY_PROVIDER_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateTaskSetInput$capacityProviderStrategy",
+        "com.amazonaws.ecs.synthetic",
+        "CreateTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "capacityProviderStrategy",
+    8,
+)
+.with_list_member(&CREATETASKSETINPUT_MEMBER_CAPACITY_PROVIDER_STRATEGY_MEMBER);
+static CREATETASKSETINPUT_MEMBER_PLATFORM_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateTaskSetInput$platformVersion",
+        "com.amazonaws.ecs.synthetic",
+        "CreateTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "platformVersion",
+    9,
+);
+static CREATETASKSETINPUT_MEMBER_SCALE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateTaskSetInput$scale",
+        "com.amazonaws.ecs.synthetic",
+        "CreateTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "scale",
+    10,
+);
+static CREATETASKSETINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateTaskSetInput$clientToken",
+        "com.amazonaws.ecs.synthetic",
+        "CreateTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "clientToken",
+    11,
+);
+static CREATETASKSETINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Tags$member", "com.amazonaws.ecs", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATETASKSETINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateTaskSetInput$tags",
+        "com.amazonaws.ecs.synthetic",
+        "CreateTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    12,
+)
+.with_list_member(&CREATETASKSETINPUT_MEMBER_TAGS_MEMBER);
+static CREATETASKSETINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateTaskSetInput",
+        "com.amazonaws.ecs.synthetic",
+        "CreateTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATETASKSETINPUT_MEMBER_SERVICE,
+        &CREATETASKSETINPUT_MEMBER_CLUSTER,
+        &CREATETASKSETINPUT_MEMBER_EXTERNAL_ID,
+        &CREATETASKSETINPUT_MEMBER_TASK_DEFINITION,
+        &CREATETASKSETINPUT_MEMBER_NETWORK_CONFIGURATION,
+        &CREATETASKSETINPUT_MEMBER_LOAD_BALANCERS,
+        &CREATETASKSETINPUT_MEMBER_SERVICE_REGISTRIES,
+        &CREATETASKSETINPUT_MEMBER_LAUNCH_TYPE,
+        &CREATETASKSETINPUT_MEMBER_CAPACITY_PROVIDER_STRATEGY,
+        &CREATETASKSETINPUT_MEMBER_PLATFORM_VERSION,
+        &CREATETASKSETINPUT_MEMBER_SCALE,
+        &CREATETASKSETINPUT_MEMBER_CLIENT_TOKEN,
+        &CREATETASKSETINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateTaskSetRequest");
+impl CreateTaskSetInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATETASKSETINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateTaskSetInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.service {
+            ser.write_string(&CREATETASKSETINPUT_MEMBER_SERVICE, val)?;
+        }
+        if let Some(ref val) = self.cluster {
+            ser.write_string(&CREATETASKSETINPUT_MEMBER_CLUSTER, val)?;
+        }
+        if let Some(ref val) = self.external_id {
+            ser.write_string(&CREATETASKSETINPUT_MEMBER_EXTERNAL_ID, val)?;
+        }
+        if let Some(ref val) = self.task_definition {
+            ser.write_string(&CREATETASKSETINPUT_MEMBER_TASK_DEFINITION, val)?;
+        }
+        if let Some(ref val) = self.network_configuration {
+            ser.write_struct(&CREATETASKSETINPUT_MEMBER_NETWORK_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.load_balancers {
+            ser.write_list(
+                &CREATETASKSETINPUT_MEMBER_LOAD_BALANCERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::LoadBalancer::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.service_registries {
+            ser.write_list(
+                &CREATETASKSETINPUT_MEMBER_SERVICE_REGISTRIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ServiceRegistry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.launch_type {
+            ser.write_string(&CREATETASKSETINPUT_MEMBER_LAUNCH_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.capacity_provider_strategy {
+            ser.write_list(
+                &CREATETASKSETINPUT_MEMBER_CAPACITY_PROVIDER_STRATEGY,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CapacityProviderStrategyItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.platform_version {
+            ser.write_string(&CREATETASKSETINPUT_MEMBER_PLATFORM_VERSION, val)?;
+        }
+        if let Some(ref val) = self.scale {
+            ser.write_struct(&CREATETASKSETINPUT_MEMBER_SCALE, val)?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&CREATETASKSETINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATETASKSETINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_task_set::builders::CreateTaskSetInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATETASKSETINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_definition = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_configuration = Some(crate::types::NetworkConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.load_balancers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LoadBalancer::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_registries = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ServiceRegistry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.launch_type = Some(crate::types::LaunchType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_provider_strategy = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CapacityProviderStrategyItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scale = Some(crate::types::Scale::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateTaskSetInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.service = builder.service.or(Some(String::new()));
+        builder.cluster = builder.cluster.or(Some(String::new()));
+        builder.task_definition = builder.task_definition.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateTaskSetInput {
     /// Creates a new builder-style object to manufacture [`CreateTaskSetInput`](crate::operation::create_task_set::CreateTaskSetInput).
     pub fn builder() -> crate::operation::create_task_set::builders::CreateTaskSetInputBuilder {

@@ -67,6 +67,9 @@ pub struct Image {
     pub public_ssm_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The watermarks attached to the AMI.</p>
     pub image_watermarks: ::std::option::Option<::std::vec::Vec<crate::types::ImageWatermark>>,
+    /// <p>The Amazon Inspector scan results for the AMI. This information is present only for AMIs that Amazon Inspector has scanned.</p>
+    /// <p>When you share an AMI with other accounts, organizations, or organizational units (OUs), or make it public, its scan results are available to the accounts that can use the AMI.</p>
+    pub scan_results: ::std::option::Option<crate::types::ScanResults>,
     /// <p>The instance type specification for the AMI, which defines which instance types are compatible with this image.</p>
     pub instance_type_specification: ::std::option::Option<crate::types::InstanceTypeSpecification>,
     /// <p>The ID of the AMI.</p>
@@ -218,6 +221,11 @@ impl Image {
     pub fn image_watermarks(&self) -> &[crate::types::ImageWatermark] {
         self.image_watermarks.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Inspector scan results for the AMI. This information is present only for AMIs that Amazon Inspector has scanned.</p>
+    /// <p>When you share an AMI with other accounts, organizations, or organizational units (OUs), or make it public, its scan results are available to the accounts that can use the AMI.</p>
+    pub fn scan_results(&self) -> ::std::option::Option<&crate::types::ScanResults> {
+        self.scan_results.as_ref()
+    }
     /// <p>The instance type specification for the AMI, which defines which instance types are compatible with this image.</p>
     pub fn instance_type_specification(&self) -> ::std::option::Option<&crate::types::InstanceTypeSpecification> {
         self.instance_type_specification.as_ref()
@@ -311,6 +319,7 @@ pub struct ImageBuilder {
     pub(crate) free_tier_eligible: ::std::option::Option<bool>,
     pub(crate) public_ssm_parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) image_watermarks: ::std::option::Option<::std::vec::Vec<crate::types::ImageWatermark>>,
+    pub(crate) scan_results: ::std::option::Option<crate::types::ScanResults>,
     pub(crate) instance_type_specification: ::std::option::Option<crate::types::InstanceTypeSpecification>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_location: ::std::option::Option<::std::string::String>,
@@ -749,6 +758,23 @@ impl ImageBuilder {
     pub fn get_image_watermarks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageWatermark>> {
         &self.image_watermarks
     }
+    /// <p>The Amazon Inspector scan results for the AMI. This information is present only for AMIs that Amazon Inspector has scanned.</p>
+    /// <p>When you share an AMI with other accounts, organizations, or organizational units (OUs), or make it public, its scan results are available to the accounts that can use the AMI.</p>
+    pub fn scan_results(mut self, input: crate::types::ScanResults) -> Self {
+        self.scan_results = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon Inspector scan results for the AMI. This information is present only for AMIs that Amazon Inspector has scanned.</p>
+    /// <p>When you share an AMI with other accounts, organizations, or organizational units (OUs), or make it public, its scan results are available to the accounts that can use the AMI.</p>
+    pub fn set_scan_results(mut self, input: ::std::option::Option<crate::types::ScanResults>) -> Self {
+        self.scan_results = input;
+        self
+    }
+    /// <p>The Amazon Inspector scan results for the AMI. This information is present only for AMIs that Amazon Inspector has scanned.</p>
+    /// <p>When you share an AMI with other accounts, organizations, or organizational units (OUs), or make it public, its scan results are available to the accounts that can use the AMI.</p>
+    pub fn get_scan_results(&self) -> &::std::option::Option<crate::types::ScanResults> {
+        &self.scan_results
+    }
     /// <p>The instance type specification for the AMI, which defines which instance types are compatible with this image.</p>
     pub fn instance_type_specification(mut self, input: crate::types::InstanceTypeSpecification) -> Self {
         self.instance_type_specification = ::std::option::Option::Some(input);
@@ -967,6 +993,7 @@ impl ImageBuilder {
             free_tier_eligible: self.free_tier_eligible,
             public_ssm_parameter_name: self.public_ssm_parameter_name,
             image_watermarks: self.image_watermarks,
+            scan_results: self.scan_results,
             instance_type_specification: self.instance_type_specification,
             image_id: self.image_id,
             image_location: self.image_location,

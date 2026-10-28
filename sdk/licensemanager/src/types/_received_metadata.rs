@@ -10,6 +10,14 @@ pub struct ReceivedMetadata {
     pub received_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Allowed operations.</p>
     pub allowed_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
+    /// <p>The type of the grant through which the license was received. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - Grants you the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives you read-only visibility into the licenses and grants distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub grant_type: ::std::option::Option<crate::types::GrantType>,
 }
 impl ReceivedMetadata {
     /// <p>Received status.</p>
@@ -25,6 +33,16 @@ impl ReceivedMetadata {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_operations.is_none()`.
     pub fn allowed_operations(&self) -> &[crate::types::AllowedOperation] {
         self.allowed_operations.as_deref().unwrap_or_default()
+    }
+    /// <p>The type of the grant through which the license was received. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - Grants you the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives you read-only visibility into the licenses and grants distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub fn grant_type(&self) -> ::std::option::Option<&crate::types::GrantType> {
+        self.grant_type.as_ref()
     }
 }
 static RECEIVEDMETADATA_MEMBER_RECEIVED_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -68,6 +86,16 @@ static RECEIVEDMETADATA_MEMBER_ALLOWED_OPERATIONS: ::aws_smithy_schema::Schema<'
     2,
 )
 .with_list_member(&RECEIVEDMETADATA_MEMBER_ALLOWED_OPERATIONS_MEMBER);
+static RECEIVEDMETADATA_MEMBER_GRANT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ReceivedMetadata$GrantType",
+        "com.amazonaws.licensemanager",
+        "ReceivedMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GrantType",
+    3,
+);
 static RECEIVEDMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.licensemanager#ReceivedMetadata",
@@ -79,6 +107,7 @@ static RECEIVEDMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smi
         &RECEIVEDMETADATA_MEMBER_RECEIVED_STATUS,
         &RECEIVEDMETADATA_MEMBER_RECEIVED_STATUS_REASON,
         &RECEIVEDMETADATA_MEMBER_ALLOWED_OPERATIONS,
+        &RECEIVEDMETADATA_MEMBER_GRANT_TYPE,
     ],
 );
 impl ReceivedMetadata {
@@ -111,6 +140,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for ReceivedMetadata {
                     Ok(())
                 },
             )?;
+        }
+        if let Some(ref val) = self.grant_type {
+            ser.write_string(&RECEIVEDMETADATA_MEMBER_GRANT_TYPE, val.as_str())?;
         }
         Ok(())
     }
@@ -159,6 +191,13 @@ impl crate::types::builders::ReceivedMetadataBuilder {
                         });
                     }
                 }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.grant_type = Some(crate::types::GrantType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
                 _ => {}
             }
             Ok(())
@@ -190,6 +229,7 @@ pub struct ReceivedMetadataBuilder {
     pub(crate) received_status: ::std::option::Option<crate::types::ReceivedStatus>,
     pub(crate) received_status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
+    pub(crate) grant_type: ::std::option::Option<crate::types::GrantType>,
 }
 impl ReceivedMetadataBuilder {
     /// <p>Received status.</p>
@@ -240,12 +280,45 @@ impl ReceivedMetadataBuilder {
     pub fn get_allowed_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>> {
         &self.allowed_operations
     }
+    /// <p>The type of the grant through which the license was received. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - Grants you the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives you read-only visibility into the licenses and grants distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub fn grant_type(mut self, input: crate::types::GrantType) -> Self {
+        self.grant_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the grant through which the license was received. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - Grants you the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives you read-only visibility into the licenses and grants distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub fn set_grant_type(mut self, input: ::std::option::Option<crate::types::GrantType>) -> Self {
+        self.grant_type = input;
+        self
+    }
+    /// <p>The type of the grant through which the license was received. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - Grants you the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives you read-only visibility into the licenses and grants distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub fn get_grant_type(&self) -> &::std::option::Option<crate::types::GrantType> {
+        &self.grant_type
+    }
     /// Consumes the builder and constructs a [`ReceivedMetadata`](crate::types::ReceivedMetadata).
     pub fn build(self) -> crate::types::ReceivedMetadata {
         crate::types::ReceivedMetadata {
             received_status: self.received_status,
             received_status_reason: self.received_status_reason,
             allowed_operations: self.allowed_operations,
+            grant_type: self.grant_type,
         }
     }
 }

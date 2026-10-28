@@ -29,6 +29,113 @@ impl ::std::fmt::Debug for DocumentText {
         formatter.finish()
     }
 }
+static DOCUMENTTEXT_MEMBER_TEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#DocumentText$text", "com.amazonaws.wisdom", "DocumentText"),
+    ::aws_smithy_schema::ShapeType::String,
+    "text",
+    0,
+);
+static DOCUMENTTEXT_MEMBER_HIGHLIGHTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#Highlights$member", "com.amazonaws.wisdom", "Highlights"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DOCUMENTTEXT_MEMBER_HIGHLIGHTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#DocumentText$highlights", "com.amazonaws.wisdom", "DocumentText"),
+    ::aws_smithy_schema::ShapeType::List,
+    "highlights",
+    1,
+)
+.with_list_member(&DOCUMENTTEXT_MEMBER_HIGHLIGHTS_MEMBER);
+static DOCUMENTTEXT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#DocumentText", "com.amazonaws.wisdom", "DocumentText"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DOCUMENTTEXT_MEMBER_TEXT, &DOCUMENTTEXT_MEMBER_HIGHLIGHTS],
+);
+impl DocumentText {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOCUMENTTEXT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DocumentText {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.text {
+            ser.write_string(&DOCUMENTTEXT_MEMBER_TEXT, val)?;
+        }
+        if let Some(ref val) = self.highlights {
+            ser.write_list(
+                &DOCUMENTTEXT_MEMBER_HIGHLIGHTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Highlight::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DocumentTextBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOCUMENTTEXT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.text = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.highlights = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Highlight::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DocumentText {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DocumentText {
     /// Creates a new builder-style object to manufacture [`DocumentText`](crate::types::DocumentText).
     pub fn builder() -> crate::types::builders::DocumentTextBuilder {

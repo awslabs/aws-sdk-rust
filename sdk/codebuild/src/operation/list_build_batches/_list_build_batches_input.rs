@@ -42,6 +42,150 @@ impl ListBuildBatchesInput {
         self.next_token.as_deref()
     }
 }
+static LISTBUILDBATCHESINPUT_MEMBER_FILTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#ListBuildBatchesInput$filter",
+        "com.amazonaws.codebuild.synthetic",
+        "ListBuildBatchesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "filter",
+    0,
+);
+static LISTBUILDBATCHESINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#ListBuildBatchesInput$maxResults",
+        "com.amazonaws.codebuild.synthetic",
+        "ListBuildBatchesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxResults",
+    1,
+);
+static LISTBUILDBATCHESINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#ListBuildBatchesInput$sortOrder",
+        "com.amazonaws.codebuild.synthetic",
+        "ListBuildBatchesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sortOrder",
+    2,
+);
+static LISTBUILDBATCHESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#ListBuildBatchesInput$nextToken",
+        "com.amazonaws.codebuild.synthetic",
+        "ListBuildBatchesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    3,
+);
+static LISTBUILDBATCHESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#ListBuildBatchesInput",
+        "com.amazonaws.codebuild.synthetic",
+        "ListBuildBatchesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTBUILDBATCHESINPUT_MEMBER_FILTER,
+        &LISTBUILDBATCHESINPUT_MEMBER_MAX_RESULTS,
+        &LISTBUILDBATCHESINPUT_MEMBER_SORT_ORDER,
+        &LISTBUILDBATCHESINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListBuildBatchesInput");
+impl ListBuildBatchesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTBUILDBATCHESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListBuildBatchesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.filter {
+            ser.write_struct(&LISTBUILDBATCHESINPUT_MEMBER_FILTER, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTBUILDBATCHESINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTBUILDBATCHESINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTBUILDBATCHESINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_build_batches::builders::ListBuildBatchesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTBUILDBATCHESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filter = Some(crate::types::BuildBatchFilter::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrderType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListBuildBatchesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListBuildBatchesInput {
     /// Creates a new builder-style object to manufacture [`ListBuildBatchesInput`](crate::operation::list_build_batches::ListBuildBatchesInput).
     pub fn builder() -> crate::operation::list_build_batches::builders::ListBuildBatchesInputBuilder {

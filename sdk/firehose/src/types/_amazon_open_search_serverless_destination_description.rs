@@ -67,6 +67,289 @@ impl AmazonOpenSearchServerlessDestinationDescription {
         self.vpc_configuration_description.as_ref()
     }
 }
+static AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#AmazonOpenSearchServerlessDestinationDescription$RoleARN",
+            "com.amazonaws.firehose",
+            "AmazonOpenSearchServerlessDestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "RoleARN",
+        0,
+    );
+static AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_COLLECTION_ENDPOINT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#AmazonOpenSearchServerlessDestinationDescription$CollectionEndpoint",
+            "com.amazonaws.firehose",
+            "AmazonOpenSearchServerlessDestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "CollectionEndpoint",
+        1,
+    );
+static AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_INDEX_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#AmazonOpenSearchServerlessDestinationDescription$IndexName",
+            "com.amazonaws.firehose",
+            "AmazonOpenSearchServerlessDestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "IndexName",
+        2,
+    );
+static AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_BUFFERING_HINTS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#AmazonOpenSearchServerlessDestinationDescription$BufferingHints",
+            "com.amazonaws.firehose",
+            "AmazonOpenSearchServerlessDestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "BufferingHints",
+        3,
+    );
+static AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_RETRY_OPTIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#AmazonOpenSearchServerlessDestinationDescription$RetryOptions",
+            "com.amazonaws.firehose",
+            "AmazonOpenSearchServerlessDestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "RetryOptions",
+        4,
+    );
+static AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_S3_BACKUP_MODE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#AmazonOpenSearchServerlessDestinationDescription$S3BackupMode",
+            "com.amazonaws.firehose",
+            "AmazonOpenSearchServerlessDestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "S3BackupMode",
+        5,
+    );
+static AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_S3_DESTINATION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#AmazonOpenSearchServerlessDestinationDescription$S3DestinationDescription",
+            "com.amazonaws.firehose",
+            "AmazonOpenSearchServerlessDestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "S3DestinationDescription",
+        6,
+    );
+static AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_PROCESSING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#AmazonOpenSearchServerlessDestinationDescription$ProcessingConfiguration",
+            "com.amazonaws.firehose",
+            "AmazonOpenSearchServerlessDestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ProcessingConfiguration",
+        7,
+    );
+static AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#AmazonOpenSearchServerlessDestinationDescription$CloudWatchLoggingOptions",
+            "com.amazonaws.firehose",
+            "AmazonOpenSearchServerlessDestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "CloudWatchLoggingOptions",
+        8,
+    );
+static AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_VPC_CONFIGURATION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#AmazonOpenSearchServerlessDestinationDescription$VpcConfigurationDescription",
+            "com.amazonaws.firehose",
+            "AmazonOpenSearchServerlessDestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "VpcConfigurationDescription",
+        9,
+    );
+static AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#AmazonOpenSearchServerlessDestinationDescription",
+        "com.amazonaws.firehose",
+        "AmazonOpenSearchServerlessDestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_ROLE_ARN,
+        &AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_COLLECTION_ENDPOINT,
+        &AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_INDEX_NAME,
+        &AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_BUFFERING_HINTS,
+        &AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_RETRY_OPTIONS,
+        &AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_S3_BACKUP_MODE,
+        &AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_S3_DESTINATION_DESCRIPTION,
+        &AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_PROCESSING_CONFIGURATION,
+        &AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS,
+        &AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_VPC_CONFIGURATION_DESCRIPTION,
+    ],
+);
+impl AmazonOpenSearchServerlessDestinationDescription {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AmazonOpenSearchServerlessDestinationDescription {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.collection_endpoint {
+            ser.write_string(&AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_COLLECTION_ENDPOINT, val)?;
+        }
+        if let Some(ref val) = self.index_name {
+            ser.write_string(&AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_INDEX_NAME, val)?;
+        }
+        if let Some(ref val) = self.buffering_hints {
+            ser.write_struct(&AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_BUFFERING_HINTS, val)?;
+        }
+        if let Some(ref val) = self.retry_options {
+            ser.write_struct(&AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_RETRY_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.s3_backup_mode {
+            ser.write_string(&AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_S3_BACKUP_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_destination_description {
+            ser.write_struct(&AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_S3_DESTINATION_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.processing_configuration {
+            ser.write_struct(&AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_PROCESSING_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.cloud_watch_logging_options {
+            ser.write_struct(&AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.vpc_configuration_description {
+            ser.write_struct(
+                &AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_MEMBER_VPC_CONFIGURATION_DESCRIPTION,
+                val,
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AmazonOpenSearchServerlessDestinationDescriptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AMAZONOPENSEARCHSERVERLESSDESTINATIONDESCRIPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.collection_endpoint = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.index_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.buffering_hints = Some(crate::types::AmazonOpenSearchServerlessBufferingHints::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retry_options = Some(crate::types::AmazonOpenSearchServerlessRetryOptions::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_backup_mode = Some(crate::types::AmazonOpenSearchServerlessS3BackupMode::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_destination_description = Some(crate::types::S3DestinationDescription::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.processing_configuration = Some(crate::types::ProcessingConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_watch_logging_options = Some(crate::types::CloudWatchLoggingOptions::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_configuration_description = Some(crate::types::VpcConfigurationDescription::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AmazonOpenSearchServerlessDestinationDescription {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AmazonOpenSearchServerlessDestinationDescription {
     /// Creates a new builder-style object to manufacture [`AmazonOpenSearchServerlessDestinationDescription`](crate::types::AmazonOpenSearchServerlessDestinationDescription).
     pub fn builder() -> crate::types::builders::AmazonOpenSearchServerlessDestinationDescriptionBuilder {

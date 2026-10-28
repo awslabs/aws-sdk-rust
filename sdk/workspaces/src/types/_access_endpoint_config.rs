@@ -22,6 +22,159 @@ impl AccessEndpointConfig {
         self.internet_fallback_protocols.as_deref().unwrap_or_default()
     }
 }
+static ACCESSENDPOINTCONFIG_MEMBER_ACCESS_ENDPOINTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#AccessEndpointList$member",
+        "com.amazonaws.workspaces",
+        "AccessEndpointList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ACCESSENDPOINTCONFIG_MEMBER_ACCESS_ENDPOINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#AccessEndpointConfig$AccessEndpoints",
+        "com.amazonaws.workspaces",
+        "AccessEndpointConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AccessEndpoints",
+    0,
+)
+.with_list_member(&ACCESSENDPOINTCONFIG_MEMBER_ACCESS_ENDPOINTS_MEMBER);
+static ACCESSENDPOINTCONFIG_MEMBER_INTERNET_FALLBACK_PROTOCOLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#InternetFallbackProtocolList$member",
+        "com.amazonaws.workspaces",
+        "InternetFallbackProtocolList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ACCESSENDPOINTCONFIG_MEMBER_INTERNET_FALLBACK_PROTOCOLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#AccessEndpointConfig$InternetFallbackProtocols",
+        "com.amazonaws.workspaces",
+        "AccessEndpointConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InternetFallbackProtocols",
+    1,
+)
+.with_list_member(&ACCESSENDPOINTCONFIG_MEMBER_INTERNET_FALLBACK_PROTOCOLS_MEMBER);
+static ACCESSENDPOINTCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#AccessEndpointConfig",
+        "com.amazonaws.workspaces",
+        "AccessEndpointConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACCESSENDPOINTCONFIG_MEMBER_ACCESS_ENDPOINTS,
+        &ACCESSENDPOINTCONFIG_MEMBER_INTERNET_FALLBACK_PROTOCOLS,
+    ],
+);
+impl AccessEndpointConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACCESSENDPOINTCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AccessEndpointConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.access_endpoints;
+
+            ser.write_list(
+                &ACCESSENDPOINTCONFIG_MEMBER_ACCESS_ENDPOINTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AccessEndpoint::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.internet_fallback_protocols {
+            ser.write_list(
+                &ACCESSENDPOINTCONFIG_MEMBER_INTERNET_FALLBACK_PROTOCOLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AccessEndpointConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACCESSENDPOINTCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.access_endpoints = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::AccessEndpoint::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.internet_fallback_protocols = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InternetFallbackProtocol::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AccessEndpointConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.access_endpoints = builder.access_endpoints.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AccessEndpointConfig {
     /// Creates a new builder-style object to manufacture [`AccessEndpointConfig`](crate::types::AccessEndpointConfig).
     pub fn builder() -> crate::types::builders::AccessEndpointConfigBuilder {

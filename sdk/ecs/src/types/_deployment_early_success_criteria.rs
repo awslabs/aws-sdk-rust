@@ -44,6 +44,125 @@ impl DeploymentEarlySuccessCriteria {
         self.source_service_revision_cleanup.as_ref()
     }
 }
+static DEPLOYMENTEARLYSUCCESSCRITERIA_MEMBER_ENABLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentEarlySuccessCriteria$enable",
+        "com.amazonaws.ecs",
+        "DeploymentEarlySuccessCriteria",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "enable",
+    0,
+);
+static DEPLOYMENTEARLYSUCCESSCRITERIA_MEMBER_HEALTHY_PERCENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentEarlySuccessCriteria$healthyPercent",
+        "com.amazonaws.ecs",
+        "DeploymentEarlySuccessCriteria",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "healthyPercent",
+    1,
+);
+static DEPLOYMENTEARLYSUCCESSCRITERIA_MEMBER_SOURCE_SERVICE_REVISION_CLEANUP: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#DeploymentEarlySuccessCriteria$sourceServiceRevisionCleanup",
+            "com.amazonaws.ecs",
+            "DeploymentEarlySuccessCriteria",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "sourceServiceRevisionCleanup",
+        2,
+    );
+static DEPLOYMENTEARLYSUCCESSCRITERIA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeploymentEarlySuccessCriteria",
+        "com.amazonaws.ecs",
+        "DeploymentEarlySuccessCriteria",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEPLOYMENTEARLYSUCCESSCRITERIA_MEMBER_ENABLE,
+        &DEPLOYMENTEARLYSUCCESSCRITERIA_MEMBER_HEALTHY_PERCENT,
+        &DEPLOYMENTEARLYSUCCESSCRITERIA_MEMBER_SOURCE_SERVICE_REVISION_CLEANUP,
+    ],
+);
+impl DeploymentEarlySuccessCriteria {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEPLOYMENTEARLYSUCCESSCRITERIA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeploymentEarlySuccessCriteria {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.enable;
+            ser.write_boolean(&DEPLOYMENTEARLYSUCCESSCRITERIA_MEMBER_ENABLE, *val)?;
+        }
+        if let Some(ref val) = self.healthy_percent {
+            ser.write_integer(&DEPLOYMENTEARLYSUCCESSCRITERIA_MEMBER_HEALTHY_PERCENT, *val)?;
+        }
+        if let Some(ref val) = self.source_service_revision_cleanup {
+            ser.write_string(&DEPLOYMENTEARLYSUCCESSCRITERIA_MEMBER_SOURCE_SERVICE_REVISION_CLEANUP, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeploymentEarlySuccessCriteriaBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEPLOYMENTEARLYSUCCESSCRITERIA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.enable = Some(deser.read_boolean(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.healthy_percent = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_service_revision_cleanup = Some(crate::types::ServiceRevisionCleanup::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeploymentEarlySuccessCriteria {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeploymentEarlySuccessCriteria {
     /// Creates a new builder-style object to manufacture [`DeploymentEarlySuccessCriteria`](crate::types::DeploymentEarlySuccessCriteria).
     pub fn builder() -> crate::types::builders::DeploymentEarlySuccessCriteriaBuilder {

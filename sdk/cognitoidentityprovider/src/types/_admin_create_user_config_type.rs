@@ -31,6 +31,121 @@ impl AdminCreateUserConfigType {
         self.invite_message_template.as_ref()
     }
 }
+static ADMINCREATEUSERCONFIGTYPE_MEMBER_ALLOW_ADMIN_CREATE_USER_ONLY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AdminCreateUserConfigType$AllowAdminCreateUserOnly",
+        "com.amazonaws.cognitoidentityprovider",
+        "AdminCreateUserConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "AllowAdminCreateUserOnly",
+    0,
+);
+static ADMINCREATEUSERCONFIGTYPE_MEMBER_UNUSED_ACCOUNT_VALIDITY_DAYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AdminCreateUserConfigType$UnusedAccountValidityDays",
+        "com.amazonaws.cognitoidentityprovider",
+        "AdminCreateUserConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "UnusedAccountValidityDays",
+    1,
+);
+static ADMINCREATEUSERCONFIGTYPE_MEMBER_INVITE_MESSAGE_TEMPLATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AdminCreateUserConfigType$InviteMessageTemplate",
+        "com.amazonaws.cognitoidentityprovider",
+        "AdminCreateUserConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InviteMessageTemplate",
+    2,
+);
+static ADMINCREATEUSERCONFIGTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AdminCreateUserConfigType",
+        "com.amazonaws.cognitoidentityprovider",
+        "AdminCreateUserConfigType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ADMINCREATEUSERCONFIGTYPE_MEMBER_ALLOW_ADMIN_CREATE_USER_ONLY,
+        &ADMINCREATEUSERCONFIGTYPE_MEMBER_UNUSED_ACCOUNT_VALIDITY_DAYS,
+        &ADMINCREATEUSERCONFIGTYPE_MEMBER_INVITE_MESSAGE_TEMPLATE,
+    ],
+);
+impl AdminCreateUserConfigType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ADMINCREATEUSERCONFIGTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AdminCreateUserConfigType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.allow_admin_create_user_only;
+            ser.write_boolean(&ADMINCREATEUSERCONFIGTYPE_MEMBER_ALLOW_ADMIN_CREATE_USER_ONLY, *val)?;
+        }
+        {
+            let val = &self.unused_account_validity_days;
+            ser.write_integer(&ADMINCREATEUSERCONFIGTYPE_MEMBER_UNUSED_ACCOUNT_VALIDITY_DAYS, *val)?;
+        }
+        if let Some(ref val) = self.invite_message_template {
+            ser.write_struct(&ADMINCREATEUSERCONFIGTYPE_MEMBER_INVITE_MESSAGE_TEMPLATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AdminCreateUserConfigTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ADMINCREATEUSERCONFIGTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.allow_admin_create_user_only = Some(deser.read_boolean(member)?);
+                }
+                Some(1) => {
+                    self.unused_account_validity_days = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.invite_message_template = Some(crate::types::MessageTemplateType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AdminCreateUserConfigType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AdminCreateUserConfigType {
     /// Creates a new builder-style object to manufacture [`AdminCreateUserConfigType`](crate::types::AdminCreateUserConfigType).
     pub fn builder() -> crate::types::builders::AdminCreateUserConfigTypeBuilder {

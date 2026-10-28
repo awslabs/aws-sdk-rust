@@ -35,11 +35,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// <p>The inheritance behavior for a scan-type configuration. Used with
-/// <code>UpdateConfigurationInheritance</code> to reset a member account's configuration to
-/// inherit from the delegated administrator. The only valid value is
-/// <code>INHERIT_FROM_ADMIN</code>, which resets the member account's configuration so that it
-/// inherits scan settings from the delegated administrator.</p>
+/// <p>The inheritance behavior for a scan-type configuration. Used with <code>UpdateConfigurationInheritance</code> to reset a member account's configuration to inherit from the delegated administrator. The only valid value is <code>INHERIT_FROM_ADMIN</code>, which resets the member account's configuration so that it inherits scan settings from the delegated administrator.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

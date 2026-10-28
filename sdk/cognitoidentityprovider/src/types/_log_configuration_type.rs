@@ -37,6 +37,163 @@ impl LogConfigurationType {
         self.firehose_configuration.as_ref()
     }
 }
+static LOGCONFIGURATIONTYPE_MEMBER_LOG_LEVEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LogConfigurationType$LogLevel",
+        "com.amazonaws.cognitoidentityprovider",
+        "LogConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LogLevel",
+    0,
+);
+static LOGCONFIGURATIONTYPE_MEMBER_EVENT_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LogConfigurationType$EventSource",
+        "com.amazonaws.cognitoidentityprovider",
+        "LogConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EventSource",
+    1,
+);
+static LOGCONFIGURATIONTYPE_MEMBER_CLOUD_WATCH_LOGS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LogConfigurationType$CloudWatchLogsConfiguration",
+        "com.amazonaws.cognitoidentityprovider",
+        "LogConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CloudWatchLogsConfiguration",
+    2,
+);
+static LOGCONFIGURATIONTYPE_MEMBER_S3_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LogConfigurationType$S3Configuration",
+        "com.amazonaws.cognitoidentityprovider",
+        "LogConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3Configuration",
+    3,
+);
+static LOGCONFIGURATIONTYPE_MEMBER_FIREHOSE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LogConfigurationType$FirehoseConfiguration",
+        "com.amazonaws.cognitoidentityprovider",
+        "LogConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FirehoseConfiguration",
+    4,
+);
+static LOGCONFIGURATIONTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LogConfigurationType",
+        "com.amazonaws.cognitoidentityprovider",
+        "LogConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LOGCONFIGURATIONTYPE_MEMBER_LOG_LEVEL,
+        &LOGCONFIGURATIONTYPE_MEMBER_EVENT_SOURCE,
+        &LOGCONFIGURATIONTYPE_MEMBER_CLOUD_WATCH_LOGS_CONFIGURATION,
+        &LOGCONFIGURATIONTYPE_MEMBER_S3_CONFIGURATION,
+        &LOGCONFIGURATIONTYPE_MEMBER_FIREHOSE_CONFIGURATION,
+    ],
+);
+impl LogConfigurationType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LOGCONFIGURATIONTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LogConfigurationType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.log_level;
+            ser.write_string(&LOGCONFIGURATIONTYPE_MEMBER_LOG_LEVEL, val.as_str())?;
+        }
+        {
+            let val = &self.event_source;
+            ser.write_string(&LOGCONFIGURATIONTYPE_MEMBER_EVENT_SOURCE, val.as_str())?;
+        }
+        if let Some(ref val) = self.cloud_watch_logs_configuration {
+            ser.write_struct(&LOGCONFIGURATIONTYPE_MEMBER_CLOUD_WATCH_LOGS_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.s3_configuration {
+            ser.write_struct(&LOGCONFIGURATIONTYPE_MEMBER_S3_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.firehose_configuration {
+            ser.write_struct(&LOGCONFIGURATIONTYPE_MEMBER_FIREHOSE_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LogConfigurationTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LOGCONFIGURATIONTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.log_level = Some(crate::types::LogLevel::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    self.event_source = Some(crate::types::EventSourceName::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_watch_logs_configuration = Some(crate::types::CloudWatchLogsConfigurationType::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_configuration = Some(crate::types::S3ConfigurationType::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firehose_configuration = Some(crate::types::FirehoseConfigurationType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LogConfigurationType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl LogConfigurationType {
     /// Creates a new builder-style object to manufacture [`LogConfigurationType`](crate::types::LogConfigurationType).
     pub fn builder() -> crate::types::builders::LogConfigurationTypeBuilder {

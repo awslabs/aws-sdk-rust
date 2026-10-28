@@ -28,6 +28,107 @@ impl ::std::fmt::Debug for GetAcmeExternalAccountBindingCredentialsOutput {
         formatter.finish()
     }
 }
+static GETACMEEXTERNALACCOUNTBINDINGCREDENTIALSOUTPUT_MEMBER_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#GetAcmeExternalAccountBindingCredentialsOutput$KeyId",
+        "com.amazonaws.acm.synthetic",
+        "GetAcmeExternalAccountBindingCredentialsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KeyId",
+    0,
+);
+static GETACMEEXTERNALACCOUNTBINDINGCREDENTIALSOUTPUT_MEMBER_MAC_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#GetAcmeExternalAccountBindingCredentialsOutput$MacKey",
+        "com.amazonaws.acm.synthetic",
+        "GetAcmeExternalAccountBindingCredentialsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MacKey",
+    1,
+);
+static GETACMEEXTERNALACCOUNTBINDINGCREDENTIALSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#GetAcmeExternalAccountBindingCredentialsOutput",
+        "com.amazonaws.acm.synthetic",
+        "GetAcmeExternalAccountBindingCredentialsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETACMEEXTERNALACCOUNTBINDINGCREDENTIALSOUTPUT_MEMBER_KEY_ID,
+        &GETACMEEXTERNALACCOUNTBINDINGCREDENTIALSOUTPUT_MEMBER_MAC_KEY,
+    ],
+)
+.with_original_name("GetAcmeExternalAccountBindingCredentialsResponse");
+impl GetAcmeExternalAccountBindingCredentialsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETACMEEXTERNALACCOUNTBINDINGCREDENTIALSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetAcmeExternalAccountBindingCredentialsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.key_id {
+            ser.write_string(&GETACMEEXTERNALACCOUNTBINDINGCREDENTIALSOUTPUT_MEMBER_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.mac_key {
+            ser.write_string(&GETACMEEXTERNALACCOUNTBINDINGCREDENTIALSOUTPUT_MEMBER_MAC_KEY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_acme_external_account_binding_credentials::builders::GetAcmeExternalAccountBindingCredentialsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETACMEEXTERNALACCOUNTBINDINGCREDENTIALSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mac_key = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetAcmeExternalAccountBindingCredentialsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetAcmeExternalAccountBindingCredentialsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

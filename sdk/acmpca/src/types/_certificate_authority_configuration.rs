@@ -33,6 +33,142 @@ impl CertificateAuthorityConfiguration {
         self.csr_extensions.as_ref()
     }
 }
+static CERTIFICATEAUTHORITYCONFIGURATION_MEMBER_KEY_ALGORITHM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthorityConfiguration$KeyAlgorithm",
+        "com.amazonaws.acmpca",
+        "CertificateAuthorityConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KeyAlgorithm",
+    0,
+);
+static CERTIFICATEAUTHORITYCONFIGURATION_MEMBER_SIGNING_ALGORITHM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthorityConfiguration$SigningAlgorithm",
+        "com.amazonaws.acmpca",
+        "CertificateAuthorityConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SigningAlgorithm",
+    1,
+);
+static CERTIFICATEAUTHORITYCONFIGURATION_MEMBER_SUBJECT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthorityConfiguration$Subject",
+        "com.amazonaws.acmpca",
+        "CertificateAuthorityConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Subject",
+    2,
+);
+static CERTIFICATEAUTHORITYCONFIGURATION_MEMBER_CSR_EXTENSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthorityConfiguration$CsrExtensions",
+        "com.amazonaws.acmpca",
+        "CertificateAuthorityConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CsrExtensions",
+    3,
+);
+static CERTIFICATEAUTHORITYCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#CertificateAuthorityConfiguration",
+        "com.amazonaws.acmpca",
+        "CertificateAuthorityConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CERTIFICATEAUTHORITYCONFIGURATION_MEMBER_KEY_ALGORITHM,
+        &CERTIFICATEAUTHORITYCONFIGURATION_MEMBER_SIGNING_ALGORITHM,
+        &CERTIFICATEAUTHORITYCONFIGURATION_MEMBER_SUBJECT,
+        &CERTIFICATEAUTHORITYCONFIGURATION_MEMBER_CSR_EXTENSIONS,
+    ],
+);
+impl CertificateAuthorityConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CERTIFICATEAUTHORITYCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CertificateAuthorityConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.key_algorithm;
+            ser.write_string(&CERTIFICATEAUTHORITYCONFIGURATION_MEMBER_KEY_ALGORITHM, val.as_str())?;
+        }
+        {
+            let val = &self.signing_algorithm;
+            ser.write_string(&CERTIFICATEAUTHORITYCONFIGURATION_MEMBER_SIGNING_ALGORITHM, val.as_str())?;
+        }
+        if let Some(ref val) = self.subject {
+            ser.write_struct(&CERTIFICATEAUTHORITYCONFIGURATION_MEMBER_SUBJECT, val)?;
+        }
+        if let Some(ref val) = self.csr_extensions {
+            ser.write_struct(&CERTIFICATEAUTHORITYCONFIGURATION_MEMBER_CSR_EXTENSIONS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CertificateAuthorityConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CERTIFICATEAUTHORITYCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.key_algorithm = Some(crate::types::KeyAlgorithm::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    self.signing_algorithm = Some(crate::types::SigningAlgorithm::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subject = Some(crate::types::Asn1Subject::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.csr_extensions = Some(crate::types::CsrExtensions::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CertificateAuthorityConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CertificateAuthorityConfiguration {
     /// Creates a new builder-style object to manufacture [`CertificateAuthorityConfiguration`](crate::types::CertificateAuthorityConfiguration).
     pub fn builder() -> crate::types::builders::CertificateAuthorityConfigurationBuilder {

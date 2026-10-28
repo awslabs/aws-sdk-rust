@@ -57,6 +57,194 @@ impl ActivityTypeConfiguration {
         self.default_task_schedule_to_close_timeout.as_deref()
     }
 }
+static ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_START_TO_CLOSE_TIMEOUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ActivityTypeConfiguration$defaultTaskStartToCloseTimeout",
+            "com.amazonaws.swf",
+            "ActivityTypeConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "defaultTaskStartToCloseTimeout",
+        0,
+    );
+static ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_HEARTBEAT_TIMEOUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ActivityTypeConfiguration$defaultTaskHeartbeatTimeout",
+            "com.amazonaws.swf",
+            "ActivityTypeConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "defaultTaskHeartbeatTimeout",
+        1,
+    );
+static ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ActivityTypeConfiguration$defaultTaskList",
+        "com.amazonaws.swf",
+        "ActivityTypeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "defaultTaskList",
+    2,
+);
+static ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_PRIORITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ActivityTypeConfiguration$defaultTaskPriority",
+        "com.amazonaws.swf",
+        "ActivityTypeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "defaultTaskPriority",
+    3,
+);
+static ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_SCHEDULE_TO_START_TIMEOUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ActivityTypeConfiguration$defaultTaskScheduleToStartTimeout",
+            "com.amazonaws.swf",
+            "ActivityTypeConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "defaultTaskScheduleToStartTimeout",
+        4,
+    );
+static ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_SCHEDULE_TO_CLOSE_TIMEOUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ActivityTypeConfiguration$defaultTaskScheduleToCloseTimeout",
+            "com.amazonaws.swf",
+            "ActivityTypeConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "defaultTaskScheduleToCloseTimeout",
+        5,
+    );
+static ACTIVITYTYPECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ActivityTypeConfiguration",
+        "com.amazonaws.swf",
+        "ActivityTypeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_START_TO_CLOSE_TIMEOUT,
+        &ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_HEARTBEAT_TIMEOUT,
+        &ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_LIST,
+        &ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_PRIORITY,
+        &ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_SCHEDULE_TO_START_TIMEOUT,
+        &ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_SCHEDULE_TO_CLOSE_TIMEOUT,
+    ],
+);
+impl ActivityTypeConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACTIVITYTYPECONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ActivityTypeConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.default_task_start_to_close_timeout {
+            ser.write_string(&ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_START_TO_CLOSE_TIMEOUT, val)?;
+        }
+        if let Some(ref val) = self.default_task_heartbeat_timeout {
+            ser.write_string(&ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_HEARTBEAT_TIMEOUT, val)?;
+        }
+        if let Some(ref val) = self.default_task_list {
+            ser.write_struct(&ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_LIST, val)?;
+        }
+        if let Some(ref val) = self.default_task_priority {
+            ser.write_string(&ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_PRIORITY, val)?;
+        }
+        if let Some(ref val) = self.default_task_schedule_to_start_timeout {
+            ser.write_string(&ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_SCHEDULE_TO_START_TIMEOUT, val)?;
+        }
+        if let Some(ref val) = self.default_task_schedule_to_close_timeout {
+            ser.write_string(&ACTIVITYTYPECONFIGURATION_MEMBER_DEFAULT_TASK_SCHEDULE_TO_CLOSE_TIMEOUT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ActivityTypeConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACTIVITYTYPECONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_task_start_to_close_timeout = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_task_heartbeat_timeout = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_task_list = Some(crate::types::TaskList::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_task_priority = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_task_schedule_to_start_timeout = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_task_schedule_to_close_timeout = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ActivityTypeConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ActivityTypeConfiguration {
     /// Creates a new builder-style object to manufacture [`ActivityTypeConfiguration`](crate::types::ActivityTypeConfiguration).
     pub fn builder() -> crate::types::builders::ActivityTypeConfigurationBuilder {

@@ -25,6 +25,123 @@ impl DaemonContainerImage {
         self.image.as_deref()
     }
 }
+static DAEMONCONTAINERIMAGE_MEMBER_CONTAINER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerImage$containerName",
+        "com.amazonaws.ecs",
+        "DaemonContainerImage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "containerName",
+    0,
+);
+static DAEMONCONTAINERIMAGE_MEMBER_IMAGE_DIGEST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerImage$imageDigest",
+        "com.amazonaws.ecs",
+        "DaemonContainerImage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "imageDigest",
+    1,
+);
+static DAEMONCONTAINERIMAGE_MEMBER_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerImage$image",
+        "com.amazonaws.ecs",
+        "DaemonContainerImage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "image",
+    2,
+);
+static DAEMONCONTAINERIMAGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#DaemonContainerImage", "com.amazonaws.ecs", "DaemonContainerImage"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DAEMONCONTAINERIMAGE_MEMBER_CONTAINER_NAME,
+        &DAEMONCONTAINERIMAGE_MEMBER_IMAGE_DIGEST,
+        &DAEMONCONTAINERIMAGE_MEMBER_IMAGE,
+    ],
+);
+impl DaemonContainerImage {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DAEMONCONTAINERIMAGE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DaemonContainerImage {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.container_name {
+            ser.write_string(&DAEMONCONTAINERIMAGE_MEMBER_CONTAINER_NAME, val)?;
+        }
+        if let Some(ref val) = self.image_digest {
+            ser.write_string(&DAEMONCONTAINERIMAGE_MEMBER_IMAGE_DIGEST, val)?;
+        }
+        if let Some(ref val) = self.image {
+            ser.write_string(&DAEMONCONTAINERIMAGE_MEMBER_IMAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DaemonContainerImageBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DAEMONCONTAINERIMAGE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_digest = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DaemonContainerImage {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DaemonContainerImage {
     /// Creates a new builder-style object to manufacture [`DaemonContainerImage`](crate::types::DaemonContainerImage).
     pub fn builder() -> crate::types::builders::DaemonContainerImageBuilder {

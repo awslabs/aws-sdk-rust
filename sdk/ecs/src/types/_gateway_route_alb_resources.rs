@@ -53,6 +53,253 @@ impl GatewayRouteAlbResources {
         self.service_security_group_arn.as_deref()
     }
 }
+static GATEWAYROUTEALBRESOURCES_MEMBER_ACM_CERTIFICATE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayRouteAlbResources$acmCertificateArn",
+        "com.amazonaws.ecs",
+        "GatewayRouteAlbResources",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "acmCertificateArn",
+    0,
+);
+static GATEWAYROUTEALBRESOURCES_MEMBER_LOAD_BALANCER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayRouteAlbResources$loadBalancerArn",
+        "com.amazonaws.ecs",
+        "GatewayRouteAlbResources",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "loadBalancerArn",
+    1,
+);
+static GATEWAYROUTEALBRESOURCES_MEMBER_LISTENER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayRouteAlbResources$listenerArn",
+        "com.amazonaws.ecs",
+        "GatewayRouteAlbResources",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "listenerArn",
+    2,
+);
+static GATEWAYROUTEALBRESOURCES_MEMBER_LISTENER_RULE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayRouteAlbResources$listenerRuleArn",
+        "com.amazonaws.ecs",
+        "GatewayRouteAlbResources",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "listenerRuleArn",
+    3,
+);
+static GATEWAYROUTEALBRESOURCES_MEMBER_TEST_LISTENER_RULE_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static GATEWAYROUTEALBRESOURCES_MEMBER_TEST_LISTENER_RULE_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayRouteAlbResources$testListenerRuleArns",
+        "com.amazonaws.ecs",
+        "GatewayRouteAlbResources",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "testListenerRuleArns",
+    4,
+)
+.with_list_member(&GATEWAYROUTEALBRESOURCES_MEMBER_TEST_LISTENER_RULE_ARNS_MEMBER);
+static GATEWAYROUTEALBRESOURCES_MEMBER_LOAD_BALANCER_SECURITY_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#GatewayRouteLoadBalancerSecurityGroupList$member",
+            "com.amazonaws.ecs",
+            "GatewayRouteLoadBalancerSecurityGroupList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static GATEWAYROUTEALBRESOURCES_MEMBER_LOAD_BALANCER_SECURITY_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayRouteAlbResources$loadBalancerSecurityGroups",
+        "com.amazonaws.ecs",
+        "GatewayRouteAlbResources",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "loadBalancerSecurityGroups",
+    5,
+)
+.with_list_member(&GATEWAYROUTEALBRESOURCES_MEMBER_LOAD_BALANCER_SECURITY_GROUPS_MEMBER);
+static GATEWAYROUTEALBRESOURCES_MEMBER_SERVICE_SECURITY_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayRouteAlbResources$serviceSecurityGroupArn",
+        "com.amazonaws.ecs",
+        "GatewayRouteAlbResources",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceSecurityGroupArn",
+    6,
+);
+static GATEWAYROUTEALBRESOURCES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayRouteAlbResources",
+        "com.amazonaws.ecs",
+        "GatewayRouteAlbResources",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GATEWAYROUTEALBRESOURCES_MEMBER_ACM_CERTIFICATE_ARN,
+        &GATEWAYROUTEALBRESOURCES_MEMBER_LOAD_BALANCER_ARN,
+        &GATEWAYROUTEALBRESOURCES_MEMBER_LISTENER_ARN,
+        &GATEWAYROUTEALBRESOURCES_MEMBER_LISTENER_RULE_ARN,
+        &GATEWAYROUTEALBRESOURCES_MEMBER_TEST_LISTENER_RULE_ARNS,
+        &GATEWAYROUTEALBRESOURCES_MEMBER_LOAD_BALANCER_SECURITY_GROUPS,
+        &GATEWAYROUTEALBRESOURCES_MEMBER_SERVICE_SECURITY_GROUP_ARN,
+    ],
+);
+impl GatewayRouteAlbResources {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GATEWAYROUTEALBRESOURCES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GatewayRouteAlbResources {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.acm_certificate_arn {
+            ser.write_string(&GATEWAYROUTEALBRESOURCES_MEMBER_ACM_CERTIFICATE_ARN, val)?;
+        }
+        if let Some(ref val) = self.load_balancer_arn {
+            ser.write_string(&GATEWAYROUTEALBRESOURCES_MEMBER_LOAD_BALANCER_ARN, val)?;
+        }
+        if let Some(ref val) = self.listener_arn {
+            ser.write_string(&GATEWAYROUTEALBRESOURCES_MEMBER_LISTENER_ARN, val)?;
+        }
+        if let Some(ref val) = self.listener_rule_arn {
+            ser.write_string(&GATEWAYROUTEALBRESOURCES_MEMBER_LISTENER_RULE_ARN, val)?;
+        }
+        if let Some(ref val) = self.test_listener_rule_arns {
+            ser.write_list(
+                &GATEWAYROUTEALBRESOURCES_MEMBER_TEST_LISTENER_RULE_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.load_balancer_security_groups {
+            ser.write_list(
+                &GATEWAYROUTEALBRESOURCES_MEMBER_LOAD_BALANCER_SECURITY_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::GatewayRouteLoadBalancerSecurityGroup::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.service_security_group_arn {
+            ser.write_string(&GATEWAYROUTEALBRESOURCES_MEMBER_SERVICE_SECURITY_GROUP_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::GatewayRouteAlbResourcesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GATEWAYROUTEALBRESOURCES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.acm_certificate_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.load_balancer_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.listener_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.listener_rule_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.test_listener_rule_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.load_balancer_security_groups = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::GatewayRouteLoadBalancerSecurityGroup::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_security_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GatewayRouteAlbResources {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl GatewayRouteAlbResources {
     /// Creates a new builder-style object to manufacture [`GatewayRouteAlbResources`](crate::types::GatewayRouteAlbResources).
     pub fn builder() -> crate::types::builders::GatewayRouteAlbResourcesBuilder {

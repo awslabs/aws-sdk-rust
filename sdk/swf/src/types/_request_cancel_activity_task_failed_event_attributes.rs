@@ -30,6 +30,127 @@ impl RequestCancelActivityTaskFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+static REQUESTCANCELACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_ACTIVITY_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#RequestCancelActivityTaskFailedEventAttributes$activityId",
+            "com.amazonaws.swf",
+            "RequestCancelActivityTaskFailedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "activityId",
+        0,
+    );
+static REQUESTCANCELACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_CAUSE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#RequestCancelActivityTaskFailedEventAttributes$cause",
+        "com.amazonaws.swf",
+        "RequestCancelActivityTaskFailedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cause",
+    1,
+);
+static REQUESTCANCELACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#RequestCancelActivityTaskFailedEventAttributes$decisionTaskCompletedEventId",
+            "com.amazonaws.swf",
+            "RequestCancelActivityTaskFailedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "decisionTaskCompletedEventId",
+        2,
+    );
+static REQUESTCANCELACTIVITYTASKFAILEDEVENTATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#RequestCancelActivityTaskFailedEventAttributes",
+        "com.amazonaws.swf",
+        "RequestCancelActivityTaskFailedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REQUESTCANCELACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_ACTIVITY_ID,
+        &REQUESTCANCELACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_CAUSE,
+        &REQUESTCANCELACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID,
+    ],
+);
+impl RequestCancelActivityTaskFailedEventAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REQUESTCANCELACTIVITYTASKFAILEDEVENTATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RequestCancelActivityTaskFailedEventAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.activity_id;
+            ser.write_string(&REQUESTCANCELACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_ACTIVITY_ID, val)?;
+        }
+        {
+            let val = &self.cause;
+            ser.write_string(&REQUESTCANCELACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_CAUSE, val.as_str())?;
+        }
+        {
+            let val = &self.decision_task_completed_event_id;
+            ser.write_long(
+                &REQUESTCANCELACTIVITYTASKFAILEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID,
+                *val,
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RequestCancelActivityTaskFailedEventAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REQUESTCANCELACTIVITYTASKFAILEDEVENTATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.activity_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.cause = Some(crate::types::RequestCancelActivityTaskFailedCause::from(
+                        deser.read_string(member)?.as_str(),
+                    ));
+                }
+                Some(2) => {
+                    self.decision_task_completed_event_id = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RequestCancelActivityTaskFailedEventAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.activity_id = builder.activity_id.or(Some(String::new()));
+        builder.decision_task_completed_event_id = builder.decision_task_completed_event_id.or(Some(0i64));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RequestCancelActivityTaskFailedEventAttributes {
     /// Creates a new builder-style object to manufacture [`RequestCancelActivityTaskFailedEventAttributes`](crate::types::RequestCancelActivityTaskFailedEventAttributes).
     pub fn builder() -> crate::types::builders::RequestCancelActivityTaskFailedEventAttributesBuilder {

@@ -25,6 +25,127 @@ impl FailedCreateWorkspaceRequest {
         self.error_message.as_deref()
     }
 }
+static FAILEDCREATEWORKSPACEREQUEST_MEMBER_WORKSPACE_REQUEST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#FailedCreateWorkspaceRequest$WorkspaceRequest",
+        "com.amazonaws.workspaces",
+        "FailedCreateWorkspaceRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WorkspaceRequest",
+    0,
+);
+static FAILEDCREATEWORKSPACEREQUEST_MEMBER_ERROR_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#FailedCreateWorkspaceRequest$ErrorCode",
+        "com.amazonaws.workspaces",
+        "FailedCreateWorkspaceRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorCode",
+    1,
+);
+static FAILEDCREATEWORKSPACEREQUEST_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#FailedCreateWorkspaceRequest$ErrorMessage",
+        "com.amazonaws.workspaces",
+        "FailedCreateWorkspaceRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorMessage",
+    2,
+);
+static FAILEDCREATEWORKSPACEREQUEST_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#FailedCreateWorkspaceRequest",
+        "com.amazonaws.workspaces",
+        "FailedCreateWorkspaceRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FAILEDCREATEWORKSPACEREQUEST_MEMBER_WORKSPACE_REQUEST,
+        &FAILEDCREATEWORKSPACEREQUEST_MEMBER_ERROR_CODE,
+        &FAILEDCREATEWORKSPACEREQUEST_MEMBER_ERROR_MESSAGE,
+    ],
+);
+impl FailedCreateWorkspaceRequest {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FAILEDCREATEWORKSPACEREQUEST_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FailedCreateWorkspaceRequest {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.workspace_request {
+            ser.write_struct(&FAILEDCREATEWORKSPACEREQUEST_MEMBER_WORKSPACE_REQUEST, val)?;
+        }
+        if let Some(ref val) = self.error_code {
+            ser.write_string(&FAILEDCREATEWORKSPACEREQUEST_MEMBER_ERROR_CODE, val)?;
+        }
+        if let Some(ref val) = self.error_message {
+            ser.write_string(&FAILEDCREATEWORKSPACEREQUEST_MEMBER_ERROR_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FailedCreateWorkspaceRequestBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FAILEDCREATEWORKSPACEREQUEST_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_request = Some(crate::types::WorkspaceRequest::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FailedCreateWorkspaceRequest {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FailedCreateWorkspaceRequest {
     /// Creates a new builder-style object to manufacture [`FailedCreateWorkspaceRequest`](crate::types::FailedCreateWorkspaceRequest).
     pub fn builder() -> crate::types::builders::FailedCreateWorkspaceRequestBuilder {

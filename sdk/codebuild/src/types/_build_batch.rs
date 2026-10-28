@@ -265,6 +265,804 @@ impl BuildBatch {
         self.report_arns.as_deref().unwrap_or_default()
     }
 }
+static BUILDBATCH_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$id", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::String,
+    "id",
+    0,
+);
+static BUILDBATCH_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$arn", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    1,
+);
+static BUILDBATCH_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$startTime", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "startTime",
+    2,
+);
+static BUILDBATCH_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$endTime", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "endTime",
+    3,
+);
+static BUILDBATCH_MEMBER_CURRENT_PHASE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$currentPhase", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::String,
+    "currentPhase",
+    4,
+);
+static BUILDBATCH_MEMBER_BUILD_BATCH_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildBatch$buildBatchStatus",
+        "com.amazonaws.codebuild",
+        "BuildBatch",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "buildBatchStatus",
+    5,
+);
+static BUILDBATCH_MEMBER_SOURCE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildBatch$sourceVersion",
+        "com.amazonaws.codebuild",
+        "BuildBatch",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sourceVersion",
+    6,
+);
+static BUILDBATCH_MEMBER_RESOLVED_SOURCE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildBatch$resolvedSourceVersion",
+        "com.amazonaws.codebuild",
+        "BuildBatch",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resolvedSourceVersion",
+    7,
+);
+static BUILDBATCH_MEMBER_PROJECT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$projectName", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::String,
+    "projectName",
+    8,
+);
+static BUILDBATCH_MEMBER_PHASES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildBatchPhases$member",
+        "com.amazonaws.codebuild",
+        "BuildBatchPhases",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BUILDBATCH_MEMBER_PHASES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$phases", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::List,
+    "phases",
+    9,
+)
+.with_list_member(&BUILDBATCH_MEMBER_PHASES_MEMBER);
+static BUILDBATCH_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$source", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "source",
+    10,
+);
+static BUILDBATCH_MEMBER_SECONDARY_SOURCES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectSources$member",
+        "com.amazonaws.codebuild",
+        "ProjectSources",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BUILDBATCH_MEMBER_SECONDARY_SOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildBatch$secondarySources",
+        "com.amazonaws.codebuild",
+        "BuildBatch",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "secondarySources",
+    11,
+)
+.with_list_member(&BUILDBATCH_MEMBER_SECONDARY_SOURCES_MEMBER);
+static BUILDBATCH_MEMBER_SECONDARY_SOURCE_VERSIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectSecondarySourceVersions$member",
+        "com.amazonaws.codebuild",
+        "ProjectSecondarySourceVersions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BUILDBATCH_MEMBER_SECONDARY_SOURCE_VERSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildBatch$secondarySourceVersions",
+        "com.amazonaws.codebuild",
+        "BuildBatch",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "secondarySourceVersions",
+    12,
+)
+.with_list_member(&BUILDBATCH_MEMBER_SECONDARY_SOURCE_VERSIONS_MEMBER);
+static BUILDBATCH_MEMBER_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$artifacts", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "artifacts",
+    13,
+);
+static BUILDBATCH_MEMBER_SECONDARY_ARTIFACTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildArtifactsList$member",
+        "com.amazonaws.codebuild",
+        "BuildArtifactsList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BUILDBATCH_MEMBER_SECONDARY_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildBatch$secondaryArtifacts",
+        "com.amazonaws.codebuild",
+        "BuildBatch",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "secondaryArtifacts",
+    14,
+)
+.with_list_member(&BUILDBATCH_MEMBER_SECONDARY_ARTIFACTS_MEMBER);
+static BUILDBATCH_MEMBER_CACHE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$cache", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "cache",
+    15,
+);
+static BUILDBATCH_MEMBER_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$environment", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "environment",
+    16,
+);
+static BUILDBATCH_MEMBER_SERVICE_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$serviceRole", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceRole",
+    17,
+);
+static BUILDBATCH_MEMBER_LOG_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$logConfig", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "logConfig",
+    18,
+);
+static BUILDBATCH_MEMBER_BUILD_TIMEOUT_IN_MINUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildBatch$buildTimeoutInMinutes",
+        "com.amazonaws.codebuild",
+        "BuildBatch",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "buildTimeoutInMinutes",
+    19,
+);
+static BUILDBATCH_MEMBER_QUEUED_TIMEOUT_IN_MINUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildBatch$queuedTimeoutInMinutes",
+        "com.amazonaws.codebuild",
+        "BuildBatch",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "queuedTimeoutInMinutes",
+    20,
+);
+static BUILDBATCH_MEMBER_COMPLETE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$complete", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "complete",
+    21,
+);
+static BUILDBATCH_MEMBER_INITIATOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$initiator", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::String,
+    "initiator",
+    22,
+);
+static BUILDBATCH_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$vpcConfig", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "vpcConfig",
+    23,
+);
+static BUILDBATCH_MEMBER_ENCRYPTION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildBatch$encryptionKey",
+        "com.amazonaws.codebuild",
+        "BuildBatch",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "encryptionKey",
+    24,
+);
+static BUILDBATCH_MEMBER_BUILD_BATCH_NUMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildBatch$buildBatchNumber",
+        "com.amazonaws.codebuild",
+        "BuildBatch",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "buildBatchNumber",
+    25,
+);
+static BUILDBATCH_MEMBER_FILE_SYSTEM_LOCATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectFileSystemLocations$member",
+        "com.amazonaws.codebuild",
+        "ProjectFileSystemLocations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BUILDBATCH_MEMBER_FILE_SYSTEM_LOCATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildBatch$fileSystemLocations",
+        "com.amazonaws.codebuild",
+        "BuildBatch",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "fileSystemLocations",
+    26,
+)
+.with_list_member(&BUILDBATCH_MEMBER_FILE_SYSTEM_LOCATIONS_MEMBER);
+static BUILDBATCH_MEMBER_BUILD_BATCH_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildBatch$buildBatchConfig",
+        "com.amazonaws.codebuild",
+        "BuildBatch",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "buildBatchConfig",
+    27,
+);
+static BUILDBATCH_MEMBER_BUILD_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildGroups$member", "com.amazonaws.codebuild", "BuildGroups"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BUILDBATCH_MEMBER_BUILD_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$buildGroups", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::List,
+    "buildGroups",
+    28,
+)
+.with_list_member(&BUILDBATCH_MEMBER_BUILD_GROUPS_MEMBER);
+static BUILDBATCH_MEMBER_DEBUG_SESSION_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildBatch$debugSessionEnabled",
+        "com.amazonaws.codebuild",
+        "BuildBatch",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "debugSessionEnabled",
+    29,
+);
+static BUILDBATCH_MEMBER_REPORT_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildReportArns$member",
+        "com.amazonaws.codebuild",
+        "BuildReportArns",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static BUILDBATCH_MEMBER_REPORT_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch$reportArns", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::List,
+    "reportArns",
+    30,
+)
+.with_list_member(&BUILDBATCH_MEMBER_REPORT_ARNS_MEMBER);
+static BUILDBATCH_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildBatch", "com.amazonaws.codebuild", "BuildBatch"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BUILDBATCH_MEMBER_ID,
+        &BUILDBATCH_MEMBER_ARN,
+        &BUILDBATCH_MEMBER_START_TIME,
+        &BUILDBATCH_MEMBER_END_TIME,
+        &BUILDBATCH_MEMBER_CURRENT_PHASE,
+        &BUILDBATCH_MEMBER_BUILD_BATCH_STATUS,
+        &BUILDBATCH_MEMBER_SOURCE_VERSION,
+        &BUILDBATCH_MEMBER_RESOLVED_SOURCE_VERSION,
+        &BUILDBATCH_MEMBER_PROJECT_NAME,
+        &BUILDBATCH_MEMBER_PHASES,
+        &BUILDBATCH_MEMBER_SOURCE,
+        &BUILDBATCH_MEMBER_SECONDARY_SOURCES,
+        &BUILDBATCH_MEMBER_SECONDARY_SOURCE_VERSIONS,
+        &BUILDBATCH_MEMBER_ARTIFACTS,
+        &BUILDBATCH_MEMBER_SECONDARY_ARTIFACTS,
+        &BUILDBATCH_MEMBER_CACHE,
+        &BUILDBATCH_MEMBER_ENVIRONMENT,
+        &BUILDBATCH_MEMBER_SERVICE_ROLE,
+        &BUILDBATCH_MEMBER_LOG_CONFIG,
+        &BUILDBATCH_MEMBER_BUILD_TIMEOUT_IN_MINUTES,
+        &BUILDBATCH_MEMBER_QUEUED_TIMEOUT_IN_MINUTES,
+        &BUILDBATCH_MEMBER_COMPLETE,
+        &BUILDBATCH_MEMBER_INITIATOR,
+        &BUILDBATCH_MEMBER_VPC_CONFIG,
+        &BUILDBATCH_MEMBER_ENCRYPTION_KEY,
+        &BUILDBATCH_MEMBER_BUILD_BATCH_NUMBER,
+        &BUILDBATCH_MEMBER_FILE_SYSTEM_LOCATIONS,
+        &BUILDBATCH_MEMBER_BUILD_BATCH_CONFIG,
+        &BUILDBATCH_MEMBER_BUILD_GROUPS,
+        &BUILDBATCH_MEMBER_DEBUG_SESSION_ENABLED,
+        &BUILDBATCH_MEMBER_REPORT_ARNS,
+    ],
+);
+impl BuildBatch {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BUILDBATCH_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BuildBatch {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&BUILDBATCH_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&BUILDBATCH_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&BUILDBATCH_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&BUILDBATCH_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.current_phase {
+            ser.write_string(&BUILDBATCH_MEMBER_CURRENT_PHASE, val)?;
+        }
+        if let Some(ref val) = self.build_batch_status {
+            ser.write_string(&BUILDBATCH_MEMBER_BUILD_BATCH_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.source_version {
+            ser.write_string(&BUILDBATCH_MEMBER_SOURCE_VERSION, val)?;
+        }
+        if let Some(ref val) = self.resolved_source_version {
+            ser.write_string(&BUILDBATCH_MEMBER_RESOLVED_SOURCE_VERSION, val)?;
+        }
+        if let Some(ref val) = self.project_name {
+            ser.write_string(&BUILDBATCH_MEMBER_PROJECT_NAME, val)?;
+        }
+        if let Some(ref val) = self.phases {
+            ser.write_list(&BUILDBATCH_MEMBER_PHASES, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::BuildBatchPhase::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.source {
+            ser.write_struct(&BUILDBATCH_MEMBER_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.secondary_sources {
+            ser.write_list(
+                &BUILDBATCH_MEMBER_SECONDARY_SOURCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProjectSource::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.secondary_source_versions {
+            ser.write_list(
+                &BUILDBATCH_MEMBER_SECONDARY_SOURCE_VERSIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProjectSourceVersion::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.artifacts {
+            ser.write_struct(&BUILDBATCH_MEMBER_ARTIFACTS, val)?;
+        }
+        if let Some(ref val) = self.secondary_artifacts {
+            ser.write_list(
+                &BUILDBATCH_MEMBER_SECONDARY_ARTIFACTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::BuildArtifacts::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.cache {
+            ser.write_struct(&BUILDBATCH_MEMBER_CACHE, val)?;
+        }
+        if let Some(ref val) = self.environment {
+            ser.write_struct(&BUILDBATCH_MEMBER_ENVIRONMENT, val)?;
+        }
+        if let Some(ref val) = self.service_role {
+            ser.write_string(&BUILDBATCH_MEMBER_SERVICE_ROLE, val)?;
+        }
+        if let Some(ref val) = self.log_config {
+            ser.write_struct(&BUILDBATCH_MEMBER_LOG_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.build_timeout_in_minutes {
+            ser.write_integer(&BUILDBATCH_MEMBER_BUILD_TIMEOUT_IN_MINUTES, *val)?;
+        }
+        if let Some(ref val) = self.queued_timeout_in_minutes {
+            ser.write_integer(&BUILDBATCH_MEMBER_QUEUED_TIMEOUT_IN_MINUTES, *val)?;
+        }
+        {
+            let val = &self.complete;
+            ser.write_boolean(&BUILDBATCH_MEMBER_COMPLETE, *val)?;
+        }
+        if let Some(ref val) = self.initiator {
+            ser.write_string(&BUILDBATCH_MEMBER_INITIATOR, val)?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&BUILDBATCH_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.encryption_key {
+            ser.write_string(&BUILDBATCH_MEMBER_ENCRYPTION_KEY, val)?;
+        }
+        if let Some(ref val) = self.build_batch_number {
+            ser.write_long(&BUILDBATCH_MEMBER_BUILD_BATCH_NUMBER, *val)?;
+        }
+        if let Some(ref val) = self.file_system_locations {
+            ser.write_list(
+                &BUILDBATCH_MEMBER_FILE_SYSTEM_LOCATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProjectFileSystemLocation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.build_batch_config {
+            ser.write_struct(&BUILDBATCH_MEMBER_BUILD_BATCH_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.build_groups {
+            ser.write_list(
+                &BUILDBATCH_MEMBER_BUILD_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::BuildGroup::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.debug_session_enabled {
+            ser.write_boolean(&BUILDBATCH_MEMBER_DEBUG_SESSION_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.report_arns {
+            ser.write_list(
+                &BUILDBATCH_MEMBER_REPORT_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BuildBatchBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BUILDBATCH_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_phase = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.build_batch_status = Some(crate::types::StatusType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolved_source_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.phases = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::BuildBatchPhase::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source = Some(crate::types::ProjectSource::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_sources = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProjectSource::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_source_versions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProjectSourceVersion::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifacts = Some(crate::types::BuildArtifacts::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_artifacts = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::BuildArtifacts::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cache = Some(crate::types::ProjectCache::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment = Some(crate::types::ProjectEnvironment::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_config = Some(crate::types::LogsConfig::deserialize(deser)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.build_timeout_in_minutes = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.queued_timeout_in_minutes = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(21) => {
+                    self.complete = Some(deser.read_boolean(member)?);
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.initiator = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(25) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.build_batch_number = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(26) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_locations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProjectFileSystemLocation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(27) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.build_batch_config = Some(crate::types::ProjectBuildBatchConfig::deserialize(deser)?);
+                    }
+                }
+                Some(28) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.build_groups = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::BuildGroup::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(29) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.debug_session_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(30) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BuildBatch {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl BuildBatch {
     /// Creates a new builder-style object to manufacture [`BuildBatch`](crate::types::BuildBatch).
     pub fn builder() -> crate::types::builders::BuildBatchBuilder {

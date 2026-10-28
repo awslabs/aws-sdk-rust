@@ -5,11 +5,17 @@
 pub struct StartInstanceInput {
     /// <p>The name of the instance (a virtual private server) to start.</p>
     pub instance_name: ::std::option::Option<::std::string::String>,
+    /// <p>An object that describes the attributes to update on the instance before it starts.</p>
+    pub attribute_updates: ::std::option::Option<crate::types::InstanceAttributeUpdates>,
 }
 impl StartInstanceInput {
     /// <p>The name of the instance (a virtual private server) to start.</p>
     pub fn instance_name(&self) -> ::std::option::Option<&str> {
         self.instance_name.as_deref()
+    }
+    /// <p>An object that describes the attributes to update on the instance before it starts.</p>
+    pub fn attribute_updates(&self) -> ::std::option::Option<&crate::types::InstanceAttributeUpdates> {
+        self.attribute_updates.as_ref()
     }
 }
 static STARTINSTANCEINPUT_MEMBER_INSTANCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -22,6 +28,16 @@ static STARTINSTANCEINPUT_MEMBER_INSTANCE_NAME: ::aws_smithy_schema::Schema<'sta
     "instanceName",
     0,
 );
+static STARTINSTANCEINPUT_MEMBER_ATTRIBUTE_UPDATES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#StartInstanceInput$attributeUpdates",
+        "com.amazonaws.lightsail.synthetic",
+        "StartInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "attributeUpdates",
+    1,
+);
 static STARTINSTANCEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.lightsail.synthetic#StartInstanceInput",
@@ -29,7 +45,7 @@ static STARTINSTANCEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_s
         "StartInstanceInput",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&STARTINSTANCEINPUT_MEMBER_INSTANCE_NAME],
+    &[&STARTINSTANCEINPUT_MEMBER_INSTANCE_NAME, &STARTINSTANCEINPUT_MEMBER_ATTRIBUTE_UPDATES],
 )
 .with_http(aws_smithy_schema::traits::HttpTrait::new(
     "POST",
@@ -55,6 +71,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for StartInstanceInput {
         if let Some(ref val) = self.instance_name {
             ser.write_string(&STARTINSTANCEINPUT_MEMBER_INSTANCE_NAME, val)?;
         }
+        if let Some(ref val) = self.attribute_updates {
+            ser.write_struct(&STARTINSTANCEINPUT_MEMBER_ATTRIBUTE_UPDATES, val)?;
+        }
         Ok(())
     }
 }
@@ -77,6 +96,13 @@ impl crate::operation::start_instance::builders::StartInstanceInputBuilder {
                         deser.read_null()?;
                     } else {
                         self.instance_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attribute_updates = Some(crate::types::InstanceAttributeUpdates::deserialize(deser)?);
                     }
                 }
                 _ => {}
@@ -109,6 +135,7 @@ impl StartInstanceInput {
 #[non_exhaustive]
 pub struct StartInstanceInputBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
+    pub(crate) attribute_updates: ::std::option::Option<crate::types::InstanceAttributeUpdates>,
 }
 impl StartInstanceInputBuilder {
     /// <p>The name of the instance (a virtual private server) to start.</p>
@@ -126,12 +153,27 @@ impl StartInstanceInputBuilder {
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_name
     }
+    /// <p>An object that describes the attributes to update on the instance before it starts.</p>
+    pub fn attribute_updates(mut self, input: crate::types::InstanceAttributeUpdates) -> Self {
+        self.attribute_updates = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that describes the attributes to update on the instance before it starts.</p>
+    pub fn set_attribute_updates(mut self, input: ::std::option::Option<crate::types::InstanceAttributeUpdates>) -> Self {
+        self.attribute_updates = input;
+        self
+    }
+    /// <p>An object that describes the attributes to update on the instance before it starts.</p>
+    pub fn get_attribute_updates(&self) -> &::std::option::Option<crate::types::InstanceAttributeUpdates> {
+        &self.attribute_updates
+    }
     /// Consumes the builder and constructs a [`StartInstanceInput`](crate::operation::start_instance::StartInstanceInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_instance::StartInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_instance::StartInstanceInput {
             instance_name: self.instance_name,
+            attribute_updates: self.attribute_updates,
         })
     }
 }

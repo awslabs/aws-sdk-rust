@@ -61,6 +61,143 @@ impl ProxyConfiguration {
         self.properties.as_deref().unwrap_or_default()
     }
 }
+static PROXYCONFIGURATION_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ProxyConfiguration$type", "com.amazonaws.ecs", "ProxyConfiguration"),
+    ::aws_smithy_schema::ShapeType::String,
+    "type",
+    0,
+);
+static PROXYCONFIGURATION_MEMBER_CONTAINER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ProxyConfiguration$containerName",
+        "com.amazonaws.ecs",
+        "ProxyConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "containerName",
+    1,
+);
+static PROXYCONFIGURATION_MEMBER_PROPERTIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ProxyConfigurationProperties$member",
+        "com.amazonaws.ecs",
+        "ProxyConfigurationProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PROXYCONFIGURATION_MEMBER_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ProxyConfiguration$properties",
+        "com.amazonaws.ecs",
+        "ProxyConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "properties",
+    2,
+)
+.with_list_member(&PROXYCONFIGURATION_MEMBER_PROPERTIES_MEMBER);
+static PROXYCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ProxyConfiguration", "com.amazonaws.ecs", "ProxyConfiguration"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PROXYCONFIGURATION_MEMBER_TYPE,
+        &PROXYCONFIGURATION_MEMBER_CONTAINER_NAME,
+        &PROXYCONFIGURATION_MEMBER_PROPERTIES,
+    ],
+);
+impl ProxyConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PROXYCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProxyConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&PROXYCONFIGURATION_MEMBER_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.container_name;
+            ser.write_string(&PROXYCONFIGURATION_MEMBER_CONTAINER_NAME, val)?;
+        }
+        if let Some(ref val) = self.properties {
+            ser.write_list(
+                &PROXYCONFIGURATION_MEMBER_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::KeyValuePair::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProxyConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PROXYCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::ProxyConfigurationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    self.container_name = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.properties = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::KeyValuePair::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProxyConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.container_name = builder.container_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ProxyConfiguration {
     /// Creates a new builder-style object to manufacture [`ProxyConfiguration`](crate::types::ProxyConfiguration).
     pub fn builder() -> crate::types::builders::ProxyConfigurationBuilder {

@@ -27,6 +27,103 @@ impl DeliveryStreamEncryptionConfigurationInput {
         &self.key_type
     }
 }
+static DELIVERYSTREAMENCRYPTIONCONFIGURATIONINPUT_MEMBER_KEY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DeliveryStreamEncryptionConfigurationInput$KeyARN",
+        "com.amazonaws.firehose",
+        "DeliveryStreamEncryptionConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KeyARN",
+    0,
+);
+static DELIVERYSTREAMENCRYPTIONCONFIGURATIONINPUT_MEMBER_KEY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DeliveryStreamEncryptionConfigurationInput$KeyType",
+        "com.amazonaws.firehose",
+        "DeliveryStreamEncryptionConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KeyType",
+    1,
+);
+static DELIVERYSTREAMENCRYPTIONCONFIGURATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DeliveryStreamEncryptionConfigurationInput",
+        "com.amazonaws.firehose",
+        "DeliveryStreamEncryptionConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELIVERYSTREAMENCRYPTIONCONFIGURATIONINPUT_MEMBER_KEY_ARN,
+        &DELIVERYSTREAMENCRYPTIONCONFIGURATIONINPUT_MEMBER_KEY_TYPE,
+    ],
+);
+impl DeliveryStreamEncryptionConfigurationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELIVERYSTREAMENCRYPTIONCONFIGURATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeliveryStreamEncryptionConfigurationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.key_arn {
+            ser.write_string(&DELIVERYSTREAMENCRYPTIONCONFIGURATIONINPUT_MEMBER_KEY_ARN, val)?;
+        }
+        {
+            let val = &self.key_type;
+            ser.write_string(&DELIVERYSTREAMENCRYPTIONCONFIGURATIONINPUT_MEMBER_KEY_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeliveryStreamEncryptionConfigurationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELIVERYSTREAMENCRYPTIONCONFIGURATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.key_type = Some(crate::types::KeyType::from(deser.read_string(member)?.as_str()));
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeliveryStreamEncryptionConfigurationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeliveryStreamEncryptionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeliveryStreamEncryptionConfigurationInput`](crate::types::DeliveryStreamEncryptionConfigurationInput).
     pub fn builder() -> crate::types::builders::DeliveryStreamEncryptionConfigurationInputBuilder {

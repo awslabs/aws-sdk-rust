@@ -32,6 +32,153 @@ impl UpdateDataRepositoryAssociationInput {
         self.s3.as_ref()
     }
 }
+static UPDATEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_ASSOCIATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#UpdateDataRepositoryAssociationInput$AssociationId",
+        "com.amazonaws.fsx.synthetic",
+        "UpdateDataRepositoryAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationId",
+    0,
+);
+static UPDATEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx.synthetic#UpdateDataRepositoryAssociationInput$ClientRequestToken",
+            "com.amazonaws.fsx.synthetic",
+            "UpdateDataRepositoryAssociationInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ClientRequestToken",
+        1,
+    );
+static UPDATEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_IMPORTED_FILE_CHUNK_SIZE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx.synthetic#UpdateDataRepositoryAssociationInput$ImportedFileChunkSize",
+            "com.amazonaws.fsx.synthetic",
+            "UpdateDataRepositoryAssociationInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "ImportedFileChunkSize",
+        2,
+    );
+static UPDATEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_S3: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#UpdateDataRepositoryAssociationInput$S3",
+        "com.amazonaws.fsx.synthetic",
+        "UpdateDataRepositoryAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3",
+    3,
+);
+static UPDATEDATAREPOSITORYASSOCIATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#UpdateDataRepositoryAssociationInput",
+        "com.amazonaws.fsx.synthetic",
+        "UpdateDataRepositoryAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_ASSOCIATION_ID,
+        &UPDATEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &UPDATEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_IMPORTED_FILE_CHUNK_SIZE,
+        &UPDATEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_S3,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateDataRepositoryAssociationRequest");
+impl UpdateDataRepositoryAssociationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEDATAREPOSITORYASSOCIATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateDataRepositoryAssociationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.association_id {
+            ser.write_string(&UPDATEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_ASSOCIATION_ID, val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&UPDATEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.imported_file_chunk_size {
+            ser.write_integer(&UPDATEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_IMPORTED_FILE_CHUNK_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.s3 {
+            ser.write_struct(&UPDATEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_S3, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_data_repository_association::builders::UpdateDataRepositoryAssociationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEDATAREPOSITORYASSOCIATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.association_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.imported_file_chunk_size = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3 = Some(crate::types::S3DataRepositoryConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateDataRepositoryAssociationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.association_id = builder.association_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateDataRepositoryAssociationInput {
     /// Creates a new builder-style object to manufacture [`UpdateDataRepositoryAssociationInput`](crate::operation::update_data_repository_association::UpdateDataRepositoryAssociationInput).
     pub fn builder() -> crate::operation::update_data_repository_association::builders::UpdateDataRepositoryAssociationInputBuilder {

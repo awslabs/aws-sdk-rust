@@ -46,6 +46,185 @@ impl PollForActivityTaskOutput {
         self.input.as_deref()
     }
 }
+static POLLFORACTIVITYTASKOUTPUT_MEMBER_TASK_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForActivityTaskOutput$taskToken",
+        "com.amazonaws.swf.synthetic",
+        "PollForActivityTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskToken",
+    0,
+);
+static POLLFORACTIVITYTASKOUTPUT_MEMBER_ACTIVITY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForActivityTaskOutput$activityId",
+        "com.amazonaws.swf.synthetic",
+        "PollForActivityTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "activityId",
+    1,
+);
+static POLLFORACTIVITYTASKOUTPUT_MEMBER_STARTED_EVENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForActivityTaskOutput$startedEventId",
+        "com.amazonaws.swf.synthetic",
+        "PollForActivityTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "startedEventId",
+    2,
+);
+static POLLFORACTIVITYTASKOUTPUT_MEMBER_WORKFLOW_EXECUTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForActivityTaskOutput$workflowExecution",
+        "com.amazonaws.swf.synthetic",
+        "PollForActivityTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "workflowExecution",
+    3,
+);
+static POLLFORACTIVITYTASKOUTPUT_MEMBER_ACTIVITY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForActivityTaskOutput$activityType",
+        "com.amazonaws.swf.synthetic",
+        "PollForActivityTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "activityType",
+    4,
+);
+static POLLFORACTIVITYTASKOUTPUT_MEMBER_INPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForActivityTaskOutput$input",
+        "com.amazonaws.swf.synthetic",
+        "PollForActivityTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "input",
+    5,
+);
+static POLLFORACTIVITYTASKOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForActivityTaskOutput",
+        "com.amazonaws.swf.synthetic",
+        "PollForActivityTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &POLLFORACTIVITYTASKOUTPUT_MEMBER_TASK_TOKEN,
+        &POLLFORACTIVITYTASKOUTPUT_MEMBER_ACTIVITY_ID,
+        &POLLFORACTIVITYTASKOUTPUT_MEMBER_STARTED_EVENT_ID,
+        &POLLFORACTIVITYTASKOUTPUT_MEMBER_WORKFLOW_EXECUTION,
+        &POLLFORACTIVITYTASKOUTPUT_MEMBER_ACTIVITY_TYPE,
+        &POLLFORACTIVITYTASKOUTPUT_MEMBER_INPUT,
+    ],
+)
+.with_original_name("ActivityTask");
+impl PollForActivityTaskOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &POLLFORACTIVITYTASKOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PollForActivityTaskOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.task_token;
+            ser.write_string(&POLLFORACTIVITYTASKOUTPUT_MEMBER_TASK_TOKEN, val)?;
+        }
+        {
+            let val = &self.activity_id;
+            ser.write_string(&POLLFORACTIVITYTASKOUTPUT_MEMBER_ACTIVITY_ID, val)?;
+        }
+        {
+            let val = &self.started_event_id;
+            ser.write_long(&POLLFORACTIVITYTASKOUTPUT_MEMBER_STARTED_EVENT_ID, *val)?;
+        }
+        if let Some(ref val) = self.workflow_execution {
+            ser.write_struct(&POLLFORACTIVITYTASKOUTPUT_MEMBER_WORKFLOW_EXECUTION, val)?;
+        }
+        if let Some(ref val) = self.activity_type {
+            ser.write_struct(&POLLFORACTIVITYTASKOUTPUT_MEMBER_ACTIVITY_TYPE, val)?;
+        }
+        if let Some(ref val) = self.input {
+            ser.write_string(&POLLFORACTIVITYTASKOUTPUT_MEMBER_INPUT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::poll_for_activity_task::builders::PollForActivityTaskOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&POLLFORACTIVITYTASKOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.task_token = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.activity_id = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.started_event_id = Some(deser.read_long(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_execution = Some(crate::types::WorkflowExecution::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.activity_type = Some(crate::types::ActivityType::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PollForActivityTaskOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.task_token = builder.task_token.or(Some(String::new()));
+        builder.activity_id = builder.activity_id.or(Some(String::new()));
+        builder.started_event_id = builder.started_event_id.or(Some(0i64));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for PollForActivityTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

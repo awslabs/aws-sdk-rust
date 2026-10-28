@@ -250,6 +250,379 @@ impl UpdateFirewallRuleEntry {
         self.firewall_rule_type.as_ref()
     }
 }
+static UPDATEFIREWALLRULEENTRY_MEMBER_FIREWALL_RULE_GROUP_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#UpdateFirewallRuleEntry$FirewallRuleGroupId",
+        "com.amazonaws.route53resolver",
+        "UpdateFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FirewallRuleGroupId",
+    0,
+);
+static UPDATEFIREWALLRULEENTRY_MEMBER_FIREWALL_DOMAIN_LIST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#UpdateFirewallRuleEntry$FirewallDomainListId",
+        "com.amazonaws.route53resolver",
+        "UpdateFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FirewallDomainListId",
+    1,
+);
+static UPDATEFIREWALLRULEENTRY_MEMBER_FIREWALL_THREAT_PROTECTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#UpdateFirewallRuleEntry$FirewallThreatProtectionId",
+        "com.amazonaws.route53resolver",
+        "UpdateFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FirewallThreatProtectionId",
+    2,
+);
+static UPDATEFIREWALLRULEENTRY_MEMBER_PRIORITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#UpdateFirewallRuleEntry$Priority",
+        "com.amazonaws.route53resolver",
+        "UpdateFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Priority",
+    3,
+);
+static UPDATEFIREWALLRULEENTRY_MEMBER_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#UpdateFirewallRuleEntry$Action",
+        "com.amazonaws.route53resolver",
+        "UpdateFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Action",
+    4,
+);
+static UPDATEFIREWALLRULEENTRY_MEMBER_BLOCK_RESPONSE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#UpdateFirewallRuleEntry$BlockResponse",
+        "com.amazonaws.route53resolver",
+        "UpdateFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BlockResponse",
+    5,
+);
+static UPDATEFIREWALLRULEENTRY_MEMBER_BLOCK_OVERRIDE_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#UpdateFirewallRuleEntry$BlockOverrideDomain",
+        "com.amazonaws.route53resolver",
+        "UpdateFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BlockOverrideDomain",
+    6,
+);
+static UPDATEFIREWALLRULEENTRY_MEMBER_BLOCK_OVERRIDE_DNS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#UpdateFirewallRuleEntry$BlockOverrideDnsType",
+        "com.amazonaws.route53resolver",
+        "UpdateFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BlockOverrideDnsType",
+    7,
+);
+static UPDATEFIREWALLRULEENTRY_MEMBER_BLOCK_OVERRIDE_TTL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#UpdateFirewallRuleEntry$BlockOverrideTtl",
+        "com.amazonaws.route53resolver",
+        "UpdateFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "BlockOverrideTtl",
+    8,
+);
+static UPDATEFIREWALLRULEENTRY_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#UpdateFirewallRuleEntry$Name",
+        "com.amazonaws.route53resolver",
+        "UpdateFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    9,
+);
+static UPDATEFIREWALLRULEENTRY_MEMBER_FIREWALL_DOMAIN_REDIRECTION_ACTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.route53resolver#UpdateFirewallRuleEntry$FirewallDomainRedirectionAction",
+            "com.amazonaws.route53resolver",
+            "UpdateFirewallRuleEntry",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "FirewallDomainRedirectionAction",
+        10,
+    );
+static UPDATEFIREWALLRULEENTRY_MEMBER_QTYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#UpdateFirewallRuleEntry$Qtype",
+        "com.amazonaws.route53resolver",
+        "UpdateFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Qtype",
+    11,
+);
+static UPDATEFIREWALLRULEENTRY_MEMBER_DNS_THREAT_PROTECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#UpdateFirewallRuleEntry$DnsThreatProtection",
+        "com.amazonaws.route53resolver",
+        "UpdateFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DnsThreatProtection",
+    12,
+);
+static UPDATEFIREWALLRULEENTRY_MEMBER_CONFIDENCE_THRESHOLD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#UpdateFirewallRuleEntry$ConfidenceThreshold",
+        "com.amazonaws.route53resolver",
+        "UpdateFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConfidenceThreshold",
+    13,
+);
+static UPDATEFIREWALLRULEENTRY_MEMBER_FIREWALL_RULE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#UpdateFirewallRuleEntry$FirewallRuleType",
+        "com.amazonaws.route53resolver",
+        "UpdateFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FirewallRuleType",
+    14,
+);
+static UPDATEFIREWALLRULEENTRY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#UpdateFirewallRuleEntry",
+        "com.amazonaws.route53resolver",
+        "UpdateFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEFIREWALLRULEENTRY_MEMBER_FIREWALL_RULE_GROUP_ID,
+        &UPDATEFIREWALLRULEENTRY_MEMBER_FIREWALL_DOMAIN_LIST_ID,
+        &UPDATEFIREWALLRULEENTRY_MEMBER_FIREWALL_THREAT_PROTECTION_ID,
+        &UPDATEFIREWALLRULEENTRY_MEMBER_PRIORITY,
+        &UPDATEFIREWALLRULEENTRY_MEMBER_ACTION,
+        &UPDATEFIREWALLRULEENTRY_MEMBER_BLOCK_RESPONSE,
+        &UPDATEFIREWALLRULEENTRY_MEMBER_BLOCK_OVERRIDE_DOMAIN,
+        &UPDATEFIREWALLRULEENTRY_MEMBER_BLOCK_OVERRIDE_DNS_TYPE,
+        &UPDATEFIREWALLRULEENTRY_MEMBER_BLOCK_OVERRIDE_TTL,
+        &UPDATEFIREWALLRULEENTRY_MEMBER_NAME,
+        &UPDATEFIREWALLRULEENTRY_MEMBER_FIREWALL_DOMAIN_REDIRECTION_ACTION,
+        &UPDATEFIREWALLRULEENTRY_MEMBER_QTYPE,
+        &UPDATEFIREWALLRULEENTRY_MEMBER_DNS_THREAT_PROTECTION,
+        &UPDATEFIREWALLRULEENTRY_MEMBER_CONFIDENCE_THRESHOLD,
+        &UPDATEFIREWALLRULEENTRY_MEMBER_FIREWALL_RULE_TYPE,
+    ],
+);
+impl UpdateFirewallRuleEntry {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEFIREWALLRULEENTRY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateFirewallRuleEntry {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.firewall_rule_group_id;
+            ser.write_string(&UPDATEFIREWALLRULEENTRY_MEMBER_FIREWALL_RULE_GROUP_ID, val)?;
+        }
+        if let Some(ref val) = self.firewall_domain_list_id {
+            ser.write_string(&UPDATEFIREWALLRULEENTRY_MEMBER_FIREWALL_DOMAIN_LIST_ID, val)?;
+        }
+        if let Some(ref val) = self.firewall_threat_protection_id {
+            ser.write_string(&UPDATEFIREWALLRULEENTRY_MEMBER_FIREWALL_THREAT_PROTECTION_ID, val)?;
+        }
+        if let Some(ref val) = self.priority {
+            ser.write_integer(&UPDATEFIREWALLRULEENTRY_MEMBER_PRIORITY, *val)?;
+        }
+        if let Some(ref val) = self.action {
+            ser.write_string(&UPDATEFIREWALLRULEENTRY_MEMBER_ACTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.block_response {
+            ser.write_string(&UPDATEFIREWALLRULEENTRY_MEMBER_BLOCK_RESPONSE, val.as_str())?;
+        }
+        if let Some(ref val) = self.block_override_domain {
+            ser.write_string(&UPDATEFIREWALLRULEENTRY_MEMBER_BLOCK_OVERRIDE_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.block_override_dns_type {
+            ser.write_string(&UPDATEFIREWALLRULEENTRY_MEMBER_BLOCK_OVERRIDE_DNS_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.block_override_ttl {
+            ser.write_integer(&UPDATEFIREWALLRULEENTRY_MEMBER_BLOCK_OVERRIDE_TTL, *val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&UPDATEFIREWALLRULEENTRY_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.firewall_domain_redirection_action {
+            ser.write_string(&UPDATEFIREWALLRULEENTRY_MEMBER_FIREWALL_DOMAIN_REDIRECTION_ACTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.qtype {
+            ser.write_string(&UPDATEFIREWALLRULEENTRY_MEMBER_QTYPE, val)?;
+        }
+        if let Some(ref val) = self.dns_threat_protection {
+            ser.write_string(&UPDATEFIREWALLRULEENTRY_MEMBER_DNS_THREAT_PROTECTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.confidence_threshold {
+            ser.write_string(&UPDATEFIREWALLRULEENTRY_MEMBER_CONFIDENCE_THRESHOLD, val.as_str())?;
+        }
+        if let Some(ref val) = self.firewall_rule_type {
+            ser.write_struct(&UPDATEFIREWALLRULEENTRY_MEMBER_FIREWALL_RULE_TYPE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UpdateFirewallRuleEntryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEFIREWALLRULEENTRY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.firewall_rule_group_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firewall_domain_list_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firewall_threat_protection_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.priority = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action = Some(crate::types::Action::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.block_response = Some(crate::types::BlockResponse::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.block_override_domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.block_override_dns_type = Some(crate::types::BlockOverrideDnsType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.block_override_ttl = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firewall_domain_redirection_action =
+                            Some(crate::types::FirewallDomainRedirectionAction::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.qtype = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_threat_protection = Some(crate::types::DnsThreatProtection::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.confidence_threshold = Some(crate::types::ConfidenceThreshold::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firewall_rule_type = Some(crate::types::FirewallRuleType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateFirewallRuleEntry {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.firewall_rule_group_id = builder.firewall_rule_group_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateFirewallRuleEntry {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallRuleEntry`](crate::types::UpdateFirewallRuleEntry).
     pub fn builder() -> crate::types::builders::UpdateFirewallRuleEntryBuilder {

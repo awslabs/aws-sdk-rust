@@ -33,6 +33,144 @@ impl SourceDescription {
         self.database_source_description.as_ref()
     }
 }
+static SOURCEDESCRIPTION_MEMBER_DIRECT_PUT_SOURCE_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SourceDescription$DirectPutSourceDescription",
+        "com.amazonaws.firehose",
+        "SourceDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DirectPutSourceDescription",
+    0,
+);
+static SOURCEDESCRIPTION_MEMBER_KINESIS_STREAM_SOURCE_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SourceDescription$KinesisStreamSourceDescription",
+        "com.amazonaws.firehose",
+        "SourceDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "KinesisStreamSourceDescription",
+    1,
+);
+static SOURCEDESCRIPTION_MEMBER_MSK_SOURCE_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SourceDescription$MSKSourceDescription",
+        "com.amazonaws.firehose",
+        "SourceDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MSKSourceDescription",
+    2,
+);
+static SOURCEDESCRIPTION_MEMBER_DATABASE_SOURCE_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SourceDescription$DatabaseSourceDescription",
+        "com.amazonaws.firehose",
+        "SourceDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DatabaseSourceDescription",
+    3,
+);
+static SOURCEDESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#SourceDescription", "com.amazonaws.firehose", "SourceDescription"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SOURCEDESCRIPTION_MEMBER_DIRECT_PUT_SOURCE_DESCRIPTION,
+        &SOURCEDESCRIPTION_MEMBER_KINESIS_STREAM_SOURCE_DESCRIPTION,
+        &SOURCEDESCRIPTION_MEMBER_MSK_SOURCE_DESCRIPTION,
+        &SOURCEDESCRIPTION_MEMBER_DATABASE_SOURCE_DESCRIPTION,
+    ],
+);
+impl SourceDescription {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SOURCEDESCRIPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SourceDescription {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.direct_put_source_description {
+            ser.write_struct(&SOURCEDESCRIPTION_MEMBER_DIRECT_PUT_SOURCE_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.kinesis_stream_source_description {
+            ser.write_struct(&SOURCEDESCRIPTION_MEMBER_KINESIS_STREAM_SOURCE_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.msk_source_description {
+            ser.write_struct(&SOURCEDESCRIPTION_MEMBER_MSK_SOURCE_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.database_source_description {
+            ser.write_struct(&SOURCEDESCRIPTION_MEMBER_DATABASE_SOURCE_DESCRIPTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SourceDescriptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SOURCEDESCRIPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.direct_put_source_description = Some(crate::types::DirectPutSourceDescription::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kinesis_stream_source_description = Some(crate::types::KinesisStreamSourceDescription::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.msk_source_description = Some(crate::types::MskSourceDescription::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.database_source_description = Some(crate::types::DatabaseSourceDescription::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SourceDescription {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SourceDescription {
     /// Creates a new builder-style object to manufacture [`SourceDescription`](crate::types::SourceDescription).
     pub fn builder() -> crate::types::builders::SourceDescriptionBuilder {

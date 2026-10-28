@@ -40,6 +40,171 @@ impl ListTaskDefinitionsInput {
         self.max_results
     }
 }
+static LISTTASKDEFINITIONSINPUT_MEMBER_FAMILY_PREFIX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListTaskDefinitionsInput$familyPrefix",
+        "com.amazonaws.ecs.synthetic",
+        "ListTaskDefinitionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "familyPrefix",
+    0,
+);
+static LISTTASKDEFINITIONSINPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListTaskDefinitionsInput$status",
+        "com.amazonaws.ecs.synthetic",
+        "ListTaskDefinitionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    1,
+);
+static LISTTASKDEFINITIONSINPUT_MEMBER_SORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListTaskDefinitionsInput$sort",
+        "com.amazonaws.ecs.synthetic",
+        "ListTaskDefinitionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sort",
+    2,
+);
+static LISTTASKDEFINITIONSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListTaskDefinitionsInput$nextToken",
+        "com.amazonaws.ecs.synthetic",
+        "ListTaskDefinitionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    3,
+);
+static LISTTASKDEFINITIONSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListTaskDefinitionsInput$maxResults",
+        "com.amazonaws.ecs.synthetic",
+        "ListTaskDefinitionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxResults",
+    4,
+);
+static LISTTASKDEFINITIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListTaskDefinitionsInput",
+        "com.amazonaws.ecs.synthetic",
+        "ListTaskDefinitionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTTASKDEFINITIONSINPUT_MEMBER_FAMILY_PREFIX,
+        &LISTTASKDEFINITIONSINPUT_MEMBER_STATUS,
+        &LISTTASKDEFINITIONSINPUT_MEMBER_SORT,
+        &LISTTASKDEFINITIONSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTTASKDEFINITIONSINPUT_MEMBER_MAX_RESULTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListTaskDefinitionsRequest");
+impl ListTaskDefinitionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTTASKDEFINITIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListTaskDefinitionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.family_prefix {
+            ser.write_string(&LISTTASKDEFINITIONSINPUT_MEMBER_FAMILY_PREFIX, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&LISTTASKDEFINITIONSINPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort {
+            ser.write_string(&LISTTASKDEFINITIONSINPUT_MEMBER_SORT, val.as_str())?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTTASKDEFINITIONSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTTASKDEFINITIONSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_task_definitions::builders::ListTaskDefinitionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTTASKDEFINITIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.family_prefix = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::TaskDefinitionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort = Some(crate::types::SortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListTaskDefinitionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListTaskDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListTaskDefinitionsInput`](crate::operation::list_task_definitions::ListTaskDefinitionsInput).
     pub fn builder() -> crate::operation::list_task_definitions::builders::ListTaskDefinitionsInputBuilder {

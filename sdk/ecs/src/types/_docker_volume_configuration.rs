@@ -41,6 +41,219 @@ impl DockerVolumeConfiguration {
         self.labels.as_ref()
     }
 }
+static DOCKERVOLUMECONFIGURATION_MEMBER_SCOPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DockerVolumeConfiguration$scope",
+        "com.amazonaws.ecs",
+        "DockerVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "scope",
+    0,
+);
+static DOCKERVOLUMECONFIGURATION_MEMBER_AUTOPROVISION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DockerVolumeConfiguration$autoprovision",
+        "com.amazonaws.ecs",
+        "DockerVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "autoprovision",
+    1,
+);
+static DOCKERVOLUMECONFIGURATION_MEMBER_DRIVER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DockerVolumeConfiguration$driver",
+        "com.amazonaws.ecs",
+        "DockerVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "driver",
+    2,
+);
+static DOCKERVOLUMECONFIGURATION_MEMBER_DRIVER_OPTS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringMap$key", "com.amazonaws.ecs", "StringMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static DOCKERVOLUMECONFIGURATION_MEMBER_DRIVER_OPTS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringMap$value", "com.amazonaws.ecs", "StringMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static DOCKERVOLUMECONFIGURATION_MEMBER_DRIVER_OPTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DockerVolumeConfiguration$driverOpts",
+        "com.amazonaws.ecs",
+        "DockerVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "driverOpts",
+    3,
+)
+.with_map_members(
+    &DOCKERVOLUMECONFIGURATION_MEMBER_DRIVER_OPTS_KEY,
+    &DOCKERVOLUMECONFIGURATION_MEMBER_DRIVER_OPTS_VALUE,
+);
+static DOCKERVOLUMECONFIGURATION_MEMBER_LABELS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringMap$key", "com.amazonaws.ecs", "StringMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static DOCKERVOLUMECONFIGURATION_MEMBER_LABELS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringMap$value", "com.amazonaws.ecs", "StringMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static DOCKERVOLUMECONFIGURATION_MEMBER_LABELS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DockerVolumeConfiguration$labels",
+        "com.amazonaws.ecs",
+        "DockerVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "labels",
+    4,
+)
+.with_map_members(
+    &DOCKERVOLUMECONFIGURATION_MEMBER_LABELS_KEY,
+    &DOCKERVOLUMECONFIGURATION_MEMBER_LABELS_VALUE,
+);
+static DOCKERVOLUMECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DockerVolumeConfiguration",
+        "com.amazonaws.ecs",
+        "DockerVolumeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DOCKERVOLUMECONFIGURATION_MEMBER_SCOPE,
+        &DOCKERVOLUMECONFIGURATION_MEMBER_AUTOPROVISION,
+        &DOCKERVOLUMECONFIGURATION_MEMBER_DRIVER,
+        &DOCKERVOLUMECONFIGURATION_MEMBER_DRIVER_OPTS,
+        &DOCKERVOLUMECONFIGURATION_MEMBER_LABELS,
+    ],
+);
+impl DockerVolumeConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOCKERVOLUMECONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DockerVolumeConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.scope {
+            ser.write_string(&DOCKERVOLUMECONFIGURATION_MEMBER_SCOPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.autoprovision {
+            ser.write_boolean(&DOCKERVOLUMECONFIGURATION_MEMBER_AUTOPROVISION, *val)?;
+        }
+        if let Some(ref val) = self.driver {
+            ser.write_string(&DOCKERVOLUMECONFIGURATION_MEMBER_DRIVER, val)?;
+        }
+        if let Some(ref val) = self.driver_opts {
+            ser.write_map(
+                &DOCKERVOLUMECONFIGURATION_MEMBER_DRIVER_OPTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.labels {
+            ser.write_map(
+                &DOCKERVOLUMECONFIGURATION_MEMBER_LABELS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DockerVolumeConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOCKERVOLUMECONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scope = Some(crate::types::Scope::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.autoprovision = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.driver = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.driver_opts = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.labels = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DockerVolumeConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DockerVolumeConfiguration {
     /// Creates a new builder-style object to manufacture [`DockerVolumeConfiguration`](crate::types::DockerVolumeConfiguration).
     pub fn builder() -> crate::types::builders::DockerVolumeConfigurationBuilder {

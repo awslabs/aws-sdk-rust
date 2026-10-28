@@ -555,8 +555,8 @@ pub fn ser_filter_criteria(
         }
         array_182.finish();
     }
-    if let Some(var_185) = &input.cloud_provider {
-        let mut array_186 = object.key("cloudProvider").start_array();
+    if let Some(var_185) = &input.machine_image_id {
+        let mut array_186 = object.key("machineImageId").start_array();
         for item_187 in var_185 {
             {
                 #[allow(unused_mut)]
@@ -567,8 +567,8 @@ pub fn ser_filter_criteria(
         }
         array_186.finish();
     }
-    if let Some(var_189) = &input.cloud_provider_region {
-        let mut array_190 = object.key("cloudProviderRegion").start_array();
+    if let Some(var_189) = &input.machine_image_name {
+        let mut array_190 = object.key("machineImageName").start_array();
         for item_191 in var_189 {
             {
                 #[allow(unused_mut)]
@@ -579,8 +579,8 @@ pub fn ser_filter_criteria(
         }
         array_190.finish();
     }
-    if let Some(var_193) = &input.cloud_provider_account_id {
-        let mut array_194 = object.key("cloudProviderAccountId").start_array();
+    if let Some(var_193) = &input.machine_image_owner_account_id {
+        let mut array_194 = object.key("machineImageOwnerAccountId").start_array();
         for item_195 in var_193 {
             {
                 #[allow(unused_mut)]
@@ -591,8 +591,8 @@ pub fn ser_filter_criteria(
         }
         array_194.finish();
     }
-    if let Some(var_197) = &input.cloud_provider_org_id {
-        let mut array_198 = object.key("cloudProviderOrgId").start_array();
+    if let Some(var_197) = &input.machine_image_platform {
+        let mut array_198 = object.key("machineImagePlatform").start_array();
         for item_199 in var_197 {
             {
                 #[allow(unused_mut)]
@@ -603,8 +603,8 @@ pub fn ser_filter_criteria(
         }
         array_198.finish();
     }
-    if let Some(var_201) = &input.cloud_vm_image_reference {
-        let mut array_202 = object.key("cloudVmImageReference").start_array();
+    if let Some(var_201) = &input.cloud_provider {
+        let mut array_202 = object.key("cloudProvider").start_array();
         for item_203 in var_201 {
             {
                 #[allow(unused_mut)]
@@ -615,8 +615,8 @@ pub fn ser_filter_criteria(
         }
         array_202.finish();
     }
-    if let Some(var_205) = &input.cloud_vm_network_id {
-        let mut array_206 = object.key("cloudVmNetworkId").start_array();
+    if let Some(var_205) = &input.cloud_provider_region {
+        let mut array_206 = object.key("cloudProviderRegion").start_array();
         for item_207 in var_205 {
             {
                 #[allow(unused_mut)]
@@ -627,8 +627,8 @@ pub fn ser_filter_criteria(
         }
         array_206.finish();
     }
-    if let Some(var_209) = &input.cloud_vm_subnet_ids {
-        let mut array_210 = object.key("cloudVmSubnetIds").start_array();
+    if let Some(var_209) = &input.cloud_provider_account_id {
+        let mut array_210 = object.key("cloudProviderAccountId").start_array();
         for item_211 in var_209 {
             {
                 #[allow(unused_mut)]
@@ -639,8 +639,8 @@ pub fn ser_filter_criteria(
         }
         array_210.finish();
     }
-    if let Some(var_213) = &input.cloud_image_repository_name {
-        let mut array_214 = object.key("cloudImageRepositoryName").start_array();
+    if let Some(var_213) = &input.cloud_provider_org_id {
+        let mut array_214 = object.key("cloudProviderOrgId").start_array();
         for item_215 in var_213 {
             {
                 #[allow(unused_mut)]
@@ -651,8 +651,8 @@ pub fn ser_filter_criteria(
         }
         array_214.finish();
     }
-    if let Some(var_217) = &input.cloud_image_registry {
-        let mut array_218 = object.key("cloudImageRegistry").start_array();
+    if let Some(var_217) = &input.cloud_vm_image_reference {
+        let mut array_218 = object.key("cloudVmImageReference").start_array();
         for item_219 in var_217 {
             {
                 #[allow(unused_mut)]
@@ -663,8 +663,8 @@ pub fn ser_filter_criteria(
         }
         array_218.finish();
     }
-    if let Some(var_221) = &input.cloud_image_digest {
-        let mut array_222 = object.key("cloudImageDigest").start_array();
+    if let Some(var_221) = &input.cloud_vm_network_id {
+        let mut array_222 = object.key("cloudVmNetworkId").start_array();
         for item_223 in var_221 {
             {
                 #[allow(unused_mut)]
@@ -675,8 +675,8 @@ pub fn ser_filter_criteria(
         }
         array_222.finish();
     }
-    if let Some(var_225) = &input.cloud_image_tags {
-        let mut array_226 = object.key("cloudImageTags").start_array();
+    if let Some(var_225) = &input.cloud_vm_subnet_ids {
+        let mut array_226 = object.key("cloudVmSubnetIds").start_array();
         for item_227 in var_225 {
             {
                 #[allow(unused_mut)]
@@ -687,20 +687,20 @@ pub fn ser_filter_criteria(
         }
         array_226.finish();
     }
-    if let Some(var_229) = &input.cloud_image_pushed_at {
-        let mut array_230 = object.key("cloudImagePushedAt").start_array();
+    if let Some(var_229) = &input.cloud_image_repository_name {
+        let mut array_230 = object.key("cloudImageRepositoryName").start_array();
         for item_231 in var_229 {
             {
                 #[allow(unused_mut)]
                 let mut object_232 = array_230.value().start_object();
-                crate::protocol_serde::shape_date_filter::ser_date_filter(&mut object_232, item_231)?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_232, item_231)?;
                 object_232.finish();
             }
         }
         array_230.finish();
     }
-    if let Some(var_233) = &input.cloud_image_architecture {
-        let mut array_234 = object.key("cloudImageArchitecture").start_array();
+    if let Some(var_233) = &input.cloud_image_registry {
+        let mut array_234 = object.key("cloudImageRegistry").start_array();
         for item_235 in var_233 {
             {
                 #[allow(unused_mut)]
@@ -711,44 +711,44 @@ pub fn ser_filter_criteria(
         }
         array_234.finish();
     }
-    if let Some(var_237) = &input.cloud_image_last_in_use_at {
-        let mut array_238 = object.key("cloudImageLastInUseAt").start_array();
+    if let Some(var_237) = &input.cloud_image_digest {
+        let mut array_238 = object.key("cloudImageDigest").start_array();
         for item_239 in var_237 {
             {
                 #[allow(unused_mut)]
                 let mut object_240 = array_238.value().start_object();
-                crate::protocol_serde::shape_date_filter::ser_date_filter(&mut object_240, item_239)?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_240, item_239)?;
                 object_240.finish();
             }
         }
         array_238.finish();
     }
-    if let Some(var_241) = &input.cloud_image_in_use_count {
-        let mut array_242 = object.key("cloudImageInUseCount").start_array();
+    if let Some(var_241) = &input.cloud_image_tags {
+        let mut array_242 = object.key("cloudImageTags").start_array();
         for item_243 in var_241 {
             {
                 #[allow(unused_mut)]
                 let mut object_244 = array_242.value().start_object();
-                crate::protocol_serde::shape_number_filter::ser_number_filter(&mut object_244, item_243)?;
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_244, item_243)?;
                 object_244.finish();
             }
         }
         array_242.finish();
     }
-    if let Some(var_245) = &input.cloud_serverless_function_name {
-        let mut array_246 = object.key("cloudServerlessFunctionName").start_array();
+    if let Some(var_245) = &input.cloud_image_pushed_at {
+        let mut array_246 = object.key("cloudImagePushedAt").start_array();
         for item_247 in var_245 {
             {
                 #[allow(unused_mut)]
                 let mut object_248 = array_246.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_248, item_247)?;
+                crate::protocol_serde::shape_date_filter::ser_date_filter(&mut object_248, item_247)?;
                 object_248.finish();
             }
         }
         array_246.finish();
     }
-    if let Some(var_249) = &input.cloud_serverless_function_runtime {
-        let mut array_250 = object.key("cloudServerlessFunctionRuntime").start_array();
+    if let Some(var_249) = &input.cloud_image_architecture {
+        let mut array_250 = object.key("cloudImageArchitecture").start_array();
         for item_251 in var_249 {
             {
                 #[allow(unused_mut)]
@@ -759,8 +759,8 @@ pub fn ser_filter_criteria(
         }
         array_250.finish();
     }
-    if let Some(var_253) = &input.cloud_serverless_function_last_modified_at {
-        let mut array_254 = object.key("cloudServerlessFunctionLastModifiedAt").start_array();
+    if let Some(var_253) = &input.cloud_image_last_in_use_at {
+        let mut array_254 = object.key("cloudImageLastInUseAt").start_array();
         for item_255 in var_253 {
             {
                 #[allow(unused_mut)]
@@ -771,17 +771,65 @@ pub fn ser_filter_criteria(
         }
         array_254.finish();
     }
-    if let Some(var_257) = &input.cloud_serverless_function_execution_role {
-        let mut array_258 = object.key("cloudServerlessFunctionExecutionRole").start_array();
+    if let Some(var_257) = &input.cloud_image_in_use_count {
+        let mut array_258 = object.key("cloudImageInUseCount").start_array();
         for item_259 in var_257 {
             {
                 #[allow(unused_mut)]
                 let mut object_260 = array_258.value().start_object();
-                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_260, item_259)?;
+                crate::protocol_serde::shape_number_filter::ser_number_filter(&mut object_260, item_259)?;
                 object_260.finish();
             }
         }
         array_258.finish();
+    }
+    if let Some(var_261) = &input.cloud_serverless_function_name {
+        let mut array_262 = object.key("cloudServerlessFunctionName").start_array();
+        for item_263 in var_261 {
+            {
+                #[allow(unused_mut)]
+                let mut object_264 = array_262.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_264, item_263)?;
+                object_264.finish();
+            }
+        }
+        array_262.finish();
+    }
+    if let Some(var_265) = &input.cloud_serverless_function_runtime {
+        let mut array_266 = object.key("cloudServerlessFunctionRuntime").start_array();
+        for item_267 in var_265 {
+            {
+                #[allow(unused_mut)]
+                let mut object_268 = array_266.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_268, item_267)?;
+                object_268.finish();
+            }
+        }
+        array_266.finish();
+    }
+    if let Some(var_269) = &input.cloud_serverless_function_last_modified_at {
+        let mut array_270 = object.key("cloudServerlessFunctionLastModifiedAt").start_array();
+        for item_271 in var_269 {
+            {
+                #[allow(unused_mut)]
+                let mut object_272 = array_270.value().start_object();
+                crate::protocol_serde::shape_date_filter::ser_date_filter(&mut object_272, item_271)?;
+                object_272.finish();
+            }
+        }
+        array_270.finish();
+    }
+    if let Some(var_273) = &input.cloud_serverless_function_execution_role {
+        let mut array_274 = object.key("cloudServerlessFunctionExecutionRole").start_array();
+        for item_275 in var_273 {
+            {
+                #[allow(unused_mut)]
+                let mut object_276 = array_274.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_276, item_275)?;
+                object_276.finish();
+            }
+        }
+        array_274.finish();
     }
     Ok(())
 }
@@ -1110,6 +1158,32 @@ where
                                 builder = builder.set_code_repository_provider_type(
                                     crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
                                 );
+                            }
+                            "machineImageId" => {
+                                builder = builder.set_machine_image_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "machineImageName" => {
+                                builder = builder.set_machine_image_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "machineImageOwnerAccountId" => {
+                                builder = builder.set_machine_image_owner_account_id(
+                                    crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "machineImagePlatform" => {
+                                builder = builder.set_machine_image_platform(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
                             }
                             "cloudProvider" => {
                                 builder = builder.set_cloud_provider(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(

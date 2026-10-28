@@ -21,6 +21,87 @@ impl HostEntry {
         self.ip_address.deref()
     }
 }
+static HOSTENTRY_MEMBER_HOSTNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#HostEntry$hostname", "com.amazonaws.ecs", "HostEntry"),
+    ::aws_smithy_schema::ShapeType::String,
+    "hostname",
+    0,
+);
+static HOSTENTRY_MEMBER_IP_ADDRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#HostEntry$ipAddress", "com.amazonaws.ecs", "HostEntry"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ipAddress",
+    1,
+);
+static HOSTENTRY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#HostEntry", "com.amazonaws.ecs", "HostEntry"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&HOSTENTRY_MEMBER_HOSTNAME, &HOSTENTRY_MEMBER_IP_ADDRESS],
+);
+impl HostEntry {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &HOSTENTRY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for HostEntry {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.hostname;
+            ser.write_string(&HOSTENTRY_MEMBER_HOSTNAME, val)?;
+        }
+        {
+            let val = &self.ip_address;
+            ser.write_string(&HOSTENTRY_MEMBER_IP_ADDRESS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::HostEntryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&HOSTENTRY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.hostname = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.ip_address = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl HostEntry {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.hostname = builder.hostname.or(Some(String::new()));
+        builder.ip_address = builder.ip_address.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl HostEntry {
     /// Creates a new builder-style object to manufacture [`HostEntry`](crate::types::HostEntry).
     pub fn builder() -> crate::types::builders::HostEntryBuilder {

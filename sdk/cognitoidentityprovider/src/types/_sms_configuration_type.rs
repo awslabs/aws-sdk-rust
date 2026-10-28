@@ -36,6 +36,145 @@ impl SmsConfigurationType {
         self.eums_sms.as_ref()
     }
 }
+static SMSCONFIGURATIONTYPE_MEMBER_SNS_CALLER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SmsConfigurationType$SnsCallerArn",
+        "com.amazonaws.cognitoidentityprovider",
+        "SmsConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SnsCallerArn",
+    0,
+);
+static SMSCONFIGURATIONTYPE_MEMBER_EXTERNAL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SmsConfigurationType$ExternalId",
+        "com.amazonaws.cognitoidentityprovider",
+        "SmsConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExternalId",
+    1,
+);
+static SMSCONFIGURATIONTYPE_MEMBER_SNS_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SmsConfigurationType$SnsRegion",
+        "com.amazonaws.cognitoidentityprovider",
+        "SmsConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SnsRegion",
+    2,
+);
+static SMSCONFIGURATIONTYPE_MEMBER_EUMS_SMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SmsConfigurationType$EumsSms",
+        "com.amazonaws.cognitoidentityprovider",
+        "SmsConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EumsSms",
+    3,
+);
+static SMSCONFIGURATIONTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SmsConfigurationType",
+        "com.amazonaws.cognitoidentityprovider",
+        "SmsConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SMSCONFIGURATIONTYPE_MEMBER_SNS_CALLER_ARN,
+        &SMSCONFIGURATIONTYPE_MEMBER_EXTERNAL_ID,
+        &SMSCONFIGURATIONTYPE_MEMBER_SNS_REGION,
+        &SMSCONFIGURATIONTYPE_MEMBER_EUMS_SMS,
+    ],
+);
+impl SmsConfigurationType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SMSCONFIGURATIONTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SmsConfigurationType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.sns_caller_arn;
+            ser.write_string(&SMSCONFIGURATIONTYPE_MEMBER_SNS_CALLER_ARN, val)?;
+        }
+        if let Some(ref val) = self.external_id {
+            ser.write_string(&SMSCONFIGURATIONTYPE_MEMBER_EXTERNAL_ID, val)?;
+        }
+        if let Some(ref val) = self.sns_region {
+            ser.write_string(&SMSCONFIGURATIONTYPE_MEMBER_SNS_REGION, val)?;
+        }
+        if let Some(ref val) = self.eums_sms {
+            ser.write_struct(&SMSCONFIGURATIONTYPE_MEMBER_EUMS_SMS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SmsConfigurationTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SMSCONFIGURATIONTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.sns_caller_arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sns_region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.eums_sms = Some(crate::types::EumsSmsConfigurationType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SmsConfigurationType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SmsConfigurationType {
     /// Creates a new builder-style object to manufacture [`SmsConfigurationType`](crate::types::SmsConfigurationType).
     pub fn builder() -> crate::types::builders::SmsConfigurationTypeBuilder {

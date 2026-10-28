@@ -19,6 +19,97 @@ impl SmsMfaSettingsType {
         self.preferred_mfa
     }
 }
+static SMSMFASETTINGSTYPE_MEMBER_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SMSMfaSettingsType$Enabled",
+        "com.amazonaws.cognitoidentityprovider",
+        "SMSMfaSettingsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Enabled",
+    0,
+);
+static SMSMFASETTINGSTYPE_MEMBER_PREFERRED_MFA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SMSMfaSettingsType$PreferredMfa",
+        "com.amazonaws.cognitoidentityprovider",
+        "SMSMfaSettingsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "PreferredMfa",
+    1,
+);
+static SMSMFASETTINGSTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SMSMfaSettingsType",
+        "com.amazonaws.cognitoidentityprovider",
+        "SMSMfaSettingsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&SMSMFASETTINGSTYPE_MEMBER_ENABLED, &SMSMFASETTINGSTYPE_MEMBER_PREFERRED_MFA],
+);
+impl SmsMfaSettingsType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SMSMFASETTINGSTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SmsMfaSettingsType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.enabled;
+            ser.write_boolean(&SMSMFASETTINGSTYPE_MEMBER_ENABLED, *val)?;
+        }
+        {
+            let val = &self.preferred_mfa;
+            ser.write_boolean(&SMSMFASETTINGSTYPE_MEMBER_PREFERRED_MFA, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SmsMfaSettingsTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SMSMFASETTINGSTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.enabled = Some(deser.read_boolean(member)?);
+                }
+                Some(1) => {
+                    self.preferred_mfa = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SmsMfaSettingsType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SmsMfaSettingsType {
     /// Creates a new builder-style object to manufacture [`SmsMfaSettingsType`](crate::types::SmsMfaSettingsType).
     pub fn builder() -> crate::types::builders::SmsMfaSettingsTypeBuilder {

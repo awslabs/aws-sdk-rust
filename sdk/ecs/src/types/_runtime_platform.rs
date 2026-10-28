@@ -22,6 +22,99 @@ impl RuntimePlatform {
         self.operating_system_family.as_ref()
     }
 }
+static RUNTIMEPLATFORM_MEMBER_CPU_ARCHITECTURE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#RuntimePlatform$cpuArchitecture",
+        "com.amazonaws.ecs",
+        "RuntimePlatform",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cpuArchitecture",
+    0,
+);
+static RUNTIMEPLATFORM_MEMBER_OPERATING_SYSTEM_FAMILY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#RuntimePlatform$operatingSystemFamily",
+        "com.amazonaws.ecs",
+        "RuntimePlatform",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "operatingSystemFamily",
+    1,
+);
+static RUNTIMEPLATFORM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#RuntimePlatform", "com.amazonaws.ecs", "RuntimePlatform"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&RUNTIMEPLATFORM_MEMBER_CPU_ARCHITECTURE, &RUNTIMEPLATFORM_MEMBER_OPERATING_SYSTEM_FAMILY],
+);
+impl RuntimePlatform {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RUNTIMEPLATFORM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RuntimePlatform {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cpu_architecture {
+            ser.write_string(&RUNTIMEPLATFORM_MEMBER_CPU_ARCHITECTURE, val.as_str())?;
+        }
+        if let Some(ref val) = self.operating_system_family {
+            ser.write_string(&RUNTIMEPLATFORM_MEMBER_OPERATING_SYSTEM_FAMILY, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RuntimePlatformBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RUNTIMEPLATFORM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cpu_architecture = Some(crate::types::CpuArchitecture::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operating_system_family = Some(crate::types::OsFamily::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RuntimePlatform {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RuntimePlatform {
     /// Creates a new builder-style object to manufacture [`RuntimePlatform`](crate::types::RuntimePlatform).
     pub fn builder() -> crate::types::builders::RuntimePlatformBuilder {

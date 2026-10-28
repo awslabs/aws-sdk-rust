@@ -24,6 +24,130 @@ impl ModifyWorkspacePropertiesInput {
         self.data_replication.as_ref()
     }
 }
+static MODIFYWORKSPACEPROPERTIESINPUT_MEMBER_WORKSPACE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifyWorkspacePropertiesInput$WorkspaceId",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifyWorkspacePropertiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkspaceId",
+    0,
+);
+static MODIFYWORKSPACEPROPERTIESINPUT_MEMBER_WORKSPACE_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifyWorkspacePropertiesInput$WorkspaceProperties",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifyWorkspacePropertiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WorkspaceProperties",
+    1,
+);
+static MODIFYWORKSPACEPROPERTIESINPUT_MEMBER_DATA_REPLICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifyWorkspacePropertiesInput$DataReplication",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifyWorkspacePropertiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataReplication",
+    2,
+);
+static MODIFYWORKSPACEPROPERTIESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifyWorkspacePropertiesInput",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifyWorkspacePropertiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODIFYWORKSPACEPROPERTIESINPUT_MEMBER_WORKSPACE_ID,
+        &MODIFYWORKSPACEPROPERTIESINPUT_MEMBER_WORKSPACE_PROPERTIES,
+        &MODIFYWORKSPACEPROPERTIESINPUT_MEMBER_DATA_REPLICATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ModifyWorkspacePropertiesRequest");
+impl ModifyWorkspacePropertiesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODIFYWORKSPACEPROPERTIESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModifyWorkspacePropertiesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.workspace_id {
+            ser.write_string(&MODIFYWORKSPACEPROPERTIESINPUT_MEMBER_WORKSPACE_ID, val)?;
+        }
+        if let Some(ref val) = self.workspace_properties {
+            ser.write_struct(&MODIFYWORKSPACEPROPERTIESINPUT_MEMBER_WORKSPACE_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.data_replication {
+            ser.write_string(&MODIFYWORKSPACEPROPERTIESINPUT_MEMBER_DATA_REPLICATION, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODIFYWORKSPACEPROPERTIESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_properties = Some(crate::types::WorkspaceProperties::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_replication = Some(crate::types::DataReplication::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModifyWorkspacePropertiesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.workspace_id = builder.workspace_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ModifyWorkspacePropertiesInput {
     /// Creates a new builder-style object to manufacture [`ModifyWorkspacePropertiesInput`](crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesInput).
     pub fn builder() -> crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesInputBuilder {

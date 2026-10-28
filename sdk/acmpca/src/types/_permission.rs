@@ -45,6 +45,190 @@ impl Permission {
         self.policy.as_deref()
     }
 }
+static PERMISSION_MEMBER_CERTIFICATE_AUTHORITY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#Permission$CertificateAuthorityArn",
+        "com.amazonaws.acmpca",
+        "Permission",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertificateAuthorityArn",
+    0,
+);
+static PERMISSION_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#Permission$CreatedAt", "com.amazonaws.acmpca", "Permission"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAt",
+    1,
+);
+static PERMISSION_MEMBER_PRINCIPAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#Permission$Principal", "com.amazonaws.acmpca", "Permission"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Principal",
+    2,
+);
+static PERMISSION_MEMBER_SOURCE_ACCOUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#Permission$SourceAccount", "com.amazonaws.acmpca", "Permission"),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceAccount",
+    3,
+);
+static PERMISSION_MEMBER_ACTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#ActionList$member", "com.amazonaws.acmpca", "ActionList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static PERMISSION_MEMBER_ACTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#Permission$Actions", "com.amazonaws.acmpca", "Permission"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Actions",
+    4,
+)
+.with_list_member(&PERMISSION_MEMBER_ACTIONS_MEMBER);
+static PERMISSION_MEMBER_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#Permission$Policy", "com.amazonaws.acmpca", "Permission"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Policy",
+    5,
+);
+static PERMISSION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#Permission", "com.amazonaws.acmpca", "Permission"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PERMISSION_MEMBER_CERTIFICATE_AUTHORITY_ARN,
+        &PERMISSION_MEMBER_CREATED_AT,
+        &PERMISSION_MEMBER_PRINCIPAL,
+        &PERMISSION_MEMBER_SOURCE_ACCOUNT,
+        &PERMISSION_MEMBER_ACTIONS,
+        &PERMISSION_MEMBER_POLICY,
+    ],
+);
+impl Permission {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PERMISSION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Permission {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.certificate_authority_arn {
+            ser.write_string(&PERMISSION_MEMBER_CERTIFICATE_AUTHORITY_ARN, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&PERMISSION_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.principal {
+            ser.write_string(&PERMISSION_MEMBER_PRINCIPAL, val)?;
+        }
+        if let Some(ref val) = self.source_account {
+            ser.write_string(&PERMISSION_MEMBER_SOURCE_ACCOUNT, val)?;
+        }
+        if let Some(ref val) = self.actions {
+            ser.write_list(
+                &PERMISSION_MEMBER_ACTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.policy {
+            ser.write_string(&PERMISSION_MEMBER_POLICY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PermissionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PERMISSION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_authority_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.principal = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_account = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.actions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ActionType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.policy = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Permission {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Permission {
     /// Creates a new builder-style object to manufacture [`Permission`](crate::types::Permission).
     pub fn builder() -> crate::types::builders::PermissionBuilder {

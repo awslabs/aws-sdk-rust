@@ -35,6 +35,123 @@ impl Consumer {
         &self.consumer_creation_timestamp
     }
 }
+static CONSUMER_MEMBER_CONSUMER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#Consumer$ConsumerName", "com.amazonaws.kinesis", "Consumer"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConsumerName",
+    0,
+);
+static CONSUMER_MEMBER_CONSUMER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#Consumer$ConsumerARN", "com.amazonaws.kinesis", "Consumer"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConsumerARN",
+    1,
+);
+static CONSUMER_MEMBER_CONSUMER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#Consumer$ConsumerStatus", "com.amazonaws.kinesis", "Consumer"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConsumerStatus",
+    2,
+);
+static CONSUMER_MEMBER_CONSUMER_CREATION_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#Consumer$ConsumerCreationTimestamp",
+        "com.amazonaws.kinesis",
+        "Consumer",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ConsumerCreationTimestamp",
+    3,
+);
+static CONSUMER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#Consumer", "com.amazonaws.kinesis", "Consumer"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONSUMER_MEMBER_CONSUMER_NAME,
+        &CONSUMER_MEMBER_CONSUMER_ARN,
+        &CONSUMER_MEMBER_CONSUMER_STATUS,
+        &CONSUMER_MEMBER_CONSUMER_CREATION_TIMESTAMP,
+    ],
+);
+impl Consumer {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONSUMER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Consumer {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.consumer_name;
+            ser.write_string(&CONSUMER_MEMBER_CONSUMER_NAME, val)?;
+        }
+        {
+            let val = &self.consumer_arn;
+            ser.write_string(&CONSUMER_MEMBER_CONSUMER_ARN, val)?;
+        }
+        {
+            let val = &self.consumer_status;
+            ser.write_string(&CONSUMER_MEMBER_CONSUMER_STATUS, val.as_str())?;
+        }
+        {
+            let val = &self.consumer_creation_timestamp;
+            ser.write_timestamp(&CONSUMER_MEMBER_CONSUMER_CREATION_TIMESTAMP, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConsumerBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONSUMER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.consumer_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.consumer_arn = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.consumer_status = Some(crate::types::ConsumerStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    self.consumer_creation_timestamp = Some(deser.read_timestamp(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Consumer {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.consumer_name = builder.consumer_name.or(Some(String::new()));
+        builder.consumer_arn = builder.consumer_arn.or(Some(String::new()));
+        builder.consumer_creation_timestamp = builder.consumer_creation_timestamp.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl Consumer {
     /// Creates a new builder-style object to manufacture [`Consumer`](crate::types::Consumer).
     pub fn builder() -> crate::types::builders::ConsumerBuilder {

@@ -73,6 +73,295 @@ impl OutpostResolver {
         self.outpost_arn.as_deref()
     }
 }
+static OUTPOSTRESOLVER_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#OutpostResolver$Arn",
+        "com.amazonaws.route53resolver",
+        "OutpostResolver",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    0,
+);
+static OUTPOSTRESOLVER_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#OutpostResolver$CreationTime",
+        "com.amazonaws.route53resolver",
+        "OutpostResolver",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreationTime",
+    1,
+);
+static OUTPOSTRESOLVER_MEMBER_MODIFICATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#OutpostResolver$ModificationTime",
+        "com.amazonaws.route53resolver",
+        "OutpostResolver",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModificationTime",
+    2,
+);
+static OUTPOSTRESOLVER_MEMBER_CREATOR_REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#OutpostResolver$CreatorRequestId",
+        "com.amazonaws.route53resolver",
+        "OutpostResolver",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreatorRequestId",
+    3,
+);
+static OUTPOSTRESOLVER_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#OutpostResolver$Id",
+        "com.amazonaws.route53resolver",
+        "OutpostResolver",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    4,
+);
+static OUTPOSTRESOLVER_MEMBER_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#OutpostResolver$InstanceCount",
+        "com.amazonaws.route53resolver",
+        "OutpostResolver",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InstanceCount",
+    5,
+);
+static OUTPOSTRESOLVER_MEMBER_PREFERRED_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#OutpostResolver$PreferredInstanceType",
+        "com.amazonaws.route53resolver",
+        "OutpostResolver",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreferredInstanceType",
+    6,
+);
+static OUTPOSTRESOLVER_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#OutpostResolver$Name",
+        "com.amazonaws.route53resolver",
+        "OutpostResolver",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    7,
+);
+static OUTPOSTRESOLVER_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#OutpostResolver$Status",
+        "com.amazonaws.route53resolver",
+        "OutpostResolver",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    8,
+);
+static OUTPOSTRESOLVER_MEMBER_STATUS_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#OutpostResolver$StatusMessage",
+        "com.amazonaws.route53resolver",
+        "OutpostResolver",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusMessage",
+    9,
+);
+static OUTPOSTRESOLVER_MEMBER_OUTPOST_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#OutpostResolver$OutpostArn",
+        "com.amazonaws.route53resolver",
+        "OutpostResolver",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutpostArn",
+    10,
+);
+static OUTPOSTRESOLVER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#OutpostResolver",
+        "com.amazonaws.route53resolver",
+        "OutpostResolver",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &OUTPOSTRESOLVER_MEMBER_ARN,
+        &OUTPOSTRESOLVER_MEMBER_CREATION_TIME,
+        &OUTPOSTRESOLVER_MEMBER_MODIFICATION_TIME,
+        &OUTPOSTRESOLVER_MEMBER_CREATOR_REQUEST_ID,
+        &OUTPOSTRESOLVER_MEMBER_ID,
+        &OUTPOSTRESOLVER_MEMBER_INSTANCE_COUNT,
+        &OUTPOSTRESOLVER_MEMBER_PREFERRED_INSTANCE_TYPE,
+        &OUTPOSTRESOLVER_MEMBER_NAME,
+        &OUTPOSTRESOLVER_MEMBER_STATUS,
+        &OUTPOSTRESOLVER_MEMBER_STATUS_MESSAGE,
+        &OUTPOSTRESOLVER_MEMBER_OUTPOST_ARN,
+    ],
+);
+impl OutpostResolver {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OUTPOSTRESOLVER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OutpostResolver {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&OUTPOSTRESOLVER_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_string(&OUTPOSTRESOLVER_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.modification_time {
+            ser.write_string(&OUTPOSTRESOLVER_MEMBER_MODIFICATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.creator_request_id {
+            ser.write_string(&OUTPOSTRESOLVER_MEMBER_CREATOR_REQUEST_ID, val)?;
+        }
+        if let Some(ref val) = self.id {
+            ser.write_string(&OUTPOSTRESOLVER_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.instance_count {
+            ser.write_integer(&OUTPOSTRESOLVER_MEMBER_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.preferred_instance_type {
+            ser.write_string(&OUTPOSTRESOLVER_MEMBER_PREFERRED_INSTANCE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&OUTPOSTRESOLVER_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&OUTPOSTRESOLVER_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_message {
+            ser.write_string(&OUTPOSTRESOLVER_MEMBER_STATUS_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.outpost_arn {
+            ser.write_string(&OUTPOSTRESOLVER_MEMBER_OUTPOST_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OutpostResolverBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&OUTPOSTRESOLVER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.modification_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creator_request_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preferred_instance_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::OutpostResolverStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.outpost_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OutpostResolver {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl OutpostResolver {
     /// Creates a new builder-style object to manufacture [`OutpostResolver`](crate::types::OutpostResolver).
     pub fn builder() -> crate::types::builders::OutpostResolverBuilder {

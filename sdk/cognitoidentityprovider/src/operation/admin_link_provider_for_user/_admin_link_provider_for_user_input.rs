@@ -48,6 +48,130 @@ impl AdminLinkProviderForUserInput {
         self.source_user.as_ref()
     }
 }
+static ADMINLINKPROVIDERFORUSERINPUT_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminLinkProviderForUserInput$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminLinkProviderForUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    0,
+);
+static ADMINLINKPROVIDERFORUSERINPUT_MEMBER_DESTINATION_USER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminLinkProviderForUserInput$DestinationUser",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminLinkProviderForUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DestinationUser",
+    1,
+);
+static ADMINLINKPROVIDERFORUSERINPUT_MEMBER_SOURCE_USER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminLinkProviderForUserInput$SourceUser",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminLinkProviderForUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SourceUser",
+    2,
+);
+static ADMINLINKPROVIDERFORUSERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#AdminLinkProviderForUserInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "AdminLinkProviderForUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ADMINLINKPROVIDERFORUSERINPUT_MEMBER_USER_POOL_ID,
+        &ADMINLINKPROVIDERFORUSERINPUT_MEMBER_DESTINATION_USER,
+        &ADMINLINKPROVIDERFORUSERINPUT_MEMBER_SOURCE_USER,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("AdminLinkProviderForUserRequest");
+impl AdminLinkProviderForUserInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ADMINLINKPROVIDERFORUSERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AdminLinkProviderForUserInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&ADMINLINKPROVIDERFORUSERINPUT_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.destination_user {
+            ser.write_struct(&ADMINLINKPROVIDERFORUSERINPUT_MEMBER_DESTINATION_USER, val)?;
+        }
+        if let Some(ref val) = self.source_user {
+            ser.write_struct(&ADMINLINKPROVIDERFORUSERINPUT_MEMBER_SOURCE_USER, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::admin_link_provider_for_user::builders::AdminLinkProviderForUserInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ADMINLINKPROVIDERFORUSERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_user = Some(crate::types::ProviderUserIdentifierType::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_user = Some(crate::types::ProviderUserIdentifierType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AdminLinkProviderForUserInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_pool_id = builder.user_pool_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AdminLinkProviderForUserInput {
     /// Creates a new builder-style object to manufacture [`AdminLinkProviderForUserInput`](crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserInput).
     pub fn builder() -> crate::operation::admin_link_provider_for_user::builders::AdminLinkProviderForUserInputBuilder {

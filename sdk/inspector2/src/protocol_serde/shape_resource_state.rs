@@ -36,6 +36,9 @@ where
                         "codeRepository" => {
                             builder = builder.set_code_repository(crate::protocol_serde::shape_state::de_state(tokens, _value, depth + 1)?);
                         }
+                        "ami" => {
+                            builder = builder.set_ami(crate::protocol_serde::shape_state::de_state(tokens, _value, depth + 1)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

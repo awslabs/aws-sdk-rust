@@ -170,6 +170,409 @@ impl DataRepositoryTask {
         self.release_configuration.as_ref()
     }
 }
+static DATAREPOSITORYTASK_MEMBER_TASK_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#DataRepositoryTask$TaskId", "com.amazonaws.fsx", "DataRepositoryTask"),
+    ::aws_smithy_schema::ShapeType::String,
+    "TaskId",
+    0,
+);
+static DATAREPOSITORYTASK_MEMBER_LIFECYCLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryTask$Lifecycle",
+        "com.amazonaws.fsx",
+        "DataRepositoryTask",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Lifecycle",
+    1,
+);
+static DATAREPOSITORYTASK_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#DataRepositoryTask$Type", "com.amazonaws.fsx", "DataRepositoryTask"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    2,
+);
+static DATAREPOSITORYTASK_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryTask$CreationTime",
+        "com.amazonaws.fsx",
+        "DataRepositoryTask",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    3,
+);
+static DATAREPOSITORYTASK_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryTask$StartTime",
+        "com.amazonaws.fsx",
+        "DataRepositoryTask",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    4,
+);
+static DATAREPOSITORYTASK_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#DataRepositoryTask$EndTime", "com.amazonaws.fsx", "DataRepositoryTask"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    5,
+);
+static DATAREPOSITORYTASK_MEMBER_RESOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryTask$ResourceARN",
+        "com.amazonaws.fsx",
+        "DataRepositoryTask",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceARN",
+    6,
+);
+static DATAREPOSITORYTASK_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Tags$member", "com.amazonaws.fsx", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DATAREPOSITORYTASK_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#DataRepositoryTask$Tags", "com.amazonaws.fsx", "DataRepositoryTask"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    7,
+)
+.with_list_member(&DATAREPOSITORYTASK_MEMBER_TAGS_MEMBER);
+static DATAREPOSITORYTASK_MEMBER_FILE_SYSTEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryTask$FileSystemId",
+        "com.amazonaws.fsx",
+        "DataRepositoryTask",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileSystemId",
+    8,
+);
+static DATAREPOSITORYTASK_MEMBER_PATHS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryTaskPaths$member",
+        "com.amazonaws.fsx",
+        "DataRepositoryTaskPaths",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DATAREPOSITORYTASK_MEMBER_PATHS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#DataRepositoryTask$Paths", "com.amazonaws.fsx", "DataRepositoryTask"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Paths",
+    9,
+)
+.with_list_member(&DATAREPOSITORYTASK_MEMBER_PATHS_MEMBER);
+static DATAREPOSITORYTASK_MEMBER_FAILURE_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryTask$FailureDetails",
+        "com.amazonaws.fsx",
+        "DataRepositoryTask",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FailureDetails",
+    10,
+);
+static DATAREPOSITORYTASK_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#DataRepositoryTask$Status", "com.amazonaws.fsx", "DataRepositoryTask"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Status",
+    11,
+);
+static DATAREPOSITORYTASK_MEMBER_REPORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#DataRepositoryTask$Report", "com.amazonaws.fsx", "DataRepositoryTask"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Report",
+    12,
+);
+static DATAREPOSITORYTASK_MEMBER_CAPACITY_TO_RELEASE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryTask$CapacityToRelease",
+        "com.amazonaws.fsx",
+        "DataRepositoryTask",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "CapacityToRelease",
+    13,
+);
+static DATAREPOSITORYTASK_MEMBER_FILE_CACHE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryTask$FileCacheId",
+        "com.amazonaws.fsx",
+        "DataRepositoryTask",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileCacheId",
+    14,
+);
+static DATAREPOSITORYTASK_MEMBER_RELEASE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryTask$ReleaseConfiguration",
+        "com.amazonaws.fsx",
+        "DataRepositoryTask",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ReleaseConfiguration",
+    15,
+);
+static DATAREPOSITORYTASK_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#DataRepositoryTask", "com.amazonaws.fsx", "DataRepositoryTask"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DATAREPOSITORYTASK_MEMBER_TASK_ID,
+        &DATAREPOSITORYTASK_MEMBER_LIFECYCLE,
+        &DATAREPOSITORYTASK_MEMBER_TYPE,
+        &DATAREPOSITORYTASK_MEMBER_CREATION_TIME,
+        &DATAREPOSITORYTASK_MEMBER_START_TIME,
+        &DATAREPOSITORYTASK_MEMBER_END_TIME,
+        &DATAREPOSITORYTASK_MEMBER_RESOURCE_ARN,
+        &DATAREPOSITORYTASK_MEMBER_TAGS,
+        &DATAREPOSITORYTASK_MEMBER_FILE_SYSTEM_ID,
+        &DATAREPOSITORYTASK_MEMBER_PATHS,
+        &DATAREPOSITORYTASK_MEMBER_FAILURE_DETAILS,
+        &DATAREPOSITORYTASK_MEMBER_STATUS,
+        &DATAREPOSITORYTASK_MEMBER_REPORT,
+        &DATAREPOSITORYTASK_MEMBER_CAPACITY_TO_RELEASE,
+        &DATAREPOSITORYTASK_MEMBER_FILE_CACHE_ID,
+        &DATAREPOSITORYTASK_MEMBER_RELEASE_CONFIGURATION,
+    ],
+);
+impl DataRepositoryTask {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DATAREPOSITORYTASK_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DataRepositoryTask {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.task_id {
+            ser.write_string(&DATAREPOSITORYTASK_MEMBER_TASK_ID, val)?;
+        }
+        if let Some(ref val) = self.lifecycle {
+            ser.write_string(&DATAREPOSITORYTASK_MEMBER_LIFECYCLE, val.as_str())?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&DATAREPOSITORYTASK_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DATAREPOSITORYTASK_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&DATAREPOSITORYTASK_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&DATAREPOSITORYTASK_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.resource_arn {
+            ser.write_string(&DATAREPOSITORYTASK_MEMBER_RESOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &DATAREPOSITORYTASK_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.file_system_id {
+            ser.write_string(&DATAREPOSITORYTASK_MEMBER_FILE_SYSTEM_ID, val)?;
+        }
+        if let Some(ref val) = self.paths {
+            ser.write_list(
+                &DATAREPOSITORYTASK_MEMBER_PATHS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.failure_details {
+            ser.write_struct(&DATAREPOSITORYTASK_MEMBER_FAILURE_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_struct(&DATAREPOSITORYTASK_MEMBER_STATUS, val)?;
+        }
+        if let Some(ref val) = self.report {
+            ser.write_struct(&DATAREPOSITORYTASK_MEMBER_REPORT, val)?;
+        }
+        if let Some(ref val) = self.capacity_to_release {
+            ser.write_long(&DATAREPOSITORYTASK_MEMBER_CAPACITY_TO_RELEASE, *val)?;
+        }
+        if let Some(ref val) = self.file_cache_id {
+            ser.write_string(&DATAREPOSITORYTASK_MEMBER_FILE_CACHE_ID, val)?;
+        }
+        if let Some(ref val) = self.release_configuration {
+            ser.write_struct(&DATAREPOSITORYTASK_MEMBER_RELEASE_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DataRepositoryTaskBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DATAREPOSITORYTASK_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle = Some(crate::types::DataRepositoryTaskLifecycle::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::DataRepositoryTaskType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.paths = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_details = Some(crate::types::DataRepositoryTaskFailureDetails::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::DataRepositoryTaskStatus::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report = Some(crate::types::CompletionReport::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_to_release = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_cache_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.release_configuration = Some(crate::types::ReleaseConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DataRepositoryTask {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DataRepositoryTask {
     /// Creates a new builder-style object to manufacture [`DataRepositoryTask`](crate::types::DataRepositoryTask).
     pub fn builder() -> crate::types::builders::DataRepositoryTaskBuilder {

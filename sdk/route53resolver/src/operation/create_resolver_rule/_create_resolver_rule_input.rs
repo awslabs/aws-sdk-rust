@@ -72,6 +72,283 @@ impl CreateResolverRuleInput {
         self.delegation_record.as_deref()
     }
 }
+static CREATERESOLVERRULEINPUT_MEMBER_CREATOR_REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverRuleInput$CreatorRequestId",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreatorRequestId",
+    0,
+);
+static CREATERESOLVERRULEINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverRuleInput$Name",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static CREATERESOLVERRULEINPUT_MEMBER_RULE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverRuleInput$RuleType",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RuleType",
+    2,
+);
+static CREATERESOLVERRULEINPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverRuleInput$DomainName",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    3,
+);
+static CREATERESOLVERRULEINPUT_MEMBER_TARGET_IPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#TargetList$member",
+        "com.amazonaws.route53resolver",
+        "TargetList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATERESOLVERRULEINPUT_MEMBER_TARGET_IPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverRuleInput$TargetIps",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TargetIps",
+    4,
+)
+.with_list_member(&CREATERESOLVERRULEINPUT_MEMBER_TARGET_IPS_MEMBER);
+static CREATERESOLVERRULEINPUT_MEMBER_RESOLVER_ENDPOINT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverRuleInput$ResolverEndpointId",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResolverEndpointId",
+    5,
+);
+static CREATERESOLVERRULEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.route53resolver#TagList$member", "com.amazonaws.route53resolver", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATERESOLVERRULEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverRuleInput$Tags",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    6,
+)
+.with_list_member(&CREATERESOLVERRULEINPUT_MEMBER_TAGS_MEMBER);
+static CREATERESOLVERRULEINPUT_MEMBER_DELEGATION_RECORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverRuleInput$DelegationRecord",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DelegationRecord",
+    7,
+);
+static CREATERESOLVERRULEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverRuleInput",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATERESOLVERRULEINPUT_MEMBER_CREATOR_REQUEST_ID,
+        &CREATERESOLVERRULEINPUT_MEMBER_NAME,
+        &CREATERESOLVERRULEINPUT_MEMBER_RULE_TYPE,
+        &CREATERESOLVERRULEINPUT_MEMBER_DOMAIN_NAME,
+        &CREATERESOLVERRULEINPUT_MEMBER_TARGET_IPS,
+        &CREATERESOLVERRULEINPUT_MEMBER_RESOLVER_ENDPOINT_ID,
+        &CREATERESOLVERRULEINPUT_MEMBER_TAGS,
+        &CREATERESOLVERRULEINPUT_MEMBER_DELEGATION_RECORD,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateResolverRuleRequest");
+impl CreateResolverRuleInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATERESOLVERRULEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateResolverRuleInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.creator_request_id {
+            ser.write_string(&CREATERESOLVERRULEINPUT_MEMBER_CREATOR_REQUEST_ID, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATERESOLVERRULEINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.rule_type {
+            ser.write_string(&CREATERESOLVERRULEINPUT_MEMBER_RULE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&CREATERESOLVERRULEINPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.target_ips {
+            ser.write_list(
+                &CREATERESOLVERRULEINPUT_MEMBER_TARGET_IPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TargetAddress::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.resolver_endpoint_id {
+            ser.write_string(&CREATERESOLVERRULEINPUT_MEMBER_RESOLVER_ENDPOINT_ID, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATERESOLVERRULEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.delegation_record {
+            ser.write_string(&CREATERESOLVERRULEINPUT_MEMBER_DELEGATION_RECORD, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_resolver_rule::builders::CreateResolverRuleInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATERESOLVERRULEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creator_request_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rule_type = Some(crate::types::RuleTypeOption::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_ips = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TargetAddress::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolver_endpoint_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delegation_record = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateResolverRuleInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.creator_request_id = builder.creator_request_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateResolverRuleInput {
     /// Creates a new builder-style object to manufacture [`CreateResolverRuleInput`](crate::operation::create_resolver_rule::CreateResolverRuleInput).
     pub fn builder() -> crate::operation::create_resolver_rule::builders::CreateResolverRuleInputBuilder {

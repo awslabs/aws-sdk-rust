@@ -50,6 +50,237 @@ impl CreateGatewayInput {
         self.propagate_tags.as_ref()
     }
 }
+static CREATEGATEWAYINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateGatewayInput$name",
+        "com.amazonaws.ecs.synthetic",
+        "CreateGatewayInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static CREATEGATEWAYINPUT_MEMBER_INFRASTRUCTURE_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateGatewayInput$infrastructureRoleArn",
+        "com.amazonaws.ecs.synthetic",
+        "CreateGatewayInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "infrastructureRoleArn",
+    1,
+);
+static CREATEGATEWAYINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateGatewayInput$clientToken",
+        "com.amazonaws.ecs.synthetic",
+        "CreateGatewayInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "clientToken",
+    2,
+);
+static CREATEGATEWAYINPUT_MEMBER_DELETION_PROTECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateGatewayInput$deletionProtection",
+        "com.amazonaws.ecs.synthetic",
+        "CreateGatewayInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "deletionProtection",
+    3,
+);
+static CREATEGATEWAYINPUT_MEMBER_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateGatewayInput$configuration",
+        "com.amazonaws.ecs.synthetic",
+        "CreateGatewayInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "configuration",
+    4,
+);
+static CREATEGATEWAYINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Tags$member", "com.amazonaws.ecs", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEGATEWAYINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateGatewayInput$tags",
+        "com.amazonaws.ecs.synthetic",
+        "CreateGatewayInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    5,
+)
+.with_list_member(&CREATEGATEWAYINPUT_MEMBER_TAGS_MEMBER);
+static CREATEGATEWAYINPUT_MEMBER_PROPAGATE_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateGatewayInput$propagateTags",
+        "com.amazonaws.ecs.synthetic",
+        "CreateGatewayInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "propagateTags",
+    6,
+);
+static CREATEGATEWAYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateGatewayInput",
+        "com.amazonaws.ecs.synthetic",
+        "CreateGatewayInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEGATEWAYINPUT_MEMBER_NAME,
+        &CREATEGATEWAYINPUT_MEMBER_INFRASTRUCTURE_ROLE_ARN,
+        &CREATEGATEWAYINPUT_MEMBER_CLIENT_TOKEN,
+        &CREATEGATEWAYINPUT_MEMBER_DELETION_PROTECTION,
+        &CREATEGATEWAYINPUT_MEMBER_CONFIGURATION,
+        &CREATEGATEWAYINPUT_MEMBER_TAGS,
+        &CREATEGATEWAYINPUT_MEMBER_PROPAGATE_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateGatewayRequest");
+impl CreateGatewayInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEGATEWAYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateGatewayInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATEGATEWAYINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.infrastructure_role_arn {
+            ser.write_string(&CREATEGATEWAYINPUT_MEMBER_INFRASTRUCTURE_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&CREATEGATEWAYINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.deletion_protection {
+            ser.write_boolean(&CREATEGATEWAYINPUT_MEMBER_DELETION_PROTECTION, *val)?;
+        }
+        if let Some(ref val) = self.configuration {
+            ser.write_struct(&CREATEGATEWAYINPUT_MEMBER_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEGATEWAYINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.propagate_tags {
+            ser.write_string(&CREATEGATEWAYINPUT_MEMBER_PROPAGATE_TAGS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_gateway::builders::CreateGatewayInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEGATEWAYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.infrastructure_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deletion_protection = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration = Some(crate::types::GatewayConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.propagate_tags = Some(crate::types::PropagateGatewayTags::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateGatewayInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.infrastructure_role_arn = builder.infrastructure_role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateGatewayInput {
     /// Creates a new builder-style object to manufacture [`CreateGatewayInput`](crate::operation::create_gateway::CreateGatewayInput).
     pub fn builder() -> crate::operation::create_gateway::builders::CreateGatewayInputBuilder {

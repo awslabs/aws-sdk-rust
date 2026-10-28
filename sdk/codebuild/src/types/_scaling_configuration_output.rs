@@ -33,6 +33,176 @@ impl ScalingConfigurationOutput {
         self.desired_capacity
     }
 }
+static SCALINGCONFIGURATIONOUTPUT_MEMBER_SCALING_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ScalingConfigurationOutput$scalingType",
+        "com.amazonaws.codebuild",
+        "ScalingConfigurationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "scalingType",
+    0,
+);
+static SCALINGCONFIGURATIONOUTPUT_MEMBER_TARGET_TRACKING_SCALING_CONFIGS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codebuild#TargetTrackingScalingConfigurations$member",
+            "com.amazonaws.codebuild",
+            "TargetTrackingScalingConfigurations",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static SCALINGCONFIGURATIONOUTPUT_MEMBER_TARGET_TRACKING_SCALING_CONFIGS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codebuild#ScalingConfigurationOutput$targetTrackingScalingConfigs",
+            "com.amazonaws.codebuild",
+            "ScalingConfigurationOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "targetTrackingScalingConfigs",
+        1,
+    )
+    .with_list_member(&SCALINGCONFIGURATIONOUTPUT_MEMBER_TARGET_TRACKING_SCALING_CONFIGS_MEMBER);
+static SCALINGCONFIGURATIONOUTPUT_MEMBER_MAX_CAPACITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ScalingConfigurationOutput$maxCapacity",
+        "com.amazonaws.codebuild",
+        "ScalingConfigurationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxCapacity",
+    2,
+);
+static SCALINGCONFIGURATIONOUTPUT_MEMBER_DESIRED_CAPACITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ScalingConfigurationOutput$desiredCapacity",
+        "com.amazonaws.codebuild",
+        "ScalingConfigurationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "desiredCapacity",
+    3,
+);
+static SCALINGCONFIGURATIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ScalingConfigurationOutput",
+        "com.amazonaws.codebuild",
+        "ScalingConfigurationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SCALINGCONFIGURATIONOUTPUT_MEMBER_SCALING_TYPE,
+        &SCALINGCONFIGURATIONOUTPUT_MEMBER_TARGET_TRACKING_SCALING_CONFIGS,
+        &SCALINGCONFIGURATIONOUTPUT_MEMBER_MAX_CAPACITY,
+        &SCALINGCONFIGURATIONOUTPUT_MEMBER_DESIRED_CAPACITY,
+    ],
+);
+impl ScalingConfigurationOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SCALINGCONFIGURATIONOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ScalingConfigurationOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.scaling_type {
+            ser.write_string(&SCALINGCONFIGURATIONOUTPUT_MEMBER_SCALING_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.target_tracking_scaling_configs {
+            ser.write_list(
+                &SCALINGCONFIGURATIONOUTPUT_MEMBER_TARGET_TRACKING_SCALING_CONFIGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TargetTrackingScalingConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.max_capacity {
+            ser.write_integer(&SCALINGCONFIGURATIONOUTPUT_MEMBER_MAX_CAPACITY, *val)?;
+        }
+        if let Some(ref val) = self.desired_capacity {
+            ser.write_integer(&SCALINGCONFIGURATIONOUTPUT_MEMBER_DESIRED_CAPACITY, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ScalingConfigurationOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SCALINGCONFIGURATIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scaling_type = Some(crate::types::FleetScalingType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_tracking_scaling_configs = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TargetTrackingScalingConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_capacity = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.desired_capacity = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ScalingConfigurationOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ScalingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ScalingConfigurationOutput`](crate::types::ScalingConfigurationOutput).
     pub fn builder() -> crate::types::builders::ScalingConfigurationOutputBuilder {

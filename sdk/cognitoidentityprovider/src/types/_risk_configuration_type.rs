@@ -58,6 +58,193 @@ impl ::std::fmt::Debug for RiskConfigurationType {
         formatter.finish()
     }
 }
+static RISKCONFIGURATIONTYPE_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#RiskConfigurationType$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider",
+        "RiskConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    0,
+);
+static RISKCONFIGURATIONTYPE_MEMBER_CLIENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#RiskConfigurationType$ClientId",
+        "com.amazonaws.cognitoidentityprovider",
+        "RiskConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientId",
+    1,
+);
+static RISKCONFIGURATIONTYPE_MEMBER_COMPROMISED_CREDENTIALS_RISK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentityprovider#RiskConfigurationType$CompromisedCredentialsRiskConfiguration",
+            "com.amazonaws.cognitoidentityprovider",
+            "RiskConfigurationType",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "CompromisedCredentialsRiskConfiguration",
+        2,
+    );
+static RISKCONFIGURATIONTYPE_MEMBER_ACCOUNT_TAKEOVER_RISK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentityprovider#RiskConfigurationType$AccountTakeoverRiskConfiguration",
+            "com.amazonaws.cognitoidentityprovider",
+            "RiskConfigurationType",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "AccountTakeoverRiskConfiguration",
+        3,
+    );
+static RISKCONFIGURATIONTYPE_MEMBER_RISK_EXCEPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#RiskConfigurationType$RiskExceptionConfiguration",
+        "com.amazonaws.cognitoidentityprovider",
+        "RiskConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RiskExceptionConfiguration",
+    4,
+);
+static RISKCONFIGURATIONTYPE_MEMBER_LAST_MODIFIED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#RiskConfigurationType$LastModifiedDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "RiskConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedDate",
+    5,
+);
+static RISKCONFIGURATIONTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#RiskConfigurationType",
+        "com.amazonaws.cognitoidentityprovider",
+        "RiskConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RISKCONFIGURATIONTYPE_MEMBER_USER_POOL_ID,
+        &RISKCONFIGURATIONTYPE_MEMBER_CLIENT_ID,
+        &RISKCONFIGURATIONTYPE_MEMBER_COMPROMISED_CREDENTIALS_RISK_CONFIGURATION,
+        &RISKCONFIGURATIONTYPE_MEMBER_ACCOUNT_TAKEOVER_RISK_CONFIGURATION,
+        &RISKCONFIGURATIONTYPE_MEMBER_RISK_EXCEPTION_CONFIGURATION,
+        &RISKCONFIGURATIONTYPE_MEMBER_LAST_MODIFIED_DATE,
+    ],
+);
+impl RiskConfigurationType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RISKCONFIGURATIONTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RiskConfigurationType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&RISKCONFIGURATIONTYPE_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.client_id {
+            ser.write_string(&RISKCONFIGURATIONTYPE_MEMBER_CLIENT_ID, val)?;
+        }
+        if let Some(ref val) = self.compromised_credentials_risk_configuration {
+            ser.write_struct(&RISKCONFIGURATIONTYPE_MEMBER_COMPROMISED_CREDENTIALS_RISK_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.account_takeover_risk_configuration {
+            ser.write_struct(&RISKCONFIGURATIONTYPE_MEMBER_ACCOUNT_TAKEOVER_RISK_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.risk_exception_configuration {
+            ser.write_struct(&RISKCONFIGURATIONTYPE_MEMBER_RISK_EXCEPTION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.last_modified_date {
+            ser.write_timestamp(&RISKCONFIGURATIONTYPE_MEMBER_LAST_MODIFIED_DATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RiskConfigurationTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RISKCONFIGURATIONTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compromised_credentials_risk_configuration =
+                            Some(crate::types::CompromisedCredentialsRiskConfigurationType::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_takeover_risk_configuration = Some(crate::types::AccountTakeoverRiskConfigurationType::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.risk_exception_configuration = Some(crate::types::RiskExceptionConfigurationType::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RiskConfigurationType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RiskConfigurationType {
     /// Creates a new builder-style object to manufacture [`RiskConfigurationType`](crate::types::RiskConfigurationType).
     pub fn builder() -> crate::types::builders::RiskConfigurationTypeBuilder {

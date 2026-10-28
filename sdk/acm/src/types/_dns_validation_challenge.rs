@@ -13,6 +13,79 @@ impl DnsValidationChallenge {
         self.resource_record.as_ref()
     }
 }
+static DNSVALIDATIONCHALLENGE_MEMBER_RESOURCE_RECORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DnsValidationChallenge$ResourceRecord",
+        "com.amazonaws.acm",
+        "DnsValidationChallenge",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResourceRecord",
+    0,
+);
+static DNSVALIDATIONCHALLENGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DnsValidationChallenge", "com.amazonaws.acm", "DnsValidationChallenge"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DNSVALIDATIONCHALLENGE_MEMBER_RESOURCE_RECORD],
+);
+impl DnsValidationChallenge {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DNSVALIDATIONCHALLENGE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DnsValidationChallenge {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_record {
+            ser.write_struct(&DNSVALIDATIONCHALLENGE_MEMBER_RESOURCE_RECORD, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DnsValidationChallengeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DNSVALIDATIONCHALLENGE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_record = Some(crate::types::ResourceRecord::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DnsValidationChallenge {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DnsValidationChallenge {
     /// Creates a new builder-style object to manufacture [`DnsValidationChallenge`](crate::types::DnsValidationChallenge).
     pub fn builder() -> crate::types::builders::DnsValidationChallengeBuilder {

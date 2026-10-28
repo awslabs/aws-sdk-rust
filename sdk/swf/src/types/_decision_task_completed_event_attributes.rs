@@ -37,6 +37,164 @@ impl DecisionTaskCompletedEventAttributes {
         self.task_list_schedule_to_start_timeout.as_deref()
     }
 }
+static DECISIONTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_EXECUTION_CONTEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#DecisionTaskCompletedEventAttributes$executionContext",
+        "com.amazonaws.swf",
+        "DecisionTaskCompletedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "executionContext",
+    0,
+);
+static DECISIONTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_SCHEDULED_EVENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#DecisionTaskCompletedEventAttributes$scheduledEventId",
+        "com.amazonaws.swf",
+        "DecisionTaskCompletedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "scheduledEventId",
+    1,
+);
+static DECISIONTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_STARTED_EVENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#DecisionTaskCompletedEventAttributes$startedEventId",
+        "com.amazonaws.swf",
+        "DecisionTaskCompletedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "startedEventId",
+    2,
+);
+static DECISIONTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_TASK_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#DecisionTaskCompletedEventAttributes$taskList",
+        "com.amazonaws.swf",
+        "DecisionTaskCompletedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "taskList",
+    3,
+);
+static DECISIONTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_TASK_LIST_SCHEDULE_TO_START_TIMEOUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#DecisionTaskCompletedEventAttributes$taskListScheduleToStartTimeout",
+            "com.amazonaws.swf",
+            "DecisionTaskCompletedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "taskListScheduleToStartTimeout",
+        4,
+    );
+static DECISIONTASKCOMPLETEDEVENTATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#DecisionTaskCompletedEventAttributes",
+        "com.amazonaws.swf",
+        "DecisionTaskCompletedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DECISIONTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_EXECUTION_CONTEXT,
+        &DECISIONTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_SCHEDULED_EVENT_ID,
+        &DECISIONTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_STARTED_EVENT_ID,
+        &DECISIONTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_TASK_LIST,
+        &DECISIONTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_TASK_LIST_SCHEDULE_TO_START_TIMEOUT,
+    ],
+);
+impl DecisionTaskCompletedEventAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DECISIONTASKCOMPLETEDEVENTATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DecisionTaskCompletedEventAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.execution_context {
+            ser.write_string(&DECISIONTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_EXECUTION_CONTEXT, val)?;
+        }
+        {
+            let val = &self.scheduled_event_id;
+            ser.write_long(&DECISIONTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_SCHEDULED_EVENT_ID, *val)?;
+        }
+        {
+            let val = &self.started_event_id;
+            ser.write_long(&DECISIONTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_STARTED_EVENT_ID, *val)?;
+        }
+        if let Some(ref val) = self.task_list {
+            ser.write_struct(&DECISIONTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_TASK_LIST, val)?;
+        }
+        if let Some(ref val) = self.task_list_schedule_to_start_timeout {
+            ser.write_string(&DECISIONTASKCOMPLETEDEVENTATTRIBUTES_MEMBER_TASK_LIST_SCHEDULE_TO_START_TIMEOUT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DecisionTaskCompletedEventAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DECISIONTASKCOMPLETEDEVENTATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_context = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.scheduled_event_id = Some(deser.read_long(member)?);
+                }
+                Some(2) => {
+                    self.started_event_id = Some(deser.read_long(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_list = Some(crate::types::TaskList::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_list_schedule_to_start_timeout = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DecisionTaskCompletedEventAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DecisionTaskCompletedEventAttributes {
     /// Creates a new builder-style object to manufacture [`DecisionTaskCompletedEventAttributes`](crate::types::DecisionTaskCompletedEventAttributes).
     pub fn builder() -> crate::types::builders::DecisionTaskCompletedEventAttributesBuilder {

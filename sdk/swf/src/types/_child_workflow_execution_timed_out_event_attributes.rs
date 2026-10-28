@@ -37,6 +37,167 @@ impl ChildWorkflowExecutionTimedOutEventAttributes {
         self.started_event_id
     }
 }
+static CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_MEMBER_WORKFLOW_EXECUTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ChildWorkflowExecutionTimedOutEventAttributes$workflowExecution",
+            "com.amazonaws.swf",
+            "ChildWorkflowExecutionTimedOutEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "workflowExecution",
+        0,
+    );
+static CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_MEMBER_WORKFLOW_TYPE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ChildWorkflowExecutionTimedOutEventAttributes$workflowType",
+            "com.amazonaws.swf",
+            "ChildWorkflowExecutionTimedOutEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "workflowType",
+        1,
+    );
+static CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_MEMBER_TIMEOUT_TYPE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ChildWorkflowExecutionTimedOutEventAttributes$timeoutType",
+            "com.amazonaws.swf",
+            "ChildWorkflowExecutionTimedOutEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "timeoutType",
+        2,
+    );
+static CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_MEMBER_INITIATED_EVENT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ChildWorkflowExecutionTimedOutEventAttributes$initiatedEventId",
+            "com.amazonaws.swf",
+            "ChildWorkflowExecutionTimedOutEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "initiatedEventId",
+        3,
+    );
+static CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_MEMBER_STARTED_EVENT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ChildWorkflowExecutionTimedOutEventAttributes$startedEventId",
+            "com.amazonaws.swf",
+            "ChildWorkflowExecutionTimedOutEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "startedEventId",
+        4,
+    );
+static CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ChildWorkflowExecutionTimedOutEventAttributes",
+        "com.amazonaws.swf",
+        "ChildWorkflowExecutionTimedOutEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_MEMBER_WORKFLOW_EXECUTION,
+        &CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_MEMBER_WORKFLOW_TYPE,
+        &CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_MEMBER_TIMEOUT_TYPE,
+        &CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_MEMBER_INITIATED_EVENT_ID,
+        &CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_MEMBER_STARTED_EVENT_ID,
+    ],
+);
+impl ChildWorkflowExecutionTimedOutEventAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ChildWorkflowExecutionTimedOutEventAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.workflow_execution {
+            ser.write_struct(&CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_MEMBER_WORKFLOW_EXECUTION, val)?;
+        }
+        if let Some(ref val) = self.workflow_type {
+            ser.write_struct(&CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_MEMBER_WORKFLOW_TYPE, val)?;
+        }
+        {
+            let val = &self.timeout_type;
+            ser.write_string(&CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_MEMBER_TIMEOUT_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.initiated_event_id;
+            ser.write_long(&CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_MEMBER_INITIATED_EVENT_ID, *val)?;
+        }
+        {
+            let val = &self.started_event_id;
+            ser.write_long(&CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_MEMBER_STARTED_EVENT_ID, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ChildWorkflowExecutionTimedOutEventAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_execution = Some(crate::types::WorkflowExecution::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_type = Some(crate::types::WorkflowType::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    self.timeout_type = Some(crate::types::WorkflowExecutionTimeoutType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    self.initiated_event_id = Some(deser.read_long(member)?);
+                }
+                Some(4) => {
+                    self.started_event_id = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ChildWorkflowExecutionTimedOutEventAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.initiated_event_id = builder.initiated_event_id.or(Some(0i64));
+        builder.started_event_id = builder.started_event_id.or(Some(0i64));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ChildWorkflowExecutionTimedOutEventAttributes {
     /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::types::ChildWorkflowExecutionTimedOutEventAttributes).
     pub fn builder() -> crate::types::builders::ChildWorkflowExecutionTimedOutEventAttributesBuilder {

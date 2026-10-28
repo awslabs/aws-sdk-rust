@@ -192,7 +192,7 @@ mod partition;
 mod registry;
 mod stats;
 
-pub use builder::{BuildError, Builder};
+pub use builder::{BuildError, Builder, HttpsBuilder};
 pub use client::{Client, ClientBuildError};
 pub use connection::{CloseReason, ConnectionId, ConnectionInfo, ConnectionProtocol};
 pub use events::{

@@ -68,6 +68,224 @@ impl ::std::fmt::Debug for PutSnapshotBlockInput {
         formatter.finish()
     }
 }
+static PUTSNAPSHOTBLOCKINPUT_MEMBER_SNAPSHOT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#PutSnapshotBlockInput$SnapshotId",
+        "com.amazonaws.ebs.synthetic",
+        "PutSnapshotBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SnapshotId",
+    0,
+)
+.with_http_label();
+static PUTSNAPSHOTBLOCKINPUT_MEMBER_BLOCK_INDEX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#PutSnapshotBlockInput$BlockIndex",
+        "com.amazonaws.ebs.synthetic",
+        "PutSnapshotBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "BlockIndex",
+    1,
+)
+.with_http_label();
+static PUTSNAPSHOTBLOCKINPUT_MEMBER_BLOCK_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#PutSnapshotBlockInput$BlockData",
+        "com.amazonaws.ebs.synthetic",
+        "PutSnapshotBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Blob,
+    "BlockData",
+    2,
+)
+.with_http_payload()
+.with_streaming();
+static PUTSNAPSHOTBLOCKINPUT_MEMBER_DATA_LENGTH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#PutSnapshotBlockInput$DataLength",
+        "com.amazonaws.ebs.synthetic",
+        "PutSnapshotBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DataLength",
+    3,
+)
+.with_http_header("x-amz-Data-Length");
+static PUTSNAPSHOTBLOCKINPUT_MEMBER_PROGRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#PutSnapshotBlockInput$Progress",
+        "com.amazonaws.ebs.synthetic",
+        "PutSnapshotBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Progress",
+    4,
+)
+.with_http_header("x-amz-Progress");
+static PUTSNAPSHOTBLOCKINPUT_MEMBER_CHECKSUM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#PutSnapshotBlockInput$Checksum",
+        "com.amazonaws.ebs.synthetic",
+        "PutSnapshotBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Checksum",
+    5,
+)
+.with_http_header("x-amz-Checksum");
+static PUTSNAPSHOTBLOCKINPUT_MEMBER_CHECKSUM_ALGORITHM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#PutSnapshotBlockInput$ChecksumAlgorithm",
+        "com.amazonaws.ebs.synthetic",
+        "PutSnapshotBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChecksumAlgorithm",
+    6,
+)
+.with_http_header("x-amz-Checksum-Algorithm");
+static PUTSNAPSHOTBLOCKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#PutSnapshotBlockInput",
+        "com.amazonaws.ebs.synthetic",
+        "PutSnapshotBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTSNAPSHOTBLOCKINPUT_MEMBER_SNAPSHOT_ID,
+        &PUTSNAPSHOTBLOCKINPUT_MEMBER_BLOCK_INDEX,
+        &PUTSNAPSHOTBLOCKINPUT_MEMBER_BLOCK_DATA,
+        &PUTSNAPSHOTBLOCKINPUT_MEMBER_DATA_LENGTH,
+        &PUTSNAPSHOTBLOCKINPUT_MEMBER_PROGRESS,
+        &PUTSNAPSHOTBLOCKINPUT_MEMBER_CHECKSUM,
+        &PUTSNAPSHOTBLOCKINPUT_MEMBER_CHECKSUM_ALGORITHM,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "PUT",
+    "/snapshots/{SnapshotId}/blocks/{BlockIndex}",
+    Some(201),
+))
+.with_no_body_members()
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutSnapshotBlockRequest");
+impl PutSnapshotBlockInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTSNAPSHOTBLOCKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutSnapshotBlockInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.snapshot_id {
+            ser.write_string(&PUTSNAPSHOTBLOCKINPUT_MEMBER_SNAPSHOT_ID, val)?;
+        }
+        if let Some(ref val) = self.block_index {
+            ser.write_integer(&PUTSNAPSHOTBLOCKINPUT_MEMBER_BLOCK_INDEX, *val)?;
+        }
+        if let Some(ref val) = self.data_length {
+            ser.write_integer(&PUTSNAPSHOTBLOCKINPUT_MEMBER_DATA_LENGTH, *val)?;
+        }
+        if let Some(ref val) = self.progress {
+            ser.write_integer(&PUTSNAPSHOTBLOCKINPUT_MEMBER_PROGRESS, *val)?;
+        }
+        if let Some(ref val) = self.checksum {
+            ser.write_string(&PUTSNAPSHOTBLOCKINPUT_MEMBER_CHECKSUM, val)?;
+        }
+        if let Some(ref val) = self.checksum_algorithm {
+            ser.write_string(&PUTSNAPSHOTBLOCKINPUT_MEMBER_CHECKSUM_ALGORITHM, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_snapshot_block::builders::PutSnapshotBlockInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTSNAPSHOTBLOCKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.snapshot_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.block_index = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    deser.skip_value()?;
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_length = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.progress = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.checksum = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.checksum_algorithm = Some(crate::types::ChecksumAlgorithm::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutSnapshotBlockInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.snapshot_id = builder.snapshot_id.or(Some(String::new()));
+        builder.block_index = builder.block_index.or(Some(0i32));
+        builder.data_length = builder.data_length.or(Some(0i32));
+        builder.checksum = builder.checksum.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutSnapshotBlockInput {
     /// Creates a new builder-style object to manufacture [`PutSnapshotBlockInput`](crate::operation::put_snapshot_block::PutSnapshotBlockInput).
     pub fn builder() -> crate::operation::put_snapshot_block::builders::PutSnapshotBlockInputBuilder {

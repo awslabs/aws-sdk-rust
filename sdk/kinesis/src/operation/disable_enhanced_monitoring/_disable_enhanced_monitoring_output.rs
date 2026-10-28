@@ -36,6 +36,201 @@ impl DisableEnhancedMonitoringOutput {
         self.stream_arn.as_deref()
     }
 }
+static DISABLEENHANCEDMONITORINGOUTPUT_MEMBER_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DisableEnhancedMonitoringOutput$StreamName",
+        "com.amazonaws.kinesis.synthetic",
+        "DisableEnhancedMonitoringOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamName",
+    0,
+);
+static DISABLEENHANCEDMONITORINGOUTPUT_MEMBER_CURRENT_SHARD_LEVEL_METRICS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#MetricsNameList$member", "com.amazonaws.kinesis", "MetricsNameList"),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static DISABLEENHANCEDMONITORINGOUTPUT_MEMBER_CURRENT_SHARD_LEVEL_METRICS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.kinesis.synthetic#DisableEnhancedMonitoringOutput$CurrentShardLevelMetrics",
+            "com.amazonaws.kinesis.synthetic",
+            "DisableEnhancedMonitoringOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "CurrentShardLevelMetrics",
+        1,
+    )
+    .with_list_member(&DISABLEENHANCEDMONITORINGOUTPUT_MEMBER_CURRENT_SHARD_LEVEL_METRICS_MEMBER);
+static DISABLEENHANCEDMONITORINGOUTPUT_MEMBER_DESIRED_SHARD_LEVEL_METRICS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#MetricsNameList$member", "com.amazonaws.kinesis", "MetricsNameList"),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static DISABLEENHANCEDMONITORINGOUTPUT_MEMBER_DESIRED_SHARD_LEVEL_METRICS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.kinesis.synthetic#DisableEnhancedMonitoringOutput$DesiredShardLevelMetrics",
+            "com.amazonaws.kinesis.synthetic",
+            "DisableEnhancedMonitoringOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "DesiredShardLevelMetrics",
+        2,
+    )
+    .with_list_member(&DISABLEENHANCEDMONITORINGOUTPUT_MEMBER_DESIRED_SHARD_LEVEL_METRICS_MEMBER);
+static DISABLEENHANCEDMONITORINGOUTPUT_MEMBER_STREAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DisableEnhancedMonitoringOutput$StreamARN",
+        "com.amazonaws.kinesis.synthetic",
+        "DisableEnhancedMonitoringOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamARN",
+    3,
+);
+static DISABLEENHANCEDMONITORINGOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DisableEnhancedMonitoringOutput",
+        "com.amazonaws.kinesis.synthetic",
+        "DisableEnhancedMonitoringOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DISABLEENHANCEDMONITORINGOUTPUT_MEMBER_STREAM_NAME,
+        &DISABLEENHANCEDMONITORINGOUTPUT_MEMBER_CURRENT_SHARD_LEVEL_METRICS,
+        &DISABLEENHANCEDMONITORINGOUTPUT_MEMBER_DESIRED_SHARD_LEVEL_METRICS,
+        &DISABLEENHANCEDMONITORINGOUTPUT_MEMBER_STREAM_ARN,
+    ],
+)
+.with_original_name("EnhancedMonitoringOutput");
+impl DisableEnhancedMonitoringOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DISABLEENHANCEDMONITORINGOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DisableEnhancedMonitoringOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stream_name {
+            ser.write_string(&DISABLEENHANCEDMONITORINGOUTPUT_MEMBER_STREAM_NAME, val)?;
+        }
+        if let Some(ref val) = self.current_shard_level_metrics {
+            ser.write_list(
+                &DISABLEENHANCEDMONITORINGOUTPUT_MEMBER_CURRENT_SHARD_LEVEL_METRICS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.desired_shard_level_metrics {
+            ser.write_list(
+                &DISABLEENHANCEDMONITORINGOUTPUT_MEMBER_DESIRED_SHARD_LEVEL_METRICS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.stream_arn {
+            ser.write_string(&DISABLEENHANCEDMONITORINGOUTPUT_MEMBER_STREAM_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::disable_enhanced_monitoring::builders::DisableEnhancedMonitoringOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DISABLEENHANCEDMONITORINGOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_shard_level_metrics = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MetricsName::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.desired_shard_level_metrics = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MetricsName::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DisableEnhancedMonitoringOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DisableEnhancedMonitoringOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

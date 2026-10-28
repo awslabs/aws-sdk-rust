@@ -89,6 +89,184 @@ impl SftpConnectorConfig {
         self.ordered_user_secret_version_stages.as_deref().unwrap_or_default()
     }
 }
+static SFTPCONNECTORCONFIG_MEMBER_USER_SECRET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#SftpConnectorConfig$UserSecretId",
+        "com.amazonaws.transfer",
+        "SftpConnectorConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserSecretId",
+    0,
+);
+static SFTPCONNECTORCONFIG_MEMBER_TRUSTED_HOST_KEYS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#SftpConnectorTrustedHostKeyList$member",
+        "com.amazonaws.transfer",
+        "SftpConnectorTrustedHostKeyList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static SFTPCONNECTORCONFIG_MEMBER_TRUSTED_HOST_KEYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#SftpConnectorConfig$TrustedHostKeys",
+        "com.amazonaws.transfer",
+        "SftpConnectorConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TrustedHostKeys",
+    1,
+)
+.with_list_member(&SFTPCONNECTORCONFIG_MEMBER_TRUSTED_HOST_KEYS_MEMBER);
+static SFTPCONNECTORCONFIG_MEMBER_MAX_CONCURRENT_CONNECTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#SftpConnectorConfig$MaxConcurrentConnections",
+        "com.amazonaws.transfer",
+        "SftpConnectorConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxConcurrentConnections",
+    2,
+);
+static SFTPCONNECTORCONFIG_MEMBER_ORDERED_USER_SECRET_VERSION_STAGES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.transfer#SecretVersionStageList$member",
+            "com.amazonaws.transfer",
+            "SecretVersionStageList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static SFTPCONNECTORCONFIG_MEMBER_ORDERED_USER_SECRET_VERSION_STAGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#SftpConnectorConfig$OrderedUserSecretVersionStages",
+        "com.amazonaws.transfer",
+        "SftpConnectorConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "OrderedUserSecretVersionStages",
+    3,
+)
+.with_list_member(&SFTPCONNECTORCONFIG_MEMBER_ORDERED_USER_SECRET_VERSION_STAGES_MEMBER);
+static SFTPCONNECTORCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#SftpConnectorConfig",
+        "com.amazonaws.transfer",
+        "SftpConnectorConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SFTPCONNECTORCONFIG_MEMBER_USER_SECRET_ID,
+        &SFTPCONNECTORCONFIG_MEMBER_TRUSTED_HOST_KEYS,
+        &SFTPCONNECTORCONFIG_MEMBER_MAX_CONCURRENT_CONNECTIONS,
+        &SFTPCONNECTORCONFIG_MEMBER_ORDERED_USER_SECRET_VERSION_STAGES,
+    ],
+);
+impl SftpConnectorConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SFTPCONNECTORCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SftpConnectorConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_secret_id {
+            ser.write_string(&SFTPCONNECTORCONFIG_MEMBER_USER_SECRET_ID, val)?;
+        }
+        if let Some(ref val) = self.trusted_host_keys {
+            ser.write_list(
+                &SFTPCONNECTORCONFIG_MEMBER_TRUSTED_HOST_KEYS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.max_concurrent_connections;
+            ser.write_integer(&SFTPCONNECTORCONFIG_MEMBER_MAX_CONCURRENT_CONNECTIONS, *val)?;
+        }
+        if let Some(ref val) = self.ordered_user_secret_version_stages {
+            ser.write_list(
+                &SFTPCONNECTORCONFIG_MEMBER_ORDERED_USER_SECRET_VERSION_STAGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SftpConnectorConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SFTPCONNECTORCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_secret_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.trusted_host_keys = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.max_concurrent_connections = Some(deser.read_integer(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ordered_user_secret_version_stages = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SftpConnectorConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SftpConnectorConfig {
     /// Creates a new builder-style object to manufacture [`SftpConnectorConfig`](crate::types::SftpConnectorConfig).
     pub fn builder() -> crate::types::builders::SftpConnectorConfigBuilder {

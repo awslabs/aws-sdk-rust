@@ -19,6 +19,106 @@ impl DnsPrevalidationOptions {
         self.hosted_zone_id.as_deref()
     }
 }
+static DNSPREVALIDATIONOPTIONS_MEMBER_DOMAIN_SCOPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DnsPrevalidationOptions$DomainScope",
+        "com.amazonaws.acm",
+        "DnsPrevalidationOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DomainScope",
+    0,
+);
+static DNSPREVALIDATIONOPTIONS_MEMBER_HOSTED_ZONE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DnsPrevalidationOptions$HostedZoneId",
+        "com.amazonaws.acm",
+        "DnsPrevalidationOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HostedZoneId",
+    1,
+);
+static DNSPREVALIDATIONOPTIONS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DnsPrevalidationOptions",
+        "com.amazonaws.acm",
+        "DnsPrevalidationOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DNSPREVALIDATIONOPTIONS_MEMBER_DOMAIN_SCOPE,
+        &DNSPREVALIDATIONOPTIONS_MEMBER_HOSTED_ZONE_ID,
+    ],
+);
+impl DnsPrevalidationOptions {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DNSPREVALIDATIONOPTIONS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DnsPrevalidationOptions {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_scope {
+            ser.write_struct(&DNSPREVALIDATIONOPTIONS_MEMBER_DOMAIN_SCOPE, val)?;
+        }
+        if let Some(ref val) = self.hosted_zone_id {
+            ser.write_string(&DNSPREVALIDATIONOPTIONS_MEMBER_HOSTED_ZONE_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DnsPrevalidationOptionsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DNSPREVALIDATIONOPTIONS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_scope = Some(crate::types::DomainScope::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hosted_zone_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DnsPrevalidationOptions {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DnsPrevalidationOptions {
     /// Creates a new builder-style object to manufacture [`DnsPrevalidationOptions`](crate::types::DnsPrevalidationOptions).
     pub fn builder() -> crate::types::builders::DnsPrevalidationOptionsBuilder {

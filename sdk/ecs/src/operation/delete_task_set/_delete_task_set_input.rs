@@ -30,6 +30,153 @@ impl DeleteTaskSetInput {
         self.force
     }
 }
+static DELETETASKSETINPUT_MEMBER_CLUSTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DeleteTaskSetInput$cluster",
+        "com.amazonaws.ecs.synthetic",
+        "DeleteTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cluster",
+    0,
+);
+static DELETETASKSETINPUT_MEMBER_SERVICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DeleteTaskSetInput$service",
+        "com.amazonaws.ecs.synthetic",
+        "DeleteTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "service",
+    1,
+);
+static DELETETASKSETINPUT_MEMBER_TASK_SET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DeleteTaskSetInput$taskSet",
+        "com.amazonaws.ecs.synthetic",
+        "DeleteTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskSet",
+    2,
+);
+static DELETETASKSETINPUT_MEMBER_FORCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DeleteTaskSetInput$force",
+        "com.amazonaws.ecs.synthetic",
+        "DeleteTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "force",
+    3,
+);
+static DELETETASKSETINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DeleteTaskSetInput",
+        "com.amazonaws.ecs.synthetic",
+        "DeleteTaskSetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELETETASKSETINPUT_MEMBER_CLUSTER,
+        &DELETETASKSETINPUT_MEMBER_SERVICE,
+        &DELETETASKSETINPUT_MEMBER_TASK_SET,
+        &DELETETASKSETINPUT_MEMBER_FORCE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteTaskSetRequest");
+impl DeleteTaskSetInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETETASKSETINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteTaskSetInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster {
+            ser.write_string(&DELETETASKSETINPUT_MEMBER_CLUSTER, val)?;
+        }
+        if let Some(ref val) = self.service {
+            ser.write_string(&DELETETASKSETINPUT_MEMBER_SERVICE, val)?;
+        }
+        if let Some(ref val) = self.task_set {
+            ser.write_string(&DELETETASKSETINPUT_MEMBER_TASK_SET, val)?;
+        }
+        if let Some(ref val) = self.force {
+            ser.write_boolean(&DELETETASKSETINPUT_MEMBER_FORCE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_task_set::builders::DeleteTaskSetInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETETASKSETINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_set = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.force = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteTaskSetInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.cluster = builder.cluster.or(Some(String::new()));
+        builder.service = builder.service.or(Some(String::new()));
+        builder.task_set = builder.task_set.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteTaskSetInput {
     /// Creates a new builder-style object to manufacture [`DeleteTaskSetInput`](crate::operation::delete_task_set::DeleteTaskSetInput).
     pub fn builder() -> crate::operation::delete_task_set::builders::DeleteTaskSetInputBuilder {

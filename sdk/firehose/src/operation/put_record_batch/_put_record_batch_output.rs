@@ -26,6 +26,151 @@ impl PutRecordBatchOutput {
         self.request_responses.deref()
     }
 }
+static PUTRECORDBATCHOUTPUT_MEMBER_FAILED_PUT_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#PutRecordBatchOutput$FailedPutCount",
+        "com.amazonaws.firehose.synthetic",
+        "PutRecordBatchOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "FailedPutCount",
+    0,
+);
+static PUTRECORDBATCHOUTPUT_MEMBER_ENCRYPTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#PutRecordBatchOutput$Encrypted",
+        "com.amazonaws.firehose.synthetic",
+        "PutRecordBatchOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Encrypted",
+    1,
+);
+static PUTRECORDBATCHOUTPUT_MEMBER_REQUEST_RESPONSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#PutRecordBatchResponseEntryList$member",
+        "com.amazonaws.firehose",
+        "PutRecordBatchResponseEntryList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PUTRECORDBATCHOUTPUT_MEMBER_REQUEST_RESPONSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#PutRecordBatchOutput$RequestResponses",
+        "com.amazonaws.firehose.synthetic",
+        "PutRecordBatchOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "RequestResponses",
+    2,
+)
+.with_list_member(&PUTRECORDBATCHOUTPUT_MEMBER_REQUEST_RESPONSES_MEMBER);
+static PUTRECORDBATCHOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#PutRecordBatchOutput",
+        "com.amazonaws.firehose.synthetic",
+        "PutRecordBatchOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTRECORDBATCHOUTPUT_MEMBER_FAILED_PUT_COUNT,
+        &PUTRECORDBATCHOUTPUT_MEMBER_ENCRYPTED,
+        &PUTRECORDBATCHOUTPUT_MEMBER_REQUEST_RESPONSES,
+    ],
+)
+.with_original_name("PutRecordBatchOutput");
+impl PutRecordBatchOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTRECORDBATCHOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutRecordBatchOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.failed_put_count;
+            ser.write_integer(&PUTRECORDBATCHOUTPUT_MEMBER_FAILED_PUT_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.encrypted {
+            ser.write_boolean(&PUTRECORDBATCHOUTPUT_MEMBER_ENCRYPTED, *val)?;
+        }
+        {
+            let val = &self.request_responses;
+
+            ser.write_list(
+                &PUTRECORDBATCHOUTPUT_MEMBER_REQUEST_RESPONSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PutRecordBatchResponseEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_record_batch::builders::PutRecordBatchOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTRECORDBATCHOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.failed_put_count = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encrypted = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.request_responses = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::PutRecordBatchResponseEntry::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutRecordBatchOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.failed_put_count = builder.failed_put_count.or(Some(0i32));
+        builder.request_responses = builder.request_responses.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for PutRecordBatchOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

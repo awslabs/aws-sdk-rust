@@ -121,6 +121,207 @@ impl BuildArtifacts {
         self.bucket_owner_access.as_ref()
     }
 }
+static BUILDARTIFACTS_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildArtifacts$location",
+        "com.amazonaws.codebuild",
+        "BuildArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "location",
+    0,
+);
+static BUILDARTIFACTS_MEMBER_SHA256_SUM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildArtifacts$sha256sum",
+        "com.amazonaws.codebuild",
+        "BuildArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sha256sum",
+    1,
+);
+static BUILDARTIFACTS_MEMBER_MD5_SUM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildArtifacts$md5sum",
+        "com.amazonaws.codebuild",
+        "BuildArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "md5sum",
+    2,
+);
+static BUILDARTIFACTS_MEMBER_OVERRIDE_ARTIFACT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildArtifacts$overrideArtifactName",
+        "com.amazonaws.codebuild",
+        "BuildArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "overrideArtifactName",
+    3,
+);
+static BUILDARTIFACTS_MEMBER_ENCRYPTION_DISABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildArtifacts$encryptionDisabled",
+        "com.amazonaws.codebuild",
+        "BuildArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "encryptionDisabled",
+    4,
+);
+static BUILDARTIFACTS_MEMBER_ARTIFACT_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildArtifacts$artifactIdentifier",
+        "com.amazonaws.codebuild",
+        "BuildArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "artifactIdentifier",
+    5,
+);
+static BUILDARTIFACTS_MEMBER_BUCKET_OWNER_ACCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildArtifacts$bucketOwnerAccess",
+        "com.amazonaws.codebuild",
+        "BuildArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "bucketOwnerAccess",
+    6,
+);
+static BUILDARTIFACTS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildArtifacts", "com.amazonaws.codebuild", "BuildArtifacts"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BUILDARTIFACTS_MEMBER_LOCATION,
+        &BUILDARTIFACTS_MEMBER_SHA256_SUM,
+        &BUILDARTIFACTS_MEMBER_MD5_SUM,
+        &BUILDARTIFACTS_MEMBER_OVERRIDE_ARTIFACT_NAME,
+        &BUILDARTIFACTS_MEMBER_ENCRYPTION_DISABLED,
+        &BUILDARTIFACTS_MEMBER_ARTIFACT_IDENTIFIER,
+        &BUILDARTIFACTS_MEMBER_BUCKET_OWNER_ACCESS,
+    ],
+);
+impl BuildArtifacts {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BUILDARTIFACTS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BuildArtifacts {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.location {
+            ser.write_string(&BUILDARTIFACTS_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.sha256_sum {
+            ser.write_string(&BUILDARTIFACTS_MEMBER_SHA256_SUM, val)?;
+        }
+        if let Some(ref val) = self.md5_sum {
+            ser.write_string(&BUILDARTIFACTS_MEMBER_MD5_SUM, val)?;
+        }
+        if let Some(ref val) = self.override_artifact_name {
+            ser.write_boolean(&BUILDARTIFACTS_MEMBER_OVERRIDE_ARTIFACT_NAME, *val)?;
+        }
+        if let Some(ref val) = self.encryption_disabled {
+            ser.write_boolean(&BUILDARTIFACTS_MEMBER_ENCRYPTION_DISABLED, *val)?;
+        }
+        if let Some(ref val) = self.artifact_identifier {
+            ser.write_string(&BUILDARTIFACTS_MEMBER_ARTIFACT_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.bucket_owner_access {
+            ser.write_string(&BUILDARTIFACTS_MEMBER_BUCKET_OWNER_ACCESS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BuildArtifactsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BUILDARTIFACTS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sha256_sum = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.md5_sum = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.override_artifact_name = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_disabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifact_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bucket_owner_access = Some(crate::types::BucketOwnerAccess::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BuildArtifacts {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl BuildArtifacts {
     /// Creates a new builder-style object to manufacture [`BuildArtifacts`](crate::types::BuildArtifacts).
     pub fn builder() -> crate::types::builders::BuildArtifactsBuilder {

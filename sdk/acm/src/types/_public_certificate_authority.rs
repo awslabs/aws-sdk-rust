@@ -15,6 +15,112 @@ impl PublicCertificateAuthority {
         self.allowed_key_algorithms.as_deref().unwrap_or_default()
     }
 }
+static PUBLICCERTIFICATEAUTHORITY_MEMBER_ALLOWED_KEY_ALGORITHMS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.acm#PublicKeyAlgorithmList$member",
+            "com.amazonaws.acm",
+            "PublicKeyAlgorithmList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static PUBLICCERTIFICATEAUTHORITY_MEMBER_ALLOWED_KEY_ALGORITHMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#PublicCertificateAuthority$AllowedKeyAlgorithms",
+        "com.amazonaws.acm",
+        "PublicCertificateAuthority",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AllowedKeyAlgorithms",
+    0,
+)
+.with_list_member(&PUBLICCERTIFICATEAUTHORITY_MEMBER_ALLOWED_KEY_ALGORITHMS_MEMBER);
+static PUBLICCERTIFICATEAUTHORITY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#PublicCertificateAuthority",
+        "com.amazonaws.acm",
+        "PublicCertificateAuthority",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&PUBLICCERTIFICATEAUTHORITY_MEMBER_ALLOWED_KEY_ALGORITHMS],
+);
+impl PublicCertificateAuthority {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUBLICCERTIFICATEAUTHORITY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PublicCertificateAuthority {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.allowed_key_algorithms {
+            ser.write_list(
+                &PUBLICCERTIFICATEAUTHORITY_MEMBER_ALLOWED_KEY_ALGORITHMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PublicCertificateAuthorityBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUBLICCERTIFICATEAUTHORITY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.allowed_key_algorithms = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PublicKeyAlgorithm::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PublicCertificateAuthority {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PublicCertificateAuthority {
     /// Creates a new builder-style object to manufacture [`PublicCertificateAuthority`](crate::types::PublicCertificateAuthority).
     pub fn builder() -> crate::types::builders::PublicCertificateAuthorityBuilder {

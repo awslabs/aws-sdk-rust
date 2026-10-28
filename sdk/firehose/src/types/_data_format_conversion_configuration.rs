@@ -31,6 +31,150 @@ impl DataFormatConversionConfiguration {
         self.enabled
     }
 }
+static DATAFORMATCONVERSIONCONFIGURATION_MEMBER_SCHEMA_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DataFormatConversionConfiguration$SchemaConfiguration",
+        "com.amazonaws.firehose",
+        "DataFormatConversionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SchemaConfiguration",
+    0,
+);
+static DATAFORMATCONVERSIONCONFIGURATION_MEMBER_INPUT_FORMAT_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#DataFormatConversionConfiguration$InputFormatConfiguration",
+            "com.amazonaws.firehose",
+            "DataFormatConversionConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "InputFormatConfiguration",
+        1,
+    );
+static DATAFORMATCONVERSIONCONFIGURATION_MEMBER_OUTPUT_FORMAT_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#DataFormatConversionConfiguration$OutputFormatConfiguration",
+            "com.amazonaws.firehose",
+            "DataFormatConversionConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "OutputFormatConfiguration",
+        2,
+    );
+static DATAFORMATCONVERSIONCONFIGURATION_MEMBER_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DataFormatConversionConfiguration$Enabled",
+        "com.amazonaws.firehose",
+        "DataFormatConversionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Enabled",
+    3,
+);
+static DATAFORMATCONVERSIONCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DataFormatConversionConfiguration",
+        "com.amazonaws.firehose",
+        "DataFormatConversionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DATAFORMATCONVERSIONCONFIGURATION_MEMBER_SCHEMA_CONFIGURATION,
+        &DATAFORMATCONVERSIONCONFIGURATION_MEMBER_INPUT_FORMAT_CONFIGURATION,
+        &DATAFORMATCONVERSIONCONFIGURATION_MEMBER_OUTPUT_FORMAT_CONFIGURATION,
+        &DATAFORMATCONVERSIONCONFIGURATION_MEMBER_ENABLED,
+    ],
+);
+impl DataFormatConversionConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DATAFORMATCONVERSIONCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DataFormatConversionConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.schema_configuration {
+            ser.write_struct(&DATAFORMATCONVERSIONCONFIGURATION_MEMBER_SCHEMA_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.input_format_configuration {
+            ser.write_struct(&DATAFORMATCONVERSIONCONFIGURATION_MEMBER_INPUT_FORMAT_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.output_format_configuration {
+            ser.write_struct(&DATAFORMATCONVERSIONCONFIGURATION_MEMBER_OUTPUT_FORMAT_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.enabled {
+            ser.write_boolean(&DATAFORMATCONVERSIONCONFIGURATION_MEMBER_ENABLED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DataFormatConversionConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DATAFORMATCONVERSIONCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.schema_configuration = Some(crate::types::SchemaConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_format_configuration = Some(crate::types::InputFormatConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_format_configuration = Some(crate::types::OutputFormatConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DataFormatConversionConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DataFormatConversionConfiguration {
     /// Creates a new builder-style object to manufacture [`DataFormatConversionConfiguration`](crate::types::DataFormatConversionConfiguration).
     pub fn builder() -> crate::types::builders::DataFormatConversionConfigurationBuilder {

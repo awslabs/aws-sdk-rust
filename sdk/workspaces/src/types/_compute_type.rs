@@ -13,6 +13,75 @@ impl ComputeType {
         self.name.as_ref()
     }
 }
+static COMPUTETYPE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#ComputeType$Name", "com.amazonaws.workspaces", "ComputeType"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static COMPUTETYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#ComputeType", "com.amazonaws.workspaces", "ComputeType"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&COMPUTETYPE_MEMBER_NAME],
+);
+impl ComputeType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COMPUTETYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ComputeType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&COMPUTETYPE_MEMBER_NAME, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ComputeTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COMPUTETYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(crate::types::Compute::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ComputeType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ComputeType {
     /// Creates a new builder-style object to manufacture [`ComputeType`](crate::types::ComputeType).
     pub fn builder() -> crate::types::builders::ComputeTypeBuilder {

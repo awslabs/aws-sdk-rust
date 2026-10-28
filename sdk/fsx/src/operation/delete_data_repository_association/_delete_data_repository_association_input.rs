@@ -24,6 +24,132 @@ impl DeleteDataRepositoryAssociationInput {
         self.delete_data_in_file_system
     }
 }
+static DELETEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_ASSOCIATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DeleteDataRepositoryAssociationInput$AssociationId",
+        "com.amazonaws.fsx.synthetic",
+        "DeleteDataRepositoryAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationId",
+    0,
+);
+static DELETEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx.synthetic#DeleteDataRepositoryAssociationInput$ClientRequestToken",
+            "com.amazonaws.fsx.synthetic",
+            "DeleteDataRepositoryAssociationInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ClientRequestToken",
+        1,
+    );
+static DELETEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_DELETE_DATA_IN_FILE_SYSTEM: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx.synthetic#DeleteDataRepositoryAssociationInput$DeleteDataInFileSystem",
+            "com.amazonaws.fsx.synthetic",
+            "DeleteDataRepositoryAssociationInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "DeleteDataInFileSystem",
+        2,
+    );
+static DELETEDATAREPOSITORYASSOCIATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DeleteDataRepositoryAssociationInput",
+        "com.amazonaws.fsx.synthetic",
+        "DeleteDataRepositoryAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELETEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_ASSOCIATION_ID,
+        &DELETEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &DELETEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_DELETE_DATA_IN_FILE_SYSTEM,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteDataRepositoryAssociationRequest");
+impl DeleteDataRepositoryAssociationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEDATAREPOSITORYASSOCIATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteDataRepositoryAssociationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.association_id {
+            ser.write_string(&DELETEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_ASSOCIATION_ID, val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&DELETEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.delete_data_in_file_system {
+            ser.write_boolean(&DELETEDATAREPOSITORYASSOCIATIONINPUT_MEMBER_DELETE_DATA_IN_FILE_SYSTEM, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_data_repository_association::builders::DeleteDataRepositoryAssociationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEDATAREPOSITORYASSOCIATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.association_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delete_data_in_file_system = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteDataRepositoryAssociationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.association_id = builder.association_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteDataRepositoryAssociationInput {
     /// Creates a new builder-style object to manufacture [`DeleteDataRepositoryAssociationInput`](crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationInput).
     pub fn builder() -> crate::operation::delete_data_repository_association::builders::DeleteDataRepositoryAssociationInputBuilder {

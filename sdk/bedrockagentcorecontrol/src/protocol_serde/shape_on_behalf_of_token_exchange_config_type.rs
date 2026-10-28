@@ -12,6 +12,12 @@ pub fn ser_on_behalf_of_token_exchange_config_type(
         crate::protocol_serde::shape_token_exchange_grant_type_config_type::ser_token_exchange_grant_type_config_type(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.on_behalf_of_authentication_config {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("onBehalfOfAuthenticationConfig").start_object();
+        crate::protocol_serde::shape_on_behalf_of_authentication_config::ser_on_behalf_of_authentication_config(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -50,6 +56,15 @@ where
                         "tokenExchangeGrantTypeConfig" => {
                             builder = builder.set_token_exchange_grant_type_config(
                                 crate::protocol_serde::shape_token_exchange_grant_type_config_type::de_token_exchange_grant_type_config_type(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "onBehalfOfAuthenticationConfig" => {
+                            builder = builder.set_on_behalf_of_authentication_config(
+                                crate::protocol_serde::shape_on_behalf_of_authentication_config::de_on_behalf_of_authentication_config(
                                     tokens,
                                     _value,
                                     depth + 1,

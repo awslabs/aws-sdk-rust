@@ -36,6 +36,174 @@ impl ExecuteCommandInput {
         self.task.as_deref()
     }
 }
+static EXECUTECOMMANDINPUT_MEMBER_CLUSTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ExecuteCommandInput$cluster",
+        "com.amazonaws.ecs.synthetic",
+        "ExecuteCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cluster",
+    0,
+);
+static EXECUTECOMMANDINPUT_MEMBER_CONTAINER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ExecuteCommandInput$container",
+        "com.amazonaws.ecs.synthetic",
+        "ExecuteCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "container",
+    1,
+);
+static EXECUTECOMMANDINPUT_MEMBER_COMMAND: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ExecuteCommandInput$command",
+        "com.amazonaws.ecs.synthetic",
+        "ExecuteCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "command",
+    2,
+);
+static EXECUTECOMMANDINPUT_MEMBER_INTERACTIVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ExecuteCommandInput$interactive",
+        "com.amazonaws.ecs.synthetic",
+        "ExecuteCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "interactive",
+    3,
+);
+static EXECUTECOMMANDINPUT_MEMBER_TASK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ExecuteCommandInput$task",
+        "com.amazonaws.ecs.synthetic",
+        "ExecuteCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "task",
+    4,
+);
+static EXECUTECOMMANDINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ExecuteCommandInput",
+        "com.amazonaws.ecs.synthetic",
+        "ExecuteCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EXECUTECOMMANDINPUT_MEMBER_CLUSTER,
+        &EXECUTECOMMANDINPUT_MEMBER_CONTAINER,
+        &EXECUTECOMMANDINPUT_MEMBER_COMMAND,
+        &EXECUTECOMMANDINPUT_MEMBER_INTERACTIVE,
+        &EXECUTECOMMANDINPUT_MEMBER_TASK,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ExecuteCommandRequest");
+impl ExecuteCommandInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EXECUTECOMMANDINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ExecuteCommandInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster {
+            ser.write_string(&EXECUTECOMMANDINPUT_MEMBER_CLUSTER, val)?;
+        }
+        if let Some(ref val) = self.container {
+            ser.write_string(&EXECUTECOMMANDINPUT_MEMBER_CONTAINER, val)?;
+        }
+        if let Some(ref val) = self.command {
+            ser.write_string(&EXECUTECOMMANDINPUT_MEMBER_COMMAND, val)?;
+        }
+        if let Some(ref val) = self.interactive {
+            ser.write_boolean(&EXECUTECOMMANDINPUT_MEMBER_INTERACTIVE, *val)?;
+        }
+        if let Some(ref val) = self.task {
+            ser.write_string(&EXECUTECOMMANDINPUT_MEMBER_TASK, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::execute_command::builders::ExecuteCommandInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EXECUTECOMMANDINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.command = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.interactive = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ExecuteCommandInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.command = builder.command.or(Some(String::new()));
+        builder.interactive = builder.interactive.or(Some(false));
+        builder.task = builder.task.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ExecuteCommandInput {
     /// Creates a new builder-style object to manufacture [`ExecuteCommandInput`](crate::operation::execute_command::ExecuteCommandInput).
     pub fn builder() -> crate::operation::execute_command::builders::ExecuteCommandInputBuilder {

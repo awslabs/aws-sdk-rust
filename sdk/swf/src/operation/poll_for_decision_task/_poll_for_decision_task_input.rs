@@ -58,6 +58,215 @@ impl PollForDecisionTaskInput {
         self.start_at_previous_started_event
     }
 }
+static POLLFORDECISIONTASKINPUT_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForDecisionTaskInput$domain",
+        "com.amazonaws.swf.synthetic",
+        "PollForDecisionTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domain",
+    0,
+);
+static POLLFORDECISIONTASKINPUT_MEMBER_TASK_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForDecisionTaskInput$taskList",
+        "com.amazonaws.swf.synthetic",
+        "PollForDecisionTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "taskList",
+    1,
+);
+static POLLFORDECISIONTASKINPUT_MEMBER_IDENTITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForDecisionTaskInput$identity",
+        "com.amazonaws.swf.synthetic",
+        "PollForDecisionTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "identity",
+    2,
+);
+static POLLFORDECISIONTASKINPUT_MEMBER_NEXT_PAGE_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForDecisionTaskInput$nextPageToken",
+        "com.amazonaws.swf.synthetic",
+        "PollForDecisionTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextPageToken",
+    3,
+);
+static POLLFORDECISIONTASKINPUT_MEMBER_MAXIMUM_PAGE_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForDecisionTaskInput$maximumPageSize",
+        "com.amazonaws.swf.synthetic",
+        "PollForDecisionTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maximumPageSize",
+    4,
+);
+static POLLFORDECISIONTASKINPUT_MEMBER_REVERSE_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForDecisionTaskInput$reverseOrder",
+        "com.amazonaws.swf.synthetic",
+        "PollForDecisionTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "reverseOrder",
+    5,
+);
+static POLLFORDECISIONTASKINPUT_MEMBER_START_AT_PREVIOUS_STARTED_EVENT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf.synthetic#PollForDecisionTaskInput$startAtPreviousStartedEvent",
+            "com.amazonaws.swf.synthetic",
+            "PollForDecisionTaskInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "startAtPreviousStartedEvent",
+        6,
+    );
+static POLLFORDECISIONTASKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#PollForDecisionTaskInput",
+        "com.amazonaws.swf.synthetic",
+        "PollForDecisionTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &POLLFORDECISIONTASKINPUT_MEMBER_DOMAIN,
+        &POLLFORDECISIONTASKINPUT_MEMBER_TASK_LIST,
+        &POLLFORDECISIONTASKINPUT_MEMBER_IDENTITY,
+        &POLLFORDECISIONTASKINPUT_MEMBER_NEXT_PAGE_TOKEN,
+        &POLLFORDECISIONTASKINPUT_MEMBER_MAXIMUM_PAGE_SIZE,
+        &POLLFORDECISIONTASKINPUT_MEMBER_REVERSE_ORDER,
+        &POLLFORDECISIONTASKINPUT_MEMBER_START_AT_PREVIOUS_STARTED_EVENT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PollForDecisionTaskInput");
+impl PollForDecisionTaskInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &POLLFORDECISIONTASKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PollForDecisionTaskInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain {
+            ser.write_string(&POLLFORDECISIONTASKINPUT_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.task_list {
+            ser.write_struct(&POLLFORDECISIONTASKINPUT_MEMBER_TASK_LIST, val)?;
+        }
+        if let Some(ref val) = self.identity {
+            ser.write_string(&POLLFORDECISIONTASKINPUT_MEMBER_IDENTITY, val)?;
+        }
+        if let Some(ref val) = self.next_page_token {
+            ser.write_string(&POLLFORDECISIONTASKINPUT_MEMBER_NEXT_PAGE_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.maximum_page_size {
+            ser.write_integer(&POLLFORDECISIONTASKINPUT_MEMBER_MAXIMUM_PAGE_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.reverse_order {
+            ser.write_boolean(&POLLFORDECISIONTASKINPUT_MEMBER_REVERSE_ORDER, *val)?;
+        }
+        if let Some(ref val) = self.start_at_previous_started_event {
+            ser.write_boolean(&POLLFORDECISIONTASKINPUT_MEMBER_START_AT_PREVIOUS_STARTED_EVENT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::poll_for_decision_task::builders::PollForDecisionTaskInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&POLLFORDECISIONTASKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_list = Some(crate::types::TaskList::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_page_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.maximum_page_size = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reverse_order = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_at_previous_started_event = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PollForDecisionTaskInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain = builder.domain.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PollForDecisionTaskInput {
     /// Creates a new builder-style object to manufacture [`PollForDecisionTaskInput`](crate::operation::poll_for_decision_task::PollForDecisionTaskInput).
     pub fn builder() -> crate::operation::poll_for_decision_task::builders::PollForDecisionTaskInputBuilder {

@@ -25,6 +25,152 @@ impl DescribeServiceDeploymentsOutput {
         self.failures.as_deref().unwrap_or_default()
     }
 }
+static DESCRIBESERVICEDEPLOYMENTSOUTPUT_MEMBER_SERVICE_DEPLOYMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceDeployments$member", "com.amazonaws.ecs", "ServiceDeployments"),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static DESCRIBESERVICEDEPLOYMENTSOUTPUT_MEMBER_SERVICE_DEPLOYMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DescribeServiceDeploymentsOutput$serviceDeployments",
+        "com.amazonaws.ecs.synthetic",
+        "DescribeServiceDeploymentsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "serviceDeployments",
+    0,
+)
+.with_list_member(&DESCRIBESERVICEDEPLOYMENTSOUTPUT_MEMBER_SERVICE_DEPLOYMENTS_MEMBER);
+static DESCRIBESERVICEDEPLOYMENTSOUTPUT_MEMBER_FAILURES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Failures$member", "com.amazonaws.ecs", "Failures"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBESERVICEDEPLOYMENTSOUTPUT_MEMBER_FAILURES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DescribeServiceDeploymentsOutput$failures",
+        "com.amazonaws.ecs.synthetic",
+        "DescribeServiceDeploymentsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "failures",
+    1,
+)
+.with_list_member(&DESCRIBESERVICEDEPLOYMENTSOUTPUT_MEMBER_FAILURES_MEMBER);
+static DESCRIBESERVICEDEPLOYMENTSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DescribeServiceDeploymentsOutput",
+        "com.amazonaws.ecs.synthetic",
+        "DescribeServiceDeploymentsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBESERVICEDEPLOYMENTSOUTPUT_MEMBER_SERVICE_DEPLOYMENTS,
+        &DESCRIBESERVICEDEPLOYMENTSOUTPUT_MEMBER_FAILURES,
+    ],
+)
+.with_original_name("DescribeServiceDeploymentsResponse");
+impl DescribeServiceDeploymentsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBESERVICEDEPLOYMENTSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeServiceDeploymentsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.service_deployments {
+            ser.write_list(
+                &DESCRIBESERVICEDEPLOYMENTSOUTPUT_MEMBER_SERVICE_DEPLOYMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ServiceDeployment::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.failures {
+            ser.write_list(
+                &DESCRIBESERVICEDEPLOYMENTSOUTPUT_MEMBER_FAILURES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Failure::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_service_deployments::builders::DescribeServiceDeploymentsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBESERVICEDEPLOYMENTSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_deployments = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ServiceDeployment::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failures = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Failure::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeServiceDeploymentsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeServiceDeploymentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

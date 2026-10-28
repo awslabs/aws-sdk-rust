@@ -14,6 +14,84 @@ impl GetDeviceOutput {
         self.device.as_ref()
     }
 }
+static GETDEVICEOUTPUT_MEMBER_DEVICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetDeviceOutput$Device",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetDeviceOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Device",
+    0,
+);
+static GETDEVICEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetDeviceOutput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetDeviceOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETDEVICEOUTPUT_MEMBER_DEVICE],
+)
+.with_original_name("GetDeviceResponse");
+impl GetDeviceOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETDEVICEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetDeviceOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.device {
+            ser.write_struct(&GETDEVICEOUTPUT_MEMBER_DEVICE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_device::builders::GetDeviceOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETDEVICEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device = Some(crate::types::DeviceType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetDeviceOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetDeviceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

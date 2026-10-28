@@ -33,6 +33,128 @@ impl ServiceRegistry {
         self.container_port
     }
 }
+static SERVICEREGISTRY_MEMBER_REGISTRY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRegistry$registryArn", "com.amazonaws.ecs", "ServiceRegistry"),
+    ::aws_smithy_schema::ShapeType::String,
+    "registryArn",
+    0,
+);
+static SERVICEREGISTRY_MEMBER_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRegistry$port", "com.amazonaws.ecs", "ServiceRegistry"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "port",
+    1,
+);
+static SERVICEREGISTRY_MEMBER_CONTAINER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRegistry$containerName", "com.amazonaws.ecs", "ServiceRegistry"),
+    ::aws_smithy_schema::ShapeType::String,
+    "containerName",
+    2,
+);
+static SERVICEREGISTRY_MEMBER_CONTAINER_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRegistry$containerPort", "com.amazonaws.ecs", "ServiceRegistry"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "containerPort",
+    3,
+);
+static SERVICEREGISTRY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ServiceRegistry", "com.amazonaws.ecs", "ServiceRegistry"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SERVICEREGISTRY_MEMBER_REGISTRY_ARN,
+        &SERVICEREGISTRY_MEMBER_PORT,
+        &SERVICEREGISTRY_MEMBER_CONTAINER_NAME,
+        &SERVICEREGISTRY_MEMBER_CONTAINER_PORT,
+    ],
+);
+impl ServiceRegistry {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SERVICEREGISTRY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ServiceRegistry {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.registry_arn {
+            ser.write_string(&SERVICEREGISTRY_MEMBER_REGISTRY_ARN, val)?;
+        }
+        if let Some(ref val) = self.port {
+            ser.write_integer(&SERVICEREGISTRY_MEMBER_PORT, *val)?;
+        }
+        if let Some(ref val) = self.container_name {
+            ser.write_string(&SERVICEREGISTRY_MEMBER_CONTAINER_NAME, val)?;
+        }
+        if let Some(ref val) = self.container_port {
+            ser.write_integer(&SERVICEREGISTRY_MEMBER_CONTAINER_PORT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ServiceRegistryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SERVICEREGISTRY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registry_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.port = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_port = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ServiceRegistry {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ServiceRegistry {
     /// Creates a new builder-style object to manufacture [`ServiceRegistry`](crate::types::ServiceRegistry).
     pub fn builder() -> crate::types::builders::ServiceRegistryBuilder {

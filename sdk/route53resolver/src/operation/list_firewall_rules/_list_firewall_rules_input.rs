@@ -60,6 +60,172 @@ impl ListFirewallRulesInput {
         self.next_token.as_deref()
     }
 }
+static LISTFIREWALLRULESINPUT_MEMBER_FIREWALL_RULE_GROUP_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#ListFirewallRulesInput$FirewallRuleGroupId",
+        "com.amazonaws.route53resolver.synthetic",
+        "ListFirewallRulesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FirewallRuleGroupId",
+    0,
+);
+static LISTFIREWALLRULESINPUT_MEMBER_PRIORITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#ListFirewallRulesInput$Priority",
+        "com.amazonaws.route53resolver.synthetic",
+        "ListFirewallRulesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Priority",
+    1,
+);
+static LISTFIREWALLRULESINPUT_MEMBER_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#ListFirewallRulesInput$Action",
+        "com.amazonaws.route53resolver.synthetic",
+        "ListFirewallRulesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Action",
+    2,
+);
+static LISTFIREWALLRULESINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#ListFirewallRulesInput$MaxResults",
+        "com.amazonaws.route53resolver.synthetic",
+        "ListFirewallRulesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    3,
+);
+static LISTFIREWALLRULESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#ListFirewallRulesInput$NextToken",
+        "com.amazonaws.route53resolver.synthetic",
+        "ListFirewallRulesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    4,
+);
+static LISTFIREWALLRULESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#ListFirewallRulesInput",
+        "com.amazonaws.route53resolver.synthetic",
+        "ListFirewallRulesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTFIREWALLRULESINPUT_MEMBER_FIREWALL_RULE_GROUP_ID,
+        &LISTFIREWALLRULESINPUT_MEMBER_PRIORITY,
+        &LISTFIREWALLRULESINPUT_MEMBER_ACTION,
+        &LISTFIREWALLRULESINPUT_MEMBER_MAX_RESULTS,
+        &LISTFIREWALLRULESINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListFirewallRulesRequest");
+impl ListFirewallRulesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTFIREWALLRULESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListFirewallRulesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.firewall_rule_group_id {
+            ser.write_string(&LISTFIREWALLRULESINPUT_MEMBER_FIREWALL_RULE_GROUP_ID, val)?;
+        }
+        if let Some(ref val) = self.priority {
+            ser.write_integer(&LISTFIREWALLRULESINPUT_MEMBER_PRIORITY, *val)?;
+        }
+        if let Some(ref val) = self.action {
+            ser.write_string(&LISTFIREWALLRULESINPUT_MEMBER_ACTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTFIREWALLRULESINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTFIREWALLRULESINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_firewall_rules::builders::ListFirewallRulesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTFIREWALLRULESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firewall_rule_group_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.priority = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action = Some(crate::types::Action::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListFirewallRulesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.firewall_rule_group_id = builder.firewall_rule_group_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListFirewallRulesInput {
     /// Creates a new builder-style object to manufacture [`ListFirewallRulesInput`](crate::operation::list_firewall_rules::ListFirewallRulesInput).
     pub fn builder() -> crate::operation::list_firewall_rules::builders::ListFirewallRulesInputBuilder {

@@ -38,6 +38,150 @@ impl ManagedCertificate {
         self.domain_name.deref()
     }
 }
+static MANAGEDCERTIFICATE_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ManagedCertificate$arn", "com.amazonaws.ecs", "ManagedCertificate"),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    0,
+);
+static MANAGEDCERTIFICATE_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ManagedCertificate$status", "com.amazonaws.ecs", "ManagedCertificate"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    1,
+);
+static MANAGEDCERTIFICATE_MEMBER_STATUS_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedCertificate$statusReason",
+        "com.amazonaws.ecs",
+        "ManagedCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "statusReason",
+    2,
+);
+static MANAGEDCERTIFICATE_MEMBER_UPDATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedCertificate$updatedAt",
+        "com.amazonaws.ecs",
+        "ManagedCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "updatedAt",
+    3,
+);
+static MANAGEDCERTIFICATE_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedCertificate$domainName",
+        "com.amazonaws.ecs",
+        "ManagedCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domainName",
+    4,
+);
+static MANAGEDCERTIFICATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ManagedCertificate", "com.amazonaws.ecs", "ManagedCertificate"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MANAGEDCERTIFICATE_MEMBER_ARN,
+        &MANAGEDCERTIFICATE_MEMBER_STATUS,
+        &MANAGEDCERTIFICATE_MEMBER_STATUS_REASON,
+        &MANAGEDCERTIFICATE_MEMBER_UPDATED_AT,
+        &MANAGEDCERTIFICATE_MEMBER_DOMAIN_NAME,
+    ],
+);
+impl ManagedCertificate {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MANAGEDCERTIFICATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ManagedCertificate {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&MANAGEDCERTIFICATE_MEMBER_ARN, val)?;
+        }
+        {
+            let val = &self.status;
+            ser.write_string(&MANAGEDCERTIFICATE_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_reason {
+            ser.write_string(&MANAGEDCERTIFICATE_MEMBER_STATUS_REASON, val)?;
+        }
+        {
+            let val = &self.updated_at;
+            ser.write_timestamp(&MANAGEDCERTIFICATE_MEMBER_UPDATED_AT, val)?;
+        }
+        {
+            let val = &self.domain_name;
+            ser.write_string(&MANAGEDCERTIFICATE_MEMBER_DOMAIN_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ManagedCertificateBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MANAGEDCERTIFICATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.status = Some(crate::types::ManagedResourceStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    self.updated_at = Some(deser.read_timestamp(member)?);
+                }
+                Some(4) => {
+                    self.domain_name = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ManagedCertificate {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.updated_at = builder.updated_at.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.domain_name = builder.domain_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ManagedCertificate {
     /// Creates a new builder-style object to manufacture [`ManagedCertificate`](crate::types::ManagedCertificate).
     pub fn builder() -> crate::types::builders::ManagedCertificateBuilder {

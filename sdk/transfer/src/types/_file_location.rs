@@ -19,6 +19,99 @@ impl FileLocation {
         self.efs_file_location.as_ref()
     }
 }
+static FILELOCATION_MEMBER_S3_FILE_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#FileLocation$S3FileLocation",
+        "com.amazonaws.transfer",
+        "FileLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3FileLocation",
+    0,
+);
+static FILELOCATION_MEMBER_EFS_FILE_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#FileLocation$EfsFileLocation",
+        "com.amazonaws.transfer",
+        "FileLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EfsFileLocation",
+    1,
+);
+static FILELOCATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#FileLocation", "com.amazonaws.transfer", "FileLocation"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&FILELOCATION_MEMBER_S3_FILE_LOCATION, &FILELOCATION_MEMBER_EFS_FILE_LOCATION],
+);
+impl FileLocation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FILELOCATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FileLocation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3_file_location {
+            ser.write_struct(&FILELOCATION_MEMBER_S3_FILE_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.efs_file_location {
+            ser.write_struct(&FILELOCATION_MEMBER_EFS_FILE_LOCATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FileLocationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FILELOCATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_file_location = Some(crate::types::S3FileLocation::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.efs_file_location = Some(crate::types::EfsFileLocation::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FileLocation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FileLocation {
     /// Creates a new builder-style object to manufacture [`FileLocation`](crate::types::FileLocation).
     pub fn builder() -> crate::types::builders::FileLocationBuilder {

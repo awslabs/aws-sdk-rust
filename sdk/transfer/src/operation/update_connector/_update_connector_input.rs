@@ -72,6 +72,256 @@ impl UpdateConnectorInput {
         self.ip_address_type.as_ref()
     }
 }
+static UPDATECONNECTORINPUT_MEMBER_CONNECTOR_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateConnectorInput$ConnectorId",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateConnectorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConnectorId",
+    0,
+);
+static UPDATECONNECTORINPUT_MEMBER_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateConnectorInput$Url",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateConnectorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Url",
+    1,
+);
+static UPDATECONNECTORINPUT_MEMBER_AS2_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateConnectorInput$As2Config",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateConnectorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "As2Config",
+    2,
+);
+static UPDATECONNECTORINPUT_MEMBER_ACCESS_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateConnectorInput$AccessRole",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateConnectorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccessRole",
+    3,
+);
+static UPDATECONNECTORINPUT_MEMBER_LOGGING_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateConnectorInput$LoggingRole",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateConnectorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LoggingRole",
+    4,
+);
+static UPDATECONNECTORINPUT_MEMBER_SFTP_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateConnectorInput$SftpConfig",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateConnectorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SftpConfig",
+    5,
+);
+static UPDATECONNECTORINPUT_MEMBER_SECURITY_POLICY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateConnectorInput$SecurityPolicyName",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateConnectorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecurityPolicyName",
+    6,
+);
+static UPDATECONNECTORINPUT_MEMBER_EGRESS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateConnectorInput$EgressConfig",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateConnectorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "EgressConfig",
+    7,
+);
+static UPDATECONNECTORINPUT_MEMBER_IP_ADDRESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateConnectorInput$IpAddressType",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateConnectorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IpAddressType",
+    8,
+);
+static UPDATECONNECTORINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateConnectorInput",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateConnectorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATECONNECTORINPUT_MEMBER_CONNECTOR_ID,
+        &UPDATECONNECTORINPUT_MEMBER_URL,
+        &UPDATECONNECTORINPUT_MEMBER_AS2_CONFIG,
+        &UPDATECONNECTORINPUT_MEMBER_ACCESS_ROLE,
+        &UPDATECONNECTORINPUT_MEMBER_LOGGING_ROLE,
+        &UPDATECONNECTORINPUT_MEMBER_SFTP_CONFIG,
+        &UPDATECONNECTORINPUT_MEMBER_SECURITY_POLICY_NAME,
+        &UPDATECONNECTORINPUT_MEMBER_EGRESS_CONFIG,
+        &UPDATECONNECTORINPUT_MEMBER_IP_ADDRESS_TYPE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateConnectorRequest");
+impl UpdateConnectorInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATECONNECTORINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateConnectorInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.connector_id {
+            ser.write_string(&UPDATECONNECTORINPUT_MEMBER_CONNECTOR_ID, val)?;
+        }
+        if let Some(ref val) = self.url {
+            ser.write_string(&UPDATECONNECTORINPUT_MEMBER_URL, val)?;
+        }
+        if let Some(ref val) = self.as2_config {
+            ser.write_struct(&UPDATECONNECTORINPUT_MEMBER_AS2_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.access_role {
+            ser.write_string(&UPDATECONNECTORINPUT_MEMBER_ACCESS_ROLE, val)?;
+        }
+        if let Some(ref val) = self.logging_role {
+            ser.write_string(&UPDATECONNECTORINPUT_MEMBER_LOGGING_ROLE, val)?;
+        }
+        if let Some(ref val) = self.sftp_config {
+            ser.write_struct(&UPDATECONNECTORINPUT_MEMBER_SFTP_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.security_policy_name {
+            ser.write_string(&UPDATECONNECTORINPUT_MEMBER_SECURITY_POLICY_NAME, val)?;
+        }
+        if let Some(ref val) = self.egress_config {
+            ser.write_struct(&UPDATECONNECTORINPUT_MEMBER_EGRESS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.ip_address_type {
+            ser.write_string(&UPDATECONNECTORINPUT_MEMBER_IP_ADDRESS_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_connector::builders::UpdateConnectorInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATECONNECTORINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.connector_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.as2_config = Some(crate::types::As2ConnectorConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logging_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sftp_config = Some(crate::types::SftpConnectorConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_policy_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.egress_config = Some(crate::types::UpdateConnectorEgressConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_type = Some(crate::types::ConnectorsIpAddressType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateConnectorInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.connector_id = builder.connector_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateConnectorInput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectorInput`](crate::operation::update_connector::UpdateConnectorInput).
     pub fn builder() -> crate::operation::update_connector::builders::UpdateConnectorInputBuilder {

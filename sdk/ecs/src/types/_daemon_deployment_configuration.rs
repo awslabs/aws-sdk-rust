@@ -25,6 +25,124 @@ impl DaemonDeploymentConfiguration {
         self.bake_time_in_minutes
     }
 }
+static DAEMONDEPLOYMENTCONFIGURATION_MEMBER_DRAIN_PERCENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonDeploymentConfiguration$drainPercent",
+        "com.amazonaws.ecs",
+        "DaemonDeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "drainPercent",
+    0,
+);
+static DAEMONDEPLOYMENTCONFIGURATION_MEMBER_ALARMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonDeploymentConfiguration$alarms",
+        "com.amazonaws.ecs",
+        "DaemonDeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "alarms",
+    1,
+);
+static DAEMONDEPLOYMENTCONFIGURATION_MEMBER_BAKE_TIME_IN_MINUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonDeploymentConfiguration$bakeTimeInMinutes",
+        "com.amazonaws.ecs",
+        "DaemonDeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "bakeTimeInMinutes",
+    2,
+);
+static DAEMONDEPLOYMENTCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonDeploymentConfiguration",
+        "com.amazonaws.ecs",
+        "DaemonDeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DAEMONDEPLOYMENTCONFIGURATION_MEMBER_DRAIN_PERCENT,
+        &DAEMONDEPLOYMENTCONFIGURATION_MEMBER_ALARMS,
+        &DAEMONDEPLOYMENTCONFIGURATION_MEMBER_BAKE_TIME_IN_MINUTES,
+    ],
+);
+impl DaemonDeploymentConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DAEMONDEPLOYMENTCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DaemonDeploymentConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.drain_percent {
+            ser.write_double(&DAEMONDEPLOYMENTCONFIGURATION_MEMBER_DRAIN_PERCENT, *val)?;
+        }
+        if let Some(ref val) = self.alarms {
+            ser.write_struct(&DAEMONDEPLOYMENTCONFIGURATION_MEMBER_ALARMS, val)?;
+        }
+        {
+            let val = &self.bake_time_in_minutes;
+            ser.write_integer(&DAEMONDEPLOYMENTCONFIGURATION_MEMBER_BAKE_TIME_IN_MINUTES, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DaemonDeploymentConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DAEMONDEPLOYMENTCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.drain_percent = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.alarms = Some(crate::types::DaemonAlarmConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    self.bake_time_in_minutes = Some(deser.read_integer(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DaemonDeploymentConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DaemonDeploymentConfiguration {
     /// Creates a new builder-style object to manufacture [`DaemonDeploymentConfiguration`](crate::types::DaemonDeploymentConfiguration).
     pub fn builder() -> crate::types::builders::DaemonDeploymentConfigurationBuilder {

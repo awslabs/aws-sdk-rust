@@ -52,6 +52,145 @@ impl Record {
         self.encryption_type.as_ref()
     }
 }
+static RECORD_MEMBER_SEQUENCE_NUMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#Record$SequenceNumber", "com.amazonaws.kinesis", "Record"),
+    ::aws_smithy_schema::ShapeType::String,
+    "SequenceNumber",
+    0,
+);
+static RECORD_MEMBER_APPROXIMATE_ARRIVAL_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#Record$ApproximateArrivalTimestamp",
+        "com.amazonaws.kinesis",
+        "Record",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ApproximateArrivalTimestamp",
+    1,
+);
+static RECORD_MEMBER_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#Record$Data", "com.amazonaws.kinesis", "Record"),
+    ::aws_smithy_schema::ShapeType::Blob,
+    "Data",
+    2,
+);
+static RECORD_MEMBER_PARTITION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#Record$PartitionKey", "com.amazonaws.kinesis", "Record"),
+    ::aws_smithy_schema::ShapeType::String,
+    "PartitionKey",
+    3,
+);
+static RECORD_MEMBER_ENCRYPTION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#Record$EncryptionType", "com.amazonaws.kinesis", "Record"),
+    ::aws_smithy_schema::ShapeType::String,
+    "EncryptionType",
+    4,
+);
+static RECORD_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#Record", "com.amazonaws.kinesis", "Record"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RECORD_MEMBER_SEQUENCE_NUMBER,
+        &RECORD_MEMBER_APPROXIMATE_ARRIVAL_TIMESTAMP,
+        &RECORD_MEMBER_DATA,
+        &RECORD_MEMBER_PARTITION_KEY,
+        &RECORD_MEMBER_ENCRYPTION_TYPE,
+    ],
+);
+impl Record {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RECORD_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Record {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.sequence_number;
+            ser.write_string(&RECORD_MEMBER_SEQUENCE_NUMBER, val)?;
+        }
+        if let Some(ref val) = self.approximate_arrival_timestamp {
+            ser.write_timestamp(&RECORD_MEMBER_APPROXIMATE_ARRIVAL_TIMESTAMP, val)?;
+        }
+        {
+            let val = &self.data;
+            ser.write_blob(&RECORD_MEMBER_DATA, val.clone())?;
+        }
+        if let Some(ref val) = self.partition_key {
+            ser.write_string(&RECORD_MEMBER_PARTITION_KEY, val)?;
+        }
+        if let Some(ref val) = self.encryption_type {
+            ser.write_string(&RECORD_MEMBER_ENCRYPTION_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RecordBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RECORD_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.sequence_number = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approximate_arrival_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.data = Some(deser.read_blob(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.partition_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_type = Some(crate::types::EncryptionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Record {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.sequence_number = builder.sequence_number.or(Some(String::new()));
+        builder.data = builder.data.or(Some(::aws_smithy_types::Blob::new("")));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl Record {
     /// Creates a new builder-style object to manufacture [`Record`](crate::types::Record).
     pub fn builder() -> crate::types::builders::RecordBuilder {

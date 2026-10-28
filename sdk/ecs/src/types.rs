@@ -363,6 +363,8 @@ pub use crate::types::_attachment::Attachment;
 
 pub use crate::types::_instance_health_check_state::InstanceHealthCheckState;
 
+pub use crate::types::_gpu_device::GpuDevice;
+
 pub use crate::types::_transport_protocol::TransportProtocol;
 
 pub use crate::types::_managed_agent_name::ManagedAgentName;
@@ -519,6 +521,8 @@ pub use crate::types::_capacity_reservation_preference::CapacityReservationPrefe
 
 pub use crate::types::_instance_health_check_result::InstanceHealthCheckResult;
 
+pub use crate::types::_gpu_sharing_mode::GpuSharingMode;
+
 pub use crate::types::_daemon_deployment_rollback_monitors_status::DaemonDeploymentRollbackMonitorsStatus;
 
 pub use crate::types::_daemon_container_image::DaemonContainerImage;
@@ -597,6 +601,8 @@ pub use crate::types::_f_sx_windows_file_server_authorization_config::FSxWindows
 
 pub use crate::types::_task_managed_ebs_volume_termination_policy::TaskManagedEbsVolumeTerminationPolicy;
 
+pub use crate::types::_sharing_strategy::SharingStrategy;
+
 pub use crate::types::_cpu_manufacturer::CpuManufacturer;
 
 pub use crate::types::_instance_generation::InstanceGeneration;
@@ -666,6 +672,8 @@ pub use crate::types::_efs_authorization_config_iam::EfsAuthorizationConfigIam;
 pub use crate::types::_network_interface::NetworkInterface;
 
 pub use crate::types::_managed_agent::ManagedAgent;
+
+pub use crate::types::_nvidia_mps_allocation::NvidiaMpsAllocation;
 
 pub use crate::types::_gateway_route_load_balancer_security_group::GatewayRouteLoadBalancerSecurityGroup;
 
@@ -1045,6 +1053,10 @@ mod _gateway_summary;
 
 mod _gateway_test_traffic_header;
 
+mod _gpu_device;
+
+mod _gpu_sharing_mode;
+
 mod _health_check;
 
 mod _health_status;
@@ -1172,6 +1184,8 @@ mod _network_interface;
 mod _network_interface_count_request;
 
 mod _network_mode;
+
+mod _nvidia_mps_allocation;
 
 mod _os_family;
 
@@ -1308,6 +1322,8 @@ mod _setting;
 mod _setting_name;
 
 mod _setting_type;
+
+mod _sharing_strategy;
 
 mod _sort_order;
 

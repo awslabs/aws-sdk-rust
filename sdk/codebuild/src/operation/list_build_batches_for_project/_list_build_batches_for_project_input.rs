@@ -48,6 +48,171 @@ impl ListBuildBatchesForProjectInput {
         self.next_token.as_deref()
     }
 }
+static LISTBUILDBATCHESFORPROJECTINPUT_MEMBER_PROJECT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#ListBuildBatchesForProjectInput$projectName",
+        "com.amazonaws.codebuild.synthetic",
+        "ListBuildBatchesForProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "projectName",
+    0,
+);
+static LISTBUILDBATCHESFORPROJECTINPUT_MEMBER_FILTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#ListBuildBatchesForProjectInput$filter",
+        "com.amazonaws.codebuild.synthetic",
+        "ListBuildBatchesForProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "filter",
+    1,
+);
+static LISTBUILDBATCHESFORPROJECTINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#ListBuildBatchesForProjectInput$maxResults",
+        "com.amazonaws.codebuild.synthetic",
+        "ListBuildBatchesForProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxResults",
+    2,
+);
+static LISTBUILDBATCHESFORPROJECTINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#ListBuildBatchesForProjectInput$sortOrder",
+        "com.amazonaws.codebuild.synthetic",
+        "ListBuildBatchesForProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sortOrder",
+    3,
+);
+static LISTBUILDBATCHESFORPROJECTINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#ListBuildBatchesForProjectInput$nextToken",
+        "com.amazonaws.codebuild.synthetic",
+        "ListBuildBatchesForProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    4,
+);
+static LISTBUILDBATCHESFORPROJECTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#ListBuildBatchesForProjectInput",
+        "com.amazonaws.codebuild.synthetic",
+        "ListBuildBatchesForProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTBUILDBATCHESFORPROJECTINPUT_MEMBER_PROJECT_NAME,
+        &LISTBUILDBATCHESFORPROJECTINPUT_MEMBER_FILTER,
+        &LISTBUILDBATCHESFORPROJECTINPUT_MEMBER_MAX_RESULTS,
+        &LISTBUILDBATCHESFORPROJECTINPUT_MEMBER_SORT_ORDER,
+        &LISTBUILDBATCHESFORPROJECTINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListBuildBatchesForProjectInput");
+impl ListBuildBatchesForProjectInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTBUILDBATCHESFORPROJECTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListBuildBatchesForProjectInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.project_name {
+            ser.write_string(&LISTBUILDBATCHESFORPROJECTINPUT_MEMBER_PROJECT_NAME, val)?;
+        }
+        if let Some(ref val) = self.filter {
+            ser.write_struct(&LISTBUILDBATCHESFORPROJECTINPUT_MEMBER_FILTER, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTBUILDBATCHESFORPROJECTINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTBUILDBATCHESFORPROJECTINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTBUILDBATCHESFORPROJECTINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_build_batches_for_project::builders::ListBuildBatchesForProjectInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTBUILDBATCHESFORPROJECTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filter = Some(crate::types::BuildBatchFilter::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrderType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListBuildBatchesForProjectInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListBuildBatchesForProjectInput {
     /// Creates a new builder-style object to manufacture [`ListBuildBatchesForProjectInput`](crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectInput).
     pub fn builder() -> crate::operation::list_build_batches_for_project::builders::ListBuildBatchesForProjectInputBuilder {

@@ -27,6 +27,146 @@ impl OpenZfsPosixFileSystemUser {
         self.secondary_gids.as_deref().unwrap_or_default()
     }
 }
+static OPENZFSPOSIXFILESYSTEMUSER_MEMBER_UID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OpenZFSPosixFileSystemUser$Uid",
+        "com.amazonaws.fsx",
+        "OpenZFSPosixFileSystemUser",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Uid",
+    0,
+);
+static OPENZFSPOSIXFILESYSTEMUSER_MEMBER_GID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OpenZFSPosixFileSystemUser$Gid",
+        "com.amazonaws.fsx",
+        "OpenZFSPosixFileSystemUser",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Gid",
+    1,
+);
+static OPENZFSPOSIXFILESYSTEMUSER_MEMBER_SECONDARY_GIDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#FileSystemSecondaryGIDs$member",
+        "com.amazonaws.fsx",
+        "FileSystemSecondaryGIDs",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "member",
+    0,
+);
+static OPENZFSPOSIXFILESYSTEMUSER_MEMBER_SECONDARY_GIDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OpenZFSPosixFileSystemUser$SecondaryGids",
+        "com.amazonaws.fsx",
+        "OpenZFSPosixFileSystemUser",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecondaryGids",
+    2,
+)
+.with_list_member(&OPENZFSPOSIXFILESYSTEMUSER_MEMBER_SECONDARY_GIDS_MEMBER);
+static OPENZFSPOSIXFILESYSTEMUSER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OpenZFSPosixFileSystemUser",
+        "com.amazonaws.fsx",
+        "OpenZFSPosixFileSystemUser",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &OPENZFSPOSIXFILESYSTEMUSER_MEMBER_UID,
+        &OPENZFSPOSIXFILESYSTEMUSER_MEMBER_GID,
+        &OPENZFSPOSIXFILESYSTEMUSER_MEMBER_SECONDARY_GIDS,
+    ],
+);
+impl OpenZfsPosixFileSystemUser {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OPENZFSPOSIXFILESYSTEMUSER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OpenZfsPosixFileSystemUser {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.uid {
+            ser.write_long(&OPENZFSPOSIXFILESYSTEMUSER_MEMBER_UID, *val)?;
+        }
+        if let Some(ref val) = self.gid {
+            ser.write_long(&OPENZFSPOSIXFILESYSTEMUSER_MEMBER_GID, *val)?;
+        }
+        if let Some(ref val) = self.secondary_gids {
+            ser.write_list(
+                &OPENZFSPOSIXFILESYSTEMUSER_MEMBER_SECONDARY_GIDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_long(&aws_smithy_schema::prelude::LONG, *item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OpenZfsPosixFileSystemUserBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&OPENZFSPOSIXFILESYSTEMUSER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.uid = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gid = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_gids = Some(deser.read_long_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OpenZfsPosixFileSystemUser {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl OpenZfsPosixFileSystemUser {
     /// Creates a new builder-style object to manufacture [`OpenZfsPosixFileSystemUser`](crate::types::OpenZfsPosixFileSystemUser).
     pub fn builder() -> crate::types::builders::OpenZfsPosixFileSystemUserBuilder {

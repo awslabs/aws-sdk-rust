@@ -99,6 +99,358 @@ impl ElasticsearchDestinationConfiguration {
         self.document_id_options.as_ref()
     }
 }
+static ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ElasticsearchDestinationConfiguration$RoleARN",
+        "com.amazonaws.firehose",
+        "ElasticsearchDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleARN",
+    0,
+);
+static ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_DOMAIN_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ElasticsearchDestinationConfiguration$DomainARN",
+        "com.amazonaws.firehose",
+        "ElasticsearchDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainARN",
+    1,
+);
+static ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_CLUSTER_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ElasticsearchDestinationConfiguration$ClusterEndpoint",
+        "com.amazonaws.firehose",
+        "ElasticsearchDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterEndpoint",
+    2,
+);
+static ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_INDEX_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ElasticsearchDestinationConfiguration$IndexName",
+        "com.amazonaws.firehose",
+        "ElasticsearchDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IndexName",
+    3,
+);
+static ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_TYPE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ElasticsearchDestinationConfiguration$TypeName",
+        "com.amazonaws.firehose",
+        "ElasticsearchDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TypeName",
+    4,
+);
+static ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_INDEX_ROTATION_PERIOD: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#ElasticsearchDestinationConfiguration$IndexRotationPeriod",
+            "com.amazonaws.firehose",
+            "ElasticsearchDestinationConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "IndexRotationPeriod",
+        5,
+    );
+static ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_BUFFERING_HINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ElasticsearchDestinationConfiguration$BufferingHints",
+        "com.amazonaws.firehose",
+        "ElasticsearchDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BufferingHints",
+    6,
+);
+static ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_RETRY_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ElasticsearchDestinationConfiguration$RetryOptions",
+        "com.amazonaws.firehose",
+        "ElasticsearchDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RetryOptions",
+    7,
+);
+static ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_S3_BACKUP_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ElasticsearchDestinationConfiguration$S3BackupMode",
+        "com.amazonaws.firehose",
+        "ElasticsearchDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3BackupMode",
+    8,
+);
+static ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_S3_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ElasticsearchDestinationConfiguration$S3Configuration",
+        "com.amazonaws.firehose",
+        "ElasticsearchDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3Configuration",
+    9,
+);
+static ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_PROCESSING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#ElasticsearchDestinationConfiguration$ProcessingConfiguration",
+            "com.amazonaws.firehose",
+            "ElasticsearchDestinationConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ProcessingConfiguration",
+        10,
+    );
+static ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#ElasticsearchDestinationConfiguration$CloudWatchLoggingOptions",
+            "com.amazonaws.firehose",
+            "ElasticsearchDestinationConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "CloudWatchLoggingOptions",
+        11,
+    );
+static ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_VPC_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ElasticsearchDestinationConfiguration$VpcConfiguration",
+        "com.amazonaws.firehose",
+        "ElasticsearchDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfiguration",
+    12,
+);
+static ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_DOCUMENT_ID_OPTIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#ElasticsearchDestinationConfiguration$DocumentIdOptions",
+            "com.amazonaws.firehose",
+            "ElasticsearchDestinationConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DocumentIdOptions",
+        13,
+    );
+static ELASTICSEARCHDESTINATIONCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ElasticsearchDestinationConfiguration",
+        "com.amazonaws.firehose",
+        "ElasticsearchDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_ROLE_ARN,
+        &ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_DOMAIN_ARN,
+        &ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_CLUSTER_ENDPOINT,
+        &ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_INDEX_NAME,
+        &ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_TYPE_NAME,
+        &ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_INDEX_ROTATION_PERIOD,
+        &ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_BUFFERING_HINTS,
+        &ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_RETRY_OPTIONS,
+        &ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_S3_BACKUP_MODE,
+        &ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_S3_CONFIGURATION,
+        &ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_PROCESSING_CONFIGURATION,
+        &ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS,
+        &ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_VPC_CONFIGURATION,
+        &ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_DOCUMENT_ID_OPTIONS,
+    ],
+);
+impl ElasticsearchDestinationConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ELASTICSEARCHDESTINATIONCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ElasticsearchDestinationConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.role_arn;
+            ser.write_string(&ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.domain_arn {
+            ser.write_string(&ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_DOMAIN_ARN, val)?;
+        }
+        if let Some(ref val) = self.cluster_endpoint {
+            ser.write_string(&ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_CLUSTER_ENDPOINT, val)?;
+        }
+        {
+            let val = &self.index_name;
+            ser.write_string(&ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_INDEX_NAME, val)?;
+        }
+        if let Some(ref val) = self.type_name {
+            ser.write_string(&ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_TYPE_NAME, val)?;
+        }
+        if let Some(ref val) = self.index_rotation_period {
+            ser.write_string(&ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_INDEX_ROTATION_PERIOD, val.as_str())?;
+        }
+        if let Some(ref val) = self.buffering_hints {
+            ser.write_struct(&ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_BUFFERING_HINTS, val)?;
+        }
+        if let Some(ref val) = self.retry_options {
+            ser.write_struct(&ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_RETRY_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.s3_backup_mode {
+            ser.write_string(&ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_S3_BACKUP_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_configuration {
+            ser.write_struct(&ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_S3_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.processing_configuration {
+            ser.write_struct(&ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_PROCESSING_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.cloud_watch_logging_options {
+            ser.write_struct(&ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.vpc_configuration {
+            ser.write_struct(&ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_VPC_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.document_id_options {
+            ser.write_struct(&ELASTICSEARCHDESTINATIONCONFIGURATION_MEMBER_DOCUMENT_ID_OPTIONS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ElasticsearchDestinationConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ELASTICSEARCHDESTINATIONCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.role_arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_endpoint = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    self.index_name = Some(deser.read_string(member)?);
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.type_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.index_rotation_period = Some(crate::types::ElasticsearchIndexRotationPeriod::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.buffering_hints = Some(crate::types::ElasticsearchBufferingHints::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retry_options = Some(crate::types::ElasticsearchRetryOptions::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_backup_mode = Some(crate::types::ElasticsearchS3BackupMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_configuration = Some(crate::types::S3DestinationConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.processing_configuration = Some(crate::types::ProcessingConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_watch_logging_options = Some(crate::types::CloudWatchLoggingOptions::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_configuration = Some(crate::types::VpcConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document_id_options = Some(crate::types::DocumentIdOptions::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ElasticsearchDestinationConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.index_name = builder.index_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ElasticsearchDestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`ElasticsearchDestinationConfiguration`](crate::types::ElasticsearchDestinationConfiguration).
     pub fn builder() -> crate::types::builders::ElasticsearchDestinationConfigurationBuilder {

@@ -33,6 +33,166 @@ impl RemoveTagsFromStreamInput {
         self.stream_id.as_deref()
     }
 }
+static REMOVETAGSFROMSTREAMINPUT_MEMBER_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#RemoveTagsFromStreamInput$StreamName",
+        "com.amazonaws.kinesis.synthetic",
+        "RemoveTagsFromStreamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamName",
+    0,
+);
+static REMOVETAGSFROMSTREAMINPUT_MEMBER_TAG_KEYS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#TagKeyList$member", "com.amazonaws.kinesis", "TagKeyList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static REMOVETAGSFROMSTREAMINPUT_MEMBER_TAG_KEYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#RemoveTagsFromStreamInput$TagKeys",
+        "com.amazonaws.kinesis.synthetic",
+        "RemoveTagsFromStreamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TagKeys",
+    1,
+)
+.with_list_member(&REMOVETAGSFROMSTREAMINPUT_MEMBER_TAG_KEYS_MEMBER);
+static REMOVETAGSFROMSTREAMINPUT_MEMBER_STREAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#RemoveTagsFromStreamInput$StreamARN",
+        "com.amazonaws.kinesis.synthetic",
+        "RemoveTagsFromStreamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamARN",
+    2,
+);
+static REMOVETAGSFROMSTREAMINPUT_MEMBER_STREAM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#RemoveTagsFromStreamInput$StreamId",
+        "com.amazonaws.kinesis.synthetic",
+        "RemoveTagsFromStreamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamId",
+    3,
+);
+static REMOVETAGSFROMSTREAMINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#RemoveTagsFromStreamInput",
+        "com.amazonaws.kinesis.synthetic",
+        "RemoveTagsFromStreamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REMOVETAGSFROMSTREAMINPUT_MEMBER_STREAM_NAME,
+        &REMOVETAGSFROMSTREAMINPUT_MEMBER_TAG_KEYS,
+        &REMOVETAGSFROMSTREAMINPUT_MEMBER_STREAM_ARN,
+        &REMOVETAGSFROMSTREAMINPUT_MEMBER_STREAM_ID,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RemoveTagsFromStreamInput");
+impl RemoveTagsFromStreamInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REMOVETAGSFROMSTREAMINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RemoveTagsFromStreamInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stream_name {
+            ser.write_string(&REMOVETAGSFROMSTREAMINPUT_MEMBER_STREAM_NAME, val)?;
+        }
+        if let Some(ref val) = self.tag_keys {
+            ser.write_list(
+                &REMOVETAGSFROMSTREAMINPUT_MEMBER_TAG_KEYS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.stream_arn {
+            ser.write_string(&REMOVETAGSFROMSTREAMINPUT_MEMBER_STREAM_ARN, val)?;
+        }
+        if let Some(ref val) = self.stream_id {
+            ser.write_string(&REMOVETAGSFROMSTREAMINPUT_MEMBER_STREAM_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REMOVETAGSFROMSTREAMINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_keys = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RemoveTagsFromStreamInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.tag_keys = builder.tag_keys.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RemoveTagsFromStreamInput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromStreamInput`](crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput).
     pub fn builder() -> crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamInputBuilder {

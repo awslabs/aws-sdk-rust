@@ -13,6 +13,83 @@ impl GatewayElbAccessLogConfiguration {
         self.destination.as_ref()
     }
 }
+static GATEWAYELBACCESSLOGCONFIGURATION_MEMBER_DESTINATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayElbAccessLogConfiguration$destination",
+        "com.amazonaws.ecs",
+        "GatewayElbAccessLogConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "destination",
+    0,
+);
+static GATEWAYELBACCESSLOGCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayElbAccessLogConfiguration",
+        "com.amazonaws.ecs",
+        "GatewayElbAccessLogConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GATEWAYELBACCESSLOGCONFIGURATION_MEMBER_DESTINATION],
+);
+impl GatewayElbAccessLogConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GATEWAYELBACCESSLOGCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GatewayElbAccessLogConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.destination {
+            ser.write_struct(&GATEWAYELBACCESSLOGCONFIGURATION_MEMBER_DESTINATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::GatewayElbAccessLogConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GATEWAYELBACCESSLOGCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination = Some(crate::types::GatewayElbAccessLogDestination::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GatewayElbAccessLogConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl GatewayElbAccessLogConfiguration {
     /// Creates a new builder-style object to manufacture [`GatewayElbAccessLogConfiguration`](crate::types::GatewayElbAccessLogConfiguration).
     pub fn builder() -> crate::types::builders::GatewayElbAccessLogConfigurationBuilder {

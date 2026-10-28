@@ -192,6 +192,440 @@ impl DataRepositoryAssociation {
         self.nfs.as_ref()
     }
 }
+static DATAREPOSITORYASSOCIATION_MEMBER_ASSOCIATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryAssociation$AssociationId",
+        "com.amazonaws.fsx",
+        "DataRepositoryAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationId",
+    0,
+);
+static DATAREPOSITORYASSOCIATION_MEMBER_RESOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryAssociation$ResourceARN",
+        "com.amazonaws.fsx",
+        "DataRepositoryAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceARN",
+    1,
+);
+static DATAREPOSITORYASSOCIATION_MEMBER_FILE_SYSTEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryAssociation$FileSystemId",
+        "com.amazonaws.fsx",
+        "DataRepositoryAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileSystemId",
+    2,
+);
+static DATAREPOSITORYASSOCIATION_MEMBER_LIFECYCLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryAssociation$Lifecycle",
+        "com.amazonaws.fsx",
+        "DataRepositoryAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Lifecycle",
+    3,
+);
+static DATAREPOSITORYASSOCIATION_MEMBER_FAILURE_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryAssociation$FailureDetails",
+        "com.amazonaws.fsx",
+        "DataRepositoryAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FailureDetails",
+    4,
+);
+static DATAREPOSITORYASSOCIATION_MEMBER_FILE_SYSTEM_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryAssociation$FileSystemPath",
+        "com.amazonaws.fsx",
+        "DataRepositoryAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileSystemPath",
+    5,
+);
+static DATAREPOSITORYASSOCIATION_MEMBER_DATA_REPOSITORY_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryAssociation$DataRepositoryPath",
+        "com.amazonaws.fsx",
+        "DataRepositoryAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataRepositoryPath",
+    6,
+);
+static DATAREPOSITORYASSOCIATION_MEMBER_BATCH_IMPORT_META_DATA_ON_CREATE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#DataRepositoryAssociation$BatchImportMetaDataOnCreate",
+            "com.amazonaws.fsx",
+            "DataRepositoryAssociation",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "BatchImportMetaDataOnCreate",
+        7,
+    );
+static DATAREPOSITORYASSOCIATION_MEMBER_IMPORTED_FILE_CHUNK_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryAssociation$ImportedFileChunkSize",
+        "com.amazonaws.fsx",
+        "DataRepositoryAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ImportedFileChunkSize",
+    8,
+);
+static DATAREPOSITORYASSOCIATION_MEMBER_S3: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryAssociation$S3",
+        "com.amazonaws.fsx",
+        "DataRepositoryAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3",
+    9,
+);
+static DATAREPOSITORYASSOCIATION_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Tags$member", "com.amazonaws.fsx", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DATAREPOSITORYASSOCIATION_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryAssociation$Tags",
+        "com.amazonaws.fsx",
+        "DataRepositoryAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    10,
+)
+.with_list_member(&DATAREPOSITORYASSOCIATION_MEMBER_TAGS_MEMBER);
+static DATAREPOSITORYASSOCIATION_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryAssociation$CreationTime",
+        "com.amazonaws.fsx",
+        "DataRepositoryAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    11,
+);
+static DATAREPOSITORYASSOCIATION_MEMBER_FILE_CACHE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryAssociation$FileCacheId",
+        "com.amazonaws.fsx",
+        "DataRepositoryAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileCacheId",
+    12,
+);
+static DATAREPOSITORYASSOCIATION_MEMBER_FILE_CACHE_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryAssociation$FileCachePath",
+        "com.amazonaws.fsx",
+        "DataRepositoryAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileCachePath",
+    13,
+);
+static DATAREPOSITORYASSOCIATION_MEMBER_DATA_REPOSITORY_SUBDIRECTORIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#SubDirectoriesPaths$member", "com.amazonaws.fsx", "SubDirectoriesPaths"),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static DATAREPOSITORYASSOCIATION_MEMBER_DATA_REPOSITORY_SUBDIRECTORIES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#DataRepositoryAssociation$DataRepositorySubdirectories",
+            "com.amazonaws.fsx",
+            "DataRepositoryAssociation",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "DataRepositorySubdirectories",
+        14,
+    )
+    .with_list_member(&DATAREPOSITORYASSOCIATION_MEMBER_DATA_REPOSITORY_SUBDIRECTORIES_MEMBER);
+static DATAREPOSITORYASSOCIATION_MEMBER_NFS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryAssociation$NFS",
+        "com.amazonaws.fsx",
+        "DataRepositoryAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NFS",
+    15,
+);
+static DATAREPOSITORYASSOCIATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryAssociation",
+        "com.amazonaws.fsx",
+        "DataRepositoryAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DATAREPOSITORYASSOCIATION_MEMBER_ASSOCIATION_ID,
+        &DATAREPOSITORYASSOCIATION_MEMBER_RESOURCE_ARN,
+        &DATAREPOSITORYASSOCIATION_MEMBER_FILE_SYSTEM_ID,
+        &DATAREPOSITORYASSOCIATION_MEMBER_LIFECYCLE,
+        &DATAREPOSITORYASSOCIATION_MEMBER_FAILURE_DETAILS,
+        &DATAREPOSITORYASSOCIATION_MEMBER_FILE_SYSTEM_PATH,
+        &DATAREPOSITORYASSOCIATION_MEMBER_DATA_REPOSITORY_PATH,
+        &DATAREPOSITORYASSOCIATION_MEMBER_BATCH_IMPORT_META_DATA_ON_CREATE,
+        &DATAREPOSITORYASSOCIATION_MEMBER_IMPORTED_FILE_CHUNK_SIZE,
+        &DATAREPOSITORYASSOCIATION_MEMBER_S3,
+        &DATAREPOSITORYASSOCIATION_MEMBER_TAGS,
+        &DATAREPOSITORYASSOCIATION_MEMBER_CREATION_TIME,
+        &DATAREPOSITORYASSOCIATION_MEMBER_FILE_CACHE_ID,
+        &DATAREPOSITORYASSOCIATION_MEMBER_FILE_CACHE_PATH,
+        &DATAREPOSITORYASSOCIATION_MEMBER_DATA_REPOSITORY_SUBDIRECTORIES,
+        &DATAREPOSITORYASSOCIATION_MEMBER_NFS,
+    ],
+);
+impl DataRepositoryAssociation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DATAREPOSITORYASSOCIATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DataRepositoryAssociation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.association_id {
+            ser.write_string(&DATAREPOSITORYASSOCIATION_MEMBER_ASSOCIATION_ID, val)?;
+        }
+        if let Some(ref val) = self.resource_arn {
+            ser.write_string(&DATAREPOSITORYASSOCIATION_MEMBER_RESOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.file_system_id {
+            ser.write_string(&DATAREPOSITORYASSOCIATION_MEMBER_FILE_SYSTEM_ID, val)?;
+        }
+        if let Some(ref val) = self.lifecycle {
+            ser.write_string(&DATAREPOSITORYASSOCIATION_MEMBER_LIFECYCLE, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_details {
+            ser.write_struct(&DATAREPOSITORYASSOCIATION_MEMBER_FAILURE_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.file_system_path {
+            ser.write_string(&DATAREPOSITORYASSOCIATION_MEMBER_FILE_SYSTEM_PATH, val)?;
+        }
+        if let Some(ref val) = self.data_repository_path {
+            ser.write_string(&DATAREPOSITORYASSOCIATION_MEMBER_DATA_REPOSITORY_PATH, val)?;
+        }
+        if let Some(ref val) = self.batch_import_meta_data_on_create {
+            ser.write_boolean(&DATAREPOSITORYASSOCIATION_MEMBER_BATCH_IMPORT_META_DATA_ON_CREATE, *val)?;
+        }
+        if let Some(ref val) = self.imported_file_chunk_size {
+            ser.write_integer(&DATAREPOSITORYASSOCIATION_MEMBER_IMPORTED_FILE_CHUNK_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.s3 {
+            ser.write_struct(&DATAREPOSITORYASSOCIATION_MEMBER_S3, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &DATAREPOSITORYASSOCIATION_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DATAREPOSITORYASSOCIATION_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.file_cache_id {
+            ser.write_string(&DATAREPOSITORYASSOCIATION_MEMBER_FILE_CACHE_ID, val)?;
+        }
+        if let Some(ref val) = self.file_cache_path {
+            ser.write_string(&DATAREPOSITORYASSOCIATION_MEMBER_FILE_CACHE_PATH, val)?;
+        }
+        if let Some(ref val) = self.data_repository_subdirectories {
+            ser.write_list(
+                &DATAREPOSITORYASSOCIATION_MEMBER_DATA_REPOSITORY_SUBDIRECTORIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.nfs {
+            ser.write_struct(&DATAREPOSITORYASSOCIATION_MEMBER_NFS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DataRepositoryAssociationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DATAREPOSITORYASSOCIATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.association_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle = Some(crate::types::DataRepositoryLifecycle::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_details = Some(crate::types::DataRepositoryFailureDetails::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_repository_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.batch_import_meta_data_on_create = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.imported_file_chunk_size = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3 = Some(crate::types::S3DataRepositoryConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_cache_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_cache_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_repository_subdirectories = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.nfs = Some(crate::types::NfsDataRepositoryConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DataRepositoryAssociation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DataRepositoryAssociation {
     /// Creates a new builder-style object to manufacture [`DataRepositoryAssociation`](crate::types::DataRepositoryAssociation).
     pub fn builder() -> crate::types::builders::DataRepositoryAssociationBuilder {

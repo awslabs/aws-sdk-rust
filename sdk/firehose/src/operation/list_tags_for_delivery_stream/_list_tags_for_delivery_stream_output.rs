@@ -20,6 +20,130 @@ impl ListTagsForDeliveryStreamOutput {
         self.has_more_tags
     }
 }
+static LISTTAGSFORDELIVERYSTREAMOUTPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ListTagsForDeliveryStreamOutputTagList$member",
+        "com.amazonaws.firehose",
+        "ListTagsForDeliveryStreamOutputTagList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LISTTAGSFORDELIVERYSTREAMOUTPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#ListTagsForDeliveryStreamOutput$Tags",
+        "com.amazonaws.firehose.synthetic",
+        "ListTagsForDeliveryStreamOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    0,
+)
+.with_list_member(&LISTTAGSFORDELIVERYSTREAMOUTPUT_MEMBER_TAGS_MEMBER);
+static LISTTAGSFORDELIVERYSTREAMOUTPUT_MEMBER_HAS_MORE_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#ListTagsForDeliveryStreamOutput$HasMoreTags",
+        "com.amazonaws.firehose.synthetic",
+        "ListTagsForDeliveryStreamOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "HasMoreTags",
+    1,
+);
+static LISTTAGSFORDELIVERYSTREAMOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#ListTagsForDeliveryStreamOutput",
+        "com.amazonaws.firehose.synthetic",
+        "ListTagsForDeliveryStreamOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTTAGSFORDELIVERYSTREAMOUTPUT_MEMBER_TAGS,
+        &LISTTAGSFORDELIVERYSTREAMOUTPUT_MEMBER_HAS_MORE_TAGS,
+    ],
+)
+.with_original_name("ListTagsForDeliveryStreamOutput");
+impl ListTagsForDeliveryStreamOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTTAGSFORDELIVERYSTREAMOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListTagsForDeliveryStreamOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.tags;
+
+            ser.write_list(
+                &LISTTAGSFORDELIVERYSTREAMOUTPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.has_more_tags;
+            ser.write_boolean(&LISTTAGSFORDELIVERYSTREAMOUTPUT_MEMBER_HAS_MORE_TAGS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_tags_for_delivery_stream::builders::ListTagsForDeliveryStreamOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTTAGSFORDELIVERYSTREAMOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.tags = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::Tag::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(1) => {
+                    self.has_more_tags = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListTagsForDeliveryStreamOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.tags = builder.tags.or(Some(Vec::new()));
+        builder.has_more_tags = builder.has_more_tags.or(Some(false));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for ListTagsForDeliveryStreamOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

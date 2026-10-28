@@ -51,6 +51,192 @@ impl ::std::fmt::Debug for ListSnapshotBlocksOutput {
         formatter.finish()
     }
 }
+static LISTSNAPSHOTBLOCKSOUTPUT_MEMBER_BLOCKS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ebs#Blocks$member", "com.amazonaws.ebs", "Blocks"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LISTSNAPSHOTBLOCKSOUTPUT_MEMBER_BLOCKS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#ListSnapshotBlocksOutput$Blocks",
+        "com.amazonaws.ebs.synthetic",
+        "ListSnapshotBlocksOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Blocks",
+    0,
+)
+.with_list_member(&LISTSNAPSHOTBLOCKSOUTPUT_MEMBER_BLOCKS_MEMBER);
+static LISTSNAPSHOTBLOCKSOUTPUT_MEMBER_EXPIRY_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#ListSnapshotBlocksOutput$ExpiryTime",
+        "com.amazonaws.ebs.synthetic",
+        "ListSnapshotBlocksOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ExpiryTime",
+    1,
+);
+static LISTSNAPSHOTBLOCKSOUTPUT_MEMBER_VOLUME_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#ListSnapshotBlocksOutput$VolumeSize",
+        "com.amazonaws.ebs.synthetic",
+        "ListSnapshotBlocksOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "VolumeSize",
+    2,
+);
+static LISTSNAPSHOTBLOCKSOUTPUT_MEMBER_BLOCK_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#ListSnapshotBlocksOutput$BlockSize",
+        "com.amazonaws.ebs.synthetic",
+        "ListSnapshotBlocksOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "BlockSize",
+    3,
+);
+static LISTSNAPSHOTBLOCKSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#ListSnapshotBlocksOutput$NextToken",
+        "com.amazonaws.ebs.synthetic",
+        "ListSnapshotBlocksOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    4,
+);
+static LISTSNAPSHOTBLOCKSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#ListSnapshotBlocksOutput",
+        "com.amazonaws.ebs.synthetic",
+        "ListSnapshotBlocksOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTSNAPSHOTBLOCKSOUTPUT_MEMBER_BLOCKS,
+        &LISTSNAPSHOTBLOCKSOUTPUT_MEMBER_EXPIRY_TIME,
+        &LISTSNAPSHOTBLOCKSOUTPUT_MEMBER_VOLUME_SIZE,
+        &LISTSNAPSHOTBLOCKSOUTPUT_MEMBER_BLOCK_SIZE,
+        &LISTSNAPSHOTBLOCKSOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("ListSnapshotBlocksResponse");
+impl ListSnapshotBlocksOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTSNAPSHOTBLOCKSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListSnapshotBlocksOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.blocks {
+            ser.write_list(
+                &LISTSNAPSHOTBLOCKSOUTPUT_MEMBER_BLOCKS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Block::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.expiry_time {
+            ser.write_timestamp(&LISTSNAPSHOTBLOCKSOUTPUT_MEMBER_EXPIRY_TIME, val)?;
+        }
+        if let Some(ref val) = self.volume_size {
+            ser.write_long(&LISTSNAPSHOTBLOCKSOUTPUT_MEMBER_VOLUME_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.block_size {
+            ser.write_integer(&LISTSNAPSHOTBLOCKSOUTPUT_MEMBER_BLOCK_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTSNAPSHOTBLOCKSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_snapshot_blocks::builders::ListSnapshotBlocksOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTSNAPSHOTBLOCKSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.blocks = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Block::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expiry_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_size = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.block_size = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListSnapshotBlocksOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListSnapshotBlocksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

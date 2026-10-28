@@ -20,6 +20,137 @@ impl DescribeExpressGatewayServiceInput {
         self.include.as_deref().unwrap_or_default()
     }
 }
+static DESCRIBEEXPRESSGATEWAYSERVICEINPUT_MEMBER_SERVICE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DescribeExpressGatewayServiceInput$serviceArn",
+        "com.amazonaws.ecs.synthetic",
+        "DescribeExpressGatewayServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceArn",
+    0,
+);
+static DESCRIBEEXPRESSGATEWAYSERVICEINPUT_MEMBER_INCLUDE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ExpressGatewayServiceIncludeList$member",
+        "com.amazonaws.ecs",
+        "ExpressGatewayServiceIncludeList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEEXPRESSGATEWAYSERVICEINPUT_MEMBER_INCLUDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DescribeExpressGatewayServiceInput$include",
+        "com.amazonaws.ecs.synthetic",
+        "DescribeExpressGatewayServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "include",
+    1,
+)
+.with_list_member(&DESCRIBEEXPRESSGATEWAYSERVICEINPUT_MEMBER_INCLUDE_MEMBER);
+static DESCRIBEEXPRESSGATEWAYSERVICEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DescribeExpressGatewayServiceInput",
+        "com.amazonaws.ecs.synthetic",
+        "DescribeExpressGatewayServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEEXPRESSGATEWAYSERVICEINPUT_MEMBER_SERVICE_ARN,
+        &DESCRIBEEXPRESSGATEWAYSERVICEINPUT_MEMBER_INCLUDE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeExpressGatewayServiceRequest");
+impl DescribeExpressGatewayServiceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEEXPRESSGATEWAYSERVICEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeExpressGatewayServiceInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.service_arn {
+            ser.write_string(&DESCRIBEEXPRESSGATEWAYSERVICEINPUT_MEMBER_SERVICE_ARN, val)?;
+        }
+        if let Some(ref val) = self.include {
+            ser.write_list(
+                &DESCRIBEEXPRESSGATEWAYSERVICEINPUT_MEMBER_INCLUDE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_express_gateway_service::builders::DescribeExpressGatewayServiceInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEEXPRESSGATEWAYSERVICEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.include = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ExpressGatewayServiceInclude::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeExpressGatewayServiceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.service_arn = builder.service_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeExpressGatewayServiceInput {
     /// Creates a new builder-style object to manufacture [`DescribeExpressGatewayServiceInput`](crate::operation::describe_express_gateway_service::DescribeExpressGatewayServiceInput).
     pub fn builder() -> crate::operation::describe_express_gateway_service::builders::DescribeExpressGatewayServiceInputBuilder {

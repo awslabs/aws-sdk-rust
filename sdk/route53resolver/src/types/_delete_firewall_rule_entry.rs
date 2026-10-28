@@ -32,6 +32,146 @@ impl DeleteFirewallRuleEntry {
         self.qtype.as_deref()
     }
 }
+static DELETEFIREWALLRULEENTRY_MEMBER_FIREWALL_RULE_GROUP_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#DeleteFirewallRuleEntry$FirewallRuleGroupId",
+        "com.amazonaws.route53resolver",
+        "DeleteFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FirewallRuleGroupId",
+    0,
+);
+static DELETEFIREWALLRULEENTRY_MEMBER_FIREWALL_DOMAIN_LIST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#DeleteFirewallRuleEntry$FirewallDomainListId",
+        "com.amazonaws.route53resolver",
+        "DeleteFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FirewallDomainListId",
+    1,
+);
+static DELETEFIREWALLRULEENTRY_MEMBER_FIREWALL_THREAT_PROTECTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#DeleteFirewallRuleEntry$FirewallThreatProtectionId",
+        "com.amazonaws.route53resolver",
+        "DeleteFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FirewallThreatProtectionId",
+    2,
+);
+static DELETEFIREWALLRULEENTRY_MEMBER_QTYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#DeleteFirewallRuleEntry$Qtype",
+        "com.amazonaws.route53resolver",
+        "DeleteFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Qtype",
+    3,
+);
+static DELETEFIREWALLRULEENTRY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#DeleteFirewallRuleEntry",
+        "com.amazonaws.route53resolver",
+        "DeleteFirewallRuleEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELETEFIREWALLRULEENTRY_MEMBER_FIREWALL_RULE_GROUP_ID,
+        &DELETEFIREWALLRULEENTRY_MEMBER_FIREWALL_DOMAIN_LIST_ID,
+        &DELETEFIREWALLRULEENTRY_MEMBER_FIREWALL_THREAT_PROTECTION_ID,
+        &DELETEFIREWALLRULEENTRY_MEMBER_QTYPE,
+    ],
+);
+impl DeleteFirewallRuleEntry {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEFIREWALLRULEENTRY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteFirewallRuleEntry {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.firewall_rule_group_id;
+            ser.write_string(&DELETEFIREWALLRULEENTRY_MEMBER_FIREWALL_RULE_GROUP_ID, val)?;
+        }
+        if let Some(ref val) = self.firewall_domain_list_id {
+            ser.write_string(&DELETEFIREWALLRULEENTRY_MEMBER_FIREWALL_DOMAIN_LIST_ID, val)?;
+        }
+        if let Some(ref val) = self.firewall_threat_protection_id {
+            ser.write_string(&DELETEFIREWALLRULEENTRY_MEMBER_FIREWALL_THREAT_PROTECTION_ID, val)?;
+        }
+        if let Some(ref val) = self.qtype {
+            ser.write_string(&DELETEFIREWALLRULEENTRY_MEMBER_QTYPE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeleteFirewallRuleEntryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEFIREWALLRULEENTRY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.firewall_rule_group_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firewall_domain_list_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firewall_threat_protection_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.qtype = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteFirewallRuleEntry {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.firewall_rule_group_id = builder.firewall_rule_group_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteFirewallRuleEntry {
     /// Creates a new builder-style object to manufacture [`DeleteFirewallRuleEntry`](crate::types::DeleteFirewallRuleEntry).
     pub fn builder() -> crate::types::builders::DeleteFirewallRuleEntryBuilder {

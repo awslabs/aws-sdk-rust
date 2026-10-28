@@ -36,6 +36,175 @@ impl CreateUpdatedWorkspaceImageInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEUPDATEDWORKSPACEIMAGEINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateUpdatedWorkspaceImageInput$Name",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateUpdatedWorkspaceImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static CREATEUPDATEDWORKSPACEIMAGEINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateUpdatedWorkspaceImageInput$Description",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateUpdatedWorkspaceImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static CREATEUPDATEDWORKSPACEIMAGEINPUT_MEMBER_SOURCE_IMAGE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateUpdatedWorkspaceImageInput$SourceImageId",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateUpdatedWorkspaceImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceImageId",
+    2,
+);
+static CREATEUPDATEDWORKSPACEIMAGEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#TagList$member", "com.amazonaws.workspaces", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEUPDATEDWORKSPACEIMAGEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateUpdatedWorkspaceImageInput$Tags",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateUpdatedWorkspaceImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    3,
+)
+.with_list_member(&CREATEUPDATEDWORKSPACEIMAGEINPUT_MEMBER_TAGS_MEMBER);
+static CREATEUPDATEDWORKSPACEIMAGEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateUpdatedWorkspaceImageInput",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateUpdatedWorkspaceImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEUPDATEDWORKSPACEIMAGEINPUT_MEMBER_NAME,
+        &CREATEUPDATEDWORKSPACEIMAGEINPUT_MEMBER_DESCRIPTION,
+        &CREATEUPDATEDWORKSPACEIMAGEINPUT_MEMBER_SOURCE_IMAGE_ID,
+        &CREATEUPDATEDWORKSPACEIMAGEINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateUpdatedWorkspaceImageRequest");
+impl CreateUpdatedWorkspaceImageInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEUPDATEDWORKSPACEIMAGEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateUpdatedWorkspaceImageInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATEUPDATEDWORKSPACEIMAGEINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATEUPDATEDWORKSPACEIMAGEINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.source_image_id {
+            ser.write_string(&CREATEUPDATEDWORKSPACEIMAGEINPUT_MEMBER_SOURCE_IMAGE_ID, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEUPDATEDWORKSPACEIMAGEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_updated_workspace_image::builders::CreateUpdatedWorkspaceImageInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEUPDATEDWORKSPACEIMAGEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_image_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateUpdatedWorkspaceImageInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.description = builder.description.or(Some(String::new()));
+        builder.source_image_id = builder.source_image_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateUpdatedWorkspaceImageInput {
     /// Creates a new builder-style object to manufacture [`CreateUpdatedWorkspaceImageInput`](crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageInput).
     pub fn builder() -> crate::operation::create_updated_workspace_image::builders::CreateUpdatedWorkspaceImageInputBuilder {

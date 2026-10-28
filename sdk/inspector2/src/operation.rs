@@ -124,6 +124,9 @@ pub mod get_findings_report_status;
 /// Types for the `GetMember` operation.
 pub mod get_member;
 
+/// Types for the `GetOnDemandScanStatus` operation.
+pub mod get_on_demand_scan_status;
+
 /// Types for the `GetSbomExport` operation.
 pub mod get_sbom_export;
 
@@ -178,6 +181,9 @@ pub mod list_findings;
 /// Types for the `ListMembers` operation.
 pub mod list_members;
 
+/// Types for the `ListOnDemandScans` operation.
+pub mod list_on_demand_scans;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
@@ -201,6 +207,9 @@ pub mod start_cis_session;
 
 /// Types for the `StartCodeSecurityScan` operation.
 pub mod start_code_security_scan;
+
+/// Types for the `StartOnDemandScan` operation.
+pub mod start_on_demand_scan;
 
 /// Types for the `StopCisSession` operation.
 pub mod stop_cis_session;

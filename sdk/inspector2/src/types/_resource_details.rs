@@ -12,6 +12,8 @@ pub struct ResourceDetails {
     pub aws_lambda_function: ::std::option::Option<crate::types::AwsLambdaFunctionDetails>,
     /// <p>Contains details about a code repository resource associated with a finding.</p>
     pub code_repository: ::std::option::Option<crate::types::CodeRepositoryDetails>,
+    /// Details about a machine image resource scanned directly by Inspector.
+    pub machine_image: ::std::option::Option<crate::types::MachineImageDetails>,
     /// <p>An object that contains details about a VM instance involved in the finding.</p>
     pub vm: ::std::option::Option<crate::types::Vm>,
     /// <p>An object that contains details about a container image involved in the finding.</p>
@@ -35,6 +37,10 @@ impl ResourceDetails {
     /// <p>Contains details about a code repository resource associated with a finding.</p>
     pub fn code_repository(&self) -> ::std::option::Option<&crate::types::CodeRepositoryDetails> {
         self.code_repository.as_ref()
+    }
+    /// Details about a machine image resource scanned directly by Inspector.
+    pub fn machine_image(&self) -> ::std::option::Option<&crate::types::MachineImageDetails> {
+        self.machine_image.as_ref()
     }
     /// <p>An object that contains details about a VM instance involved in the finding.</p>
     pub fn vm(&self) -> ::std::option::Option<&crate::types::Vm> {
@@ -64,6 +70,7 @@ pub struct ResourceDetailsBuilder {
     pub(crate) aws_ecr_container_image: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
     pub(crate) aws_lambda_function: ::std::option::Option<crate::types::AwsLambdaFunctionDetails>,
     pub(crate) code_repository: ::std::option::Option<crate::types::CodeRepositoryDetails>,
+    pub(crate) machine_image: ::std::option::Option<crate::types::MachineImageDetails>,
     pub(crate) vm: ::std::option::Option<crate::types::Vm>,
     pub(crate) image: ::std::option::Option<crate::types::Image>,
     pub(crate) serverless_function: ::std::option::Option<crate::types::ServerlessFunction>,
@@ -125,6 +132,20 @@ impl ResourceDetailsBuilder {
     pub fn get_code_repository(&self) -> &::std::option::Option<crate::types::CodeRepositoryDetails> {
         &self.code_repository
     }
+    /// Details about a machine image resource scanned directly by Inspector.
+    pub fn machine_image(mut self, input: crate::types::MachineImageDetails) -> Self {
+        self.machine_image = ::std::option::Option::Some(input);
+        self
+    }
+    /// Details about a machine image resource scanned directly by Inspector.
+    pub fn set_machine_image(mut self, input: ::std::option::Option<crate::types::MachineImageDetails>) -> Self {
+        self.machine_image = input;
+        self
+    }
+    /// Details about a machine image resource scanned directly by Inspector.
+    pub fn get_machine_image(&self) -> &::std::option::Option<crate::types::MachineImageDetails> {
+        &self.machine_image
+    }
     /// <p>An object that contains details about a VM instance involved in the finding.</p>
     pub fn vm(mut self, input: crate::types::Vm) -> Self {
         self.vm = ::std::option::Option::Some(input);
@@ -174,6 +195,7 @@ impl ResourceDetailsBuilder {
             aws_ecr_container_image: self.aws_ecr_container_image,
             aws_lambda_function: self.aws_lambda_function,
             code_repository: self.code_repository,
+            machine_image: self.machine_image,
             vm: self.vm,
             image: self.image,
             serverless_function: self.serverless_function,

@@ -68,6 +68,228 @@ impl Hsm {
         self.state_message.as_deref()
     }
 }
+static HSM_MEMBER_AVAILABILITY_ZONE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Hsm$AvailabilityZone", "com.amazonaws.cloudhsmv2", "Hsm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "AvailabilityZone",
+    0,
+);
+static HSM_MEMBER_CLUSTER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Hsm$ClusterId", "com.amazonaws.cloudhsmv2", "Hsm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterId",
+    1,
+);
+static HSM_MEMBER_SUBNET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Hsm$SubnetId", "com.amazonaws.cloudhsmv2", "Hsm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "SubnetId",
+    2,
+);
+static HSM_MEMBER_ENI_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Hsm$EniId", "com.amazonaws.cloudhsmv2", "Hsm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "EniId",
+    3,
+);
+static HSM_MEMBER_ENI_IP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Hsm$EniIp", "com.amazonaws.cloudhsmv2", "Hsm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "EniIp",
+    4,
+);
+static HSM_MEMBER_ENI_IPV6: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Hsm$EniIpV6", "com.amazonaws.cloudhsmv2", "Hsm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "EniIpV6",
+    5,
+);
+static HSM_MEMBER_HSM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Hsm$HsmId", "com.amazonaws.cloudhsmv2", "Hsm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "HsmId",
+    6,
+);
+static HSM_MEMBER_HSM_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Hsm$HsmType", "com.amazonaws.cloudhsmv2", "Hsm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "HsmType",
+    7,
+);
+static HSM_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Hsm$State", "com.amazonaws.cloudhsmv2", "Hsm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    8,
+);
+static HSM_MEMBER_STATE_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Hsm$StateMessage", "com.amazonaws.cloudhsmv2", "Hsm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "StateMessage",
+    9,
+);
+static HSM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Hsm", "com.amazonaws.cloudhsmv2", "Hsm"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &HSM_MEMBER_AVAILABILITY_ZONE,
+        &HSM_MEMBER_CLUSTER_ID,
+        &HSM_MEMBER_SUBNET_ID,
+        &HSM_MEMBER_ENI_ID,
+        &HSM_MEMBER_ENI_IP,
+        &HSM_MEMBER_ENI_IPV6,
+        &HSM_MEMBER_HSM_ID,
+        &HSM_MEMBER_HSM_TYPE,
+        &HSM_MEMBER_STATE,
+        &HSM_MEMBER_STATE_MESSAGE,
+    ],
+);
+impl Hsm {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &HSM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Hsm {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.availability_zone {
+            ser.write_string(&HSM_MEMBER_AVAILABILITY_ZONE, val)?;
+        }
+        if let Some(ref val) = self.cluster_id {
+            ser.write_string(&HSM_MEMBER_CLUSTER_ID, val)?;
+        }
+        if let Some(ref val) = self.subnet_id {
+            ser.write_string(&HSM_MEMBER_SUBNET_ID, val)?;
+        }
+        if let Some(ref val) = self.eni_id {
+            ser.write_string(&HSM_MEMBER_ENI_ID, val)?;
+        }
+        if let Some(ref val) = self.eni_ip {
+            ser.write_string(&HSM_MEMBER_ENI_IP, val)?;
+        }
+        if let Some(ref val) = self.eni_ipv6 {
+            ser.write_string(&HSM_MEMBER_ENI_IPV6, val)?;
+        }
+        {
+            let val = &self.hsm_id;
+            ser.write_string(&HSM_MEMBER_HSM_ID, val)?;
+        }
+        if let Some(ref val) = self.hsm_type {
+            ser.write_string(&HSM_MEMBER_HSM_TYPE, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&HSM_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.state_message {
+            ser.write_string(&HSM_MEMBER_STATE_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::HsmBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&HSM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.availability_zone = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subnet_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.eni_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.eni_ip = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.eni_ipv6 = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    self.hsm_id = Some(deser.read_string(member)?);
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hsm_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::HsmState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state_message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Hsm {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.hsm_id = builder.hsm_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl Hsm {
     /// Creates a new builder-style object to manufacture [`Hsm`](crate::types::Hsm).
     pub fn builder() -> crate::types::builders::HsmBuilder {

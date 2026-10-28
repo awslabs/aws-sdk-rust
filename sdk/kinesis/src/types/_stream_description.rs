@@ -133,6 +133,324 @@ impl StreamDescription {
         self.key_id.as_deref()
     }
 }
+static STREAMDESCRIPTION_MEMBER_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#StreamDescription$StreamName",
+        "com.amazonaws.kinesis",
+        "StreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamName",
+    0,
+);
+static STREAMDESCRIPTION_MEMBER_STREAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#StreamDescription$StreamARN",
+        "com.amazonaws.kinesis",
+        "StreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamARN",
+    1,
+);
+static STREAMDESCRIPTION_MEMBER_STREAM_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#StreamDescription$StreamStatus",
+        "com.amazonaws.kinesis",
+        "StreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamStatus",
+    2,
+);
+static STREAMDESCRIPTION_MEMBER_STREAM_MODE_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#StreamDescription$StreamModeDetails",
+        "com.amazonaws.kinesis",
+        "StreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StreamModeDetails",
+    3,
+);
+static STREAMDESCRIPTION_MEMBER_SHARDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#ShardList$member", "com.amazonaws.kinesis", "ShardList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STREAMDESCRIPTION_MEMBER_SHARDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#StreamDescription$Shards",
+        "com.amazonaws.kinesis",
+        "StreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Shards",
+    4,
+)
+.with_list_member(&STREAMDESCRIPTION_MEMBER_SHARDS_MEMBER);
+static STREAMDESCRIPTION_MEMBER_HAS_MORE_SHARDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#StreamDescription$HasMoreShards",
+        "com.amazonaws.kinesis",
+        "StreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "HasMoreShards",
+    5,
+);
+static STREAMDESCRIPTION_MEMBER_RETENTION_PERIOD_HOURS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#StreamDescription$RetentionPeriodHours",
+        "com.amazonaws.kinesis",
+        "StreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "RetentionPeriodHours",
+    6,
+);
+static STREAMDESCRIPTION_MEMBER_STREAM_CREATION_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#StreamDescription$StreamCreationTimestamp",
+        "com.amazonaws.kinesis",
+        "StreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StreamCreationTimestamp",
+    7,
+);
+static STREAMDESCRIPTION_MEMBER_ENHANCED_MONITORING_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#EnhancedMonitoringList$member",
+        "com.amazonaws.kinesis",
+        "EnhancedMonitoringList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STREAMDESCRIPTION_MEMBER_ENHANCED_MONITORING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#StreamDescription$EnhancedMonitoring",
+        "com.amazonaws.kinesis",
+        "StreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "EnhancedMonitoring",
+    8,
+)
+.with_list_member(&STREAMDESCRIPTION_MEMBER_ENHANCED_MONITORING_MEMBER);
+static STREAMDESCRIPTION_MEMBER_ENCRYPTION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#StreamDescription$EncryptionType",
+        "com.amazonaws.kinesis",
+        "StreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EncryptionType",
+    9,
+);
+static STREAMDESCRIPTION_MEMBER_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#StreamDescription$KeyId",
+        "com.amazonaws.kinesis",
+        "StreamDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KeyId",
+    10,
+);
+static STREAMDESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#StreamDescription", "com.amazonaws.kinesis", "StreamDescription"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STREAMDESCRIPTION_MEMBER_STREAM_NAME,
+        &STREAMDESCRIPTION_MEMBER_STREAM_ARN,
+        &STREAMDESCRIPTION_MEMBER_STREAM_STATUS,
+        &STREAMDESCRIPTION_MEMBER_STREAM_MODE_DETAILS,
+        &STREAMDESCRIPTION_MEMBER_SHARDS,
+        &STREAMDESCRIPTION_MEMBER_HAS_MORE_SHARDS,
+        &STREAMDESCRIPTION_MEMBER_RETENTION_PERIOD_HOURS,
+        &STREAMDESCRIPTION_MEMBER_STREAM_CREATION_TIMESTAMP,
+        &STREAMDESCRIPTION_MEMBER_ENHANCED_MONITORING,
+        &STREAMDESCRIPTION_MEMBER_ENCRYPTION_TYPE,
+        &STREAMDESCRIPTION_MEMBER_KEY_ID,
+    ],
+);
+impl StreamDescription {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STREAMDESCRIPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StreamDescription {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.stream_name;
+            ser.write_string(&STREAMDESCRIPTION_MEMBER_STREAM_NAME, val)?;
+        }
+        {
+            let val = &self.stream_arn;
+            ser.write_string(&STREAMDESCRIPTION_MEMBER_STREAM_ARN, val)?;
+        }
+        {
+            let val = &self.stream_status;
+            ser.write_string(&STREAMDESCRIPTION_MEMBER_STREAM_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.stream_mode_details {
+            ser.write_struct(&STREAMDESCRIPTION_MEMBER_STREAM_MODE_DETAILS, val)?;
+        }
+        {
+            let val = &self.shards;
+
+            ser.write_list(
+                &STREAMDESCRIPTION_MEMBER_SHARDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Shard::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.has_more_shards;
+            ser.write_boolean(&STREAMDESCRIPTION_MEMBER_HAS_MORE_SHARDS, *val)?;
+        }
+        {
+            let val = &self.retention_period_hours;
+            ser.write_integer(&STREAMDESCRIPTION_MEMBER_RETENTION_PERIOD_HOURS, *val)?;
+        }
+        {
+            let val = &self.stream_creation_timestamp;
+            ser.write_timestamp(&STREAMDESCRIPTION_MEMBER_STREAM_CREATION_TIMESTAMP, val)?;
+        }
+        {
+            let val = &self.enhanced_monitoring;
+
+            ser.write_list(
+                &STREAMDESCRIPTION_MEMBER_ENHANCED_MONITORING,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EnhancedMetrics::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.encryption_type {
+            ser.write_string(&STREAMDESCRIPTION_MEMBER_ENCRYPTION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.key_id {
+            ser.write_string(&STREAMDESCRIPTION_MEMBER_KEY_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::StreamDescriptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STREAMDESCRIPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.stream_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.stream_arn = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.stream_status = Some(crate::types::StreamStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_mode_details = Some(crate::types::StreamModeDetails::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    self.shards = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::Shard::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(5) => {
+                    self.has_more_shards = Some(deser.read_boolean(member)?);
+                }
+                Some(6) => {
+                    self.retention_period_hours = Some(deser.read_integer(member)?);
+                }
+                Some(7) => {
+                    self.stream_creation_timestamp = Some(deser.read_timestamp(member)?);
+                }
+                Some(8) => {
+                    self.enhanced_monitoring = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::EnhancedMetrics::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_type = Some(crate::types::EncryptionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StreamDescription {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.stream_name = builder.stream_name.or(Some(String::new()));
+        builder.stream_arn = builder.stream_arn.or(Some(String::new()));
+        builder.shards = builder.shards.or(Some(Vec::new()));
+        builder.has_more_shards = builder.has_more_shards.or(Some(false));
+        builder.retention_period_hours = builder.retention_period_hours.or(Some(0i32));
+        builder.stream_creation_timestamp = builder.stream_creation_timestamp.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.enhanced_monitoring = builder.enhanced_monitoring.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StreamDescription {
     /// Creates a new builder-style object to manufacture [`StreamDescription`](crate::types::StreamDescription).
     pub fn builder() -> crate::types::builders::StreamDescriptionBuilder {

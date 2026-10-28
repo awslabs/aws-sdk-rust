@@ -27,6 +27,102 @@ impl DeviceConfigurationType {
         self.device_only_remembered_on_user_prompt
     }
 }
+static DEVICECONFIGURATIONTYPE_MEMBER_CHALLENGE_REQUIRED_ON_NEW_DEVICE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentityprovider#DeviceConfigurationType$ChallengeRequiredOnNewDevice",
+            "com.amazonaws.cognitoidentityprovider",
+            "DeviceConfigurationType",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "ChallengeRequiredOnNewDevice",
+        0,
+    );
+static DEVICECONFIGURATIONTYPE_MEMBER_DEVICE_ONLY_REMEMBERED_ON_USER_PROMPT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentityprovider#DeviceConfigurationType$DeviceOnlyRememberedOnUserPrompt",
+            "com.amazonaws.cognitoidentityprovider",
+            "DeviceConfigurationType",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "DeviceOnlyRememberedOnUserPrompt",
+        1,
+    );
+static DEVICECONFIGURATIONTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DeviceConfigurationType",
+        "com.amazonaws.cognitoidentityprovider",
+        "DeviceConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEVICECONFIGURATIONTYPE_MEMBER_CHALLENGE_REQUIRED_ON_NEW_DEVICE,
+        &DEVICECONFIGURATIONTYPE_MEMBER_DEVICE_ONLY_REMEMBERED_ON_USER_PROMPT,
+    ],
+);
+impl DeviceConfigurationType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEVICECONFIGURATIONTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeviceConfigurationType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.challenge_required_on_new_device;
+            ser.write_boolean(&DEVICECONFIGURATIONTYPE_MEMBER_CHALLENGE_REQUIRED_ON_NEW_DEVICE, *val)?;
+        }
+        {
+            let val = &self.device_only_remembered_on_user_prompt;
+            ser.write_boolean(&DEVICECONFIGURATIONTYPE_MEMBER_DEVICE_ONLY_REMEMBERED_ON_USER_PROMPT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeviceConfigurationTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEVICECONFIGURATIONTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.challenge_required_on_new_device = Some(deser.read_boolean(member)?);
+                }
+                Some(1) => {
+                    self.device_only_remembered_on_user_prompt = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeviceConfigurationType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeviceConfigurationType {
     /// Creates a new builder-style object to manufacture [`DeviceConfigurationType`](crate::types::DeviceConfigurationType).
     pub fn builder() -> crate::types::builders::DeviceConfigurationTypeBuilder {

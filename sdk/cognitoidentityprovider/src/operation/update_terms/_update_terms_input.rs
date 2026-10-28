@@ -44,6 +44,224 @@ impl UpdateTermsInput {
         self.links.as_ref()
     }
 }
+static UPDATETERMSINPUT_MEMBER_TERMS_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateTermsInput$TermsId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateTermsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TermsId",
+    0,
+);
+static UPDATETERMSINPUT_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateTermsInput$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateTermsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    1,
+);
+static UPDATETERMSINPUT_MEMBER_TERMS_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateTermsInput$TermsName",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateTermsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TermsName",
+    2,
+);
+static UPDATETERMSINPUT_MEMBER_TERMS_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateTermsInput$TermsSource",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateTermsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TermsSource",
+    3,
+);
+static UPDATETERMSINPUT_MEMBER_ENFORCEMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateTermsInput$Enforcement",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateTermsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Enforcement",
+    4,
+);
+static UPDATETERMSINPUT_MEMBER_LINKS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LinksType$key",
+        "com.amazonaws.cognitoidentityprovider",
+        "LinksType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static UPDATETERMSINPUT_MEMBER_LINKS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#LinksType$value",
+        "com.amazonaws.cognitoidentityprovider",
+        "LinksType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static UPDATETERMSINPUT_MEMBER_LINKS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateTermsInput$Links",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateTermsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Links",
+    5,
+)
+.with_map_members(&UPDATETERMSINPUT_MEMBER_LINKS_KEY, &UPDATETERMSINPUT_MEMBER_LINKS_VALUE);
+static UPDATETERMSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateTermsInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateTermsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATETERMSINPUT_MEMBER_TERMS_ID,
+        &UPDATETERMSINPUT_MEMBER_USER_POOL_ID,
+        &UPDATETERMSINPUT_MEMBER_TERMS_NAME,
+        &UPDATETERMSINPUT_MEMBER_TERMS_SOURCE,
+        &UPDATETERMSINPUT_MEMBER_ENFORCEMENT,
+        &UPDATETERMSINPUT_MEMBER_LINKS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateTermsRequest");
+impl UpdateTermsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATETERMSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateTermsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.terms_id {
+            ser.write_string(&UPDATETERMSINPUT_MEMBER_TERMS_ID, val)?;
+        }
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&UPDATETERMSINPUT_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.terms_name {
+            ser.write_string(&UPDATETERMSINPUT_MEMBER_TERMS_NAME, val)?;
+        }
+        if let Some(ref val) = self.terms_source {
+            ser.write_string(&UPDATETERMSINPUT_MEMBER_TERMS_SOURCE, val.as_str())?;
+        }
+        if let Some(ref val) = self.enforcement {
+            ser.write_string(&UPDATETERMSINPUT_MEMBER_ENFORCEMENT, val.as_str())?;
+        }
+        if let Some(ref val) = self.links {
+            ser.write_map(
+                &UPDATETERMSINPUT_MEMBER_LINKS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_terms::builders::UpdateTermsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATETERMSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.terms_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.terms_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.terms_source = Some(crate::types::TermsSourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enforcement = Some(crate::types::TermsEnforcementType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.links = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateTermsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.terms_id = builder.terms_id.or(Some(String::new()));
+        builder.user_pool_id = builder.user_pool_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateTermsInput {
     /// Creates a new builder-style object to manufacture [`UpdateTermsInput`](crate::operation::update_terms::UpdateTermsInput).
     pub fn builder() -> crate::operation::update_terms::builders::UpdateTermsInputBuilder {

@@ -18,6 +18,105 @@ impl RetryBuildInput {
         self.idempotency_token.as_deref()
     }
 }
+static RETRYBUILDINPUT_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#RetryBuildInput$id",
+        "com.amazonaws.codebuild.synthetic",
+        "RetryBuildInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "id",
+    0,
+);
+static RETRYBUILDINPUT_MEMBER_IDEMPOTENCY_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#RetryBuildInput$idempotencyToken",
+        "com.amazonaws.codebuild.synthetic",
+        "RetryBuildInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "idempotencyToken",
+    1,
+);
+static RETRYBUILDINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#RetryBuildInput",
+        "com.amazonaws.codebuild.synthetic",
+        "RetryBuildInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&RETRYBUILDINPUT_MEMBER_ID, &RETRYBUILDINPUT_MEMBER_IDEMPOTENCY_TOKEN],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RetryBuildInput");
+impl RetryBuildInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RETRYBUILDINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RetryBuildInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&RETRYBUILDINPUT_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.idempotency_token {
+            ser.write_string(&RETRYBUILDINPUT_MEMBER_IDEMPOTENCY_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::retry_build::builders::RetryBuildInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RETRYBUILDINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idempotency_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RetryBuildInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RetryBuildInput {
     /// Creates a new builder-style object to manufacture [`RetryBuildInput`](crate::operation::retry_build::RetryBuildInput).
     pub fn builder() -> crate::operation::retry_build::builders::RetryBuildInputBuilder {

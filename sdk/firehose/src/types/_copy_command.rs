@@ -38,6 +38,117 @@ impl CopyCommand {
         self.copy_options.as_deref()
     }
 }
+static COPYCOMMAND_MEMBER_DATA_TABLE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#CopyCommand$DataTableName",
+        "com.amazonaws.firehose",
+        "CopyCommand",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataTableName",
+    0,
+);
+static COPYCOMMAND_MEMBER_DATA_TABLE_COLUMNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#CopyCommand$DataTableColumns",
+        "com.amazonaws.firehose",
+        "CopyCommand",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataTableColumns",
+    1,
+);
+static COPYCOMMAND_MEMBER_COPY_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#CopyCommand$CopyOptions", "com.amazonaws.firehose", "CopyCommand"),
+    ::aws_smithy_schema::ShapeType::String,
+    "CopyOptions",
+    2,
+);
+static COPYCOMMAND_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#CopyCommand", "com.amazonaws.firehose", "CopyCommand"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &COPYCOMMAND_MEMBER_DATA_TABLE_NAME,
+        &COPYCOMMAND_MEMBER_DATA_TABLE_COLUMNS,
+        &COPYCOMMAND_MEMBER_COPY_OPTIONS,
+    ],
+);
+impl CopyCommand {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COPYCOMMAND_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CopyCommand {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.data_table_name;
+            ser.write_string(&COPYCOMMAND_MEMBER_DATA_TABLE_NAME, val)?;
+        }
+        if let Some(ref val) = self.data_table_columns {
+            ser.write_string(&COPYCOMMAND_MEMBER_DATA_TABLE_COLUMNS, val)?;
+        }
+        if let Some(ref val) = self.copy_options {
+            ser.write_string(&COPYCOMMAND_MEMBER_COPY_OPTIONS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CopyCommandBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COPYCOMMAND_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.data_table_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_table_columns = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.copy_options = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CopyCommand {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.data_table_name = builder.data_table_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CopyCommand {
     /// Creates a new builder-style object to manufacture [`CopyCommand`](crate::types::CopyCommand).
     pub fn builder() -> crate::types::builders::CopyCommandBuilder {

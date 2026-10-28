@@ -61,6 +61,8 @@ pub use crate::types::_static_ip::StaticIpBuilder;
 
 pub use crate::types::_container_image::ContainerImageBuilder;
 
+pub use crate::types::_instance_attribute_updates::InstanceAttributeUpdatesBuilder;
+
 pub use crate::types::_access_rules::AccessRulesBuilder;
 
 pub use crate::types::_bucket_access_log_config::BucketAccessLogConfigBuilder;

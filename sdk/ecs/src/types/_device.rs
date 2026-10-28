@@ -28,6 +28,133 @@ impl Device {
         self.permissions.as_deref().unwrap_or_default()
     }
 }
+static DEVICE_MEMBER_HOST_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Device$hostPath", "com.amazonaws.ecs", "Device"),
+    ::aws_smithy_schema::ShapeType::String,
+    "hostPath",
+    0,
+);
+static DEVICE_MEMBER_CONTAINER_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Device$containerPath", "com.amazonaws.ecs", "Device"),
+    ::aws_smithy_schema::ShapeType::String,
+    "containerPath",
+    1,
+);
+static DEVICE_MEMBER_PERMISSIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DeviceCgroupPermissions$member",
+        "com.amazonaws.ecs",
+        "DeviceCgroupPermissions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DEVICE_MEMBER_PERMISSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Device$permissions", "com.amazonaws.ecs", "Device"),
+    ::aws_smithy_schema::ShapeType::List,
+    "permissions",
+    2,
+)
+.with_list_member(&DEVICE_MEMBER_PERMISSIONS_MEMBER);
+static DEVICE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Device", "com.amazonaws.ecs", "Device"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DEVICE_MEMBER_HOST_PATH, &DEVICE_MEMBER_CONTAINER_PATH, &DEVICE_MEMBER_PERMISSIONS],
+);
+impl Device {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEVICE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Device {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.host_path;
+            ser.write_string(&DEVICE_MEMBER_HOST_PATH, val)?;
+        }
+        if let Some(ref val) = self.container_path {
+            ser.write_string(&DEVICE_MEMBER_CONTAINER_PATH, val)?;
+        }
+        if let Some(ref val) = self.permissions {
+            ser.write_list(
+                &DEVICE_MEMBER_PERMISSIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeviceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEVICE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.host_path = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.permissions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DeviceCgroupPermission::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Device {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.host_path = builder.host_path.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl Device {
     /// Creates a new builder-style object to manufacture [`Device`](crate::types::Device).
     pub fn builder() -> crate::types::builders::DeviceBuilder {

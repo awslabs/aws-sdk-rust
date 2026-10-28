@@ -25,6 +25,128 @@ impl DiscoverPollEndpointOutput {
         self.service_connect_endpoint.as_deref()
     }
 }
+static DISCOVERPOLLENDPOINTOUTPUT_MEMBER_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DiscoverPollEndpointOutput$endpoint",
+        "com.amazonaws.ecs.synthetic",
+        "DiscoverPollEndpointOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "endpoint",
+    0,
+);
+static DISCOVERPOLLENDPOINTOUTPUT_MEMBER_TELEMETRY_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DiscoverPollEndpointOutput$telemetryEndpoint",
+        "com.amazonaws.ecs.synthetic",
+        "DiscoverPollEndpointOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "telemetryEndpoint",
+    1,
+);
+static DISCOVERPOLLENDPOINTOUTPUT_MEMBER_SERVICE_CONNECT_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DiscoverPollEndpointOutput$serviceConnectEndpoint",
+        "com.amazonaws.ecs.synthetic",
+        "DiscoverPollEndpointOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceConnectEndpoint",
+    2,
+);
+static DISCOVERPOLLENDPOINTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DiscoverPollEndpointOutput",
+        "com.amazonaws.ecs.synthetic",
+        "DiscoverPollEndpointOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DISCOVERPOLLENDPOINTOUTPUT_MEMBER_ENDPOINT,
+        &DISCOVERPOLLENDPOINTOUTPUT_MEMBER_TELEMETRY_ENDPOINT,
+        &DISCOVERPOLLENDPOINTOUTPUT_MEMBER_SERVICE_CONNECT_ENDPOINT,
+    ],
+)
+.with_original_name("DiscoverPollEndpointResponse");
+impl DiscoverPollEndpointOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DISCOVERPOLLENDPOINTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DiscoverPollEndpointOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.endpoint {
+            ser.write_string(&DISCOVERPOLLENDPOINTOUTPUT_MEMBER_ENDPOINT, val)?;
+        }
+        if let Some(ref val) = self.telemetry_endpoint {
+            ser.write_string(&DISCOVERPOLLENDPOINTOUTPUT_MEMBER_TELEMETRY_ENDPOINT, val)?;
+        }
+        if let Some(ref val) = self.service_connect_endpoint {
+            ser.write_string(&DISCOVERPOLLENDPOINTOUTPUT_MEMBER_SERVICE_CONNECT_ENDPOINT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DISCOVERPOLLENDPOINTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.telemetry_endpoint = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_connect_endpoint = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DiscoverPollEndpointOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DiscoverPollEndpointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -98,6 +98,276 @@ impl CreateDataRepositoryTaskInput {
         self.release_configuration.as_ref()
     }
 }
+static CREATEDATAREPOSITORYTASKINPUT_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateDataRepositoryTaskInput$Type",
+        "com.amazonaws.fsx.synthetic",
+        "CreateDataRepositoryTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    0,
+);
+static CREATEDATAREPOSITORYTASKINPUT_MEMBER_PATHS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#DataRepositoryTaskPaths$member",
+        "com.amazonaws.fsx",
+        "DataRepositoryTaskPaths",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEDATAREPOSITORYTASKINPUT_MEMBER_PATHS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateDataRepositoryTaskInput$Paths",
+        "com.amazonaws.fsx.synthetic",
+        "CreateDataRepositoryTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Paths",
+    1,
+)
+.with_list_member(&CREATEDATAREPOSITORYTASKINPUT_MEMBER_PATHS_MEMBER);
+static CREATEDATAREPOSITORYTASKINPUT_MEMBER_FILE_SYSTEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateDataRepositoryTaskInput$FileSystemId",
+        "com.amazonaws.fsx.synthetic",
+        "CreateDataRepositoryTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileSystemId",
+    2,
+);
+static CREATEDATAREPOSITORYTASKINPUT_MEMBER_REPORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateDataRepositoryTaskInput$Report",
+        "com.amazonaws.fsx.synthetic",
+        "CreateDataRepositoryTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Report",
+    3,
+);
+static CREATEDATAREPOSITORYTASKINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateDataRepositoryTaskInput$ClientRequestToken",
+        "com.amazonaws.fsx.synthetic",
+        "CreateDataRepositoryTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    4,
+);
+static CREATEDATAREPOSITORYTASKINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Tags$member", "com.amazonaws.fsx", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEDATAREPOSITORYTASKINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateDataRepositoryTaskInput$Tags",
+        "com.amazonaws.fsx.synthetic",
+        "CreateDataRepositoryTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&CREATEDATAREPOSITORYTASKINPUT_MEMBER_TAGS_MEMBER);
+static CREATEDATAREPOSITORYTASKINPUT_MEMBER_CAPACITY_TO_RELEASE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateDataRepositoryTaskInput$CapacityToRelease",
+        "com.amazonaws.fsx.synthetic",
+        "CreateDataRepositoryTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "CapacityToRelease",
+    6,
+);
+static CREATEDATAREPOSITORYTASKINPUT_MEMBER_RELEASE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateDataRepositoryTaskInput$ReleaseConfiguration",
+        "com.amazonaws.fsx.synthetic",
+        "CreateDataRepositoryTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ReleaseConfiguration",
+    7,
+);
+static CREATEDATAREPOSITORYTASKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateDataRepositoryTaskInput",
+        "com.amazonaws.fsx.synthetic",
+        "CreateDataRepositoryTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEDATAREPOSITORYTASKINPUT_MEMBER_TYPE,
+        &CREATEDATAREPOSITORYTASKINPUT_MEMBER_PATHS,
+        &CREATEDATAREPOSITORYTASKINPUT_MEMBER_FILE_SYSTEM_ID,
+        &CREATEDATAREPOSITORYTASKINPUT_MEMBER_REPORT,
+        &CREATEDATAREPOSITORYTASKINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &CREATEDATAREPOSITORYTASKINPUT_MEMBER_TAGS,
+        &CREATEDATAREPOSITORYTASKINPUT_MEMBER_CAPACITY_TO_RELEASE,
+        &CREATEDATAREPOSITORYTASKINPUT_MEMBER_RELEASE_CONFIGURATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateDataRepositoryTaskRequest");
+impl CreateDataRepositoryTaskInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEDATAREPOSITORYTASKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateDataRepositoryTaskInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&CREATEDATAREPOSITORYTASKINPUT_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.paths {
+            ser.write_list(
+                &CREATEDATAREPOSITORYTASKINPUT_MEMBER_PATHS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.file_system_id {
+            ser.write_string(&CREATEDATAREPOSITORYTASKINPUT_MEMBER_FILE_SYSTEM_ID, val)?;
+        }
+        if let Some(ref val) = self.report {
+            ser.write_struct(&CREATEDATAREPOSITORYTASKINPUT_MEMBER_REPORT, val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&CREATEDATAREPOSITORYTASKINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEDATAREPOSITORYTASKINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.capacity_to_release {
+            ser.write_long(&CREATEDATAREPOSITORYTASKINPUT_MEMBER_CAPACITY_TO_RELEASE, *val)?;
+        }
+        if let Some(ref val) = self.release_configuration {
+            ser.write_struct(&CREATEDATAREPOSITORYTASKINPUT_MEMBER_RELEASE_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEDATAREPOSITORYTASKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::DataRepositoryTaskType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.paths = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report = Some(crate::types::CompletionReport::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_to_release = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.release_configuration = Some(crate::types::ReleaseConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateDataRepositoryTaskInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.file_system_id = builder.file_system_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateDataRepositoryTaskInput {
     /// Creates a new builder-style object to manufacture [`CreateDataRepositoryTaskInput`](crate::operation::create_data_repository_task::CreateDataRepositoryTaskInput).
     pub fn builder() -> crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskInputBuilder {

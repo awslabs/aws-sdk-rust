@@ -39,6 +39,192 @@ impl ListChangedBlocksOutput {
         self.next_token.as_deref()
     }
 }
+static LISTCHANGEDBLOCKSOUTPUT_MEMBER_CHANGED_BLOCKS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ebs#ChangedBlocks$member", "com.amazonaws.ebs", "ChangedBlocks"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LISTCHANGEDBLOCKSOUTPUT_MEMBER_CHANGED_BLOCKS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#ListChangedBlocksOutput$ChangedBlocks",
+        "com.amazonaws.ebs.synthetic",
+        "ListChangedBlocksOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ChangedBlocks",
+    0,
+)
+.with_list_member(&LISTCHANGEDBLOCKSOUTPUT_MEMBER_CHANGED_BLOCKS_MEMBER);
+static LISTCHANGEDBLOCKSOUTPUT_MEMBER_EXPIRY_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#ListChangedBlocksOutput$ExpiryTime",
+        "com.amazonaws.ebs.synthetic",
+        "ListChangedBlocksOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ExpiryTime",
+    1,
+);
+static LISTCHANGEDBLOCKSOUTPUT_MEMBER_VOLUME_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#ListChangedBlocksOutput$VolumeSize",
+        "com.amazonaws.ebs.synthetic",
+        "ListChangedBlocksOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "VolumeSize",
+    2,
+);
+static LISTCHANGEDBLOCKSOUTPUT_MEMBER_BLOCK_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#ListChangedBlocksOutput$BlockSize",
+        "com.amazonaws.ebs.synthetic",
+        "ListChangedBlocksOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "BlockSize",
+    3,
+);
+static LISTCHANGEDBLOCKSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#ListChangedBlocksOutput$NextToken",
+        "com.amazonaws.ebs.synthetic",
+        "ListChangedBlocksOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    4,
+);
+static LISTCHANGEDBLOCKSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#ListChangedBlocksOutput",
+        "com.amazonaws.ebs.synthetic",
+        "ListChangedBlocksOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTCHANGEDBLOCKSOUTPUT_MEMBER_CHANGED_BLOCKS,
+        &LISTCHANGEDBLOCKSOUTPUT_MEMBER_EXPIRY_TIME,
+        &LISTCHANGEDBLOCKSOUTPUT_MEMBER_VOLUME_SIZE,
+        &LISTCHANGEDBLOCKSOUTPUT_MEMBER_BLOCK_SIZE,
+        &LISTCHANGEDBLOCKSOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("ListChangedBlocksResponse");
+impl ListChangedBlocksOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTCHANGEDBLOCKSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListChangedBlocksOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.changed_blocks {
+            ser.write_list(
+                &LISTCHANGEDBLOCKSOUTPUT_MEMBER_CHANGED_BLOCKS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ChangedBlock::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.expiry_time {
+            ser.write_timestamp(&LISTCHANGEDBLOCKSOUTPUT_MEMBER_EXPIRY_TIME, val)?;
+        }
+        if let Some(ref val) = self.volume_size {
+            ser.write_long(&LISTCHANGEDBLOCKSOUTPUT_MEMBER_VOLUME_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.block_size {
+            ser.write_integer(&LISTCHANGEDBLOCKSOUTPUT_MEMBER_BLOCK_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTCHANGEDBLOCKSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_changed_blocks::builders::ListChangedBlocksOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTCHANGEDBLOCKSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.changed_blocks = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ChangedBlock::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expiry_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_size = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.block_size = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListChangedBlocksOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListChangedBlocksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

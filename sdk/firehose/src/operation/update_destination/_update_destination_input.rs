@@ -88,6 +88,347 @@ impl UpdateDestinationInput {
         self.iceberg_destination_update.as_ref()
     }
 }
+static UPDATEDESTINATIONINPUT_MEMBER_DELIVERY_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#UpdateDestinationInput$DeliveryStreamName",
+        "com.amazonaws.firehose.synthetic",
+        "UpdateDestinationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeliveryStreamName",
+    0,
+);
+static UPDATEDESTINATIONINPUT_MEMBER_CURRENT_DELIVERY_STREAM_VERSION_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose.synthetic#UpdateDestinationInput$CurrentDeliveryStreamVersionId",
+            "com.amazonaws.firehose.synthetic",
+            "UpdateDestinationInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "CurrentDeliveryStreamVersionId",
+        1,
+    );
+static UPDATEDESTINATIONINPUT_MEMBER_DESTINATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#UpdateDestinationInput$DestinationId",
+        "com.amazonaws.firehose.synthetic",
+        "UpdateDestinationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DestinationId",
+    2,
+);
+static UPDATEDESTINATIONINPUT_MEMBER_S3_DESTINATION_UPDATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#UpdateDestinationInput$S3DestinationUpdate",
+        "com.amazonaws.firehose.synthetic",
+        "UpdateDestinationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3DestinationUpdate",
+    3,
+);
+static UPDATEDESTINATIONINPUT_MEMBER_EXTENDED_S3_DESTINATION_UPDATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#UpdateDestinationInput$ExtendedS3DestinationUpdate",
+        "com.amazonaws.firehose.synthetic",
+        "UpdateDestinationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ExtendedS3DestinationUpdate",
+    4,
+);
+static UPDATEDESTINATIONINPUT_MEMBER_REDSHIFT_DESTINATION_UPDATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#UpdateDestinationInput$RedshiftDestinationUpdate",
+        "com.amazonaws.firehose.synthetic",
+        "UpdateDestinationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RedshiftDestinationUpdate",
+    5,
+);
+static UPDATEDESTINATIONINPUT_MEMBER_ELASTICSEARCH_DESTINATION_UPDATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#UpdateDestinationInput$ElasticsearchDestinationUpdate",
+        "com.amazonaws.firehose.synthetic",
+        "UpdateDestinationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ElasticsearchDestinationUpdate",
+    6,
+);
+static UPDATEDESTINATIONINPUT_MEMBER_AMAZONOPENSEARCHSERVICE_DESTINATION_UPDATE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose.synthetic#UpdateDestinationInput$AmazonopensearchserviceDestinationUpdate",
+            "com.amazonaws.firehose.synthetic",
+            "UpdateDestinationInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "AmazonopensearchserviceDestinationUpdate",
+        7,
+    );
+static UPDATEDESTINATIONINPUT_MEMBER_SPLUNK_DESTINATION_UPDATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#UpdateDestinationInput$SplunkDestinationUpdate",
+        "com.amazonaws.firehose.synthetic",
+        "UpdateDestinationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SplunkDestinationUpdate",
+    8,
+);
+static UPDATEDESTINATIONINPUT_MEMBER_HTTP_ENDPOINT_DESTINATION_UPDATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#UpdateDestinationInput$HttpEndpointDestinationUpdate",
+        "com.amazonaws.firehose.synthetic",
+        "UpdateDestinationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "HttpEndpointDestinationUpdate",
+    9,
+);
+static UPDATEDESTINATIONINPUT_MEMBER_AMAZON_OPEN_SEARCH_SERVERLESS_DESTINATION_UPDATE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose.synthetic#UpdateDestinationInput$AmazonOpenSearchServerlessDestinationUpdate",
+            "com.amazonaws.firehose.synthetic",
+            "UpdateDestinationInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "AmazonOpenSearchServerlessDestinationUpdate",
+        10,
+    );
+static UPDATEDESTINATIONINPUT_MEMBER_SNOWFLAKE_DESTINATION_UPDATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#UpdateDestinationInput$SnowflakeDestinationUpdate",
+        "com.amazonaws.firehose.synthetic",
+        "UpdateDestinationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SnowflakeDestinationUpdate",
+    11,
+);
+static UPDATEDESTINATIONINPUT_MEMBER_ICEBERG_DESTINATION_UPDATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#UpdateDestinationInput$IcebergDestinationUpdate",
+        "com.amazonaws.firehose.synthetic",
+        "UpdateDestinationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "IcebergDestinationUpdate",
+    12,
+);
+static UPDATEDESTINATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose.synthetic#UpdateDestinationInput",
+        "com.amazonaws.firehose.synthetic",
+        "UpdateDestinationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEDESTINATIONINPUT_MEMBER_DELIVERY_STREAM_NAME,
+        &UPDATEDESTINATIONINPUT_MEMBER_CURRENT_DELIVERY_STREAM_VERSION_ID,
+        &UPDATEDESTINATIONINPUT_MEMBER_DESTINATION_ID,
+        &UPDATEDESTINATIONINPUT_MEMBER_S3_DESTINATION_UPDATE,
+        &UPDATEDESTINATIONINPUT_MEMBER_EXTENDED_S3_DESTINATION_UPDATE,
+        &UPDATEDESTINATIONINPUT_MEMBER_REDSHIFT_DESTINATION_UPDATE,
+        &UPDATEDESTINATIONINPUT_MEMBER_ELASTICSEARCH_DESTINATION_UPDATE,
+        &UPDATEDESTINATIONINPUT_MEMBER_AMAZONOPENSEARCHSERVICE_DESTINATION_UPDATE,
+        &UPDATEDESTINATIONINPUT_MEMBER_SPLUNK_DESTINATION_UPDATE,
+        &UPDATEDESTINATIONINPUT_MEMBER_HTTP_ENDPOINT_DESTINATION_UPDATE,
+        &UPDATEDESTINATIONINPUT_MEMBER_AMAZON_OPEN_SEARCH_SERVERLESS_DESTINATION_UPDATE,
+        &UPDATEDESTINATIONINPUT_MEMBER_SNOWFLAKE_DESTINATION_UPDATE,
+        &UPDATEDESTINATIONINPUT_MEMBER_ICEBERG_DESTINATION_UPDATE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateDestinationInput");
+impl UpdateDestinationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEDESTINATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateDestinationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.delivery_stream_name {
+            ser.write_string(&UPDATEDESTINATIONINPUT_MEMBER_DELIVERY_STREAM_NAME, val)?;
+        }
+        if let Some(ref val) = self.current_delivery_stream_version_id {
+            ser.write_string(&UPDATEDESTINATIONINPUT_MEMBER_CURRENT_DELIVERY_STREAM_VERSION_ID, val)?;
+        }
+        if let Some(ref val) = self.destination_id {
+            ser.write_string(&UPDATEDESTINATIONINPUT_MEMBER_DESTINATION_ID, val)?;
+        }
+        if let Some(ref val) = self.s3_destination_update {
+            ser.write_struct(&UPDATEDESTINATIONINPUT_MEMBER_S3_DESTINATION_UPDATE, val)?;
+        }
+        if let Some(ref val) = self.extended_s3_destination_update {
+            ser.write_struct(&UPDATEDESTINATIONINPUT_MEMBER_EXTENDED_S3_DESTINATION_UPDATE, val)?;
+        }
+        if let Some(ref val) = self.redshift_destination_update {
+            ser.write_struct(&UPDATEDESTINATIONINPUT_MEMBER_REDSHIFT_DESTINATION_UPDATE, val)?;
+        }
+        if let Some(ref val) = self.elasticsearch_destination_update {
+            ser.write_struct(&UPDATEDESTINATIONINPUT_MEMBER_ELASTICSEARCH_DESTINATION_UPDATE, val)?;
+        }
+        if let Some(ref val) = self.amazonopensearchservice_destination_update {
+            ser.write_struct(&UPDATEDESTINATIONINPUT_MEMBER_AMAZONOPENSEARCHSERVICE_DESTINATION_UPDATE, val)?;
+        }
+        if let Some(ref val) = self.splunk_destination_update {
+            ser.write_struct(&UPDATEDESTINATIONINPUT_MEMBER_SPLUNK_DESTINATION_UPDATE, val)?;
+        }
+        if let Some(ref val) = self.http_endpoint_destination_update {
+            ser.write_struct(&UPDATEDESTINATIONINPUT_MEMBER_HTTP_ENDPOINT_DESTINATION_UPDATE, val)?;
+        }
+        if let Some(ref val) = self.amazon_open_search_serverless_destination_update {
+            ser.write_struct(&UPDATEDESTINATIONINPUT_MEMBER_AMAZON_OPEN_SEARCH_SERVERLESS_DESTINATION_UPDATE, val)?;
+        }
+        if let Some(ref val) = self.snowflake_destination_update {
+            ser.write_struct(&UPDATEDESTINATIONINPUT_MEMBER_SNOWFLAKE_DESTINATION_UPDATE, val)?;
+        }
+        if let Some(ref val) = self.iceberg_destination_update {
+            ser.write_struct(&UPDATEDESTINATIONINPUT_MEMBER_ICEBERG_DESTINATION_UPDATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_destination::builders::UpdateDestinationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEDESTINATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delivery_stream_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_delivery_stream_version_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_destination_update = Some(crate::types::S3DestinationUpdate::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.extended_s3_destination_update = Some(crate::types::ExtendedS3DestinationUpdate::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.redshift_destination_update = Some(crate::types::RedshiftDestinationUpdate::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.elasticsearch_destination_update = Some(crate::types::ElasticsearchDestinationUpdate::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.amazonopensearchservice_destination_update =
+                            Some(crate::types::AmazonopensearchserviceDestinationUpdate::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.splunk_destination_update = Some(crate::types::SplunkDestinationUpdate::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.http_endpoint_destination_update = Some(crate::types::HttpEndpointDestinationUpdate::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.amazon_open_search_serverless_destination_update =
+                            Some(crate::types::AmazonOpenSearchServerlessDestinationUpdate::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.snowflake_destination_update = Some(crate::types::SnowflakeDestinationUpdate::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.iceberg_destination_update = Some(crate::types::IcebergDestinationUpdate::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateDestinationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.delivery_stream_name = builder.delivery_stream_name.or(Some(String::new()));
+        builder.current_delivery_stream_version_id = builder.current_delivery_stream_version_id.or(Some(String::new()));
+        builder.destination_id = builder.destination_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateDestinationInput {
     /// Creates a new builder-style object to manufacture [`UpdateDestinationInput`](crate::operation::update_destination::UpdateDestinationInput).
     pub fn builder() -> crate::operation::update_destination::builders::UpdateDestinationInputBuilder {

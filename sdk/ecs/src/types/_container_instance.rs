@@ -59,6 +59,8 @@ pub struct ContainerInstance {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An object representing the health status of the container instance.</p>
     pub health_status: ::std::option::Option<crate::types::ContainerInstanceHealthStatus>,
+    /// <p>The state of each GPU on the container instance, including its sharing mode and available memory. This field is present only for container instances that support GPU sharing.</p>
+    pub gpu_devices: ::std::option::Option<::std::vec::Vec<crate::types::GpuDevice>>,
 }
 impl ContainerInstance {
     /// <p>The Amazon Resource Name (ARN) of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
@@ -162,6 +164,565 @@ impl ContainerInstance {
     pub fn health_status(&self) -> ::std::option::Option<&crate::types::ContainerInstanceHealthStatus> {
         self.health_status.as_ref()
     }
+    /// <p>The state of each GPU on the container instance, including its sharing mode and available memory. This field is present only for container instances that support GPU sharing.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gpu_devices.is_none()`.
+    pub fn gpu_devices(&self) -> &[crate::types::GpuDevice] {
+        self.gpu_devices.as_deref().unwrap_or_default()
+    }
+}
+static CONTAINERINSTANCE_MEMBER_CONTAINER_INSTANCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerInstance$containerInstanceArn",
+        "com.amazonaws.ecs",
+        "ContainerInstance",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "containerInstanceArn",
+    0,
+);
+static CONTAINERINSTANCE_MEMBER_EC2_INSTANCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerInstance$ec2InstanceId",
+        "com.amazonaws.ecs",
+        "ContainerInstance",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ec2InstanceId",
+    1,
+);
+static CONTAINERINSTANCE_MEMBER_CAPACITY_PROVIDER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerInstance$capacityProviderName",
+        "com.amazonaws.ecs",
+        "ContainerInstance",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "capacityProviderName",
+    2,
+);
+static CONTAINERINSTANCE_MEMBER_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerInstance$version", "com.amazonaws.ecs", "ContainerInstance"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "version",
+    3,
+);
+static CONTAINERINSTANCE_MEMBER_VERSION_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerInstance$versionInfo",
+        "com.amazonaws.ecs",
+        "ContainerInstance",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "versionInfo",
+    4,
+);
+static CONTAINERINSTANCE_MEMBER_REMAINING_RESOURCES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Resources$member", "com.amazonaws.ecs", "Resources"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERINSTANCE_MEMBER_REMAINING_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerInstance$remainingResources",
+        "com.amazonaws.ecs",
+        "ContainerInstance",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "remainingResources",
+    5,
+)
+.with_list_member(&CONTAINERINSTANCE_MEMBER_REMAINING_RESOURCES_MEMBER);
+static CONTAINERINSTANCE_MEMBER_REGISTERED_RESOURCES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Resources$member", "com.amazonaws.ecs", "Resources"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERINSTANCE_MEMBER_REGISTERED_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerInstance$registeredResources",
+        "com.amazonaws.ecs",
+        "ContainerInstance",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "registeredResources",
+    6,
+)
+.with_list_member(&CONTAINERINSTANCE_MEMBER_REGISTERED_RESOURCES_MEMBER);
+static CONTAINERINSTANCE_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerInstance$status", "com.amazonaws.ecs", "ContainerInstance"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    7,
+);
+static CONTAINERINSTANCE_MEMBER_STATUS_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerInstance$statusReason",
+        "com.amazonaws.ecs",
+        "ContainerInstance",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "statusReason",
+    8,
+);
+static CONTAINERINSTANCE_MEMBER_AGENT_CONNECTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerInstance$agentConnected",
+        "com.amazonaws.ecs",
+        "ContainerInstance",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "agentConnected",
+    9,
+);
+static CONTAINERINSTANCE_MEMBER_RUNNING_TASKS_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerInstance$runningTasksCount",
+        "com.amazonaws.ecs",
+        "ContainerInstance",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "runningTasksCount",
+    10,
+);
+static CONTAINERINSTANCE_MEMBER_PENDING_TASKS_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerInstance$pendingTasksCount",
+        "com.amazonaws.ecs",
+        "ContainerInstance",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "pendingTasksCount",
+    11,
+);
+static CONTAINERINSTANCE_MEMBER_AGENT_UPDATE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerInstance$agentUpdateStatus",
+        "com.amazonaws.ecs",
+        "ContainerInstance",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "agentUpdateStatus",
+    12,
+);
+static CONTAINERINSTANCE_MEMBER_ATTRIBUTES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Attributes$member", "com.amazonaws.ecs", "Attributes"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERINSTANCE_MEMBER_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerInstance$attributes", "com.amazonaws.ecs", "ContainerInstance"),
+    ::aws_smithy_schema::ShapeType::List,
+    "attributes",
+    13,
+)
+.with_list_member(&CONTAINERINSTANCE_MEMBER_ATTRIBUTES_MEMBER);
+static CONTAINERINSTANCE_MEMBER_REGISTERED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerInstance$registeredAt",
+        "com.amazonaws.ecs",
+        "ContainerInstance",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "registeredAt",
+    14,
+);
+static CONTAINERINSTANCE_MEMBER_ATTACHMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Attachments$member", "com.amazonaws.ecs", "Attachments"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERINSTANCE_MEMBER_ATTACHMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerInstance$attachments",
+        "com.amazonaws.ecs",
+        "ContainerInstance",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "attachments",
+    15,
+)
+.with_list_member(&CONTAINERINSTANCE_MEMBER_ATTACHMENTS_MEMBER);
+static CONTAINERINSTANCE_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Tags$member", "com.amazonaws.ecs", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERINSTANCE_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerInstance$tags", "com.amazonaws.ecs", "ContainerInstance"),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    16,
+)
+.with_list_member(&CONTAINERINSTANCE_MEMBER_TAGS_MEMBER);
+static CONTAINERINSTANCE_MEMBER_HEALTH_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ContainerInstance$healthStatus",
+        "com.amazonaws.ecs",
+        "ContainerInstance",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "healthStatus",
+    17,
+);
+static CONTAINERINSTANCE_MEMBER_GPU_DEVICES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#GpuDevices$member", "com.amazonaws.ecs", "GpuDevices"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERINSTANCE_MEMBER_GPU_DEVICES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerInstance$gpuDevices", "com.amazonaws.ecs", "ContainerInstance"),
+    ::aws_smithy_schema::ShapeType::List,
+    "gpuDevices",
+    18,
+)
+.with_list_member(&CONTAINERINSTANCE_MEMBER_GPU_DEVICES_MEMBER);
+static CONTAINERINSTANCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ContainerInstance", "com.amazonaws.ecs", "ContainerInstance"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTAINERINSTANCE_MEMBER_CONTAINER_INSTANCE_ARN,
+        &CONTAINERINSTANCE_MEMBER_EC2_INSTANCE_ID,
+        &CONTAINERINSTANCE_MEMBER_CAPACITY_PROVIDER_NAME,
+        &CONTAINERINSTANCE_MEMBER_VERSION,
+        &CONTAINERINSTANCE_MEMBER_VERSION_INFO,
+        &CONTAINERINSTANCE_MEMBER_REMAINING_RESOURCES,
+        &CONTAINERINSTANCE_MEMBER_REGISTERED_RESOURCES,
+        &CONTAINERINSTANCE_MEMBER_STATUS,
+        &CONTAINERINSTANCE_MEMBER_STATUS_REASON,
+        &CONTAINERINSTANCE_MEMBER_AGENT_CONNECTED,
+        &CONTAINERINSTANCE_MEMBER_RUNNING_TASKS_COUNT,
+        &CONTAINERINSTANCE_MEMBER_PENDING_TASKS_COUNT,
+        &CONTAINERINSTANCE_MEMBER_AGENT_UPDATE_STATUS,
+        &CONTAINERINSTANCE_MEMBER_ATTRIBUTES,
+        &CONTAINERINSTANCE_MEMBER_REGISTERED_AT,
+        &CONTAINERINSTANCE_MEMBER_ATTACHMENTS,
+        &CONTAINERINSTANCE_MEMBER_TAGS,
+        &CONTAINERINSTANCE_MEMBER_HEALTH_STATUS,
+        &CONTAINERINSTANCE_MEMBER_GPU_DEVICES,
+    ],
+);
+impl ContainerInstance {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTAINERINSTANCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContainerInstance {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.container_instance_arn {
+            ser.write_string(&CONTAINERINSTANCE_MEMBER_CONTAINER_INSTANCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.ec2_instance_id {
+            ser.write_string(&CONTAINERINSTANCE_MEMBER_EC2_INSTANCE_ID, val)?;
+        }
+        if let Some(ref val) = self.capacity_provider_name {
+            ser.write_string(&CONTAINERINSTANCE_MEMBER_CAPACITY_PROVIDER_NAME, val)?;
+        }
+        {
+            let val = &self.version;
+            ser.write_long(&CONTAINERINSTANCE_MEMBER_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.version_info {
+            ser.write_struct(&CONTAINERINSTANCE_MEMBER_VERSION_INFO, val)?;
+        }
+        if let Some(ref val) = self.remaining_resources {
+            ser.write_list(
+                &CONTAINERINSTANCE_MEMBER_REMAINING_RESOURCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Resource::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.registered_resources {
+            ser.write_list(
+                &CONTAINERINSTANCE_MEMBER_REGISTERED_RESOURCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Resource::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&CONTAINERINSTANCE_MEMBER_STATUS, val)?;
+        }
+        if let Some(ref val) = self.status_reason {
+            ser.write_string(&CONTAINERINSTANCE_MEMBER_STATUS_REASON, val)?;
+        }
+        {
+            let val = &self.agent_connected;
+            ser.write_boolean(&CONTAINERINSTANCE_MEMBER_AGENT_CONNECTED, *val)?;
+        }
+        {
+            let val = &self.running_tasks_count;
+            ser.write_integer(&CONTAINERINSTANCE_MEMBER_RUNNING_TASKS_COUNT, *val)?;
+        }
+        {
+            let val = &self.pending_tasks_count;
+            ser.write_integer(&CONTAINERINSTANCE_MEMBER_PENDING_TASKS_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.agent_update_status {
+            ser.write_string(&CONTAINERINSTANCE_MEMBER_AGENT_UPDATE_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.attributes {
+            ser.write_list(
+                &CONTAINERINSTANCE_MEMBER_ATTRIBUTES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Attribute::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.registered_at {
+            ser.write_timestamp(&CONTAINERINSTANCE_MEMBER_REGISTERED_AT, val)?;
+        }
+        if let Some(ref val) = self.attachments {
+            ser.write_list(
+                &CONTAINERINSTANCE_MEMBER_ATTACHMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Attachment::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CONTAINERINSTANCE_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.health_status {
+            ser.write_struct(&CONTAINERINSTANCE_MEMBER_HEALTH_STATUS, val)?;
+        }
+        if let Some(ref val) = self.gpu_devices {
+            ser.write_list(
+                &CONTAINERINSTANCE_MEMBER_GPU_DEVICES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::GpuDevice::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContainerInstanceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTAINERINSTANCE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_instance_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ec2_instance_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_provider_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    self.version = Some(deser.read_long(member)?);
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version_info = Some(crate::types::VersionInfo::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.remaining_resources = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Resource::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registered_resources = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Resource::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    self.agent_connected = Some(deser.read_boolean(member)?);
+                }
+                Some(10) => {
+                    self.running_tasks_count = Some(deser.read_integer(member)?);
+                }
+                Some(11) => {
+                    self.pending_tasks_count = Some(deser.read_integer(member)?);
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agent_update_status = Some(crate::types::AgentUpdateStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attributes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Attribute::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registered_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attachments = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Attachment::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_status = Some(crate::types::ContainerInstanceHealthStatus::deserialize(deser)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gpu_devices = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::GpuDevice::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContainerInstance {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
 }
 impl ContainerInstance {
     /// Creates a new builder-style object to manufacture [`ContainerInstance`](crate::types::ContainerInstance).
@@ -192,6 +753,7 @@ pub struct ContainerInstanceBuilder {
     pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) health_status: ::std::option::Option<crate::types::ContainerInstanceHealthStatus>,
+    pub(crate) gpu_devices: ::std::option::Option<::std::vec::Vec<crate::types::GpuDevice>>,
 }
 impl ContainerInstanceBuilder {
     /// <p>The Amazon Resource Name (ARN) of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
@@ -533,6 +1095,26 @@ impl ContainerInstanceBuilder {
     pub fn get_health_status(&self) -> &::std::option::Option<crate::types::ContainerInstanceHealthStatus> {
         &self.health_status
     }
+    /// Appends an item to `gpu_devices`.
+    ///
+    /// To override the contents of this collection use [`set_gpu_devices`](Self::set_gpu_devices).
+    ///
+    /// <p>The state of each GPU on the container instance, including its sharing mode and available memory. This field is present only for container instances that support GPU sharing.</p>
+    pub fn gpu_devices(mut self, input: crate::types::GpuDevice) -> Self {
+        let mut v = self.gpu_devices.unwrap_or_default();
+        v.push(input);
+        self.gpu_devices = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The state of each GPU on the container instance, including its sharing mode and available memory. This field is present only for container instances that support GPU sharing.</p>
+    pub fn set_gpu_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GpuDevice>>) -> Self {
+        self.gpu_devices = input;
+        self
+    }
+    /// <p>The state of each GPU on the container instance, including its sharing mode and available memory. This field is present only for container instances that support GPU sharing.</p>
+    pub fn get_gpu_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GpuDevice>> {
+        &self.gpu_devices
+    }
     /// Consumes the builder and constructs a [`ContainerInstance`](crate::types::ContainerInstance).
     pub fn build(self) -> crate::types::ContainerInstance {
         crate::types::ContainerInstance {
@@ -554,6 +1136,7 @@ impl ContainerInstanceBuilder {
             attachments: self.attachments,
             tags: self.tags,
             health_status: self.health_status,
+            gpu_devices: self.gpu_devices,
         }
     }
 }

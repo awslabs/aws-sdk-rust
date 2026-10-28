@@ -24,6 +24,126 @@ impl StopTaskInput {
         self.reason.as_deref()
     }
 }
+static STOPTASKINPUT_MEMBER_CLUSTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#StopTaskInput$cluster",
+        "com.amazonaws.ecs.synthetic",
+        "StopTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cluster",
+    0,
+);
+static STOPTASKINPUT_MEMBER_TASK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#StopTaskInput$task",
+        "com.amazonaws.ecs.synthetic",
+        "StopTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "task",
+    1,
+);
+static STOPTASKINPUT_MEMBER_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#StopTaskInput$reason",
+        "com.amazonaws.ecs.synthetic",
+        "StopTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "reason",
+    2,
+);
+static STOPTASKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#StopTaskInput",
+        "com.amazonaws.ecs.synthetic",
+        "StopTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&STOPTASKINPUT_MEMBER_CLUSTER, &STOPTASKINPUT_MEMBER_TASK, &STOPTASKINPUT_MEMBER_REASON],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StopTaskRequest");
+impl StopTaskInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STOPTASKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StopTaskInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster {
+            ser.write_string(&STOPTASKINPUT_MEMBER_CLUSTER, val)?;
+        }
+        if let Some(ref val) = self.task {
+            ser.write_string(&STOPTASKINPUT_MEMBER_TASK, val)?;
+        }
+        if let Some(ref val) = self.reason {
+            ser.write_string(&STOPTASKINPUT_MEMBER_REASON, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::stop_task::builders::StopTaskInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STOPTASKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reason = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StopTaskInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.task = builder.task.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StopTaskInput {
     /// Creates a new builder-style object to manufacture [`StopTaskInput`](crate::operation::stop_task::StopTaskInput).
     pub fn builder() -> crate::operation::stop_task::builders::StopTaskInputBuilder {

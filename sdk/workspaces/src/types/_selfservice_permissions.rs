@@ -37,6 +37,169 @@ impl SelfservicePermissions {
         self.rebuild_workspace.as_ref()
     }
 }
+static SELFSERVICEPERMISSIONS_MEMBER_RESTART_WORKSPACE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#SelfservicePermissions$RestartWorkspace",
+        "com.amazonaws.workspaces",
+        "SelfservicePermissions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RestartWorkspace",
+    0,
+);
+static SELFSERVICEPERMISSIONS_MEMBER_INCREASE_VOLUME_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#SelfservicePermissions$IncreaseVolumeSize",
+        "com.amazonaws.workspaces",
+        "SelfservicePermissions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IncreaseVolumeSize",
+    1,
+);
+static SELFSERVICEPERMISSIONS_MEMBER_CHANGE_COMPUTE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#SelfservicePermissions$ChangeComputeType",
+        "com.amazonaws.workspaces",
+        "SelfservicePermissions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChangeComputeType",
+    2,
+);
+static SELFSERVICEPERMISSIONS_MEMBER_SWITCH_RUNNING_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#SelfservicePermissions$SwitchRunningMode",
+        "com.amazonaws.workspaces",
+        "SelfservicePermissions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SwitchRunningMode",
+    3,
+);
+static SELFSERVICEPERMISSIONS_MEMBER_REBUILD_WORKSPACE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#SelfservicePermissions$RebuildWorkspace",
+        "com.amazonaws.workspaces",
+        "SelfservicePermissions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RebuildWorkspace",
+    4,
+);
+static SELFSERVICEPERMISSIONS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#SelfservicePermissions",
+        "com.amazonaws.workspaces",
+        "SelfservicePermissions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SELFSERVICEPERMISSIONS_MEMBER_RESTART_WORKSPACE,
+        &SELFSERVICEPERMISSIONS_MEMBER_INCREASE_VOLUME_SIZE,
+        &SELFSERVICEPERMISSIONS_MEMBER_CHANGE_COMPUTE_TYPE,
+        &SELFSERVICEPERMISSIONS_MEMBER_SWITCH_RUNNING_MODE,
+        &SELFSERVICEPERMISSIONS_MEMBER_REBUILD_WORKSPACE,
+    ],
+);
+impl SelfservicePermissions {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SELFSERVICEPERMISSIONS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SelfservicePermissions {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.restart_workspace {
+            ser.write_string(&SELFSERVICEPERMISSIONS_MEMBER_RESTART_WORKSPACE, val.as_str())?;
+        }
+        if let Some(ref val) = self.increase_volume_size {
+            ser.write_string(&SELFSERVICEPERMISSIONS_MEMBER_INCREASE_VOLUME_SIZE, val.as_str())?;
+        }
+        if let Some(ref val) = self.change_compute_type {
+            ser.write_string(&SELFSERVICEPERMISSIONS_MEMBER_CHANGE_COMPUTE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.switch_running_mode {
+            ser.write_string(&SELFSERVICEPERMISSIONS_MEMBER_SWITCH_RUNNING_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.rebuild_workspace {
+            ser.write_string(&SELFSERVICEPERMISSIONS_MEMBER_REBUILD_WORKSPACE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SelfservicePermissionsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SELFSERVICEPERMISSIONS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.restart_workspace = Some(crate::types::ReconnectEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.increase_volume_size = Some(crate::types::ReconnectEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.change_compute_type = Some(crate::types::ReconnectEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.switch_running_mode = Some(crate::types::ReconnectEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rebuild_workspace = Some(crate::types::ReconnectEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SelfservicePermissions {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SelfservicePermissions {
     /// Creates a new builder-style object to manufacture [`SelfservicePermissions`](crate::types::SelfservicePermissions).
     pub fn builder() -> crate::types::builders::SelfservicePermissionsBuilder {

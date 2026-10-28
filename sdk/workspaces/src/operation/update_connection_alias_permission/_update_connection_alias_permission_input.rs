@@ -18,6 +18,110 @@ impl UpdateConnectionAliasPermissionInput {
         self.connection_alias_permission.as_ref()
     }
 }
+static UPDATECONNECTIONALIASPERMISSIONINPUT_MEMBER_ALIAS_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#UpdateConnectionAliasPermissionInput$AliasId",
+        "com.amazonaws.workspaces.synthetic",
+        "UpdateConnectionAliasPermissionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AliasId",
+    0,
+);
+static UPDATECONNECTIONALIASPERMISSIONINPUT_MEMBER_CONNECTION_ALIAS_PERMISSION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces.synthetic#UpdateConnectionAliasPermissionInput$ConnectionAliasPermission",
+            "com.amazonaws.workspaces.synthetic",
+            "UpdateConnectionAliasPermissionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ConnectionAliasPermission",
+        1,
+    );
+static UPDATECONNECTIONALIASPERMISSIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#UpdateConnectionAliasPermissionInput",
+        "com.amazonaws.workspaces.synthetic",
+        "UpdateConnectionAliasPermissionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATECONNECTIONALIASPERMISSIONINPUT_MEMBER_ALIAS_ID,
+        &UPDATECONNECTIONALIASPERMISSIONINPUT_MEMBER_CONNECTION_ALIAS_PERMISSION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateConnectionAliasPermissionRequest");
+impl UpdateConnectionAliasPermissionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATECONNECTIONALIASPERMISSIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateConnectionAliasPermissionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.alias_id {
+            ser.write_string(&UPDATECONNECTIONALIASPERMISSIONINPUT_MEMBER_ALIAS_ID, val)?;
+        }
+        if let Some(ref val) = self.connection_alias_permission {
+            ser.write_struct(&UPDATECONNECTIONALIASPERMISSIONINPUT_MEMBER_CONNECTION_ALIAS_PERMISSION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATECONNECTIONALIASPERMISSIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.alias_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.connection_alias_permission = Some(crate::types::ConnectionAliasPermission::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateConnectionAliasPermissionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.alias_id = builder.alias_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateConnectionAliasPermissionInput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectionAliasPermissionInput`](crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionInput).
     pub fn builder() -> crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionInputBuilder {

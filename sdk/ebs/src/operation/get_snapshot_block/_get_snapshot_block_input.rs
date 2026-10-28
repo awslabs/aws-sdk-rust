@@ -28,6 +28,141 @@ impl GetSnapshotBlockInput {
         self.block_token.as_deref()
     }
 }
+static GETSNAPSHOTBLOCKINPUT_MEMBER_SNAPSHOT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#GetSnapshotBlockInput$SnapshotId",
+        "com.amazonaws.ebs.synthetic",
+        "GetSnapshotBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SnapshotId",
+    0,
+)
+.with_http_label();
+static GETSNAPSHOTBLOCKINPUT_MEMBER_BLOCK_INDEX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#GetSnapshotBlockInput$BlockIndex",
+        "com.amazonaws.ebs.synthetic",
+        "GetSnapshotBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "BlockIndex",
+    1,
+)
+.with_http_label();
+static GETSNAPSHOTBLOCKINPUT_MEMBER_BLOCK_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#GetSnapshotBlockInput$BlockToken",
+        "com.amazonaws.ebs.synthetic",
+        "GetSnapshotBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BlockToken",
+    2,
+)
+.with_http_query("blockToken");
+static GETSNAPSHOTBLOCKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ebs.synthetic#GetSnapshotBlockInput",
+        "com.amazonaws.ebs.synthetic",
+        "GetSnapshotBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETSNAPSHOTBLOCKINPUT_MEMBER_SNAPSHOT_ID,
+        &GETSNAPSHOTBLOCKINPUT_MEMBER_BLOCK_INDEX,
+        &GETSNAPSHOTBLOCKINPUT_MEMBER_BLOCK_TOKEN,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "GET",
+    "/snapshots/{SnapshotId}/blocks/{BlockIndex}",
+    None,
+))
+.with_no_body_members()
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetSnapshotBlockRequest");
+impl GetSnapshotBlockInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETSNAPSHOTBLOCKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetSnapshotBlockInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.snapshot_id {
+            ser.write_string(&GETSNAPSHOTBLOCKINPUT_MEMBER_SNAPSHOT_ID, val)?;
+        }
+        if let Some(ref val) = self.block_index {
+            ser.write_integer(&GETSNAPSHOTBLOCKINPUT_MEMBER_BLOCK_INDEX, *val)?;
+        }
+        if let Some(ref val) = self.block_token {
+            ser.write_string(&GETSNAPSHOTBLOCKINPUT_MEMBER_BLOCK_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_snapshot_block::builders::GetSnapshotBlockInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETSNAPSHOTBLOCKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.snapshot_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.block_index = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.block_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetSnapshotBlockInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.snapshot_id = builder.snapshot_id.or(Some(String::new()));
+        builder.block_index = builder.block_index.or(Some(0i32));
+        builder.block_token = builder.block_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetSnapshotBlockInput {
     /// Creates a new builder-style object to manufacture [`GetSnapshotBlockInput`](crate::operation::get_snapshot_block::GetSnapshotBlockInput).
     pub fn builder() -> crate::operation::get_snapshot_block::builders::GetSnapshotBlockInputBuilder {

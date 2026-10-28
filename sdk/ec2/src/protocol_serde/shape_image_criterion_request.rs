@@ -66,5 +66,10 @@ pub fn ser_image_criterion_request(
             list_23.finish();
         }
     }
+    #[allow(unused_mut)]
+    let mut scope_25 = writer.prefix("ScanResultCondition");
+    if let Some(var_26) = &input.scan_result_condition {
+        crate::protocol_serde::shape_scan_result_condition_request::ser_scan_result_condition_request(scope_25, var_26)?;
+    }
     Ok(())
 }

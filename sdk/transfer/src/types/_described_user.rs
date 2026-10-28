@@ -92,6 +92,318 @@ impl DescribedUser {
         self.user_name.as_deref()
     }
 }
+static DESCRIBEDUSER_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#DescribedUser$Arn", "com.amazonaws.transfer", "DescribedUser"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    0,
+);
+static DESCRIBEDUSER_MEMBER_HOME_DIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedUser$HomeDirectory",
+        "com.amazonaws.transfer",
+        "DescribedUser",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeDirectory",
+    1,
+);
+static DESCRIBEDUSER_MEMBER_HOME_DIRECTORY_MAPPINGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#HomeDirectoryMappings$member",
+        "com.amazonaws.transfer",
+        "HomeDirectoryMappings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEDUSER_MEMBER_HOME_DIRECTORY_MAPPINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedUser$HomeDirectoryMappings",
+        "com.amazonaws.transfer",
+        "DescribedUser",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "HomeDirectoryMappings",
+    2,
+)
+.with_list_member(&DESCRIBEDUSER_MEMBER_HOME_DIRECTORY_MAPPINGS_MEMBER);
+static DESCRIBEDUSER_MEMBER_HOME_DIRECTORY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedUser$HomeDirectoryType",
+        "com.amazonaws.transfer",
+        "DescribedUser",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeDirectoryType",
+    3,
+);
+static DESCRIBEDUSER_MEMBER_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#DescribedUser$Policy", "com.amazonaws.transfer", "DescribedUser"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Policy",
+    4,
+);
+static DESCRIBEDUSER_MEMBER_POSIX_PROFILE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedUser$PosixProfile",
+        "com.amazonaws.transfer",
+        "DescribedUser",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PosixProfile",
+    5,
+);
+static DESCRIBEDUSER_MEMBER_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#DescribedUser$Role", "com.amazonaws.transfer", "DescribedUser"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Role",
+    6,
+);
+static DESCRIBEDUSER_MEMBER_SSH_PUBLIC_KEYS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#SshPublicKeys$member", "com.amazonaws.transfer", "SshPublicKeys"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEDUSER_MEMBER_SSH_PUBLIC_KEYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedUser$SshPublicKeys",
+        "com.amazonaws.transfer",
+        "DescribedUser",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SshPublicKeys",
+    7,
+)
+.with_list_member(&DESCRIBEDUSER_MEMBER_SSH_PUBLIC_KEYS_MEMBER);
+static DESCRIBEDUSER_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#Tags$member", "com.amazonaws.transfer", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEDUSER_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#DescribedUser$Tags", "com.amazonaws.transfer", "DescribedUser"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    8,
+)
+.with_list_member(&DESCRIBEDUSER_MEMBER_TAGS_MEMBER);
+static DESCRIBEDUSER_MEMBER_USER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#DescribedUser$UserName", "com.amazonaws.transfer", "DescribedUser"),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserName",
+    9,
+);
+static DESCRIBEDUSER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#DescribedUser", "com.amazonaws.transfer", "DescribedUser"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEDUSER_MEMBER_ARN,
+        &DESCRIBEDUSER_MEMBER_HOME_DIRECTORY,
+        &DESCRIBEDUSER_MEMBER_HOME_DIRECTORY_MAPPINGS,
+        &DESCRIBEDUSER_MEMBER_HOME_DIRECTORY_TYPE,
+        &DESCRIBEDUSER_MEMBER_POLICY,
+        &DESCRIBEDUSER_MEMBER_POSIX_PROFILE,
+        &DESCRIBEDUSER_MEMBER_ROLE,
+        &DESCRIBEDUSER_MEMBER_SSH_PUBLIC_KEYS,
+        &DESCRIBEDUSER_MEMBER_TAGS,
+        &DESCRIBEDUSER_MEMBER_USER_NAME,
+    ],
+);
+impl DescribedUser {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEDUSER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribedUser {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.arn;
+            ser.write_string(&DESCRIBEDUSER_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.home_directory {
+            ser.write_string(&DESCRIBEDUSER_MEMBER_HOME_DIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.home_directory_mappings {
+            ser.write_list(
+                &DESCRIBEDUSER_MEMBER_HOME_DIRECTORY_MAPPINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::HomeDirectoryMapEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.home_directory_type {
+            ser.write_string(&DESCRIBEDUSER_MEMBER_HOME_DIRECTORY_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.policy {
+            ser.write_string(&DESCRIBEDUSER_MEMBER_POLICY, val)?;
+        }
+        if let Some(ref val) = self.posix_profile {
+            ser.write_struct(&DESCRIBEDUSER_MEMBER_POSIX_PROFILE, val)?;
+        }
+        if let Some(ref val) = self.role {
+            ser.write_string(&DESCRIBEDUSER_MEMBER_ROLE, val)?;
+        }
+        if let Some(ref val) = self.ssh_public_keys {
+            ser.write_list(
+                &DESCRIBEDUSER_MEMBER_SSH_PUBLIC_KEYS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::SshPublicKey::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &DESCRIBEDUSER_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.user_name {
+            ser.write_string(&DESCRIBEDUSER_MEMBER_USER_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DescribedUserBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEDUSER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_directory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_directory_mappings = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::HomeDirectoryMapEntry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_directory_type = Some(crate::types::HomeDirectoryType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.policy = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.posix_profile = Some(crate::types::PosixProfile::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ssh_public_keys = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SshPublicKey::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribedUser {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.arn = builder.arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribedUser {
     /// Creates a new builder-style object to manufacture [`DescribedUser`](crate::types::DescribedUser).
     pub fn builder() -> crate::types::builders::DescribedUserBuilder {

@@ -196,6 +196,461 @@ impl CreateResolverEndpointInput {
         self.ipv6_internet_access_enabled
     }
 }
+static CREATERESOLVERENDPOINTINPUT_MEMBER_CREATOR_REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverEndpointInput$CreatorRequestId",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreatorRequestId",
+    0,
+);
+static CREATERESOLVERENDPOINTINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverEndpointInput$Name",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static CREATERESOLVERENDPOINTINPUT_MEMBER_SECURITY_GROUP_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#SecurityGroupIds$member",
+        "com.amazonaws.route53resolver",
+        "SecurityGroupIds",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATERESOLVERENDPOINTINPUT_MEMBER_SECURITY_GROUP_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverEndpointInput$SecurityGroupIds",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecurityGroupIds",
+    2,
+)
+.with_list_member(&CREATERESOLVERENDPOINTINPUT_MEMBER_SECURITY_GROUP_IDS_MEMBER);
+static CREATERESOLVERENDPOINTINPUT_MEMBER_DIRECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverEndpointInput$Direction",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Direction",
+    3,
+);
+static CREATERESOLVERENDPOINTINPUT_MEMBER_IP_ADDRESSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#IpAddressesRequest$member",
+        "com.amazonaws.route53resolver",
+        "IpAddressesRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATERESOLVERENDPOINTINPUT_MEMBER_IP_ADDRESSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverEndpointInput$IpAddresses",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "IpAddresses",
+    4,
+)
+.with_list_member(&CREATERESOLVERENDPOINTINPUT_MEMBER_IP_ADDRESSES_MEMBER);
+static CREATERESOLVERENDPOINTINPUT_MEMBER_OUTPOST_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverEndpointInput$OutpostArn",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutpostArn",
+    5,
+);
+static CREATERESOLVERENDPOINTINPUT_MEMBER_PREFERRED_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverEndpointInput$PreferredInstanceType",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreferredInstanceType",
+    6,
+);
+static CREATERESOLVERENDPOINTINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.route53resolver#TagList$member", "com.amazonaws.route53resolver", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATERESOLVERENDPOINTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverEndpointInput$Tags",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    7,
+)
+.with_list_member(&CREATERESOLVERENDPOINTINPUT_MEMBER_TAGS_MEMBER);
+static CREATERESOLVERENDPOINTINPUT_MEMBER_RESOLVER_ENDPOINT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverEndpointInput$ResolverEndpointType",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResolverEndpointType",
+    8,
+);
+static CREATERESOLVERENDPOINTINPUT_MEMBER_PROTOCOLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ProtocolList$member",
+        "com.amazonaws.route53resolver",
+        "ProtocolList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATERESOLVERENDPOINTINPUT_MEMBER_PROTOCOLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverEndpointInput$Protocols",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Protocols",
+    9,
+)
+.with_list_member(&CREATERESOLVERENDPOINTINPUT_MEMBER_PROTOCOLS_MEMBER);
+static CREATERESOLVERENDPOINTINPUT_MEMBER_RNI_ENHANCED_METRICS_ENABLED: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.route53resolver.synthetic#CreateResolverEndpointInput$RniEnhancedMetricsEnabled",
+            "com.amazonaws.route53resolver.synthetic",
+            "CreateResolverEndpointInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "RniEnhancedMetricsEnabled",
+        10,
+    );
+static CREATERESOLVERENDPOINTINPUT_MEMBER_TARGET_NAME_SERVER_METRICS_ENABLED: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.route53resolver.synthetic#CreateResolverEndpointInput$TargetNameServerMetricsEnabled",
+            "com.amazonaws.route53resolver.synthetic",
+            "CreateResolverEndpointInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "TargetNameServerMetricsEnabled",
+        11,
+    );
+static CREATERESOLVERENDPOINTINPUT_MEMBER_DNS64_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverEndpointInput$Dns64Enabled",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Dns64Enabled",
+    12,
+);
+static CREATERESOLVERENDPOINTINPUT_MEMBER_IPV6_INTERNET_ACCESS_ENABLED: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.route53resolver.synthetic#CreateResolverEndpointInput$Ipv6InternetAccessEnabled",
+            "com.amazonaws.route53resolver.synthetic",
+            "CreateResolverEndpointInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "Ipv6InternetAccessEnabled",
+        13,
+    );
+static CREATERESOLVERENDPOINTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#CreateResolverEndpointInput",
+        "com.amazonaws.route53resolver.synthetic",
+        "CreateResolverEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATERESOLVERENDPOINTINPUT_MEMBER_CREATOR_REQUEST_ID,
+        &CREATERESOLVERENDPOINTINPUT_MEMBER_NAME,
+        &CREATERESOLVERENDPOINTINPUT_MEMBER_SECURITY_GROUP_IDS,
+        &CREATERESOLVERENDPOINTINPUT_MEMBER_DIRECTION,
+        &CREATERESOLVERENDPOINTINPUT_MEMBER_IP_ADDRESSES,
+        &CREATERESOLVERENDPOINTINPUT_MEMBER_OUTPOST_ARN,
+        &CREATERESOLVERENDPOINTINPUT_MEMBER_PREFERRED_INSTANCE_TYPE,
+        &CREATERESOLVERENDPOINTINPUT_MEMBER_TAGS,
+        &CREATERESOLVERENDPOINTINPUT_MEMBER_RESOLVER_ENDPOINT_TYPE,
+        &CREATERESOLVERENDPOINTINPUT_MEMBER_PROTOCOLS,
+        &CREATERESOLVERENDPOINTINPUT_MEMBER_RNI_ENHANCED_METRICS_ENABLED,
+        &CREATERESOLVERENDPOINTINPUT_MEMBER_TARGET_NAME_SERVER_METRICS_ENABLED,
+        &CREATERESOLVERENDPOINTINPUT_MEMBER_DNS64_ENABLED,
+        &CREATERESOLVERENDPOINTINPUT_MEMBER_IPV6_INTERNET_ACCESS_ENABLED,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateResolverEndpointRequest");
+impl CreateResolverEndpointInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATERESOLVERENDPOINTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateResolverEndpointInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.creator_request_id {
+            ser.write_string(&CREATERESOLVERENDPOINTINPUT_MEMBER_CREATOR_REQUEST_ID, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATERESOLVERENDPOINTINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.security_group_ids {
+            ser.write_list(
+                &CREATERESOLVERENDPOINTINPUT_MEMBER_SECURITY_GROUP_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.direction {
+            ser.write_string(&CREATERESOLVERENDPOINTINPUT_MEMBER_DIRECTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.ip_addresses {
+            ser.write_list(
+                &CREATERESOLVERENDPOINTINPUT_MEMBER_IP_ADDRESSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::IpAddressRequest::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.outpost_arn {
+            ser.write_string(&CREATERESOLVERENDPOINTINPUT_MEMBER_OUTPOST_ARN, val)?;
+        }
+        if let Some(ref val) = self.preferred_instance_type {
+            ser.write_string(&CREATERESOLVERENDPOINTINPUT_MEMBER_PREFERRED_INSTANCE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATERESOLVERENDPOINTINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.resolver_endpoint_type {
+            ser.write_string(&CREATERESOLVERENDPOINTINPUT_MEMBER_RESOLVER_ENDPOINT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.protocols {
+            ser.write_list(
+                &CREATERESOLVERENDPOINTINPUT_MEMBER_PROTOCOLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.rni_enhanced_metrics_enabled {
+            ser.write_boolean(&CREATERESOLVERENDPOINTINPUT_MEMBER_RNI_ENHANCED_METRICS_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.target_name_server_metrics_enabled {
+            ser.write_boolean(&CREATERESOLVERENDPOINTINPUT_MEMBER_TARGET_NAME_SERVER_METRICS_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.dns64_enabled {
+            ser.write_boolean(&CREATERESOLVERENDPOINTINPUT_MEMBER_DNS64_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.ipv6_internet_access_enabled {
+            ser.write_boolean(&CREATERESOLVERENDPOINTINPUT_MEMBER_IPV6_INTERNET_ACCESS_ENABLED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_resolver_endpoint::builders::CreateResolverEndpointInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATERESOLVERENDPOINTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creator_request_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_group_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.direction = Some(crate::types::ResolverEndpointDirection::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_addresses = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::IpAddressRequest::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.outpost_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preferred_instance_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolver_endpoint_type = Some(crate::types::ResolverEndpointType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocols = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Protocol::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rni_enhanced_metrics_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_name_server_metrics_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns64_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ipv6_internet_access_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateResolverEndpointInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.creator_request_id = builder.creator_request_id.or(Some(String::new()));
+        builder.security_group_ids = builder.security_group_ids.or(Some(Vec::new()));
+        builder.ip_addresses = builder.ip_addresses.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateResolverEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreateResolverEndpointInput`](crate::operation::create_resolver_endpoint::CreateResolverEndpointInput).
     pub fn builder() -> crate::operation::create_resolver_endpoint::builders::CreateResolverEndpointInputBuilder {

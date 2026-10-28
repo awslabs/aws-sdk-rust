@@ -328,6 +328,32 @@ impl ImageAvailableFluentBuilder {
     /// <li>
     /// <p><code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p></li>
     /// <li>
+    /// <p><code>scan-result.critical-fix-available-since</code> - The earliest date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), at which Amazon Inspector reported a fix as available for a <code>critical</code> severity finding on the AMI.</p></li>
+    /// <li>
+    /// <p><code>scan-result.finding-scan-date</code> - The date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), of the most recent Amazon Inspector scan of the AMI.</p></li>
+    /// <li>
+    /// <p><code>scan-result.high-fix-available-since</code> - The earliest date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), at which Amazon Inspector reported a fix as available for a <code>high</code> severity finding on the AMI.</p></li>
+    /// <li>
+    /// <p><code>scan-result.highest-finding-severity-label</code> - The highest severity among the AMI's Amazon Inspector findings, whether or not a fix is available. The valid values are the following Amazon Inspector severity levels:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>informational</code> - CVSS score of 0.</p></li>
+    /// <li>
+    /// <p><code>low</code> - CVSS score of 0.1 to 3.9.</p></li>
+    /// <li>
+    /// <p><code>medium</code> - CVSS score of 4.0 to 6.9.</p></li>
+    /// <li>
+    /// <p><code>high</code> - CVSS score of 7.0 to 8.9.</p></li>
+    /// <li>
+    /// <p><code>critical</code> - CVSS score of 9.0 to 10.0.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>scan-result.informational-fix-available-since</code> - The earliest date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), at which Amazon Inspector reported a fix as available for an <code>informational</code> severity finding on the AMI.</p></li>
+    /// <li>
+    /// <p><code>scan-result.low-fix-available-since</code> - The earliest date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), at which Amazon Inspector reported a fix as available for a <code>low</code> severity finding on the AMI.</p></li>
+    /// <li>
+    /// <p><code>scan-result.medium-fix-available-since</code> - The earliest date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), at which Amazon Inspector reported a fix as available for a <code>medium</code> severity finding on the AMI.</p></li>
+    /// <li>
     /// <p><code>source-image-id</code> - The ID of the source AMI from which the AMI was created.</p></li>
     /// <li>
     /// <p><code>source-image-region</code> - The Region of the source AMI.</p></li>
@@ -427,6 +453,32 @@ impl ImageAvailableFluentBuilder {
     /// <li>
     /// <p><code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p></li>
     /// <li>
+    /// <p><code>scan-result.critical-fix-available-since</code> - The earliest date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), at which Amazon Inspector reported a fix as available for a <code>critical</code> severity finding on the AMI.</p></li>
+    /// <li>
+    /// <p><code>scan-result.finding-scan-date</code> - The date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), of the most recent Amazon Inspector scan of the AMI.</p></li>
+    /// <li>
+    /// <p><code>scan-result.high-fix-available-since</code> - The earliest date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), at which Amazon Inspector reported a fix as available for a <code>high</code> severity finding on the AMI.</p></li>
+    /// <li>
+    /// <p><code>scan-result.highest-finding-severity-label</code> - The highest severity among the AMI's Amazon Inspector findings, whether or not a fix is available. The valid values are the following Amazon Inspector severity levels:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>informational</code> - CVSS score of 0.</p></li>
+    /// <li>
+    /// <p><code>low</code> - CVSS score of 0.1 to 3.9.</p></li>
+    /// <li>
+    /// <p><code>medium</code> - CVSS score of 4.0 to 6.9.</p></li>
+    /// <li>
+    /// <p><code>high</code> - CVSS score of 7.0 to 8.9.</p></li>
+    /// <li>
+    /// <p><code>critical</code> - CVSS score of 9.0 to 10.0.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>scan-result.informational-fix-available-since</code> - The earliest date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), at which Amazon Inspector reported a fix as available for an <code>informational</code> severity finding on the AMI.</p></li>
+    /// <li>
+    /// <p><code>scan-result.low-fix-available-since</code> - The earliest date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), at which Amazon Inspector reported a fix as available for a <code>low</code> severity finding on the AMI.</p></li>
+    /// <li>
+    /// <p><code>scan-result.medium-fix-available-since</code> - The earliest date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), at which Amazon Inspector reported a fix as available for a <code>medium</code> severity finding on the AMI.</p></li>
+    /// <li>
     /// <p><code>source-image-id</code> - The ID of the source AMI from which the AMI was created.</p></li>
     /// <li>
     /// <p><code>source-image-region</code> - The Region of the source AMI.</p></li>
@@ -525,6 +577,32 @@ impl ImageAvailableFluentBuilder {
     /// <p><code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).</p></li>
     /// <li>
     /// <p><code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p></li>
+    /// <li>
+    /// <p><code>scan-result.critical-fix-available-since</code> - The earliest date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), at which Amazon Inspector reported a fix as available for a <code>critical</code> severity finding on the AMI.</p></li>
+    /// <li>
+    /// <p><code>scan-result.finding-scan-date</code> - The date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), of the most recent Amazon Inspector scan of the AMI.</p></li>
+    /// <li>
+    /// <p><code>scan-result.high-fix-available-since</code> - The earliest date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), at which Amazon Inspector reported a fix as available for a <code>high</code> severity finding on the AMI.</p></li>
+    /// <li>
+    /// <p><code>scan-result.highest-finding-severity-label</code> - The highest severity among the AMI's Amazon Inspector findings, whether or not a fix is available. The valid values are the following Amazon Inspector severity levels:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>informational</code> - CVSS score of 0.</p></li>
+    /// <li>
+    /// <p><code>low</code> - CVSS score of 0.1 to 3.9.</p></li>
+    /// <li>
+    /// <p><code>medium</code> - CVSS score of 4.0 to 6.9.</p></li>
+    /// <li>
+    /// <p><code>high</code> - CVSS score of 7.0 to 8.9.</p></li>
+    /// <li>
+    /// <p><code>critical</code> - CVSS score of 9.0 to 10.0.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>scan-result.informational-fix-available-since</code> - The earliest date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), at which Amazon Inspector reported a fix as available for an <code>informational</code> severity finding on the AMI.</p></li>
+    /// <li>
+    /// <p><code>scan-result.low-fix-available-since</code> - The earliest date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), at which Amazon Inspector reported a fix as available for a <code>low</code> severity finding on the AMI.</p></li>
+    /// <li>
+    /// <p><code>scan-result.medium-fix-available-since</code> - The earliest date and time, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), at which Amazon Inspector reported a fix as available for a <code>medium</code> severity finding on the AMI.</p></li>
     /// <li>
     /// <p><code>source-image-id</code> - The ID of the source AMI from which the AMI was created.</p></li>
     /// <li>

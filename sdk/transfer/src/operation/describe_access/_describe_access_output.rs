@@ -20,6 +20,102 @@ impl DescribeAccessOutput {
         self.access.as_ref()
     }
 }
+static DESCRIBEACCESSOUTPUT_MEMBER_SERVER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#DescribeAccessOutput$ServerId",
+        "com.amazonaws.transfer.synthetic",
+        "DescribeAccessOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServerId",
+    0,
+);
+static DESCRIBEACCESSOUTPUT_MEMBER_ACCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#DescribeAccessOutput$Access",
+        "com.amazonaws.transfer.synthetic",
+        "DescribeAccessOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Access",
+    1,
+);
+static DESCRIBEACCESSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#DescribeAccessOutput",
+        "com.amazonaws.transfer.synthetic",
+        "DescribeAccessOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESCRIBEACCESSOUTPUT_MEMBER_SERVER_ID, &DESCRIBEACCESSOUTPUT_MEMBER_ACCESS],
+)
+.with_original_name("DescribeAccessResponse");
+impl DescribeAccessOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEACCESSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeAccessOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.server_id;
+            ser.write_string(&DESCRIBEACCESSOUTPUT_MEMBER_SERVER_ID, val)?;
+        }
+        if let Some(ref val) = self.access {
+            ser.write_struct(&DESCRIBEACCESSOUTPUT_MEMBER_ACCESS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_access::builders::DescribeAccessOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEACCESSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.server_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access = Some(crate::types::DescribedAccess::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeAccessOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.server_id = builder.server_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

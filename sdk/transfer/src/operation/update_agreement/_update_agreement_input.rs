@@ -132,6 +132,299 @@ impl UpdateAgreementInput {
         self.custom_directories.as_ref()
     }
 }
+static UPDATEAGREEMENTINPUT_MEMBER_AGREEMENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateAgreementInput$AgreementId",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateAgreementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AgreementId",
+    0,
+);
+static UPDATEAGREEMENTINPUT_MEMBER_SERVER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateAgreementInput$ServerId",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateAgreementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServerId",
+    1,
+);
+static UPDATEAGREEMENTINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateAgreementInput$Description",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateAgreementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static UPDATEAGREEMENTINPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateAgreementInput$Status",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateAgreementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    3,
+);
+static UPDATEAGREEMENTINPUT_MEMBER_LOCAL_PROFILE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateAgreementInput$LocalProfileId",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateAgreementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocalProfileId",
+    4,
+);
+static UPDATEAGREEMENTINPUT_MEMBER_PARTNER_PROFILE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateAgreementInput$PartnerProfileId",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateAgreementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PartnerProfileId",
+    5,
+);
+static UPDATEAGREEMENTINPUT_MEMBER_BASE_DIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateAgreementInput$BaseDirectory",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateAgreementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BaseDirectory",
+    6,
+);
+static UPDATEAGREEMENTINPUT_MEMBER_ACCESS_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateAgreementInput$AccessRole",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateAgreementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccessRole",
+    7,
+);
+static UPDATEAGREEMENTINPUT_MEMBER_PRESERVE_FILENAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateAgreementInput$PreserveFilename",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateAgreementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreserveFilename",
+    8,
+);
+static UPDATEAGREEMENTINPUT_MEMBER_ENFORCE_MESSAGE_SIGNING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateAgreementInput$EnforceMessageSigning",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateAgreementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EnforceMessageSigning",
+    9,
+);
+static UPDATEAGREEMENTINPUT_MEMBER_CUSTOM_DIRECTORIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateAgreementInput$CustomDirectories",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateAgreementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CustomDirectories",
+    10,
+);
+static UPDATEAGREEMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateAgreementInput",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateAgreementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEAGREEMENTINPUT_MEMBER_AGREEMENT_ID,
+        &UPDATEAGREEMENTINPUT_MEMBER_SERVER_ID,
+        &UPDATEAGREEMENTINPUT_MEMBER_DESCRIPTION,
+        &UPDATEAGREEMENTINPUT_MEMBER_STATUS,
+        &UPDATEAGREEMENTINPUT_MEMBER_LOCAL_PROFILE_ID,
+        &UPDATEAGREEMENTINPUT_MEMBER_PARTNER_PROFILE_ID,
+        &UPDATEAGREEMENTINPUT_MEMBER_BASE_DIRECTORY,
+        &UPDATEAGREEMENTINPUT_MEMBER_ACCESS_ROLE,
+        &UPDATEAGREEMENTINPUT_MEMBER_PRESERVE_FILENAME,
+        &UPDATEAGREEMENTINPUT_MEMBER_ENFORCE_MESSAGE_SIGNING,
+        &UPDATEAGREEMENTINPUT_MEMBER_CUSTOM_DIRECTORIES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateAgreementRequest");
+impl UpdateAgreementInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEAGREEMENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateAgreementInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.agreement_id {
+            ser.write_string(&UPDATEAGREEMENTINPUT_MEMBER_AGREEMENT_ID, val)?;
+        }
+        if let Some(ref val) = self.server_id {
+            ser.write_string(&UPDATEAGREEMENTINPUT_MEMBER_SERVER_ID, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATEAGREEMENTINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&UPDATEAGREEMENTINPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.local_profile_id {
+            ser.write_string(&UPDATEAGREEMENTINPUT_MEMBER_LOCAL_PROFILE_ID, val)?;
+        }
+        if let Some(ref val) = self.partner_profile_id {
+            ser.write_string(&UPDATEAGREEMENTINPUT_MEMBER_PARTNER_PROFILE_ID, val)?;
+        }
+        if let Some(ref val) = self.base_directory {
+            ser.write_string(&UPDATEAGREEMENTINPUT_MEMBER_BASE_DIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.access_role {
+            ser.write_string(&UPDATEAGREEMENTINPUT_MEMBER_ACCESS_ROLE, val)?;
+        }
+        if let Some(ref val) = self.preserve_filename {
+            ser.write_string(&UPDATEAGREEMENTINPUT_MEMBER_PRESERVE_FILENAME, val.as_str())?;
+        }
+        if let Some(ref val) = self.enforce_message_signing {
+            ser.write_string(&UPDATEAGREEMENTINPUT_MEMBER_ENFORCE_MESSAGE_SIGNING, val.as_str())?;
+        }
+        if let Some(ref val) = self.custom_directories {
+            ser.write_struct(&UPDATEAGREEMENTINPUT_MEMBER_CUSTOM_DIRECTORIES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_agreement::builders::UpdateAgreementInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEAGREEMENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agreement_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.server_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::AgreementStatusType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.local_profile_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.partner_profile_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.base_directory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preserve_filename = Some(crate::types::PreserveFilenameType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enforce_message_signing = Some(crate::types::EnforceMessageSigningType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_directories = Some(crate::types::CustomDirectoriesType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateAgreementInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.agreement_id = builder.agreement_id.or(Some(String::new()));
+        builder.server_id = builder.server_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateAgreementInput {
     /// Creates a new builder-style object to manufacture [`UpdateAgreementInput`](crate::operation::update_agreement::UpdateAgreementInput).
     pub fn builder() -> crate::operation::update_agreement::builders::UpdateAgreementInputBuilder {

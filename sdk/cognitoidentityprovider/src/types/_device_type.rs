@@ -39,6 +39,195 @@ impl DeviceType {
         self.device_last_authenticated_date.as_ref()
     }
 }
+static DEVICETYPE_MEMBER_DEVICE_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DeviceType$DeviceKey",
+        "com.amazonaws.cognitoidentityprovider",
+        "DeviceType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceKey",
+    0,
+);
+static DEVICETYPE_MEMBER_DEVICE_ATTRIBUTES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AttributeListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "AttributeListType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DEVICETYPE_MEMBER_DEVICE_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DeviceType$DeviceAttributes",
+        "com.amazonaws.cognitoidentityprovider",
+        "DeviceType",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DeviceAttributes",
+    1,
+)
+.with_list_member(&DEVICETYPE_MEMBER_DEVICE_ATTRIBUTES_MEMBER);
+static DEVICETYPE_MEMBER_DEVICE_CREATE_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DeviceType$DeviceCreateDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "DeviceType",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "DeviceCreateDate",
+    2,
+);
+static DEVICETYPE_MEMBER_DEVICE_LAST_MODIFIED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DeviceType$DeviceLastModifiedDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "DeviceType",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "DeviceLastModifiedDate",
+    3,
+);
+static DEVICETYPE_MEMBER_DEVICE_LAST_AUTHENTICATED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DeviceType$DeviceLastAuthenticatedDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "DeviceType",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "DeviceLastAuthenticatedDate",
+    4,
+);
+static DEVICETYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#DeviceType",
+        "com.amazonaws.cognitoidentityprovider",
+        "DeviceType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEVICETYPE_MEMBER_DEVICE_KEY,
+        &DEVICETYPE_MEMBER_DEVICE_ATTRIBUTES,
+        &DEVICETYPE_MEMBER_DEVICE_CREATE_DATE,
+        &DEVICETYPE_MEMBER_DEVICE_LAST_MODIFIED_DATE,
+        &DEVICETYPE_MEMBER_DEVICE_LAST_AUTHENTICATED_DATE,
+    ],
+);
+impl DeviceType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEVICETYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeviceType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.device_key {
+            ser.write_string(&DEVICETYPE_MEMBER_DEVICE_KEY, val)?;
+        }
+        if let Some(ref val) = self.device_attributes {
+            ser.write_list(
+                &DEVICETYPE_MEMBER_DEVICE_ATTRIBUTES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AttributeType::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.device_create_date {
+            ser.write_timestamp(&DEVICETYPE_MEMBER_DEVICE_CREATE_DATE, val)?;
+        }
+        if let Some(ref val) = self.device_last_modified_date {
+            ser.write_timestamp(&DEVICETYPE_MEMBER_DEVICE_LAST_MODIFIED_DATE, val)?;
+        }
+        if let Some(ref val) = self.device_last_authenticated_date {
+            ser.write_timestamp(&DEVICETYPE_MEMBER_DEVICE_LAST_AUTHENTICATED_DATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeviceTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEVICETYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_attributes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AttributeType::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_create_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_last_modified_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_last_authenticated_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeviceType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeviceType {
     /// Creates a new builder-style object to manufacture [`DeviceType`](crate::types::DeviceType).
     pub fn builder() -> crate::types::builders::DeviceTypeBuilder {

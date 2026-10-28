@@ -31,6 +31,129 @@ impl ::std::fmt::Debug for DeleteUserAttributesInput {
         formatter.finish()
     }
 }
+static DELETEUSERATTRIBUTESINPUT_MEMBER_USER_ATTRIBUTE_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AttributeNameListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "AttributeNameListType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DELETEUSERATTRIBUTESINPUT_MEMBER_USER_ATTRIBUTE_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#DeleteUserAttributesInput$UserAttributeNames",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "DeleteUserAttributesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "UserAttributeNames",
+    0,
+)
+.with_list_member(&DELETEUSERATTRIBUTESINPUT_MEMBER_USER_ATTRIBUTE_NAMES_MEMBER);
+static DELETEUSERATTRIBUTESINPUT_MEMBER_ACCESS_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#DeleteUserAttributesInput$AccessToken",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "DeleteUserAttributesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccessToken",
+    1,
+);
+static DELETEUSERATTRIBUTESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#DeleteUserAttributesInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "DeleteUserAttributesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELETEUSERATTRIBUTESINPUT_MEMBER_USER_ATTRIBUTE_NAMES,
+        &DELETEUSERATTRIBUTESINPUT_MEMBER_ACCESS_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteUserAttributesRequest");
+impl DeleteUserAttributesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEUSERATTRIBUTESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteUserAttributesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_attribute_names {
+            ser.write_list(
+                &DELETEUSERATTRIBUTESINPUT_MEMBER_USER_ATTRIBUTE_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.access_token {
+            ser.write_string(&DELETEUSERATTRIBUTESINPUT_MEMBER_ACCESS_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_user_attributes::builders::DeleteUserAttributesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEUSERATTRIBUTESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_attribute_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteUserAttributesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_attribute_names = builder.user_attribute_names.or(Some(Vec::new()));
+        builder.access_token = builder.access_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteUserAttributesInput {
     /// Creates a new builder-style object to manufacture [`DeleteUserAttributesInput`](crate::operation::delete_user_attributes::DeleteUserAttributesInput).
     pub fn builder() -> crate::operation::delete_user_attributes::builders::DeleteUserAttributesInputBuilder {

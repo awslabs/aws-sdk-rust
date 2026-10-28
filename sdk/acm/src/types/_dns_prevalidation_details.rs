@@ -25,6 +25,127 @@ impl DnsPrevalidationDetails {
         self.resource_record.as_ref()
     }
 }
+static DNSPREVALIDATIONDETAILS_MEMBER_DOMAIN_SCOPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DnsPrevalidationDetails$DomainScope",
+        "com.amazonaws.acm",
+        "DnsPrevalidationDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DomainScope",
+    0,
+);
+static DNSPREVALIDATIONDETAILS_MEMBER_HOSTED_ZONE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DnsPrevalidationDetails$HostedZoneId",
+        "com.amazonaws.acm",
+        "DnsPrevalidationDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HostedZoneId",
+    1,
+);
+static DNSPREVALIDATIONDETAILS_MEMBER_RESOURCE_RECORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DnsPrevalidationDetails$ResourceRecord",
+        "com.amazonaws.acm",
+        "DnsPrevalidationDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResourceRecord",
+    2,
+);
+static DNSPREVALIDATIONDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DnsPrevalidationDetails",
+        "com.amazonaws.acm",
+        "DnsPrevalidationDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DNSPREVALIDATIONDETAILS_MEMBER_DOMAIN_SCOPE,
+        &DNSPREVALIDATIONDETAILS_MEMBER_HOSTED_ZONE_ID,
+        &DNSPREVALIDATIONDETAILS_MEMBER_RESOURCE_RECORD,
+    ],
+);
+impl DnsPrevalidationDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DNSPREVALIDATIONDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DnsPrevalidationDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_scope {
+            ser.write_struct(&DNSPREVALIDATIONDETAILS_MEMBER_DOMAIN_SCOPE, val)?;
+        }
+        if let Some(ref val) = self.hosted_zone_id {
+            ser.write_string(&DNSPREVALIDATIONDETAILS_MEMBER_HOSTED_ZONE_ID, val)?;
+        }
+        if let Some(ref val) = self.resource_record {
+            ser.write_struct(&DNSPREVALIDATIONDETAILS_MEMBER_RESOURCE_RECORD, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DnsPrevalidationDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DNSPREVALIDATIONDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_scope = Some(crate::types::DomainScope::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hosted_zone_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_record = Some(crate::types::ResourceRecord::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DnsPrevalidationDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DnsPrevalidationDetails {
     /// Creates a new builder-style object to manufacture [`DnsPrevalidationDetails`](crate::types::DnsPrevalidationDetails).
     pub fn builder() -> crate::types::builders::DnsPrevalidationDetailsBuilder {

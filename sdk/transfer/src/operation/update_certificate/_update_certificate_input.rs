@@ -30,6 +30,151 @@ impl UpdateCertificateInput {
         self.description.as_deref()
     }
 }
+static UPDATECERTIFICATEINPUT_MEMBER_CERTIFICATE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateCertificateInput$CertificateId",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertificateId",
+    0,
+);
+static UPDATECERTIFICATEINPUT_MEMBER_ACTIVE_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateCertificateInput$ActiveDate",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ActiveDate",
+    1,
+);
+static UPDATECERTIFICATEINPUT_MEMBER_INACTIVE_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateCertificateInput$InactiveDate",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "InactiveDate",
+    2,
+);
+static UPDATECERTIFICATEINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateCertificateInput$Description",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    3,
+);
+static UPDATECERTIFICATEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateCertificateInput",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATECERTIFICATEINPUT_MEMBER_CERTIFICATE_ID,
+        &UPDATECERTIFICATEINPUT_MEMBER_ACTIVE_DATE,
+        &UPDATECERTIFICATEINPUT_MEMBER_INACTIVE_DATE,
+        &UPDATECERTIFICATEINPUT_MEMBER_DESCRIPTION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateCertificateRequest");
+impl UpdateCertificateInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATECERTIFICATEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateCertificateInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.certificate_id {
+            ser.write_string(&UPDATECERTIFICATEINPUT_MEMBER_CERTIFICATE_ID, val)?;
+        }
+        if let Some(ref val) = self.active_date {
+            ser.write_timestamp(&UPDATECERTIFICATEINPUT_MEMBER_ACTIVE_DATE, val)?;
+        }
+        if let Some(ref val) = self.inactive_date {
+            ser.write_timestamp(&UPDATECERTIFICATEINPUT_MEMBER_INACTIVE_DATE, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATECERTIFICATEINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_certificate::builders::UpdateCertificateInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATECERTIFICATEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.active_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inactive_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateCertificateInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.certificate_id = builder.certificate_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateCertificateInput {
     /// Creates a new builder-style object to manufacture [`UpdateCertificateInput`](crate::operation::update_certificate::UpdateCertificateInput).
     pub fn builder() -> crate::operation::update_certificate::builders::UpdateCertificateInputBuilder {

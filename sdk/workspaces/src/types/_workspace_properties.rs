@@ -89,6 +89,278 @@ impl WorkspaceProperties {
         self.nested_virtualization_enabled
     }
 }
+static WORKSPACEPROPERTIES_MEMBER_RUNNING_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceProperties$RunningMode",
+        "com.amazonaws.workspaces",
+        "WorkspaceProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RunningMode",
+    0,
+);
+static WORKSPACEPROPERTIES_MEMBER_RUNNING_MODE_AUTO_STOP_TIMEOUT_IN_MINUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces#WorkspaceProperties$RunningModeAutoStopTimeoutInMinutes",
+            "com.amazonaws.workspaces",
+            "WorkspaceProperties",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "RunningModeAutoStopTimeoutInMinutes",
+        1,
+    );
+static WORKSPACEPROPERTIES_MEMBER_ROOT_VOLUME_SIZE_GIB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceProperties$RootVolumeSizeGib",
+        "com.amazonaws.workspaces",
+        "WorkspaceProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "RootVolumeSizeGib",
+    2,
+);
+static WORKSPACEPROPERTIES_MEMBER_USER_VOLUME_SIZE_GIB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceProperties$UserVolumeSizeGib",
+        "com.amazonaws.workspaces",
+        "WorkspaceProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "UserVolumeSizeGib",
+    3,
+);
+static WORKSPACEPROPERTIES_MEMBER_COMPUTE_TYPE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceProperties$ComputeTypeName",
+        "com.amazonaws.workspaces",
+        "WorkspaceProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComputeTypeName",
+    4,
+);
+static WORKSPACEPROPERTIES_MEMBER_PROTOCOLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#ProtocolList$member", "com.amazonaws.workspaces", "ProtocolList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static WORKSPACEPROPERTIES_MEMBER_PROTOCOLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceProperties$Protocols",
+        "com.amazonaws.workspaces",
+        "WorkspaceProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Protocols",
+    5,
+)
+.with_list_member(&WORKSPACEPROPERTIES_MEMBER_PROTOCOLS_MEMBER);
+static WORKSPACEPROPERTIES_MEMBER_OPERATING_SYSTEM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceProperties$OperatingSystemName",
+        "com.amazonaws.workspaces",
+        "WorkspaceProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OperatingSystemName",
+    6,
+);
+static WORKSPACEPROPERTIES_MEMBER_GLOBAL_ACCELERATOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceProperties$GlobalAccelerator",
+        "com.amazonaws.workspaces",
+        "WorkspaceProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "GlobalAccelerator",
+    7,
+);
+static WORKSPACEPROPERTIES_MEMBER_NESTED_VIRTUALIZATION_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceProperties$NestedVirtualizationEnabled",
+        "com.amazonaws.workspaces",
+        "WorkspaceProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "NestedVirtualizationEnabled",
+    8,
+);
+static WORKSPACEPROPERTIES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceProperties",
+        "com.amazonaws.workspaces",
+        "WorkspaceProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKSPACEPROPERTIES_MEMBER_RUNNING_MODE,
+        &WORKSPACEPROPERTIES_MEMBER_RUNNING_MODE_AUTO_STOP_TIMEOUT_IN_MINUTES,
+        &WORKSPACEPROPERTIES_MEMBER_ROOT_VOLUME_SIZE_GIB,
+        &WORKSPACEPROPERTIES_MEMBER_USER_VOLUME_SIZE_GIB,
+        &WORKSPACEPROPERTIES_MEMBER_COMPUTE_TYPE_NAME,
+        &WORKSPACEPROPERTIES_MEMBER_PROTOCOLS,
+        &WORKSPACEPROPERTIES_MEMBER_OPERATING_SYSTEM_NAME,
+        &WORKSPACEPROPERTIES_MEMBER_GLOBAL_ACCELERATOR,
+        &WORKSPACEPROPERTIES_MEMBER_NESTED_VIRTUALIZATION_ENABLED,
+    ],
+);
+impl WorkspaceProperties {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKSPACEPROPERTIES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WorkspaceProperties {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.running_mode {
+            ser.write_string(&WORKSPACEPROPERTIES_MEMBER_RUNNING_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.running_mode_auto_stop_timeout_in_minutes {
+            ser.write_integer(&WORKSPACEPROPERTIES_MEMBER_RUNNING_MODE_AUTO_STOP_TIMEOUT_IN_MINUTES, *val)?;
+        }
+        if let Some(ref val) = self.root_volume_size_gib {
+            ser.write_integer(&WORKSPACEPROPERTIES_MEMBER_ROOT_VOLUME_SIZE_GIB, *val)?;
+        }
+        if let Some(ref val) = self.user_volume_size_gib {
+            ser.write_integer(&WORKSPACEPROPERTIES_MEMBER_USER_VOLUME_SIZE_GIB, *val)?;
+        }
+        if let Some(ref val) = self.compute_type_name {
+            ser.write_string(&WORKSPACEPROPERTIES_MEMBER_COMPUTE_TYPE_NAME, val.as_str())?;
+        }
+        if let Some(ref val) = self.protocols {
+            ser.write_list(
+                &WORKSPACEPROPERTIES_MEMBER_PROTOCOLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.operating_system_name {
+            ser.write_string(&WORKSPACEPROPERTIES_MEMBER_OPERATING_SYSTEM_NAME, val.as_str())?;
+        }
+        if let Some(ref val) = self.global_accelerator {
+            ser.write_struct(&WORKSPACEPROPERTIES_MEMBER_GLOBAL_ACCELERATOR, val)?;
+        }
+        if let Some(ref val) = self.nested_virtualization_enabled {
+            ser.write_boolean(&WORKSPACEPROPERTIES_MEMBER_NESTED_VIRTUALIZATION_ENABLED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkspacePropertiesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKSPACEPROPERTIES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.running_mode = Some(crate::types::RunningMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.running_mode_auto_stop_timeout_in_minutes = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.root_volume_size_gib = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_volume_size_gib = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_type_name = Some(crate::types::Compute::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocols = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Protocol::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operating_system_name = Some(crate::types::OperatingSystemName::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.global_accelerator = Some(crate::types::GlobalAcceleratorForWorkSpace::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.nested_virtualization_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WorkspaceProperties {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl WorkspaceProperties {
     /// Creates a new builder-style object to manufacture [`WorkspaceProperties`](crate::types::WorkspaceProperties).
     pub fn builder() -> crate::types::builders::WorkspacePropertiesBuilder {

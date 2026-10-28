@@ -13,6 +13,84 @@ impl CreateVolumeFromBackupOutput {
         self.volume.as_ref()
     }
 }
+static CREATEVOLUMEFROMBACKUPOUTPUT_MEMBER_VOLUME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateVolumeFromBackupOutput$Volume",
+        "com.amazonaws.fsx.synthetic",
+        "CreateVolumeFromBackupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Volume",
+    0,
+);
+static CREATEVOLUMEFROMBACKUPOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#CreateVolumeFromBackupOutput",
+        "com.amazonaws.fsx.synthetic",
+        "CreateVolumeFromBackupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CREATEVOLUMEFROMBACKUPOUTPUT_MEMBER_VOLUME],
+)
+.with_original_name("CreateVolumeFromBackupResponse");
+impl CreateVolumeFromBackupOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEVOLUMEFROMBACKUPOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateVolumeFromBackupOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.volume {
+            ser.write_struct(&CREATEVOLUMEFROMBACKUPOUTPUT_MEMBER_VOLUME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEVOLUMEFROMBACKUPOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume = Some(crate::types::Volume::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateVolumeFromBackupOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for CreateVolumeFromBackupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

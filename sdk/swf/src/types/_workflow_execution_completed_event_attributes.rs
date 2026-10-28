@@ -19,6 +19,104 @@ impl WorkflowExecutionCompletedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+static WORKFLOWEXECUTIONCOMPLETEDEVENTATTRIBUTES_MEMBER_RESULT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionCompletedEventAttributes$result",
+        "com.amazonaws.swf",
+        "WorkflowExecutionCompletedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "result",
+    0,
+);
+static WORKFLOWEXECUTIONCOMPLETEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#WorkflowExecutionCompletedEventAttributes$decisionTaskCompletedEventId",
+            "com.amazonaws.swf",
+            "WorkflowExecutionCompletedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "decisionTaskCompletedEventId",
+        1,
+    );
+static WORKFLOWEXECUTIONCOMPLETEDEVENTATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionCompletedEventAttributes",
+        "com.amazonaws.swf",
+        "WorkflowExecutionCompletedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKFLOWEXECUTIONCOMPLETEDEVENTATTRIBUTES_MEMBER_RESULT,
+        &WORKFLOWEXECUTIONCOMPLETEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID,
+    ],
+);
+impl WorkflowExecutionCompletedEventAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKFLOWEXECUTIONCOMPLETEDEVENTATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WorkflowExecutionCompletedEventAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.result {
+            ser.write_string(&WORKFLOWEXECUTIONCOMPLETEDEVENTATTRIBUTES_MEMBER_RESULT, val)?;
+        }
+        {
+            let val = &self.decision_task_completed_event_id;
+            ser.write_long(&WORKFLOWEXECUTIONCOMPLETEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkflowExecutionCompletedEventAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKFLOWEXECUTIONCOMPLETEDEVENTATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.result = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.decision_task_completed_event_id = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WorkflowExecutionCompletedEventAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl WorkflowExecutionCompletedEventAttributes {
     /// Creates a new builder-style object to manufacture [`WorkflowExecutionCompletedEventAttributes`](crate::types::WorkflowExecutionCompletedEventAttributes).
     pub fn builder() -> crate::types::builders::WorkflowExecutionCompletedEventAttributesBuilder {

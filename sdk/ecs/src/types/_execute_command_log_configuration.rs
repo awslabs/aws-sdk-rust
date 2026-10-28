@@ -45,6 +45,165 @@ impl ExecuteCommandLogConfiguration {
         self.s3_key_prefix.as_deref()
     }
 }
+static EXECUTECOMMANDLOGCONFIGURATION_MEMBER_CLOUD_WATCH_LOG_GROUP_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#ExecuteCommandLogConfiguration$cloudWatchLogGroupName",
+            "com.amazonaws.ecs",
+            "ExecuteCommandLogConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "cloudWatchLogGroupName",
+        0,
+    );
+static EXECUTECOMMANDLOGCONFIGURATION_MEMBER_CLOUD_WATCH_ENCRYPTION_ENABLED: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#ExecuteCommandLogConfiguration$cloudWatchEncryptionEnabled",
+            "com.amazonaws.ecs",
+            "ExecuteCommandLogConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "cloudWatchEncryptionEnabled",
+        1,
+    );
+static EXECUTECOMMANDLOGCONFIGURATION_MEMBER_S3_BUCKET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ExecuteCommandLogConfiguration$s3BucketName",
+        "com.amazonaws.ecs",
+        "ExecuteCommandLogConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "s3BucketName",
+    2,
+);
+static EXECUTECOMMANDLOGCONFIGURATION_MEMBER_S3_ENCRYPTION_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ExecuteCommandLogConfiguration$s3EncryptionEnabled",
+        "com.amazonaws.ecs",
+        "ExecuteCommandLogConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "s3EncryptionEnabled",
+    3,
+);
+static EXECUTECOMMANDLOGCONFIGURATION_MEMBER_S3_KEY_PREFIX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ExecuteCommandLogConfiguration$s3KeyPrefix",
+        "com.amazonaws.ecs",
+        "ExecuteCommandLogConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "s3KeyPrefix",
+    4,
+);
+static EXECUTECOMMANDLOGCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ExecuteCommandLogConfiguration",
+        "com.amazonaws.ecs",
+        "ExecuteCommandLogConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EXECUTECOMMANDLOGCONFIGURATION_MEMBER_CLOUD_WATCH_LOG_GROUP_NAME,
+        &EXECUTECOMMANDLOGCONFIGURATION_MEMBER_CLOUD_WATCH_ENCRYPTION_ENABLED,
+        &EXECUTECOMMANDLOGCONFIGURATION_MEMBER_S3_BUCKET_NAME,
+        &EXECUTECOMMANDLOGCONFIGURATION_MEMBER_S3_ENCRYPTION_ENABLED,
+        &EXECUTECOMMANDLOGCONFIGURATION_MEMBER_S3_KEY_PREFIX,
+    ],
+);
+impl ExecuteCommandLogConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EXECUTECOMMANDLOGCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ExecuteCommandLogConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cloud_watch_log_group_name {
+            ser.write_string(&EXECUTECOMMANDLOGCONFIGURATION_MEMBER_CLOUD_WATCH_LOG_GROUP_NAME, val)?;
+        }
+        {
+            let val = &self.cloud_watch_encryption_enabled;
+            ser.write_boolean(&EXECUTECOMMANDLOGCONFIGURATION_MEMBER_CLOUD_WATCH_ENCRYPTION_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.s3_bucket_name {
+            ser.write_string(&EXECUTECOMMANDLOGCONFIGURATION_MEMBER_S3_BUCKET_NAME, val)?;
+        }
+        {
+            let val = &self.s3_encryption_enabled;
+            ser.write_boolean(&EXECUTECOMMANDLOGCONFIGURATION_MEMBER_S3_ENCRYPTION_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.s3_key_prefix {
+            ser.write_string(&EXECUTECOMMANDLOGCONFIGURATION_MEMBER_S3_KEY_PREFIX, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ExecuteCommandLogConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EXECUTECOMMANDLOGCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_watch_log_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.cloud_watch_encryption_enabled = Some(deser.read_boolean(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_bucket_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    self.s3_encryption_enabled = Some(deser.read_boolean(member)?);
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_key_prefix = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ExecuteCommandLogConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ExecuteCommandLogConfiguration {
     /// Creates a new builder-style object to manufacture [`ExecuteCommandLogConfiguration`](crate::types::ExecuteCommandLogConfiguration).
     pub fn builder() -> crate::types::builders::ExecuteCommandLogConfigurationBuilder {

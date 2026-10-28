@@ -27,6 +27,106 @@ impl ::std::fmt::Debug for SnowflakeRoleConfiguration {
         formatter.finish()
     }
 }
+static SNOWFLAKEROLECONFIGURATION_MEMBER_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SnowflakeRoleConfiguration$Enabled",
+        "com.amazonaws.firehose",
+        "SnowflakeRoleConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Enabled",
+    0,
+);
+static SNOWFLAKEROLECONFIGURATION_MEMBER_SNOWFLAKE_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SnowflakeRoleConfiguration$SnowflakeRole",
+        "com.amazonaws.firehose",
+        "SnowflakeRoleConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SnowflakeRole",
+    1,
+);
+static SNOWFLAKEROLECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SnowflakeRoleConfiguration",
+        "com.amazonaws.firehose",
+        "SnowflakeRoleConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SNOWFLAKEROLECONFIGURATION_MEMBER_ENABLED,
+        &SNOWFLAKEROLECONFIGURATION_MEMBER_SNOWFLAKE_ROLE,
+    ],
+);
+impl SnowflakeRoleConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SNOWFLAKEROLECONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SnowflakeRoleConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.enabled {
+            ser.write_boolean(&SNOWFLAKEROLECONFIGURATION_MEMBER_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.snowflake_role {
+            ser.write_string(&SNOWFLAKEROLECONFIGURATION_MEMBER_SNOWFLAKE_ROLE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SnowflakeRoleConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SNOWFLAKEROLECONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.snowflake_role = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SnowflakeRoleConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SnowflakeRoleConfiguration {
     /// Creates a new builder-style object to manufacture [`SnowflakeRoleConfiguration`](crate::types::SnowflakeRoleConfiguration).
     pub fn builder() -> crate::types::builders::SnowflakeRoleConfigurationBuilder {

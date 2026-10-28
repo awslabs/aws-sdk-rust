@@ -26,6 +26,126 @@ impl DomainValidationSummary {
         self.requested_validation_configuration.as_ref()
     }
 }
+static DOMAINVALIDATIONSUMMARY_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DomainValidationSummary$DomainName",
+        "com.amazonaws.acm",
+        "DomainValidationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static DOMAINVALIDATIONSUMMARY_MEMBER_ACTIVE_VALIDATION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DomainValidationSummary$ActiveValidationConfiguration",
+        "com.amazonaws.acm",
+        "DomainValidationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ActiveValidationConfiguration",
+    1,
+);
+static DOMAINVALIDATIONSUMMARY_MEMBER_REQUESTED_VALIDATION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.acm#DomainValidationSummary$RequestedValidationConfiguration",
+            "com.amazonaws.acm",
+            "DomainValidationSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "RequestedValidationConfiguration",
+        2,
+    );
+static DOMAINVALIDATIONSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DomainValidationSummary",
+        "com.amazonaws.acm",
+        "DomainValidationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DOMAINVALIDATIONSUMMARY_MEMBER_DOMAIN_NAME,
+        &DOMAINVALIDATIONSUMMARY_MEMBER_ACTIVE_VALIDATION_CONFIGURATION,
+        &DOMAINVALIDATIONSUMMARY_MEMBER_REQUESTED_VALIDATION_CONFIGURATION,
+    ],
+);
+impl DomainValidationSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOMAINVALIDATIONSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DomainValidationSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.domain_name;
+            ser.write_string(&DOMAINVALIDATIONSUMMARY_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.active_validation_configuration {
+            ser.write_struct(&DOMAINVALIDATIONSUMMARY_MEMBER_ACTIVE_VALIDATION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.requested_validation_configuration {
+            ser.write_struct(&DOMAINVALIDATIONSUMMARY_MEMBER_REQUESTED_VALIDATION_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DomainValidationSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOMAINVALIDATIONSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.domain_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.active_validation_configuration = Some(crate::types::ValidationConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.requested_validation_configuration = Some(crate::types::ValidationConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DomainValidationSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_name = builder.domain_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DomainValidationSummary {
     /// Creates a new builder-style object to manufacture [`DomainValidationSummary`](crate::types::DomainValidationSummary).
     pub fn builder() -> crate::types::builders::DomainValidationSummaryBuilder {

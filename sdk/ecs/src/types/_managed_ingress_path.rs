@@ -60,6 +60,259 @@ impl ManagedIngressPath {
         self.target_groups.as_deref().unwrap_or_default()
     }
 }
+static MANAGEDINGRESSPATH_MEMBER_ACCESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedIngressPath$accessType",
+        "com.amazonaws.ecs",
+        "ManagedIngressPath",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "accessType",
+    0,
+);
+static MANAGEDINGRESSPATH_MEMBER_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ManagedIngressPath$endpoint", "com.amazonaws.ecs", "ManagedIngressPath"),
+    ::aws_smithy_schema::ShapeType::String,
+    "endpoint",
+    1,
+);
+static MANAGEDINGRESSPATH_MEMBER_LOAD_BALANCER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedIngressPath$loadBalancer",
+        "com.amazonaws.ecs",
+        "ManagedIngressPath",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "loadBalancer",
+    2,
+);
+static MANAGEDINGRESSPATH_MEMBER_LOAD_BALANCER_SECURITY_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedSecurityGroups$member",
+        "com.amazonaws.ecs",
+        "ManagedSecurityGroups",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static MANAGEDINGRESSPATH_MEMBER_LOAD_BALANCER_SECURITY_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedIngressPath$loadBalancerSecurityGroups",
+        "com.amazonaws.ecs",
+        "ManagedIngressPath",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "loadBalancerSecurityGroups",
+    3,
+)
+.with_list_member(&MANAGEDINGRESSPATH_MEMBER_LOAD_BALANCER_SECURITY_GROUPS_MEMBER);
+static MANAGEDINGRESSPATH_MEMBER_CERTIFICATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedIngressPath$certificate",
+        "com.amazonaws.ecs",
+        "ManagedIngressPath",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "certificate",
+    4,
+);
+static MANAGEDINGRESSPATH_MEMBER_LISTENER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ManagedIngressPath$listener", "com.amazonaws.ecs", "ManagedIngressPath"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "listener",
+    5,
+);
+static MANAGEDINGRESSPATH_MEMBER_RULE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ManagedIngressPath$rule", "com.amazonaws.ecs", "ManagedIngressPath"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "rule",
+    6,
+);
+static MANAGEDINGRESSPATH_MEMBER_TARGET_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ManagedTargetGroups$member", "com.amazonaws.ecs", "ManagedTargetGroups"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static MANAGEDINGRESSPATH_MEMBER_TARGET_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedIngressPath$targetGroups",
+        "com.amazonaws.ecs",
+        "ManagedIngressPath",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "targetGroups",
+    7,
+)
+.with_list_member(&MANAGEDINGRESSPATH_MEMBER_TARGET_GROUPS_MEMBER);
+static MANAGEDINGRESSPATH_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ManagedIngressPath", "com.amazonaws.ecs", "ManagedIngressPath"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MANAGEDINGRESSPATH_MEMBER_ACCESS_TYPE,
+        &MANAGEDINGRESSPATH_MEMBER_ENDPOINT,
+        &MANAGEDINGRESSPATH_MEMBER_LOAD_BALANCER,
+        &MANAGEDINGRESSPATH_MEMBER_LOAD_BALANCER_SECURITY_GROUPS,
+        &MANAGEDINGRESSPATH_MEMBER_CERTIFICATE,
+        &MANAGEDINGRESSPATH_MEMBER_LISTENER,
+        &MANAGEDINGRESSPATH_MEMBER_RULE,
+        &MANAGEDINGRESSPATH_MEMBER_TARGET_GROUPS,
+    ],
+);
+impl ManagedIngressPath {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MANAGEDINGRESSPATH_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ManagedIngressPath {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.access_type;
+            ser.write_string(&MANAGEDINGRESSPATH_MEMBER_ACCESS_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.endpoint;
+            ser.write_string(&MANAGEDINGRESSPATH_MEMBER_ENDPOINT, val)?;
+        }
+        if let Some(ref val) = self.load_balancer {
+            ser.write_struct(&MANAGEDINGRESSPATH_MEMBER_LOAD_BALANCER, val)?;
+        }
+        if let Some(ref val) = self.load_balancer_security_groups {
+            ser.write_list(
+                &MANAGEDINGRESSPATH_MEMBER_LOAD_BALANCER_SECURITY_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ManagedSecurityGroup::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.certificate {
+            ser.write_struct(&MANAGEDINGRESSPATH_MEMBER_CERTIFICATE, val)?;
+        }
+        if let Some(ref val) = self.listener {
+            ser.write_struct(&MANAGEDINGRESSPATH_MEMBER_LISTENER, val)?;
+        }
+        if let Some(ref val) = self.rule {
+            ser.write_struct(&MANAGEDINGRESSPATH_MEMBER_RULE, val)?;
+        }
+        if let Some(ref val) = self.target_groups {
+            ser.write_list(
+                &MANAGEDINGRESSPATH_MEMBER_TARGET_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ManagedTargetGroup::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ManagedIngressPathBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MANAGEDINGRESSPATH_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.access_type = Some(crate::types::AccessType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    self.endpoint = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.load_balancer = Some(crate::types::ManagedLoadBalancer::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.load_balancer_security_groups = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ManagedSecurityGroup::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate = Some(crate::types::ManagedCertificate::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.listener = Some(crate::types::ManagedListener::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rule = Some(crate::types::ManagedListenerRule::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_groups = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ManagedTargetGroup::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ManagedIngressPath {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.endpoint = builder.endpoint.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ManagedIngressPath {
     /// Creates a new builder-style object to manufacture [`ManagedIngressPath`](crate::types::ManagedIngressPath).
     pub fn builder() -> crate::types::builders::ManagedIngressPathBuilder {

@@ -39,6 +39,171 @@ impl GetUserPoolMfaConfigOutput {
         self.web_authn_configuration.as_ref()
     }
 }
+static GETUSERPOOLMFACONFIGOUTPUT_MEMBER_SMS_MFA_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetUserPoolMfaConfigOutput$SmsMfaConfiguration",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetUserPoolMfaConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SmsMfaConfiguration",
+    0,
+);
+static GETUSERPOOLMFACONFIGOUTPUT_MEMBER_SOFTWARE_TOKEN_MFA_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentityprovider.synthetic#GetUserPoolMfaConfigOutput$SoftwareTokenMfaConfiguration",
+            "com.amazonaws.cognitoidentityprovider.synthetic",
+            "GetUserPoolMfaConfigOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "SoftwareTokenMfaConfiguration",
+        1,
+    );
+static GETUSERPOOLMFACONFIGOUTPUT_MEMBER_EMAIL_MFA_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetUserPoolMfaConfigOutput$EmailMfaConfiguration",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetUserPoolMfaConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EmailMfaConfiguration",
+    2,
+);
+static GETUSERPOOLMFACONFIGOUTPUT_MEMBER_MFA_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetUserPoolMfaConfigOutput$MfaConfiguration",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetUserPoolMfaConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MfaConfiguration",
+    3,
+);
+static GETUSERPOOLMFACONFIGOUTPUT_MEMBER_WEB_AUTHN_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetUserPoolMfaConfigOutput$WebAuthnConfiguration",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetUserPoolMfaConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WebAuthnConfiguration",
+    4,
+);
+static GETUSERPOOLMFACONFIGOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#GetUserPoolMfaConfigOutput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "GetUserPoolMfaConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETUSERPOOLMFACONFIGOUTPUT_MEMBER_SMS_MFA_CONFIGURATION,
+        &GETUSERPOOLMFACONFIGOUTPUT_MEMBER_SOFTWARE_TOKEN_MFA_CONFIGURATION,
+        &GETUSERPOOLMFACONFIGOUTPUT_MEMBER_EMAIL_MFA_CONFIGURATION,
+        &GETUSERPOOLMFACONFIGOUTPUT_MEMBER_MFA_CONFIGURATION,
+        &GETUSERPOOLMFACONFIGOUTPUT_MEMBER_WEB_AUTHN_CONFIGURATION,
+    ],
+)
+.with_original_name("GetUserPoolMfaConfigResponse");
+impl GetUserPoolMfaConfigOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETUSERPOOLMFACONFIGOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetUserPoolMfaConfigOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.sms_mfa_configuration {
+            ser.write_struct(&GETUSERPOOLMFACONFIGOUTPUT_MEMBER_SMS_MFA_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.software_token_mfa_configuration {
+            ser.write_struct(&GETUSERPOOLMFACONFIGOUTPUT_MEMBER_SOFTWARE_TOKEN_MFA_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.email_mfa_configuration {
+            ser.write_struct(&GETUSERPOOLMFACONFIGOUTPUT_MEMBER_EMAIL_MFA_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.mfa_configuration {
+            ser.write_string(&GETUSERPOOLMFACONFIGOUTPUT_MEMBER_MFA_CONFIGURATION, val.as_str())?;
+        }
+        if let Some(ref val) = self.web_authn_configuration {
+            ser.write_struct(&GETUSERPOOLMFACONFIGOUTPUT_MEMBER_WEB_AUTHN_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_user_pool_mfa_config::builders::GetUserPoolMfaConfigOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETUSERPOOLMFACONFIGOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sms_mfa_configuration = Some(crate::types::SmsMfaConfigType::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.software_token_mfa_configuration = Some(crate::types::SoftwareTokenMfaConfigType::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email_mfa_configuration = Some(crate::types::EmailMfaConfigType::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mfa_configuration = Some(crate::types::UserPoolMfaType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.web_authn_configuration = Some(crate::types::WebAuthnConfigurationType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetUserPoolMfaConfigOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetUserPoolMfaConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

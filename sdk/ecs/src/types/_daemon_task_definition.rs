@@ -105,6 +105,416 @@ impl DaemonTaskDefinition {
         self.ipc_mode.as_ref()
     }
 }
+static DAEMONTASKDEFINITION_MEMBER_DAEMON_TASK_DEFINITION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinition$daemonTaskDefinitionArn",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "daemonTaskDefinitionArn",
+    0,
+);
+static DAEMONTASKDEFINITION_MEMBER_FAMILY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinition$family",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "family",
+    1,
+);
+static DAEMONTASKDEFINITION_MEMBER_REVISION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinition$revision",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "revision",
+    2,
+);
+static DAEMONTASKDEFINITION_MEMBER_TASK_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinition$taskRoleArn",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskRoleArn",
+    3,
+);
+static DAEMONTASKDEFINITION_MEMBER_EXECUTION_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinition$executionRoleArn",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "executionRoleArn",
+    4,
+);
+static DAEMONTASKDEFINITION_MEMBER_CONTAINER_DEFINITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonContainerDefinitionList$member",
+        "com.amazonaws.ecs",
+        "DaemonContainerDefinitionList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DAEMONTASKDEFINITION_MEMBER_CONTAINER_DEFINITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinition$containerDefinitions",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "containerDefinitions",
+    5,
+)
+.with_list_member(&DAEMONTASKDEFINITION_MEMBER_CONTAINER_DEFINITIONS_MEMBER);
+static DAEMONTASKDEFINITION_MEMBER_VOLUMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#DaemonVolumeList$member", "com.amazonaws.ecs", "DaemonVolumeList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DAEMONTASKDEFINITION_MEMBER_VOLUMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinition$volumes",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "volumes",
+    6,
+)
+.with_list_member(&DAEMONTASKDEFINITION_MEMBER_VOLUMES_MEMBER);
+static DAEMONTASKDEFINITION_MEMBER_CPU: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#DaemonTaskDefinition$cpu", "com.amazonaws.ecs", "DaemonTaskDefinition"),
+    ::aws_smithy_schema::ShapeType::String,
+    "cpu",
+    7,
+);
+static DAEMONTASKDEFINITION_MEMBER_MEMORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinition$memory",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "memory",
+    8,
+);
+static DAEMONTASKDEFINITION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinition$status",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    9,
+);
+static DAEMONTASKDEFINITION_MEMBER_REGISTERED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinition$registeredAt",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "registeredAt",
+    10,
+);
+static DAEMONTASKDEFINITION_MEMBER_DELETE_REQUESTED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinition$deleteRequestedAt",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "deleteRequestedAt",
+    11,
+);
+static DAEMONTASKDEFINITION_MEMBER_REGISTERED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinition$registeredBy",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "registeredBy",
+    12,
+);
+static DAEMONTASKDEFINITION_MEMBER_PID_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinition$pidMode",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pidMode",
+    13,
+);
+static DAEMONTASKDEFINITION_MEMBER_IPC_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonTaskDefinition$ipcMode",
+        "com.amazonaws.ecs",
+        "DaemonTaskDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ipcMode",
+    14,
+);
+static DAEMONTASKDEFINITION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#DaemonTaskDefinition", "com.amazonaws.ecs", "DaemonTaskDefinition"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DAEMONTASKDEFINITION_MEMBER_DAEMON_TASK_DEFINITION_ARN,
+        &DAEMONTASKDEFINITION_MEMBER_FAMILY,
+        &DAEMONTASKDEFINITION_MEMBER_REVISION,
+        &DAEMONTASKDEFINITION_MEMBER_TASK_ROLE_ARN,
+        &DAEMONTASKDEFINITION_MEMBER_EXECUTION_ROLE_ARN,
+        &DAEMONTASKDEFINITION_MEMBER_CONTAINER_DEFINITIONS,
+        &DAEMONTASKDEFINITION_MEMBER_VOLUMES,
+        &DAEMONTASKDEFINITION_MEMBER_CPU,
+        &DAEMONTASKDEFINITION_MEMBER_MEMORY,
+        &DAEMONTASKDEFINITION_MEMBER_STATUS,
+        &DAEMONTASKDEFINITION_MEMBER_REGISTERED_AT,
+        &DAEMONTASKDEFINITION_MEMBER_DELETE_REQUESTED_AT,
+        &DAEMONTASKDEFINITION_MEMBER_REGISTERED_BY,
+        &DAEMONTASKDEFINITION_MEMBER_PID_MODE,
+        &DAEMONTASKDEFINITION_MEMBER_IPC_MODE,
+    ],
+);
+impl DaemonTaskDefinition {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DAEMONTASKDEFINITION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DaemonTaskDefinition {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.daemon_task_definition_arn {
+            ser.write_string(&DAEMONTASKDEFINITION_MEMBER_DAEMON_TASK_DEFINITION_ARN, val)?;
+        }
+        if let Some(ref val) = self.family {
+            ser.write_string(&DAEMONTASKDEFINITION_MEMBER_FAMILY, val)?;
+        }
+        {
+            let val = &self.revision;
+            ser.write_integer(&DAEMONTASKDEFINITION_MEMBER_REVISION, *val)?;
+        }
+        if let Some(ref val) = self.task_role_arn {
+            ser.write_string(&DAEMONTASKDEFINITION_MEMBER_TASK_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.execution_role_arn {
+            ser.write_string(&DAEMONTASKDEFINITION_MEMBER_EXECUTION_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.container_definitions {
+            ser.write_list(
+                &DAEMONTASKDEFINITION_MEMBER_CONTAINER_DEFINITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DaemonContainerDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.volumes {
+            ser.write_list(
+                &DAEMONTASKDEFINITION_MEMBER_VOLUMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DaemonVolume::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.cpu {
+            ser.write_string(&DAEMONTASKDEFINITION_MEMBER_CPU, val)?;
+        }
+        if let Some(ref val) = self.memory {
+            ser.write_string(&DAEMONTASKDEFINITION_MEMBER_MEMORY, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DAEMONTASKDEFINITION_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.registered_at {
+            ser.write_timestamp(&DAEMONTASKDEFINITION_MEMBER_REGISTERED_AT, val)?;
+        }
+        if let Some(ref val) = self.delete_requested_at {
+            ser.write_timestamp(&DAEMONTASKDEFINITION_MEMBER_DELETE_REQUESTED_AT, val)?;
+        }
+        if let Some(ref val) = self.registered_by {
+            ser.write_string(&DAEMONTASKDEFINITION_MEMBER_REGISTERED_BY, val)?;
+        }
+        if let Some(ref val) = self.pid_mode {
+            ser.write_string(&DAEMONTASKDEFINITION_MEMBER_PID_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.ipc_mode {
+            ser.write_string(&DAEMONTASKDEFINITION_MEMBER_IPC_MODE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DaemonTaskDefinitionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DAEMONTASKDEFINITION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.daemon_task_definition_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.family = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.revision = Some(deser.read_integer(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_definitions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DaemonContainerDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volumes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DaemonVolume::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cpu = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.memory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::DaemonTaskDefinitionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registered_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delete_requested_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registered_by = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pid_mode = Some(crate::types::DaemonPidMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ipc_mode = Some(crate::types::DaemonIpcMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DaemonTaskDefinition {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DaemonTaskDefinition {
     /// Creates a new builder-style object to manufacture [`DaemonTaskDefinition`](crate::types::DaemonTaskDefinition).
     pub fn builder() -> crate::types::builders::DaemonTaskDefinitionBuilder {

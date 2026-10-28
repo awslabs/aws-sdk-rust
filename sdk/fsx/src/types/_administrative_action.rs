@@ -187,6 +187,291 @@ impl AdministrativeAction {
         self.message.as_deref()
     }
 }
+static ADMINISTRATIVEACTION_MEMBER_ADMINISTRATIVE_ACTION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#AdministrativeAction$AdministrativeActionType",
+        "com.amazonaws.fsx",
+        "AdministrativeAction",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AdministrativeActionType",
+    0,
+);
+static ADMINISTRATIVEACTION_MEMBER_PROGRESS_PERCENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#AdministrativeAction$ProgressPercent",
+        "com.amazonaws.fsx",
+        "AdministrativeAction",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ProgressPercent",
+    1,
+);
+static ADMINISTRATIVEACTION_MEMBER_REQUEST_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#AdministrativeAction$RequestTime",
+        "com.amazonaws.fsx",
+        "AdministrativeAction",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "RequestTime",
+    2,
+);
+static ADMINISTRATIVEACTION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#AdministrativeAction$Status",
+        "com.amazonaws.fsx",
+        "AdministrativeAction",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    3,
+);
+static ADMINISTRATIVEACTION_MEMBER_TARGET_FILE_SYSTEM_VALUES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#AdministrativeAction$TargetFileSystemValues",
+        "com.amazonaws.fsx",
+        "AdministrativeAction",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TargetFileSystemValues",
+    4,
+);
+static ADMINISTRATIVEACTION_MEMBER_FAILURE_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#AdministrativeAction$FailureDetails",
+        "com.amazonaws.fsx",
+        "AdministrativeAction",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FailureDetails",
+    5,
+);
+static ADMINISTRATIVEACTION_MEMBER_TARGET_VOLUME_VALUES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#AdministrativeAction$TargetVolumeValues",
+        "com.amazonaws.fsx",
+        "AdministrativeAction",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TargetVolumeValues",
+    6,
+);
+static ADMINISTRATIVEACTION_MEMBER_TARGET_SNAPSHOT_VALUES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#AdministrativeAction$TargetSnapshotValues",
+        "com.amazonaws.fsx",
+        "AdministrativeAction",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TargetSnapshotValues",
+    7,
+);
+static ADMINISTRATIVEACTION_MEMBER_TOTAL_TRANSFER_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#AdministrativeAction$TotalTransferBytes",
+        "com.amazonaws.fsx",
+        "AdministrativeAction",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "TotalTransferBytes",
+    8,
+);
+static ADMINISTRATIVEACTION_MEMBER_REMAINING_TRANSFER_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#AdministrativeAction$RemainingTransferBytes",
+        "com.amazonaws.fsx",
+        "AdministrativeAction",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "RemainingTransferBytes",
+    9,
+);
+static ADMINISTRATIVEACTION_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#AdministrativeAction$Message",
+        "com.amazonaws.fsx",
+        "AdministrativeAction",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    10,
+);
+static ADMINISTRATIVEACTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#AdministrativeAction", "com.amazonaws.fsx", "AdministrativeAction"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ADMINISTRATIVEACTION_MEMBER_ADMINISTRATIVE_ACTION_TYPE,
+        &ADMINISTRATIVEACTION_MEMBER_PROGRESS_PERCENT,
+        &ADMINISTRATIVEACTION_MEMBER_REQUEST_TIME,
+        &ADMINISTRATIVEACTION_MEMBER_STATUS,
+        &ADMINISTRATIVEACTION_MEMBER_TARGET_FILE_SYSTEM_VALUES,
+        &ADMINISTRATIVEACTION_MEMBER_FAILURE_DETAILS,
+        &ADMINISTRATIVEACTION_MEMBER_TARGET_VOLUME_VALUES,
+        &ADMINISTRATIVEACTION_MEMBER_TARGET_SNAPSHOT_VALUES,
+        &ADMINISTRATIVEACTION_MEMBER_TOTAL_TRANSFER_BYTES,
+        &ADMINISTRATIVEACTION_MEMBER_REMAINING_TRANSFER_BYTES,
+        &ADMINISTRATIVEACTION_MEMBER_MESSAGE,
+    ],
+);
+impl AdministrativeAction {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ADMINISTRATIVEACTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AdministrativeAction {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.administrative_action_type {
+            ser.write_string(&ADMINISTRATIVEACTION_MEMBER_ADMINISTRATIVE_ACTION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.progress_percent {
+            ser.write_integer(&ADMINISTRATIVEACTION_MEMBER_PROGRESS_PERCENT, *val)?;
+        }
+        if let Some(ref val) = self.request_time {
+            ser.write_timestamp(&ADMINISTRATIVEACTION_MEMBER_REQUEST_TIME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&ADMINISTRATIVEACTION_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.target_file_system_values {
+            ser.write_struct(&ADMINISTRATIVEACTION_MEMBER_TARGET_FILE_SYSTEM_VALUES, val)?;
+        }
+        if let Some(ref val) = self.failure_details {
+            ser.write_struct(&ADMINISTRATIVEACTION_MEMBER_FAILURE_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.target_volume_values {
+            ser.write_struct(&ADMINISTRATIVEACTION_MEMBER_TARGET_VOLUME_VALUES, val)?;
+        }
+        if let Some(ref val) = self.target_snapshot_values {
+            ser.write_struct(&ADMINISTRATIVEACTION_MEMBER_TARGET_SNAPSHOT_VALUES, val)?;
+        }
+        if let Some(ref val) = self.total_transfer_bytes {
+            ser.write_long(&ADMINISTRATIVEACTION_MEMBER_TOTAL_TRANSFER_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.remaining_transfer_bytes {
+            ser.write_long(&ADMINISTRATIVEACTION_MEMBER_REMAINING_TRANSFER_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&ADMINISTRATIVEACTION_MEMBER_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AdministrativeActionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ADMINISTRATIVEACTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.administrative_action_type = Some(crate::types::AdministrativeActionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.progress_percent = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.request_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::Status::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_file_system_values = Some(crate::types::FileSystem::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_details = Some(crate::types::AdministrativeActionFailureDetails::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_volume_values = Some(crate::types::Volume::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_snapshot_values = Some(crate::types::Snapshot::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.total_transfer_bytes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.remaining_transfer_bytes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AdministrativeAction {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AdministrativeAction {
     /// Creates a new builder-style object to manufacture [`AdministrativeAction`](crate::types::AdministrativeAction).
     pub fn builder() -> crate::types::builders::AdministrativeActionBuilder {

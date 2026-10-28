@@ -12,6 +12,93 @@ impl DeleteKnowledgeBaseInput {
         self.knowledge_base_id.as_deref()
     }
 }
+static DELETEKNOWLEDGEBASEINPUT_MEMBER_KNOWLEDGE_BASE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#DeleteKnowledgeBaseInput$knowledgeBaseId",
+        "com.amazonaws.wisdom.synthetic",
+        "DeleteKnowledgeBaseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "knowledgeBaseId",
+    0,
+)
+.with_http_label();
+static DELETEKNOWLEDGEBASEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#DeleteKnowledgeBaseInput",
+        "com.amazonaws.wisdom.synthetic",
+        "DeleteKnowledgeBaseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELETEKNOWLEDGEBASEINPUT_MEMBER_KNOWLEDGE_BASE_ID],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "DELETE",
+    "/knowledgeBases/{knowledgeBaseId}",
+    Some(204),
+))
+.with_no_body_members()
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteKnowledgeBaseRequest");
+impl DeleteKnowledgeBaseInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEKNOWLEDGEBASEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteKnowledgeBaseInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.knowledge_base_id {
+            ser.write_string(&DELETEKNOWLEDGEBASEINPUT_MEMBER_KNOWLEDGE_BASE_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEKNOWLEDGEBASEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.knowledge_base_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteKnowledgeBaseInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.knowledge_base_id = builder.knowledge_base_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteKnowledgeBaseInput {
     /// Creates a new builder-style object to manufacture [`DeleteKnowledgeBaseInput`](crate::operation::delete_knowledge_base::DeleteKnowledgeBaseInput).
     pub fn builder() -> crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseInputBuilder {

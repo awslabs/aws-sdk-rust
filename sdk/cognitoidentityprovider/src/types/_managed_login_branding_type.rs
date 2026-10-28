@@ -75,6 +75,234 @@ impl ManagedLoginBrandingType {
         self.last_modified_date.as_ref()
     }
 }
+static MANAGEDLOGINBRANDINGTYPE_MEMBER_MANAGED_LOGIN_BRANDING_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ManagedLoginBrandingType$ManagedLoginBrandingId",
+        "com.amazonaws.cognitoidentityprovider",
+        "ManagedLoginBrandingType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ManagedLoginBrandingId",
+    0,
+);
+static MANAGEDLOGINBRANDINGTYPE_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ManagedLoginBrandingType$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider",
+        "ManagedLoginBrandingType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    1,
+);
+static MANAGEDLOGINBRANDINGTYPE_MEMBER_USE_COGNITO_PROVIDED_VALUES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ManagedLoginBrandingType$UseCognitoProvidedValues",
+        "com.amazonaws.cognitoidentityprovider",
+        "ManagedLoginBrandingType",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "UseCognitoProvidedValues",
+    2,
+);
+static MANAGEDLOGINBRANDINGTYPE_MEMBER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ManagedLoginBrandingType$Settings",
+        "com.amazonaws.cognitoidentityprovider",
+        "ManagedLoginBrandingType",
+    ),
+    ::aws_smithy_schema::ShapeType::Document,
+    "Settings",
+    3,
+);
+static MANAGEDLOGINBRANDINGTYPE_MEMBER_ASSETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#AssetListType$member",
+        "com.amazonaws.cognitoidentityprovider",
+        "AssetListType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static MANAGEDLOGINBRANDINGTYPE_MEMBER_ASSETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ManagedLoginBrandingType$Assets",
+        "com.amazonaws.cognitoidentityprovider",
+        "ManagedLoginBrandingType",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Assets",
+    4,
+)
+.with_list_member(&MANAGEDLOGINBRANDINGTYPE_MEMBER_ASSETS_MEMBER);
+static MANAGEDLOGINBRANDINGTYPE_MEMBER_CREATION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ManagedLoginBrandingType$CreationDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "ManagedLoginBrandingType",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationDate",
+    5,
+);
+static MANAGEDLOGINBRANDINGTYPE_MEMBER_LAST_MODIFIED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ManagedLoginBrandingType$LastModifiedDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "ManagedLoginBrandingType",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedDate",
+    6,
+);
+static MANAGEDLOGINBRANDINGTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ManagedLoginBrandingType",
+        "com.amazonaws.cognitoidentityprovider",
+        "ManagedLoginBrandingType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MANAGEDLOGINBRANDINGTYPE_MEMBER_MANAGED_LOGIN_BRANDING_ID,
+        &MANAGEDLOGINBRANDINGTYPE_MEMBER_USER_POOL_ID,
+        &MANAGEDLOGINBRANDINGTYPE_MEMBER_USE_COGNITO_PROVIDED_VALUES,
+        &MANAGEDLOGINBRANDINGTYPE_MEMBER_SETTINGS,
+        &MANAGEDLOGINBRANDINGTYPE_MEMBER_ASSETS,
+        &MANAGEDLOGINBRANDINGTYPE_MEMBER_CREATION_DATE,
+        &MANAGEDLOGINBRANDINGTYPE_MEMBER_LAST_MODIFIED_DATE,
+    ],
+);
+impl ManagedLoginBrandingType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MANAGEDLOGINBRANDINGTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ManagedLoginBrandingType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.managed_login_branding_id {
+            ser.write_string(&MANAGEDLOGINBRANDINGTYPE_MEMBER_MANAGED_LOGIN_BRANDING_ID, val)?;
+        }
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&MANAGEDLOGINBRANDINGTYPE_MEMBER_USER_POOL_ID, val)?;
+        }
+        {
+            let val = &self.use_cognito_provided_values;
+            ser.write_boolean(&MANAGEDLOGINBRANDINGTYPE_MEMBER_USE_COGNITO_PROVIDED_VALUES, *val)?;
+        }
+        if let Some(ref val) = self.settings {
+            ser.write_document(&MANAGEDLOGINBRANDINGTYPE_MEMBER_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.assets {
+            ser.write_list(
+                &MANAGEDLOGINBRANDINGTYPE_MEMBER_ASSETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AssetType::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.creation_date {
+            ser.write_timestamp(&MANAGEDLOGINBRANDINGTYPE_MEMBER_CREATION_DATE, val)?;
+        }
+        if let Some(ref val) = self.last_modified_date {
+            ser.write_timestamp(&MANAGEDLOGINBRANDINGTYPE_MEMBER_LAST_MODIFIED_DATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ManagedLoginBrandingTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MANAGEDLOGINBRANDINGTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_login_branding_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.use_cognito_provided_values = Some(deser.read_boolean(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.settings = Some(deser.read_document(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.assets = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AssetType::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ManagedLoginBrandingType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ManagedLoginBrandingType {
     /// Creates a new builder-style object to manufacture [`ManagedLoginBrandingType`](crate::types::ManagedLoginBrandingType).
     pub fn builder() -> crate::types::builders::ManagedLoginBrandingTypeBuilder {

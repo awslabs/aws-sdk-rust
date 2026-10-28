@@ -69,6 +69,306 @@ impl DescribeCustomWorkspaceImageImportOutput {
         self.error_details.as_deref().unwrap_or_default()
     }
 }
+static DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_IMAGE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeCustomWorkspaceImageImportOutput$ImageId",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeCustomWorkspaceImageImportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageId",
+    0,
+);
+static DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_INFRASTRUCTURE_CONFIGURATION_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces.synthetic#DescribeCustomWorkspaceImageImportOutput$InfrastructureConfigurationArn",
+            "com.amazonaws.workspaces.synthetic",
+            "DescribeCustomWorkspaceImageImportOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "InfrastructureConfigurationArn",
+        1,
+    );
+static DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeCustomWorkspaceImageImportOutput$State",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeCustomWorkspaceImageImportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    2,
+);
+static DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_STATE_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeCustomWorkspaceImageImportOutput$StateMessage",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeCustomWorkspaceImageImportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StateMessage",
+    3,
+);
+static DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_PROGRESS_PERCENTAGE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces.synthetic#DescribeCustomWorkspaceImageImportOutput$ProgressPercentage",
+            "com.amazonaws.workspaces.synthetic",
+            "DescribeCustomWorkspaceImageImportOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "ProgressPercentage",
+        4,
+    );
+static DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_CREATED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeCustomWorkspaceImageImportOutput$Created",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeCustomWorkspaceImageImportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "Created",
+    5,
+);
+static DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_LAST_UPDATED_TIME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces.synthetic#DescribeCustomWorkspaceImageImportOutput$LastUpdatedTime",
+            "com.amazonaws.workspaces.synthetic",
+            "DescribeCustomWorkspaceImageImportOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "LastUpdatedTime",
+        6,
+    );
+static DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_IMAGE_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeCustomWorkspaceImageImportOutput$ImageSource",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeCustomWorkspaceImageImportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "ImageSource",
+    7,
+);
+static DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_IMAGE_BUILDER_INSTANCE_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces.synthetic#DescribeCustomWorkspaceImageImportOutput$ImageBuilderInstanceId",
+            "com.amazonaws.workspaces.synthetic",
+            "DescribeCustomWorkspaceImageImportOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ImageBuilderInstanceId",
+        8,
+    );
+static DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_ERROR_DETAILS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces#CustomWorkspaceImageImportErrorDetailsList$member",
+            "com.amazonaws.workspaces",
+            "CustomWorkspaceImageImportErrorDetailsList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_ERROR_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeCustomWorkspaceImageImportOutput$ErrorDetails",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeCustomWorkspaceImageImportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ErrorDetails",
+    9,
+)
+.with_list_member(&DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_ERROR_DETAILS_MEMBER);
+static DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeCustomWorkspaceImageImportOutput",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeCustomWorkspaceImageImportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_IMAGE_ID,
+        &DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_INFRASTRUCTURE_CONFIGURATION_ARN,
+        &DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_STATE,
+        &DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_STATE_MESSAGE,
+        &DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_PROGRESS_PERCENTAGE,
+        &DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_CREATED,
+        &DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_LAST_UPDATED_TIME,
+        &DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_IMAGE_SOURCE,
+        &DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_IMAGE_BUILDER_INSTANCE_ID,
+        &DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_ERROR_DETAILS,
+    ],
+)
+.with_original_name("DescribeCustomWorkspaceImageImportResult");
+impl DescribeCustomWorkspaceImageImportOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeCustomWorkspaceImageImportOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.image_id {
+            ser.write_string(&DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_IMAGE_ID, val)?;
+        }
+        if let Some(ref val) = self.infrastructure_configuration_arn {
+            ser.write_string(&DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_INFRASTRUCTURE_CONFIGURATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.state_message {
+            ser.write_string(&DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_STATE_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.progress_percentage {
+            ser.write_integer(&DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_PROGRESS_PERCENTAGE, *val)?;
+        }
+        if let Some(ref val) = self.created {
+            ser.write_timestamp(&DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_CREATED, val)?;
+        }
+        if let Some(ref val) = self.last_updated_time {
+            ser.write_timestamp(&DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_LAST_UPDATED_TIME, val)?;
+        }
+        if let Some(ref val) = self.image_source {
+            ser.write_struct(&DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_IMAGE_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.image_builder_instance_id {
+            ser.write_string(&DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_IMAGE_BUILDER_INSTANCE_ID, val)?;
+        }
+        if let Some(ref val) = self.error_details {
+            ser.write_list(
+                &DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_MEMBER_ERROR_DETAILS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CustomWorkspaceImageImportErrorDetails::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_custom_workspace_image_import::builders::DescribeCustomWorkspaceImageImportOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECUSTOMWORKSPACEIMAGEIMPORTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.infrastructure_configuration_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::CustomWorkspaceImageImportState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.progress_percentage = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_updated_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_source = Some(crate::types::ImageSourceIdentifier::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_builder_instance_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_details = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CustomWorkspaceImageImportErrorDetails::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeCustomWorkspaceImageImportOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeCustomWorkspaceImageImportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

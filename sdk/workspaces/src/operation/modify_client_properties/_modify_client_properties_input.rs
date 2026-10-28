@@ -18,6 +18,109 @@ impl ModifyClientPropertiesInput {
         self.client_properties.as_ref()
     }
 }
+static MODIFYCLIENTPROPERTIESINPUT_MEMBER_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifyClientPropertiesInput$ResourceId",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifyClientPropertiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceId",
+    0,
+);
+static MODIFYCLIENTPROPERTIESINPUT_MEMBER_CLIENT_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifyClientPropertiesInput$ClientProperties",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifyClientPropertiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ClientProperties",
+    1,
+);
+static MODIFYCLIENTPROPERTIESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifyClientPropertiesInput",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifyClientPropertiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODIFYCLIENTPROPERTIESINPUT_MEMBER_RESOURCE_ID,
+        &MODIFYCLIENTPROPERTIESINPUT_MEMBER_CLIENT_PROPERTIES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ModifyClientPropertiesRequest");
+impl ModifyClientPropertiesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODIFYCLIENTPROPERTIESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModifyClientPropertiesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_id {
+            ser.write_string(&MODIFYCLIENTPROPERTIESINPUT_MEMBER_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.client_properties {
+            ser.write_struct(&MODIFYCLIENTPROPERTIESINPUT_MEMBER_CLIENT_PROPERTIES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::modify_client_properties::builders::ModifyClientPropertiesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODIFYCLIENTPROPERTIESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_properties = Some(crate::types::ClientProperties::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModifyClientPropertiesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.resource_id = builder.resource_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ModifyClientPropertiesInput {
     /// Creates a new builder-style object to manufacture [`ModifyClientPropertiesInput`](crate::operation::modify_client_properties::ModifyClientPropertiesInput).
     pub fn builder() -> crate::operation::modify_client_properties::builders::ModifyClientPropertiesInputBuilder {

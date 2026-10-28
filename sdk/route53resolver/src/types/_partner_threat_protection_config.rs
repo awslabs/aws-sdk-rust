@@ -14,6 +14,81 @@ impl PartnerThreatProtectionConfig {
         self.partner.deref()
     }
 }
+static PARTNERTHREATPROTECTIONCONFIG_MEMBER_PARTNER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#PartnerThreatProtectionConfig$Partner",
+        "com.amazonaws.route53resolver",
+        "PartnerThreatProtectionConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Partner",
+    0,
+);
+static PARTNERTHREATPROTECTIONCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#PartnerThreatProtectionConfig",
+        "com.amazonaws.route53resolver",
+        "PartnerThreatProtectionConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&PARTNERTHREATPROTECTIONCONFIG_MEMBER_PARTNER],
+);
+impl PartnerThreatProtectionConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PARTNERTHREATPROTECTIONCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PartnerThreatProtectionConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.partner;
+            ser.write_string(&PARTNERTHREATPROTECTIONCONFIG_MEMBER_PARTNER, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PartnerThreatProtectionConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PARTNERTHREATPROTECTIONCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.partner = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PartnerThreatProtectionConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.partner = builder.partner.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PartnerThreatProtectionConfig {
     /// Creates a new builder-style object to manufacture [`PartnerThreatProtectionConfig`](crate::types::PartnerThreatProtectionConfig).
     pub fn builder() -> crate::types::builders::PartnerThreatProtectionConfigBuilder {

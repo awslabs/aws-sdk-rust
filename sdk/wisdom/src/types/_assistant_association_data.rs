@@ -53,6 +53,222 @@ impl AssistantAssociationData {
         self.tags.as_ref()
     }
 }
+static ASSISTANTASSOCIATIONDATA_MEMBER_ASSISTANT_ASSOCIATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#AssistantAssociationData$assistantAssociationId",
+        "com.amazonaws.wisdom",
+        "AssistantAssociationData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "assistantAssociationId",
+    0,
+);
+static ASSISTANTASSOCIATIONDATA_MEMBER_ASSISTANT_ASSOCIATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#AssistantAssociationData$assistantAssociationArn",
+        "com.amazonaws.wisdom",
+        "AssistantAssociationData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "assistantAssociationArn",
+    1,
+);
+static ASSISTANTASSOCIATIONDATA_MEMBER_ASSISTANT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#AssistantAssociationData$assistantId",
+        "com.amazonaws.wisdom",
+        "AssistantAssociationData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "assistantId",
+    2,
+);
+static ASSISTANTASSOCIATIONDATA_MEMBER_ASSISTANT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#AssistantAssociationData$assistantArn",
+        "com.amazonaws.wisdom",
+        "AssistantAssociationData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "assistantArn",
+    3,
+);
+static ASSISTANTASSOCIATIONDATA_MEMBER_ASSOCIATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#AssistantAssociationData$associationType",
+        "com.amazonaws.wisdom",
+        "AssistantAssociationData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "associationType",
+    4,
+);
+static ASSISTANTASSOCIATIONDATA_MEMBER_ASSOCIATION_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#AssistantAssociationData$associationData",
+        "com.amazonaws.wisdom",
+        "AssistantAssociationData",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "associationData",
+    5,
+);
+static ASSISTANTASSOCIATIONDATA_MEMBER_TAGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#Tags$key", "com.amazonaws.wisdom", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static ASSISTANTASSOCIATIONDATA_MEMBER_TAGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#Tags$value", "com.amazonaws.wisdom", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static ASSISTANTASSOCIATIONDATA_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#AssistantAssociationData$tags",
+        "com.amazonaws.wisdom",
+        "AssistantAssociationData",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "tags",
+    6,
+)
+.with_map_members(&ASSISTANTASSOCIATIONDATA_MEMBER_TAGS_KEY, &ASSISTANTASSOCIATIONDATA_MEMBER_TAGS_VALUE);
+static ASSISTANTASSOCIATIONDATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#AssistantAssociationData",
+        "com.amazonaws.wisdom",
+        "AssistantAssociationData",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ASSISTANTASSOCIATIONDATA_MEMBER_ASSISTANT_ASSOCIATION_ID,
+        &ASSISTANTASSOCIATIONDATA_MEMBER_ASSISTANT_ASSOCIATION_ARN,
+        &ASSISTANTASSOCIATIONDATA_MEMBER_ASSISTANT_ID,
+        &ASSISTANTASSOCIATIONDATA_MEMBER_ASSISTANT_ARN,
+        &ASSISTANTASSOCIATIONDATA_MEMBER_ASSOCIATION_TYPE,
+        &ASSISTANTASSOCIATIONDATA_MEMBER_ASSOCIATION_DATA,
+        &ASSISTANTASSOCIATIONDATA_MEMBER_TAGS,
+    ],
+);
+impl AssistantAssociationData {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ASSISTANTASSOCIATIONDATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AssistantAssociationData {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.assistant_association_id;
+            ser.write_string(&ASSISTANTASSOCIATIONDATA_MEMBER_ASSISTANT_ASSOCIATION_ID, val)?;
+        }
+        {
+            let val = &self.assistant_association_arn;
+            ser.write_string(&ASSISTANTASSOCIATIONDATA_MEMBER_ASSISTANT_ASSOCIATION_ARN, val)?;
+        }
+        {
+            let val = &self.assistant_id;
+            ser.write_string(&ASSISTANTASSOCIATIONDATA_MEMBER_ASSISTANT_ID, val)?;
+        }
+        {
+            let val = &self.assistant_arn;
+            ser.write_string(&ASSISTANTASSOCIATIONDATA_MEMBER_ASSISTANT_ARN, val)?;
+        }
+        {
+            let val = &self.association_type;
+            ser.write_string(&ASSISTANTASSOCIATIONDATA_MEMBER_ASSOCIATION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.association_data {
+            ser.write_struct(&ASSISTANTASSOCIATIONDATA_MEMBER_ASSOCIATION_DATA, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_map(
+                &ASSISTANTASSOCIATIONDATA_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AssistantAssociationDataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ASSISTANTASSOCIATIONDATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.assistant_association_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.assistant_association_arn = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.assistant_id = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.assistant_arn = Some(deser.read_string(member)?);
+                }
+                Some(4) => {
+                    self.association_type = Some(crate::types::AssociationType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.association_data = Some(crate::types::AssistantAssociationOutputData::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AssistantAssociationData {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.assistant_association_id = builder.assistant_association_id.or(Some(String::new()));
+        builder.assistant_association_arn = builder.assistant_association_arn.or(Some(String::new()));
+        builder.assistant_id = builder.assistant_id.or(Some(String::new()));
+        builder.assistant_arn = builder.assistant_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AssistantAssociationData {
     /// Creates a new builder-style object to manufacture [`AssistantAssociationData`](crate::types::AssistantAssociationData).
     pub fn builder() -> crate::types::builders::AssistantAssociationDataBuilder {

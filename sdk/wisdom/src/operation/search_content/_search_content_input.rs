@@ -30,6 +30,159 @@ impl SearchContentInput {
         self.search_expression.as_ref()
     }
 }
+static SEARCHCONTENTINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#SearchContentInput$nextToken",
+        "com.amazonaws.wisdom.synthetic",
+        "SearchContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    0,
+)
+.with_http_query("nextToken");
+static SEARCHCONTENTINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#SearchContentInput$maxResults",
+        "com.amazonaws.wisdom.synthetic",
+        "SearchContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxResults",
+    1,
+)
+.with_http_query("maxResults");
+static SEARCHCONTENTINPUT_MEMBER_KNOWLEDGE_BASE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#SearchContentInput$knowledgeBaseId",
+        "com.amazonaws.wisdom.synthetic",
+        "SearchContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "knowledgeBaseId",
+    2,
+)
+.with_http_label();
+static SEARCHCONTENTINPUT_MEMBER_SEARCH_EXPRESSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#SearchContentInput$searchExpression",
+        "com.amazonaws.wisdom.synthetic",
+        "SearchContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "searchExpression",
+    3,
+);
+static SEARCHCONTENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#SearchContentInput",
+        "com.amazonaws.wisdom.synthetic",
+        "SearchContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SEARCHCONTENTINPUT_MEMBER_NEXT_TOKEN,
+        &SEARCHCONTENTINPUT_MEMBER_MAX_RESULTS,
+        &SEARCHCONTENTINPUT_MEMBER_KNOWLEDGE_BASE_ID,
+        &SEARCHCONTENTINPUT_MEMBER_SEARCH_EXPRESSION,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/knowledgeBases/{knowledgeBaseId}/search",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("SearchContentRequest");
+impl SearchContentInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SEARCHCONTENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SearchContentInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&SEARCHCONTENTINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&SEARCHCONTENTINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.knowledge_base_id {
+            ser.write_string(&SEARCHCONTENTINPUT_MEMBER_KNOWLEDGE_BASE_ID, val)?;
+        }
+        if let Some(ref val) = self.search_expression {
+            ser.write_struct(&SEARCHCONTENTINPUT_MEMBER_SEARCH_EXPRESSION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::search_content::builders::SearchContentInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SEARCHCONTENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.knowledge_base_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.search_expression = Some(crate::types::SearchExpression::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SearchContentInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.knowledge_base_id = builder.knowledge_base_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SearchContentInput {
     /// Creates a new builder-style object to manufacture [`SearchContentInput`](crate::operation::search_content::SearchContentInput).
     pub fn builder() -> crate::operation::search_content::builders::SearchContentInputBuilder {

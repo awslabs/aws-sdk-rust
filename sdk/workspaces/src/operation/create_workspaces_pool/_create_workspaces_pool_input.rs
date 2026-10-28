@@ -62,6 +62,281 @@ impl CreateWorkspacesPoolInput {
         self.running_mode.as_ref()
     }
 }
+static CREATEWORKSPACESPOOLINPUT_MEMBER_POOL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspacesPoolInput$PoolName",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PoolName",
+    0,
+);
+static CREATEWORKSPACESPOOLINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspacesPoolInput$Description",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static CREATEWORKSPACESPOOLINPUT_MEMBER_BUNDLE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspacesPoolInput$BundleId",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BundleId",
+    2,
+);
+static CREATEWORKSPACESPOOLINPUT_MEMBER_DIRECTORY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspacesPoolInput$DirectoryId",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DirectoryId",
+    3,
+);
+static CREATEWORKSPACESPOOLINPUT_MEMBER_CAPACITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspacesPoolInput$Capacity",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Capacity",
+    4,
+);
+static CREATEWORKSPACESPOOLINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#TagList$member", "com.amazonaws.workspaces", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEWORKSPACESPOOLINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspacesPoolInput$Tags",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&CREATEWORKSPACESPOOLINPUT_MEMBER_TAGS_MEMBER);
+static CREATEWORKSPACESPOOLINPUT_MEMBER_APPLICATION_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspacesPoolInput$ApplicationSettings",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ApplicationSettings",
+    6,
+);
+static CREATEWORKSPACESPOOLINPUT_MEMBER_TIMEOUT_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspacesPoolInput$TimeoutSettings",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TimeoutSettings",
+    7,
+);
+static CREATEWORKSPACESPOOLINPUT_MEMBER_RUNNING_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspacesPoolInput$RunningMode",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RunningMode",
+    8,
+);
+static CREATEWORKSPACESPOOLINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspacesPoolInput",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspacesPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEWORKSPACESPOOLINPUT_MEMBER_POOL_NAME,
+        &CREATEWORKSPACESPOOLINPUT_MEMBER_DESCRIPTION,
+        &CREATEWORKSPACESPOOLINPUT_MEMBER_BUNDLE_ID,
+        &CREATEWORKSPACESPOOLINPUT_MEMBER_DIRECTORY_ID,
+        &CREATEWORKSPACESPOOLINPUT_MEMBER_CAPACITY,
+        &CREATEWORKSPACESPOOLINPUT_MEMBER_TAGS,
+        &CREATEWORKSPACESPOOLINPUT_MEMBER_APPLICATION_SETTINGS,
+        &CREATEWORKSPACESPOOLINPUT_MEMBER_TIMEOUT_SETTINGS,
+        &CREATEWORKSPACESPOOLINPUT_MEMBER_RUNNING_MODE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateWorkspacesPoolRequest");
+impl CreateWorkspacesPoolInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEWORKSPACESPOOLINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateWorkspacesPoolInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pool_name {
+            ser.write_string(&CREATEWORKSPACESPOOLINPUT_MEMBER_POOL_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATEWORKSPACESPOOLINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.bundle_id {
+            ser.write_string(&CREATEWORKSPACESPOOLINPUT_MEMBER_BUNDLE_ID, val)?;
+        }
+        if let Some(ref val) = self.directory_id {
+            ser.write_string(&CREATEWORKSPACESPOOLINPUT_MEMBER_DIRECTORY_ID, val)?;
+        }
+        if let Some(ref val) = self.capacity {
+            ser.write_struct(&CREATEWORKSPACESPOOLINPUT_MEMBER_CAPACITY, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEWORKSPACESPOOLINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.application_settings {
+            ser.write_struct(&CREATEWORKSPACESPOOLINPUT_MEMBER_APPLICATION_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.timeout_settings {
+            ser.write_struct(&CREATEWORKSPACESPOOLINPUT_MEMBER_TIMEOUT_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.running_mode {
+            ser.write_string(&CREATEWORKSPACESPOOLINPUT_MEMBER_RUNNING_MODE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_workspaces_pool::builders::CreateWorkspacesPoolInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEWORKSPACESPOOLINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pool_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bundle_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.directory_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity = Some(crate::types::Capacity::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.application_settings = Some(crate::types::ApplicationSettingsRequest::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.timeout_settings = Some(crate::types::TimeoutSettings::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.running_mode = Some(crate::types::PoolsRunningMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateWorkspacesPoolInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pool_name = builder.pool_name.or(Some(String::new()));
+        builder.description = builder.description.or(Some(String::new()));
+        builder.bundle_id = builder.bundle_id.or(Some(String::new()));
+        builder.directory_id = builder.directory_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateWorkspacesPoolInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspacesPoolInput`](crate::operation::create_workspaces_pool::CreateWorkspacesPoolInput).
     pub fn builder() -> crate::operation::create_workspaces_pool::builders::CreateWorkspacesPoolInputBuilder {

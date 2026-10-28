@@ -18,6 +18,110 @@ impl DisassociateResolverRuleInput {
         self.resolver_rule_id.as_deref()
     }
 }
+static DISASSOCIATERESOLVERRULEINPUT_MEMBER_VPC_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#DisassociateResolverRuleInput$VPCId",
+        "com.amazonaws.route53resolver.synthetic",
+        "DisassociateResolverRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VPCId",
+    0,
+);
+static DISASSOCIATERESOLVERRULEINPUT_MEMBER_RESOLVER_RULE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#DisassociateResolverRuleInput$ResolverRuleId",
+        "com.amazonaws.route53resolver.synthetic",
+        "DisassociateResolverRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResolverRuleId",
+    1,
+);
+static DISASSOCIATERESOLVERRULEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#DisassociateResolverRuleInput",
+        "com.amazonaws.route53resolver.synthetic",
+        "DisassociateResolverRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DISASSOCIATERESOLVERRULEINPUT_MEMBER_VPC_ID,
+        &DISASSOCIATERESOLVERRULEINPUT_MEMBER_RESOLVER_RULE_ID,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DisassociateResolverRuleRequest");
+impl DisassociateResolverRuleInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DISASSOCIATERESOLVERRULEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DisassociateResolverRuleInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.vpc_id {
+            ser.write_string(&DISASSOCIATERESOLVERRULEINPUT_MEMBER_VPC_ID, val)?;
+        }
+        if let Some(ref val) = self.resolver_rule_id {
+            ser.write_string(&DISASSOCIATERESOLVERRULEINPUT_MEMBER_RESOLVER_RULE_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::disassociate_resolver_rule::builders::DisassociateResolverRuleInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DISASSOCIATERESOLVERRULEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolver_rule_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DisassociateResolverRuleInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.vpc_id = builder.vpc_id.or(Some(String::new()));
+        builder.resolver_rule_id = builder.resolver_rule_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DisassociateResolverRuleInput {
     /// Creates a new builder-style object to manufacture [`DisassociateResolverRuleInput`](crate::operation::disassociate_resolver_rule::DisassociateResolverRuleInput).
     pub fn builder() -> crate::operation::disassociate_resolver_rule::builders::DisassociateResolverRuleInputBuilder {

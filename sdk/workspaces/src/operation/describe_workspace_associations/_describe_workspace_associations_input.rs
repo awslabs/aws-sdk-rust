@@ -20,6 +20,140 @@ impl DescribeWorkspaceAssociationsInput {
         self.associated_resource_types.as_deref().unwrap_or_default()
     }
 }
+static DESCRIBEWORKSPACEASSOCIATIONSINPUT_MEMBER_WORKSPACE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeWorkspaceAssociationsInput$WorkspaceId",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeWorkspaceAssociationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkspaceId",
+    0,
+);
+static DESCRIBEWORKSPACEASSOCIATIONSINPUT_MEMBER_ASSOCIATED_RESOURCE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces#WorkSpaceAssociatedResourceTypeList$member",
+            "com.amazonaws.workspaces",
+            "WorkSpaceAssociatedResourceTypeList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static DESCRIBEWORKSPACEASSOCIATIONSINPUT_MEMBER_ASSOCIATED_RESOURCE_TYPES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces.synthetic#DescribeWorkspaceAssociationsInput$AssociatedResourceTypes",
+            "com.amazonaws.workspaces.synthetic",
+            "DescribeWorkspaceAssociationsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "AssociatedResourceTypes",
+        1,
+    )
+    .with_list_member(&DESCRIBEWORKSPACEASSOCIATIONSINPUT_MEMBER_ASSOCIATED_RESOURCE_TYPES_MEMBER);
+static DESCRIBEWORKSPACEASSOCIATIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeWorkspaceAssociationsInput",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeWorkspaceAssociationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEWORKSPACEASSOCIATIONSINPUT_MEMBER_WORKSPACE_ID,
+        &DESCRIBEWORKSPACEASSOCIATIONSINPUT_MEMBER_ASSOCIATED_RESOURCE_TYPES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeWorkspaceAssociationsRequest");
+impl DescribeWorkspaceAssociationsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEWORKSPACEASSOCIATIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeWorkspaceAssociationsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.workspace_id {
+            ser.write_string(&DESCRIBEWORKSPACEASSOCIATIONSINPUT_MEMBER_WORKSPACE_ID, val)?;
+        }
+        if let Some(ref val) = self.associated_resource_types {
+            ser.write_list(
+                &DESCRIBEWORKSPACEASSOCIATIONSINPUT_MEMBER_ASSOCIATED_RESOURCE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_workspace_associations::builders::DescribeWorkspaceAssociationsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEWORKSPACEASSOCIATIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.associated_resource_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::WorkSpaceAssociatedResourceType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeWorkspaceAssociationsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.workspace_id = builder.workspace_id.or(Some(String::new()));
+        builder.associated_resource_types = builder.associated_resource_types.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeWorkspaceAssociationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceAssociationsInput`](crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsInput).
     pub fn builder() -> crate::operation::describe_workspace_associations::builders::DescribeWorkspaceAssociationsInputBuilder {

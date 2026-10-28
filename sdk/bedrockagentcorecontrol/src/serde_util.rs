@@ -2261,6 +2261,24 @@ pub(crate) fn put_resource_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn reset_token_vault_key_material_output_output_correct_errors(
+    mut builder: crate::operation::reset_token_vault_key_material::builders::ResetTokenVaultKeyMaterialOutputBuilder,
+) -> crate::operation::reset_token_vault_key_material::builders::ResetTokenVaultKeyMaterialOutputBuilder {
+    if builder.token_vault_id.is_none() {
+        builder.token_vault_id = Some(Default::default())
+    }
+    if builder.kms_configuration.is_none() {
+        builder.kms_configuration = {
+            let builder = crate::types::builders::KmsConfigurationBuilder::default();
+            crate::serde_util::kms_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.last_modified_date.is_none() {
+        builder.last_modified_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn rotate_payment_connector_credentials_output_output_correct_errors(
     mut builder: crate::operation::rotate_payment_connector_credentials::builders::RotatePaymentConnectorCredentialsOutputBuilder,
 ) -> crate::operation::rotate_payment_connector_credentials::builders::RotatePaymentConnectorCredentialsOutputBuilder {
@@ -5141,6 +5159,15 @@ pub(crate) fn oauth2_authorization_server_metadata_correct_errors(
     }
     if builder.token_endpoint.is_none() {
         builder.token_endpoint = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn on_behalf_of_authentication_config_correct_errors(
+    mut builder: crate::types::builders::OnBehalfOfAuthenticationConfigBuilder,
+) -> crate::types::builders::OnBehalfOfAuthenticationConfigBuilder {
+    if builder.client_authentication_method.is_none() {
+        builder.client_authentication_method = "no value was set".parse::<crate::types::OnBehalfOfClientAuthenticationMethod>().ok()
     }
     builder
 }

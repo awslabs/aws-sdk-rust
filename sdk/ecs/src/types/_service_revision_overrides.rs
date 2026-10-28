@@ -13,6 +13,83 @@ impl ServiceRevisionOverrides {
         self.runtime_platform.as_ref()
     }
 }
+static SERVICEREVISIONOVERRIDES_MEMBER_RUNTIME_PLATFORM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceRevisionOverrides$runtimePlatform",
+        "com.amazonaws.ecs",
+        "ServiceRevisionOverrides",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "runtimePlatform",
+    0,
+);
+static SERVICEREVISIONOVERRIDES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ServiceRevisionOverrides",
+        "com.amazonaws.ecs",
+        "ServiceRevisionOverrides",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&SERVICEREVISIONOVERRIDES_MEMBER_RUNTIME_PLATFORM],
+);
+impl ServiceRevisionOverrides {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SERVICEREVISIONOVERRIDES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ServiceRevisionOverrides {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.runtime_platform {
+            ser.write_struct(&SERVICEREVISIONOVERRIDES_MEMBER_RUNTIME_PLATFORM, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ServiceRevisionOverridesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SERVICEREVISIONOVERRIDES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.runtime_platform = Some(crate::types::RuntimePlatformOverride::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ServiceRevisionOverrides {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ServiceRevisionOverrides {
     /// Creates a new builder-style object to manufacture [`ServiceRevisionOverrides`](crate::types::ServiceRevisionOverrides).
     pub fn builder() -> crate::types::builders::ServiceRevisionOverridesBuilder {

@@ -51,6 +51,149 @@ impl TestConnectionOutput {
         self.sftp_connection_details.as_ref()
     }
 }
+static TESTCONNECTIONOUTPUT_MEMBER_CONNECTOR_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#TestConnectionOutput$ConnectorId",
+        "com.amazonaws.transfer.synthetic",
+        "TestConnectionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConnectorId",
+    0,
+);
+static TESTCONNECTIONOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#TestConnectionOutput$Status",
+        "com.amazonaws.transfer.synthetic",
+        "TestConnectionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    1,
+);
+static TESTCONNECTIONOUTPUT_MEMBER_STATUS_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#TestConnectionOutput$StatusMessage",
+        "com.amazonaws.transfer.synthetic",
+        "TestConnectionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusMessage",
+    2,
+);
+static TESTCONNECTIONOUTPUT_MEMBER_SFTP_CONNECTION_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#TestConnectionOutput$SftpConnectionDetails",
+        "com.amazonaws.transfer.synthetic",
+        "TestConnectionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SftpConnectionDetails",
+    3,
+);
+static TESTCONNECTIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#TestConnectionOutput",
+        "com.amazonaws.transfer.synthetic",
+        "TestConnectionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TESTCONNECTIONOUTPUT_MEMBER_CONNECTOR_ID,
+        &TESTCONNECTIONOUTPUT_MEMBER_STATUS,
+        &TESTCONNECTIONOUTPUT_MEMBER_STATUS_MESSAGE,
+        &TESTCONNECTIONOUTPUT_MEMBER_SFTP_CONNECTION_DETAILS,
+    ],
+)
+.with_original_name("TestConnectionResponse");
+impl TestConnectionOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TESTCONNECTIONOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TestConnectionOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.connector_id {
+            ser.write_string(&TESTCONNECTIONOUTPUT_MEMBER_CONNECTOR_ID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&TESTCONNECTIONOUTPUT_MEMBER_STATUS, val)?;
+        }
+        if let Some(ref val) = self.status_message {
+            ser.write_string(&TESTCONNECTIONOUTPUT_MEMBER_STATUS_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.sftp_connection_details {
+            ser.write_struct(&TESTCONNECTIONOUTPUT_MEMBER_SFTP_CONNECTION_DETAILS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::test_connection::builders::TestConnectionOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TESTCONNECTIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.connector_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sftp_connection_details = Some(crate::types::SftpConnectorConnectionDetails::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TestConnectionOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for TestConnectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

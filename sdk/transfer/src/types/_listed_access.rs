@@ -47,6 +47,136 @@ impl ListedAccess {
         self.external_id.as_deref()
     }
 }
+static LISTEDACCESS_MEMBER_HOME_DIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedAccess$HomeDirectory",
+        "com.amazonaws.transfer",
+        "ListedAccess",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeDirectory",
+    0,
+);
+static LISTEDACCESS_MEMBER_HOME_DIRECTORY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedAccess$HomeDirectoryType",
+        "com.amazonaws.transfer",
+        "ListedAccess",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeDirectoryType",
+    1,
+);
+static LISTEDACCESS_MEMBER_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ListedAccess$Role", "com.amazonaws.transfer", "ListedAccess"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Role",
+    2,
+);
+static LISTEDACCESS_MEMBER_EXTERNAL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ListedAccess$ExternalId", "com.amazonaws.transfer", "ListedAccess"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExternalId",
+    3,
+);
+static LISTEDACCESS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ListedAccess", "com.amazonaws.transfer", "ListedAccess"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTEDACCESS_MEMBER_HOME_DIRECTORY,
+        &LISTEDACCESS_MEMBER_HOME_DIRECTORY_TYPE,
+        &LISTEDACCESS_MEMBER_ROLE,
+        &LISTEDACCESS_MEMBER_EXTERNAL_ID,
+    ],
+);
+impl ListedAccess {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTEDACCESS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListedAccess {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.home_directory {
+            ser.write_string(&LISTEDACCESS_MEMBER_HOME_DIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.home_directory_type {
+            ser.write_string(&LISTEDACCESS_MEMBER_HOME_DIRECTORY_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.role {
+            ser.write_string(&LISTEDACCESS_MEMBER_ROLE, val)?;
+        }
+        if let Some(ref val) = self.external_id {
+            ser.write_string(&LISTEDACCESS_MEMBER_EXTERNAL_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ListedAccessBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTEDACCESS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_directory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_directory_type = Some(crate::types::HomeDirectoryType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListedAccess {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ListedAccess {
     /// Creates a new builder-style object to manufacture [`ListedAccess`](crate::types::ListedAccess).
     pub fn builder() -> crate::types::builders::ListedAccessBuilder {

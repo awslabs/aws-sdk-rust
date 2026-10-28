@@ -147,44 +147,44 @@ pub fn ser_coverage_filter_criteria(
         }
         array_46.finish();
     }
-    if let Some(var_49) = &input.last_scanned_at {
-        let mut array_50 = object.key("lastScannedAt").start_array();
+    if let Some(var_49) = &input.machine_image_tags {
+        let mut array_50 = object.key("machineImageTags").start_array();
         for item_51 in var_49 {
             {
                 #[allow(unused_mut)]
                 let mut object_52 = array_50.value().start_object();
-                crate::protocol_serde::shape_coverage_date_filter::ser_coverage_date_filter(&mut object_52, item_51)?;
+                crate::protocol_serde::shape_coverage_map_filter::ser_coverage_map_filter(&mut object_52, item_51)?;
                 object_52.finish();
             }
         }
         array_50.finish();
     }
-    if let Some(var_53) = &input.scan_mode {
-        let mut array_54 = object.key("scanMode").start_array();
+    if let Some(var_53) = &input.last_scanned_at {
+        let mut array_54 = object.key("lastScannedAt").start_array();
         for item_55 in var_53 {
             {
                 #[allow(unused_mut)]
                 let mut object_56 = array_54.value().start_object();
-                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_56, item_55)?;
+                crate::protocol_serde::shape_coverage_date_filter::ser_coverage_date_filter(&mut object_56, item_55)?;
                 object_56.finish();
             }
         }
         array_54.finish();
     }
-    if let Some(var_57) = &input.image_pulled_at {
-        let mut array_58 = object.key("imagePulledAt").start_array();
+    if let Some(var_57) = &input.scan_mode {
+        let mut array_58 = object.key("scanMode").start_array();
         for item_59 in var_57 {
             {
                 #[allow(unused_mut)]
                 let mut object_60 = array_58.value().start_object();
-                crate::protocol_serde::shape_coverage_date_filter::ser_coverage_date_filter(&mut object_60, item_59)?;
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_60, item_59)?;
                 object_60.finish();
             }
         }
         array_58.finish();
     }
-    if let Some(var_61) = &input.ecr_image_last_in_use_at {
-        let mut array_62 = object.key("ecrImageLastInUseAt").start_array();
+    if let Some(var_61) = &input.image_pulled_at {
+        let mut array_62 = object.key("imagePulledAt").start_array();
         for item_63 in var_61 {
             {
                 #[allow(unused_mut)]
@@ -195,32 +195,32 @@ pub fn ser_coverage_filter_criteria(
         }
         array_62.finish();
     }
-    if let Some(var_65) = &input.ecr_image_in_use_count {
-        let mut array_66 = object.key("ecrImageInUseCount").start_array();
+    if let Some(var_65) = &input.ecr_image_last_in_use_at {
+        let mut array_66 = object.key("ecrImageLastInUseAt").start_array();
         for item_67 in var_65 {
             {
                 #[allow(unused_mut)]
                 let mut object_68 = array_66.value().start_object();
-                crate::protocol_serde::shape_coverage_number_filter::ser_coverage_number_filter(&mut object_68, item_67)?;
+                crate::protocol_serde::shape_coverage_date_filter::ser_coverage_date_filter(&mut object_68, item_67)?;
                 object_68.finish();
             }
         }
         array_66.finish();
     }
-    if let Some(var_69) = &input.code_repository_project_name {
-        let mut array_70 = object.key("codeRepositoryProjectName").start_array();
+    if let Some(var_69) = &input.ecr_image_in_use_count {
+        let mut array_70 = object.key("ecrImageInUseCount").start_array();
         for item_71 in var_69 {
             {
                 #[allow(unused_mut)]
                 let mut object_72 = array_70.value().start_object();
-                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_72, item_71)?;
+                crate::protocol_serde::shape_coverage_number_filter::ser_coverage_number_filter(&mut object_72, item_71)?;
                 object_72.finish();
             }
         }
         array_70.finish();
     }
-    if let Some(var_73) = &input.code_repository_provider_type {
-        let mut array_74 = object.key("codeRepositoryProviderType").start_array();
+    if let Some(var_73) = &input.code_repository_project_name {
+        let mut array_74 = object.key("codeRepositoryProjectName").start_array();
         for item_75 in var_73 {
             {
                 #[allow(unused_mut)]
@@ -231,8 +231,8 @@ pub fn ser_coverage_filter_criteria(
         }
         array_74.finish();
     }
-    if let Some(var_77) = &input.code_repository_provider_type_visibility {
-        let mut array_78 = object.key("codeRepositoryProviderTypeVisibility").start_array();
+    if let Some(var_77) = &input.code_repository_provider_type {
+        let mut array_78 = object.key("codeRepositoryProviderType").start_array();
         for item_79 in var_77 {
             {
                 #[allow(unused_mut)]
@@ -243,8 +243,8 @@ pub fn ser_coverage_filter_criteria(
         }
         array_78.finish();
     }
-    if let Some(var_81) = &input.last_scanned_commit_id {
-        let mut array_82 = object.key("lastScannedCommitId").start_array();
+    if let Some(var_81) = &input.code_repository_provider_type_visibility {
+        let mut array_82 = object.key("codeRepositoryProviderTypeVisibility").start_array();
         for item_83 in var_81 {
             {
                 #[allow(unused_mut)]
@@ -255,8 +255,8 @@ pub fn ser_coverage_filter_criteria(
         }
         array_82.finish();
     }
-    if let Some(var_85) = &input.cloud_provider {
-        let mut array_86 = object.key("cloudProvider").start_array();
+    if let Some(var_85) = &input.last_scanned_commit_id {
+        let mut array_86 = object.key("lastScannedCommitId").start_array();
         for item_87 in var_85 {
             {
                 #[allow(unused_mut)]
@@ -267,8 +267,8 @@ pub fn ser_coverage_filter_criteria(
         }
         array_86.finish();
     }
-    if let Some(var_89) = &input.cloud_provider_account_id {
-        let mut array_90 = object.key("cloudProviderAccountId").start_array();
+    if let Some(var_89) = &input.cloud_provider {
+        let mut array_90 = object.key("cloudProvider").start_array();
         for item_91 in var_89 {
             {
                 #[allow(unused_mut)]
@@ -279,8 +279,8 @@ pub fn ser_coverage_filter_criteria(
         }
         array_90.finish();
     }
-    if let Some(var_93) = &input.cloud_provider_region {
-        let mut array_94 = object.key("cloudProviderRegion").start_array();
+    if let Some(var_93) = &input.cloud_provider_account_id {
+        let mut array_94 = object.key("cloudProviderAccountId").start_array();
         for item_95 in var_93 {
             {
                 #[allow(unused_mut)]
@@ -291,32 +291,32 @@ pub fn ser_coverage_filter_criteria(
         }
         array_94.finish();
     }
-    if let Some(var_97) = &input.cloud_vm_instance_tags {
-        let mut array_98 = object.key("cloudVmInstanceTags").start_array();
+    if let Some(var_97) = &input.cloud_provider_region {
+        let mut array_98 = object.key("cloudProviderRegion").start_array();
         for item_99 in var_97 {
             {
                 #[allow(unused_mut)]
                 let mut object_100 = array_98.value().start_object();
-                crate::protocol_serde::shape_coverage_map_filter::ser_coverage_map_filter(&mut object_100, item_99)?;
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_100, item_99)?;
                 object_100.finish();
             }
         }
         array_98.finish();
     }
-    if let Some(var_101) = &input.cloud_container_image_tags {
-        let mut array_102 = object.key("cloudContainerImageTags").start_array();
+    if let Some(var_101) = &input.cloud_vm_instance_tags {
+        let mut array_102 = object.key("cloudVmInstanceTags").start_array();
         for item_103 in var_101 {
             {
                 #[allow(unused_mut)]
                 let mut object_104 = array_102.value().start_object();
-                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_104, item_103)?;
+                crate::protocol_serde::shape_coverage_map_filter::ser_coverage_map_filter(&mut object_104, item_103)?;
                 object_104.finish();
             }
         }
         array_102.finish();
     }
-    if let Some(var_105) = &input.cloud_container_repository_name {
-        let mut array_106 = object.key("cloudContainerRepositoryName").start_array();
+    if let Some(var_105) = &input.cloud_container_image_tags {
+        let mut array_106 = object.key("cloudContainerImageTags").start_array();
         for item_107 in var_105 {
             {
                 #[allow(unused_mut)]
@@ -327,8 +327,8 @@ pub fn ser_coverage_filter_criteria(
         }
         array_106.finish();
     }
-    if let Some(var_109) = &input.cloud_container_registry_name {
-        let mut array_110 = object.key("cloudContainerRegistryName").start_array();
+    if let Some(var_109) = &input.cloud_container_repository_name {
+        let mut array_110 = object.key("cloudContainerRepositoryName").start_array();
         for item_111 in var_109 {
             {
                 #[allow(unused_mut)]
@@ -339,8 +339,8 @@ pub fn ser_coverage_filter_criteria(
         }
         array_110.finish();
     }
-    if let Some(var_113) = &input.cloud_serverless_function_name {
-        let mut array_114 = object.key("cloudServerlessFunctionName").start_array();
+    if let Some(var_113) = &input.cloud_container_registry_name {
+        let mut array_114 = object.key("cloudContainerRegistryName").start_array();
         for item_115 in var_113 {
             {
                 #[allow(unused_mut)]
@@ -351,8 +351,8 @@ pub fn ser_coverage_filter_criteria(
         }
         array_114.finish();
     }
-    if let Some(var_117) = &input.cloud_serverless_function_runtime {
-        let mut array_118 = object.key("cloudServerlessFunctionRuntime").start_array();
+    if let Some(var_117) = &input.cloud_serverless_function_name {
+        let mut array_118 = object.key("cloudServerlessFunctionName").start_array();
         for item_119 in var_117 {
             {
                 #[allow(unused_mut)]
@@ -363,29 +363,41 @@ pub fn ser_coverage_filter_criteria(
         }
         array_118.finish();
     }
-    if let Some(var_121) = &input.cloud_serverless_function_tags {
-        let mut array_122 = object.key("cloudServerlessFunctionTags").start_array();
+    if let Some(var_121) = &input.cloud_serverless_function_runtime {
+        let mut array_122 = object.key("cloudServerlessFunctionRuntime").start_array();
         for item_123 in var_121 {
             {
                 #[allow(unused_mut)]
                 let mut object_124 = array_122.value().start_object();
-                crate::protocol_serde::shape_coverage_map_filter::ser_coverage_map_filter(&mut object_124, item_123)?;
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_124, item_123)?;
                 object_124.finish();
             }
         }
         array_122.finish();
     }
-    if let Some(var_125) = &input.cloud_provider_org_id {
-        let mut array_126 = object.key("cloudProviderOrgId").start_array();
+    if let Some(var_125) = &input.cloud_serverless_function_tags {
+        let mut array_126 = object.key("cloudServerlessFunctionTags").start_array();
         for item_127 in var_125 {
             {
                 #[allow(unused_mut)]
                 let mut object_128 = array_126.value().start_object();
-                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_128, item_127)?;
+                crate::protocol_serde::shape_coverage_map_filter::ser_coverage_map_filter(&mut object_128, item_127)?;
                 object_128.finish();
             }
         }
         array_126.finish();
+    }
+    if let Some(var_129) = &input.cloud_provider_org_id {
+        let mut array_130 = object.key("cloudProviderOrgId").start_array();
+        for item_131 in var_129 {
+            {
+                #[allow(unused_mut)]
+                let mut object_132 = array_130.value().start_object();
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_132, item_131)?;
+                object_132.finish();
+            }
+        }
+        array_130.finish();
     }
     Ok(())
 }

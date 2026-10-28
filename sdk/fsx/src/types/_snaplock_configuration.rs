@@ -61,6 +61,186 @@ impl SnaplockConfiguration {
         self.volume_append_mode_enabled
     }
 }
+static SNAPLOCKCONFIGURATION_MEMBER_AUDIT_LOG_VOLUME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#SnaplockConfiguration$AuditLogVolume",
+        "com.amazonaws.fsx",
+        "SnaplockConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "AuditLogVolume",
+    0,
+);
+static SNAPLOCKCONFIGURATION_MEMBER_AUTOCOMMIT_PERIOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#SnaplockConfiguration$AutocommitPeriod",
+        "com.amazonaws.fsx",
+        "SnaplockConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AutocommitPeriod",
+    1,
+);
+static SNAPLOCKCONFIGURATION_MEMBER_PRIVILEGED_DELETE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#SnaplockConfiguration$PrivilegedDelete",
+        "com.amazonaws.fsx",
+        "SnaplockConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PrivilegedDelete",
+    2,
+);
+static SNAPLOCKCONFIGURATION_MEMBER_RETENTION_PERIOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#SnaplockConfiguration$RetentionPeriod",
+        "com.amazonaws.fsx",
+        "SnaplockConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RetentionPeriod",
+    3,
+);
+static SNAPLOCKCONFIGURATION_MEMBER_SNAPLOCK_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#SnaplockConfiguration$SnaplockType",
+        "com.amazonaws.fsx",
+        "SnaplockConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SnaplockType",
+    4,
+);
+static SNAPLOCKCONFIGURATION_MEMBER_VOLUME_APPEND_MODE_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#SnaplockConfiguration$VolumeAppendModeEnabled",
+        "com.amazonaws.fsx",
+        "SnaplockConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "VolumeAppendModeEnabled",
+    5,
+);
+static SNAPLOCKCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#SnaplockConfiguration", "com.amazonaws.fsx", "SnaplockConfiguration"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SNAPLOCKCONFIGURATION_MEMBER_AUDIT_LOG_VOLUME,
+        &SNAPLOCKCONFIGURATION_MEMBER_AUTOCOMMIT_PERIOD,
+        &SNAPLOCKCONFIGURATION_MEMBER_PRIVILEGED_DELETE,
+        &SNAPLOCKCONFIGURATION_MEMBER_RETENTION_PERIOD,
+        &SNAPLOCKCONFIGURATION_MEMBER_SNAPLOCK_TYPE,
+        &SNAPLOCKCONFIGURATION_MEMBER_VOLUME_APPEND_MODE_ENABLED,
+    ],
+);
+impl SnaplockConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SNAPLOCKCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SnaplockConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.audit_log_volume {
+            ser.write_boolean(&SNAPLOCKCONFIGURATION_MEMBER_AUDIT_LOG_VOLUME, *val)?;
+        }
+        if let Some(ref val) = self.autocommit_period {
+            ser.write_struct(&SNAPLOCKCONFIGURATION_MEMBER_AUTOCOMMIT_PERIOD, val)?;
+        }
+        if let Some(ref val) = self.privileged_delete {
+            ser.write_string(&SNAPLOCKCONFIGURATION_MEMBER_PRIVILEGED_DELETE, val.as_str())?;
+        }
+        if let Some(ref val) = self.retention_period {
+            ser.write_struct(&SNAPLOCKCONFIGURATION_MEMBER_RETENTION_PERIOD, val)?;
+        }
+        if let Some(ref val) = self.snaplock_type {
+            ser.write_string(&SNAPLOCKCONFIGURATION_MEMBER_SNAPLOCK_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.volume_append_mode_enabled {
+            ser.write_boolean(&SNAPLOCKCONFIGURATION_MEMBER_VOLUME_APPEND_MODE_ENABLED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SnaplockConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SNAPLOCKCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.audit_log_volume = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.autocommit_period = Some(crate::types::AutocommitPeriod::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.privileged_delete = Some(crate::types::PrivilegedDelete::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retention_period = Some(crate::types::SnaplockRetentionPeriod::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.snaplock_type = Some(crate::types::SnaplockType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_append_mode_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SnaplockConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SnaplockConfiguration {
     /// Creates a new builder-style object to manufacture [`SnaplockConfiguration`](crate::types::SnaplockConfiguration).
     pub fn builder() -> crate::types::builders::SnaplockConfigurationBuilder {

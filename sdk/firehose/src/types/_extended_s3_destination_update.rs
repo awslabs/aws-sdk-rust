@@ -97,6 +97,381 @@ impl ExtendedS3DestinationUpdate {
         self.custom_time_zone.as_deref()
     }
 }
+static EXTENDEDS3DESTINATIONUPDATE_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ExtendedS3DestinationUpdate$RoleARN",
+        "com.amazonaws.firehose",
+        "ExtendedS3DestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleARN",
+    0,
+);
+static EXTENDEDS3DESTINATIONUPDATE_MEMBER_BUCKET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ExtendedS3DestinationUpdate$BucketARN",
+        "com.amazonaws.firehose",
+        "ExtendedS3DestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BucketARN",
+    1,
+);
+static EXTENDEDS3DESTINATIONUPDATE_MEMBER_PREFIX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ExtendedS3DestinationUpdate$Prefix",
+        "com.amazonaws.firehose",
+        "ExtendedS3DestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Prefix",
+    2,
+);
+static EXTENDEDS3DESTINATIONUPDATE_MEMBER_ERROR_OUTPUT_PREFIX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ExtendedS3DestinationUpdate$ErrorOutputPrefix",
+        "com.amazonaws.firehose",
+        "ExtendedS3DestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorOutputPrefix",
+    3,
+);
+static EXTENDEDS3DESTINATIONUPDATE_MEMBER_BUFFERING_HINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ExtendedS3DestinationUpdate$BufferingHints",
+        "com.amazonaws.firehose",
+        "ExtendedS3DestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BufferingHints",
+    4,
+);
+static EXTENDEDS3DESTINATIONUPDATE_MEMBER_COMPRESSION_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ExtendedS3DestinationUpdate$CompressionFormat",
+        "com.amazonaws.firehose",
+        "ExtendedS3DestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CompressionFormat",
+    5,
+);
+static EXTENDEDS3DESTINATIONUPDATE_MEMBER_ENCRYPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ExtendedS3DestinationUpdate$EncryptionConfiguration",
+        "com.amazonaws.firehose",
+        "ExtendedS3DestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EncryptionConfiguration",
+    6,
+);
+static EXTENDEDS3DESTINATIONUPDATE_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ExtendedS3DestinationUpdate$CloudWatchLoggingOptions",
+        "com.amazonaws.firehose",
+        "ExtendedS3DestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CloudWatchLoggingOptions",
+    7,
+);
+static EXTENDEDS3DESTINATIONUPDATE_MEMBER_PROCESSING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ExtendedS3DestinationUpdate$ProcessingConfiguration",
+        "com.amazonaws.firehose",
+        "ExtendedS3DestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ProcessingConfiguration",
+    8,
+);
+static EXTENDEDS3DESTINATIONUPDATE_MEMBER_S3_BACKUP_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ExtendedS3DestinationUpdate$S3BackupMode",
+        "com.amazonaws.firehose",
+        "ExtendedS3DestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3BackupMode",
+    9,
+);
+static EXTENDEDS3DESTINATIONUPDATE_MEMBER_S3_BACKUP_UPDATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ExtendedS3DestinationUpdate$S3BackupUpdate",
+        "com.amazonaws.firehose",
+        "ExtendedS3DestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3BackupUpdate",
+    10,
+);
+static EXTENDEDS3DESTINATIONUPDATE_MEMBER_DATA_FORMAT_CONVERSION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#ExtendedS3DestinationUpdate$DataFormatConversionConfiguration",
+            "com.amazonaws.firehose",
+            "ExtendedS3DestinationUpdate",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DataFormatConversionConfiguration",
+        11,
+    );
+static EXTENDEDS3DESTINATIONUPDATE_MEMBER_DYNAMIC_PARTITIONING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#ExtendedS3DestinationUpdate$DynamicPartitioningConfiguration",
+            "com.amazonaws.firehose",
+            "ExtendedS3DestinationUpdate",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DynamicPartitioningConfiguration",
+        12,
+    );
+static EXTENDEDS3DESTINATIONUPDATE_MEMBER_FILE_EXTENSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ExtendedS3DestinationUpdate$FileExtension",
+        "com.amazonaws.firehose",
+        "ExtendedS3DestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileExtension",
+    13,
+);
+static EXTENDEDS3DESTINATIONUPDATE_MEMBER_CUSTOM_TIME_ZONE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ExtendedS3DestinationUpdate$CustomTimeZone",
+        "com.amazonaws.firehose",
+        "ExtendedS3DestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CustomTimeZone",
+    14,
+);
+static EXTENDEDS3DESTINATIONUPDATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ExtendedS3DestinationUpdate",
+        "com.amazonaws.firehose",
+        "ExtendedS3DestinationUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EXTENDEDS3DESTINATIONUPDATE_MEMBER_ROLE_ARN,
+        &EXTENDEDS3DESTINATIONUPDATE_MEMBER_BUCKET_ARN,
+        &EXTENDEDS3DESTINATIONUPDATE_MEMBER_PREFIX,
+        &EXTENDEDS3DESTINATIONUPDATE_MEMBER_ERROR_OUTPUT_PREFIX,
+        &EXTENDEDS3DESTINATIONUPDATE_MEMBER_BUFFERING_HINTS,
+        &EXTENDEDS3DESTINATIONUPDATE_MEMBER_COMPRESSION_FORMAT,
+        &EXTENDEDS3DESTINATIONUPDATE_MEMBER_ENCRYPTION_CONFIGURATION,
+        &EXTENDEDS3DESTINATIONUPDATE_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS,
+        &EXTENDEDS3DESTINATIONUPDATE_MEMBER_PROCESSING_CONFIGURATION,
+        &EXTENDEDS3DESTINATIONUPDATE_MEMBER_S3_BACKUP_MODE,
+        &EXTENDEDS3DESTINATIONUPDATE_MEMBER_S3_BACKUP_UPDATE,
+        &EXTENDEDS3DESTINATIONUPDATE_MEMBER_DATA_FORMAT_CONVERSION_CONFIGURATION,
+        &EXTENDEDS3DESTINATIONUPDATE_MEMBER_DYNAMIC_PARTITIONING_CONFIGURATION,
+        &EXTENDEDS3DESTINATIONUPDATE_MEMBER_FILE_EXTENSION,
+        &EXTENDEDS3DESTINATIONUPDATE_MEMBER_CUSTOM_TIME_ZONE,
+    ],
+);
+impl ExtendedS3DestinationUpdate {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EXTENDEDS3DESTINATIONUPDATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ExtendedS3DestinationUpdate {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&EXTENDEDS3DESTINATIONUPDATE_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.bucket_arn {
+            ser.write_string(&EXTENDEDS3DESTINATIONUPDATE_MEMBER_BUCKET_ARN, val)?;
+        }
+        if let Some(ref val) = self.prefix {
+            ser.write_string(&EXTENDEDS3DESTINATIONUPDATE_MEMBER_PREFIX, val)?;
+        }
+        if let Some(ref val) = self.error_output_prefix {
+            ser.write_string(&EXTENDEDS3DESTINATIONUPDATE_MEMBER_ERROR_OUTPUT_PREFIX, val)?;
+        }
+        if let Some(ref val) = self.buffering_hints {
+            ser.write_struct(&EXTENDEDS3DESTINATIONUPDATE_MEMBER_BUFFERING_HINTS, val)?;
+        }
+        if let Some(ref val) = self.compression_format {
+            ser.write_string(&EXTENDEDS3DESTINATIONUPDATE_MEMBER_COMPRESSION_FORMAT, val.as_str())?;
+        }
+        if let Some(ref val) = self.encryption_configuration {
+            ser.write_struct(&EXTENDEDS3DESTINATIONUPDATE_MEMBER_ENCRYPTION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.cloud_watch_logging_options {
+            ser.write_struct(&EXTENDEDS3DESTINATIONUPDATE_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.processing_configuration {
+            ser.write_struct(&EXTENDEDS3DESTINATIONUPDATE_MEMBER_PROCESSING_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.s3_backup_mode {
+            ser.write_string(&EXTENDEDS3DESTINATIONUPDATE_MEMBER_S3_BACKUP_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_backup_update {
+            ser.write_struct(&EXTENDEDS3DESTINATIONUPDATE_MEMBER_S3_BACKUP_UPDATE, val)?;
+        }
+        if let Some(ref val) = self.data_format_conversion_configuration {
+            ser.write_struct(&EXTENDEDS3DESTINATIONUPDATE_MEMBER_DATA_FORMAT_CONVERSION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.dynamic_partitioning_configuration {
+            ser.write_struct(&EXTENDEDS3DESTINATIONUPDATE_MEMBER_DYNAMIC_PARTITIONING_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.file_extension {
+            ser.write_string(&EXTENDEDS3DESTINATIONUPDATE_MEMBER_FILE_EXTENSION, val)?;
+        }
+        if let Some(ref val) = self.custom_time_zone {
+            ser.write_string(&EXTENDEDS3DESTINATIONUPDATE_MEMBER_CUSTOM_TIME_ZONE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ExtendedS3DestinationUpdateBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EXTENDEDS3DESTINATIONUPDATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bucket_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.prefix = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_output_prefix = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.buffering_hints = Some(crate::types::BufferingHints::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compression_format = Some(crate::types::CompressionFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_configuration = Some(crate::types::EncryptionConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_watch_logging_options = Some(crate::types::CloudWatchLoggingOptions::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.processing_configuration = Some(crate::types::ProcessingConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_backup_mode = Some(crate::types::S3BackupMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_backup_update = Some(crate::types::S3DestinationUpdate::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_format_conversion_configuration = Some(crate::types::DataFormatConversionConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dynamic_partitioning_configuration = Some(crate::types::DynamicPartitioningConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_extension = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_time_zone = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ExtendedS3DestinationUpdate {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ExtendedS3DestinationUpdate {
     /// Creates a new builder-style object to manufacture [`ExtendedS3DestinationUpdate`](crate::types::ExtendedS3DestinationUpdate).
     pub fn builder() -> crate::types::builders::ExtendedS3DestinationUpdateBuilder {

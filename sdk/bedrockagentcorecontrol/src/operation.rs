@@ -412,6 +412,9 @@ pub mod list_workload_identities;
 /// Types for the `PutResourcePolicy` operation.
 pub mod put_resource_policy;
 
+/// Types for the `ResetTokenVaultKeyMaterial` operation.
+pub mod reset_token_vault_key_material;
+
 /// Types for the `RotatePaymentConnectorCredentials` operation.
 pub mod rotate_payment_connector_credentials;
 

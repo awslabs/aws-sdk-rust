@@ -25,6 +25,127 @@ impl OpenZfsUserOrGroupQuota {
         self.storage_capacity_quota_gib
     }
 }
+static OPENZFSUSERORGROUPQUOTA_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OpenZFSUserOrGroupQuota$Type",
+        "com.amazonaws.fsx",
+        "OpenZFSUserOrGroupQuota",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    0,
+);
+static OPENZFSUSERORGROUPQUOTA_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OpenZFSUserOrGroupQuota$Id",
+        "com.amazonaws.fsx",
+        "OpenZFSUserOrGroupQuota",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Id",
+    1,
+);
+static OPENZFSUSERORGROUPQUOTA_MEMBER_STORAGE_CAPACITY_QUOTA_GIB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OpenZFSUserOrGroupQuota$StorageCapacityQuotaGiB",
+        "com.amazonaws.fsx",
+        "OpenZFSUserOrGroupQuota",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "StorageCapacityQuotaGiB",
+    2,
+);
+static OPENZFSUSERORGROUPQUOTA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#OpenZFSUserOrGroupQuota",
+        "com.amazonaws.fsx",
+        "OpenZFSUserOrGroupQuota",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &OPENZFSUSERORGROUPQUOTA_MEMBER_TYPE,
+        &OPENZFSUSERORGROUPQUOTA_MEMBER_ID,
+        &OPENZFSUSERORGROUPQUOTA_MEMBER_STORAGE_CAPACITY_QUOTA_GIB,
+    ],
+);
+impl OpenZfsUserOrGroupQuota {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OPENZFSUSERORGROUPQUOTA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OpenZfsUserOrGroupQuota {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&OPENZFSUSERORGROUPQUOTA_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.id {
+            ser.write_integer(&OPENZFSUSERORGROUPQUOTA_MEMBER_ID, *val)?;
+        }
+        if let Some(ref val) = self.storage_capacity_quota_gib {
+            ser.write_integer(&OPENZFSUSERORGROUPQUOTA_MEMBER_STORAGE_CAPACITY_QUOTA_GIB, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OpenZfsUserOrGroupQuotaBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&OPENZFSUSERORGROUPQUOTA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::OpenZfsQuotaType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.storage_capacity_quota_gib = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OpenZfsUserOrGroupQuota {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl OpenZfsUserOrGroupQuota {
     /// Creates a new builder-style object to manufacture [`OpenZfsUserOrGroupQuota`](crate::types::OpenZfsUserOrGroupQuota).
     pub fn builder() -> crate::types::builders::OpenZfsUserOrGroupQuotaBuilder {

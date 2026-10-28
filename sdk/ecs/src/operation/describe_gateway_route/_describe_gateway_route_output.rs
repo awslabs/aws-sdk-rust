@@ -13,6 +13,84 @@ impl DescribeGatewayRouteOutput {
         self.gateway_route.as_ref()
     }
 }
+static DESCRIBEGATEWAYROUTEOUTPUT_MEMBER_GATEWAY_ROUTE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DescribeGatewayRouteOutput$gatewayRoute",
+        "com.amazonaws.ecs.synthetic",
+        "DescribeGatewayRouteOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "gatewayRoute",
+    0,
+);
+static DESCRIBEGATEWAYROUTEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DescribeGatewayRouteOutput",
+        "com.amazonaws.ecs.synthetic",
+        "DescribeGatewayRouteOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESCRIBEGATEWAYROUTEOUTPUT_MEMBER_GATEWAY_ROUTE],
+)
+.with_original_name("DescribeGatewayRouteResponse");
+impl DescribeGatewayRouteOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEGATEWAYROUTEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeGatewayRouteOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.gateway_route {
+            ser.write_struct(&DESCRIBEGATEWAYROUTEOUTPUT_MEMBER_GATEWAY_ROUTE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_gateway_route::builders::DescribeGatewayRouteOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEGATEWAYROUTEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_route = Some(crate::types::GatewayRoute::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeGatewayRouteOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeGatewayRouteOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

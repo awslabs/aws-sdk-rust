@@ -30,6 +30,121 @@ impl CancelTimerFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+static CANCELTIMERFAILEDEVENTATTRIBUTES_MEMBER_TIMER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#CancelTimerFailedEventAttributes$timerId",
+        "com.amazonaws.swf",
+        "CancelTimerFailedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "timerId",
+    0,
+);
+static CANCELTIMERFAILEDEVENTATTRIBUTES_MEMBER_CAUSE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#CancelTimerFailedEventAttributes$cause",
+        "com.amazonaws.swf",
+        "CancelTimerFailedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cause",
+    1,
+);
+static CANCELTIMERFAILEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#CancelTimerFailedEventAttributes$decisionTaskCompletedEventId",
+            "com.amazonaws.swf",
+            "CancelTimerFailedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "decisionTaskCompletedEventId",
+        2,
+    );
+static CANCELTIMERFAILEDEVENTATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#CancelTimerFailedEventAttributes",
+        "com.amazonaws.swf",
+        "CancelTimerFailedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CANCELTIMERFAILEDEVENTATTRIBUTES_MEMBER_TIMER_ID,
+        &CANCELTIMERFAILEDEVENTATTRIBUTES_MEMBER_CAUSE,
+        &CANCELTIMERFAILEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID,
+    ],
+);
+impl CancelTimerFailedEventAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CANCELTIMERFAILEDEVENTATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CancelTimerFailedEventAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.timer_id;
+            ser.write_string(&CANCELTIMERFAILEDEVENTATTRIBUTES_MEMBER_TIMER_ID, val)?;
+        }
+        {
+            let val = &self.cause;
+            ser.write_string(&CANCELTIMERFAILEDEVENTATTRIBUTES_MEMBER_CAUSE, val.as_str())?;
+        }
+        {
+            let val = &self.decision_task_completed_event_id;
+            ser.write_long(&CANCELTIMERFAILEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CancelTimerFailedEventAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CANCELTIMERFAILEDEVENTATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.timer_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.cause = Some(crate::types::CancelTimerFailedCause::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    self.decision_task_completed_event_id = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CancelTimerFailedEventAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.timer_id = builder.timer_id.or(Some(String::new()));
+        builder.decision_task_completed_event_id = builder.decision_task_completed_event_id.or(Some(0i64));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CancelTimerFailedEventAttributes {
     /// Creates a new builder-style object to manufacture [`CancelTimerFailedEventAttributes`](crate::types::CancelTimerFailedEventAttributes).
     pub fn builder() -> crate::types::builders::CancelTimerFailedEventAttributesBuilder {

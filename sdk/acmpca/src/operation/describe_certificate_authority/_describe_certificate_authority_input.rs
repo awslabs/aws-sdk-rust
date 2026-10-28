@@ -14,6 +14,87 @@ impl DescribeCertificateAuthorityInput {
         self.certificate_authority_arn.as_deref()
     }
 }
+static DESCRIBECERTIFICATEAUTHORITYINPUT_MEMBER_CERTIFICATE_AUTHORITY_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.acmpca.synthetic#DescribeCertificateAuthorityInput$CertificateAuthorityArn",
+            "com.amazonaws.acmpca.synthetic",
+            "DescribeCertificateAuthorityInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "CertificateAuthorityArn",
+        0,
+    );
+static DESCRIBECERTIFICATEAUTHORITYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#DescribeCertificateAuthorityInput",
+        "com.amazonaws.acmpca.synthetic",
+        "DescribeCertificateAuthorityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESCRIBECERTIFICATEAUTHORITYINPUT_MEMBER_CERTIFICATE_AUTHORITY_ARN],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeCertificateAuthorityRequest");
+impl DescribeCertificateAuthorityInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECERTIFICATEAUTHORITYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeCertificateAuthorityInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.certificate_authority_arn {
+            ser.write_string(&DESCRIBECERTIFICATEAUTHORITYINPUT_MEMBER_CERTIFICATE_AUTHORITY_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_certificate_authority::builders::DescribeCertificateAuthorityInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECERTIFICATEAUTHORITYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_authority_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeCertificateAuthorityInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.certificate_authority_arn = builder.certificate_authority_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeCertificateAuthorityInput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificateAuthorityInput`](crate::operation::describe_certificate_authority::DescribeCertificateAuthorityInput).
     pub fn builder() -> crate::operation::describe_certificate_authority::builders::DescribeCertificateAuthorityInputBuilder {

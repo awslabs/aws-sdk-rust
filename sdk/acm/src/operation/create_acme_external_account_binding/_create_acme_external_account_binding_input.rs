@@ -38,6 +38,195 @@ impl CreateAcmeExternalAccountBindingInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEACMEEXTERNALACCOUNTBINDINGINPUT_MEMBER_IDEMPOTENCY_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeExternalAccountBindingInput$IdempotencyToken",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeExternalAccountBindingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdempotencyToken",
+    0,
+);
+static CREATEACMEEXTERNALACCOUNTBINDINGINPUT_MEMBER_ACME_ENDPOINT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeExternalAccountBindingInput$AcmeEndpointArn",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeExternalAccountBindingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcmeEndpointArn",
+    1,
+);
+static CREATEACMEEXTERNALACCOUNTBINDINGINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeExternalAccountBindingInput$RoleArn",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeExternalAccountBindingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    2,
+);
+static CREATEACMEEXTERNALACCOUNTBINDINGINPUT_MEMBER_EXPIRATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeExternalAccountBindingInput$Expiration",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeExternalAccountBindingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Expiration",
+    3,
+);
+static CREATEACMEEXTERNALACCOUNTBINDINGINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#TagList$member", "com.amazonaws.acm", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEACMEEXTERNALACCOUNTBINDINGINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeExternalAccountBindingInput$Tags",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeExternalAccountBindingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    4,
+)
+.with_list_member(&CREATEACMEEXTERNALACCOUNTBINDINGINPUT_MEMBER_TAGS_MEMBER);
+static CREATEACMEEXTERNALACCOUNTBINDINGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeExternalAccountBindingInput",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeExternalAccountBindingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEACMEEXTERNALACCOUNTBINDINGINPUT_MEMBER_IDEMPOTENCY_TOKEN,
+        &CREATEACMEEXTERNALACCOUNTBINDINGINPUT_MEMBER_ACME_ENDPOINT_ARN,
+        &CREATEACMEEXTERNALACCOUNTBINDINGINPUT_MEMBER_ROLE_ARN,
+        &CREATEACMEEXTERNALACCOUNTBINDINGINPUT_MEMBER_EXPIRATION,
+        &CREATEACMEEXTERNALACCOUNTBINDINGINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateAcmeExternalAccountBindingRequest");
+impl CreateAcmeExternalAccountBindingInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEACMEEXTERNALACCOUNTBINDINGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAcmeExternalAccountBindingInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.idempotency_token {
+            ser.write_string(&CREATEACMEEXTERNALACCOUNTBINDINGINPUT_MEMBER_IDEMPOTENCY_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.acme_endpoint_arn {
+            ser.write_string(&CREATEACMEEXTERNALACCOUNTBINDINGINPUT_MEMBER_ACME_ENDPOINT_ARN, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CREATEACMEEXTERNALACCOUNTBINDINGINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.expiration {
+            ser.write_struct(&CREATEACMEEXTERNALACCOUNTBINDINGINPUT_MEMBER_EXPIRATION, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEACMEEXTERNALACCOUNTBINDINGINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_acme_external_account_binding::builders::CreateAcmeExternalAccountBindingInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEACMEEXTERNALACCOUNTBINDINGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idempotency_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.acme_endpoint_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expiration = Some(crate::types::Expiration::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateAcmeExternalAccountBindingInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.acme_endpoint_arn = builder.acme_endpoint_arn.or(Some(String::new()));
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateAcmeExternalAccountBindingInput {
     /// Creates a new builder-style object to manufacture [`CreateAcmeExternalAccountBindingInput`](crate::operation::create_acme_external_account_binding::CreateAcmeExternalAccountBindingInput).
     pub fn builder() -> crate::operation::create_acme_external_account_binding::builders::CreateAcmeExternalAccountBindingInputBuilder {

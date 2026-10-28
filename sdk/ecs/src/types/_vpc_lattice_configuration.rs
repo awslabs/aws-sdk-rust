@@ -34,6 +34,142 @@ impl VpcLatticeConfiguration {
         self.advanced_configuration.as_ref()
     }
 }
+static VPCLATTICECONFIGURATION_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#VpcLatticeConfiguration$roleArn",
+        "com.amazonaws.ecs",
+        "VpcLatticeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "roleArn",
+    0,
+);
+static VPCLATTICECONFIGURATION_MEMBER_TARGET_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#VpcLatticeConfiguration$targetGroupArn",
+        "com.amazonaws.ecs",
+        "VpcLatticeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "targetGroupArn",
+    1,
+);
+static VPCLATTICECONFIGURATION_MEMBER_PORT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#VpcLatticeConfiguration$portName",
+        "com.amazonaws.ecs",
+        "VpcLatticeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "portName",
+    2,
+);
+static VPCLATTICECONFIGURATION_MEMBER_ADVANCED_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#VpcLatticeConfiguration$advancedConfiguration",
+        "com.amazonaws.ecs",
+        "VpcLatticeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "advancedConfiguration",
+    3,
+);
+static VPCLATTICECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#VpcLatticeConfiguration",
+        "com.amazonaws.ecs",
+        "VpcLatticeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &VPCLATTICECONFIGURATION_MEMBER_ROLE_ARN,
+        &VPCLATTICECONFIGURATION_MEMBER_TARGET_GROUP_ARN,
+        &VPCLATTICECONFIGURATION_MEMBER_PORT_NAME,
+        &VPCLATTICECONFIGURATION_MEMBER_ADVANCED_CONFIGURATION,
+    ],
+);
+impl VpcLatticeConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &VPCLATTICECONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for VpcLatticeConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.role_arn;
+            ser.write_string(&VPCLATTICECONFIGURATION_MEMBER_ROLE_ARN, val)?;
+        }
+        {
+            let val = &self.target_group_arn;
+            ser.write_string(&VPCLATTICECONFIGURATION_MEMBER_TARGET_GROUP_ARN, val)?;
+        }
+        {
+            let val = &self.port_name;
+            ser.write_string(&VPCLATTICECONFIGURATION_MEMBER_PORT_NAME, val)?;
+        }
+        if let Some(ref val) = self.advanced_configuration {
+            ser.write_struct(&VPCLATTICECONFIGURATION_MEMBER_ADVANCED_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::VpcLatticeConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&VPCLATTICECONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.role_arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.target_group_arn = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.port_name = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.advanced_configuration = Some(crate::types::VpcLatticeAdvancedConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl VpcLatticeConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.target_group_arn = builder.target_group_arn.or(Some(String::new()));
+        builder.port_name = builder.port_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl VpcLatticeConfiguration {
     /// Creates a new builder-style object to manufacture [`VpcLatticeConfiguration`](crate::types::VpcLatticeConfiguration).
     pub fn builder() -> crate::types::builders::VpcLatticeConfigurationBuilder {

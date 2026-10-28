@@ -37,6 +37,173 @@ impl MergeShardsInput {
         self.stream_id.as_deref()
     }
 }
+static MERGESHARDSINPUT_MEMBER_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#MergeShardsInput$StreamName",
+        "com.amazonaws.kinesis.synthetic",
+        "MergeShardsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamName",
+    0,
+);
+static MERGESHARDSINPUT_MEMBER_SHARD_TO_MERGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#MergeShardsInput$ShardToMerge",
+        "com.amazonaws.kinesis.synthetic",
+        "MergeShardsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ShardToMerge",
+    1,
+);
+static MERGESHARDSINPUT_MEMBER_ADJACENT_SHARD_TO_MERGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#MergeShardsInput$AdjacentShardToMerge",
+        "com.amazonaws.kinesis.synthetic",
+        "MergeShardsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AdjacentShardToMerge",
+    2,
+);
+static MERGESHARDSINPUT_MEMBER_STREAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#MergeShardsInput$StreamARN",
+        "com.amazonaws.kinesis.synthetic",
+        "MergeShardsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamARN",
+    3,
+);
+static MERGESHARDSINPUT_MEMBER_STREAM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#MergeShardsInput$StreamId",
+        "com.amazonaws.kinesis.synthetic",
+        "MergeShardsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamId",
+    4,
+);
+static MERGESHARDSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#MergeShardsInput",
+        "com.amazonaws.kinesis.synthetic",
+        "MergeShardsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MERGESHARDSINPUT_MEMBER_STREAM_NAME,
+        &MERGESHARDSINPUT_MEMBER_SHARD_TO_MERGE,
+        &MERGESHARDSINPUT_MEMBER_ADJACENT_SHARD_TO_MERGE,
+        &MERGESHARDSINPUT_MEMBER_STREAM_ARN,
+        &MERGESHARDSINPUT_MEMBER_STREAM_ID,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("MergeShardsInput");
+impl MergeShardsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MERGESHARDSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MergeShardsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stream_name {
+            ser.write_string(&MERGESHARDSINPUT_MEMBER_STREAM_NAME, val)?;
+        }
+        if let Some(ref val) = self.shard_to_merge {
+            ser.write_string(&MERGESHARDSINPUT_MEMBER_SHARD_TO_MERGE, val)?;
+        }
+        if let Some(ref val) = self.adjacent_shard_to_merge {
+            ser.write_string(&MERGESHARDSINPUT_MEMBER_ADJACENT_SHARD_TO_MERGE, val)?;
+        }
+        if let Some(ref val) = self.stream_arn {
+            ser.write_string(&MERGESHARDSINPUT_MEMBER_STREAM_ARN, val)?;
+        }
+        if let Some(ref val) = self.stream_id {
+            ser.write_string(&MERGESHARDSINPUT_MEMBER_STREAM_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::merge_shards::builders::MergeShardsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MERGESHARDSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.shard_to_merge = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.adjacent_shard_to_merge = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MergeShardsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.shard_to_merge = builder.shard_to_merge.or(Some(String::new()));
+        builder.adjacent_shard_to_merge = builder.adjacent_shard_to_merge.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl MergeShardsInput {
     /// Creates a new builder-style object to manufacture [`MergeShardsInput`](crate::operation::merge_shards::MergeShardsInput).
     pub fn builder() -> crate::operation::merge_shards::builders::MergeShardsInputBuilder {

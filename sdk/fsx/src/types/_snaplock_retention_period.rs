@@ -25,6 +25,127 @@ impl SnaplockRetentionPeriod {
         self.maximum_retention.as_ref()
     }
 }
+static SNAPLOCKRETENTIONPERIOD_MEMBER_DEFAULT_RETENTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#SnaplockRetentionPeriod$DefaultRetention",
+        "com.amazonaws.fsx",
+        "SnaplockRetentionPeriod",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DefaultRetention",
+    0,
+);
+static SNAPLOCKRETENTIONPERIOD_MEMBER_MINIMUM_RETENTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#SnaplockRetentionPeriod$MinimumRetention",
+        "com.amazonaws.fsx",
+        "SnaplockRetentionPeriod",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MinimumRetention",
+    1,
+);
+static SNAPLOCKRETENTIONPERIOD_MEMBER_MAXIMUM_RETENTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#SnaplockRetentionPeriod$MaximumRetention",
+        "com.amazonaws.fsx",
+        "SnaplockRetentionPeriod",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MaximumRetention",
+    2,
+);
+static SNAPLOCKRETENTIONPERIOD_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#SnaplockRetentionPeriod",
+        "com.amazonaws.fsx",
+        "SnaplockRetentionPeriod",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SNAPLOCKRETENTIONPERIOD_MEMBER_DEFAULT_RETENTION,
+        &SNAPLOCKRETENTIONPERIOD_MEMBER_MINIMUM_RETENTION,
+        &SNAPLOCKRETENTIONPERIOD_MEMBER_MAXIMUM_RETENTION,
+    ],
+);
+impl SnaplockRetentionPeriod {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SNAPLOCKRETENTIONPERIOD_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SnaplockRetentionPeriod {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.default_retention {
+            ser.write_struct(&SNAPLOCKRETENTIONPERIOD_MEMBER_DEFAULT_RETENTION, val)?;
+        }
+        if let Some(ref val) = self.minimum_retention {
+            ser.write_struct(&SNAPLOCKRETENTIONPERIOD_MEMBER_MINIMUM_RETENTION, val)?;
+        }
+        if let Some(ref val) = self.maximum_retention {
+            ser.write_struct(&SNAPLOCKRETENTIONPERIOD_MEMBER_MAXIMUM_RETENTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SnaplockRetentionPeriodBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SNAPLOCKRETENTIONPERIOD_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_retention = Some(crate::types::RetentionPeriod::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.minimum_retention = Some(crate::types::RetentionPeriod::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.maximum_retention = Some(crate::types::RetentionPeriod::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SnaplockRetentionPeriod {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SnaplockRetentionPeriod {
     /// Creates a new builder-style object to manufacture [`SnaplockRetentionPeriod`](crate::types::SnaplockRetentionPeriod).
     pub fn builder() -> crate::types::builders::SnaplockRetentionPeriodBuilder {

@@ -5,15 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceRequirement {
     /// <p>The value for the specified resource type.</p>
+    /// <p>You must specify this parameter unless the type is <code>GPU</code> and you specify <code>sharingStrategy</code>.</p>
     /// <p>When the type is <code>GPU</code>, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on. You can also specify <code>ALL</code> to allocate all available GPUs on the instance to the container.</p>
     /// <p>When the type is <code>NeuronDevice</code>, the value must be <code>ALL</code>. This allocates all available Neuron devices on the instance to the container. Only one container in a task can specify <code>NeuronDevice</code> resources. This resource type is only supported on Managed Instances.</p>
     /// <p>When the type is <code>InferenceAccelerator</code>, the <code>value</code> matches the <code>deviceName</code> for an <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a> specified in a task definition.</p>
     pub value: ::std::string::String,
     /// <p>The type of resource to assign to a container.</p>
     pub r#type: crate::types::ResourceType,
+    /// <p>The strategy that the container uses to share a GPU with other containers. Specify a sharing strategy only when the type is <code>GPU</code>. For a GPU resource requirement, specify either <code>value</code> or <code>sharingStrategy</code>, but not both. If you don't specify a sharing strategy, the container has exclusive use of each GPU that Amazon ECS assigns to it. The containers in a task that request GPUs must all use the same option.</p>
+    /// <p>You can use GPU sharing with tasks that run on Amazon EC2 instances or Amazon ECS Managed Instances. Task definitions that require <code>EXTERNAL</code> compatibility don't support GPU sharing.</p>
+    pub sharing_strategy: ::std::option::Option<crate::types::SharingStrategy>,
 }
 impl ResourceRequirement {
     /// <p>The value for the specified resource type.</p>
+    /// <p>You must specify this parameter unless the type is <code>GPU</code> and you specify <code>sharingStrategy</code>.</p>
     /// <p>When the type is <code>GPU</code>, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on. You can also specify <code>ALL</code> to allocate all available GPUs on the instance to the container.</p>
     /// <p>When the type is <code>NeuronDevice</code>, the value must be <code>ALL</code>. This allocates all available Neuron devices on the instance to the container. Only one container in a task can specify <code>NeuronDevice</code> resources. This resource type is only supported on Managed Instances.</p>
     /// <p>When the type is <code>InferenceAccelerator</code>, the <code>value</code> matches the <code>deviceName</code> for an <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a> specified in a task definition.</p>
@@ -24,6 +29,114 @@ impl ResourceRequirement {
     /// <p>The type of resource to assign to a container.</p>
     pub fn r#type(&self) -> &crate::types::ResourceType {
         &self.r#type
+    }
+    /// <p>The strategy that the container uses to share a GPU with other containers. Specify a sharing strategy only when the type is <code>GPU</code>. For a GPU resource requirement, specify either <code>value</code> or <code>sharingStrategy</code>, but not both. If you don't specify a sharing strategy, the container has exclusive use of each GPU that Amazon ECS assigns to it. The containers in a task that request GPUs must all use the same option.</p>
+    /// <p>You can use GPU sharing with tasks that run on Amazon EC2 instances or Amazon ECS Managed Instances. Task definitions that require <code>EXTERNAL</code> compatibility don't support GPU sharing.</p>
+    pub fn sharing_strategy(&self) -> ::std::option::Option<&crate::types::SharingStrategy> {
+        self.sharing_strategy.as_ref()
+    }
+}
+static RESOURCEREQUIREMENT_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ResourceRequirement$value", "com.amazonaws.ecs", "ResourceRequirement"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    0,
+);
+static RESOURCEREQUIREMENT_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ResourceRequirement$type", "com.amazonaws.ecs", "ResourceRequirement"),
+    ::aws_smithy_schema::ShapeType::String,
+    "type",
+    1,
+);
+static RESOURCEREQUIREMENT_MEMBER_SHARING_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ResourceRequirement$sharingStrategy",
+        "com.amazonaws.ecs",
+        "ResourceRequirement",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "sharingStrategy",
+    2,
+);
+static RESOURCEREQUIREMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ResourceRequirement", "com.amazonaws.ecs", "ResourceRequirement"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESOURCEREQUIREMENT_MEMBER_VALUE,
+        &RESOURCEREQUIREMENT_MEMBER_TYPE,
+        &RESOURCEREQUIREMENT_MEMBER_SHARING_STRATEGY,
+    ],
+);
+impl ResourceRequirement {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOURCEREQUIREMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResourceRequirement {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.value;
+            ser.write_string(&RESOURCEREQUIREMENT_MEMBER_VALUE, val)?;
+        }
+        {
+            let val = &self.r#type;
+            ser.write_string(&RESOURCEREQUIREMENT_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.sharing_strategy {
+            ser.write_struct(&RESOURCEREQUIREMENT_MEMBER_SHARING_STRATEGY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ResourceRequirementBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESOURCEREQUIREMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.value = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.r#type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sharing_strategy = Some(crate::types::SharingStrategy::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResourceRequirement {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
     }
 }
 impl ResourceRequirement {
@@ -39,18 +152,20 @@ impl ResourceRequirement {
 pub struct ResourceRequirementBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ResourceType>,
+    pub(crate) sharing_strategy: ::std::option::Option<crate::types::SharingStrategy>,
 }
 impl ResourceRequirementBuilder {
     /// <p>The value for the specified resource type.</p>
+    /// <p>You must specify this parameter unless the type is <code>GPU</code> and you specify <code>sharingStrategy</code>.</p>
     /// <p>When the type is <code>GPU</code>, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on. You can also specify <code>ALL</code> to allocate all available GPUs on the instance to the container.</p>
     /// <p>When the type is <code>NeuronDevice</code>, the value must be <code>ALL</code>. This allocates all available Neuron devices on the instance to the container. Only one container in a task can specify <code>NeuronDevice</code> resources. This resource type is only supported on Managed Instances.</p>
     /// <p>When the type is <code>InferenceAccelerator</code>, the <code>value</code> matches the <code>deviceName</code> for an <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a> specified in a task definition.</p>
-    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value for the specified resource type.</p>
+    /// <p>You must specify this parameter unless the type is <code>GPU</code> and you specify <code>sharingStrategy</code>.</p>
     /// <p>When the type is <code>GPU</code>, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on. You can also specify <code>ALL</code> to allocate all available GPUs on the instance to the container.</p>
     /// <p>When the type is <code>NeuronDevice</code>, the value must be <code>ALL</code>. This allocates all available Neuron devices on the instance to the container. Only one container in a task can specify <code>NeuronDevice</code> resources. This resource type is only supported on Managed Instances.</p>
     /// <p>When the type is <code>InferenceAccelerator</code>, the <code>value</code> matches the <code>deviceName</code> for an <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a> specified in a task definition.</p>
@@ -59,6 +174,7 @@ impl ResourceRequirementBuilder {
         self
     }
     /// <p>The value for the specified resource type.</p>
+    /// <p>You must specify this parameter unless the type is <code>GPU</code> and you specify <code>sharingStrategy</code>.</p>
     /// <p>When the type is <code>GPU</code>, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on. You can also specify <code>ALL</code> to allocate all available GPUs on the instance to the container.</p>
     /// <p>When the type is <code>NeuronDevice</code>, the value must be <code>ALL</code>. This allocates all available Neuron devices on the instance to the container. Only one container in a task can specify <code>NeuronDevice</code> resources. This resource type is only supported on Managed Instances.</p>
     /// <p>When the type is <code>InferenceAccelerator</code>, the <code>value</code> matches the <code>deviceName</code> for an <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a> specified in a task definition.</p>
@@ -80,24 +196,36 @@ impl ResourceRequirementBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.r#type
     }
+    /// <p>The strategy that the container uses to share a GPU with other containers. Specify a sharing strategy only when the type is <code>GPU</code>. For a GPU resource requirement, specify either <code>value</code> or <code>sharingStrategy</code>, but not both. If you don't specify a sharing strategy, the container has exclusive use of each GPU that Amazon ECS assigns to it. The containers in a task that request GPUs must all use the same option.</p>
+    /// <p>You can use GPU sharing with tasks that run on Amazon EC2 instances or Amazon ECS Managed Instances. Task definitions that require <code>EXTERNAL</code> compatibility don't support GPU sharing.</p>
+    pub fn sharing_strategy(mut self, input: crate::types::SharingStrategy) -> Self {
+        self.sharing_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The strategy that the container uses to share a GPU with other containers. Specify a sharing strategy only when the type is <code>GPU</code>. For a GPU resource requirement, specify either <code>value</code> or <code>sharingStrategy</code>, but not both. If you don't specify a sharing strategy, the container has exclusive use of each GPU that Amazon ECS assigns to it. The containers in a task that request GPUs must all use the same option.</p>
+    /// <p>You can use GPU sharing with tasks that run on Amazon EC2 instances or Amazon ECS Managed Instances. Task definitions that require <code>EXTERNAL</code> compatibility don't support GPU sharing.</p>
+    pub fn set_sharing_strategy(mut self, input: ::std::option::Option<crate::types::SharingStrategy>) -> Self {
+        self.sharing_strategy = input;
+        self
+    }
+    /// <p>The strategy that the container uses to share a GPU with other containers. Specify a sharing strategy only when the type is <code>GPU</code>. For a GPU resource requirement, specify either <code>value</code> or <code>sharingStrategy</code>, but not both. If you don't specify a sharing strategy, the container has exclusive use of each GPU that Amazon ECS assigns to it. The containers in a task that request GPUs must all use the same option.</p>
+    /// <p>You can use GPU sharing with tasks that run on Amazon EC2 instances or Amazon ECS Managed Instances. Task definitions that require <code>EXTERNAL</code> compatibility don't support GPU sharing.</p>
+    pub fn get_sharing_strategy(&self) -> &::std::option::Option<crate::types::SharingStrategy> {
+        &self.sharing_strategy
+    }
     /// Consumes the builder and constructs a [`ResourceRequirement`](crate::types::ResourceRequirement).
     /// This method will fail if any of the following fields are not set:
-    /// - [`value`](crate::types::builders::ResourceRequirementBuilder::value)
     /// - [`r#type`](crate::types::builders::ResourceRequirementBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceRequirement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceRequirement {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building ResourceRequirement",
-                )
-            })?,
+            value: self.value.unwrap_or_default(),
             r#type: self.r#type.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building ResourceRequirement",
                 )
             })?,
+            sharing_strategy: self.sharing_strategy,
         })
     }
 }

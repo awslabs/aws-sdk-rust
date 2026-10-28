@@ -53,6 +53,128 @@ impl UpdateProjectVisibilityOutput {
         self.project_visibility.as_ref()
     }
 }
+static UPDATEPROJECTVISIBILITYOUTPUT_MEMBER_PROJECT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateProjectVisibilityOutput$projectArn",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateProjectVisibilityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "projectArn",
+    0,
+);
+static UPDATEPROJECTVISIBILITYOUTPUT_MEMBER_PUBLIC_PROJECT_ALIAS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateProjectVisibilityOutput$publicProjectAlias",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateProjectVisibilityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "publicProjectAlias",
+    1,
+);
+static UPDATEPROJECTVISIBILITYOUTPUT_MEMBER_PROJECT_VISIBILITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateProjectVisibilityOutput$projectVisibility",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateProjectVisibilityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "projectVisibility",
+    2,
+);
+static UPDATEPROJECTVISIBILITYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateProjectVisibilityOutput",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateProjectVisibilityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEPROJECTVISIBILITYOUTPUT_MEMBER_PROJECT_ARN,
+        &UPDATEPROJECTVISIBILITYOUTPUT_MEMBER_PUBLIC_PROJECT_ALIAS,
+        &UPDATEPROJECTVISIBILITYOUTPUT_MEMBER_PROJECT_VISIBILITY,
+    ],
+)
+.with_original_name("UpdateProjectVisibilityOutput");
+impl UpdateProjectVisibilityOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEPROJECTVISIBILITYOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateProjectVisibilityOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.project_arn {
+            ser.write_string(&UPDATEPROJECTVISIBILITYOUTPUT_MEMBER_PROJECT_ARN, val)?;
+        }
+        if let Some(ref val) = self.public_project_alias {
+            ser.write_string(&UPDATEPROJECTVISIBILITYOUTPUT_MEMBER_PUBLIC_PROJECT_ALIAS, val)?;
+        }
+        if let Some(ref val) = self.project_visibility {
+            ser.write_string(&UPDATEPROJECTVISIBILITYOUTPUT_MEMBER_PROJECT_VISIBILITY, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_project_visibility::builders::UpdateProjectVisibilityOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEPROJECTVISIBILITYOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.public_project_alias = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project_visibility = Some(crate::types::ProjectVisibilityType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateProjectVisibilityOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for UpdateProjectVisibilityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

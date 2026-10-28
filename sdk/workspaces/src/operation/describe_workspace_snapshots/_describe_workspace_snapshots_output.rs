@@ -23,6 +23,153 @@ impl DescribeWorkspaceSnapshotsOutput {
         self.restore_snapshots.as_deref().unwrap_or_default()
     }
 }
+static DESCRIBEWORKSPACESNAPSHOTSOUTPUT_MEMBER_REBUILD_SNAPSHOTS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#SnapshotList$member", "com.amazonaws.workspaces", "SnapshotList"),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static DESCRIBEWORKSPACESNAPSHOTSOUTPUT_MEMBER_REBUILD_SNAPSHOTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeWorkspaceSnapshotsOutput$RebuildSnapshots",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeWorkspaceSnapshotsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "RebuildSnapshots",
+    0,
+)
+.with_list_member(&DESCRIBEWORKSPACESNAPSHOTSOUTPUT_MEMBER_REBUILD_SNAPSHOTS_MEMBER);
+static DESCRIBEWORKSPACESNAPSHOTSOUTPUT_MEMBER_RESTORE_SNAPSHOTS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#SnapshotList$member", "com.amazonaws.workspaces", "SnapshotList"),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static DESCRIBEWORKSPACESNAPSHOTSOUTPUT_MEMBER_RESTORE_SNAPSHOTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeWorkspaceSnapshotsOutput$RestoreSnapshots",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeWorkspaceSnapshotsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "RestoreSnapshots",
+    1,
+)
+.with_list_member(&DESCRIBEWORKSPACESNAPSHOTSOUTPUT_MEMBER_RESTORE_SNAPSHOTS_MEMBER);
+static DESCRIBEWORKSPACESNAPSHOTSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeWorkspaceSnapshotsOutput",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeWorkspaceSnapshotsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEWORKSPACESNAPSHOTSOUTPUT_MEMBER_REBUILD_SNAPSHOTS,
+        &DESCRIBEWORKSPACESNAPSHOTSOUTPUT_MEMBER_RESTORE_SNAPSHOTS,
+    ],
+)
+.with_original_name("DescribeWorkspaceSnapshotsResult");
+impl DescribeWorkspaceSnapshotsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEWORKSPACESNAPSHOTSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeWorkspaceSnapshotsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.rebuild_snapshots {
+            ser.write_list(
+                &DESCRIBEWORKSPACESNAPSHOTSOUTPUT_MEMBER_REBUILD_SNAPSHOTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Snapshot::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.restore_snapshots {
+            ser.write_list(
+                &DESCRIBEWORKSPACESNAPSHOTSOUTPUT_MEMBER_RESTORE_SNAPSHOTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Snapshot::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEWORKSPACESNAPSHOTSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rebuild_snapshots = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Snapshot::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.restore_snapshots = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Snapshot::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeWorkspaceSnapshotsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeWorkspaceSnapshotsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

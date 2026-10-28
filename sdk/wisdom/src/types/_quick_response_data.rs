@@ -135,6 +135,450 @@ impl QuickResponseData {
         self.tags.as_ref()
     }
 }
+static QUICKRESPONSEDATA_MEMBER_QUICK_RESPONSE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseData$quickResponseArn",
+        "com.amazonaws.wisdom",
+        "QuickResponseData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "quickResponseArn",
+    0,
+);
+static QUICKRESPONSEDATA_MEMBER_QUICK_RESPONSE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseData$quickResponseId",
+        "com.amazonaws.wisdom",
+        "QuickResponseData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "quickResponseId",
+    1,
+);
+static QUICKRESPONSEDATA_MEMBER_KNOWLEDGE_BASE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseData$knowledgeBaseArn",
+        "com.amazonaws.wisdom",
+        "QuickResponseData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "knowledgeBaseArn",
+    2,
+);
+static QUICKRESPONSEDATA_MEMBER_KNOWLEDGE_BASE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseData$knowledgeBaseId",
+        "com.amazonaws.wisdom",
+        "QuickResponseData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "knowledgeBaseId",
+    3,
+);
+static QUICKRESPONSEDATA_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#QuickResponseData$name", "com.amazonaws.wisdom", "QuickResponseData"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    4,
+);
+static QUICKRESPONSEDATA_MEMBER_CONTENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseData$contentType",
+        "com.amazonaws.wisdom",
+        "QuickResponseData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "contentType",
+    5,
+);
+static QUICKRESPONSEDATA_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseData$status",
+        "com.amazonaws.wisdom",
+        "QuickResponseData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    6,
+);
+static QUICKRESPONSEDATA_MEMBER_CREATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseData$createdTime",
+        "com.amazonaws.wisdom",
+        "QuickResponseData",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdTime",
+    7,
+)
+.with_timestamp_format(aws_smithy_schema::traits::TimestampFormat::EpochSeconds);
+static QUICKRESPONSEDATA_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseData$lastModifiedTime",
+        "com.amazonaws.wisdom",
+        "QuickResponseData",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastModifiedTime",
+    8,
+)
+.with_timestamp_format(aws_smithy_schema::traits::TimestampFormat::EpochSeconds);
+static QUICKRESPONSEDATA_MEMBER_CONTENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseData$contents",
+        "com.amazonaws.wisdom",
+        "QuickResponseData",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "contents",
+    9,
+);
+static QUICKRESPONSEDATA_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseData$description",
+        "com.amazonaws.wisdom",
+        "QuickResponseData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    10,
+);
+static QUICKRESPONSEDATA_MEMBER_GROUPING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseData$groupingConfiguration",
+        "com.amazonaws.wisdom",
+        "QuickResponseData",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "groupingConfiguration",
+    11,
+);
+static QUICKRESPONSEDATA_MEMBER_SHORTCUT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseData$shortcutKey",
+        "com.amazonaws.wisdom",
+        "QuickResponseData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "shortcutKey",
+    12,
+);
+static QUICKRESPONSEDATA_MEMBER_LAST_MODIFIED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseData$lastModifiedBy",
+        "com.amazonaws.wisdom",
+        "QuickResponseData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "lastModifiedBy",
+    13,
+);
+static QUICKRESPONSEDATA_MEMBER_IS_ACTIVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseData$isActive",
+        "com.amazonaws.wisdom",
+        "QuickResponseData",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isActive",
+    14,
+);
+static QUICKRESPONSEDATA_MEMBER_CHANNELS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#Channels$member", "com.amazonaws.wisdom", "Channels"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static QUICKRESPONSEDATA_MEMBER_CHANNELS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseData$channels",
+        "com.amazonaws.wisdom",
+        "QuickResponseData",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "channels",
+    15,
+)
+.with_list_member(&QUICKRESPONSEDATA_MEMBER_CHANNELS_MEMBER);
+static QUICKRESPONSEDATA_MEMBER_LANGUAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseData$language",
+        "com.amazonaws.wisdom",
+        "QuickResponseData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "language",
+    16,
+);
+static QUICKRESPONSEDATA_MEMBER_TAGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#Tags$key", "com.amazonaws.wisdom", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static QUICKRESPONSEDATA_MEMBER_TAGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#Tags$value", "com.amazonaws.wisdom", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static QUICKRESPONSEDATA_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#QuickResponseData$tags", "com.amazonaws.wisdom", "QuickResponseData"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "tags",
+    17,
+)
+.with_map_members(&QUICKRESPONSEDATA_MEMBER_TAGS_KEY, &QUICKRESPONSEDATA_MEMBER_TAGS_VALUE);
+static QUICKRESPONSEDATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#QuickResponseData", "com.amazonaws.wisdom", "QuickResponseData"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &QUICKRESPONSEDATA_MEMBER_QUICK_RESPONSE_ARN,
+        &QUICKRESPONSEDATA_MEMBER_QUICK_RESPONSE_ID,
+        &QUICKRESPONSEDATA_MEMBER_KNOWLEDGE_BASE_ARN,
+        &QUICKRESPONSEDATA_MEMBER_KNOWLEDGE_BASE_ID,
+        &QUICKRESPONSEDATA_MEMBER_NAME,
+        &QUICKRESPONSEDATA_MEMBER_CONTENT_TYPE,
+        &QUICKRESPONSEDATA_MEMBER_STATUS,
+        &QUICKRESPONSEDATA_MEMBER_CREATED_TIME,
+        &QUICKRESPONSEDATA_MEMBER_LAST_MODIFIED_TIME,
+        &QUICKRESPONSEDATA_MEMBER_CONTENTS,
+        &QUICKRESPONSEDATA_MEMBER_DESCRIPTION,
+        &QUICKRESPONSEDATA_MEMBER_GROUPING_CONFIGURATION,
+        &QUICKRESPONSEDATA_MEMBER_SHORTCUT_KEY,
+        &QUICKRESPONSEDATA_MEMBER_LAST_MODIFIED_BY,
+        &QUICKRESPONSEDATA_MEMBER_IS_ACTIVE,
+        &QUICKRESPONSEDATA_MEMBER_CHANNELS,
+        &QUICKRESPONSEDATA_MEMBER_LANGUAGE,
+        &QUICKRESPONSEDATA_MEMBER_TAGS,
+    ],
+);
+impl QuickResponseData {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &QUICKRESPONSEDATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for QuickResponseData {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.quick_response_arn;
+            ser.write_string(&QUICKRESPONSEDATA_MEMBER_QUICK_RESPONSE_ARN, val)?;
+        }
+        {
+            let val = &self.quick_response_id;
+            ser.write_string(&QUICKRESPONSEDATA_MEMBER_QUICK_RESPONSE_ID, val)?;
+        }
+        {
+            let val = &self.knowledge_base_arn;
+            ser.write_string(&QUICKRESPONSEDATA_MEMBER_KNOWLEDGE_BASE_ARN, val)?;
+        }
+        {
+            let val = &self.knowledge_base_id;
+            ser.write_string(&QUICKRESPONSEDATA_MEMBER_KNOWLEDGE_BASE_ID, val)?;
+        }
+        {
+            let val = &self.name;
+            ser.write_string(&QUICKRESPONSEDATA_MEMBER_NAME, val)?;
+        }
+        {
+            let val = &self.content_type;
+            ser.write_string(&QUICKRESPONSEDATA_MEMBER_CONTENT_TYPE, val)?;
+        }
+        {
+            let val = &self.status;
+            ser.write_string(&QUICKRESPONSEDATA_MEMBER_STATUS, val.as_str())?;
+        }
+        {
+            let val = &self.created_time;
+            ser.write_timestamp(&QUICKRESPONSEDATA_MEMBER_CREATED_TIME, val)?;
+        }
+        {
+            let val = &self.last_modified_time;
+            ser.write_timestamp(&QUICKRESPONSEDATA_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.contents {
+            ser.write_struct(&QUICKRESPONSEDATA_MEMBER_CONTENTS, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&QUICKRESPONSEDATA_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.grouping_configuration {
+            ser.write_struct(&QUICKRESPONSEDATA_MEMBER_GROUPING_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.shortcut_key {
+            ser.write_string(&QUICKRESPONSEDATA_MEMBER_SHORTCUT_KEY, val)?;
+        }
+        if let Some(ref val) = self.last_modified_by {
+            ser.write_string(&QUICKRESPONSEDATA_MEMBER_LAST_MODIFIED_BY, val)?;
+        }
+        if let Some(ref val) = self.is_active {
+            ser.write_boolean(&QUICKRESPONSEDATA_MEMBER_IS_ACTIVE, *val)?;
+        }
+        if let Some(ref val) = self.channels {
+            ser.write_list(
+                &QUICKRESPONSEDATA_MEMBER_CHANNELS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.language {
+            ser.write_string(&QUICKRESPONSEDATA_MEMBER_LANGUAGE, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_map(
+                &QUICKRESPONSEDATA_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::QuickResponseDataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&QUICKRESPONSEDATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.quick_response_arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.quick_response_id = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.knowledge_base_arn = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.knowledge_base_id = Some(deser.read_string(member)?);
+                }
+                Some(4) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(5) => {
+                    self.content_type = Some(deser.read_string(member)?);
+                }
+                Some(6) => {
+                    self.status = Some(crate::types::QuickResponseStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(7) => {
+                    self.created_time = Some(deser.read_timestamp(member)?);
+                }
+                Some(8) => {
+                    self.last_modified_time = Some(deser.read_timestamp(member)?);
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.contents = Some(crate::types::QuickResponseContents::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.grouping_configuration = Some(crate::types::GroupingConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.shortcut_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_by = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_active = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.channels = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl QuickResponseData {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.quick_response_arn = builder.quick_response_arn.or(Some(String::new()));
+        builder.quick_response_id = builder.quick_response_id.or(Some(String::new()));
+        builder.knowledge_base_arn = builder.knowledge_base_arn.or(Some(String::new()));
+        builder.knowledge_base_id = builder.knowledge_base_id.or(Some(String::new()));
+        builder.name = builder.name.or(Some(String::new()));
+        builder.content_type = builder.content_type.or(Some(String::new()));
+        builder.created_time = builder.created_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.last_modified_time = builder.last_modified_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl QuickResponseData {
     /// Creates a new builder-style object to manufacture [`QuickResponseData`](crate::types::QuickResponseData).
     pub fn builder() -> crate::types::builders::QuickResponseDataBuilder {

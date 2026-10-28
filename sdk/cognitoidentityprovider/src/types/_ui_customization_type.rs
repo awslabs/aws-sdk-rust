@@ -62,6 +62,211 @@ impl ::std::fmt::Debug for UiCustomizationType {
         formatter.finish()
     }
 }
+static UICUSTOMIZATIONTYPE_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UICustomizationType$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider",
+        "UICustomizationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    0,
+);
+static UICUSTOMIZATIONTYPE_MEMBER_CLIENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UICustomizationType$ClientId",
+        "com.amazonaws.cognitoidentityprovider",
+        "UICustomizationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientId",
+    1,
+);
+static UICUSTOMIZATIONTYPE_MEMBER_IMAGE_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UICustomizationType$ImageUrl",
+        "com.amazonaws.cognitoidentityprovider",
+        "UICustomizationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageUrl",
+    2,
+);
+static UICUSTOMIZATIONTYPE_MEMBER_CSS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UICustomizationType$CSS",
+        "com.amazonaws.cognitoidentityprovider",
+        "UICustomizationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CSS",
+    3,
+);
+static UICUSTOMIZATIONTYPE_MEMBER_CSS_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UICustomizationType$CSSVersion",
+        "com.amazonaws.cognitoidentityprovider",
+        "UICustomizationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CSSVersion",
+    4,
+);
+static UICUSTOMIZATIONTYPE_MEMBER_LAST_MODIFIED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UICustomizationType$LastModifiedDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "UICustomizationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedDate",
+    5,
+);
+static UICUSTOMIZATIONTYPE_MEMBER_CREATION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UICustomizationType$CreationDate",
+        "com.amazonaws.cognitoidentityprovider",
+        "UICustomizationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationDate",
+    6,
+);
+static UICUSTOMIZATIONTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UICustomizationType",
+        "com.amazonaws.cognitoidentityprovider",
+        "UICustomizationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UICUSTOMIZATIONTYPE_MEMBER_USER_POOL_ID,
+        &UICUSTOMIZATIONTYPE_MEMBER_CLIENT_ID,
+        &UICUSTOMIZATIONTYPE_MEMBER_IMAGE_URL,
+        &UICUSTOMIZATIONTYPE_MEMBER_CSS,
+        &UICUSTOMIZATIONTYPE_MEMBER_CSS_VERSION,
+        &UICUSTOMIZATIONTYPE_MEMBER_LAST_MODIFIED_DATE,
+        &UICUSTOMIZATIONTYPE_MEMBER_CREATION_DATE,
+    ],
+);
+impl UiCustomizationType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UICUSTOMIZATIONTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UiCustomizationType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&UICUSTOMIZATIONTYPE_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.client_id {
+            ser.write_string(&UICUSTOMIZATIONTYPE_MEMBER_CLIENT_ID, val)?;
+        }
+        if let Some(ref val) = self.image_url {
+            ser.write_string(&UICUSTOMIZATIONTYPE_MEMBER_IMAGE_URL, val)?;
+        }
+        if let Some(ref val) = self.css {
+            ser.write_string(&UICUSTOMIZATIONTYPE_MEMBER_CSS, val)?;
+        }
+        if let Some(ref val) = self.css_version {
+            ser.write_string(&UICUSTOMIZATIONTYPE_MEMBER_CSS_VERSION, val)?;
+        }
+        if let Some(ref val) = self.last_modified_date {
+            ser.write_timestamp(&UICUSTOMIZATIONTYPE_MEMBER_LAST_MODIFIED_DATE, val)?;
+        }
+        if let Some(ref val) = self.creation_date {
+            ser.write_timestamp(&UICUSTOMIZATIONTYPE_MEMBER_CREATION_DATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UiCustomizationTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UICUSTOMIZATIONTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.css = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.css_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UiCustomizationType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl UiCustomizationType {
     /// Creates a new builder-style object to manufacture [`UiCustomizationType`](crate::types::UiCustomizationType).
     pub fn builder() -> crate::types::builders::UiCustomizationTypeBuilder {

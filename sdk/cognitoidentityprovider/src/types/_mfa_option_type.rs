@@ -19,6 +19,103 @@ impl MfaOptionType {
         self.attribute_name.as_deref()
     }
 }
+static MFAOPTIONTYPE_MEMBER_DELIVERY_MEDIUM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#MFAOptionType$DeliveryMedium",
+        "com.amazonaws.cognitoidentityprovider",
+        "MFAOptionType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeliveryMedium",
+    0,
+);
+static MFAOPTIONTYPE_MEMBER_ATTRIBUTE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#MFAOptionType$AttributeName",
+        "com.amazonaws.cognitoidentityprovider",
+        "MFAOptionType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AttributeName",
+    1,
+);
+static MFAOPTIONTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#MFAOptionType",
+        "com.amazonaws.cognitoidentityprovider",
+        "MFAOptionType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&MFAOPTIONTYPE_MEMBER_DELIVERY_MEDIUM, &MFAOPTIONTYPE_MEMBER_ATTRIBUTE_NAME],
+);
+impl MfaOptionType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MFAOPTIONTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MfaOptionType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.delivery_medium {
+            ser.write_string(&MFAOPTIONTYPE_MEMBER_DELIVERY_MEDIUM, val.as_str())?;
+        }
+        if let Some(ref val) = self.attribute_name {
+            ser.write_string(&MFAOPTIONTYPE_MEMBER_ATTRIBUTE_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MfaOptionTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MFAOPTIONTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delivery_medium = Some(crate::types::DeliveryMediumType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attribute_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MfaOptionType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MfaOptionType {
     /// Creates a new builder-style object to manufacture [`MfaOptionType`](crate::types::MfaOptionType).
     pub fn builder() -> crate::types::builders::MfaOptionTypeBuilder {

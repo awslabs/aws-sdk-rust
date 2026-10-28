@@ -115,6 +115,309 @@ impl Volume {
         self.open_zfs_configuration.as_ref()
     }
 }
+static VOLUME_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Volume$CreationTime", "com.amazonaws.fsx", "Volume"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    0,
+);
+static VOLUME_MEMBER_FILE_SYSTEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Volume$FileSystemId", "com.amazonaws.fsx", "Volume"),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileSystemId",
+    1,
+);
+static VOLUME_MEMBER_LIFECYCLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Volume$Lifecycle", "com.amazonaws.fsx", "Volume"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Lifecycle",
+    2,
+);
+static VOLUME_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Volume$Name", "com.amazonaws.fsx", "Volume"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    3,
+);
+static VOLUME_MEMBER_ONTAP_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Volume$OntapConfiguration", "com.amazonaws.fsx", "Volume"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OntapConfiguration",
+    4,
+);
+static VOLUME_MEMBER_RESOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Volume$ResourceARN", "com.amazonaws.fsx", "Volume"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceARN",
+    5,
+);
+static VOLUME_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Tags$member", "com.amazonaws.fsx", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static VOLUME_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Volume$Tags", "com.amazonaws.fsx", "Volume"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    6,
+)
+.with_list_member(&VOLUME_MEMBER_TAGS_MEMBER);
+static VOLUME_MEMBER_VOLUME_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Volume$VolumeId", "com.amazonaws.fsx", "Volume"),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeId",
+    7,
+);
+static VOLUME_MEMBER_VOLUME_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Volume$VolumeType", "com.amazonaws.fsx", "Volume"),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeType",
+    8,
+);
+static VOLUME_MEMBER_LIFECYCLE_TRANSITION_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Volume$LifecycleTransitionReason", "com.amazonaws.fsx", "Volume"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LifecycleTransitionReason",
+    9,
+);
+static VOLUME_MEMBER_ADMINISTRATIVE_ACTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#AdministrativeActions$member",
+        "com.amazonaws.fsx",
+        "AdministrativeActions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static VOLUME_MEMBER_ADMINISTRATIVE_ACTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Volume$AdministrativeActions", "com.amazonaws.fsx", "Volume"),
+    ::aws_smithy_schema::ShapeType::List,
+    "AdministrativeActions",
+    10,
+)
+.with_list_member(&VOLUME_MEMBER_ADMINISTRATIVE_ACTIONS_MEMBER);
+static VOLUME_MEMBER_OPEN_ZFS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Volume$OpenZFSConfiguration", "com.amazonaws.fsx", "Volume"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OpenZFSConfiguration",
+    11,
+);
+static VOLUME_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Volume", "com.amazonaws.fsx", "Volume"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &VOLUME_MEMBER_CREATION_TIME,
+        &VOLUME_MEMBER_FILE_SYSTEM_ID,
+        &VOLUME_MEMBER_LIFECYCLE,
+        &VOLUME_MEMBER_NAME,
+        &VOLUME_MEMBER_ONTAP_CONFIGURATION,
+        &VOLUME_MEMBER_RESOURCE_ARN,
+        &VOLUME_MEMBER_TAGS,
+        &VOLUME_MEMBER_VOLUME_ID,
+        &VOLUME_MEMBER_VOLUME_TYPE,
+        &VOLUME_MEMBER_LIFECYCLE_TRANSITION_REASON,
+        &VOLUME_MEMBER_ADMINISTRATIVE_ACTIONS,
+        &VOLUME_MEMBER_OPEN_ZFS_CONFIGURATION,
+    ],
+);
+impl Volume {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &VOLUME_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Volume {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&VOLUME_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.file_system_id {
+            ser.write_string(&VOLUME_MEMBER_FILE_SYSTEM_ID, val)?;
+        }
+        if let Some(ref val) = self.lifecycle {
+            ser.write_string(&VOLUME_MEMBER_LIFECYCLE, val.as_str())?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&VOLUME_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.ontap_configuration {
+            ser.write_struct(&VOLUME_MEMBER_ONTAP_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.resource_arn {
+            ser.write_string(&VOLUME_MEMBER_RESOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(&VOLUME_MEMBER_TAGS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.volume_id {
+            ser.write_string(&VOLUME_MEMBER_VOLUME_ID, val)?;
+        }
+        if let Some(ref val) = self.volume_type {
+            ser.write_string(&VOLUME_MEMBER_VOLUME_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.lifecycle_transition_reason {
+            ser.write_struct(&VOLUME_MEMBER_LIFECYCLE_TRANSITION_REASON, val)?;
+        }
+        if let Some(ref val) = self.administrative_actions {
+            ser.write_list(
+                &VOLUME_MEMBER_ADMINISTRATIVE_ACTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AdministrativeAction::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.open_zfs_configuration {
+            ser.write_struct(&VOLUME_MEMBER_OPEN_ZFS_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::VolumeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&VOLUME_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle = Some(crate::types::VolumeLifecycle::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ontap_configuration = Some(crate::types::OntapVolumeConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_type = Some(crate::types::VolumeType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle_transition_reason = Some(crate::types::LifecycleTransitionReason::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.administrative_actions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AdministrativeAction::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.open_zfs_configuration = Some(crate::types::OpenZfsVolumeConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Volume {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Volume {
     /// Creates a new builder-style object to manufacture [`Volume`](crate::types::Volume).
     pub fn builder() -> crate::types::builders::VolumeBuilder {

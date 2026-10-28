@@ -238,6 +238,341 @@ impl UpdateFleetInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static UPDATEFLEETINPUT_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateFleetInput$arn",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateFleetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    0,
+);
+static UPDATEFLEETINPUT_MEMBER_BASE_CAPACITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateFleetInput$baseCapacity",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateFleetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "baseCapacity",
+    1,
+);
+static UPDATEFLEETINPUT_MEMBER_ENVIRONMENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateFleetInput$environmentType",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateFleetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "environmentType",
+    2,
+);
+static UPDATEFLEETINPUT_MEMBER_COMPUTE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateFleetInput$computeType",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateFleetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "computeType",
+    3,
+);
+static UPDATEFLEETINPUT_MEMBER_COMPUTE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateFleetInput$computeConfiguration",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateFleetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "computeConfiguration",
+    4,
+);
+static UPDATEFLEETINPUT_MEMBER_SCALING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateFleetInput$scalingConfiguration",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateFleetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "scalingConfiguration",
+    5,
+);
+static UPDATEFLEETINPUT_MEMBER_OVERFLOW_BEHAVIOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateFleetInput$overflowBehavior",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateFleetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "overflowBehavior",
+    6,
+);
+static UPDATEFLEETINPUT_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateFleetInput$vpcConfig",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateFleetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "vpcConfig",
+    7,
+);
+static UPDATEFLEETINPUT_MEMBER_PROXY_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateFleetInput$proxyConfiguration",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateFleetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "proxyConfiguration",
+    8,
+);
+static UPDATEFLEETINPUT_MEMBER_IMAGE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateFleetInput$imageId",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateFleetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "imageId",
+    9,
+);
+static UPDATEFLEETINPUT_MEMBER_FLEET_SERVICE_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateFleetInput$fleetServiceRole",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateFleetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "fleetServiceRole",
+    10,
+);
+static UPDATEFLEETINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#TagList$member", "com.amazonaws.codebuild", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEFLEETINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateFleetInput$tags",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateFleetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    11,
+)
+.with_list_member(&UPDATEFLEETINPUT_MEMBER_TAGS_MEMBER);
+static UPDATEFLEETINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#UpdateFleetInput",
+        "com.amazonaws.codebuild.synthetic",
+        "UpdateFleetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEFLEETINPUT_MEMBER_ARN,
+        &UPDATEFLEETINPUT_MEMBER_BASE_CAPACITY,
+        &UPDATEFLEETINPUT_MEMBER_ENVIRONMENT_TYPE,
+        &UPDATEFLEETINPUT_MEMBER_COMPUTE_TYPE,
+        &UPDATEFLEETINPUT_MEMBER_COMPUTE_CONFIGURATION,
+        &UPDATEFLEETINPUT_MEMBER_SCALING_CONFIGURATION,
+        &UPDATEFLEETINPUT_MEMBER_OVERFLOW_BEHAVIOR,
+        &UPDATEFLEETINPUT_MEMBER_VPC_CONFIG,
+        &UPDATEFLEETINPUT_MEMBER_PROXY_CONFIGURATION,
+        &UPDATEFLEETINPUT_MEMBER_IMAGE_ID,
+        &UPDATEFLEETINPUT_MEMBER_FLEET_SERVICE_ROLE,
+        &UPDATEFLEETINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateFleetInput");
+impl UpdateFleetInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEFLEETINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateFleetInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&UPDATEFLEETINPUT_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.base_capacity {
+            ser.write_integer(&UPDATEFLEETINPUT_MEMBER_BASE_CAPACITY, *val)?;
+        }
+        if let Some(ref val) = self.environment_type {
+            ser.write_string(&UPDATEFLEETINPUT_MEMBER_ENVIRONMENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.compute_type {
+            ser.write_string(&UPDATEFLEETINPUT_MEMBER_COMPUTE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.compute_configuration {
+            ser.write_struct(&UPDATEFLEETINPUT_MEMBER_COMPUTE_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.scaling_configuration {
+            ser.write_struct(&UPDATEFLEETINPUT_MEMBER_SCALING_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.overflow_behavior {
+            ser.write_string(&UPDATEFLEETINPUT_MEMBER_OVERFLOW_BEHAVIOR, val.as_str())?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&UPDATEFLEETINPUT_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.proxy_configuration {
+            ser.write_struct(&UPDATEFLEETINPUT_MEMBER_PROXY_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.image_id {
+            ser.write_string(&UPDATEFLEETINPUT_MEMBER_IMAGE_ID, val)?;
+        }
+        if let Some(ref val) = self.fleet_service_role {
+            ser.write_string(&UPDATEFLEETINPUT_MEMBER_FLEET_SERVICE_ROLE, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &UPDATEFLEETINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_fleet::builders::UpdateFleetInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEFLEETINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.base_capacity = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment_type = Some(crate::types::EnvironmentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_type = Some(crate::types::ComputeType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_configuration = Some(crate::types::ComputeConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scaling_configuration = Some(crate::types::ScalingConfigurationInput::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.overflow_behavior = Some(crate::types::FleetOverflowBehavior::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.proxy_configuration = Some(crate::types::ProxyConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fleet_service_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateFleetInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.arn = builder.arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateFleetInput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetInput`](crate::operation::update_fleet::UpdateFleetInput).
     pub fn builder() -> crate::operation::update_fleet::builders::UpdateFleetInputBuilder {

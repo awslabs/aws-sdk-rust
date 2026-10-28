@@ -10,6 +10,8 @@ pub struct AmiAggregation {
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The value to sort results by.</p>
     pub sort_by: ::std::option::Option<crate::types::AmiSortBy>,
+    /// <p>The scan sources to filter the aggregation results by.</p>
+    pub scan_sources: ::std::option::Option<::std::vec::Vec<crate::types::ScanSource>>,
 }
 impl AmiAggregation {
     /// <p>The IDs of AMIs to aggregate findings for.</p>
@@ -26,6 +28,12 @@ impl AmiAggregation {
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::AmiSortBy> {
         self.sort_by.as_ref()
     }
+    /// <p>The scan sources to filter the aggregation results by.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scan_sources.is_none()`.
+    pub fn scan_sources(&self) -> &[crate::types::ScanSource] {
+        self.scan_sources.as_deref().unwrap_or_default()
+    }
 }
 impl AmiAggregation {
     /// Creates a new builder-style object to manufacture [`AmiAggregation`](crate::types::AmiAggregation).
@@ -41,6 +49,7 @@ pub struct AmiAggregationBuilder {
     pub(crate) amis: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) sort_by: ::std::option::Option<crate::types::AmiSortBy>,
+    pub(crate) scan_sources: ::std::option::Option<::std::vec::Vec<crate::types::ScanSource>>,
 }
 impl AmiAggregationBuilder {
     /// Appends an item to `amis`.
@@ -91,12 +100,33 @@ impl AmiAggregationBuilder {
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::AmiSortBy> {
         &self.sort_by
     }
+    /// Appends an item to `scan_sources`.
+    ///
+    /// To override the contents of this collection use [`set_scan_sources`](Self::set_scan_sources).
+    ///
+    /// <p>The scan sources to filter the aggregation results by.</p>
+    pub fn scan_sources(mut self, input: crate::types::ScanSource) -> Self {
+        let mut v = self.scan_sources.unwrap_or_default();
+        v.push(input);
+        self.scan_sources = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The scan sources to filter the aggregation results by.</p>
+    pub fn set_scan_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScanSource>>) -> Self {
+        self.scan_sources = input;
+        self
+    }
+    /// <p>The scan sources to filter the aggregation results by.</p>
+    pub fn get_scan_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanSource>> {
+        &self.scan_sources
+    }
     /// Consumes the builder and constructs a [`AmiAggregation`](crate::types::AmiAggregation).
     pub fn build(self) -> crate::types::AmiAggregation {
         crate::types::AmiAggregation {
             amis: self.amis,
             sort_order: self.sort_order,
             sort_by: self.sort_by,
+            scan_sources: self.scan_sources,
         }
     }
 }

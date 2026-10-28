@@ -19,6 +19,7 @@
 ///     AllowedOperation::CreateToken => { /* ... */ },
 ///     AllowedOperation::ExtendConsumptionLicense => { /* ... */ },
 ///     AllowedOperation::ListPurchasedLicenses => { /* ... */ },
+///     AllowedOperation::ListReceivedLicenses => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -61,6 +62,8 @@ pub enum AllowedOperation {
     ExtendConsumptionLicense,
     #[allow(missing_docs)] // documentation missing in model
     ListPurchasedLicenses,
+    #[allow(missing_docs)] // documentation missing in model
+    ListReceivedLicenses,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -75,6 +78,7 @@ impl ::std::convert::From<&str> for AllowedOperation {
             "CreateToken" => AllowedOperation::CreateToken,
             "ExtendConsumptionLicense" => AllowedOperation::ExtendConsumptionLicense,
             "ListPurchasedLicenses" => AllowedOperation::ListPurchasedLicenses,
+            "ListReceivedLicenses" => AllowedOperation::ListReceivedLicenses,
             other => AllowedOperation::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -97,6 +101,7 @@ impl AllowedOperation {
             AllowedOperation::CreateToken => "CreateToken",
             AllowedOperation::ExtendConsumptionLicense => "ExtendConsumptionLicense",
             AllowedOperation::ListPurchasedLicenses => "ListPurchasedLicenses",
+            AllowedOperation::ListReceivedLicenses => "ListReceivedLicenses",
             AllowedOperation::Unknown(value) => value.as_str(),
         }
     }
@@ -110,6 +115,7 @@ impl AllowedOperation {
             "CreateToken",
             "ExtendConsumptionLicense",
             "ListPurchasedLicenses",
+            "ListReceivedLicenses",
         ]
     }
 }
@@ -140,6 +146,7 @@ impl ::std::fmt::Display for AllowedOperation {
             AllowedOperation::CreateToken => write!(f, "CreateToken"),
             AllowedOperation::ExtendConsumptionLicense => write!(f, "ExtendConsumptionLicense"),
             AllowedOperation::ListPurchasedLicenses => write!(f, "ListPurchasedLicenses"),
+            AllowedOperation::ListReceivedLicenses => write!(f, "ListReceivedLicenses"),
             AllowedOperation::Unknown(value) => write!(f, "{value}"),
         }
     }

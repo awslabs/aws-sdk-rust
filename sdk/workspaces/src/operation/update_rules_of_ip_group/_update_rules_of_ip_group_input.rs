@@ -20,6 +20,129 @@ impl UpdateRulesOfIpGroupInput {
         self.user_rules.as_deref().unwrap_or_default()
     }
 }
+static UPDATERULESOFIPGROUPINPUT_MEMBER_GROUP_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#UpdateRulesOfIpGroupInput$GroupId",
+        "com.amazonaws.workspaces.synthetic",
+        "UpdateRulesOfIpGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GroupId",
+    0,
+);
+static UPDATERULESOFIPGROUPINPUT_MEMBER_USER_RULES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#IpRuleList$member", "com.amazonaws.workspaces", "IpRuleList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATERULESOFIPGROUPINPUT_MEMBER_USER_RULES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#UpdateRulesOfIpGroupInput$UserRules",
+        "com.amazonaws.workspaces.synthetic",
+        "UpdateRulesOfIpGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "UserRules",
+    1,
+)
+.with_list_member(&UPDATERULESOFIPGROUPINPUT_MEMBER_USER_RULES_MEMBER);
+static UPDATERULESOFIPGROUPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#UpdateRulesOfIpGroupInput",
+        "com.amazonaws.workspaces.synthetic",
+        "UpdateRulesOfIpGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&UPDATERULESOFIPGROUPINPUT_MEMBER_GROUP_ID, &UPDATERULESOFIPGROUPINPUT_MEMBER_USER_RULES],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateRulesOfIpGroupRequest");
+impl UpdateRulesOfIpGroupInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATERULESOFIPGROUPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateRulesOfIpGroupInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.group_id {
+            ser.write_string(&UPDATERULESOFIPGROUPINPUT_MEMBER_GROUP_ID, val)?;
+        }
+        if let Some(ref val) = self.user_rules {
+            ser.write_list(
+                &UPDATERULESOFIPGROUPINPUT_MEMBER_USER_RULES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::IpRuleItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATERULESOFIPGROUPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.group_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_rules = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::IpRuleItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateRulesOfIpGroupInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.group_id = builder.group_id.or(Some(String::new()));
+        builder.user_rules = builder.user_rules.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateRulesOfIpGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateRulesOfIpGroupInput`](crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput).
     pub fn builder() -> crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupInputBuilder {

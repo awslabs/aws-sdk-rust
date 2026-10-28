@@ -79,6 +79,232 @@ impl S3AccessPointAttachment {
         self.s3_access_point.as_ref()
     }
 }
+static S3ACCESSPOINTATTACHMENT_MEMBER_LIFECYCLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#S3AccessPointAttachment$Lifecycle",
+        "com.amazonaws.fsx",
+        "S3AccessPointAttachment",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Lifecycle",
+    0,
+);
+static S3ACCESSPOINTATTACHMENT_MEMBER_LIFECYCLE_TRANSITION_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#S3AccessPointAttachment$LifecycleTransitionReason",
+        "com.amazonaws.fsx",
+        "S3AccessPointAttachment",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LifecycleTransitionReason",
+    1,
+);
+static S3ACCESSPOINTATTACHMENT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#S3AccessPointAttachment$CreationTime",
+        "com.amazonaws.fsx",
+        "S3AccessPointAttachment",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    2,
+);
+static S3ACCESSPOINTATTACHMENT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#S3AccessPointAttachment$Name",
+        "com.amazonaws.fsx",
+        "S3AccessPointAttachment",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    3,
+);
+static S3ACCESSPOINTATTACHMENT_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#S3AccessPointAttachment$Type",
+        "com.amazonaws.fsx",
+        "S3AccessPointAttachment",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    4,
+);
+static S3ACCESSPOINTATTACHMENT_MEMBER_OPEN_ZFS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#S3AccessPointAttachment$OpenZFSConfiguration",
+        "com.amazonaws.fsx",
+        "S3AccessPointAttachment",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OpenZFSConfiguration",
+    5,
+);
+static S3ACCESSPOINTATTACHMENT_MEMBER_ONTAP_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#S3AccessPointAttachment$OntapConfiguration",
+        "com.amazonaws.fsx",
+        "S3AccessPointAttachment",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OntapConfiguration",
+    6,
+);
+static S3ACCESSPOINTATTACHMENT_MEMBER_S3_ACCESS_POINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#S3AccessPointAttachment$S3AccessPoint",
+        "com.amazonaws.fsx",
+        "S3AccessPointAttachment",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3AccessPoint",
+    7,
+);
+static S3ACCESSPOINTATTACHMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#S3AccessPointAttachment",
+        "com.amazonaws.fsx",
+        "S3AccessPointAttachment",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &S3ACCESSPOINTATTACHMENT_MEMBER_LIFECYCLE,
+        &S3ACCESSPOINTATTACHMENT_MEMBER_LIFECYCLE_TRANSITION_REASON,
+        &S3ACCESSPOINTATTACHMENT_MEMBER_CREATION_TIME,
+        &S3ACCESSPOINTATTACHMENT_MEMBER_NAME,
+        &S3ACCESSPOINTATTACHMENT_MEMBER_TYPE,
+        &S3ACCESSPOINTATTACHMENT_MEMBER_OPEN_ZFS_CONFIGURATION,
+        &S3ACCESSPOINTATTACHMENT_MEMBER_ONTAP_CONFIGURATION,
+        &S3ACCESSPOINTATTACHMENT_MEMBER_S3_ACCESS_POINT,
+    ],
+);
+impl S3AccessPointAttachment {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &S3ACCESSPOINTATTACHMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for S3AccessPointAttachment {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.lifecycle {
+            ser.write_string(&S3ACCESSPOINTATTACHMENT_MEMBER_LIFECYCLE, val.as_str())?;
+        }
+        if let Some(ref val) = self.lifecycle_transition_reason {
+            ser.write_struct(&S3ACCESSPOINTATTACHMENT_MEMBER_LIFECYCLE_TRANSITION_REASON, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&S3ACCESSPOINTATTACHMENT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&S3ACCESSPOINTATTACHMENT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&S3ACCESSPOINTATTACHMENT_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.open_zfs_configuration {
+            ser.write_struct(&S3ACCESSPOINTATTACHMENT_MEMBER_OPEN_ZFS_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.ontap_configuration {
+            ser.write_struct(&S3ACCESSPOINTATTACHMENT_MEMBER_ONTAP_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.s3_access_point {
+            ser.write_struct(&S3ACCESSPOINTATTACHMENT_MEMBER_S3_ACCESS_POINT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::S3AccessPointAttachmentBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&S3ACCESSPOINTATTACHMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle = Some(crate::types::S3AccessPointAttachmentLifecycle::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle_transition_reason = Some(crate::types::LifecycleTransitionReason::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::S3AccessPointAttachmentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.open_zfs_configuration = Some(crate::types::S3AccessPointOpenZfsConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ontap_configuration = Some(crate::types::S3AccessPointOntapConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_access_point = Some(crate::types::S3AccessPoint::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl S3AccessPointAttachment {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl S3AccessPointAttachment {
     /// Creates a new builder-style object to manufacture [`S3AccessPointAttachment`](crate::types::S3AccessPointAttachment).
     pub fn builder() -> crate::types::builders::S3AccessPointAttachmentBuilder {

@@ -19,6 +19,103 @@ impl BaselineEbsBandwidthMbpsRequest {
         self.max
     }
 }
+static BASELINEEBSBANDWIDTHMBPSREQUEST_MEMBER_MIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#BaselineEbsBandwidthMbpsRequest$min",
+        "com.amazonaws.ecs",
+        "BaselineEbsBandwidthMbpsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "min",
+    0,
+);
+static BASELINEEBSBANDWIDTHMBPSREQUEST_MEMBER_MAX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#BaselineEbsBandwidthMbpsRequest$max",
+        "com.amazonaws.ecs",
+        "BaselineEbsBandwidthMbpsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "max",
+    1,
+);
+static BASELINEEBSBANDWIDTHMBPSREQUEST_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#BaselineEbsBandwidthMbpsRequest",
+        "com.amazonaws.ecs",
+        "BaselineEbsBandwidthMbpsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&BASELINEEBSBANDWIDTHMBPSREQUEST_MEMBER_MIN, &BASELINEEBSBANDWIDTHMBPSREQUEST_MEMBER_MAX],
+);
+impl BaselineEbsBandwidthMbpsRequest {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BASELINEEBSBANDWIDTHMBPSREQUEST_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BaselineEbsBandwidthMbpsRequest {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.min {
+            ser.write_integer(&BASELINEEBSBANDWIDTHMBPSREQUEST_MEMBER_MIN, *val)?;
+        }
+        if let Some(ref val) = self.max {
+            ser.write_integer(&BASELINEEBSBANDWIDTHMBPSREQUEST_MEMBER_MAX, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BaselineEbsBandwidthMbpsRequestBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BASELINEEBSBANDWIDTHMBPSREQUEST_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.min = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BaselineEbsBandwidthMbpsRequest {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl BaselineEbsBandwidthMbpsRequest {
     /// Creates a new builder-style object to manufacture [`BaselineEbsBandwidthMbpsRequest`](crate::types::BaselineEbsBandwidthMbpsRequest).
     pub fn builder() -> crate::types::builders::BaselineEbsBandwidthMbpsRequestBuilder {

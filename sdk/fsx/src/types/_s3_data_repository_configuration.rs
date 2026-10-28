@@ -21,6 +21,106 @@ impl S3DataRepositoryConfiguration {
         self.auto_export_policy.as_ref()
     }
 }
+static S3DATAREPOSITORYCONFIGURATION_MEMBER_AUTO_IMPORT_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#S3DataRepositoryConfiguration$AutoImportPolicy",
+        "com.amazonaws.fsx",
+        "S3DataRepositoryConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AutoImportPolicy",
+    0,
+);
+static S3DATAREPOSITORYCONFIGURATION_MEMBER_AUTO_EXPORT_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#S3DataRepositoryConfiguration$AutoExportPolicy",
+        "com.amazonaws.fsx",
+        "S3DataRepositoryConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AutoExportPolicy",
+    1,
+);
+static S3DATAREPOSITORYCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#S3DataRepositoryConfiguration",
+        "com.amazonaws.fsx",
+        "S3DataRepositoryConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &S3DATAREPOSITORYCONFIGURATION_MEMBER_AUTO_IMPORT_POLICY,
+        &S3DATAREPOSITORYCONFIGURATION_MEMBER_AUTO_EXPORT_POLICY,
+    ],
+);
+impl S3DataRepositoryConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &S3DATAREPOSITORYCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for S3DataRepositoryConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.auto_import_policy {
+            ser.write_struct(&S3DATAREPOSITORYCONFIGURATION_MEMBER_AUTO_IMPORT_POLICY, val)?;
+        }
+        if let Some(ref val) = self.auto_export_policy {
+            ser.write_struct(&S3DATAREPOSITORYCONFIGURATION_MEMBER_AUTO_EXPORT_POLICY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::S3DataRepositoryConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&S3DATAREPOSITORYCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_import_policy = Some(crate::types::AutoImportPolicy::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_export_policy = Some(crate::types::AutoExportPolicy::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl S3DataRepositoryConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl S3DataRepositoryConfiguration {
     /// Creates a new builder-style object to manufacture [`S3DataRepositoryConfiguration`](crate::types::S3DataRepositoryConfiguration).
     pub fn builder() -> crate::types::builders::S3DataRepositoryConfigurationBuilder {

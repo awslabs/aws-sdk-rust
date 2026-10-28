@@ -25,6 +25,113 @@ impl UserSetting {
         self.maximum_length
     }
 }
+static USERSETTING_MEMBER_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#UserSetting$Action", "com.amazonaws.workspaces", "UserSetting"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Action",
+    0,
+);
+static USERSETTING_MEMBER_PERMISSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#UserSetting$Permission",
+        "com.amazonaws.workspaces",
+        "UserSetting",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Permission",
+    1,
+);
+static USERSETTING_MEMBER_MAXIMUM_LENGTH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#UserSetting$MaximumLength",
+        "com.amazonaws.workspaces",
+        "UserSetting",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaximumLength",
+    2,
+);
+static USERSETTING_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#UserSetting", "com.amazonaws.workspaces", "UserSetting"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &USERSETTING_MEMBER_ACTION,
+        &USERSETTING_MEMBER_PERMISSION,
+        &USERSETTING_MEMBER_MAXIMUM_LENGTH,
+    ],
+);
+impl UserSetting {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &USERSETTING_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UserSetting {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.action;
+            ser.write_string(&USERSETTING_MEMBER_ACTION, val.as_str())?;
+        }
+        {
+            let val = &self.permission;
+            ser.write_string(&USERSETTING_MEMBER_PERMISSION, val.as_str())?;
+        }
+        if let Some(ref val) = self.maximum_length {
+            ser.write_integer(&USERSETTING_MEMBER_MAXIMUM_LENGTH, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UserSettingBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&USERSETTING_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.action = Some(crate::types::UserSettingActionEnum::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    self.permission = Some(crate::types::UserSettingPermissionEnum::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.maximum_length = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UserSetting {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UserSetting {
     /// Creates a new builder-style object to manufacture [`UserSetting`](crate::types::UserSetting).
     pub fn builder() -> crate::types::builders::UserSettingBuilder {

@@ -125,3 +125,133 @@ impl GeneralName {
         matches!(self, Self::Unknown)
     }
 }
+static GENERALNAME_MEMBER_DIRECTORYNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#GeneralName$DirectoryName", "com.amazonaws.acm", "GeneralName"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DirectoryName",
+    0,
+);
+static GENERALNAME_MEMBER_DNSNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#GeneralName$DnsName", "com.amazonaws.acm", "GeneralName"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DnsName",
+    1,
+);
+static GENERALNAME_MEMBER_IPADDRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#GeneralName$IpAddress", "com.amazonaws.acm", "GeneralName"),
+    ::aws_smithy_schema::ShapeType::String,
+    "IpAddress",
+    2,
+);
+static GENERALNAME_MEMBER_OTHERNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#GeneralName$OtherName", "com.amazonaws.acm", "GeneralName"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OtherName",
+    3,
+);
+static GENERALNAME_MEMBER_REGISTEREDID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#GeneralName$RegisteredId", "com.amazonaws.acm", "GeneralName"),
+    ::aws_smithy_schema::ShapeType::String,
+    "RegisteredId",
+    4,
+);
+static GENERALNAME_MEMBER_RFC822NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#GeneralName$Rfc822Name", "com.amazonaws.acm", "GeneralName"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Rfc822Name",
+    5,
+);
+static GENERALNAME_MEMBER_UNIFORMRESOURCEIDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#GeneralName$UniformResourceIdentifier",
+        "com.amazonaws.acm",
+        "GeneralName",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UniformResourceIdentifier",
+    6,
+);
+static GENERALNAME_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#GeneralName", "com.amazonaws.acm", "GeneralName"),
+    ::aws_smithy_schema::ShapeType::Union,
+    &[
+        &GENERALNAME_MEMBER_DIRECTORYNAME,
+        &GENERALNAME_MEMBER_DNSNAME,
+        &GENERALNAME_MEMBER_IPADDRESS,
+        &GENERALNAME_MEMBER_OTHERNAME,
+        &GENERALNAME_MEMBER_REGISTEREDID,
+        &GENERALNAME_MEMBER_RFC822NAME,
+        &GENERALNAME_MEMBER_UNIFORMRESOURCEIDENTIFIER,
+    ],
+);
+impl GeneralName {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GENERALNAME_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GeneralName {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        match self {
+            Self::DirectoryName(val) => {
+                ser.write_struct(&GENERALNAME_MEMBER_DIRECTORYNAME, val)?;
+            }
+            Self::DnsName(val) => {
+                ser.write_string(&GENERALNAME_MEMBER_DNSNAME, val)?;
+            }
+            Self::IpAddress(val) => {
+                ser.write_string(&GENERALNAME_MEMBER_IPADDRESS, val)?;
+            }
+            Self::OtherName(val) => {
+                ser.write_struct(&GENERALNAME_MEMBER_OTHERNAME, val)?;
+            }
+            Self::RegisteredId(val) => {
+                ser.write_string(&GENERALNAME_MEMBER_REGISTEREDID, val)?;
+            }
+            Self::Rfc822Name(val) => {
+                ser.write_string(&GENERALNAME_MEMBER_RFC822NAME, val)?;
+            }
+            Self::UniformResourceIdentifier(val) => {
+                ser.write_string(&GENERALNAME_MEMBER_UNIFORMRESOURCEIDENTIFIER, val)?;
+            }
+            Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
+        }
+        Ok(())
+    }
+}
+impl GeneralName {
+    /// Deserializes this union from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut result: ::std::option::Option<Self> = ::std::option::Option::None;
+        #[allow(unused_variables, unreachable_code, clippy::single_match, clippy::match_single_binding)]
+        deserializer.read_struct(&GENERALNAME_SCHEMA, &mut |member, deser| {
+            // A union holds exactly one member; the deserializer reports every key
+            // (known or not), so a second one is an error whatever it names.
+            if result.is_some() {
+                return Err(::aws_smithy_schema::serde::SerdeError::invalid_input(
+                    "encountered mixed variants in union",
+                ));
+            }
+            result = ::std::option::Option::Some(match member.member_index() {
+                Some(0) => Self::DirectoryName(crate::types::DistinguishedName::deserialize(deser)?),
+                Some(1) => Self::DnsName(deser.read_string(member)?),
+                Some(2) => Self::IpAddress(deser.read_string(member)?),
+                Some(3) => Self::OtherName(crate::types::OtherName::deserialize(deser)?),
+                Some(4) => Self::RegisteredId(deser.read_string(member)?),
+                Some(5) => Self::Rfc822Name(deser.read_string(member)?),
+                Some(6) => Self::UniformResourceIdentifier(deser.read_string(member)?),
+                _ => Self::Unknown,
+            });
+            Ok(())
+        })?;
+        result.ok_or_else(|| ::aws_smithy_schema::serde::SerdeError::custom("expected a union variant"))
+    }
+}

@@ -5,7 +5,7 @@ harness = false
 
 [package]
 name = "aws-smithy-xml"
-version = "0.64.0"
+version = "0.64.1"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 description = "XML parsing logic for Smithy protocols."
 edition = "2021"
@@ -19,12 +19,12 @@ cargo-args = ["-Zunstable-options", "-Zrustdoc-scrape-examples"]
 rustdoc-args = ["--cfg", "docsrs"]
 
 [dependencies]
-xmlparser = "0.13.5"
+xmlparser = "0.13.6"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client"]
-version = "1.19.1"
+version = "1.19.2"
 
 [dependencies.aws-smithy-schema]
 path = "../aws-smithy-schema"
@@ -32,7 +32,7 @@ version = "1.1.0"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.9.0"
+version = "1.9.1"
 
 [dev-dependencies]
 base64 = "0.13.0"

@@ -20,6 +20,94 @@ impl PartitionField {
         self.source_name.deref()
     }
 }
+static PARTITIONFIELD_MEMBER_TRANSFORM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#PartitionField$Transform",
+        "com.amazonaws.kinesis",
+        "PartitionField",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Transform",
+    0,
+);
+static PARTITIONFIELD_MEMBER_SOURCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#PartitionField$SourceName",
+        "com.amazonaws.kinesis",
+        "PartitionField",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceName",
+    1,
+);
+static PARTITIONFIELD_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#PartitionField", "com.amazonaws.kinesis", "PartitionField"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&PARTITIONFIELD_MEMBER_TRANSFORM, &PARTITIONFIELD_MEMBER_SOURCE_NAME],
+);
+impl PartitionField {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PARTITIONFIELD_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PartitionField {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.transform;
+            ser.write_string(&PARTITIONFIELD_MEMBER_TRANSFORM, val.as_str())?;
+        }
+        {
+            let val = &self.source_name;
+            ser.write_string(&PARTITIONFIELD_MEMBER_SOURCE_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PartitionFieldBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PARTITIONFIELD_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.transform = Some(crate::types::PartitionTransform::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    self.source_name = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PartitionField {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.source_name = builder.source_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PartitionField {
     /// Creates a new builder-style object to manufacture [`PartitionField`](crate::types::PartitionField).
     pub fn builder() -> crate::types::builders::PartitionFieldBuilder {

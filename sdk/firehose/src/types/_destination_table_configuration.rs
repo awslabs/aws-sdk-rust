@@ -43,6 +43,184 @@ impl DestinationTableConfiguration {
         self.s3_error_output_prefix.as_deref()
     }
 }
+static DESTINATIONTABLECONFIGURATION_MEMBER_DESTINATION_TABLE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DestinationTableConfiguration$DestinationTableName",
+        "com.amazonaws.firehose",
+        "DestinationTableConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DestinationTableName",
+    0,
+);
+static DESTINATIONTABLECONFIGURATION_MEMBER_DESTINATION_DATABASE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DestinationTableConfiguration$DestinationDatabaseName",
+        "com.amazonaws.firehose",
+        "DestinationTableConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DestinationDatabaseName",
+    1,
+);
+static DESTINATIONTABLECONFIGURATION_MEMBER_UNIQUE_KEYS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ListOfNonEmptyStringsWithoutWhitespace$member",
+        "com.amazonaws.firehose",
+        "ListOfNonEmptyStringsWithoutWhitespace",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESTINATIONTABLECONFIGURATION_MEMBER_UNIQUE_KEYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DestinationTableConfiguration$UniqueKeys",
+        "com.amazonaws.firehose",
+        "DestinationTableConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "UniqueKeys",
+    2,
+)
+.with_list_member(&DESTINATIONTABLECONFIGURATION_MEMBER_UNIQUE_KEYS_MEMBER);
+static DESTINATIONTABLECONFIGURATION_MEMBER_PARTITION_SPEC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DestinationTableConfiguration$PartitionSpec",
+        "com.amazonaws.firehose",
+        "DestinationTableConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PartitionSpec",
+    3,
+);
+static DESTINATIONTABLECONFIGURATION_MEMBER_S3_ERROR_OUTPUT_PREFIX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DestinationTableConfiguration$S3ErrorOutputPrefix",
+        "com.amazonaws.firehose",
+        "DestinationTableConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3ErrorOutputPrefix",
+    4,
+);
+static DESTINATIONTABLECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DestinationTableConfiguration",
+        "com.amazonaws.firehose",
+        "DestinationTableConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESTINATIONTABLECONFIGURATION_MEMBER_DESTINATION_TABLE_NAME,
+        &DESTINATIONTABLECONFIGURATION_MEMBER_DESTINATION_DATABASE_NAME,
+        &DESTINATIONTABLECONFIGURATION_MEMBER_UNIQUE_KEYS,
+        &DESTINATIONTABLECONFIGURATION_MEMBER_PARTITION_SPEC,
+        &DESTINATIONTABLECONFIGURATION_MEMBER_S3_ERROR_OUTPUT_PREFIX,
+    ],
+);
+impl DestinationTableConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESTINATIONTABLECONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DestinationTableConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.destination_table_name;
+            ser.write_string(&DESTINATIONTABLECONFIGURATION_MEMBER_DESTINATION_TABLE_NAME, val)?;
+        }
+        {
+            let val = &self.destination_database_name;
+            ser.write_string(&DESTINATIONTABLECONFIGURATION_MEMBER_DESTINATION_DATABASE_NAME, val)?;
+        }
+        if let Some(ref val) = self.unique_keys {
+            ser.write_list(
+                &DESTINATIONTABLECONFIGURATION_MEMBER_UNIQUE_KEYS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.partition_spec {
+            ser.write_struct(&DESTINATIONTABLECONFIGURATION_MEMBER_PARTITION_SPEC, val)?;
+        }
+        if let Some(ref val) = self.s3_error_output_prefix {
+            ser.write_string(&DESTINATIONTABLECONFIGURATION_MEMBER_S3_ERROR_OUTPUT_PREFIX, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DestinationTableConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESTINATIONTABLECONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.destination_table_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.destination_database_name = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.unique_keys = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.partition_spec = Some(crate::types::PartitionSpec::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_error_output_prefix = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DestinationTableConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.destination_table_name = builder.destination_table_name.or(Some(String::new()));
+        builder.destination_database_name = builder.destination_database_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DestinationTableConfiguration {
     /// Creates a new builder-style object to manufacture [`DestinationTableConfiguration`](crate::types::DestinationTableConfiguration).
     pub fn builder() -> crate::types::builders::DestinationTableConfigurationBuilder {

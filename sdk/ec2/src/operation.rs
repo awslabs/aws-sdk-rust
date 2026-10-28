@@ -1729,6 +1729,9 @@ pub mod get_image_ancestry;
 /// Types for the `GetImageBlockPublicAccessState` operation.
 pub mod get_image_block_public_access_state;
 
+/// Types for the `GetImageFindings` operation.
+pub mod get_image_findings;
+
 /// Types for the `GetInstanceMetadataDefaults` operation.
 pub mod get_instance_metadata_defaults;
 

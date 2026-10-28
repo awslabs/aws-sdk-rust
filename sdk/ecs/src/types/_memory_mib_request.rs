@@ -19,6 +19,89 @@ impl MemoryMiBRequest {
         self.max
     }
 }
+static MEMORYMIBREQUEST_MEMBER_MIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#MemoryMiBRequest$min", "com.amazonaws.ecs", "MemoryMiBRequest"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "min",
+    0,
+);
+static MEMORYMIBREQUEST_MEMBER_MAX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#MemoryMiBRequest$max", "com.amazonaws.ecs", "MemoryMiBRequest"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "max",
+    1,
+);
+static MEMORYMIBREQUEST_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#MemoryMiBRequest", "com.amazonaws.ecs", "MemoryMiBRequest"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&MEMORYMIBREQUEST_MEMBER_MIN, &MEMORYMIBREQUEST_MEMBER_MAX],
+);
+impl MemoryMiBRequest {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MEMORYMIBREQUEST_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MemoryMiBRequest {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.min;
+            ser.write_integer(&MEMORYMIBREQUEST_MEMBER_MIN, *val)?;
+        }
+        if let Some(ref val) = self.max {
+            ser.write_integer(&MEMORYMIBREQUEST_MEMBER_MAX, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MemoryMiBRequestBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MEMORYMIBREQUEST_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.min = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MemoryMiBRequest {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.min = builder.min.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl MemoryMiBRequest {
     /// Creates a new builder-style object to manufacture [`MemoryMiBRequest`](crate::types::MemoryMiBRequest).
     pub fn builder() -> crate::types::builders::MemoryMiBRequestBuilder {

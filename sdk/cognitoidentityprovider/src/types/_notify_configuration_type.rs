@@ -44,6 +44,188 @@ impl NotifyConfigurationType {
         self.mfa_email.as_ref()
     }
 }
+static NOTIFYCONFIGURATIONTYPE_MEMBER_FROM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#NotifyConfigurationType$From",
+        "com.amazonaws.cognitoidentityprovider",
+        "NotifyConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "From",
+    0,
+);
+static NOTIFYCONFIGURATIONTYPE_MEMBER_REPLY_TO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#NotifyConfigurationType$ReplyTo",
+        "com.amazonaws.cognitoidentityprovider",
+        "NotifyConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ReplyTo",
+    1,
+);
+static NOTIFYCONFIGURATIONTYPE_MEMBER_SOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#NotifyConfigurationType$SourceArn",
+        "com.amazonaws.cognitoidentityprovider",
+        "NotifyConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceArn",
+    2,
+);
+static NOTIFYCONFIGURATIONTYPE_MEMBER_BLOCK_EMAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#NotifyConfigurationType$BlockEmail",
+        "com.amazonaws.cognitoidentityprovider",
+        "NotifyConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BlockEmail",
+    3,
+);
+static NOTIFYCONFIGURATIONTYPE_MEMBER_NO_ACTION_EMAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#NotifyConfigurationType$NoActionEmail",
+        "com.amazonaws.cognitoidentityprovider",
+        "NotifyConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NoActionEmail",
+    4,
+);
+static NOTIFYCONFIGURATIONTYPE_MEMBER_MFA_EMAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#NotifyConfigurationType$MfaEmail",
+        "com.amazonaws.cognitoidentityprovider",
+        "NotifyConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MfaEmail",
+    5,
+);
+static NOTIFYCONFIGURATIONTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#NotifyConfigurationType",
+        "com.amazonaws.cognitoidentityprovider",
+        "NotifyConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &NOTIFYCONFIGURATIONTYPE_MEMBER_FROM,
+        &NOTIFYCONFIGURATIONTYPE_MEMBER_REPLY_TO,
+        &NOTIFYCONFIGURATIONTYPE_MEMBER_SOURCE_ARN,
+        &NOTIFYCONFIGURATIONTYPE_MEMBER_BLOCK_EMAIL,
+        &NOTIFYCONFIGURATIONTYPE_MEMBER_NO_ACTION_EMAIL,
+        &NOTIFYCONFIGURATIONTYPE_MEMBER_MFA_EMAIL,
+    ],
+);
+impl NotifyConfigurationType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &NOTIFYCONFIGURATIONTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for NotifyConfigurationType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.from {
+            ser.write_string(&NOTIFYCONFIGURATIONTYPE_MEMBER_FROM, val)?;
+        }
+        if let Some(ref val) = self.reply_to {
+            ser.write_string(&NOTIFYCONFIGURATIONTYPE_MEMBER_REPLY_TO, val)?;
+        }
+        {
+            let val = &self.source_arn;
+            ser.write_string(&NOTIFYCONFIGURATIONTYPE_MEMBER_SOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.block_email {
+            ser.write_struct(&NOTIFYCONFIGURATIONTYPE_MEMBER_BLOCK_EMAIL, val)?;
+        }
+        if let Some(ref val) = self.no_action_email {
+            ser.write_struct(&NOTIFYCONFIGURATIONTYPE_MEMBER_NO_ACTION_EMAIL, val)?;
+        }
+        if let Some(ref val) = self.mfa_email {
+            ser.write_struct(&NOTIFYCONFIGURATIONTYPE_MEMBER_MFA_EMAIL, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::NotifyConfigurationTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&NOTIFYCONFIGURATIONTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.from = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reply_to = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.source_arn = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.block_email = Some(crate::types::NotifyEmailType::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.no_action_email = Some(crate::types::NotifyEmailType::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mfa_email = Some(crate::types::NotifyEmailType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl NotifyConfigurationType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.source_arn = builder.source_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl NotifyConfigurationType {
     /// Creates a new builder-style object to manufacture [`NotifyConfigurationType`](crate::types::NotifyConfigurationType).
     pub fn builder() -> crate::types::builders::NotifyConfigurationTypeBuilder {

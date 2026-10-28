@@ -117,6 +117,169 @@ impl EmailConfigurationType {
         self.configuration_set.as_deref()
     }
 }
+static EMAILCONFIGURATIONTYPE_MEMBER_SOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#EmailConfigurationType$SourceArn",
+        "com.amazonaws.cognitoidentityprovider",
+        "EmailConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceArn",
+    0,
+);
+static EMAILCONFIGURATIONTYPE_MEMBER_REPLY_TO_EMAIL_ADDRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#EmailConfigurationType$ReplyToEmailAddress",
+        "com.amazonaws.cognitoidentityprovider",
+        "EmailConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ReplyToEmailAddress",
+    1,
+);
+static EMAILCONFIGURATIONTYPE_MEMBER_EMAIL_SENDING_ACCOUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#EmailConfigurationType$EmailSendingAccount",
+        "com.amazonaws.cognitoidentityprovider",
+        "EmailConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EmailSendingAccount",
+    2,
+);
+static EMAILCONFIGURATIONTYPE_MEMBER_FROM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#EmailConfigurationType$From",
+        "com.amazonaws.cognitoidentityprovider",
+        "EmailConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "From",
+    3,
+);
+static EMAILCONFIGURATIONTYPE_MEMBER_CONFIGURATION_SET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#EmailConfigurationType$ConfigurationSet",
+        "com.amazonaws.cognitoidentityprovider",
+        "EmailConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConfigurationSet",
+    4,
+);
+static EMAILCONFIGURATIONTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#EmailConfigurationType",
+        "com.amazonaws.cognitoidentityprovider",
+        "EmailConfigurationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EMAILCONFIGURATIONTYPE_MEMBER_SOURCE_ARN,
+        &EMAILCONFIGURATIONTYPE_MEMBER_REPLY_TO_EMAIL_ADDRESS,
+        &EMAILCONFIGURATIONTYPE_MEMBER_EMAIL_SENDING_ACCOUNT,
+        &EMAILCONFIGURATIONTYPE_MEMBER_FROM,
+        &EMAILCONFIGURATIONTYPE_MEMBER_CONFIGURATION_SET,
+    ],
+);
+impl EmailConfigurationType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EMAILCONFIGURATIONTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EmailConfigurationType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.source_arn {
+            ser.write_string(&EMAILCONFIGURATIONTYPE_MEMBER_SOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.reply_to_email_address {
+            ser.write_string(&EMAILCONFIGURATIONTYPE_MEMBER_REPLY_TO_EMAIL_ADDRESS, val)?;
+        }
+        if let Some(ref val) = self.email_sending_account {
+            ser.write_string(&EMAILCONFIGURATIONTYPE_MEMBER_EMAIL_SENDING_ACCOUNT, val.as_str())?;
+        }
+        if let Some(ref val) = self.from {
+            ser.write_string(&EMAILCONFIGURATIONTYPE_MEMBER_FROM, val)?;
+        }
+        if let Some(ref val) = self.configuration_set {
+            ser.write_string(&EMAILCONFIGURATIONTYPE_MEMBER_CONFIGURATION_SET, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EmailConfigurationTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EMAILCONFIGURATIONTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reply_to_email_address = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email_sending_account = Some(crate::types::EmailSendingAccountType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.from = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration_set = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EmailConfigurationType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EmailConfigurationType {
     /// Creates a new builder-style object to manufacture [`EmailConfigurationType`](crate::types::EmailConfigurationType).
     pub fn builder() -> crate::types::builders::EmailConfigurationTypeBuilder {

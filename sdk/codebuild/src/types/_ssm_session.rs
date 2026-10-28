@@ -25,6 +25,111 @@ impl SsmSession {
         self.stream_url.as_deref()
     }
 }
+static SSMSESSION_MEMBER_SESSION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#SSMSession$sessionId", "com.amazonaws.codebuild", "SSMSession"),
+    ::aws_smithy_schema::ShapeType::String,
+    "sessionId",
+    0,
+);
+static SSMSESSION_MEMBER_TOKEN_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#SSMSession$tokenValue", "com.amazonaws.codebuild", "SSMSession"),
+    ::aws_smithy_schema::ShapeType::String,
+    "tokenValue",
+    1,
+);
+static SSMSESSION_MEMBER_STREAM_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#SSMSession$streamUrl", "com.amazonaws.codebuild", "SSMSession"),
+    ::aws_smithy_schema::ShapeType::String,
+    "streamUrl",
+    2,
+);
+static SSMSESSION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#SSMSession", "com.amazonaws.codebuild", "SSMSession"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SSMSESSION_MEMBER_SESSION_ID,
+        &SSMSESSION_MEMBER_TOKEN_VALUE,
+        &SSMSESSION_MEMBER_STREAM_URL,
+    ],
+);
+impl SsmSession {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SSMSESSION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SsmSession {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.session_id {
+            ser.write_string(&SSMSESSION_MEMBER_SESSION_ID, val)?;
+        }
+        if let Some(ref val) = self.token_value {
+            ser.write_string(&SSMSESSION_MEMBER_TOKEN_VALUE, val)?;
+        }
+        if let Some(ref val) = self.stream_url {
+            ser.write_string(&SSMSESSION_MEMBER_STREAM_URL, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SsmSessionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SSMSESSION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.session_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.token_value = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_url = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SsmSession {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SsmSession {
     /// Creates a new builder-style object to manufacture [`SsmSession`](crate::types::SsmSession).
     pub fn builder() -> crate::types::builders::SsmSessionBuilder {

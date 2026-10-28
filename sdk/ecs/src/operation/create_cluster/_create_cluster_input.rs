@@ -100,6 +100,299 @@ impl CreateClusterInput {
         self.service_connect_defaults.as_ref()
     }
 }
+static CREATECLUSTERINPUT_MEMBER_CLUSTER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateClusterInput$clusterName",
+        "com.amazonaws.ecs.synthetic",
+        "CreateClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "clusterName",
+    0,
+);
+static CREATECLUSTERINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Tags$member", "com.amazonaws.ecs", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATECLUSTERINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateClusterInput$tags",
+        "com.amazonaws.ecs.synthetic",
+        "CreateClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    1,
+)
+.with_list_member(&CREATECLUSTERINPUT_MEMBER_TAGS_MEMBER);
+static CREATECLUSTERINPUT_MEMBER_SETTINGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ClusterSettings$member", "com.amazonaws.ecs", "ClusterSettings"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATECLUSTERINPUT_MEMBER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateClusterInput$settings",
+        "com.amazonaws.ecs.synthetic",
+        "CreateClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "settings",
+    2,
+)
+.with_list_member(&CREATECLUSTERINPUT_MEMBER_SETTINGS_MEMBER);
+static CREATECLUSTERINPUT_MEMBER_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateClusterInput$configuration",
+        "com.amazonaws.ecs.synthetic",
+        "CreateClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "configuration",
+    3,
+);
+static CREATECLUSTERINPUT_MEMBER_CAPACITY_PROVIDERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#StringList$member", "com.amazonaws.ecs", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATECLUSTERINPUT_MEMBER_CAPACITY_PROVIDERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateClusterInput$capacityProviders",
+        "com.amazonaws.ecs.synthetic",
+        "CreateClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "capacityProviders",
+    4,
+)
+.with_list_member(&CREATECLUSTERINPUT_MEMBER_CAPACITY_PROVIDERS_MEMBER);
+static CREATECLUSTERINPUT_MEMBER_DEFAULT_CAPACITY_PROVIDER_STRATEGY_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#CapacityProviderStrategy$member",
+            "com.amazonaws.ecs",
+            "CapacityProviderStrategy",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CREATECLUSTERINPUT_MEMBER_DEFAULT_CAPACITY_PROVIDER_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateClusterInput$defaultCapacityProviderStrategy",
+        "com.amazonaws.ecs.synthetic",
+        "CreateClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "defaultCapacityProviderStrategy",
+    5,
+)
+.with_list_member(&CREATECLUSTERINPUT_MEMBER_DEFAULT_CAPACITY_PROVIDER_STRATEGY_MEMBER);
+static CREATECLUSTERINPUT_MEMBER_SERVICE_CONNECT_DEFAULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateClusterInput$serviceConnectDefaults",
+        "com.amazonaws.ecs.synthetic",
+        "CreateClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "serviceConnectDefaults",
+    6,
+);
+static CREATECLUSTERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateClusterInput",
+        "com.amazonaws.ecs.synthetic",
+        "CreateClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATECLUSTERINPUT_MEMBER_CLUSTER_NAME,
+        &CREATECLUSTERINPUT_MEMBER_TAGS,
+        &CREATECLUSTERINPUT_MEMBER_SETTINGS,
+        &CREATECLUSTERINPUT_MEMBER_CONFIGURATION,
+        &CREATECLUSTERINPUT_MEMBER_CAPACITY_PROVIDERS,
+        &CREATECLUSTERINPUT_MEMBER_DEFAULT_CAPACITY_PROVIDER_STRATEGY,
+        &CREATECLUSTERINPUT_MEMBER_SERVICE_CONNECT_DEFAULTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateClusterRequest");
+impl CreateClusterInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATECLUSTERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateClusterInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster_name {
+            ser.write_string(&CREATECLUSTERINPUT_MEMBER_CLUSTER_NAME, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATECLUSTERINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.settings {
+            ser.write_list(
+                &CREATECLUSTERINPUT_MEMBER_SETTINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ClusterSetting::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.configuration {
+            ser.write_struct(&CREATECLUSTERINPUT_MEMBER_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.capacity_providers {
+            ser.write_list(
+                &CREATECLUSTERINPUT_MEMBER_CAPACITY_PROVIDERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.default_capacity_provider_strategy {
+            ser.write_list(
+                &CREATECLUSTERINPUT_MEMBER_DEFAULT_CAPACITY_PROVIDER_STRATEGY,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CapacityProviderStrategyItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.service_connect_defaults {
+            ser.write_struct(&CREATECLUSTERINPUT_MEMBER_SERVICE_CONNECT_DEFAULTS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_cluster::builders::CreateClusterInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATECLUSTERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.settings = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ClusterSetting::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration = Some(crate::types::ClusterConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_providers = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_capacity_provider_strategy = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CapacityProviderStrategyItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_connect_defaults = Some(crate::types::ClusterServiceConnectDefaultsRequest::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateClusterInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn builder() -> crate::operation::create_cluster::builders::CreateClusterInputBuilder {

@@ -23,6 +23,153 @@ impl NotifyRecommendationsReceivedOutput {
         self.errors.as_deref().unwrap_or_default()
     }
 }
+static NOTIFYRECOMMENDATIONSRECEIVEDOUTPUT_MEMBER_RECOMMENDATION_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.wisdom#RecommendationIdList$member",
+            "com.amazonaws.wisdom",
+            "RecommendationIdList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static NOTIFYRECOMMENDATIONSRECEIVEDOUTPUT_MEMBER_RECOMMENDATION_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#NotifyRecommendationsReceivedOutput$recommendationIds",
+        "com.amazonaws.wisdom.synthetic",
+        "NotifyRecommendationsReceivedOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "recommendationIds",
+    0,
+)
+.with_list_member(&NOTIFYRECOMMENDATIONSRECEIVEDOUTPUT_MEMBER_RECOMMENDATION_IDS_MEMBER);
+static NOTIFYRECOMMENDATIONSRECEIVEDOUTPUT_MEMBER_ERRORS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#NotifyRecommendationsReceivedErrorList$member",
+        "com.amazonaws.wisdom",
+        "NotifyRecommendationsReceivedErrorList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static NOTIFYRECOMMENDATIONSRECEIVEDOUTPUT_MEMBER_ERRORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#NotifyRecommendationsReceivedOutput$errors",
+        "com.amazonaws.wisdom.synthetic",
+        "NotifyRecommendationsReceivedOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "errors",
+    1,
+)
+.with_list_member(&NOTIFYRECOMMENDATIONSRECEIVEDOUTPUT_MEMBER_ERRORS_MEMBER);
+static NOTIFYRECOMMENDATIONSRECEIVEDOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#NotifyRecommendationsReceivedOutput",
+        "com.amazonaws.wisdom.synthetic",
+        "NotifyRecommendationsReceivedOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &NOTIFYRECOMMENDATIONSRECEIVEDOUTPUT_MEMBER_RECOMMENDATION_IDS,
+        &NOTIFYRECOMMENDATIONSRECEIVEDOUTPUT_MEMBER_ERRORS,
+    ],
+)
+.with_original_name("NotifyRecommendationsReceivedResponse");
+impl NotifyRecommendationsReceivedOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &NOTIFYRECOMMENDATIONSRECEIVEDOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for NotifyRecommendationsReceivedOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.recommendation_ids {
+            ser.write_list(
+                &NOTIFYRECOMMENDATIONSRECEIVEDOUTPUT_MEMBER_RECOMMENDATION_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.errors {
+            ser.write_list(
+                &NOTIFYRECOMMENDATIONSRECEIVEDOUTPUT_MEMBER_ERRORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::NotifyRecommendationsReceivedError::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&NOTIFYRECOMMENDATIONSRECEIVEDOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.recommendation_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.errors = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::NotifyRecommendationsReceivedError::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl NotifyRecommendationsReceivedOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for NotifyRecommendationsReceivedOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -79,6 +79,166 @@ impl DecryptStepDetails {
         self.destination_file_location.as_ref()
     }
 }
+static DECRYPTSTEPDETAILS_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DecryptStepDetails$Name",
+        "com.amazonaws.transfer",
+        "DecryptStepDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static DECRYPTSTEPDETAILS_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DecryptStepDetails$Type",
+        "com.amazonaws.transfer",
+        "DecryptStepDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    1,
+);
+static DECRYPTSTEPDETAILS_MEMBER_SOURCE_FILE_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DecryptStepDetails$SourceFileLocation",
+        "com.amazonaws.transfer",
+        "DecryptStepDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceFileLocation",
+    2,
+);
+static DECRYPTSTEPDETAILS_MEMBER_OVERWRITE_EXISTING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DecryptStepDetails$OverwriteExisting",
+        "com.amazonaws.transfer",
+        "DecryptStepDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OverwriteExisting",
+    3,
+);
+static DECRYPTSTEPDETAILS_MEMBER_DESTINATION_FILE_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DecryptStepDetails$DestinationFileLocation",
+        "com.amazonaws.transfer",
+        "DecryptStepDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DestinationFileLocation",
+    4,
+);
+static DECRYPTSTEPDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DecryptStepDetails",
+        "com.amazonaws.transfer",
+        "DecryptStepDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DECRYPTSTEPDETAILS_MEMBER_NAME,
+        &DECRYPTSTEPDETAILS_MEMBER_TYPE,
+        &DECRYPTSTEPDETAILS_MEMBER_SOURCE_FILE_LOCATION,
+        &DECRYPTSTEPDETAILS_MEMBER_OVERWRITE_EXISTING,
+        &DECRYPTSTEPDETAILS_MEMBER_DESTINATION_FILE_LOCATION,
+    ],
+);
+impl DecryptStepDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DECRYPTSTEPDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DecryptStepDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&DECRYPTSTEPDETAILS_MEMBER_NAME, val)?;
+        }
+        {
+            let val = &self.r#type;
+            ser.write_string(&DECRYPTSTEPDETAILS_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.source_file_location {
+            ser.write_string(&DECRYPTSTEPDETAILS_MEMBER_SOURCE_FILE_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.overwrite_existing {
+            ser.write_string(&DECRYPTSTEPDETAILS_MEMBER_OVERWRITE_EXISTING, val.as_str())?;
+        }
+        if let Some(ref val) = self.destination_file_location {
+            ser.write_struct(&DECRYPTSTEPDETAILS_MEMBER_DESTINATION_FILE_LOCATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DecryptStepDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DECRYPTSTEPDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.r#type = Some(crate::types::EncryptionType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_file_location = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.overwrite_existing = Some(crate::types::OverwriteExisting::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_file_location = Some(crate::types::InputFileLocation::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DecryptStepDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DecryptStepDetails {
     /// Creates a new builder-style object to manufacture [`DecryptStepDetails`](crate::types::DecryptStepDetails).
     pub fn builder() -> crate::types::builders::DecryptStepDetailsBuilder {

@@ -168,14 +168,14 @@ impl DriverSpawner {
 
     /// Places connection-owned work through a caller-provided spawn function.
     ///
-    /// `spawn` receives each connection-owned task and must run it to
-    /// completion on the runtime this partition represents. Dropping the task
-    /// instead is treated by the pool as that runtime shutting down.
+    /// Each call transfers ownership of a connection-owned task. The callback
+    /// must submit it to the runtime this partition represents and return
+    /// promptly. Calls may arrive concurrently from different threads.
     ///
-    /// This is a test hook for observing task placement and is not a supported
-    /// extension point.
-    #[cfg(feature = "test-util")]
-    #[doc(hidden)]
+    /// Tasks must make progress while that runtime is running. Dropping a task
+    /// during shutdown follows the pool's existing connection-close behavior.
+    /// The callback returns neither a join handle nor a submission error.
+    /// Runtime ownership and shutdown remain the caller's responsibility.
     pub fn from_fn<F>(spawn: F) -> Self
     where
         F: Fn(Pin<Box<dyn Future<Output = ()> + Send + 'static>>) + Send + Sync + 'static,
@@ -184,13 +184,6 @@ impl DriverSpawner {
     }
 
     /// Wraps one crate-internal placement implementation.
-    #[cfg_attr(
-        not(any(feature = "rt-tokio", feature = "test-util", test)),
-        allow(
-            dead_code,
-            reason = "no public constructor exists without a runtime feature"
-        )
-    )]
     pub(in crate::client::pool) fn new(spawn: impl Spawn) -> Self {
         Self {
             inner: Arc::new(spawn),
@@ -245,17 +238,14 @@ impl Spawn for TokioSpawn {
 }
 
 /// Placement through a caller-provided spawn function.
-#[cfg(feature = "test-util")]
 struct FnSpawn<F>(F);
 
-#[cfg(feature = "test-util")]
 impl<F> fmt::Debug for FnSpawn<F> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.write_str("FnSpawn")
     }
 }
 
-#[cfg(feature = "test-util")]
 impl<F> Spawn for FnSpawn<F>
 where
     F: Fn(Pin<Box<dyn Future<Output = ()> + Send + 'static>>) + Send + Sync + 'static,
@@ -335,7 +325,6 @@ mod tests {
         retained.spawn(driver);
     }
 
-    #[cfg(feature = "test-util")]
     #[test]
     fn from_fn_receives_each_driver() {
         let submitted = Arc::new(std::sync::atomic::AtomicUsize::new(0));
@@ -349,6 +338,33 @@ mod tests {
         spawner.spawn(Box::pin(async {}));
         assert_eq!(2, submitted.load(std::sync::atomic::Ordering::SeqCst));
         assert_eq!("DriverSpawner(FnSpawn)", format!("{spawner:?}"));
+    }
+
+    #[cfg(feature = "rt-tokio")]
+    #[test]
+    fn callback_spawner_submits_to_its_target_from_another_runtime() {
+        let owner = tokio::runtime::Builder::new_current_thread()
+            .build()
+            .unwrap();
+        let foreign = tokio::runtime::Builder::new_current_thread()
+            .build()
+            .unwrap();
+        let owner_id = owner.handle().id();
+        let handle = owner.handle().clone();
+        let spawner = DriverSpawner::from_fn(move |task| {
+            let task_handle = handle.spawn(task);
+            drop(task_handle);
+        });
+        let (completed, completion) = tokio::sync::oneshot::channel();
+
+        foreign.block_on(async {
+            spawner.spawn(Box::pin(async move {
+                completed
+                    .send(tokio::runtime::Handle::current().id())
+                    .unwrap();
+            }));
+        });
+        assert_eq!(owner_id, owner.block_on(completion).unwrap());
     }
 
     #[cfg(feature = "rt-tokio")]

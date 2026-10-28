@@ -44,6 +44,8 @@ pub struct AmiAggregationResponse {
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
     /// <p>The IDs of Amazon EC2 instances using this AMI.</p>
     pub affected_instances: ::std::option::Option<i64>,
+    /// <p>The source of the scan that generated the findings for the Amazon Machine Image (AMI).</p>
+    pub scan_source: ::std::option::Option<crate::types::ScanSource>,
 }
 impl AmiAggregationResponse {
     /// <p>The ID of the AMI that findings were aggregated for.</p>
@@ -105,6 +107,10 @@ impl AmiAggregationResponse {
     pub fn affected_instances(&self) -> ::std::option::Option<i64> {
         self.affected_instances
     }
+    /// <p>The source of the scan that generated the findings for the Amazon Machine Image (AMI).</p>
+    pub fn scan_source(&self) -> ::std::option::Option<&crate::types::ScanSource> {
+        self.scan_source.as_ref()
+    }
 }
 impl AmiAggregationResponse {
     /// Creates a new builder-style object to manufacture [`AmiAggregationResponse`](crate::types::AmiAggregationResponse).
@@ -126,6 +132,7 @@ pub struct AmiAggregationResponseBuilder {
     pub(crate) cloud_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
     pub(crate) affected_instances: ::std::option::Option<i64>,
+    pub(crate) scan_source: ::std::option::Option<crate::types::ScanSource>,
 }
 impl AmiAggregationResponseBuilder {
     /// <p>The ID of the AMI that findings were aggregated for.</p>
@@ -321,6 +328,20 @@ impl AmiAggregationResponseBuilder {
     pub fn get_affected_instances(&self) -> &::std::option::Option<i64> {
         &self.affected_instances
     }
+    /// <p>The source of the scan that generated the findings for the Amazon Machine Image (AMI).</p>
+    pub fn scan_source(mut self, input: crate::types::ScanSource) -> Self {
+        self.scan_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source of the scan that generated the findings for the Amazon Machine Image (AMI).</p>
+    pub fn set_scan_source(mut self, input: ::std::option::Option<crate::types::ScanSource>) -> Self {
+        self.scan_source = input;
+        self
+    }
+    /// <p>The source of the scan that generated the findings for the Amazon Machine Image (AMI).</p>
+    pub fn get_scan_source(&self) -> &::std::option::Option<crate::types::ScanSource> {
+        &self.scan_source
+    }
     /// Consumes the builder and constructs a [`AmiAggregationResponse`](crate::types::AmiAggregationResponse).
     /// This method will fail if any of the following fields are not set:
     /// - [`ami`](crate::types::builders::AmiAggregationResponseBuilder::ami)
@@ -340,6 +361,7 @@ impl AmiAggregationResponseBuilder {
             cloud_account_id: self.cloud_account_id,
             severity_counts: self.severity_counts,
             affected_instances: self.affected_instances,
+            scan_source: self.scan_source,
         })
     }
 }

@@ -25,6 +25,128 @@ impl CreateUserPoolDomainOutput {
         self.routing.as_ref()
     }
 }
+static CREATEUSERPOOLDOMAINOUTPUT_MEMBER_MANAGED_LOGIN_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolDomainOutput$ManagedLoginVersion",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ManagedLoginVersion",
+    0,
+);
+static CREATEUSERPOOLDOMAINOUTPUT_MEMBER_CLOUD_FRONT_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolDomainOutput$CloudFrontDomain",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CloudFrontDomain",
+    1,
+);
+static CREATEUSERPOOLDOMAINOUTPUT_MEMBER_ROUTING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolDomainOutput$Routing",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Routing",
+    2,
+);
+static CREATEUSERPOOLDOMAINOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolDomainOutput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEUSERPOOLDOMAINOUTPUT_MEMBER_MANAGED_LOGIN_VERSION,
+        &CREATEUSERPOOLDOMAINOUTPUT_MEMBER_CLOUD_FRONT_DOMAIN,
+        &CREATEUSERPOOLDOMAINOUTPUT_MEMBER_ROUTING,
+    ],
+)
+.with_original_name("CreateUserPoolDomainResponse");
+impl CreateUserPoolDomainOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEUSERPOOLDOMAINOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateUserPoolDomainOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.managed_login_version {
+            ser.write_integer(&CREATEUSERPOOLDOMAINOUTPUT_MEMBER_MANAGED_LOGIN_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.cloud_front_domain {
+            ser.write_string(&CREATEUSERPOOLDOMAINOUTPUT_MEMBER_CLOUD_FRONT_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.routing {
+            ser.write_struct(&CREATEUSERPOOLDOMAINOUTPUT_MEMBER_ROUTING, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_user_pool_domain::builders::CreateUserPoolDomainOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEUSERPOOLDOMAINOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_login_version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_front_domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.routing = Some(crate::types::RoutingType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateUserPoolDomainOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for CreateUserPoolDomainOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

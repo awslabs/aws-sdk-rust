@@ -13,6 +13,83 @@ impl RoutingType {
         self.failover.as_ref()
     }
 }
+static ROUTINGTYPE_MEMBER_FAILOVER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#RoutingType$Failover",
+        "com.amazonaws.cognitoidentityprovider",
+        "RoutingType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Failover",
+    0,
+);
+static ROUTINGTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#RoutingType",
+        "com.amazonaws.cognitoidentityprovider",
+        "RoutingType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ROUTINGTYPE_MEMBER_FAILOVER],
+);
+impl RoutingType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ROUTINGTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RoutingType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.failover {
+            ser.write_struct(&ROUTINGTYPE_MEMBER_FAILOVER, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RoutingTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ROUTINGTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failover = Some(crate::types::FailoverType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RoutingType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RoutingType {
     /// Creates a new builder-style object to manufacture [`RoutingType`](crate::types::RoutingType).
     pub fn builder() -> crate::types::builders::RoutingTypeBuilder {

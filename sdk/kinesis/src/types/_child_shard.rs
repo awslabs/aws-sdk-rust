@@ -27,6 +27,123 @@ impl ChildShard {
         self.hash_key_range.as_ref()
     }
 }
+static CHILDSHARD_MEMBER_SHARD_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#ChildShard$ShardId", "com.amazonaws.kinesis", "ChildShard"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ShardId",
+    0,
+);
+static CHILDSHARD_MEMBER_PARENT_SHARDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#ShardIdList$member", "com.amazonaws.kinesis", "ShardIdList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CHILDSHARD_MEMBER_PARENT_SHARDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#ChildShard$ParentShards", "com.amazonaws.kinesis", "ChildShard"),
+    ::aws_smithy_schema::ShapeType::List,
+    "ParentShards",
+    1,
+)
+.with_list_member(&CHILDSHARD_MEMBER_PARENT_SHARDS_MEMBER);
+static CHILDSHARD_MEMBER_HASH_KEY_RANGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#ChildShard$HashKeyRange", "com.amazonaws.kinesis", "ChildShard"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "HashKeyRange",
+    2,
+);
+static CHILDSHARD_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#ChildShard", "com.amazonaws.kinesis", "ChildShard"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CHILDSHARD_MEMBER_SHARD_ID,
+        &CHILDSHARD_MEMBER_PARENT_SHARDS,
+        &CHILDSHARD_MEMBER_HASH_KEY_RANGE,
+    ],
+);
+impl ChildShard {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CHILDSHARD_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ChildShard {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.shard_id;
+            ser.write_string(&CHILDSHARD_MEMBER_SHARD_ID, val)?;
+        }
+        {
+            let val = &self.parent_shards;
+
+            ser.write_list(
+                &CHILDSHARD_MEMBER_PARENT_SHARDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.hash_key_range {
+            ser.write_struct(&CHILDSHARD_MEMBER_HASH_KEY_RANGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ChildShardBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CHILDSHARD_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.shard_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.parent_shards = Some(deser.read_string_list(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hash_key_range = Some(crate::types::HashKeyRange::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ChildShard {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.shard_id = builder.shard_id.or(Some(String::new()));
+        builder.parent_shards = builder.parent_shards.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ChildShard {
     /// Creates a new builder-style object to manufacture [`ChildShard`](crate::types::ChildShard).
     pub fn builder() -> crate::types::builders::ChildShardBuilder {

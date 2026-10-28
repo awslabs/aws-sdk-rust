@@ -25,6 +25,127 @@ impl ClientProperties {
         self.client_experience_policy.as_deref()
     }
 }
+static CLIENTPROPERTIES_MEMBER_RECONNECT_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ClientProperties$ReconnectEnabled",
+        "com.amazonaws.workspaces",
+        "ClientProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ReconnectEnabled",
+    0,
+);
+static CLIENTPROPERTIES_MEMBER_LOG_UPLOAD_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ClientProperties$LogUploadEnabled",
+        "com.amazonaws.workspaces",
+        "ClientProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LogUploadEnabled",
+    1,
+);
+static CLIENTPROPERTIES_MEMBER_CLIENT_EXPERIENCE_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ClientProperties$ClientExperiencePolicy",
+        "com.amazonaws.workspaces",
+        "ClientProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientExperiencePolicy",
+    2,
+);
+static CLIENTPROPERTIES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ClientProperties",
+        "com.amazonaws.workspaces",
+        "ClientProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLIENTPROPERTIES_MEMBER_RECONNECT_ENABLED,
+        &CLIENTPROPERTIES_MEMBER_LOG_UPLOAD_ENABLED,
+        &CLIENTPROPERTIES_MEMBER_CLIENT_EXPERIENCE_POLICY,
+    ],
+);
+impl ClientProperties {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLIENTPROPERTIES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClientProperties {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.reconnect_enabled {
+            ser.write_string(&CLIENTPROPERTIES_MEMBER_RECONNECT_ENABLED, val.as_str())?;
+        }
+        if let Some(ref val) = self.log_upload_enabled {
+            ser.write_string(&CLIENTPROPERTIES_MEMBER_LOG_UPLOAD_ENABLED, val.as_str())?;
+        }
+        if let Some(ref val) = self.client_experience_policy {
+            ser.write_string(&CLIENTPROPERTIES_MEMBER_CLIENT_EXPERIENCE_POLICY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClientPropertiesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLIENTPROPERTIES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reconnect_enabled = Some(crate::types::ReconnectEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_upload_enabled = Some(crate::types::LogUploadEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_experience_policy = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClientProperties {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ClientProperties {
     /// Creates a new builder-style object to manufacture [`ClientProperties`](crate::types::ClientProperties).
     pub fn builder() -> crate::types::builders::ClientPropertiesBuilder {

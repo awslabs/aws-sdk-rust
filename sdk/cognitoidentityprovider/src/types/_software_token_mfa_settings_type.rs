@@ -19,6 +19,100 @@ impl SoftwareTokenMfaSettingsType {
         self.preferred_mfa
     }
 }
+static SOFTWARETOKENMFASETTINGSTYPE_MEMBER_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SoftwareTokenMfaSettingsType$Enabled",
+        "com.amazonaws.cognitoidentityprovider",
+        "SoftwareTokenMfaSettingsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Enabled",
+    0,
+);
+static SOFTWARETOKENMFASETTINGSTYPE_MEMBER_PREFERRED_MFA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SoftwareTokenMfaSettingsType$PreferredMfa",
+        "com.amazonaws.cognitoidentityprovider",
+        "SoftwareTokenMfaSettingsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "PreferredMfa",
+    1,
+);
+static SOFTWARETOKENMFASETTINGSTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#SoftwareTokenMfaSettingsType",
+        "com.amazonaws.cognitoidentityprovider",
+        "SoftwareTokenMfaSettingsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SOFTWARETOKENMFASETTINGSTYPE_MEMBER_ENABLED,
+        &SOFTWARETOKENMFASETTINGSTYPE_MEMBER_PREFERRED_MFA,
+    ],
+);
+impl SoftwareTokenMfaSettingsType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SOFTWARETOKENMFASETTINGSTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SoftwareTokenMfaSettingsType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.enabled;
+            ser.write_boolean(&SOFTWARETOKENMFASETTINGSTYPE_MEMBER_ENABLED, *val)?;
+        }
+        {
+            let val = &self.preferred_mfa;
+            ser.write_boolean(&SOFTWARETOKENMFASETTINGSTYPE_MEMBER_PREFERRED_MFA, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SoftwareTokenMfaSettingsTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SOFTWARETOKENMFASETTINGSTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.enabled = Some(deser.read_boolean(member)?);
+                }
+                Some(1) => {
+                    self.preferred_mfa = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SoftwareTokenMfaSettingsType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SoftwareTokenMfaSettingsType {
     /// Creates a new builder-style object to manufacture [`SoftwareTokenMfaSettingsType`](crate::types::SoftwareTokenMfaSettingsType).
     pub fn builder() -> crate::types::builders::SoftwareTokenMfaSettingsTypeBuilder {

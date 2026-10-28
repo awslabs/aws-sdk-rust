@@ -31,6 +31,144 @@ impl AutoRetryConfig {
         self.previous_auto_retry.as_deref()
     }
 }
+static AUTORETRYCONFIG_MEMBER_AUTO_RETRY_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#AutoRetryConfig$autoRetryLimit",
+        "com.amazonaws.codebuild",
+        "AutoRetryConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "autoRetryLimit",
+    0,
+);
+static AUTORETRYCONFIG_MEMBER_AUTO_RETRY_NUMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#AutoRetryConfig$autoRetryNumber",
+        "com.amazonaws.codebuild",
+        "AutoRetryConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "autoRetryNumber",
+    1,
+);
+static AUTORETRYCONFIG_MEMBER_NEXT_AUTO_RETRY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#AutoRetryConfig$nextAutoRetry",
+        "com.amazonaws.codebuild",
+        "AutoRetryConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextAutoRetry",
+    2,
+);
+static AUTORETRYCONFIG_MEMBER_PREVIOUS_AUTO_RETRY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#AutoRetryConfig$previousAutoRetry",
+        "com.amazonaws.codebuild",
+        "AutoRetryConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "previousAutoRetry",
+    3,
+);
+static AUTORETRYCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#AutoRetryConfig", "com.amazonaws.codebuild", "AutoRetryConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AUTORETRYCONFIG_MEMBER_AUTO_RETRY_LIMIT,
+        &AUTORETRYCONFIG_MEMBER_AUTO_RETRY_NUMBER,
+        &AUTORETRYCONFIG_MEMBER_NEXT_AUTO_RETRY,
+        &AUTORETRYCONFIG_MEMBER_PREVIOUS_AUTO_RETRY,
+    ],
+);
+impl AutoRetryConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AUTORETRYCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AutoRetryConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.auto_retry_limit {
+            ser.write_integer(&AUTORETRYCONFIG_MEMBER_AUTO_RETRY_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.auto_retry_number {
+            ser.write_integer(&AUTORETRYCONFIG_MEMBER_AUTO_RETRY_NUMBER, *val)?;
+        }
+        if let Some(ref val) = self.next_auto_retry {
+            ser.write_string(&AUTORETRYCONFIG_MEMBER_NEXT_AUTO_RETRY, val)?;
+        }
+        if let Some(ref val) = self.previous_auto_retry {
+            ser.write_string(&AUTORETRYCONFIG_MEMBER_PREVIOUS_AUTO_RETRY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AutoRetryConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AUTORETRYCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_retry_limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_retry_number = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_auto_retry = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.previous_auto_retry = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AutoRetryConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AutoRetryConfig {
     /// Creates a new builder-style object to manufacture [`AutoRetryConfig`](crate::types::AutoRetryConfig).
     pub fn builder() -> crate::types::builders::AutoRetryConfigBuilder {

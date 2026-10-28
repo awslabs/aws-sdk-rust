@@ -64,6 +64,234 @@ impl InstanceLaunchTemplateUpdate {
         self.capacity_reservations.as_ref()
     }
 }
+static INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_EC2_INSTANCE_PROFILE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceLaunchTemplateUpdate$ec2InstanceProfileArn",
+        "com.amazonaws.ecs",
+        "InstanceLaunchTemplateUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ec2InstanceProfileArn",
+    0,
+);
+static INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_NETWORK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceLaunchTemplateUpdate$networkConfiguration",
+        "com.amazonaws.ecs",
+        "InstanceLaunchTemplateUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "networkConfiguration",
+    1,
+);
+static INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_STORAGE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceLaunchTemplateUpdate$storageConfiguration",
+        "com.amazonaws.ecs",
+        "InstanceLaunchTemplateUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "storageConfiguration",
+    2,
+);
+static INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_INSTANCE_METADATA_TAGS_PROPAGATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#InstanceLaunchTemplateUpdate$instanceMetadataTagsPropagation",
+            "com.amazonaws.ecs",
+            "InstanceLaunchTemplateUpdate",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "instanceMetadataTagsPropagation",
+        3,
+    );
+static INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_LOCAL_STORAGE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#InstanceLaunchTemplateUpdate$localStorageConfiguration",
+            "com.amazonaws.ecs",
+            "InstanceLaunchTemplateUpdate",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "localStorageConfiguration",
+        4,
+    );
+static INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_MONITORING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceLaunchTemplateUpdate$monitoring",
+        "com.amazonaws.ecs",
+        "InstanceLaunchTemplateUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "monitoring",
+    5,
+);
+static INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_INSTANCE_REQUIREMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceLaunchTemplateUpdate$instanceRequirements",
+        "com.amazonaws.ecs",
+        "InstanceLaunchTemplateUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "instanceRequirements",
+    6,
+);
+static INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_CAPACITY_RESERVATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceLaunchTemplateUpdate$capacityReservations",
+        "com.amazonaws.ecs",
+        "InstanceLaunchTemplateUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "capacityReservations",
+    7,
+);
+static INSTANCELAUNCHTEMPLATEUPDATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceLaunchTemplateUpdate",
+        "com.amazonaws.ecs",
+        "InstanceLaunchTemplateUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_EC2_INSTANCE_PROFILE_ARN,
+        &INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_NETWORK_CONFIGURATION,
+        &INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_STORAGE_CONFIGURATION,
+        &INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_INSTANCE_METADATA_TAGS_PROPAGATION,
+        &INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_LOCAL_STORAGE_CONFIGURATION,
+        &INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_MONITORING,
+        &INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_INSTANCE_REQUIREMENTS,
+        &INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_CAPACITY_RESERVATIONS,
+    ],
+);
+impl InstanceLaunchTemplateUpdate {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCELAUNCHTEMPLATEUPDATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstanceLaunchTemplateUpdate {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ec2_instance_profile_arn {
+            ser.write_string(&INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_EC2_INSTANCE_PROFILE_ARN, val)?;
+        }
+        if let Some(ref val) = self.network_configuration {
+            ser.write_struct(&INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_NETWORK_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.storage_configuration {
+            ser.write_struct(&INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_STORAGE_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.instance_metadata_tags_propagation {
+            ser.write_boolean(&INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_INSTANCE_METADATA_TAGS_PROPAGATION, *val)?;
+        }
+        if let Some(ref val) = self.local_storage_configuration {
+            ser.write_struct(&INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_LOCAL_STORAGE_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.monitoring {
+            ser.write_string(&INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_MONITORING, val.as_str())?;
+        }
+        if let Some(ref val) = self.instance_requirements {
+            ser.write_struct(&INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_INSTANCE_REQUIREMENTS, val)?;
+        }
+        if let Some(ref val) = self.capacity_reservations {
+            ser.write_struct(&INSTANCELAUNCHTEMPLATEUPDATE_MEMBER_CAPACITY_RESERVATIONS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InstanceLaunchTemplateUpdateBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INSTANCELAUNCHTEMPLATEUPDATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ec2_instance_profile_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_configuration = Some(crate::types::ManagedInstancesNetworkConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.storage_configuration = Some(crate::types::ManagedInstancesStorageConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_metadata_tags_propagation = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.local_storage_configuration = Some(crate::types::ManagedInstancesLocalStorageConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring = Some(crate::types::ManagedInstancesMonitoringOptions::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_requirements = Some(crate::types::InstanceRequirementsRequest::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_reservations = Some(crate::types::CapacityReservationRequest::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InstanceLaunchTemplateUpdate {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InstanceLaunchTemplateUpdate {
     /// Creates a new builder-style object to manufacture [`InstanceLaunchTemplateUpdate`](crate::types::InstanceLaunchTemplateUpdate).
     pub fn builder() -> crate::types::builders::InstanceLaunchTemplateUpdateBuilder {

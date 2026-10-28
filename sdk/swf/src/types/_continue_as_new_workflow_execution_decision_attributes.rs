@@ -118,6 +118,280 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributes {
         self.lambda_role.as_deref()
     }
 }
+static CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_INPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ContinueAsNewWorkflowExecutionDecisionAttributes$input",
+        "com.amazonaws.swf",
+        "ContinueAsNewWorkflowExecutionDecisionAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "input",
+    0,
+);
+static CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_EXECUTION_START_TO_CLOSE_TIMEOUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ContinueAsNewWorkflowExecutionDecisionAttributes$executionStartToCloseTimeout",
+            "com.amazonaws.swf",
+            "ContinueAsNewWorkflowExecutionDecisionAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "executionStartToCloseTimeout",
+        1,
+    );
+static CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_TASK_LIST: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ContinueAsNewWorkflowExecutionDecisionAttributes$taskList",
+            "com.amazonaws.swf",
+            "ContinueAsNewWorkflowExecutionDecisionAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "taskList",
+        2,
+    );
+static CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_TASK_PRIORITY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ContinueAsNewWorkflowExecutionDecisionAttributes$taskPriority",
+            "com.amazonaws.swf",
+            "ContinueAsNewWorkflowExecutionDecisionAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "taskPriority",
+        3,
+    );
+static CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_TASK_START_TO_CLOSE_TIMEOUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ContinueAsNewWorkflowExecutionDecisionAttributes$taskStartToCloseTimeout",
+            "com.amazonaws.swf",
+            "ContinueAsNewWorkflowExecutionDecisionAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "taskStartToCloseTimeout",
+        4,
+    );
+static CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_CHILD_POLICY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ContinueAsNewWorkflowExecutionDecisionAttributes$childPolicy",
+            "com.amazonaws.swf",
+            "ContinueAsNewWorkflowExecutionDecisionAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "childPolicy",
+        5,
+    );
+static CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_TAG_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.swf#TagList$member", "com.amazonaws.swf", "TagList"),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_TAG_LIST: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ContinueAsNewWorkflowExecutionDecisionAttributes$tagList",
+            "com.amazonaws.swf",
+            "ContinueAsNewWorkflowExecutionDecisionAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "tagList",
+        6,
+    )
+    .with_list_member(&CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_TAG_LIST_MEMBER);
+static CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_WORKFLOW_TYPE_VERSION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ContinueAsNewWorkflowExecutionDecisionAttributes$workflowTypeVersion",
+            "com.amazonaws.swf",
+            "ContinueAsNewWorkflowExecutionDecisionAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "workflowTypeVersion",
+        7,
+    );
+static CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_LAMBDA_ROLE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ContinueAsNewWorkflowExecutionDecisionAttributes$lambdaRole",
+            "com.amazonaws.swf",
+            "ContinueAsNewWorkflowExecutionDecisionAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "lambdaRole",
+        8,
+    );
+static CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ContinueAsNewWorkflowExecutionDecisionAttributes",
+        "com.amazonaws.swf",
+        "ContinueAsNewWorkflowExecutionDecisionAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_INPUT,
+        &CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_EXECUTION_START_TO_CLOSE_TIMEOUT,
+        &CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_TASK_LIST,
+        &CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_TASK_PRIORITY,
+        &CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_TASK_START_TO_CLOSE_TIMEOUT,
+        &CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_CHILD_POLICY,
+        &CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_TAG_LIST,
+        &CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_WORKFLOW_TYPE_VERSION,
+        &CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_LAMBDA_ROLE,
+    ],
+);
+impl ContinueAsNewWorkflowExecutionDecisionAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContinueAsNewWorkflowExecutionDecisionAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.input {
+            ser.write_string(&CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_INPUT, val)?;
+        }
+        if let Some(ref val) = self.execution_start_to_close_timeout {
+            ser.write_string(
+                &CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_EXECUTION_START_TO_CLOSE_TIMEOUT,
+                val,
+            )?;
+        }
+        if let Some(ref val) = self.task_list {
+            ser.write_struct(&CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_TASK_LIST, val)?;
+        }
+        if let Some(ref val) = self.task_priority {
+            ser.write_string(&CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_TASK_PRIORITY, val)?;
+        }
+        if let Some(ref val) = self.task_start_to_close_timeout {
+            ser.write_string(&CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_TASK_START_TO_CLOSE_TIMEOUT, val)?;
+        }
+        if let Some(ref val) = self.child_policy {
+            ser.write_string(&CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_CHILD_POLICY, val.as_str())?;
+        }
+        if let Some(ref val) = self.tag_list {
+            ser.write_list(
+                &CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_TAG_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.workflow_type_version {
+            ser.write_string(&CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_WORKFLOW_TYPE_VERSION, val)?;
+        }
+        if let Some(ref val) = self.lambda_role {
+            ser.write_string(&CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_MEMBER_LAMBDA_ROLE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContinueAsNewWorkflowExecutionDecisionAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTINUEASNEWWORKFLOWEXECUTIONDECISIONATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_start_to_close_timeout = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_list = Some(crate::types::TaskList::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_priority = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_start_to_close_timeout = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.child_policy = Some(crate::types::ChildPolicy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_list = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_type_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lambda_role = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContinueAsNewWorkflowExecutionDecisionAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ContinueAsNewWorkflowExecutionDecisionAttributes {
     /// Creates a new builder-style object to manufacture [`ContinueAsNewWorkflowExecutionDecisionAttributes`](crate::types::ContinueAsNewWorkflowExecutionDecisionAttributes).
     pub fn builder() -> crate::types::builders::ContinueAsNewWorkflowExecutionDecisionAttributesBuilder {

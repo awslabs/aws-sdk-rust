@@ -38,6 +38,160 @@ impl RecommendationData {
         self.r#type.as_ref()
     }
 }
+static RECOMMENDATIONDATA_MEMBER_RECOMMENDATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#RecommendationData$recommendationId",
+        "com.amazonaws.wisdom",
+        "RecommendationData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "recommendationId",
+    0,
+);
+static RECOMMENDATIONDATA_MEMBER_DOCUMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#RecommendationData$document",
+        "com.amazonaws.wisdom",
+        "RecommendationData",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "document",
+    1,
+);
+static RECOMMENDATIONDATA_MEMBER_RELEVANCE_SCORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#RecommendationData$relevanceScore",
+        "com.amazonaws.wisdom",
+        "RecommendationData",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "relevanceScore",
+    2,
+);
+static RECOMMENDATIONDATA_MEMBER_RELEVANCE_LEVEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#RecommendationData$relevanceLevel",
+        "com.amazonaws.wisdom",
+        "RecommendationData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "relevanceLevel",
+    3,
+);
+static RECOMMENDATIONDATA_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#RecommendationData$type",
+        "com.amazonaws.wisdom",
+        "RecommendationData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "type",
+    4,
+);
+static RECOMMENDATIONDATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#RecommendationData", "com.amazonaws.wisdom", "RecommendationData"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RECOMMENDATIONDATA_MEMBER_RECOMMENDATION_ID,
+        &RECOMMENDATIONDATA_MEMBER_DOCUMENT,
+        &RECOMMENDATIONDATA_MEMBER_RELEVANCE_SCORE,
+        &RECOMMENDATIONDATA_MEMBER_RELEVANCE_LEVEL,
+        &RECOMMENDATIONDATA_MEMBER_TYPE,
+    ],
+);
+impl RecommendationData {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RECOMMENDATIONDATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RecommendationData {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.recommendation_id;
+            ser.write_string(&RECOMMENDATIONDATA_MEMBER_RECOMMENDATION_ID, val)?;
+        }
+        if let Some(ref val) = self.document {
+            ser.write_struct(&RECOMMENDATIONDATA_MEMBER_DOCUMENT, val)?;
+        }
+        {
+            let val = &self.relevance_score;
+            ser.write_double(&RECOMMENDATIONDATA_MEMBER_RELEVANCE_SCORE, *val)?;
+        }
+        if let Some(ref val) = self.relevance_level {
+            ser.write_string(&RECOMMENDATIONDATA_MEMBER_RELEVANCE_LEVEL, val.as_str())?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&RECOMMENDATIONDATA_MEMBER_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RecommendationDataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RECOMMENDATIONDATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.recommendation_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document = Some(crate::types::Document::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    self.relevance_score = Some(deser.read_double(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relevance_level = Some(crate::types::RelevanceLevel::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::RecommendationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RecommendationData {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.recommendation_id = builder.recommendation_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RecommendationData {
     /// Creates a new builder-style object to manufacture [`RecommendationData`](crate::types::RecommendationData).
     pub fn builder() -> crate::types::builders::RecommendationDataBuilder {

@@ -20,6 +20,129 @@ impl ListCertificatesOutput {
         self.certificates.deref()
     }
 }
+static LISTCERTIFICATESOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#ListCertificatesOutput$NextToken",
+        "com.amazonaws.transfer.synthetic",
+        "ListCertificatesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    0,
+);
+static LISTCERTIFICATESOUTPUT_MEMBER_CERTIFICATES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedCertificates$member",
+        "com.amazonaws.transfer",
+        "ListedCertificates",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LISTCERTIFICATESOUTPUT_MEMBER_CERTIFICATES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#ListCertificatesOutput$Certificates",
+        "com.amazonaws.transfer.synthetic",
+        "ListCertificatesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Certificates",
+    1,
+)
+.with_list_member(&LISTCERTIFICATESOUTPUT_MEMBER_CERTIFICATES_MEMBER);
+static LISTCERTIFICATESOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#ListCertificatesOutput",
+        "com.amazonaws.transfer.synthetic",
+        "ListCertificatesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&LISTCERTIFICATESOUTPUT_MEMBER_NEXT_TOKEN, &LISTCERTIFICATESOUTPUT_MEMBER_CERTIFICATES],
+)
+.with_original_name("ListCertificatesResponse");
+impl ListCertificatesOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTCERTIFICATESOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListCertificatesOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTCERTIFICATESOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        {
+            let val = &self.certificates;
+
+            ser.write_list(
+                &LISTCERTIFICATESOUTPUT_MEMBER_CERTIFICATES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ListedCertificate::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_certificates::builders::ListCertificatesOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTCERTIFICATESOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.certificates = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::ListedCertificate::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListCertificatesOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.certificates = builder.certificates.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for ListCertificatesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

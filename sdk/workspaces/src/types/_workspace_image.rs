@@ -81,6 +81,338 @@ impl WorkspaceImage {
         self.error_details.as_deref().unwrap_or_default()
     }
 }
+static WORKSPACEIMAGE_MEMBER_IMAGE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceImage$ImageId",
+        "com.amazonaws.workspaces",
+        "WorkspaceImage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageId",
+    0,
+);
+static WORKSPACEIMAGE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceImage$Name",
+        "com.amazonaws.workspaces",
+        "WorkspaceImage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static WORKSPACEIMAGE_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceImage$Description",
+        "com.amazonaws.workspaces",
+        "WorkspaceImage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static WORKSPACEIMAGE_MEMBER_OPERATING_SYSTEM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceImage$OperatingSystem",
+        "com.amazonaws.workspaces",
+        "WorkspaceImage",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OperatingSystem",
+    3,
+);
+static WORKSPACEIMAGE_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceImage$State",
+        "com.amazonaws.workspaces",
+        "WorkspaceImage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    4,
+);
+static WORKSPACEIMAGE_MEMBER_REQUIRED_TENANCY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceImage$RequiredTenancy",
+        "com.amazonaws.workspaces",
+        "WorkspaceImage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RequiredTenancy",
+    5,
+);
+static WORKSPACEIMAGE_MEMBER_ERROR_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceImage$ErrorCode",
+        "com.amazonaws.workspaces",
+        "WorkspaceImage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorCode",
+    6,
+);
+static WORKSPACEIMAGE_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceImage$ErrorMessage",
+        "com.amazonaws.workspaces",
+        "WorkspaceImage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorMessage",
+    7,
+);
+static WORKSPACEIMAGE_MEMBER_CREATED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceImage$Created",
+        "com.amazonaws.workspaces",
+        "WorkspaceImage",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "Created",
+    8,
+);
+static WORKSPACEIMAGE_MEMBER_OWNER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceImage$OwnerAccountId",
+        "com.amazonaws.workspaces",
+        "WorkspaceImage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OwnerAccountId",
+    9,
+);
+static WORKSPACEIMAGE_MEMBER_UPDATES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceImage$Updates",
+        "com.amazonaws.workspaces",
+        "WorkspaceImage",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Updates",
+    10,
+);
+static WORKSPACEIMAGE_MEMBER_ERROR_DETAILS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ErrorDetailsList$member",
+        "com.amazonaws.workspaces",
+        "ErrorDetailsList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static WORKSPACEIMAGE_MEMBER_ERROR_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceImage$ErrorDetails",
+        "com.amazonaws.workspaces",
+        "WorkspaceImage",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ErrorDetails",
+    11,
+)
+.with_list_member(&WORKSPACEIMAGE_MEMBER_ERROR_DETAILS_MEMBER);
+static WORKSPACEIMAGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#WorkspaceImage", "com.amazonaws.workspaces", "WorkspaceImage"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKSPACEIMAGE_MEMBER_IMAGE_ID,
+        &WORKSPACEIMAGE_MEMBER_NAME,
+        &WORKSPACEIMAGE_MEMBER_DESCRIPTION,
+        &WORKSPACEIMAGE_MEMBER_OPERATING_SYSTEM,
+        &WORKSPACEIMAGE_MEMBER_STATE,
+        &WORKSPACEIMAGE_MEMBER_REQUIRED_TENANCY,
+        &WORKSPACEIMAGE_MEMBER_ERROR_CODE,
+        &WORKSPACEIMAGE_MEMBER_ERROR_MESSAGE,
+        &WORKSPACEIMAGE_MEMBER_CREATED,
+        &WORKSPACEIMAGE_MEMBER_OWNER_ACCOUNT_ID,
+        &WORKSPACEIMAGE_MEMBER_UPDATES,
+        &WORKSPACEIMAGE_MEMBER_ERROR_DETAILS,
+    ],
+);
+impl WorkspaceImage {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKSPACEIMAGE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WorkspaceImage {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.image_id {
+            ser.write_string(&WORKSPACEIMAGE_MEMBER_IMAGE_ID, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&WORKSPACEIMAGE_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&WORKSPACEIMAGE_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.operating_system {
+            ser.write_struct(&WORKSPACEIMAGE_MEMBER_OPERATING_SYSTEM, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&WORKSPACEIMAGE_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.required_tenancy {
+            ser.write_string(&WORKSPACEIMAGE_MEMBER_REQUIRED_TENANCY, val.as_str())?;
+        }
+        if let Some(ref val) = self.error_code {
+            ser.write_string(&WORKSPACEIMAGE_MEMBER_ERROR_CODE, val)?;
+        }
+        if let Some(ref val) = self.error_message {
+            ser.write_string(&WORKSPACEIMAGE_MEMBER_ERROR_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.created {
+            ser.write_timestamp(&WORKSPACEIMAGE_MEMBER_CREATED, val)?;
+        }
+        if let Some(ref val) = self.owner_account_id {
+            ser.write_string(&WORKSPACEIMAGE_MEMBER_OWNER_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.updates {
+            ser.write_struct(&WORKSPACEIMAGE_MEMBER_UPDATES, val)?;
+        }
+        if let Some(ref val) = self.error_details {
+            ser.write_list(
+                &WORKSPACEIMAGE_MEMBER_ERROR_DETAILS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ErrorDetails::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkspaceImageBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKSPACEIMAGE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operating_system = Some(crate::types::OperatingSystem::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::WorkspaceImageState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.required_tenancy = Some(crate::types::WorkspaceImageRequiredTenancy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.owner_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.updates = Some(crate::types::UpdateResult::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_details = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ErrorDetails::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WorkspaceImage {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl WorkspaceImage {
     /// Creates a new builder-style object to manufacture [`WorkspaceImage`](crate::types::WorkspaceImage).
     pub fn builder() -> crate::types::builders::WorkspaceImageBuilder {

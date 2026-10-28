@@ -24,6 +24,130 @@ impl UpdateMaxRecordSizeInput {
         self.max_record_size_in_kib
     }
 }
+static UPDATEMAXRECORDSIZEINPUT_MEMBER_STREAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#UpdateMaxRecordSizeInput$StreamARN",
+        "com.amazonaws.kinesis.synthetic",
+        "UpdateMaxRecordSizeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamARN",
+    0,
+);
+static UPDATEMAXRECORDSIZEINPUT_MEMBER_STREAM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#UpdateMaxRecordSizeInput$StreamId",
+        "com.amazonaws.kinesis.synthetic",
+        "UpdateMaxRecordSizeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamId",
+    1,
+);
+static UPDATEMAXRECORDSIZEINPUT_MEMBER_MAX_RECORD_SIZE_IN_KIB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#UpdateMaxRecordSizeInput$MaxRecordSizeInKiB",
+        "com.amazonaws.kinesis.synthetic",
+        "UpdateMaxRecordSizeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxRecordSizeInKiB",
+    2,
+);
+static UPDATEMAXRECORDSIZEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#UpdateMaxRecordSizeInput",
+        "com.amazonaws.kinesis.synthetic",
+        "UpdateMaxRecordSizeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEMAXRECORDSIZEINPUT_MEMBER_STREAM_ARN,
+        &UPDATEMAXRECORDSIZEINPUT_MEMBER_STREAM_ID,
+        &UPDATEMAXRECORDSIZEINPUT_MEMBER_MAX_RECORD_SIZE_IN_KIB,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateMaxRecordSizeInput");
+impl UpdateMaxRecordSizeInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEMAXRECORDSIZEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateMaxRecordSizeInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stream_arn {
+            ser.write_string(&UPDATEMAXRECORDSIZEINPUT_MEMBER_STREAM_ARN, val)?;
+        }
+        if let Some(ref val) = self.stream_id {
+            ser.write_string(&UPDATEMAXRECORDSIZEINPUT_MEMBER_STREAM_ID, val)?;
+        }
+        if let Some(ref val) = self.max_record_size_in_kib {
+            ser.write_integer(&UPDATEMAXRECORDSIZEINPUT_MEMBER_MAX_RECORD_SIZE_IN_KIB, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_max_record_size::builders::UpdateMaxRecordSizeInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEMAXRECORDSIZEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_record_size_in_kib = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateMaxRecordSizeInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.max_record_size_in_kib = builder.max_record_size_in_kib.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateMaxRecordSizeInput {
     /// Creates a new builder-style object to manufacture [`UpdateMaxRecordSizeInput`](crate::operation::update_max_record_size::UpdateMaxRecordSizeInput).
     pub fn builder() -> crate::operation::update_max_record_size::builders::UpdateMaxRecordSizeInputBuilder {

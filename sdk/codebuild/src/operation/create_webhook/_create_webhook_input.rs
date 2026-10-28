@@ -68,6 +68,258 @@ impl CreateWebhookInput {
         self.pull_request_build_policy.as_ref()
     }
 }
+static CREATEWEBHOOKINPUT_MEMBER_PROJECT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateWebhookInput$projectName",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateWebhookInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "projectName",
+    0,
+);
+static CREATEWEBHOOKINPUT_MEMBER_BRANCH_FILTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateWebhookInput$branchFilter",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateWebhookInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "branchFilter",
+    1,
+);
+static CREATEWEBHOOKINPUT_MEMBER_FILTER_GROUPS_MEMBER_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#FilterGroup$member", "com.amazonaws.codebuild", "FilterGroup"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEWEBHOOKINPUT_MEMBER_FILTER_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#FilterGroups$member", "com.amazonaws.codebuild", "FilterGroups"),
+    ::aws_smithy_schema::ShapeType::List,
+    "member",
+    0,
+)
+.with_list_member(&CREATEWEBHOOKINPUT_MEMBER_FILTER_GROUPS_MEMBER_MEMBER);
+static CREATEWEBHOOKINPUT_MEMBER_FILTER_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateWebhookInput$filterGroups",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateWebhookInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "filterGroups",
+    2,
+)
+.with_list_member(&CREATEWEBHOOKINPUT_MEMBER_FILTER_GROUPS_MEMBER);
+static CREATEWEBHOOKINPUT_MEMBER_BUILD_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateWebhookInput$buildType",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateWebhookInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "buildType",
+    3,
+);
+static CREATEWEBHOOKINPUT_MEMBER_MANUAL_CREATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateWebhookInput$manualCreation",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateWebhookInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "manualCreation",
+    4,
+);
+static CREATEWEBHOOKINPUT_MEMBER_SCOPE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateWebhookInput$scopeConfiguration",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateWebhookInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "scopeConfiguration",
+    5,
+);
+static CREATEWEBHOOKINPUT_MEMBER_PULL_REQUEST_BUILD_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateWebhookInput$pullRequestBuildPolicy",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateWebhookInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "pullRequestBuildPolicy",
+    6,
+);
+static CREATEWEBHOOKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#CreateWebhookInput",
+        "com.amazonaws.codebuild.synthetic",
+        "CreateWebhookInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEWEBHOOKINPUT_MEMBER_PROJECT_NAME,
+        &CREATEWEBHOOKINPUT_MEMBER_BRANCH_FILTER,
+        &CREATEWEBHOOKINPUT_MEMBER_FILTER_GROUPS,
+        &CREATEWEBHOOKINPUT_MEMBER_BUILD_TYPE,
+        &CREATEWEBHOOKINPUT_MEMBER_MANUAL_CREATION,
+        &CREATEWEBHOOKINPUT_MEMBER_SCOPE_CONFIGURATION,
+        &CREATEWEBHOOKINPUT_MEMBER_PULL_REQUEST_BUILD_POLICY,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateWebhookInput");
+impl CreateWebhookInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEWEBHOOKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateWebhookInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.project_name {
+            ser.write_string(&CREATEWEBHOOKINPUT_MEMBER_PROJECT_NAME, val)?;
+        }
+        if let Some(ref val) = self.branch_filter {
+            ser.write_string(&CREATEWEBHOOKINPUT_MEMBER_BRANCH_FILTER, val)?;
+        }
+        if let Some(ref val) = self.filter_groups {
+            ser.write_list(
+                &CREATEWEBHOOKINPUT_MEMBER_FILTER_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_list(
+                            &CREATEWEBHOOKINPUT_MEMBER_FILTER_GROUPS_MEMBER,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for item in item {
+                                    ser.write_struct(crate::types::WebhookFilter::SCHEMA, item)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.build_type {
+            ser.write_string(&CREATEWEBHOOKINPUT_MEMBER_BUILD_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.manual_creation {
+            ser.write_boolean(&CREATEWEBHOOKINPUT_MEMBER_MANUAL_CREATION, *val)?;
+        }
+        if let Some(ref val) = self.scope_configuration {
+            ser.write_struct(&CREATEWEBHOOKINPUT_MEMBER_SCOPE_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.pull_request_build_policy {
+            ser.write_struct(&CREATEWEBHOOKINPUT_MEMBER_PULL_REQUEST_BUILD_POLICY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_webhook::builders::CreateWebhookInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEWEBHOOKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.branch_filter = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filter_groups = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push({
+                                    let mut list = Vec::new();
+                                    deser.read_list(&CREATEWEBHOOKINPUT_MEMBER_FILTER_GROUPS_MEMBER, &mut |deser| {
+                                        list.push(crate::types::WebhookFilter::deserialize(deser)?);
+                                        Ok(())
+                                    })?;
+                                    list
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.build_type = Some(crate::types::WebhookBuildType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.manual_creation = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scope_configuration = Some(crate::types::ScopeConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_request_build_policy = Some(crate::types::PullRequestBuildPolicy::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateWebhookInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.project_name = builder.project_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateWebhookInput {
     /// Creates a new builder-style object to manufacture [`CreateWebhookInput`](crate::operation::create_webhook::CreateWebhookInput).
     pub fn builder() -> crate::operation::create_webhook::builders::CreateWebhookInputBuilder {

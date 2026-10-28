@@ -167,6 +167,785 @@ impl InstanceRequirementsRequest {
         self.max_spot_price_as_percentage_of_optimal_on_demand_price
     }
 }
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_V_CPU_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$vCpuCount",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "vCpuCount",
+    0,
+);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_MEMORY_MIB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$memoryMiB",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "memoryMiB",
+    1,
+);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_CPU_MANUFACTURERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#CpuManufacturerSet$member", "com.amazonaws.ecs", "CpuManufacturerSet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+)
+.with_xml_name("item");
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_CPU_MANUFACTURERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$cpuManufacturers",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "cpuManufacturers",
+    2,
+)
+.with_xml_name("CpuManufacturer")
+.with_list_member(&INSTANCEREQUIREMENTSREQUEST_MEMBER_CPU_MANUFACTURERS_MEMBER);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_MEMORY_GIB_PER_V_CPU: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$memoryGiBPerVCpu",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "memoryGiBPerVCpu",
+    3,
+);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_EXCLUDED_INSTANCE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#ExcludedInstanceTypeSet$member",
+            "com.amazonaws.ecs",
+            "ExcludedInstanceTypeSet",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    )
+    .with_xml_name("item");
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_EXCLUDED_INSTANCE_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$excludedInstanceTypes",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "excludedInstanceTypes",
+    4,
+)
+.with_xml_name("ExcludedInstanceType")
+.with_list_member(&INSTANCEREQUIREMENTSREQUEST_MEMBER_EXCLUDED_INSTANCE_TYPES_MEMBER);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_INSTANCE_GENERATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#InstanceGenerationSet$member",
+            "com.amazonaws.ecs",
+            "InstanceGenerationSet",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    )
+    .with_xml_name("item");
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_INSTANCE_GENERATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$instanceGenerations",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "instanceGenerations",
+    5,
+)
+.with_xml_name("InstanceGeneration")
+.with_list_member(&INSTANCEREQUIREMENTSREQUEST_MEMBER_INSTANCE_GENERATIONS_MEMBER);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_SPOT_MAX_PRICE_PERCENTAGE_OVER_LOWEST_PRICE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#InstanceRequirementsRequest$spotMaxPricePercentageOverLowestPrice",
+            "com.amazonaws.ecs",
+            "InstanceRequirementsRequest",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "spotMaxPricePercentageOverLowestPrice",
+        6,
+    );
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_ON_DEMAND_MAX_PRICE_PERCENTAGE_OVER_LOWEST_PRICE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#InstanceRequirementsRequest$onDemandMaxPricePercentageOverLowestPrice",
+            "com.amazonaws.ecs",
+            "InstanceRequirementsRequest",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "onDemandMaxPricePercentageOverLowestPrice",
+        7,
+    );
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_BARE_METAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$bareMetal",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "bareMetal",
+    8,
+);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_BURSTABLE_PERFORMANCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$burstablePerformance",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "burstablePerformance",
+    9,
+);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_REQUIRE_HIBERNATE_SUPPORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$requireHibernateSupport",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "requireHibernateSupport",
+    10,
+);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_NETWORK_INTERFACE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$networkInterfaceCount",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "networkInterfaceCount",
+    11,
+);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_LOCAL_STORAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$localStorage",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "localStorage",
+    12,
+);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_LOCAL_STORAGE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#LocalStorageTypeSet$member", "com.amazonaws.ecs", "LocalStorageTypeSet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+)
+.with_xml_name("item");
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_LOCAL_STORAGE_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$localStorageTypes",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "localStorageTypes",
+    13,
+)
+.with_xml_name("LocalStorageType")
+.with_list_member(&INSTANCEREQUIREMENTSREQUEST_MEMBER_LOCAL_STORAGE_TYPES_MEMBER);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_TOTAL_LOCAL_STORAGE_GB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$totalLocalStorageGB",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "totalLocalStorageGB",
+    14,
+);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_BASELINE_EBS_BANDWIDTH_MBPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$baselineEbsBandwidthMbps",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "baselineEbsBandwidthMbps",
+    15,
+);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#AcceleratorTypeSet$member", "com.amazonaws.ecs", "AcceleratorTypeSet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+)
+.with_xml_name("item");
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$acceleratorTypes",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "acceleratorTypes",
+    16,
+)
+.with_xml_name("AcceleratorType")
+.with_list_member(&INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_TYPES_MEMBER);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$acceleratorCount",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "acceleratorCount",
+    17,
+);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_MANUFACTURERS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#AcceleratorManufacturerSet$member",
+            "com.amazonaws.ecs",
+            "AcceleratorManufacturerSet",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    )
+    .with_xml_name("item");
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_MANUFACTURERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$acceleratorManufacturers",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "acceleratorManufacturers",
+    18,
+)
+.with_xml_name("AcceleratorManufacturer")
+.with_list_member(&INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_MANUFACTURERS_MEMBER);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#AcceleratorNameSet$member", "com.amazonaws.ecs", "AcceleratorNameSet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+)
+.with_xml_name("item");
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$acceleratorNames",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "acceleratorNames",
+    19,
+)
+.with_xml_name("AcceleratorName")
+.with_list_member(&INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_NAMES_MEMBER);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_TOTAL_MEMORY_MIB: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#InstanceRequirementsRequest$acceleratorTotalMemoryMiB",
+            "com.amazonaws.ecs",
+            "InstanceRequirementsRequest",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "acceleratorTotalMemoryMiB",
+        20,
+    );
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_NETWORK_BANDWIDTH_GBPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$networkBandwidthGbps",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "networkBandwidthGbps",
+    21,
+);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_ALLOWED_INSTANCE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#AllowedInstanceTypeSet$member",
+            "com.amazonaws.ecs",
+            "AllowedInstanceTypeSet",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    )
+    .with_xml_name("item");
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_ALLOWED_INSTANCE_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest$allowedInstanceTypes",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "allowedInstanceTypes",
+    22,
+)
+.with_xml_name("AllowedInstanceType")
+.with_list_member(&INSTANCEREQUIREMENTSREQUEST_MEMBER_ALLOWED_INSTANCE_TYPES_MEMBER);
+static INSTANCEREQUIREMENTSREQUEST_MEMBER_MAX_SPOT_PRICE_AS_PERCENTAGE_OF_OPTIMAL_ON_DEMAND_PRICE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#InstanceRequirementsRequest$maxSpotPriceAsPercentageOfOptimalOnDemandPrice",
+            "com.amazonaws.ecs",
+            "InstanceRequirementsRequest",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "maxSpotPriceAsPercentageOfOptimalOnDemandPrice",
+        23,
+    );
+static INSTANCEREQUIREMENTSREQUEST_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#InstanceRequirementsRequest",
+        "com.amazonaws.ecs",
+        "InstanceRequirementsRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_V_CPU_COUNT,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_MEMORY_MIB,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_CPU_MANUFACTURERS,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_MEMORY_GIB_PER_V_CPU,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_EXCLUDED_INSTANCE_TYPES,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_INSTANCE_GENERATIONS,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_SPOT_MAX_PRICE_PERCENTAGE_OVER_LOWEST_PRICE,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_ON_DEMAND_MAX_PRICE_PERCENTAGE_OVER_LOWEST_PRICE,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_BARE_METAL,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_BURSTABLE_PERFORMANCE,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_REQUIRE_HIBERNATE_SUPPORT,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_NETWORK_INTERFACE_COUNT,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_LOCAL_STORAGE,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_LOCAL_STORAGE_TYPES,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_TOTAL_LOCAL_STORAGE_GB,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_BASELINE_EBS_BANDWIDTH_MBPS,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_TYPES,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_COUNT,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_MANUFACTURERS,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_NAMES,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_TOTAL_MEMORY_MIB,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_NETWORK_BANDWIDTH_GBPS,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_ALLOWED_INSTANCE_TYPES,
+        &INSTANCEREQUIREMENTSREQUEST_MEMBER_MAX_SPOT_PRICE_AS_PERCENTAGE_OF_OPTIMAL_ON_DEMAND_PRICE,
+    ],
+);
+impl InstanceRequirementsRequest {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCEREQUIREMENTSREQUEST_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstanceRequirementsRequest {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.v_cpu_count {
+            ser.write_struct(&INSTANCEREQUIREMENTSREQUEST_MEMBER_V_CPU_COUNT, val)?;
+        }
+        if let Some(ref val) = self.memory_mib {
+            ser.write_struct(&INSTANCEREQUIREMENTSREQUEST_MEMBER_MEMORY_MIB, val)?;
+        }
+        if let Some(ref val) = self.cpu_manufacturers {
+            ser.write_list(
+                &INSTANCEREQUIREMENTSREQUEST_MEMBER_CPU_MANUFACTURERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.memory_gib_per_v_cpu {
+            ser.write_struct(&INSTANCEREQUIREMENTSREQUEST_MEMBER_MEMORY_GIB_PER_V_CPU, val)?;
+        }
+        if let Some(ref val) = self.excluded_instance_types {
+            ser.write_list(
+                &INSTANCEREQUIREMENTSREQUEST_MEMBER_EXCLUDED_INSTANCE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.instance_generations {
+            ser.write_list(
+                &INSTANCEREQUIREMENTSREQUEST_MEMBER_INSTANCE_GENERATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.spot_max_price_percentage_over_lowest_price {
+            ser.write_integer(&INSTANCEREQUIREMENTSREQUEST_MEMBER_SPOT_MAX_PRICE_PERCENTAGE_OVER_LOWEST_PRICE, *val)?;
+        }
+        if let Some(ref val) = self.on_demand_max_price_percentage_over_lowest_price {
+            ser.write_integer(&INSTANCEREQUIREMENTSREQUEST_MEMBER_ON_DEMAND_MAX_PRICE_PERCENTAGE_OVER_LOWEST_PRICE, *val)?;
+        }
+        if let Some(ref val) = self.bare_metal {
+            ser.write_string(&INSTANCEREQUIREMENTSREQUEST_MEMBER_BARE_METAL, val.as_str())?;
+        }
+        if let Some(ref val) = self.burstable_performance {
+            ser.write_string(&INSTANCEREQUIREMENTSREQUEST_MEMBER_BURSTABLE_PERFORMANCE, val.as_str())?;
+        }
+        if let Some(ref val) = self.require_hibernate_support {
+            ser.write_boolean(&INSTANCEREQUIREMENTSREQUEST_MEMBER_REQUIRE_HIBERNATE_SUPPORT, *val)?;
+        }
+        if let Some(ref val) = self.network_interface_count {
+            ser.write_struct(&INSTANCEREQUIREMENTSREQUEST_MEMBER_NETWORK_INTERFACE_COUNT, val)?;
+        }
+        if let Some(ref val) = self.local_storage {
+            ser.write_string(&INSTANCEREQUIREMENTSREQUEST_MEMBER_LOCAL_STORAGE, val.as_str())?;
+        }
+        if let Some(ref val) = self.local_storage_types {
+            ser.write_list(
+                &INSTANCEREQUIREMENTSREQUEST_MEMBER_LOCAL_STORAGE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.total_local_storage_gb {
+            ser.write_struct(&INSTANCEREQUIREMENTSREQUEST_MEMBER_TOTAL_LOCAL_STORAGE_GB, val)?;
+        }
+        if let Some(ref val) = self.baseline_ebs_bandwidth_mbps {
+            ser.write_struct(&INSTANCEREQUIREMENTSREQUEST_MEMBER_BASELINE_EBS_BANDWIDTH_MBPS, val)?;
+        }
+        if let Some(ref val) = self.accelerator_types {
+            ser.write_list(
+                &INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.accelerator_count {
+            ser.write_struct(&INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_COUNT, val)?;
+        }
+        if let Some(ref val) = self.accelerator_manufacturers {
+            ser.write_list(
+                &INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_MANUFACTURERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.accelerator_names {
+            ser.write_list(
+                &INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.accelerator_total_memory_mib {
+            ser.write_struct(&INSTANCEREQUIREMENTSREQUEST_MEMBER_ACCELERATOR_TOTAL_MEMORY_MIB, val)?;
+        }
+        if let Some(ref val) = self.network_bandwidth_gbps {
+            ser.write_struct(&INSTANCEREQUIREMENTSREQUEST_MEMBER_NETWORK_BANDWIDTH_GBPS, val)?;
+        }
+        if let Some(ref val) = self.allowed_instance_types {
+            ser.write_list(
+                &INSTANCEREQUIREMENTSREQUEST_MEMBER_ALLOWED_INSTANCE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.max_spot_price_as_percentage_of_optimal_on_demand_price {
+            ser.write_integer(
+                &INSTANCEREQUIREMENTSREQUEST_MEMBER_MAX_SPOT_PRICE_AS_PERCENTAGE_OF_OPTIMAL_ON_DEMAND_PRICE,
+                *val,
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InstanceRequirementsRequestBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INSTANCEREQUIREMENTSREQUEST_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.v_cpu_count = Some(crate::types::VCpuCountRangeRequest::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.memory_mib = Some(crate::types::MemoryMiBRequest::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cpu_manufacturers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CpuManufacturer::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.memory_gib_per_v_cpu = Some(crate::types::MemoryGiBPerVCpuRequest::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.excluded_instance_types = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_generations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InstanceGeneration::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.spot_max_price_percentage_over_lowest_price = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.on_demand_max_price_percentage_over_lowest_price = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bare_metal = Some(crate::types::BareMetal::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.burstable_performance = Some(crate::types::BurstablePerformance::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.require_hibernate_support = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_interface_count = Some(crate::types::NetworkInterfaceCountRequest::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.local_storage = Some(crate::types::LocalStorage::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.local_storage_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LocalStorageType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.total_local_storage_gb = Some(crate::types::TotalLocalStorageGbRequest::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.baseline_ebs_bandwidth_mbps = Some(crate::types::BaselineEbsBandwidthMbpsRequest::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AcceleratorType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator_count = Some(crate::types::AcceleratorCountRequest::deserialize(deser)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator_manufacturers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AcceleratorManufacturer::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator_names = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AcceleratorName::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator_total_memory_mib = Some(crate::types::AcceleratorTotalMemoryMiBRequest::deserialize(deser)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_bandwidth_gbps = Some(crate::types::NetworkBandwidthGbpsRequest::deserialize(deser)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.allowed_instance_types = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_spot_price_as_percentage_of_optimal_on_demand_price = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InstanceRequirementsRequest {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InstanceRequirementsRequest {
     /// Creates a new builder-style object to manufacture [`InstanceRequirementsRequest`](crate::types::InstanceRequirementsRequest).
     pub fn builder() -> crate::types::builders::InstanceRequirementsRequestBuilder {

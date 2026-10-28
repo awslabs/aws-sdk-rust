@@ -26,6 +26,106 @@ impl ResultData {
         self.relevance_score
     }
 }
+static RESULTDATA_MEMBER_RESULT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ResultData$resultId", "com.amazonaws.wisdom", "ResultData"),
+    ::aws_smithy_schema::ShapeType::String,
+    "resultId",
+    0,
+);
+static RESULTDATA_MEMBER_DOCUMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ResultData$document", "com.amazonaws.wisdom", "ResultData"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "document",
+    1,
+);
+static RESULTDATA_MEMBER_RELEVANCE_SCORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ResultData$relevanceScore", "com.amazonaws.wisdom", "ResultData"),
+    ::aws_smithy_schema::ShapeType::Double,
+    "relevanceScore",
+    2,
+);
+static RESULTDATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ResultData", "com.amazonaws.wisdom", "ResultData"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESULTDATA_MEMBER_RESULT_ID,
+        &RESULTDATA_MEMBER_DOCUMENT,
+        &RESULTDATA_MEMBER_RELEVANCE_SCORE,
+    ],
+);
+impl ResultData {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESULTDATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResultData {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.result_id;
+            ser.write_string(&RESULTDATA_MEMBER_RESULT_ID, val)?;
+        }
+        if let Some(ref val) = self.document {
+            ser.write_struct(&RESULTDATA_MEMBER_DOCUMENT, val)?;
+        }
+        {
+            let val = &self.relevance_score;
+            ser.write_double(&RESULTDATA_MEMBER_RELEVANCE_SCORE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ResultDataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESULTDATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.result_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document = Some(crate::types::Document::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    self.relevance_score = Some(deser.read_double(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResultData {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.result_id = builder.result_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ResultData {
     /// Creates a new builder-style object to manufacture [`ResultData`](crate::types::ResultData).
     pub fn builder() -> crate::types::builders::ResultDataBuilder {

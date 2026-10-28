@@ -96,6 +96,14 @@ pub struct FilterCriteria {
     pub code_repository_project_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Filter criteria for findings based on the repository provider type (such as GitHub, GitLab, etc.).</p>
     pub code_repository_provider_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>The ID of the Amazon Machine Image (AMI) used to filter findings.</p>
+    pub machine_image_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>The name of the Amazon Machine Image (AMI) used to filter findings.</p>
+    pub machine_image_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>The ID of the Amazon Web Services account that owns the Amazon Machine Image (AMI) used to filter findings.</p>
+    pub machine_image_owner_account_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>The platform of the Amazon Machine Image (AMI) used to filter findings.</p>
+    pub machine_image_platform: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Filter criteria for the cloud provider.</p>
     pub cloud_provider: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Filter criteria for the cloud provider region.</p>
@@ -412,6 +420,30 @@ impl FilterCriteria {
     pub fn code_repository_provider_type(&self) -> &[crate::types::StringFilter] {
         self.code_repository_provider_type.as_deref().unwrap_or_default()
     }
+    /// <p>The ID of the Amazon Machine Image (AMI) used to filter findings.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.machine_image_id.is_none()`.
+    pub fn machine_image_id(&self) -> &[crate::types::StringFilter] {
+        self.machine_image_id.as_deref().unwrap_or_default()
+    }
+    /// <p>The name of the Amazon Machine Image (AMI) used to filter findings.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.machine_image_name.is_none()`.
+    pub fn machine_image_name(&self) -> &[crate::types::StringFilter] {
+        self.machine_image_name.as_deref().unwrap_or_default()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the Amazon Machine Image (AMI) used to filter findings.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.machine_image_owner_account_id.is_none()`.
+    pub fn machine_image_owner_account_id(&self) -> &[crate::types::StringFilter] {
+        self.machine_image_owner_account_id.as_deref().unwrap_or_default()
+    }
+    /// <p>The platform of the Amazon Machine Image (AMI) used to filter findings.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.machine_image_platform.is_none()`.
+    pub fn machine_image_platform(&self) -> &[crate::types::StringFilter] {
+        self.machine_image_platform.as_deref().unwrap_or_default()
+    }
     /// <p>Filter criteria for the cloud provider.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_provider.is_none()`.
@@ -584,6 +616,10 @@ pub struct FilterCriteriaBuilder {
     pub(crate) epss_score: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     pub(crate) code_repository_project_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) code_repository_provider_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) machine_image_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) machine_image_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) machine_image_owner_account_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) machine_image_platform: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) cloud_provider: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) cloud_provider_region: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) cloud_provider_account_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -1525,6 +1561,86 @@ impl FilterCriteriaBuilder {
     pub fn get_code_repository_provider_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.code_repository_provider_type
     }
+    /// Appends an item to `machine_image_id`.
+    ///
+    /// To override the contents of this collection use [`set_machine_image_id`](Self::set_machine_image_id).
+    ///
+    /// <p>The ID of the Amazon Machine Image (AMI) used to filter findings.</p>
+    pub fn machine_image_id(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.machine_image_id.unwrap_or_default();
+        v.push(input);
+        self.machine_image_id = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) used to filter findings.</p>
+    pub fn set_machine_image_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.machine_image_id = input;
+        self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) used to filter findings.</p>
+    pub fn get_machine_image_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.machine_image_id
+    }
+    /// Appends an item to `machine_image_name`.
+    ///
+    /// To override the contents of this collection use [`set_machine_image_name`](Self::set_machine_image_name).
+    ///
+    /// <p>The name of the Amazon Machine Image (AMI) used to filter findings.</p>
+    pub fn machine_image_name(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.machine_image_name.unwrap_or_default();
+        v.push(input);
+        self.machine_image_name = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The name of the Amazon Machine Image (AMI) used to filter findings.</p>
+    pub fn set_machine_image_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.machine_image_name = input;
+        self
+    }
+    /// <p>The name of the Amazon Machine Image (AMI) used to filter findings.</p>
+    pub fn get_machine_image_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.machine_image_name
+    }
+    /// Appends an item to `machine_image_owner_account_id`.
+    ///
+    /// To override the contents of this collection use [`set_machine_image_owner_account_id`](Self::set_machine_image_owner_account_id).
+    ///
+    /// <p>The ID of the Amazon Web Services account that owns the Amazon Machine Image (AMI) used to filter findings.</p>
+    pub fn machine_image_owner_account_id(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.machine_image_owner_account_id.unwrap_or_default();
+        v.push(input);
+        self.machine_image_owner_account_id = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the Amazon Machine Image (AMI) used to filter findings.</p>
+    pub fn set_machine_image_owner_account_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.machine_image_owner_account_id = input;
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the Amazon Machine Image (AMI) used to filter findings.</p>
+    pub fn get_machine_image_owner_account_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.machine_image_owner_account_id
+    }
+    /// Appends an item to `machine_image_platform`.
+    ///
+    /// To override the contents of this collection use [`set_machine_image_platform`](Self::set_machine_image_platform).
+    ///
+    /// <p>The platform of the Amazon Machine Image (AMI) used to filter findings.</p>
+    pub fn machine_image_platform(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.machine_image_platform.unwrap_or_default();
+        v.push(input);
+        self.machine_image_platform = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The platform of the Amazon Machine Image (AMI) used to filter findings.</p>
+    pub fn set_machine_image_platform(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.machine_image_platform = input;
+        self
+    }
+    /// <p>The platform of the Amazon Machine Image (AMI) used to filter findings.</p>
+    pub fn get_machine_image_platform(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.machine_image_platform
+    }
     /// Appends an item to `cloud_provider`.
     ///
     /// To override the contents of this collection use [`set_cloud_provider`](Self::set_cloud_provider).
@@ -1954,6 +2070,10 @@ impl FilterCriteriaBuilder {
             epss_score: self.epss_score,
             code_repository_project_name: self.code_repository_project_name,
             code_repository_provider_type: self.code_repository_provider_type,
+            machine_image_id: self.machine_image_id,
+            machine_image_name: self.machine_image_name,
+            machine_image_owner_account_id: self.machine_image_owner_account_id,
+            machine_image_platform: self.machine_image_platform,
             cloud_provider: self.cloud_provider,
             cloud_provider_region: self.cloud_provider_region,
             cloud_provider_account_id: self.cloud_provider_account_id,

@@ -40,6 +40,175 @@ impl RegisterDomainInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static REGISTERDOMAININPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#RegisterDomainInput$name",
+        "com.amazonaws.swf.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static REGISTERDOMAININPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#RegisterDomainInput$description",
+        "com.amazonaws.swf.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    1,
+);
+static REGISTERDOMAININPUT_MEMBER_WORKFLOW_EXECUTION_RETENTION_PERIOD_IN_DAYS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf.synthetic#RegisterDomainInput$workflowExecutionRetentionPeriodInDays",
+            "com.amazonaws.swf.synthetic",
+            "RegisterDomainInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "workflowExecutionRetentionPeriodInDays",
+        2,
+    );
+static REGISTERDOMAININPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.swf#ResourceTagList$member", "com.amazonaws.swf", "ResourceTagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static REGISTERDOMAININPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#RegisterDomainInput$tags",
+        "com.amazonaws.swf.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    3,
+)
+.with_list_member(&REGISTERDOMAININPUT_MEMBER_TAGS_MEMBER);
+static REGISTERDOMAININPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#RegisterDomainInput",
+        "com.amazonaws.swf.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REGISTERDOMAININPUT_MEMBER_NAME,
+        &REGISTERDOMAININPUT_MEMBER_DESCRIPTION,
+        &REGISTERDOMAININPUT_MEMBER_WORKFLOW_EXECUTION_RETENTION_PERIOD_IN_DAYS,
+        &REGISTERDOMAININPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RegisterDomainInput");
+impl RegisterDomainInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REGISTERDOMAININPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RegisterDomainInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&REGISTERDOMAININPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&REGISTERDOMAININPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.workflow_execution_retention_period_in_days {
+            ser.write_string(&REGISTERDOMAININPUT_MEMBER_WORKFLOW_EXECUTION_RETENTION_PERIOD_IN_DAYS, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &REGISTERDOMAININPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ResourceTag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::register_domain::builders::RegisterDomainInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REGISTERDOMAININPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_execution_retention_period_in_days = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ResourceTag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RegisterDomainInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.workflow_execution_retention_period_in_days = builder.workflow_execution_retention_period_in_days.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RegisterDomainInput {
     /// Creates a new builder-style object to manufacture [`RegisterDomainInput`](crate::operation::register_domain::RegisterDomainInput).
     pub fn builder() -> crate::operation::register_domain::builders::RegisterDomainInputBuilder {

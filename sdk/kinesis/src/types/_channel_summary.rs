@@ -95,6 +95,235 @@ impl ChannelSummary {
         self.streams.deref()
     }
 }
+static CHANNELSUMMARY_MEMBER_CHANNEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelSummary$ChannelName",
+        "com.amazonaws.kinesis",
+        "ChannelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChannelName",
+    0,
+);
+static CHANNELSUMMARY_MEMBER_CHANNEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelSummary$ChannelARN",
+        "com.amazonaws.kinesis",
+        "ChannelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChannelARN",
+    1,
+);
+static CHANNELSUMMARY_MEMBER_CHANNEL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelSummary$ChannelId",
+        "com.amazonaws.kinesis",
+        "ChannelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChannelId",
+    2,
+);
+static CHANNELSUMMARY_MEMBER_CHANNEL_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelSummary$ChannelStatus",
+        "com.amazonaws.kinesis",
+        "ChannelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChannelStatus",
+    3,
+);
+static CHANNELSUMMARY_MEMBER_CHANNEL_STATUS_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelSummary$ChannelStatusReason",
+        "com.amazonaws.kinesis",
+        "ChannelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChannelStatusReason",
+    4,
+);
+static CHANNELSUMMARY_MEMBER_CHANNEL_CREATION_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelSummary$ChannelCreationTimestamp",
+        "com.amazonaws.kinesis",
+        "ChannelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ChannelCreationTimestamp",
+    5,
+);
+static CHANNELSUMMARY_MEMBER_CHANNEL_DESTINATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelSummary$ChannelDestinationType",
+        "com.amazonaws.kinesis",
+        "ChannelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChannelDestinationType",
+    6,
+);
+static CHANNELSUMMARY_MEMBER_STREAMS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#ChannelStreamIdentifierList$member",
+        "com.amazonaws.kinesis",
+        "ChannelStreamIdentifierList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CHANNELSUMMARY_MEMBER_STREAMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#ChannelSummary$Streams", "com.amazonaws.kinesis", "ChannelSummary"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Streams",
+    7,
+)
+.with_list_member(&CHANNELSUMMARY_MEMBER_STREAMS_MEMBER);
+static CHANNELSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kinesis#ChannelSummary", "com.amazonaws.kinesis", "ChannelSummary"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CHANNELSUMMARY_MEMBER_CHANNEL_NAME,
+        &CHANNELSUMMARY_MEMBER_CHANNEL_ARN,
+        &CHANNELSUMMARY_MEMBER_CHANNEL_ID,
+        &CHANNELSUMMARY_MEMBER_CHANNEL_STATUS,
+        &CHANNELSUMMARY_MEMBER_CHANNEL_STATUS_REASON,
+        &CHANNELSUMMARY_MEMBER_CHANNEL_CREATION_TIMESTAMP,
+        &CHANNELSUMMARY_MEMBER_CHANNEL_DESTINATION_TYPE,
+        &CHANNELSUMMARY_MEMBER_STREAMS,
+    ],
+);
+impl ChannelSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CHANNELSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ChannelSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.channel_name;
+            ser.write_string(&CHANNELSUMMARY_MEMBER_CHANNEL_NAME, val)?;
+        }
+        {
+            let val = &self.channel_arn;
+            ser.write_string(&CHANNELSUMMARY_MEMBER_CHANNEL_ARN, val)?;
+        }
+        {
+            let val = &self.channel_id;
+            ser.write_string(&CHANNELSUMMARY_MEMBER_CHANNEL_ID, val)?;
+        }
+        {
+            let val = &self.channel_status;
+            ser.write_string(&CHANNELSUMMARY_MEMBER_CHANNEL_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.channel_status_reason {
+            ser.write_string(&CHANNELSUMMARY_MEMBER_CHANNEL_STATUS_REASON, val)?;
+        }
+        {
+            let val = &self.channel_creation_timestamp;
+            ser.write_timestamp(&CHANNELSUMMARY_MEMBER_CHANNEL_CREATION_TIMESTAMP, val)?;
+        }
+        {
+            let val = &self.channel_destination_type;
+            ser.write_string(&CHANNELSUMMARY_MEMBER_CHANNEL_DESTINATION_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.streams;
+
+            ser.write_list(
+                &CHANNELSUMMARY_MEMBER_STREAMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ChannelStreamIdentifier::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ChannelSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CHANNELSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.channel_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.channel_arn = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.channel_id = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.channel_status = Some(crate::types::ChannelStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.channel_status_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    self.channel_creation_timestamp = Some(deser.read_timestamp(member)?);
+                }
+                Some(6) => {
+                    self.channel_destination_type = Some(crate::types::ChannelDestinationType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(7) => {
+                    self.streams = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::ChannelStreamIdentifier::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ChannelSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.channel_name = builder.channel_name.or(Some(String::new()));
+        builder.channel_arn = builder.channel_arn.or(Some(String::new()));
+        builder.channel_id = builder.channel_id.or(Some(String::new()));
+        builder.channel_creation_timestamp = builder.channel_creation_timestamp.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.streams = builder.streams.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ChannelSummary {
     /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::types::ChannelSummary).
     pub fn builder() -> crate::types::builders::ChannelSummaryBuilder {

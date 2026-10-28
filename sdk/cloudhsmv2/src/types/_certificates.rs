@@ -37,6 +37,165 @@ impl Certificates {
         self.cluster_certificate.as_deref()
     }
 }
+static CERTIFICATES_MEMBER_CLUSTER_CSR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2#Certificates$ClusterCsr",
+        "com.amazonaws.cloudhsmv2",
+        "Certificates",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterCsr",
+    0,
+);
+static CERTIFICATES_MEMBER_HSM_CERTIFICATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2#Certificates$HsmCertificate",
+        "com.amazonaws.cloudhsmv2",
+        "Certificates",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HsmCertificate",
+    1,
+);
+static CERTIFICATES_MEMBER_AWS_HARDWARE_CERTIFICATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2#Certificates$AwsHardwareCertificate",
+        "com.amazonaws.cloudhsmv2",
+        "Certificates",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AwsHardwareCertificate",
+    2,
+);
+static CERTIFICATES_MEMBER_MANUFACTURER_HARDWARE_CERTIFICATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2#Certificates$ManufacturerHardwareCertificate",
+        "com.amazonaws.cloudhsmv2",
+        "Certificates",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ManufacturerHardwareCertificate",
+    3,
+);
+static CERTIFICATES_MEMBER_CLUSTER_CERTIFICATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2#Certificates$ClusterCertificate",
+        "com.amazonaws.cloudhsmv2",
+        "Certificates",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterCertificate",
+    4,
+);
+static CERTIFICATES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#Certificates", "com.amazonaws.cloudhsmv2", "Certificates"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CERTIFICATES_MEMBER_CLUSTER_CSR,
+        &CERTIFICATES_MEMBER_HSM_CERTIFICATE,
+        &CERTIFICATES_MEMBER_AWS_HARDWARE_CERTIFICATE,
+        &CERTIFICATES_MEMBER_MANUFACTURER_HARDWARE_CERTIFICATE,
+        &CERTIFICATES_MEMBER_CLUSTER_CERTIFICATE,
+    ],
+);
+impl Certificates {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CERTIFICATES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Certificates {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster_csr {
+            ser.write_string(&CERTIFICATES_MEMBER_CLUSTER_CSR, val)?;
+        }
+        if let Some(ref val) = self.hsm_certificate {
+            ser.write_string(&CERTIFICATES_MEMBER_HSM_CERTIFICATE, val)?;
+        }
+        if let Some(ref val) = self.aws_hardware_certificate {
+            ser.write_string(&CERTIFICATES_MEMBER_AWS_HARDWARE_CERTIFICATE, val)?;
+        }
+        if let Some(ref val) = self.manufacturer_hardware_certificate {
+            ser.write_string(&CERTIFICATES_MEMBER_MANUFACTURER_HARDWARE_CERTIFICATE, val)?;
+        }
+        if let Some(ref val) = self.cluster_certificate {
+            ser.write_string(&CERTIFICATES_MEMBER_CLUSTER_CERTIFICATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CertificatesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CERTIFICATES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_csr = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hsm_certificate = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.aws_hardware_certificate = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.manufacturer_hardware_certificate = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_certificate = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Certificates {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Certificates {
     /// Creates a new builder-style object to manufacture [`Certificates`](crate::types::Certificates).
     pub fn builder() -> crate::types::builders::CertificatesBuilder {

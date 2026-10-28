@@ -65,6 +65,91 @@ impl Alias {
         self.lifecycle.as_ref()
     }
 }
+static ALIAS_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Alias$Name", "com.amazonaws.fsx", "Alias"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static ALIAS_MEMBER_LIFECYCLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Alias$Lifecycle", "com.amazonaws.fsx", "Alias"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Lifecycle",
+    1,
+);
+static ALIAS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Alias", "com.amazonaws.fsx", "Alias"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ALIAS_MEMBER_NAME, &ALIAS_MEMBER_LIFECYCLE],
+);
+impl Alias {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ALIAS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Alias {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&ALIAS_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.lifecycle {
+            ser.write_string(&ALIAS_MEMBER_LIFECYCLE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AliasBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ALIAS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle = Some(crate::types::AliasLifecycle::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Alias {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Alias {
     /// Creates a new builder-style object to manufacture [`Alias`](crate::types::Alias).
     pub fn builder() -> crate::types::builders::AliasBuilder {

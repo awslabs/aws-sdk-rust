@@ -67,6 +67,274 @@ impl DescribeGatewayAlbConfiguration {
         self.test_traffic_rules.as_ref()
     }
 }
+static DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_NETWORK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DescribeGatewayAlbConfiguration$networkConfiguration",
+        "com.amazonaws.ecs",
+        "DescribeGatewayAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "networkConfiguration",
+    0,
+);
+static DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_SCHEME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DescribeGatewayAlbConfiguration$scheme",
+        "com.amazonaws.ecs",
+        "DescribeGatewayAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "scheme",
+    1,
+);
+static DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_ACCESS_LOGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DescribeGatewayAlbConfiguration$accessLogs",
+        "com.amazonaws.ecs",
+        "DescribeGatewayAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "accessLogs",
+    2,
+);
+static DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_WEB_ACL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DescribeGatewayAlbConfiguration$webACLArn",
+        "com.amazonaws.ecs",
+        "DescribeGatewayAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "webACLArn",
+    3,
+);
+static DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DescribeGatewayAlbConfiguration$port",
+        "com.amazonaws.ecs",
+        "DescribeGatewayAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "port",
+    4,
+);
+static DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_PROTOCOL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DescribeGatewayAlbConfiguration$protocol",
+        "com.amazonaws.ecs",
+        "DescribeGatewayAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "protocol",
+    5,
+);
+static DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_MAX_ALB_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DescribeGatewayAlbConfiguration$maxAlbCount",
+        "com.amazonaws.ecs",
+        "DescribeGatewayAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxAlbCount",
+    6,
+);
+static DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_CURRENT_ALB_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DescribeGatewayAlbConfiguration$currentAlbCount",
+        "com.amazonaws.ecs",
+        "DescribeGatewayAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "currentAlbCount",
+    7,
+);
+static DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_HTTP_DESYNC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DescribeGatewayAlbConfiguration$httpDesync",
+        "com.amazonaws.ecs",
+        "DescribeGatewayAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "httpDesync",
+    8,
+);
+static DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_TEST_TRAFFIC_RULES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DescribeGatewayAlbConfiguration$testTrafficRules",
+        "com.amazonaws.ecs",
+        "DescribeGatewayAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "testTrafficRules",
+    9,
+);
+static DESCRIBEGATEWAYALBCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DescribeGatewayAlbConfiguration",
+        "com.amazonaws.ecs",
+        "DescribeGatewayAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_NETWORK_CONFIGURATION,
+        &DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_SCHEME,
+        &DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_ACCESS_LOGS,
+        &DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_WEB_ACL_ARN,
+        &DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_PORT,
+        &DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_PROTOCOL,
+        &DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_MAX_ALB_COUNT,
+        &DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_CURRENT_ALB_COUNT,
+        &DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_HTTP_DESYNC,
+        &DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_TEST_TRAFFIC_RULES,
+    ],
+);
+impl DescribeGatewayAlbConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEGATEWAYALBCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeGatewayAlbConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.network_configuration {
+            ser.write_struct(&DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_NETWORK_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.scheme {
+            ser.write_string(&DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_SCHEME, val.as_str())?;
+        }
+        if let Some(ref val) = self.access_logs {
+            ser.write_struct(&DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_ACCESS_LOGS, val)?;
+        }
+        if let Some(ref val) = self.web_acl_arn {
+            ser.write_string(&DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_WEB_ACL_ARN, val)?;
+        }
+        if let Some(ref val) = self.port {
+            ser.write_integer(&DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_PORT, *val)?;
+        }
+        if let Some(ref val) = self.protocol {
+            ser.write_string(&DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_PROTOCOL, val.as_str())?;
+        }
+        if let Some(ref val) = self.max_alb_count {
+            ser.write_integer(&DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_MAX_ALB_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.current_alb_count {
+            ser.write_integer(&DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_CURRENT_ALB_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.http_desync {
+            ser.write_string(&DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_HTTP_DESYNC, val.as_str())?;
+        }
+        if let Some(ref val) = self.test_traffic_rules {
+            ser.write_struct(&DESCRIBEGATEWAYALBCONFIGURATION_MEMBER_TEST_TRAFFIC_RULES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DescribeGatewayAlbConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEGATEWAYALBCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_configuration = Some(crate::types::GatewayElbNetworkConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scheme = Some(crate::types::GatewayElbScheme::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_logs = Some(crate::types::GatewayElbAccessLogConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.web_acl_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.port = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocol = Some(crate::types::GatewayAlbProtocol::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_alb_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_alb_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.http_desync = Some(crate::types::GatewayAlbDesyncMitigationMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.test_traffic_rules = Some(crate::types::GatewayAlbTestTrafficRules::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeGatewayAlbConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DescribeGatewayAlbConfiguration {
     /// Creates a new builder-style object to manufacture [`DescribeGatewayAlbConfiguration`](crate::types::DescribeGatewayAlbConfiguration).
     pub fn builder() -> crate::types::builders::DescribeGatewayAlbConfigurationBuilder {

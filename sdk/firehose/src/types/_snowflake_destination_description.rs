@@ -139,6 +139,448 @@ impl ::std::fmt::Debug for SnowflakeDestinationDescription {
         formatter.finish()
     }
 }
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_ACCOUNT_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SnowflakeDestinationDescription$AccountUrl",
+        "com.amazonaws.firehose",
+        "SnowflakeDestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccountUrl",
+    0,
+);
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_USER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SnowflakeDestinationDescription$User",
+        "com.amazonaws.firehose",
+        "SnowflakeDestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "User",
+    1,
+);
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_DATABASE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SnowflakeDestinationDescription$Database",
+        "com.amazonaws.firehose",
+        "SnowflakeDestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Database",
+    2,
+);
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SnowflakeDestinationDescription$Schema",
+        "com.amazonaws.firehose",
+        "SnowflakeDestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Schema",
+    3,
+);
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_TABLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SnowflakeDestinationDescription$Table",
+        "com.amazonaws.firehose",
+        "SnowflakeDestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Table",
+    4,
+);
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_SNOWFLAKE_ROLE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#SnowflakeDestinationDescription$SnowflakeRoleConfiguration",
+            "com.amazonaws.firehose",
+            "SnowflakeDestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "SnowflakeRoleConfiguration",
+        5,
+    );
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_DATA_LOADING_OPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SnowflakeDestinationDescription$DataLoadingOption",
+        "com.amazonaws.firehose",
+        "SnowflakeDestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataLoadingOption",
+    6,
+);
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_META_DATA_COLUMN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SnowflakeDestinationDescription$MetaDataColumnName",
+        "com.amazonaws.firehose",
+        "SnowflakeDestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MetaDataColumnName",
+    7,
+);
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_CONTENT_COLUMN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SnowflakeDestinationDescription$ContentColumnName",
+        "com.amazonaws.firehose",
+        "SnowflakeDestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContentColumnName",
+    8,
+);
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_SNOWFLAKE_VPC_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#SnowflakeDestinationDescription$SnowflakeVpcConfiguration",
+            "com.amazonaws.firehose",
+            "SnowflakeDestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "SnowflakeVpcConfiguration",
+        9,
+    );
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#SnowflakeDestinationDescription$CloudWatchLoggingOptions",
+            "com.amazonaws.firehose",
+            "SnowflakeDestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "CloudWatchLoggingOptions",
+        10,
+    );
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_PROCESSING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#SnowflakeDestinationDescription$ProcessingConfiguration",
+            "com.amazonaws.firehose",
+            "SnowflakeDestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ProcessingConfiguration",
+        11,
+    );
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SnowflakeDestinationDescription$RoleARN",
+        "com.amazonaws.firehose",
+        "SnowflakeDestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleARN",
+    12,
+);
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_RETRY_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SnowflakeDestinationDescription$RetryOptions",
+        "com.amazonaws.firehose",
+        "SnowflakeDestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RetryOptions",
+    13,
+);
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_S3_BACKUP_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SnowflakeDestinationDescription$S3BackupMode",
+        "com.amazonaws.firehose",
+        "SnowflakeDestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3BackupMode",
+    14,
+);
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_S3_DESTINATION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#SnowflakeDestinationDescription$S3DestinationDescription",
+            "com.amazonaws.firehose",
+            "SnowflakeDestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "S3DestinationDescription",
+        15,
+    );
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_SECRETS_MANAGER_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.firehose#SnowflakeDestinationDescription$SecretsManagerConfiguration",
+            "com.amazonaws.firehose",
+            "SnowflakeDestinationDescription",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "SecretsManagerConfiguration",
+        16,
+    );
+static SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_BUFFERING_HINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SnowflakeDestinationDescription$BufferingHints",
+        "com.amazonaws.firehose",
+        "SnowflakeDestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BufferingHints",
+    17,
+);
+static SNOWFLAKEDESTINATIONDESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#SnowflakeDestinationDescription",
+        "com.amazonaws.firehose",
+        "SnowflakeDestinationDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_ACCOUNT_URL,
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_USER,
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_DATABASE,
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_SCHEMA,
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_TABLE,
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_SNOWFLAKE_ROLE_CONFIGURATION,
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_DATA_LOADING_OPTION,
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_META_DATA_COLUMN_NAME,
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_CONTENT_COLUMN_NAME,
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_SNOWFLAKE_VPC_CONFIGURATION,
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS,
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_PROCESSING_CONFIGURATION,
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_ROLE_ARN,
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_RETRY_OPTIONS,
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_S3_BACKUP_MODE,
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_S3_DESTINATION_DESCRIPTION,
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_SECRETS_MANAGER_CONFIGURATION,
+        &SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_BUFFERING_HINTS,
+    ],
+);
+impl SnowflakeDestinationDescription {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SNOWFLAKEDESTINATIONDESCRIPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SnowflakeDestinationDescription {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.account_url {
+            ser.write_string(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_ACCOUNT_URL, val)?;
+        }
+        if let Some(ref val) = self.user {
+            ser.write_string(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_USER, val)?;
+        }
+        if let Some(ref val) = self.database {
+            ser.write_string(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_DATABASE, val)?;
+        }
+        if let Some(ref val) = self.schema {
+            ser.write_string(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_SCHEMA, val)?;
+        }
+        if let Some(ref val) = self.table {
+            ser.write_string(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_TABLE, val)?;
+        }
+        if let Some(ref val) = self.snowflake_role_configuration {
+            ser.write_struct(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_SNOWFLAKE_ROLE_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.data_loading_option {
+            ser.write_string(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_DATA_LOADING_OPTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.meta_data_column_name {
+            ser.write_string(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_META_DATA_COLUMN_NAME, val)?;
+        }
+        if let Some(ref val) = self.content_column_name {
+            ser.write_string(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_CONTENT_COLUMN_NAME, val)?;
+        }
+        if let Some(ref val) = self.snowflake_vpc_configuration {
+            ser.write_struct(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_SNOWFLAKE_VPC_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.cloud_watch_logging_options {
+            ser.write_struct(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_CLOUD_WATCH_LOGGING_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.processing_configuration {
+            ser.write_struct(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_PROCESSING_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.retry_options {
+            ser.write_struct(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_RETRY_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.s3_backup_mode {
+            ser.write_string(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_S3_BACKUP_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_destination_description {
+            ser.write_struct(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_S3_DESTINATION_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.secrets_manager_configuration {
+            ser.write_struct(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_SECRETS_MANAGER_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.buffering_hints {
+            ser.write_struct(&SNOWFLAKEDESTINATIONDESCRIPTION_MEMBER_BUFFERING_HINTS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SnowflakeDestinationDescriptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SNOWFLAKEDESTINATIONDESCRIPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.database = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.schema = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.table = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.snowflake_role_configuration = Some(crate::types::SnowflakeRoleConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_loading_option = Some(crate::types::SnowflakeDataLoadingOption::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.meta_data_column_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content_column_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.snowflake_vpc_configuration = Some(crate::types::SnowflakeVpcConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_watch_logging_options = Some(crate::types::CloudWatchLoggingOptions::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.processing_configuration = Some(crate::types::ProcessingConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retry_options = Some(crate::types::SnowflakeRetryOptions::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_backup_mode = Some(crate::types::SnowflakeS3BackupMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_destination_description = Some(crate::types::S3DestinationDescription::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secrets_manager_configuration = Some(crate::types::SecretsManagerConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.buffering_hints = Some(crate::types::SnowflakeBufferingHints::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SnowflakeDestinationDescription {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SnowflakeDestinationDescription {
     /// Creates a new builder-style object to manufacture [`SnowflakeDestinationDescription`](crate::types::SnowflakeDestinationDescription).
     pub fn builder() -> crate::types::builders::SnowflakeDestinationDescriptionBuilder {

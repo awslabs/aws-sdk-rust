@@ -50,6 +50,182 @@ impl QuickResponseQueryField {
         self.priority.as_ref()
     }
 }
+static QUICKRESPONSEQUERYFIELD_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseQueryField$name",
+        "com.amazonaws.wisdom",
+        "QuickResponseQueryField",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static QUICKRESPONSEQUERYFIELD_MEMBER_VALUES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseQueryValueList$member",
+        "com.amazonaws.wisdom",
+        "QuickResponseQueryValueList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static QUICKRESPONSEQUERYFIELD_MEMBER_VALUES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseQueryField$values",
+        "com.amazonaws.wisdom",
+        "QuickResponseQueryField",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "values",
+    1,
+)
+.with_list_member(&QUICKRESPONSEQUERYFIELD_MEMBER_VALUES_MEMBER);
+static QUICKRESPONSEQUERYFIELD_MEMBER_OPERATOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseQueryField$operator",
+        "com.amazonaws.wisdom",
+        "QuickResponseQueryField",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "operator",
+    2,
+);
+static QUICKRESPONSEQUERYFIELD_MEMBER_ALLOW_FUZZINESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseQueryField$allowFuzziness",
+        "com.amazonaws.wisdom",
+        "QuickResponseQueryField",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "allowFuzziness",
+    3,
+);
+static QUICKRESPONSEQUERYFIELD_MEMBER_PRIORITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseQueryField$priority",
+        "com.amazonaws.wisdom",
+        "QuickResponseQueryField",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "priority",
+    4,
+);
+static QUICKRESPONSEQUERYFIELD_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#QuickResponseQueryField",
+        "com.amazonaws.wisdom",
+        "QuickResponseQueryField",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &QUICKRESPONSEQUERYFIELD_MEMBER_NAME,
+        &QUICKRESPONSEQUERYFIELD_MEMBER_VALUES,
+        &QUICKRESPONSEQUERYFIELD_MEMBER_OPERATOR,
+        &QUICKRESPONSEQUERYFIELD_MEMBER_ALLOW_FUZZINESS,
+        &QUICKRESPONSEQUERYFIELD_MEMBER_PRIORITY,
+    ],
+);
+impl QuickResponseQueryField {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &QUICKRESPONSEQUERYFIELD_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for QuickResponseQueryField {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&QUICKRESPONSEQUERYFIELD_MEMBER_NAME, val)?;
+        }
+        {
+            let val = &self.values;
+
+            ser.write_list(
+                &QUICKRESPONSEQUERYFIELD_MEMBER_VALUES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.operator;
+            ser.write_string(&QUICKRESPONSEQUERYFIELD_MEMBER_OPERATOR, val.as_str())?;
+        }
+        if let Some(ref val) = self.allow_fuzziness {
+            ser.write_boolean(&QUICKRESPONSEQUERYFIELD_MEMBER_ALLOW_FUZZINESS, *val)?;
+        }
+        if let Some(ref val) = self.priority {
+            ser.write_string(&QUICKRESPONSEQUERYFIELD_MEMBER_PRIORITY, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::QuickResponseQueryFieldBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&QUICKRESPONSEQUERYFIELD_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.values = Some(deser.read_string_list(member)?);
+                }
+                Some(2) => {
+                    self.operator = Some(crate::types::QuickResponseQueryOperator::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.allow_fuzziness = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.priority = Some(crate::types::Priority::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl QuickResponseQueryField {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.values = builder.values.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl QuickResponseQueryField {
     /// Creates a new builder-style object to manufacture [`QuickResponseQueryField`](crate::types::QuickResponseQueryField).
     pub fn builder() -> crate::types::builders::QuickResponseQueryFieldBuilder {

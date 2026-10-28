@@ -45,6 +45,186 @@ impl LambdaFunctionScheduledEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+static LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#LambdaFunctionScheduledEventAttributes$id",
+        "com.amazonaws.swf",
+        "LambdaFunctionScheduledEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "id",
+    0,
+);
+static LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#LambdaFunctionScheduledEventAttributes$name",
+        "com.amazonaws.swf",
+        "LambdaFunctionScheduledEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    1,
+);
+static LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_CONTROL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#LambdaFunctionScheduledEventAttributes$control",
+        "com.amazonaws.swf",
+        "LambdaFunctionScheduledEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "control",
+    2,
+);
+static LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_INPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#LambdaFunctionScheduledEventAttributes$input",
+        "com.amazonaws.swf",
+        "LambdaFunctionScheduledEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "input",
+    3,
+);
+static LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_START_TO_CLOSE_TIMEOUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#LambdaFunctionScheduledEventAttributes$startToCloseTimeout",
+            "com.amazonaws.swf",
+            "LambdaFunctionScheduledEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "startToCloseTimeout",
+        4,
+    );
+static LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#LambdaFunctionScheduledEventAttributes$decisionTaskCompletedEventId",
+            "com.amazonaws.swf",
+            "LambdaFunctionScheduledEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "decisionTaskCompletedEventId",
+        5,
+    );
+static LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#LambdaFunctionScheduledEventAttributes",
+        "com.amazonaws.swf",
+        "LambdaFunctionScheduledEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_ID,
+        &LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_NAME,
+        &LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_CONTROL,
+        &LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_INPUT,
+        &LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_START_TO_CLOSE_TIMEOUT,
+        &LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID,
+    ],
+);
+impl LambdaFunctionScheduledEventAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LambdaFunctionScheduledEventAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.id;
+            ser.write_string(&LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_ID, val)?;
+        }
+        {
+            let val = &self.name;
+            ser.write_string(&LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.control {
+            ser.write_string(&LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_CONTROL, val)?;
+        }
+        if let Some(ref val) = self.input {
+            ser.write_string(&LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_INPUT, val)?;
+        }
+        if let Some(ref val) = self.start_to_close_timeout {
+            ser.write_string(&LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_START_TO_CLOSE_TIMEOUT, val)?;
+        }
+        {
+            let val = &self.decision_task_completed_event_id;
+            ser.write_long(&LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LambdaFunctionScheduledEventAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LAMBDAFUNCTIONSCHEDULEDEVENTATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.control = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_to_close_timeout = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    self.decision_task_completed_event_id = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LambdaFunctionScheduledEventAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.id = builder.id.or(Some(String::new()));
+        builder.name = builder.name.or(Some(String::new()));
+        builder.decision_task_completed_event_id = builder.decision_task_completed_event_id.or(Some(0i64));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl LambdaFunctionScheduledEventAttributes {
     /// Creates a new builder-style object to manufacture [`LambdaFunctionScheduledEventAttributes`](crate::types::LambdaFunctionScheduledEventAttributes).
     pub fn builder() -> crate::types::builders::LambdaFunctionScheduledEventAttributesBuilder {

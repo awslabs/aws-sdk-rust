@@ -54,6 +54,238 @@ impl CreateWorkspaceBundleInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEWORKSPACEBUNDLEINPUT_MEMBER_BUNDLE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspaceBundleInput$BundleName",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspaceBundleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BundleName",
+    0,
+);
+static CREATEWORKSPACEBUNDLEINPUT_MEMBER_BUNDLE_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspaceBundleInput$BundleDescription",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspaceBundleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BundleDescription",
+    1,
+);
+static CREATEWORKSPACEBUNDLEINPUT_MEMBER_IMAGE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspaceBundleInput$ImageId",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspaceBundleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageId",
+    2,
+);
+static CREATEWORKSPACEBUNDLEINPUT_MEMBER_COMPUTE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspaceBundleInput$ComputeType",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspaceBundleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ComputeType",
+    3,
+);
+static CREATEWORKSPACEBUNDLEINPUT_MEMBER_USER_STORAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspaceBundleInput$UserStorage",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspaceBundleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "UserStorage",
+    4,
+);
+static CREATEWORKSPACEBUNDLEINPUT_MEMBER_ROOT_STORAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspaceBundleInput$RootStorage",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspaceBundleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RootStorage",
+    5,
+);
+static CREATEWORKSPACEBUNDLEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#TagList$member", "com.amazonaws.workspaces", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEWORKSPACEBUNDLEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspaceBundleInput$Tags",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspaceBundleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    6,
+)
+.with_list_member(&CREATEWORKSPACEBUNDLEINPUT_MEMBER_TAGS_MEMBER);
+static CREATEWORKSPACEBUNDLEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#CreateWorkspaceBundleInput",
+        "com.amazonaws.workspaces.synthetic",
+        "CreateWorkspaceBundleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEWORKSPACEBUNDLEINPUT_MEMBER_BUNDLE_NAME,
+        &CREATEWORKSPACEBUNDLEINPUT_MEMBER_BUNDLE_DESCRIPTION,
+        &CREATEWORKSPACEBUNDLEINPUT_MEMBER_IMAGE_ID,
+        &CREATEWORKSPACEBUNDLEINPUT_MEMBER_COMPUTE_TYPE,
+        &CREATEWORKSPACEBUNDLEINPUT_MEMBER_USER_STORAGE,
+        &CREATEWORKSPACEBUNDLEINPUT_MEMBER_ROOT_STORAGE,
+        &CREATEWORKSPACEBUNDLEINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateWorkspaceBundleRequest");
+impl CreateWorkspaceBundleInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEWORKSPACEBUNDLEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateWorkspaceBundleInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.bundle_name {
+            ser.write_string(&CREATEWORKSPACEBUNDLEINPUT_MEMBER_BUNDLE_NAME, val)?;
+        }
+        if let Some(ref val) = self.bundle_description {
+            ser.write_string(&CREATEWORKSPACEBUNDLEINPUT_MEMBER_BUNDLE_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.image_id {
+            ser.write_string(&CREATEWORKSPACEBUNDLEINPUT_MEMBER_IMAGE_ID, val)?;
+        }
+        if let Some(ref val) = self.compute_type {
+            ser.write_struct(&CREATEWORKSPACEBUNDLEINPUT_MEMBER_COMPUTE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.user_storage {
+            ser.write_struct(&CREATEWORKSPACEBUNDLEINPUT_MEMBER_USER_STORAGE, val)?;
+        }
+        if let Some(ref val) = self.root_storage {
+            ser.write_struct(&CREATEWORKSPACEBUNDLEINPUT_MEMBER_ROOT_STORAGE, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEWORKSPACEBUNDLEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEWORKSPACEBUNDLEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bundle_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bundle_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_type = Some(crate::types::ComputeType::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_storage = Some(crate::types::UserStorage::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.root_storage = Some(crate::types::RootStorage::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateWorkspaceBundleInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.bundle_name = builder.bundle_name.or(Some(String::new()));
+        builder.bundle_description = builder.bundle_description.or(Some(String::new()));
+        builder.image_id = builder.image_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateWorkspaceBundleInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspaceBundleInput`](crate::operation::create_workspace_bundle::CreateWorkspaceBundleInput).
     pub fn builder() -> crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleInputBuilder {

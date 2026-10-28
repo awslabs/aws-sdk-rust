@@ -19,6 +19,103 @@ impl HttpHeader {
         self.header_value.as_deref()
     }
 }
+static HTTPHEADER_MEMBER_HEADER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#HttpHeader$headerName",
+        "com.amazonaws.cognitoidentityprovider",
+        "HttpHeader",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "headerName",
+    0,
+);
+static HTTPHEADER_MEMBER_HEADER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#HttpHeader$headerValue",
+        "com.amazonaws.cognitoidentityprovider",
+        "HttpHeader",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "headerValue",
+    1,
+);
+static HTTPHEADER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#HttpHeader",
+        "com.amazonaws.cognitoidentityprovider",
+        "HttpHeader",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&HTTPHEADER_MEMBER_HEADER_NAME, &HTTPHEADER_MEMBER_HEADER_VALUE],
+);
+impl HttpHeader {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &HTTPHEADER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for HttpHeader {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.header_name {
+            ser.write_string(&HTTPHEADER_MEMBER_HEADER_NAME, val)?;
+        }
+        if let Some(ref val) = self.header_value {
+            ser.write_string(&HTTPHEADER_MEMBER_HEADER_VALUE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::HttpHeaderBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&HTTPHEADER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.header_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.header_value = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl HttpHeader {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl HttpHeader {
     /// Creates a new builder-style object to manufacture [`HttpHeader`](crate::types::HttpHeader).
     pub fn builder() -> crate::types::builders::HttpHeaderBuilder {

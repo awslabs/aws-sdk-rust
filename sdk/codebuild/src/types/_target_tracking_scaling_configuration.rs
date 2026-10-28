@@ -19,6 +19,106 @@ impl TargetTrackingScalingConfiguration {
         self.target_value
     }
 }
+static TARGETTRACKINGSCALINGCONFIGURATION_MEMBER_METRIC_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#TargetTrackingScalingConfiguration$metricType",
+        "com.amazonaws.codebuild",
+        "TargetTrackingScalingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "metricType",
+    0,
+);
+static TARGETTRACKINGSCALINGCONFIGURATION_MEMBER_TARGET_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#TargetTrackingScalingConfiguration$targetValue",
+        "com.amazonaws.codebuild",
+        "TargetTrackingScalingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "targetValue",
+    1,
+);
+static TARGETTRACKINGSCALINGCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#TargetTrackingScalingConfiguration",
+        "com.amazonaws.codebuild",
+        "TargetTrackingScalingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TARGETTRACKINGSCALINGCONFIGURATION_MEMBER_METRIC_TYPE,
+        &TARGETTRACKINGSCALINGCONFIGURATION_MEMBER_TARGET_VALUE,
+    ],
+);
+impl TargetTrackingScalingConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TARGETTRACKINGSCALINGCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TargetTrackingScalingConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.metric_type {
+            ser.write_string(&TARGETTRACKINGSCALINGCONFIGURATION_MEMBER_METRIC_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.target_value {
+            ser.write_double(&TARGETTRACKINGSCALINGCONFIGURATION_MEMBER_TARGET_VALUE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TargetTrackingScalingConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TARGETTRACKINGSCALINGCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metric_type = Some(crate::types::FleetScalingMetricType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_value = Some(deser.read_double(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TargetTrackingScalingConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TargetTrackingScalingConfiguration {
     /// Creates a new builder-style object to manufacture [`TargetTrackingScalingConfiguration`](crate::types::TargetTrackingScalingConfiguration).
     pub fn builder() -> crate::types::builders::TargetTrackingScalingConfigurationBuilder {

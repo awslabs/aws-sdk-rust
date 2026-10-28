@@ -105,6 +105,396 @@ impl AcmCertificateMetadata {
         self.acme_account_id.as_deref()
     }
 }
+static ACMCERTIFICATEMETADATA_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadata$CreatedAt",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAt",
+    0,
+);
+static ACMCERTIFICATEMETADATA_MEMBER_EXPORTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadata$Exported",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Exported",
+    1,
+);
+static ACMCERTIFICATEMETADATA_MEMBER_IMPORTED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadata$ImportedAt",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ImportedAt",
+    2,
+);
+static ACMCERTIFICATEMETADATA_MEMBER_IN_USE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadata$InUse",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "InUse",
+    3,
+);
+static ACMCERTIFICATEMETADATA_MEMBER_ISSUED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadata$IssuedAt",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "IssuedAt",
+    4,
+);
+static ACMCERTIFICATEMETADATA_MEMBER_RENEWAL_ELIGIBILITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadata$RenewalEligibility",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RenewalEligibility",
+    5,
+);
+static ACMCERTIFICATEMETADATA_MEMBER_REVOKED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadata$RevokedAt",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "RevokedAt",
+    6,
+);
+static ACMCERTIFICATEMETADATA_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadata$Status",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    7,
+);
+static ACMCERTIFICATEMETADATA_MEMBER_RENEWAL_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadata$RenewalStatus",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RenewalStatus",
+    8,
+);
+static ACMCERTIFICATEMETADATA_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadata$Type",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    9,
+);
+static ACMCERTIFICATEMETADATA_MEMBER_EXPORT_OPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadata$ExportOption",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExportOption",
+    10,
+);
+static ACMCERTIFICATEMETADATA_MEMBER_MANAGED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadata$ManagedBy",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ManagedBy",
+    11,
+);
+static ACMCERTIFICATEMETADATA_MEMBER_VALIDATION_METHOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadata$ValidationMethod",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ValidationMethod",
+    12,
+);
+static ACMCERTIFICATEMETADATA_MEMBER_CERTIFICATE_KEY_PAIR_ORIGIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadata$CertificateKeyPairOrigin",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertificateKeyPairOrigin",
+    13,
+);
+static ACMCERTIFICATEMETADATA_MEMBER_ACME_ENDPOINT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadata$AcmeEndpointArn",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcmeEndpointArn",
+    14,
+);
+static ACMCERTIFICATEMETADATA_MEMBER_ACME_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadata$AcmeAccountId",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcmeAccountId",
+    15,
+);
+static ACMCERTIFICATEMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#AcmCertificateMetadata", "com.amazonaws.acm", "AcmCertificateMetadata"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACMCERTIFICATEMETADATA_MEMBER_CREATED_AT,
+        &ACMCERTIFICATEMETADATA_MEMBER_EXPORTED,
+        &ACMCERTIFICATEMETADATA_MEMBER_IMPORTED_AT,
+        &ACMCERTIFICATEMETADATA_MEMBER_IN_USE,
+        &ACMCERTIFICATEMETADATA_MEMBER_ISSUED_AT,
+        &ACMCERTIFICATEMETADATA_MEMBER_RENEWAL_ELIGIBILITY,
+        &ACMCERTIFICATEMETADATA_MEMBER_REVOKED_AT,
+        &ACMCERTIFICATEMETADATA_MEMBER_STATUS,
+        &ACMCERTIFICATEMETADATA_MEMBER_RENEWAL_STATUS,
+        &ACMCERTIFICATEMETADATA_MEMBER_TYPE,
+        &ACMCERTIFICATEMETADATA_MEMBER_EXPORT_OPTION,
+        &ACMCERTIFICATEMETADATA_MEMBER_MANAGED_BY,
+        &ACMCERTIFICATEMETADATA_MEMBER_VALIDATION_METHOD,
+        &ACMCERTIFICATEMETADATA_MEMBER_CERTIFICATE_KEY_PAIR_ORIGIN,
+        &ACMCERTIFICATEMETADATA_MEMBER_ACME_ENDPOINT_ARN,
+        &ACMCERTIFICATEMETADATA_MEMBER_ACME_ACCOUNT_ID,
+    ],
+);
+impl AcmCertificateMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACMCERTIFICATEMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AcmCertificateMetadata {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&ACMCERTIFICATEMETADATA_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.exported {
+            ser.write_boolean(&ACMCERTIFICATEMETADATA_MEMBER_EXPORTED, *val)?;
+        }
+        if let Some(ref val) = self.imported_at {
+            ser.write_timestamp(&ACMCERTIFICATEMETADATA_MEMBER_IMPORTED_AT, val)?;
+        }
+        if let Some(ref val) = self.in_use {
+            ser.write_boolean(&ACMCERTIFICATEMETADATA_MEMBER_IN_USE, *val)?;
+        }
+        if let Some(ref val) = self.issued_at {
+            ser.write_timestamp(&ACMCERTIFICATEMETADATA_MEMBER_ISSUED_AT, val)?;
+        }
+        if let Some(ref val) = self.renewal_eligibility {
+            ser.write_string(&ACMCERTIFICATEMETADATA_MEMBER_RENEWAL_ELIGIBILITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.revoked_at {
+            ser.write_timestamp(&ACMCERTIFICATEMETADATA_MEMBER_REVOKED_AT, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&ACMCERTIFICATEMETADATA_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.renewal_status {
+            ser.write_string(&ACMCERTIFICATEMETADATA_MEMBER_RENEWAL_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&ACMCERTIFICATEMETADATA_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.export_option {
+            ser.write_string(&ACMCERTIFICATEMETADATA_MEMBER_EXPORT_OPTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.managed_by {
+            ser.write_string(&ACMCERTIFICATEMETADATA_MEMBER_MANAGED_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.validation_method {
+            ser.write_string(&ACMCERTIFICATEMETADATA_MEMBER_VALIDATION_METHOD, val.as_str())?;
+        }
+        if let Some(ref val) = self.certificate_key_pair_origin {
+            ser.write_string(&ACMCERTIFICATEMETADATA_MEMBER_CERTIFICATE_KEY_PAIR_ORIGIN, val.as_str())?;
+        }
+        if let Some(ref val) = self.acme_endpoint_arn {
+            ser.write_string(&ACMCERTIFICATEMETADATA_MEMBER_ACME_ENDPOINT_ARN, val)?;
+        }
+        if let Some(ref val) = self.acme_account_id {
+            ser.write_string(&ACMCERTIFICATEMETADATA_MEMBER_ACME_ACCOUNT_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AcmCertificateMetadataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACMCERTIFICATEMETADATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.exported = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.imported_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.in_use = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.issued_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.renewal_eligibility = Some(crate::types::RenewalEligibility::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revoked_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::CertificateStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.renewal_status = Some(crate::types::RenewalStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::CertificateType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.export_option = Some(crate::types::CertificateExport::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_by = Some(crate::types::CertificateManagedBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_method = Some(crate::types::ValidationMethod::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_key_pair_origin = Some(crate::types::CertificateKeyPairOrigin::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.acme_endpoint_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.acme_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AcmCertificateMetadata {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AcmCertificateMetadata {
     /// Creates a new builder-style object to manufacture [`AcmCertificateMetadata`](crate::types::AcmCertificateMetadata).
     pub fn builder() -> crate::types::builders::AcmCertificateMetadataBuilder {

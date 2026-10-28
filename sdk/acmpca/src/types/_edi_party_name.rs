@@ -20,6 +20,89 @@ impl EdiPartyName {
         self.name_assigner.as_deref()
     }
 }
+static EDIPARTYNAME_MEMBER_PARTY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#EdiPartyName$PartyName", "com.amazonaws.acmpca", "EdiPartyName"),
+    ::aws_smithy_schema::ShapeType::String,
+    "PartyName",
+    0,
+);
+static EDIPARTYNAME_MEMBER_NAME_ASSIGNER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#EdiPartyName$NameAssigner", "com.amazonaws.acmpca", "EdiPartyName"),
+    ::aws_smithy_schema::ShapeType::String,
+    "NameAssigner",
+    1,
+);
+static EDIPARTYNAME_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#EdiPartyName", "com.amazonaws.acmpca", "EdiPartyName"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&EDIPARTYNAME_MEMBER_PARTY_NAME, &EDIPARTYNAME_MEMBER_NAME_ASSIGNER],
+);
+impl EdiPartyName {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EDIPARTYNAME_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EdiPartyName {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.party_name;
+            ser.write_string(&EDIPARTYNAME_MEMBER_PARTY_NAME, val)?;
+        }
+        if let Some(ref val) = self.name_assigner {
+            ser.write_string(&EDIPARTYNAME_MEMBER_NAME_ASSIGNER, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EdiPartyNameBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EDIPARTYNAME_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.party_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name_assigner = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EdiPartyName {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.party_name = builder.party_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl EdiPartyName {
     /// Creates a new builder-style object to manufacture [`EdiPartyName`](crate::types::EdiPartyName).
     pub fn builder() -> crate::types::builders::EdiPartyNameBuilder {

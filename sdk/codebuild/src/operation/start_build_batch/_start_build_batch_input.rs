@@ -298,6 +298,828 @@ impl StartBuildBatchInput {
         self.debug_session_enabled
     }
 }
+static STARTBUILDBATCHINPUT_MEMBER_PROJECT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$projectName",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "projectName",
+    0,
+);
+static STARTBUILDBATCHINPUT_MEMBER_SECONDARY_SOURCES_OVERRIDE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectSources$member",
+        "com.amazonaws.codebuild",
+        "ProjectSources",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTBUILDBATCHINPUT_MEMBER_SECONDARY_SOURCES_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$secondarySourcesOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "secondarySourcesOverride",
+    1,
+)
+.with_list_member(&STARTBUILDBATCHINPUT_MEMBER_SECONDARY_SOURCES_OVERRIDE_MEMBER);
+static STARTBUILDBATCHINPUT_MEMBER_SECONDARY_SOURCES_VERSION_OVERRIDE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codebuild#ProjectSecondarySourceVersions$member",
+            "com.amazonaws.codebuild",
+            "ProjectSecondarySourceVersions",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static STARTBUILDBATCHINPUT_MEMBER_SECONDARY_SOURCES_VERSION_OVERRIDE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$secondarySourcesVersionOverride",
+            "com.amazonaws.codebuild.synthetic",
+            "StartBuildBatchInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "secondarySourcesVersionOverride",
+        2,
+    )
+    .with_list_member(&STARTBUILDBATCHINPUT_MEMBER_SECONDARY_SOURCES_VERSION_OVERRIDE_MEMBER);
+static STARTBUILDBATCHINPUT_MEMBER_SOURCE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$sourceVersion",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sourceVersion",
+    3,
+);
+static STARTBUILDBATCHINPUT_MEMBER_ARTIFACTS_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$artifactsOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "artifactsOverride",
+    4,
+);
+static STARTBUILDBATCHINPUT_MEMBER_SECONDARY_ARTIFACTS_OVERRIDE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codebuild#ProjectArtifactsList$member",
+            "com.amazonaws.codebuild",
+            "ProjectArtifactsList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static STARTBUILDBATCHINPUT_MEMBER_SECONDARY_ARTIFACTS_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$secondaryArtifactsOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "secondaryArtifactsOverride",
+    5,
+)
+.with_list_member(&STARTBUILDBATCHINPUT_MEMBER_SECONDARY_ARTIFACTS_OVERRIDE_MEMBER);
+static STARTBUILDBATCHINPUT_MEMBER_ENVIRONMENT_VARIABLES_OVERRIDE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codebuild#EnvironmentVariables$member",
+            "com.amazonaws.codebuild",
+            "EnvironmentVariables",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static STARTBUILDBATCHINPUT_MEMBER_ENVIRONMENT_VARIABLES_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$environmentVariablesOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "environmentVariablesOverride",
+    6,
+)
+.with_list_member(&STARTBUILDBATCHINPUT_MEMBER_ENVIRONMENT_VARIABLES_OVERRIDE_MEMBER);
+static STARTBUILDBATCHINPUT_MEMBER_SOURCE_TYPE_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$sourceTypeOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sourceTypeOverride",
+    7,
+);
+static STARTBUILDBATCHINPUT_MEMBER_SOURCE_LOCATION_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$sourceLocationOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sourceLocationOverride",
+    8,
+);
+static STARTBUILDBATCHINPUT_MEMBER_SOURCE_AUTH_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$sourceAuthOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "sourceAuthOverride",
+    9,
+);
+static STARTBUILDBATCHINPUT_MEMBER_GIT_CLONE_DEPTH_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$gitCloneDepthOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "gitCloneDepthOverride",
+    10,
+);
+static STARTBUILDBATCHINPUT_MEMBER_GIT_SUBMODULES_CONFIG_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$gitSubmodulesConfigOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "gitSubmodulesConfigOverride",
+    11,
+);
+static STARTBUILDBATCHINPUT_MEMBER_BUILDSPEC_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$buildspecOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "buildspecOverride",
+    12,
+);
+static STARTBUILDBATCHINPUT_MEMBER_INSECURE_SSL_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$insecureSslOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "insecureSslOverride",
+    13,
+);
+static STARTBUILDBATCHINPUT_MEMBER_REPORT_BUILD_BATCH_STATUS_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$reportBuildBatchStatusOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "reportBuildBatchStatusOverride",
+    14,
+);
+static STARTBUILDBATCHINPUT_MEMBER_ENVIRONMENT_TYPE_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$environmentTypeOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "environmentTypeOverride",
+    15,
+);
+static STARTBUILDBATCHINPUT_MEMBER_IMAGE_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$imageOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "imageOverride",
+    16,
+);
+static STARTBUILDBATCHINPUT_MEMBER_COMPUTE_TYPE_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$computeTypeOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "computeTypeOverride",
+    17,
+);
+static STARTBUILDBATCHINPUT_MEMBER_CERTIFICATE_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$certificateOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "certificateOverride",
+    18,
+);
+static STARTBUILDBATCHINPUT_MEMBER_CACHE_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$cacheOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "cacheOverride",
+    19,
+);
+static STARTBUILDBATCHINPUT_MEMBER_SERVICE_ROLE_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$serviceRoleOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceRoleOverride",
+    20,
+);
+static STARTBUILDBATCHINPUT_MEMBER_PRIVILEGED_MODE_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$privilegedModeOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "privilegedModeOverride",
+    21,
+);
+static STARTBUILDBATCHINPUT_MEMBER_BUILD_TIMEOUT_IN_MINUTES_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$buildTimeoutInMinutesOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "buildTimeoutInMinutesOverride",
+    22,
+);
+static STARTBUILDBATCHINPUT_MEMBER_QUEUED_TIMEOUT_IN_MINUTES_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$queuedTimeoutInMinutesOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "queuedTimeoutInMinutesOverride",
+    23,
+);
+static STARTBUILDBATCHINPUT_MEMBER_ENCRYPTION_KEY_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$encryptionKeyOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "encryptionKeyOverride",
+    24,
+);
+static STARTBUILDBATCHINPUT_MEMBER_IDEMPOTENCY_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$idempotencyToken",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "idempotencyToken",
+    25,
+);
+static STARTBUILDBATCHINPUT_MEMBER_LOGS_CONFIG_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$logsConfigOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "logsConfigOverride",
+    26,
+);
+static STARTBUILDBATCHINPUT_MEMBER_REGISTRY_CREDENTIAL_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$registryCredentialOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "registryCredentialOverride",
+    27,
+);
+static STARTBUILDBATCHINPUT_MEMBER_IMAGE_PULL_CREDENTIALS_TYPE_OVERRIDE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$imagePullCredentialsTypeOverride",
+            "com.amazonaws.codebuild.synthetic",
+            "StartBuildBatchInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "imagePullCredentialsTypeOverride",
+        28,
+    );
+static STARTBUILDBATCHINPUT_MEMBER_BUILD_BATCH_CONFIG_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$buildBatchConfigOverride",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "buildBatchConfigOverride",
+    29,
+);
+static STARTBUILDBATCHINPUT_MEMBER_DEBUG_SESSION_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput$debugSessionEnabled",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "debugSessionEnabled",
+    30,
+);
+static STARTBUILDBATCHINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#StartBuildBatchInput",
+        "com.amazonaws.codebuild.synthetic",
+        "StartBuildBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTBUILDBATCHINPUT_MEMBER_PROJECT_NAME,
+        &STARTBUILDBATCHINPUT_MEMBER_SECONDARY_SOURCES_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_SECONDARY_SOURCES_VERSION_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_SOURCE_VERSION,
+        &STARTBUILDBATCHINPUT_MEMBER_ARTIFACTS_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_SECONDARY_ARTIFACTS_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_ENVIRONMENT_VARIABLES_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_SOURCE_TYPE_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_SOURCE_LOCATION_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_SOURCE_AUTH_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_GIT_CLONE_DEPTH_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_GIT_SUBMODULES_CONFIG_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_BUILDSPEC_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_INSECURE_SSL_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_REPORT_BUILD_BATCH_STATUS_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_ENVIRONMENT_TYPE_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_IMAGE_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_COMPUTE_TYPE_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_CERTIFICATE_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_CACHE_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_SERVICE_ROLE_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_PRIVILEGED_MODE_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_BUILD_TIMEOUT_IN_MINUTES_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_QUEUED_TIMEOUT_IN_MINUTES_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_ENCRYPTION_KEY_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_IDEMPOTENCY_TOKEN,
+        &STARTBUILDBATCHINPUT_MEMBER_LOGS_CONFIG_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_REGISTRY_CREDENTIAL_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_IMAGE_PULL_CREDENTIALS_TYPE_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_BUILD_BATCH_CONFIG_OVERRIDE,
+        &STARTBUILDBATCHINPUT_MEMBER_DEBUG_SESSION_ENABLED,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartBuildBatchInput");
+impl StartBuildBatchInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTBUILDBATCHINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartBuildBatchInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.project_name {
+            ser.write_string(&STARTBUILDBATCHINPUT_MEMBER_PROJECT_NAME, val)?;
+        }
+        if let Some(ref val) = self.secondary_sources_override {
+            ser.write_list(
+                &STARTBUILDBATCHINPUT_MEMBER_SECONDARY_SOURCES_OVERRIDE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProjectSource::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.secondary_sources_version_override {
+            ser.write_list(
+                &STARTBUILDBATCHINPUT_MEMBER_SECONDARY_SOURCES_VERSION_OVERRIDE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProjectSourceVersion::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.source_version {
+            ser.write_string(&STARTBUILDBATCHINPUT_MEMBER_SOURCE_VERSION, val)?;
+        }
+        if let Some(ref val) = self.artifacts_override {
+            ser.write_struct(&STARTBUILDBATCHINPUT_MEMBER_ARTIFACTS_OVERRIDE, val)?;
+        }
+        if let Some(ref val) = self.secondary_artifacts_override {
+            ser.write_list(
+                &STARTBUILDBATCHINPUT_MEMBER_SECONDARY_ARTIFACTS_OVERRIDE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProjectArtifacts::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.environment_variables_override {
+            ser.write_list(
+                &STARTBUILDBATCHINPUT_MEMBER_ENVIRONMENT_VARIABLES_OVERRIDE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EnvironmentVariable::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.source_type_override {
+            ser.write_string(&STARTBUILDBATCHINPUT_MEMBER_SOURCE_TYPE_OVERRIDE, val.as_str())?;
+        }
+        if let Some(ref val) = self.source_location_override {
+            ser.write_string(&STARTBUILDBATCHINPUT_MEMBER_SOURCE_LOCATION_OVERRIDE, val)?;
+        }
+        if let Some(ref val) = self.source_auth_override {
+            ser.write_struct(&STARTBUILDBATCHINPUT_MEMBER_SOURCE_AUTH_OVERRIDE, val)?;
+        }
+        if let Some(ref val) = self.git_clone_depth_override {
+            ser.write_integer(&STARTBUILDBATCHINPUT_MEMBER_GIT_CLONE_DEPTH_OVERRIDE, *val)?;
+        }
+        if let Some(ref val) = self.git_submodules_config_override {
+            ser.write_struct(&STARTBUILDBATCHINPUT_MEMBER_GIT_SUBMODULES_CONFIG_OVERRIDE, val)?;
+        }
+        if let Some(ref val) = self.buildspec_override {
+            ser.write_string(&STARTBUILDBATCHINPUT_MEMBER_BUILDSPEC_OVERRIDE, val)?;
+        }
+        if let Some(ref val) = self.insecure_ssl_override {
+            ser.write_boolean(&STARTBUILDBATCHINPUT_MEMBER_INSECURE_SSL_OVERRIDE, *val)?;
+        }
+        if let Some(ref val) = self.report_build_batch_status_override {
+            ser.write_boolean(&STARTBUILDBATCHINPUT_MEMBER_REPORT_BUILD_BATCH_STATUS_OVERRIDE, *val)?;
+        }
+        if let Some(ref val) = self.environment_type_override {
+            ser.write_string(&STARTBUILDBATCHINPUT_MEMBER_ENVIRONMENT_TYPE_OVERRIDE, val.as_str())?;
+        }
+        if let Some(ref val) = self.image_override {
+            ser.write_string(&STARTBUILDBATCHINPUT_MEMBER_IMAGE_OVERRIDE, val)?;
+        }
+        if let Some(ref val) = self.compute_type_override {
+            ser.write_string(&STARTBUILDBATCHINPUT_MEMBER_COMPUTE_TYPE_OVERRIDE, val.as_str())?;
+        }
+        if let Some(ref val) = self.certificate_override {
+            ser.write_string(&STARTBUILDBATCHINPUT_MEMBER_CERTIFICATE_OVERRIDE, val)?;
+        }
+        if let Some(ref val) = self.cache_override {
+            ser.write_struct(&STARTBUILDBATCHINPUT_MEMBER_CACHE_OVERRIDE, val)?;
+        }
+        if let Some(ref val) = self.service_role_override {
+            ser.write_string(&STARTBUILDBATCHINPUT_MEMBER_SERVICE_ROLE_OVERRIDE, val)?;
+        }
+        if let Some(ref val) = self.privileged_mode_override {
+            ser.write_boolean(&STARTBUILDBATCHINPUT_MEMBER_PRIVILEGED_MODE_OVERRIDE, *val)?;
+        }
+        if let Some(ref val) = self.build_timeout_in_minutes_override {
+            ser.write_integer(&STARTBUILDBATCHINPUT_MEMBER_BUILD_TIMEOUT_IN_MINUTES_OVERRIDE, *val)?;
+        }
+        if let Some(ref val) = self.queued_timeout_in_minutes_override {
+            ser.write_integer(&STARTBUILDBATCHINPUT_MEMBER_QUEUED_TIMEOUT_IN_MINUTES_OVERRIDE, *val)?;
+        }
+        if let Some(ref val) = self.encryption_key_override {
+            ser.write_string(&STARTBUILDBATCHINPUT_MEMBER_ENCRYPTION_KEY_OVERRIDE, val)?;
+        }
+        if let Some(ref val) = self.idempotency_token {
+            ser.write_string(&STARTBUILDBATCHINPUT_MEMBER_IDEMPOTENCY_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.logs_config_override {
+            ser.write_struct(&STARTBUILDBATCHINPUT_MEMBER_LOGS_CONFIG_OVERRIDE, val)?;
+        }
+        if let Some(ref val) = self.registry_credential_override {
+            ser.write_struct(&STARTBUILDBATCHINPUT_MEMBER_REGISTRY_CREDENTIAL_OVERRIDE, val)?;
+        }
+        if let Some(ref val) = self.image_pull_credentials_type_override {
+            ser.write_string(&STARTBUILDBATCHINPUT_MEMBER_IMAGE_PULL_CREDENTIALS_TYPE_OVERRIDE, val.as_str())?;
+        }
+        if let Some(ref val) = self.build_batch_config_override {
+            ser.write_struct(&STARTBUILDBATCHINPUT_MEMBER_BUILD_BATCH_CONFIG_OVERRIDE, val)?;
+        }
+        if let Some(ref val) = self.debug_session_enabled {
+            ser.write_boolean(&STARTBUILDBATCHINPUT_MEMBER_DEBUG_SESSION_ENABLED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_build_batch::builders::StartBuildBatchInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTBUILDBATCHINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_sources_override = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProjectSource::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_sources_version_override = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProjectSourceVersion::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifacts_override = Some(crate::types::ProjectArtifacts::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_artifacts_override = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProjectArtifacts::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment_variables_override = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EnvironmentVariable::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_type_override = Some(crate::types::SourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_location_override = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_auth_override = Some(crate::types::SourceAuth::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.git_clone_depth_override = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.git_submodules_config_override = Some(crate::types::GitSubmodulesConfig::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.buildspec_override = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.insecure_ssl_override = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_build_batch_status_override = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment_type_override = Some(crate::types::EnvironmentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_override = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_type_override = Some(crate::types::ComputeType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_override = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cache_override = Some(crate::types::ProjectCache::deserialize(deser)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_role_override = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.privileged_mode_override = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.build_timeout_in_minutes_override = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.queued_timeout_in_minutes_override = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_key_override = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(25) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idempotency_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(26) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logs_config_override = Some(crate::types::LogsConfig::deserialize(deser)?);
+                    }
+                }
+                Some(27) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registry_credential_override = Some(crate::types::RegistryCredential::deserialize(deser)?);
+                    }
+                }
+                Some(28) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_pull_credentials_type_override =
+                            Some(crate::types::ImagePullCredentialsType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(29) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.build_batch_config_override = Some(crate::types::ProjectBuildBatchConfig::deserialize(deser)?);
+                    }
+                }
+                Some(30) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.debug_session_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartBuildBatchInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.project_name = builder.project_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartBuildBatchInput {
     /// Creates a new builder-style object to manufacture [`StartBuildBatchInput`](crate::operation::start_build_batch::StartBuildBatchInput).
     pub fn builder() -> crate::operation::start_build_batch::builders::StartBuildBatchInputBuilder {

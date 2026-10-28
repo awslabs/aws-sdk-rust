@@ -71,6 +71,228 @@ impl ListedCertificate {
         self.description.as_deref()
     }
 }
+static LISTEDCERTIFICATE_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedCertificate$Arn",
+        "com.amazonaws.transfer",
+        "ListedCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    0,
+);
+static LISTEDCERTIFICATE_MEMBER_CERTIFICATE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedCertificate$CertificateId",
+        "com.amazonaws.transfer",
+        "ListedCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertificateId",
+    1,
+);
+static LISTEDCERTIFICATE_MEMBER_USAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedCertificate$Usage",
+        "com.amazonaws.transfer",
+        "ListedCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Usage",
+    2,
+);
+static LISTEDCERTIFICATE_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedCertificate$Status",
+        "com.amazonaws.transfer",
+        "ListedCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    3,
+);
+static LISTEDCERTIFICATE_MEMBER_ACTIVE_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedCertificate$ActiveDate",
+        "com.amazonaws.transfer",
+        "ListedCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ActiveDate",
+    4,
+);
+static LISTEDCERTIFICATE_MEMBER_INACTIVE_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedCertificate$InactiveDate",
+        "com.amazonaws.transfer",
+        "ListedCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "InactiveDate",
+    5,
+);
+static LISTEDCERTIFICATE_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedCertificate$Type",
+        "com.amazonaws.transfer",
+        "ListedCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    6,
+);
+static LISTEDCERTIFICATE_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ListedCertificate$Description",
+        "com.amazonaws.transfer",
+        "ListedCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    7,
+);
+static LISTEDCERTIFICATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#ListedCertificate", "com.amazonaws.transfer", "ListedCertificate"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTEDCERTIFICATE_MEMBER_ARN,
+        &LISTEDCERTIFICATE_MEMBER_CERTIFICATE_ID,
+        &LISTEDCERTIFICATE_MEMBER_USAGE,
+        &LISTEDCERTIFICATE_MEMBER_STATUS,
+        &LISTEDCERTIFICATE_MEMBER_ACTIVE_DATE,
+        &LISTEDCERTIFICATE_MEMBER_INACTIVE_DATE,
+        &LISTEDCERTIFICATE_MEMBER_TYPE,
+        &LISTEDCERTIFICATE_MEMBER_DESCRIPTION,
+    ],
+);
+impl ListedCertificate {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTEDCERTIFICATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListedCertificate {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&LISTEDCERTIFICATE_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.certificate_id {
+            ser.write_string(&LISTEDCERTIFICATE_MEMBER_CERTIFICATE_ID, val)?;
+        }
+        if let Some(ref val) = self.usage {
+            ser.write_string(&LISTEDCERTIFICATE_MEMBER_USAGE, val.as_str())?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&LISTEDCERTIFICATE_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.active_date {
+            ser.write_timestamp(&LISTEDCERTIFICATE_MEMBER_ACTIVE_DATE, val)?;
+        }
+        if let Some(ref val) = self.inactive_date {
+            ser.write_timestamp(&LISTEDCERTIFICATE_MEMBER_INACTIVE_DATE, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&LISTEDCERTIFICATE_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&LISTEDCERTIFICATE_MEMBER_DESCRIPTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ListedCertificateBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTEDCERTIFICATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.usage = Some(crate::types::CertificateUsageType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::CertificateStatusType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.active_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inactive_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::CertificateType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListedCertificate {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ListedCertificate {
     /// Creates a new builder-style object to manufacture [`ListedCertificate`](crate::types::ListedCertificate).
     pub fn builder() -> crate::types::builders::ListedCertificateBuilder {

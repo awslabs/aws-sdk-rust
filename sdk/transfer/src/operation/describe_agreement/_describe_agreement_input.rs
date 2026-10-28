@@ -18,6 +18,107 @@ impl DescribeAgreementInput {
         self.server_id.as_deref()
     }
 }
+static DESCRIBEAGREEMENTINPUT_MEMBER_AGREEMENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#DescribeAgreementInput$AgreementId",
+        "com.amazonaws.transfer.synthetic",
+        "DescribeAgreementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AgreementId",
+    0,
+);
+static DESCRIBEAGREEMENTINPUT_MEMBER_SERVER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#DescribeAgreementInput$ServerId",
+        "com.amazonaws.transfer.synthetic",
+        "DescribeAgreementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServerId",
+    1,
+);
+static DESCRIBEAGREEMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#DescribeAgreementInput",
+        "com.amazonaws.transfer.synthetic",
+        "DescribeAgreementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESCRIBEAGREEMENTINPUT_MEMBER_AGREEMENT_ID, &DESCRIBEAGREEMENTINPUT_MEMBER_SERVER_ID],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeAgreementRequest");
+impl DescribeAgreementInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEAGREEMENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeAgreementInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.agreement_id {
+            ser.write_string(&DESCRIBEAGREEMENTINPUT_MEMBER_AGREEMENT_ID, val)?;
+        }
+        if let Some(ref val) = self.server_id {
+            ser.write_string(&DESCRIBEAGREEMENTINPUT_MEMBER_SERVER_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_agreement::builders::DescribeAgreementInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEAGREEMENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agreement_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.server_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeAgreementInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.agreement_id = builder.agreement_id.or(Some(String::new()));
+        builder.server_id = builder.server_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeAgreementInput {
     /// Creates a new builder-style object to manufacture [`DescribeAgreementInput`](crate::operation::describe_agreement::DescribeAgreementInput).
     pub fn builder() -> crate::operation::describe_agreement::builders::DescribeAgreementInputBuilder {

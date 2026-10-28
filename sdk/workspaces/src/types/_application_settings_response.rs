@@ -25,6 +25,124 @@ impl ApplicationSettingsResponse {
         self.s3_bucket_name.as_deref()
     }
 }
+static APPLICATIONSETTINGSRESPONSE_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ApplicationSettingsResponse$Status",
+        "com.amazonaws.workspaces",
+        "ApplicationSettingsResponse",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    0,
+);
+static APPLICATIONSETTINGSRESPONSE_MEMBER_SETTINGS_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ApplicationSettingsResponse$SettingsGroup",
+        "com.amazonaws.workspaces",
+        "ApplicationSettingsResponse",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SettingsGroup",
+    1,
+);
+static APPLICATIONSETTINGSRESPONSE_MEMBER_S3_BUCKET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ApplicationSettingsResponse$S3BucketName",
+        "com.amazonaws.workspaces",
+        "ApplicationSettingsResponse",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3BucketName",
+    2,
+);
+static APPLICATIONSETTINGSRESPONSE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ApplicationSettingsResponse",
+        "com.amazonaws.workspaces",
+        "ApplicationSettingsResponse",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &APPLICATIONSETTINGSRESPONSE_MEMBER_STATUS,
+        &APPLICATIONSETTINGSRESPONSE_MEMBER_SETTINGS_GROUP,
+        &APPLICATIONSETTINGSRESPONSE_MEMBER_S3_BUCKET_NAME,
+    ],
+);
+impl ApplicationSettingsResponse {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &APPLICATIONSETTINGSRESPONSE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ApplicationSettingsResponse {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.status;
+            ser.write_string(&APPLICATIONSETTINGSRESPONSE_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.settings_group {
+            ser.write_string(&APPLICATIONSETTINGSRESPONSE_MEMBER_SETTINGS_GROUP, val)?;
+        }
+        if let Some(ref val) = self.s3_bucket_name {
+            ser.write_string(&APPLICATIONSETTINGSRESPONSE_MEMBER_S3_BUCKET_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ApplicationSettingsResponseBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&APPLICATIONSETTINGSRESPONSE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.status = Some(crate::types::ApplicationSettingsStatusEnum::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.settings_group = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_bucket_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ApplicationSettingsResponse {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ApplicationSettingsResponse {
     /// Creates a new builder-style object to manufacture [`ApplicationSettingsResponse`](crate::types::ApplicationSettingsResponse).
     pub fn builder() -> crate::types::builders::ApplicationSettingsResponseBuilder {

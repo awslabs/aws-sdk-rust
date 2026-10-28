@@ -61,6 +61,253 @@ impl HostSharedAlbConfiguration {
         self.test_traffic_rules.as_ref()
     }
 }
+static HOSTSHAREDALBCONFIGURATION_MEMBER_NETWORK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#HostSharedAlbConfiguration$networkConfiguration",
+        "com.amazonaws.ecs",
+        "HostSharedAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "networkConfiguration",
+    0,
+);
+static HOSTSHAREDALBCONFIGURATION_MEMBER_SCHEME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#HostSharedAlbConfiguration$scheme",
+        "com.amazonaws.ecs",
+        "HostSharedAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "scheme",
+    1,
+);
+static HOSTSHAREDALBCONFIGURATION_MEMBER_WEB_ACL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#HostSharedAlbConfiguration$webACLArn",
+        "com.amazonaws.ecs",
+        "HostSharedAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "webACLArn",
+    2,
+);
+static HOSTSHAREDALBCONFIGURATION_MEMBER_ACCESS_LOGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#HostSharedAlbConfiguration$accessLogs",
+        "com.amazonaws.ecs",
+        "HostSharedAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "accessLogs",
+    3,
+);
+static HOSTSHAREDALBCONFIGURATION_MEMBER_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#HostSharedAlbConfiguration$port",
+        "com.amazonaws.ecs",
+        "HostSharedAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "port",
+    4,
+);
+static HOSTSHAREDALBCONFIGURATION_MEMBER_PROTOCOL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#HostSharedAlbConfiguration$protocol",
+        "com.amazonaws.ecs",
+        "HostSharedAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "protocol",
+    5,
+);
+static HOSTSHAREDALBCONFIGURATION_MEMBER_MAX_ALB_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#HostSharedAlbConfiguration$maxAlbCount",
+        "com.amazonaws.ecs",
+        "HostSharedAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxAlbCount",
+    6,
+);
+static HOSTSHAREDALBCONFIGURATION_MEMBER_HTTP_DESYNC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#HostSharedAlbConfiguration$httpDesync",
+        "com.amazonaws.ecs",
+        "HostSharedAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "httpDesync",
+    7,
+);
+static HOSTSHAREDALBCONFIGURATION_MEMBER_TEST_TRAFFIC_RULES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#HostSharedAlbConfiguration$testTrafficRules",
+        "com.amazonaws.ecs",
+        "HostSharedAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "testTrafficRules",
+    8,
+);
+static HOSTSHAREDALBCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#HostSharedAlbConfiguration",
+        "com.amazonaws.ecs",
+        "HostSharedAlbConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &HOSTSHAREDALBCONFIGURATION_MEMBER_NETWORK_CONFIGURATION,
+        &HOSTSHAREDALBCONFIGURATION_MEMBER_SCHEME,
+        &HOSTSHAREDALBCONFIGURATION_MEMBER_WEB_ACL_ARN,
+        &HOSTSHAREDALBCONFIGURATION_MEMBER_ACCESS_LOGS,
+        &HOSTSHAREDALBCONFIGURATION_MEMBER_PORT,
+        &HOSTSHAREDALBCONFIGURATION_MEMBER_PROTOCOL,
+        &HOSTSHAREDALBCONFIGURATION_MEMBER_MAX_ALB_COUNT,
+        &HOSTSHAREDALBCONFIGURATION_MEMBER_HTTP_DESYNC,
+        &HOSTSHAREDALBCONFIGURATION_MEMBER_TEST_TRAFFIC_RULES,
+    ],
+);
+impl HostSharedAlbConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &HOSTSHAREDALBCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for HostSharedAlbConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.network_configuration {
+            ser.write_struct(&HOSTSHAREDALBCONFIGURATION_MEMBER_NETWORK_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.scheme {
+            ser.write_string(&HOSTSHAREDALBCONFIGURATION_MEMBER_SCHEME, val.as_str())?;
+        }
+        if let Some(ref val) = self.web_acl_arn {
+            ser.write_string(&HOSTSHAREDALBCONFIGURATION_MEMBER_WEB_ACL_ARN, val)?;
+        }
+        if let Some(ref val) = self.access_logs {
+            ser.write_struct(&HOSTSHAREDALBCONFIGURATION_MEMBER_ACCESS_LOGS, val)?;
+        }
+        if let Some(ref val) = self.port {
+            ser.write_integer(&HOSTSHAREDALBCONFIGURATION_MEMBER_PORT, *val)?;
+        }
+        if let Some(ref val) = self.protocol {
+            ser.write_string(&HOSTSHAREDALBCONFIGURATION_MEMBER_PROTOCOL, val.as_str())?;
+        }
+        if let Some(ref val) = self.max_alb_count {
+            ser.write_integer(&HOSTSHAREDALBCONFIGURATION_MEMBER_MAX_ALB_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.http_desync {
+            ser.write_string(&HOSTSHAREDALBCONFIGURATION_MEMBER_HTTP_DESYNC, val.as_str())?;
+        }
+        if let Some(ref val) = self.test_traffic_rules {
+            ser.write_struct(&HOSTSHAREDALBCONFIGURATION_MEMBER_TEST_TRAFFIC_RULES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::HostSharedAlbConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&HOSTSHAREDALBCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_configuration = Some(crate::types::GatewayElbNetworkConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scheme = Some(crate::types::GatewayElbScheme::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.web_acl_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_logs = Some(crate::types::GatewayElbAccessLogConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.port = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocol = Some(crate::types::GatewayAlbProtocol::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_alb_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.http_desync = Some(crate::types::GatewayAlbDesyncMitigationMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.test_traffic_rules = Some(crate::types::GatewayAlbTestTrafficRules::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl HostSharedAlbConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl HostSharedAlbConfiguration {
     /// Creates a new builder-style object to manufacture [`HostSharedAlbConfiguration`](crate::types::HostSharedAlbConfiguration).
     pub fn builder() -> crate::types::builders::HostSharedAlbConfigurationBuilder {

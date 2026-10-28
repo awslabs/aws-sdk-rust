@@ -130,6 +130,384 @@ impl CreateExpressGatewayServiceInput {
         self.task_definition_arn.as_deref()
     }
 }
+static CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_EXECUTION_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateExpressGatewayServiceInput$executionRoleArn",
+        "com.amazonaws.ecs.synthetic",
+        "CreateExpressGatewayServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "executionRoleArn",
+    0,
+);
+static CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_INFRASTRUCTURE_ROLE_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs.synthetic#CreateExpressGatewayServiceInput$infrastructureRoleArn",
+            "com.amazonaws.ecs.synthetic",
+            "CreateExpressGatewayServiceInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "infrastructureRoleArn",
+        1,
+    );
+static CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_SERVICE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateExpressGatewayServiceInput$serviceName",
+        "com.amazonaws.ecs.synthetic",
+        "CreateExpressGatewayServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceName",
+    2,
+);
+static CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_CLUSTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateExpressGatewayServiceInput$cluster",
+        "com.amazonaws.ecs.synthetic",
+        "CreateExpressGatewayServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cluster",
+    3,
+);
+static CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_HEALTH_CHECK_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateExpressGatewayServiceInput$healthCheckPath",
+        "com.amazonaws.ecs.synthetic",
+        "CreateExpressGatewayServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "healthCheckPath",
+    4,
+);
+static CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_PRIMARY_CONTAINER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateExpressGatewayServiceInput$primaryContainer",
+        "com.amazonaws.ecs.synthetic",
+        "CreateExpressGatewayServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "primaryContainer",
+    5,
+);
+static CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_TASK_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateExpressGatewayServiceInput$taskRoleArn",
+        "com.amazonaws.ecs.synthetic",
+        "CreateExpressGatewayServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskRoleArn",
+    6,
+);
+static CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_NETWORK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateExpressGatewayServiceInput$networkConfiguration",
+        "com.amazonaws.ecs.synthetic",
+        "CreateExpressGatewayServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "networkConfiguration",
+    7,
+);
+static CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_CPU: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateExpressGatewayServiceInput$cpu",
+        "com.amazonaws.ecs.synthetic",
+        "CreateExpressGatewayServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cpu",
+    8,
+);
+static CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_MEMORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateExpressGatewayServiceInput$memory",
+        "com.amazonaws.ecs.synthetic",
+        "CreateExpressGatewayServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "memory",
+    9,
+);
+static CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_CPU_ARCHITECTURE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateExpressGatewayServiceInput$cpuArchitecture",
+        "com.amazonaws.ecs.synthetic",
+        "CreateExpressGatewayServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cpuArchitecture",
+    10,
+);
+static CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_SCALING_TARGET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateExpressGatewayServiceInput$scalingTarget",
+        "com.amazonaws.ecs.synthetic",
+        "CreateExpressGatewayServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "scalingTarget",
+    11,
+);
+static CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#Tags$member", "com.amazonaws.ecs", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateExpressGatewayServiceInput$tags",
+        "com.amazonaws.ecs.synthetic",
+        "CreateExpressGatewayServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    12,
+)
+.with_list_member(&CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_TAGS_MEMBER);
+static CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_TASK_DEFINITION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateExpressGatewayServiceInput$taskDefinitionArn",
+        "com.amazonaws.ecs.synthetic",
+        "CreateExpressGatewayServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskDefinitionArn",
+    13,
+);
+static CREATEEXPRESSGATEWAYSERVICEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#CreateExpressGatewayServiceInput",
+        "com.amazonaws.ecs.synthetic",
+        "CreateExpressGatewayServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_EXECUTION_ROLE_ARN,
+        &CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_INFRASTRUCTURE_ROLE_ARN,
+        &CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_SERVICE_NAME,
+        &CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_CLUSTER,
+        &CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_HEALTH_CHECK_PATH,
+        &CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_PRIMARY_CONTAINER,
+        &CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_TASK_ROLE_ARN,
+        &CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_NETWORK_CONFIGURATION,
+        &CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_CPU,
+        &CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_MEMORY,
+        &CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_CPU_ARCHITECTURE,
+        &CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_SCALING_TARGET,
+        &CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_TAGS,
+        &CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_TASK_DEFINITION_ARN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateExpressGatewayServiceRequest");
+impl CreateExpressGatewayServiceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEEXPRESSGATEWAYSERVICEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateExpressGatewayServiceInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.execution_role_arn {
+            ser.write_string(&CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_EXECUTION_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.infrastructure_role_arn {
+            ser.write_string(&CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_INFRASTRUCTURE_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.service_name {
+            ser.write_string(&CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_SERVICE_NAME, val)?;
+        }
+        if let Some(ref val) = self.cluster {
+            ser.write_string(&CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_CLUSTER, val)?;
+        }
+        if let Some(ref val) = self.health_check_path {
+            ser.write_string(&CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_HEALTH_CHECK_PATH, val)?;
+        }
+        if let Some(ref val) = self.primary_container {
+            ser.write_struct(&CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_PRIMARY_CONTAINER, val)?;
+        }
+        if let Some(ref val) = self.task_role_arn {
+            ser.write_string(&CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_TASK_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.network_configuration {
+            ser.write_struct(&CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_NETWORK_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.cpu {
+            ser.write_string(&CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_CPU, val)?;
+        }
+        if let Some(ref val) = self.memory {
+            ser.write_string(&CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_MEMORY, val)?;
+        }
+        if let Some(ref val) = self.cpu_architecture {
+            ser.write_string(&CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_CPU_ARCHITECTURE, val.as_str())?;
+        }
+        if let Some(ref val) = self.scaling_target {
+            ser.write_struct(&CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_SCALING_TARGET, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.task_definition_arn {
+            ser.write_string(&CREATEEXPRESSGATEWAYSERVICEINPUT_MEMBER_TASK_DEFINITION_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_express_gateway_service::builders::CreateExpressGatewayServiceInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEEXPRESSGATEWAYSERVICEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.infrastructure_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.primary_container = Some(crate::types::ExpressGatewayContainer::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_configuration = Some(crate::types::ExpressGatewayServiceNetworkConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cpu = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.memory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cpu_architecture = Some(crate::types::ExpressCpuArchitecture::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scaling_target = Some(crate::types::ExpressGatewayScalingTarget::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_definition_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateExpressGatewayServiceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.infrastructure_role_arn = builder.infrastructure_role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateExpressGatewayServiceInput {
     /// Creates a new builder-style object to manufacture [`CreateExpressGatewayServiceInput`](crate::operation::create_express_gateway_service::CreateExpressGatewayServiceInput).
     pub fn builder() -> crate::operation::create_express_gateway_service::builders::CreateExpressGatewayServiceInputBuilder {

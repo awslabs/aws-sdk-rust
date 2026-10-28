@@ -19,6 +19,103 @@ impl RefreshTokenRotationType {
         self.retry_grace_period_seconds
     }
 }
+static REFRESHTOKENROTATIONTYPE_MEMBER_FEATURE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#RefreshTokenRotationType$Feature",
+        "com.amazonaws.cognitoidentityprovider",
+        "RefreshTokenRotationType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Feature",
+    0,
+);
+static REFRESHTOKENROTATIONTYPE_MEMBER_RETRY_GRACE_PERIOD_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#RefreshTokenRotationType$RetryGracePeriodSeconds",
+        "com.amazonaws.cognitoidentityprovider",
+        "RefreshTokenRotationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "RetryGracePeriodSeconds",
+    1,
+);
+static REFRESHTOKENROTATIONTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#RefreshTokenRotationType",
+        "com.amazonaws.cognitoidentityprovider",
+        "RefreshTokenRotationType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REFRESHTOKENROTATIONTYPE_MEMBER_FEATURE,
+        &REFRESHTOKENROTATIONTYPE_MEMBER_RETRY_GRACE_PERIOD_SECONDS,
+    ],
+);
+impl RefreshTokenRotationType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REFRESHTOKENROTATIONTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RefreshTokenRotationType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.feature;
+            ser.write_string(&REFRESHTOKENROTATIONTYPE_MEMBER_FEATURE, val.as_str())?;
+        }
+        if let Some(ref val) = self.retry_grace_period_seconds {
+            ser.write_integer(&REFRESHTOKENROTATIONTYPE_MEMBER_RETRY_GRACE_PERIOD_SECONDS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RefreshTokenRotationTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REFRESHTOKENROTATIONTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.feature = Some(crate::types::FeatureType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retry_grace_period_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RefreshTokenRotationType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RefreshTokenRotationType {
     /// Creates a new builder-style object to manufacture [`RefreshTokenRotationType`](crate::types::RefreshTokenRotationType).
     pub fn builder() -> crate::types::builders::RefreshTokenRotationTypeBuilder {

@@ -20,6 +20,135 @@ impl DeleteClientBrandingInput {
         self.platforms.as_deref().unwrap_or_default()
     }
 }
+static DELETECLIENTBRANDINGINPUT_MEMBER_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DeleteClientBrandingInput$ResourceId",
+        "com.amazonaws.workspaces.synthetic",
+        "DeleteClientBrandingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceId",
+    0,
+);
+static DELETECLIENTBRANDINGINPUT_MEMBER_PLATFORMS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#ClientDeviceTypeList$member",
+        "com.amazonaws.workspaces",
+        "ClientDeviceTypeList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DELETECLIENTBRANDINGINPUT_MEMBER_PLATFORMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DeleteClientBrandingInput$Platforms",
+        "com.amazonaws.workspaces.synthetic",
+        "DeleteClientBrandingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Platforms",
+    1,
+)
+.with_list_member(&DELETECLIENTBRANDINGINPUT_MEMBER_PLATFORMS_MEMBER);
+static DELETECLIENTBRANDINGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DeleteClientBrandingInput",
+        "com.amazonaws.workspaces.synthetic",
+        "DeleteClientBrandingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELETECLIENTBRANDINGINPUT_MEMBER_RESOURCE_ID, &DELETECLIENTBRANDINGINPUT_MEMBER_PLATFORMS],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteClientBrandingRequest");
+impl DeleteClientBrandingInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETECLIENTBRANDINGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteClientBrandingInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_id {
+            ser.write_string(&DELETECLIENTBRANDINGINPUT_MEMBER_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.platforms {
+            ser.write_list(
+                &DELETECLIENTBRANDINGINPUT_MEMBER_PLATFORMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_client_branding::builders::DeleteClientBrandingInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETECLIENTBRANDINGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platforms = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ClientDeviceType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteClientBrandingInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.resource_id = builder.resource_id.or(Some(String::new()));
+        builder.platforms = builder.platforms.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteClientBrandingInput {
     /// Creates a new builder-style object to manufacture [`DeleteClientBrandingInput`](crate::operation::delete_client_branding::DeleteClientBrandingInput).
     pub fn builder() -> crate::operation::delete_client_branding::builders::DeleteClientBrandingInputBuilder {

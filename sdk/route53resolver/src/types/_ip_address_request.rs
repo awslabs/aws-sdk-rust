@@ -32,6 +32,125 @@ impl IpAddressRequest {
         self.ipv6.as_deref()
     }
 }
+static IPADDRESSREQUEST_MEMBER_SUBNET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#IpAddressRequest$SubnetId",
+        "com.amazonaws.route53resolver",
+        "IpAddressRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SubnetId",
+    0,
+);
+static IPADDRESSREQUEST_MEMBER_IP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#IpAddressRequest$Ip",
+        "com.amazonaws.route53resolver",
+        "IpAddressRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Ip",
+    1,
+);
+static IPADDRESSREQUEST_MEMBER_IPV6: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#IpAddressRequest$Ipv6",
+        "com.amazonaws.route53resolver",
+        "IpAddressRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Ipv6",
+    2,
+);
+static IPADDRESSREQUEST_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#IpAddressRequest",
+        "com.amazonaws.route53resolver",
+        "IpAddressRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &IPADDRESSREQUEST_MEMBER_SUBNET_ID,
+        &IPADDRESSREQUEST_MEMBER_IP,
+        &IPADDRESSREQUEST_MEMBER_IPV6,
+    ],
+);
+impl IpAddressRequest {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &IPADDRESSREQUEST_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for IpAddressRequest {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.subnet_id;
+            ser.write_string(&IPADDRESSREQUEST_MEMBER_SUBNET_ID, val)?;
+        }
+        if let Some(ref val) = self.ip {
+            ser.write_string(&IPADDRESSREQUEST_MEMBER_IP, val)?;
+        }
+        if let Some(ref val) = self.ipv6 {
+            ser.write_string(&IPADDRESSREQUEST_MEMBER_IPV6, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::IpAddressRequestBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&IPADDRESSREQUEST_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.subnet_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ipv6 = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl IpAddressRequest {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.subnet_id = builder.subnet_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl IpAddressRequest {
     /// Creates a new builder-style object to manufacture [`IpAddressRequest`](crate::types::IpAddressRequest).
     pub fn builder() -> crate::types::builders::IpAddressRequestBuilder {

@@ -31,6 +31,152 @@ impl DescribeCertificateAuthorityAuditReportOutput {
         self.created_at.as_ref()
     }
 }
+static DESCRIBECERTIFICATEAUTHORITYAUDITREPORTOUTPUT_MEMBER_AUDIT_REPORT_STATUS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.acmpca.synthetic#DescribeCertificateAuthorityAuditReportOutput$AuditReportStatus",
+            "com.amazonaws.acmpca.synthetic",
+            "DescribeCertificateAuthorityAuditReportOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "AuditReportStatus",
+        0,
+    );
+static DESCRIBECERTIFICATEAUTHORITYAUDITREPORTOUTPUT_MEMBER_S3_BUCKET_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.acmpca.synthetic#DescribeCertificateAuthorityAuditReportOutput$S3BucketName",
+            "com.amazonaws.acmpca.synthetic",
+            "DescribeCertificateAuthorityAuditReportOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "S3BucketName",
+        1,
+    );
+static DESCRIBECERTIFICATEAUTHORITYAUDITREPORTOUTPUT_MEMBER_S3_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#DescribeCertificateAuthorityAuditReportOutput$S3Key",
+        "com.amazonaws.acmpca.synthetic",
+        "DescribeCertificateAuthorityAuditReportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3Key",
+    2,
+);
+static DESCRIBECERTIFICATEAUTHORITYAUDITREPORTOUTPUT_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.acmpca.synthetic#DescribeCertificateAuthorityAuditReportOutput$CreatedAt",
+            "com.amazonaws.acmpca.synthetic",
+            "DescribeCertificateAuthorityAuditReportOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "CreatedAt",
+        3,
+    );
+static DESCRIBECERTIFICATEAUTHORITYAUDITREPORTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#DescribeCertificateAuthorityAuditReportOutput",
+        "com.amazonaws.acmpca.synthetic",
+        "DescribeCertificateAuthorityAuditReportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBECERTIFICATEAUTHORITYAUDITREPORTOUTPUT_MEMBER_AUDIT_REPORT_STATUS,
+        &DESCRIBECERTIFICATEAUTHORITYAUDITREPORTOUTPUT_MEMBER_S3_BUCKET_NAME,
+        &DESCRIBECERTIFICATEAUTHORITYAUDITREPORTOUTPUT_MEMBER_S3_KEY,
+        &DESCRIBECERTIFICATEAUTHORITYAUDITREPORTOUTPUT_MEMBER_CREATED_AT,
+    ],
+)
+.with_original_name("DescribeCertificateAuthorityAuditReportResponse");
+impl DescribeCertificateAuthorityAuditReportOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECERTIFICATEAUTHORITYAUDITREPORTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeCertificateAuthorityAuditReportOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.audit_report_status {
+            ser.write_string(&DESCRIBECERTIFICATEAUTHORITYAUDITREPORTOUTPUT_MEMBER_AUDIT_REPORT_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_bucket_name {
+            ser.write_string(&DESCRIBECERTIFICATEAUTHORITYAUDITREPORTOUTPUT_MEMBER_S3_BUCKET_NAME, val)?;
+        }
+        if let Some(ref val) = self.s3_key {
+            ser.write_string(&DESCRIBECERTIFICATEAUTHORITYAUDITREPORTOUTPUT_MEMBER_S3_KEY, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&DESCRIBECERTIFICATEAUTHORITYAUDITREPORTOUTPUT_MEMBER_CREATED_AT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_certificate_authority_audit_report::builders::DescribeCertificateAuthorityAuditReportOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECERTIFICATEAUTHORITYAUDITREPORTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.audit_report_status = Some(crate::types::AuditReportStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_bucket_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeCertificateAuthorityAuditReportOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeCertificateAuthorityAuditReportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

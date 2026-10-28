@@ -14,6 +14,8 @@ pub struct AutoEnable {
     pub lambda_code: ::std::option::Option<bool>,
     /// <p>Represents whether code repository scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub code_repository: ::std::option::Option<bool>,
+    /// <p>Represents whether Amazon Machine Image (AMI) scans are automatically enabled for new members of your Amazon Inspector organization.</p>
+    pub ami: ::std::option::Option<bool>,
 }
 impl AutoEnable {
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
@@ -36,6 +38,10 @@ impl AutoEnable {
     pub fn code_repository(&self) -> ::std::option::Option<bool> {
         self.code_repository
     }
+    /// <p>Represents whether Amazon Machine Image (AMI) scans are automatically enabled for new members of your Amazon Inspector organization.</p>
+    pub fn ami(&self) -> ::std::option::Option<bool> {
+        self.ami
+    }
 }
 impl AutoEnable {
     /// Creates a new builder-style object to manufacture [`AutoEnable`](crate::types::AutoEnable).
@@ -53,6 +59,7 @@ pub struct AutoEnableBuilder {
     pub(crate) lambda: ::std::option::Option<bool>,
     pub(crate) lambda_code: ::std::option::Option<bool>,
     pub(crate) code_repository: ::std::option::Option<bool>,
+    pub(crate) ami: ::std::option::Option<bool>,
 }
 impl AutoEnableBuilder {
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
@@ -127,6 +134,20 @@ impl AutoEnableBuilder {
     pub fn get_code_repository(&self) -> &::std::option::Option<bool> {
         &self.code_repository
     }
+    /// <p>Represents whether Amazon Machine Image (AMI) scans are automatically enabled for new members of your Amazon Inspector organization.</p>
+    pub fn ami(mut self, input: bool) -> Self {
+        self.ami = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Represents whether Amazon Machine Image (AMI) scans are automatically enabled for new members of your Amazon Inspector organization.</p>
+    pub fn set_ami(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.ami = input;
+        self
+    }
+    /// <p>Represents whether Amazon Machine Image (AMI) scans are automatically enabled for new members of your Amazon Inspector organization.</p>
+    pub fn get_ami(&self) -> &::std::option::Option<bool> {
+        &self.ami
+    }
     /// Consumes the builder and constructs a [`AutoEnable`](crate::types::AutoEnable).
     /// This method will fail if any of the following fields are not set:
     /// - [`ec2`](crate::types::builders::AutoEnableBuilder::ec2)
@@ -148,6 +169,7 @@ impl AutoEnableBuilder {
             lambda: self.lambda,
             lambda_code: self.lambda_code,
             code_repository: self.code_repository,
+            ami: self.ami,
         })
     }
 }

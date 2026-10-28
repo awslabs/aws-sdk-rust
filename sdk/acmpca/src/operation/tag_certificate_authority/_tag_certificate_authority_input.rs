@@ -22,6 +22,132 @@ impl TagCertificateAuthorityInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static TAGCERTIFICATEAUTHORITYINPUT_MEMBER_CERTIFICATE_AUTHORITY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#TagCertificateAuthorityInput$CertificateAuthorityArn",
+        "com.amazonaws.acmpca.synthetic",
+        "TagCertificateAuthorityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertificateAuthorityArn",
+    0,
+);
+static TAGCERTIFICATEAUTHORITYINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#TagList$member", "com.amazonaws.acmpca", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TAGCERTIFICATEAUTHORITYINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#TagCertificateAuthorityInput$Tags",
+        "com.amazonaws.acmpca.synthetic",
+        "TagCertificateAuthorityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    1,
+)
+.with_list_member(&TAGCERTIFICATEAUTHORITYINPUT_MEMBER_TAGS_MEMBER);
+static TAGCERTIFICATEAUTHORITYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#TagCertificateAuthorityInput",
+        "com.amazonaws.acmpca.synthetic",
+        "TagCertificateAuthorityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TAGCERTIFICATEAUTHORITYINPUT_MEMBER_CERTIFICATE_AUTHORITY_ARN,
+        &TAGCERTIFICATEAUTHORITYINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("TagCertificateAuthorityRequest");
+impl TagCertificateAuthorityInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TAGCERTIFICATEAUTHORITYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TagCertificateAuthorityInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.certificate_authority_arn {
+            ser.write_string(&TAGCERTIFICATEAUTHORITYINPUT_MEMBER_CERTIFICATE_AUTHORITY_ARN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &TAGCERTIFICATEAUTHORITYINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::tag_certificate_authority::builders::TagCertificateAuthorityInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TAGCERTIFICATEAUTHORITYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_authority_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TagCertificateAuthorityInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.certificate_authority_arn = builder.certificate_authority_arn.or(Some(String::new()));
+        builder.tags = builder.tags.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl TagCertificateAuthorityInput {
     /// Creates a new builder-style object to manufacture [`TagCertificateAuthorityInput`](crate::operation::tag_certificate_authority::TagCertificateAuthorityInput).
     pub fn builder() -> crate::operation::tag_certificate_authority::builders::TagCertificateAuthorityInputBuilder {

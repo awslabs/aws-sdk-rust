@@ -26,6 +26,14 @@ pub struct Grant {
     pub granted_operations: ::std::vec::Vec<crate::types::AllowedOperation>,
     /// <p>The options specified for the grant.</p>
     pub options: ::std::option::Option<crate::types::Options>,
+    /// <p>The type of the grant. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - Grants the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives the grantee read-only visibility into the licenses and grants distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub grant_type: ::std::option::Option<crate::types::GrantType>,
 }
 impl Grant {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
@@ -79,6 +87,16 @@ impl Grant {
     /// <p>The options specified for the grant.</p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::Options> {
         self.options.as_ref()
+    }
+    /// <p>The type of the grant. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - Grants the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives the grantee read-only visibility into the licenses and grants distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub fn grant_type(&self) -> ::std::option::Option<&crate::types::GrantType> {
+        self.grant_type.as_ref()
     }
 }
 static GRANT_MEMBER_GRANT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -166,6 +184,12 @@ static GRANT_MEMBER_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy
     "Options",
     10,
 );
+static GRANT_MEMBER_GRANT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#Grant$GrantType", "com.amazonaws.licensemanager", "Grant"),
+    ::aws_smithy_schema::ShapeType::String,
+    "GrantType",
+    11,
+);
 static GRANT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#Grant", "com.amazonaws.licensemanager", "Grant"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -181,6 +205,7 @@ static GRANT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema:
         &GRANT_MEMBER_VERSION,
         &GRANT_MEMBER_GRANTED_OPERATIONS,
         &GRANT_MEMBER_OPTIONS,
+        &GRANT_MEMBER_GRANT_TYPE,
     ],
 );
 impl Grant {
@@ -247,6 +272,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for Grant {
         }
         if let Some(ref val) = self.options {
             ser.write_struct(&GRANT_MEMBER_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.grant_type {
+            ser.write_string(&GRANT_MEMBER_GRANT_TYPE, val.as_str())?;
         }
         Ok(())
     }
@@ -315,6 +343,13 @@ impl crate::types::builders::GrantBuilder {
                         self.options = Some(crate::types::Options::deserialize(deser)?);
                     }
                 }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.grant_type = Some(crate::types::GrantType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
                 _ => {}
             }
             Ok(())
@@ -362,6 +397,7 @@ pub struct GrantBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) granted_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
     pub(crate) options: ::std::option::Option<crate::types::Options>,
+    pub(crate) grant_type: ::std::option::Option<crate::types::GrantType>,
 }
 impl GrantBuilder {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
@@ -532,6 +568,38 @@ impl GrantBuilder {
     pub fn get_options(&self) -> &::std::option::Option<crate::types::Options> {
         &self.options
     }
+    /// <p>The type of the grant. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - Grants the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives the grantee read-only visibility into the licenses and grants distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub fn grant_type(mut self, input: crate::types::GrantType) -> Self {
+        self.grant_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the grant. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - Grants the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives the grantee read-only visibility into the licenses and grants distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub fn set_grant_type(mut self, input: ::std::option::Option<crate::types::GrantType>) -> Self {
+        self.grant_type = input;
+        self
+    }
+    /// <p>The type of the grant. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BuyerGrant</code> - Grants the entitlement to use the license.</p></li>
+    /// <li>
+    /// <p><code>DelegateGrant</code> - Gives the grantee read-only visibility into the licenses and grants distributed to buyers, with no entitlement to use them.</p></li>
+    /// </ul>
+    pub fn get_grant_type(&self) -> &::std::option::Option<crate::types::GrantType> {
+        &self.grant_type
+    }
     /// Consumes the builder and constructs a [`Grant`](crate::types::Grant).
     /// This method will fail if any of the following fields are not set:
     /// - [`grant_arn`](crate::types::builders::GrantBuilder::grant_arn)
@@ -601,6 +669,7 @@ impl GrantBuilder {
                 )
             })?,
             options: self.options,
+            grant_type: self.grant_type,
         })
     }
 }

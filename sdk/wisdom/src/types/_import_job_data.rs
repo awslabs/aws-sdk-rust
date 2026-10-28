@@ -109,6 +109,308 @@ impl ::std::fmt::Debug for ImportJobData {
         formatter.finish()
     }
 }
+static IMPORTJOBDATA_MEMBER_IMPORT_JOB_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ImportJobData$importJobId", "com.amazonaws.wisdom", "ImportJobData"),
+    ::aws_smithy_schema::ShapeType::String,
+    "importJobId",
+    0,
+);
+static IMPORTJOBDATA_MEMBER_KNOWLEDGE_BASE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#ImportJobData$knowledgeBaseId",
+        "com.amazonaws.wisdom",
+        "ImportJobData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "knowledgeBaseId",
+    1,
+);
+static IMPORTJOBDATA_MEMBER_UPLOAD_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ImportJobData$uploadId", "com.amazonaws.wisdom", "ImportJobData"),
+    ::aws_smithy_schema::ShapeType::String,
+    "uploadId",
+    2,
+);
+static IMPORTJOBDATA_MEMBER_KNOWLEDGE_BASE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#ImportJobData$knowledgeBaseArn",
+        "com.amazonaws.wisdom",
+        "ImportJobData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "knowledgeBaseArn",
+    3,
+);
+static IMPORTJOBDATA_MEMBER_IMPORT_JOB_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#ImportJobData$importJobType",
+        "com.amazonaws.wisdom",
+        "ImportJobData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "importJobType",
+    4,
+);
+static IMPORTJOBDATA_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ImportJobData$status", "com.amazonaws.wisdom", "ImportJobData"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    5,
+);
+static IMPORTJOBDATA_MEMBER_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ImportJobData$url", "com.amazonaws.wisdom", "ImportJobData"),
+    ::aws_smithy_schema::ShapeType::String,
+    "url",
+    6,
+);
+static IMPORTJOBDATA_MEMBER_FAILED_RECORD_REPORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#ImportJobData$failedRecordReport",
+        "com.amazonaws.wisdom",
+        "ImportJobData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "failedRecordReport",
+    7,
+);
+static IMPORTJOBDATA_MEMBER_URL_EXPIRY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ImportJobData$urlExpiry", "com.amazonaws.wisdom", "ImportJobData"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "urlExpiry",
+    8,
+)
+.with_timestamp_format(aws_smithy_schema::traits::TimestampFormat::EpochSeconds);
+static IMPORTJOBDATA_MEMBER_CREATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ImportJobData$createdTime", "com.amazonaws.wisdom", "ImportJobData"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdTime",
+    9,
+)
+.with_timestamp_format(aws_smithy_schema::traits::TimestampFormat::EpochSeconds);
+static IMPORTJOBDATA_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#ImportJobData$lastModifiedTime",
+        "com.amazonaws.wisdom",
+        "ImportJobData",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastModifiedTime",
+    10,
+)
+.with_timestamp_format(aws_smithy_schema::traits::TimestampFormat::EpochSeconds);
+static IMPORTJOBDATA_MEMBER_METADATA_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentMetadata$key", "com.amazonaws.wisdom", "ContentMetadata"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static IMPORTJOBDATA_MEMBER_METADATA_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ContentMetadata$value", "com.amazonaws.wisdom", "ContentMetadata"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static IMPORTJOBDATA_MEMBER_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ImportJobData$metadata", "com.amazonaws.wisdom", "ImportJobData"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "metadata",
+    11,
+)
+.with_map_members(&IMPORTJOBDATA_MEMBER_METADATA_KEY, &IMPORTJOBDATA_MEMBER_METADATA_VALUE);
+static IMPORTJOBDATA_MEMBER_EXTERNAL_SOURCE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#ImportJobData$externalSourceConfiguration",
+        "com.amazonaws.wisdom",
+        "ImportJobData",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "externalSourceConfiguration",
+    12,
+);
+static IMPORTJOBDATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#ImportJobData", "com.amazonaws.wisdom", "ImportJobData"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &IMPORTJOBDATA_MEMBER_IMPORT_JOB_ID,
+        &IMPORTJOBDATA_MEMBER_KNOWLEDGE_BASE_ID,
+        &IMPORTJOBDATA_MEMBER_UPLOAD_ID,
+        &IMPORTJOBDATA_MEMBER_KNOWLEDGE_BASE_ARN,
+        &IMPORTJOBDATA_MEMBER_IMPORT_JOB_TYPE,
+        &IMPORTJOBDATA_MEMBER_STATUS,
+        &IMPORTJOBDATA_MEMBER_URL,
+        &IMPORTJOBDATA_MEMBER_FAILED_RECORD_REPORT,
+        &IMPORTJOBDATA_MEMBER_URL_EXPIRY,
+        &IMPORTJOBDATA_MEMBER_CREATED_TIME,
+        &IMPORTJOBDATA_MEMBER_LAST_MODIFIED_TIME,
+        &IMPORTJOBDATA_MEMBER_METADATA,
+        &IMPORTJOBDATA_MEMBER_EXTERNAL_SOURCE_CONFIGURATION,
+    ],
+);
+impl ImportJobData {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &IMPORTJOBDATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ImportJobData {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.import_job_id;
+            ser.write_string(&IMPORTJOBDATA_MEMBER_IMPORT_JOB_ID, val)?;
+        }
+        {
+            let val = &self.knowledge_base_id;
+            ser.write_string(&IMPORTJOBDATA_MEMBER_KNOWLEDGE_BASE_ID, val)?;
+        }
+        {
+            let val = &self.upload_id;
+            ser.write_string(&IMPORTJOBDATA_MEMBER_UPLOAD_ID, val)?;
+        }
+        {
+            let val = &self.knowledge_base_arn;
+            ser.write_string(&IMPORTJOBDATA_MEMBER_KNOWLEDGE_BASE_ARN, val)?;
+        }
+        {
+            let val = &self.import_job_type;
+            ser.write_string(&IMPORTJOBDATA_MEMBER_IMPORT_JOB_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.status;
+            ser.write_string(&IMPORTJOBDATA_MEMBER_STATUS, val.as_str())?;
+        }
+        {
+            let val = &self.url;
+            ser.write_string(&IMPORTJOBDATA_MEMBER_URL, val)?;
+        }
+        if let Some(ref val) = self.failed_record_report {
+            ser.write_string(&IMPORTJOBDATA_MEMBER_FAILED_RECORD_REPORT, val)?;
+        }
+        {
+            let val = &self.url_expiry;
+            ser.write_timestamp(&IMPORTJOBDATA_MEMBER_URL_EXPIRY, val)?;
+        }
+        {
+            let val = &self.created_time;
+            ser.write_timestamp(&IMPORTJOBDATA_MEMBER_CREATED_TIME, val)?;
+        }
+        {
+            let val = &self.last_modified_time;
+            ser.write_timestamp(&IMPORTJOBDATA_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.metadata {
+            ser.write_map(
+                &IMPORTJOBDATA_MEMBER_METADATA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.external_source_configuration {
+            ser.write_struct(&IMPORTJOBDATA_MEMBER_EXTERNAL_SOURCE_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ImportJobDataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&IMPORTJOBDATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.import_job_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.knowledge_base_id = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.upload_id = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.knowledge_base_arn = Some(deser.read_string(member)?);
+                }
+                Some(4) => {
+                    self.import_job_type = Some(crate::types::ImportJobType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(5) => {
+                    self.status = Some(crate::types::ImportJobStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(6) => {
+                    self.url = Some(deser.read_string(member)?);
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failed_record_report = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    self.url_expiry = Some(deser.read_timestamp(member)?);
+                }
+                Some(9) => {
+                    self.created_time = Some(deser.read_timestamp(member)?);
+                }
+                Some(10) => {
+                    self.last_modified_time = Some(deser.read_timestamp(member)?);
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metadata = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_source_configuration = Some(crate::types::ExternalSourceConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ImportJobData {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.import_job_id = builder.import_job_id.or(Some(String::new()));
+        builder.knowledge_base_id = builder.knowledge_base_id.or(Some(String::new()));
+        builder.upload_id = builder.upload_id.or(Some(String::new()));
+        builder.knowledge_base_arn = builder.knowledge_base_arn.or(Some(String::new()));
+        builder.url = builder.url.or(Some(String::new()));
+        builder.url_expiry = builder.url_expiry.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.created_time = builder.created_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.last_modified_time = builder.last_modified_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ImportJobData {
     /// Creates a new builder-style object to manufacture [`ImportJobData`](crate::types::ImportJobData).
     pub fn builder() -> crate::types::builders::ImportJobDataBuilder {

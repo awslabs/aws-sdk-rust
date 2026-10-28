@@ -42,6 +42,123 @@ impl StartTimerDecisionAttributes {
         self.start_to_fire_timeout.deref()
     }
 }
+static STARTTIMERDECISIONATTRIBUTES_MEMBER_TIMER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#StartTimerDecisionAttributes$timerId",
+        "com.amazonaws.swf",
+        "StartTimerDecisionAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "timerId",
+    0,
+);
+static STARTTIMERDECISIONATTRIBUTES_MEMBER_CONTROL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#StartTimerDecisionAttributes$control",
+        "com.amazonaws.swf",
+        "StartTimerDecisionAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "control",
+    1,
+);
+static STARTTIMERDECISIONATTRIBUTES_MEMBER_START_TO_FIRE_TIMEOUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#StartTimerDecisionAttributes$startToFireTimeout",
+        "com.amazonaws.swf",
+        "StartTimerDecisionAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "startToFireTimeout",
+    2,
+);
+static STARTTIMERDECISIONATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#StartTimerDecisionAttributes",
+        "com.amazonaws.swf",
+        "StartTimerDecisionAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTTIMERDECISIONATTRIBUTES_MEMBER_TIMER_ID,
+        &STARTTIMERDECISIONATTRIBUTES_MEMBER_CONTROL,
+        &STARTTIMERDECISIONATTRIBUTES_MEMBER_START_TO_FIRE_TIMEOUT,
+    ],
+);
+impl StartTimerDecisionAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTTIMERDECISIONATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartTimerDecisionAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.timer_id;
+            ser.write_string(&STARTTIMERDECISIONATTRIBUTES_MEMBER_TIMER_ID, val)?;
+        }
+        if let Some(ref val) = self.control {
+            ser.write_string(&STARTTIMERDECISIONATTRIBUTES_MEMBER_CONTROL, val)?;
+        }
+        {
+            let val = &self.start_to_fire_timeout;
+            ser.write_string(&STARTTIMERDECISIONATTRIBUTES_MEMBER_START_TO_FIRE_TIMEOUT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::StartTimerDecisionAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTTIMERDECISIONATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.timer_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.control = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.start_to_fire_timeout = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartTimerDecisionAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.timer_id = builder.timer_id.or(Some(String::new()));
+        builder.start_to_fire_timeout = builder.start_to_fire_timeout.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartTimerDecisionAttributes {
     /// Creates a new builder-style object to manufacture [`StartTimerDecisionAttributes`](crate::types::StartTimerDecisionAttributes).
     pub fn builder() -> crate::types::builders::StartTimerDecisionAttributesBuilder {

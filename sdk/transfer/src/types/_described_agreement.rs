@@ -146,6 +146,357 @@ impl DescribedAgreement {
         self.custom_directories.as_ref()
     }
 }
+static DESCRIBEDAGREEMENT_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedAgreement$Arn",
+        "com.amazonaws.transfer",
+        "DescribedAgreement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    0,
+);
+static DESCRIBEDAGREEMENT_MEMBER_AGREEMENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedAgreement$AgreementId",
+        "com.amazonaws.transfer",
+        "DescribedAgreement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AgreementId",
+    1,
+);
+static DESCRIBEDAGREEMENT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedAgreement$Description",
+        "com.amazonaws.transfer",
+        "DescribedAgreement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static DESCRIBEDAGREEMENT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedAgreement$Status",
+        "com.amazonaws.transfer",
+        "DescribedAgreement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    3,
+);
+static DESCRIBEDAGREEMENT_MEMBER_SERVER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedAgreement$ServerId",
+        "com.amazonaws.transfer",
+        "DescribedAgreement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServerId",
+    4,
+);
+static DESCRIBEDAGREEMENT_MEMBER_LOCAL_PROFILE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedAgreement$LocalProfileId",
+        "com.amazonaws.transfer",
+        "DescribedAgreement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocalProfileId",
+    5,
+);
+static DESCRIBEDAGREEMENT_MEMBER_PARTNER_PROFILE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedAgreement$PartnerProfileId",
+        "com.amazonaws.transfer",
+        "DescribedAgreement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PartnerProfileId",
+    6,
+);
+static DESCRIBEDAGREEMENT_MEMBER_BASE_DIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedAgreement$BaseDirectory",
+        "com.amazonaws.transfer",
+        "DescribedAgreement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BaseDirectory",
+    7,
+);
+static DESCRIBEDAGREEMENT_MEMBER_ACCESS_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedAgreement$AccessRole",
+        "com.amazonaws.transfer",
+        "DescribedAgreement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccessRole",
+    8,
+);
+static DESCRIBEDAGREEMENT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#Tags$member", "com.amazonaws.transfer", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEDAGREEMENT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedAgreement$Tags",
+        "com.amazonaws.transfer",
+        "DescribedAgreement",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    9,
+)
+.with_list_member(&DESCRIBEDAGREEMENT_MEMBER_TAGS_MEMBER);
+static DESCRIBEDAGREEMENT_MEMBER_PRESERVE_FILENAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedAgreement$PreserveFilename",
+        "com.amazonaws.transfer",
+        "DescribedAgreement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreserveFilename",
+    10,
+);
+static DESCRIBEDAGREEMENT_MEMBER_ENFORCE_MESSAGE_SIGNING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedAgreement$EnforceMessageSigning",
+        "com.amazonaws.transfer",
+        "DescribedAgreement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EnforceMessageSigning",
+    11,
+);
+static DESCRIBEDAGREEMENT_MEMBER_CUSTOM_DIRECTORIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedAgreement$CustomDirectories",
+        "com.amazonaws.transfer",
+        "DescribedAgreement",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CustomDirectories",
+    12,
+);
+static DESCRIBEDAGREEMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedAgreement",
+        "com.amazonaws.transfer",
+        "DescribedAgreement",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEDAGREEMENT_MEMBER_ARN,
+        &DESCRIBEDAGREEMENT_MEMBER_AGREEMENT_ID,
+        &DESCRIBEDAGREEMENT_MEMBER_DESCRIPTION,
+        &DESCRIBEDAGREEMENT_MEMBER_STATUS,
+        &DESCRIBEDAGREEMENT_MEMBER_SERVER_ID,
+        &DESCRIBEDAGREEMENT_MEMBER_LOCAL_PROFILE_ID,
+        &DESCRIBEDAGREEMENT_MEMBER_PARTNER_PROFILE_ID,
+        &DESCRIBEDAGREEMENT_MEMBER_BASE_DIRECTORY,
+        &DESCRIBEDAGREEMENT_MEMBER_ACCESS_ROLE,
+        &DESCRIBEDAGREEMENT_MEMBER_TAGS,
+        &DESCRIBEDAGREEMENT_MEMBER_PRESERVE_FILENAME,
+        &DESCRIBEDAGREEMENT_MEMBER_ENFORCE_MESSAGE_SIGNING,
+        &DESCRIBEDAGREEMENT_MEMBER_CUSTOM_DIRECTORIES,
+    ],
+);
+impl DescribedAgreement {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEDAGREEMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribedAgreement {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.arn;
+            ser.write_string(&DESCRIBEDAGREEMENT_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.agreement_id {
+            ser.write_string(&DESCRIBEDAGREEMENT_MEMBER_AGREEMENT_ID, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&DESCRIBEDAGREEMENT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DESCRIBEDAGREEMENT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.server_id {
+            ser.write_string(&DESCRIBEDAGREEMENT_MEMBER_SERVER_ID, val)?;
+        }
+        if let Some(ref val) = self.local_profile_id {
+            ser.write_string(&DESCRIBEDAGREEMENT_MEMBER_LOCAL_PROFILE_ID, val)?;
+        }
+        if let Some(ref val) = self.partner_profile_id {
+            ser.write_string(&DESCRIBEDAGREEMENT_MEMBER_PARTNER_PROFILE_ID, val)?;
+        }
+        if let Some(ref val) = self.base_directory {
+            ser.write_string(&DESCRIBEDAGREEMENT_MEMBER_BASE_DIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.access_role {
+            ser.write_string(&DESCRIBEDAGREEMENT_MEMBER_ACCESS_ROLE, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &DESCRIBEDAGREEMENT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.preserve_filename {
+            ser.write_string(&DESCRIBEDAGREEMENT_MEMBER_PRESERVE_FILENAME, val.as_str())?;
+        }
+        if let Some(ref val) = self.enforce_message_signing {
+            ser.write_string(&DESCRIBEDAGREEMENT_MEMBER_ENFORCE_MESSAGE_SIGNING, val.as_str())?;
+        }
+        if let Some(ref val) = self.custom_directories {
+            ser.write_struct(&DESCRIBEDAGREEMENT_MEMBER_CUSTOM_DIRECTORIES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DescribedAgreementBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEDAGREEMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agreement_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::AgreementStatusType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.server_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.local_profile_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.partner_profile_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.base_directory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preserve_filename = Some(crate::types::PreserveFilenameType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enforce_message_signing = Some(crate::types::EnforceMessageSigningType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_directories = Some(crate::types::CustomDirectoriesType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribedAgreement {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.arn = builder.arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribedAgreement {
     /// Creates a new builder-style object to manufacture [`DescribedAgreement`](crate::types::DescribedAgreement).
     pub fn builder() -> crate::types::builders::DescribedAgreementBuilder {

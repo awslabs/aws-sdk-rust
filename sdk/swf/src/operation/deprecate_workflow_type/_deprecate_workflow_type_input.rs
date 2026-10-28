@@ -18,6 +18,109 @@ impl DeprecateWorkflowTypeInput {
         self.workflow_type.as_ref()
     }
 }
+static DEPRECATEWORKFLOWTYPEINPUT_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#DeprecateWorkflowTypeInput$domain",
+        "com.amazonaws.swf.synthetic",
+        "DeprecateWorkflowTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domain",
+    0,
+);
+static DEPRECATEWORKFLOWTYPEINPUT_MEMBER_WORKFLOW_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#DeprecateWorkflowTypeInput$workflowType",
+        "com.amazonaws.swf.synthetic",
+        "DeprecateWorkflowTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "workflowType",
+    1,
+);
+static DEPRECATEWORKFLOWTYPEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf.synthetic#DeprecateWorkflowTypeInput",
+        "com.amazonaws.swf.synthetic",
+        "DeprecateWorkflowTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEPRECATEWORKFLOWTYPEINPUT_MEMBER_DOMAIN,
+        &DEPRECATEWORKFLOWTYPEINPUT_MEMBER_WORKFLOW_TYPE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeprecateWorkflowTypeInput");
+impl DeprecateWorkflowTypeInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEPRECATEWORKFLOWTYPEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeprecateWorkflowTypeInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain {
+            ser.write_string(&DEPRECATEWORKFLOWTYPEINPUT_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.workflow_type {
+            ser.write_struct(&DEPRECATEWORKFLOWTYPEINPUT_MEMBER_WORKFLOW_TYPE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::deprecate_workflow_type::builders::DeprecateWorkflowTypeInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEPRECATEWORKFLOWTYPEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_type = Some(crate::types::WorkflowType::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeprecateWorkflowTypeInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain = builder.domain.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeprecateWorkflowTypeInput {
     /// Creates a new builder-style object to manufacture [`DeprecateWorkflowTypeInput`](crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeInput).
     pub fn builder() -> crate::operation::deprecate_workflow_type::builders::DeprecateWorkflowTypeInputBuilder {

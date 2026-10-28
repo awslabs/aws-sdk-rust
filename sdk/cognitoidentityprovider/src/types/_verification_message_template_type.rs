@@ -45,6 +45,190 @@ impl VerificationMessageTemplateType {
         self.default_email_option.as_ref()
     }
 }
+static VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_SMS_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#VerificationMessageTemplateType$SmsMessage",
+        "com.amazonaws.cognitoidentityprovider",
+        "VerificationMessageTemplateType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SmsMessage",
+    0,
+);
+static VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_EMAIL_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#VerificationMessageTemplateType$EmailMessage",
+        "com.amazonaws.cognitoidentityprovider",
+        "VerificationMessageTemplateType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EmailMessage",
+    1,
+);
+static VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_EMAIL_SUBJECT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#VerificationMessageTemplateType$EmailSubject",
+        "com.amazonaws.cognitoidentityprovider",
+        "VerificationMessageTemplateType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EmailSubject",
+    2,
+);
+static VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_EMAIL_MESSAGE_BY_LINK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#VerificationMessageTemplateType$EmailMessageByLink",
+        "com.amazonaws.cognitoidentityprovider",
+        "VerificationMessageTemplateType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EmailMessageByLink",
+    3,
+);
+static VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_EMAIL_SUBJECT_BY_LINK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#VerificationMessageTemplateType$EmailSubjectByLink",
+        "com.amazonaws.cognitoidentityprovider",
+        "VerificationMessageTemplateType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EmailSubjectByLink",
+    4,
+);
+static VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_DEFAULT_EMAIL_OPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#VerificationMessageTemplateType$DefaultEmailOption",
+        "com.amazonaws.cognitoidentityprovider",
+        "VerificationMessageTemplateType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DefaultEmailOption",
+    5,
+);
+static VERIFICATIONMESSAGETEMPLATETYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#VerificationMessageTemplateType",
+        "com.amazonaws.cognitoidentityprovider",
+        "VerificationMessageTemplateType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_SMS_MESSAGE,
+        &VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_EMAIL_MESSAGE,
+        &VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_EMAIL_SUBJECT,
+        &VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_EMAIL_MESSAGE_BY_LINK,
+        &VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_EMAIL_SUBJECT_BY_LINK,
+        &VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_DEFAULT_EMAIL_OPTION,
+    ],
+);
+impl VerificationMessageTemplateType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &VERIFICATIONMESSAGETEMPLATETYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for VerificationMessageTemplateType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.sms_message {
+            ser.write_string(&VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_SMS_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.email_message {
+            ser.write_string(&VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_EMAIL_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.email_subject {
+            ser.write_string(&VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_EMAIL_SUBJECT, val)?;
+        }
+        if let Some(ref val) = self.email_message_by_link {
+            ser.write_string(&VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_EMAIL_MESSAGE_BY_LINK, val)?;
+        }
+        if let Some(ref val) = self.email_subject_by_link {
+            ser.write_string(&VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_EMAIL_SUBJECT_BY_LINK, val)?;
+        }
+        if let Some(ref val) = self.default_email_option {
+            ser.write_string(&VERIFICATIONMESSAGETEMPLATETYPE_MEMBER_DEFAULT_EMAIL_OPTION, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::VerificationMessageTemplateTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&VERIFICATIONMESSAGETEMPLATETYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sms_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email_subject = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email_message_by_link = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email_subject_by_link = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_email_option = Some(crate::types::DefaultEmailOptionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl VerificationMessageTemplateType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl VerificationMessageTemplateType {
     /// Creates a new builder-style object to manufacture [`VerificationMessageTemplateType`](crate::types::VerificationMessageTemplateType).
     pub fn builder() -> crate::types::builders::VerificationMessageTemplateTypeBuilder {

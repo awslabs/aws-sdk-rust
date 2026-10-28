@@ -16,6 +16,111 @@ impl UpdateUserAttributesOutput {
         self.code_delivery_details_list.as_deref().unwrap_or_default()
     }
 }
+static UPDATEUSERATTRIBUTESOUTPUT_MEMBER_CODE_DELIVERY_DETAILS_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentityprovider#CodeDeliveryDetailsListType$member",
+            "com.amazonaws.cognitoidentityprovider",
+            "CodeDeliveryDetailsListType",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static UPDATEUSERATTRIBUTESOUTPUT_MEMBER_CODE_DELIVERY_DETAILS_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateUserAttributesOutput$CodeDeliveryDetailsList",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateUserAttributesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CodeDeliveryDetailsList",
+    0,
+)
+.with_list_member(&UPDATEUSERATTRIBUTESOUTPUT_MEMBER_CODE_DELIVERY_DETAILS_LIST_MEMBER);
+static UPDATEUSERATTRIBUTESOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateUserAttributesOutput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateUserAttributesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&UPDATEUSERATTRIBUTESOUTPUT_MEMBER_CODE_DELIVERY_DETAILS_LIST],
+)
+.with_original_name("UpdateUserAttributesResponse");
+impl UpdateUserAttributesOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEUSERATTRIBUTESOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateUserAttributesOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.code_delivery_details_list {
+            ser.write_list(
+                &UPDATEUSERATTRIBUTESOUTPUT_MEMBER_CODE_DELIVERY_DETAILS_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CodeDeliveryDetailsType::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_user_attributes::builders::UpdateUserAttributesOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEUSERATTRIBUTESOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.code_delivery_details_list = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CodeDeliveryDetailsType::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateUserAttributesOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for UpdateUserAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

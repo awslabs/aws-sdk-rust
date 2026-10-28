@@ -21,6 +21,129 @@ impl ManagedAutoScaling {
         self.application_auto_scaling_policies.as_deref().unwrap_or_default()
     }
 }
+static MANAGEDAUTOSCALING_MEMBER_SCALABLE_TARGET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedAutoScaling$scalableTarget",
+        "com.amazonaws.ecs",
+        "ManagedAutoScaling",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "scalableTarget",
+    0,
+);
+static MANAGEDAUTOSCALING_MEMBER_APPLICATION_AUTO_SCALING_POLICIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#ManagedApplicationAutoScalingPolicies$member",
+            "com.amazonaws.ecs",
+            "ManagedApplicationAutoScalingPolicies",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static MANAGEDAUTOSCALING_MEMBER_APPLICATION_AUTO_SCALING_POLICIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ManagedAutoScaling$applicationAutoScalingPolicies",
+        "com.amazonaws.ecs",
+        "ManagedAutoScaling",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "applicationAutoScalingPolicies",
+    1,
+)
+.with_list_member(&MANAGEDAUTOSCALING_MEMBER_APPLICATION_AUTO_SCALING_POLICIES_MEMBER);
+static MANAGEDAUTOSCALING_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ManagedAutoScaling", "com.amazonaws.ecs", "ManagedAutoScaling"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MANAGEDAUTOSCALING_MEMBER_SCALABLE_TARGET,
+        &MANAGEDAUTOSCALING_MEMBER_APPLICATION_AUTO_SCALING_POLICIES,
+    ],
+);
+impl ManagedAutoScaling {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MANAGEDAUTOSCALING_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ManagedAutoScaling {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.scalable_target {
+            ser.write_struct(&MANAGEDAUTOSCALING_MEMBER_SCALABLE_TARGET, val)?;
+        }
+        if let Some(ref val) = self.application_auto_scaling_policies {
+            ser.write_list(
+                &MANAGEDAUTOSCALING_MEMBER_APPLICATION_AUTO_SCALING_POLICIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ManagedApplicationAutoScalingPolicy::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ManagedAutoScalingBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MANAGEDAUTOSCALING_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scalable_target = Some(crate::types::ManagedScalableTarget::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.application_auto_scaling_policies = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ManagedApplicationAutoScalingPolicy::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ManagedAutoScaling {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ManagedAutoScaling {
     /// Creates a new builder-style object to manufacture [`ManagedAutoScaling`](crate::types::ManagedAutoScaling).
     pub fn builder() -> crate::types::builders::ManagedAutoScalingBuilder {

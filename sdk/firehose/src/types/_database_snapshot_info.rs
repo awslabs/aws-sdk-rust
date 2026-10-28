@@ -56,6 +56,178 @@ impl DatabaseSnapshotInfo {
         self.failure_description.as_ref()
     }
 }
+static DATABASESNAPSHOTINFO_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSnapshotInfo$Id",
+        "com.amazonaws.firehose",
+        "DatabaseSnapshotInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    0,
+);
+static DATABASESNAPSHOTINFO_MEMBER_TABLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSnapshotInfo$Table",
+        "com.amazonaws.firehose",
+        "DatabaseSnapshotInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Table",
+    1,
+);
+static DATABASESNAPSHOTINFO_MEMBER_REQUEST_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSnapshotInfo$RequestTimestamp",
+        "com.amazonaws.firehose",
+        "DatabaseSnapshotInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "RequestTimestamp",
+    2,
+);
+static DATABASESNAPSHOTINFO_MEMBER_REQUESTED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSnapshotInfo$RequestedBy",
+        "com.amazonaws.firehose",
+        "DatabaseSnapshotInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RequestedBy",
+    3,
+);
+static DATABASESNAPSHOTINFO_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSnapshotInfo$Status",
+        "com.amazonaws.firehose",
+        "DatabaseSnapshotInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    4,
+);
+static DATABASESNAPSHOTINFO_MEMBER_FAILURE_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSnapshotInfo$FailureDescription",
+        "com.amazonaws.firehose",
+        "DatabaseSnapshotInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FailureDescription",
+    5,
+);
+static DATABASESNAPSHOTINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#DatabaseSnapshotInfo",
+        "com.amazonaws.firehose",
+        "DatabaseSnapshotInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DATABASESNAPSHOTINFO_MEMBER_ID,
+        &DATABASESNAPSHOTINFO_MEMBER_TABLE,
+        &DATABASESNAPSHOTINFO_MEMBER_REQUEST_TIMESTAMP,
+        &DATABASESNAPSHOTINFO_MEMBER_REQUESTED_BY,
+        &DATABASESNAPSHOTINFO_MEMBER_STATUS,
+        &DATABASESNAPSHOTINFO_MEMBER_FAILURE_DESCRIPTION,
+    ],
+);
+impl DatabaseSnapshotInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DATABASESNAPSHOTINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DatabaseSnapshotInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.id;
+            ser.write_string(&DATABASESNAPSHOTINFO_MEMBER_ID, val)?;
+        }
+        {
+            let val = &self.table;
+            ser.write_string(&DATABASESNAPSHOTINFO_MEMBER_TABLE, val)?;
+        }
+        {
+            let val = &self.request_timestamp;
+            ser.write_timestamp(&DATABASESNAPSHOTINFO_MEMBER_REQUEST_TIMESTAMP, val)?;
+        }
+        {
+            let val = &self.requested_by;
+            ser.write_string(&DATABASESNAPSHOTINFO_MEMBER_REQUESTED_BY, val.as_str())?;
+        }
+        {
+            let val = &self.status;
+            ser.write_string(&DATABASESNAPSHOTINFO_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_description {
+            ser.write_struct(&DATABASESNAPSHOTINFO_MEMBER_FAILURE_DESCRIPTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DatabaseSnapshotInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DATABASESNAPSHOTINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.table = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.request_timestamp = Some(deser.read_timestamp(member)?);
+                }
+                Some(3) => {
+                    self.requested_by = Some(crate::types::SnapshotRequestedBy::from(deser.read_string(member)?.as_str()));
+                }
+                Some(4) => {
+                    self.status = Some(crate::types::SnapshotStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_description = Some(crate::types::FailureDescription::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DatabaseSnapshotInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.id = builder.id.or(Some(String::new()));
+        builder.table = builder.table.or(Some(String::new()));
+        builder.request_timestamp = builder.request_timestamp.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DatabaseSnapshotInfo {
     /// Creates a new builder-style object to manufacture [`DatabaseSnapshotInfo`](crate::types::DatabaseSnapshotInfo).
     pub fn builder() -> crate::types::builders::DatabaseSnapshotInfoBuilder {

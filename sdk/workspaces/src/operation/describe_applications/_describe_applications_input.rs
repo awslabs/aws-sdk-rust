@@ -54,6 +54,284 @@ impl DescribeApplicationsInput {
         self.next_token.as_deref()
     }
 }
+static DESCRIBEAPPLICATIONSINPUT_MEMBER_APPLICATION_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkSpaceApplicationIdList$member",
+        "com.amazonaws.workspaces",
+        "WorkSpaceApplicationIdList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEAPPLICATIONSINPUT_MEMBER_APPLICATION_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeApplicationsInput$ApplicationIds",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeApplicationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ApplicationIds",
+    0,
+)
+.with_list_member(&DESCRIBEAPPLICATIONSINPUT_MEMBER_APPLICATION_IDS_MEMBER);
+static DESCRIBEAPPLICATIONSINPUT_MEMBER_COMPUTE_TYPE_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#ComputeList$member", "com.amazonaws.workspaces", "ComputeList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEAPPLICATIONSINPUT_MEMBER_COMPUTE_TYPE_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeApplicationsInput$ComputeTypeNames",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeApplicationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ComputeTypeNames",
+    1,
+)
+.with_list_member(&DESCRIBEAPPLICATIONSINPUT_MEMBER_COMPUTE_TYPE_NAMES_MEMBER);
+static DESCRIBEAPPLICATIONSINPUT_MEMBER_LICENSE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeApplicationsInput$LicenseType",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeApplicationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LicenseType",
+    2,
+);
+static DESCRIBEAPPLICATIONSINPUT_MEMBER_OPERATING_SYSTEM_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#OperatingSystemNameList$member",
+        "com.amazonaws.workspaces",
+        "OperatingSystemNameList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEAPPLICATIONSINPUT_MEMBER_OPERATING_SYSTEM_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeApplicationsInput$OperatingSystemNames",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeApplicationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "OperatingSystemNames",
+    3,
+)
+.with_list_member(&DESCRIBEAPPLICATIONSINPUT_MEMBER_OPERATING_SYSTEM_NAMES_MEMBER);
+static DESCRIBEAPPLICATIONSINPUT_MEMBER_OWNER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeApplicationsInput$Owner",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeApplicationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Owner",
+    4,
+);
+static DESCRIBEAPPLICATIONSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeApplicationsInput$MaxResults",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeApplicationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    5,
+);
+static DESCRIBEAPPLICATIONSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeApplicationsInput$NextToken",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeApplicationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    6,
+);
+static DESCRIBEAPPLICATIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeApplicationsInput",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeApplicationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEAPPLICATIONSINPUT_MEMBER_APPLICATION_IDS,
+        &DESCRIBEAPPLICATIONSINPUT_MEMBER_COMPUTE_TYPE_NAMES,
+        &DESCRIBEAPPLICATIONSINPUT_MEMBER_LICENSE_TYPE,
+        &DESCRIBEAPPLICATIONSINPUT_MEMBER_OPERATING_SYSTEM_NAMES,
+        &DESCRIBEAPPLICATIONSINPUT_MEMBER_OWNER,
+        &DESCRIBEAPPLICATIONSINPUT_MEMBER_MAX_RESULTS,
+        &DESCRIBEAPPLICATIONSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeApplicationsRequest");
+impl DescribeApplicationsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEAPPLICATIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeApplicationsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.application_ids {
+            ser.write_list(
+                &DESCRIBEAPPLICATIONSINPUT_MEMBER_APPLICATION_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.compute_type_names {
+            ser.write_list(
+                &DESCRIBEAPPLICATIONSINPUT_MEMBER_COMPUTE_TYPE_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.license_type {
+            ser.write_string(&DESCRIBEAPPLICATIONSINPUT_MEMBER_LICENSE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.operating_system_names {
+            ser.write_list(
+                &DESCRIBEAPPLICATIONSINPUT_MEMBER_OPERATING_SYSTEM_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.owner {
+            ser.write_string(&DESCRIBEAPPLICATIONSINPUT_MEMBER_OWNER, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&DESCRIBEAPPLICATIONSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&DESCRIBEAPPLICATIONSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEAPPLICATIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.application_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_type_names = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Compute::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_type = Some(crate::types::WorkSpaceApplicationLicenseType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operating_system_names = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::OperatingSystemName::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.owner = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeApplicationsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeApplicationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationsInput`](crate::operation::describe_applications::DescribeApplicationsInput).
     pub fn builder() -> crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder {

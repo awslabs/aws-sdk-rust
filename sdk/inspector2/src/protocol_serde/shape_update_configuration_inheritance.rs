@@ -9,5 +9,8 @@ pub fn ser_update_configuration_inheritance(
     if let Some(var_2) = &input.ecr_configuration {
         object.key("ecrConfiguration").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.ami_configuration {
+        object.key("amiConfiguration").string(var_3.as_str());
+    }
     Ok(())
 }

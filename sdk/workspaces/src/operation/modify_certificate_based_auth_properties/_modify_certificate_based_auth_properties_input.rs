@@ -26,6 +26,161 @@ impl ModifyCertificateBasedAuthPropertiesInput {
         self.properties_to_delete.as_deref().unwrap_or_default()
     }
 }
+static MODIFYCERTIFICATEBASEDAUTHPROPERTIESINPUT_MEMBER_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifyCertificateBasedAuthPropertiesInput$ResourceId",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifyCertificateBasedAuthPropertiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceId",
+    0,
+);
+static MODIFYCERTIFICATEBASEDAUTHPROPERTIESINPUT_MEMBER_CERTIFICATE_BASED_AUTH_PROPERTIES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces.synthetic#ModifyCertificateBasedAuthPropertiesInput$CertificateBasedAuthProperties",
+            "com.amazonaws.workspaces.synthetic",
+            "ModifyCertificateBasedAuthPropertiesInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "CertificateBasedAuthProperties",
+        1,
+    );
+static MODIFYCERTIFICATEBASEDAUTHPROPERTIESINPUT_MEMBER_PROPERTIES_TO_DELETE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces#DeletableCertificateBasedAuthPropertiesList$member",
+            "com.amazonaws.workspaces",
+            "DeletableCertificateBasedAuthPropertiesList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static MODIFYCERTIFICATEBASEDAUTHPROPERTIESINPUT_MEMBER_PROPERTIES_TO_DELETE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces.synthetic#ModifyCertificateBasedAuthPropertiesInput$PropertiesToDelete",
+            "com.amazonaws.workspaces.synthetic",
+            "ModifyCertificateBasedAuthPropertiesInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "PropertiesToDelete",
+        2,
+    )
+    .with_list_member(&MODIFYCERTIFICATEBASEDAUTHPROPERTIESINPUT_MEMBER_PROPERTIES_TO_DELETE_MEMBER);
+static MODIFYCERTIFICATEBASEDAUTHPROPERTIESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#ModifyCertificateBasedAuthPropertiesInput",
+        "com.amazonaws.workspaces.synthetic",
+        "ModifyCertificateBasedAuthPropertiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODIFYCERTIFICATEBASEDAUTHPROPERTIESINPUT_MEMBER_RESOURCE_ID,
+        &MODIFYCERTIFICATEBASEDAUTHPROPERTIESINPUT_MEMBER_CERTIFICATE_BASED_AUTH_PROPERTIES,
+        &MODIFYCERTIFICATEBASEDAUTHPROPERTIESINPUT_MEMBER_PROPERTIES_TO_DELETE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ModifyCertificateBasedAuthPropertiesRequest");
+impl ModifyCertificateBasedAuthPropertiesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODIFYCERTIFICATEBASEDAUTHPROPERTIESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModifyCertificateBasedAuthPropertiesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_id {
+            ser.write_string(&MODIFYCERTIFICATEBASEDAUTHPROPERTIESINPUT_MEMBER_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.certificate_based_auth_properties {
+            ser.write_struct(&MODIFYCERTIFICATEBASEDAUTHPROPERTIESINPUT_MEMBER_CERTIFICATE_BASED_AUTH_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.properties_to_delete {
+            ser.write_list(
+                &MODIFYCERTIFICATEBASEDAUTHPROPERTIESINPUT_MEMBER_PROPERTIES_TO_DELETE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODIFYCERTIFICATEBASEDAUTHPROPERTIESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_based_auth_properties = Some(crate::types::CertificateBasedAuthProperties::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.properties_to_delete = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DeletableCertificateBasedAuthProperty::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModifyCertificateBasedAuthPropertiesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.resource_id = builder.resource_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ModifyCertificateBasedAuthPropertiesInput {
     /// Creates a new builder-style object to manufacture [`ModifyCertificateBasedAuthPropertiesInput`](crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesInput).
     pub fn builder() -> crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesInputBuilder {

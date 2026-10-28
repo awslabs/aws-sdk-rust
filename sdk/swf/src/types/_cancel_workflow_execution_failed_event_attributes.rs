@@ -23,6 +23,107 @@ impl CancelWorkflowExecutionFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+static CANCELWORKFLOWEXECUTIONFAILEDEVENTATTRIBUTES_MEMBER_CAUSE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#CancelWorkflowExecutionFailedEventAttributes$cause",
+        "com.amazonaws.swf",
+        "CancelWorkflowExecutionFailedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cause",
+    0,
+);
+static CANCELWORKFLOWEXECUTIONFAILEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#CancelWorkflowExecutionFailedEventAttributes$decisionTaskCompletedEventId",
+            "com.amazonaws.swf",
+            "CancelWorkflowExecutionFailedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "decisionTaskCompletedEventId",
+        1,
+    );
+static CANCELWORKFLOWEXECUTIONFAILEDEVENTATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#CancelWorkflowExecutionFailedEventAttributes",
+        "com.amazonaws.swf",
+        "CancelWorkflowExecutionFailedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CANCELWORKFLOWEXECUTIONFAILEDEVENTATTRIBUTES_MEMBER_CAUSE,
+        &CANCELWORKFLOWEXECUTIONFAILEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID,
+    ],
+);
+impl CancelWorkflowExecutionFailedEventAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CANCELWORKFLOWEXECUTIONFAILEDEVENTATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CancelWorkflowExecutionFailedEventAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.cause;
+            ser.write_string(&CANCELWORKFLOWEXECUTIONFAILEDEVENTATTRIBUTES_MEMBER_CAUSE, val.as_str())?;
+        }
+        {
+            let val = &self.decision_task_completed_event_id;
+            ser.write_long(
+                &CANCELWORKFLOWEXECUTIONFAILEDEVENTATTRIBUTES_MEMBER_DECISION_TASK_COMPLETED_EVENT_ID,
+                *val,
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CancelWorkflowExecutionFailedEventAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CANCELWORKFLOWEXECUTIONFAILEDEVENTATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.cause = Some(crate::types::CancelWorkflowExecutionFailedCause::from(
+                        deser.read_string(member)?.as_str(),
+                    ));
+                }
+                Some(1) => {
+                    self.decision_task_completed_event_id = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CancelWorkflowExecutionFailedEventAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.decision_task_completed_event_id = builder.decision_task_completed_event_id.or(Some(0i64));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CancelWorkflowExecutionFailedEventAttributes {
     /// Creates a new builder-style object to manufacture [`CancelWorkflowExecutionFailedEventAttributes`](crate::types::CancelWorkflowExecutionFailedEventAttributes).
     pub fn builder() -> crate::types::builders::CancelWorkflowExecutionFailedEventAttributesBuilder {

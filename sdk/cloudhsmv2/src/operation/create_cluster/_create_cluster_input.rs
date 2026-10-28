@@ -64,6 +64,252 @@ impl CreateClusterInput {
         self.mode.as_ref()
     }
 }
+static CREATECLUSTERINPUT_MEMBER_BACKUP_RETENTION_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#CreateClusterInput$BackupRetentionPolicy",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "CreateClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BackupRetentionPolicy",
+    0,
+);
+static CREATECLUSTERINPUT_MEMBER_HSM_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#CreateClusterInput$HsmType",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "CreateClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HsmType",
+    1,
+);
+static CREATECLUSTERINPUT_MEMBER_SOURCE_BACKUP_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#CreateClusterInput$SourceBackupId",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "CreateClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceBackupId",
+    2,
+);
+static CREATECLUSTERINPUT_MEMBER_SUBNET_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#SubnetIds$member", "com.amazonaws.cloudhsmv2", "SubnetIds"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATECLUSTERINPUT_MEMBER_SUBNET_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#CreateClusterInput$SubnetIds",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "CreateClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SubnetIds",
+    3,
+)
+.with_list_member(&CREATECLUSTERINPUT_MEMBER_SUBNET_IDS_MEMBER);
+static CREATECLUSTERINPUT_MEMBER_NETWORK_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#CreateClusterInput$NetworkType",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "CreateClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NetworkType",
+    4,
+);
+static CREATECLUSTERINPUT_MEMBER_TAG_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudhsmv2#TagList$member", "com.amazonaws.cloudhsmv2", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATECLUSTERINPUT_MEMBER_TAG_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#CreateClusterInput$TagList",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "CreateClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TagList",
+    5,
+)
+.with_list_member(&CREATECLUSTERINPUT_MEMBER_TAG_LIST_MEMBER);
+static CREATECLUSTERINPUT_MEMBER_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#CreateClusterInput$Mode",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "CreateClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Mode",
+    6,
+);
+static CREATECLUSTERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudhsmv2.synthetic#CreateClusterInput",
+        "com.amazonaws.cloudhsmv2.synthetic",
+        "CreateClusterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATECLUSTERINPUT_MEMBER_BACKUP_RETENTION_POLICY,
+        &CREATECLUSTERINPUT_MEMBER_HSM_TYPE,
+        &CREATECLUSTERINPUT_MEMBER_SOURCE_BACKUP_ID,
+        &CREATECLUSTERINPUT_MEMBER_SUBNET_IDS,
+        &CREATECLUSTERINPUT_MEMBER_NETWORK_TYPE,
+        &CREATECLUSTERINPUT_MEMBER_TAG_LIST,
+        &CREATECLUSTERINPUT_MEMBER_MODE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateClusterRequest");
+impl CreateClusterInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATECLUSTERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateClusterInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.backup_retention_policy {
+            ser.write_struct(&CREATECLUSTERINPUT_MEMBER_BACKUP_RETENTION_POLICY, val)?;
+        }
+        if let Some(ref val) = self.hsm_type {
+            ser.write_string(&CREATECLUSTERINPUT_MEMBER_HSM_TYPE, val)?;
+        }
+        if let Some(ref val) = self.source_backup_id {
+            ser.write_string(&CREATECLUSTERINPUT_MEMBER_SOURCE_BACKUP_ID, val)?;
+        }
+        if let Some(ref val) = self.subnet_ids {
+            ser.write_list(
+                &CREATECLUSTERINPUT_MEMBER_SUBNET_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.network_type {
+            ser.write_string(&CREATECLUSTERINPUT_MEMBER_NETWORK_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.tag_list {
+            ser.write_list(
+                &CREATECLUSTERINPUT_MEMBER_TAG_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.mode {
+            ser.write_string(&CREATECLUSTERINPUT_MEMBER_MODE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_cluster::builders::CreateClusterInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATECLUSTERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.backup_retention_policy = Some(crate::types::BackupRetentionPolicy::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hsm_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_backup_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subnet_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_type = Some(crate::types::NetworkType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_list = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mode = Some(crate::types::ClusterMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateClusterInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.hsm_type = builder.hsm_type.or(Some(String::new()));
+        builder.subnet_ids = builder.subnet_ids.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn builder() -> crate::operation::create_cluster::builders::CreateClusterInputBuilder {

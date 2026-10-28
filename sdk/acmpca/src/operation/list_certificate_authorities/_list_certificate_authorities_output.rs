@@ -21,6 +21,135 @@ impl ListCertificateAuthoritiesOutput {
         self.certificate_authorities.as_deref().unwrap_or_default()
     }
 }
+static LISTCERTIFICATEAUTHORITIESOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#ListCertificateAuthoritiesOutput$NextToken",
+        "com.amazonaws.acmpca.synthetic",
+        "ListCertificateAuthoritiesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    0,
+);
+static LISTCERTIFICATEAUTHORITIESOUTPUT_MEMBER_CERTIFICATE_AUTHORITIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.acmpca#CertificateAuthorities$member",
+            "com.amazonaws.acmpca",
+            "CertificateAuthorities",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static LISTCERTIFICATEAUTHORITIESOUTPUT_MEMBER_CERTIFICATE_AUTHORITIES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.acmpca.synthetic#ListCertificateAuthoritiesOutput$CertificateAuthorities",
+            "com.amazonaws.acmpca.synthetic",
+            "ListCertificateAuthoritiesOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "CertificateAuthorities",
+        1,
+    )
+    .with_list_member(&LISTCERTIFICATEAUTHORITIESOUTPUT_MEMBER_CERTIFICATE_AUTHORITIES_MEMBER);
+static LISTCERTIFICATEAUTHORITIESOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca.synthetic#ListCertificateAuthoritiesOutput",
+        "com.amazonaws.acmpca.synthetic",
+        "ListCertificateAuthoritiesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTCERTIFICATEAUTHORITIESOUTPUT_MEMBER_NEXT_TOKEN,
+        &LISTCERTIFICATEAUTHORITIESOUTPUT_MEMBER_CERTIFICATE_AUTHORITIES,
+    ],
+)
+.with_original_name("ListCertificateAuthoritiesResponse");
+impl ListCertificateAuthoritiesOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTCERTIFICATEAUTHORITIESOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListCertificateAuthoritiesOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTCERTIFICATEAUTHORITIESOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.certificate_authorities {
+            ser.write_list(
+                &LISTCERTIFICATEAUTHORITIESOUTPUT_MEMBER_CERTIFICATE_AUTHORITIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CertificateAuthority::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTCERTIFICATEAUTHORITIESOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_authorities = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CertificateAuthority::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListCertificateAuthoritiesOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListCertificateAuthoritiesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

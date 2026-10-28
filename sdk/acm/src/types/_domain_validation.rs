@@ -72,6 +72,212 @@ impl DomainValidation {
         self.validation_method.as_ref()
     }
 }
+static DOMAINVALIDATION_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DomainValidation$DomainName", "com.amazonaws.acm", "DomainValidation"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static DOMAINVALIDATION_MEMBER_VALIDATION_EMAILS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#ValidationEmailList$member", "com.amazonaws.acm", "ValidationEmailList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DOMAINVALIDATION_MEMBER_VALIDATION_EMAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DomainValidation$ValidationEmails",
+        "com.amazonaws.acm",
+        "DomainValidation",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ValidationEmails",
+    1,
+)
+.with_list_member(&DOMAINVALIDATION_MEMBER_VALIDATION_EMAILS_MEMBER);
+static DOMAINVALIDATION_MEMBER_VALIDATION_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DomainValidation$ValidationDomain",
+        "com.amazonaws.acm",
+        "DomainValidation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ValidationDomain",
+    2,
+);
+static DOMAINVALIDATION_MEMBER_VALIDATION_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DomainValidation$ValidationStatus",
+        "com.amazonaws.acm",
+        "DomainValidation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ValidationStatus",
+    3,
+);
+static DOMAINVALIDATION_MEMBER_RESOURCE_RECORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DomainValidation$ResourceRecord",
+        "com.amazonaws.acm",
+        "DomainValidation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResourceRecord",
+    4,
+);
+static DOMAINVALIDATION_MEMBER_HTTP_REDIRECT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DomainValidation$HttpRedirect", "com.amazonaws.acm", "DomainValidation"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "HttpRedirect",
+    5,
+);
+static DOMAINVALIDATION_MEMBER_VALIDATION_METHOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#DomainValidation$ValidationMethod",
+        "com.amazonaws.acm",
+        "DomainValidation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ValidationMethod",
+    6,
+);
+static DOMAINVALIDATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DomainValidation", "com.amazonaws.acm", "DomainValidation"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DOMAINVALIDATION_MEMBER_DOMAIN_NAME,
+        &DOMAINVALIDATION_MEMBER_VALIDATION_EMAILS,
+        &DOMAINVALIDATION_MEMBER_VALIDATION_DOMAIN,
+        &DOMAINVALIDATION_MEMBER_VALIDATION_STATUS,
+        &DOMAINVALIDATION_MEMBER_RESOURCE_RECORD,
+        &DOMAINVALIDATION_MEMBER_HTTP_REDIRECT,
+        &DOMAINVALIDATION_MEMBER_VALIDATION_METHOD,
+    ],
+);
+impl DomainValidation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOMAINVALIDATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DomainValidation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.domain_name;
+            ser.write_string(&DOMAINVALIDATION_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.validation_emails {
+            ser.write_list(
+                &DOMAINVALIDATION_MEMBER_VALIDATION_EMAILS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.validation_domain {
+            ser.write_string(&DOMAINVALIDATION_MEMBER_VALIDATION_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.validation_status {
+            ser.write_string(&DOMAINVALIDATION_MEMBER_VALIDATION_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.resource_record {
+            ser.write_struct(&DOMAINVALIDATION_MEMBER_RESOURCE_RECORD, val)?;
+        }
+        if let Some(ref val) = self.http_redirect {
+            ser.write_struct(&DOMAINVALIDATION_MEMBER_HTTP_REDIRECT, val)?;
+        }
+        if let Some(ref val) = self.validation_method {
+            ser.write_string(&DOMAINVALIDATION_MEMBER_VALIDATION_METHOD, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DomainValidationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOMAINVALIDATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.domain_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_emails = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_status = Some(crate::types::DomainStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_record = Some(crate::types::ResourceRecord::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.http_redirect = Some(crate::types::HttpRedirect::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_method = Some(crate::types::ValidationMethod::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DomainValidation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_name = builder.domain_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DomainValidation {
     /// Creates a new builder-style object to manufacture [`DomainValidation`](crate::types::DomainValidation).
     pub fn builder() -> crate::types::builders::DomainValidationBuilder {

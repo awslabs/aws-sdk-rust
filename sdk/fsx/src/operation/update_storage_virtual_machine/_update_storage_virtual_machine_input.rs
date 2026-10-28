@@ -40,6 +40,153 @@ impl ::std::fmt::Debug for UpdateStorageVirtualMachineInput {
         formatter.finish()
     }
 }
+static UPDATESTORAGEVIRTUALMACHINEINPUT_MEMBER_ACTIVE_DIRECTORY_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx.synthetic#UpdateStorageVirtualMachineInput$ActiveDirectoryConfiguration",
+            "com.amazonaws.fsx.synthetic",
+            "UpdateStorageVirtualMachineInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ActiveDirectoryConfiguration",
+        0,
+    );
+static UPDATESTORAGEVIRTUALMACHINEINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#UpdateStorageVirtualMachineInput$ClientRequestToken",
+        "com.amazonaws.fsx.synthetic",
+        "UpdateStorageVirtualMachineInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    1,
+);
+static UPDATESTORAGEVIRTUALMACHINEINPUT_MEMBER_STORAGE_VIRTUAL_MACHINE_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx.synthetic#UpdateStorageVirtualMachineInput$StorageVirtualMachineId",
+            "com.amazonaws.fsx.synthetic",
+            "UpdateStorageVirtualMachineInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "StorageVirtualMachineId",
+        2,
+    );
+static UPDATESTORAGEVIRTUALMACHINEINPUT_MEMBER_SVM_ADMIN_PASSWORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#UpdateStorageVirtualMachineInput$SvmAdminPassword",
+        "com.amazonaws.fsx.synthetic",
+        "UpdateStorageVirtualMachineInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SvmAdminPassword",
+    3,
+);
+static UPDATESTORAGEVIRTUALMACHINEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#UpdateStorageVirtualMachineInput",
+        "com.amazonaws.fsx.synthetic",
+        "UpdateStorageVirtualMachineInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATESTORAGEVIRTUALMACHINEINPUT_MEMBER_ACTIVE_DIRECTORY_CONFIGURATION,
+        &UPDATESTORAGEVIRTUALMACHINEINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &UPDATESTORAGEVIRTUALMACHINEINPUT_MEMBER_STORAGE_VIRTUAL_MACHINE_ID,
+        &UPDATESTORAGEVIRTUALMACHINEINPUT_MEMBER_SVM_ADMIN_PASSWORD,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateStorageVirtualMachineRequest");
+impl UpdateStorageVirtualMachineInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATESTORAGEVIRTUALMACHINEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateStorageVirtualMachineInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.active_directory_configuration {
+            ser.write_struct(&UPDATESTORAGEVIRTUALMACHINEINPUT_MEMBER_ACTIVE_DIRECTORY_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&UPDATESTORAGEVIRTUALMACHINEINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.storage_virtual_machine_id {
+            ser.write_string(&UPDATESTORAGEVIRTUALMACHINEINPUT_MEMBER_STORAGE_VIRTUAL_MACHINE_ID, val)?;
+        }
+        if let Some(ref val) = self.svm_admin_password {
+            ser.write_string(&UPDATESTORAGEVIRTUALMACHINEINPUT_MEMBER_SVM_ADMIN_PASSWORD, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_storage_virtual_machine::builders::UpdateStorageVirtualMachineInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATESTORAGEVIRTUALMACHINEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.active_directory_configuration = Some(crate::types::UpdateSvmActiveDirectoryConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.storage_virtual_machine_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.svm_admin_password = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateStorageVirtualMachineInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.storage_virtual_machine_id = builder.storage_virtual_machine_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateStorageVirtualMachineInput {
     /// Creates a new builder-style object to manufacture [`UpdateStorageVirtualMachineInput`](crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineInput).
     pub fn builder() -> crate::operation::update_storage_virtual_machine::builders::UpdateStorageVirtualMachineInputBuilder {

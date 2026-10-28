@@ -25,6 +25,102 @@ impl TimeoutConfiguration {
         self.per_request_timeout_seconds
     }
 }
+static TIMEOUTCONFIGURATION_MEMBER_IDLE_TIMEOUT_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#TimeoutConfiguration$idleTimeoutSeconds",
+        "com.amazonaws.ecs",
+        "TimeoutConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "idleTimeoutSeconds",
+    0,
+);
+static TIMEOUTCONFIGURATION_MEMBER_PER_REQUEST_TIMEOUT_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#TimeoutConfiguration$perRequestTimeoutSeconds",
+        "com.amazonaws.ecs",
+        "TimeoutConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "perRequestTimeoutSeconds",
+    1,
+);
+static TIMEOUTCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#TimeoutConfiguration", "com.amazonaws.ecs", "TimeoutConfiguration"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TIMEOUTCONFIGURATION_MEMBER_IDLE_TIMEOUT_SECONDS,
+        &TIMEOUTCONFIGURATION_MEMBER_PER_REQUEST_TIMEOUT_SECONDS,
+    ],
+);
+impl TimeoutConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TIMEOUTCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TimeoutConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.idle_timeout_seconds {
+            ser.write_integer(&TIMEOUTCONFIGURATION_MEMBER_IDLE_TIMEOUT_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.per_request_timeout_seconds {
+            ser.write_integer(&TIMEOUTCONFIGURATION_MEMBER_PER_REQUEST_TIMEOUT_SECONDS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TimeoutConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TIMEOUTCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idle_timeout_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.per_request_timeout_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TimeoutConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TimeoutConfiguration {
     /// Creates a new builder-style object to manufacture [`TimeoutConfiguration`](crate::types::TimeoutConfiguration).
     pub fn builder() -> crate::types::builders::TimeoutConfigurationBuilder {

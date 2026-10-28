@@ -25,6 +25,127 @@ impl KinesisStreamSourceDescription {
         self.delivery_start_timestamp.as_ref()
     }
 }
+static KINESISSTREAMSOURCEDESCRIPTION_MEMBER_KINESIS_STREAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#KinesisStreamSourceDescription$KinesisStreamARN",
+        "com.amazonaws.firehose",
+        "KinesisStreamSourceDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KinesisStreamARN",
+    0,
+);
+static KINESISSTREAMSOURCEDESCRIPTION_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#KinesisStreamSourceDescription$RoleARN",
+        "com.amazonaws.firehose",
+        "KinesisStreamSourceDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleARN",
+    1,
+);
+static KINESISSTREAMSOURCEDESCRIPTION_MEMBER_DELIVERY_START_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#KinesisStreamSourceDescription$DeliveryStartTimestamp",
+        "com.amazonaws.firehose",
+        "KinesisStreamSourceDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "DeliveryStartTimestamp",
+    2,
+);
+static KINESISSTREAMSOURCEDESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#KinesisStreamSourceDescription",
+        "com.amazonaws.firehose",
+        "KinesisStreamSourceDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &KINESISSTREAMSOURCEDESCRIPTION_MEMBER_KINESIS_STREAM_ARN,
+        &KINESISSTREAMSOURCEDESCRIPTION_MEMBER_ROLE_ARN,
+        &KINESISSTREAMSOURCEDESCRIPTION_MEMBER_DELIVERY_START_TIMESTAMP,
+    ],
+);
+impl KinesisStreamSourceDescription {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &KINESISSTREAMSOURCEDESCRIPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for KinesisStreamSourceDescription {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.kinesis_stream_arn {
+            ser.write_string(&KINESISSTREAMSOURCEDESCRIPTION_MEMBER_KINESIS_STREAM_ARN, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&KINESISSTREAMSOURCEDESCRIPTION_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.delivery_start_timestamp {
+            ser.write_timestamp(&KINESISSTREAMSOURCEDESCRIPTION_MEMBER_DELIVERY_START_TIMESTAMP, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::KinesisStreamSourceDescriptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&KINESISSTREAMSOURCEDESCRIPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kinesis_stream_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delivery_start_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl KinesisStreamSourceDescription {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl KinesisStreamSourceDescription {
     /// Creates a new builder-style object to manufacture [`KinesisStreamSourceDescription`](crate::types::KinesisStreamSourceDescription).
     pub fn builder() -> crate::types::builders::KinesisStreamSourceDescriptionBuilder {

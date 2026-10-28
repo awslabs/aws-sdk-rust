@@ -37,6 +37,169 @@ impl EventContextDataType {
         self.country.as_deref()
     }
 }
+static EVENTCONTEXTDATATYPE_MEMBER_IP_ADDRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#EventContextDataType$IpAddress",
+        "com.amazonaws.cognitoidentityprovider",
+        "EventContextDataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IpAddress",
+    0,
+);
+static EVENTCONTEXTDATATYPE_MEMBER_DEVICE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#EventContextDataType$DeviceName",
+        "com.amazonaws.cognitoidentityprovider",
+        "EventContextDataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceName",
+    1,
+);
+static EVENTCONTEXTDATATYPE_MEMBER_TIMEZONE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#EventContextDataType$Timezone",
+        "com.amazonaws.cognitoidentityprovider",
+        "EventContextDataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Timezone",
+    2,
+);
+static EVENTCONTEXTDATATYPE_MEMBER_CITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#EventContextDataType$City",
+        "com.amazonaws.cognitoidentityprovider",
+        "EventContextDataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "City",
+    3,
+);
+static EVENTCONTEXTDATATYPE_MEMBER_COUNTRY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#EventContextDataType$Country",
+        "com.amazonaws.cognitoidentityprovider",
+        "EventContextDataType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Country",
+    4,
+);
+static EVENTCONTEXTDATATYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#EventContextDataType",
+        "com.amazonaws.cognitoidentityprovider",
+        "EventContextDataType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EVENTCONTEXTDATATYPE_MEMBER_IP_ADDRESS,
+        &EVENTCONTEXTDATATYPE_MEMBER_DEVICE_NAME,
+        &EVENTCONTEXTDATATYPE_MEMBER_TIMEZONE,
+        &EVENTCONTEXTDATATYPE_MEMBER_CITY,
+        &EVENTCONTEXTDATATYPE_MEMBER_COUNTRY,
+    ],
+);
+impl EventContextDataType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EVENTCONTEXTDATATYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EventContextDataType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ip_address {
+            ser.write_string(&EVENTCONTEXTDATATYPE_MEMBER_IP_ADDRESS, val)?;
+        }
+        if let Some(ref val) = self.device_name {
+            ser.write_string(&EVENTCONTEXTDATATYPE_MEMBER_DEVICE_NAME, val)?;
+        }
+        if let Some(ref val) = self.timezone {
+            ser.write_string(&EVENTCONTEXTDATATYPE_MEMBER_TIMEZONE, val)?;
+        }
+        if let Some(ref val) = self.city {
+            ser.write_string(&EVENTCONTEXTDATATYPE_MEMBER_CITY, val)?;
+        }
+        if let Some(ref val) = self.country {
+            ser.write_string(&EVENTCONTEXTDATATYPE_MEMBER_COUNTRY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EventContextDataTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EVENTCONTEXTDATATYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.timezone = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.city = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.country = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EventContextDataType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EventContextDataType {
     /// Creates a new builder-style object to manufacture [`EventContextDataType`](crate::types::EventContextDataType).
     pub fn builder() -> crate::types::builders::EventContextDataTypeBuilder {

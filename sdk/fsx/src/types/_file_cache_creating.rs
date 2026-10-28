@@ -147,6 +147,483 @@ impl FileCacheCreating {
         self.data_repository_association_ids.as_deref().unwrap_or_default()
     }
 }
+static FILECACHECREATING_MEMBER_OWNER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#FileCacheCreating$OwnerId", "com.amazonaws.fsx", "FileCacheCreating"),
+    ::aws_smithy_schema::ShapeType::String,
+    "OwnerId",
+    0,
+);
+static FILECACHECREATING_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#FileCacheCreating$CreationTime",
+        "com.amazonaws.fsx",
+        "FileCacheCreating",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    1,
+);
+static FILECACHECREATING_MEMBER_FILE_CACHE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#FileCacheCreating$FileCacheId",
+        "com.amazonaws.fsx",
+        "FileCacheCreating",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileCacheId",
+    2,
+);
+static FILECACHECREATING_MEMBER_FILE_CACHE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#FileCacheCreating$FileCacheType",
+        "com.amazonaws.fsx",
+        "FileCacheCreating",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileCacheType",
+    3,
+);
+static FILECACHECREATING_MEMBER_FILE_CACHE_TYPE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#FileCacheCreating$FileCacheTypeVersion",
+        "com.amazonaws.fsx",
+        "FileCacheCreating",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileCacheTypeVersion",
+    4,
+);
+static FILECACHECREATING_MEMBER_LIFECYCLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#FileCacheCreating$Lifecycle", "com.amazonaws.fsx", "FileCacheCreating"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Lifecycle",
+    5,
+);
+static FILECACHECREATING_MEMBER_FAILURE_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#FileCacheCreating$FailureDetails",
+        "com.amazonaws.fsx",
+        "FileCacheCreating",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FailureDetails",
+    6,
+);
+static FILECACHECREATING_MEMBER_STORAGE_CAPACITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#FileCacheCreating$StorageCapacity",
+        "com.amazonaws.fsx",
+        "FileCacheCreating",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "StorageCapacity",
+    7,
+);
+static FILECACHECREATING_MEMBER_VPC_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#FileCacheCreating$VpcId", "com.amazonaws.fsx", "FileCacheCreating"),
+    ::aws_smithy_schema::ShapeType::String,
+    "VpcId",
+    8,
+);
+static FILECACHECREATING_MEMBER_SUBNET_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#SubnetIds$member", "com.amazonaws.fsx", "SubnetIds"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static FILECACHECREATING_MEMBER_SUBNET_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#FileCacheCreating$SubnetIds", "com.amazonaws.fsx", "FileCacheCreating"),
+    ::aws_smithy_schema::ShapeType::List,
+    "SubnetIds",
+    9,
+)
+.with_list_member(&FILECACHECREATING_MEMBER_SUBNET_IDS_MEMBER);
+static FILECACHECREATING_MEMBER_NETWORK_INTERFACE_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#NetworkInterfaceIds$member", "com.amazonaws.fsx", "NetworkInterfaceIds"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static FILECACHECREATING_MEMBER_NETWORK_INTERFACE_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#FileCacheCreating$NetworkInterfaceIds",
+        "com.amazonaws.fsx",
+        "FileCacheCreating",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "NetworkInterfaceIds",
+    10,
+)
+.with_list_member(&FILECACHECREATING_MEMBER_NETWORK_INTERFACE_IDS_MEMBER);
+static FILECACHECREATING_MEMBER_DNS_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#FileCacheCreating$DNSName", "com.amazonaws.fsx", "FileCacheCreating"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DNSName",
+    11,
+);
+static FILECACHECREATING_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#FileCacheCreating$KmsKeyId", "com.amazonaws.fsx", "FileCacheCreating"),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyId",
+    12,
+);
+static FILECACHECREATING_MEMBER_RESOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#FileCacheCreating$ResourceARN",
+        "com.amazonaws.fsx",
+        "FileCacheCreating",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceARN",
+    13,
+);
+static FILECACHECREATING_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#Tags$member", "com.amazonaws.fsx", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static FILECACHECREATING_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#FileCacheCreating$Tags", "com.amazonaws.fsx", "FileCacheCreating"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    14,
+)
+.with_list_member(&FILECACHECREATING_MEMBER_TAGS_MEMBER);
+static FILECACHECREATING_MEMBER_COPY_TAGS_TO_DATA_REPOSITORY_ASSOCIATIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#FileCacheCreating$CopyTagsToDataRepositoryAssociations",
+            "com.amazonaws.fsx",
+            "FileCacheCreating",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "CopyTagsToDataRepositoryAssociations",
+        15,
+    );
+static FILECACHECREATING_MEMBER_LUSTRE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#FileCacheCreating$LustreConfiguration",
+        "com.amazonaws.fsx",
+        "FileCacheCreating",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LustreConfiguration",
+    16,
+);
+static FILECACHECREATING_MEMBER_DATA_REPOSITORY_ASSOCIATION_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.fsx#DataRepositoryAssociationIds$member",
+            "com.amazonaws.fsx",
+            "DataRepositoryAssociationIds",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static FILECACHECREATING_MEMBER_DATA_REPOSITORY_ASSOCIATION_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#FileCacheCreating$DataRepositoryAssociationIds",
+        "com.amazonaws.fsx",
+        "FileCacheCreating",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DataRepositoryAssociationIds",
+    17,
+)
+.with_list_member(&FILECACHECREATING_MEMBER_DATA_REPOSITORY_ASSOCIATION_IDS_MEMBER);
+static FILECACHECREATING_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#FileCacheCreating", "com.amazonaws.fsx", "FileCacheCreating"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FILECACHECREATING_MEMBER_OWNER_ID,
+        &FILECACHECREATING_MEMBER_CREATION_TIME,
+        &FILECACHECREATING_MEMBER_FILE_CACHE_ID,
+        &FILECACHECREATING_MEMBER_FILE_CACHE_TYPE,
+        &FILECACHECREATING_MEMBER_FILE_CACHE_TYPE_VERSION,
+        &FILECACHECREATING_MEMBER_LIFECYCLE,
+        &FILECACHECREATING_MEMBER_FAILURE_DETAILS,
+        &FILECACHECREATING_MEMBER_STORAGE_CAPACITY,
+        &FILECACHECREATING_MEMBER_VPC_ID,
+        &FILECACHECREATING_MEMBER_SUBNET_IDS,
+        &FILECACHECREATING_MEMBER_NETWORK_INTERFACE_IDS,
+        &FILECACHECREATING_MEMBER_DNS_NAME,
+        &FILECACHECREATING_MEMBER_KMS_KEY_ID,
+        &FILECACHECREATING_MEMBER_RESOURCE_ARN,
+        &FILECACHECREATING_MEMBER_TAGS,
+        &FILECACHECREATING_MEMBER_COPY_TAGS_TO_DATA_REPOSITORY_ASSOCIATIONS,
+        &FILECACHECREATING_MEMBER_LUSTRE_CONFIGURATION,
+        &FILECACHECREATING_MEMBER_DATA_REPOSITORY_ASSOCIATION_IDS,
+    ],
+);
+impl FileCacheCreating {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FILECACHECREATING_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FileCacheCreating {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.owner_id {
+            ser.write_string(&FILECACHECREATING_MEMBER_OWNER_ID, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&FILECACHECREATING_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.file_cache_id {
+            ser.write_string(&FILECACHECREATING_MEMBER_FILE_CACHE_ID, val)?;
+        }
+        if let Some(ref val) = self.file_cache_type {
+            ser.write_string(&FILECACHECREATING_MEMBER_FILE_CACHE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.file_cache_type_version {
+            ser.write_string(&FILECACHECREATING_MEMBER_FILE_CACHE_TYPE_VERSION, val)?;
+        }
+        if let Some(ref val) = self.lifecycle {
+            ser.write_string(&FILECACHECREATING_MEMBER_LIFECYCLE, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_details {
+            ser.write_struct(&FILECACHECREATING_MEMBER_FAILURE_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.storage_capacity {
+            ser.write_integer(&FILECACHECREATING_MEMBER_STORAGE_CAPACITY, *val)?;
+        }
+        if let Some(ref val) = self.vpc_id {
+            ser.write_string(&FILECACHECREATING_MEMBER_VPC_ID, val)?;
+        }
+        if let Some(ref val) = self.subnet_ids {
+            ser.write_list(
+                &FILECACHECREATING_MEMBER_SUBNET_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.network_interface_ids {
+            ser.write_list(
+                &FILECACHECREATING_MEMBER_NETWORK_INTERFACE_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.dns_name {
+            ser.write_string(&FILECACHECREATING_MEMBER_DNS_NAME, val)?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&FILECACHECREATING_MEMBER_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.resource_arn {
+            ser.write_string(&FILECACHECREATING_MEMBER_RESOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &FILECACHECREATING_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.copy_tags_to_data_repository_associations {
+            ser.write_boolean(&FILECACHECREATING_MEMBER_COPY_TAGS_TO_DATA_REPOSITORY_ASSOCIATIONS, *val)?;
+        }
+        if let Some(ref val) = self.lustre_configuration {
+            ser.write_struct(&FILECACHECREATING_MEMBER_LUSTRE_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.data_repository_association_ids {
+            ser.write_list(
+                &FILECACHECREATING_MEMBER_DATA_REPOSITORY_ASSOCIATION_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FileCacheCreatingBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FILECACHECREATING_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.owner_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_cache_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_cache_type = Some(crate::types::FileCacheType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_cache_type_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle = Some(crate::types::FileCacheLifecycle::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_details = Some(crate::types::FileCacheFailureDetails::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.storage_capacity = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subnet_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_interface_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.copy_tags_to_data_repository_associations = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lustre_configuration = Some(crate::types::FileCacheLustreConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_repository_association_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FileCacheCreating {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FileCacheCreating {
     /// Creates a new builder-style object to manufacture [`FileCacheCreating`](crate::types::FileCacheCreating).
     pub fn builder() -> crate::types::builders::FileCacheCreatingBuilder {

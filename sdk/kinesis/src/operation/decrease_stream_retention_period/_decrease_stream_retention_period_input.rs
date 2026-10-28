@@ -31,6 +31,152 @@ impl DecreaseStreamRetentionPeriodInput {
         self.stream_id.as_deref()
     }
 }
+static DECREASESTREAMRETENTIONPERIODINPUT_MEMBER_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DecreaseStreamRetentionPeriodInput$StreamName",
+        "com.amazonaws.kinesis.synthetic",
+        "DecreaseStreamRetentionPeriodInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamName",
+    0,
+);
+static DECREASESTREAMRETENTIONPERIODINPUT_MEMBER_RETENTION_PERIOD_HOURS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.kinesis.synthetic#DecreaseStreamRetentionPeriodInput$RetentionPeriodHours",
+            "com.amazonaws.kinesis.synthetic",
+            "DecreaseStreamRetentionPeriodInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "RetentionPeriodHours",
+        1,
+    );
+static DECREASESTREAMRETENTIONPERIODINPUT_MEMBER_STREAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DecreaseStreamRetentionPeriodInput$StreamARN",
+        "com.amazonaws.kinesis.synthetic",
+        "DecreaseStreamRetentionPeriodInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamARN",
+    2,
+);
+static DECREASESTREAMRETENTIONPERIODINPUT_MEMBER_STREAM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DecreaseStreamRetentionPeriodInput$StreamId",
+        "com.amazonaws.kinesis.synthetic",
+        "DecreaseStreamRetentionPeriodInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamId",
+    3,
+);
+static DECREASESTREAMRETENTIONPERIODINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DecreaseStreamRetentionPeriodInput",
+        "com.amazonaws.kinesis.synthetic",
+        "DecreaseStreamRetentionPeriodInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DECREASESTREAMRETENTIONPERIODINPUT_MEMBER_STREAM_NAME,
+        &DECREASESTREAMRETENTIONPERIODINPUT_MEMBER_RETENTION_PERIOD_HOURS,
+        &DECREASESTREAMRETENTIONPERIODINPUT_MEMBER_STREAM_ARN,
+        &DECREASESTREAMRETENTIONPERIODINPUT_MEMBER_STREAM_ID,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DecreaseStreamRetentionPeriodInput");
+impl DecreaseStreamRetentionPeriodInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DECREASESTREAMRETENTIONPERIODINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DecreaseStreamRetentionPeriodInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stream_name {
+            ser.write_string(&DECREASESTREAMRETENTIONPERIODINPUT_MEMBER_STREAM_NAME, val)?;
+        }
+        if let Some(ref val) = self.retention_period_hours {
+            ser.write_integer(&DECREASESTREAMRETENTIONPERIODINPUT_MEMBER_RETENTION_PERIOD_HOURS, *val)?;
+        }
+        if let Some(ref val) = self.stream_arn {
+            ser.write_string(&DECREASESTREAMRETENTIONPERIODINPUT_MEMBER_STREAM_ARN, val)?;
+        }
+        if let Some(ref val) = self.stream_id {
+            ser.write_string(&DECREASESTREAMRETENTIONPERIODINPUT_MEMBER_STREAM_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::decrease_stream_retention_period::builders::DecreaseStreamRetentionPeriodInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DECREASESTREAMRETENTIONPERIODINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retention_period_hours = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DecreaseStreamRetentionPeriodInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.retention_period_hours = builder.retention_period_hours.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DecreaseStreamRetentionPeriodInput {
     /// Creates a new builder-style object to manufacture [`DecreaseStreamRetentionPeriodInput`](crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodInput).
     pub fn builder() -> crate::operation::decrease_stream_retention_period::builders::DecreaseStreamRetentionPeriodInputBuilder {

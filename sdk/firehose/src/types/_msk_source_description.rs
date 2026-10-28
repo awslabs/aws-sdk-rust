@@ -39,6 +39,169 @@ impl MskSourceDescription {
         self.read_from_timestamp.as_ref()
     }
 }
+static MSKSOURCEDESCRIPTION_MEMBER_MSK_CLUSTER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#MSKSourceDescription$MSKClusterARN",
+        "com.amazonaws.firehose",
+        "MSKSourceDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MSKClusterARN",
+    0,
+);
+static MSKSOURCEDESCRIPTION_MEMBER_TOPIC_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#MSKSourceDescription$TopicName",
+        "com.amazonaws.firehose",
+        "MSKSourceDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TopicName",
+    1,
+);
+static MSKSOURCEDESCRIPTION_MEMBER_AUTHENTICATION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#MSKSourceDescription$AuthenticationConfiguration",
+        "com.amazonaws.firehose",
+        "MSKSourceDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AuthenticationConfiguration",
+    2,
+);
+static MSKSOURCEDESCRIPTION_MEMBER_DELIVERY_START_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#MSKSourceDescription$DeliveryStartTimestamp",
+        "com.amazonaws.firehose",
+        "MSKSourceDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "DeliveryStartTimestamp",
+    3,
+);
+static MSKSOURCEDESCRIPTION_MEMBER_READ_FROM_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#MSKSourceDescription$ReadFromTimestamp",
+        "com.amazonaws.firehose",
+        "MSKSourceDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ReadFromTimestamp",
+    4,
+);
+static MSKSOURCEDESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#MSKSourceDescription",
+        "com.amazonaws.firehose",
+        "MSKSourceDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MSKSOURCEDESCRIPTION_MEMBER_MSK_CLUSTER_ARN,
+        &MSKSOURCEDESCRIPTION_MEMBER_TOPIC_NAME,
+        &MSKSOURCEDESCRIPTION_MEMBER_AUTHENTICATION_CONFIGURATION,
+        &MSKSOURCEDESCRIPTION_MEMBER_DELIVERY_START_TIMESTAMP,
+        &MSKSOURCEDESCRIPTION_MEMBER_READ_FROM_TIMESTAMP,
+    ],
+);
+impl MskSourceDescription {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MSKSOURCEDESCRIPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MskSourceDescription {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.msk_cluster_arn {
+            ser.write_string(&MSKSOURCEDESCRIPTION_MEMBER_MSK_CLUSTER_ARN, val)?;
+        }
+        if let Some(ref val) = self.topic_name {
+            ser.write_string(&MSKSOURCEDESCRIPTION_MEMBER_TOPIC_NAME, val)?;
+        }
+        if let Some(ref val) = self.authentication_configuration {
+            ser.write_struct(&MSKSOURCEDESCRIPTION_MEMBER_AUTHENTICATION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.delivery_start_timestamp {
+            ser.write_timestamp(&MSKSOURCEDESCRIPTION_MEMBER_DELIVERY_START_TIMESTAMP, val)?;
+        }
+        if let Some(ref val) = self.read_from_timestamp {
+            ser.write_timestamp(&MSKSOURCEDESCRIPTION_MEMBER_READ_FROM_TIMESTAMP, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MskSourceDescriptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MSKSOURCEDESCRIPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.msk_cluster_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.topic_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authentication_configuration = Some(crate::types::AuthenticationConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delivery_start_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.read_from_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MskSourceDescription {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MskSourceDescription {
     /// Creates a new builder-style object to manufacture [`MskSourceDescription`](crate::types::MskSourceDescription).
     pub fn builder() -> crate::types::builders::MskSourceDescriptionBuilder {

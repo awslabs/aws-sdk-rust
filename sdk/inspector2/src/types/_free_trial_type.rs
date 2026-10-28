@@ -18,6 +18,7 @@
 ///     FreeTrialType::Ecr => { /* ... */ },
 ///     FreeTrialType::Lambda => { /* ... */ },
 ///     FreeTrialType::LambdaCode => { /* ... */ },
+///     FreeTrialType::MachineImage => { /* ... */ },
 ///     FreeTrialType::ServerlessFunction => { /* ... */ },
 ///     FreeTrialType::Vm => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -61,6 +62,8 @@ pub enum FreeTrialType {
     #[allow(missing_docs)] // documentation missing in model
     LambdaCode,
     #[allow(missing_docs)] // documentation missing in model
+    MachineImage,
+    #[allow(missing_docs)] // documentation missing in model
     ServerlessFunction,
     #[allow(missing_docs)] // documentation missing in model
     Vm,
@@ -77,6 +80,7 @@ impl ::std::convert::From<&str> for FreeTrialType {
             "ECR" => FreeTrialType::Ecr,
             "LAMBDA" => FreeTrialType::Lambda,
             "LAMBDA_CODE" => FreeTrialType::LambdaCode,
+            "MACHINE_IMAGE" => FreeTrialType::MachineImage,
             "SERVERLESS_FUNCTION" => FreeTrialType::ServerlessFunction,
             "VM" => FreeTrialType::Vm,
             other => FreeTrialType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -100,6 +104,7 @@ impl FreeTrialType {
             FreeTrialType::Ecr => "ECR",
             FreeTrialType::Lambda => "LAMBDA",
             FreeTrialType::LambdaCode => "LAMBDA_CODE",
+            FreeTrialType::MachineImage => "MACHINE_IMAGE",
             FreeTrialType::ServerlessFunction => "SERVERLESS_FUNCTION",
             FreeTrialType::Vm => "VM",
             FreeTrialType::Unknown(value) => value.as_str(),
@@ -114,6 +119,7 @@ impl FreeTrialType {
             "ECR",
             "LAMBDA",
             "LAMBDA_CODE",
+            "MACHINE_IMAGE",
             "SERVERLESS_FUNCTION",
             "VM",
         ]
@@ -145,6 +151,7 @@ impl ::std::fmt::Display for FreeTrialType {
             FreeTrialType::Ecr => write!(f, "ECR"),
             FreeTrialType::Lambda => write!(f, "LAMBDA"),
             FreeTrialType::LambdaCode => write!(f, "LAMBDA_CODE"),
+            FreeTrialType::MachineImage => write!(f, "MACHINE_IMAGE"),
             FreeTrialType::ServerlessFunction => write!(f, "SERVERLESS_FUNCTION"),
             FreeTrialType::Vm => write!(f, "VM"),
             FreeTrialType::Unknown(value) => write!(f, "{value}"),

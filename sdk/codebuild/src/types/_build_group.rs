@@ -41,6 +41,195 @@ impl BuildGroup {
         self.prior_build_summary_list.as_deref().unwrap_or_default()
     }
 }
+static BUILDGROUP_MEMBER_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildGroup$identifier", "com.amazonaws.codebuild", "BuildGroup"),
+    ::aws_smithy_schema::ShapeType::String,
+    "identifier",
+    0,
+);
+static BUILDGROUP_MEMBER_DEPENDS_ON_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#Identifiers$member", "com.amazonaws.codebuild", "Identifiers"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static BUILDGROUP_MEMBER_DEPENDS_ON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildGroup$dependsOn", "com.amazonaws.codebuild", "BuildGroup"),
+    ::aws_smithy_schema::ShapeType::List,
+    "dependsOn",
+    1,
+)
+.with_list_member(&BUILDGROUP_MEMBER_DEPENDS_ON_MEMBER);
+static BUILDGROUP_MEMBER_IGNORE_FAILURE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildGroup$ignoreFailure",
+        "com.amazonaws.codebuild",
+        "BuildGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ignoreFailure",
+    2,
+);
+static BUILDGROUP_MEMBER_CURRENT_BUILD_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildGroup$currentBuildSummary",
+        "com.amazonaws.codebuild",
+        "BuildGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "currentBuildSummary",
+    3,
+);
+static BUILDGROUP_MEMBER_PRIOR_BUILD_SUMMARY_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildSummaries$member",
+        "com.amazonaws.codebuild",
+        "BuildSummaries",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BUILDGROUP_MEMBER_PRIOR_BUILD_SUMMARY_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#BuildGroup$priorBuildSummaryList",
+        "com.amazonaws.codebuild",
+        "BuildGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "priorBuildSummaryList",
+    4,
+)
+.with_list_member(&BUILDGROUP_MEMBER_PRIOR_BUILD_SUMMARY_LIST_MEMBER);
+static BUILDGROUP_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#BuildGroup", "com.amazonaws.codebuild", "BuildGroup"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BUILDGROUP_MEMBER_IDENTIFIER,
+        &BUILDGROUP_MEMBER_DEPENDS_ON,
+        &BUILDGROUP_MEMBER_IGNORE_FAILURE,
+        &BUILDGROUP_MEMBER_CURRENT_BUILD_SUMMARY,
+        &BUILDGROUP_MEMBER_PRIOR_BUILD_SUMMARY_LIST,
+    ],
+);
+impl BuildGroup {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BUILDGROUP_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BuildGroup {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.identifier {
+            ser.write_string(&BUILDGROUP_MEMBER_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.depends_on {
+            ser.write_list(
+                &BUILDGROUP_MEMBER_DEPENDS_ON,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.ignore_failure;
+            ser.write_boolean(&BUILDGROUP_MEMBER_IGNORE_FAILURE, *val)?;
+        }
+        if let Some(ref val) = self.current_build_summary {
+            ser.write_struct(&BUILDGROUP_MEMBER_CURRENT_BUILD_SUMMARY, val)?;
+        }
+        if let Some(ref val) = self.prior_build_summary_list {
+            ser.write_list(
+                &BUILDGROUP_MEMBER_PRIOR_BUILD_SUMMARY_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::BuildSummary::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BuildGroupBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BUILDGROUP_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.depends_on = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.ignore_failure = Some(deser.read_boolean(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_build_summary = Some(crate::types::BuildSummary::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.prior_build_summary_list = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::BuildSummary::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BuildGroup {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl BuildGroup {
     /// Creates a new builder-style object to manufacture [`BuildGroup`](crate::types::BuildGroup).
     pub fn builder() -> crate::types::builders::BuildGroupBuilder {

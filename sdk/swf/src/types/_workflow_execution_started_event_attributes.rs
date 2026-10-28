@@ -103,6 +103,330 @@ impl WorkflowExecutionStartedEventAttributes {
         self.lambda_role.as_deref()
     }
 }
+static WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_INPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionStartedEventAttributes$input",
+        "com.amazonaws.swf",
+        "WorkflowExecutionStartedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "input",
+    0,
+);
+static WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_EXECUTION_START_TO_CLOSE_TIMEOUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#WorkflowExecutionStartedEventAttributes$executionStartToCloseTimeout",
+            "com.amazonaws.swf",
+            "WorkflowExecutionStartedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "executionStartToCloseTimeout",
+        1,
+    );
+static WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_TASK_START_TO_CLOSE_TIMEOUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#WorkflowExecutionStartedEventAttributes$taskStartToCloseTimeout",
+            "com.amazonaws.swf",
+            "WorkflowExecutionStartedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "taskStartToCloseTimeout",
+        2,
+    );
+static WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_CHILD_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionStartedEventAttributes$childPolicy",
+        "com.amazonaws.swf",
+        "WorkflowExecutionStartedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "childPolicy",
+    3,
+);
+static WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_TASK_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionStartedEventAttributes$taskList",
+        "com.amazonaws.swf",
+        "WorkflowExecutionStartedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "taskList",
+    4,
+);
+static WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_TASK_PRIORITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionStartedEventAttributes$taskPriority",
+        "com.amazonaws.swf",
+        "WorkflowExecutionStartedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskPriority",
+    5,
+);
+static WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_WORKFLOW_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionStartedEventAttributes$workflowType",
+        "com.amazonaws.swf",
+        "WorkflowExecutionStartedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "workflowType",
+    6,
+);
+static WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_TAG_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.swf#TagList$member", "com.amazonaws.swf", "TagList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_TAG_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionStartedEventAttributes$tagList",
+        "com.amazonaws.swf",
+        "WorkflowExecutionStartedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tagList",
+    7,
+)
+.with_list_member(&WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_TAG_LIST_MEMBER);
+static WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_CONTINUED_EXECUTION_RUN_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#WorkflowExecutionStartedEventAttributes$continuedExecutionRunId",
+            "com.amazonaws.swf",
+            "WorkflowExecutionStartedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "continuedExecutionRunId",
+        8,
+    );
+static WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_PARENT_WORKFLOW_EXECUTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#WorkflowExecutionStartedEventAttributes$parentWorkflowExecution",
+            "com.amazonaws.swf",
+            "WorkflowExecutionStartedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "parentWorkflowExecution",
+        9,
+    );
+static WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_PARENT_INITIATED_EVENT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#WorkflowExecutionStartedEventAttributes$parentInitiatedEventId",
+            "com.amazonaws.swf",
+            "WorkflowExecutionStartedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "parentInitiatedEventId",
+        10,
+    );
+static WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_LAMBDA_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionStartedEventAttributes$lambdaRole",
+        "com.amazonaws.swf",
+        "WorkflowExecutionStartedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "lambdaRole",
+    11,
+);
+static WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#WorkflowExecutionStartedEventAttributes",
+        "com.amazonaws.swf",
+        "WorkflowExecutionStartedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_INPUT,
+        &WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_EXECUTION_START_TO_CLOSE_TIMEOUT,
+        &WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_TASK_START_TO_CLOSE_TIMEOUT,
+        &WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_CHILD_POLICY,
+        &WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_TASK_LIST,
+        &WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_TASK_PRIORITY,
+        &WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_WORKFLOW_TYPE,
+        &WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_TAG_LIST,
+        &WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_CONTINUED_EXECUTION_RUN_ID,
+        &WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_PARENT_WORKFLOW_EXECUTION,
+        &WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_PARENT_INITIATED_EVENT_ID,
+        &WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_LAMBDA_ROLE,
+    ],
+);
+impl WorkflowExecutionStartedEventAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WorkflowExecutionStartedEventAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.input {
+            ser.write_string(&WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_INPUT, val)?;
+        }
+        if let Some(ref val) = self.execution_start_to_close_timeout {
+            ser.write_string(&WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_EXECUTION_START_TO_CLOSE_TIMEOUT, val)?;
+        }
+        if let Some(ref val) = self.task_start_to_close_timeout {
+            ser.write_string(&WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_TASK_START_TO_CLOSE_TIMEOUT, val)?;
+        }
+        {
+            let val = &self.child_policy;
+            ser.write_string(&WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_CHILD_POLICY, val.as_str())?;
+        }
+        if let Some(ref val) = self.task_list {
+            ser.write_struct(&WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_TASK_LIST, val)?;
+        }
+        if let Some(ref val) = self.task_priority {
+            ser.write_string(&WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_TASK_PRIORITY, val)?;
+        }
+        if let Some(ref val) = self.workflow_type {
+            ser.write_struct(&WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_WORKFLOW_TYPE, val)?;
+        }
+        if let Some(ref val) = self.tag_list {
+            ser.write_list(
+                &WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_TAG_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.continued_execution_run_id {
+            ser.write_string(&WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_CONTINUED_EXECUTION_RUN_ID, val)?;
+        }
+        if let Some(ref val) = self.parent_workflow_execution {
+            ser.write_struct(&WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_PARENT_WORKFLOW_EXECUTION, val)?;
+        }
+        {
+            let val = &self.parent_initiated_event_id;
+            ser.write_long(&WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_PARENT_INITIATED_EVENT_ID, *val)?;
+        }
+        if let Some(ref val) = self.lambda_role {
+            ser.write_string(&WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_LAMBDA_ROLE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkflowExecutionStartedEventAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_start_to_close_timeout = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_start_to_close_timeout = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    self.child_policy = Some(crate::types::ChildPolicy::from(deser.read_string(member)?.as_str()));
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_list = Some(crate::types::TaskList::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_priority = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_type = Some(crate::types::WorkflowType::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_list = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.continued_execution_run_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parent_workflow_execution = Some(crate::types::WorkflowExecution::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    self.parent_initiated_event_id = Some(deser.read_long(member)?);
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lambda_role = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WorkflowExecutionStartedEventAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl WorkflowExecutionStartedEventAttributes {
     /// Creates a new builder-style object to manufacture [`WorkflowExecutionStartedEventAttributes`](crate::types::WorkflowExecutionStartedEventAttributes).
     pub fn builder() -> crate::types::builders::WorkflowExecutionStartedEventAttributesBuilder {

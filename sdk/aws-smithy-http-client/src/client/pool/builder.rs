@@ -107,6 +107,12 @@ pub struct Builder<Tls = TlsUnset> {
     tls: Tls,
 }
 
+/// Connection-pool builder with a TLS provider selected.
+///
+/// Created by [`Builder::tls_provider`]. HTTPS construction requires an enabled
+/// TLS provider feature.
+pub type HttpsBuilder = Builder<TlsProviderSelected>;
+
 impl Default for Builder<TlsUnset> {
     fn default() -> Self {
         Self {
@@ -272,6 +278,15 @@ impl<Tls> Builder<Tls> {
         self
     }
 
+    /// Returns whether an explicit partition set is configured.
+    ///
+    /// An explicitly supplied empty set also returns `true`. Clearing the set
+    /// with [`Self::set_partitions`] and `None` restores anonymous partition
+    /// construction.
+    pub fn has_explicit_partitions(&self) -> bool {
+        self.partitions.is_some()
+    }
+
     /// Declares the complete explicit partition set.
     pub fn partitions(mut self, partitions: impl IntoIterator<Item = Partition>) -> Self {
         self.partitions = Some(partitions.into_iter().collect());
@@ -367,6 +382,21 @@ impl Builder<TlsUnset> {
     }
 }
 
+impl Builder<TlsProviderSelected> {
+    /// Builds a pool whose connector performs TLS and ALPN negotiation.
+    pub fn build_https(self) -> Result<ConnectionPool, BuildError> {
+        #[cfg(any(feature = "__rustls", feature = "s2n-tls"))]
+        {
+            self.build_https_enabled()
+        }
+        #[cfg(not(any(feature = "__rustls", feature = "s2n-tls")))]
+        {
+            // Provider has no variants here; exhaustiveness is compiler-checked.
+            match self.tls.provider {}
+        }
+    }
+}
+
 crate::cfg::cfg_tls! {
     impl Builder<TlsProviderSelected> {
         /// Sets provider-specific TLS configuration for HTTPS connections.
@@ -381,8 +411,8 @@ crate::cfg::cfg_tls! {
             self
         }
 
-        /// Builds a pool whose connector performs TLS and ALPN negotiation.
-        pub fn build_https(self) -> Result<ConnectionPool, BuildError> {
+        /// Selects the resolver for the HTTPS transport.
+        fn build_https_enabled(self) -> Result<ConnectionPool, BuildError> {
             let resolver = self.dns_resolver.clone();
             match resolver {
                 Some(resolver) => {

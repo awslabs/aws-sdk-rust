@@ -55,6 +55,233 @@ impl AcmeExternalAccountBindingSummary {
         self.updated_at.as_ref()
     }
 }
+static ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_ACME_EXTERNAL_ACCOUNT_BINDING_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.acm#AcmeExternalAccountBindingSummary$AcmeExternalAccountBindingArn",
+            "com.amazonaws.acm",
+            "AcmeExternalAccountBindingSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "AcmeExternalAccountBindingArn",
+        0,
+    );
+static ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_ACME_ENDPOINT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeExternalAccountBindingSummary$AcmeEndpointArn",
+        "com.amazonaws.acm",
+        "AcmeExternalAccountBindingSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcmeEndpointArn",
+    1,
+);
+static ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeExternalAccountBindingSummary$RoleArn",
+        "com.amazonaws.acm",
+        "AcmeExternalAccountBindingSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    2,
+);
+static ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_EXPIRES_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeExternalAccountBindingSummary$ExpiresAt",
+        "com.amazonaws.acm",
+        "AcmeExternalAccountBindingSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ExpiresAt",
+    3,
+);
+static ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_REVOKED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeExternalAccountBindingSummary$RevokedAt",
+        "com.amazonaws.acm",
+        "AcmeExternalAccountBindingSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "RevokedAt",
+    4,
+);
+static ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_LAST_USED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeExternalAccountBindingSummary$LastUsedAt",
+        "com.amazonaws.acm",
+        "AcmeExternalAccountBindingSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastUsedAt",
+    5,
+);
+static ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeExternalAccountBindingSummary$CreatedAt",
+        "com.amazonaws.acm",
+        "AcmeExternalAccountBindingSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAt",
+    6,
+);
+static ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_UPDATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeExternalAccountBindingSummary$UpdatedAt",
+        "com.amazonaws.acm",
+        "AcmeExternalAccountBindingSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "UpdatedAt",
+    7,
+);
+static ACMEEXTERNALACCOUNTBINDINGSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmeExternalAccountBindingSummary",
+        "com.amazonaws.acm",
+        "AcmeExternalAccountBindingSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_ACME_EXTERNAL_ACCOUNT_BINDING_ARN,
+        &ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_ACME_ENDPOINT_ARN,
+        &ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_ROLE_ARN,
+        &ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_EXPIRES_AT,
+        &ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_REVOKED_AT,
+        &ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_LAST_USED_AT,
+        &ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_CREATED_AT,
+        &ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_UPDATED_AT,
+    ],
+);
+impl AcmeExternalAccountBindingSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACMEEXTERNALACCOUNTBINDINGSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AcmeExternalAccountBindingSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.acme_external_account_binding_arn {
+            ser.write_string(&ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_ACME_EXTERNAL_ACCOUNT_BINDING_ARN, val)?;
+        }
+        if let Some(ref val) = self.acme_endpoint_arn {
+            ser.write_string(&ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_ACME_ENDPOINT_ARN, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.expires_at {
+            ser.write_timestamp(&ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_EXPIRES_AT, val)?;
+        }
+        if let Some(ref val) = self.revoked_at {
+            ser.write_timestamp(&ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_REVOKED_AT, val)?;
+        }
+        if let Some(ref val) = self.last_used_at {
+            ser.write_timestamp(&ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_LAST_USED_AT, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.updated_at {
+            ser.write_timestamp(&ACMEEXTERNALACCOUNTBINDINGSUMMARY_MEMBER_UPDATED_AT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AcmeExternalAccountBindingSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACMEEXTERNALACCOUNTBINDINGSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.acme_external_account_binding_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.acme_endpoint_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expires_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revoked_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_used_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.updated_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AcmeExternalAccountBindingSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AcmeExternalAccountBindingSummary {
     /// Creates a new builder-style object to manufacture [`AcmeExternalAccountBindingSummary`](crate::types::AcmeExternalAccountBindingSummary).
     pub fn builder() -> crate::types::builders::AcmeExternalAccountBindingSummaryBuilder {

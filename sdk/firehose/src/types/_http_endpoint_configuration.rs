@@ -39,6 +39,125 @@ impl ::std::fmt::Debug for HttpEndpointConfiguration {
         formatter.finish()
     }
 }
+static HTTPENDPOINTCONFIGURATION_MEMBER_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#HttpEndpointConfiguration$Url",
+        "com.amazonaws.firehose",
+        "HttpEndpointConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Url",
+    0,
+);
+static HTTPENDPOINTCONFIGURATION_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#HttpEndpointConfiguration$Name",
+        "com.amazonaws.firehose",
+        "HttpEndpointConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static HTTPENDPOINTCONFIGURATION_MEMBER_ACCESS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#HttpEndpointConfiguration$AccessKey",
+        "com.amazonaws.firehose",
+        "HttpEndpointConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccessKey",
+    2,
+);
+static HTTPENDPOINTCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#HttpEndpointConfiguration",
+        "com.amazonaws.firehose",
+        "HttpEndpointConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &HTTPENDPOINTCONFIGURATION_MEMBER_URL,
+        &HTTPENDPOINTCONFIGURATION_MEMBER_NAME,
+        &HTTPENDPOINTCONFIGURATION_MEMBER_ACCESS_KEY,
+    ],
+);
+impl HttpEndpointConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &HTTPENDPOINTCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for HttpEndpointConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.url;
+            ser.write_string(&HTTPENDPOINTCONFIGURATION_MEMBER_URL, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&HTTPENDPOINTCONFIGURATION_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.access_key {
+            ser.write_string(&HTTPENDPOINTCONFIGURATION_MEMBER_ACCESS_KEY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::HttpEndpointConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&HTTPENDPOINTCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.url = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_key = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl HttpEndpointConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.url = builder.url.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl HttpEndpointConfiguration {
     /// Creates a new builder-style object to manufacture [`HttpEndpointConfiguration`](crate::types::HttpEndpointConfiguration).
     pub fn builder() -> crate::types::builders::HttpEndpointConfigurationBuilder {

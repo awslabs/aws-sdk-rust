@@ -82,6 +82,374 @@ impl DescribedSecurityPolicy {
         self.protocols.as_deref().unwrap_or_default()
     }
 }
+static DESCRIBEDSECURITYPOLICY_MEMBER_FIPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedSecurityPolicy$Fips",
+        "com.amazonaws.transfer",
+        "DescribedSecurityPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Fips",
+    0,
+);
+static DESCRIBEDSECURITYPOLICY_MEMBER_SECURITY_POLICY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedSecurityPolicy$SecurityPolicyName",
+        "com.amazonaws.transfer",
+        "DescribedSecurityPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecurityPolicyName",
+    1,
+);
+static DESCRIBEDSECURITYPOLICY_MEMBER_SSH_CIPHERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#SecurityPolicyOptions$member",
+        "com.amazonaws.transfer",
+        "SecurityPolicyOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEDSECURITYPOLICY_MEMBER_SSH_CIPHERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedSecurityPolicy$SshCiphers",
+        "com.amazonaws.transfer",
+        "DescribedSecurityPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SshCiphers",
+    2,
+)
+.with_list_member(&DESCRIBEDSECURITYPOLICY_MEMBER_SSH_CIPHERS_MEMBER);
+static DESCRIBEDSECURITYPOLICY_MEMBER_SSH_KEXS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#SecurityPolicyOptions$member",
+        "com.amazonaws.transfer",
+        "SecurityPolicyOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEDSECURITYPOLICY_MEMBER_SSH_KEXS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedSecurityPolicy$SshKexs",
+        "com.amazonaws.transfer",
+        "DescribedSecurityPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SshKexs",
+    3,
+)
+.with_list_member(&DESCRIBEDSECURITYPOLICY_MEMBER_SSH_KEXS_MEMBER);
+static DESCRIBEDSECURITYPOLICY_MEMBER_SSH_MACS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#SecurityPolicyOptions$member",
+        "com.amazonaws.transfer",
+        "SecurityPolicyOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEDSECURITYPOLICY_MEMBER_SSH_MACS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedSecurityPolicy$SshMacs",
+        "com.amazonaws.transfer",
+        "DescribedSecurityPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SshMacs",
+    4,
+)
+.with_list_member(&DESCRIBEDSECURITYPOLICY_MEMBER_SSH_MACS_MEMBER);
+static DESCRIBEDSECURITYPOLICY_MEMBER_TLS_CIPHERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#SecurityPolicyOptions$member",
+        "com.amazonaws.transfer",
+        "SecurityPolicyOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEDSECURITYPOLICY_MEMBER_TLS_CIPHERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedSecurityPolicy$TlsCiphers",
+        "com.amazonaws.transfer",
+        "DescribedSecurityPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TlsCiphers",
+    5,
+)
+.with_list_member(&DESCRIBEDSECURITYPOLICY_MEMBER_TLS_CIPHERS_MEMBER);
+static DESCRIBEDSECURITYPOLICY_MEMBER_SSH_HOST_KEY_ALGORITHMS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#SecurityPolicyOptions$member",
+        "com.amazonaws.transfer",
+        "SecurityPolicyOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEDSECURITYPOLICY_MEMBER_SSH_HOST_KEY_ALGORITHMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedSecurityPolicy$SshHostKeyAlgorithms",
+        "com.amazonaws.transfer",
+        "DescribedSecurityPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SshHostKeyAlgorithms",
+    6,
+)
+.with_list_member(&DESCRIBEDSECURITYPOLICY_MEMBER_SSH_HOST_KEY_ALGORITHMS_MEMBER);
+static DESCRIBEDSECURITYPOLICY_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedSecurityPolicy$Type",
+        "com.amazonaws.transfer",
+        "DescribedSecurityPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    7,
+);
+static DESCRIBEDSECURITYPOLICY_MEMBER_PROTOCOLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#SecurityPolicyProtocols$member",
+        "com.amazonaws.transfer",
+        "SecurityPolicyProtocols",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEDSECURITYPOLICY_MEMBER_PROTOCOLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedSecurityPolicy$Protocols",
+        "com.amazonaws.transfer",
+        "DescribedSecurityPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Protocols",
+    8,
+)
+.with_list_member(&DESCRIBEDSECURITYPOLICY_MEMBER_PROTOCOLS_MEMBER);
+static DESCRIBEDSECURITYPOLICY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#DescribedSecurityPolicy",
+        "com.amazonaws.transfer",
+        "DescribedSecurityPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEDSECURITYPOLICY_MEMBER_FIPS,
+        &DESCRIBEDSECURITYPOLICY_MEMBER_SECURITY_POLICY_NAME,
+        &DESCRIBEDSECURITYPOLICY_MEMBER_SSH_CIPHERS,
+        &DESCRIBEDSECURITYPOLICY_MEMBER_SSH_KEXS,
+        &DESCRIBEDSECURITYPOLICY_MEMBER_SSH_MACS,
+        &DESCRIBEDSECURITYPOLICY_MEMBER_TLS_CIPHERS,
+        &DESCRIBEDSECURITYPOLICY_MEMBER_SSH_HOST_KEY_ALGORITHMS,
+        &DESCRIBEDSECURITYPOLICY_MEMBER_TYPE,
+        &DESCRIBEDSECURITYPOLICY_MEMBER_PROTOCOLS,
+    ],
+);
+impl DescribedSecurityPolicy {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEDSECURITYPOLICY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribedSecurityPolicy {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.fips {
+            ser.write_boolean(&DESCRIBEDSECURITYPOLICY_MEMBER_FIPS, *val)?;
+        }
+        {
+            let val = &self.security_policy_name;
+            ser.write_string(&DESCRIBEDSECURITYPOLICY_MEMBER_SECURITY_POLICY_NAME, val)?;
+        }
+        if let Some(ref val) = self.ssh_ciphers {
+            ser.write_list(
+                &DESCRIBEDSECURITYPOLICY_MEMBER_SSH_CIPHERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ssh_kexs {
+            ser.write_list(
+                &DESCRIBEDSECURITYPOLICY_MEMBER_SSH_KEXS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ssh_macs {
+            ser.write_list(
+                &DESCRIBEDSECURITYPOLICY_MEMBER_SSH_MACS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tls_ciphers {
+            ser.write_list(
+                &DESCRIBEDSECURITYPOLICY_MEMBER_TLS_CIPHERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ssh_host_key_algorithms {
+            ser.write_list(
+                &DESCRIBEDSECURITYPOLICY_MEMBER_SSH_HOST_KEY_ALGORITHMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&DESCRIBEDSECURITYPOLICY_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.protocols {
+            ser.write_list(
+                &DESCRIBEDSECURITYPOLICY_MEMBER_PROTOCOLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DescribedSecurityPolicyBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEDSECURITYPOLICY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fips = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.security_policy_name = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ssh_ciphers = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ssh_kexs = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ssh_macs = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tls_ciphers = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ssh_host_key_algorithms = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::SecurityPolicyResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocols = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SecurityPolicyProtocol::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribedSecurityPolicy {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.security_policy_name = builder.security_policy_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribedSecurityPolicy {
     /// Creates a new builder-style object to manufacture [`DescribedSecurityPolicy`](crate::types::DescribedSecurityPolicy).
     pub fn builder() -> crate::types::builders::DescribedSecurityPolicyBuilder {

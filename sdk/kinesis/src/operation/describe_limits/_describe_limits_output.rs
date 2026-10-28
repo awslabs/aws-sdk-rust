@@ -43,6 +43,183 @@ impl DescribeLimitsOutput {
         self.channel_count_limit
     }
 }
+static DESCRIBELIMITSOUTPUT_MEMBER_SHARD_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DescribeLimitsOutput$ShardLimit",
+        "com.amazonaws.kinesis.synthetic",
+        "DescribeLimitsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ShardLimit",
+    0,
+);
+static DESCRIBELIMITSOUTPUT_MEMBER_OPEN_SHARD_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DescribeLimitsOutput$OpenShardCount",
+        "com.amazonaws.kinesis.synthetic",
+        "DescribeLimitsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "OpenShardCount",
+    1,
+);
+static DESCRIBELIMITSOUTPUT_MEMBER_ON_DEMAND_STREAM_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DescribeLimitsOutput$OnDemandStreamCount",
+        "com.amazonaws.kinesis.synthetic",
+        "DescribeLimitsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "OnDemandStreamCount",
+    2,
+);
+static DESCRIBELIMITSOUTPUT_MEMBER_ON_DEMAND_STREAM_COUNT_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DescribeLimitsOutput$OnDemandStreamCountLimit",
+        "com.amazonaws.kinesis.synthetic",
+        "DescribeLimitsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "OnDemandStreamCountLimit",
+    3,
+);
+static DESCRIBELIMITSOUTPUT_MEMBER_CHANNEL_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DescribeLimitsOutput$ChannelCount",
+        "com.amazonaws.kinesis.synthetic",
+        "DescribeLimitsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ChannelCount",
+    4,
+);
+static DESCRIBELIMITSOUTPUT_MEMBER_CHANNEL_COUNT_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DescribeLimitsOutput$ChannelCountLimit",
+        "com.amazonaws.kinesis.synthetic",
+        "DescribeLimitsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ChannelCountLimit",
+    5,
+);
+static DESCRIBELIMITSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis.synthetic#DescribeLimitsOutput",
+        "com.amazonaws.kinesis.synthetic",
+        "DescribeLimitsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBELIMITSOUTPUT_MEMBER_SHARD_LIMIT,
+        &DESCRIBELIMITSOUTPUT_MEMBER_OPEN_SHARD_COUNT,
+        &DESCRIBELIMITSOUTPUT_MEMBER_ON_DEMAND_STREAM_COUNT,
+        &DESCRIBELIMITSOUTPUT_MEMBER_ON_DEMAND_STREAM_COUNT_LIMIT,
+        &DESCRIBELIMITSOUTPUT_MEMBER_CHANNEL_COUNT,
+        &DESCRIBELIMITSOUTPUT_MEMBER_CHANNEL_COUNT_LIMIT,
+    ],
+)
+.with_original_name("DescribeLimitsOutput");
+impl DescribeLimitsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBELIMITSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeLimitsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.shard_limit;
+            ser.write_integer(&DESCRIBELIMITSOUTPUT_MEMBER_SHARD_LIMIT, *val)?;
+        }
+        {
+            let val = &self.open_shard_count;
+            ser.write_integer(&DESCRIBELIMITSOUTPUT_MEMBER_OPEN_SHARD_COUNT, *val)?;
+        }
+        {
+            let val = &self.on_demand_stream_count;
+            ser.write_integer(&DESCRIBELIMITSOUTPUT_MEMBER_ON_DEMAND_STREAM_COUNT, *val)?;
+        }
+        {
+            let val = &self.on_demand_stream_count_limit;
+            ser.write_integer(&DESCRIBELIMITSOUTPUT_MEMBER_ON_DEMAND_STREAM_COUNT_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.channel_count {
+            ser.write_integer(&DESCRIBELIMITSOUTPUT_MEMBER_CHANNEL_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.channel_count_limit {
+            ser.write_integer(&DESCRIBELIMITSOUTPUT_MEMBER_CHANNEL_COUNT_LIMIT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_limits::builders::DescribeLimitsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBELIMITSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.shard_limit = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    self.open_shard_count = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    self.on_demand_stream_count = Some(deser.read_integer(member)?);
+                }
+                Some(3) => {
+                    self.on_demand_stream_count_limit = Some(deser.read_integer(member)?);
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.channel_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.channel_count_limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeLimitsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.shard_limit = builder.shard_limit.or(Some(0i32));
+        builder.open_shard_count = builder.open_shard_count.or(Some(0i32));
+        builder.on_demand_stream_count = builder.on_demand_stream_count.or(Some(0i32));
+        builder.on_demand_stream_count_limit = builder.on_demand_stream_count_limit.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeLimitsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

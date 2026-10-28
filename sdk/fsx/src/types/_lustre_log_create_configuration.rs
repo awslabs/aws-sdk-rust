@@ -66,6 +66,106 @@ impl LustreLogCreateConfiguration {
         self.destination.as_deref()
     }
 }
+static LUSTRELOGCREATECONFIGURATION_MEMBER_LEVEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#LustreLogCreateConfiguration$Level",
+        "com.amazonaws.fsx",
+        "LustreLogCreateConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Level",
+    0,
+);
+static LUSTRELOGCREATECONFIGURATION_MEMBER_DESTINATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#LustreLogCreateConfiguration$Destination",
+        "com.amazonaws.fsx",
+        "LustreLogCreateConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Destination",
+    1,
+);
+static LUSTRELOGCREATECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx#LustreLogCreateConfiguration",
+        "com.amazonaws.fsx",
+        "LustreLogCreateConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LUSTRELOGCREATECONFIGURATION_MEMBER_LEVEL,
+        &LUSTRELOGCREATECONFIGURATION_MEMBER_DESTINATION,
+    ],
+);
+impl LustreLogCreateConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LUSTRELOGCREATECONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LustreLogCreateConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.level {
+            ser.write_string(&LUSTRELOGCREATECONFIGURATION_MEMBER_LEVEL, val.as_str())?;
+        }
+        if let Some(ref val) = self.destination {
+            ser.write_string(&LUSTRELOGCREATECONFIGURATION_MEMBER_DESTINATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LustreLogCreateConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LUSTRELOGCREATECONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.level = Some(crate::types::LustreAccessAuditLogLevel::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LustreLogCreateConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LustreLogCreateConfiguration {
     /// Creates a new builder-style object to manufacture [`LustreLogCreateConfiguration`](crate::types::LustreLogCreateConfiguration).
     pub fn builder() -> crate::types::builders::LustreLogCreateConfigurationBuilder {

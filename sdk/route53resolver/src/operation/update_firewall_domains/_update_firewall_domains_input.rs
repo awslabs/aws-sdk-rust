@@ -64,6 +64,150 @@ impl UpdateFirewallDomainsInput {
         self.domains.as_deref().unwrap_or_default()
     }
 }
+static UPDATEFIREWALLDOMAINSINPUT_MEMBER_FIREWALL_DOMAIN_LIST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#UpdateFirewallDomainsInput$FirewallDomainListId",
+        "com.amazonaws.route53resolver.synthetic",
+        "UpdateFirewallDomainsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FirewallDomainListId",
+    0,
+);
+static UPDATEFIREWALLDOMAINSINPUT_MEMBER_OPERATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#UpdateFirewallDomainsInput$Operation",
+        "com.amazonaws.route53resolver.synthetic",
+        "UpdateFirewallDomainsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Operation",
+    1,
+);
+static UPDATEFIREWALLDOMAINSINPUT_MEMBER_DOMAINS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallDomains$member",
+        "com.amazonaws.route53resolver",
+        "FirewallDomains",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEFIREWALLDOMAINSINPUT_MEMBER_DOMAINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#UpdateFirewallDomainsInput$Domains",
+        "com.amazonaws.route53resolver.synthetic",
+        "UpdateFirewallDomainsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Domains",
+    2,
+)
+.with_list_member(&UPDATEFIREWALLDOMAINSINPUT_MEMBER_DOMAINS_MEMBER);
+static UPDATEFIREWALLDOMAINSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#UpdateFirewallDomainsInput",
+        "com.amazonaws.route53resolver.synthetic",
+        "UpdateFirewallDomainsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEFIREWALLDOMAINSINPUT_MEMBER_FIREWALL_DOMAIN_LIST_ID,
+        &UPDATEFIREWALLDOMAINSINPUT_MEMBER_OPERATION,
+        &UPDATEFIREWALLDOMAINSINPUT_MEMBER_DOMAINS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateFirewallDomainsRequest");
+impl UpdateFirewallDomainsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEFIREWALLDOMAINSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateFirewallDomainsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.firewall_domain_list_id {
+            ser.write_string(&UPDATEFIREWALLDOMAINSINPUT_MEMBER_FIREWALL_DOMAIN_LIST_ID, val)?;
+        }
+        if let Some(ref val) = self.operation {
+            ser.write_string(&UPDATEFIREWALLDOMAINSINPUT_MEMBER_OPERATION, val.as_str())?;
+        }
+        if let Some(ref val) = self.domains {
+            ser.write_list(
+                &UPDATEFIREWALLDOMAINSINPUT_MEMBER_DOMAINS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEFIREWALLDOMAINSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firewall_domain_list_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operation = Some(crate::types::FirewallDomainUpdateOperation::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domains = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateFirewallDomainsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.firewall_domain_list_id = builder.firewall_domain_list_id.or(Some(String::new()));
+        builder.domains = builder.domains.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateFirewallDomainsInput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallDomainsInput`](crate::operation::update_firewall_domains::UpdateFirewallDomainsInput).
     pub fn builder() -> crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsInputBuilder {

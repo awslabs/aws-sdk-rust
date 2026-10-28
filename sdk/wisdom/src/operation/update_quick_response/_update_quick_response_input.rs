@@ -104,6 +104,384 @@ impl UpdateQuickResponseInput {
         self.language.as_deref()
     }
 }
+static UPDATEQUICKRESPONSEINPUT_MEMBER_KNOWLEDGE_BASE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateQuickResponseInput$knowledgeBaseId",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateQuickResponseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "knowledgeBaseId",
+    0,
+)
+.with_http_label();
+static UPDATEQUICKRESPONSEINPUT_MEMBER_QUICK_RESPONSE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateQuickResponseInput$quickResponseId",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateQuickResponseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "quickResponseId",
+    1,
+)
+.with_http_label();
+static UPDATEQUICKRESPONSEINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateQuickResponseInput$name",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateQuickResponseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    2,
+);
+static UPDATEQUICKRESPONSEINPUT_MEMBER_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateQuickResponseInput$content",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateQuickResponseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "content",
+    3,
+);
+static UPDATEQUICKRESPONSEINPUT_MEMBER_CONTENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateQuickResponseInput$contentType",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateQuickResponseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "contentType",
+    4,
+);
+static UPDATEQUICKRESPONSEINPUT_MEMBER_GROUPING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateQuickResponseInput$groupingConfiguration",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateQuickResponseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "groupingConfiguration",
+    5,
+);
+static UPDATEQUICKRESPONSEINPUT_MEMBER_REMOVE_GROUPING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateQuickResponseInput$removeGroupingConfiguration",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateQuickResponseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "removeGroupingConfiguration",
+    6,
+);
+static UPDATEQUICKRESPONSEINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateQuickResponseInput$description",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateQuickResponseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    7,
+);
+static UPDATEQUICKRESPONSEINPUT_MEMBER_REMOVE_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateQuickResponseInput$removeDescription",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateQuickResponseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "removeDescription",
+    8,
+);
+static UPDATEQUICKRESPONSEINPUT_MEMBER_SHORTCUT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateQuickResponseInput$shortcutKey",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateQuickResponseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "shortcutKey",
+    9,
+);
+static UPDATEQUICKRESPONSEINPUT_MEMBER_REMOVE_SHORTCUT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateQuickResponseInput$removeShortcutKey",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateQuickResponseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "removeShortcutKey",
+    10,
+);
+static UPDATEQUICKRESPONSEINPUT_MEMBER_IS_ACTIVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateQuickResponseInput$isActive",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateQuickResponseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isActive",
+    11,
+);
+static UPDATEQUICKRESPONSEINPUT_MEMBER_CHANNELS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.wisdom#Channels$member", "com.amazonaws.wisdom", "Channels"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEQUICKRESPONSEINPUT_MEMBER_CHANNELS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateQuickResponseInput$channels",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateQuickResponseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "channels",
+    12,
+)
+.with_list_member(&UPDATEQUICKRESPONSEINPUT_MEMBER_CHANNELS_MEMBER);
+static UPDATEQUICKRESPONSEINPUT_MEMBER_LANGUAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateQuickResponseInput$language",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateQuickResponseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "language",
+    13,
+);
+static UPDATEQUICKRESPONSEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom.synthetic#UpdateQuickResponseInput",
+        "com.amazonaws.wisdom.synthetic",
+        "UpdateQuickResponseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEQUICKRESPONSEINPUT_MEMBER_KNOWLEDGE_BASE_ID,
+        &UPDATEQUICKRESPONSEINPUT_MEMBER_QUICK_RESPONSE_ID,
+        &UPDATEQUICKRESPONSEINPUT_MEMBER_NAME,
+        &UPDATEQUICKRESPONSEINPUT_MEMBER_CONTENT,
+        &UPDATEQUICKRESPONSEINPUT_MEMBER_CONTENT_TYPE,
+        &UPDATEQUICKRESPONSEINPUT_MEMBER_GROUPING_CONFIGURATION,
+        &UPDATEQUICKRESPONSEINPUT_MEMBER_REMOVE_GROUPING_CONFIGURATION,
+        &UPDATEQUICKRESPONSEINPUT_MEMBER_DESCRIPTION,
+        &UPDATEQUICKRESPONSEINPUT_MEMBER_REMOVE_DESCRIPTION,
+        &UPDATEQUICKRESPONSEINPUT_MEMBER_SHORTCUT_KEY,
+        &UPDATEQUICKRESPONSEINPUT_MEMBER_REMOVE_SHORTCUT_KEY,
+        &UPDATEQUICKRESPONSEINPUT_MEMBER_IS_ACTIVE,
+        &UPDATEQUICKRESPONSEINPUT_MEMBER_CHANNELS,
+        &UPDATEQUICKRESPONSEINPUT_MEMBER_LANGUAGE,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/knowledgeBases/{knowledgeBaseId}/quickResponses/{quickResponseId}",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateQuickResponseRequest");
+impl UpdateQuickResponseInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEQUICKRESPONSEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateQuickResponseInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.knowledge_base_id {
+            ser.write_string(&UPDATEQUICKRESPONSEINPUT_MEMBER_KNOWLEDGE_BASE_ID, val)?;
+        }
+        if let Some(ref val) = self.quick_response_id {
+            ser.write_string(&UPDATEQUICKRESPONSEINPUT_MEMBER_QUICK_RESPONSE_ID, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&UPDATEQUICKRESPONSEINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.content {
+            ser.write_struct(&UPDATEQUICKRESPONSEINPUT_MEMBER_CONTENT, val)?;
+        }
+        if let Some(ref val) = self.content_type {
+            ser.write_string(&UPDATEQUICKRESPONSEINPUT_MEMBER_CONTENT_TYPE, val)?;
+        }
+        if let Some(ref val) = self.grouping_configuration {
+            ser.write_struct(&UPDATEQUICKRESPONSEINPUT_MEMBER_GROUPING_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.remove_grouping_configuration {
+            ser.write_boolean(&UPDATEQUICKRESPONSEINPUT_MEMBER_REMOVE_GROUPING_CONFIGURATION, *val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATEQUICKRESPONSEINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.remove_description {
+            ser.write_boolean(&UPDATEQUICKRESPONSEINPUT_MEMBER_REMOVE_DESCRIPTION, *val)?;
+        }
+        if let Some(ref val) = self.shortcut_key {
+            ser.write_string(&UPDATEQUICKRESPONSEINPUT_MEMBER_SHORTCUT_KEY, val)?;
+        }
+        if let Some(ref val) = self.remove_shortcut_key {
+            ser.write_boolean(&UPDATEQUICKRESPONSEINPUT_MEMBER_REMOVE_SHORTCUT_KEY, *val)?;
+        }
+        if let Some(ref val) = self.is_active {
+            ser.write_boolean(&UPDATEQUICKRESPONSEINPUT_MEMBER_IS_ACTIVE, *val)?;
+        }
+        if let Some(ref val) = self.channels {
+            ser.write_list(
+                &UPDATEQUICKRESPONSEINPUT_MEMBER_CHANNELS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.language {
+            ser.write_string(&UPDATEQUICKRESPONSEINPUT_MEMBER_LANGUAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_quick_response::builders::UpdateQuickResponseInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEQUICKRESPONSEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.knowledge_base_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.quick_response_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content = Some(crate::types::QuickResponseDataProvider::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.grouping_configuration = Some(crate::types::GroupingConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.remove_grouping_configuration = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.remove_description = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.shortcut_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.remove_shortcut_key = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_active = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.channels = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateQuickResponseInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.knowledge_base_id = builder.knowledge_base_id.or(Some(String::new()));
+        builder.quick_response_id = builder.quick_response_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateQuickResponseInput {
     /// Creates a new builder-style object to manufacture [`UpdateQuickResponseInput`](crate::operation::update_quick_response::UpdateQuickResponseInput).
     pub fn builder() -> crate::operation::update_quick_response::builders::UpdateQuickResponseInputBuilder {

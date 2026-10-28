@@ -148,6 +148,162 @@ impl PortMapping {
         self.container_port_range.as_deref()
     }
 }
+static PORTMAPPING_MEMBER_CONTAINER_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#PortMapping$containerPort", "com.amazonaws.ecs", "PortMapping"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "containerPort",
+    0,
+);
+static PORTMAPPING_MEMBER_HOST_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#PortMapping$hostPort", "com.amazonaws.ecs", "PortMapping"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "hostPort",
+    1,
+);
+static PORTMAPPING_MEMBER_PROTOCOL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#PortMapping$protocol", "com.amazonaws.ecs", "PortMapping"),
+    ::aws_smithy_schema::ShapeType::String,
+    "protocol",
+    2,
+);
+static PORTMAPPING_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#PortMapping$name", "com.amazonaws.ecs", "PortMapping"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    3,
+);
+static PORTMAPPING_MEMBER_APP_PROTOCOL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#PortMapping$appProtocol", "com.amazonaws.ecs", "PortMapping"),
+    ::aws_smithy_schema::ShapeType::String,
+    "appProtocol",
+    4,
+);
+static PORTMAPPING_MEMBER_CONTAINER_PORT_RANGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#PortMapping$containerPortRange", "com.amazonaws.ecs", "PortMapping"),
+    ::aws_smithy_schema::ShapeType::String,
+    "containerPortRange",
+    5,
+);
+static PORTMAPPING_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#PortMapping", "com.amazonaws.ecs", "PortMapping"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PORTMAPPING_MEMBER_CONTAINER_PORT,
+        &PORTMAPPING_MEMBER_HOST_PORT,
+        &PORTMAPPING_MEMBER_PROTOCOL,
+        &PORTMAPPING_MEMBER_NAME,
+        &PORTMAPPING_MEMBER_APP_PROTOCOL,
+        &PORTMAPPING_MEMBER_CONTAINER_PORT_RANGE,
+    ],
+);
+impl PortMapping {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PORTMAPPING_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PortMapping {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.container_port {
+            ser.write_integer(&PORTMAPPING_MEMBER_CONTAINER_PORT, *val)?;
+        }
+        if let Some(ref val) = self.host_port {
+            ser.write_integer(&PORTMAPPING_MEMBER_HOST_PORT, *val)?;
+        }
+        if let Some(ref val) = self.protocol {
+            ser.write_string(&PORTMAPPING_MEMBER_PROTOCOL, val.as_str())?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&PORTMAPPING_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.app_protocol {
+            ser.write_string(&PORTMAPPING_MEMBER_APP_PROTOCOL, val.as_str())?;
+        }
+        if let Some(ref val) = self.container_port_range {
+            ser.write_string(&PORTMAPPING_MEMBER_CONTAINER_PORT_RANGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PortMappingBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PORTMAPPING_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_port = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.host_port = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocol = Some(crate::types::TransportProtocol::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_protocol = Some(crate::types::ApplicationProtocol::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_port_range = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PortMapping {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PortMapping {
     /// Creates a new builder-style object to manufacture [`PortMapping`](crate::types::PortMapping).
     pub fn builder() -> crate::types::builders::PortMappingBuilder {

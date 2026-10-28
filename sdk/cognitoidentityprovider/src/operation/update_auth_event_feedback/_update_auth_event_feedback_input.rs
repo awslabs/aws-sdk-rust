@@ -47,6 +47,175 @@ impl ::std::fmt::Debug for UpdateAuthEventFeedbackInput {
         formatter.finish()
     }
 }
+static UPDATEAUTHEVENTFEEDBACKINPUT_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateAuthEventFeedbackInput$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateAuthEventFeedbackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    0,
+);
+static UPDATEAUTHEVENTFEEDBACKINPUT_MEMBER_USERNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateAuthEventFeedbackInput$Username",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateAuthEventFeedbackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Username",
+    1,
+);
+static UPDATEAUTHEVENTFEEDBACKINPUT_MEMBER_EVENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateAuthEventFeedbackInput$EventId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateAuthEventFeedbackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EventId",
+    2,
+);
+static UPDATEAUTHEVENTFEEDBACKINPUT_MEMBER_FEEDBACK_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateAuthEventFeedbackInput$FeedbackToken",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateAuthEventFeedbackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeedbackToken",
+    3,
+);
+static UPDATEAUTHEVENTFEEDBACKINPUT_MEMBER_FEEDBACK_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateAuthEventFeedbackInput$FeedbackValue",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateAuthEventFeedbackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeedbackValue",
+    4,
+);
+static UPDATEAUTHEVENTFEEDBACKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateAuthEventFeedbackInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateAuthEventFeedbackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEAUTHEVENTFEEDBACKINPUT_MEMBER_USER_POOL_ID,
+        &UPDATEAUTHEVENTFEEDBACKINPUT_MEMBER_USERNAME,
+        &UPDATEAUTHEVENTFEEDBACKINPUT_MEMBER_EVENT_ID,
+        &UPDATEAUTHEVENTFEEDBACKINPUT_MEMBER_FEEDBACK_TOKEN,
+        &UPDATEAUTHEVENTFEEDBACKINPUT_MEMBER_FEEDBACK_VALUE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateAuthEventFeedbackRequest");
+impl UpdateAuthEventFeedbackInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEAUTHEVENTFEEDBACKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateAuthEventFeedbackInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&UPDATEAUTHEVENTFEEDBACKINPUT_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.username {
+            ser.write_string(&UPDATEAUTHEVENTFEEDBACKINPUT_MEMBER_USERNAME, val)?;
+        }
+        if let Some(ref val) = self.event_id {
+            ser.write_string(&UPDATEAUTHEVENTFEEDBACKINPUT_MEMBER_EVENT_ID, val)?;
+        }
+        if let Some(ref val) = self.feedback_token {
+            ser.write_string(&UPDATEAUTHEVENTFEEDBACKINPUT_MEMBER_FEEDBACK_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.feedback_value {
+            ser.write_string(&UPDATEAUTHEVENTFEEDBACKINPUT_MEMBER_FEEDBACK_VALUE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_auth_event_feedback::builders::UpdateAuthEventFeedbackInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEAUTHEVENTFEEDBACKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.username = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feedback_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feedback_value = Some(crate::types::FeedbackValueType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateAuthEventFeedbackInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_pool_id = builder.user_pool_id.or(Some(String::new()));
+        builder.username = builder.username.or(Some(String::new()));
+        builder.event_id = builder.event_id.or(Some(String::new()));
+        builder.feedback_token = builder.feedback_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateAuthEventFeedbackInput {
     /// Creates a new builder-style object to manufacture [`UpdateAuthEventFeedbackInput`](crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackInput).
     pub fn builder() -> crate::operation::update_auth_event_feedback::builders::UpdateAuthEventFeedbackInputBuilder {

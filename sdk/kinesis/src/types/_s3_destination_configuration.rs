@@ -25,6 +25,128 @@ impl S3DestinationConfiguration {
         self.storage_configuration.as_ref()
     }
 }
+static S3DESTINATIONCONFIGURATION_MEMBER_DATA_FRESHNESS_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#S3DestinationConfiguration$DataFreshnessInSeconds",
+        "com.amazonaws.kinesis",
+        "S3DestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DataFreshnessInSeconds",
+    0,
+);
+static S3DESTINATIONCONFIGURATION_MEMBER_DEAD_LETTER_QUEUE_S3_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.kinesis#S3DestinationConfiguration$DeadLetterQueueS3Configuration",
+            "com.amazonaws.kinesis",
+            "S3DestinationConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DeadLetterQueueS3Configuration",
+        1,
+    );
+static S3DESTINATIONCONFIGURATION_MEMBER_STORAGE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#S3DestinationConfiguration$StorageConfiguration",
+        "com.amazonaws.kinesis",
+        "S3DestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StorageConfiguration",
+    2,
+);
+static S3DESTINATIONCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#S3DestinationConfiguration",
+        "com.amazonaws.kinesis",
+        "S3DestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &S3DESTINATIONCONFIGURATION_MEMBER_DATA_FRESHNESS_IN_SECONDS,
+        &S3DESTINATIONCONFIGURATION_MEMBER_DEAD_LETTER_QUEUE_S3_CONFIGURATION,
+        &S3DESTINATIONCONFIGURATION_MEMBER_STORAGE_CONFIGURATION,
+    ],
+);
+impl S3DestinationConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &S3DESTINATIONCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for S3DestinationConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.data_freshness_in_seconds {
+            ser.write_integer(&S3DESTINATIONCONFIGURATION_MEMBER_DATA_FRESHNESS_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.dead_letter_queue_s3_configuration {
+            ser.write_struct(&S3DESTINATIONCONFIGURATION_MEMBER_DEAD_LETTER_QUEUE_S3_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.storage_configuration {
+            ser.write_struct(&S3DESTINATIONCONFIGURATION_MEMBER_STORAGE_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::S3DestinationConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&S3DESTINATIONCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_freshness_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dead_letter_queue_s3_configuration = Some(crate::types::DeadLetterQueueS3Configuration::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.storage_configuration = Some(crate::types::S3StorageConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl S3DestinationConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl S3DestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`S3DestinationConfiguration`](crate::types::S3DestinationConfiguration).
     pub fn builder() -> crate::types::builders::S3DestinationConfigurationBuilder {

@@ -195,6 +195,259 @@ impl ProjectSource {
         self.source_identifier.as_deref()
     }
 }
+static PROJECTSOURCE_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#ProjectSource$type", "com.amazonaws.codebuild", "ProjectSource"),
+    ::aws_smithy_schema::ShapeType::String,
+    "type",
+    0,
+);
+static PROJECTSOURCE_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectSource$location",
+        "com.amazonaws.codebuild",
+        "ProjectSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "location",
+    1,
+);
+static PROJECTSOURCE_MEMBER_GIT_CLONE_DEPTH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectSource$gitCloneDepth",
+        "com.amazonaws.codebuild",
+        "ProjectSource",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "gitCloneDepth",
+    2,
+);
+static PROJECTSOURCE_MEMBER_GIT_SUBMODULES_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectSource$gitSubmodulesConfig",
+        "com.amazonaws.codebuild",
+        "ProjectSource",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "gitSubmodulesConfig",
+    3,
+);
+static PROJECTSOURCE_MEMBER_BUILDSPEC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectSource$buildspec",
+        "com.amazonaws.codebuild",
+        "ProjectSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "buildspec",
+    4,
+);
+static PROJECTSOURCE_MEMBER_AUTH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#ProjectSource$auth", "com.amazonaws.codebuild", "ProjectSource"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "auth",
+    5,
+);
+static PROJECTSOURCE_MEMBER_REPORT_BUILD_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectSource$reportBuildStatus",
+        "com.amazonaws.codebuild",
+        "ProjectSource",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "reportBuildStatus",
+    6,
+);
+static PROJECTSOURCE_MEMBER_BUILD_STATUS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectSource$buildStatusConfig",
+        "com.amazonaws.codebuild",
+        "ProjectSource",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "buildStatusConfig",
+    7,
+);
+static PROJECTSOURCE_MEMBER_INSECURE_SSL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectSource$insecureSsl",
+        "com.amazonaws.codebuild",
+        "ProjectSource",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "insecureSsl",
+    8,
+);
+static PROJECTSOURCE_MEMBER_SOURCE_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#ProjectSource$sourceIdentifier",
+        "com.amazonaws.codebuild",
+        "ProjectSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sourceIdentifier",
+    9,
+);
+static PROJECTSOURCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#ProjectSource", "com.amazonaws.codebuild", "ProjectSource"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PROJECTSOURCE_MEMBER_TYPE,
+        &PROJECTSOURCE_MEMBER_LOCATION,
+        &PROJECTSOURCE_MEMBER_GIT_CLONE_DEPTH,
+        &PROJECTSOURCE_MEMBER_GIT_SUBMODULES_CONFIG,
+        &PROJECTSOURCE_MEMBER_BUILDSPEC,
+        &PROJECTSOURCE_MEMBER_AUTH,
+        &PROJECTSOURCE_MEMBER_REPORT_BUILD_STATUS,
+        &PROJECTSOURCE_MEMBER_BUILD_STATUS_CONFIG,
+        &PROJECTSOURCE_MEMBER_INSECURE_SSL,
+        &PROJECTSOURCE_MEMBER_SOURCE_IDENTIFIER,
+    ],
+);
+impl ProjectSource {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PROJECTSOURCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProjectSource {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.r#type;
+            ser.write_string(&PROJECTSOURCE_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.location {
+            ser.write_string(&PROJECTSOURCE_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.git_clone_depth {
+            ser.write_integer(&PROJECTSOURCE_MEMBER_GIT_CLONE_DEPTH, *val)?;
+        }
+        if let Some(ref val) = self.git_submodules_config {
+            ser.write_struct(&PROJECTSOURCE_MEMBER_GIT_SUBMODULES_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.buildspec {
+            ser.write_string(&PROJECTSOURCE_MEMBER_BUILDSPEC, val)?;
+        }
+        if let Some(ref val) = self.auth {
+            ser.write_struct(&PROJECTSOURCE_MEMBER_AUTH, val)?;
+        }
+        if let Some(ref val) = self.report_build_status {
+            ser.write_boolean(&PROJECTSOURCE_MEMBER_REPORT_BUILD_STATUS, *val)?;
+        }
+        if let Some(ref val) = self.build_status_config {
+            ser.write_struct(&PROJECTSOURCE_MEMBER_BUILD_STATUS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.insecure_ssl {
+            ser.write_boolean(&PROJECTSOURCE_MEMBER_INSECURE_SSL, *val)?;
+        }
+        if let Some(ref val) = self.source_identifier {
+            ser.write_string(&PROJECTSOURCE_MEMBER_SOURCE_IDENTIFIER, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProjectSourceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PROJECTSOURCE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.r#type = Some(crate::types::SourceType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.git_clone_depth = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.git_submodules_config = Some(crate::types::GitSubmodulesConfig::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.buildspec = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auth = Some(crate::types::SourceAuth::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_build_status = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.build_status_config = Some(crate::types::BuildStatusConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.insecure_ssl = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProjectSource {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ProjectSource {
     /// Creates a new builder-style object to manufacture [`ProjectSource`](crate::types::ProjectSource).
     pub fn builder() -> crate::types::builders::ProjectSourceBuilder {

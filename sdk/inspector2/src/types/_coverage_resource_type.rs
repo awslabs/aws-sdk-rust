@@ -17,6 +17,7 @@
 ///     CoverageResourceType::AwsEcrRepository => { /* ... */ },
 ///     CoverageResourceType::AwsLambdaFunction => { /* ... */ },
 ///     CoverageResourceType::CodeRepository => { /* ... */ },
+///     CoverageResourceType::MachineImage => { /* ... */ },
 ///     CoverageResourceType::MicrosoftComputeVirtualMachines => { /* ... */ },
 ///     CoverageResourceType::MicrosoftContainerRegistryRegistries => { /* ... */ },
 ///     CoverageResourceType::MicrosoftContainerRegistryRegistryContainerImage => { /* ... */ },
@@ -61,6 +62,8 @@ pub enum CoverageResourceType {
     #[allow(missing_docs)] // documentation missing in model
     CodeRepository,
     #[allow(missing_docs)] // documentation missing in model
+    MachineImage,
+    #[allow(missing_docs)] // documentation missing in model
     MicrosoftComputeVirtualMachines,
     #[allow(missing_docs)] // documentation missing in model
     MicrosoftContainerRegistryRegistries,
@@ -82,6 +85,7 @@ impl ::std::convert::From<&str> for CoverageResourceType {
             "AWS_ECR_REPOSITORY" => CoverageResourceType::AwsEcrRepository,
             "AWS_LAMBDA_FUNCTION" => CoverageResourceType::AwsLambdaFunction,
             "CODE_REPOSITORY" => CoverageResourceType::CodeRepository,
+            "MACHINE_IMAGE" => CoverageResourceType::MachineImage,
             "Microsoft.Compute/virtualMachines" => CoverageResourceType::MicrosoftComputeVirtualMachines,
             "Microsoft.ContainerRegistry/registries" => CoverageResourceType::MicrosoftContainerRegistryRegistries,
             "Microsoft.ContainerRegistry/registry/containerImage" => CoverageResourceType::MicrosoftContainerRegistryRegistryContainerImage,
@@ -107,6 +111,7 @@ impl CoverageResourceType {
             CoverageResourceType::AwsEcrRepository => "AWS_ECR_REPOSITORY",
             CoverageResourceType::AwsLambdaFunction => "AWS_LAMBDA_FUNCTION",
             CoverageResourceType::CodeRepository => "CODE_REPOSITORY",
+            CoverageResourceType::MachineImage => "MACHINE_IMAGE",
             CoverageResourceType::MicrosoftComputeVirtualMachines => "Microsoft.Compute/virtualMachines",
             CoverageResourceType::MicrosoftContainerRegistryRegistries => "Microsoft.ContainerRegistry/registries",
             CoverageResourceType::MicrosoftContainerRegistryRegistryContainerImage => "Microsoft.ContainerRegistry/registry/containerImage",
@@ -123,6 +128,7 @@ impl CoverageResourceType {
             "AWS_ECR_REPOSITORY",
             "AWS_LAMBDA_FUNCTION",
             "CODE_REPOSITORY",
+            "MACHINE_IMAGE",
             "Microsoft.Compute/virtualMachines",
             "Microsoft.ContainerRegistry/registries",
             "Microsoft.ContainerRegistry/registry/containerImage",
@@ -156,6 +162,7 @@ impl ::std::fmt::Display for CoverageResourceType {
             CoverageResourceType::AwsEcrRepository => write!(f, "AWS_ECR_REPOSITORY"),
             CoverageResourceType::AwsLambdaFunction => write!(f, "AWS_LAMBDA_FUNCTION"),
             CoverageResourceType::CodeRepository => write!(f, "CODE_REPOSITORY"),
+            CoverageResourceType::MachineImage => write!(f, "MACHINE_IMAGE"),
             CoverageResourceType::MicrosoftComputeVirtualMachines => write!(f, "Microsoft.Compute/virtualMachines"),
             CoverageResourceType::MicrosoftContainerRegistryRegistries => write!(f, "Microsoft.ContainerRegistry/registries"),
             CoverageResourceType::MicrosoftContainerRegistryRegistryContainerImage => {

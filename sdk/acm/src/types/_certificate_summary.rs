@@ -147,6 +147,546 @@ impl CertificateSummary {
         self.certificate_key_pair_origin.as_ref()
     }
 }
+static CERTIFICATESUMMARY_MEMBER_CERTIFICATE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSummary$CertificateArn",
+        "com.amazonaws.acm",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertificateArn",
+    0,
+);
+static CERTIFICATESUMMARY_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSummary$DomainName",
+        "com.amazonaws.acm",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    1,
+);
+static CERTIFICATESUMMARY_MEMBER_SUBJECT_ALTERNATIVE_NAME_SUMMARIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#DomainList$member", "com.amazonaws.acm", "DomainList"),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static CERTIFICATESUMMARY_MEMBER_SUBJECT_ALTERNATIVE_NAME_SUMMARIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSummary$SubjectAlternativeNameSummaries",
+        "com.amazonaws.acm",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SubjectAlternativeNameSummaries",
+    2,
+)
+.with_list_member(&CERTIFICATESUMMARY_MEMBER_SUBJECT_ALTERNATIVE_NAME_SUMMARIES_MEMBER);
+static CERTIFICATESUMMARY_MEMBER_HAS_ADDITIONAL_SUBJECT_ALTERNATIVE_NAMES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.acm#CertificateSummary$HasAdditionalSubjectAlternativeNames",
+            "com.amazonaws.acm",
+            "CertificateSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "HasAdditionalSubjectAlternativeNames",
+        3,
+    );
+static CERTIFICATESUMMARY_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#CertificateSummary$Status", "com.amazonaws.acm", "CertificateSummary"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    4,
+);
+static CERTIFICATESUMMARY_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#CertificateSummary$Type", "com.amazonaws.acm", "CertificateSummary"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    5,
+);
+static CERTIFICATESUMMARY_MEMBER_KEY_ALGORITHM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSummary$KeyAlgorithm",
+        "com.amazonaws.acm",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KeyAlgorithm",
+    6,
+);
+static CERTIFICATESUMMARY_MEMBER_KEY_USAGES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#KeyUsageNames$member", "com.amazonaws.acm", "KeyUsageNames"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CERTIFICATESUMMARY_MEMBER_KEY_USAGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSummary$KeyUsages",
+        "com.amazonaws.acm",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "KeyUsages",
+    7,
+)
+.with_list_member(&CERTIFICATESUMMARY_MEMBER_KEY_USAGES_MEMBER);
+static CERTIFICATESUMMARY_MEMBER_EXTENDED_KEY_USAGES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#ExtendedKeyUsageNames$member",
+        "com.amazonaws.acm",
+        "ExtendedKeyUsageNames",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CERTIFICATESUMMARY_MEMBER_EXTENDED_KEY_USAGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSummary$ExtendedKeyUsages",
+        "com.amazonaws.acm",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ExtendedKeyUsages",
+    8,
+)
+.with_list_member(&CERTIFICATESUMMARY_MEMBER_EXTENDED_KEY_USAGES_MEMBER);
+static CERTIFICATESUMMARY_MEMBER_EXPORT_OPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSummary$ExportOption",
+        "com.amazonaws.acm",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExportOption",
+    9,
+);
+static CERTIFICATESUMMARY_MEMBER_IN_USE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#CertificateSummary$InUse", "com.amazonaws.acm", "CertificateSummary"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "InUse",
+    10,
+);
+static CERTIFICATESUMMARY_MEMBER_EXPORTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#CertificateSummary$Exported", "com.amazonaws.acm", "CertificateSummary"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Exported",
+    11,
+);
+static CERTIFICATESUMMARY_MEMBER_RENEWAL_ELIGIBILITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSummary$RenewalEligibility",
+        "com.amazonaws.acm",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RenewalEligibility",
+    12,
+);
+static CERTIFICATESUMMARY_MEMBER_NOT_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSummary$NotBefore",
+        "com.amazonaws.acm",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "NotBefore",
+    13,
+);
+static CERTIFICATESUMMARY_MEMBER_NOT_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#CertificateSummary$NotAfter", "com.amazonaws.acm", "CertificateSummary"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "NotAfter",
+    14,
+);
+static CERTIFICATESUMMARY_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSummary$CreatedAt",
+        "com.amazonaws.acm",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAt",
+    15,
+);
+static CERTIFICATESUMMARY_MEMBER_ISSUED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#CertificateSummary$IssuedAt", "com.amazonaws.acm", "CertificateSummary"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "IssuedAt",
+    16,
+);
+static CERTIFICATESUMMARY_MEMBER_IMPORTED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSummary$ImportedAt",
+        "com.amazonaws.acm",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ImportedAt",
+    17,
+);
+static CERTIFICATESUMMARY_MEMBER_REVOKED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSummary$RevokedAt",
+        "com.amazonaws.acm",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "RevokedAt",
+    18,
+);
+static CERTIFICATESUMMARY_MEMBER_MANAGED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSummary$ManagedBy",
+        "com.amazonaws.acm",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ManagedBy",
+    19,
+);
+static CERTIFICATESUMMARY_MEMBER_CERTIFICATE_KEY_PAIR_ORIGIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSummary$CertificateKeyPairOrigin",
+        "com.amazonaws.acm",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertificateKeyPairOrigin",
+    20,
+);
+static CERTIFICATESUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#CertificateSummary", "com.amazonaws.acm", "CertificateSummary"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CERTIFICATESUMMARY_MEMBER_CERTIFICATE_ARN,
+        &CERTIFICATESUMMARY_MEMBER_DOMAIN_NAME,
+        &CERTIFICATESUMMARY_MEMBER_SUBJECT_ALTERNATIVE_NAME_SUMMARIES,
+        &CERTIFICATESUMMARY_MEMBER_HAS_ADDITIONAL_SUBJECT_ALTERNATIVE_NAMES,
+        &CERTIFICATESUMMARY_MEMBER_STATUS,
+        &CERTIFICATESUMMARY_MEMBER_TYPE,
+        &CERTIFICATESUMMARY_MEMBER_KEY_ALGORITHM,
+        &CERTIFICATESUMMARY_MEMBER_KEY_USAGES,
+        &CERTIFICATESUMMARY_MEMBER_EXTENDED_KEY_USAGES,
+        &CERTIFICATESUMMARY_MEMBER_EXPORT_OPTION,
+        &CERTIFICATESUMMARY_MEMBER_IN_USE,
+        &CERTIFICATESUMMARY_MEMBER_EXPORTED,
+        &CERTIFICATESUMMARY_MEMBER_RENEWAL_ELIGIBILITY,
+        &CERTIFICATESUMMARY_MEMBER_NOT_BEFORE,
+        &CERTIFICATESUMMARY_MEMBER_NOT_AFTER,
+        &CERTIFICATESUMMARY_MEMBER_CREATED_AT,
+        &CERTIFICATESUMMARY_MEMBER_ISSUED_AT,
+        &CERTIFICATESUMMARY_MEMBER_IMPORTED_AT,
+        &CERTIFICATESUMMARY_MEMBER_REVOKED_AT,
+        &CERTIFICATESUMMARY_MEMBER_MANAGED_BY,
+        &CERTIFICATESUMMARY_MEMBER_CERTIFICATE_KEY_PAIR_ORIGIN,
+    ],
+);
+impl CertificateSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CERTIFICATESUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CertificateSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.certificate_arn {
+            ser.write_string(&CERTIFICATESUMMARY_MEMBER_CERTIFICATE_ARN, val)?;
+        }
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&CERTIFICATESUMMARY_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.subject_alternative_name_summaries {
+            ser.write_list(
+                &CERTIFICATESUMMARY_MEMBER_SUBJECT_ALTERNATIVE_NAME_SUMMARIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.has_additional_subject_alternative_names {
+            ser.write_boolean(&CERTIFICATESUMMARY_MEMBER_HAS_ADDITIONAL_SUBJECT_ALTERNATIVE_NAMES, *val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&CERTIFICATESUMMARY_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&CERTIFICATESUMMARY_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.key_algorithm {
+            ser.write_string(&CERTIFICATESUMMARY_MEMBER_KEY_ALGORITHM, val.as_str())?;
+        }
+        if let Some(ref val) = self.key_usages {
+            ser.write_list(
+                &CERTIFICATESUMMARY_MEMBER_KEY_USAGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.extended_key_usages {
+            ser.write_list(
+                &CERTIFICATESUMMARY_MEMBER_EXTENDED_KEY_USAGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.export_option {
+            ser.write_string(&CERTIFICATESUMMARY_MEMBER_EXPORT_OPTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.in_use {
+            ser.write_boolean(&CERTIFICATESUMMARY_MEMBER_IN_USE, *val)?;
+        }
+        if let Some(ref val) = self.exported {
+            ser.write_boolean(&CERTIFICATESUMMARY_MEMBER_EXPORTED, *val)?;
+        }
+        if let Some(ref val) = self.renewal_eligibility {
+            ser.write_string(&CERTIFICATESUMMARY_MEMBER_RENEWAL_ELIGIBILITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.not_before {
+            ser.write_timestamp(&CERTIFICATESUMMARY_MEMBER_NOT_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.not_after {
+            ser.write_timestamp(&CERTIFICATESUMMARY_MEMBER_NOT_AFTER, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&CERTIFICATESUMMARY_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.issued_at {
+            ser.write_timestamp(&CERTIFICATESUMMARY_MEMBER_ISSUED_AT, val)?;
+        }
+        if let Some(ref val) = self.imported_at {
+            ser.write_timestamp(&CERTIFICATESUMMARY_MEMBER_IMPORTED_AT, val)?;
+        }
+        if let Some(ref val) = self.revoked_at {
+            ser.write_timestamp(&CERTIFICATESUMMARY_MEMBER_REVOKED_AT, val)?;
+        }
+        if let Some(ref val) = self.managed_by {
+            ser.write_string(&CERTIFICATESUMMARY_MEMBER_MANAGED_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.certificate_key_pair_origin {
+            ser.write_string(&CERTIFICATESUMMARY_MEMBER_CERTIFICATE_KEY_PAIR_ORIGIN, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CertificateSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CERTIFICATESUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subject_alternative_name_summaries = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.has_additional_subject_alternative_names = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::CertificateStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::CertificateType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_algorithm = Some(crate::types::KeyAlgorithm::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_usages = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::KeyUsageName::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.extended_key_usages = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ExtendedKeyUsageName::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.export_option = Some(crate::types::CertificateExport::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.in_use = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.exported = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.renewal_eligibility = Some(crate::types::RenewalEligibility::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.not_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.not_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.issued_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.imported_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revoked_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_by = Some(crate::types::CertificateManagedBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_key_pair_origin = Some(crate::types::CertificateKeyPairOrigin::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CertificateSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CertificateSummary {
     /// Creates a new builder-style object to manufacture [`CertificateSummary`](crate::types::CertificateSummary).
     pub fn builder() -> crate::types::builders::CertificateSummaryBuilder {

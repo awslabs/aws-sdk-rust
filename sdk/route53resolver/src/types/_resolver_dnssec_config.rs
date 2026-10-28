@@ -51,6 +51,148 @@ impl ResolverDnssecConfig {
         self.validation_status.as_ref()
     }
 }
+static RESOLVERDNSSECCONFIG_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverDnssecConfig$Id",
+        "com.amazonaws.route53resolver",
+        "ResolverDnssecConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    0,
+);
+static RESOLVERDNSSECCONFIG_MEMBER_OWNER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverDnssecConfig$OwnerId",
+        "com.amazonaws.route53resolver",
+        "ResolverDnssecConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OwnerId",
+    1,
+);
+static RESOLVERDNSSECCONFIG_MEMBER_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverDnssecConfig$ResourceId",
+        "com.amazonaws.route53resolver",
+        "ResolverDnssecConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceId",
+    2,
+);
+static RESOLVERDNSSECCONFIG_MEMBER_VALIDATION_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverDnssecConfig$ValidationStatus",
+        "com.amazonaws.route53resolver",
+        "ResolverDnssecConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ValidationStatus",
+    3,
+);
+static RESOLVERDNSSECCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#ResolverDnssecConfig",
+        "com.amazonaws.route53resolver",
+        "ResolverDnssecConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESOLVERDNSSECCONFIG_MEMBER_ID,
+        &RESOLVERDNSSECCONFIG_MEMBER_OWNER_ID,
+        &RESOLVERDNSSECCONFIG_MEMBER_RESOURCE_ID,
+        &RESOLVERDNSSECCONFIG_MEMBER_VALIDATION_STATUS,
+    ],
+);
+impl ResolverDnssecConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOLVERDNSSECCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResolverDnssecConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&RESOLVERDNSSECCONFIG_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.owner_id {
+            ser.write_string(&RESOLVERDNSSECCONFIG_MEMBER_OWNER_ID, val)?;
+        }
+        if let Some(ref val) = self.resource_id {
+            ser.write_string(&RESOLVERDNSSECCONFIG_MEMBER_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.validation_status {
+            ser.write_string(&RESOLVERDNSSECCONFIG_MEMBER_VALIDATION_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ResolverDnssecConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESOLVERDNSSECCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.owner_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_status = Some(crate::types::ResolverDnssecValidationStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResolverDnssecConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ResolverDnssecConfig {
     /// Creates a new builder-style object to manufacture [`ResolverDnssecConfig`](crate::types::ResolverDnssecConfig).
     pub fn builder() -> crate::types::builders::ResolverDnssecConfigBuilder {

@@ -40,6 +40,151 @@ impl ::std::fmt::Debug for SetUiCustomizationInput {
         formatter.finish()
     }
 }
+static SETUICUSTOMIZATIONINPUT_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#SetUICustomizationInput$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "SetUICustomizationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    0,
+);
+static SETUICUSTOMIZATIONINPUT_MEMBER_CLIENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#SetUICustomizationInput$ClientId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "SetUICustomizationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientId",
+    1,
+);
+static SETUICUSTOMIZATIONINPUT_MEMBER_CSS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#SetUICustomizationInput$CSS",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "SetUICustomizationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CSS",
+    2,
+);
+static SETUICUSTOMIZATIONINPUT_MEMBER_IMAGE_FILE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#SetUICustomizationInput$ImageFile",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "SetUICustomizationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Blob,
+    "ImageFile",
+    3,
+);
+static SETUICUSTOMIZATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#SetUICustomizationInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "SetUICustomizationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SETUICUSTOMIZATIONINPUT_MEMBER_USER_POOL_ID,
+        &SETUICUSTOMIZATIONINPUT_MEMBER_CLIENT_ID,
+        &SETUICUSTOMIZATIONINPUT_MEMBER_CSS,
+        &SETUICUSTOMIZATIONINPUT_MEMBER_IMAGE_FILE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("SetUICustomizationRequest");
+impl SetUiCustomizationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SETUICUSTOMIZATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SetUiCustomizationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&SETUICUSTOMIZATIONINPUT_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.client_id {
+            ser.write_string(&SETUICUSTOMIZATIONINPUT_MEMBER_CLIENT_ID, val)?;
+        }
+        if let Some(ref val) = self.css {
+            ser.write_string(&SETUICUSTOMIZATIONINPUT_MEMBER_CSS, val)?;
+        }
+        if let Some(ref val) = self.image_file {
+            ser.write_blob(&SETUICUSTOMIZATIONINPUT_MEMBER_IMAGE_FILE, val.clone())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::set_ui_customization::builders::SetUiCustomizationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SETUICUSTOMIZATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.css = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_file = Some(deser.read_blob(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SetUiCustomizationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_pool_id = builder.user_pool_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SetUiCustomizationInput {
     /// Creates a new builder-style object to manufacture [`SetUiCustomizationInput`](crate::operation::set_ui_customization::SetUiCustomizationInput).
     pub fn builder() -> crate::operation::set_ui_customization::builders::SetUiCustomizationInputBuilder {

@@ -25,6 +25,127 @@ impl EventRiskType {
         self.compromised_credentials_detected
     }
 }
+static EVENTRISKTYPE_MEMBER_RISK_DECISION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#EventRiskType$RiskDecision",
+        "com.amazonaws.cognitoidentityprovider",
+        "EventRiskType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RiskDecision",
+    0,
+);
+static EVENTRISKTYPE_MEMBER_RISK_LEVEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#EventRiskType$RiskLevel",
+        "com.amazonaws.cognitoidentityprovider",
+        "EventRiskType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RiskLevel",
+    1,
+);
+static EVENTRISKTYPE_MEMBER_COMPROMISED_CREDENTIALS_DETECTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#EventRiskType$CompromisedCredentialsDetected",
+        "com.amazonaws.cognitoidentityprovider",
+        "EventRiskType",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "CompromisedCredentialsDetected",
+    2,
+);
+static EVENTRISKTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#EventRiskType",
+        "com.amazonaws.cognitoidentityprovider",
+        "EventRiskType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EVENTRISKTYPE_MEMBER_RISK_DECISION,
+        &EVENTRISKTYPE_MEMBER_RISK_LEVEL,
+        &EVENTRISKTYPE_MEMBER_COMPROMISED_CREDENTIALS_DETECTED,
+    ],
+);
+impl EventRiskType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EVENTRISKTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EventRiskType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.risk_decision {
+            ser.write_string(&EVENTRISKTYPE_MEMBER_RISK_DECISION, val.as_str())?;
+        }
+        if let Some(ref val) = self.risk_level {
+            ser.write_string(&EVENTRISKTYPE_MEMBER_RISK_LEVEL, val.as_str())?;
+        }
+        if let Some(ref val) = self.compromised_credentials_detected {
+            ser.write_boolean(&EVENTRISKTYPE_MEMBER_COMPROMISED_CREDENTIALS_DETECTED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EventRiskTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EVENTRISKTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.risk_decision = Some(crate::types::RiskDecisionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.risk_level = Some(crate::types::RiskLevelType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compromised_credentials_detected = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EventRiskType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EventRiskType {
     /// Creates a new builder-style object to manufacture [`EventRiskType`](crate::types::EventRiskType).
     pub fn builder() -> crate::types::builders::EventRiskTypeBuilder {

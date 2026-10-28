@@ -104,6 +104,333 @@ impl ::std::fmt::Debug for CommandExecution {
         formatter.finish()
     }
 }
+static COMMANDEXECUTION_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CommandExecution$id",
+        "com.amazonaws.codebuild",
+        "CommandExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "id",
+    0,
+);
+static COMMANDEXECUTION_MEMBER_SANDBOX_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CommandExecution$sandboxId",
+        "com.amazonaws.codebuild",
+        "CommandExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sandboxId",
+    1,
+);
+static COMMANDEXECUTION_MEMBER_SUBMIT_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CommandExecution$submitTime",
+        "com.amazonaws.codebuild",
+        "CommandExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "submitTime",
+    2,
+);
+static COMMANDEXECUTION_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CommandExecution$startTime",
+        "com.amazonaws.codebuild",
+        "CommandExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "startTime",
+    3,
+);
+static COMMANDEXECUTION_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CommandExecution$endTime",
+        "com.amazonaws.codebuild",
+        "CommandExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "endTime",
+    4,
+);
+static COMMANDEXECUTION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CommandExecution$status",
+        "com.amazonaws.codebuild",
+        "CommandExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    5,
+);
+static COMMANDEXECUTION_MEMBER_COMMAND: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CommandExecution$command",
+        "com.amazonaws.codebuild",
+        "CommandExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "command",
+    6,
+);
+static COMMANDEXECUTION_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CommandExecution$type",
+        "com.amazonaws.codebuild",
+        "CommandExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "type",
+    7,
+);
+static COMMANDEXECUTION_MEMBER_EXIT_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CommandExecution$exitCode",
+        "com.amazonaws.codebuild",
+        "CommandExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "exitCode",
+    8,
+);
+static COMMANDEXECUTION_MEMBER_STANDARD_OUTPUT_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CommandExecution$standardOutputContent",
+        "com.amazonaws.codebuild",
+        "CommandExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "standardOutputContent",
+    9,
+);
+static COMMANDEXECUTION_MEMBER_STANDARD_ERR_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CommandExecution$standardErrContent",
+        "com.amazonaws.codebuild",
+        "CommandExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "standardErrContent",
+    10,
+);
+static COMMANDEXECUTION_MEMBER_LOGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CommandExecution$logs",
+        "com.amazonaws.codebuild",
+        "CommandExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "logs",
+    11,
+);
+static COMMANDEXECUTION_MEMBER_SANDBOX_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CommandExecution$sandboxArn",
+        "com.amazonaws.codebuild",
+        "CommandExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sandboxArn",
+    12,
+);
+static COMMANDEXECUTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#CommandExecution", "com.amazonaws.codebuild", "CommandExecution"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &COMMANDEXECUTION_MEMBER_ID,
+        &COMMANDEXECUTION_MEMBER_SANDBOX_ID,
+        &COMMANDEXECUTION_MEMBER_SUBMIT_TIME,
+        &COMMANDEXECUTION_MEMBER_START_TIME,
+        &COMMANDEXECUTION_MEMBER_END_TIME,
+        &COMMANDEXECUTION_MEMBER_STATUS,
+        &COMMANDEXECUTION_MEMBER_COMMAND,
+        &COMMANDEXECUTION_MEMBER_TYPE,
+        &COMMANDEXECUTION_MEMBER_EXIT_CODE,
+        &COMMANDEXECUTION_MEMBER_STANDARD_OUTPUT_CONTENT,
+        &COMMANDEXECUTION_MEMBER_STANDARD_ERR_CONTENT,
+        &COMMANDEXECUTION_MEMBER_LOGS,
+        &COMMANDEXECUTION_MEMBER_SANDBOX_ARN,
+    ],
+);
+impl CommandExecution {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COMMANDEXECUTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CommandExecution {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&COMMANDEXECUTION_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.sandbox_id {
+            ser.write_string(&COMMANDEXECUTION_MEMBER_SANDBOX_ID, val)?;
+        }
+        if let Some(ref val) = self.submit_time {
+            ser.write_timestamp(&COMMANDEXECUTION_MEMBER_SUBMIT_TIME, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&COMMANDEXECUTION_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&COMMANDEXECUTION_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&COMMANDEXECUTION_MEMBER_STATUS, val)?;
+        }
+        if let Some(ref val) = self.command {
+            ser.write_string(&COMMANDEXECUTION_MEMBER_COMMAND, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&COMMANDEXECUTION_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.exit_code {
+            ser.write_string(&COMMANDEXECUTION_MEMBER_EXIT_CODE, val)?;
+        }
+        if let Some(ref val) = self.standard_output_content {
+            ser.write_string(&COMMANDEXECUTION_MEMBER_STANDARD_OUTPUT_CONTENT, val)?;
+        }
+        if let Some(ref val) = self.standard_err_content {
+            ser.write_string(&COMMANDEXECUTION_MEMBER_STANDARD_ERR_CONTENT, val)?;
+        }
+        if let Some(ref val) = self.logs {
+            ser.write_struct(&COMMANDEXECUTION_MEMBER_LOGS, val)?;
+        }
+        if let Some(ref val) = self.sandbox_arn {
+            ser.write_string(&COMMANDEXECUTION_MEMBER_SANDBOX_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CommandExecutionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COMMANDEXECUTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sandbox_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.submit_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.command = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::CommandType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.exit_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.standard_output_content = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.standard_err_content = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logs = Some(crate::types::LogsLocation::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sandbox_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CommandExecution {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CommandExecution {
     /// Creates a new builder-style object to manufacture [`CommandExecution`](crate::types::CommandExecution).
     pub fn builder() -> crate::types::builders::CommandExecutionBuilder {

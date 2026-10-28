@@ -46,6 +46,236 @@ impl CreateAcmeEndpointInput {
         self.certificate_tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEACMEENDPOINTINPUT_MEMBER_IDEMPOTENCY_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeEndpointInput$IdempotencyToken",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdempotencyToken",
+    0,
+);
+static CREATEACMEENDPOINTINPUT_MEMBER_AUTHORIZATION_BEHAVIOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeEndpointInput$AuthorizationBehavior",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthorizationBehavior",
+    1,
+);
+static CREATEACMEENDPOINTINPUT_MEMBER_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeEndpointInput$Contact",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Contact",
+    2,
+);
+static CREATEACMEENDPOINTINPUT_MEMBER_CERTIFICATE_AUTHORITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeEndpointInput$CertificateAuthority",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "CertificateAuthority",
+    3,
+);
+static CREATEACMEENDPOINTINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#TagList$member", "com.amazonaws.acm", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEACMEENDPOINTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeEndpointInput$Tags",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    4,
+)
+.with_list_member(&CREATEACMEENDPOINTINPUT_MEMBER_TAGS_MEMBER);
+static CREATEACMEENDPOINTINPUT_MEMBER_CERTIFICATE_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#TagList$member", "com.amazonaws.acm", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEACMEENDPOINTINPUT_MEMBER_CERTIFICATE_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeEndpointInput$CertificateTags",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CertificateTags",
+    5,
+)
+.with_list_member(&CREATEACMEENDPOINTINPUT_MEMBER_CERTIFICATE_TAGS_MEMBER);
+static CREATEACMEENDPOINTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#CreateAcmeEndpointInput",
+        "com.amazonaws.acm.synthetic",
+        "CreateAcmeEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEACMEENDPOINTINPUT_MEMBER_IDEMPOTENCY_TOKEN,
+        &CREATEACMEENDPOINTINPUT_MEMBER_AUTHORIZATION_BEHAVIOR,
+        &CREATEACMEENDPOINTINPUT_MEMBER_CONTACT,
+        &CREATEACMEENDPOINTINPUT_MEMBER_CERTIFICATE_AUTHORITY,
+        &CREATEACMEENDPOINTINPUT_MEMBER_TAGS,
+        &CREATEACMEENDPOINTINPUT_MEMBER_CERTIFICATE_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateAcmeEndpointRequest");
+impl CreateAcmeEndpointInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEACMEENDPOINTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAcmeEndpointInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.idempotency_token {
+            ser.write_string(&CREATEACMEENDPOINTINPUT_MEMBER_IDEMPOTENCY_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.authorization_behavior {
+            ser.write_string(&CREATEACMEENDPOINTINPUT_MEMBER_AUTHORIZATION_BEHAVIOR, val.as_str())?;
+        }
+        if let Some(ref val) = self.contact {
+            ser.write_string(&CREATEACMEENDPOINTINPUT_MEMBER_CONTACT, val.as_str())?;
+        }
+        if let Some(ref val) = self.certificate_authority {
+            ser.write_struct(&CREATEACMEENDPOINTINPUT_MEMBER_CERTIFICATE_AUTHORITY, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEACMEENDPOINTINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.certificate_tags {
+            ser.write_list(
+                &CREATEACMEENDPOINTINPUT_MEMBER_CERTIFICATE_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_acme_endpoint::builders::CreateAcmeEndpointInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEACMEENDPOINTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idempotency_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authorization_behavior = Some(crate::types::AcmeAuthorizationBehavior::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.contact = Some(crate::types::AcmeContact::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_authority = Some(crate::types::CertificateAuthority::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateAcmeEndpointInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateAcmeEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreateAcmeEndpointInput`](crate::operation::create_acme_endpoint::CreateAcmeEndpointInput).
     pub fn builder() -> crate::operation::create_acme_endpoint::builders::CreateAcmeEndpointInputBuilder {

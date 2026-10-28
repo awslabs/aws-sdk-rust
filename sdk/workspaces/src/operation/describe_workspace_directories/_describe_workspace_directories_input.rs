@@ -42,6 +42,237 @@ impl DescribeWorkspaceDirectoriesInput {
         self.filters.as_deref().unwrap_or_default()
     }
 }
+static DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_DIRECTORY_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#DirectoryIdList$member",
+        "com.amazonaws.workspaces",
+        "DirectoryIdList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_DIRECTORY_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeWorkspaceDirectoriesInput$DirectoryIds",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeWorkspaceDirectoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DirectoryIds",
+    0,
+)
+.with_list_member(&DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_DIRECTORY_IDS_MEMBER);
+static DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_WORKSPACE_DIRECTORY_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces#WorkspaceDirectoryNameList$member",
+            "com.amazonaws.workspaces",
+            "WorkspaceDirectoryNameList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_WORKSPACE_DIRECTORY_NAMES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.workspaces.synthetic#DescribeWorkspaceDirectoriesInput$WorkspaceDirectoryNames",
+            "com.amazonaws.workspaces.synthetic",
+            "DescribeWorkspaceDirectoriesInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "WorkspaceDirectoryNames",
+        1,
+    )
+    .with_list_member(&DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_WORKSPACE_DIRECTORY_NAMES_MEMBER);
+static DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeWorkspaceDirectoriesInput$Limit",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeWorkspaceDirectoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Limit",
+    2,
+);
+static DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeWorkspaceDirectoriesInput$NextToken",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeWorkspaceDirectoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    3,
+);
+static DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#DescribeWorkspaceDirectoriesFilterList$member",
+        "com.amazonaws.workspaces",
+        "DescribeWorkspaceDirectoriesFilterList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeWorkspaceDirectoriesInput$Filters",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeWorkspaceDirectoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Filters",
+    4,
+)
+.with_list_member(&DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_FILTERS_MEMBER);
+static DESCRIBEWORKSPACEDIRECTORIESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#DescribeWorkspaceDirectoriesInput",
+        "com.amazonaws.workspaces.synthetic",
+        "DescribeWorkspaceDirectoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_DIRECTORY_IDS,
+        &DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_WORKSPACE_DIRECTORY_NAMES,
+        &DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_LIMIT,
+        &DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_NEXT_TOKEN,
+        &DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_FILTERS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeWorkspaceDirectoriesRequest");
+impl DescribeWorkspaceDirectoriesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEWORKSPACEDIRECTORIESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeWorkspaceDirectoriesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.directory_ids {
+            ser.write_list(
+                &DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_DIRECTORY_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.workspace_directory_names {
+            ser.write_list(
+                &DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_WORKSPACE_DIRECTORY_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.limit {
+            ser.write_integer(&DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.filters {
+            ser.write_list(
+                &DESCRIBEWORKSPACEDIRECTORIESINPUT_MEMBER_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DescribeWorkspaceDirectoriesFilter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEWORKSPACEDIRECTORIESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.directory_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_directory_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DescribeWorkspaceDirectoriesFilter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeWorkspaceDirectoriesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeWorkspaceDirectoriesInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceDirectoriesInput`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesInput).
     pub fn builder() -> crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesInputBuilder {

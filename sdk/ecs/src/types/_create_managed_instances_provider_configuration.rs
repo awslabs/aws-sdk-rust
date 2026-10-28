@@ -42,6 +42,172 @@ impl CreateManagedInstancesProviderConfiguration {
         self.auto_repair_configuration.as_ref()
     }
 }
+static CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_MEMBER_INFRASTRUCTURE_ROLE_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#CreateManagedInstancesProviderConfiguration$infrastructureRoleArn",
+            "com.amazonaws.ecs",
+            "CreateManagedInstancesProviderConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "infrastructureRoleArn",
+        0,
+    );
+static CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_MEMBER_INSTANCE_LAUNCH_TEMPLATE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#CreateManagedInstancesProviderConfiguration$instanceLaunchTemplate",
+            "com.amazonaws.ecs",
+            "CreateManagedInstancesProviderConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "instanceLaunchTemplate",
+        1,
+    );
+static CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_MEMBER_PROPAGATE_TAGS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#CreateManagedInstancesProviderConfiguration$propagateTags",
+            "com.amazonaws.ecs",
+            "CreateManagedInstancesProviderConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "propagateTags",
+        2,
+    );
+static CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_MEMBER_INFRASTRUCTURE_OPTIMIZATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#CreateManagedInstancesProviderConfiguration$infrastructureOptimization",
+            "com.amazonaws.ecs",
+            "CreateManagedInstancesProviderConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "infrastructureOptimization",
+        3,
+    );
+static CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_MEMBER_AUTO_REPAIR_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ecs#CreateManagedInstancesProviderConfiguration$autoRepairConfiguration",
+            "com.amazonaws.ecs",
+            "CreateManagedInstancesProviderConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "autoRepairConfiguration",
+        4,
+    );
+static CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#CreateManagedInstancesProviderConfiguration",
+        "com.amazonaws.ecs",
+        "CreateManagedInstancesProviderConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_MEMBER_INFRASTRUCTURE_ROLE_ARN,
+        &CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_MEMBER_INSTANCE_LAUNCH_TEMPLATE,
+        &CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_MEMBER_PROPAGATE_TAGS,
+        &CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_MEMBER_INFRASTRUCTURE_OPTIMIZATION,
+        &CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_MEMBER_AUTO_REPAIR_CONFIGURATION,
+    ],
+);
+impl CreateManagedInstancesProviderConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateManagedInstancesProviderConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.infrastructure_role_arn;
+            ser.write_string(&CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_MEMBER_INFRASTRUCTURE_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.instance_launch_template {
+            ser.write_struct(&CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_MEMBER_INSTANCE_LAUNCH_TEMPLATE, val)?;
+        }
+        if let Some(ref val) = self.propagate_tags {
+            ser.write_string(&CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_MEMBER_PROPAGATE_TAGS, val.as_str())?;
+        }
+        if let Some(ref val) = self.infrastructure_optimization {
+            ser.write_struct(&CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_MEMBER_INFRASTRUCTURE_OPTIMIZATION, val)?;
+        }
+        if let Some(ref val) = self.auto_repair_configuration {
+            ser.write_struct(&CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_MEMBER_AUTO_REPAIR_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CreateManagedInstancesProviderConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEMANAGEDINSTANCESPROVIDERCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.infrastructure_role_arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_launch_template = Some(crate::types::InstanceLaunchTemplate::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.propagate_tags = Some(crate::types::PropagateMiTags::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.infrastructure_optimization = Some(crate::types::InfrastructureOptimization::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_repair_configuration = Some(crate::types::AutoRepairConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateManagedInstancesProviderConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.infrastructure_role_arn = builder.infrastructure_role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateManagedInstancesProviderConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateManagedInstancesProviderConfiguration`](crate::types::CreateManagedInstancesProviderConfiguration).
     pub fn builder() -> crate::types::builders::CreateManagedInstancesProviderConfigurationBuilder {

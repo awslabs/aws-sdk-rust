@@ -73,6 +73,257 @@ impl OrcSerDe {
         self.format_version.as_ref()
     }
 }
+static ORCSERDE_MEMBER_STRIPE_SIZE_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#OrcSerDe$StripeSizeBytes", "com.amazonaws.firehose", "OrcSerDe"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "StripeSizeBytes",
+    0,
+);
+static ORCSERDE_MEMBER_BLOCK_SIZE_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#OrcSerDe$BlockSizeBytes", "com.amazonaws.firehose", "OrcSerDe"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "BlockSizeBytes",
+    1,
+);
+static ORCSERDE_MEMBER_ROW_INDEX_STRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#OrcSerDe$RowIndexStride", "com.amazonaws.firehose", "OrcSerDe"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "RowIndexStride",
+    2,
+);
+static ORCSERDE_MEMBER_ENABLE_PADDING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#OrcSerDe$EnablePadding", "com.amazonaws.firehose", "OrcSerDe"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnablePadding",
+    3,
+);
+static ORCSERDE_MEMBER_PADDING_TOLERANCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#OrcSerDe$PaddingTolerance", "com.amazonaws.firehose", "OrcSerDe"),
+    ::aws_smithy_schema::ShapeType::Double,
+    "PaddingTolerance",
+    4,
+);
+static ORCSERDE_MEMBER_COMPRESSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#OrcSerDe$Compression", "com.amazonaws.firehose", "OrcSerDe"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Compression",
+    5,
+);
+static ORCSERDE_MEMBER_BLOOM_FILTER_COLUMNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#ListOfNonEmptyStringsWithoutWhitespace$member",
+        "com.amazonaws.firehose",
+        "ListOfNonEmptyStringsWithoutWhitespace",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ORCSERDE_MEMBER_BLOOM_FILTER_COLUMNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#OrcSerDe$BloomFilterColumns", "com.amazonaws.firehose", "OrcSerDe"),
+    ::aws_smithy_schema::ShapeType::List,
+    "BloomFilterColumns",
+    6,
+)
+.with_list_member(&ORCSERDE_MEMBER_BLOOM_FILTER_COLUMNS_MEMBER);
+static ORCSERDE_MEMBER_BLOOM_FILTER_FALSE_POSITIVE_PROBABILITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#OrcSerDe$BloomFilterFalsePositiveProbability",
+        "com.amazonaws.firehose",
+        "OrcSerDe",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "BloomFilterFalsePositiveProbability",
+    7,
+);
+static ORCSERDE_MEMBER_DICTIONARY_KEY_THRESHOLD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.firehose#OrcSerDe$DictionaryKeyThreshold",
+        "com.amazonaws.firehose",
+        "OrcSerDe",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "DictionaryKeyThreshold",
+    8,
+);
+static ORCSERDE_MEMBER_FORMAT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#OrcSerDe$FormatVersion", "com.amazonaws.firehose", "OrcSerDe"),
+    ::aws_smithy_schema::ShapeType::String,
+    "FormatVersion",
+    9,
+);
+static ORCSERDE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.firehose#OrcSerDe", "com.amazonaws.firehose", "OrcSerDe"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ORCSERDE_MEMBER_STRIPE_SIZE_BYTES,
+        &ORCSERDE_MEMBER_BLOCK_SIZE_BYTES,
+        &ORCSERDE_MEMBER_ROW_INDEX_STRIDE,
+        &ORCSERDE_MEMBER_ENABLE_PADDING,
+        &ORCSERDE_MEMBER_PADDING_TOLERANCE,
+        &ORCSERDE_MEMBER_COMPRESSION,
+        &ORCSERDE_MEMBER_BLOOM_FILTER_COLUMNS,
+        &ORCSERDE_MEMBER_BLOOM_FILTER_FALSE_POSITIVE_PROBABILITY,
+        &ORCSERDE_MEMBER_DICTIONARY_KEY_THRESHOLD,
+        &ORCSERDE_MEMBER_FORMAT_VERSION,
+    ],
+);
+impl OrcSerDe {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ORCSERDE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OrcSerDe {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stripe_size_bytes {
+            ser.write_integer(&ORCSERDE_MEMBER_STRIPE_SIZE_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.block_size_bytes {
+            ser.write_integer(&ORCSERDE_MEMBER_BLOCK_SIZE_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.row_index_stride {
+            ser.write_integer(&ORCSERDE_MEMBER_ROW_INDEX_STRIDE, *val)?;
+        }
+        if let Some(ref val) = self.enable_padding {
+            ser.write_boolean(&ORCSERDE_MEMBER_ENABLE_PADDING, *val)?;
+        }
+        if let Some(ref val) = self.padding_tolerance {
+            ser.write_double(&ORCSERDE_MEMBER_PADDING_TOLERANCE, *val)?;
+        }
+        if let Some(ref val) = self.compression {
+            ser.write_string(&ORCSERDE_MEMBER_COMPRESSION, val.as_str())?;
+        }
+        if let Some(ref val) = self.bloom_filter_columns {
+            ser.write_list(
+                &ORCSERDE_MEMBER_BLOOM_FILTER_COLUMNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.bloom_filter_false_positive_probability {
+            ser.write_double(&ORCSERDE_MEMBER_BLOOM_FILTER_FALSE_POSITIVE_PROBABILITY, *val)?;
+        }
+        if let Some(ref val) = self.dictionary_key_threshold {
+            ser.write_double(&ORCSERDE_MEMBER_DICTIONARY_KEY_THRESHOLD, *val)?;
+        }
+        if let Some(ref val) = self.format_version {
+            ser.write_string(&ORCSERDE_MEMBER_FORMAT_VERSION, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OrcSerDeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ORCSERDE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stripe_size_bytes = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.block_size_bytes = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.row_index_stride = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_padding = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.padding_tolerance = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compression = Some(crate::types::OrcCompression::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bloom_filter_columns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bloom_filter_false_positive_probability = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dictionary_key_threshold = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.format_version = Some(crate::types::OrcFormatVersion::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OrcSerDe {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl OrcSerDe {
     /// Creates a new builder-style object to manufacture [`OrcSerDe`](crate::types::OrcSerDe).
     pub fn builder() -> crate::types::builders::OrcSerDeBuilder {

@@ -24,6 +24,164 @@ impl CreateUserPoolReplicaInput {
         self.user_pool_tags.as_ref()
     }
 }
+static CREATEUSERPOOLREPLICAINPUT_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolReplicaInput$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolReplicaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    0,
+);
+static CREATEUSERPOOLREPLICAINPUT_MEMBER_REGION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolReplicaInput$RegionName",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolReplicaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RegionName",
+    1,
+);
+static CREATEUSERPOOLREPLICAINPUT_MEMBER_USER_POOL_TAGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserPoolTagsType$key",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserPoolTagsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEUSERPOOLREPLICAINPUT_MEMBER_USER_POOL_TAGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserPoolTagsType$value",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserPoolTagsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATEUSERPOOLREPLICAINPUT_MEMBER_USER_POOL_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolReplicaInput$UserPoolTags",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolReplicaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "UserPoolTags",
+    2,
+)
+.with_map_members(
+    &CREATEUSERPOOLREPLICAINPUT_MEMBER_USER_POOL_TAGS_KEY,
+    &CREATEUSERPOOLREPLICAINPUT_MEMBER_USER_POOL_TAGS_VALUE,
+);
+static CREATEUSERPOOLREPLICAINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolReplicaInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "CreateUserPoolReplicaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEUSERPOOLREPLICAINPUT_MEMBER_USER_POOL_ID,
+        &CREATEUSERPOOLREPLICAINPUT_MEMBER_REGION_NAME,
+        &CREATEUSERPOOLREPLICAINPUT_MEMBER_USER_POOL_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateUserPoolReplicaRequest");
+impl CreateUserPoolReplicaInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEUSERPOOLREPLICAINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateUserPoolReplicaInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&CREATEUSERPOOLREPLICAINPUT_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.region_name {
+            ser.write_string(&CREATEUSERPOOLREPLICAINPUT_MEMBER_REGION_NAME, val)?;
+        }
+        if let Some(ref val) = self.user_pool_tags {
+            ser.write_map(
+                &CREATEUSERPOOLREPLICAINPUT_MEMBER_USER_POOL_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_user_pool_replica::builders::CreateUserPoolReplicaInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEUSERPOOLREPLICAINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.region_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_tags = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateUserPoolReplicaInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_pool_id = builder.user_pool_id.or(Some(String::new()));
+        builder.region_name = builder.region_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateUserPoolReplicaInput {
     /// Creates a new builder-style object to manufacture [`CreateUserPoolReplicaInput`](crate::operation::create_user_pool_replica::CreateUserPoolReplicaInput).
     pub fn builder() -> crate::operation::create_user_pool_replica::builders::CreateUserPoolReplicaInputBuilder {

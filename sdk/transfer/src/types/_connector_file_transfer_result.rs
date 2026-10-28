@@ -32,6 +32,143 @@ impl ConnectorFileTransferResult {
         self.failure_message.as_deref()
     }
 }
+static CONNECTORFILETRANSFERRESULT_MEMBER_FILE_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ConnectorFileTransferResult$FilePath",
+        "com.amazonaws.transfer",
+        "ConnectorFileTransferResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FilePath",
+    0,
+);
+static CONNECTORFILETRANSFERRESULT_MEMBER_STATUS_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ConnectorFileTransferResult$StatusCode",
+        "com.amazonaws.transfer",
+        "ConnectorFileTransferResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusCode",
+    1,
+);
+static CONNECTORFILETRANSFERRESULT_MEMBER_FAILURE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ConnectorFileTransferResult$FailureCode",
+        "com.amazonaws.transfer",
+        "ConnectorFileTransferResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureCode",
+    2,
+);
+static CONNECTORFILETRANSFERRESULT_MEMBER_FAILURE_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ConnectorFileTransferResult$FailureMessage",
+        "com.amazonaws.transfer",
+        "ConnectorFileTransferResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureMessage",
+    3,
+);
+static CONNECTORFILETRANSFERRESULT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#ConnectorFileTransferResult",
+        "com.amazonaws.transfer",
+        "ConnectorFileTransferResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONNECTORFILETRANSFERRESULT_MEMBER_FILE_PATH,
+        &CONNECTORFILETRANSFERRESULT_MEMBER_STATUS_CODE,
+        &CONNECTORFILETRANSFERRESULT_MEMBER_FAILURE_CODE,
+        &CONNECTORFILETRANSFERRESULT_MEMBER_FAILURE_MESSAGE,
+    ],
+);
+impl ConnectorFileTransferResult {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONNECTORFILETRANSFERRESULT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConnectorFileTransferResult {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.file_path;
+            ser.write_string(&CONNECTORFILETRANSFERRESULT_MEMBER_FILE_PATH, val)?;
+        }
+        {
+            let val = &self.status_code;
+            ser.write_string(&CONNECTORFILETRANSFERRESULT_MEMBER_STATUS_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_code {
+            ser.write_string(&CONNECTORFILETRANSFERRESULT_MEMBER_FAILURE_CODE, val)?;
+        }
+        if let Some(ref val) = self.failure_message {
+            ser.write_string(&CONNECTORFILETRANSFERRESULT_MEMBER_FAILURE_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConnectorFileTransferResultBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONNECTORFILETRANSFERRESULT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.file_path = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.status_code = Some(crate::types::TransferTableStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConnectorFileTransferResult {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.file_path = builder.file_path.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ConnectorFileTransferResult {
     /// Creates a new builder-style object to manufacture [`ConnectorFileTransferResult`](crate::types::ConnectorFileTransferResult).
     pub fn builder() -> crate::types::builders::ConnectorFileTransferResultBuilder {

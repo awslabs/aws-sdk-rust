@@ -18,6 +18,7 @@ pub struct ScanStatus {
     /// <p><code>IMAGE_SIZE_EXCEEDED</code> - Reserved for future use.</p>
     /// <p><code>INTEGRATION_CONNNECTION_LOST</code> - Amazon Inspector couldn't communicate with the source code management platform.</p>
     /// <p><code>INTERNAL_ERROR</code> - Amazon Inspector has encountered an internal error for this resource. Amazon Inspector service will automatically resolve the issue and resume the scanning. No action required from the user.</p>
+    /// <p><code>INVALID_ARTIFACT</code> - Amazon Inspector couldn't scan this resource because its artifact is malformed and couldn't be safely extracted.</p>
     /// <p><code>NO_INVENTORY</code> - Amazon Inspector couldn't find software application inventory to scan for vulnerabilities. This might be caused due to required Amazon Inspector associations being deleted or failing to run on your resource. Please verify the status of <code>InspectorInventoryCollection-do-not-delete</code> association in the SSM console for the resource. Additionally, you can verify the instance's inventory in the SSM Fleet Manager console.</p>
     /// <p><code>NO_RESOURCES_FOUND</code> - Reserved for future use.</p>
     /// <p><code>NO_SCAN_CONFIGURATION_ASSOCIATED</code> - The code repository resource doesn't have an associated scan configuration.</p>
@@ -57,6 +58,7 @@ impl ScanStatus {
     /// <p><code>IMAGE_SIZE_EXCEEDED</code> - Reserved for future use.</p>
     /// <p><code>INTEGRATION_CONNNECTION_LOST</code> - Amazon Inspector couldn't communicate with the source code management platform.</p>
     /// <p><code>INTERNAL_ERROR</code> - Amazon Inspector has encountered an internal error for this resource. Amazon Inspector service will automatically resolve the issue and resume the scanning. No action required from the user.</p>
+    /// <p><code>INVALID_ARTIFACT</code> - Amazon Inspector couldn't scan this resource because its artifact is malformed and couldn't be safely extracted.</p>
     /// <p><code>NO_INVENTORY</code> - Amazon Inspector couldn't find software application inventory to scan for vulnerabilities. This might be caused due to required Amazon Inspector associations being deleted or failing to run on your resource. Please verify the status of <code>InspectorInventoryCollection-do-not-delete</code> association in the SSM console for the resource. Additionally, you can verify the instance's inventory in the SSM Fleet Manager console.</p>
     /// <p><code>NO_RESOURCES_FOUND</code> - Reserved for future use.</p>
     /// <p><code>NO_SCAN_CONFIGURATION_ASSOCIATED</code> - The code repository resource doesn't have an associated scan configuration.</p>
@@ -123,6 +125,7 @@ impl ScanStatusBuilder {
     /// <p><code>IMAGE_SIZE_EXCEEDED</code> - Reserved for future use.</p>
     /// <p><code>INTEGRATION_CONNNECTION_LOST</code> - Amazon Inspector couldn't communicate with the source code management platform.</p>
     /// <p><code>INTERNAL_ERROR</code> - Amazon Inspector has encountered an internal error for this resource. Amazon Inspector service will automatically resolve the issue and resume the scanning. No action required from the user.</p>
+    /// <p><code>INVALID_ARTIFACT</code> - Amazon Inspector couldn't scan this resource because its artifact is malformed and couldn't be safely extracted.</p>
     /// <p><code>NO_INVENTORY</code> - Amazon Inspector couldn't find software application inventory to scan for vulnerabilities. This might be caused due to required Amazon Inspector associations being deleted or failing to run on your resource. Please verify the status of <code>InspectorInventoryCollection-do-not-delete</code> association in the SSM console for the resource. Additionally, you can verify the instance's inventory in the SSM Fleet Manager console.</p>
     /// <p><code>NO_RESOURCES_FOUND</code> - Reserved for future use.</p>
     /// <p><code>NO_SCAN_CONFIGURATION_ASSOCIATED</code> - The code repository resource doesn't have an associated scan configuration.</p>
@@ -160,6 +163,7 @@ impl ScanStatusBuilder {
     /// <p><code>IMAGE_SIZE_EXCEEDED</code> - Reserved for future use.</p>
     /// <p><code>INTEGRATION_CONNNECTION_LOST</code> - Amazon Inspector couldn't communicate with the source code management platform.</p>
     /// <p><code>INTERNAL_ERROR</code> - Amazon Inspector has encountered an internal error for this resource. Amazon Inspector service will automatically resolve the issue and resume the scanning. No action required from the user.</p>
+    /// <p><code>INVALID_ARTIFACT</code> - Amazon Inspector couldn't scan this resource because its artifact is malformed and couldn't be safely extracted.</p>
     /// <p><code>NO_INVENTORY</code> - Amazon Inspector couldn't find software application inventory to scan for vulnerabilities. This might be caused due to required Amazon Inspector associations being deleted or failing to run on your resource. Please verify the status of <code>InspectorInventoryCollection-do-not-delete</code> association in the SSM console for the resource. Additionally, you can verify the instance's inventory in the SSM Fleet Manager console.</p>
     /// <p><code>NO_RESOURCES_FOUND</code> - Reserved for future use.</p>
     /// <p><code>NO_SCAN_CONFIGURATION_ASSOCIATED</code> - The code repository resource doesn't have an associated scan configuration.</p>
@@ -196,6 +200,7 @@ impl ScanStatusBuilder {
     /// <p><code>IMAGE_SIZE_EXCEEDED</code> - Reserved for future use.</p>
     /// <p><code>INTEGRATION_CONNNECTION_LOST</code> - Amazon Inspector couldn't communicate with the source code management platform.</p>
     /// <p><code>INTERNAL_ERROR</code> - Amazon Inspector has encountered an internal error for this resource. Amazon Inspector service will automatically resolve the issue and resume the scanning. No action required from the user.</p>
+    /// <p><code>INVALID_ARTIFACT</code> - Amazon Inspector couldn't scan this resource because its artifact is malformed and couldn't be safely extracted.</p>
     /// <p><code>NO_INVENTORY</code> - Amazon Inspector couldn't find software application inventory to scan for vulnerabilities. This might be caused due to required Amazon Inspector associations being deleted or failing to run on your resource. Please verify the status of <code>InspectorInventoryCollection-do-not-delete</code> association in the SSM console for the resource. Additionally, you can verify the instance's inventory in the SSM Fleet Manager console.</p>
     /// <p><code>NO_RESOURCES_FOUND</code> - Reserved for future use.</p>
     /// <p><code>NO_SCAN_CONFIGURATION_ASSOCIATED</code> - The code repository resource doesn't have an associated scan configuration.</p>

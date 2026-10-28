@@ -31,6 +31,83 @@ impl RenderingConfiguration {
         self.template_uri.as_deref()
     }
 }
+static RENDERINGCONFIGURATION_MEMBER_TEMPLATE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#RenderingConfiguration$templateUri",
+        "com.amazonaws.wisdom",
+        "RenderingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "templateUri",
+    0,
+);
+static RENDERINGCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.wisdom#RenderingConfiguration",
+        "com.amazonaws.wisdom",
+        "RenderingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&RENDERINGCONFIGURATION_MEMBER_TEMPLATE_URI],
+);
+impl RenderingConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RENDERINGCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RenderingConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.template_uri {
+            ser.write_string(&RENDERINGCONFIGURATION_MEMBER_TEMPLATE_URI, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RenderingConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RENDERINGCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.template_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RenderingConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RenderingConfiguration {
     /// Creates a new builder-style object to manufacture [`RenderingConfiguration`](crate::types::RenderingConfiguration).
     pub fn builder() -> crate::types::builders::RenderingConfigurationBuilder {

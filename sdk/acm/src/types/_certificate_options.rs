@@ -29,6 +29,122 @@ impl CertificateOptions {
         self.validation_method.as_ref()
     }
 }
+static CERTIFICATEOPTIONS_MEMBER_CERTIFICATE_TRANSPARENCY_LOGGING_PREFERENCE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.acm#CertificateOptions$CertificateTransparencyLoggingPreference",
+            "com.amazonaws.acm",
+            "CertificateOptions",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "CertificateTransparencyLoggingPreference",
+        0,
+    );
+static CERTIFICATEOPTIONS_MEMBER_EXPORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#CertificateOptions$Export", "com.amazonaws.acm", "CertificateOptions"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Export",
+    1,
+);
+static CERTIFICATEOPTIONS_MEMBER_VALIDATION_METHOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateOptions$ValidationMethod",
+        "com.amazonaws.acm",
+        "CertificateOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ValidationMethod",
+    2,
+);
+static CERTIFICATEOPTIONS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#CertificateOptions", "com.amazonaws.acm", "CertificateOptions"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CERTIFICATEOPTIONS_MEMBER_CERTIFICATE_TRANSPARENCY_LOGGING_PREFERENCE,
+        &CERTIFICATEOPTIONS_MEMBER_EXPORT,
+        &CERTIFICATEOPTIONS_MEMBER_VALIDATION_METHOD,
+    ],
+);
+impl CertificateOptions {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CERTIFICATEOPTIONS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CertificateOptions {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.certificate_transparency_logging_preference {
+            ser.write_string(&CERTIFICATEOPTIONS_MEMBER_CERTIFICATE_TRANSPARENCY_LOGGING_PREFERENCE, val.as_str())?;
+        }
+        if let Some(ref val) = self.export {
+            ser.write_string(&CERTIFICATEOPTIONS_MEMBER_EXPORT, val.as_str())?;
+        }
+        if let Some(ref val) = self.validation_method {
+            ser.write_string(&CERTIFICATEOPTIONS_MEMBER_VALIDATION_METHOD, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CertificateOptionsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CERTIFICATEOPTIONS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_transparency_logging_preference = Some(crate::types::CertificateTransparencyLoggingPreference::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.export = Some(crate::types::CertificateExport::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_method = Some(crate::types::ValidationMethod::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CertificateOptions {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CertificateOptions {
     /// Creates a new builder-style object to manufacture [`CertificateOptions`](crate::types::CertificateOptions).
     pub fn builder() -> crate::types::builders::CertificateOptionsBuilder {

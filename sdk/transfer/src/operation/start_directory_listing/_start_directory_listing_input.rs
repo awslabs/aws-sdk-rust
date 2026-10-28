@@ -30,6 +30,153 @@ impl StartDirectoryListingInput {
         self.output_directory_path.as_deref()
     }
 }
+static STARTDIRECTORYLISTINGINPUT_MEMBER_CONNECTOR_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#StartDirectoryListingInput$ConnectorId",
+        "com.amazonaws.transfer.synthetic",
+        "StartDirectoryListingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConnectorId",
+    0,
+);
+static STARTDIRECTORYLISTINGINPUT_MEMBER_REMOTE_DIRECTORY_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#StartDirectoryListingInput$RemoteDirectoryPath",
+        "com.amazonaws.transfer.synthetic",
+        "StartDirectoryListingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RemoteDirectoryPath",
+    1,
+);
+static STARTDIRECTORYLISTINGINPUT_MEMBER_MAX_ITEMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#StartDirectoryListingInput$MaxItems",
+        "com.amazonaws.transfer.synthetic",
+        "StartDirectoryListingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxItems",
+    2,
+);
+static STARTDIRECTORYLISTINGINPUT_MEMBER_OUTPUT_DIRECTORY_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#StartDirectoryListingInput$OutputDirectoryPath",
+        "com.amazonaws.transfer.synthetic",
+        "StartDirectoryListingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputDirectoryPath",
+    3,
+);
+static STARTDIRECTORYLISTINGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#StartDirectoryListingInput",
+        "com.amazonaws.transfer.synthetic",
+        "StartDirectoryListingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTDIRECTORYLISTINGINPUT_MEMBER_CONNECTOR_ID,
+        &STARTDIRECTORYLISTINGINPUT_MEMBER_REMOTE_DIRECTORY_PATH,
+        &STARTDIRECTORYLISTINGINPUT_MEMBER_MAX_ITEMS,
+        &STARTDIRECTORYLISTINGINPUT_MEMBER_OUTPUT_DIRECTORY_PATH,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartDirectoryListingRequest");
+impl StartDirectoryListingInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTDIRECTORYLISTINGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartDirectoryListingInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.connector_id {
+            ser.write_string(&STARTDIRECTORYLISTINGINPUT_MEMBER_CONNECTOR_ID, val)?;
+        }
+        if let Some(ref val) = self.remote_directory_path {
+            ser.write_string(&STARTDIRECTORYLISTINGINPUT_MEMBER_REMOTE_DIRECTORY_PATH, val)?;
+        }
+        if let Some(ref val) = self.max_items {
+            ser.write_integer(&STARTDIRECTORYLISTINGINPUT_MEMBER_MAX_ITEMS, *val)?;
+        }
+        if let Some(ref val) = self.output_directory_path {
+            ser.write_string(&STARTDIRECTORYLISTINGINPUT_MEMBER_OUTPUT_DIRECTORY_PATH, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_directory_listing::builders::StartDirectoryListingInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTDIRECTORYLISTINGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.connector_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.remote_directory_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_items = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_directory_path = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartDirectoryListingInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.connector_id = builder.connector_id.or(Some(String::new()));
+        builder.remote_directory_path = builder.remote_directory_path.or(Some(String::new()));
+        builder.output_directory_path = builder.output_directory_path.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartDirectoryListingInput {
     /// Creates a new builder-style object to manufacture [`StartDirectoryListingInput`](crate::operation::start_directory_listing::StartDirectoryListingInput).
     pub fn builder() -> crate::operation::start_directory_listing::builders::StartDirectoryListingInputBuilder {

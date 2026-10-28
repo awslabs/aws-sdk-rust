@@ -170,6 +170,130 @@ impl GetReportGroupTrendInput {
         self.trend_field.as_ref()
     }
 }
+static GETREPORTGROUPTRENDINPUT_MEMBER_REPORT_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#GetReportGroupTrendInput$reportGroupArn",
+        "com.amazonaws.codebuild.synthetic",
+        "GetReportGroupTrendInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "reportGroupArn",
+    0,
+);
+static GETREPORTGROUPTRENDINPUT_MEMBER_NUM_OF_REPORTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#GetReportGroupTrendInput$numOfReports",
+        "com.amazonaws.codebuild.synthetic",
+        "GetReportGroupTrendInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "numOfReports",
+    1,
+);
+static GETREPORTGROUPTRENDINPUT_MEMBER_TREND_FIELD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#GetReportGroupTrendInput$trendField",
+        "com.amazonaws.codebuild.synthetic",
+        "GetReportGroupTrendInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "trendField",
+    2,
+);
+static GETREPORTGROUPTRENDINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild.synthetic#GetReportGroupTrendInput",
+        "com.amazonaws.codebuild.synthetic",
+        "GetReportGroupTrendInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETREPORTGROUPTRENDINPUT_MEMBER_REPORT_GROUP_ARN,
+        &GETREPORTGROUPTRENDINPUT_MEMBER_NUM_OF_REPORTS,
+        &GETREPORTGROUPTRENDINPUT_MEMBER_TREND_FIELD,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetReportGroupTrendInput");
+impl GetReportGroupTrendInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETREPORTGROUPTRENDINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetReportGroupTrendInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.report_group_arn {
+            ser.write_string(&GETREPORTGROUPTRENDINPUT_MEMBER_REPORT_GROUP_ARN, val)?;
+        }
+        if let Some(ref val) = self.num_of_reports {
+            ser.write_integer(&GETREPORTGROUPTRENDINPUT_MEMBER_NUM_OF_REPORTS, *val)?;
+        }
+        if let Some(ref val) = self.trend_field {
+            ser.write_string(&GETREPORTGROUPTRENDINPUT_MEMBER_TREND_FIELD, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_report_group_trend::builders::GetReportGroupTrendInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETREPORTGROUPTRENDINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.num_of_reports = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.trend_field = Some(crate::types::ReportGroupTrendFieldType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetReportGroupTrendInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.report_group_arn = builder.report_group_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetReportGroupTrendInput {
     /// Creates a new builder-style object to manufacture [`GetReportGroupTrendInput`](crate::operation::get_report_group_trend::GetReportGroupTrendInput).
     pub fn builder() -> crate::operation::get_report_group_trend::builders::GetReportGroupTrendInputBuilder {

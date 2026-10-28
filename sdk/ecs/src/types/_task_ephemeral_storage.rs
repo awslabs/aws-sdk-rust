@@ -19,6 +19,96 @@ impl TaskEphemeralStorage {
         self.kms_key_id.as_deref()
     }
 }
+static TASKEPHEMERALSTORAGE_MEMBER_SIZE_IN_GIB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#TaskEphemeralStorage$sizeInGiB",
+        "com.amazonaws.ecs",
+        "TaskEphemeralStorage",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "sizeInGiB",
+    0,
+);
+static TASKEPHEMERALSTORAGE_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#TaskEphemeralStorage$kmsKeyId",
+        "com.amazonaws.ecs",
+        "TaskEphemeralStorage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "kmsKeyId",
+    1,
+);
+static TASKEPHEMERALSTORAGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#TaskEphemeralStorage", "com.amazonaws.ecs", "TaskEphemeralStorage"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&TASKEPHEMERALSTORAGE_MEMBER_SIZE_IN_GIB, &TASKEPHEMERALSTORAGE_MEMBER_KMS_KEY_ID],
+);
+impl TaskEphemeralStorage {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TASKEPHEMERALSTORAGE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TaskEphemeralStorage {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.size_in_gib;
+            ser.write_integer(&TASKEPHEMERALSTORAGE_MEMBER_SIZE_IN_GIB, *val)?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&TASKEPHEMERALSTORAGE_MEMBER_KMS_KEY_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TaskEphemeralStorageBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TASKEPHEMERALSTORAGE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.size_in_gib = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TaskEphemeralStorage {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TaskEphemeralStorage {
     /// Creates a new builder-style object to manufacture [`TaskEphemeralStorage`](crate::types::TaskEphemeralStorage).
     pub fn builder() -> crate::types::builders::TaskEphemeralStorageBuilder {

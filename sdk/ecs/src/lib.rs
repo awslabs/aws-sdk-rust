@@ -39,7 +39,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-ecs = "1.154.0"
+//! aws-sdk-ecs = "1.155.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -195,6 +195,8 @@ pub mod error;
 
 mod error_meta;
 
+mod error_type_registry;
+
 /// Information about this crate.
 pub mod meta;
 
@@ -203,6 +205,8 @@ pub mod operation;
 
 /// Primitives such as `Blob` or `DateTime` used by other types.
 pub mod primitives;
+
+mod type_registry;
 
 /// Data structures used by operation inputs/outputs.
 pub mod types;
@@ -213,11 +217,7 @@ mod idempotency_token;
 
 mod observability_feature;
 
-pub(crate) mod protocol_serde;
-
 mod sdk_feature_tracker;
-
-mod serialization_settings;
 
 mod endpoint_lib;
 
@@ -227,10 +227,6 @@ mod lens;
 ///
 /// Note: to use waiters, import the [`Waiters`](crate::client::Waiters) trait, which adds methods prefixed with `wait_until` to the client.
 pub mod waiters;
-
-mod json_errors;
-
-mod serde_util;
 
 #[doc(inline)]
 pub use client::Client;

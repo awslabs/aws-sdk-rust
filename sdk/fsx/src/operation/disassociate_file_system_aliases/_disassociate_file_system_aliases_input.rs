@@ -27,6 +27,146 @@ impl DisassociateFileSystemAliasesInput {
         self.aliases.as_deref().unwrap_or_default()
     }
 }
+static DISASSOCIATEFILESYSTEMALIASESINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DisassociateFileSystemAliasesInput$ClientRequestToken",
+        "com.amazonaws.fsx.synthetic",
+        "DisassociateFileSystemAliasesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    0,
+);
+static DISASSOCIATEFILESYSTEMALIASESINPUT_MEMBER_FILE_SYSTEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DisassociateFileSystemAliasesInput$FileSystemId",
+        "com.amazonaws.fsx.synthetic",
+        "DisassociateFileSystemAliasesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileSystemId",
+    1,
+);
+static DISASSOCIATEFILESYSTEMALIASESINPUT_MEMBER_ALIASES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.fsx#AlternateDNSNames$member", "com.amazonaws.fsx", "AlternateDNSNames"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DISASSOCIATEFILESYSTEMALIASESINPUT_MEMBER_ALIASES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DisassociateFileSystemAliasesInput$Aliases",
+        "com.amazonaws.fsx.synthetic",
+        "DisassociateFileSystemAliasesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Aliases",
+    2,
+)
+.with_list_member(&DISASSOCIATEFILESYSTEMALIASESINPUT_MEMBER_ALIASES_MEMBER);
+static DISASSOCIATEFILESYSTEMALIASESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.fsx.synthetic#DisassociateFileSystemAliasesInput",
+        "com.amazonaws.fsx.synthetic",
+        "DisassociateFileSystemAliasesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DISASSOCIATEFILESYSTEMALIASESINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &DISASSOCIATEFILESYSTEMALIASESINPUT_MEMBER_FILE_SYSTEM_ID,
+        &DISASSOCIATEFILESYSTEMALIASESINPUT_MEMBER_ALIASES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DisassociateFileSystemAliasesRequest");
+impl DisassociateFileSystemAliasesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DISASSOCIATEFILESYSTEMALIASESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DisassociateFileSystemAliasesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&DISASSOCIATEFILESYSTEMALIASESINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.file_system_id {
+            ser.write_string(&DISASSOCIATEFILESYSTEMALIASESINPUT_MEMBER_FILE_SYSTEM_ID, val)?;
+        }
+        if let Some(ref val) = self.aliases {
+            ser.write_list(
+                &DISASSOCIATEFILESYSTEMALIASESINPUT_MEMBER_ALIASES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::disassociate_file_system_aliases::builders::DisassociateFileSystemAliasesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DISASSOCIATEFILESYSTEMALIASESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.aliases = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DisassociateFileSystemAliasesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.file_system_id = builder.file_system_id.or(Some(String::new()));
+        builder.aliases = builder.aliases.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DisassociateFileSystemAliasesInput {
     /// Creates a new builder-style object to manufacture [`DisassociateFileSystemAliasesInput`](crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesInput).
     pub fn builder() -> crate::operation::disassociate_file_system_aliases::builders::DisassociateFileSystemAliasesInputBuilder {

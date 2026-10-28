@@ -27,6 +27,123 @@ impl DeadLetterQueueS3Configuration {
         self.error_output_prefix.as_deref()
     }
 }
+static DEADLETTERQUEUES3CONFIGURATION_MEMBER_BUCKET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#DeadLetterQueueS3Configuration$BucketARN",
+        "com.amazonaws.kinesis",
+        "DeadLetterQueueS3Configuration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BucketARN",
+    0,
+);
+static DEADLETTERQUEUES3CONFIGURATION_MEMBER_EXPECTED_BUCKET_OWNER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#DeadLetterQueueS3Configuration$ExpectedBucketOwner",
+        "com.amazonaws.kinesis",
+        "DeadLetterQueueS3Configuration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExpectedBucketOwner",
+    1,
+);
+static DEADLETTERQUEUES3CONFIGURATION_MEMBER_ERROR_OUTPUT_PREFIX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#DeadLetterQueueS3Configuration$ErrorOutputPrefix",
+        "com.amazonaws.kinesis",
+        "DeadLetterQueueS3Configuration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorOutputPrefix",
+    2,
+);
+static DEADLETTERQUEUES3CONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#DeadLetterQueueS3Configuration",
+        "com.amazonaws.kinesis",
+        "DeadLetterQueueS3Configuration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEADLETTERQUEUES3CONFIGURATION_MEMBER_BUCKET_ARN,
+        &DEADLETTERQUEUES3CONFIGURATION_MEMBER_EXPECTED_BUCKET_OWNER,
+        &DEADLETTERQUEUES3CONFIGURATION_MEMBER_ERROR_OUTPUT_PREFIX,
+    ],
+);
+impl DeadLetterQueueS3Configuration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEADLETTERQUEUES3CONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeadLetterQueueS3Configuration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.bucket_arn;
+            ser.write_string(&DEADLETTERQUEUES3CONFIGURATION_MEMBER_BUCKET_ARN, val)?;
+        }
+        {
+            let val = &self.expected_bucket_owner;
+            ser.write_string(&DEADLETTERQUEUES3CONFIGURATION_MEMBER_EXPECTED_BUCKET_OWNER, val)?;
+        }
+        if let Some(ref val) = self.error_output_prefix {
+            ser.write_string(&DEADLETTERQUEUES3CONFIGURATION_MEMBER_ERROR_OUTPUT_PREFIX, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeadLetterQueueS3ConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEADLETTERQUEUES3CONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.bucket_arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.expected_bucket_owner = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_output_prefix = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeadLetterQueueS3Configuration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.bucket_arn = builder.bucket_arn.or(Some(String::new()));
+        builder.expected_bucket_owner = builder.expected_bucket_owner.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeadLetterQueueS3Configuration {
     /// Creates a new builder-style object to manufacture [`DeadLetterQueueS3Configuration`](crate::types::DeadLetterQueueS3Configuration).
     pub fn builder() -> crate::types::builders::DeadLetterQueueS3ConfigurationBuilder {

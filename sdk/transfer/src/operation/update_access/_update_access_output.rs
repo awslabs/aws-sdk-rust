@@ -21,6 +21,100 @@ impl UpdateAccessOutput {
         self.external_id.deref()
     }
 }
+static UPDATEACCESSOUTPUT_MEMBER_SERVER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateAccessOutput$ServerId",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateAccessOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServerId",
+    0,
+);
+static UPDATEACCESSOUTPUT_MEMBER_EXTERNAL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateAccessOutput$ExternalId",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateAccessOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExternalId",
+    1,
+);
+static UPDATEACCESSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer.synthetic#UpdateAccessOutput",
+        "com.amazonaws.transfer.synthetic",
+        "UpdateAccessOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&UPDATEACCESSOUTPUT_MEMBER_SERVER_ID, &UPDATEACCESSOUTPUT_MEMBER_EXTERNAL_ID],
+)
+.with_original_name("UpdateAccessResponse");
+impl UpdateAccessOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEACCESSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateAccessOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.server_id;
+            ser.write_string(&UPDATEACCESSOUTPUT_MEMBER_SERVER_ID, val)?;
+        }
+        {
+            let val = &self.external_id;
+            ser.write_string(&UPDATEACCESSOUTPUT_MEMBER_EXTERNAL_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_access::builders::UpdateAccessOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEACCESSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.server_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.external_id = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateAccessOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.server_id = builder.server_id.or(Some(String::new()));
+        builder.external_id = builder.external_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for UpdateAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

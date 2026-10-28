@@ -13,6 +13,84 @@ impl DeleteClusterOutput {
         self.cluster.as_ref()
     }
 }
+static DELETECLUSTEROUTPUT_MEMBER_CLUSTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DeleteClusterOutput$cluster",
+        "com.amazonaws.ecs.synthetic",
+        "DeleteClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "cluster",
+    0,
+);
+static DELETECLUSTEROUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#DeleteClusterOutput",
+        "com.amazonaws.ecs.synthetic",
+        "DeleteClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELETECLUSTEROUTPUT_MEMBER_CLUSTER],
+)
+.with_original_name("DeleteClusterResponse");
+impl DeleteClusterOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETECLUSTEROUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteClusterOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster {
+            ser.write_struct(&DELETECLUSTEROUTPUT_MEMBER_CLUSTER, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_cluster::builders::DeleteClusterOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETECLUSTEROUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster = Some(crate::types::Cluster::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteClusterOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DeleteClusterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

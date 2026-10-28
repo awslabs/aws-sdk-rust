@@ -27,6 +27,122 @@ impl PosixProfile {
         self.secondary_gids.as_deref().unwrap_or_default()
     }
 }
+static POSIXPROFILE_MEMBER_UID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#PosixProfile$Uid", "com.amazonaws.transfer", "PosixProfile"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Uid",
+    0,
+);
+static POSIXPROFILE_MEMBER_GID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#PosixProfile$Gid", "com.amazonaws.transfer", "PosixProfile"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Gid",
+    1,
+);
+static POSIXPROFILE_MEMBER_SECONDARY_GIDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#SecondaryGids$member", "com.amazonaws.transfer", "SecondaryGids"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "member",
+    0,
+);
+static POSIXPROFILE_MEMBER_SECONDARY_GIDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transfer#PosixProfile$SecondaryGids",
+        "com.amazonaws.transfer",
+        "PosixProfile",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecondaryGids",
+    2,
+)
+.with_list_member(&POSIXPROFILE_MEMBER_SECONDARY_GIDS_MEMBER);
+static POSIXPROFILE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transfer#PosixProfile", "com.amazonaws.transfer", "PosixProfile"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&POSIXPROFILE_MEMBER_UID, &POSIXPROFILE_MEMBER_GID, &POSIXPROFILE_MEMBER_SECONDARY_GIDS],
+);
+impl PosixProfile {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &POSIXPROFILE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PosixProfile {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.uid;
+            ser.write_long(&POSIXPROFILE_MEMBER_UID, *val)?;
+        }
+        {
+            let val = &self.gid;
+            ser.write_long(&POSIXPROFILE_MEMBER_GID, *val)?;
+        }
+        if let Some(ref val) = self.secondary_gids {
+            ser.write_list(
+                &POSIXPROFILE_MEMBER_SECONDARY_GIDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_long(&aws_smithy_schema::prelude::LONG, *item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PosixProfileBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&POSIXPROFILE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.uid = Some(deser.read_long(member)?);
+                }
+                Some(1) => {
+                    self.gid = Some(deser.read_long(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_gids = Some(deser.read_long_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PosixProfile {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.uid = builder.uid.or(Some(0i64));
+        builder.gid = builder.gid.or(Some(0i64));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PosixProfile {
     /// Creates a new builder-style object to manufacture [`PosixProfile`](crate::types::PosixProfile).
     pub fn builder() -> crate::types::builders::PosixProfileBuilder {

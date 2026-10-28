@@ -52,6 +52,192 @@ impl ListAccountSettingsInput {
         self.max_results
     }
 }
+static LISTACCOUNTSETTINGSINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListAccountSettingsInput$name",
+        "com.amazonaws.ecs.synthetic",
+        "ListAccountSettingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static LISTACCOUNTSETTINGSINPUT_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListAccountSettingsInput$value",
+        "com.amazonaws.ecs.synthetic",
+        "ListAccountSettingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static LISTACCOUNTSETTINGSINPUT_MEMBER_PRINCIPAL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListAccountSettingsInput$principalArn",
+        "com.amazonaws.ecs.synthetic",
+        "ListAccountSettingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "principalArn",
+    2,
+);
+static LISTACCOUNTSETTINGSINPUT_MEMBER_EFFECTIVE_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListAccountSettingsInput$effectiveSettings",
+        "com.amazonaws.ecs.synthetic",
+        "ListAccountSettingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "effectiveSettings",
+    3,
+);
+static LISTACCOUNTSETTINGSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListAccountSettingsInput$nextToken",
+        "com.amazonaws.ecs.synthetic",
+        "ListAccountSettingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    4,
+);
+static LISTACCOUNTSETTINGSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListAccountSettingsInput$maxResults",
+        "com.amazonaws.ecs.synthetic",
+        "ListAccountSettingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxResults",
+    5,
+);
+static LISTACCOUNTSETTINGSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs.synthetic#ListAccountSettingsInput",
+        "com.amazonaws.ecs.synthetic",
+        "ListAccountSettingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTACCOUNTSETTINGSINPUT_MEMBER_NAME,
+        &LISTACCOUNTSETTINGSINPUT_MEMBER_VALUE,
+        &LISTACCOUNTSETTINGSINPUT_MEMBER_PRINCIPAL_ARN,
+        &LISTACCOUNTSETTINGSINPUT_MEMBER_EFFECTIVE_SETTINGS,
+        &LISTACCOUNTSETTINGSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTACCOUNTSETTINGSINPUT_MEMBER_MAX_RESULTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListAccountSettingsRequest");
+impl ListAccountSettingsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTACCOUNTSETTINGSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListAccountSettingsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&LISTACCOUNTSETTINGSINPUT_MEMBER_NAME, val.as_str())?;
+        }
+        if let Some(ref val) = self.value {
+            ser.write_string(&LISTACCOUNTSETTINGSINPUT_MEMBER_VALUE, val)?;
+        }
+        if let Some(ref val) = self.principal_arn {
+            ser.write_string(&LISTACCOUNTSETTINGSINPUT_MEMBER_PRINCIPAL_ARN, val)?;
+        }
+        if let Some(ref val) = self.effective_settings {
+            ser.write_boolean(&LISTACCOUNTSETTINGSINPUT_MEMBER_EFFECTIVE_SETTINGS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTACCOUNTSETTINGSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTACCOUNTSETTINGSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_account_settings::builders::ListAccountSettingsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTACCOUNTSETTINGSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(crate::types::SettingName::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.value = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.principal_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.effective_settings = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListAccountSettingsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListAccountSettingsInput {
     /// Creates a new builder-style object to manufacture [`ListAccountSettingsInput`](crate::operation::list_account_settings::ListAccountSettingsInput).
     pub fn builder() -> crate::operation::list_account_settings::builders::ListAccountSettingsInputBuilder {

@@ -25,6 +25,127 @@ impl ChildWorkflowExecutionStartedEventAttributes {
         self.initiated_event_id
     }
 }
+static CHILDWORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_WORKFLOW_EXECUTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ChildWorkflowExecutionStartedEventAttributes$workflowExecution",
+            "com.amazonaws.swf",
+            "ChildWorkflowExecutionStartedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "workflowExecution",
+        0,
+    );
+static CHILDWORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_WORKFLOW_TYPE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ChildWorkflowExecutionStartedEventAttributes$workflowType",
+            "com.amazonaws.swf",
+            "ChildWorkflowExecutionStartedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "workflowType",
+        1,
+    );
+static CHILDWORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_INITIATED_EVENT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.swf#ChildWorkflowExecutionStartedEventAttributes$initiatedEventId",
+            "com.amazonaws.swf",
+            "ChildWorkflowExecutionStartedEventAttributes",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "initiatedEventId",
+        2,
+    );
+static CHILDWORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.swf#ChildWorkflowExecutionStartedEventAttributes",
+        "com.amazonaws.swf",
+        "ChildWorkflowExecutionStartedEventAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CHILDWORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_WORKFLOW_EXECUTION,
+        &CHILDWORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_WORKFLOW_TYPE,
+        &CHILDWORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_INITIATED_EVENT_ID,
+    ],
+);
+impl ChildWorkflowExecutionStartedEventAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CHILDWORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ChildWorkflowExecutionStartedEventAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.workflow_execution {
+            ser.write_struct(&CHILDWORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_WORKFLOW_EXECUTION, val)?;
+        }
+        if let Some(ref val) = self.workflow_type {
+            ser.write_struct(&CHILDWORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_WORKFLOW_TYPE, val)?;
+        }
+        {
+            let val = &self.initiated_event_id;
+            ser.write_long(&CHILDWORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_MEMBER_INITIATED_EVENT_ID, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ChildWorkflowExecutionStartedEventAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CHILDWORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_execution = Some(crate::types::WorkflowExecution::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workflow_type = Some(crate::types::WorkflowType::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    self.initiated_event_id = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ChildWorkflowExecutionStartedEventAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ChildWorkflowExecutionStartedEventAttributes {
     /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionStartedEventAttributes`](crate::types::ChildWorkflowExecutionStartedEventAttributes).
     pub fn builder() -> crate::types::builders::ChildWorkflowExecutionStartedEventAttributesBuilder {

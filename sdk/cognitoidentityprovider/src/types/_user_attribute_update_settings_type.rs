@@ -17,6 +17,113 @@ impl UserAttributeUpdateSettingsType {
         self.attributes_require_verification_before_update.as_deref().unwrap_or_default()
     }
 }
+static USERATTRIBUTEUPDATESETTINGSTYPE_MEMBER_ATTRIBUTES_REQUIRE_VERIFICATION_BEFORE_UPDATE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentityprovider#AttributesRequireVerificationBeforeUpdateType$member",
+            "com.amazonaws.cognitoidentityprovider",
+            "AttributesRequireVerificationBeforeUpdateType",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static USERATTRIBUTEUPDATESETTINGSTYPE_MEMBER_ATTRIBUTES_REQUIRE_VERIFICATION_BEFORE_UPDATE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentityprovider#UserAttributeUpdateSettingsType$AttributesRequireVerificationBeforeUpdate",
+            "com.amazonaws.cognitoidentityprovider",
+            "UserAttributeUpdateSettingsType",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "AttributesRequireVerificationBeforeUpdate",
+        0,
+    )
+    .with_list_member(&USERATTRIBUTEUPDATESETTINGSTYPE_MEMBER_ATTRIBUTES_REQUIRE_VERIFICATION_BEFORE_UPDATE_MEMBER);
+static USERATTRIBUTEUPDATESETTINGSTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserAttributeUpdateSettingsType",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserAttributeUpdateSettingsType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&USERATTRIBUTEUPDATESETTINGSTYPE_MEMBER_ATTRIBUTES_REQUIRE_VERIFICATION_BEFORE_UPDATE],
+);
+impl UserAttributeUpdateSettingsType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &USERATTRIBUTEUPDATESETTINGSTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UserAttributeUpdateSettingsType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.attributes_require_verification_before_update {
+            ser.write_list(
+                &USERATTRIBUTEUPDATESETTINGSTYPE_MEMBER_ATTRIBUTES_REQUIRE_VERIFICATION_BEFORE_UPDATE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UserAttributeUpdateSettingsTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&USERATTRIBUTEUPDATESETTINGSTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attributes_require_verification_before_update = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::VerifiedAttributeType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UserAttributeUpdateSettingsType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl UserAttributeUpdateSettingsType {
     /// Creates a new builder-style object to manufacture [`UserAttributeUpdateSettingsType`](crate::types::UserAttributeUpdateSettingsType).
     pub fn builder() -> crate::types::builders::UserAttributeUpdateSettingsTypeBuilder {

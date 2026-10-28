@@ -1582,6 +1582,8 @@ mod get_image_ancestry;
 
 mod get_image_block_public_access_state;
 
+mod get_image_findings;
+
 mod get_instance_metadata_defaults;
 
 mod get_instance_tpm_ek_pub;

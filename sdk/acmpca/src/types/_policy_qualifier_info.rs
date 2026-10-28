@@ -19,6 +19,96 @@ impl PolicyQualifierInfo {
         self.qualifier.as_ref()
     }
 }
+static POLICYQUALIFIERINFO_MEMBER_POLICY_QUALIFIER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#PolicyQualifierInfo$PolicyQualifierId",
+        "com.amazonaws.acmpca",
+        "PolicyQualifierInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PolicyQualifierId",
+    0,
+);
+static POLICYQUALIFIERINFO_MEMBER_QUALIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acmpca#PolicyQualifierInfo$Qualifier",
+        "com.amazonaws.acmpca",
+        "PolicyQualifierInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Qualifier",
+    1,
+);
+static POLICYQUALIFIERINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acmpca#PolicyQualifierInfo", "com.amazonaws.acmpca", "PolicyQualifierInfo"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&POLICYQUALIFIERINFO_MEMBER_POLICY_QUALIFIER_ID, &POLICYQUALIFIERINFO_MEMBER_QUALIFIER],
+);
+impl PolicyQualifierInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &POLICYQUALIFIERINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PolicyQualifierInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.policy_qualifier_id;
+            ser.write_string(&POLICYQUALIFIERINFO_MEMBER_POLICY_QUALIFIER_ID, val.as_str())?;
+        }
+        if let Some(ref val) = self.qualifier {
+            ser.write_struct(&POLICYQUALIFIERINFO_MEMBER_QUALIFIER, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PolicyQualifierInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&POLICYQUALIFIERINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.policy_qualifier_id = Some(crate::types::PolicyQualifierId::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.qualifier = Some(crate::types::Qualifier::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PolicyQualifierInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PolicyQualifierInfo {
     /// Creates a new builder-style object to manufacture [`PolicyQualifierInfo`](crate::types::PolicyQualifierInfo).
     pub fn builder() -> crate::types::builders::PolicyQualifierInfoBuilder {

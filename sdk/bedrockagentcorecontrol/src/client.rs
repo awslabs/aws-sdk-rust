@@ -491,6 +491,8 @@ mod list_workload_identities;
 
 mod put_resource_policy;
 
+mod reset_token_vault_key_material;
+
 mod rotate_payment_connector_credentials;
 
 mod set_token_vault_cmk;

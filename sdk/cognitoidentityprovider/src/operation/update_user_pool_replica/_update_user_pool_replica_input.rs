@@ -24,6 +24,131 @@ impl UpdateUserPoolReplicaInput {
         self.status.as_ref()
     }
 }
+static UPDATEUSERPOOLREPLICAINPUT_MEMBER_USER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateUserPoolReplicaInput$UserPoolId",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateUserPoolReplicaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserPoolId",
+    0,
+);
+static UPDATEUSERPOOLREPLICAINPUT_MEMBER_REGION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateUserPoolReplicaInput$RegionName",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateUserPoolReplicaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RegionName",
+    1,
+);
+static UPDATEUSERPOOLREPLICAINPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateUserPoolReplicaInput$Status",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateUserPoolReplicaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    2,
+);
+static UPDATEUSERPOOLREPLICAINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateUserPoolReplicaInput",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateUserPoolReplicaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEUSERPOOLREPLICAINPUT_MEMBER_USER_POOL_ID,
+        &UPDATEUSERPOOLREPLICAINPUT_MEMBER_REGION_NAME,
+        &UPDATEUSERPOOLREPLICAINPUT_MEMBER_STATUS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateUserPoolReplicaRequest");
+impl UpdateUserPoolReplicaInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEUSERPOOLREPLICAINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateUserPoolReplicaInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_pool_id {
+            ser.write_string(&UPDATEUSERPOOLREPLICAINPUT_MEMBER_USER_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.region_name {
+            ser.write_string(&UPDATEUSERPOOLREPLICAINPUT_MEMBER_REGION_NAME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&UPDATEUSERPOOLREPLICAINPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_user_pool_replica::builders::UpdateUserPoolReplicaInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEUSERPOOLREPLICAINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.region_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::UpdateReplicaStatusType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateUserPoolReplicaInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_pool_id = builder.user_pool_id.or(Some(String::new()));
+        builder.region_name = builder.region_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateUserPoolReplicaInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserPoolReplicaInput`](crate::operation::update_user_pool_replica::UpdateUserPoolReplicaInput).
     pub fn builder() -> crate::operation::update_user_pool_replica::builders::UpdateUserPoolReplicaInputBuilder {

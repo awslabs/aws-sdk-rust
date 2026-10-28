@@ -69,6 +69,258 @@ impl CodeCoverage {
         self.expired.as_ref()
     }
 }
+static CODECOVERAGE_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#CodeCoverage$id", "com.amazonaws.codebuild", "CodeCoverage"),
+    ::aws_smithy_schema::ShapeType::String,
+    "id",
+    0,
+);
+static CODECOVERAGE_MEMBER_REPORT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CodeCoverage$reportARN",
+        "com.amazonaws.codebuild",
+        "CodeCoverage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "reportARN",
+    1,
+);
+static CODECOVERAGE_MEMBER_FILE_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#CodeCoverage$filePath", "com.amazonaws.codebuild", "CodeCoverage"),
+    ::aws_smithy_schema::ShapeType::String,
+    "filePath",
+    2,
+);
+static CODECOVERAGE_MEMBER_LINE_COVERAGE_PERCENTAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CodeCoverage$lineCoveragePercentage",
+        "com.amazonaws.codebuild",
+        "CodeCoverage",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "lineCoveragePercentage",
+    3,
+);
+static CODECOVERAGE_MEMBER_LINES_COVERED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CodeCoverage$linesCovered",
+        "com.amazonaws.codebuild",
+        "CodeCoverage",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "linesCovered",
+    4,
+);
+static CODECOVERAGE_MEMBER_LINES_MISSED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CodeCoverage$linesMissed",
+        "com.amazonaws.codebuild",
+        "CodeCoverage",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "linesMissed",
+    5,
+);
+static CODECOVERAGE_MEMBER_BRANCH_COVERAGE_PERCENTAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CodeCoverage$branchCoveragePercentage",
+        "com.amazonaws.codebuild",
+        "CodeCoverage",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "branchCoveragePercentage",
+    6,
+);
+static CODECOVERAGE_MEMBER_BRANCHES_COVERED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CodeCoverage$branchesCovered",
+        "com.amazonaws.codebuild",
+        "CodeCoverage",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "branchesCovered",
+    7,
+);
+static CODECOVERAGE_MEMBER_BRANCHES_MISSED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codebuild#CodeCoverage$branchesMissed",
+        "com.amazonaws.codebuild",
+        "CodeCoverage",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "branchesMissed",
+    8,
+);
+static CODECOVERAGE_MEMBER_EXPIRED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#CodeCoverage$expired", "com.amazonaws.codebuild", "CodeCoverage"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "expired",
+    9,
+);
+static CODECOVERAGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codebuild#CodeCoverage", "com.amazonaws.codebuild", "CodeCoverage"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CODECOVERAGE_MEMBER_ID,
+        &CODECOVERAGE_MEMBER_REPORT_ARN,
+        &CODECOVERAGE_MEMBER_FILE_PATH,
+        &CODECOVERAGE_MEMBER_LINE_COVERAGE_PERCENTAGE,
+        &CODECOVERAGE_MEMBER_LINES_COVERED,
+        &CODECOVERAGE_MEMBER_LINES_MISSED,
+        &CODECOVERAGE_MEMBER_BRANCH_COVERAGE_PERCENTAGE,
+        &CODECOVERAGE_MEMBER_BRANCHES_COVERED,
+        &CODECOVERAGE_MEMBER_BRANCHES_MISSED,
+        &CODECOVERAGE_MEMBER_EXPIRED,
+    ],
+);
+impl CodeCoverage {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CODECOVERAGE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CodeCoverage {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&CODECOVERAGE_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.report_arn {
+            ser.write_string(&CODECOVERAGE_MEMBER_REPORT_ARN, val)?;
+        }
+        if let Some(ref val) = self.file_path {
+            ser.write_string(&CODECOVERAGE_MEMBER_FILE_PATH, val)?;
+        }
+        if let Some(ref val) = self.line_coverage_percentage {
+            ser.write_double(&CODECOVERAGE_MEMBER_LINE_COVERAGE_PERCENTAGE, *val)?;
+        }
+        if let Some(ref val) = self.lines_covered {
+            ser.write_integer(&CODECOVERAGE_MEMBER_LINES_COVERED, *val)?;
+        }
+        if let Some(ref val) = self.lines_missed {
+            ser.write_integer(&CODECOVERAGE_MEMBER_LINES_MISSED, *val)?;
+        }
+        if let Some(ref val) = self.branch_coverage_percentage {
+            ser.write_double(&CODECOVERAGE_MEMBER_BRANCH_COVERAGE_PERCENTAGE, *val)?;
+        }
+        if let Some(ref val) = self.branches_covered {
+            ser.write_integer(&CODECOVERAGE_MEMBER_BRANCHES_COVERED, *val)?;
+        }
+        if let Some(ref val) = self.branches_missed {
+            ser.write_integer(&CODECOVERAGE_MEMBER_BRANCHES_MISSED, *val)?;
+        }
+        if let Some(ref val) = self.expired {
+            ser.write_timestamp(&CODECOVERAGE_MEMBER_EXPIRED, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CodeCoverageBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CODECOVERAGE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.line_coverage_percentage = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lines_covered = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lines_missed = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.branch_coverage_percentage = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.branches_covered = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.branches_missed = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expired = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CodeCoverage {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CodeCoverage {
     /// Creates a new builder-style object to manufacture [`CodeCoverage`](crate::types::CodeCoverage).
     pub fn builder() -> crate::types::builders::CodeCoverageBuilder {

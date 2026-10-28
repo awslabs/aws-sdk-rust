@@ -13,6 +13,84 @@ impl GetResolverEndpointOutput {
         self.resolver_endpoint.as_ref()
     }
 }
+static GETRESOLVERENDPOINTOUTPUT_MEMBER_RESOLVER_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#GetResolverEndpointOutput$ResolverEndpoint",
+        "com.amazonaws.route53resolver.synthetic",
+        "GetResolverEndpointOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResolverEndpoint",
+    0,
+);
+static GETRESOLVERENDPOINTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#GetResolverEndpointOutput",
+        "com.amazonaws.route53resolver.synthetic",
+        "GetResolverEndpointOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETRESOLVERENDPOINTOUTPUT_MEMBER_RESOLVER_ENDPOINT],
+)
+.with_original_name("GetResolverEndpointResponse");
+impl GetResolverEndpointOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETRESOLVERENDPOINTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetResolverEndpointOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resolver_endpoint {
+            ser.write_struct(&GETRESOLVERENDPOINTOUTPUT_MEMBER_RESOLVER_ENDPOINT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_resolver_endpoint::builders::GetResolverEndpointOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETRESOLVERENDPOINTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolver_endpoint = Some(crate::types::ResolverEndpoint::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetResolverEndpointOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetResolverEndpointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

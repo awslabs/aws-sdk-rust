@@ -33,6 +33,148 @@ impl PendingCreateStandbyWorkspacesRequest {
         self.workspace_id.as_deref()
     }
 }
+static PENDINGCREATESTANDBYWORKSPACESREQUEST_MEMBER_USER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#PendingCreateStandbyWorkspacesRequest$UserName",
+        "com.amazonaws.workspaces",
+        "PendingCreateStandbyWorkspacesRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserName",
+    0,
+);
+static PENDINGCREATESTANDBYWORKSPACESREQUEST_MEMBER_DIRECTORY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#PendingCreateStandbyWorkspacesRequest$DirectoryId",
+        "com.amazonaws.workspaces",
+        "PendingCreateStandbyWorkspacesRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DirectoryId",
+    1,
+);
+static PENDINGCREATESTANDBYWORKSPACESREQUEST_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#PendingCreateStandbyWorkspacesRequest$State",
+        "com.amazonaws.workspaces",
+        "PendingCreateStandbyWorkspacesRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    2,
+);
+static PENDINGCREATESTANDBYWORKSPACESREQUEST_MEMBER_WORKSPACE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#PendingCreateStandbyWorkspacesRequest$WorkspaceId",
+        "com.amazonaws.workspaces",
+        "PendingCreateStandbyWorkspacesRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkspaceId",
+    3,
+);
+static PENDINGCREATESTANDBYWORKSPACESREQUEST_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#PendingCreateStandbyWorkspacesRequest",
+        "com.amazonaws.workspaces",
+        "PendingCreateStandbyWorkspacesRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PENDINGCREATESTANDBYWORKSPACESREQUEST_MEMBER_USER_NAME,
+        &PENDINGCREATESTANDBYWORKSPACESREQUEST_MEMBER_DIRECTORY_ID,
+        &PENDINGCREATESTANDBYWORKSPACESREQUEST_MEMBER_STATE,
+        &PENDINGCREATESTANDBYWORKSPACESREQUEST_MEMBER_WORKSPACE_ID,
+    ],
+);
+impl PendingCreateStandbyWorkspacesRequest {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PENDINGCREATESTANDBYWORKSPACESREQUEST_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PendingCreateStandbyWorkspacesRequest {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_name {
+            ser.write_string(&PENDINGCREATESTANDBYWORKSPACESREQUEST_MEMBER_USER_NAME, val)?;
+        }
+        if let Some(ref val) = self.directory_id {
+            ser.write_string(&PENDINGCREATESTANDBYWORKSPACESREQUEST_MEMBER_DIRECTORY_ID, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&PENDINGCREATESTANDBYWORKSPACESREQUEST_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.workspace_id {
+            ser.write_string(&PENDINGCREATESTANDBYWORKSPACESREQUEST_MEMBER_WORKSPACE_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PendingCreateStandbyWorkspacesRequestBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PENDINGCREATESTANDBYWORKSPACESREQUEST_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.directory_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::WorkspaceState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PendingCreateStandbyWorkspacesRequest {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PendingCreateStandbyWorkspacesRequest {
     /// Creates a new builder-style object to manufacture [`PendingCreateStandbyWorkspacesRequest`](crate::types::PendingCreateStandbyWorkspacesRequest).
     pub fn builder() -> crate::types::builders::PendingCreateStandbyWorkspacesRequestBuilder {

@@ -43,6 +43,123 @@ impl SamlProperties {
         self.relay_state_parameter_name.as_deref()
     }
 }
+static SAMLPROPERTIES_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#SamlProperties$Status",
+        "com.amazonaws.workspaces",
+        "SamlProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    0,
+);
+static SAMLPROPERTIES_MEMBER_USER_ACCESS_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#SamlProperties$UserAccessUrl",
+        "com.amazonaws.workspaces",
+        "SamlProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserAccessUrl",
+    1,
+);
+static SAMLPROPERTIES_MEMBER_RELAY_STATE_PARAMETER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#SamlProperties$RelayStateParameterName",
+        "com.amazonaws.workspaces",
+        "SamlProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RelayStateParameterName",
+    2,
+);
+static SAMLPROPERTIES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.workspaces#SamlProperties", "com.amazonaws.workspaces", "SamlProperties"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SAMLPROPERTIES_MEMBER_STATUS,
+        &SAMLPROPERTIES_MEMBER_USER_ACCESS_URL,
+        &SAMLPROPERTIES_MEMBER_RELAY_STATE_PARAMETER_NAME,
+    ],
+);
+impl SamlProperties {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SAMLPROPERTIES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SamlProperties {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.status {
+            ser.write_string(&SAMLPROPERTIES_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.user_access_url {
+            ser.write_string(&SAMLPROPERTIES_MEMBER_USER_ACCESS_URL, val)?;
+        }
+        if let Some(ref val) = self.relay_state_parameter_name {
+            ser.write_string(&SAMLPROPERTIES_MEMBER_RELAY_STATE_PARAMETER_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SamlPropertiesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SAMLPROPERTIES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::SamlStatusEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_access_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relay_state_parameter_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SamlProperties {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SamlProperties {
     /// Creates a new builder-style object to manufacture [`SamlProperties`](crate::types::SamlProperties).
     pub fn builder() -> crate::types::builders::SamlPropertiesBuilder {

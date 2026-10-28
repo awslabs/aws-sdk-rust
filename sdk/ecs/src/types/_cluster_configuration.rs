@@ -19,6 +19,102 @@ impl ClusterConfiguration {
         self.managed_storage_configuration.as_ref()
     }
 }
+static CLUSTERCONFIGURATION_MEMBER_EXECUTE_COMMAND_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ClusterConfiguration$executeCommandConfiguration",
+        "com.amazonaws.ecs",
+        "ClusterConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "executeCommandConfiguration",
+    0,
+);
+static CLUSTERCONFIGURATION_MEMBER_MANAGED_STORAGE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#ClusterConfiguration$managedStorageConfiguration",
+        "com.amazonaws.ecs",
+        "ClusterConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "managedStorageConfiguration",
+    1,
+);
+static CLUSTERCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#ClusterConfiguration", "com.amazonaws.ecs", "ClusterConfiguration"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLUSTERCONFIGURATION_MEMBER_EXECUTE_COMMAND_CONFIGURATION,
+        &CLUSTERCONFIGURATION_MEMBER_MANAGED_STORAGE_CONFIGURATION,
+    ],
+);
+impl ClusterConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLUSTERCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClusterConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.execute_command_configuration {
+            ser.write_struct(&CLUSTERCONFIGURATION_MEMBER_EXECUTE_COMMAND_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.managed_storage_configuration {
+            ser.write_struct(&CLUSTERCONFIGURATION_MEMBER_MANAGED_STORAGE_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClusterConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLUSTERCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execute_command_configuration = Some(crate::types::ExecuteCommandConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_storage_configuration = Some(crate::types::ManagedStorageConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClusterConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ClusterConfiguration {
     /// Creates a new builder-style object to manufacture [`ClusterConfiguration`](crate::types::ClusterConfiguration).
     pub fn builder() -> crate::types::builders::ClusterConfigurationBuilder {
