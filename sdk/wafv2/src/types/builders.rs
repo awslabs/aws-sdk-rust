@@ -113,6 +113,8 @@ pub use crate::types::_data_protection::DataProtectionBuilder;
 
 pub use crate::types::_request_body_associated_resource_type_config::RequestBodyAssociatedResourceTypeConfigBuilder;
 
+pub use crate::types::_challenge_javascript_sdk_injection_config::ChallengeJavascriptSdkInjectionConfigBuilder;
+
 pub use crate::types::_application_attribute::ApplicationAttributeBuilder;
 
 pub use crate::types::_field_to_match::FieldToMatchBuilder;

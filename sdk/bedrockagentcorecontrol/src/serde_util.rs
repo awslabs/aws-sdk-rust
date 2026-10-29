@@ -4872,6 +4872,16 @@ pub(crate) fn payment_credential_provider_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn port_range_correct_errors(mut builder: crate::types::builders::PortRangeBuilder) -> crate::types::builders::PortRangeBuilder {
+    if builder.from.is_none() {
+        builder.from = Some(Default::default())
+    }
+    if builder.to.is_none() {
+        builder.to = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn runtime_target_configuration_correct_errors(
     mut builder: crate::types::builders::RuntimeTargetConfigurationBuilder,
 ) -> crate::types::builders::RuntimeTargetConfigurationBuilder {

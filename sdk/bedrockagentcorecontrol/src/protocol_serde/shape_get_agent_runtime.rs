@@ -166,6 +166,9 @@ pub(crate) fn de_get_agent_runtime(
                             .transpose()?,
                     );
                 }
+                "allowedPorts" => {
+                    builder = builder.set_allowed_ports(crate::protocol_serde::shape_allowed_ports::de_allowed_ports(tokens, _value, depth + 1)?);
+                }
                 "authorizerConfiguration" => {
                     builder = builder.set_authorizer_configuration(
                         crate::protocol_serde::shape_authorizer_configuration::de_authorizer_configuration(tokens, _value, depth + 1)?,

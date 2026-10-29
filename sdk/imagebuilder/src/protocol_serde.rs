@@ -529,6 +529,8 @@ pub(crate) mod shape_s3_export_configuration;
 
 pub(crate) mod shape_s3_logs;
 
+pub(crate) mod shape_scan_result_condition;
+
 pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_ssm_parameter_configuration;
@@ -570,6 +572,8 @@ pub(crate) mod shape_image_aggregation;
 pub(crate) mod shape_image_failure_context;
 
 pub(crate) mod shape_image_pipeline_aggregation;
+
+pub(crate) mod shape_image_scanning_type_list;
 
 pub(crate) mod shape_inspector_score_details;
 

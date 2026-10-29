@@ -46,6 +46,7 @@ pub struct UpdateWebAclInput {
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
+    /// <p>You can also use this to have your CloudFront distributions insert the WAF challenge JavaScript SDK into the HTML responses that they return. For more information, see the <code>ChallengeJavascriptSdkInjection</code> setting.</p>
     pub association_config: ::std::option::Option<crate::types::AssociationConfig>,
     /// <p>Specifies the type of DDoS protection to apply to web request data for a web ACL. For most scenarios, it is recommended to use the default protection level, <code>ACTIVE_UNDER_DDOS</code>. If a web ACL is associated with multiple Application Load Balancers, the changes you make to DDoS protection in that web ACL will apply to all associated Application Load Balancers.</p>
     pub on_source_d_do_s_protection_config: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>,
@@ -137,6 +138,7 @@ impl UpdateWebAclInput {
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
+    /// <p>You can also use this to have your CloudFront distributions insert the WAF challenge JavaScript SDK into the HTML responses that they return. For more information, see the <code>ChallengeJavascriptSdkInjection</code> setting.</p>
     pub fn association_config(&self) -> ::std::option::Option<&crate::types::AssociationConfig> {
         self.association_config.as_ref()
     }
@@ -442,6 +444,7 @@ impl UpdateWebAclInputBuilder {
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
+    /// <p>You can also use this to have your CloudFront distributions insert the WAF challenge JavaScript SDK into the HTML responses that they return. For more information, see the <code>ChallengeJavascriptSdkInjection</code> setting.</p>
     pub fn association_config(mut self, input: crate::types::AssociationConfig) -> Self {
         self.association_config = ::std::option::Option::Some(input);
         self
@@ -451,6 +454,7 @@ impl UpdateWebAclInputBuilder {
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
+    /// <p>You can also use this to have your CloudFront distributions insert the WAF challenge JavaScript SDK into the HTML responses that they return. For more information, see the <code>ChallengeJavascriptSdkInjection</code> setting.</p>
     pub fn set_association_config(mut self, input: ::std::option::Option<crate::types::AssociationConfig>) -> Self {
         self.association_config = input;
         self
@@ -460,6 +464,7 @@ impl UpdateWebAclInputBuilder {
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
+    /// <p>You can also use this to have your CloudFront distributions insert the WAF challenge JavaScript SDK into the HTML responses that they return. For more information, see the <code>ChallengeJavascriptSdkInjection</code> setting.</p>
     pub fn get_association_config(&self) -> &::std::option::Option<crate::types::AssociationConfig> {
         &self.association_config
     }

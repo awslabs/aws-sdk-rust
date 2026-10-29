@@ -40,7 +40,7 @@ pub struct ImagePipeline {
     pub date_next_run: ::std::option::Option<::std::string::String>,
     /// <p>The tags of this image pipeline.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the images that the pipeline creates.</p>
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
     /// <p>The tags that Image Builder applies to the Image Builder image resource that this pipeline's scheduled executions create. These tags don't apply to the output AMI. Builds that you start manually use the tags from the <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_StartImagePipelineExecution.html">StartImagePipelineExecution</a> request instead.</p>
     pub image_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -140,7 +140,7 @@ impl ImagePipeline {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the images that the pipeline creates.</p>
     pub fn image_scanning_configuration(&self) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
@@ -476,17 +476,17 @@ impl ImagePipelineBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the images that the pipeline creates.</p>
     pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.image_scanning_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the images that the pipeline creates.</p>
     pub fn set_image_scanning_configuration(mut self, input: ::std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
         self.image_scanning_configuration = input;
         self
     }
-    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the images that the pipeline creates.</p>
     pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         &self.image_scanning_configuration
     }

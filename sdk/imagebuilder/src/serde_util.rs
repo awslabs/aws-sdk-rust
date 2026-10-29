@@ -117,6 +117,15 @@ pub(crate) fn product_code_list_item_correct_errors(
     builder
 }
 
+pub(crate) fn scan_result_condition_correct_errors(
+    mut builder: crate::types::builders::ScanResultConditionBuilder,
+) -> crate::types::builders::ScanResultConditionBuilder {
+    if builder.maximum_severity_label.is_none() {
+        builder.maximum_severity_label = "no value was set".parse::<crate::types::MaximumSeverityLabel>().ok()
+    }
+    builder
+}
+
 pub(crate) fn workflow_configuration_correct_errors(
     mut builder: crate::types::builders::WorkflowConfigurationBuilder,
 ) -> crate::types::builders::WorkflowConfigurationBuilder {

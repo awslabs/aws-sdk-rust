@@ -19,6 +19,22 @@ pub fn ser_association_config(
         }
         object_2.finish();
     }
+    if let Some(var_6) = &input.challenge_javascript_sdk_injection {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("ChallengeJavascriptSdkInjection").start_object();
+        for (key_8, value_9) in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = object_7.key(key_8.as_str()).start_object();
+                crate::protocol_serde::shape_challenge_javascript_sdk_injection_config::ser_challenge_javascript_sdk_injection_config(
+                    &mut object_10,
+                    value_9,
+                )?;
+                object_10.finish();
+            }
+        }
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -47,6 +63,15 @@ where
                         "RequestBody" => {
                             builder =
                                 builder.set_request_body(crate::protocol_serde::shape_request_body::de_request_body(tokens, _value, depth + 1)?);
+                        }
+                        "ChallengeJavascriptSdkInjection" => {
+                            builder = builder.set_challenge_javascript_sdk_injection(
+                                crate::protocol_serde::shape_challenge_javascript_sdk_injection::de_challenge_javascript_sdk_injection(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

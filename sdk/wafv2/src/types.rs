@@ -151,6 +151,8 @@ pub use crate::types::_associated_resource_type::AssociatedResourceType;
 
 pub use crate::types::_request_body_associated_resource_type_config::RequestBodyAssociatedResourceTypeConfig;
 
+pub use crate::types::_challenge_javascript_sdk_injection_config::ChallengeJavascriptSdkInjectionConfig;
+
 pub use crate::types::_application_attribute::ApplicationAttribute;
 
 pub use crate::types::_field_to_match::FieldToMatch;
@@ -456,6 +458,8 @@ mod _captcha_response;
 mod _challenge_action;
 
 mod _challenge_config;
+
+mod _challenge_javascript_sdk_injection_config;
 
 mod _challenge_response;
 

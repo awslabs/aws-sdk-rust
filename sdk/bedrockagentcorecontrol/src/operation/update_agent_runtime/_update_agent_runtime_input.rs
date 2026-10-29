@@ -17,7 +17,7 @@ pub struct UpdateAgentRuntimeInput {
     pub authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     /// <p>The updated configuration for HTTP request headers that will be passed through to the runtime.</p>
     pub request_header_configuration: ::std::option::Option<crate::types::RequestHeaderConfiguration>,
-    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
+    /// <p>The updated protocol configuration for the AgentCore Runtime, including the protocol, port, and path on which the agent server is available.</p>
     pub protocol_configuration: ::std::option::Option<crate::types::ProtocolConfiguration>,
     /// <p>The updated life cycle configuration for the AgentCore Runtime.</p>
     pub lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
@@ -31,6 +31,8 @@ pub struct UpdateAgentRuntimeInput {
     pub capacity_provider_configuration: ::std::option::Option<crate::types::CapacityProviderConfiguration>,
     /// <p>The updated version of the runtime platform to use for the AgentCore Runtime.</p>
     pub platform_version: ::std::option::Option<::std::string::String>,
+    /// <p>The updated additional ports on the AgentCore Runtime that are reachable through the runtime's session URL. Specify one to five non-overlapping entries, each containing either a single port or an inclusive port range. Ports must be between <code>8000</code> and <code>12000</code>, excluding the reserved port <code>8443</code>.</p>
+    pub allowed_ports: ::std::option::Option<::std::vec::Vec<crate::types::AllowedPort>>,
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -63,7 +65,7 @@ impl UpdateAgentRuntimeInput {
     pub fn request_header_configuration(&self) -> ::std::option::Option<&crate::types::RequestHeaderConfiguration> {
         self.request_header_configuration.as_ref()
     }
-    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
+    /// <p>The updated protocol configuration for the AgentCore Runtime, including the protocol, port, and path on which the agent server is available.</p>
     pub fn protocol_configuration(&self) -> ::std::option::Option<&crate::types::ProtocolConfiguration> {
         self.protocol_configuration.as_ref()
     }
@@ -93,6 +95,12 @@ impl UpdateAgentRuntimeInput {
     pub fn platform_version(&self) -> ::std::option::Option<&str> {
         self.platform_version.as_deref()
     }
+    /// <p>The updated additional ports on the AgentCore Runtime that are reachable through the runtime's session URL. Specify one to five non-overlapping entries, each containing either a single port or an inclusive port range. Ports must be between <code>8000</code> and <code>12000</code>, excluding the reserved port <code>8443</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_ports.is_none()`.
+    pub fn allowed_ports(&self) -> &[crate::types::AllowedPort] {
+        self.allowed_ports.as_deref().unwrap_or_default()
+    }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -115,6 +123,7 @@ impl ::std::fmt::Debug for UpdateAgentRuntimeInput {
         formatter.field("filesystem_configurations", &self.filesystem_configurations);
         formatter.field("capacity_provider_configuration", &self.capacity_provider_configuration);
         formatter.field("platform_version", &self.platform_version);
+        formatter.field("allowed_ports", &self.allowed_ports);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
@@ -144,6 +153,7 @@ pub struct UpdateAgentRuntimeInputBuilder {
     pub(crate) filesystem_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>,
     pub(crate) capacity_provider_configuration: ::std::option::Option<crate::types::CapacityProviderConfiguration>,
     pub(crate) platform_version: ::std::option::Option<::std::string::String>,
+    pub(crate) allowed_ports: ::std::option::Option<::std::vec::Vec<crate::types::AllowedPort>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAgentRuntimeInputBuilder {
@@ -248,17 +258,17 @@ impl UpdateAgentRuntimeInputBuilder {
     pub fn get_request_header_configuration(&self) -> &::std::option::Option<crate::types::RequestHeaderConfiguration> {
         &self.request_header_configuration
     }
-    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
+    /// <p>The updated protocol configuration for the AgentCore Runtime, including the protocol, port, and path on which the agent server is available.</p>
     pub fn protocol_configuration(mut self, input: crate::types::ProtocolConfiguration) -> Self {
         self.protocol_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
+    /// <p>The updated protocol configuration for the AgentCore Runtime, including the protocol, port, and path on which the agent server is available.</p>
     pub fn set_protocol_configuration(mut self, input: ::std::option::Option<crate::types::ProtocolConfiguration>) -> Self {
         self.protocol_configuration = input;
         self
     }
-    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
+    /// <p>The updated protocol configuration for the AgentCore Runtime, including the protocol, port, and path on which the agent server is available.</p>
     pub fn get_protocol_configuration(&self) -> &::std::option::Option<crate::types::ProtocolConfiguration> {
         &self.protocol_configuration
     }
@@ -365,6 +375,26 @@ impl UpdateAgentRuntimeInputBuilder {
     pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_version
     }
+    /// Appends an item to `allowed_ports`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_ports`](Self::set_allowed_ports).
+    ///
+    /// <p>The updated additional ports on the AgentCore Runtime that are reachable through the runtime's session URL. Specify one to five non-overlapping entries, each containing either a single port or an inclusive port range. Ports must be between <code>8000</code> and <code>12000</code>, excluding the reserved port <code>8443</code>.</p>
+    pub fn allowed_ports(mut self, input: crate::types::AllowedPort) -> Self {
+        let mut v = self.allowed_ports.unwrap_or_default();
+        v.push(input);
+        self.allowed_ports = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The updated additional ports on the AgentCore Runtime that are reachable through the runtime's session URL. Specify one to five non-overlapping entries, each containing either a single port or an inclusive port range. Ports must be between <code>8000</code> and <code>12000</code>, excluding the reserved port <code>8443</code>.</p>
+    pub fn set_allowed_ports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedPort>>) -> Self {
+        self.allowed_ports = input;
+        self
+    }
+    /// <p>The updated additional ports on the AgentCore Runtime that are reachable through the runtime's session URL. Specify one to five non-overlapping entries, each containing either a single port or an inclusive port range. Ports must be between <code>8000</code> and <code>12000</code>, excluding the reserved port <code>8443</code>.</p>
+    pub fn get_allowed_ports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedPort>> {
+        &self.allowed_ports
+    }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -399,6 +429,7 @@ impl UpdateAgentRuntimeInputBuilder {
             filesystem_configurations: self.filesystem_configurations,
             capacity_provider_configuration: self.capacity_provider_configuration,
             platform_version: self.platform_version,
+            allowed_ports: self.allowed_ports,
             client_token: self.client_token,
         })
     }
@@ -420,6 +451,7 @@ impl ::std::fmt::Debug for UpdateAgentRuntimeInputBuilder {
         formatter.field("filesystem_configurations", &self.filesystem_configurations);
         formatter.field("capacity_provider_configuration", &self.capacity_provider_configuration);
         formatter.field("platform_version", &self.platform_version);
+        formatter.field("allowed_ports", &self.allowed_ports);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }

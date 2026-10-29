@@ -589,6 +589,10 @@ pub(crate) mod shape_agent_runtime_version_summary_list;
 
 pub(crate) mod shape_agent_runtimes;
 
+pub(crate) mod shape_allowed_port;
+
+pub(crate) mod shape_allowed_ports;
+
 pub(crate) mod shape_api_key_credential_providers;
 
 pub(crate) mod shape_approval_configuration;
@@ -1136,6 +1140,8 @@ pub(crate) mod shape_policy_generation_summary;
 pub(crate) mod shape_policy_statement;
 
 pub(crate) mod shape_policy_summary;
+
+pub(crate) mod shape_port_range;
 
 pub(crate) mod shape_rate_config;
 

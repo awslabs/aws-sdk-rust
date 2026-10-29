@@ -29,7 +29,7 @@ pub struct CreateImagePipelineInput {
     pub image_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the images that this pipeline creates.</p>
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
     /// <p>The array of workflow configuration objects for builds that this pipeline starts. You must also specify <code>executionRole</code> when you provide workflows.</p>
     pub workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
@@ -93,7 +93,7 @@ impl CreateImagePipelineInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the images that this pipeline creates.</p>
     pub fn image_scanning_configuration(&self) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
@@ -344,17 +344,17 @@ impl CreateImagePipelineInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the images that this pipeline creates.</p>
     pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.image_scanning_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the images that this pipeline creates.</p>
     pub fn set_image_scanning_configuration(mut self, input: ::std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
         self.image_scanning_configuration = input;
         self
     }
-    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the images that this pipeline creates.</p>
     pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         &self.image_scanning_configuration
     }

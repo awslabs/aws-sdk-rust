@@ -20,6 +20,7 @@
 ///     ParameterExceptionField::BodyParsingFallbackBehavior => { /* ... */ },
 ///     ParameterExceptionField::ByteMatchStatement => { /* ... */ },
 ///     ParameterExceptionField::ChallengeConfig => { /* ... */ },
+///     ParameterExceptionField::ChallengeJavascriptSdkInjectionConfig => { /* ... */ },
 ///     ParameterExceptionField::ChangePropagationStatus => { /* ... */ },
 ///     ParameterExceptionField::CookieMatchPattern => { /* ... */ },
 ///     ParameterExceptionField::CustomKeys => { /* ... */ },
@@ -133,6 +134,8 @@ pub enum ParameterExceptionField {
     ByteMatchStatement,
     #[allow(missing_docs)] // documentation missing in model
     ChallengeConfig,
+    #[allow(missing_docs)] // documentation missing in model
+    ChallengeJavascriptSdkInjectionConfig,
     #[allow(missing_docs)] // documentation missing in model
     ChangePropagationStatus,
     #[allow(missing_docs)] // documentation missing in model
@@ -286,6 +289,7 @@ impl ::std::convert::From<&str> for ParameterExceptionField {
             "BODY_PARSING_FALLBACK_BEHAVIOR" => ParameterExceptionField::BodyParsingFallbackBehavior,
             "BYTE_MATCH_STATEMENT" => ParameterExceptionField::ByteMatchStatement,
             "CHALLENGE_CONFIG" => ParameterExceptionField::ChallengeConfig,
+            "CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG" => ParameterExceptionField::ChallengeJavascriptSdkInjectionConfig,
             "CHANGE_PROPAGATION_STATUS" => ParameterExceptionField::ChangePropagationStatus,
             "COOKIE_MATCH_PATTERN" => ParameterExceptionField::CookieMatchPattern,
             "CUSTOM_KEYS" => ParameterExceptionField::CustomKeys,
@@ -378,6 +382,7 @@ impl ParameterExceptionField {
             ParameterExceptionField::BodyParsingFallbackBehavior => "BODY_PARSING_FALLBACK_BEHAVIOR",
             ParameterExceptionField::ByteMatchStatement => "BYTE_MATCH_STATEMENT",
             ParameterExceptionField::ChallengeConfig => "CHALLENGE_CONFIG",
+            ParameterExceptionField::ChallengeJavascriptSdkInjectionConfig => "CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG",
             ParameterExceptionField::ChangePropagationStatus => "CHANGE_PROPAGATION_STATUS",
             ParameterExceptionField::CookieMatchPattern => "COOKIE_MATCH_PATTERN",
             ParameterExceptionField::CustomKeys => "CUSTOM_KEYS",
@@ -461,6 +466,7 @@ impl ParameterExceptionField {
             "BODY_PARSING_FALLBACK_BEHAVIOR",
             "BYTE_MATCH_STATEMENT",
             "CHALLENGE_CONFIG",
+            "CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG",
             "CHANGE_PROPAGATION_STATUS",
             "COOKIE_MATCH_PATTERN",
             "CUSTOM_KEYS",
@@ -561,6 +567,7 @@ impl ::std::fmt::Display for ParameterExceptionField {
             ParameterExceptionField::BodyParsingFallbackBehavior => write!(f, "BODY_PARSING_FALLBACK_BEHAVIOR"),
             ParameterExceptionField::ByteMatchStatement => write!(f, "BYTE_MATCH_STATEMENT"),
             ParameterExceptionField::ChallengeConfig => write!(f, "CHALLENGE_CONFIG"),
+            ParameterExceptionField::ChallengeJavascriptSdkInjectionConfig => write!(f, "CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG"),
             ParameterExceptionField::ChangePropagationStatus => write!(f, "CHANGE_PROPAGATION_STATUS"),
             ParameterExceptionField::CookieMatchPattern => write!(f, "COOKIE_MATCH_PATTERN"),
             ParameterExceptionField::CustomKeys => write!(f, "CUSTOM_KEYS"),

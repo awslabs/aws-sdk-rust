@@ -97,6 +97,8 @@ pub use crate::types::_distribution::Distribution;
 
 pub use crate::types::_ecr_configuration::EcrConfiguration;
 
+pub use crate::types::_scan_result_condition::ScanResultCondition;
+
 pub use crate::types::_workflow_configuration::WorkflowConfiguration;
 
 pub use crate::types::_pipeline_execution_start_condition::PipelineExecutionStartCondition;
@@ -184,6 +186,10 @@ pub use crate::types::_ami_distribution_configuration::AmiDistributionConfigurat
 pub use crate::types::_container_distribution_configuration::ContainerDistributionConfiguration;
 
 pub use crate::types::_s3_export_configuration::S3ExportConfiguration;
+
+pub use crate::types::_image_scanning_type::ImageScanningType;
+
+pub use crate::types::_maximum_severity_label::MaximumSeverityLabel;
 
 pub use crate::types::_on_workflow_failure::OnWorkflowFailure;
 
@@ -405,6 +411,8 @@ mod _image_scan_status;
 
 mod _image_scanning_configuration;
 
+mod _image_scanning_type;
+
 mod _image_source;
 
 mod _image_state;
@@ -493,6 +501,8 @@ mod _logging;
 
 mod _marketplace_resource_type;
 
+mod _maximum_severity_label;
+
 mod _on_workflow_failure;
 
 mod _output_resources;
@@ -538,6 +548,8 @@ mod _resource_status;
 mod _s3_export_configuration;
 
 mod _s3_logs;
+
+mod _scan_result_condition;
 
 mod _schedule;
 

@@ -306,15 +306,15 @@ model_hash = '01b68cb1d1bdbbe68567f90b7240dc5c081896fd523bd0fa805466e0f8e75d25'
 
 [crates.aws-sdk-bedrockagentcore]
 category = 'AwsSdk'
-version = '1.81.0'
-source_hash = '9819706474b07323d4c6a1516cb0d34d1fd44660421e4e2591e9f406cd319ac4'
-model_hash = 'd8a8e65713a3e2099bd0874a6e3c057790bf5543a09eae85d58fdfa540f4f8fe'
+version = '1.82.0'
+source_hash = '12417f83402f9b0be43edde111da65e6e992b799837311069cd8a75cfb97ccd5'
+model_hash = '330a4905b39a62ecc32767c15dcbe3ca1202eccc23ba67890eddfe8ed82e8a54'
 
 [crates.aws-sdk-bedrockagentcorecontrol]
 category = 'AwsSdk'
-version = '1.95.0'
-source_hash = '3174bb27d915693bf2e0f80a4786413adbabec6d10167abe677aa1f0f5bbc6bb'
-model_hash = '2180728e48914815f5cb965e8ac07d64f122b7e2a12d6b77afccd0b930b5ea28'
+version = '1.96.0'
+source_hash = 'a50e6e870a4ee7e8d26d555d7218251f7ea1cfaa8778f0de15a147b8ee07530d'
+model_hash = '8d41cafffff565a93ced36e1123d7801268b4f4b196be7d5948819b1344997fc'
 
 [crates.aws-sdk-bedrockagentruntime]
 category = 'AwsSdk'
@@ -408,9 +408,9 @@ model_hash = '12efa2a5ee0f236c69c01a5f224bf30565a695687d7dc253cc8b0da6b19726f1'
 
 [crates.aws-sdk-cleanrooms]
 category = 'AwsSdk'
-version = '1.145.0'
-source_hash = 'dd389331304b5ebf73a70343d58b0607af2053ba345394347b3cfc8b66a4d868'
-model_hash = 'f85a8522f1092f6ac132858a7777b0ba1ecde1b18126cd7e4503b476f86c2a1d'
+version = '1.146.0'
+source_hash = 'b8eef68a9bd6cc901bd1858f99a8743c3d75e6cf65f5f9b485785f6c1f674cee'
+model_hash = 'e1706c3dbd26b31745628ff1fffa0b9ff00eb0f4005326ffd6bbaffe5db778c1'
 
 [crates.aws-sdk-cleanroomsml]
 category = 'AwsSdk'
@@ -1152,9 +1152,9 @@ model_hash = 'abbe16af2b741d850ad930c464a080c163856513e70dbe80788890c49caff9cf'
 
 [crates.aws-sdk-imagebuilder]
 category = 'AwsSdk'
-version = '1.135.0'
-source_hash = '47a3b3802fbc898a749f72f29405bae73c822a37e6f5e6c7f1ac371e0b63eccd'
-model_hash = '85837b5f879d9d13e67ec558eda57fead691a268278da944cf89d16277720970'
+version = '1.136.0'
+source_hash = '0d2229772b5a6d4b0ad1ef7262e0511243e7db5e636159c9369e72a50a22dd35'
+model_hash = '067cba134c9823cd797302f07c440d6383c264945686a8cbbd49b6dd80803cc8'
 
 [crates.aws-sdk-inspector]
 category = 'AwsSdk'
@@ -1446,9 +1446,9 @@ model_hash = '2f1560ba18bb7b9a3ae491d33164794a8966b242542cf4d68f1f1f80486950e7'
 
 [crates.aws-sdk-lightsail]
 category = 'AwsSdk'
-version = '1.133.0'
-source_hash = '89276837db35c5cf175d2cc2751751335a17f3dec7cd86e91b827ee620c049c6'
-model_hash = '8c3aa5b87abd13695387c89893ac4bbc0318f7b3238d5410c4ebe0dab48594aa'
+version = '1.134.0'
+source_hash = '771bc432aa2a32586432dd5cdbb10f0063b8fc0611f954a08d8fd0cc12ad8654'
+model_hash = '45da9f382f3621b19c9409ea5b057247b2ba0f16296f51ff9b5f368561a3d61b'
 
 [crates.aws-sdk-location]
 category = 'AwsSdk'
@@ -2568,9 +2568,9 @@ model_hash = 'e3a561857b356beddd5906ade8e69ab623b1c6dd04df33e95fc35e48b69dcd3f'
 
 [crates.aws-sdk-wafv2]
 category = 'AwsSdk'
-version = '1.137.0'
-source_hash = '6f892038d26904be16f8a2fcc6365ec62db54067f25a7721b3e15e4707e39af4'
-model_hash = '692fddee84be42655ef12b9715fbd97e6e62883124985c89cee2100b98d8ee75'
+version = '1.138.0'
+source_hash = '76b6a4407968463e2e14d1f4af7414fc62d45d82c51d1a81c3079b5aa295d976'
+model_hash = '7687336d2996b9598aad3de5ecbc71b7a4265de35db7e536c694d0c20ccc6a06'
 
 [crates.aws-sdk-wellarchitected]
 category = 'AwsSdk'
@@ -2807,19 +2807,10 @@ source_hash = '2b6934e1e69a4fc11ef50e74a43a03213e505cf1c74b7ac112df28fdbe92628e'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '484ac8814dc06739c5b28ff9ef294f81487d2cc348776e1e51dafd7b15d0890e'
-
-[release]
-tag = 'release-2026-10-28.2'
-
 [release.crates]
-aws-sdk-acm = '1.125.0'
-aws-sdk-artifact = '1.111.0'
-aws-sdk-connect = '1.219.0'
-aws-sdk-connectparticipant = '1.125.0'
-aws-sdk-ec2 = '1.273.0'
-aws-sdk-ivs = '1.130.0'
-aws-sdk-kafkaconnect = '1.124.0'
-aws-sdk-medialive = '1.164.0'
-aws-sdk-neptunedata = '1.121.0'
-aws-sdk-opensearch = '1.156.0'
-aws-sdk-securityagent = '1.37.0'
+aws-sdk-bedrockagentcore = '1.82.0'
+aws-sdk-bedrockagentcorecontrol = '1.96.0'
+aws-sdk-cleanrooms = '1.146.0'
+aws-sdk-imagebuilder = '1.136.0'
+aws-sdk-lightsail = '1.134.0'
+aws-sdk-wafv2 = '1.138.0'

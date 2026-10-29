@@ -49,6 +49,12 @@ pub struct Instance {
     pub ssh_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The metadata options for the Amazon Lightsail instance.</p>
     pub metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
+    /// <p>Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.</p>
+    /// <p>This value is returned only when you set <code>includeHealthStatus</code> to <code>true</code> in your request.</p>
+    pub instance_status: ::std::option::Option<crate::types::InstanceHealthStatus>,
+    /// <p>Reports impaired functionality that stems from issues related to the systems that support an instance, such as hardware failures and network connectivity problems.</p>
+    /// <p>This value is returned only when you set <code>includeHealthStatus</code> to <code>true</code> in your request.</p>
+    pub system_status: ::std::option::Option<crate::types::InstanceHealthStatus>,
 }
 impl Instance {
     /// <p>The name the user gave the instance (<code>Amazon_Linux_2023-1</code>).</p>
@@ -145,6 +151,16 @@ impl Instance {
     /// <p>The metadata options for the Amazon Lightsail instance.</p>
     pub fn metadata_options(&self) -> ::std::option::Option<&crate::types::InstanceMetadataOptions> {
         self.metadata_options.as_ref()
+    }
+    /// <p>Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.</p>
+    /// <p>This value is returned only when you set <code>includeHealthStatus</code> to <code>true</code> in your request.</p>
+    pub fn instance_status(&self) -> ::std::option::Option<&crate::types::InstanceHealthStatus> {
+        self.instance_status.as_ref()
+    }
+    /// <p>Reports impaired functionality that stems from issues related to the systems that support an instance, such as hardware failures and network connectivity problems.</p>
+    /// <p>This value is returned only when you set <code>includeHealthStatus</code> to <code>true</code> in your request.</p>
+    pub fn system_status(&self) -> ::std::option::Option<&crate::types::InstanceHealthStatus> {
+        self.system_status.as_ref()
     }
 }
 static INSTANCE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -304,6 +320,18 @@ static INSTANCE_MEMBER_METADATA_OPTIONS: ::aws_smithy_schema::Schema<'static> = 
     "metadataOptions",
     21,
 );
+static INSTANCE_MEMBER_INSTANCE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Instance$instanceStatus", "com.amazonaws.lightsail", "Instance"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "instanceStatus",
+    22,
+);
+static INSTANCE_MEMBER_SYSTEM_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Instance$systemStatus", "com.amazonaws.lightsail", "Instance"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "systemStatus",
+    23,
+);
 static INSTANCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Instance", "com.amazonaws.lightsail", "Instance"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -330,6 +358,8 @@ static INSTANCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_sche
         &INSTANCE_MEMBER_USERNAME,
         &INSTANCE_MEMBER_SSH_KEY_NAME,
         &INSTANCE_MEMBER_METADATA_OPTIONS,
+        &INSTANCE_MEMBER_INSTANCE_STATUS,
+        &INSTANCE_MEMBER_SYSTEM_STATUS,
     ],
 );
 impl Instance {
@@ -429,6 +459,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for Instance {
         }
         if let Some(ref val) = self.metadata_options {
             ser.write_struct(&INSTANCE_MEMBER_METADATA_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.instance_status {
+            ser.write_struct(&INSTANCE_MEMBER_INSTANCE_STATUS, val)?;
+        }
+        if let Some(ref val) = self.system_status {
+            ser.write_struct(&INSTANCE_MEMBER_SYSTEM_STATUS, val)?;
         }
         Ok(())
     }
@@ -615,6 +651,20 @@ impl crate::types::builders::InstanceBuilder {
                         self.metadata_options = Some(crate::types::InstanceMetadataOptions::deserialize(deser)?);
                     }
                 }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_status = Some(crate::types::InstanceHealthStatus::deserialize(deser)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.system_status = Some(crate::types::InstanceHealthStatus::deserialize(deser)?);
+                    }
+                }
                 _ => {}
             }
             Ok(())
@@ -665,6 +715,8 @@ pub struct InstanceBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) ssh_key_name: ::std::option::Option<::std::string::String>,
     pub(crate) metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
+    pub(crate) instance_status: ::std::option::Option<crate::types::InstanceHealthStatus>,
+    pub(crate) system_status: ::std::option::Option<crate::types::InstanceHealthStatus>,
 }
 impl InstanceBuilder {
     /// <p>The name the user gave the instance (<code>Amazon_Linux_2023-1</code>).</p>
@@ -996,6 +1048,40 @@ impl InstanceBuilder {
     pub fn get_metadata_options(&self) -> &::std::option::Option<crate::types::InstanceMetadataOptions> {
         &self.metadata_options
     }
+    /// <p>Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.</p>
+    /// <p>This value is returned only when you set <code>includeHealthStatus</code> to <code>true</code> in your request.</p>
+    pub fn instance_status(mut self, input: crate::types::InstanceHealthStatus) -> Self {
+        self.instance_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.</p>
+    /// <p>This value is returned only when you set <code>includeHealthStatus</code> to <code>true</code> in your request.</p>
+    pub fn set_instance_status(mut self, input: ::std::option::Option<crate::types::InstanceHealthStatus>) -> Self {
+        self.instance_status = input;
+        self
+    }
+    /// <p>Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.</p>
+    /// <p>This value is returned only when you set <code>includeHealthStatus</code> to <code>true</code> in your request.</p>
+    pub fn get_instance_status(&self) -> &::std::option::Option<crate::types::InstanceHealthStatus> {
+        &self.instance_status
+    }
+    /// <p>Reports impaired functionality that stems from issues related to the systems that support an instance, such as hardware failures and network connectivity problems.</p>
+    /// <p>This value is returned only when you set <code>includeHealthStatus</code> to <code>true</code> in your request.</p>
+    pub fn system_status(mut self, input: crate::types::InstanceHealthStatus) -> Self {
+        self.system_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reports impaired functionality that stems from issues related to the systems that support an instance, such as hardware failures and network connectivity problems.</p>
+    /// <p>This value is returned only when you set <code>includeHealthStatus</code> to <code>true</code> in your request.</p>
+    pub fn set_system_status(mut self, input: ::std::option::Option<crate::types::InstanceHealthStatus>) -> Self {
+        self.system_status = input;
+        self
+    }
+    /// <p>Reports impaired functionality that stems from issues related to the systems that support an instance, such as hardware failures and network connectivity problems.</p>
+    /// <p>This value is returned only when you set <code>includeHealthStatus</code> to <code>true</code> in your request.</p>
+    pub fn get_system_status(&self) -> &::std::option::Option<crate::types::InstanceHealthStatus> {
+        &self.system_status
+    }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {
         crate::types::Instance {
@@ -1021,6 +1107,8 @@ impl InstanceBuilder {
             username: self.username,
             ssh_key_name: self.ssh_key_name,
             metadata_options: self.metadata_options,
+            instance_status: self.instance_status,
+            system_status: self.system_status,
         }
     }
 }

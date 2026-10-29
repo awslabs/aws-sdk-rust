@@ -4,12 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectedJobS3OutputConfigurationInput {
+    /// <p>The file format of the protected job results. If you don't specify a format, results are written as CSV.</p>
+    pub result_format: ::std::option::Option<crate::types::ResultFormat>,
     /// <p>The S3 bucket for job output.</p>
     pub bucket: ::std::string::String,
     /// <p>The S3 prefix to unload the protected job results.</p>
     pub key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ProtectedJobS3OutputConfigurationInput {
+    /// <p>The file format of the protected job results. If you don't specify a format, results are written as CSV.</p>
+    pub fn result_format(&self) -> ::std::option::Option<&crate::types::ResultFormat> {
+        self.result_format.as_ref()
+    }
     /// <p>The S3 bucket for job output.</p>
     pub fn bucket(&self) -> &str {
         use std::ops::Deref;
@@ -31,10 +37,25 @@ impl ProtectedJobS3OutputConfigurationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ProtectedJobS3OutputConfigurationInputBuilder {
+    pub(crate) result_format: ::std::option::Option<crate::types::ResultFormat>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ProtectedJobS3OutputConfigurationInputBuilder {
+    /// <p>The file format of the protected job results. If you don't specify a format, results are written as CSV.</p>
+    pub fn result_format(mut self, input: crate::types::ResultFormat) -> Self {
+        self.result_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The file format of the protected job results. If you don't specify a format, results are written as CSV.</p>
+    pub fn set_result_format(mut self, input: ::std::option::Option<crate::types::ResultFormat>) -> Self {
+        self.result_format = input;
+        self
+    }
+    /// <p>The file format of the protected job results. If you don't specify a format, results are written as CSV.</p>
+    pub fn get_result_format(&self) -> &::std::option::Option<crate::types::ResultFormat> {
+        &self.result_format
+    }
     /// <p>The S3 bucket for job output.</p>
     /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,6 +92,7 @@ impl ProtectedJobS3OutputConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<crate::types::ProtectedJobS3OutputConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProtectedJobS3OutputConfigurationInput {
+            result_format: self.result_format,
             bucket: self.bucket.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",

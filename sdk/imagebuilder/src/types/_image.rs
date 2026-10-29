@@ -88,7 +88,7 @@ pub struct Image {
     pub image_source: ::std::option::Option<crate::types::ImageSource>,
     /// <p>Contains information about the current state of scans for this image.</p>
     pub scan_state: ::std::option::Option<crate::types::ImageScanState>,
-    /// <p>Settings for the vulnerability scans that Amazon Inspector runs for this image. For AMI output, Amazon Inspector scans the test instance during image creation. For container output, Amazon Inspector scans the container image in its Amazon ECR repository.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans this image.</p>
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
     /// <p>The time when deprecation occurs for an image resource. This can be a past or future date.</p>
     pub deprecation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -228,7 +228,7 @@ impl Image {
     pub fn scan_state(&self) -> ::std::option::Option<&crate::types::ImageScanState> {
         self.scan_state.as_ref()
     }
-    /// <p>Settings for the vulnerability scans that Amazon Inspector runs for this image. For AMI output, Amazon Inspector scans the test instance during image creation. For container output, Amazon Inspector scans the container image in its Amazon ECR repository.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans this image.</p>
     pub fn image_scanning_configuration(&self) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
@@ -721,17 +721,17 @@ impl ImageBuilder {
     pub fn get_scan_state(&self) -> &::std::option::Option<crate::types::ImageScanState> {
         &self.scan_state
     }
-    /// <p>Settings for the vulnerability scans that Amazon Inspector runs for this image. For AMI output, Amazon Inspector scans the test instance during image creation. For container output, Amazon Inspector scans the container image in its Amazon ECR repository.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans this image.</p>
     pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.image_scanning_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Settings for the vulnerability scans that Amazon Inspector runs for this image. For AMI output, Amazon Inspector scans the test instance during image creation. For container output, Amazon Inspector scans the container image in its Amazon ECR repository.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans this image.</p>
     pub fn set_image_scanning_configuration(mut self, input: ::std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
         self.image_scanning_configuration = input;
         self
     }
-    /// <p>Settings for the vulnerability scans that Amazon Inspector runs for this image. For AMI output, Amazon Inspector scans the test instance during image creation. For container output, Amazon Inspector scans the container image in its Amazon ECR repository.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans this image.</p>
     pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         &self.image_scanning_configuration
     }

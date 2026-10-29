@@ -42,6 +42,13 @@ pub(crate) fn de_runtime_session_id_header(
     ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
+pub(crate) fn de_session_endpoint_url_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all_bytes("X-Amzn-Bedrock-AgentCore-Runtime-Session-Endpoint-Url");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
+}
+
 pub(crate) fn de_trace_id_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {

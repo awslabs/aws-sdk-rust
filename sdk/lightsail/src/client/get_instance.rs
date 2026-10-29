@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_name(impl Into<String>)`](crate::operation::get_instance::builders::GetInstanceFluentBuilder::instance_name) / [`set_instance_name(Option<String>)`](crate::operation::get_instance::builders::GetInstanceFluentBuilder::set_instance_name):<br>required: **true**<br><p>The name of the instance.</p><br>
+    ///   - [`include_health_status(bool)`](crate::operation::get_instance::builders::GetInstanceFluentBuilder::include_health_status) / [`set_include_health_status(Option<bool>)`](crate::operation::get_instance::builders::GetInstanceFluentBuilder::set_include_health_status):<br>required: **false**<br><p>Specifies whether to include the instance health status checks in the response of your request.</p> <p>When set to <code>true</code>, the response includes the <code>instanceStatus</code> and <code>systemStatus</code> of the instance. When omitted or set to <code>false</code>, the response doesn't include them.</p><br>
     /// - On success, responds with [`GetInstanceOutput`](crate::operation::get_instance::GetInstanceOutput) with field(s):
     ///   - [`instance(Option<Instance>)`](crate::operation::get_instance::GetInstanceOutput::instance): <p>An array of key-value pairs containing information about the specified instance.</p>
     /// - On failure, responds with [`SdkError<GetInstanceError>`](crate::operation::get_instance::GetInstanceError)

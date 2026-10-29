@@ -239,6 +239,8 @@ pub use crate::types::_instance_networking::InstanceNetworking;
 
 pub use crate::types::_instance_metadata_options::InstanceMetadataOptions;
 
+pub use crate::types::_instance_health_status::InstanceHealthStatus;
+
 pub use crate::types::_password_data::PasswordData;
 
 pub use crate::types::_instance_port_state::InstancePortState;
@@ -329,6 +331,8 @@ pub use crate::types::_monthly_transfer::MonthlyTransfer;
 
 pub use crate::types::_instance_metadata_state::InstanceMetadataState;
 
+pub use crate::types::_instance_health_status_value::InstanceHealthStatusValue;
+
 pub use crate::types::_host_key_attributes::HostKeyAttributes;
 
 pub use crate::types::_port_state::PortState;
@@ -389,6 +393,8 @@ pub use crate::types::_disk_snapshot_info::DiskSnapshotInfo;
 
 pub use crate::types::_instance_port_info::InstancePortInfo;
 
+pub use crate::types::_instance_health_status_detail::InstanceHealthStatusDetail;
+
 pub use crate::types::_instance_health_state::InstanceHealthState;
 
 pub use crate::types::_instance_health_reason::InstanceHealthReason;
@@ -412,6 +418,10 @@ pub use crate::types::_cloud_formation_stack_record_source_type::CloudFormationS
 pub use crate::types::_port_access_type::PortAccessType;
 
 pub use crate::types::_access_direction::AccessDirection;
+
+pub use crate::types::_instance_health_status_detail_name::InstanceHealthStatusDetailName;
+
+pub use crate::types::_instance_health_status_detail_value::InstanceHealthStatusDetailValue;
 
 pub use crate::types::_load_balancer_tls_certificate_domain_status::LoadBalancerTlsCertificateDomainStatus;
 
@@ -644,6 +654,16 @@ mod _instance_hardware;
 mod _instance_health_reason;
 
 mod _instance_health_state;
+
+mod _instance_health_status;
+
+mod _instance_health_status_detail;
+
+mod _instance_health_status_detail_name;
+
+mod _instance_health_status_detail_value;
+
+mod _instance_health_status_value;
 
 mod _instance_health_summary;
 
