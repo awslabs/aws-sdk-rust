@@ -11,6 +11,8 @@ pub use crate::types::_import_filter::ImportFilterBuilder;
 
 pub use crate::types::_destination_configuration::DestinationConfigurationBuilder;
 
+pub use crate::types::_dry_run_result::DryRunResultBuilder;
+
 pub use crate::types::_delivery_destination::DeliveryDestinationBuilder;
 
 pub use crate::types::_policy::PolicyBuilder;
@@ -122,6 +124,8 @@ pub use crate::types::_query_compile_error_location::QueryCompileErrorLocationBu
 pub use crate::types::_metric_filter_match_record::MetricFilterMatchRecordBuilder;
 
 pub use crate::types::_transformed_log_record::TransformedLogRecordBuilder;
+
+pub use crate::types::_log_group_impact::LogGroupImpactBuilder;
 
 pub use crate::types::_configuration_template_delivery_config_values::ConfigurationTemplateDeliveryConfigValuesBuilder;
 

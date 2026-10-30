@@ -15,6 +15,7 @@
 ///     PolicyType::DataProtectionPolicy => { /* ... */ },
 ///     PolicyType::FieldIndexPolicy => { /* ... */ },
 ///     PolicyType::MetricExtractionPolicy => { /* ... */ },
+///     PolicyType::RetentionPolicy => { /* ... */ },
 ///     PolicyType::SubscriptionFilterPolicy => { /* ... */ },
 ///     PolicyType::TransformerPolicy => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -52,6 +53,8 @@ pub enum PolicyType {
     #[allow(missing_docs)] // documentation missing in model
     MetricExtractionPolicy,
     #[allow(missing_docs)] // documentation missing in model
+    RetentionPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     SubscriptionFilterPolicy,
     #[allow(missing_docs)] // documentation missing in model
     TransformerPolicy,
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for PolicyType {
             "DATA_PROTECTION_POLICY" => PolicyType::DataProtectionPolicy,
             "FIELD_INDEX_POLICY" => PolicyType::FieldIndexPolicy,
             "METRIC_EXTRACTION_POLICY" => PolicyType::MetricExtractionPolicy,
+            "RETENTION_POLICY" => PolicyType::RetentionPolicy,
             "SUBSCRIPTION_FILTER_POLICY" => PolicyType::SubscriptionFilterPolicy,
             "TRANSFORMER_POLICY" => PolicyType::TransformerPolicy,
             other => PolicyType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -85,6 +89,7 @@ impl PolicyType {
             PolicyType::DataProtectionPolicy => "DATA_PROTECTION_POLICY",
             PolicyType::FieldIndexPolicy => "FIELD_INDEX_POLICY",
             PolicyType::MetricExtractionPolicy => "METRIC_EXTRACTION_POLICY",
+            PolicyType::RetentionPolicy => "RETENTION_POLICY",
             PolicyType::SubscriptionFilterPolicy => "SUBSCRIPTION_FILTER_POLICY",
             PolicyType::TransformerPolicy => "TRANSFORMER_POLICY",
             PolicyType::Unknown(value) => value.as_str(),
@@ -96,6 +101,7 @@ impl PolicyType {
             "DATA_PROTECTION_POLICY",
             "FIELD_INDEX_POLICY",
             "METRIC_EXTRACTION_POLICY",
+            "RETENTION_POLICY",
             "SUBSCRIPTION_FILTER_POLICY",
             "TRANSFORMER_POLICY",
         ]
@@ -124,6 +130,7 @@ impl ::std::fmt::Display for PolicyType {
             PolicyType::DataProtectionPolicy => write!(f, "DATA_PROTECTION_POLICY"),
             PolicyType::FieldIndexPolicy => write!(f, "FIELD_INDEX_POLICY"),
             PolicyType::MetricExtractionPolicy => write!(f, "METRIC_EXTRACTION_POLICY"),
+            PolicyType::RetentionPolicy => write!(f, "RETENTION_POLICY"),
             PolicyType::SubscriptionFilterPolicy => write!(f, "SUBSCRIPTION_FILTER_POLICY"),
             PolicyType::TransformerPolicy => write!(f, "TRANSFORMER_POLICY"),
             PolicyType::Unknown(value) => write!(f, "{value}"),

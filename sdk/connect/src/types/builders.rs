@@ -163,6 +163,8 @@ pub use crate::types::_sign_in_config::SignInConfigBuilder;
 
 pub use crate::types::_agent_config::AgentConfigBuilder;
 
+pub use crate::types::_real_time_contact_analysis_segments_filter::RealTimeContactAnalysisSegmentsFilterBuilder;
+
 pub use crate::types::_agent_status_search_filter::AgentStatusSearchFilterBuilder;
 
 pub use crate::types::_agent_status_search_criteria::AgentStatusSearchCriteriaBuilder;
@@ -605,6 +607,8 @@ pub use crate::types::_quick_connect_summary::QuickConnectSummaryBuilder;
 
 pub use crate::types::_queue_summary::QueueSummaryBuilder;
 
+pub use crate::types::_categories_attribute_filter::CategoriesAttributeFilterBuilder;
+
 pub use crate::types::_replication_finding::ReplicationFindingBuilder;
 
 pub use crate::types::_approximate_drifted_resource_count::ApproximateDriftedResourceCountBuilder;
@@ -901,6 +905,10 @@ pub use crate::types::_contact_analysis_reference::ContactAnalysisReferenceBuild
 
 pub use crate::types::_evaluation_form_ai_version_lifecycle::EvaluationFormAiVersionLifecycleBuilder;
 
+pub use crate::types::_categories_attribute_and_condition::CategoriesAttributeAndConditionBuilder;
+
+pub use crate::types::_tag_condition::TagConditionBuilder;
+
 pub use crate::types::_real_time_contact_analysis_segment_transcript::RealTimeContactAnalysisSegmentTranscriptBuilder;
 
 pub use crate::types::_real_time_contact_analysis_segment_categories::RealTimeContactAnalysisSegmentCategoriesBuilder;
@@ -916,8 +924,6 @@ pub use crate::types::_real_time_contact_analysis_segment_post_contact_summary::
 pub use crate::types::_real_time_contact_analysis_segment_extracted_information::RealTimeContactAnalysisSegmentExtractedInformationBuilder;
 
 pub use crate::types::_common_attribute_and_condition::CommonAttributeAndConditionBuilder;
-
-pub use crate::types::_tag_condition::TagConditionBuilder;
 
 pub use crate::types::_contact_evaluation_attribute_and_condition::ContactEvaluationAttributeAndConditionBuilder;
 

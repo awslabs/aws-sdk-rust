@@ -155,21 +155,21 @@ impl<'a> ShapeId<'a> {
     /// The return type is `&'a str` (the lifetime of the data, not the
     /// receiver). Calling this on `ShapeId<'static>` yields `&'static str`,
     /// preserving the codegen-side `'static` accessor guarantee.
-    pub fn as_str(&self) -> &'a str {
+    pub const fn as_str(&self) -> &'a str {
         self.fqn
     }
 
     /// Returns the namespace portion of the ShapeId.
     ///
     /// Lifetime is `'a` — see [`Self::as_str`] for rationale.
-    pub fn namespace(&self) -> &'a str {
+    pub const fn namespace(&self) -> &'a str {
         self.namespace
     }
 
     /// Returns the shape name portion of the ShapeId.
     ///
     /// Lifetime is `'a` — see [`Self::as_str`] for rationale.
-    pub fn shape_name(&self) -> &'a str {
+    pub const fn shape_name(&self) -> &'a str {
         self.shape_name
     }
 

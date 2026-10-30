@@ -459,18 +459,8 @@ pub fn de_db_cluster(
                 builder = builder.set_serverless_v2_scaling_configuration(var_35);
             }
             ,
-            s if s.matches("MasterUserSecret") /* MasterUserSecret com.amazonaws.docdb#DBCluster$MasterUserSecret */ =>  {
+            s if s.matches("ServerlessV2PlatformVersion") /* ServerlessV2PlatformVersion com.amazonaws.docdb#DBCluster$ServerlessV2PlatformVersion */ =>  {
                 let var_36 =
-                    Some(
-                        crate::protocol_serde::shape_cluster_master_user_secret::de_cluster_master_user_secret(&mut tag, depth + 1)
-                        ?
-                    )
-                ;
-                builder = builder.set_master_user_secret(var_36);
-            }
-            ,
-            s if s.matches("NetworkType") /* NetworkType com.amazonaws.docdb#DBCluster$NetworkType */ =>  {
-                let var_37 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -479,11 +469,34 @@ pub fn de_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_network_type(var_37);
+                builder = builder.set_serverless_v2_platform_version(var_36);
+            }
+            ,
+            s if s.matches("MasterUserSecret") /* MasterUserSecret com.amazonaws.docdb#DBCluster$MasterUserSecret */ =>  {
+                let var_37 =
+                    Some(
+                        crate::protocol_serde::shape_cluster_master_user_secret::de_cluster_master_user_secret(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_master_user_secret(var_37);
+            }
+            ,
+            s if s.matches("NetworkType") /* NetworkType com.amazonaws.docdb#DBCluster$NetworkType */ =>  {
+                let var_38 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_network_type(var_38);
             }
             ,
             s if s.matches("CopyTagsToSnapshot") /* CopyTagsToSnapshot com.amazonaws.docdb#DBCluster$CopyTagsToSnapshot */ =>  {
-                let var_38 =
+                let var_39 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -494,7 +507,7 @@ pub fn de_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_copy_tags_to_snapshot(var_38);
+                builder = builder.set_copy_tags_to_snapshot(var_39);
             }
             ,
             _ => {}

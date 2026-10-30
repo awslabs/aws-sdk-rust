@@ -18,7 +18,7 @@ pub struct CreateScraperInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the scraper is created without an exporter configuration.</p>
+    /// <p>The exporter configurations for the scraper. You can configure at most one exporter, for either an Amazon OpenSearch Service domain or an Amazon MSK cluster. If you don't specify a value, the scraper is created without an exporter configuration.</p>
     pub exporters: ::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>>,
 }
 impl CreateScraperInput {
@@ -50,7 +50,7 @@ impl CreateScraperInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the scraper is created without an exporter configuration.</p>
+    /// <p>The exporter configurations for the scraper. You can configure at most one exporter, for either an Amazon OpenSearch Service domain or an Amazon MSK cluster. If you don't specify a value, the scraper is created without an exporter configuration.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exporters.is_none()`.
     pub fn exporters(&self) -> &[crate::types::ExporterConfiguration] {
@@ -189,19 +189,19 @@ impl CreateScraperInputBuilder {
     ///
     /// To override the contents of this collection use [`set_exporters`](Self::set_exporters).
     ///
-    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the scraper is created without an exporter configuration.</p>
+    /// <p>The exporter configurations for the scraper. You can configure at most one exporter, for either an Amazon OpenSearch Service domain or an Amazon MSK cluster. If you don't specify a value, the scraper is created without an exporter configuration.</p>
     pub fn exporters(mut self, input: crate::types::ExporterConfiguration) -> Self {
         let mut v = self.exporters.unwrap_or_default();
         v.push(input);
         self.exporters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the scraper is created without an exporter configuration.</p>
+    /// <p>The exporter configurations for the scraper. You can configure at most one exporter, for either an Amazon OpenSearch Service domain or an Amazon MSK cluster. If you don't specify a value, the scraper is created without an exporter configuration.</p>
     pub fn set_exporters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>>) -> Self {
         self.exporters = input;
         self
     }
-    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the scraper is created without an exporter configuration.</p>
+    /// <p>The exporter configurations for the scraper. You can configure at most one exporter, for either an Amazon OpenSearch Service domain or an Amazon MSK cluster. If you don't specify a value, the scraper is created without an exporter configuration.</p>
     pub fn get_exporters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>> {
         &self.exporters
     }

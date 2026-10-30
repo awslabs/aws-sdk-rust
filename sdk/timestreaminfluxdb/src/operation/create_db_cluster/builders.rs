@@ -216,16 +216,19 @@ impl CreateDbClusterFluentBuilder {
         self.inner.get_db_parameter_group_identifier()
     }
     /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
+    /// <p>Optional when you define the cluster topology with deploymentConfiguration, because the instance type is then specified per node group.</p>
     pub fn db_instance_type(mut self, input: crate::types::DbInstanceType) -> Self {
         self.inner = self.inner.db_instance_type(input);
         self
     }
     /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
+    /// <p>Optional when you define the cluster topology with deploymentConfiguration, because the instance type is then specified per node group.</p>
     pub fn set_db_instance_type(mut self, input: ::std::option::Option<crate::types::DbInstanceType>) -> Self {
         self.inner = self.inner.set_db_instance_type(input);
         self
     }
     /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
+    /// <p>Optional when you define the cluster topology with deploymentConfiguration, because the instance type is then specified per node group.</p>
     pub fn get_db_instance_type(&self) -> &::std::option::Option<crate::types::DbInstanceType> {
         self.inner.get_db_instance_type()
     }
@@ -363,6 +366,20 @@ impl CreateDbClusterFluentBuilder {
     /// <p>Specifies the type of cluster to create.</p>
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::ClusterDeploymentType> {
         self.inner.get_deployment_type()
+    }
+    /// <p>The compute topology for the cluster, defined as a set of node groups. Use deploymentConfiguration to allocate compute per function: ingest, query, compaction, and processing. A deployment configuration becomes the source of truth for the cluster's topology. Timestream for InfluxDB then ignores any node-count parameters in the associated DB parameter group.</p>
+    pub fn deployment_configuration(mut self, input: crate::types::DeploymentConfiguration) -> Self {
+        self.inner = self.inner.deployment_configuration(input);
+        self
+    }
+    /// <p>The compute topology for the cluster, defined as a set of node groups. Use deploymentConfiguration to allocate compute per function: ingest, query, compaction, and processing. A deployment configuration becomes the source of truth for the cluster's topology. Timestream for InfluxDB then ignores any node-count parameters in the associated DB parameter group.</p>
+    pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::DeploymentConfiguration>) -> Self {
+        self.inner = self.inner.set_deployment_configuration(input);
+        self
+    }
+    /// <p>The compute topology for the cluster, defined as a set of node groups. Use deploymentConfiguration to allocate compute per function: ingest, query, compaction, and processing. A deployment configuration becomes the source of truth for the cluster's topology. Timestream for InfluxDB then ignores any node-count parameters in the associated DB parameter group.</p>
+    pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
+        self.inner.get_deployment_configuration()
     }
     /// <p>Specifies the behavior of failure recovery when the primary node of the cluster fails.</p>
     pub fn failover_mode(mut self, input: crate::types::FailoverMode) -> Self {

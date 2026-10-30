@@ -23,6 +23,8 @@ pub use crate::types::_scheduled_query_state::ScheduledQueryState;
 
 pub use crate::types::_policy_type::PolicyType;
 
+pub use crate::types::_dry_run_result::DryRunResult;
+
 pub use crate::types::_export_task_status_code::ExportTaskStatusCode;
 
 pub use crate::types::_order_by::OrderBy;
@@ -188,6 +190,8 @@ pub use crate::types::_metric_filter_match_record::MetricFilterMatchRecord;
 pub use crate::types::_transformed_log_record::TransformedLogRecord;
 
 pub use crate::types::_suppression_unit::SuppressionUnit;
+
+pub use crate::types::_log_group_impact::LogGroupImpact;
 
 pub use crate::types::_configuration_template_delivery_config_values::ConfigurationTemplateDeliveryConfigValues;
 
@@ -385,6 +389,8 @@ mod _destination_configuration;
 
 mod _distribution;
 
+mod _dry_run_result;
+
 mod _entity;
 
 mod _entity_rejection_error_type;
@@ -470,6 +476,8 @@ mod _log_group;
 mod _log_group_class;
 
 mod _log_group_field;
+
+mod _log_group_impact;
 
 mod _log_group_summary;
 

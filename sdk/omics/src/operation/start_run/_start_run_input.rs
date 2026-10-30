@@ -53,6 +53,8 @@ pub struct StartRunInput {
     pub session_policy: ::std::option::Option<::std::string::String>,
     /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
     pub engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
+    /// <p>You can control the path prefixes that the service adds beneath <code>outputUri</code>. If you don't specify a value, the service uses <code>SERVICE_DEFINED</code>, which adds a run-specific prefix.</p>
+    pub output_uri_prefix_mode: ::std::option::Option<crate::types::RunOutputUriPrefixMode>,
 }
 impl StartRunInput {
     /// <p>The run's workflow ID. The <code>workflowId</code> is not the UUID.</p>
@@ -153,6 +155,10 @@ impl StartRunInput {
     pub fn engine_settings(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.engine_settings.as_ref()
     }
+    /// <p>You can control the path prefixes that the service adds beneath <code>outputUri</code>. If you don't specify a value, the service uses <code>SERVICE_DEFINED</code>, which adds a run-specific prefix.</p>
+    pub fn output_uri_prefix_mode(&self) -> ::std::option::Option<&crate::types::RunOutputUriPrefixMode> {
+        self.output_uri_prefix_mode.as_ref()
+    }
 }
 impl StartRunInput {
     /// Creates a new builder-style object to manufacture [`StartRunInput`](crate::operation::start_run::StartRunInput).
@@ -189,6 +195,7 @@ pub struct StartRunInputBuilder {
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) session_policy: ::std::option::Option<::std::string::String>,
     pub(crate) engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
+    pub(crate) output_uri_prefix_mode: ::std::option::Option<crate::types::RunOutputUriPrefixMode>,
 }
 impl StartRunInputBuilder {
     /// <p>The run's workflow ID. The <code>workflowId</code> is not the UUID.</p>
@@ -542,6 +549,20 @@ impl StartRunInputBuilder {
     pub fn get_engine_settings(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.engine_settings
     }
+    /// <p>You can control the path prefixes that the service adds beneath <code>outputUri</code>. If you don't specify a value, the service uses <code>SERVICE_DEFINED</code>, which adds a run-specific prefix.</p>
+    pub fn output_uri_prefix_mode(mut self, input: crate::types::RunOutputUriPrefixMode) -> Self {
+        self.output_uri_prefix_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>You can control the path prefixes that the service adds beneath <code>outputUri</code>. If you don't specify a value, the service uses <code>SERVICE_DEFINED</code>, which adds a run-specific prefix.</p>
+    pub fn set_output_uri_prefix_mode(mut self, input: ::std::option::Option<crate::types::RunOutputUriPrefixMode>) -> Self {
+        self.output_uri_prefix_mode = input;
+        self
+    }
+    /// <p>You can control the path prefixes that the service adds beneath <code>outputUri</code>. If you don't specify a value, the service uses <code>SERVICE_DEFINED</code>, which adds a run-specific prefix.</p>
+    pub fn get_output_uri_prefix_mode(&self) -> &::std::option::Option<crate::types::RunOutputUriPrefixMode> {
+        &self.output_uri_prefix_mode
+    }
     /// Consumes the builder and constructs a [`StartRunInput`](crate::operation::start_run::StartRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_run::StartRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_run::StartRunInput {
@@ -569,6 +590,7 @@ impl StartRunInputBuilder {
             configuration_name: self.configuration_name,
             session_policy: self.session_policy,
             engine_settings: self.engine_settings,
+            output_uri_prefix_mode: self.output_uri_prefix_mode,
         })
     }
 }

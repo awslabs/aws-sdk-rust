@@ -1845,6 +1845,8 @@ pub(crate) mod shape_quick_connect_search_summary_list;
 
 pub(crate) mod shape_quick_connect_summary_list;
 
+pub(crate) mod shape_real_time_contact_analysis_segments_filter;
+
 pub(crate) mod shape_realtime_contact_analysis_segments;
 
 pub(crate) mod shape_recurrence_config;
@@ -2138,6 +2140,8 @@ pub(crate) mod shape_boolean_condition;
 pub(crate) mod shape_calculation_component;
 
 pub(crate) mod shape_campaign;
+
+pub(crate) mod shape_categories_attribute_filter;
 
 pub(crate) mod shape_chat_entry_point_parameters;
 
@@ -2602,6 +2606,8 @@ pub(crate) mod shape_available_filter;
 pub(crate) mod shape_calculation_component_list;
 
 pub(crate) mod shape_case_sla_configuration;
+
+pub(crate) mod shape_categories_attribute_and_condition;
 
 pub(crate) mod shape_channel_to_count_map;
 

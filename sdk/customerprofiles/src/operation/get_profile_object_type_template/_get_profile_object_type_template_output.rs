@@ -9,6 +9,12 @@ pub struct GetProfileObjectTypeTemplateOutput {
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>The source of the object template.</p>
     pub source_object: ::std::option::Option<::std::string::String>,
+    /// <p>The default maximum number of objects of this object type that can be stored per profile. This default applies when you don't set <code>MaxProfileObjectCount</code> on an object type created from this template. If this value isn't present, no default limit applies.</p>
+    pub default_max_profile_object_count: ::std::option::Option<i32>,
+    /// <p>The timestamp after which <code>DefaultMaxProfileObjectCount</code> takes effect. The default limit applies only to domains created after this time.</p>
+    pub default_max_profile_object_count_effective_after: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Indicates whether the template is store-only. Objects of an object type created from a store-only template are ingested and stored, but the object type can't be used by calculated attributes or event triggers.</p>
+    pub store_only: bool,
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     pub allow_profile_creation: bool,
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
@@ -31,6 +37,18 @@ impl GetProfileObjectTypeTemplateOutput {
     /// <p>The source of the object template.</p>
     pub fn source_object(&self) -> ::std::option::Option<&str> {
         self.source_object.as_deref()
+    }
+    /// <p>The default maximum number of objects of this object type that can be stored per profile. This default applies when you don't set <code>MaxProfileObjectCount</code> on an object type created from this template. If this value isn't present, no default limit applies.</p>
+    pub fn default_max_profile_object_count(&self) -> ::std::option::Option<i32> {
+        self.default_max_profile_object_count
+    }
+    /// <p>The timestamp after which <code>DefaultMaxProfileObjectCount</code> takes effect. The default limit applies only to domains created after this time.</p>
+    pub fn default_max_profile_object_count_effective_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.default_max_profile_object_count_effective_after.as_ref()
+    }
+    /// <p>Indicates whether the template is store-only. Objects of an object type created from a store-only template are ingested and stored, but the object type can't be used by calculated attributes or event triggers.</p>
+    pub fn store_only(&self) -> bool {
+        self.store_only
     }
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     pub fn allow_profile_creation(&self) -> bool {
@@ -55,6 +73,12 @@ impl ::std::fmt::Debug for GetProfileObjectTypeTemplateOutput {
         formatter.field("template_id", &self.template_id);
         formatter.field("source_name", &self.source_name);
         formatter.field("source_object", &self.source_object);
+        formatter.field("default_max_profile_object_count", &self.default_max_profile_object_count);
+        formatter.field(
+            "default_max_profile_object_count_effective_after",
+            &self.default_max_profile_object_count_effective_after,
+        );
+        formatter.field("store_only", &self.store_only);
         formatter.field("allow_profile_creation", &self.allow_profile_creation);
         formatter.field("source_last_updated_timestamp_format", &self.source_last_updated_timestamp_format);
         formatter.field("fields", &"*** Sensitive Data Redacted ***");
@@ -82,6 +106,9 @@ pub struct GetProfileObjectTypeTemplateOutputBuilder {
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_object: ::std::option::Option<::std::string::String>,
+    pub(crate) default_max_profile_object_count: ::std::option::Option<i32>,
+    pub(crate) default_max_profile_object_count_effective_after: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) store_only: ::std::option::Option<bool>,
     pub(crate) allow_profile_creation: ::std::option::Option<bool>,
     pub(crate) source_last_updated_timestamp_format: ::std::option::Option<::std::string::String>,
     pub(crate) fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
@@ -130,6 +157,48 @@ impl GetProfileObjectTypeTemplateOutputBuilder {
     /// <p>The source of the object template.</p>
     pub fn get_source_object(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_object
+    }
+    /// <p>The default maximum number of objects of this object type that can be stored per profile. This default applies when you don't set <code>MaxProfileObjectCount</code> on an object type created from this template. If this value isn't present, no default limit applies.</p>
+    pub fn default_max_profile_object_count(mut self, input: i32) -> Self {
+        self.default_max_profile_object_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default maximum number of objects of this object type that can be stored per profile. This default applies when you don't set <code>MaxProfileObjectCount</code> on an object type created from this template. If this value isn't present, no default limit applies.</p>
+    pub fn set_default_max_profile_object_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.default_max_profile_object_count = input;
+        self
+    }
+    /// <p>The default maximum number of objects of this object type that can be stored per profile. This default applies when you don't set <code>MaxProfileObjectCount</code> on an object type created from this template. If this value isn't present, no default limit applies.</p>
+    pub fn get_default_max_profile_object_count(&self) -> &::std::option::Option<i32> {
+        &self.default_max_profile_object_count
+    }
+    /// <p>The timestamp after which <code>DefaultMaxProfileObjectCount</code> takes effect. The default limit applies only to domains created after this time.</p>
+    pub fn default_max_profile_object_count_effective_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.default_max_profile_object_count_effective_after = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp after which <code>DefaultMaxProfileObjectCount</code> takes effect. The default limit applies only to domains created after this time.</p>
+    pub fn set_default_max_profile_object_count_effective_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.default_max_profile_object_count_effective_after = input;
+        self
+    }
+    /// <p>The timestamp after which <code>DefaultMaxProfileObjectCount</code> takes effect. The default limit applies only to domains created after this time.</p>
+    pub fn get_default_max_profile_object_count_effective_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.default_max_profile_object_count_effective_after
+    }
+    /// <p>Indicates whether the template is store-only. Objects of an object type created from a store-only template are ingested and stored, but the object type can't be used by calculated attributes or event triggers.</p>
+    pub fn store_only(mut self, input: bool) -> Self {
+        self.store_only = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the template is store-only. Objects of an object type created from a store-only template are ingested and stored, but the object type can't be used by calculated attributes or event triggers.</p>
+    pub fn set_store_only(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.store_only = input;
+        self
+    }
+    /// <p>Indicates whether the template is store-only. Objects of an object type created from a store-only template are ingested and stored, but the object type can't be used by calculated attributes or event triggers.</p>
+    pub fn get_store_only(&self) -> &::std::option::Option<bool> {
+        &self.store_only
     }
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     pub fn allow_profile_creation(mut self, input: bool) -> Self {
@@ -222,6 +291,9 @@ impl GetProfileObjectTypeTemplateOutputBuilder {
             template_id: self.template_id,
             source_name: self.source_name,
             source_object: self.source_object,
+            default_max_profile_object_count: self.default_max_profile_object_count,
+            default_max_profile_object_count_effective_after: self.default_max_profile_object_count_effective_after,
+            store_only: self.store_only.unwrap_or_default(),
             allow_profile_creation: self.allow_profile_creation.unwrap_or_default(),
             source_last_updated_timestamp_format: self.source_last_updated_timestamp_format,
             fields: self.fields,
@@ -236,6 +308,12 @@ impl ::std::fmt::Debug for GetProfileObjectTypeTemplateOutputBuilder {
         formatter.field("template_id", &self.template_id);
         formatter.field("source_name", &self.source_name);
         formatter.field("source_object", &self.source_object);
+        formatter.field("default_max_profile_object_count", &self.default_max_profile_object_count);
+        formatter.field(
+            "default_max_profile_object_count_effective_after",
+            &self.default_max_profile_object_count_effective_after,
+        );
+        formatter.field("store_only", &self.store_only);
         formatter.field("allow_profile_creation", &self.allow_profile_creation);
         formatter.field("source_last_updated_timestamp_format", &self.source_last_updated_timestamp_format);
         formatter.field("fields", &"*** Sensitive Data Redacted ***");

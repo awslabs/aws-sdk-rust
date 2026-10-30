@@ -9,5 +9,8 @@ pub fn ser_delete_account_policy_input_input(
     if let Some(var_2) = &input.policy_type {
         object.key("policyType").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.dry_run {
+        object.key("dryRun").boolean(*var_3);
+    }
     Ok(())
 }

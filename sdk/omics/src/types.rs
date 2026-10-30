@@ -67,6 +67,8 @@ pub use crate::types::_networking_mode::NetworkingMode;
 
 pub use crate::types::_scratch_storage_mode::ScratchStorageMode;
 
+pub use crate::types::_run_output_uri_prefix_mode::RunOutputUriPrefixMode;
+
 pub use crate::types::_configuration_details::ConfigurationDetails;
 
 pub use crate::types::_accelerators::Accelerators;
@@ -470,6 +472,8 @@ mod _run_list_item;
 mod _run_log_level;
 
 mod _run_log_location;
+
+mod _run_output_uri_prefix_mode;
 
 mod _run_retention_mode;
 

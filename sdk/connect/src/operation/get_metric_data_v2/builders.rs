@@ -674,6 +674,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-evaluation-score">Average evaluation score</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_EVALUATION_SCORE_BY_SUBMIT_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-evaluation-score-by-submit-time">Average evaluation score (Submit time)</a></p>
+    /// </dd>
+    /// <dt>
     /// AVG_FIRST_RESPONSE_TIME_AGENT
     /// </dt>
     /// <dd>
@@ -1511,6 +1519,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluations-performed">Evaluations performed</a></p>
+    /// </dd>
+    /// <dt>
+    /// EVALUATIONS_PERFORMED_BY_SUBMIT_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluations-performed-by-submit-time">Evaluations performed (Submit time)</a></p>
     /// </dd>
     /// <dt>
     /// FLOWS_OUTCOME
@@ -2138,6 +2154,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-evaluation-score">Average evaluation score</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_EVALUATION_SCORE_BY_SUBMIT_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-evaluation-score-by-submit-time">Average evaluation score (Submit time)</a></p>
+    /// </dd>
+    /// <dt>
     /// AVG_FIRST_RESPONSE_TIME_AGENT
     /// </dt>
     /// <dd>
@@ -2975,6 +2999,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluations-performed">Evaluations performed</a></p>
+    /// </dd>
+    /// <dt>
+    /// EVALUATIONS_PERFORMED_BY_SUBMIT_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluations-performed-by-submit-time">Evaluations performed (Submit time)</a></p>
     /// </dd>
     /// <dt>
     /// FLOWS_OUTCOME
@@ -3602,6 +3634,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-evaluation-score">Average evaluation score</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_EVALUATION_SCORE_BY_SUBMIT_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-evaluation-score-by-submit-time">Average evaluation score (Submit time)</a></p>
+    /// </dd>
+    /// <dt>
     /// AVG_FIRST_RESPONSE_TIME_AGENT
     /// </dt>
     /// <dd>
@@ -4439,6 +4479,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluations-performed">Evaluations performed</a></p>
+    /// </dd>
+    /// <dt>
+    /// EVALUATIONS_PERFORMED_BY_SUBMIT_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluations-performed-by-submit-time">Evaluations performed (Submit time)</a></p>
     /// </dd>
     /// <dt>
     /// FLOWS_OUTCOME

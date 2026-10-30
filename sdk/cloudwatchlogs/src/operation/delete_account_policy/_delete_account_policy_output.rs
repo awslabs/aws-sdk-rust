@@ -3,7 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAccountPolicyOutput {
+    /// <p>The estimated impact of deleting the policy. This field is returned only when the request specifies <code>dryRun</code> as <code>true</code>.</p>
+    pub dry_run_result: ::std::option::Option<crate::types::DryRunResult>,
     _request_id: Option<String>,
+}
+impl DeleteAccountPolicyOutput {
+    /// <p>The estimated impact of deleting the policy. This field is returned only when the request specifies <code>dryRun</code> as <code>true</code>.</p>
+    pub fn dry_run_result(&self) -> ::std::option::Option<&crate::types::DryRunResult> {
+        self.dry_run_result.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DeleteAccountPolicyOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +29,24 @@ impl DeleteAccountPolicyOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DeleteAccountPolicyOutputBuilder {
+    pub(crate) dry_run_result: ::std::option::Option<crate::types::DryRunResult>,
     _request_id: Option<String>,
 }
 impl DeleteAccountPolicyOutputBuilder {
+    /// <p>The estimated impact of deleting the policy. This field is returned only when the request specifies <code>dryRun</code> as <code>true</code>.</p>
+    pub fn dry_run_result(mut self, input: crate::types::DryRunResult) -> Self {
+        self.dry_run_result = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The estimated impact of deleting the policy. This field is returned only when the request specifies <code>dryRun</code> as <code>true</code>.</p>
+    pub fn set_dry_run_result(mut self, input: ::std::option::Option<crate::types::DryRunResult>) -> Self {
+        self.dry_run_result = input;
+        self
+    }
+    /// <p>The estimated impact of deleting the policy. This field is returned only when the request specifies <code>dryRun</code> as <code>true</code>.</p>
+    pub fn get_dry_run_result(&self) -> &::std::option::Option<crate::types::DryRunResult> {
+        &self.dry_run_result
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +59,7 @@ impl DeleteAccountPolicyOutputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccountPolicyOutput`](crate::operation::delete_account_policy::DeleteAccountPolicyOutput).
     pub fn build(self) -> crate::operation::delete_account_policy::DeleteAccountPolicyOutput {
         crate::operation::delete_account_policy::DeleteAccountPolicyOutput {
+            dry_run_result: self.dry_run_result,
             _request_id: self._request_id,
         }
     }

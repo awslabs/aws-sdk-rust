@@ -31,7 +31,7 @@ pub struct ScraperDescription {
     pub destination: ::std::option::Option<crate::types::Destination>,
     /// <p>This structure displays information about the IAM roles used for cross-account scraping configuration.</p>
     pub role_configuration: ::std::option::Option<crate::types::RoleConfiguration>,
-    /// <p>The exporter configurations for the scraper, if configured. The list contains at most one configuration for an Amazon OpenSearch Service domain.</p>
+    /// <p>The exporter configurations for the scraper, if configured. The list contains at most one configuration, for either an Amazon OpenSearch Service domain or an Amazon MSK cluster.</p>
     pub exporters: ::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>>,
 }
 impl ScraperDescription {
@@ -91,7 +91,7 @@ impl ScraperDescription {
     pub fn role_configuration(&self) -> ::std::option::Option<&crate::types::RoleConfiguration> {
         self.role_configuration.as_ref()
     }
-    /// <p>The exporter configurations for the scraper, if configured. The list contains at most one configuration for an Amazon OpenSearch Service domain.</p>
+    /// <p>The exporter configurations for the scraper, if configured. The list contains at most one configuration, for either an Amazon OpenSearch Service domain or an Amazon MSK cluster.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exporters.is_none()`.
     pub fn exporters(&self) -> &[crate::types::ExporterConfiguration] {
@@ -329,19 +329,19 @@ impl ScraperDescriptionBuilder {
     ///
     /// To override the contents of this collection use [`set_exporters`](Self::set_exporters).
     ///
-    /// <p>The exporter configurations for the scraper, if configured. The list contains at most one configuration for an Amazon OpenSearch Service domain.</p>
+    /// <p>The exporter configurations for the scraper, if configured. The list contains at most one configuration, for either an Amazon OpenSearch Service domain or an Amazon MSK cluster.</p>
     pub fn exporters(mut self, input: crate::types::ExporterConfiguration) -> Self {
         let mut v = self.exporters.unwrap_or_default();
         v.push(input);
         self.exporters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The exporter configurations for the scraper, if configured. The list contains at most one configuration for an Amazon OpenSearch Service domain.</p>
+    /// <p>The exporter configurations for the scraper, if configured. The list contains at most one configuration, for either an Amazon OpenSearch Service domain or an Amazon MSK cluster.</p>
     pub fn set_exporters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>>) -> Self {
         self.exporters = input;
         self
     }
-    /// <p>The exporter configurations for the scraper, if configured. The list contains at most one configuration for an Amazon OpenSearch Service domain.</p>
+    /// <p>The exporter configurations for the scraper, if configured. The list contains at most one configuration, for either an Amazon OpenSearch Service domain or an Amazon MSK cluster.</p>
     pub fn get_exporters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>> {
         &self.exporters
     }

@@ -22,7 +22,7 @@ impl crate::operation::update_function_url_config::builders::UpdateFunctionUrlCo
 }
 /// Fluent builder constructing a request to `UpdateFunctionUrlConfig`.
 ///
-/// <p>Updates the configuration for a Lambda function URL.</p>
+/// <p>Updates the configuration for a function URL of a Lambda Event Function.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFunctionUrlConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

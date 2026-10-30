@@ -21,6 +21,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "RuleId" => {
+                            builder = builder.set_rule_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "PointsOfInterest" => {
                             builder = builder.set_points_of_interest(
                                     crate::protocol_serde::shape_real_time_contact_analysis_points_of_interest::de_real_time_contact_analysis_points_of_interest(tokens, _value, depth + 1)?

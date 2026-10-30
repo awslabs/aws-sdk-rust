@@ -41,6 +41,15 @@ where
                                     crate::protocol_serde::shape_agentic_retrieve_memory_retrieve_details::de_agentic_retrieve_memory_retrieve_details(tokens, _value, depth + 1)?
                                 );
                             }
+                            "codeExecution" => {
+                                builder = builder.set_code_execution(
+                                    crate::protocol_serde::shape_agentic_retrieve_code_execution_details::de_agentic_retrieve_code_execution_details(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

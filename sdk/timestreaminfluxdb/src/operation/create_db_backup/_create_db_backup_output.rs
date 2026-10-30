@@ -26,7 +26,11 @@ pub struct CreateDbBackupOutput {
     /// <p>The Amazon Web Services KMS key ARN used for encryption of the resource at the time of backup.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The cluster configuration of the resource at the time of backup.</p>
+    /// <p>Deprecated. Use deploymentConfiguration to view the cluster topology instead.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub cluster_configuration: ::std::option::Option<crate::types::ClusterConfiguration>,
+    /// <p>The deployment configuration of the resource at the time of backup.</p>
+    pub deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
     /// <p>The identifier of the DB parameter group associated with the backup.</p>
     pub db_parameter_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The DB instance type of the resource at the time of backup.</p>
@@ -103,8 +107,14 @@ impl CreateDbBackupOutput {
         self.kms_key_id.as_deref()
     }
     /// <p>The cluster configuration of the resource at the time of backup.</p>
+    /// <p>Deprecated. Use deploymentConfiguration to view the cluster topology instead.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn cluster_configuration(&self) -> ::std::option::Option<&crate::types::ClusterConfiguration> {
         self.cluster_configuration.as_ref()
+    }
+    /// <p>The deployment configuration of the resource at the time of backup.</p>
+    pub fn deployment_configuration(&self) -> ::std::option::Option<&crate::types::DeploymentConfiguration> {
+        self.deployment_configuration.as_ref()
     }
     /// <p>The identifier of the DB parameter group associated with the backup.</p>
     pub fn db_parameter_group_id(&self) -> ::std::option::Option<&str> {
@@ -191,6 +201,7 @@ pub struct CreateDbBackupOutputBuilder {
     pub(crate) deployment_type: ::std::option::Option<crate::types::ResourceDeploymentType>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_configuration: ::std::option::Option<crate::types::ClusterConfiguration>,
+    pub(crate) deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
     pub(crate) db_parameter_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_type: ::std::option::Option<crate::types::DbInstanceType>,
     pub(crate) log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
@@ -364,18 +375,38 @@ impl CreateDbBackupOutputBuilder {
         &self.kms_key_id
     }
     /// <p>The cluster configuration of the resource at the time of backup.</p>
+    /// <p>Deprecated. Use deploymentConfiguration to view the cluster topology instead.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn cluster_configuration(mut self, input: crate::types::ClusterConfiguration) -> Self {
         self.cluster_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cluster configuration of the resource at the time of backup.</p>
+    /// <p>Deprecated. Use deploymentConfiguration to view the cluster topology instead.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn set_cluster_configuration(mut self, input: ::std::option::Option<crate::types::ClusterConfiguration>) -> Self {
         self.cluster_configuration = input;
         self
     }
     /// <p>The cluster configuration of the resource at the time of backup.</p>
+    /// <p>Deprecated. Use deploymentConfiguration to view the cluster topology instead.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn get_cluster_configuration(&self) -> &::std::option::Option<crate::types::ClusterConfiguration> {
         &self.cluster_configuration
+    }
+    /// <p>The deployment configuration of the resource at the time of backup.</p>
+    pub fn deployment_configuration(mut self, input: crate::types::DeploymentConfiguration) -> Self {
+        self.deployment_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deployment configuration of the resource at the time of backup.</p>
+    pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::DeploymentConfiguration>) -> Self {
+        self.deployment_configuration = input;
+        self
+    }
+    /// <p>The deployment configuration of the resource at the time of backup.</p>
+    pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
+        &self.deployment_configuration
     }
     /// <p>The identifier of the DB parameter group associated with the backup.</p>
     pub fn db_parameter_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -610,6 +641,7 @@ impl CreateDbBackupOutputBuilder {
             deployment_type: self.deployment_type,
             kms_key_id: self.kms_key_id,
             cluster_configuration: self.cluster_configuration,
+            deployment_configuration: self.deployment_configuration,
             db_parameter_group_id: self.db_parameter_group_id,
             db_instance_type: self.db_instance_type,
             log_delivery_configuration: self.log_delivery_configuration,

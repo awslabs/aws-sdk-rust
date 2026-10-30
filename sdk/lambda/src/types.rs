@@ -183,6 +183,8 @@ pub use crate::types::_function_response_type::FunctionResponseType;
 
 pub use crate::types::_kafka_schema_registry_config::KafkaSchemaRegistryConfig;
 
+pub use crate::types::_kafka_event_source_mapping_consumption_mode::KafkaEventSourceMappingConsumptionMode;
+
 pub use crate::types::_full_document::FullDocument;
 
 pub use crate::types::_tracing_mode::TracingMode;
@@ -540,6 +542,8 @@ mod _invoke_response_stream_update;
 mod _invoke_with_response_stream_complete_event;
 
 mod _invoke_with_response_stream_response_event;
+
+mod _kafka_event_source_mapping_consumption_mode;
 
 mod _kafka_schema_registry_access_config;
 

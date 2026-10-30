@@ -106,6 +106,9 @@ pub mod describe_orderable_db_instance_options;
 /// Types for the `DescribePendingMaintenanceActions` operation.
 pub mod describe_pending_maintenance_actions;
 
+/// Types for the `DescribeServerlessV2PlatformVersions` operation.
+pub mod describe_serverless_v2_platform_versions;
+
 /// Types for the `FailoverDBCluster` operation.
 pub mod failover_db_cluster;
 

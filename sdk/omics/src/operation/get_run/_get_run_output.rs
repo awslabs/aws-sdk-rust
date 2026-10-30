@@ -89,6 +89,8 @@ pub struct GetRunOutput {
     pub engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>Inline policy json for scoping down permissions via a session policy on the IAM role.</p>
     pub session_policy: ::std::option::Option<::std::string::String>,
+    /// <p>The service returns the value that the <code>StartRun</code> request specified for <code>outputUriPrefixMode</code>. The service returns <code>SERVICE_DEFINED</code> if the request did not specify a value.</p>
+    pub output_uri_prefix_mode: ::std::option::Option<crate::types::RunOutputUriPrefixMode>,
     _request_id: Option<String>,
 }
 impl GetRunOutput {
@@ -264,6 +266,10 @@ impl GetRunOutput {
     pub fn session_policy(&self) -> ::std::option::Option<&str> {
         self.session_policy.as_deref()
     }
+    /// <p>The service returns the value that the <code>StartRun</code> request specified for <code>outputUriPrefixMode</code>. The service returns <code>SERVICE_DEFINED</code> if the request did not specify a value.</p>
+    pub fn output_uri_prefix_mode(&self) -> ::std::option::Option<&crate::types::RunOutputUriPrefixMode> {
+        self.output_uri_prefix_mode.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetRunOutput {
     fn request_id(&self) -> Option<&str> {
@@ -324,6 +330,7 @@ pub struct GetRunOutputBuilder {
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfigResponse>,
     pub(crate) engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) session_policy: ::std::option::Option<::std::string::String>,
+    pub(crate) output_uri_prefix_mode: ::std::option::Option<crate::types::RunOutputUriPrefixMode>,
     _request_id: Option<String>,
 }
 impl GetRunOutputBuilder {
@@ -948,6 +955,20 @@ impl GetRunOutputBuilder {
     pub fn get_session_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_policy
     }
+    /// <p>The service returns the value that the <code>StartRun</code> request specified for <code>outputUriPrefixMode</code>. The service returns <code>SERVICE_DEFINED</code> if the request did not specify a value.</p>
+    pub fn output_uri_prefix_mode(mut self, input: crate::types::RunOutputUriPrefixMode) -> Self {
+        self.output_uri_prefix_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The service returns the value that the <code>StartRun</code> request specified for <code>outputUriPrefixMode</code>. The service returns <code>SERVICE_DEFINED</code> if the request did not specify a value.</p>
+    pub fn set_output_uri_prefix_mode(mut self, input: ::std::option::Option<crate::types::RunOutputUriPrefixMode>) -> Self {
+        self.output_uri_prefix_mode = input;
+        self
+    }
+    /// <p>The service returns the value that the <code>StartRun</code> request specified for <code>outputUriPrefixMode</code>. The service returns <code>SERVICE_DEFINED</code> if the request did not specify a value.</p>
+    pub fn get_output_uri_prefix_mode(&self) -> &::std::option::Option<crate::types::RunOutputUriPrefixMode> {
+        &self.output_uri_prefix_mode
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -1003,6 +1024,7 @@ impl GetRunOutputBuilder {
             vpc_config: self.vpc_config,
             engine_settings: self.engine_settings,
             session_policy: self.session_policy,
+            output_uri_prefix_mode: self.output_uri_prefix_mode,
             _request_id: self._request_id,
         }
     }

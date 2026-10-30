@@ -22,7 +22,7 @@ impl crate::operation::list_function_event_invoke_configs::builders::ListFunctio
 }
 /// Fluent builder constructing a request to `ListFunctionEventInvokeConfigs`.
 ///
-/// <p>Retrieves a list of configurations for asynchronous invocation for a function.</p>
+/// <p>Retrieves a list of configurations for asynchronous invocation for a Lambda Event Function. To retrieve more configurations, use the <code>Marker</code> parameter.</p>
 /// <p>To configure options for asynchronous invocation, use <code>PutFunctionEventInvokeConfig</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFunctionEventInvokeConfigsFluentBuilder {

@@ -37,6 +37,16 @@ where
                                 )?,
                             );
                         }
+                        "ConsumptionMode" => {
+                            builder = builder.set_consumption_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::KafkaEventSourceMappingConsumptionMode::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -66,6 +76,9 @@ pub fn ser_self_managed_kafka_event_source_config(
         let mut object_3 = object.key("SchemaRegistryConfig").start_object();
         crate::protocol_serde::shape_kafka_schema_registry_config::ser_kafka_schema_registry_config(&mut object_3, var_2)?;
         object_3.finish();
+    }
+    if let Some(var_4) = &input.consumption_mode {
+        object.key("ConsumptionMode").string(var_4.as_str());
     }
     Ok(())
 }

@@ -22,7 +22,7 @@ impl crate::operation::list_versions_by_function::builders::ListVersionsByFuncti
 }
 /// Fluent builder constructing a request to `ListVersionsByFunction`.
 ///
-/// <p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>, with the version-specific configuration of each. Lambda returns up to 50 versions per call.</p>
+/// <p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a> of a Lambda Event Function, with the version-specific configuration of each. Lambda returns up to 50 versions per call.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListVersionsByFunctionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

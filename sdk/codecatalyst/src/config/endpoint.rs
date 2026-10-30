@@ -34,7 +34,7 @@ mod test {
     fn test_1() {
         let params = crate::config::endpoint::Params::builder()
             .endpoint("https://test.codecatalyst.global.api.aws".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -50,7 +50,9 @@ mod test {
     /// Default endpoint (region not set)
     #[test]
     fn test_2() {
-        let params = crate::config::endpoint::Params::builder().build().expect("invalid params");
+        let params = crate::config::endpoint::Params::builder()
+            .build_without_validators()
+            .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint = endpoint.expect("Expected valid endpoint: https://codecatalyst.global.api.aws");
@@ -65,7 +67,10 @@ mod test {
     /// Default FIPS endpoint (region not set)
     #[test]
     fn test_3() {
-        let params = crate::config::endpoint::Params::builder().use_fips(true).build().expect("invalid params");
+        let params = crate::config::endpoint::Params::builder()
+            .use_fips(true)
+            .build_without_validators()
+            .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint = endpoint.expect("Expected valid endpoint: https://codecatalyst-fips.global.api.aws");
@@ -82,7 +87,7 @@ mod test {
     fn test_4() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -101,7 +106,7 @@ mod test {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -119,7 +124,7 @@ mod test {
     fn test_6() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -138,7 +143,7 @@ mod test {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -156,7 +161,7 @@ mod test {
     fn test_8() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -175,7 +180,7 @@ mod test {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -546,6 +551,12 @@ impl ParamsBuilder {
                 ));
             }
         };
+        self.build_without_validators()
+    }
+    /// Consume this builder, creating [`Params`] without the validators run by `build()`.
+    ///
+    /// Endpoint rule-set tests use this so they test the rules as the model defines them.
+    fn build_without_validators(self) -> ::std::result::Result<crate::config::endpoint::Params, crate::config::endpoint::InvalidParams> {
         Ok(
             #[allow(clippy::unnecessary_lazy_evaluations)]
             crate::config::endpoint::Params {

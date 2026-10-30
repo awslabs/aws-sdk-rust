@@ -157,6 +157,8 @@ pub(crate) mod shape_db_instance_summary_list;
 
 pub(crate) mod shape_db_parameter_group_summary_list;
 
+pub(crate) mod shape_deployment_configuration;
+
 pub(crate) mod shape_instance_mode_list;
 
 pub(crate) mod shape_log_delivery_configuration;
@@ -187,10 +189,16 @@ pub(crate) mod shape_influx_dbv2_parameters;
 
 pub(crate) mod shape_influx_dbv3_core_parameters;
 
+pub(crate) mod shape_influx_dbv3_enterprise_deployment_configuration;
+
 pub(crate) mod shape_influx_dbv3_enterprise_parameters;
 
 pub(crate) mod shape_s3_configuration;
 
 pub(crate) mod shape_duration;
+
+pub(crate) mod shape_node_group;
+
+pub(crate) mod shape_node_group_list;
 
 pub(crate) mod shape_percent_or_absolute_long;

@@ -53,6 +53,8 @@ pub use crate::types::_event::Event;
 
 pub use crate::types::_orderable_db_instance_option::OrderableDbInstanceOption;
 
+pub use crate::types::_serverless_v2_platform_version_info::ServerlessV2PlatformVersionInfo;
+
 pub use crate::types::_pending_maintenance_action::PendingMaintenanceAction;
 
 pub use crate::types::_db_cluster_member::DbClusterMember;
@@ -152,6 +154,8 @@ mod _pending_modified_values;
 mod _resource_pending_maintenance_actions;
 
 mod _serverless_v2_features_support;
+
+mod _serverless_v2_platform_version_info;
 
 mod _serverless_v2_scaling_configuration;
 

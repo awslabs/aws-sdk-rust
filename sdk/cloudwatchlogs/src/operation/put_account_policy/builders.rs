@@ -549,4 +549,21 @@ impl PutAccountPolicyFluentBuilder {
     pub fn get_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_selection_criteria()
     }
+    /// <p>Specifies whether to preview the impact of the policy without creating or updating it. If you specify <code>true</code>, CloudWatch Logs validates the request, does not save the policy, and returns the estimated impact in <code>dryRunResult</code> instead of <code>accountPolicy</code>. The default is <code>false</code>.</p>
+    /// <p>Specifying <code>dryRun</code> is valid only when you specify <code>RETENTION_POLICY</code> for <code>policyType</code>. Only one dry run can be in progress for an account at a time.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Specifies whether to preview the impact of the policy without creating or updating it. If you specify <code>true</code>, CloudWatch Logs validates the request, does not save the policy, and returns the estimated impact in <code>dryRunResult</code> instead of <code>accountPolicy</code>. The default is <code>false</code>.</p>
+    /// <p>Specifying <code>dryRun</code> is valid only when you specify <code>RETENTION_POLICY</code> for <code>policyType</code>. Only one dry run can be in progress for an account at a time.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Specifies whether to preview the impact of the policy without creating or updating it. If you specify <code>true</code>, CloudWatch Logs validates the request, does not save the policy, and returns the estimated impact in <code>dryRunResult</code> instead of <code>accountPolicy</code>. The default is <code>false</code>.</p>
+    /// <p>Specifying <code>dryRun</code> is valid only when you specify <code>RETENTION_POLICY</code> for <code>policyType</code>. Only one dry run can be in progress for an account at a time.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
 }

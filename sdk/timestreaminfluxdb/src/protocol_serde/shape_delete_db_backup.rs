@@ -234,6 +234,11 @@ pub(crate) fn de_delete_db_backup(
                         depth + 1,
                     )?);
                 }
+                "deploymentConfiguration" => {
+                    builder = builder.set_deployment_configuration(
+                        crate::protocol_serde::shape_deployment_configuration::de_deployment_configuration(tokens, _value, depth + 1)?,
+                    );
+                }
                 "dbParameterGroupId" => {
                     builder = builder.set_db_parameter_group_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

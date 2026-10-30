@@ -302,6 +302,11 @@ pub(crate) fn de_get_db_cluster(
                         depth + 1,
                     )?);
                 }
+                "deploymentConfiguration" => {
+                    builder = builder.set_deployment_configuration(
+                        crate::protocol_serde::shape_deployment_configuration::de_deployment_configuration(tokens, _value, depth + 1)?,
+                    );
+                }
                 "dbBackupConfigurations" => {
                     builder = builder.set_db_backup_configurations(
                         crate::protocol_serde::shape_db_backup_configuration_output_list::de_db_backup_configuration_output_list(

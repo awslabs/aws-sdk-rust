@@ -263,6 +263,8 @@ pub use crate::types::_metric_type::MetricType;
 
 pub use crate::types::_real_time_contact_analysis_output_type::RealTimeContactAnalysisOutputType;
 
+pub use crate::types::_real_time_contact_analysis_segments_filter::RealTimeContactAnalysisSegmentsFilter;
+
 pub use crate::types::_real_time_contact_analysis_supported_channel::RealTimeContactAnalysisSupportedChannel;
 
 pub use crate::types::_real_time_contact_analysis_status::RealTimeContactAnalysisStatus;
@@ -795,6 +797,8 @@ pub use crate::types::_queue_summary::QueueSummary;
 
 pub use crate::types::_real_time_contact_analysis_segment_type::RealTimeContactAnalysisSegmentType;
 
+pub use crate::types::_categories_attribute_filter::CategoriesAttributeFilter;
+
 pub use crate::types::_realtime_contact_analysis_segment::RealtimeContactAnalysisSegment;
 
 pub use crate::types::_replication_finding::ReplicationFinding;
@@ -1179,6 +1183,10 @@ pub use crate::types::_contact_analysis_reference::ContactAnalysisReference;
 
 pub use crate::types::_evaluation_form_ai_version_lifecycle::EvaluationFormAiVersionLifecycle;
 
+pub use crate::types::_categories_attribute_and_condition::CategoriesAttributeAndCondition;
+
+pub use crate::types::_tag_condition::TagCondition;
+
 pub use crate::types::_real_time_contact_analysis_segment_transcript::RealTimeContactAnalysisSegmentTranscript;
 
 pub use crate::types::_real_time_contact_analysis_segment_categories::RealTimeContactAnalysisSegmentCategories;
@@ -1198,8 +1206,6 @@ pub use crate::types::_execution_record_status::ExecutionRecordStatus;
 pub use crate::types::_notification_source::NotificationSource;
 
 pub use crate::types::_common_attribute_and_condition::CommonAttributeAndCondition;
-
-pub use crate::types::_tag_condition::TagCondition;
 
 pub use crate::types::_string_comparison_type::StringComparisonType;
 
@@ -1794,6 +1800,10 @@ mod _calculation_component;
 mod _campaign;
 
 mod _case_sla_configuration;
+
+mod _categories_attribute_and_condition;
+
+mod _categories_attribute_filter;
 
 mod _channel;
 
@@ -2794,6 +2804,8 @@ mod _real_time_contact_analysis_segment_post_contact_summary;
 mod _real_time_contact_analysis_segment_transcript;
 
 mod _real_time_contact_analysis_segment_type;
+
+mod _real_time_contact_analysis_segments_filter;
 
 mod _real_time_contact_analysis_sentiment_label;
 

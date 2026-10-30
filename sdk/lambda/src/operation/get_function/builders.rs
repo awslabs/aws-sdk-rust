@@ -22,7 +22,7 @@ impl crate::operation::get_function::builders::GetFunctionInputBuilder {
 }
 /// Fluent builder constructing a request to `GetFunction`.
 ///
-/// <p>Returns information about the function or function version, with a link to download the deployment package that's valid for 10 minutes. If you specify a function version, only details that are specific to that version are returned.</p>
+/// <p>Returns information about a Lambda Event Function or function version, with a link to download the deployment package that's valid for 10 minutes. If you specify a function version, only details that are specific to that version are returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFunctionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

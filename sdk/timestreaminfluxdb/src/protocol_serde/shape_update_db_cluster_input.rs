@@ -24,26 +24,32 @@ pub fn ser_update_db_cluster_input_input(
     if let Some(var_6) = &input.db_instance_type {
         object.key("dbInstanceType").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.failover_mode {
-        object.key("failoverMode").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.maintenance_schedule {
+    if let Some(var_7) = &input.deployment_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("maintenanceSchedule").start_object();
-        crate::protocol_serde::shape_maintenance_schedule::ser_maintenance_schedule(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("deploymentConfiguration").start_object();
+        crate::protocol_serde::shape_deployment_configuration::ser_deployment_configuration(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_10) = &input.db_backup_configurations {
-        let mut array_11 = object.key("dbBackupConfigurations").start_array();
-        for item_12 in var_10 {
+    if let Some(var_9) = &input.failover_mode {
+        object.key("failoverMode").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.maintenance_schedule {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("maintenanceSchedule").start_object();
+        crate::protocol_serde::shape_maintenance_schedule::ser_maintenance_schedule(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.db_backup_configurations {
+        let mut array_13 = object.key("dbBackupConfigurations").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_db_backup_configuration::ser_db_backup_configuration(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_db_backup_configuration::ser_db_backup_configuration(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_11.finish();
+        array_13.finish();
     }
     Ok(())
 }

@@ -115,6 +115,8 @@ pub struct ProductionVariant {
     pub inference_ami_version: ::std::option::Option<crate::types::ProductionVariantInferenceAmiVersion>,
     /// <p>Settings for the capacity reservation for the compute instances that SageMaker AI reserves for an endpoint.</p>
     pub capacity_reservation_config: ::std::option::Option<crate::types::ProductionVariantCapacityReservationConfig>,
+    /// <p>The accelerator partition layout for the accelerators backing this production variant. A layout lists the partition profiles to carve on the accelerators it applies to; on NVIDIA GPUs these are Multi-Instance GPU (MIG) profiles such as <code>mig-3g.40gb</code>. Specify a single layout: SageMaker applies it uniformly to every accelerator on the variant's instance type, and you place one inference component on each partition. Omit this field to use whole, unpartitioned accelerators.</p>
+    pub accelerator_partition_layouts: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorPartitionLayout>>,
 }
 impl ProductionVariant {
     /// <p>The name of the production variant.</p>
@@ -265,6 +267,12 @@ impl ProductionVariant {
     /// <p>Settings for the capacity reservation for the compute instances that SageMaker AI reserves for an endpoint.</p>
     pub fn capacity_reservation_config(&self) -> ::std::option::Option<&crate::types::ProductionVariantCapacityReservationConfig> {
         self.capacity_reservation_config.as_ref()
+    }
+    /// <p>The accelerator partition layout for the accelerators backing this production variant. A layout lists the partition profiles to carve on the accelerators it applies to; on NVIDIA GPUs these are Multi-Instance GPU (MIG) profiles such as <code>mig-3g.40gb</code>. Specify a single layout: SageMaker applies it uniformly to every accelerator on the variant's instance type, and you place one inference component on each partition. Omit this field to use whole, unpartitioned accelerators.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_partition_layouts.is_none()`.
+    pub fn accelerator_partition_layouts(&self) -> &[crate::types::AcceleratorPartitionLayout] {
+        self.accelerator_partition_layouts.as_deref().unwrap_or_default()
     }
 }
 static PRODUCTIONVARIANT_MEMBER_VARIANT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -461,6 +469,27 @@ static PRODUCTIONVARIANT_MEMBER_CAPACITY_RESERVATION_CONFIG: ::aws_smithy_schema
     "CapacityReservationConfig",
     17,
 );
+static PRODUCTIONVARIANT_MEMBER_ACCELERATOR_PARTITION_LAYOUTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AcceleratorPartitionLayouts$member",
+        "com.amazonaws.sagemaker",
+        "AcceleratorPartitionLayouts",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PRODUCTIONVARIANT_MEMBER_ACCELERATOR_PARTITION_LAYOUTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariant$AcceleratorPartitionLayouts",
+        "com.amazonaws.sagemaker",
+        "ProductionVariant",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AcceleratorPartitionLayouts",
+    18,
+)
+.with_list_member(&PRODUCTIONVARIANT_MEMBER_ACCELERATOR_PARTITION_LAYOUTS_MEMBER);
 static PRODUCTIONVARIANT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.sagemaker#ProductionVariant",
@@ -487,6 +516,7 @@ static PRODUCTIONVARIANT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_sm
         &PRODUCTIONVARIANT_MEMBER_ROUTING_CONFIG,
         &PRODUCTIONVARIANT_MEMBER_INFERENCE_AMI_VERSION,
         &PRODUCTIONVARIANT_MEMBER_CAPACITY_RESERVATION_CONFIG,
+        &PRODUCTIONVARIANT_MEMBER_ACCELERATOR_PARTITION_LAYOUTS,
     ],
 );
 impl ProductionVariant {
@@ -564,6 +594,17 @@ impl ::aws_smithy_schema::serde::SerializableStruct for ProductionVariant {
         }
         if let Some(ref val) = self.capacity_reservation_config {
             ser.write_struct(&PRODUCTIONVARIANT_MEMBER_CAPACITY_RESERVATION_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.accelerator_partition_layouts {
+            ser.write_list(
+                &PRODUCTIONVARIANT_MEMBER_ACCELERATOR_PARTITION_LAYOUTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AcceleratorPartitionLayout::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
         }
         Ok(())
     }
@@ -717,6 +758,20 @@ impl crate::types::builders::ProductionVariantBuilder {
                         self.capacity_reservation_config = Some(crate::types::ProductionVariantCapacityReservationConfig::deserialize(deser)?);
                     }
                 }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator_partition_layouts = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AcceleratorPartitionLayout::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
                 _ => {}
             }
             Ok(())
@@ -763,6 +818,7 @@ pub struct ProductionVariantBuilder {
     pub(crate) routing_config: ::std::option::Option<crate::types::ProductionVariantRoutingConfig>,
     pub(crate) inference_ami_version: ::std::option::Option<crate::types::ProductionVariantInferenceAmiVersion>,
     pub(crate) capacity_reservation_config: ::std::option::Option<crate::types::ProductionVariantCapacityReservationConfig>,
+    pub(crate) accelerator_partition_layouts: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorPartitionLayout>>,
 }
 impl ProductionVariantBuilder {
     /// <p>The name of the production variant.</p>
@@ -1249,6 +1305,29 @@ impl ProductionVariantBuilder {
     pub fn get_capacity_reservation_config(&self) -> &::std::option::Option<crate::types::ProductionVariantCapacityReservationConfig> {
         &self.capacity_reservation_config
     }
+    /// Appends an item to `accelerator_partition_layouts`.
+    ///
+    /// To override the contents of this collection use [`set_accelerator_partition_layouts`](Self::set_accelerator_partition_layouts).
+    ///
+    /// <p>The accelerator partition layout for the accelerators backing this production variant. A layout lists the partition profiles to carve on the accelerators it applies to; on NVIDIA GPUs these are Multi-Instance GPU (MIG) profiles such as <code>mig-3g.40gb</code>. Specify a single layout: SageMaker applies it uniformly to every accelerator on the variant's instance type, and you place one inference component on each partition. Omit this field to use whole, unpartitioned accelerators.</p>
+    pub fn accelerator_partition_layouts(mut self, input: crate::types::AcceleratorPartitionLayout) -> Self {
+        let mut v = self.accelerator_partition_layouts.unwrap_or_default();
+        v.push(input);
+        self.accelerator_partition_layouts = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The accelerator partition layout for the accelerators backing this production variant. A layout lists the partition profiles to carve on the accelerators it applies to; on NVIDIA GPUs these are Multi-Instance GPU (MIG) profiles such as <code>mig-3g.40gb</code>. Specify a single layout: SageMaker applies it uniformly to every accelerator on the variant's instance type, and you place one inference component on each partition. Omit this field to use whole, unpartitioned accelerators.</p>
+    pub fn set_accelerator_partition_layouts(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorPartitionLayout>>,
+    ) -> Self {
+        self.accelerator_partition_layouts = input;
+        self
+    }
+    /// <p>The accelerator partition layout for the accelerators backing this production variant. A layout lists the partition profiles to carve on the accelerators it applies to; on NVIDIA GPUs these are Multi-Instance GPU (MIG) profiles such as <code>mig-3g.40gb</code>. Specify a single layout: SageMaker applies it uniformly to every accelerator on the variant's instance type, and you place one inference component on each partition. Omit this field to use whole, unpartitioned accelerators.</p>
+    pub fn get_accelerator_partition_layouts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorPartitionLayout>> {
+        &self.accelerator_partition_layouts
+    }
     /// Consumes the builder and constructs a [`ProductionVariant`](crate::types::ProductionVariant).
     pub fn build(self) -> crate::types::ProductionVariant {
         crate::types::ProductionVariant {
@@ -1270,6 +1349,7 @@ impl ProductionVariantBuilder {
             routing_config: self.routing_config,
             inference_ami_version: self.inference_ami_version,
             capacity_reservation_config: self.capacity_reservation_config,
+            accelerator_partition_layouts: self.accelerator_partition_layouts,
         }
     }
 }

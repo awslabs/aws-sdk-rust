@@ -18,5 +18,8 @@ pub fn ser_put_account_policy_input_input(
     if let Some(var_5) = &input.selection_criteria {
         object.key("selectionCriteria").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.dry_run {
+        object.key("dryRun").boolean(*var_6);
+    }
     Ok(())
 }

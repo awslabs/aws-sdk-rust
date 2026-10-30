@@ -65,6 +65,8 @@ pub use crate::types::_limits_per_label_set::LimitsPerLabelSetBuilder;
 
 pub use crate::types::_open_search_exporter_configuration::OpenSearchExporterConfigurationBuilder;
 
+pub use crate::types::_kafka_exporter_configuration::KafkaExporterConfigurationBuilder;
+
 pub use crate::types::_component_config::ComponentConfigBuilder;
 
 pub use crate::types::_logging_filter::LoggingFilterBuilder;

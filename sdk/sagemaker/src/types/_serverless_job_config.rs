@@ -18,25 +18,7 @@ pub struct ServerlessJobConfig {
     pub evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     /// <p>The evaluator Amazon Resource Name (ARN) used as reward function or reward prompt.</p>
     pub evaluator_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum sequence length, in tokens, that the customization job supports. SageMaker uses this value to select a training configuration for the base model that you specify. The parameter supports the following values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>1K</code></p></li>
-    /// <li>
-    /// <p><code>2K</code></p></li>
-    /// <li>
-    /// <p><code>4K</code></p></li>
-    /// <li>
-    /// <p><code>8K</code></p></li>
-    /// <li>
-    /// <p><code>16K</code></p></li>
-    /// <li>
-    /// <p><code>32K</code></p></li>
-    /// <li>
-    /// <p><code>64K</code></p></li>
-    /// <li>
-    /// <p><code>128K</code></p></li>
-    /// </ul>
+    /// <p>The maximum sequence length, in tokens, that the customization job supports. SageMaker uses this value to select a training configuration for the base model that you specify. The value must be an integer value from <code>1K</code> to <code>1024K</code> (for example, <code>32K</code>).</p>
     /// <p>If you don't specify a value, SageMaker selects a training configuration based on the other values that you specify. The selection is not restricted to a particular sequence length.</p>
     pub sequence_length: ::std::option::Option<::std::string::String>,
 }
@@ -70,25 +52,7 @@ impl ServerlessJobConfig {
     pub fn evaluator_arn(&self) -> ::std::option::Option<&str> {
         self.evaluator_arn.as_deref()
     }
-    /// <p>The maximum sequence length, in tokens, that the customization job supports. SageMaker uses this value to select a training configuration for the base model that you specify. The parameter supports the following values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>1K</code></p></li>
-    /// <li>
-    /// <p><code>2K</code></p></li>
-    /// <li>
-    /// <p><code>4K</code></p></li>
-    /// <li>
-    /// <p><code>8K</code></p></li>
-    /// <li>
-    /// <p><code>16K</code></p></li>
-    /// <li>
-    /// <p><code>32K</code></p></li>
-    /// <li>
-    /// <p><code>64K</code></p></li>
-    /// <li>
-    /// <p><code>128K</code></p></li>
-    /// </ul>
+    /// <p>The maximum sequence length, in tokens, that the customization job supports. SageMaker uses this value to select a training configuration for the base model that you specify. The value must be an integer value from <code>1K</code> to <code>1024K</code> (for example, <code>32K</code>).</p>
     /// <p>If you don't specify a value, SageMaker selects a training configuration based on the other values that you specify. The selection is not restricted to a particular sequence length.</p>
     pub fn sequence_length(&self) -> ::std::option::Option<&str> {
         self.sequence_length.as_deref()
@@ -436,73 +400,19 @@ impl ServerlessJobConfigBuilder {
     pub fn get_evaluator_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluator_arn
     }
-    /// <p>The maximum sequence length, in tokens, that the customization job supports. SageMaker uses this value to select a training configuration for the base model that you specify. The parameter supports the following values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>1K</code></p></li>
-    /// <li>
-    /// <p><code>2K</code></p></li>
-    /// <li>
-    /// <p><code>4K</code></p></li>
-    /// <li>
-    /// <p><code>8K</code></p></li>
-    /// <li>
-    /// <p><code>16K</code></p></li>
-    /// <li>
-    /// <p><code>32K</code></p></li>
-    /// <li>
-    /// <p><code>64K</code></p></li>
-    /// <li>
-    /// <p><code>128K</code></p></li>
-    /// </ul>
+    /// <p>The maximum sequence length, in tokens, that the customization job supports. SageMaker uses this value to select a training configuration for the base model that you specify. The value must be an integer value from <code>1K</code> to <code>1024K</code> (for example, <code>32K</code>).</p>
     /// <p>If you don't specify a value, SageMaker selects a training configuration based on the other values that you specify. The selection is not restricted to a particular sequence length.</p>
     pub fn sequence_length(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_length = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum sequence length, in tokens, that the customization job supports. SageMaker uses this value to select a training configuration for the base model that you specify. The parameter supports the following values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>1K</code></p></li>
-    /// <li>
-    /// <p><code>2K</code></p></li>
-    /// <li>
-    /// <p><code>4K</code></p></li>
-    /// <li>
-    /// <p><code>8K</code></p></li>
-    /// <li>
-    /// <p><code>16K</code></p></li>
-    /// <li>
-    /// <p><code>32K</code></p></li>
-    /// <li>
-    /// <p><code>64K</code></p></li>
-    /// <li>
-    /// <p><code>128K</code></p></li>
-    /// </ul>
+    /// <p>The maximum sequence length, in tokens, that the customization job supports. SageMaker uses this value to select a training configuration for the base model that you specify. The value must be an integer value from <code>1K</code> to <code>1024K</code> (for example, <code>32K</code>).</p>
     /// <p>If you don't specify a value, SageMaker selects a training configuration based on the other values that you specify. The selection is not restricted to a particular sequence length.</p>
     pub fn set_sequence_length(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_length = input;
         self
     }
-    /// <p>The maximum sequence length, in tokens, that the customization job supports. SageMaker uses this value to select a training configuration for the base model that you specify. The parameter supports the following values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>1K</code></p></li>
-    /// <li>
-    /// <p><code>2K</code></p></li>
-    /// <li>
-    /// <p><code>4K</code></p></li>
-    /// <li>
-    /// <p><code>8K</code></p></li>
-    /// <li>
-    /// <p><code>16K</code></p></li>
-    /// <li>
-    /// <p><code>32K</code></p></li>
-    /// <li>
-    /// <p><code>64K</code></p></li>
-    /// <li>
-    /// <p><code>128K</code></p></li>
-    /// </ul>
+    /// <p>The maximum sequence length, in tokens, that the customization job supports. SageMaker uses this value to select a training configuration for the base model that you specify. The value must be an integer value from <code>1K</code> to <code>1024K</code> (for example, <code>32K</code>).</p>
     /// <p>If you don't specify a value, SageMaker selects a training configuration based on the other values that you specify. The selection is not restricted to a particular sequence length.</p>
     pub fn get_sequence_length(&self) -> &::std::option::Option<::std::string::String> {
         &self.sequence_length

@@ -4,7 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PreEvaluationFilter {
-    /// <p>The type of resource to filter on. Valid values: <code>CONTACT</code>.</p>
+    /// <p>The type of resource to filter on. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CONTACT</code> - Filter on attributes of the contact, such as tags assigned to the contact.</p></li>
+    /// <li>
+    /// <p><code>CONTACT_EVALUATION</code> - Filter on attributes of the contact evaluation, such as tags assigned to the contact evaluation, for rules triggered on the <code>OnContactEvaluationSubmit</code> event source.</p></li>
+    /// </ul>
     pub resource_type: crate::types::PreEvaluationFilterResourceType,
     /// <p>The type of filter to apply. Valid values: <code>TAG</code>.</p>
     pub filter_type: crate::types::PreEvaluationFilterType,
@@ -16,7 +22,13 @@ pub struct PreEvaluationFilter {
     pub operator: crate::types::PreEvaluationFilterOperator,
 }
 impl PreEvaluationFilter {
-    /// <p>The type of resource to filter on. Valid values: <code>CONTACT</code>.</p>
+    /// <p>The type of resource to filter on. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CONTACT</code> - Filter on attributes of the contact, such as tags assigned to the contact.</p></li>
+    /// <li>
+    /// <p><code>CONTACT_EVALUATION</code> - Filter on attributes of the contact evaluation, such as tags assigned to the contact evaluation, for rules triggered on the <code>OnContactEvaluationSubmit</code> event source.</p></li>
+    /// </ul>
     pub fn resource_type(&self) -> &crate::types::PreEvaluationFilterResourceType {
         &self.resource_type
     }
@@ -57,18 +69,36 @@ pub struct PreEvaluationFilterBuilder {
     pub(crate) operator: ::std::option::Option<crate::types::PreEvaluationFilterOperator>,
 }
 impl PreEvaluationFilterBuilder {
-    /// <p>The type of resource to filter on. Valid values: <code>CONTACT</code>.</p>
+    /// <p>The type of resource to filter on. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CONTACT</code> - Filter on attributes of the contact, such as tags assigned to the contact.</p></li>
+    /// <li>
+    /// <p><code>CONTACT_EVALUATION</code> - Filter on attributes of the contact evaluation, such as tags assigned to the contact evaluation, for rules triggered on the <code>OnContactEvaluationSubmit</code> event source.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn resource_type(mut self, input: crate::types::PreEvaluationFilterResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of resource to filter on. Valid values: <code>CONTACT</code>.</p>
+    /// <p>The type of resource to filter on. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CONTACT</code> - Filter on attributes of the contact, such as tags assigned to the contact.</p></li>
+    /// <li>
+    /// <p><code>CONTACT_EVALUATION</code> - Filter on attributes of the contact evaluation, such as tags assigned to the contact evaluation, for rules triggered on the <code>OnContactEvaluationSubmit</code> event source.</p></li>
+    /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::PreEvaluationFilterResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The type of resource to filter on. Valid values: <code>CONTACT</code>.</p>
+    /// <p>The type of resource to filter on. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CONTACT</code> - Filter on attributes of the contact, such as tags assigned to the contact.</p></li>
+    /// <li>
+    /// <p><code>CONTACT_EVALUATION</code> - Filter on attributes of the contact evaluation, such as tags assigned to the contact evaluation, for rules triggered on the <code>OnContactEvaluationSubmit</code> event source.</p></li>
+    /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::PreEvaluationFilterResourceType> {
         &self.resource_type
     }

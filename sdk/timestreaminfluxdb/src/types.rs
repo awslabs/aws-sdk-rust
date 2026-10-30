@@ -11,6 +11,8 @@ pub use crate::types::_resource_deployment_type::ResourceDeploymentType;
 
 pub use crate::types::_cluster_configuration::ClusterConfiguration;
 
+pub use crate::types::_deployment_configuration::DeploymentConfiguration;
+
 pub use crate::types::_db_instance_type::DbInstanceType;
 
 pub use crate::types::_log_delivery_configuration::LogDeliveryConfiguration;
@@ -42,6 +44,8 @@ pub use crate::types::_instance_mode::InstanceMode;
 pub use crate::types::_parameters::Parameters;
 
 pub use crate::types::_db_backup_summary::DbBackupSummary;
+
+pub use crate::types::_influx_dbv3_enterprise_deployment_configuration::InfluxDBv3EnterpriseDeploymentConfiguration;
 
 pub use crate::types::_s3_configuration::S3Configuration;
 
@@ -77,6 +81,8 @@ pub use crate::types::_data_fusion_runtime_type::DataFusionRuntimeType;
 
 pub use crate::types::_percent_or_absolute_long::PercentOrAbsoluteLong;
 
+pub use crate::types::_node_group::NodeGroup;
+
 pub use crate::types::_duration_type::DurationType;
 
 mod _automated_db_backup_type;
@@ -111,6 +117,8 @@ mod _db_parameter_group_summary;
 
 mod _db_storage_type;
 
+mod _deployment_configuration;
+
 mod _deployment_type;
 
 mod _duration;
@@ -125,6 +133,8 @@ mod _influx_dbv2_parameters;
 
 mod _influx_dbv3_core_parameters;
 
+mod _influx_dbv3_enterprise_deployment_configuration;
+
 mod _influx_dbv3_enterprise_parameters;
 
 mod _instance_mode;
@@ -138,6 +148,8 @@ mod _log_level;
 mod _maintenance_schedule;
 
 mod _network_type;
+
+mod _node_group;
 
 mod _parameters;
 

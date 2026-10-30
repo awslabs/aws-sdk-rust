@@ -39,7 +39,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -70,7 +70,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -101,7 +101,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -132,7 +132,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -163,7 +163,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -194,7 +194,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -227,7 +227,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -258,7 +258,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -289,7 +289,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -309,7 +309,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -340,7 +340,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -371,7 +371,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -404,7 +404,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -435,7 +435,7 @@ mod test {
             .requires_account_id(false)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -464,7 +464,7 @@ mod test {
             .requires_account_id(false)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -492,7 +492,7 @@ mod test {
             .requires_account_id(false)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -521,7 +521,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -549,7 +549,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -578,7 +578,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -607,7 +607,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(true)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -638,7 +638,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(true)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -669,7 +669,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(true)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -700,7 +700,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -718,7 +718,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -736,7 +736,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -754,7 +754,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -784,7 +784,7 @@ mod test {
             .use_arn_region(false)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -816,7 +816,7 @@ mod test {
             .use_arn_region(false)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -838,7 +838,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -868,7 +868,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -899,7 +899,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -918,7 +918,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -942,7 +942,7 @@ mod test {
             .requires_account_id(false)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -971,7 +971,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1003,7 +1003,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1033,7 +1033,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1062,7 +1062,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(true)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1092,7 +1092,7 @@ mod test {
             .requires_account_id(false)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1121,7 +1121,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(true)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1141,7 +1141,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1171,7 +1171,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1201,7 +1201,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1231,7 +1231,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1261,7 +1261,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1291,7 +1291,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(true)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1321,7 +1321,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1351,7 +1351,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1381,7 +1381,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1411,7 +1411,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1441,7 +1441,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1471,7 +1471,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(true)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1501,7 +1501,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1531,7 +1531,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1561,7 +1561,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1591,7 +1591,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1621,7 +1621,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1651,7 +1651,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1669,7 +1669,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1686,7 +1686,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1704,7 +1704,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1721,7 +1721,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1749,7 +1749,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(true)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1777,7 +1777,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1805,7 +1805,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1829,7 +1829,7 @@ mod test {
     fn test_65() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1854,7 +1854,7 @@ mod test {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1879,7 +1879,7 @@ mod test {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1905,7 +1905,7 @@ mod test {
             .region("us-east-1".to_string())
             .use_dual_stack(true)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1929,7 +1929,7 @@ mod test {
     fn test_69() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1955,7 +1955,7 @@ mod test {
             .region("cn-north-1".to_string())
             .use_dual_stack(true)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1972,7 +1972,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2000,7 +2000,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2017,7 +2017,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2045,7 +2045,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(true)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2072,7 +2072,7 @@ mod test {
             .region("us-east-1".to_string())
             .requires_account_id(true)
             .endpoint("https://example.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2097,7 +2097,7 @@ mod test {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .requires_account_id(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2112,7 +2112,7 @@ mod test {
             .region("us-east-1".to_string())
             .endpoint("https://beta.example.com".to_string())
             .requires_account_id(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2129,7 +2129,7 @@ mod test {
             .endpoint("https://beta.example.com".to_string())
             .account_id("/?invalid&not-host*label".to_string())
             .requires_account_id(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2148,7 +2148,7 @@ mod test {
             .requires_account_id(true)
             .endpoint("https://example.com".to_string())
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2174,7 +2174,7 @@ mod test {
             .region("us-east-1".to_string())
             .endpoint("https://example.com".to_string())
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2200,7 +2200,7 @@ mod test {
             .region("us-east-1".to_string())
             .endpoint("https://example.com".to_string())
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2227,7 +2227,7 @@ mod test {
             .endpoint("https://example.com".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2242,7 +2242,9 @@ mod test {
     /// region not set
     #[test]
     fn test_83() {
-        let params = crate::config::endpoint::Params::builder().build().expect("invalid params");
+        let params = crate::config::endpoint::Params::builder()
+            .build_without_validators()
+            .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Region must be set [region not set]");
@@ -2254,7 +2256,7 @@ mod test {
     fn test_84() {
         let params = crate::config::endpoint::Params::builder()
             .region("invalid-region 42".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2271,7 +2273,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2289,7 +2291,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2308,7 +2310,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2325,7 +2327,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2342,7 +2344,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2361,7 +2363,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2390,7 +2392,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2422,7 +2424,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(true)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2443,7 +2445,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(true)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2464,7 +2466,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2482,7 +2484,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2501,7 +2503,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2522,7 +2524,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2538,7 +2540,7 @@ mod test {
             .region("us-west-2".to_string())
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2568,7 +2570,7 @@ mod test {
             .use_arn_region(false)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2590,7 +2592,7 @@ mod test {
             .use_arn_region(false)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2611,7 +2613,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2641,7 +2643,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2672,7 +2674,7 @@ mod test {
             .use_arn_region(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2691,7 +2693,7 @@ mod test {
             .use_dual_stack(false)
             .use_arn_region(true)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2710,7 +2712,7 @@ mod test {
             .use_dual_stack(false)
             .use_arn_region(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2730,7 +2732,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2760,7 +2762,7 @@ mod test {
             .endpoint("https://10.0.1.12:433".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2787,7 +2789,7 @@ mod test {
             .endpoint("https://10.0.1.12:433".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2815,7 +2817,7 @@ mod test {
             .endpoint("https://10.0.1.12".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2843,7 +2845,7 @@ mod test {
             .endpoint("http://s3snow.com".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2871,7 +2873,7 @@ mod test {
             .endpoint("https://10.0.1.12:433".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2888,7 +2890,7 @@ mod test {
             .endpoint("https://10.0.1.12:433".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2906,7 +2908,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2935,7 +2937,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2964,7 +2966,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2993,7 +2995,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3022,7 +3024,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3043,7 +3045,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3073,7 +3075,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3103,7 +3105,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(true)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3124,7 +3126,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3153,7 +3155,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3182,7 +3184,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3211,7 +3213,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3240,7 +3242,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3269,7 +3271,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3297,7 +3299,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3315,7 +3317,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3334,7 +3336,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3364,7 +3366,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(false)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3393,7 +3395,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(true)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3412,7 +3414,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(true)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3432,7 +3434,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(true)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3454,7 +3456,7 @@ mod test {
             .requires_account_id(true)
             .use_dual_stack(true)
             .use_fips(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -7577,6 +7579,12 @@ pub struct ParamsBuilder {
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
     pub fn build(self) -> ::std::result::Result<crate::config::endpoint::Params, crate::config::endpoint::InvalidParams> {
+        self.build_without_validators()
+    }
+    /// Consume this builder, creating [`Params`] without the validators run by `build()`.
+    ///
+    /// Endpoint rule-set tests use this so they test the rules as the model defines them.
+    fn build_without_validators(self) -> ::std::result::Result<crate::config::endpoint::Params, crate::config::endpoint::InvalidParams> {
         Ok(
             #[allow(clippy::unnecessary_lazy_evaluations)]
             crate::config::endpoint::Params {

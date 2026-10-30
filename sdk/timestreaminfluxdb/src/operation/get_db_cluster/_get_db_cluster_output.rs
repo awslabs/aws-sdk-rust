@@ -52,7 +52,11 @@ pub struct GetDbClusterOutput {
     /// <p>The configured failover mode for the DB cluster.</p>
     pub failover_mode: ::std::option::Option<crate::types::FailoverMode>,
     /// <p>Configuration for node modes in the DbCluster.</p>
+    /// <p>Deprecated. Use deploymentConfiguration to view the cluster topology instead.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub cluster_configuration: ::std::option::Option<crate::types::ClusterConfiguration>,
+    /// <p>The current compute topology of the cluster, as a set of node groups. The returned topology reflects the cluster's actual provisioned nodes.</p>
+    pub deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
     /// <p>The backup configurations for the DB cluster.</p>
     pub db_backup_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfigurationOutput>>,
     /// <p>The Amazon Web Services KMS key ARN used for encryption of the DB cluster.</p>
@@ -164,8 +168,14 @@ impl GetDbClusterOutput {
         self.failover_mode.as_ref()
     }
     /// <p>Configuration for node modes in the DbCluster.</p>
+    /// <p>Deprecated. Use deploymentConfiguration to view the cluster topology instead.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn cluster_configuration(&self) -> ::std::option::Option<&crate::types::ClusterConfiguration> {
         self.cluster_configuration.as_ref()
+    }
+    /// <p>The current compute topology of the cluster, as a set of node groups. The returned topology reflects the cluster's actual provisioned nodes.</p>
+    pub fn deployment_configuration(&self) -> ::std::option::Option<&crate::types::DeploymentConfiguration> {
+        self.deployment_configuration.as_ref()
     }
     /// <p>The backup configurations for the DB cluster.</p>
     ///
@@ -219,6 +229,7 @@ pub struct GetDbClusterOutputBuilder {
     pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) failover_mode: ::std::option::Option<crate::types::FailoverMode>,
     pub(crate) cluster_configuration: ::std::option::Option<crate::types::ClusterConfiguration>,
+    pub(crate) deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
     pub(crate) db_backup_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfigurationOutput>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -576,18 +587,38 @@ impl GetDbClusterOutputBuilder {
         &self.failover_mode
     }
     /// <p>Configuration for node modes in the DbCluster.</p>
+    /// <p>Deprecated. Use deploymentConfiguration to view the cluster topology instead.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn cluster_configuration(mut self, input: crate::types::ClusterConfiguration) -> Self {
         self.cluster_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration for node modes in the DbCluster.</p>
+    /// <p>Deprecated. Use deploymentConfiguration to view the cluster topology instead.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn set_cluster_configuration(mut self, input: ::std::option::Option<crate::types::ClusterConfiguration>) -> Self {
         self.cluster_configuration = input;
         self
     }
     /// <p>Configuration for node modes in the DbCluster.</p>
+    /// <p>Deprecated. Use deploymentConfiguration to view the cluster topology instead.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn get_cluster_configuration(&self) -> &::std::option::Option<crate::types::ClusterConfiguration> {
         &self.cluster_configuration
+    }
+    /// <p>The current compute topology of the cluster, as a set of node groups. The returned topology reflects the cluster's actual provisioned nodes.</p>
+    pub fn deployment_configuration(mut self, input: crate::types::DeploymentConfiguration) -> Self {
+        self.deployment_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current compute topology of the cluster, as a set of node groups. The returned topology reflects the cluster's actual provisioned nodes.</p>
+    pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::DeploymentConfiguration>) -> Self {
+        self.deployment_configuration = input;
+        self
+    }
+    /// <p>The current compute topology of the cluster, as a set of node groups. The returned topology reflects the cluster's actual provisioned nodes.</p>
+    pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
+        &self.deployment_configuration
     }
     /// Appends an item to `db_backup_configurations`.
     ///
@@ -681,6 +712,7 @@ impl GetDbClusterOutputBuilder {
             vpc_security_group_ids: self.vpc_security_group_ids,
             failover_mode: self.failover_mode,
             cluster_configuration: self.cluster_configuration,
+            deployment_configuration: self.deployment_configuration,
             db_backup_configurations: self.db_backup_configurations,
             kms_key_id: self.kms_key_id,
             _request_id: self._request_id,

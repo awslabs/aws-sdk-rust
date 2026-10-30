@@ -115,10 +115,16 @@ pub struct InfluxDBv3EnterpriseParameters {
     /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that holds your repository access token.</p>
     pub plugin_repository_secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies number of instances in the DbCluster which can both ingest and query.</p>
+    /// <p>Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define the cluster topology instead. When you supply a deployment configuration, Timestream for InfluxDB ignores this parameter.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub ingest_query_instances: i32,
     /// <p>Specifies number of instances in the DbCluster which can only query.</p>
+    /// <p>Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define the cluster topology instead. When you supply a deployment configuration, Timestream for InfluxDB ignores this parameter.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub query_only_instances: i32,
     /// <p>Specifies if the compactor instance should be a standalone instance or not.</p>
+    /// <p>Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define the cluster topology instead. When you supply a deployment configuration, Timestream for InfluxDB ignores this parameter.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub dedicated_compactor: bool,
     /// <p>Specifies the soft limit for the number of rows per file that the compactor writes. The compactor may write more rows than this limit.</p>
     /// <p>Default: 1000000</p>
@@ -351,14 +357,20 @@ impl InfluxDBv3EnterpriseParameters {
         self.plugin_repository_secret_arn.as_deref()
     }
     /// <p>Specifies number of instances in the DbCluster which can both ingest and query.</p>
+    /// <p>Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define the cluster topology instead. When you supply a deployment configuration, Timestream for InfluxDB ignores this parameter.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn ingest_query_instances(&self) -> i32 {
         self.ingest_query_instances
     }
     /// <p>Specifies number of instances in the DbCluster which can only query.</p>
+    /// <p>Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define the cluster topology instead. When you supply a deployment configuration, Timestream for InfluxDB ignores this parameter.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn query_only_instances(&self) -> i32 {
         self.query_only_instances
     }
     /// <p>Specifies if the compactor instance should be a standalone instance or not.</p>
+    /// <p>Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define the cluster topology instead. When you supply a deployment configuration, Timestream for InfluxDB ignores this parameter.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn dedicated_compactor(&self) -> bool {
         self.dedicated_compactor
     }
@@ -1157,47 +1169,62 @@ impl InfluxDBv3EnterpriseParametersBuilder {
         &self.plugin_repository_secret_arn
     }
     /// <p>Specifies number of instances in the DbCluster which can both ingest and query.</p>
-    /// This field is required.
+    /// <p>Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define the cluster topology instead. When you supply a deployment configuration, Timestream for InfluxDB ignores this parameter.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn ingest_query_instances(mut self, input: i32) -> Self {
         self.ingest_query_instances = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies number of instances in the DbCluster which can both ingest and query.</p>
+    /// <p>Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define the cluster topology instead. When you supply a deployment configuration, Timestream for InfluxDB ignores this parameter.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn set_ingest_query_instances(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ingest_query_instances = input;
         self
     }
     /// <p>Specifies number of instances in the DbCluster which can both ingest and query.</p>
+    /// <p>Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define the cluster topology instead. When you supply a deployment configuration, Timestream for InfluxDB ignores this parameter.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn get_ingest_query_instances(&self) -> &::std::option::Option<i32> {
         &self.ingest_query_instances
     }
     /// <p>Specifies number of instances in the DbCluster which can only query.</p>
-    /// This field is required.
+    /// <p>Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define the cluster topology instead. When you supply a deployment configuration, Timestream for InfluxDB ignores this parameter.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn query_only_instances(mut self, input: i32) -> Self {
         self.query_only_instances = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies number of instances in the DbCluster which can only query.</p>
+    /// <p>Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define the cluster topology instead. When you supply a deployment configuration, Timestream for InfluxDB ignores this parameter.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn set_query_only_instances(mut self, input: ::std::option::Option<i32>) -> Self {
         self.query_only_instances = input;
         self
     }
     /// <p>Specifies number of instances in the DbCluster which can only query.</p>
+    /// <p>Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define the cluster topology instead. When you supply a deployment configuration, Timestream for InfluxDB ignores this parameter.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn get_query_only_instances(&self) -> &::std::option::Option<i32> {
         &self.query_only_instances
     }
     /// <p>Specifies if the compactor instance should be a standalone instance or not.</p>
-    /// This field is required.
+    /// <p>Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define the cluster topology instead. When you supply a deployment configuration, Timestream for InfluxDB ignores this parameter.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn dedicated_compactor(mut self, input: bool) -> Self {
         self.dedicated_compactor = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies if the compactor instance should be a standalone instance or not.</p>
+    /// <p>Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define the cluster topology instead. When you supply a deployment configuration, Timestream for InfluxDB ignores this parameter.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn set_dedicated_compactor(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dedicated_compactor = input;
         self
     }
     /// <p>Specifies if the compactor instance should be a standalone instance or not.</p>
+    /// <p>Deprecated. Use deploymentConfiguration on CreateDbCluster or UpdateDbCluster to define the cluster topology instead. When you supply a deployment configuration, Timestream for InfluxDB ignores this parameter.</p>
+    #[deprecated(note = "Use deploymentConfiguration instead.", since = "2026-09-28")]
     pub fn get_dedicated_compactor(&self) -> &::std::option::Option<bool> {
         &self.dedicated_compactor
     }
@@ -1422,12 +1449,8 @@ impl InfluxDBv3EnterpriseParametersBuilder {
         &self.snapshot_duration
     }
     /// Consumes the builder and constructs a [`InfluxDBv3EnterpriseParameters`](crate::types::InfluxDBv3EnterpriseParameters).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`ingest_query_instances`](crate::types::builders::InfluxDBv3EnterpriseParametersBuilder::ingest_query_instances)
-    /// - [`query_only_instances`](crate::types::builders::InfluxDBv3EnterpriseParametersBuilder::query_only_instances)
-    /// - [`dedicated_compactor`](crate::types::builders::InfluxDBv3EnterpriseParametersBuilder::dedicated_compactor)
-    pub fn build(self) -> ::std::result::Result<crate::types::InfluxDBv3EnterpriseParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InfluxDBv3EnterpriseParameters {
+    pub fn build(self) -> crate::types::InfluxDBv3EnterpriseParameters {
+        crate::types::InfluxDBv3EnterpriseParameters {
             query_file_limit: self.query_file_limit,
             query_log_size: self.query_log_size,
             log_filter: self.log_filter,
@@ -1469,24 +1492,9 @@ impl InfluxDBv3EnterpriseParametersBuilder {
             hard_delete_default_duration: self.hard_delete_default_duration,
             plugin_repository_url: self.plugin_repository_url,
             plugin_repository_secret_arn: self.plugin_repository_secret_arn,
-            ingest_query_instances: self.ingest_query_instances.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ingest_query_instances",
-                    "ingest_query_instances was not specified but it is required when building InfluxDBv3EnterpriseParameters",
-                )
-            })?,
-            query_only_instances: self.query_only_instances.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "query_only_instances",
-                    "query_only_instances was not specified but it is required when building InfluxDBv3EnterpriseParameters",
-                )
-            })?,
-            dedicated_compactor: self.dedicated_compactor.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dedicated_compactor",
-                    "dedicated_compactor was not specified but it is required when building InfluxDBv3EnterpriseParameters",
-                )
-            })?,
+            ingest_query_instances: self.ingest_query_instances.unwrap_or(1),
+            query_only_instances: self.query_only_instances.unwrap_or_default(),
+            dedicated_compactor: self.dedicated_compactor.unwrap_or_default(),
             compaction_row_limit: self.compaction_row_limit,
             compaction_max_num_files_per_plan: self.compaction_max_num_files_per_plan,
             compaction_gen2_duration: self.compaction_gen2_duration,
@@ -1501,6 +1509,6 @@ impl InfluxDBv3EnterpriseParametersBuilder {
             wal_buffer_size: self.wal_buffer_size,
             snapshot_size: self.snapshot_size,
             snapshot_duration: self.snapshot_duration,
-        })
+        }
     }
 }

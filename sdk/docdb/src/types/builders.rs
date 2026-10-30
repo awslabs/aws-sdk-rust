@@ -51,6 +51,8 @@ pub use crate::types::_event::EventBuilder;
 
 pub use crate::types::_orderable_db_instance_option::OrderableDbInstanceOptionBuilder;
 
+pub use crate::types::_serverless_v2_platform_version_info::ServerlessV2PlatformVersionInfoBuilder;
+
 pub use crate::types::_pending_maintenance_action::PendingMaintenanceActionBuilder;
 
 pub use crate::types::_db_cluster_member::DbClusterMemberBuilder;

@@ -214,4 +214,18 @@ impl ListRealtimeContactAnalysisSegmentsV2FluentBuilder {
     pub fn get_segment_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisSegmentType>> {
         self.inner.get_segment_types()
     }
+    /// <p>A filter that restricts the segments returned by the API. When <code>SegmentTypes</code> includes <code>Categories</code>, use <code>CategoriesAttributeFilter</code> to return only the category segments whose rules have tags that match the filter. This enforces tag-based access control on the categories a caller can view.</p>
+    pub fn list_filter(mut self, input: crate::types::RealTimeContactAnalysisSegmentsFilter) -> Self {
+        self.inner = self.inner.list_filter(input);
+        self
+    }
+    /// <p>A filter that restricts the segments returned by the API. When <code>SegmentTypes</code> includes <code>Categories</code>, use <code>CategoriesAttributeFilter</code> to return only the category segments whose rules have tags that match the filter. This enforces tag-based access control on the categories a caller can view.</p>
+    pub fn set_list_filter(mut self, input: ::std::option::Option<crate::types::RealTimeContactAnalysisSegmentsFilter>) -> Self {
+        self.inner = self.inner.set_list_filter(input);
+        self
+    }
+    /// <p>A filter that restricts the segments returned by the API. When <code>SegmentTypes</code> includes <code>Categories</code>, use <code>CategoriesAttributeFilter</code> to return only the category segments whose rules have tags that match the filter. This enforces tag-based access control on the categories a caller can view.</p>
+    pub fn get_list_filter(&self) -> &::std::option::Option<crate::types::RealTimeContactAnalysisSegmentsFilter> {
+        self.inner.get_list_filter()
+    }
 }

@@ -12,6 +12,7 @@
 /// ```text
 /// # let agenticretrievestep = unimplemented!();
 /// match agenticretrievestep {
+///     AgenticRetrieveStep::CodeExecution => { /* ... */ },
 ///     AgenticRetrieveStep::FullDocumentExpansion => { /* ... */ },
 ///     AgenticRetrieveStep::Planning => { /* ... */ },
 ///     AgenticRetrieveStep::Retrieval => { /* ... */ },
@@ -45,6 +46,8 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AgenticRetrieveStep {
+    /// <p>The phase that runs agent-generated code in an isolated sandbox. The code can read documents retrieved earlier in the same request.</p>
+    CodeExecution,
     /// <p>The full document expansion phase.</p>
     FullDocumentExpansion,
     /// <p>The planning phase of retrieval.</p>
@@ -62,6 +65,7 @@ pub enum AgenticRetrieveStep {
 impl ::std::convert::From<&str> for AgenticRetrieveStep {
     fn from(s: &str) -> Self {
         match s {
+            "CodeExecution" => AgenticRetrieveStep::CodeExecution,
             "FullDocumentExpansion" => AgenticRetrieveStep::FullDocumentExpansion,
             "Planning" => AgenticRetrieveStep::Planning,
             "Retrieval" => AgenticRetrieveStep::Retrieval,
@@ -82,6 +86,7 @@ impl AgenticRetrieveStep {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AgenticRetrieveStep::CodeExecution => "CodeExecution",
             AgenticRetrieveStep::FullDocumentExpansion => "FullDocumentExpansion",
             AgenticRetrieveStep::Planning => "Planning",
             AgenticRetrieveStep::Retrieval => "Retrieval",
@@ -93,6 +98,7 @@ impl AgenticRetrieveStep {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "CodeExecution",
             "FullDocumentExpansion",
             "Planning",
             "Retrieval",
@@ -121,6 +127,7 @@ impl AgenticRetrieveStep {
 impl ::std::fmt::Display for AgenticRetrieveStep {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AgenticRetrieveStep::CodeExecution => write!(f, "CodeExecution"),
             AgenticRetrieveStep::FullDocumentExpansion => write!(f, "FullDocumentExpansion"),
             AgenticRetrieveStep::Planning => write!(f, "Planning"),
             AgenticRetrieveStep::Retrieval => write!(f, "Retrieval"),

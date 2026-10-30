@@ -66,45 +66,51 @@ pub fn ser_create_db_cluster_input_input(
     if let Some(var_19) = &input.deployment_type {
         object.key("deploymentType").string(var_19.as_str());
     }
-    if let Some(var_20) = &input.failover_mode {
-        object.key("failoverMode").string(var_20.as_str());
-    }
-    if let Some(var_21) = &input.log_delivery_configuration {
+    if let Some(var_20) = &input.deployment_configuration {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("logDeliveryConfiguration").start_object();
-        crate::protocol_serde::shape_log_delivery_configuration::ser_log_delivery_configuration(&mut object_22, var_21)?;
-        object_22.finish();
+        let mut object_21 = object.key("deploymentConfiguration").start_object();
+        crate::protocol_serde::shape_deployment_configuration::ser_deployment_configuration(&mut object_21, var_20)?;
+        object_21.finish();
     }
-    if let Some(var_23) = &input.maintenance_schedule {
+    if let Some(var_22) = &input.failover_mode {
+        object.key("failoverMode").string(var_22.as_str());
+    }
+    if let Some(var_23) = &input.log_delivery_configuration {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("maintenanceSchedule").start_object();
-        crate::protocol_serde::shape_maintenance_schedule::ser_maintenance_schedule(&mut object_24, var_23)?;
+        let mut object_24 = object.key("logDeliveryConfiguration").start_object();
+        crate::protocol_serde::shape_log_delivery_configuration::ser_log_delivery_configuration(&mut object_24, var_23)?;
         object_24.finish();
     }
-    if let Some(var_25) = &input.db_backup_configurations {
-        let mut array_26 = object.key("dbBackupConfigurations").start_array();
-        for item_27 in var_25 {
+    if let Some(var_25) = &input.maintenance_schedule {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("maintenanceSchedule").start_object();
+        crate::protocol_serde::shape_maintenance_schedule::ser_maintenance_schedule(&mut object_26, var_25)?;
+        object_26.finish();
+    }
+    if let Some(var_27) = &input.db_backup_configurations {
+        let mut array_28 = object.key("dbBackupConfigurations").start_array();
+        for item_29 in var_27 {
             {
                 #[allow(unused_mut)]
-                let mut object_28 = array_26.value().start_object();
-                crate::protocol_serde::shape_db_backup_configuration::ser_db_backup_configuration(&mut object_28, item_27)?;
-                object_28.finish();
+                let mut object_30 = array_28.value().start_object();
+                crate::protocol_serde::shape_db_backup_configuration::ser_db_backup_configuration(&mut object_30, item_29)?;
+                object_30.finish();
             }
         }
-        array_26.finish();
+        array_28.finish();
     }
-    if let Some(var_29) = &input.kms_key_id {
-        object.key("kmsKeyId").string(var_29.as_str());
+    if let Some(var_31) = &input.kms_key_id {
+        object.key("kmsKeyId").string(var_31.as_str());
     }
-    if let Some(var_30) = &input.tags {
+    if let Some(var_32) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_31 = object.key("tags").start_object();
-        for (key_32, value_33) in var_30 {
+        let mut object_33 = object.key("tags").start_object();
+        for (key_34, value_35) in var_32 {
             {
-                object_31.key(key_32.as_str()).string(value_33.as_str());
+                object_33.key(key_34.as_str()).string(value_35.as_str());
             }
         }
-        object_31.finish();
+        object_33.finish();
     }
     Ok(())
 }

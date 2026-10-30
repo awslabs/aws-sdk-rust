@@ -10,6 +10,12 @@ pub fn ser_exporter_configuration(
             crate::protocol_serde::shape_open_search_exporter_configuration::ser_open_search_exporter_configuration(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::ExporterConfiguration::KafkaConfiguration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_8.key("kafkaConfiguration").start_object();
+            crate::protocol_serde::shape_kafka_exporter_configuration::ser_kafka_exporter_configuration(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::ExporterConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ExporterConfiguration",
@@ -65,6 +71,12 @@ where
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'openSearchConfiguration' cannot be null")
                             })?,
+                        )),
+                        "kafkaConfiguration" => Some(crate::types::ExporterConfiguration::KafkaConfiguration(
+                            crate::protocol_serde::shape_kafka_exporter_configuration::de_kafka_exporter_configuration(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'kafkaConfiguration' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

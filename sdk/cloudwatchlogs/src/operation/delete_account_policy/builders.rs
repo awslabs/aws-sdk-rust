@@ -149,4 +149,21 @@ impl DeleteAccountPolicyFluentBuilder {
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
         self.inner.get_policy_type()
     }
+    /// <p>Specifies whether to preview the impact of deleting the policy without deleting it. If you specify <code>true</code>, CloudWatch Logs does not delete the policy and returns the estimated impact in <code>dryRunResult</code>. The default is <code>false</code>.</p>
+    /// <p>Specifying <code>dryRun</code> is valid only when you specify <code>RETENTION_POLICY</code> for <code>policyType</code>. Only one dry run can be in progress for an account at a time.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Specifies whether to preview the impact of deleting the policy without deleting it. If you specify <code>true</code>, CloudWatch Logs does not delete the policy and returns the estimated impact in <code>dryRunResult</code>. The default is <code>false</code>.</p>
+    /// <p>Specifying <code>dryRun</code> is valid only when you specify <code>RETENTION_POLICY</code> for <code>policyType</code>. Only one dry run can be in progress for an account at a time.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Specifies whether to preview the impact of deleting the policy without deleting it. If you specify <code>true</code>, CloudWatch Logs does not delete the policy and returns the estimated impact in <code>dryRunResult</code>. The default is <code>false</code>.</p>
+    /// <p>Specifying <code>dryRun</code> is valid only when you specify <code>RETENTION_POLICY</code> for <code>policyType</code>. Only one dry run can be in progress for an account at a time.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
 }

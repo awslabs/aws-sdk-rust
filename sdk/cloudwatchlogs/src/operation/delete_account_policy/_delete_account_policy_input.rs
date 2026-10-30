@@ -7,6 +7,9 @@ pub struct DeleteAccountPolicyInput {
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of policy to delete.</p>
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
+    /// <p>Specifies whether to preview the impact of deleting the policy without deleting it. If you specify <code>true</code>, CloudWatch Logs does not delete the policy and returns the estimated impact in <code>dryRunResult</code>. The default is <code>false</code>.</p>
+    /// <p>Specifying <code>dryRun</code> is valid only when you specify <code>RETENTION_POLICY</code> for <code>policyType</code>. Only one dry run can be in progress for an account at a time.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl DeleteAccountPolicyInput {
     /// <p>The name of the policy to delete.</p>
@@ -16,6 +19,11 @@ impl DeleteAccountPolicyInput {
     /// <p>The type of policy to delete.</p>
     pub fn policy_type(&self) -> ::std::option::Option<&crate::types::PolicyType> {
         self.policy_type.as_ref()
+    }
+    /// <p>Specifies whether to preview the impact of deleting the policy without deleting it. If you specify <code>true</code>, CloudWatch Logs does not delete the policy and returns the estimated impact in <code>dryRunResult</code>. The default is <code>false</code>.</p>
+    /// <p>Specifying <code>dryRun</code> is valid only when you specify <code>RETENTION_POLICY</code> for <code>policyType</code>. Only one dry run can be in progress for an account at a time.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
     }
 }
 impl DeleteAccountPolicyInput {
@@ -31,6 +39,7 @@ impl DeleteAccountPolicyInput {
 pub struct DeleteAccountPolicyInputBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyType>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteAccountPolicyInputBuilder {
     /// <p>The name of the policy to delete.</p>
@@ -63,6 +72,23 @@ impl DeleteAccountPolicyInputBuilder {
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
         &self.policy_type
     }
+    /// <p>Specifies whether to preview the impact of deleting the policy without deleting it. If you specify <code>true</code>, CloudWatch Logs does not delete the policy and returns the estimated impact in <code>dryRunResult</code>. The default is <code>false</code>.</p>
+    /// <p>Specifying <code>dryRun</code> is valid only when you specify <code>RETENTION_POLICY</code> for <code>policyType</code>. Only one dry run can be in progress for an account at a time.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to preview the impact of deleting the policy without deleting it. If you specify <code>true</code>, CloudWatch Logs does not delete the policy and returns the estimated impact in <code>dryRunResult</code>. The default is <code>false</code>.</p>
+    /// <p>Specifying <code>dryRun</code> is valid only when you specify <code>RETENTION_POLICY</code> for <code>policyType</code>. Only one dry run can be in progress for an account at a time.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Specifies whether to preview the impact of deleting the policy without deleting it. If you specify <code>true</code>, CloudWatch Logs does not delete the policy and returns the estimated impact in <code>dryRunResult</code>. The default is <code>false</code>.</p>
+    /// <p>Specifying <code>dryRun</code> is valid only when you specify <code>RETENTION_POLICY</code> for <code>policyType</code>. Only one dry run can be in progress for an account at a time.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`DeleteAccountPolicyInput`](crate::operation::delete_account_policy::DeleteAccountPolicyInput).
     pub fn build(
         self,
@@ -71,6 +97,7 @@ impl DeleteAccountPolicyInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_account_policy::DeleteAccountPolicyInput {
             policy_name: self.policy_name,
             policy_type: self.policy_type,
+            dry_run: self.dry_run,
         })
     }
 }

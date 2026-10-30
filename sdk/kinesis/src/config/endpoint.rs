@@ -36,7 +36,7 @@ mod test {
             .region("af-south-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -56,7 +56,7 @@ mod test {
             .region("ap-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -76,7 +76,7 @@ mod test {
             .region("ap-northeast-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -96,7 +96,7 @@ mod test {
             .region("ap-northeast-2".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -116,7 +116,7 @@ mod test {
             .region("ap-northeast-3".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -136,7 +136,7 @@ mod test {
             .region("ap-south-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -156,7 +156,7 @@ mod test {
             .region("ap-southeast-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -176,7 +176,7 @@ mod test {
             .region("ap-southeast-2".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -196,7 +196,7 @@ mod test {
             .region("ap-southeast-3".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -216,7 +216,7 @@ mod test {
             .region("ca-central-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -236,7 +236,7 @@ mod test {
             .region("eu-central-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -256,7 +256,7 @@ mod test {
             .region("eu-north-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -276,7 +276,7 @@ mod test {
             .region("eu-south-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -296,7 +296,7 @@ mod test {
             .region("eu-west-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -316,7 +316,7 @@ mod test {
             .region("eu-west-2".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -336,7 +336,7 @@ mod test {
             .region("eu-west-3".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -356,7 +356,7 @@ mod test {
             .region("me-south-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -376,7 +376,7 @@ mod test {
             .region("sa-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -396,7 +396,7 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -416,7 +416,7 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -436,7 +436,7 @@ mod test {
             .region("us-east-2".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -456,7 +456,7 @@ mod test {
             .region("us-east-2".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -476,7 +476,7 @@ mod test {
             .region("us-west-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -496,7 +496,7 @@ mod test {
             .region("us-west-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -516,7 +516,7 @@ mod test {
             .region("us-west-2".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -536,7 +536,7 @@ mod test {
             .region("us-west-2".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -556,7 +556,7 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -576,7 +576,7 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -596,7 +596,7 @@ mod test {
             .region("cn-north-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -616,7 +616,7 @@ mod test {
             .region("cn-northwest-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -636,7 +636,7 @@ mod test {
             .region("cn-north-1".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -656,7 +656,7 @@ mod test {
             .region("cn-north-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -676,7 +676,7 @@ mod test {
             .region("cn-north-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -696,7 +696,7 @@ mod test {
             .region("us-gov-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -716,7 +716,7 @@ mod test {
             .region("us-gov-east-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -736,7 +736,7 @@ mod test {
             .region("us-gov-west-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -756,7 +756,7 @@ mod test {
             .region("us-gov-west-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -776,7 +776,7 @@ mod test {
             .region("us-gov-east-1".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -796,7 +796,7 @@ mod test {
             .region("us-gov-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -816,7 +816,7 @@ mod test {
             .region("us-iso-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -836,7 +836,7 @@ mod test {
             .region("us-iso-west-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -856,7 +856,7 @@ mod test {
             .region("us-iso-east-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -876,7 +876,7 @@ mod test {
             .region("us-isob-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -896,7 +896,7 @@ mod test {
             .region("us-isob-east-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -917,7 +917,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .endpoint("https://example.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -935,7 +935,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .endpoint("https://example.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -954,7 +954,7 @@ mod test {
             .use_fips(true)
             .use_dual_stack(false)
             .endpoint("https://example.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -970,7 +970,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(true)
             .endpoint("https://example.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -984,7 +984,9 @@ mod test {
     /// Missing region
     #[test]
     fn test_49() {
-        let params = crate::config::endpoint::Params::builder().build().expect("invalid params");
+        let params = crate::config::endpoint::Params::builder()
+            .build_without_validators()
+            .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let error = endpoint.expect_err("expected error: Invalid Configuration: Missing Region [Missing region]");
@@ -999,7 +1001,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .stream_arn("arn".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1015,7 +1017,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .stream_arn("arn::kinesis:us-west-2:123456789012:stream/testStream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1031,7 +1033,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .stream_arn("arn:aws:kinesis:us-west-2:123456789012:stream/testStream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1051,7 +1053,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .stream_arn("arn:aws:s3:us-west-2:123456789012:stream/testStream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1068,7 +1070,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .stream_arn("arn:aws:kinesis::123456789012:stream/testStream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1084,7 +1086,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .stream_arn("arn:aws:kinesis:  :123456789012:stream/testStream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1101,7 +1103,7 @@ mod test {
             .use_dual_stack(false)
             .stream_arn("arn:aws:kinesis:us-east-1::stream/testStream".to_string())
             .operation_type("control".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1118,7 +1120,7 @@ mod test {
             .use_dual_stack(false)
             .stream_arn("arn:aws:kinesis:us-east-1:   :stream/testStream".to_string())
             .operation_type("control".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1134,7 +1136,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .stream_arn("arn:aws:kinesis:us-east-1:123:accesspoint/testStream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1150,7 +1152,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .stream_arn("arn:aws:kinesis:us-east-1:123456789012:stream/testStream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1172,7 +1174,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
             .endpoint("https://example.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1192,7 +1194,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1214,7 +1216,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1236,7 +1238,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1258,7 +1260,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1280,7 +1282,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("control".to_string())
             .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1302,7 +1304,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("data".to_string())
             .stream_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1324,7 +1326,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .stream_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1346,7 +1348,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .stream_arn("arn:aws:kinesis:us-west-1:123:stream/testStream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1368,7 +1370,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .stream_arn("arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1390,7 +1392,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("data".to_string())
             .stream_arn("arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1412,7 +1414,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .stream_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1434,7 +1436,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .stream_arn("arn:aws-iso:kinesis:us-iso-west-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1456,7 +1458,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .stream_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1478,7 +1480,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .stream_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1500,7 +1502,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .stream_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1521,7 +1523,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .consumer_arn("arn".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1537,7 +1539,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .consumer_arn("arn::kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1553,7 +1555,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .consumer_arn("arn:aws:kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1573,7 +1575,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .consumer_arn("arn:aws:s3:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1590,7 +1592,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .consumer_arn("arn:aws:kinesis::123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1606,7 +1608,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .consumer_arn("arn:aws:kinesis:  :123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1623,7 +1625,7 @@ mod test {
             .use_dual_stack(false)
             .consumer_arn("arn:aws:kinesis:us-east-1::stream/testStream/consumer/test-consumer:1525898737".to_string())
             .operation_type("control".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1640,7 +1642,7 @@ mod test {
             .use_dual_stack(false)
             .consumer_arn("arn:aws:kinesis:us-east-1:   :stream/testStream/consumer/test-consumer:1525898737".to_string())
             .operation_type("control".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1656,7 +1658,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .consumer_arn("arn:aws:kinesis:us-east-1:123:accesspoint/testStream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1672,7 +1674,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .consumer_arn("arn:aws:kinesis:us-east-1:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1694,7 +1696,7 @@ mod test {
             .operation_type("control".to_string())
             .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
             .endpoint("https://example.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1714,7 +1716,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1736,7 +1738,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1758,7 +1760,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1780,7 +1782,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1802,7 +1804,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("control".to_string())
             .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1824,7 +1826,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("data".to_string())
             .consumer_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1846,7 +1848,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .consumer_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1868,7 +1870,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .consumer_arn("arn:aws:kinesis:us-west-1:123:stream/testStream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1890,7 +1892,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .consumer_arn("arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1912,7 +1914,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("data".to_string())
             .consumer_arn("arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1934,7 +1936,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .consumer_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1956,7 +1958,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .consumer_arn("arn:aws-iso:kinesis:us-iso-west-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1978,7 +1980,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .consumer_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2000,7 +2002,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .consumer_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2022,7 +2024,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .consumer_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2044,7 +2046,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .consumer_arn("arn:aws:kinesis:us-east-1:123456789123:stream/foobar/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2067,7 +2069,7 @@ mod test {
             .operation_type("data".to_string())
             .stream_arn("arn:aws:kinesis:us-east-1:123:stream/foobar".to_string())
             .consumer_arn("arn:aws:kinesis:us-east-1:123456789123:stream/foobar/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2088,7 +2090,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .resource_arn("arn".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2104,7 +2106,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .resource_arn("arn::kinesis:us-west-2:123456789012:stream/testStream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2122,7 +2124,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .resource_arn("arn:aws:kinesis:us-west-2:123456789012:stream/testStream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2141,7 +2143,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .resource_arn("arn:aws:s3:us-west-2:123456789012:stream/testStream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2157,7 +2159,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .resource_arn("arn:aws:kinesis::123456789012:stream/testStream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2174,7 +2176,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .resource_arn("arn:aws:kinesis:  :123456789012:stream/testStream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2192,7 +2194,7 @@ mod test {
             .use_dual_stack(false)
             .resource_arn("arn:aws:kinesis:us-east-1::stream/testStream".to_string())
             .operation_type("control".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2210,7 +2212,7 @@ mod test {
             .use_dual_stack(false)
             .resource_arn("arn:aws:kinesis:us-east-1:   :stream/testStream".to_string())
             .operation_type("control".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2227,7 +2229,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .resource_arn("arn:aws:kinesis:us-east-1:123:accesspoint/testStream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2246,7 +2248,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .resource_arn("arn:aws:kinesis:us-east-1:123456789012:stream/testStream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2267,7 +2269,7 @@ mod test {
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
             .endpoint("https://example.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2287,7 +2289,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2309,7 +2311,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2331,7 +2333,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2353,7 +2355,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2375,7 +2377,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2397,7 +2399,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("data".to_string())
             .resource_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2419,7 +2421,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2441,7 +2443,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .resource_arn("arn:aws:kinesis:us-west-1:123:stream/testStream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2463,7 +2465,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .resource_arn("arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2485,7 +2487,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("data".to_string())
             .resource_arn("arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2507,7 +2509,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2529,7 +2531,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws-iso:kinesis:us-iso-west-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2551,7 +2553,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .resource_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2573,7 +2575,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2595,7 +2597,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .resource_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2616,7 +2618,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .resource_arn("arn::kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2634,7 +2636,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .resource_arn("arn:aws:kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2653,7 +2655,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .resource_arn("arn:aws:s3:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2669,7 +2671,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .resource_arn("arn:aws:kinesis::123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2686,7 +2688,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .resource_arn("arn:aws:kinesis:  :123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2704,7 +2706,7 @@ mod test {
             .use_dual_stack(false)
             .resource_arn("arn:aws:kinesis:us-east-1::stream/testStream/consumer/test-consumer:1525898737".to_string())
             .operation_type("control".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2722,7 +2724,7 @@ mod test {
             .use_dual_stack(false)
             .resource_arn("arn:aws:kinesis:us-east-1:   :stream/testStream/consumer/test-consumer:1525898737".to_string())
             .operation_type("control".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2739,7 +2741,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .resource_arn("arn:aws:kinesis:us-east-1:123:accesspoint/testStream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2758,7 +2760,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .resource_arn("arn:aws:kinesis:us-east-1:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2779,7 +2781,7 @@ mod test {
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
             .endpoint("https://example.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2799,7 +2801,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2821,7 +2823,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2843,7 +2845,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2865,7 +2867,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2887,7 +2889,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2909,7 +2911,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("data".to_string())
             .resource_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2931,7 +2933,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2953,7 +2955,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .resource_arn("arn:aws:kinesis:us-west-1:123:stream/testStream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2975,7 +2977,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .resource_arn("arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2997,7 +2999,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("data".to_string())
             .resource_arn("arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3019,7 +3021,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3041,7 +3043,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws-iso:kinesis:us-iso-west-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3063,7 +3065,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .resource_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3085,7 +3087,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3107,7 +3109,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .resource_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3129,7 +3131,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:298091445058:accesspoint/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3149,7 +3151,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:s3:us-east-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3166,7 +3168,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-west-2:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3185,7 +3187,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .resource_arn("arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3205,7 +3207,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:298091445058:channel".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3222,7 +3224,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8.ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3242,7 +3244,7 @@ mod test {
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
             .endpoint("https://example.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3262,7 +3264,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3284,7 +3286,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3306,7 +3308,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3328,7 +3330,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3350,7 +3352,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws:kinesis:us-west-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3372,7 +3374,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws-cn:kinesis:cn-northwest-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3394,7 +3396,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("control".to_string())
             .resource_arn("arn:aws-cn:kinesis:cn-northwest-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3417,7 +3419,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3439,7 +3441,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3460,7 +3462,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .stream_id("af4lwng4k01746835071-xyz".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3481,7 +3483,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3504,7 +3506,7 @@ mod test {
             .operation_type("data".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3527,7 +3529,7 @@ mod test {
             .operation_type("data".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3550,7 +3552,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3573,7 +3575,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3596,7 +3598,7 @@ mod test {
             .operation_type("data".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .stream_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3619,7 +3621,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .stream_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3642,7 +3644,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .endpoint("kinesis-pod1.us-east-1.amazonaws.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3665,7 +3667,7 @@ mod test {
             .operation_type("data".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .endpoint("kinesis-pod1.us-east-1.amazonaws.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3688,7 +3690,7 @@ mod test {
             .operation_type("data".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .endpoint("kinesis-pod1.us-east-1.amazonaws.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3711,7 +3713,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .endpoint("kinesis-pod1.us-east-1.amazonaws.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3734,7 +3736,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .endpoint("kinesis-pod1.us-east-1.amazonaws.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3757,7 +3759,7 @@ mod test {
             .operation_type("data".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .endpoint("kinesis-pod1.us-east-1.amazonaws.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3780,7 +3782,7 @@ mod test {
             .operation_type("data".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .endpoint("https://kinesis-pod1.us-east-1.amazonaws.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3803,7 +3805,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .endpoint("https://kinesis-pod1.us-east-1.amazonaws.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3826,7 +3828,7 @@ mod test {
             .operation_type("data".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .endpoint("https://kinesis-pod1.us-east-1.amazonaws.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3849,7 +3851,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .endpoint("https://kinesis-pod1.us-east-1.amazonaws.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3872,7 +3874,7 @@ mod test {
             .operation_type("data".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .endpoint("https://kinesis-pod1.us-east-1.amazonaws.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3895,7 +3897,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .endpoint("https://kinesis-pod1.us-east-1.amazonaws.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3918,7 +3920,7 @@ mod test {
             .operation_type("data".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .endpoint("https://kinesis-pod1.us-east-1.amazonaws.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3941,7 +3943,7 @@ mod test {
             .operation_type("data".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .endpoint("https://kinesis-pod2.us-west-2.amazonaws.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3964,7 +3966,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .endpoint("https://kinesis-pod2.us-west-2.amazonaws.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -3987,7 +3989,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4010,7 +4012,7 @@ mod test {
             .operation_type("data".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4033,7 +4035,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4056,7 +4058,7 @@ mod test {
             .operation_type("data".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4079,7 +4081,7 @@ mod test {
             .operation_type("data".to_string())
             .stream_id("af4lwng4k01746835071=xyz".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4102,7 +4104,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071=xyz".to_string())
             .endpoint("https://kinesis-pod2.us-west-2.amazonaws.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4124,7 +4126,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071=xyz".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4148,7 +4150,7 @@ mod test {
             .stream_id("af4lwng4k01746835071=xyz".to_string())
             .endpoint("https://kinesis-pod2.us-west-2.amazonaws.com".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4171,7 +4173,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k0174683507123-xyz".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4194,7 +4196,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835-xyz".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4217,7 +4219,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071-wxyz".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4240,7 +4242,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071-yz".to_string())
             .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4262,7 +4264,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .channel_arn("arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4284,7 +4286,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .channel_arn("arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4306,7 +4308,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("control".to_string())
             .channel_arn("arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4328,7 +4330,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("control".to_string())
             .channel_arn("arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4350,7 +4352,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .channel_arn("arn:aws:kinesis:us-east-1:298091445058:stream/test-stream".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4370,7 +4372,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .channel_arn("arn:aws:s3:us-east-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4386,7 +4388,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .channel_arn("arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4408,7 +4410,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .channel_arn("arn:aws:kinesis:us-west-2:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4430,7 +4432,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .channel_arn("arn:aws:kinesis:us-east-1:298091445058:channel".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4447,7 +4449,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .channel_arn("arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8.ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4468,7 +4470,7 @@ mod test {
             .channel_arn(
                 "arn:aws:kinesis:us-east-1:298091445058:channel/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa".to_string(),
             )
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4486,7 +4488,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .channel_arn("arn:aws:kinesis:us-east-1:298091445058:channel/-pu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4503,7 +4505,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .channel_arn("arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8_ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4521,7 +4523,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("data".to_string())
             .channel_arn("arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4539,7 +4541,7 @@ mod test {
             .operation_type("data".to_string())
             .account_id("012345678901".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4563,7 +4565,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123".to_string())
             .account_id_endpoint_mode("required".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4587,7 +4589,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4611,7 +4613,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4636,7 +4638,7 @@ mod test {
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .account_id("123".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4660,7 +4662,7 @@ mod test {
             .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
             .account_id("123".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4684,7 +4686,7 @@ mod test {
             .consumer_arn("arn:aws:kinesis:us-west-2:123:stream/testStream/consumer/test-consumer:1525898737".to_string())
             .account_id("123".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4708,7 +4710,7 @@ mod test {
             .resource_arn("arn:aws:kinesis:us-west-2:123:stream/testStream/consumer/test-consumer:1525898737".to_string())
             .account_id("123".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4732,7 +4734,7 @@ mod test {
             .resource_arn("arn:aws:kinesis:us-west-2:456:stream/testStream".to_string())
             .account_id("123".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4756,7 +4758,7 @@ mod test {
             .resource_arn("arn:aws:kinesis:us-west-2:456:stream/testStream/consumer/test-consumer:1525898737".to_string())
             .account_id("123".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4781,7 +4783,7 @@ mod test {
             .resource_arn("arn:aws:kinesis:us-west-2:456:stream/testStream/consumer/test-consumer:1525898737".to_string())
             .account_id("123".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4804,7 +4806,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123".to_string())
             .account_id_endpoint_mode("disabled".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4828,7 +4830,7 @@ mod test {
             .stream_arn("arn:aws:kinesis:us-west-2:456:stream/testStream".to_string())
             .account_id("123".to_string())
             .account_id_endpoint_mode("disabled".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4850,7 +4852,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .account_id_endpoint_mode("required".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4870,7 +4872,7 @@ mod test {
             .use_dual_stack(true)
             .operation_type("control".to_string())
             .account_id_endpoint_mode("required".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4890,7 +4892,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .account_id_endpoint_mode("required".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4911,7 +4913,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("required".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4932,7 +4934,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4955,7 +4957,7 @@ mod test {
             .operation_type("control".to_string())
             .endpoint("https://kinesis-pod1.us-west-2.amazonaws.com".to_string())
             .account_id_endpoint_mode("required".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -4978,7 +4980,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_arn("arn:aws:kinesis:us-west-2:456:stream/testStream".to_string())
             .account_id_endpoint_mode("required".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5001,7 +5003,7 @@ mod test {
             .operation_type("control".to_string())
             .stream_id("af4lwng4k01746835071-xyz".to_string())
             .account_id_endpoint_mode("required".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5023,7 +5025,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5045,7 +5047,7 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .account_id_endpoint_mode("disabled".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5068,7 +5070,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5092,7 +5094,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5116,7 +5118,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5140,7 +5142,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5164,7 +5166,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5188,7 +5190,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5212,7 +5214,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5236,7 +5238,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5260,7 +5262,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5284,7 +5286,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5308,7 +5310,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("disabled".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5331,7 +5333,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("disabled".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5354,7 +5356,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("disabled".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5377,7 +5379,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("disabled".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5400,7 +5402,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("disabled".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5423,7 +5425,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("disabled".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5446,7 +5448,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("disabled".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5469,7 +5471,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("disabled".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5492,7 +5494,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5516,7 +5518,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5540,7 +5542,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5564,7 +5566,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5588,7 +5590,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("disabled".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5611,7 +5613,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("disabled".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5634,7 +5636,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("disabled".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5657,7 +5659,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("disabled".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5680,7 +5682,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5704,7 +5706,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("preferred".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -5728,7 +5730,7 @@ mod test {
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
             .account_id_endpoint_mode("disabled".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -8821,6 +8823,12 @@ impl ParamsBuilder {
                 ));
             }
         };
+        self.build_without_validators()
+    }
+    /// Consume this builder, creating [`Params`] without the validators run by `build()`.
+    ///
+    /// Endpoint rule-set tests use this so they test the rules as the model defines them.
+    fn build_without_validators(self) -> ::std::result::Result<crate::config::endpoint::Params, crate::config::endpoint::InvalidParams> {
         Ok(
             #[allow(clippy::unnecessary_lazy_evaluations)]
             crate::config::endpoint::Params {

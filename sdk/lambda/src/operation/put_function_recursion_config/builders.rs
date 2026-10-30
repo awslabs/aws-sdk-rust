@@ -22,7 +22,7 @@ impl crate::operation::put_function_recursion_config::builders::PutFunctionRecur
 }
 /// Fluent builder constructing a request to `PutFunctionRecursionConfig`.
 ///
-/// <p>Sets your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-recursion.html">recursive loop detection</a> configuration.</p>
+/// <p>Sets the <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-recursion.html">recursive loop detection</a> configuration for a Lambda Event Function.</p>
 /// <p>When you configure a Lambda function to output to the same service or resource that invokes the function, it's possible to create an infinite recursive loop. For example, a Lambda function might write a message to an Amazon Simple Queue Service (Amazon SQS) queue, which then invokes the same function. This invocation causes the function to write another message to the queue, which in turn invokes the function again.</p>
 /// <p>Lambda can detect certain types of recursive loops shortly after they occur. When Lambda detects a recursive loop and your function's recursive loop detection configuration is set to <code>Terminate</code>, it stops your function being invoked and notifies you.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

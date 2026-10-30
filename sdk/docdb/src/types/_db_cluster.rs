@@ -78,6 +78,8 @@ pub struct DbCluster {
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The scaling configuration of an Amazon DocumentDB Serverless cluster.</p>
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
+    /// <p>The version of the Amazon DocumentDB Serverless platform used by the cluster.</p>
+    pub serverless_v2_platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The secret managed by Amazon DocumentDB in Amazon Web Services Secrets Manager for the master user password.</p>
     pub master_user_secret: ::std::option::Option<crate::types::ClusterMasterUserSecret>,
     /// <p>The network type of the cluster.</p>
@@ -245,6 +247,10 @@ impl DbCluster {
     pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfigurationInfo> {
         self.serverless_v2_scaling_configuration.as_ref()
     }
+    /// <p>The version of the Amazon DocumentDB Serverless platform used by the cluster.</p>
+    pub fn serverless_v2_platform_version(&self) -> ::std::option::Option<&str> {
+        self.serverless_v2_platform_version.as_deref()
+    }
     /// <p>The secret managed by Amazon DocumentDB in Amazon Web Services Secrets Manager for the master user password.</p>
     pub fn master_user_secret(&self) -> ::std::option::Option<&crate::types::ClusterMasterUserSecret> {
         self.master_user_secret.as_ref()
@@ -307,6 +313,7 @@ pub struct DbClusterBuilder {
     pub(crate) io_optimized_next_allowed_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
+    pub(crate) serverless_v2_platform_version: ::std::option::Option<::std::string::String>,
     pub(crate) master_user_secret: ::std::option::Option<crate::types::ClusterMasterUserSecret>,
     pub(crate) network_type: ::std::option::Option<::std::string::String>,
     pub(crate) copy_tags_to_snapshot: ::std::option::Option<bool>,
@@ -853,6 +860,20 @@ impl DbClusterBuilder {
     pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo> {
         &self.serverless_v2_scaling_configuration
     }
+    /// <p>The version of the Amazon DocumentDB Serverless platform used by the cluster.</p>
+    pub fn serverless_v2_platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.serverless_v2_platform_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the Amazon DocumentDB Serverless platform used by the cluster.</p>
+    pub fn set_serverless_v2_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.serverless_v2_platform_version = input;
+        self
+    }
+    /// <p>The version of the Amazon DocumentDB Serverless platform used by the cluster.</p>
+    pub fn get_serverless_v2_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serverless_v2_platform_version
+    }
     /// <p>The secret managed by Amazon DocumentDB in Amazon Web Services Secrets Manager for the master user password.</p>
     pub fn master_user_secret(mut self, input: crate::types::ClusterMasterUserSecret) -> Self {
         self.master_user_secret = ::std::option::Option::Some(input);
@@ -942,6 +963,7 @@ impl DbClusterBuilder {
             io_optimized_next_allowed_modification_time: self.io_optimized_next_allowed_modification_time,
             storage_type: self.storage_type,
             serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
+            serverless_v2_platform_version: self.serverless_v2_platform_version,
             master_user_secret: self.master_user_secret,
             network_type: self.network_type,
             copy_tags_to_snapshot: self.copy_tags_to_snapshot,

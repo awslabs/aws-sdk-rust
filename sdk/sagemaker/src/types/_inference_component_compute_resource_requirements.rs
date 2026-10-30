@@ -12,6 +12,8 @@ pub struct InferenceComponentComputeResourceRequirements {
     pub min_memory_required_in_mb: ::std::option::Option<i32>,
     /// <p>The maximum MB of memory to allocate to run a model that you assign to an inference component.</p>
     pub max_memory_required_in_mb: ::std::option::Option<i32>,
+    /// <p>The accelerator partition profile this inference component occupies; on NVIDIA GPUs this is a Multi-Instance GPU (MIG) profile such as <code>mig-3g.40gb</code>. It must be one of the partition profiles declared in the target endpoint's accelerator partition layout, and when set, <code>NumberOfAcceleratorDevicesRequired</code> must be <code>1</code>. This field is required when the endpoint's production variant has an accelerator partition layout. For endpoints without a layout, omit this field to place the inference component on a whole accelerator.</p>
+    pub accelerator_partition_type: ::std::option::Option<::std::string::String>,
 }
 impl InferenceComponentComputeResourceRequirements {
     /// <p>The number of CPU cores to allocate to run a model that you assign to an inference component.</p>
@@ -29,6 +31,10 @@ impl InferenceComponentComputeResourceRequirements {
     /// <p>The maximum MB of memory to allocate to run a model that you assign to an inference component.</p>
     pub fn max_memory_required_in_mb(&self) -> ::std::option::Option<i32> {
         self.max_memory_required_in_mb
+    }
+    /// <p>The accelerator partition profile this inference component occupies; on NVIDIA GPUs this is a Multi-Instance GPU (MIG) profile such as <code>mig-3g.40gb</code>. It must be one of the partition profiles declared in the target endpoint's accelerator partition layout, and when set, <code>NumberOfAcceleratorDevicesRequired</code> must be <code>1</code>. This field is required when the endpoint's production variant has an accelerator partition layout. For endpoints without a layout, omit this field to place the inference component on a whole accelerator.</p>
+    pub fn accelerator_partition_type(&self) -> ::std::option::Option<&str> {
+        self.accelerator_partition_type.as_deref()
     }
 }
 static INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_NUMBER_OF_CPU_CORES_REQUIRED: ::aws_smithy_schema::Schema<'static> =
@@ -75,6 +81,17 @@ static INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_MAX_MEMORY_REQUIRED_
         "MaxMemoryRequiredInMb",
         3,
     );
+static INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_ACCELERATOR_PARTITION_TYPE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#InferenceComponentComputeResourceRequirements$AcceleratorPartitionType",
+            "com.amazonaws.sagemaker",
+            "InferenceComponentComputeResourceRequirements",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "AcceleratorPartitionType",
+        4,
+    );
 static INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.sagemaker#InferenceComponentComputeResourceRequirements",
@@ -87,6 +104,7 @@ static INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_SCHEMA: ::aws_smithy_schema
         &INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_NUMBER_OF_ACCELERATOR_DEVICES_REQUIRED,
         &INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_MIN_MEMORY_REQUIRED_IN_MB,
         &INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_MAX_MEMORY_REQUIRED_IN_MB,
+        &INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_ACCELERATOR_PARTITION_TYPE,
     ],
 );
 impl InferenceComponentComputeResourceRequirements {
@@ -117,6 +135,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for InferenceComponentComput
         }
         if let Some(ref val) = self.max_memory_required_in_mb {
             ser.write_integer(&INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_MAX_MEMORY_REQUIRED_IN_MB, *val)?;
+        }
+        if let Some(ref val) = self.accelerator_partition_type {
+            ser.write_string(&INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_ACCELERATOR_PARTITION_TYPE, val)?;
         }
         Ok(())
     }
@@ -163,6 +184,13 @@ impl crate::types::builders::InferenceComponentComputeResourceRequirementsBuilde
                         self.max_memory_required_in_mb = Some(deser.read_integer(member)?);
                     }
                 }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator_partition_type = Some(deser.read_string(member)?);
+                    }
+                }
                 _ => {}
             }
             Ok(())
@@ -195,6 +223,7 @@ pub struct InferenceComponentComputeResourceRequirementsBuilder {
     pub(crate) number_of_accelerator_devices_required: ::std::option::Option<f32>,
     pub(crate) min_memory_required_in_mb: ::std::option::Option<i32>,
     pub(crate) max_memory_required_in_mb: ::std::option::Option<i32>,
+    pub(crate) accelerator_partition_type: ::std::option::Option<::std::string::String>,
 }
 impl InferenceComponentComputeResourceRequirementsBuilder {
     /// <p>The number of CPU cores to allocate to run a model that you assign to an inference component.</p>
@@ -254,6 +283,20 @@ impl InferenceComponentComputeResourceRequirementsBuilder {
     pub fn get_max_memory_required_in_mb(&self) -> &::std::option::Option<i32> {
         &self.max_memory_required_in_mb
     }
+    /// <p>The accelerator partition profile this inference component occupies; on NVIDIA GPUs this is a Multi-Instance GPU (MIG) profile such as <code>mig-3g.40gb</code>. It must be one of the partition profiles declared in the target endpoint's accelerator partition layout, and when set, <code>NumberOfAcceleratorDevicesRequired</code> must be <code>1</code>. This field is required when the endpoint's production variant has an accelerator partition layout. For endpoints without a layout, omit this field to place the inference component on a whole accelerator.</p>
+    pub fn accelerator_partition_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.accelerator_partition_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The accelerator partition profile this inference component occupies; on NVIDIA GPUs this is a Multi-Instance GPU (MIG) profile such as <code>mig-3g.40gb</code>. It must be one of the partition profiles declared in the target endpoint's accelerator partition layout, and when set, <code>NumberOfAcceleratorDevicesRequired</code> must be <code>1</code>. This field is required when the endpoint's production variant has an accelerator partition layout. For endpoints without a layout, omit this field to place the inference component on a whole accelerator.</p>
+    pub fn set_accelerator_partition_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.accelerator_partition_type = input;
+        self
+    }
+    /// <p>The accelerator partition profile this inference component occupies; on NVIDIA GPUs this is a Multi-Instance GPU (MIG) profile such as <code>mig-3g.40gb</code>. It must be one of the partition profiles declared in the target endpoint's accelerator partition layout, and when set, <code>NumberOfAcceleratorDevicesRequired</code> must be <code>1</code>. This field is required when the endpoint's production variant has an accelerator partition layout. For endpoints without a layout, omit this field to place the inference component on a whole accelerator.</p>
+    pub fn get_accelerator_partition_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accelerator_partition_type
+    }
     /// Consumes the builder and constructs a [`InferenceComponentComputeResourceRequirements`](crate::types::InferenceComponentComputeResourceRequirements).
     pub fn build(self) -> crate::types::InferenceComponentComputeResourceRequirements {
         crate::types::InferenceComponentComputeResourceRequirements {
@@ -261,6 +304,7 @@ impl InferenceComponentComputeResourceRequirementsBuilder {
             number_of_accelerator_devices_required: self.number_of_accelerator_devices_required,
             min_memory_required_in_mb: self.min_memory_required_in_mb,
             max_memory_required_in_mb: self.max_memory_required_in_mb,
+            accelerator_partition_type: self.accelerator_partition_type,
         }
     }
 }

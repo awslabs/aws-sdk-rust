@@ -755,6 +755,8 @@ pub(crate) mod shape_agentic_retrieve_action_details;
 
 pub(crate) mod shape_agentic_retrieve_citation_reference_list;
 
+pub(crate) mod shape_agentic_retrieve_code_execution_details;
+
 pub(crate) mod shape_agentic_retrieve_full_doc_expansion_details;
 
 pub(crate) mod shape_agentic_retrieve_guardrail_warning;
@@ -811,6 +813,8 @@ pub(crate) mod shape_agent_collaborator_output_payload;
 
 pub(crate) mod shape_agentic_retrieve_citation_reference;
 
+pub(crate) mod shape_agentic_retrieve_code_execution_document_list;
+
 pub(crate) mod shape_agentic_retrieve_source_retriever_list;
 
 pub(crate) mod shape_api_content_map;
@@ -846,6 +850,8 @@ pub(crate) mod shape_reasoning_text_block;
 pub(crate) mod shape_request_body;
 
 pub(crate) mod shape_stop_sequences;
+
+pub(crate) mod shape_agentic_retrieve_code_execution_document;
 
 pub(crate) mod shape_content_map;
 

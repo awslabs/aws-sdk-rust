@@ -29,7 +29,8 @@ impl super::Client {
     ///   - [`vpc_subnet_ids(Option<Vec::<String>>)`](crate::operation::get_db_cluster::GetDbClusterOutput::vpc_subnet_ids): <p>A list of VPC subnet IDs associated with the DB cluster.</p>
     ///   - [`vpc_security_group_ids(Option<Vec::<String>>)`](crate::operation::get_db_cluster::GetDbClusterOutput::vpc_security_group_ids): <p>A list of VPC security group IDs associated with the DB cluster.</p>
     ///   - [`failover_mode(Option<FailoverMode>)`](crate::operation::get_db_cluster::GetDbClusterOutput::failover_mode): <p>The configured failover mode for the DB cluster.</p>
-    ///   - [`cluster_configuration(Option<ClusterConfiguration>)`](crate::operation::get_db_cluster::GetDbClusterOutput::cluster_configuration): <p>Configuration for node modes in the DbCluster.</p>
+    ///   - [`cluster_configuration(Option<ClusterConfiguration>)`](crate::operation::get_db_cluster::GetDbClusterOutput::cluster_configuration): <p>Configuration for node modes in the DbCluster.</p> <p>Deprecated. Use deploymentConfiguration to view the cluster topology instead.</p>
+    ///   - [`deployment_configuration(Option<DeploymentConfiguration>)`](crate::operation::get_db_cluster::GetDbClusterOutput::deployment_configuration): <p>The current compute topology of the cluster, as a set of node groups. The returned topology reflects the cluster's actual provisioned nodes.</p>
     ///   - [`db_backup_configurations(Option<Vec::<DbBackupConfigurationOutput>>)`](crate::operation::get_db_cluster::GetDbClusterOutput::db_backup_configurations): <p>The backup configurations for the DB cluster.</p>
     ///   - [`kms_key_id(Option<String>)`](crate::operation::get_db_cluster::GetDbClusterOutput::kms_key_id): <p>The Amazon Web Services KMS key ARN used for encryption of the DB cluster.</p>
     /// - On failure, responds with [`SdkError<GetDbClusterError>`](crate::operation::get_db_cluster::GetDbClusterError)

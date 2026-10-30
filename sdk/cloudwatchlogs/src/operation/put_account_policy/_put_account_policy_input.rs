@@ -82,6 +82,9 @@ pub struct PutAccountPolicyInput {
     /// <p>The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
     /// <p>Using the <code>selectionCriteria</code> parameter with <code>SUBSCRIPTION_FILTER_POLICY</code> is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     pub selection_criteria: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to preview the impact of the policy without creating or updating it. If you specify <code>true</code>, CloudWatch Logs validates the request, does not save the policy, and returns the estimated impact in <code>dryRunResult</code> instead of <code>accountPolicy</code>. The default is <code>false</code>.</p>
+    /// <p>Specifying <code>dryRun</code> is valid only when you specify <code>RETENTION_POLICY</code> for <code>policyType</code>. Only one dry run can be in progress for an account at a time.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl PutAccountPolicyInput {
     /// <p>A name for the policy. This must be unique within the account and cannot start with <code>aws/</code>.</p>
@@ -173,6 +176,11 @@ impl PutAccountPolicyInput {
     pub fn selection_criteria(&self) -> ::std::option::Option<&str> {
         self.selection_criteria.as_deref()
     }
+    /// <p>Specifies whether to preview the impact of the policy without creating or updating it. If you specify <code>true</code>, CloudWatch Logs validates the request, does not save the policy, and returns the estimated impact in <code>dryRunResult</code> instead of <code>accountPolicy</code>. The default is <code>false</code>.</p>
+    /// <p>Specifying <code>dryRun</code> is valid only when you specify <code>RETENTION_POLICY</code> for <code>policyType</code>. Only one dry run can be in progress for an account at a time.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl PutAccountPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutAccountPolicyInput`](crate::operation::put_account_policy::PutAccountPolicyInput).
@@ -190,6 +198,7 @@ pub struct PutAccountPolicyInputBuilder {
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyType>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) selection_criteria: ::std::option::Option<::std::string::String>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl PutAccountPolicyInputBuilder {
     /// <p>A name for the policy. This must be unique within the account and cannot start with <code>aws/</code>.</p>
@@ -472,6 +481,23 @@ impl PutAccountPolicyInputBuilder {
     pub fn get_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {
         &self.selection_criteria
     }
+    /// <p>Specifies whether to preview the impact of the policy without creating or updating it. If you specify <code>true</code>, CloudWatch Logs validates the request, does not save the policy, and returns the estimated impact in <code>dryRunResult</code> instead of <code>accountPolicy</code>. The default is <code>false</code>.</p>
+    /// <p>Specifying <code>dryRun</code> is valid only when you specify <code>RETENTION_POLICY</code> for <code>policyType</code>. Only one dry run can be in progress for an account at a time.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to preview the impact of the policy without creating or updating it. If you specify <code>true</code>, CloudWatch Logs validates the request, does not save the policy, and returns the estimated impact in <code>dryRunResult</code> instead of <code>accountPolicy</code>. The default is <code>false</code>.</p>
+    /// <p>Specifying <code>dryRun</code> is valid only when you specify <code>RETENTION_POLICY</code> for <code>policyType</code>. Only one dry run can be in progress for an account at a time.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Specifies whether to preview the impact of the policy without creating or updating it. If you specify <code>true</code>, CloudWatch Logs validates the request, does not save the policy, and returns the estimated impact in <code>dryRunResult</code> instead of <code>accountPolicy</code>. The default is <code>false</code>.</p>
+    /// <p>Specifying <code>dryRun</code> is valid only when you specify <code>RETENTION_POLICY</code> for <code>policyType</code>. Only one dry run can be in progress for an account at a time.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`PutAccountPolicyInput`](crate::operation::put_account_policy::PutAccountPolicyInput).
     pub fn build(
         self,
@@ -482,6 +508,7 @@ impl PutAccountPolicyInputBuilder {
             policy_type: self.policy_type,
             scope: self.scope,
             selection_criteria: self.selection_criteria,
+            dry_run: self.dry_run,
         })
     }
 }

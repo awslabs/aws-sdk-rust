@@ -22,7 +22,7 @@ impl crate::operation::delete_function_concurrency::builders::DeleteFunctionConc
 }
 /// Fluent builder constructing a request to `DeleteFunctionConcurrency`.
 ///
-/// <p>Removes a concurrent execution limit from a function.</p>
+/// <p>Removes a concurrent execution limit from a Lambda Event Function.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFunctionConcurrencyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

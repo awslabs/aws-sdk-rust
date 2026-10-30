@@ -13,6 +13,7 @@
 /// # let preevaluationfilterresourcetype = unimplemented!();
 /// match preevaluationfilterresourcetype {
 ///     PreEvaluationFilterResourceType::Contact => { /* ... */ },
+///     PreEvaluationFilterResourceType::ContactEvaluation => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum PreEvaluationFilterResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Contact,
+    #[allow(missing_docs)] // documentation missing in model
+    ContactEvaluation,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for PreEvaluationFilterResourceType {
     fn from(s: &str) -> Self {
         match s {
             "CONTACT" => PreEvaluationFilterResourceType::Contact,
+            "CONTACT_EVALUATION" => PreEvaluationFilterResourceType::ContactEvaluation,
             other => PreEvaluationFilterResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl PreEvaluationFilterResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             PreEvaluationFilterResourceType::Contact => "CONTACT",
+            PreEvaluationFilterResourceType::ContactEvaluation => "CONTACT_EVALUATION",
             PreEvaluationFilterResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONTACT"]
+        &["CONTACT", "CONTACT_EVALUATION"]
     }
 }
 impl ::std::convert::AsRef<str> for PreEvaluationFilterResourceType {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for PreEvaluationFilterResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PreEvaluationFilterResourceType::Contact => write!(f, "CONTACT"),
+            PreEvaluationFilterResourceType::ContactEvaluation => write!(f, "CONTACT_EVALUATION"),
             PreEvaluationFilterResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

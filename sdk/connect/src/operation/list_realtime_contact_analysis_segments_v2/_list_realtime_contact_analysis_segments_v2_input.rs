@@ -15,6 +15,8 @@ pub struct ListRealtimeContactAnalysisSegmentsV2Input {
     pub output_type: ::std::option::Option<crate::types::RealTimeContactAnalysisOutputType>,
     /// <p>Enum with segment types . Each value corresponds to a segment type returned in the segments list of the API. Each segment type has its own structure. Different channels may have different sets of supported segment types.</p>
     pub segment_types: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisSegmentType>>,
+    /// <p>A filter that restricts the segments returned by the API. When <code>SegmentTypes</code> includes <code>Categories</code>, use <code>CategoriesAttributeFilter</code> to return only the category segments whose rules have tags that match the filter. This enforces tag-based access control on the categories a caller can view.</p>
+    pub list_filter: ::std::option::Option<crate::types::RealTimeContactAnalysisSegmentsFilter>,
 }
 impl ListRealtimeContactAnalysisSegmentsV2Input {
     /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -43,6 +45,10 @@ impl ListRealtimeContactAnalysisSegmentsV2Input {
     pub fn segment_types(&self) -> &[crate::types::RealTimeContactAnalysisSegmentType] {
         self.segment_types.as_deref().unwrap_or_default()
     }
+    /// <p>A filter that restricts the segments returned by the API. When <code>SegmentTypes</code> includes <code>Categories</code>, use <code>CategoriesAttributeFilter</code> to return only the category segments whose rules have tags that match the filter. This enforces tag-based access control on the categories a caller can view.</p>
+    pub fn list_filter(&self) -> ::std::option::Option<&crate::types::RealTimeContactAnalysisSegmentsFilter> {
+        self.list_filter.as_ref()
+    }
 }
 impl ListRealtimeContactAnalysisSegmentsV2Input {
     /// Creates a new builder-style object to manufacture [`ListRealtimeContactAnalysisSegmentsV2Input`](crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Input).
@@ -61,6 +67,7 @@ pub struct ListRealtimeContactAnalysisSegmentsV2InputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) output_type: ::std::option::Option<crate::types::RealTimeContactAnalysisOutputType>,
     pub(crate) segment_types: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisSegmentType>>,
+    pub(crate) list_filter: ::std::option::Option<crate::types::RealTimeContactAnalysisSegmentsFilter>,
 }
 impl ListRealtimeContactAnalysisSegmentsV2InputBuilder {
     /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -156,6 +163,20 @@ impl ListRealtimeContactAnalysisSegmentsV2InputBuilder {
     pub fn get_segment_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisSegmentType>> {
         &self.segment_types
     }
+    /// <p>A filter that restricts the segments returned by the API. When <code>SegmentTypes</code> includes <code>Categories</code>, use <code>CategoriesAttributeFilter</code> to return only the category segments whose rules have tags that match the filter. This enforces tag-based access control on the categories a caller can view.</p>
+    pub fn list_filter(mut self, input: crate::types::RealTimeContactAnalysisSegmentsFilter) -> Self {
+        self.list_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A filter that restricts the segments returned by the API. When <code>SegmentTypes</code> includes <code>Categories</code>, use <code>CategoriesAttributeFilter</code> to return only the category segments whose rules have tags that match the filter. This enforces tag-based access control on the categories a caller can view.</p>
+    pub fn set_list_filter(mut self, input: ::std::option::Option<crate::types::RealTimeContactAnalysisSegmentsFilter>) -> Self {
+        self.list_filter = input;
+        self
+    }
+    /// <p>A filter that restricts the segments returned by the API. When <code>SegmentTypes</code> includes <code>Categories</code>, use <code>CategoriesAttributeFilter</code> to return only the category segments whose rules have tags that match the filter. This enforces tag-based access control on the categories a caller can view.</p>
+    pub fn get_list_filter(&self) -> &::std::option::Option<crate::types::RealTimeContactAnalysisSegmentsFilter> {
+        &self.list_filter
+    }
     /// Consumes the builder and constructs a [`ListRealtimeContactAnalysisSegmentsV2Input`](crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Input).
     pub fn build(
         self,
@@ -171,6 +192,7 @@ impl ListRealtimeContactAnalysisSegmentsV2InputBuilder {
                 next_token: self.next_token,
                 output_type: self.output_type,
                 segment_types: self.segment_types,
+                list_filter: self.list_filter,
             },
         )
     }

@@ -1391,6 +1391,8 @@ pub use crate::types::_production_variant_managed_instance_scaling_scale_in_poli
 
 pub use crate::types::_prefix_aware_routing_config::PrefixAwareRoutingConfigBuilder;
 
+pub use crate::types::_accelerator_partition_layout::AcceleratorPartitionLayoutBuilder;
+
 pub use crate::types::_clarify_shap_baseline_config::ClarifyShapBaselineConfigBuilder;
 
 pub use crate::types::_clarify_text_config::ClarifyTextConfigBuilder;

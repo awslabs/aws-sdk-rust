@@ -165,18 +165,35 @@ impl UpdateDbClusterFluentBuilder {
         self.inner.get_port()
     }
     /// <p>Update the DB cluster to use the specified DB instance Type.</p>
+    /// <p>You can't specify both dbInstanceType and deploymentConfiguration in the same request. When you use deploymentConfiguration, the instance type is specified per node group.</p>
     pub fn db_instance_type(mut self, input: crate::types::DbInstanceType) -> Self {
         self.inner = self.inner.db_instance_type(input);
         self
     }
     /// <p>Update the DB cluster to use the specified DB instance Type.</p>
+    /// <p>You can't specify both dbInstanceType and deploymentConfiguration in the same request. When you use deploymentConfiguration, the instance type is specified per node group.</p>
     pub fn set_db_instance_type(mut self, input: ::std::option::Option<crate::types::DbInstanceType>) -> Self {
         self.inner = self.inner.set_db_instance_type(input);
         self
     }
     /// <p>Update the DB cluster to use the specified DB instance Type.</p>
+    /// <p>You can't specify both dbInstanceType and deploymentConfiguration in the same request. When you use deploymentConfiguration, the instance type is specified per node group.</p>
     pub fn get_db_instance_type(&self) -> &::std::option::Option<crate::types::DbInstanceType> {
         self.inner.get_db_instance_type()
+    }
+    /// <p>The updated compute topology for the cluster, defined as a set of node groups. Use deploymentConfiguration to change the cluster's topology or scale its compute in a single call. You can't specify both deploymentConfiguration and dbInstanceType in the same request. When you provide a deployment configuration, Timestream for InfluxDB ignores any node-count parameters in the associated DB parameter group.</p>
+    pub fn deployment_configuration(mut self, input: crate::types::DeploymentConfiguration) -> Self {
+        self.inner = self.inner.deployment_configuration(input);
+        self
+    }
+    /// <p>The updated compute topology for the cluster, defined as a set of node groups. Use deploymentConfiguration to change the cluster's topology or scale its compute in a single call. You can't specify both deploymentConfiguration and dbInstanceType in the same request. When you provide a deployment configuration, Timestream for InfluxDB ignores any node-count parameters in the associated DB parameter group.</p>
+    pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::DeploymentConfiguration>) -> Self {
+        self.inner = self.inner.set_deployment_configuration(input);
+        self
+    }
+    /// <p>The updated compute topology for the cluster, defined as a set of node groups. Use deploymentConfiguration to change the cluster's topology or scale its compute in a single call. You can't specify both deploymentConfiguration and dbInstanceType in the same request. When you provide a deployment configuration, Timestream for InfluxDB ignores any node-count parameters in the associated DB parameter group.</p>
+    pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
+        self.inner.get_deployment_configuration()
     }
     /// <p>Update the DB cluster's failover behavior.</p>
     pub fn failover_mode(mut self, input: crate::types::FailoverMode) -> Self {

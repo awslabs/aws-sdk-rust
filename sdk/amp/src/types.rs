@@ -101,6 +101,8 @@ pub use crate::types::_workspace_configuration_status_code::WorkspaceConfigurati
 
 pub use crate::types::_open_search_exporter_configuration::OpenSearchExporterConfiguration;
 
+pub use crate::types::_kafka_exporter_configuration::KafkaExporterConfiguration;
+
 pub use crate::types::_scraper_component_type::ScraperComponentType;
 
 pub use crate::types::_component_config::ComponentConfig;
@@ -144,6 +146,8 @@ mod _eks_configuration;
 mod _exporter_configuration;
 
 mod _ignore_near_expected;
+
+mod _kafka_exporter_configuration;
 
 mod _limits_per_label_set;
 

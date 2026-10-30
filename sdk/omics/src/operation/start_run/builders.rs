@@ -478,4 +478,18 @@ impl StartRunFluentBuilder {
     pub fn get_engine_settings(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         self.inner.get_engine_settings()
     }
+    /// <p>You can control the path prefixes that the service adds beneath <code>outputUri</code>. If you don't specify a value, the service uses <code>SERVICE_DEFINED</code>, which adds a run-specific prefix.</p>
+    pub fn output_uri_prefix_mode(mut self, input: crate::types::RunOutputUriPrefixMode) -> Self {
+        self.inner = self.inner.output_uri_prefix_mode(input);
+        self
+    }
+    /// <p>You can control the path prefixes that the service adds beneath <code>outputUri</code>. If you don't specify a value, the service uses <code>SERVICE_DEFINED</code>, which adds a run-specific prefix.</p>
+    pub fn set_output_uri_prefix_mode(mut self, input: ::std::option::Option<crate::types::RunOutputUriPrefixMode>) -> Self {
+        self.inner = self.inner.set_output_uri_prefix_mode(input);
+        self
+    }
+    /// <p>You can control the path prefixes that the service adds beneath <code>outputUri</code>. If you don't specify a value, the service uses <code>SERVICE_DEFINED</code>, which adds a run-specific prefix.</p>
+    pub fn get_output_uri_prefix_mode(&self) -> &::std::option::Option<crate::types::RunOutputUriPrefixMode> {
+        self.inner.get_output_uri_prefix_mode()
+    }
 }

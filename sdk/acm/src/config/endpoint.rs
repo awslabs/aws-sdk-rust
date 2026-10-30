@@ -37,7 +37,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -58,7 +58,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -79,7 +79,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -100,7 +100,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -121,7 +121,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -142,7 +142,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -163,7 +163,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -184,7 +184,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -205,7 +205,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -226,7 +226,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -247,7 +247,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -268,7 +268,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -289,7 +289,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -310,7 +310,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -331,7 +331,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -352,7 +352,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -373,7 +373,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -394,7 +394,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -415,7 +415,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -436,7 +436,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -457,7 +457,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -478,7 +478,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -499,7 +499,7 @@ mod test {
             .use_fips(true)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -520,7 +520,7 @@ mod test {
             .use_fips(true)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -541,7 +541,7 @@ mod test {
             .use_fips(true)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -562,7 +562,7 @@ mod test {
             .use_fips(true)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -583,7 +583,7 @@ mod test {
             .use_fips(true)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -604,7 +604,7 @@ mod test {
             .use_fips(true)
             .use_dual_stack(true)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -625,7 +625,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(true)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -646,7 +646,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -667,7 +667,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -688,7 +688,7 @@ mod test {
             .use_fips(true)
             .use_dual_stack(true)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -709,7 +709,7 @@ mod test {
             .use_fips(true)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -730,7 +730,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(true)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -751,7 +751,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -772,7 +772,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -793,7 +793,7 @@ mod test {
             .use_fips(true)
             .use_dual_stack(true)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -814,7 +814,7 @@ mod test {
             .use_fips(true)
             .use_dual_stack(false)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -835,7 +835,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(true)
             .service_type("ACM".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -857,7 +857,7 @@ mod test {
             .use_dual_stack(false)
             .service_type("ACM".to_string())
             .endpoint("https://example.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -877,7 +877,7 @@ mod test {
             .use_dual_stack(false)
             .service_type("ACM".to_string())
             .endpoint("https://example.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -897,7 +897,7 @@ mod test {
             .use_dual_stack(true)
             .service_type("ACM".to_string())
             .endpoint("https://example.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -916,7 +916,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM-ACME".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -937,7 +937,7 @@ mod test {
             .use_fips(true)
             .use_dual_stack(false)
             .service_type("ACM-ACME".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -954,7 +954,7 @@ mod test {
             .use_dual_stack(false)
             .service_type("ACM-ACME".to_string())
             .endpoint("https://custom.example.com".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -975,7 +975,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM-ACME".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -996,7 +996,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM-ACME".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1017,7 +1017,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM-ACME".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1036,7 +1036,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(false)
             .service_type("ACM-ACME".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1055,7 +1055,7 @@ mod test {
             .use_fips(false)
             .use_dual_stack(true)
             .service_type("ACM-ACME".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1076,7 +1076,7 @@ mod test {
             .use_fips(true)
             .use_dual_stack(false)
             .service_type("ACM-ACME".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1515,6 +1515,12 @@ impl ParamsBuilder {
                 ));
             }
         };
+        self.build_without_validators()
+    }
+    /// Consume this builder, creating [`Params`] without the validators run by `build()`.
+    ///
+    /// Endpoint rule-set tests use this so they test the rules as the model defines them.
+    fn build_without_validators(self) -> ::std::result::Result<crate::config::endpoint::Params, crate::config::endpoint::InvalidParams> {
         Ok(
             #[allow(clippy::unnecessary_lazy_evaluations)]
             crate::config::endpoint::Params {

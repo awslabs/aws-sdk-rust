@@ -129,6 +129,9 @@ pub(crate) fn de_put_account_policy(
                 "accountPolicy" => {
                     builder = builder.set_account_policy(crate::protocol_serde::shape_account_policy::de_account_policy(tokens, _value, depth + 1)?);
                 }
+                "dryRunResult" => {
+                    builder = builder.set_dry_run_result(crate::protocol_serde::shape_dry_run_result::de_dry_run_result(tokens, _value, depth + 1)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

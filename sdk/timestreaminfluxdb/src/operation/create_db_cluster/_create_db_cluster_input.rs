@@ -21,6 +21,7 @@ pub struct CreateDbClusterInput {
     /// <p>The ID of the DB parameter group to assign to your DB cluster. DB parameter groups specify how the database is configured. For example, DB parameter groups can specify the limit for query concurrency.</p>
     pub db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
+    /// <p>Optional when you define the cluster topology with deploymentConfiguration, because the instance type is then specified per node group.</p>
     pub db_instance_type: ::std::option::Option<crate::types::DbInstanceType>,
     /// <p>The Timestream for InfluxDB DB storage type to read and write InfluxDB data.</p>
     /// <p>You can choose between three different types of provisioned Influx IOPS Included storage according to your workload requirements:</p>
@@ -45,6 +46,8 @@ pub struct CreateDbClusterInput {
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the type of cluster to create.</p>
     pub deployment_type: ::std::option::Option<crate::types::ClusterDeploymentType>,
+    /// <p>The compute topology for the cluster, defined as a set of node groups. Use deploymentConfiguration to allocate compute per function: ingest, query, compaction, and processing. A deployment configuration becomes the source of truth for the cluster's topology. Timestream for InfluxDB then ignores any node-count parameters in the associated DB parameter group.</p>
+    pub deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
     /// <p>Specifies the behavior of failure recovery when the primary node of the cluster fails.</p>
     pub failover_mode: ::std::option::Option<crate::types::FailoverMode>,
     /// <p>Configuration for sending InfluxDB engine logs to a specified S3 bucket.</p>
@@ -91,6 +94,7 @@ impl CreateDbClusterInput {
         self.db_parameter_group_identifier.as_deref()
     }
     /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
+    /// <p>Optional when you define the cluster topology with deploymentConfiguration, because the instance type is then specified per node group.</p>
     pub fn db_instance_type(&self) -> ::std::option::Option<&crate::types::DbInstanceType> {
         self.db_instance_type.as_ref()
     }
@@ -134,6 +138,10 @@ impl CreateDbClusterInput {
     /// <p>Specifies the type of cluster to create.</p>
     pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::ClusterDeploymentType> {
         self.deployment_type.as_ref()
+    }
+    /// <p>The compute topology for the cluster, defined as a set of node groups. Use deploymentConfiguration to allocate compute per function: ingest, query, compaction, and processing. A deployment configuration becomes the source of truth for the cluster's topology. Timestream for InfluxDB then ignores any node-count parameters in the associated DB parameter group.</p>
+    pub fn deployment_configuration(&self) -> ::std::option::Option<&crate::types::DeploymentConfiguration> {
+        self.deployment_configuration.as_ref()
     }
     /// <p>Specifies the behavior of failure recovery when the primary node of the cluster fails.</p>
     pub fn failover_mode(&self) -> ::std::option::Option<&crate::types::FailoverMode> {
@@ -180,6 +188,7 @@ impl ::std::fmt::Debug for CreateDbClusterInput {
         formatter.field("vpc_subnet_ids", &self.vpc_subnet_ids);
         formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
         formatter.field("deployment_type", &self.deployment_type);
+        formatter.field("deployment_configuration", &self.deployment_configuration);
         formatter.field("failover_mode", &self.failover_mode);
         formatter.field("log_delivery_configuration", &self.log_delivery_configuration);
         formatter.field("maintenance_schedule", &self.maintenance_schedule);
@@ -215,6 +224,7 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) deployment_type: ::std::option::Option<crate::types::ClusterDeploymentType>,
+    pub(crate) deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
     pub(crate) failover_mode: ::std::option::Option<crate::types::FailoverMode>,
     pub(crate) log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
     pub(crate) maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
@@ -332,17 +342,19 @@ impl CreateDbClusterInputBuilder {
         &self.db_parameter_group_identifier
     }
     /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
-    /// This field is required.
+    /// <p>Optional when you define the cluster topology with deploymentConfiguration, because the instance type is then specified per node group.</p>
     pub fn db_instance_type(mut self, input: crate::types::DbInstanceType) -> Self {
         self.db_instance_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
+    /// <p>Optional when you define the cluster topology with deploymentConfiguration, because the instance type is then specified per node group.</p>
     pub fn set_db_instance_type(mut self, input: ::std::option::Option<crate::types::DbInstanceType>) -> Self {
         self.db_instance_type = input;
         self
     }
     /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
+    /// <p>Optional when you define the cluster topology with deploymentConfiguration, because the instance type is then specified per node group.</p>
     pub fn get_db_instance_type(&self) -> &::std::option::Option<crate::types::DbInstanceType> {
         &self.db_instance_type
     }
@@ -483,6 +495,20 @@ impl CreateDbClusterInputBuilder {
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::ClusterDeploymentType> {
         &self.deployment_type
     }
+    /// <p>The compute topology for the cluster, defined as a set of node groups. Use deploymentConfiguration to allocate compute per function: ingest, query, compaction, and processing. A deployment configuration becomes the source of truth for the cluster's topology. Timestream for InfluxDB then ignores any node-count parameters in the associated DB parameter group.</p>
+    pub fn deployment_configuration(mut self, input: crate::types::DeploymentConfiguration) -> Self {
+        self.deployment_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The compute topology for the cluster, defined as a set of node groups. Use deploymentConfiguration to allocate compute per function: ingest, query, compaction, and processing. A deployment configuration becomes the source of truth for the cluster's topology. Timestream for InfluxDB then ignores any node-count parameters in the associated DB parameter group.</p>
+    pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::DeploymentConfiguration>) -> Self {
+        self.deployment_configuration = input;
+        self
+    }
+    /// <p>The compute topology for the cluster, defined as a set of node groups. Use deploymentConfiguration to allocate compute per function: ingest, query, compaction, and processing. A deployment configuration becomes the source of truth for the cluster's topology. Timestream for InfluxDB then ignores any node-count parameters in the associated DB parameter group.</p>
+    pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
+        &self.deployment_configuration
+    }
     /// <p>Specifies the behavior of failure recovery when the primary node of the cluster fails.</p>
     pub fn failover_mode(mut self, input: crate::types::FailoverMode) -> Self {
         self.failover_mode = ::std::option::Option::Some(input);
@@ -599,6 +625,7 @@ impl CreateDbClusterInputBuilder {
             vpc_subnet_ids: self.vpc_subnet_ids,
             vpc_security_group_ids: self.vpc_security_group_ids,
             deployment_type: self.deployment_type,
+            deployment_configuration: self.deployment_configuration,
             failover_mode: self.failover_mode,
             log_delivery_configuration: self.log_delivery_configuration,
             maintenance_schedule: self.maintenance_schedule,
@@ -626,6 +653,7 @@ impl ::std::fmt::Debug for CreateDbClusterInputBuilder {
         formatter.field("vpc_subnet_ids", &self.vpc_subnet_ids);
         formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
         formatter.field("deployment_type", &self.deployment_type);
+        formatter.field("deployment_configuration", &self.deployment_configuration);
         formatter.field("failover_mode", &self.failover_mode);
         formatter.field("log_delivery_configuration", &self.log_delivery_configuration);
         formatter.field("maintenance_schedule", &self.maintenance_schedule);

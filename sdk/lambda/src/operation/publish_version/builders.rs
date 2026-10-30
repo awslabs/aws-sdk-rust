@@ -22,7 +22,7 @@ impl crate::operation::publish_version::builders::PublishVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `PublishVersion`.
 ///
-/// <p>Creates a <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a> from the current code and configuration of a function. Use versions to create a snapshot of your function code and configuration that doesn't change.</p>
+/// <p>Creates a <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a> from the current code and configuration of a Lambda Event Function. Use versions to create a snapshot of your function code and configuration that doesn't change.</p>
 /// <p>Lambda doesn't publish a version if the function's configuration and code haven't changed since the last version. Use <code>UpdateFunctionCode</code> or <code>UpdateFunctionConfiguration</code> to update the function before publishing a version.</p>
 /// <p>Clients can invoke versions directly or with an alias. To create an alias, use <code>CreateAlias</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -5,12 +5,18 @@
 pub struct PutAccountPolicyOutput {
     /// <p>The account policy that you created.</p>
     pub account_policy: ::std::option::Option<crate::types::AccountPolicy>,
+    /// <p>The estimated impact of the policy on log groups in the account. This field is returned only when the request specifies <code>dryRun</code> as <code>true</code>.</p>
+    pub dry_run_result: ::std::option::Option<crate::types::DryRunResult>,
     _request_id: Option<String>,
 }
 impl PutAccountPolicyOutput {
     /// <p>The account policy that you created.</p>
     pub fn account_policy(&self) -> ::std::option::Option<&crate::types::AccountPolicy> {
         self.account_policy.as_ref()
+    }
+    /// <p>The estimated impact of the policy on log groups in the account. This field is returned only when the request specifies <code>dryRun</code> as <code>true</code>.</p>
+    pub fn dry_run_result(&self) -> ::std::option::Option<&crate::types::DryRunResult> {
+        self.dry_run_result.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutAccountPolicyOutput {
@@ -30,6 +36,7 @@ impl PutAccountPolicyOutput {
 #[non_exhaustive]
 pub struct PutAccountPolicyOutputBuilder {
     pub(crate) account_policy: ::std::option::Option<crate::types::AccountPolicy>,
+    pub(crate) dry_run_result: ::std::option::Option<crate::types::DryRunResult>,
     _request_id: Option<String>,
 }
 impl PutAccountPolicyOutputBuilder {
@@ -47,6 +54,20 @@ impl PutAccountPolicyOutputBuilder {
     pub fn get_account_policy(&self) -> &::std::option::Option<crate::types::AccountPolicy> {
         &self.account_policy
     }
+    /// <p>The estimated impact of the policy on log groups in the account. This field is returned only when the request specifies <code>dryRun</code> as <code>true</code>.</p>
+    pub fn dry_run_result(mut self, input: crate::types::DryRunResult) -> Self {
+        self.dry_run_result = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The estimated impact of the policy on log groups in the account. This field is returned only when the request specifies <code>dryRun</code> as <code>true</code>.</p>
+    pub fn set_dry_run_result(mut self, input: ::std::option::Option<crate::types::DryRunResult>) -> Self {
+        self.dry_run_result = input;
+        self
+    }
+    /// <p>The estimated impact of the policy on log groups in the account. This field is returned only when the request specifies <code>dryRun</code> as <code>true</code>.</p>
+    pub fn get_dry_run_result(&self) -> &::std::option::Option<crate::types::DryRunResult> {
+        &self.dry_run_result
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl PutAccountPolicyOutputBuilder {
     pub fn build(self) -> crate::operation::put_account_policy::PutAccountPolicyOutput {
         crate::operation::put_account_policy::PutAccountPolicyOutput {
             account_policy: self.account_policy,
+            dry_run_result: self.dry_run_result,
             _request_id: self._request_id,
         }
     }

@@ -27,66 +27,69 @@ pub fn ser_start_run_input_input(
     if let Some(var_8) = &input.output_uri {
         object.key("outputUri").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.parameters {
-        object.key("parameters").document(var_9);
+    if let Some(var_9) = &input.output_uri_prefix_mode {
+        object.key("outputUriPrefixMode").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.priority {
+    if let Some(var_10) = &input.parameters {
+        object.key("parameters").document(var_10);
+    }
+    if let Some(var_11) = &input.priority {
         object.key("priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_11) = &input.request_id {
-        object.key("requestId").string(var_11.as_str());
+    if let Some(var_12) = &input.request_id {
+        object.key("requestId").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.retention_mode {
-        object.key("retentionMode").string(var_12.as_str());
+    if let Some(var_13) = &input.retention_mode {
+        object.key("retentionMode").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.role_arn {
-        object.key("roleArn").string(var_13.as_str());
+    if let Some(var_14) = &input.role_arn {
+        object.key("roleArn").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.run_group_id {
-        object.key("runGroupId").string(var_14.as_str());
+    if let Some(var_15) = &input.run_group_id {
+        object.key("runGroupId").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.run_id {
-        object.key("runId").string(var_15.as_str());
+    if let Some(var_16) = &input.run_id {
+        object.key("runId").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.scratch_storage_mode {
-        object.key("scratchStorageMode").string(var_16.as_str());
+    if let Some(var_17) = &input.scratch_storage_mode {
+        object.key("scratchStorageMode").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.session_policy {
-        object.key("sessionPolicy").string(var_17.as_str());
+    if let Some(var_18) = &input.session_policy {
+        object.key("sessionPolicy").string(var_18.as_str());
     }
-    if let Some(var_18) = &input.storage_capacity {
+    if let Some(var_19) = &input.storage_capacity {
         object.key("storageCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_18).into()),
+            ::aws_smithy_types::Number::NegInt((*var_19).into()),
         );
     }
-    if let Some(var_19) = &input.storage_type {
-        object.key("storageType").string(var_19.as_str());
+    if let Some(var_20) = &input.storage_type {
+        object.key("storageType").string(var_20.as_str());
     }
-    if let Some(var_20) = &input.tags {
+    if let Some(var_21) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("tags").start_object();
-        for (key_22, value_23) in var_20 {
+        let mut object_22 = object.key("tags").start_object();
+        for (key_23, value_24) in var_21 {
             {
-                object_21.key(key_22.as_str()).string(value_23.as_str());
+                object_22.key(key_23.as_str()).string(value_24.as_str());
             }
         }
-        object_21.finish();
+        object_22.finish();
     }
-    if let Some(var_24) = &input.workflow_id {
-        object.key("workflowId").string(var_24.as_str());
+    if let Some(var_25) = &input.workflow_id {
+        object.key("workflowId").string(var_25.as_str());
     }
-    if let Some(var_25) = &input.workflow_owner_id {
-        object.key("workflowOwnerId").string(var_25.as_str());
+    if let Some(var_26) = &input.workflow_owner_id {
+        object.key("workflowOwnerId").string(var_26.as_str());
     }
-    if let Some(var_26) = &input.workflow_type {
-        object.key("workflowType").string(var_26.as_str());
+    if let Some(var_27) = &input.workflow_type {
+        object.key("workflowType").string(var_27.as_str());
     }
-    if let Some(var_27) = &input.workflow_version_name {
-        object.key("workflowVersionName").string(var_27.as_str());
+    if let Some(var_28) = &input.workflow_version_name {
+        object.key("workflowVersionName").string(var_28.as_str());
     }
     Ok(())
 }

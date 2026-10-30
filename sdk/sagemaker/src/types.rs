@@ -2047,6 +2047,8 @@ pub use crate::types::_prefix_aware_routing_config::PrefixAwareRoutingConfig;
 
 pub use crate::types::_capacity_reservation_preference::CapacityReservationPreference;
 
+pub use crate::types::_accelerator_partition_layout::AcceleratorPartitionLayout;
+
 pub use crate::types::_capture_mode::CaptureMode;
 
 pub use crate::types::_clarify_shap_baseline_config::ClarifyShapBaselineConfig;
@@ -2386,6 +2388,8 @@ pub use crate::types::_statistic::Statistic;
 pub use crate::types::_cleanup_failure_error_code::CleanupFailureErrorCode;
 
 mod _accelerator_partition_config;
+
+mod _accelerator_partition_layout;
 
 mod _account_default_status;
 

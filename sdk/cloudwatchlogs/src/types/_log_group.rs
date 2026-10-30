@@ -50,6 +50,8 @@ pub struct LogGroup {
     pub deletion_protection_enabled: ::std::option::Option<bool>,
     /// <p>Indicates whether bearer token authentication is enabled for this log group. When enabled, bearer token authentication is allowed on operations until it is explicitly disabled.</p>
     pub bearer_token_authentication_enabled: ::std::option::Option<bool>,
+    /// <p>The name of the account-level retention policy that determines the retention period of this log group. This field is returned only when an account-level retention policy applies to the log group. When it is returned, <code>retentionInDays</code> shows the retention period from that policy instead of the retention period set on the log group. If the policy specifies that log events never expire, <code>retentionInDays</code> is not returned.</p>
+    pub retention_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl LogGroup {
     /// <p>The name of the log group.</p>
@@ -126,6 +128,10 @@ impl LogGroup {
     pub fn bearer_token_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.bearer_token_authentication_enabled
     }
+    /// <p>The name of the account-level retention policy that determines the retention period of this log group. This field is returned only when an account-level retention policy applies to the log group. When it is returned, <code>retentionInDays</code> shows the retention period from that policy instead of the retention period set on the log group. If the policy specifies that log events never expire, <code>retentionInDays</code> is not returned.</p>
+    pub fn retention_policy_name(&self) -> ::std::option::Option<&str> {
+        self.retention_policy_name.as_deref()
+    }
 }
 impl LogGroup {
     /// Creates a new builder-style object to manufacture [`LogGroup`](crate::types::LogGroup).
@@ -151,6 +157,7 @@ pub struct LogGroupBuilder {
     pub(crate) log_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
     pub(crate) bearer_token_authentication_enabled: ::std::option::Option<bool>,
+    pub(crate) retention_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl LogGroupBuilder {
     /// <p>The name of the log group.</p>
@@ -401,6 +408,20 @@ impl LogGroupBuilder {
     pub fn get_bearer_token_authentication_enabled(&self) -> &::std::option::Option<bool> {
         &self.bearer_token_authentication_enabled
     }
+    /// <p>The name of the account-level retention policy that determines the retention period of this log group. This field is returned only when an account-level retention policy applies to the log group. When it is returned, <code>retentionInDays</code> shows the retention period from that policy instead of the retention period set on the log group. If the policy specifies that log events never expire, <code>retentionInDays</code> is not returned.</p>
+    pub fn retention_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.retention_policy_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the account-level retention policy that determines the retention period of this log group. This field is returned only when an account-level retention policy applies to the log group. When it is returned, <code>retentionInDays</code> shows the retention period from that policy instead of the retention period set on the log group. If the policy specifies that log events never expire, <code>retentionInDays</code> is not returned.</p>
+    pub fn set_retention_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.retention_policy_name = input;
+        self
+    }
+    /// <p>The name of the account-level retention policy that determines the retention period of this log group. This field is returned only when an account-level retention policy applies to the log group. When it is returned, <code>retentionInDays</code> shows the retention period from that policy instead of the retention period set on the log group. If the policy specifies that log events never expire, <code>retentionInDays</code> is not returned.</p>
+    pub fn get_retention_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.retention_policy_name
+    }
     /// Consumes the builder and constructs a [`LogGroup`](crate::types::LogGroup).
     pub fn build(self) -> crate::types::LogGroup {
         crate::types::LogGroup {
@@ -417,6 +438,7 @@ impl LogGroupBuilder {
             log_group_arn: self.log_group_arn,
             deletion_protection_enabled: self.deletion_protection_enabled,
             bearer_token_authentication_enabled: self.bearer_token_authentication_enabled,
+            retention_policy_name: self.retention_policy_name,
         }
     }
 }

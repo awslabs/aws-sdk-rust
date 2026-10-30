@@ -3,26 +3,35 @@ pub fn ser_list_realtime_contact_analysis_segments_v2_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Input,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.max_results {
+    if let Some(var_1) = &input.list_filter {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("ListFilter").start_object();
+        crate::protocol_serde::shape_real_time_contact_analysis_segments_filter::ser_real_time_contact_analysis_segments_filter(
+            &mut object_2,
+            var_1,
+        )?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_2) = &input.next_token {
-        object.key("NextToken").string(var_2.as_str());
+    if let Some(var_4) = &input.next_token {
+        object.key("NextToken").string(var_4.as_str());
     }
-    if let Some(var_3) = &input.output_type {
-        object.key("OutputType").string(var_3.as_str());
+    if let Some(var_5) = &input.output_type {
+        object.key("OutputType").string(var_5.as_str());
     }
-    if let Some(var_4) = &input.segment_types {
-        let mut array_5 = object.key("SegmentTypes").start_array();
-        for item_6 in var_4 {
+    if let Some(var_6) = &input.segment_types {
+        let mut array_7 = object.key("SegmentTypes").start_array();
+        for item_8 in var_6 {
             {
-                array_5.value().string(item_6.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_5.finish();
+        array_7.finish();
     }
     Ok(())
 }

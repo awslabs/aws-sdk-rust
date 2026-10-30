@@ -1430,6 +1430,40 @@ impl From<crate::operation::describe_pending_maintenance_actions::DescribePendin
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_serverless_v2_platform_versions::DescribeServerlessV2PlatformVersionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_serverless_v2_platform_versions::DescribeServerlessV2PlatformVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_serverless_v2_platform_versions::DescribeServerlessV2PlatformVersionsError> for Error {
+    fn from(err: crate::operation::describe_serverless_v2_platform_versions::DescribeServerlessV2PlatformVersionsError) -> Self {
+        match err {
+            crate::operation::describe_serverless_v2_platform_versions::DescribeServerlessV2PlatformVersionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::failover_db_cluster::FailoverDBClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

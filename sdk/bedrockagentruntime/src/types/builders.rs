@@ -397,6 +397,8 @@ pub use crate::types::_agentic_retrieve_full_doc_expansion_details::AgenticRetri
 
 pub use crate::types::_agentic_retrieve_memory_retrieve_details::AgenticRetrieveMemoryRetrieveDetailsBuilder;
 
+pub use crate::types::_agentic_retrieve_code_execution_details::AgenticRetrieveCodeExecutionDetailsBuilder;
+
 pub use crate::types::_agentic_retrieve_warning_message::AgenticRetrieveWarningMessageBuilder;
 
 pub use crate::types::_agentic_retrieve_guardrail_warning::AgenticRetrieveGuardrailWarningBuilder;
@@ -478,6 +480,8 @@ pub use crate::types::_api_parameter::ApiParameterBuilder;
 pub use crate::types::_function_parameter::FunctionParameterBuilder;
 
 pub use crate::types::_parameter_detail::ParameterDetailBuilder;
+
+pub use crate::types::_agentic_retrieve_code_execution_document::AgenticRetrieveCodeExecutionDocumentBuilder;
 
 pub use crate::types::_flow_trace_node_input_execution_chain_item::FlowTraceNodeInputExecutionChainItemBuilder;
 

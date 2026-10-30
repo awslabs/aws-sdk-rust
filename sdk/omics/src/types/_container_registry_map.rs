@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerRegistryMap {
-    /// <p>Mapping that provides the ECR repository path where upstream container images are pulled and synchronized.</p>
+    /// <p>The mappings between upstream container registries and repository prefixes in your Amazon Elastic Container Registry (Amazon ECR) private registry. The list can include both pull through cache mappings and mappings for registries that Amazon Web Services HealthOmics copies images from.</p>
     pub registry_mappings: ::std::option::Option<::std::vec::Vec<crate::types::RegistryMapping>>,
     /// <p>Image mappings specify path mappings between the ECR private repository and their corresponding external repositories.</p>
     pub image_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ImageMapping>>,
 }
 impl ContainerRegistryMap {
-    /// <p>Mapping that provides the ECR repository path where upstream container images are pulled and synchronized.</p>
+    /// <p>The mappings between upstream container registries and repository prefixes in your Amazon Elastic Container Registry (Amazon ECR) private registry. The list can include both pull through cache mappings and mappings for registries that Amazon Web Services HealthOmics copies images from.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.registry_mappings.is_none()`.
     pub fn registry_mappings(&self) -> &[crate::types::RegistryMapping] {
@@ -42,19 +42,19 @@ impl ContainerRegistryMapBuilder {
     ///
     /// To override the contents of this collection use [`set_registry_mappings`](Self::set_registry_mappings).
     ///
-    /// <p>Mapping that provides the ECR repository path where upstream container images are pulled and synchronized.</p>
+    /// <p>The mappings between upstream container registries and repository prefixes in your Amazon Elastic Container Registry (Amazon ECR) private registry. The list can include both pull through cache mappings and mappings for registries that Amazon Web Services HealthOmics copies images from.</p>
     pub fn registry_mappings(mut self, input: crate::types::RegistryMapping) -> Self {
         let mut v = self.registry_mappings.unwrap_or_default();
         v.push(input);
         self.registry_mappings = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Mapping that provides the ECR repository path where upstream container images are pulled and synchronized.</p>
+    /// <p>The mappings between upstream container registries and repository prefixes in your Amazon Elastic Container Registry (Amazon ECR) private registry. The list can include both pull through cache mappings and mappings for registries that Amazon Web Services HealthOmics copies images from.</p>
     pub fn set_registry_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistryMapping>>) -> Self {
         self.registry_mappings = input;
         self
     }
-    /// <p>Mapping that provides the ECR repository path where upstream container images are pulled and synchronized.</p>
+    /// <p>The mappings between upstream container registries and repository prefixes in your Amazon Elastic Container Registry (Amazon ECR) private registry. The list can include both pull through cache mappings and mappings for registries that Amazon Web Services HealthOmics copies images from.</p>
     pub fn get_registry_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryMapping>> {
         &self.registry_mappings
     }

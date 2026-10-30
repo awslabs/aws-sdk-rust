@@ -129,6 +129,16 @@ pub(crate) fn reflens_describe_pending_maintenance_actions_output_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_serverless_v2_platform_versions_output_output_marker(
+    input: &crate::operation::describe_serverless_v2_platform_versions::DescribeServerlessV2PlatformVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_certificates_output_output_certificates(
     input: crate::operation::describe_certificates::DescribeCertificatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
@@ -217,5 +227,12 @@ pub(crate) fn lens_describe_pending_maintenance_actions_output_output_pending_ma
     input: crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourcePendingMaintenanceActions>> {
     let input = input.pending_maintenance_actions?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_serverless_v2_platform_versions_output_output_serverless_v2_platform_versions(
+    input: crate::operation::describe_serverless_v2_platform_versions::DescribeServerlessV2PlatformVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ServerlessV2PlatformVersionInfo>> {
+    let input = input.serverless_v2_platform_versions?;
     ::std::option::Option::Some(input)
 }

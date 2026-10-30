@@ -144,6 +144,21 @@ pub(crate) fn de_get_profile_object_type_template(
                 "AllowProfileCreation" => {
                     builder = builder.set_allow_profile_creation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "DefaultMaxProfileObjectCount" => {
+                    builder = builder.set_default_max_profile_object_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
+                "DefaultMaxProfileObjectCountEffectiveAfter" => {
+                    builder = builder.set_default_max_profile_object_count_effective_after(
+                        ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::EpochSeconds,
+                        )?,
+                    );
+                }
                 "Fields" => {
                     builder = builder.set_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value, depth + 1)?);
                 }
@@ -170,6 +185,9 @@ pub(crate) fn de_get_profile_object_type_template(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "StoreOnly" => {
+                    builder = builder.set_store_only(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "TemplateId" => {
                     builder = builder.set_template_id(

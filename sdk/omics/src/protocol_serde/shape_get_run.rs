@@ -288,6 +288,13 @@ pub(crate) fn de_get_run(
                             .transpose()?,
                     );
                 }
+                "outputUriPrefixMode" => {
+                    builder = builder.set_output_uri_prefix_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::RunOutputUriPrefixMode::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "parameters" => {
                     builder = builder.set_parameters(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                 }

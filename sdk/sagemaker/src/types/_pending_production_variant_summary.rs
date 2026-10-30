@@ -33,6 +33,8 @@ pub struct PendingProductionVariantSummary {
     pub managed_instance_scaling: ::std::option::Option<crate::types::ProductionVariantManagedInstanceScaling>,
     /// <p>Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.</p>
     pub routing_config: ::std::option::Option<crate::types::ProductionVariantRoutingConfig>,
+    /// <p>The accelerator partition layout that SageMaker is applying to this production variant. On NVIDIA GPUs, the profiles are Multi-Instance GPU (MIG) profiles. SageMaker returns the accelerator partition layout as you provided it in the pending deployment configuration, without normalization.</p>
+    pub accelerator_partition_layouts: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorPartitionLayout>>,
 }
 impl PendingProductionVariantSummary {
     /// <p>The name of the variant.</p>
@@ -97,6 +99,12 @@ impl PendingProductionVariantSummary {
     /// <p>Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.</p>
     pub fn routing_config(&self) -> ::std::option::Option<&crate::types::ProductionVariantRoutingConfig> {
         self.routing_config.as_ref()
+    }
+    /// <p>The accelerator partition layout that SageMaker is applying to this production variant. On NVIDIA GPUs, the profiles are Multi-Instance GPU (MIG) profiles. SageMaker returns the accelerator partition layout as you provided it in the pending deployment configuration, without normalization.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_partition_layouts.is_none()`.
+    pub fn accelerator_partition_layouts(&self) -> &[crate::types::AcceleratorPartitionLayout] {
+        self.accelerator_partition_layouts.as_deref().unwrap_or_default()
     }
 }
 static PENDINGPRODUCTIONVARIANTSUMMARY_MEMBER_VARIANT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -275,6 +283,29 @@ static PENDINGPRODUCTIONVARIANTSUMMARY_MEMBER_ROUTING_CONFIG: ::aws_smithy_schem
     "RoutingConfig",
     13,
 );
+static PENDINGPRODUCTIONVARIANTSUMMARY_MEMBER_ACCELERATOR_PARTITION_LAYOUTS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AcceleratorPartitionLayouts$member",
+            "com.amazonaws.sagemaker",
+            "AcceleratorPartitionLayouts",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static PENDINGPRODUCTIONVARIANTSUMMARY_MEMBER_ACCELERATOR_PARTITION_LAYOUTS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#PendingProductionVariantSummary$AcceleratorPartitionLayouts",
+            "com.amazonaws.sagemaker",
+            "PendingProductionVariantSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "AcceleratorPartitionLayouts",
+        14,
+    )
+    .with_list_member(&PENDINGPRODUCTIONVARIANTSUMMARY_MEMBER_ACCELERATOR_PARTITION_LAYOUTS_MEMBER);
 static PENDINGPRODUCTIONVARIANTSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.sagemaker#PendingProductionVariantSummary",
@@ -297,6 +328,7 @@ static PENDINGPRODUCTIONVARIANTSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'stat
         &PENDINGPRODUCTIONVARIANTSUMMARY_MEMBER_DESIRED_SERVERLESS_CONFIG,
         &PENDINGPRODUCTIONVARIANTSUMMARY_MEMBER_MANAGED_INSTANCE_SCALING,
         &PENDINGPRODUCTIONVARIANTSUMMARY_MEMBER_ROUTING_CONFIG,
+        &PENDINGPRODUCTIONVARIANTSUMMARY_MEMBER_ACCELERATOR_PARTITION_LAYOUTS,
     ],
 );
 impl PendingProductionVariantSummary {
@@ -378,6 +410,17 @@ impl ::aws_smithy_schema::serde::SerializableStruct for PendingProductionVariant
         }
         if let Some(ref val) = self.routing_config {
             ser.write_struct(&PENDINGPRODUCTIONVARIANTSUMMARY_MEMBER_ROUTING_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.accelerator_partition_layouts {
+            ser.write_list(
+                &PENDINGPRODUCTIONVARIANTSUMMARY_MEMBER_ACCELERATOR_PARTITION_LAYOUTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AcceleratorPartitionLayout::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
         }
         Ok(())
     }
@@ -515,6 +558,20 @@ impl crate::types::builders::PendingProductionVariantSummaryBuilder {
                         self.routing_config = Some(crate::types::ProductionVariantRoutingConfig::deserialize(deser)?);
                     }
                 }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator_partition_layouts = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AcceleratorPartitionLayout::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
                 _ => {}
             }
             Ok(())
@@ -557,6 +614,7 @@ pub struct PendingProductionVariantSummaryBuilder {
     pub(crate) desired_serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
     pub(crate) managed_instance_scaling: ::std::option::Option<crate::types::ProductionVariantManagedInstanceScaling>,
     pub(crate) routing_config: ::std::option::Option<crate::types::ProductionVariantRoutingConfig>,
+    pub(crate) accelerator_partition_layouts: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorPartitionLayout>>,
 }
 impl PendingProductionVariantSummaryBuilder {
     /// <p>The name of the variant.</p>
@@ -777,6 +835,29 @@ impl PendingProductionVariantSummaryBuilder {
     pub fn get_routing_config(&self) -> &::std::option::Option<crate::types::ProductionVariantRoutingConfig> {
         &self.routing_config
     }
+    /// Appends an item to `accelerator_partition_layouts`.
+    ///
+    /// To override the contents of this collection use [`set_accelerator_partition_layouts`](Self::set_accelerator_partition_layouts).
+    ///
+    /// <p>The accelerator partition layout that SageMaker is applying to this production variant. On NVIDIA GPUs, the profiles are Multi-Instance GPU (MIG) profiles. SageMaker returns the accelerator partition layout as you provided it in the pending deployment configuration, without normalization.</p>
+    pub fn accelerator_partition_layouts(mut self, input: crate::types::AcceleratorPartitionLayout) -> Self {
+        let mut v = self.accelerator_partition_layouts.unwrap_or_default();
+        v.push(input);
+        self.accelerator_partition_layouts = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The accelerator partition layout that SageMaker is applying to this production variant. On NVIDIA GPUs, the profiles are Multi-Instance GPU (MIG) profiles. SageMaker returns the accelerator partition layout as you provided it in the pending deployment configuration, without normalization.</p>
+    pub fn set_accelerator_partition_layouts(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorPartitionLayout>>,
+    ) -> Self {
+        self.accelerator_partition_layouts = input;
+        self
+    }
+    /// <p>The accelerator partition layout that SageMaker is applying to this production variant. On NVIDIA GPUs, the profiles are Multi-Instance GPU (MIG) profiles. SageMaker returns the accelerator partition layout as you provided it in the pending deployment configuration, without normalization.</p>
+    pub fn get_accelerator_partition_layouts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorPartitionLayout>> {
+        &self.accelerator_partition_layouts
+    }
     /// Consumes the builder and constructs a [`PendingProductionVariantSummary`](crate::types::PendingProductionVariantSummary).
     pub fn build(self) -> crate::types::PendingProductionVariantSummary {
         crate::types::PendingProductionVariantSummary {
@@ -794,6 +875,7 @@ impl PendingProductionVariantSummaryBuilder {
             desired_serverless_config: self.desired_serverless_config,
             managed_instance_scaling: self.managed_instance_scaling,
             routing_config: self.routing_config,
+            accelerator_partition_layouts: self.accelerator_partition_layouts,
         }
     }
 }

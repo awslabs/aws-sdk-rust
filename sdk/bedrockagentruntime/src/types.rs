@@ -579,6 +579,8 @@ pub use crate::types::_agentic_retrieve_full_doc_expansion_details::AgenticRetri
 
 pub use crate::types::_agentic_retrieve_memory_retrieve_details::AgenticRetrieveMemoryRetrieveDetails;
 
+pub use crate::types::_agentic_retrieve_code_execution_details::AgenticRetrieveCodeExecutionDetails;
+
 pub use crate::types::_agentic_retrieve_warning_message::AgenticRetrieveWarningMessage;
 
 pub use crate::types::_agentic_retrieve_guardrail_warning::AgenticRetrieveGuardrailWarning;
@@ -703,6 +705,8 @@ pub use crate::types::_function_parameter::FunctionParameter;
 
 pub use crate::types::_parameter_detail::ParameterDetail;
 
+pub use crate::types::_agentic_retrieve_code_execution_document::AgenticRetrieveCodeExecutionDocument;
+
 pub use crate::types::_flow_control_node_type::FlowControlNodeType;
 
 pub use crate::types::_flow_trace_node_input_execution_chain_item::FlowTraceNodeInputExecutionChainItem;
@@ -794,6 +798,10 @@ mod _agentic_retrieve_bedrock_reranking_model_configuration;
 mod _agentic_retrieve_citation;
 
 mod _agentic_retrieve_citation_reference;
+
+mod _agentic_retrieve_code_execution_details;
+
+mod _agentic_retrieve_code_execution_document;
 
 mod _agentic_retrieve_configuration;
 

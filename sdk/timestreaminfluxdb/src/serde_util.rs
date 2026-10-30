@@ -404,17 +404,11 @@ pub(crate) fn db_parameter_group_summary_correct_errors(
     builder
 }
 
-pub(crate) fn influx_dbv3_enterprise_parameters_correct_errors(
-    mut builder: crate::types::builders::InfluxDBv3EnterpriseParametersBuilder,
-) -> crate::types::builders::InfluxDBv3EnterpriseParametersBuilder {
-    if builder.ingest_query_instances.is_none() {
-        builder.ingest_query_instances = Some(Default::default())
-    }
-    if builder.query_only_instances.is_none() {
-        builder.query_only_instances = Some(Default::default())
-    }
-    if builder.dedicated_compactor.is_none() {
-        builder.dedicated_compactor = Some(Default::default())
+pub(crate) fn influx_dbv3_enterprise_deployment_configuration_correct_errors(
+    mut builder: crate::types::builders::InfluxDBv3EnterpriseDeploymentConfigurationBuilder,
+) -> crate::types::builders::InfluxDBv3EnterpriseDeploymentConfigurationBuilder {
+    if builder.node_groups.is_none() {
+        builder.node_groups = Some(Default::default())
     }
     builder
 }
@@ -437,6 +431,19 @@ pub(crate) fn duration_correct_errors(mut builder: crate::types::builders::Durat
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn node_group_correct_errors(mut builder: crate::types::builders::NodeGroupBuilder) -> crate::types::builders::NodeGroupBuilder {
+    if builder.instance_modes.is_none() {
+        builder.instance_modes = Some(Default::default())
+    }
+    if builder.instance_type.is_none() {
+        builder.instance_type = "no value was set".parse::<crate::types::DbInstanceType>().ok()
+    }
+    if builder.count.is_none() {
+        builder.count = Some(Default::default())
     }
     builder
 }

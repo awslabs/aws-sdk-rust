@@ -1018,6 +1018,15 @@ pub(crate) fn vpc_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn kafka_exporter_configuration_correct_errors(
+    mut builder: crate::types::builders::KafkaExporterConfigurationBuilder,
+) -> crate::types::builders::KafkaExporterConfigurationBuilder {
+    if builder.cluster_arn.is_none() {
+        builder.cluster_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn logging_filter_correct_errors(
     mut builder: crate::types::builders::LoggingFilterBuilder,
 ) -> crate::types::builders::LoggingFilterBuilder {

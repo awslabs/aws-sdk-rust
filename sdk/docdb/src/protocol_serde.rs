@@ -163,6 +163,10 @@ pub(crate) mod shape_describe_pending_maintenance_actions;
 
 pub(crate) mod shape_describe_pending_maintenance_actions_input;
 
+pub(crate) mod shape_describe_serverless_v2_platform_versions;
+
+pub(crate) mod shape_describe_serverless_v2_platform_versions_input;
+
 pub(crate) mod shape_failover_db_cluster;
 
 pub(crate) mod shape_failover_db_cluster_input;
@@ -417,6 +421,8 @@ pub(crate) mod shape_pending_maintenance_actions;
 
 pub(crate) mod shape_resource_pending_maintenance_actions;
 
+pub(crate) mod shape_serverless_v2_platform_version_list;
+
 pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_availability_zones;
@@ -460,6 +466,8 @@ pub(crate) mod shape_pending_maintenance_action_details;
 pub(crate) mod shape_pending_modified_values;
 
 pub(crate) mod shape_read_replica_identifier_list;
+
+pub(crate) mod shape_serverless_v2_platform_version_info;
 
 pub(crate) mod shape_serverless_v2_scaling_configuration_info;
 

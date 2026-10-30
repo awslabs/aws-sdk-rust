@@ -589,6 +589,8 @@ pub(crate) mod shape_destination_configuration;
 
 pub(crate) mod shape_destinations;
 
+pub(crate) mod shape_dry_run_result;
+
 pub(crate) mod shape_entity;
 
 pub(crate) mod shape_export_tasks;
@@ -741,6 +743,8 @@ pub(crate) mod shape_log_group;
 
 pub(crate) mod shape_log_group_field;
 
+pub(crate) mod shape_log_group_impacts;
+
 pub(crate) mod shape_log_group_summary;
 
 pub(crate) mod shape_log_stream;
@@ -846,6 +850,8 @@ pub(crate) mod shape_histogram;
 pub(crate) mod shape_inherited_properties;
 
 pub(crate) mod shape_log_field_type;
+
+pub(crate) mod shape_log_group_impact;
 
 pub(crate) mod shape_log_group_names;
 

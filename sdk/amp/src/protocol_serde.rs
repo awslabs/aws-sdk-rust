@@ -253,6 +253,8 @@ pub(crate) mod shape_eks_configuration;
 
 pub(crate) mod shape_exporter_list;
 
+pub(crate) mod shape_kafka_exporter_configuration;
+
 pub(crate) mod shape_limits_per_label_set_entry;
 
 pub(crate) mod shape_limits_per_label_set_list;

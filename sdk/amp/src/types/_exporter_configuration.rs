@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ExporterConfiguration {
+    /// <p>The configuration that the scraper uses to collect metrics from an Amazon MSK cluster through a managed Kafka exporter.</p>
+    KafkaConfiguration(crate::types::KafkaExporterConfiguration),
     /// <p>The configuration that the scraper uses to export metrics to an Amazon OpenSearch Service domain.</p>
     OpenSearchConfiguration(crate::types::OpenSearchExporterConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum ExporterConfiguration {
     Unknown,
 }
 impl ExporterConfiguration {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`KafkaConfiguration`](crate::types::ExporterConfiguration::KafkaConfiguration), extracting the inner [`KafkaExporterConfiguration`](crate::types::KafkaExporterConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_kafka_configuration(&self) -> ::std::result::Result<&crate::types::KafkaExporterConfiguration, &Self> {
+        if let ExporterConfiguration::KafkaConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`KafkaConfiguration`](crate::types::ExporterConfiguration::KafkaConfiguration).
+    pub fn is_kafka_configuration(&self) -> bool {
+        self.as_kafka_configuration().is_ok()
+    }
     /// Tries to convert the enum instance into [`OpenSearchConfiguration`](crate::types::ExporterConfiguration::OpenSearchConfiguration), extracting the inner [`OpenSearchExporterConfiguration`](crate::types::OpenSearchExporterConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_open_search_configuration(&self) -> ::std::result::Result<&crate::types::OpenSearchExporterConfiguration, &Self> {

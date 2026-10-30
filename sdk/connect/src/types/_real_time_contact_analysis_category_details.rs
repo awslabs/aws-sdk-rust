@@ -4,10 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealTimeContactAnalysisCategoryDetails {
+    /// <p>The unique identifier of the rule that created the matched category.</p>
+    pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>List of PointOfInterest - objects describing a single match of a rule.</p>
     pub points_of_interest: ::std::vec::Vec<crate::types::RealTimeContactAnalysisPointOfInterest>,
 }
 impl RealTimeContactAnalysisCategoryDetails {
+    /// <p>The unique identifier of the rule that created the matched category.</p>
+    pub fn rule_id(&self) -> ::std::option::Option<&str> {
+        self.rule_id.as_deref()
+    }
     /// <p>List of PointOfInterest - objects describing a single match of a rule.</p>
     pub fn points_of_interest(&self) -> &[crate::types::RealTimeContactAnalysisPointOfInterest] {
         use std::ops::Deref;
@@ -25,9 +31,24 @@ impl RealTimeContactAnalysisCategoryDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct RealTimeContactAnalysisCategoryDetailsBuilder {
+    pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) points_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisPointOfInterest>>,
 }
 impl RealTimeContactAnalysisCategoryDetailsBuilder {
+    /// <p>The unique identifier of the rule that created the matched category.</p>
+    pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the rule that created the matched category.</p>
+    pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.rule_id = input;
+        self
+    }
+    /// <p>The unique identifier of the rule that created the matched category.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
+    }
     /// Appends an item to `points_of_interest`.
     ///
     /// To override the contents of this collection use [`set_points_of_interest`](Self::set_points_of_interest).
@@ -58,6 +79,7 @@ impl RealTimeContactAnalysisCategoryDetailsBuilder {
         self,
     ) -> ::std::result::Result<crate::types::RealTimeContactAnalysisCategoryDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RealTimeContactAnalysisCategoryDetails {
+            rule_id: self.rule_id,
             points_of_interest: self.points_of_interest.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "points_of_interest",

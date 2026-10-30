@@ -36,7 +36,7 @@ mod test {
             .endpoint("https://mycustomDomain.com".to_string())
             .api_type("ControlPlane".to_string())
             .region("us-east-1".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -56,7 +56,7 @@ mod test {
             .endpoint("https://mycustomDomain.com".to_string())
             .api_type("DataPlane".to_string())
             .region("us-east-1".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -76,7 +76,7 @@ mod test {
             .endpoint("https://mycustomDomain.com".to_string())
             .api_type("someInvalidApiType".to_string())
             .region("us-east-1".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -95,7 +95,7 @@ mod test {
         let params = crate::config::endpoint::Params::builder()
             .endpoint("https://mycustomDomain.com".to_string())
             .api_type("someInvalidApiType".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -116,7 +116,7 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -137,7 +137,7 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -153,7 +153,7 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -174,7 +174,7 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -190,7 +190,7 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -211,7 +211,7 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -232,7 +232,7 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -253,7 +253,7 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -274,7 +274,7 @@ mod test {
             .region("us-east-2".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -295,7 +295,7 @@ mod test {
             .region("us-east-2".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -311,7 +311,7 @@ mod test {
             .region("us-east-2".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -332,7 +332,7 @@ mod test {
             .region("us-east-2".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -348,7 +348,7 @@ mod test {
             .region("us-east-2".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -369,7 +369,7 @@ mod test {
             .region("us-east-2".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -390,7 +390,7 @@ mod test {
             .region("us-east-2".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -411,7 +411,7 @@ mod test {
             .region("us-east-2".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -432,7 +432,7 @@ mod test {
             .region("us-west-2".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -453,7 +453,7 @@ mod test {
             .region("us-west-2".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -469,7 +469,7 @@ mod test {
             .region("us-west-2".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -490,7 +490,7 @@ mod test {
             .region("us-west-2".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -506,7 +506,7 @@ mod test {
             .region("us-west-2".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -527,7 +527,7 @@ mod test {
             .region("us-west-2".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -548,7 +548,7 @@ mod test {
             .region("us-west-2".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -569,7 +569,7 @@ mod test {
             .region("us-west-2".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -590,7 +590,7 @@ mod test {
             .region("eu-west-1".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -611,7 +611,7 @@ mod test {
             .region("eu-west-1".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -627,7 +627,7 @@ mod test {
             .region("eu-west-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -648,7 +648,7 @@ mod test {
             .region("eu-west-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -664,7 +664,7 @@ mod test {
             .region("eu-west-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -685,7 +685,7 @@ mod test {
             .region("eu-west-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -706,7 +706,7 @@ mod test {
             .region("eu-west-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -727,7 +727,7 @@ mod test {
             .region("eu-west-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -748,7 +748,7 @@ mod test {
             .region("eu-west-2".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -769,7 +769,7 @@ mod test {
             .region("eu-west-2".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -785,7 +785,7 @@ mod test {
             .region("eu-west-2".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -806,7 +806,7 @@ mod test {
             .region("eu-west-2".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -822,7 +822,7 @@ mod test {
             .region("eu-west-2".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -843,7 +843,7 @@ mod test {
             .region("eu-west-2".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -864,7 +864,7 @@ mod test {
             .region("eu-west-2".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -885,7 +885,7 @@ mod test {
             .region("eu-west-2".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -906,7 +906,7 @@ mod test {
             .region("eu-central-1".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -927,7 +927,7 @@ mod test {
             .region("eu-central-1".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -943,7 +943,7 @@ mod test {
             .region("eu-central-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -964,7 +964,7 @@ mod test {
             .region("eu-central-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -980,7 +980,7 @@ mod test {
             .region("eu-central-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1001,7 +1001,7 @@ mod test {
             .region("eu-central-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1022,7 +1022,7 @@ mod test {
             .region("eu-central-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1043,7 +1043,7 @@ mod test {
             .region("eu-central-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1064,7 +1064,7 @@ mod test {
             .region("ap-southeast-1".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1085,7 +1085,7 @@ mod test {
             .region("ap-southeast-1".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1101,7 +1101,7 @@ mod test {
             .region("ap-southeast-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1122,7 +1122,7 @@ mod test {
             .region("ap-southeast-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1138,7 +1138,7 @@ mod test {
             .region("ap-southeast-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1159,7 +1159,7 @@ mod test {
             .region("ap-southeast-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1180,7 +1180,7 @@ mod test {
             .region("ap-southeast-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1201,7 +1201,7 @@ mod test {
             .region("ap-southeast-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1222,7 +1222,7 @@ mod test {
             .region("ap-northeast-1".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1243,7 +1243,7 @@ mod test {
             .region("ap-northeast-1".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1259,7 +1259,7 @@ mod test {
             .region("ap-northeast-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1280,7 +1280,7 @@ mod test {
             .region("ap-northeast-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1296,7 +1296,7 @@ mod test {
             .region("ap-northeast-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1317,7 +1317,7 @@ mod test {
             .region("ap-northeast-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1338,7 +1338,7 @@ mod test {
             .region("ap-northeast-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1359,7 +1359,7 @@ mod test {
             .region("ap-northeast-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1377,7 +1377,7 @@ mod test {
     fn test_69() {
         let params = crate::config::endpoint::Params::builder()
             .api_type("DataPlane".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1391,7 +1391,7 @@ mod test {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .api_type("someUnknownValue".to_string())
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1408,7 +1408,7 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(true)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1426,7 +1426,7 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1444,7 +1444,7 @@ mod test {
             .region("us-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .build()
+            .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -1942,6 +1942,12 @@ impl ParamsBuilder {
                 ));
             }
         };
+        self.build_without_validators()
+    }
+    /// Consume this builder, creating [`Params`] without the validators run by `build()`.
+    ///
+    /// Endpoint rule-set tests use this so they test the rules as the model defines them.
+    fn build_without_validators(self) -> ::std::result::Result<crate::config::endpoint::Params, crate::config::endpoint::InvalidParams> {
         Ok(
             #[allow(clippy::unnecessary_lazy_evaluations)]
             crate::config::endpoint::Params {

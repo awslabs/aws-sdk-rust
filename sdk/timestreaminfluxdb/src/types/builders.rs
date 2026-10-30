@@ -7,6 +7,8 @@ pub use crate::types::_maintenance_schedule::MaintenanceScheduleBuilder;
 
 pub use crate::types::_db_backup_summary::DbBackupSummaryBuilder;
 
+pub use crate::types::_influx_dbv3_enterprise_deployment_configuration::InfluxDBv3EnterpriseDeploymentConfigurationBuilder;
+
 pub use crate::types::_s3_configuration::S3ConfigurationBuilder;
 
 pub use crate::types::_db_backup_configuration::DbBackupConfigurationBuilder;
@@ -28,3 +30,5 @@ pub use crate::types::_influx_dbv3_core_parameters::InfluxDBv3CoreParametersBuil
 pub use crate::types::_influx_dbv3_enterprise_parameters::InfluxDBv3EnterpriseParametersBuilder;
 
 pub use crate::types::_duration::DurationBuilder;
+
+pub use crate::types::_node_group::NodeGroupBuilder;

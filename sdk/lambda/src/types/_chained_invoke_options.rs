@@ -8,7 +8,7 @@ pub struct ChainedInvokeOptions {
     pub function_name: ::std::string::String,
     /// <p>The tenant identifier for the chained invocation.</p>
     pub tenant_id: ::std::option::Option<::std::string::String>,
-    /// <p>The optional X-Ray trace header to use when starting the chained invocation. If you omit this value, the child invocation inherits the parent durable execution's trace header.</p>
+    /// <p>The X-Ray trace header to use when starting the chained invocation. This parameter is optional. If you omit this value, the child invocation inherits the parent durable execution's trace header.</p>
     /// <p>Specify this value on the <code>START</code> update for the chained invocation operation. For more information about the header format, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the <i>X-Ray Developer Guide</i>.</p>
     pub x_amzn_trace_id: ::std::option::Option<::std::string::String>,
 }
@@ -22,7 +22,7 @@ impl ChainedInvokeOptions {
     pub fn tenant_id(&self) -> ::std::option::Option<&str> {
         self.tenant_id.as_deref()
     }
-    /// <p>The optional X-Ray trace header to use when starting the chained invocation. If you omit this value, the child invocation inherits the parent durable execution's trace header.</p>
+    /// <p>The X-Ray trace header to use when starting the chained invocation. This parameter is optional. If you omit this value, the child invocation inherits the parent durable execution's trace header.</p>
     /// <p>Specify this value on the <code>START</code> update for the chained invocation operation. For more information about the header format, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the <i>X-Ray Developer Guide</i>.</p>
     pub fn x_amzn_trace_id(&self) -> ::std::option::Option<&str> {
         self.x_amzn_trace_id.as_deref()
@@ -73,19 +73,19 @@ impl ChainedInvokeOptionsBuilder {
     pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.tenant_id
     }
-    /// <p>The optional X-Ray trace header to use when starting the chained invocation. If you omit this value, the child invocation inherits the parent durable execution's trace header.</p>
+    /// <p>The X-Ray trace header to use when starting the chained invocation. This parameter is optional. If you omit this value, the child invocation inherits the parent durable execution's trace header.</p>
     /// <p>Specify this value on the <code>START</code> update for the chained invocation operation. For more information about the header format, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the <i>X-Ray Developer Guide</i>.</p>
     pub fn x_amzn_trace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.x_amzn_trace_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The optional X-Ray trace header to use when starting the chained invocation. If you omit this value, the child invocation inherits the parent durable execution's trace header.</p>
+    /// <p>The X-Ray trace header to use when starting the chained invocation. This parameter is optional. If you omit this value, the child invocation inherits the parent durable execution's trace header.</p>
     /// <p>Specify this value on the <code>START</code> update for the chained invocation operation. For more information about the header format, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the <i>X-Ray Developer Guide</i>.</p>
     pub fn set_x_amzn_trace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.x_amzn_trace_id = input;
         self
     }
-    /// <p>The optional X-Ray trace header to use when starting the chained invocation. If you omit this value, the child invocation inherits the parent durable execution's trace header.</p>
+    /// <p>The X-Ray trace header to use when starting the chained invocation. This parameter is optional. If you omit this value, the child invocation inherits the parent durable execution's trace header.</p>
     /// <p>Specify this value on the <code>START</code> update for the chained invocation operation. For more information about the header format, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the <i>X-Ray Developer Guide</i>.</p>
     pub fn get_x_amzn_trace_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.x_amzn_trace_id
