@@ -12,6 +12,21 @@ pub fn ser_image_scanning_configuration(
         crate::protocol_serde::shape_ecr_configuration::ser_ecr_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.image_scanning_types {
+        let mut array_5 = object.key("imageScanningTypes").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
+    }
+    if let Some(var_7) = &input.scan_result_condition {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("scanResultCondition").start_object();
+        crate::protocol_serde::shape_scan_result_condition::ser_scan_result_condition(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -46,6 +61,16 @@ where
                                 _value,
                                 depth + 1,
                             )?);
+                        }
+                        "imageScanningTypes" => {
+                            builder = builder.set_image_scanning_types(
+                                crate::protocol_serde::shape_image_scanning_type_list::de_image_scanning_type_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "scanResultCondition" => {
+                            builder = builder.set_scan_result_condition(
+                                crate::protocol_serde::shape_scan_result_condition::de_scan_result_condition(tokens, _value, depth + 1)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

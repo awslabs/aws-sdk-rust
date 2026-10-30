@@ -6,12 +6,20 @@ pub struct GetInstancesInput {
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetInstances</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub page_token: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to include the instance health status checks of each instance in the response of your request.</p>
+    /// <p>When set to <code>true</code>, the response includes the <code>instanceStatus</code> and <code>systemStatus</code> of each instance. When omitted or set to <code>false</code>, the response doesn't include them.</p>
+    pub include_health_status: ::std::option::Option<bool>,
 }
 impl GetInstancesInput {
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetInstances</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(&self) -> ::std::option::Option<&str> {
         self.page_token.as_deref()
+    }
+    /// <p>Specifies whether to include the instance health status checks of each instance in the response of your request.</p>
+    /// <p>When set to <code>true</code>, the response includes the <code>instanceStatus</code> and <code>systemStatus</code> of each instance. When omitted or set to <code>false</code>, the response doesn't include them.</p>
+    pub fn include_health_status(&self) -> ::std::option::Option<bool> {
+        self.include_health_status
     }
 }
 static GETINSTANCESINPUT_MEMBER_PAGE_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -24,6 +32,16 @@ static GETINSTANCESINPUT_MEMBER_PAGE_TOKEN: ::aws_smithy_schema::Schema<'static>
     "pageToken",
     0,
 );
+static GETINSTANCESINPUT_MEMBER_INCLUDE_HEALTH_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetInstancesInput$includeHealthStatus",
+        "com.amazonaws.lightsail.synthetic",
+        "GetInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "includeHealthStatus",
+    1,
+);
 static GETINSTANCESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.lightsail.synthetic#GetInstancesInput",
@@ -31,7 +49,7 @@ static GETINSTANCESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_sm
         "GetInstancesInput",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&GETINSTANCESINPUT_MEMBER_PAGE_TOKEN],
+    &[&GETINSTANCESINPUT_MEMBER_PAGE_TOKEN, &GETINSTANCESINPUT_MEMBER_INCLUDE_HEALTH_STATUS],
 )
 .with_http(aws_smithy_schema::traits::HttpTrait::new("POST", "/ls/api/2016-11-28/GetInstances", None))
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
@@ -52,6 +70,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for GetInstancesInput {
     ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
         if let Some(ref val) = self.page_token {
             ser.write_string(&GETINSTANCESINPUT_MEMBER_PAGE_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.include_health_status {
+            ser.write_boolean(&GETINSTANCESINPUT_MEMBER_INCLUDE_HEALTH_STATUS, *val)?;
         }
         Ok(())
     }
@@ -75,6 +96,13 @@ impl crate::operation::get_instances::builders::GetInstancesInputBuilder {
                         deser.read_null()?;
                     } else {
                         self.page_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.include_health_status = Some(deser.read_boolean(member)?);
                     }
                 }
                 _ => {}
@@ -106,6 +134,7 @@ impl GetInstancesInput {
 #[non_exhaustive]
 pub struct GetInstancesInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
+    pub(crate) include_health_status: ::std::option::Option<bool>,
 }
 impl GetInstancesInputBuilder {
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -125,10 +154,30 @@ impl GetInstancesInputBuilder {
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.page_token
     }
+    /// <p>Specifies whether to include the instance health status checks of each instance in the response of your request.</p>
+    /// <p>When set to <code>true</code>, the response includes the <code>instanceStatus</code> and <code>systemStatus</code> of each instance. When omitted or set to <code>false</code>, the response doesn't include them.</p>
+    pub fn include_health_status(mut self, input: bool) -> Self {
+        self.include_health_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to include the instance health status checks of each instance in the response of your request.</p>
+    /// <p>When set to <code>true</code>, the response includes the <code>instanceStatus</code> and <code>systemStatus</code> of each instance. When omitted or set to <code>false</code>, the response doesn't include them.</p>
+    pub fn set_include_health_status(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_health_status = input;
+        self
+    }
+    /// <p>Specifies whether to include the instance health status checks of each instance in the response of your request.</p>
+    /// <p>When set to <code>true</code>, the response includes the <code>instanceStatus</code> and <code>systemStatus</code> of each instance. When omitted or set to <code>false</code>, the response doesn't include them.</p>
+    pub fn get_include_health_status(&self) -> &::std::option::Option<bool> {
+        &self.include_health_status
+    }
     /// Consumes the builder and constructs a [`GetInstancesInput`](crate::operation::get_instances::GetInstancesInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_instances::GetInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_instances::GetInstancesInput { page_token: self.page_token })
+        ::std::result::Result::Ok(crate::operation::get_instances::GetInstancesInput {
+            page_token: self.page_token,
+            include_health_status: self.include_health_status,
+        })
     }
 }

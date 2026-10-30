@@ -19,7 +19,7 @@ pub struct CreateImageInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Settings for vulnerability scans that Amazon Inspector runs during image creation. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository specified in <code>ecrConfiguration</code>.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the image for vulnerabilities.</p>
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
     /// <p>The array of workflow configuration objects for the build. If you specify workflows, they replace the default workflows that Image Builder otherwise runs for the build, and you must also provide an <code>executionRole</code>.</p>
     pub workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
@@ -61,7 +61,7 @@ impl CreateImageInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Settings for vulnerability scans that Amazon Inspector runs during image creation. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository specified in <code>ecrConfiguration</code>.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the image for vulnerabilities.</p>
     pub fn image_scanning_configuration(&self) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
@@ -225,17 +225,17 @@ impl CreateImageInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>Settings for vulnerability scans that Amazon Inspector runs during image creation. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository specified in <code>ecrConfiguration</code>.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the image for vulnerabilities.</p>
     pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.image_scanning_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Settings for vulnerability scans that Amazon Inspector runs during image creation. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository specified in <code>ecrConfiguration</code>.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the image for vulnerabilities.</p>
     pub fn set_image_scanning_configuration(mut self, input: ::std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
         self.image_scanning_configuration = input;
         self
     }
-    /// <p>Settings for vulnerability scans that Amazon Inspector runs during image creation. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository specified in <code>ecrConfiguration</code>.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the image for vulnerabilities.</p>
     pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         &self.image_scanning_configuration
     }

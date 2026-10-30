@@ -139,6 +139,30 @@ pub fn de_invoke_agent_runtime_http_response(
                 }
             },
         );
+        output = output.set_session_endpoint_url(
+            match crate::protocol_serde::shape_invoke_agent_runtime_output::de_session_endpoint_url_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("X-Amzn-Bedrock-AgentCore-Runtime-Session-Endpoint-Url")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::invoke_agent_runtime::InvokeAgentRuntimeError::unhandled(
+                            "Failed to parse sessionEndpointUrl from header `X-Amzn-Bedrock-AgentCore-Runtime-Session-Endpoint-Url`",
+                        ));
+                    }
+                }
+            },
+        );
         output = output.set_status_code(Some(_response_status as _));
         output = output.set_trace_id(
             match crate::protocol_serde::shape_invoke_agent_runtime_output::de_trace_id_header(_response_headers) {

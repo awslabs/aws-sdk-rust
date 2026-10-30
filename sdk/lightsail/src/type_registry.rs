@@ -410,6 +410,18 @@ pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry:
                         },
                     )
 .insert_shape(
+                        crate::types::InstanceHealthStatus::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::InstanceHealthStatus::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::InstanceHealthStatusDetail::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::InstanceHealthStatusDetail::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
                         crate::types::InstanceHealthSummary::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::InstanceHealthSummary::deserialize(d)?))

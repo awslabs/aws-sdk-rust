@@ -300,17 +300,17 @@ impl CreateImagePipelineFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the images that this pipeline creates.</p>
     pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.inner = self.inner.image_scanning_configuration(input);
         self
     }
-    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the images that this pipeline creates.</p>
     pub fn set_image_scanning_configuration(mut self, input: ::std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
         self.inner = self.inner.set_image_scanning_configuration(input);
         self
     }
-    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
+    /// <p>The settings that determine whether and how Amazon Inspector scans the images that this pipeline creates.</p>
     pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         self.inner.get_image_scanning_configuration()
     }

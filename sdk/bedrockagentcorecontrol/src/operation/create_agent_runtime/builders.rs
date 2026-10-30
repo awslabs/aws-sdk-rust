@@ -220,17 +220,17 @@ impl CreateAgentRuntimeFluentBuilder {
     pub fn get_request_header_configuration(&self) -> &::std::option::Option<crate::types::RequestHeaderConfiguration> {
         self.inner.get_request_header_configuration()
     }
-    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
+    /// <p>The protocol configuration for the AgentCore Runtime, including the protocol, port, and path on which the agent server is available.</p>
     pub fn protocol_configuration(mut self, input: crate::types::ProtocolConfiguration) -> Self {
         self.inner = self.inner.protocol_configuration(input);
         self
     }
-    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
+    /// <p>The protocol configuration for the AgentCore Runtime, including the protocol, port, and path on which the agent server is available.</p>
     pub fn set_protocol_configuration(mut self, input: ::std::option::Option<crate::types::ProtocolConfiguration>) -> Self {
         self.inner = self.inner.set_protocol_configuration(input);
         self
     }
-    /// <p>The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.</p>
+    /// <p>The protocol configuration for the AgentCore Runtime, including the protocol, port, and path on which the agent server is available.</p>
     pub fn get_protocol_configuration(&self) -> &::std::option::Option<crate::types::ProtocolConfiguration> {
         self.inner.get_protocol_configuration()
     }
@@ -339,5 +339,24 @@ impl CreateAgentRuntimeFluentBuilder {
     /// <p>The version of the runtime platform to use for the AgentCore Runtime.</p>
     pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_platform_version()
+    }
+    ///
+    /// Appends an item to `allowedPorts`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_ports`](Self::set_allowed_ports).
+    ///
+    /// <p>The additional ports on the AgentCore Runtime that are reachable through the runtime's session URL. Specify one to five non-overlapping entries, each containing either a single port or an inclusive port range. Ports must be between <code>8000</code> and <code>12000</code>, excluding the reserved port <code>8443</code>.</p>
+    pub fn allowed_ports(mut self, input: crate::types::AllowedPort) -> Self {
+        self.inner = self.inner.allowed_ports(input);
+        self
+    }
+    /// <p>The additional ports on the AgentCore Runtime that are reachable through the runtime's session URL. Specify one to five non-overlapping entries, each containing either a single port or an inclusive port range. Ports must be between <code>8000</code> and <code>12000</code>, excluding the reserved port <code>8443</code>.</p>
+    pub fn set_allowed_ports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedPort>>) -> Self {
+        self.inner = self.inner.set_allowed_ports(input);
+        self
+    }
+    /// <p>The additional ports on the AgentCore Runtime that are reachable through the runtime's session URL. Specify one to five non-overlapping entries, each containing either a single port or an inclusive port range. Ports must be between <code>8000</code> and <code>12000</code>, excluding the reserved port <code>8443</code>.</p>
+    pub fn get_allowed_ports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedPort>> {
+        self.inner.get_allowed_ports()
     }
 }

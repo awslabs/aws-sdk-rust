@@ -125,4 +125,21 @@ impl GetInstancesFluentBuilder {
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_page_token()
     }
+    /// <p>Specifies whether to include the instance health status checks of each instance in the response of your request.</p>
+    /// <p>When set to <code>true</code>, the response includes the <code>instanceStatus</code> and <code>systemStatus</code> of each instance. When omitted or set to <code>false</code>, the response doesn't include them.</p>
+    pub fn include_health_status(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_health_status(input);
+        self
+    }
+    /// <p>Specifies whether to include the instance health status checks of each instance in the response of your request.</p>
+    /// <p>When set to <code>true</code>, the response includes the <code>instanceStatus</code> and <code>systemStatus</code> of each instance. When omitted or set to <code>false</code>, the response doesn't include them.</p>
+    pub fn set_include_health_status(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_health_status(input);
+        self
+    }
+    /// <p>Specifies whether to include the instance health status checks of each instance in the response of your request.</p>
+    /// <p>When set to <code>true</code>, the response includes the <code>instanceStatus</code> and <code>systemStatus</code> of each instance. When omitted or set to <code>false</code>, the response doesn't include them.</p>
+    pub fn get_include_health_status(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_health_status()
+    }
 }

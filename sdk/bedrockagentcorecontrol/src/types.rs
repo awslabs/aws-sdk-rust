@@ -289,6 +289,8 @@ pub use crate::types::_server_protocol::ServerProtocol;
 
 pub use crate::types::_filesystem_configuration::FilesystemConfiguration;
 
+pub use crate::types::_allowed_port::AllowedPort;
+
 pub use crate::types::_api_key_credential_provider_item::ApiKeyCredentialProviderItem;
 
 pub use crate::types::_browser_profile_summary::BrowserProfileSummary;
@@ -544,6 +546,8 @@ pub use crate::types::_s3_files_access_point_configuration::S3FilesAccessPointCo
 pub use crate::types::_efs_access_point_configuration::EfsAccessPointConfiguration;
 
 pub use crate::types::_capacity_provider_volume_configuration::CapacityProviderVolumeConfiguration;
+
+pub use crate::types::_port_range::PortRange;
 
 pub use crate::types::_resource_location::ResourceLocation;
 
@@ -1092,6 +1096,8 @@ mod _agent_runtime_status;
 mod _agent_runtime_version_summary;
 
 mod _agent_skills_descriptor;
+
+mod _allowed_port;
 
 mod _allowed_workload_configuration;
 
@@ -1834,6 +1840,8 @@ mod _policy_status;
 mod _policy_summary;
 
 mod _policy_validation_mode;
+
+mod _port_range;
 
 mod _principal_match_operator;
 

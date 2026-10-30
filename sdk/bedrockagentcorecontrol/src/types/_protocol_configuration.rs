@@ -6,11 +6,23 @@
 pub struct ProtocolConfiguration {
     /// <p>The server protocol for the agent runtime. This field specifies which protocol the agent runtime uses to communicate with clients.</p>
     pub server_protocol: crate::types::ServerProtocol,
+    /// <p>The port on which the agent server listens. The port must be between <code>8000</code> and <code>12000</code>, excluding the reserved port <code>8443</code>. When this field is omitted, the default is <code>8080</code> for <code>HTTP</code> and <code>AGUI</code>, <code>8000</code> for <code>MCP</code>, and <code>9000</code> for <code>A2A</code>.</p>
+    pub port: ::std::option::Option<i32>,
+    /// <p>The path on which the agent server accepts requests. The path must begin with <code>/</code>. When this field is omitted, the default is <code>/invocations</code> for <code>HTTP</code> and <code>AGUI</code>, <code>/mcp</code> for <code>MCP</code>, and <code>/</code> for <code>A2A</code>.</p>
+    pub path: ::std::option::Option<::std::string::String>,
 }
 impl ProtocolConfiguration {
     /// <p>The server protocol for the agent runtime. This field specifies which protocol the agent runtime uses to communicate with clients.</p>
     pub fn server_protocol(&self) -> &crate::types::ServerProtocol {
         &self.server_protocol
+    }
+    /// <p>The port on which the agent server listens. The port must be between <code>8000</code> and <code>12000</code>, excluding the reserved port <code>8443</code>. When this field is omitted, the default is <code>8080</code> for <code>HTTP</code> and <code>AGUI</code>, <code>8000</code> for <code>MCP</code>, and <code>9000</code> for <code>A2A</code>.</p>
+    pub fn port(&self) -> ::std::option::Option<i32> {
+        self.port
+    }
+    /// <p>The path on which the agent server accepts requests. The path must begin with <code>/</code>. When this field is omitted, the default is <code>/invocations</code> for <code>HTTP</code> and <code>AGUI</code>, <code>/mcp</code> for <code>MCP</code>, and <code>/</code> for <code>A2A</code>.</p>
+    pub fn path(&self) -> ::std::option::Option<&str> {
+        self.path.as_deref()
     }
 }
 impl ProtocolConfiguration {
@@ -25,6 +37,8 @@ impl ProtocolConfiguration {
 #[non_exhaustive]
 pub struct ProtocolConfigurationBuilder {
     pub(crate) server_protocol: ::std::option::Option<crate::types::ServerProtocol>,
+    pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
 }
 impl ProtocolConfigurationBuilder {
     /// <p>The server protocol for the agent runtime. This field specifies which protocol the agent runtime uses to communicate with clients.</p>
@@ -42,6 +56,34 @@ impl ProtocolConfigurationBuilder {
     pub fn get_server_protocol(&self) -> &::std::option::Option<crate::types::ServerProtocol> {
         &self.server_protocol
     }
+    /// <p>The port on which the agent server listens. The port must be between <code>8000</code> and <code>12000</code>, excluding the reserved port <code>8443</code>. When this field is omitted, the default is <code>8080</code> for <code>HTTP</code> and <code>AGUI</code>, <code>8000</code> for <code>MCP</code>, and <code>9000</code> for <code>A2A</code>.</p>
+    pub fn port(mut self, input: i32) -> Self {
+        self.port = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The port on which the agent server listens. The port must be between <code>8000</code> and <code>12000</code>, excluding the reserved port <code>8443</code>. When this field is omitted, the default is <code>8080</code> for <code>HTTP</code> and <code>AGUI</code>, <code>8000</code> for <code>MCP</code>, and <code>9000</code> for <code>A2A</code>.</p>
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.port = input;
+        self
+    }
+    /// <p>The port on which the agent server listens. The port must be between <code>8000</code> and <code>12000</code>, excluding the reserved port <code>8443</code>. When this field is omitted, the default is <code>8080</code> for <code>HTTP</code> and <code>AGUI</code>, <code>8000</code> for <code>MCP</code>, and <code>9000</code> for <code>A2A</code>.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
+    /// <p>The path on which the agent server accepts requests. The path must begin with <code>/</code>. When this field is omitted, the default is <code>/invocations</code> for <code>HTTP</code> and <code>AGUI</code>, <code>/mcp</code> for <code>MCP</code>, and <code>/</code> for <code>A2A</code>.</p>
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The path on which the agent server accepts requests. The path must begin with <code>/</code>. When this field is omitted, the default is <code>/invocations</code> for <code>HTTP</code> and <code>AGUI</code>, <code>/mcp</code> for <code>MCP</code>, and <code>/</code> for <code>A2A</code>.</p>
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.path = input;
+        self
+    }
+    /// <p>The path on which the agent server accepts requests. The path must begin with <code>/</code>. When this field is omitted, the default is <code>/invocations</code> for <code>HTTP</code> and <code>AGUI</code>, <code>/mcp</code> for <code>MCP</code>, and <code>/</code> for <code>A2A</code>.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// Consumes the builder and constructs a [`ProtocolConfiguration`](crate::types::ProtocolConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`server_protocol`](crate::types::builders::ProtocolConfigurationBuilder::server_protocol)
@@ -53,6 +95,8 @@ impl ProtocolConfigurationBuilder {
                     "server_protocol was not specified but it is required when building ProtocolConfiguration",
                 )
             })?,
+            port: self.port,
+            path: self.path,
         })
     }
 }

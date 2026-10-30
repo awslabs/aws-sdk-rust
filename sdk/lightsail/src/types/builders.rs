@@ -149,6 +149,8 @@ pub use crate::types::_instance_networking::InstanceNetworkingBuilder;
 
 pub use crate::types::_instance_metadata_options::InstanceMetadataOptionsBuilder;
 
+pub use crate::types::_instance_health_status::InstanceHealthStatusBuilder;
+
 pub use crate::types::_password_data::PasswordDataBuilder;
 
 pub use crate::types::_instance_port_state::InstancePortStateBuilder;
@@ -238,6 +240,8 @@ pub use crate::types::_instance_snapshot_info::InstanceSnapshotInfoBuilder;
 pub use crate::types::_disk_snapshot_info::DiskSnapshotInfoBuilder;
 
 pub use crate::types::_instance_port_info::InstancePortInfoBuilder;
+
+pub use crate::types::_instance_health_status_detail::InstanceHealthStatusDetailBuilder;
 
 pub use crate::types::_load_balancer_tls_certificate_domain_validation_record::LoadBalancerTlsCertificateDomainValidationRecordBuilder;
 

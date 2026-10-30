@@ -67,6 +67,8 @@ pub use crate::types::_distribution::DistributionBuilder;
 
 pub use crate::types::_ecr_configuration::EcrConfigurationBuilder;
 
+pub use crate::types::_scan_result_condition::ScanResultConditionBuilder;
+
 pub use crate::types::_workflow_configuration::WorkflowConfigurationBuilder;
 
 pub use crate::types::_auto_disable_policy::AutoDisablePolicyBuilder;

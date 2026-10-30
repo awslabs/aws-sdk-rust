@@ -419,6 +419,8 @@ pub(crate) mod shape_application_attribute;
 
 pub(crate) mod shape_block_action;
 
+pub(crate) mod shape_challenge_javascript_sdk_injection_config;
+
 pub(crate) mod shape_crypto_config;
 
 pub(crate) mod shape_custom_response_bodies;
@@ -504,6 +506,8 @@ pub(crate) mod shape_captcha_action;
 pub(crate) mod shape_captcha_response;
 
 pub(crate) mod shape_challenge_action;
+
+pub(crate) mod shape_challenge_javascript_sdk_injection;
 
 pub(crate) mod shape_challenge_response;
 

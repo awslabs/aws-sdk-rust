@@ -5,6 +5,7 @@
 /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
 /// </note>
 /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p>
+/// <p>You can also use this to have your CloudFront distributions insert the WAF challenge JavaScript SDK into the HTML responses that they return. For more information, see the <code>ChallengeJavascriptSdkInjection</code> setting.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociationConfig {
@@ -16,6 +17,22 @@ pub struct AssociationConfig {
     pub request_body: ::std::option::Option<
         ::std::collections::HashMap<crate::types::AssociatedResourceType, crate::types::RequestBodyAssociatedResourceTypeConfig>,
     >,
+    /// <p>Specifies the CloudFront distributions that insert the WAF challenge JavaScript SDK into the HTML responses that they return. When you enable this setting for a distribution, you do not add the SDK to your web pages yourself.</p>
+    /// <p>You can configure this setting only for CloudFront distributions, using the <code>CLOUDFRONT</code> map key. WAF rejects any other resource type, and the setting is not available for regional resources. To configure it, use the CloudFront scope.</p>
+    /// <p>Your web ACL must also contain at least one of the following qualifying managed rule groups. WAF Bot Control qualifies only at the <code>TARGETED</code> inspection level, not at <code>COMMON</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, with the inspection level set to <code>TARGETED</code>.</p></li>
+    /// <li>
+    /// <p>The WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>.</p></li>
+    /// <li>
+    /// <p>The WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>.</p></li>
+    /// </ul>
+    /// <p>If you remove the last qualifying managed rule group from the web ACL, or lower the WAF Bot Control inspection level from <code>TARGETED</code> to <code>COMMON</code>, you must remove this setting in the same update. Otherwise, WAF rejects the update.</p>
+    /// <p>Example JSON: <code> { "CLOUDFRONT": {} }</code></p>
+    /// <p>If you omit this setting, CloudFront does not insert the SDK. When you omit it from a web ACL that previously used it, cached HTML that already contains the SDK is still served until it expires, or until you invalidate the cache for that distribution. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-challenge-javascript-sdk-injection.html">Automatic SDK integration for CloudFront distributions</a> in the <i>WAF Developer Guide</i>.</p>
+    pub challenge_javascript_sdk_injection:
+        ::std::option::Option<::std::collections::HashMap<crate::types::AssociatedResourceType, crate::types::ChallengeJavascriptSdkInjectionConfig>>,
 }
 impl AssociationConfig {
     /// <p>Customizes the maximum size of the request body that your protected CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access resources forward to WAF for inspection. The default size is 16 KB (16,384 bytes). You can change the setting for any of the available resource types.</p><note>
@@ -29,6 +46,26 @@ impl AssociationConfig {
         &::std::collections::HashMap<crate::types::AssociatedResourceType, crate::types::RequestBodyAssociatedResourceTypeConfig>,
     > {
         self.request_body.as_ref()
+    }
+    /// <p>Specifies the CloudFront distributions that insert the WAF challenge JavaScript SDK into the HTML responses that they return. When you enable this setting for a distribution, you do not add the SDK to your web pages yourself.</p>
+    /// <p>You can configure this setting only for CloudFront distributions, using the <code>CLOUDFRONT</code> map key. WAF rejects any other resource type, and the setting is not available for regional resources. To configure it, use the CloudFront scope.</p>
+    /// <p>Your web ACL must also contain at least one of the following qualifying managed rule groups. WAF Bot Control qualifies only at the <code>TARGETED</code> inspection level, not at <code>COMMON</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, with the inspection level set to <code>TARGETED</code>.</p></li>
+    /// <li>
+    /// <p>The WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>.</p></li>
+    /// <li>
+    /// <p>The WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>.</p></li>
+    /// </ul>
+    /// <p>If you remove the last qualifying managed rule group from the web ACL, or lower the WAF Bot Control inspection level from <code>TARGETED</code> to <code>COMMON</code>, you must remove this setting in the same update. Otherwise, WAF rejects the update.</p>
+    /// <p>Example JSON: <code> { "CLOUDFRONT": {} }</code></p>
+    /// <p>If you omit this setting, CloudFront does not insert the SDK. When you omit it from a web ACL that previously used it, cached HTML that already contains the SDK is still served until it expires, or until you invalidate the cache for that distribution. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-challenge-javascript-sdk-injection.html">Automatic SDK integration for CloudFront distributions</a> in the <i>WAF Developer Guide</i>.</p>
+    pub fn challenge_javascript_sdk_injection(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AssociatedResourceType, crate::types::ChallengeJavascriptSdkInjectionConfig>>
+    {
+        self.challenge_javascript_sdk_injection.as_ref()
     }
 }
 impl AssociationConfig {
@@ -45,6 +82,8 @@ pub struct AssociationConfigBuilder {
     pub(crate) request_body: ::std::option::Option<
         ::std::collections::HashMap<crate::types::AssociatedResourceType, crate::types::RequestBodyAssociatedResourceTypeConfig>,
     >,
+    pub(crate) challenge_javascript_sdk_injection:
+        ::std::option::Option<::std::collections::HashMap<crate::types::AssociatedResourceType, crate::types::ChallengeJavascriptSdkInjectionConfig>>,
 }
 impl AssociationConfigBuilder {
     /// Adds a key-value pair to `request_body`.
@@ -88,10 +127,82 @@ impl AssociationConfigBuilder {
     > {
         &self.request_body
     }
+    /// Adds a key-value pair to `challenge_javascript_sdk_injection`.
+    ///
+    /// To override the contents of this collection use [`set_challenge_javascript_sdk_injection`](Self::set_challenge_javascript_sdk_injection).
+    ///
+    /// <p>Specifies the CloudFront distributions that insert the WAF challenge JavaScript SDK into the HTML responses that they return. When you enable this setting for a distribution, you do not add the SDK to your web pages yourself.</p>
+    /// <p>You can configure this setting only for CloudFront distributions, using the <code>CLOUDFRONT</code> map key. WAF rejects any other resource type, and the setting is not available for regional resources. To configure it, use the CloudFront scope.</p>
+    /// <p>Your web ACL must also contain at least one of the following qualifying managed rule groups. WAF Bot Control qualifies only at the <code>TARGETED</code> inspection level, not at <code>COMMON</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, with the inspection level set to <code>TARGETED</code>.</p></li>
+    /// <li>
+    /// <p>The WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>.</p></li>
+    /// <li>
+    /// <p>The WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>.</p></li>
+    /// </ul>
+    /// <p>If you remove the last qualifying managed rule group from the web ACL, or lower the WAF Bot Control inspection level from <code>TARGETED</code> to <code>COMMON</code>, you must remove this setting in the same update. Otherwise, WAF rejects the update.</p>
+    /// <p>Example JSON: <code> { "CLOUDFRONT": {} }</code></p>
+    /// <p>If you omit this setting, CloudFront does not insert the SDK. When you omit it from a web ACL that previously used it, cached HTML that already contains the SDK is still served until it expires, or until you invalidate the cache for that distribution. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-challenge-javascript-sdk-injection.html">Automatic SDK integration for CloudFront distributions</a> in the <i>WAF Developer Guide</i>.</p>
+    pub fn challenge_javascript_sdk_injection(
+        mut self,
+        k: crate::types::AssociatedResourceType,
+        v: crate::types::ChallengeJavascriptSdkInjectionConfig,
+    ) -> Self {
+        let mut hash_map = self.challenge_javascript_sdk_injection.unwrap_or_default();
+        hash_map.insert(k, v);
+        self.challenge_javascript_sdk_injection = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Specifies the CloudFront distributions that insert the WAF challenge JavaScript SDK into the HTML responses that they return. When you enable this setting for a distribution, you do not add the SDK to your web pages yourself.</p>
+    /// <p>You can configure this setting only for CloudFront distributions, using the <code>CLOUDFRONT</code> map key. WAF rejects any other resource type, and the setting is not available for regional resources. To configure it, use the CloudFront scope.</p>
+    /// <p>Your web ACL must also contain at least one of the following qualifying managed rule groups. WAF Bot Control qualifies only at the <code>TARGETED</code> inspection level, not at <code>COMMON</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, with the inspection level set to <code>TARGETED</code>.</p></li>
+    /// <li>
+    /// <p>The WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>.</p></li>
+    /// <li>
+    /// <p>The WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>.</p></li>
+    /// </ul>
+    /// <p>If you remove the last qualifying managed rule group from the web ACL, or lower the WAF Bot Control inspection level from <code>TARGETED</code> to <code>COMMON</code>, you must remove this setting in the same update. Otherwise, WAF rejects the update.</p>
+    /// <p>Example JSON: <code> { "CLOUDFRONT": {} }</code></p>
+    /// <p>If you omit this setting, CloudFront does not insert the SDK. When you omit it from a web ACL that previously used it, cached HTML that already contains the SDK is still served until it expires, or until you invalidate the cache for that distribution. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-challenge-javascript-sdk-injection.html">Automatic SDK integration for CloudFront distributions</a> in the <i>WAF Developer Guide</i>.</p>
+    pub fn set_challenge_javascript_sdk_injection(
+        mut self,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::AssociatedResourceType, crate::types::ChallengeJavascriptSdkInjectionConfig>,
+        >,
+    ) -> Self {
+        self.challenge_javascript_sdk_injection = input;
+        self
+    }
+    /// <p>Specifies the CloudFront distributions that insert the WAF challenge JavaScript SDK into the HTML responses that they return. When you enable this setting for a distribution, you do not add the SDK to your web pages yourself.</p>
+    /// <p>You can configure this setting only for CloudFront distributions, using the <code>CLOUDFRONT</code> map key. WAF rejects any other resource type, and the setting is not available for regional resources. To configure it, use the CloudFront scope.</p>
+    /// <p>Your web ACL must also contain at least one of the following qualifying managed rule groups. WAF Bot Control qualifies only at the <code>TARGETED</code> inspection level, not at <code>COMMON</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, with the inspection level set to <code>TARGETED</code>.</p></li>
+    /// <li>
+    /// <p>The WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>.</p></li>
+    /// <li>
+    /// <p>The WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>.</p></li>
+    /// </ul>
+    /// <p>If you remove the last qualifying managed rule group from the web ACL, or lower the WAF Bot Control inspection level from <code>TARGETED</code> to <code>COMMON</code>, you must remove this setting in the same update. Otherwise, WAF rejects the update.</p>
+    /// <p>Example JSON: <code> { "CLOUDFRONT": {} }</code></p>
+    /// <p>If you omit this setting, CloudFront does not insert the SDK. When you omit it from a web ACL that previously used it, cached HTML that already contains the SDK is still served until it expires, or until you invalidate the cache for that distribution. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-challenge-javascript-sdk-injection.html">Automatic SDK integration for CloudFront distributions</a> in the <i>WAF Developer Guide</i>.</p>
+    pub fn get_challenge_javascript_sdk_injection(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AssociatedResourceType, crate::types::ChallengeJavascriptSdkInjectionConfig>>
+    {
+        &self.challenge_javascript_sdk_injection
+    }
     /// Consumes the builder and constructs a [`AssociationConfig`](crate::types::AssociationConfig).
     pub fn build(self) -> crate::types::AssociationConfig {
         crate::types::AssociationConfig {
             request_body: self.request_body,
+            challenge_javascript_sdk_injection: self.challenge_javascript_sdk_injection,
         }
     }
 }

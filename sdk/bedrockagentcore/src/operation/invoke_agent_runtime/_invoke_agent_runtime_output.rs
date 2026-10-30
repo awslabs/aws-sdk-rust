@@ -4,6 +4,8 @@
 pub struct InvokeAgentRuntimeOutput {
     /// <p>The identifier of the runtime session.</p>
     pub runtime_session_id: ::std::option::Option<::std::string::String>,
+    /// <p>The HTTPS endpoint that addresses this runtime session directly. This value is returned only when the agent runtime is configured with allowed ports and direct runtime access is available for the session. If this value is not present, use <code>InvokeAgentRuntime</code> to communicate with the session.</p>
+    pub session_endpoint_url: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the MCP session.</p>
     pub mcp_session_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the MCP protocol being used.</p>
@@ -28,6 +30,10 @@ impl InvokeAgentRuntimeOutput {
     /// <p>The identifier of the runtime session.</p>
     pub fn runtime_session_id(&self) -> ::std::option::Option<&str> {
         self.runtime_session_id.as_deref()
+    }
+    /// <p>The HTTPS endpoint that addresses this runtime session directly. This value is returned only when the agent runtime is configured with allowed ports and direct runtime access is available for the session. If this value is not present, use <code>InvokeAgentRuntime</code> to communicate with the session.</p>
+    pub fn session_endpoint_url(&self) -> ::std::option::Option<&str> {
+        self.session_endpoint_url.as_deref()
     }
     /// <p>The identifier of the MCP session.</p>
     pub fn mcp_session_id(&self) -> ::std::option::Option<&str> {
@@ -71,6 +77,7 @@ impl ::std::fmt::Debug for InvokeAgentRuntimeOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeAgentRuntimeOutput");
         formatter.field("runtime_session_id", &self.runtime_session_id);
+        formatter.field("session_endpoint_url", &self.session_endpoint_url);
         formatter.field("mcp_session_id", &self.mcp_session_id);
         formatter.field("mcp_protocol_version", &self.mcp_protocol_version);
         formatter.field("trace_id", &self.trace_id);
@@ -101,6 +108,7 @@ impl InvokeAgentRuntimeOutput {
 #[non_exhaustive]
 pub struct InvokeAgentRuntimeOutputBuilder {
     pub(crate) runtime_session_id: ::std::option::Option<::std::string::String>,
+    pub(crate) session_endpoint_url: ::std::option::Option<::std::string::String>,
     pub(crate) mcp_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) mcp_protocol_version: ::std::option::Option<::std::string::String>,
     pub(crate) trace_id: ::std::option::Option<::std::string::String>,
@@ -126,6 +134,20 @@ impl InvokeAgentRuntimeOutputBuilder {
     /// <p>The identifier of the runtime session.</p>
     pub fn get_runtime_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.runtime_session_id
+    }
+    /// <p>The HTTPS endpoint that addresses this runtime session directly. This value is returned only when the agent runtime is configured with allowed ports and direct runtime access is available for the session. If this value is not present, use <code>InvokeAgentRuntime</code> to communicate with the session.</p>
+    pub fn session_endpoint_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_endpoint_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The HTTPS endpoint that addresses this runtime session directly. This value is returned only when the agent runtime is configured with allowed ports and direct runtime access is available for the session. If this value is not present, use <code>InvokeAgentRuntime</code> to communicate with the session.</p>
+    pub fn set_session_endpoint_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session_endpoint_url = input;
+        self
+    }
+    /// <p>The HTTPS endpoint that addresses this runtime session directly. This value is returned only when the agent runtime is configured with allowed ports and direct runtime access is available for the session. If this value is not present, use <code>InvokeAgentRuntime</code> to communicate with the session.</p>
+    pub fn get_session_endpoint_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_endpoint_url
     }
     /// <p>The identifier of the MCP session.</p>
     pub fn mcp_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -272,6 +294,7 @@ impl InvokeAgentRuntimeOutputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::invoke_agent_runtime::InvokeAgentRuntimeOutput {
             runtime_session_id: self.runtime_session_id,
+            session_endpoint_url: self.session_endpoint_url,
             mcp_session_id: self.mcp_session_id,
             mcp_protocol_version: self.mcp_protocol_version,
             trace_id: self.trace_id,
@@ -294,6 +317,7 @@ impl ::std::fmt::Debug for InvokeAgentRuntimeOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeAgentRuntimeOutputBuilder");
         formatter.field("runtime_session_id", &self.runtime_session_id);
+        formatter.field("session_endpoint_url", &self.session_endpoint_url);
         formatter.field("mcp_session_id", &self.mcp_session_id);
         formatter.field("mcp_protocol_version", &self.mcp_protocol_version);
         formatter.field("trace_id", &self.trace_id);

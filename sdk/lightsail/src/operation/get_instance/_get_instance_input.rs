@@ -5,11 +5,19 @@
 pub struct GetInstanceInput {
     /// <p>The name of the instance.</p>
     pub instance_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to include the instance health status checks in the response of your request.</p>
+    /// <p>When set to <code>true</code>, the response includes the <code>instanceStatus</code> and <code>systemStatus</code> of the instance. When omitted or set to <code>false</code>, the response doesn't include them.</p>
+    pub include_health_status: ::std::option::Option<bool>,
 }
 impl GetInstanceInput {
     /// <p>The name of the instance.</p>
     pub fn instance_name(&self) -> ::std::option::Option<&str> {
         self.instance_name.as_deref()
+    }
+    /// <p>Specifies whether to include the instance health status checks in the response of your request.</p>
+    /// <p>When set to <code>true</code>, the response includes the <code>instanceStatus</code> and <code>systemStatus</code> of the instance. When omitted or set to <code>false</code>, the response doesn't include them.</p>
+    pub fn include_health_status(&self) -> ::std::option::Option<bool> {
+        self.include_health_status
     }
 }
 static GETINSTANCEINPUT_MEMBER_INSTANCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -22,6 +30,16 @@ static GETINSTANCEINPUT_MEMBER_INSTANCE_NAME: ::aws_smithy_schema::Schema<'stati
     "instanceName",
     0,
 );
+static GETINSTANCEINPUT_MEMBER_INCLUDE_HEALTH_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetInstanceInput$includeHealthStatus",
+        "com.amazonaws.lightsail.synthetic",
+        "GetInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "includeHealthStatus",
+    1,
+);
 static GETINSTANCEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.lightsail.synthetic#GetInstanceInput",
@@ -29,7 +47,7 @@ static GETINSTANCEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smi
         "GetInstanceInput",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&GETINSTANCEINPUT_MEMBER_INSTANCE_NAME],
+    &[&GETINSTANCEINPUT_MEMBER_INSTANCE_NAME, &GETINSTANCEINPUT_MEMBER_INCLUDE_HEALTH_STATUS],
 )
 .with_http(aws_smithy_schema::traits::HttpTrait::new("POST", "/ls/api/2016-11-28/GetInstance", None))
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
@@ -50,6 +68,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for GetInstanceInput {
     ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
         if let Some(ref val) = self.instance_name {
             ser.write_string(&GETINSTANCEINPUT_MEMBER_INSTANCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.include_health_status {
+            ser.write_boolean(&GETINSTANCEINPUT_MEMBER_INCLUDE_HEALTH_STATUS, *val)?;
         }
         Ok(())
     }
@@ -73,6 +94,13 @@ impl crate::operation::get_instance::builders::GetInstanceInputBuilder {
                         deser.read_null()?;
                     } else {
                         self.instance_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.include_health_status = Some(deser.read_boolean(member)?);
                     }
                 }
                 _ => {}
@@ -105,6 +133,7 @@ impl GetInstanceInput {
 #[non_exhaustive]
 pub struct GetInstanceInputBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
+    pub(crate) include_health_status: ::std::option::Option<bool>,
 }
 impl GetInstanceInputBuilder {
     /// <p>The name of the instance.</p>
@@ -122,10 +151,28 @@ impl GetInstanceInputBuilder {
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_name
     }
+    /// <p>Specifies whether to include the instance health status checks in the response of your request.</p>
+    /// <p>When set to <code>true</code>, the response includes the <code>instanceStatus</code> and <code>systemStatus</code> of the instance. When omitted or set to <code>false</code>, the response doesn't include them.</p>
+    pub fn include_health_status(mut self, input: bool) -> Self {
+        self.include_health_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to include the instance health status checks in the response of your request.</p>
+    /// <p>When set to <code>true</code>, the response includes the <code>instanceStatus</code> and <code>systemStatus</code> of the instance. When omitted or set to <code>false</code>, the response doesn't include them.</p>
+    pub fn set_include_health_status(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_health_status = input;
+        self
+    }
+    /// <p>Specifies whether to include the instance health status checks in the response of your request.</p>
+    /// <p>When set to <code>true</code>, the response includes the <code>instanceStatus</code> and <code>systemStatus</code> of the instance. When omitted or set to <code>false</code>, the response doesn't include them.</p>
+    pub fn get_include_health_status(&self) -> &::std::option::Option<bool> {
+        &self.include_health_status
+    }
     /// Consumes the builder and constructs a [`GetInstanceInput`](crate::operation::get_instance::GetInstanceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_instance::GetInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_instance::GetInstanceInput {
             instance_name: self.instance_name,
+            include_health_status: self.include_health_status,
         })
     }
 }

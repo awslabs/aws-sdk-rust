@@ -3,11 +3,14 @@ pub fn ser_protected_job_s3_output_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProtectedJobS3OutputConfigurationInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.result_format {
+        object.key("resultFormat").string(var_1.as_str());
+    }
     {
         object.key("bucket").string(input.bucket.as_str());
     }
-    if let Some(var_1) = &input.key_prefix {
-        object.key("keyPrefix").string(var_1.as_str());
+    if let Some(var_2) = &input.key_prefix {
+        object.key("keyPrefix").string(var_2.as_str());
     }
     Ok(())
 }
@@ -34,6 +37,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "resultFormat" => {
+                            builder = builder.set_result_format(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResultFormat::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "bucket" => {
                             builder = builder.set_bucket(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

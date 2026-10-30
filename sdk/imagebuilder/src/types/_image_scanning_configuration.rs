@@ -4,19 +4,49 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageScanningConfiguration {
-    /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image, and whether Image Builder saves the findings. Amazon Inspector must be enabled in the account. Image tests must also be enabled. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
+    /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image. You must also enable image tests. For AMI output, <code>imageScanningTypes</code> sets whether Amazon Inspector scans the test instance or the output AMI. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
+    /// <p>To use container image scans, you must activate Amazon Inspector for Amazon ECR scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings of these scans.</p>
     pub image_scanning_enabled: ::std::option::Option<bool>,
     /// <p>Contains Amazon ECR settings for vulnerability scans.</p>
     pub ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
+    /// <p>The type of vulnerability scan that Image Builder runs for AMI output when <code>imageScanningEnabled</code> is <code>true</code>. Specify a single value. If you omit <code>imageScanningTypes</code>, Image Builder uses <code>TEST_INSTANCE_CVE</code>. The scan types work as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>TEST_INSTANCE_CVE</code>, Amazon Inspector scans the test instance during image tests. To use this scan, you must activate Amazon Inspector for Amazon EC2 scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings.</p></li>
+    /// <li>
+    /// <p>With <code>ON_DEMAND_AMI_CVE</code>, Amazon Inspector starts an on-demand scan of the output AMI during image tests. To use this scan, you must build from an image recipe, but you do not need to activate Amazon Inspector in your account. The Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageFindings.html">GetImageFindings</a> operation returns the findings.</p></li>
+    /// </ul>
+    pub image_scanning_types: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanningType>>,
+    /// <p>The condition that the output AMI's scan results must meet for the image to pass. You can set <code>scanResultCondition</code> only when <code>imageScanningTypes</code> is <code>ON_DEMAND_AMI_CVE</code>. If you omit it, Image Builder starts the scan but does not wait for it or use its results to pass or fail the image.</p>
+    /// <p>When you set <code>scanResultCondition</code>, the test phase waits for the scan to finish. Then Image Builder checks the findings against the condition. By default, Image Builder counts only findings that have a fix available. To count every finding, set <code>fixAvailable</code> to <code>false</code>. If a counted finding exceeds <code>maximumSeverityLabel</code>, Image Builder fails the image in the test phase and does not distribute the AMI.</p>
+    pub scan_result_condition: ::std::option::Option<crate::types::ScanResultCondition>,
 }
 impl ImageScanningConfiguration {
-    /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image, and whether Image Builder saves the findings. Amazon Inspector must be enabled in the account. Image tests must also be enabled. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
+    /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image. You must also enable image tests. For AMI output, <code>imageScanningTypes</code> sets whether Amazon Inspector scans the test instance or the output AMI. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
+    /// <p>To use container image scans, you must activate Amazon Inspector for Amazon ECR scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings of these scans.</p>
     pub fn image_scanning_enabled(&self) -> ::std::option::Option<bool> {
         self.image_scanning_enabled
     }
     /// <p>Contains Amazon ECR settings for vulnerability scans.</p>
     pub fn ecr_configuration(&self) -> ::std::option::Option<&crate::types::EcrConfiguration> {
         self.ecr_configuration.as_ref()
+    }
+    /// <p>The type of vulnerability scan that Image Builder runs for AMI output when <code>imageScanningEnabled</code> is <code>true</code>. Specify a single value. If you omit <code>imageScanningTypes</code>, Image Builder uses <code>TEST_INSTANCE_CVE</code>. The scan types work as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>TEST_INSTANCE_CVE</code>, Amazon Inspector scans the test instance during image tests. To use this scan, you must activate Amazon Inspector for Amazon EC2 scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings.</p></li>
+    /// <li>
+    /// <p>With <code>ON_DEMAND_AMI_CVE</code>, Amazon Inspector starts an on-demand scan of the output AMI during image tests. To use this scan, you must build from an image recipe, but you do not need to activate Amazon Inspector in your account. The Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageFindings.html">GetImageFindings</a> operation returns the findings.</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_scanning_types.is_none()`.
+    pub fn image_scanning_types(&self) -> &[crate::types::ImageScanningType] {
+        self.image_scanning_types.as_deref().unwrap_or_default()
+    }
+    /// <p>The condition that the output AMI's scan results must meet for the image to pass. You can set <code>scanResultCondition</code> only when <code>imageScanningTypes</code> is <code>ON_DEMAND_AMI_CVE</code>. If you omit it, Image Builder starts the scan but does not wait for it or use its results to pass or fail the image.</p>
+    /// <p>When you set <code>scanResultCondition</code>, the test phase waits for the scan to finish. Then Image Builder checks the findings against the condition. By default, Image Builder counts only findings that have a fix available. To count every finding, set <code>fixAvailable</code> to <code>false</code>. If a counted finding exceeds <code>maximumSeverityLabel</code>, Image Builder fails the image in the test phase and does not distribute the AMI.</p>
+    pub fn scan_result_condition(&self) -> ::std::option::Option<&crate::types::ScanResultCondition> {
+        self.scan_result_condition.as_ref()
     }
 }
 impl ImageScanningConfiguration {
@@ -32,19 +62,24 @@ impl ImageScanningConfiguration {
 pub struct ImageScanningConfigurationBuilder {
     pub(crate) image_scanning_enabled: ::std::option::Option<bool>,
     pub(crate) ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
+    pub(crate) image_scanning_types: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanningType>>,
+    pub(crate) scan_result_condition: ::std::option::Option<crate::types::ScanResultCondition>,
 }
 impl ImageScanningConfigurationBuilder {
-    /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image, and whether Image Builder saves the findings. Amazon Inspector must be enabled in the account. Image tests must also be enabled. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
+    /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image. You must also enable image tests. For AMI output, <code>imageScanningTypes</code> sets whether Amazon Inspector scans the test instance or the output AMI. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
+    /// <p>To use container image scans, you must activate Amazon Inspector for Amazon ECR scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings of these scans.</p>
     pub fn image_scanning_enabled(mut self, input: bool) -> Self {
         self.image_scanning_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image, and whether Image Builder saves the findings. Amazon Inspector must be enabled in the account. Image tests must also be enabled. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
+    /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image. You must also enable image tests. For AMI output, <code>imageScanningTypes</code> sets whether Amazon Inspector scans the test instance or the output AMI. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
+    /// <p>To use container image scans, you must activate Amazon Inspector for Amazon ECR scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings of these scans.</p>
     pub fn set_image_scanning_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.image_scanning_enabled = input;
         self
     }
-    /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image, and whether Image Builder saves the findings. Amazon Inspector must be enabled in the account. Image tests must also be enabled. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
+    /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image. You must also enable image tests. For AMI output, <code>imageScanningTypes</code> sets whether Amazon Inspector scans the test instance or the output AMI. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
+    /// <p>To use container image scans, you must activate Amazon Inspector for Amazon ECR scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings of these scans.</p>
     pub fn get_image_scanning_enabled(&self) -> &::std::option::Option<bool> {
         &self.image_scanning_enabled
     }
@@ -62,11 +97,68 @@ impl ImageScanningConfigurationBuilder {
     pub fn get_ecr_configuration(&self) -> &::std::option::Option<crate::types::EcrConfiguration> {
         &self.ecr_configuration
     }
+    /// Appends an item to `image_scanning_types`.
+    ///
+    /// To override the contents of this collection use [`set_image_scanning_types`](Self::set_image_scanning_types).
+    ///
+    /// <p>The type of vulnerability scan that Image Builder runs for AMI output when <code>imageScanningEnabled</code> is <code>true</code>. Specify a single value. If you omit <code>imageScanningTypes</code>, Image Builder uses <code>TEST_INSTANCE_CVE</code>. The scan types work as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>TEST_INSTANCE_CVE</code>, Amazon Inspector scans the test instance during image tests. To use this scan, you must activate Amazon Inspector for Amazon EC2 scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings.</p></li>
+    /// <li>
+    /// <p>With <code>ON_DEMAND_AMI_CVE</code>, Amazon Inspector starts an on-demand scan of the output AMI during image tests. To use this scan, you must build from an image recipe, but you do not need to activate Amazon Inspector in your account. The Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageFindings.html">GetImageFindings</a> operation returns the findings.</p></li>
+    /// </ul>
+    pub fn image_scanning_types(mut self, input: crate::types::ImageScanningType) -> Self {
+        let mut v = self.image_scanning_types.unwrap_or_default();
+        v.push(input);
+        self.image_scanning_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The type of vulnerability scan that Image Builder runs for AMI output when <code>imageScanningEnabled</code> is <code>true</code>. Specify a single value. If you omit <code>imageScanningTypes</code>, Image Builder uses <code>TEST_INSTANCE_CVE</code>. The scan types work as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>TEST_INSTANCE_CVE</code>, Amazon Inspector scans the test instance during image tests. To use this scan, you must activate Amazon Inspector for Amazon EC2 scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings.</p></li>
+    /// <li>
+    /// <p>With <code>ON_DEMAND_AMI_CVE</code>, Amazon Inspector starts an on-demand scan of the output AMI during image tests. To use this scan, you must build from an image recipe, but you do not need to activate Amazon Inspector in your account. The Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageFindings.html">GetImageFindings</a> operation returns the findings.</p></li>
+    /// </ul>
+    pub fn set_image_scanning_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanningType>>) -> Self {
+        self.image_scanning_types = input;
+        self
+    }
+    /// <p>The type of vulnerability scan that Image Builder runs for AMI output when <code>imageScanningEnabled</code> is <code>true</code>. Specify a single value. If you omit <code>imageScanningTypes</code>, Image Builder uses <code>TEST_INSTANCE_CVE</code>. The scan types work as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>With <code>TEST_INSTANCE_CVE</code>, Amazon Inspector scans the test instance during image tests. To use this scan, you must activate Amazon Inspector for Amazon EC2 scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings.</p></li>
+    /// <li>
+    /// <p>With <code>ON_DEMAND_AMI_CVE</code>, Amazon Inspector starts an on-demand scan of the output AMI during image tests. To use this scan, you must build from an image recipe, but you do not need to activate Amazon Inspector in your account. The Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageFindings.html">GetImageFindings</a> operation returns the findings.</p></li>
+    /// </ul>
+    pub fn get_image_scanning_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageScanningType>> {
+        &self.image_scanning_types
+    }
+    /// <p>The condition that the output AMI's scan results must meet for the image to pass. You can set <code>scanResultCondition</code> only when <code>imageScanningTypes</code> is <code>ON_DEMAND_AMI_CVE</code>. If you omit it, Image Builder starts the scan but does not wait for it or use its results to pass or fail the image.</p>
+    /// <p>When you set <code>scanResultCondition</code>, the test phase waits for the scan to finish. Then Image Builder checks the findings against the condition. By default, Image Builder counts only findings that have a fix available. To count every finding, set <code>fixAvailable</code> to <code>false</code>. If a counted finding exceeds <code>maximumSeverityLabel</code>, Image Builder fails the image in the test phase and does not distribute the AMI.</p>
+    pub fn scan_result_condition(mut self, input: crate::types::ScanResultCondition) -> Self {
+        self.scan_result_condition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The condition that the output AMI's scan results must meet for the image to pass. You can set <code>scanResultCondition</code> only when <code>imageScanningTypes</code> is <code>ON_DEMAND_AMI_CVE</code>. If you omit it, Image Builder starts the scan but does not wait for it or use its results to pass or fail the image.</p>
+    /// <p>When you set <code>scanResultCondition</code>, the test phase waits for the scan to finish. Then Image Builder checks the findings against the condition. By default, Image Builder counts only findings that have a fix available. To count every finding, set <code>fixAvailable</code> to <code>false</code>. If a counted finding exceeds <code>maximumSeverityLabel</code>, Image Builder fails the image in the test phase and does not distribute the AMI.</p>
+    pub fn set_scan_result_condition(mut self, input: ::std::option::Option<crate::types::ScanResultCondition>) -> Self {
+        self.scan_result_condition = input;
+        self
+    }
+    /// <p>The condition that the output AMI's scan results must meet for the image to pass. You can set <code>scanResultCondition</code> only when <code>imageScanningTypes</code> is <code>ON_DEMAND_AMI_CVE</code>. If you omit it, Image Builder starts the scan but does not wait for it or use its results to pass or fail the image.</p>
+    /// <p>When you set <code>scanResultCondition</code>, the test phase waits for the scan to finish. Then Image Builder checks the findings against the condition. By default, Image Builder counts only findings that have a fix available. To count every finding, set <code>fixAvailable</code> to <code>false</code>. If a counted finding exceeds <code>maximumSeverityLabel</code>, Image Builder fails the image in the test phase and does not distribute the AMI.</p>
+    pub fn get_scan_result_condition(&self) -> &::std::option::Option<crate::types::ScanResultCondition> {
+        &self.scan_result_condition
+    }
     /// Consumes the builder and constructs a [`ImageScanningConfiguration`](crate::types::ImageScanningConfiguration).
     pub fn build(self) -> crate::types::ImageScanningConfiguration {
         crate::types::ImageScanningConfiguration {
             image_scanning_enabled: self.image_scanning_enabled,
             ecr_configuration: self.ecr_configuration,
+            image_scanning_types: self.image_scanning_types,
+            scan_result_condition: self.scan_result_condition,
         }
     }
 }
