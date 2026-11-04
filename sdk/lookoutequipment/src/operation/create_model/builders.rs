@@ -25,6 +25,10 @@ impl crate::operation::create_model::builders::CreateModelInputBuilder {
 /// <p>Creates a machine learning model for data inference.</p>
 /// <p>A machine-learning (ML) model is a mathematical model that finds patterns in your data. In Amazon Lookout for Equipment, the model learns the patterns of normal behavior and detects abnormal behavior that could be potential equipment failure (or maintenance events). The models are made by analyzing normal data and abnormalities in machine behavior that have already occurred.</p>
 /// <p>Your model is trained using a portion of the data from your dataset and uses that data to learn patterns of normal behavior and abnormal patterns that lead to equipment failure. Another portion of the data is used to evaluate the model's accuracy.</p>
+#[deprecated(
+    note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+    since = "2026-10-07"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateModelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

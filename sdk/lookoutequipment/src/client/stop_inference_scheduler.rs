@@ -11,6 +11,10 @@ impl super::Client {
     ///   - [`inference_scheduler_arn(Option<String>)`](crate::operation::stop_inference_scheduler::StopInferenceSchedulerOutput::inference_scheduler_arn): <p>The Amazon Resource Name (ARN) of the inference schedule being stopped.</p>
     ///   - [`status(Option<InferenceSchedulerStatus>)`](crate::operation::stop_inference_scheduler::StopInferenceSchedulerOutput::status): <p>Indicates the status of the inference scheduler.</p>
     /// - On failure, responds with [`SdkError<StopInferenceSchedulerError>`](crate::operation::stop_inference_scheduler::StopInferenceSchedulerError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn stop_inference_scheduler(&self) -> crate::operation::stop_inference_scheduler::builders::StopInferenceSchedulerFluentBuilder {
         crate::operation::stop_inference_scheduler::builders::StopInferenceSchedulerFluentBuilder::new(self.handle.clone())
     }

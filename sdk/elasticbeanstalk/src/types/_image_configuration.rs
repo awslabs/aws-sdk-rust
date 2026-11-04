@@ -9,6 +9,7 @@ pub struct ImageConfiguration {
     pub source: ::std::option::Option<crate::types::ImageSource>,
     /// <p>Settings that Elastic Beanstalk uses to build a container image from the source bundle of the application version.</p>
     /// <p>If you specify <code>Build</code>, also specify the request's <code>SourceBundle</code> parameter, and don't specify <code>Source</code>.</p>
+    /// <p>To build the image when you create the application version instead of on first deployment, also set <code>Process</code> to <code>true</code>.</p>
     ///
     /// _Note: This member has been renamed from `build`._
     pub build_value: ::std::option::Option<crate::types::ImageBuildConfiguration>,
@@ -21,6 +22,7 @@ impl ImageConfiguration {
     }
     /// <p>Settings that Elastic Beanstalk uses to build a container image from the source bundle of the application version.</p>
     /// <p>If you specify <code>Build</code>, also specify the request's <code>SourceBundle</code> parameter, and don't specify <code>Source</code>.</p>
+    /// <p>To build the image when you create the application version instead of on first deployment, also set <code>Process</code> to <code>true</code>.</p>
     ///
     /// _Note: This member has been renamed from `build`._
     pub fn build_value(&self) -> ::std::option::Option<&crate::types::ImageBuildConfiguration> {
@@ -61,18 +63,21 @@ impl ImageConfigurationBuilder {
     }
     /// <p>Settings that Elastic Beanstalk uses to build a container image from the source bundle of the application version.</p>
     /// <p>If you specify <code>Build</code>, also specify the request's <code>SourceBundle</code> parameter, and don't specify <code>Source</code>.</p>
+    /// <p>To build the image when you create the application version instead of on first deployment, also set <code>Process</code> to <code>true</code>.</p>
     pub fn build_value(mut self, input: crate::types::ImageBuildConfiguration) -> Self {
         self.build_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>Settings that Elastic Beanstalk uses to build a container image from the source bundle of the application version.</p>
     /// <p>If you specify <code>Build</code>, also specify the request's <code>SourceBundle</code> parameter, and don't specify <code>Source</code>.</p>
+    /// <p>To build the image when you create the application version instead of on first deployment, also set <code>Process</code> to <code>true</code>.</p>
     pub fn set_build(mut self, input: ::std::option::Option<crate::types::ImageBuildConfiguration>) -> Self {
         self.build_value = input;
         self
     }
     /// <p>Settings that Elastic Beanstalk uses to build a container image from the source bundle of the application version.</p>
     /// <p>If you specify <code>Build</code>, also specify the request's <code>SourceBundle</code> parameter, and don't specify <code>Source</code>.</p>
+    /// <p>To build the image when you create the application version instead of on first deployment, also set <code>Process</code> to <code>true</code>.</p>
     pub fn get_build(&self) -> &::std::option::Option<crate::types::ImageBuildConfiguration> {
         &self.build_value
     }

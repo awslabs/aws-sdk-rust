@@ -11,6 +11,10 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_datasets::ListDatasetsOutput::next_token): <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
     ///   - [`dataset_summaries(Option<Vec::<DatasetSummary>>)`](crate::operation::list_datasets::ListDatasetsOutput::dataset_summaries): <p>Provides information about the specified dataset, including creation time, dataset ARN, and status.</p>
     /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::operation::list_datasets::ListDatasetsError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn list_datasets(&self) -> crate::operation::list_datasets::builders::ListDatasetsFluentBuilder {
         crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::new(self.handle.clone())
     }

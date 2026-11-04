@@ -13,6 +13,10 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_models::ListModelsOutput::next_token): <p>An opaque pagination token indicating where to continue the listing of machine learning models.</p>
     ///   - [`model_summaries(Option<Vec::<ModelSummary>>)`](crate::operation::list_models::ListModelsOutput::model_summaries): <p>Provides information on the specified model, including created time, model and dataset ARNs, and status.</p>
     /// - On failure, responds with [`SdkError<ListModelsError>`](crate::operation::list_models::ListModelsError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn list_models(&self) -> crate::operation::list_models::builders::ListModelsFluentBuilder {
         crate::operation::list_models::builders::ListModelsFluentBuilder::new(self.handle.clone())
     }

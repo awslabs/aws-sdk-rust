@@ -23,6 +23,10 @@ impl crate::operation::untag_resource::builders::UntagResourceInputBuilder {
 /// Fluent builder constructing a request to `UntagResource`.
 ///
 /// <p>Removes a specific tag from a given resource. The tag is specified by its key.</p>
+#[deprecated(
+    note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+    since = "2026-10-07"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

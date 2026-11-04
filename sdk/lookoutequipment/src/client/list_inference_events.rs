@@ -13,6 +13,10 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_inference_events::ListInferenceEventsOutput::next_token): <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
     ///   - [`inference_event_summaries(Option<Vec::<InferenceEventSummary>>)`](crate::operation::list_inference_events::ListInferenceEventsOutput::inference_event_summaries): <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on.</p>
     /// - On failure, responds with [`SdkError<ListInferenceEventsError>`](crate::operation::list_inference_events::ListInferenceEventsError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn list_inference_events(&self) -> crate::operation::list_inference_events::builders::ListInferenceEventsFluentBuilder {
         crate::operation::list_inference_events::builders::ListInferenceEventsFluentBuilder::new(self.handle.clone())
     }

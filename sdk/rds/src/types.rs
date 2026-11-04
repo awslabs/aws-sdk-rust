@@ -115,13 +115,13 @@ pub use crate::types::_db_capacity_reservation_state::DbCapacityReservationState
 
 pub use crate::types::_storage_encryption_type::StorageEncryptionType;
 
+pub use crate::types::_tag_specification::TagSpecification;
+
 pub use crate::types::_target_resource_configuration::TargetResourceConfiguration;
 
 pub use crate::types::_upgrade_target::UpgradeTarget;
 
 pub use crate::types::_timezone::Timezone;
-
-pub use crate::types::_tag_specification::TagSpecification;
 
 pub use crate::types::_db_cluster_associated_role::DbClusterAssociatedRole;
 

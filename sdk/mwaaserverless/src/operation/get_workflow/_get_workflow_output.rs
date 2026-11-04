@@ -35,6 +35,8 @@ pub struct GetWorkflowOutput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The network configuration for the workflow execution environment.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
+    /// <p>The environment variables that tasks in the workflow use during execution.</p>
+    pub environment: ::std::option::Option<crate::types::Environment>,
     /// <p>The trigger mode for the workflow execution.</p>
     pub trigger_mode: ::std::option::Option<::std::string::String>,
     /// <p>The workflow definition content.</p>
@@ -107,6 +109,10 @@ impl GetWorkflowOutput {
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
+    /// <p>The environment variables that tasks in the workflow use during execution.</p>
+    pub fn environment(&self) -> ::std::option::Option<&crate::types::Environment> {
+        self.environment.as_ref()
+    }
     /// <p>The trigger mode for the workflow execution.</p>
     pub fn trigger_mode(&self) -> ::std::option::Option<&str> {
         self.trigger_mode.as_deref()
@@ -148,6 +154,7 @@ pub struct GetWorkflowOutputBuilder {
     pub(crate) schedule_configuration: ::std::option::Option<crate::types::ScheduleConfiguration>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
+    pub(crate) environment: ::std::option::Option<crate::types::Environment>,
     pub(crate) trigger_mode: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_definition: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -378,6 +385,20 @@ impl GetWorkflowOutputBuilder {
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         &self.network_configuration
     }
+    /// <p>The environment variables that tasks in the workflow use during execution.</p>
+    pub fn environment(mut self, input: crate::types::Environment) -> Self {
+        self.environment = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The environment variables that tasks in the workflow use during execution.</p>
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
+        self.environment = input;
+        self
+    }
+    /// <p>The environment variables that tasks in the workflow use during execution.</p>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::Environment> {
+        &self.environment
+    }
     /// <p>The trigger mode for the workflow execution.</p>
     pub fn trigger_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trigger_mode = ::std::option::Option::Some(input.into());
@@ -441,6 +462,7 @@ impl GetWorkflowOutputBuilder {
             schedule_configuration: self.schedule_configuration,
             role_arn: self.role_arn,
             network_configuration: self.network_configuration,
+            environment: self.environment,
             trigger_mode: self.trigger_mode,
             workflow_definition: self.workflow_definition,
             _request_id: self._request_id,

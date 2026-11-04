@@ -1105,6 +1105,8 @@ pub use crate::types::_recording_info::RecordingInfo;
 
 pub use crate::types::_contact_evaluation::ContactEvaluation;
 
+pub use crate::types::_case_entry::CaseEntry;
+
 pub use crate::types::_next_contact_entry::NextContactEntry;
 
 pub use crate::types::_evaluation_score::EvaluationScore;
@@ -1798,6 +1800,8 @@ mod _boolean_condition;
 mod _calculation_component;
 
 mod _campaign;
+
+mod _case_entry;
 
 mod _case_sla_configuration;
 

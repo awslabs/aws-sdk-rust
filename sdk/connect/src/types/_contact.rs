@@ -90,6 +90,8 @@ pub struct Contact {
     pub contact_evaluations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactEvaluation>>,
     /// <p>If this contact was created using a task template, this contains information about the task template.</p>
     pub task_template_info: ::std::option::Option<crate::types::TaskTemplateInfoV2>,
+    /// <p>A list of cases associated with the contact. This field is populated when one or more cases have been linked to the contact.</p>
+    pub cases: ::std::option::Option<::std::vec::Vec<crate::types::CaseEntry>>,
     /// <p>A map of string key/value pairs that contain user-defined attributes which are lightly typed within the contact. This object is used only for task contacts.</p>
     pub contact_details: ::std::option::Option<crate::types::ContactDetails>,
     /// <p>Information about the outbound strategy.</p>
@@ -278,6 +280,12 @@ impl Contact {
     pub fn task_template_info(&self) -> ::std::option::Option<&crate::types::TaskTemplateInfoV2> {
         self.task_template_info.as_ref()
     }
+    /// <p>A list of cases associated with the contact. This field is populated when one or more cases have been linked to the contact.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cases.is_none()`.
+    pub fn cases(&self) -> &[crate::types::CaseEntry] {
+        self.cases.as_deref().unwrap_or_default()
+    }
     /// <p>A map of string key/value pairs that contain user-defined attributes which are lightly typed within the contact. This object is used only for task contacts.</p>
     pub fn contact_details(&self) -> ::std::option::Option<&crate::types::ContactDetails> {
         self.contact_details.as_ref()
@@ -347,6 +355,7 @@ impl ::std::fmt::Debug for Contact {
         formatter.field("disconnect_reason", &self.disconnect_reason);
         formatter.field("contact_evaluations", &self.contact_evaluations);
         formatter.field("task_template_info", &self.task_template_info);
+        formatter.field("cases", &self.cases);
         formatter.field("contact_details", &self.contact_details);
         formatter.field("outbound_strategy", &self.outbound_strategy);
         formatter.field("attributes", &self.attributes);
@@ -409,6 +418,7 @@ pub struct ContactBuilder {
     pub(crate) disconnect_reason: ::std::option::Option<::std::string::String>,
     pub(crate) contact_evaluations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactEvaluation>>,
     pub(crate) task_template_info: ::std::option::Option<crate::types::TaskTemplateInfoV2>,
+    pub(crate) cases: ::std::option::Option<::std::vec::Vec<crate::types::CaseEntry>>,
     pub(crate) contact_details: ::std::option::Option<crate::types::ContactDetails>,
     pub(crate) outbound_strategy: ::std::option::Option<crate::types::OutboundStrategy>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -1052,6 +1062,26 @@ impl ContactBuilder {
     pub fn get_task_template_info(&self) -> &::std::option::Option<crate::types::TaskTemplateInfoV2> {
         &self.task_template_info
     }
+    /// Appends an item to `cases`.
+    ///
+    /// To override the contents of this collection use [`set_cases`](Self::set_cases).
+    ///
+    /// <p>A list of cases associated with the contact. This field is populated when one or more cases have been linked to the contact.</p>
+    pub fn cases(mut self, input: crate::types::CaseEntry) -> Self {
+        let mut v = self.cases.unwrap_or_default();
+        v.push(input);
+        self.cases = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of cases associated with the contact. This field is populated when one or more cases have been linked to the contact.</p>
+    pub fn set_cases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaseEntry>>) -> Self {
+        self.cases = input;
+        self
+    }
+    /// <p>A list of cases associated with the contact. This field is populated when one or more cases have been linked to the contact.</p>
+    pub fn get_cases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaseEntry>> {
+        &self.cases
+    }
     /// <p>A map of string key/value pairs that contain user-defined attributes which are lightly typed within the contact. This object is used only for task contacts.</p>
     pub fn contact_details(mut self, input: crate::types::ContactDetails) -> Self {
         self.contact_details = ::std::option::Option::Some(input);
@@ -1180,6 +1210,7 @@ impl ContactBuilder {
             disconnect_reason: self.disconnect_reason,
             contact_evaluations: self.contact_evaluations,
             task_template_info: self.task_template_info,
+            cases: self.cases,
             contact_details: self.contact_details,
             outbound_strategy: self.outbound_strategy,
             attributes: self.attributes,
@@ -1234,6 +1265,7 @@ impl ::std::fmt::Debug for ContactBuilder {
         formatter.field("disconnect_reason", &self.disconnect_reason);
         formatter.field("contact_evaluations", &self.contact_evaluations);
         formatter.field("task_template_info", &self.task_template_info);
+        formatter.field("cases", &self.cases);
         formatter.field("contact_details", &self.contact_details);
         formatter.field("outbound_strategy", &self.outbound_strategy);
         formatter.field("attributes", &self.attributes);

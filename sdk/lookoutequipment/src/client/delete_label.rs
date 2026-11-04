@@ -7,6 +7,10 @@ impl super::Client {
     ///   - [`label_id(impl Into<String>)`](crate::operation::delete_label::builders::DeleteLabelFluentBuilder::label_id) / [`set_label_id(Option<String>)`](crate::operation::delete_label::builders::DeleteLabelFluentBuilder::set_label_id):<br>required: **true**<br><p>The ID of the label that you want to delete.</p><br>
     /// - On success, responds with [`DeleteLabelOutput`](crate::operation::delete_label::DeleteLabelOutput)
     /// - On failure, responds with [`SdkError<DeleteLabelError>`](crate::operation::delete_label::DeleteLabelError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn delete_label(&self) -> crate::operation::delete_label::builders::DeleteLabelFluentBuilder {
         crate::operation::delete_label::builders::DeleteLabelFluentBuilder::new(self.handle.clone())
     }

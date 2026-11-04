@@ -19,6 +19,10 @@ impl super::Client {
     ///   - [`model_version(Option<i64>)`](crate::operation::import_model_version::ImportModelVersionOutput::model_version): <p>The version of the model being created.</p>
     ///   - [`status(Option<ModelVersionStatus>)`](crate::operation::import_model_version::ImportModelVersionOutput::status): <p>The status of the <code>ImportModelVersion</code> operation.</p>
     /// - On failure, responds with [`SdkError<ImportModelVersionError>`](crate::operation::import_model_version::ImportModelVersionError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn import_model_version(&self) -> crate::operation::import_model_version::builders::ImportModelVersionFluentBuilder {
         crate::operation::import_model_version::builders::ImportModelVersionFluentBuilder::new(self.handle.clone())
     }

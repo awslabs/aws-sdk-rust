@@ -213,40 +213,37 @@ pub fn de_platform_description(
                 builder = builder.set_custom_ami_list(var_16);
             }
             ,
-            s if s.matches("SupportedTierList") /* SupportedTierList com.amazonaws.elasticbeanstalk#PlatformDescription$SupportedTierList */ =>  {
+            s if s.matches("DefaultAmiList") /* DefaultAmiList com.amazonaws.elasticbeanstalk#PlatformDescription$DefaultAmiList */ =>  {
                 let var_17 =
+                    Some(
+                        crate::protocol_serde::shape_default_ami_list::de_default_ami_list(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_default_ami_list(var_17);
+            }
+            ,
+            s if s.matches("SupportedTierList") /* SupportedTierList com.amazonaws.elasticbeanstalk#PlatformDescription$SupportedTierList */ =>  {
+                let var_18 =
                     Some(
                         crate::protocol_serde::shape_supported_tier_list::de_supported_tier_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_supported_tier_list(var_17);
+                builder = builder.set_supported_tier_list(var_18);
             }
             ,
             s if s.matches("SupportedAddonList") /* SupportedAddonList com.amazonaws.elasticbeanstalk#PlatformDescription$SupportedAddonList */ =>  {
-                let var_18 =
+                let var_19 =
                     Some(
                         crate::protocol_serde::shape_supported_addon_list::de_supported_addon_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_supported_addon_list(var_18);
+                builder = builder.set_supported_addon_list(var_19);
             }
             ,
             s if s.matches("PlatformLifecycleState") /* PlatformLifecycleState com.amazonaws.elasticbeanstalk#PlatformDescription$PlatformLifecycleState */ =>  {
-                let var_19 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_platform_lifecycle_state(var_19);
-            }
-            ,
-            s if s.matches("PlatformBranchName") /* PlatformBranchName com.amazonaws.elasticbeanstalk#PlatformDescription$PlatformBranchName */ =>  {
                 let var_20 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -256,10 +253,10 @@ pub fn de_platform_description(
                         ?
                     )
                 ;
-                builder = builder.set_platform_branch_name(var_20);
+                builder = builder.set_platform_lifecycle_state(var_20);
             }
             ,
-            s if s.matches("PlatformBranchLifecycleState") /* PlatformBranchLifecycleState com.amazonaws.elasticbeanstalk#PlatformDescription$PlatformBranchLifecycleState */ =>  {
+            s if s.matches("PlatformBranchName") /* PlatformBranchName com.amazonaws.elasticbeanstalk#PlatformDescription$PlatformBranchName */ =>  {
                 let var_21 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -269,7 +266,20 @@ pub fn de_platform_description(
                         ?
                     )
                 ;
-                builder = builder.set_platform_branch_lifecycle_state(var_21);
+                builder = builder.set_platform_branch_name(var_21);
+            }
+            ,
+            s if s.matches("PlatformBranchLifecycleState") /* PlatformBranchLifecycleState com.amazonaws.elasticbeanstalk#PlatformDescription$PlatformBranchLifecycleState */ =>  {
+                let var_22 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_platform_branch_lifecycle_state(var_22);
             }
             ,
             _ => {}

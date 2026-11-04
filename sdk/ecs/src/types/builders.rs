@@ -243,6 +243,8 @@ pub use crate::types::_container_restart_policy::ContainerRestartPolicyBuilder;
 
 pub use crate::types::_host_volume_properties::HostVolumePropertiesBuilder;
 
+pub use crate::types::_log_driver_volume_configuration::LogDriverVolumeConfigurationBuilder;
+
 pub use crate::types::_gateway_elb_network_configuration::GatewayElbNetworkConfigurationBuilder;
 
 pub use crate::types::_gateway_elb_access_log_configuration::GatewayElbAccessLogConfigurationBuilder;

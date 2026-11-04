@@ -23,6 +23,10 @@ impl crate::operation::describe_retraining_scheduler::builders::DescribeRetraini
 /// Fluent builder constructing a request to `DescribeRetrainingScheduler`.
 ///
 /// <p>Provides a description of the retraining scheduler, including information such as the model name and retraining parameters.</p>
+#[deprecated(
+    note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+    since = "2026-10-07"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRetrainingSchedulerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

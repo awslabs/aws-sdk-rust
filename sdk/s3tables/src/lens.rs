@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_table_buckets_output_output_continuation_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_table_migrations_output_output_next_token(
+    input: &crate::operation::list_table_migrations::ListTableMigrationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_tables_output_output_continuation_token(
     input: &crate::operation::list_tables::ListTablesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -40,6 +50,13 @@ pub(crate) fn lens_list_table_buckets_output_output_table_buckets(
     input: crate::operation::list_table_buckets::ListTableBucketsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TableBucketSummary>> {
     let input = input.table_buckets;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_table_migrations_output_output_migrations(
+    input: crate::operation::list_table_migrations::ListTableMigrationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MigrationSummary>> {
+    let input = input.migrations;
     ::std::option::Option::Some(input)
 }
 

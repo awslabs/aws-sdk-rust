@@ -111,6 +111,8 @@ pub use crate::types::_action_on_failure::ActionOnFailure;
 
 pub use crate::types::_step_status::StepStatus;
 
+pub use crate::types::_step_additional_info::StepAdditionalInfo;
+
 pub use crate::types::_username_password::UsernamePassword;
 
 pub use crate::types::_compute_limits::ComputeLimits;
@@ -614,6 +616,8 @@ mod _spot_resizing_specification;
 mod _statistic;
 
 mod _step;
+
+mod _step_additional_info;
 
 mod _step_cancellation_option;
 

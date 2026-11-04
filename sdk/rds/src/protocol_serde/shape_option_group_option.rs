@@ -236,6 +236,21 @@ pub fn de_option_group_option(
                 builder = builder.set_copyable_cross_account(var_17);
             }
             ,
+            s if s.matches("CopyableCrossRegion") /* CopyableCrossRegion com.amazonaws.rds#OptionGroupOption$CopyableCrossRegion */ =>  {
+                let var_18 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_copyable_cross_region(var_18);
+            }
+            ,
             _ => {}
         }
     }

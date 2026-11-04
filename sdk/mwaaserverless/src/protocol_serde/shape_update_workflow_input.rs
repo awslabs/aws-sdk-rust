@@ -42,8 +42,14 @@ pub fn ser_update_workflow_input_input(
         crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.trigger_mode {
-        object.key("TriggerMode").string(var_13.as_str());
+    if let Some(var_13) = &input.environment {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("Environment").start_object();
+        crate::protocol_serde::shape_environment::ser_environment(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.trigger_mode {
+        object.key("TriggerMode").string(var_15.as_str());
     }
     Ok(())
 }

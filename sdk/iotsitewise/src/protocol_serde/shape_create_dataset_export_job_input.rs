@@ -21,5 +21,8 @@ pub fn ser_create_dataset_export_job_input_input(
         crate::protocol_serde::shape_processing_input::ser_processing_input(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.job_name {
+        object.key("jobName").string(var_7.as_str());
+    }
     Ok(())
 }

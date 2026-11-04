@@ -25,7 +25,8 @@ pub struct CreateApplicationVersionInput {
     /// <p>Set to <code>true</code> to create an application with the specified name if it doesn't already exist.</p>
     pub auto_create_application: ::std::option::Option<bool>,
     /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>
-    /// <p>You must turn processing on for application versions that you create using CodeBuild or CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p><note>
+    /// <p>You must turn processing on for application versions that you create using CodeBuild or CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p>
+    /// <p>For application versions with <code>ImageConfiguration.Build</code>, <code>Process</code> determines when Elastic Beanstalk builds the container image. Set it to <code>true</code> to build the image when you create the application version. If you don't, Elastic Beanstalk builds the image when you first deploy the application version to an environment.</p><note>
     /// <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p>
     /// </note>
     pub process: ::std::option::Option<bool>,
@@ -72,7 +73,8 @@ impl CreateApplicationVersionInput {
         self.auto_create_application
     }
     /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>
-    /// <p>You must turn processing on for application versions that you create using CodeBuild or CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p><note>
+    /// <p>You must turn processing on for application versions that you create using CodeBuild or CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p>
+    /// <p>For application versions with <code>ImageConfiguration.Build</code>, <code>Process</code> determines when Elastic Beanstalk builds the container image. Set it to <code>true</code> to build the image when you create the application version. If you don't, Elastic Beanstalk builds the image when you first deploy the application version to an environment.</p><note>
     /// <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p>
     /// </note>
     pub fn process(&self) -> ::std::option::Option<bool> {
@@ -233,7 +235,8 @@ impl CreateApplicationVersionInputBuilder {
         &self.auto_create_application
     }
     /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>
-    /// <p>You must turn processing on for application versions that you create using CodeBuild or CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p><note>
+    /// <p>You must turn processing on for application versions that you create using CodeBuild or CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p>
+    /// <p>For application versions with <code>ImageConfiguration.Build</code>, <code>Process</code> determines when Elastic Beanstalk builds the container image. Set it to <code>true</code> to build the image when you create the application version. If you don't, Elastic Beanstalk builds the image when you first deploy the application version to an environment.</p><note>
     /// <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p>
     /// </note>
     pub fn process(mut self, input: bool) -> Self {
@@ -241,7 +244,8 @@ impl CreateApplicationVersionInputBuilder {
         self
     }
     /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>
-    /// <p>You must turn processing on for application versions that you create using CodeBuild or CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p><note>
+    /// <p>You must turn processing on for application versions that you create using CodeBuild or CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p>
+    /// <p>For application versions with <code>ImageConfiguration.Build</code>, <code>Process</code> determines when Elastic Beanstalk builds the container image. Set it to <code>true</code> to build the image when you create the application version. If you don't, Elastic Beanstalk builds the image when you first deploy the application version to an environment.</p><note>
     /// <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p>
     /// </note>
     pub fn set_process(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -249,7 +253,8 @@ impl CreateApplicationVersionInputBuilder {
         self
     }
     /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>
-    /// <p>You must turn processing on for application versions that you create using CodeBuild or CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p><note>
+    /// <p>You must turn processing on for application versions that you create using CodeBuild or CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p>
+    /// <p>For application versions with <code>ImageConfiguration.Build</code>, <code>Process</code> determines when Elastic Beanstalk builds the container image. Set it to <code>true</code> to build the image when you create the application version. If you don't, Elastic Beanstalk builds the image when you first deploy the application version to an environment.</p><note>
     /// <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p>
     /// </note>
     pub fn get_process(&self) -> &::std::option::Option<bool> {

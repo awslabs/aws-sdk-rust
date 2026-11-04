@@ -7,6 +7,10 @@ impl super::Client {
     ///   - [`fault_codes(impl Into<String>)`](crate::operation::update_label_group::builders::UpdateLabelGroupFluentBuilder::fault_codes) / [`set_fault_codes(Option<Vec::<String>>)`](crate::operation::update_label_group::builders::UpdateLabelGroupFluentBuilder::set_fault_codes):<br>required: **false**<br><p>Updates the code indicating the type of anomaly associated with the label.</p> <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p><br>
     /// - On success, responds with [`UpdateLabelGroupOutput`](crate::operation::update_label_group::UpdateLabelGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateLabelGroupError>`](crate::operation::update_label_group::UpdateLabelGroupError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn update_label_group(&self) -> crate::operation::update_label_group::builders::UpdateLabelGroupFluentBuilder {
         crate::operation::update_label_group::builders::UpdateLabelGroupFluentBuilder::new(self.handle.clone())
     }

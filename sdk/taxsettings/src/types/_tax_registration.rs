@@ -10,7 +10,7 @@ pub struct TaxRegistration {
     pub registration_type: crate::types::TaxRegistrationType,
     /// <p>The legal name associated with your TRN registration.</p>
     pub legal_name: ::std::string::String,
-    /// <p>The status of your TRN. This can be either <code>Verified</code>, <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>.</p>
+    /// <p>The status of your TRN. This can be either <code>Verified</code>, <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>. If the status is <code>Rejected</code>, see <code>statusReason</code> for the reason.</p>
     pub status: crate::types::TaxRegistrationStatus,
     /// <p>The industry that describes your business. For business-to-business (B2B) customers, specify Business. For business-to-consumer (B2C) customers, specify Individual. For business-to-government (B2G), specify Government. Note that certain values may not applicable for the request country. Please refer to country specific information in API document.</p>
     pub sector: ::std::option::Option<crate::types::Sector>,
@@ -20,6 +20,8 @@ pub struct TaxRegistration {
     pub certified_email_id: ::std::option::Option<::std::string::String>,
     /// <p>Additional tax information associated with your TRN.</p>
     pub additional_tax_information: ::std::option::Option<crate::types::AdditionalInfoResponse>,
+    /// <p>The reason that your TRN was rejected. This is returned only when <code>status</code> is <code>Rejected</code>.</p>
+    pub status_reason: ::std::option::Option<crate::types::TaxRegistrationStatusReason>,
     /// <p>The legal address associated with your TRN registration.</p>
     pub legal_address: ::std::option::Option<crate::types::Address>,
 }
@@ -38,7 +40,7 @@ impl TaxRegistration {
         use std::ops::Deref;
         self.legal_name.deref()
     }
-    /// <p>The status of your TRN. This can be either <code>Verified</code>, <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>.</p>
+    /// <p>The status of your TRN. This can be either <code>Verified</code>, <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>. If the status is <code>Rejected</code>, see <code>statusReason</code> for the reason.</p>
     pub fn status(&self) -> &crate::types::TaxRegistrationStatus {
         &self.status
     }
@@ -60,6 +62,10 @@ impl TaxRegistration {
     pub fn additional_tax_information(&self) -> ::std::option::Option<&crate::types::AdditionalInfoResponse> {
         self.additional_tax_information.as_ref()
     }
+    /// <p>The reason that your TRN was rejected. This is returned only when <code>status</code> is <code>Rejected</code>.</p>
+    pub fn status_reason(&self) -> ::std::option::Option<&crate::types::TaxRegistrationStatusReason> {
+        self.status_reason.as_ref()
+    }
     /// <p>The legal address associated with your TRN registration.</p>
     pub fn legal_address(&self) -> ::std::option::Option<&crate::types::Address> {
         self.legal_address.as_ref()
@@ -76,6 +82,7 @@ impl ::std::fmt::Debug for TaxRegistration {
         formatter.field("tax_document_metadatas", &"*** Sensitive Data Redacted ***");
         formatter.field("certified_email_id", &"*** Sensitive Data Redacted ***");
         formatter.field("additional_tax_information", &"*** Sensitive Data Redacted ***");
+        formatter.field("status_reason", &"*** Sensitive Data Redacted ***");
         formatter.field("legal_address", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -99,6 +106,7 @@ pub struct TaxRegistrationBuilder {
     pub(crate) tax_document_metadatas: ::std::option::Option<::std::vec::Vec<crate::types::TaxDocumentMetadata>>,
     pub(crate) certified_email_id: ::std::option::Option<::std::string::String>,
     pub(crate) additional_tax_information: ::std::option::Option<crate::types::AdditionalInfoResponse>,
+    pub(crate) status_reason: ::std::option::Option<crate::types::TaxRegistrationStatusReason>,
     pub(crate) legal_address: ::std::option::Option<crate::types::Address>,
 }
 impl TaxRegistrationBuilder {
@@ -147,18 +155,18 @@ impl TaxRegistrationBuilder {
     pub fn get_legal_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.legal_name
     }
-    /// <p>The status of your TRN. This can be either <code>Verified</code>, <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>.</p>
+    /// <p>The status of your TRN. This can be either <code>Verified</code>, <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>. If the status is <code>Rejected</code>, see <code>statusReason</code> for the reason.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::TaxRegistrationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of your TRN. This can be either <code>Verified</code>, <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>.</p>
+    /// <p>The status of your TRN. This can be either <code>Verified</code>, <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>. If the status is <code>Rejected</code>, see <code>statusReason</code> for the reason.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaxRegistrationStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of your TRN. This can be either <code>Verified</code>, <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>.</p>
+    /// <p>The status of your TRN. This can be either <code>Verified</code>, <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>. If the status is <code>Rejected</code>, see <code>statusReason</code> for the reason.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TaxRegistrationStatus> {
         &self.status
     }
@@ -224,6 +232,20 @@ impl TaxRegistrationBuilder {
     pub fn get_additional_tax_information(&self) -> &::std::option::Option<crate::types::AdditionalInfoResponse> {
         &self.additional_tax_information
     }
+    /// <p>The reason that your TRN was rejected. This is returned only when <code>status</code> is <code>Rejected</code>.</p>
+    pub fn status_reason(mut self, input: crate::types::TaxRegistrationStatusReason) -> Self {
+        self.status_reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The reason that your TRN was rejected. This is returned only when <code>status</code> is <code>Rejected</code>.</p>
+    pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::TaxRegistrationStatusReason>) -> Self {
+        self.status_reason = input;
+        self
+    }
+    /// <p>The reason that your TRN was rejected. This is returned only when <code>status</code> is <code>Rejected</code>.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::TaxRegistrationStatusReason> {
+        &self.status_reason
+    }
     /// <p>The legal address associated with your TRN registration.</p>
     /// This field is required.
     pub fn legal_address(mut self, input: crate::types::Address) -> Self {
@@ -275,6 +297,7 @@ impl TaxRegistrationBuilder {
             tax_document_metadatas: self.tax_document_metadatas,
             certified_email_id: self.certified_email_id,
             additional_tax_information: self.additional_tax_information,
+            status_reason: self.status_reason,
             legal_address: self.legal_address,
         })
     }
@@ -290,6 +313,7 @@ impl ::std::fmt::Debug for TaxRegistrationBuilder {
         formatter.field("tax_document_metadatas", &"*** Sensitive Data Redacted ***");
         formatter.field("certified_email_id", &"*** Sensitive Data Redacted ***");
         formatter.field("additional_tax_information", &"*** Sensitive Data Redacted ***");
+        formatter.field("status_reason", &"*** Sensitive Data Redacted ***");
         formatter.field("legal_address", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

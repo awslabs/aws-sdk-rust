@@ -8,6 +8,9 @@ pub struct DaemonVolume {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The contents of the <code>host</code> parameter determine whether your bind mount host volume persists on the host container instance and where it's stored.</p>
     pub host: ::std::option::Option<crate::types::HostVolumeProperties>,
+    /// <p>The log driver volume configuration. With a log driver volume, the containers in a daemon task can read the log files that a log driver writes for the other tasks on the container instance. To read the log files, mount the volume into a container in the daemon task with <code>mountPoints</code>.</p>
+    /// <p>Use <code>host</code> to bind mount a path on the container instance. Use <code>logDriverVolumeConfiguration</code> to read the log output of other tasks. You can't specify both for the same volume.</p>
+    pub log_driver_volume_configuration: ::std::option::Option<crate::types::LogDriverVolumeConfiguration>,
 }
 impl DaemonVolume {
     /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
@@ -17,6 +20,11 @@ impl DaemonVolume {
     /// <p>The contents of the <code>host</code> parameter determine whether your bind mount host volume persists on the host container instance and where it's stored.</p>
     pub fn host(&self) -> ::std::option::Option<&crate::types::HostVolumeProperties> {
         self.host.as_ref()
+    }
+    /// <p>The log driver volume configuration. With a log driver volume, the containers in a daemon task can read the log files that a log driver writes for the other tasks on the container instance. To read the log files, mount the volume into a container in the daemon task with <code>mountPoints</code>.</p>
+    /// <p>Use <code>host</code> to bind mount a path on the container instance. Use <code>logDriverVolumeConfiguration</code> to read the log output of other tasks. You can't specify both for the same volume.</p>
+    pub fn log_driver_volume_configuration(&self) -> ::std::option::Option<&crate::types::LogDriverVolumeConfiguration> {
+        self.log_driver_volume_configuration.as_ref()
     }
 }
 static DAEMONVOLUME_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -31,10 +39,24 @@ static DAEMONVOLUME_MEMBER_HOST: ::aws_smithy_schema::Schema<'static> = ::aws_sm
     "host",
     1,
 );
+static DAEMONVOLUME_MEMBER_LOG_DRIVER_VOLUME_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#DaemonVolume$logDriverVolumeConfiguration",
+        "com.amazonaws.ecs",
+        "DaemonVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "logDriverVolumeConfiguration",
+    2,
+);
 static DAEMONVOLUME_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#DaemonVolume", "com.amazonaws.ecs", "DaemonVolume"),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&DAEMONVOLUME_MEMBER_NAME, &DAEMONVOLUME_MEMBER_HOST],
+    &[
+        &DAEMONVOLUME_MEMBER_NAME,
+        &DAEMONVOLUME_MEMBER_HOST,
+        &DAEMONVOLUME_MEMBER_LOG_DRIVER_VOLUME_CONFIGURATION,
+    ],
 );
 impl DaemonVolume {
     /// The schema for this shape.
@@ -55,6 +77,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for DaemonVolume {
         }
         if let Some(ref val) = self.host {
             ser.write_struct(&DAEMONVOLUME_MEMBER_HOST, val)?;
+        }
+        if let Some(ref val) = self.log_driver_volume_configuration {
+            ser.write_struct(&DAEMONVOLUME_MEMBER_LOG_DRIVER_VOLUME_CONFIGURATION, val)?;
         }
         Ok(())
     }
@@ -87,6 +112,13 @@ impl crate::types::builders::DaemonVolumeBuilder {
                         self.host = Some(crate::types::HostVolumeProperties::deserialize(deser)?);
                     }
                 }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_driver_volume_configuration = Some(crate::types::LogDriverVolumeConfiguration::deserialize(deser)?);
+                    }
+                }
                 _ => {}
             }
             Ok(())
@@ -117,6 +149,7 @@ impl DaemonVolume {
 pub struct DaemonVolumeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) host: ::std::option::Option<crate::types::HostVolumeProperties>,
+    pub(crate) log_driver_volume_configuration: ::std::option::Option<crate::types::LogDriverVolumeConfiguration>,
 }
 impl DaemonVolumeBuilder {
     /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
@@ -147,11 +180,29 @@ impl DaemonVolumeBuilder {
     pub fn get_host(&self) -> &::std::option::Option<crate::types::HostVolumeProperties> {
         &self.host
     }
+    /// <p>The log driver volume configuration. With a log driver volume, the containers in a daemon task can read the log files that a log driver writes for the other tasks on the container instance. To read the log files, mount the volume into a container in the daemon task with <code>mountPoints</code>.</p>
+    /// <p>Use <code>host</code> to bind mount a path on the container instance. Use <code>logDriverVolumeConfiguration</code> to read the log output of other tasks. You can't specify both for the same volume.</p>
+    pub fn log_driver_volume_configuration(mut self, input: crate::types::LogDriverVolumeConfiguration) -> Self {
+        self.log_driver_volume_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The log driver volume configuration. With a log driver volume, the containers in a daemon task can read the log files that a log driver writes for the other tasks on the container instance. To read the log files, mount the volume into a container in the daemon task with <code>mountPoints</code>.</p>
+    /// <p>Use <code>host</code> to bind mount a path on the container instance. Use <code>logDriverVolumeConfiguration</code> to read the log output of other tasks. You can't specify both for the same volume.</p>
+    pub fn set_log_driver_volume_configuration(mut self, input: ::std::option::Option<crate::types::LogDriverVolumeConfiguration>) -> Self {
+        self.log_driver_volume_configuration = input;
+        self
+    }
+    /// <p>The log driver volume configuration. With a log driver volume, the containers in a daemon task can read the log files that a log driver writes for the other tasks on the container instance. To read the log files, mount the volume into a container in the daemon task with <code>mountPoints</code>.</p>
+    /// <p>Use <code>host</code> to bind mount a path on the container instance. Use <code>logDriverVolumeConfiguration</code> to read the log output of other tasks. You can't specify both for the same volume.</p>
+    pub fn get_log_driver_volume_configuration(&self) -> &::std::option::Option<crate::types::LogDriverVolumeConfiguration> {
+        &self.log_driver_volume_configuration
+    }
     /// Consumes the builder and constructs a [`DaemonVolume`](crate::types::DaemonVolume).
     pub fn build(self) -> crate::types::DaemonVolume {
         crate::types::DaemonVolume {
             name: self.name,
             host: self.host,
+            log_driver_volume_configuration: self.log_driver_volume_configuration,
         }
     }
 }

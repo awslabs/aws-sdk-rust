@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReviewSummary {
-    /// <p>Review summaries from different sources, such as AWS Marketplace.</p>
+    /// <p>Review summaries from different sources, such as AWS Marketplace, G2, and PeerSpot.</p>
     pub review_source_summaries: ::std::vec::Vec<crate::types::ReviewSourceSummary>,
 }
 impl ReviewSummary {
-    /// <p>Review summaries from different sources, such as AWS Marketplace.</p>
+    /// <p>Review summaries from different sources, such as AWS Marketplace, G2, and PeerSpot.</p>
     pub fn review_source_summaries(&self) -> &[crate::types::ReviewSourceSummary] {
         use std::ops::Deref;
         self.review_source_summaries.deref()
@@ -32,19 +32,19 @@ impl ReviewSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_review_source_summaries`](Self::set_review_source_summaries).
     ///
-    /// <p>Review summaries from different sources, such as AWS Marketplace.</p>
+    /// <p>Review summaries from different sources, such as AWS Marketplace, G2, and PeerSpot.</p>
     pub fn review_source_summaries(mut self, input: crate::types::ReviewSourceSummary) -> Self {
         let mut v = self.review_source_summaries.unwrap_or_default();
         v.push(input);
         self.review_source_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Review summaries from different sources, such as AWS Marketplace.</p>
+    /// <p>Review summaries from different sources, such as AWS Marketplace, G2, and PeerSpot.</p>
     pub fn set_review_source_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReviewSourceSummary>>) -> Self {
         self.review_source_summaries = input;
         self
     }
-    /// <p>Review summaries from different sources, such as AWS Marketplace.</p>
+    /// <p>Review summaries from different sources, such as AWS Marketplace, G2, and PeerSpot.</p>
     pub fn get_review_source_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReviewSourceSummary>> {
         &self.review_source_summaries
     }

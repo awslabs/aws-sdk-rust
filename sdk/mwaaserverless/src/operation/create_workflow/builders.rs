@@ -248,6 +248,20 @@ impl CreateWorkflowFluentBuilder {
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         self.inner.get_network_configuration()
     }
+    /// <p>The environment variables to set for tasks in the workflow. If you don't specify this parameter, the workflow has no environment variables.</p>
+    pub fn environment(mut self, input: crate::types::Environment) -> Self {
+        self.inner = self.inner.environment(input);
+        self
+    }
+    /// <p>The environment variables to set for tasks in the workflow. If you don't specify this parameter, the workflow has no environment variables.</p>
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
+        self.inner = self.inner.set_environment(input);
+        self
+    }
+    /// <p>The environment variables to set for tasks in the workflow. If you don't specify this parameter, the workflow has no environment variables.</p>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::Environment> {
+        self.inner.get_environment()
+    }
     ///
     /// Adds a key-value pair to `Tags`.
     ///

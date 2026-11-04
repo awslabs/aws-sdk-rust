@@ -153,17 +153,23 @@ pub use crate::types::_platform_framework::PlatformFramework;
 
 pub use crate::types::_custom_ami::CustomAmi;
 
+pub use crate::types::_default_ami::DefaultAmi;
+
 pub use crate::types::_validation_severity::ValidationSeverity;
 
 pub use crate::types::_listener::Listener;
 
 pub use crate::types::_cpu_utilization::CpuUtilization;
 
+pub use crate::types::_ami_architecture::AmiArchitecture;
+
 mod _action_history_status;
 
 mod _action_status;
 
 mod _action_type;
+
+mod _ami_architecture;
 
 mod _application_description;
 
@@ -202,6 +208,8 @@ mod _configuration_settings_description;
 mod _cpu_utilization;
 
 mod _custom_ami;
+
+mod _default_ami;
 
 mod _deployment;
 

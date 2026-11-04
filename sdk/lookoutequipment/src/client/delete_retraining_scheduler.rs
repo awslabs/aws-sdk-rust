@@ -6,6 +6,10 @@ impl super::Client {
     ///   - [`model_name(impl Into<String>)`](crate::operation::delete_retraining_scheduler::builders::DeleteRetrainingSchedulerFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::delete_retraining_scheduler::builders::DeleteRetrainingSchedulerFluentBuilder::set_model_name):<br>required: **true**<br><p>The name of the model whose retraining scheduler you want to delete.</p><br>
     /// - On success, responds with [`DeleteRetrainingSchedulerOutput`](crate::operation::delete_retraining_scheduler::DeleteRetrainingSchedulerOutput)
     /// - On failure, responds with [`SdkError<DeleteRetrainingSchedulerError>`](crate::operation::delete_retraining_scheduler::DeleteRetrainingSchedulerError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn delete_retraining_scheduler(&self) -> crate::operation::delete_retraining_scheduler::builders::DeleteRetrainingSchedulerFluentBuilder {
         crate::operation::delete_retraining_scheduler::builders::DeleteRetrainingSchedulerFluentBuilder::new(self.handle.clone())
     }

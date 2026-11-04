@@ -21,6 +21,24 @@ pub use crate::types::_table_type::TableType;
 
 pub use crate::types::_managed_table_information::ManagedTableInformation;
 
+pub use crate::types::_migration_type::MigrationType;
+
+pub use crate::types::_migration_state::MigrationState;
+
+pub use crate::types::_migration_failure_reason::MigrationFailureReason;
+
+pub use crate::types::_planning_stats::PlanningStats;
+
+pub use crate::types::_migration_stats::MigrationStats;
+
+pub use crate::types::_migration_source_type::MigrationSourceType;
+
+pub use crate::types::_source_configuration::SourceConfiguration;
+
+pub use crate::types::_data_migration_overview::DataMigrationOverview;
+
+pub use crate::types::_migration_output_overview::MigrationOutputOverview;
+
 pub use crate::types::_table_record_expiration_configuration_value::TableRecordExpirationConfigurationValue;
 
 pub use crate::types::_table_record_expiration_job_status::TableRecordExpirationJobStatus;
@@ -30,6 +48,14 @@ pub use crate::types::_table_record_expiration_job_metrics::TableRecordExpiratio
 pub use crate::types::_table_maintenance_type::TableMaintenanceType;
 
 pub use crate::types::_table_maintenance_configuration_value::TableMaintenanceConfigurationValue;
+
+pub use crate::types::_destination_table::DestinationTable;
+
+pub use crate::types::_data_migration_settings::DataMigrationSettings;
+
+pub use crate::types::_migration_output_configuration::MigrationOutputConfiguration;
+
+pub use crate::types::_migration_requested_state::MigrationRequestedState;
 
 pub use crate::types::_namespace_summary::NamespaceSummary;
 
@@ -53,13 +79,33 @@ pub use crate::types::_table_maintenance_job_type::TableMaintenanceJobType;
 
 pub use crate::types::_table_maintenance_job_status_value::TableMaintenanceJobStatusValue;
 
+pub use crate::types::_migration_failure_code::MigrationFailureCode;
+
+pub use crate::types::_glue_table_source::GlueTableSource;
+
+pub use crate::types::_maintenance_settings::MaintenanceSettings;
+
+pub use crate::types::_migration_policies::MigrationPolicies;
+
+pub use crate::types::_report_overview::ReportOverview;
+
 pub use crate::types::_table_record_expiration_status::TableRecordExpirationStatus;
 
 pub use crate::types::_table_record_expiration_settings::TableRecordExpirationSettings;
 
+pub use crate::types::_migration_summary::MigrationSummary;
+
 pub use crate::types::_table_summary::TableSummary;
 
 pub use crate::types::_table_maintenance_settings::TableMaintenanceSettings;
+
+pub use crate::types::_migration_table_properties::MigrationTableProperties;
+
+pub use crate::types::_iceberg_schema_v2::IcebergSchemaV2;
+
+pub use crate::types::_iceberg_sort_order::IcebergSortOrder;
+
+pub use crate::types::_migration_report_prefixes::MigrationReportPrefixes;
 
 pub use crate::types::_table_bucket_replication_rule::TableBucketReplicationRule;
 
@@ -73,37 +119,61 @@ pub use crate::types::_last_successful_replicated_update::LastSuccessfulReplicat
 
 pub use crate::types::_iceberg_schema::IcebergSchema;
 
-pub use crate::types::_iceberg_schema_v2::IcebergSchemaV2;
-
 pub use crate::types::_iceberg_partition_spec::IcebergPartitionSpec;
 
-pub use crate::types::_iceberg_sort_order::IcebergSortOrder;
-
 pub use crate::types::_job_status::JobStatus;
+
+pub use crate::types::_migration_compaction_settings::MigrationCompactionSettings;
+
+pub use crate::types::_migration_snapshot_management_settings::MigrationSnapshotManagementSettings;
+
+pub use crate::types::_unmatched_source_fields_policy::UnmatchedSourceFieldsPolicy;
+
+pub use crate::types::_incompatible_values_policy::IncompatibleValuesPolicy;
 
 pub use crate::types::_iceberg_compaction_settings::IcebergCompactionSettings;
 
 pub use crate::types::_iceberg_snapshot_management_settings::IcebergSnapshotManagementSettings;
 
+pub use crate::types::_data_file_format::DataFileFormat;
+
+pub use crate::types::_compression_codec::CompressionCodec;
+
 pub use crate::types::_schema_v2_field_type::SchemaV2FieldType;
 
 pub use crate::types::_iceberg_compaction_strategy::IcebergCompactionStrategy;
+
+pub use crate::types::_finding_category::FindingCategory;
+
+pub use crate::types::_schema_v2_field::SchemaV2Field;
+
+pub use crate::types::_iceberg_sort_field::IcebergSortField;
 
 pub use crate::types::_replication_destination::ReplicationDestination;
 
 pub use crate::types::_schema_field::SchemaField;
 
-pub use crate::types::_schema_v2_field::SchemaV2Field;
-
 pub use crate::types::_iceberg_partition_field::IcebergPartitionField;
-
-pub use crate::types::_iceberg_sort_field::IcebergSortField;
 
 pub use crate::types::_iceberg_sort_direction::IcebergSortDirection;
 
 pub use crate::types::_iceberg_null_order::IcebergNullOrder;
 
+mod _compression_codec;
+
+mod _data_file_format;
+
+mod _data_migration_overview;
+
+mod _data_migration_settings;
+
+mod _destination_table;
+
 mod _encryption_configuration;
+
+mod _finding_category;
+
+mod _glue_table_source;
 
 mod _iceberg_compaction_settings;
 
@@ -131,17 +201,53 @@ mod _iceberg_sort_order;
 
 mod _iceberg_unreferenced_file_removal_settings;
 
+mod _incompatible_values_policy;
+
 mod _job_status;
 
 mod _last_successful_replicated_update;
+
+mod _maintenance_settings;
 
 mod _maintenance_status;
 
 mod _managed_table_information;
 
+mod _migration_compaction_settings;
+
+mod _migration_failure_code;
+
+mod _migration_failure_reason;
+
+mod _migration_output_configuration;
+
+mod _migration_output_overview;
+
+mod _migration_policies;
+
+mod _migration_report_prefixes;
+
+mod _migration_requested_state;
+
+mod _migration_snapshot_management_settings;
+
+mod _migration_source_type;
+
+mod _migration_state;
+
+mod _migration_stats;
+
+mod _migration_summary;
+
+mod _migration_table_properties;
+
+mod _migration_type;
+
 mod _namespace_summary;
 
 mod _open_table_format;
+
+mod _planning_stats;
 
 mod _replication_destination;
 
@@ -151,11 +257,15 @@ mod _replication_information;
 
 mod _replication_status;
 
+mod _report_overview;
+
 mod _schema_field;
 
 mod _schema_v2_field;
 
 mod _schema_v2_field_type;
+
+mod _source_configuration;
 
 mod _sse_algorithm;
 
@@ -206,6 +316,8 @@ mod _table_replication_rule;
 mod _table_summary;
 
 mod _table_type;
+
+mod _unmatched_source_fields_policy;
 
 /// Builders
 pub mod builders;

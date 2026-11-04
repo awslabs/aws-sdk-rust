@@ -105,6 +105,10 @@ pub use crate::types::_resources_filters::ResourcesFilters;
 
 pub use crate::types::_security_control_definition::SecurityControlDefinition;
 
+pub use crate::types::_software_filters::SoftwareFilters;
+
+pub use crate::types::_software_scopes::SoftwareScopes;
+
 pub use crate::types::_association_filters::AssociationFilters;
 
 pub use crate::types::_cspm_connector_provider_name::CspmConnectorProviderName;
@@ -246,6 +250,12 @@ pub use crate::types::_severity_rating::SeverityRating;
 pub use crate::types::_region_availability_status::RegionAvailabilityStatus;
 
 pub use crate::types::_security_controls_provider::SecurityControlsProvider;
+
+pub use crate::types::_software_resource_result::SoftwareResourceResult;
+
+pub use crate::types::_software_group_by_rule::SoftwareGroupByRule;
+
+pub use crate::types::_software_result::SoftwareResult;
 
 pub use crate::types::_aggregator_v2::AggregatorV2;
 
@@ -412,6 +422,10 @@ pub use crate::types::_resource_criticality::ResourceCriticality;
 pub use crate::types::_security_control_property::SecurityControlProperty;
 
 pub use crate::types::_parameter_definition::ParameterDefinition;
+
+pub use crate::types::_software_composite_filter::SoftwareCompositeFilter;
+
+pub use crate::types::_software_group_by_field::SoftwareGroupByField;
 
 pub use crate::types::_cspm_provider_summary::CspmProviderSummary;
 
@@ -604,6 +618,8 @@ pub use crate::types::_boolean_configuration_options::BooleanConfigurationOption
 pub use crate::types::_enum_configuration_options::EnumConfigurationOptions;
 
 pub use crate::types::_enum_list_configuration_options::EnumListConfigurationOptions;
+
+pub use crate::types::_software_string_filter::SoftwareStringFilter;
 
 pub use crate::types::_free_trial_type::FreeTrialType;
 
@@ -870,6 +886,8 @@ pub use crate::types::_resources_date_field::ResourcesDateField;
 pub use crate::types::_resources_number_field::ResourcesNumberField;
 
 pub use crate::types::_resources_map_field::ResourcesMapField;
+
+pub use crate::types::_software_string_field::SoftwareStringField;
 
 pub use crate::types::_classification_status::ClassificationStatus;
 
@@ -3465,7 +3483,25 @@ mod _severity_update;
 
 mod _signal;
 
+mod _software_composite_filter;
+
+mod _software_filters;
+
+mod _software_group_by_field;
+
+mod _software_group_by_rule;
+
 mod _software_package;
+
+mod _software_resource_result;
+
+mod _software_result;
+
+mod _software_scopes;
+
+mod _software_string_field;
+
+mod _software_string_filter;
 
 mod _sort_criterion;
 

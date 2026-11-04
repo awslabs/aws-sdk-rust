@@ -485,6 +485,8 @@ pub(crate) mod shape_shrink_policy;
 
 pub(crate) mod shape_simplified_application;
 
+pub(crate) mod shape_step_additional_info;
+
 pub(crate) mod shape_step_monitoring_configuration;
 
 pub(crate) mod shape_step_status;

@@ -48,6 +48,21 @@ pub fn de_disable_crl_http_error(
             }
             tmp
         }),
+        "ServiceUnavailableException" => crate::operation::disable_crl::DisableCrlError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::disable_crl::DisableCrlError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::service_unavailable_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::disable_crl::DisableCrlError::unhandled)?
+            };
+            tmp
+        }),
         _ => crate::operation::disable_crl::DisableCrlError::generic(generic),
     })
 }

@@ -12,6 +12,10 @@ impl super::Client {
     ///   - [`retraining_scheduler_summaries(Option<Vec::<RetrainingSchedulerSummary>>)`](crate::operation::list_retraining_schedulers::ListRetrainingSchedulersOutput::retraining_scheduler_summaries): <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_retraining_schedulers::ListRetrainingSchedulersOutput::next_token): <p>If the number of results exceeds the maximum, this pagination token is returned. Use this token in the request to show the next page of retraining schedulers.</p>
     /// - On failure, responds with [`SdkError<ListRetrainingSchedulersError>`](crate::operation::list_retraining_schedulers::ListRetrainingSchedulersError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn list_retraining_schedulers(&self) -> crate::operation::list_retraining_schedulers::builders::ListRetrainingSchedulersFluentBuilder {
         crate::operation::list_retraining_schedulers::builders::ListRetrainingSchedulersFluentBuilder::new(self.handle.clone())
     }

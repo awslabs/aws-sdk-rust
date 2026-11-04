@@ -2936,6 +2936,127 @@ impl From<crate::operation::get_security_control_definition::GetSecurityControlD
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_software_resources_v2::GetSoftwareResourcesV2Error, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_software_resources_v2::GetSoftwareResourcesV2Error, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_software_resources_v2::GetSoftwareResourcesV2Error> for Error {
+    fn from(err: crate::operation::get_software_resources_v2::GetSoftwareResourcesV2Error) -> Self {
+        match err {
+            crate::operation::get_software_resources_v2::GetSoftwareResourcesV2Error::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_software_resources_v2::GetSoftwareResourcesV2Error::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_software_resources_v2::GetSoftwareResourcesV2Error::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_software_resources_v2::GetSoftwareResourcesV2Error::OrganizationalUnitNotFoundException(inner) => {
+                Error::OrganizationalUnitNotFoundException(inner)
+            }
+            crate::operation::get_software_resources_v2::GetSoftwareResourcesV2Error::OrganizationNotFoundException(inner) => {
+                Error::OrganizationNotFoundException(inner)
+            }
+            crate::operation::get_software_resources_v2::GetSoftwareResourcesV2Error::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_software_resources_v2::GetSoftwareResourcesV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_software_resources_v2::GetSoftwareResourcesV2Error::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_software_resources_v2::GetSoftwareResourcesV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_software_statistics_v2::GetSoftwareStatisticsV2Error, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_software_statistics_v2::GetSoftwareStatisticsV2Error, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_software_statistics_v2::GetSoftwareStatisticsV2Error> for Error {
+    fn from(err: crate::operation::get_software_statistics_v2::GetSoftwareStatisticsV2Error) -> Self {
+        match err {
+            crate::operation::get_software_statistics_v2::GetSoftwareStatisticsV2Error::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_software_statistics_v2::GetSoftwareStatisticsV2Error::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_software_statistics_v2::GetSoftwareStatisticsV2Error::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_software_statistics_v2::GetSoftwareStatisticsV2Error::OrganizationalUnitNotFoundException(inner) => {
+                Error::OrganizationalUnitNotFoundException(inner)
+            }
+            crate::operation::get_software_statistics_v2::GetSoftwareStatisticsV2Error::OrganizationNotFoundException(inner) => {
+                Error::OrganizationNotFoundException(inner)
+            }
+            crate::operation::get_software_statistics_v2::GetSoftwareStatisticsV2Error::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_software_statistics_v2::GetSoftwareStatisticsV2Error::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_software_statistics_v2::GetSoftwareStatisticsV2Error::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_software_statistics_v2::GetSoftwareStatisticsV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_software_v2::GetSoftwareV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_software_v2::GetSoftwareV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_software_v2::GetSoftwareV2Error> for Error {
+    fn from(err: crate::operation::get_software_v2::GetSoftwareV2Error) -> Self {
+        match err {
+            crate::operation::get_software_v2::GetSoftwareV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_software_v2::GetSoftwareV2Error::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_software_v2::GetSoftwareV2Error::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_software_v2::GetSoftwareV2Error::OrganizationalUnitNotFoundException(inner) => {
+                Error::OrganizationalUnitNotFoundException(inner)
+            }
+            crate::operation::get_software_v2::GetSoftwareV2Error::OrganizationNotFoundException(inner) => {
+                Error::OrganizationNotFoundException(inner)
+            }
+            crate::operation::get_software_v2::GetSoftwareV2Error::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_software_v2::GetSoftwareV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_software_v2::GetSoftwareV2Error::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_software_v2::GetSoftwareV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invite_members::InviteMembersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

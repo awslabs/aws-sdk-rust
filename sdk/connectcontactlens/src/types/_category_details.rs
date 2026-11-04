@@ -6,6 +6,8 @@
 pub struct CategoryDetails {
     /// <p>The section of audio where the category rule was detected.</p>
     pub points_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::PointOfInterest>>,
+    /// <p>The unique identifier of the rule that created the matched category.</p>
+    pub rule_id: ::std::option::Option<::std::string::String>,
 }
 impl CategoryDetails {
     /// <p>The section of audio where the category rule was detected.</p>
@@ -13,6 +15,10 @@ impl CategoryDetails {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.points_of_interest.is_none()`.
     pub fn points_of_interest(&self) -> &[crate::types::PointOfInterest] {
         self.points_of_interest.as_deref().unwrap_or_default()
+    }
+    /// <p>The unique identifier of the rule that created the matched category.</p>
+    pub fn rule_id(&self) -> ::std::option::Option<&str> {
+        self.rule_id.as_deref()
     }
 }
 impl CategoryDetails {
@@ -27,6 +33,7 @@ impl CategoryDetails {
 #[non_exhaustive]
 pub struct CategoryDetailsBuilder {
     pub(crate) points_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::PointOfInterest>>,
+    pub(crate) rule_id: ::std::option::Option<::std::string::String>,
 }
 impl CategoryDetailsBuilder {
     /// Appends an item to `points_of_interest`.
@@ -49,10 +56,25 @@ impl CategoryDetailsBuilder {
     pub fn get_points_of_interest(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PointOfInterest>> {
         &self.points_of_interest
     }
+    /// <p>The unique identifier of the rule that created the matched category.</p>
+    pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the rule that created the matched category.</p>
+    pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.rule_id = input;
+        self
+    }
+    /// <p>The unique identifier of the rule that created the matched category.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
+    }
     /// Consumes the builder and constructs a [`CategoryDetails`](crate::types::CategoryDetails).
     pub fn build(self) -> crate::types::CategoryDetails {
         crate::types::CategoryDetails {
             points_of_interest: self.points_of_interest,
+            rule_id: self.rule_id,
         }
     }
 }

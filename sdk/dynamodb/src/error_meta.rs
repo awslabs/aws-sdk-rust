@@ -448,6 +448,33 @@ impl From<crate::operation::batch_write_item::BatchWriteItemError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_bulk_operation::CancelBulkOperationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_bulk_operation::CancelBulkOperationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_bulk_operation::CancelBulkOperationError> for Error {
+    fn from(err: crate::operation::cancel_bulk_operation::CancelBulkOperationError) -> Self {
+        match err {
+            crate::operation::cancel_bulk_operation::CancelBulkOperationError::InvalidEndpointException(inner) => {
+                Error::InvalidEndpointException(inner)
+            }
+            crate::operation::cancel_bulk_operation::CancelBulkOperationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::cancel_bulk_operation::CancelBulkOperationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_backup::CreateBackupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -676,6 +703,35 @@ impl From<crate::operation::describe_backup::DescribeBackupError> for Error {
             crate::operation::describe_backup::DescribeBackupError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::describe_backup::DescribeBackupError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
             crate::operation::describe_backup::DescribeBackupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_bulk_operation::DescribeBulkOperationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_bulk_operation::DescribeBulkOperationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_bulk_operation::DescribeBulkOperationError> for Error {
+    fn from(err: crate::operation::describe_bulk_operation::DescribeBulkOperationError) -> Self {
+        match err {
+            crate::operation::describe_bulk_operation::DescribeBulkOperationError::InvalidEndpointException(inner) => {
+                Error::InvalidEndpointException(inner)
+            }
+            crate::operation::describe_bulk_operation::DescribeBulkOperationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_bulk_operation::DescribeBulkOperationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1350,6 +1406,30 @@ impl From<crate::operation::list_backups::ListBackupsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_bulk_operations::ListBulkOperationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_bulk_operations::ListBulkOperationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_bulk_operations::ListBulkOperationsError> for Error {
+    fn from(err: crate::operation::list_bulk_operations::ListBulkOperationsError) -> Self {
+        match err {
+            crate::operation::list_bulk_operations::ListBulkOperationsError::InvalidEndpointException(inner) => {
+                Error::InvalidEndpointException(inner)
+            }
+            crate::operation::list_bulk_operations::ListBulkOperationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_contributor_insights::ListContributorInsightsError, R>>
     for Error
 where
@@ -1730,6 +1810,36 @@ impl From<crate::operation::search_vectors::SearchVectorsError> for Error {
             crate::operation::search_vectors::SearchVectorsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::search_vectors::SearchVectorsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::search_vectors::SearchVectorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_bulk_put_items::StartBulkPutItemsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_bulk_put_items::StartBulkPutItemsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_bulk_put_items::StartBulkPutItemsError> for Error {
+    fn from(err: crate::operation::start_bulk_put_items::StartBulkPutItemsError) -> Self {
+        match err {
+            crate::operation::start_bulk_put_items::StartBulkPutItemsError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::start_bulk_put_items::StartBulkPutItemsError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+            crate::operation::start_bulk_put_items::StartBulkPutItemsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::start_bulk_put_items::StartBulkPutItemsError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::start_bulk_put_items::StartBulkPutItemsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_bulk_put_items::StartBulkPutItemsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

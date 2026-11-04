@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateNetworkMigrationDefinitionInput {
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the network migration definition.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the network migration definition.</p>
@@ -25,6 +27,10 @@ pub struct CreateNetworkMigrationDefinitionInput {
     pub scope_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateNetworkMigrationDefinitionInput {
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
     /// <p>The name of the network migration definition.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
@@ -73,6 +79,7 @@ impl CreateNetworkMigrationDefinitionInput {
 impl ::std::fmt::Debug for CreateNetworkMigrationDefinitionInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNetworkMigrationDefinitionInput");
+        formatter.field("client_token", &self.client_token);
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("source_configurations", &self.source_configurations);
@@ -97,6 +104,7 @@ impl CreateNetworkMigrationDefinitionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CreateNetworkMigrationDefinitionInputBuilder {
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) source_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfiguration>>,
@@ -109,6 +117,20 @@ pub struct CreateNetworkMigrationDefinitionInputBuilder {
     pub(crate) scope_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateNetworkMigrationDefinitionInputBuilder {
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The name of the network migration definition.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -285,6 +307,7 @@ impl CreateNetworkMigrationDefinitionInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_network_migration_definition::CreateNetworkMigrationDefinitionInput {
+                client_token: self.client_token,
                 name: self.name,
                 description: self.description,
                 source_configurations: self.source_configurations,
@@ -302,6 +325,7 @@ impl CreateNetworkMigrationDefinitionInputBuilder {
 impl ::std::fmt::Debug for CreateNetworkMigrationDefinitionInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNetworkMigrationDefinitionInputBuilder");
+        formatter.field("client_token", &self.client_token);
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("source_configurations", &self.source_configurations);

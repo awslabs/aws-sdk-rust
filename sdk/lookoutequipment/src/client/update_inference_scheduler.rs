@@ -11,6 +11,10 @@ impl super::Client {
     ///   - [`role_arn(impl Into<String>)`](crate::operation::update_inference_scheduler::builders::UpdateInferenceSchedulerFluentBuilder::role_arn) / [`set_role_arn(Option<String>)`](crate::operation::update_inference_scheduler::builders::UpdateInferenceSchedulerFluentBuilder::set_role_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler.</p><br>
     /// - On success, responds with [`UpdateInferenceSchedulerOutput`](crate::operation::update_inference_scheduler::UpdateInferenceSchedulerOutput)
     /// - On failure, responds with [`SdkError<UpdateInferenceSchedulerError>`](crate::operation::update_inference_scheduler::UpdateInferenceSchedulerError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn update_inference_scheduler(&self) -> crate::operation::update_inference_scheduler::builders::UpdateInferenceSchedulerFluentBuilder {
         crate::operation::update_inference_scheduler::builders::UpdateInferenceSchedulerFluentBuilder::new(self.handle.clone())
     }

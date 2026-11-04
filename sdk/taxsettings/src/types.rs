@@ -41,6 +41,8 @@ pub use crate::types::_tax_exemption_type::TaxExemptionType;
 
 pub use crate::types::_additional_info_response::AdditionalInfoResponse;
 
+pub use crate::types::_tax_registration_status_reason::TaxRegistrationStatusReason;
+
 pub use crate::types::_supplemental_tax_registration::SupplementalTaxRegistration;
 
 pub use crate::types::_account_details::AccountDetails;
@@ -102,6 +104,8 @@ pub use crate::types::_mexico_additional_info::MexicoAdditionalInfo;
 pub use crate::types::_brazil_additional_info::BrazilAdditionalInfo;
 
 pub use crate::types::_india_additional_info::IndiaAdditionalInfo;
+
+pub use crate::types::_colombia_additional_info::ColombiaAdditionalInfo;
 
 pub use crate::types::_tax_registration_with_jurisdiction::TaxRegistrationWithJurisdiction;
 
@@ -178,6 +182,8 @@ mod _canada_additional_info;
 mod _chile_additional_info;
 
 mod _chile_document_type;
+
+mod _colombia_additional_info;
 
 mod _customer_type;
 
@@ -280,6 +286,8 @@ mod _tax_registration_entry;
 mod _tax_registration_number_type;
 
 mod _tax_registration_status;
+
+mod _tax_registration_status_reason;
 
 mod _tax_registration_type;
 

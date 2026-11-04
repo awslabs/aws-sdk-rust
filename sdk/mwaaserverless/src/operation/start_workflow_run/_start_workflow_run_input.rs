@@ -9,7 +9,7 @@ pub struct StartWorkflowRunInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Optional parameters to override default workflow parameters for this specific run. These parameters are passed to the workflow during execution and can be used to customize behavior without modifying the workflow definition. Parameters are made available as environment variables to tasks and you can reference them within the YAML workflow definition using standard parameter substitution syntax.</p>
     pub override_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
-    /// <p>Optional. The specific version of the workflow to execute. If not specified, the latest version is used.</p>
+    /// <p>Optional. The specific version of the workflow to execute. If you don't specify a version, we use the latest version.</p>
     pub workflow_version: ::std::option::Option<::std::string::String>,
 }
 impl StartWorkflowRunInput {
@@ -25,7 +25,7 @@ impl StartWorkflowRunInput {
     pub fn override_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
         self.override_parameters.as_ref()
     }
-    /// <p>Optional. The specific version of the workflow to execute. If not specified, the latest version is used.</p>
+    /// <p>Optional. The specific version of the workflow to execute. If you don't specify a version, we use the latest version.</p>
     pub fn workflow_version(&self) -> ::std::option::Option<&str> {
         self.workflow_version.as_deref()
     }
@@ -111,17 +111,17 @@ impl StartWorkflowRunInputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
         &self.override_parameters
     }
-    /// <p>Optional. The specific version of the workflow to execute. If not specified, the latest version is used.</p>
+    /// <p>Optional. The specific version of the workflow to execute. If you don't specify a version, we use the latest version.</p>
     pub fn workflow_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Optional. The specific version of the workflow to execute. If not specified, the latest version is used.</p>
+    /// <p>Optional. The specific version of the workflow to execute. If you don't specify a version, we use the latest version.</p>
     pub fn set_workflow_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_version = input;
         self
     }
-    /// <p>Optional. The specific version of the workflow to execute. If not specified, the latest version is used.</p>
+    /// <p>Optional. The specific version of the workflow to execute. If you don't specify a version, we use the latest version.</p>
     pub fn get_workflow_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_version
     }

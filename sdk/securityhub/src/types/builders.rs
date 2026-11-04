@@ -41,6 +41,10 @@ pub use crate::types::_resources_filters::ResourcesFiltersBuilder;
 
 pub use crate::types::_security_control_definition::SecurityControlDefinitionBuilder;
 
+pub use crate::types::_software_filters::SoftwareFiltersBuilder;
+
+pub use crate::types::_software_scopes::SoftwareScopesBuilder;
+
 pub use crate::types::_association_filters::AssociationFiltersBuilder;
 
 pub use crate::types::_remediation_resource::RemediationResourceBuilder;
@@ -150,6 +154,12 @@ pub use crate::types::_resource_group_by_rule::ResourceGroupByRuleBuilder;
 pub use crate::types::_resources_trends_metrics_result::ResourcesTrendsMetricsResultBuilder;
 
 pub use crate::types::_resource_result::ResourceResultBuilder;
+
+pub use crate::types::_software_resource_result::SoftwareResourceResultBuilder;
+
+pub use crate::types::_software_group_by_rule::SoftwareGroupByRuleBuilder;
+
+pub use crate::types::_software_result::SoftwareResultBuilder;
 
 pub use crate::types::_aggregator_v2::AggregatorV2Builder;
 
@@ -270,6 +280,8 @@ pub use crate::types::_resources_composite_filter::ResourcesCompositeFilterBuild
 pub use crate::types::_resource_info::ResourceInfoBuilder;
 
 pub use crate::types::_parameter_definition::ParameterDefinitionBuilder;
+
+pub use crate::types::_software_composite_filter::SoftwareCompositeFilterBuilder;
 
 pub use crate::types::_cspm_provider_summary::CspmProviderSummaryBuilder;
 
@@ -406,6 +418,8 @@ pub use crate::types::_boolean_configuration_options::BooleanConfigurationOption
 pub use crate::types::_enum_configuration_options::EnumConfigurationOptionsBuilder;
 
 pub use crate::types::_enum_list_configuration_options::EnumListConfigurationOptionsBuilder;
+
+pub use crate::types::_software_string_filter::SoftwareStringFilterBuilder;
 
 pub use crate::types::_network_path_component_details::NetworkPathComponentDetailsBuilder;
 

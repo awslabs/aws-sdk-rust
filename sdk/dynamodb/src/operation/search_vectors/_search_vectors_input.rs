@@ -29,7 +29,7 @@ pub struct SearchVectorsInput {
     /// <p>The number of dimensions must match the number of dimensions configured for the vector index.</p>
     pub search_vector: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
     /// <p>A condition expression used to filter the vector search results. The expression can reference attributes defined in the vector index search schema, including <code>HASH</code> and <code>INLINE_FILTER</code> key elements.</p>
-    /// <p>Only the equality operator (<code>=</code>) is supported for <code>HASH</code> attributes. Comparison and range operators are supported for <code>INLINE_FILTER</code> attributes. Only top-level attributes from the search schema can be referenced.</p>
+    /// <p>The <code>HASH</code> and <code>INLINE_FILTER</code> attributes support only the equality operator (<code>=</code>). You can reference only top-level attributes from the search schema.</p>
     pub search_condition_expression: ::std::option::Option<::std::string::String>,
     /// <p>The number of most similar results to return.</p>
     pub top_k: ::std::option::Option<i32>,
@@ -79,7 +79,7 @@ impl SearchVectorsInput {
         self.search_vector.as_deref().unwrap_or_default()
     }
     /// <p>A condition expression used to filter the vector search results. The expression can reference attributes defined in the vector index search schema, including <code>HASH</code> and <code>INLINE_FILTER</code> key elements.</p>
-    /// <p>Only the equality operator (<code>=</code>) is supported for <code>HASH</code> attributes. Comparison and range operators are supported for <code>INLINE_FILTER</code> attributes. Only top-level attributes from the search schema can be referenced.</p>
+    /// <p>The <code>HASH</code> and <code>INLINE_FILTER</code> attributes support only the equality operator (<code>=</code>). You can reference only top-level attributes from the search schema.</p>
     pub fn search_condition_expression(&self) -> ::std::option::Option<&str> {
         self.search_condition_expression.as_deref()
     }
@@ -276,19 +276,19 @@ impl SearchVectorsInputBuilder {
         &self.search_vector
     }
     /// <p>A condition expression used to filter the vector search results. The expression can reference attributes defined in the vector index search schema, including <code>HASH</code> and <code>INLINE_FILTER</code> key elements.</p>
-    /// <p>Only the equality operator (<code>=</code>) is supported for <code>HASH</code> attributes. Comparison and range operators are supported for <code>INLINE_FILTER</code> attributes. Only top-level attributes from the search schema can be referenced.</p>
+    /// <p>The <code>HASH</code> and <code>INLINE_FILTER</code> attributes support only the equality operator (<code>=</code>). You can reference only top-level attributes from the search schema.</p>
     pub fn search_condition_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.search_condition_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A condition expression used to filter the vector search results. The expression can reference attributes defined in the vector index search schema, including <code>HASH</code> and <code>INLINE_FILTER</code> key elements.</p>
-    /// <p>Only the equality operator (<code>=</code>) is supported for <code>HASH</code> attributes. Comparison and range operators are supported for <code>INLINE_FILTER</code> attributes. Only top-level attributes from the search schema can be referenced.</p>
+    /// <p>The <code>HASH</code> and <code>INLINE_FILTER</code> attributes support only the equality operator (<code>=</code>). You can reference only top-level attributes from the search schema.</p>
     pub fn set_search_condition_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.search_condition_expression = input;
         self
     }
     /// <p>A condition expression used to filter the vector search results. The expression can reference attributes defined in the vector index search schema, including <code>HASH</code> and <code>INLINE_FILTER</code> key elements.</p>
-    /// <p>Only the equality operator (<code>=</code>) is supported for <code>HASH</code> attributes. Comparison and range operators are supported for <code>INLINE_FILTER</code> attributes. Only top-level attributes from the search schema can be referenced.</p>
+    /// <p>The <code>HASH</code> and <code>INLINE_FILTER</code> attributes support only the equality operator (<code>=</code>). You can reference only top-level attributes from the search schema.</p>
     pub fn get_search_condition_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.search_condition_expression
     }

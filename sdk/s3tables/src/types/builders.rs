@@ -11,11 +11,27 @@ pub use crate::types::_table_replication_configuration::TableReplicationConfigur
 
 pub use crate::types::_managed_table_information::ManagedTableInformationBuilder;
 
+pub use crate::types::_migration_failure_reason::MigrationFailureReasonBuilder;
+
+pub use crate::types::_planning_stats::PlanningStatsBuilder;
+
+pub use crate::types::_migration_stats::MigrationStatsBuilder;
+
+pub use crate::types::_data_migration_overview::DataMigrationOverviewBuilder;
+
+pub use crate::types::_migration_output_overview::MigrationOutputOverviewBuilder;
+
 pub use crate::types::_table_record_expiration_configuration_value::TableRecordExpirationConfigurationValueBuilder;
 
 pub use crate::types::_table_record_expiration_job_metrics::TableRecordExpirationJobMetricsBuilder;
 
 pub use crate::types::_table_maintenance_configuration_value::TableMaintenanceConfigurationValueBuilder;
+
+pub use crate::types::_destination_table::DestinationTableBuilder;
+
+pub use crate::types::_data_migration_settings::DataMigrationSettingsBuilder;
+
+pub use crate::types::_migration_output_configuration::MigrationOutputConfigurationBuilder;
 
 pub use crate::types::_namespace_summary::NamespaceSummaryBuilder;
 
@@ -29,9 +45,27 @@ pub use crate::types::_replication_information::ReplicationInformationBuilder;
 
 pub use crate::types::_table_maintenance_job_status_value::TableMaintenanceJobStatusValueBuilder;
 
+pub use crate::types::_glue_table_source::GlueTableSourceBuilder;
+
+pub use crate::types::_maintenance_settings::MaintenanceSettingsBuilder;
+
+pub use crate::types::_migration_policies::MigrationPoliciesBuilder;
+
+pub use crate::types::_report_overview::ReportOverviewBuilder;
+
 pub use crate::types::_table_record_expiration_settings::TableRecordExpirationSettingsBuilder;
 
+pub use crate::types::_migration_summary::MigrationSummaryBuilder;
+
 pub use crate::types::_table_summary::TableSummaryBuilder;
+
+pub use crate::types::_migration_table_properties::MigrationTablePropertiesBuilder;
+
+pub use crate::types::_iceberg_schema_v2::IcebergSchemaV2Builder;
+
+pub use crate::types::_iceberg_sort_order::IcebergSortOrderBuilder;
+
+pub use crate::types::_migration_report_prefixes::MigrationReportPrefixesBuilder;
 
 pub use crate::types::_table_bucket_replication_rule::TableBucketReplicationRuleBuilder;
 
@@ -43,22 +77,22 @@ pub use crate::types::_last_successful_replicated_update::LastSuccessfulReplicat
 
 pub use crate::types::_iceberg_schema::IcebergSchemaBuilder;
 
-pub use crate::types::_iceberg_schema_v2::IcebergSchemaV2Builder;
-
 pub use crate::types::_iceberg_partition_spec::IcebergPartitionSpecBuilder;
 
-pub use crate::types::_iceberg_sort_order::IcebergSortOrderBuilder;
+pub use crate::types::_migration_compaction_settings::MigrationCompactionSettingsBuilder;
+
+pub use crate::types::_migration_snapshot_management_settings::MigrationSnapshotManagementSettingsBuilder;
 
 pub use crate::types::_iceberg_compaction_settings::IcebergCompactionSettingsBuilder;
 
 pub use crate::types::_iceberg_snapshot_management_settings::IcebergSnapshotManagementSettingsBuilder;
 
+pub use crate::types::_schema_v2_field::SchemaV2FieldBuilder;
+
+pub use crate::types::_iceberg_sort_field::IcebergSortFieldBuilder;
+
 pub use crate::types::_replication_destination::ReplicationDestinationBuilder;
 
 pub use crate::types::_schema_field::SchemaFieldBuilder;
 
-pub use crate::types::_schema_v2_field::SchemaV2FieldBuilder;
-
 pub use crate::types::_iceberg_partition_field::IcebergPartitionFieldBuilder;
-
-pub use crate::types::_iceberg_sort_field::IcebergSortFieldBuilder;

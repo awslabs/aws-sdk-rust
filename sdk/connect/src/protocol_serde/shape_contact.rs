@@ -280,6 +280,9 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "Cases" => {
+                            builder = builder.set_cases(crate::protocol_serde::shape_case_entries::de_case_entries(tokens, _value, depth + 1)?);
+                        }
                         "ContactDetails" => {
                             builder = builder.set_contact_details(crate::protocol_serde::shape_contact_details::de_contact_details(
                                 tokens,

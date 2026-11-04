@@ -847,6 +847,8 @@ pub use crate::types::_recording_info::RecordingInfoBuilder;
 
 pub use crate::types::_contact_evaluation::ContactEvaluationBuilder;
 
+pub use crate::types::_case_entry::CaseEntryBuilder;
+
 pub use crate::types::_next_contact_entry::NextContactEntryBuilder;
 
 pub use crate::types::_evaluation_score::EvaluationScoreBuilder;

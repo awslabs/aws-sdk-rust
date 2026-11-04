@@ -14,6 +14,10 @@ impl super::Client {
     ///   - [`model_arn(Option<String>)`](crate::operation::create_retraining_scheduler::CreateRetrainingSchedulerOutput::model_arn): <p>The ARN of the model that you added the retraining scheduler to.</p>
     ///   - [`status(Option<RetrainingSchedulerStatus>)`](crate::operation::create_retraining_scheduler::CreateRetrainingSchedulerOutput::status): <p>The status of the retraining scheduler.</p>
     /// - On failure, responds with [`SdkError<CreateRetrainingSchedulerError>`](crate::operation::create_retraining_scheduler::CreateRetrainingSchedulerError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn create_retraining_scheduler(&self) -> crate::operation::create_retraining_scheduler::builders::CreateRetrainingSchedulerFluentBuilder {
         crate::operation::create_retraining_scheduler::builders::CreateRetrainingSchedulerFluentBuilder::new(self.handle.clone())
     }

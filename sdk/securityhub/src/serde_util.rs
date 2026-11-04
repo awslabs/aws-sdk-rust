@@ -329,6 +329,33 @@ pub(crate) fn get_security_control_definition_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_software_resources_v2_output_output_correct_errors(
+    mut builder: crate::operation::get_software_resources_v2::builders::GetSoftwareResourcesV2OutputBuilder,
+) -> crate::operation::get_software_resources_v2::builders::GetSoftwareResourcesV2OutputBuilder {
+    if builder.software_resources.is_none() {
+        builder.software_resources = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_software_statistics_v2_output_output_correct_errors(
+    mut builder: crate::operation::get_software_statistics_v2::builders::GetSoftwareStatisticsV2OutputBuilder,
+) -> crate::operation::get_software_statistics_v2::builders::GetSoftwareStatisticsV2OutputBuilder {
+    if builder.group_by_results.is_none() {
+        builder.group_by_results = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_software_v2_output_output_correct_errors(
+    mut builder: crate::operation::get_software_v2::builders::GetSoftwareV2OutputBuilder,
+) -> crate::operation::get_software_v2::builders::GetSoftwareV2OutputBuilder {
+    if builder.software.is_none() {
+        builder.software = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_connectors_output_output_correct_errors(
     mut builder: crate::operation::list_connectors::builders::ListConnectorsOutputBuilder,
 ) -> crate::operation::list_connectors::builders::ListConnectorsOutputBuilder {
@@ -882,6 +909,39 @@ pub(crate) fn service_now_detail_correct_errors(
     }
     if builder.auth_status.is_none() {
         builder.auth_status = "no value was set".parse::<crate::types::ConnectorAuthStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn software_resource_result_correct_errors(
+    mut builder: crate::types::builders::SoftwareResourceResultBuilder,
+) -> crate::types::builders::SoftwareResourceResultBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
+    }
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn software_result_correct_errors(
+    mut builder: crate::types::builders::SoftwareResultBuilder,
+) -> crate::types::builders::SoftwareResultBuilder {
+    if builder.package_name.is_none() {
+        builder.package_name = Some(Default::default())
+    }
+    if builder.package_type.is_none() {
+        builder.package_type = Some(Default::default())
+    }
+    if builder.resource_count.is_none() {
+        builder.resource_count = Some(Default::default())
     }
     builder
 }

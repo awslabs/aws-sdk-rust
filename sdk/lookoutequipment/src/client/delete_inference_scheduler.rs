@@ -6,6 +6,10 @@ impl super::Client {
     ///   - [`inference_scheduler_name(impl Into<String>)`](crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerFluentBuilder::inference_scheduler_name) / [`set_inference_scheduler_name(Option<String>)`](crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerFluentBuilder::set_inference_scheduler_name):<br>required: **true**<br><p>The name of the inference scheduler to be deleted.</p><br>
     /// - On success, responds with [`DeleteInferenceSchedulerOutput`](crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerOutput)
     /// - On failure, responds with [`SdkError<DeleteInferenceSchedulerError>`](crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn delete_inference_scheduler(&self) -> crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerFluentBuilder {
         crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerFluentBuilder::new(self.handle.clone())
     }

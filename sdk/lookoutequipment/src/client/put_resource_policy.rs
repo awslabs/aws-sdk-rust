@@ -11,6 +11,10 @@ impl super::Client {
     ///   - [`resource_arn(Option<String>)`](crate::operation::put_resource_policy::PutResourcePolicyOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which the policy was created.</p>
     ///   - [`policy_revision_id(Option<String>)`](crate::operation::put_resource_policy::PutResourcePolicyOutput::policy_revision_id): <p>A unique identifier for a revision of the resource policy.</p>
     /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::operation::put_resource_policy::PutResourcePolicyError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn put_resource_policy(&self) -> crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder {
         crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder::new(self.handle.clone())
     }

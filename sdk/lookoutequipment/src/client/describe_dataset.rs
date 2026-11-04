@@ -20,6 +20,10 @@ impl super::Client {
     ///   - [`data_end_time(Option<DateTime>)`](crate::operation::describe_dataset::DescribeDatasetOutput::data_end_time): <p>Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset.</p>
     ///   - [`source_dataset_arn(Option<String>)`](crate::operation::describe_dataset::DescribeDatasetOutput::source_dataset_arn): <p>The Amazon Resource Name (ARN) of the source dataset from which the current data being described was imported from.</p>
     /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::operation::describe_dataset::DescribeDatasetError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn describe_dataset(&self) -> crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder {
         crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::new(self.handle.clone())
     }

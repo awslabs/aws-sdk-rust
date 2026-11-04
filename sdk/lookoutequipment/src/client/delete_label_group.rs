@@ -6,6 +6,10 @@ impl super::Client {
     ///   - [`label_group_name(impl Into<String>)`](crate::operation::delete_label_group::builders::DeleteLabelGroupFluentBuilder::label_group_name) / [`set_label_group_name(Option<String>)`](crate::operation::delete_label_group::builders::DeleteLabelGroupFluentBuilder::set_label_group_name):<br>required: **true**<br><p>The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data.</p><br>
     /// - On success, responds with [`DeleteLabelGroupOutput`](crate::operation::delete_label_group::DeleteLabelGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteLabelGroupError>`](crate::operation::delete_label_group::DeleteLabelGroupError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn delete_label_group(&self) -> crate::operation::delete_label_group::builders::DeleteLabelGroupFluentBuilder {
         crate::operation::delete_label_group::builders::DeleteLabelGroupFluentBuilder::new(self.handle.clone())
     }

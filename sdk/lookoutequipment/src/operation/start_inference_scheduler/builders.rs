@@ -23,6 +23,10 @@ impl crate::operation::start_inference_scheduler::builders::StartInferenceSchedu
 /// Fluent builder constructing a request to `StartInferenceScheduler`.
 ///
 /// <p>Starts an inference scheduler.</p>
+#[deprecated(
+    note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+    since = "2026-10-07"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartInferenceSchedulerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

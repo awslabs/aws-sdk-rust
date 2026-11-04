@@ -23,6 +23,10 @@ impl crate::operation::delete_inference_scheduler::builders::DeleteInferenceSche
 /// Fluent builder constructing a request to `DeleteInferenceScheduler`.
 ///
 /// <p>Deletes an inference scheduler that has been set up. Prior inference results will not be deleted.</p>
+#[deprecated(
+    note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+    since = "2026-10-07"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteInferenceSchedulerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

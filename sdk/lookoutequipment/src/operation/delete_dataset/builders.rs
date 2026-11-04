@@ -23,6 +23,10 @@ impl crate::operation::delete_dataset::builders::DeleteDatasetInputBuilder {
 /// Fluent builder constructing a request to `DeleteDataset`.
 ///
 /// <p>Deletes a dataset and associated artifacts. The operation will check to see if any inference scheduler or data ingestion job is currently using the dataset, and if there isn't, the dataset, its metadata, and any associated data stored in S3 will be deleted. This does not affect any models that used this dataset for training and evaluation, but does prevent it from being used in the future.</p>
+#[deprecated(
+    note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+    since = "2026-10-07"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDatasetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

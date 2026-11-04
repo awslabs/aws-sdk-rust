@@ -9,6 +9,10 @@ impl super::Client {
     ///   - [`model_diagnostics_output_configuration(ModelDiagnosticsOutputConfiguration)`](crate::operation::update_model::builders::UpdateModelFluentBuilder::model_diagnostics_output_configuration) / [`set_model_diagnostics_output_configuration(Option<ModelDiagnosticsOutputConfiguration>)`](crate::operation::update_model::builders::UpdateModelFluentBuilder::set_model_diagnostics_output_configuration):<br>required: **false**<br><p>The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics for the model. You must also specify the <code>RoleArn</code> request parameter.</p><br>
     /// - On success, responds with [`UpdateModelOutput`](crate::operation::update_model::UpdateModelOutput)
     /// - On failure, responds with [`SdkError<UpdateModelError>`](crate::operation::update_model::UpdateModelError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn update_model(&self) -> crate::operation::update_model::builders::UpdateModelFluentBuilder {
         crate::operation::update_model::builders::UpdateModelFluentBuilder::new(self.handle.clone())
     }

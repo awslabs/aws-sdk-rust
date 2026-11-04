@@ -165,6 +165,11 @@ where
                                 crate::protocol_serde::shape_mexico_additional_info::de_mexico_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
+                        "colombiaAdditionalInfo" => {
+                            builder = builder.set_colombia_additional_info(
+                                crate::protocol_serde::shape_colombia_additional_info::de_colombia_additional_info(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

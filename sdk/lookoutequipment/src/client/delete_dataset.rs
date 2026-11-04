@@ -6,6 +6,10 @@ impl super::Client {
     ///   - [`dataset_name(impl Into<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::dataset_name) / [`set_dataset_name(Option<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::set_dataset_name):<br>required: **true**<br><p>The name of the dataset to be deleted.</p><br>
     /// - On success, responds with [`DeleteDatasetOutput`](crate::operation::delete_dataset::DeleteDatasetOutput)
     /// - On failure, responds with [`SdkError<DeleteDatasetError>`](crate::operation::delete_dataset::DeleteDatasetError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn delete_dataset(&self) -> crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder {
         crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::new(self.handle.clone())
     }

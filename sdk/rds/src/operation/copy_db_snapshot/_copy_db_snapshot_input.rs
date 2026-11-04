@@ -75,10 +75,22 @@ pub struct CopyDbSnapshotInput {
     /// <p><code>region</code> (Amazon Web Services Region)</p></li>
     /// </ul>
     pub snapshot_target: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account or Amazon Web Services Region and associate it with the target DB snapshot.</p>
     pub copy_option_group: ::std::option::Option<bool>,
     /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
     pub snapshot_availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>Tags to assign to the copied option group. By default, the copied option group isn't tagged.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>og</code> - The copied option group.</p></li>
+    /// </ul>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can only be specified when <code>CopyOptionGroup</code> is <code>true</code></p></li>
+    /// </ul>
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CopyDbSnapshotInput {
     /// <p>The identifier for the source DB snapshot.</p>
@@ -172,13 +184,29 @@ impl CopyDbSnapshotInput {
     pub fn snapshot_target(&self) -> ::std::option::Option<&str> {
         self.snapshot_target.as_deref()
     }
-    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account or Amazon Web Services Region and associate it with the target DB snapshot.</p>
     pub fn copy_option_group(&self) -> ::std::option::Option<bool> {
         self.copy_option_group
     }
     /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
     pub fn snapshot_availability_zone(&self) -> ::std::option::Option<&str> {
         self.snapshot_availability_zone.as_deref()
+    }
+    /// <p>Tags to assign to the copied option group. By default, the copied option group isn't tagged.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>og</code> - The copied option group.</p></li>
+    /// </ul>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can only be specified when <code>CopyOptionGroup</code> is <code>true</code></p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CopyDbSnapshotInput {
@@ -195,6 +223,7 @@ impl ::std::fmt::Debug for CopyDbSnapshotInput {
         formatter.field("snapshot_target", &self.snapshot_target);
         formatter.field("copy_option_group", &self.copy_option_group);
         formatter.field("snapshot_availability_zone", &self.snapshot_availability_zone);
+        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.finish()
     }
 }
@@ -220,6 +249,7 @@ pub struct CopyDbSnapshotInputBuilder {
     pub(crate) snapshot_target: ::std::option::Option<::std::string::String>,
     pub(crate) copy_option_group: ::std::option::Option<bool>,
     pub(crate) snapshot_availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CopyDbSnapshotInputBuilder {
     /// <p>The identifier for the source DB snapshot.</p>
@@ -515,17 +545,17 @@ impl CopyDbSnapshotInputBuilder {
     pub fn get_snapshot_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_target
     }
-    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account or Amazon Web Services Region and associate it with the target DB snapshot.</p>
     pub fn copy_option_group(mut self, input: bool) -> Self {
         self.copy_option_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account or Amazon Web Services Region and associate it with the target DB snapshot.</p>
     pub fn set_copy_option_group(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_option_group = input;
         self
     }
-    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account or Amazon Web Services Region and associate it with the target DB snapshot.</p>
     pub fn get_copy_option_group(&self) -> &::std::option::Option<bool> {
         &self.copy_option_group
     }
@@ -543,6 +573,56 @@ impl CopyDbSnapshotInputBuilder {
     pub fn get_snapshot_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_availability_zone
     }
+    /// Appends an item to `tag_specifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>Tags to assign to the copied option group. By default, the copied option group isn't tagged.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>og</code> - The copied option group.</p></li>
+    /// </ul>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can only be specified when <code>CopyOptionGroup</code> is <code>true</code></p></li>
+    /// </ul>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        let mut v = self.tag_specifications.unwrap_or_default();
+        v.push(input);
+        self.tag_specifications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Tags to assign to the copied option group. By default, the copied option group isn't tagged.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>og</code> - The copied option group.</p></li>
+    /// </ul>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can only be specified when <code>CopyOptionGroup</code> is <code>true</code></p></li>
+    /// </ul>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input;
+        self
+    }
+    /// <p>Tags to assign to the copied option group. By default, the copied option group isn't tagged.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>og</code> - The copied option group.</p></li>
+    /// </ul>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can only be specified when <code>CopyOptionGroup</code> is <code>true</code></p></li>
+    /// </ul>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// Consumes the builder and constructs a [`CopyDbSnapshotInput`](crate::operation::copy_db_snapshot::CopyDbSnapshotInput).
     pub fn build(
         self,
@@ -559,6 +639,7 @@ impl CopyDbSnapshotInputBuilder {
             snapshot_target: self.snapshot_target,
             copy_option_group: self.copy_option_group,
             snapshot_availability_zone: self.snapshot_availability_zone,
+            tag_specifications: self.tag_specifications,
         })
     }
 }
@@ -576,6 +657,7 @@ impl ::std::fmt::Debug for CopyDbSnapshotInputBuilder {
         formatter.field("snapshot_target", &self.snapshot_target);
         formatter.field("copy_option_group", &self.copy_option_group);
         formatter.field("snapshot_availability_zone", &self.snapshot_availability_zone);
+        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.finish()
     }
 }

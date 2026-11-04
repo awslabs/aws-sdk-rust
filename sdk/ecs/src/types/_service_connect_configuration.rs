@@ -20,7 +20,8 @@ pub struct ServiceConnectConfiguration {
     /// <li>
     /// <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon. Additional log drivers may be available in future releases of the Amazon ECS container agent.</p>
     /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p></li>
+    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+    /// <p>For tasks on Amazon ECS Managed Instances, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, <code>awsfirelens</code>, and <code>json-file</code>.</p></li>
     /// <li>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p></li>
     /// <li>
@@ -61,7 +62,8 @@ impl ServiceConnectConfiguration {
     /// <li>
     /// <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon. Additional log drivers may be available in future releases of the Amazon ECS container agent.</p>
     /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p></li>
+    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+    /// <p>For tasks on Amazon ECS Managed Instances, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, <code>awsfirelens</code>, and <code>json-file</code>.</p></li>
     /// <li>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p></li>
     /// <li>
@@ -401,7 +403,8 @@ impl ServiceConnectConfigurationBuilder {
     /// <li>
     /// <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon. Additional log drivers may be available in future releases of the Amazon ECS container agent.</p>
     /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p></li>
+    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+    /// <p>For tasks on Amazon ECS Managed Instances, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, <code>awsfirelens</code>, and <code>json-file</code>.</p></li>
     /// <li>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p></li>
     /// <li>
@@ -420,7 +423,8 @@ impl ServiceConnectConfigurationBuilder {
     /// <li>
     /// <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon. Additional log drivers may be available in future releases of the Amazon ECS container agent.</p>
     /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p></li>
+    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+    /// <p>For tasks on Amazon ECS Managed Instances, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, <code>awsfirelens</code>, and <code>json-file</code>.</p></li>
     /// <li>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p></li>
     /// <li>
@@ -439,7 +443,8 @@ impl ServiceConnectConfigurationBuilder {
     /// <li>
     /// <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon. Additional log drivers may be available in future releases of the Amazon ECS container agent.</p>
     /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p></li>
+    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+    /// <p>For tasks on Amazon ECS Managed Instances, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, <code>awsfirelens</code>, and <code>json-file</code>.</p></li>
     /// <li>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p></li>
     /// <li>

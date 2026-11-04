@@ -3,6 +3,8 @@ pub use crate::types::_return_consumed_capacity::ReturnConsumedCapacity;
 
 pub use crate::types::_return_item_collection_metrics::ReturnItemCollectionMetrics;
 
+pub use crate::types::_bulk_operation_status::BulkOperationStatus;
+
 pub use crate::types::_backup_details::BackupDetails;
 
 pub use crate::types::_global_table_description::GlobalTableDescription;
@@ -36,6 +38,8 @@ pub use crate::types::_return_values_on_condition_check_failure::ReturnValuesOnC
 pub use crate::types::_consumed_capacity::ConsumedCapacity;
 
 pub use crate::types::_item_collection_metrics::ItemCollectionMetrics;
+
+pub use crate::types::_bulk_operation_description::BulkOperationDescription;
 
 pub use crate::types::_continuous_backups_description::ContinuousBackupsDescription;
 
@@ -82,6 +86,12 @@ pub use crate::types::_backup_type_filter::BackupTypeFilter;
 pub use crate::types::_select::Select;
 
 pub use crate::types::_vector_capacity::VectorCapacity;
+
+pub use crate::types::_input_s3_configuration::InputS3Configuration;
+
+pub use crate::types::_output_s3_configuration::OutputS3Configuration;
+
+pub use crate::types::_bulk_operation_performance_tier::BulkOperationPerformanceTier;
 
 pub use crate::types::_point_in_time_recovery_specification::PointInTimeRecoverySpecification;
 
@@ -183,6 +193,8 @@ pub use crate::types::_csv_options::CsvOptions;
 
 pub use crate::types::_backup_summary::BackupSummary;
 
+pub use crate::types::_bulk_operation_summary::BulkOperationSummary;
+
 pub use crate::types::_contributor_insights_summary::ContributorInsightsSummary;
 
 pub use crate::types::_export_summary::ExportSummary;
@@ -194,6 +206,8 @@ pub use crate::types::_import_summary::ImportSummary;
 pub use crate::types::_condition::Condition;
 
 pub use crate::types::_search_result_item::SearchResultItem;
+
+pub use crate::types::_bulk_operation_input_format::BulkOperationInputFormat;
 
 pub use crate::types::_transact_get_item::TransactGetItem;
 
@@ -249,6 +263,10 @@ pub use crate::types::_vector_index_description::VectorIndexDescription;
 
 pub use crate::types::_comparison_operator::ComparisonOperator;
 
+pub use crate::types::_bulk_operation_table_detail::BulkOperationTableDetail;
+
+pub use crate::types::_bulk_operation_usage::BulkOperationUsage;
+
 pub use crate::types::_point_in_time_recovery_status::PointInTimeRecoveryStatus;
 
 pub use crate::types::_replica_status::ReplicaStatus;
@@ -256,6 +274,8 @@ pub use crate::types::_replica_status::ReplicaStatus;
 pub use crate::types::_auto_scaling_settings_description::AutoScalingSettingsDescription;
 
 pub use crate::types::_replica_auto_scaling_description::ReplicaAutoScalingDescription;
+
+pub use crate::types::_output_type_enum::OutputTypeEnum;
 
 pub use crate::types::_get::Get;
 
@@ -323,6 +343,8 @@ pub use crate::types::_global_secondary_index_info::GlobalSecondaryIndexInfo;
 
 pub use crate::types::_vector_index_info::VectorIndexInfo;
 
+pub use crate::types::_bulk_operation_bytes::BulkOperationBytes;
+
 pub use crate::types::_replica_global_secondary_index_settings_description::ReplicaGlobalSecondaryIndexSettingsDescription;
 
 pub use crate::types::_replica_global_secondary_index_settings_update::ReplicaGlobalSecondaryIndexSettingsUpdate;
@@ -334,6 +356,8 @@ pub use crate::types::_replica_global_secondary_index_auto_scaling_update::Repli
 pub use crate::types::_replica_global_secondary_index_description::ReplicaGlobalSecondaryIndexDescription;
 
 pub use crate::types::_search_schema_element_type::SearchSchemaElementType;
+
+pub use crate::types::_bulk_operation_vector_bytes::BulkOperationVectorBytes;
 
 pub use crate::types::_auto_scaling_policy_description::AutoScalingPolicyDescription;
 
@@ -390,6 +414,24 @@ mod _batch_statement_response;
 mod _billing_mode;
 
 mod _billing_mode_summary;
+
+mod _bulk_operation_bytes;
+
+mod _bulk_operation_description;
+
+mod _bulk_operation_input_format;
+
+mod _bulk_operation_performance_tier;
+
+mod _bulk_operation_status;
+
+mod _bulk_operation_summary;
+
+mod _bulk_operation_table_detail;
+
+mod _bulk_operation_usage;
+
+mod _bulk_operation_vector_bytes;
 
 mod _cancellation_reason;
 
@@ -515,6 +557,8 @@ mod _input_format;
 
 mod _input_format_options;
 
+mod _input_s3_configuration;
+
 mod _item_collection_metrics;
 
 mod _item_response;
@@ -538,6 +582,10 @@ mod _multi_region_consistency;
 mod _on_demand_throughput;
 
 mod _on_demand_throughput_override;
+
+mod _output_s3_configuration;
+
+mod _output_type_enum;
 
 mod _parameterized_statement;
 

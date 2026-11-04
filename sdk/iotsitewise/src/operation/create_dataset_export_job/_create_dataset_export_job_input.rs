@@ -12,6 +12,8 @@ pub struct CreateDatasetExportJobInput {
     pub destination_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The processing input source.</p>
     pub input: ::std::option::Option<crate::types::ProcessingInput>,
+    /// <p>An optional name for the export job. When omitted, one will be created based on type of job and start time.</p>
+    pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The location where the error report will be written on failure.</p>
     pub error_report_location: ::std::option::Option<crate::types::ExportErrorReportLocation>,
 }
@@ -31,6 +33,10 @@ impl CreateDatasetExportJobInput {
     /// <p>The processing input source.</p>
     pub fn input(&self) -> ::std::option::Option<&crate::types::ProcessingInput> {
         self.input.as_ref()
+    }
+    /// <p>An optional name for the export job. When omitted, one will be created based on type of job and start time.</p>
+    pub fn job_name(&self) -> ::std::option::Option<&str> {
+        self.job_name.as_deref()
     }
     /// <p>The location where the error report will be written on failure.</p>
     pub fn error_report_location(&self) -> ::std::option::Option<&crate::types::ExportErrorReportLocation> {
@@ -52,6 +58,7 @@ pub struct CreateDatasetExportJobInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) destination_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) input: ::std::option::Option<crate::types::ProcessingInput>,
+    pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) error_report_location: ::std::option::Option<crate::types::ExportErrorReportLocation>,
 }
 impl CreateDatasetExportJobInputBuilder {
@@ -114,6 +121,20 @@ impl CreateDatasetExportJobInputBuilder {
     pub fn get_input(&self) -> &::std::option::Option<crate::types::ProcessingInput> {
         &self.input
     }
+    /// <p>An optional name for the export job. When omitted, one will be created based on type of job and start time.</p>
+    pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional name for the export job. When omitted, one will be created based on type of job and start time.</p>
+    pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.job_name = input;
+        self
+    }
+    /// <p>An optional name for the export job. When omitted, one will be created based on type of job and start time.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>The location where the error report will be written on failure.</p>
     /// This field is required.
     pub fn error_report_location(mut self, input: crate::types::ExportErrorReportLocation) -> Self {
@@ -141,6 +162,7 @@ impl CreateDatasetExportJobInputBuilder {
             client_token: self.client_token,
             destination_s3_uri: self.destination_s3_uri,
             input: self.input,
+            job_name: self.job_name,
             error_report_location: self.error_report_location,
         })
     }

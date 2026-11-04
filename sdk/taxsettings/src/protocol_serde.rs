@@ -155,6 +155,8 @@ pub(crate) mod shape_tax_exemption_details;
 
 pub(crate) mod shape_tax_exemption_type;
 
+pub(crate) mod shape_tax_registration_status_reason;
+
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_verification_details;
@@ -170,6 +172,8 @@ pub(crate) mod shape_brazil_additional_info;
 pub(crate) mod shape_canada_additional_info;
 
 pub(crate) mod shape_chile_additional_info;
+
+pub(crate) mod shape_colombia_additional_info;
 
 pub(crate) mod shape_egypt_additional_info;
 
@@ -228,6 +232,8 @@ pub(crate) mod shape_uzbekistan_additional_info;
 pub(crate) mod shape_vietnam_additional_info;
 
 pub(crate) mod shape_address_role_map;
+
+pub(crate) mod shape_colombia_responsabilidades_list;
 
 pub(crate) mod shape_jurisdiction;
 

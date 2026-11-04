@@ -38,6 +38,8 @@ pub struct OptionGroupOption {
     pub option_group_option_versions: ::std::option::Option<::std::vec::Vec<crate::types::OptionVersion>>,
     /// <p>Indicates whether the option can be copied across Amazon Web Services accounts.</p>
     pub copyable_cross_account: ::std::option::Option<bool>,
+    /// <p>Indicates whether the option can be copied across Amazon Web Services Regions.</p>
+    pub copyable_cross_region: ::std::option::Option<bool>,
 }
 impl OptionGroupOption {
     /// <p>The name of the option.</p>
@@ -116,6 +118,10 @@ impl OptionGroupOption {
     pub fn copyable_cross_account(&self) -> ::std::option::Option<bool> {
         self.copyable_cross_account
     }
+    /// <p>Indicates whether the option can be copied across Amazon Web Services Regions.</p>
+    pub fn copyable_cross_region(&self) -> ::std::option::Option<bool> {
+        self.copyable_cross_region
+    }
 }
 impl OptionGroupOption {
     /// Creates a new builder-style object to manufacture [`OptionGroupOption`](crate::types::OptionGroupOption).
@@ -145,6 +151,7 @@ pub struct OptionGroupOptionBuilder {
     pub(crate) option_group_option_settings: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroupOptionSetting>>,
     pub(crate) option_group_option_versions: ::std::option::Option<::std::vec::Vec<crate::types::OptionVersion>>,
     pub(crate) copyable_cross_account: ::std::option::Option<bool>,
+    pub(crate) copyable_cross_region: ::std::option::Option<bool>,
 }
 impl OptionGroupOptionBuilder {
     /// <p>The name of the option.</p>
@@ -409,6 +416,20 @@ impl OptionGroupOptionBuilder {
     pub fn get_copyable_cross_account(&self) -> &::std::option::Option<bool> {
         &self.copyable_cross_account
     }
+    /// <p>Indicates whether the option can be copied across Amazon Web Services Regions.</p>
+    pub fn copyable_cross_region(mut self, input: bool) -> Self {
+        self.copyable_cross_region = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the option can be copied across Amazon Web Services Regions.</p>
+    pub fn set_copyable_cross_region(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.copyable_cross_region = input;
+        self
+    }
+    /// <p>Indicates whether the option can be copied across Amazon Web Services Regions.</p>
+    pub fn get_copyable_cross_region(&self) -> &::std::option::Option<bool> {
+        &self.copyable_cross_region
+    }
     /// Consumes the builder and constructs a [`OptionGroupOption`](crate::types::OptionGroupOption).
     pub fn build(self) -> crate::types::OptionGroupOption {
         crate::types::OptionGroupOption {
@@ -429,6 +450,7 @@ impl OptionGroupOptionBuilder {
             option_group_option_settings: self.option_group_option_settings,
             option_group_option_versions: self.option_group_option_versions,
             copyable_cross_account: self.copyable_cross_account,
+            copyable_cross_region: self.copyable_cross_region,
         }
     }
 }

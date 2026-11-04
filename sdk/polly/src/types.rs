@@ -11,6 +11,10 @@ pub use crate::types::_synthesis_task::SynthesisTask;
 
 pub use crate::types::_task_status::TaskStatus;
 
+pub use crate::types::_resource_type::ResourceType;
+
+pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
+
 pub use crate::types::_output_format::OutputFormat;
 
 pub use crate::types::_voice_id::VoiceId;
@@ -23,13 +27,15 @@ pub use crate::types::_quota_code::QuotaCode;
 
 pub use crate::types::_service_code::ServiceCode;
 
-pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
-
 pub use crate::types::_text_type::TextType;
 
 pub use crate::types::_voice::Voice;
 
 pub use crate::types::_lexicon_description::LexiconDescription;
+
+pub use crate::types::_throttling_reason::ThrottlingReason;
+
+pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_text_event::TextEvent;
 
@@ -38,10 +44,6 @@ pub use crate::types::_close_stream_event::CloseStreamEvent;
 pub use crate::types::_audio_event::AudioEvent;
 
 pub use crate::types::_stream_closed_event::StreamClosedEvent;
-
-pub use crate::types::_throttling_reason::ThrottlingReason;
-
-pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_speech_mark_type::SpeechMarkType;
 
@@ -70,6 +72,8 @@ mod _lexicon_description;
 mod _output_format;
 
 mod _quota_code;
+
+mod _resource_type;
 
 mod _service_code;
 

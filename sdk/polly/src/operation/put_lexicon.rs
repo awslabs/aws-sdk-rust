@@ -318,6 +318,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutLexiconEnd
 pub enum PutLexiconError {
     /// <p>Amazon Polly can't find the specified lexicon. Verify that the lexicon's name is spelled correctly, and then try again.</p>
     InvalidLexiconException(crate::types::error::InvalidLexiconException),
+    /// <p>The resource ARN or a tag in the request isn't valid. Specify the ARN of a supported resource in the Amazon Web Services account and Region of the request. Tag keys can have a maximum length of 128 characters, and tag values can have a maximum length of 256 characters. Correct the ARN or the tags, and then try again.</p>
+    InvalidTagParameterException(crate::types::error::InvalidTagParameterException),
     /// <p>The maximum size of the specified lexicon would be exceeded by this operation.</p>
     LexiconSizeExceededException(crate::types::error::LexiconSizeExceededException),
     /// <p>The maximum size of the lexeme would be exceeded by this operation.</p>
@@ -326,10 +328,14 @@ pub enum PutLexiconError {
     MaxLexiconsNumberExceededException(crate::types::error::MaxLexiconsNumberExceededException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::types::error::ServiceFailureException),
+    /// <p>The list of tags on the resource is over the limit. The maximum number of tags that can be applied to a resource is 50. Remove unused tags or reduce the number of tags in the request, and then try again.</p>
+    TooManyTagsException(crate::types::error::TooManyTagsException),
     /// <p>The alphabet specified by the lexicon is not a supported alphabet. Valid values are <code>ipa</code>, <code>x-sampa</code>, <code>x-amazon-pinyin</code>, <code>x-amazon-jyutping</code>, <code>x-amazon-pron-kana</code>, and <code>x-amazon-yomigana</code>. Replace the unsupported alphabet with one of the valid values and resubmit your request.</p>
     UnsupportedPlsAlphabetException(crate::types::error::UnsupportedPlsAlphabetException),
     /// <p>The language specified in the lexicon is unsupported. For a list of supported languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.</p>
     UnsupportedPlsLanguageException(crate::types::error::UnsupportedPlsLanguageException),
+    /// <p>The input fails to satisfy the constraints specified by the service.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -364,18 +370,25 @@ impl PutLexiconError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidLexiconException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidTagParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LexiconSizeExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MaxLexemeLengthExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MaxLexiconsNumberExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyTagsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedPlsAlphabetException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedPlsLanguageException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
     /// Returns `true` if the error kind is `PutLexiconError::InvalidLexiconException`.
     pub fn is_invalid_lexicon_exception(&self) -> bool {
         matches!(self, Self::InvalidLexiconException(_))
+    }
+    /// Returns `true` if the error kind is `PutLexiconError::InvalidTagParameterException`.
+    pub fn is_invalid_tag_parameter_exception(&self) -> bool {
+        matches!(self, Self::InvalidTagParameterException(_))
     }
     /// Returns `true` if the error kind is `PutLexiconError::LexiconSizeExceededException`.
     pub fn is_lexicon_size_exceeded_exception(&self) -> bool {
@@ -393,6 +406,10 @@ impl PutLexiconError {
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(self, Self::ServiceFailureException(_))
     }
+    /// Returns `true` if the error kind is `PutLexiconError::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(self, Self::TooManyTagsException(_))
+    }
     /// Returns `true` if the error kind is `PutLexiconError::UnsupportedPlsAlphabetException`.
     pub fn is_unsupported_pls_alphabet_exception(&self) -> bool {
         matches!(self, Self::UnsupportedPlsAlphabetException(_))
@@ -401,17 +418,24 @@ impl PutLexiconError {
     pub fn is_unsupported_pls_language_exception(&self) -> bool {
         matches!(self, Self::UnsupportedPlsLanguageException(_))
     }
+    /// Returns `true` if the error kind is `PutLexiconError::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(self, Self::ValidationException(_))
+    }
 }
 impl ::std::error::Error for PutLexiconError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InvalidLexiconException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidTagParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::LexiconSizeExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::MaxLexemeLengthExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::MaxLexiconsNumberExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceFailureException(_inner) => ::std::option::Option::Some(_inner),
+            Self::TooManyTagsException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedPlsAlphabetException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedPlsLanguageException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -420,12 +444,15 @@ impl ::std::fmt::Display for PutLexiconError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InvalidLexiconException(_inner) => _inner.fmt(f),
+            Self::InvalidTagParameterException(_inner) => _inner.fmt(f),
             Self::LexiconSizeExceededException(_inner) => _inner.fmt(f),
             Self::MaxLexemeLengthExceededException(_inner) => _inner.fmt(f),
             Self::MaxLexiconsNumberExceededException(_inner) => _inner.fmt(f),
             Self::ServiceFailureException(_inner) => _inner.fmt(f),
+            Self::TooManyTagsException(_inner) => _inner.fmt(f),
             Self::UnsupportedPlsAlphabetException(_inner) => _inner.fmt(f),
             Self::UnsupportedPlsLanguageException(_inner) => _inner.fmt(f),
+            Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -448,12 +475,15 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutLexiconErr
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidLexiconException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTagParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LexiconSizeExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MaxLexemeLengthExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MaxLexiconsNumberExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TooManyTagsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedPlsAlphabetException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedPlsLanguageException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

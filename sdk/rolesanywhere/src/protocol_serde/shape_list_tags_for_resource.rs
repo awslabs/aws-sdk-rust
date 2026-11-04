@@ -51,6 +51,21 @@ pub fn de_list_tags_for_resource_http_error(
             }
             tmp
         }),
+        "ServiceUnavailableException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::service_unavailable_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?
+            };
+            tmp
+        }),
         "ValidationException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {

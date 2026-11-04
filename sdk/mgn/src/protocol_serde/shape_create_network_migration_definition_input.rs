@@ -15,61 +15,64 @@ pub fn ser_create_network_migration_definition_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.description {
-        object.key("description").string(var_5.as_str());
+    if let Some(var_5) = &input.client_token {
+        object.key("clientToken").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
+    if let Some(var_6) = &input.description {
+        object.key("description").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.scope_tags {
+    if let Some(var_7) = &input.name {
+        object.key("name").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.scope_tags {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("scopeTags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_9 = object.key("scopeTags").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
-        object_8.finish();
+        object_9.finish();
     }
-    if let Some(var_11) = &input.source_configurations {
-        let mut array_12 = object.key("sourceConfigurations").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.source_configurations {
+        let mut array_13 = object.key("sourceConfigurations").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_source_configuration::ser_source_configuration(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_source_configuration::ser_source_configuration(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_15) = &input.tags {
+    if let Some(var_16) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("tags").start_object();
-        for (key_17, value_18) in var_15 {
+        let mut object_17 = object.key("tags").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_16.key(key_17.as_str()).string(value_18.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
-        object_16.finish();
+        object_17.finish();
     }
-    if let Some(var_19) = &input.target_deployment {
-        object.key("targetDeployment").string(var_19.as_str());
+    if let Some(var_20) = &input.target_deployment {
+        object.key("targetDeployment").string(var_20.as_str());
     }
-    if let Some(var_20) = &input.target_network {
+    if let Some(var_21) = &input.target_network {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("targetNetwork").start_object();
-        crate::protocol_serde::shape_target_network::ser_target_network(&mut object_21, var_20)?;
-        object_21.finish();
+        let mut object_22 = object.key("targetNetwork").start_object();
+        crate::protocol_serde::shape_target_network::ser_target_network(&mut object_22, var_21)?;
+        object_22.finish();
     }
-    if let Some(var_22) = &input.target_s3_configuration {
+    if let Some(var_23) = &input.target_s3_configuration {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("targetS3Configuration").start_object();
-        crate::protocol_serde::shape_target_s3_configuration::ser_target_s3_configuration(&mut object_23, var_22)?;
-        object_23.finish();
+        let mut object_24 = object.key("targetS3Configuration").start_object();
+        crate::protocol_serde::shape_target_s3_configuration::ser_target_s3_configuration(&mut object_24, var_23)?;
+        object_24.finish();
     }
-    if let Some(var_24) = &input.vpc_provisioning_strategy {
-        object.key("vpcProvisioningStrategy").string(var_24.as_str());
+    if let Some(var_25) = &input.vpc_provisioning_strategy {
+        object.key("vpcProvisioningStrategy").string(var_25.as_str());
     }
     Ok(())
 }

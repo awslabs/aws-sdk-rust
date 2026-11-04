@@ -19,6 +19,9 @@ pub mod list_lexicons;
 /// Types for the `ListSpeechSynthesisTasks` operation.
 pub mod list_speech_synthesis_tasks;
 
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
 /// Types for the `PutLexicon` operation.
 pub mod put_lexicon;
 
@@ -30,3 +33,9 @@ pub mod start_speech_synthesis_task;
 
 /// Types for the `SynthesizeSpeech` operation.
 pub mod synthesize_speech;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;

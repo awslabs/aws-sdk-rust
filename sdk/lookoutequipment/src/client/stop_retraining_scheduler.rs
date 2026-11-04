@@ -9,6 +9,10 @@ impl super::Client {
     ///   - [`model_arn(Option<String>)`](crate::operation::stop_retraining_scheduler::StopRetrainingSchedulerOutput::model_arn): <p>The ARN of the model whose retraining scheduler is being stopped.</p>
     ///   - [`status(Option<RetrainingSchedulerStatus>)`](crate::operation::stop_retraining_scheduler::StopRetrainingSchedulerOutput::status): <p>The status of the retraining scheduler.</p>
     /// - On failure, responds with [`SdkError<StopRetrainingSchedulerError>`](crate::operation::stop_retraining_scheduler::StopRetrainingSchedulerError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn stop_retraining_scheduler(&self) -> crate::operation::stop_retraining_scheduler::builders::StopRetrainingSchedulerFluentBuilder {
         crate::operation::stop_retraining_scheduler::builders::StopRetrainingSchedulerFluentBuilder::new(self.handle.clone())
     }

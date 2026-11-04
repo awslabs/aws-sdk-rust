@@ -13,11 +13,17 @@
 /// # let operatingsystemname = unimplemented!();
 /// match operatingsystemname {
 ///     OperatingSystemName::AmazonLinux2 => { /* ... */ },
+///     OperatingSystemName::Rhel10 => { /* ... */ },
 ///     OperatingSystemName::Rhel8 => { /* ... */ },
+///     OperatingSystemName::Rhel9 => { /* ... */ },
+///     OperatingSystemName::Rocky10 => { /* ... */ },
 ///     OperatingSystemName::Rocky8 => { /* ... */ },
+///     OperatingSystemName::Rocky9 => { /* ... */ },
 ///     OperatingSystemName::Ubuntu1804 => { /* ... */ },
 ///     OperatingSystemName::Ubuntu2004 => { /* ... */ },
 ///     OperatingSystemName::Ubuntu2204 => { /* ... */ },
+///     OperatingSystemName::Ubuntu2404 => { /* ... */ },
+///     OperatingSystemName::Ubuntu2604 => { /* ... */ },
 ///     OperatingSystemName::UnknownValue => { /* ... */ },
 ///     OperatingSystemName::Windows10 => { /* ... */ },
 ///     OperatingSystemName::Windows11 => { /* ... */ },
@@ -58,15 +64,27 @@ pub enum OperatingSystemName {
     #[allow(missing_docs)] // documentation missing in model
     AmazonLinux2,
     #[allow(missing_docs)] // documentation missing in model
+    Rhel10,
+    #[allow(missing_docs)] // documentation missing in model
     Rhel8,
     #[allow(missing_docs)] // documentation missing in model
+    Rhel9,
+    #[allow(missing_docs)] // documentation missing in model
+    Rocky10,
+    #[allow(missing_docs)] // documentation missing in model
     Rocky8,
+    #[allow(missing_docs)] // documentation missing in model
+    Rocky9,
     #[allow(missing_docs)] // documentation missing in model
     Ubuntu1804,
     #[allow(missing_docs)] // documentation missing in model
     Ubuntu2004,
     #[allow(missing_docs)] // documentation missing in model
     Ubuntu2204,
+    #[allow(missing_docs)] // documentation missing in model
+    Ubuntu2404,
+    #[allow(missing_docs)] // documentation missing in model
+    Ubuntu2604,
     ///
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
@@ -92,11 +110,17 @@ impl ::std::convert::From<&str> for OperatingSystemName {
     fn from(s: &str) -> Self {
         match s {
             "AMAZON_LINUX_2" => OperatingSystemName::AmazonLinux2,
+            "RHEL_10" => OperatingSystemName::Rhel10,
             "RHEL_8" => OperatingSystemName::Rhel8,
+            "RHEL_9" => OperatingSystemName::Rhel9,
+            "ROCKY_10" => OperatingSystemName::Rocky10,
             "ROCKY_8" => OperatingSystemName::Rocky8,
+            "ROCKY_9" => OperatingSystemName::Rocky9,
             "UBUNTU_18_04" => OperatingSystemName::Ubuntu1804,
             "UBUNTU_20_04" => OperatingSystemName::Ubuntu2004,
             "UBUNTU_22_04" => OperatingSystemName::Ubuntu2204,
+            "UBUNTU_24_04" => OperatingSystemName::Ubuntu2404,
+            "UBUNTU_26_04" => OperatingSystemName::Ubuntu2604,
             "UNKNOWN" => OperatingSystemName::UnknownValue,
             "WINDOWS_10" => OperatingSystemName::Windows10,
             "WINDOWS_11" => OperatingSystemName::Windows11,
@@ -121,11 +145,17 @@ impl OperatingSystemName {
     pub fn as_str(&self) -> &str {
         match self {
             OperatingSystemName::AmazonLinux2 => "AMAZON_LINUX_2",
+            OperatingSystemName::Rhel10 => "RHEL_10",
             OperatingSystemName::Rhel8 => "RHEL_8",
+            OperatingSystemName::Rhel9 => "RHEL_9",
+            OperatingSystemName::Rocky10 => "ROCKY_10",
             OperatingSystemName::Rocky8 => "ROCKY_8",
+            OperatingSystemName::Rocky9 => "ROCKY_9",
             OperatingSystemName::Ubuntu1804 => "UBUNTU_18_04",
             OperatingSystemName::Ubuntu2004 => "UBUNTU_20_04",
             OperatingSystemName::Ubuntu2204 => "UBUNTU_22_04",
+            OperatingSystemName::Ubuntu2404 => "UBUNTU_24_04",
+            OperatingSystemName::Ubuntu2604 => "UBUNTU_26_04",
             OperatingSystemName::UnknownValue => "UNKNOWN",
             OperatingSystemName::Windows10 => "WINDOWS_10",
             OperatingSystemName::Windows11 => "WINDOWS_11",
@@ -141,11 +171,17 @@ impl OperatingSystemName {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AMAZON_LINUX_2",
+            "RHEL_10",
             "RHEL_8",
+            "RHEL_9",
+            "ROCKY_10",
             "ROCKY_8",
+            "ROCKY_9",
             "UBUNTU_18_04",
             "UBUNTU_20_04",
             "UBUNTU_22_04",
+            "UBUNTU_24_04",
+            "UBUNTU_26_04",
             "UNKNOWN",
             "WINDOWS_10",
             "WINDOWS_11",
@@ -178,11 +214,17 @@ impl ::std::fmt::Display for OperatingSystemName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OperatingSystemName::AmazonLinux2 => write!(f, "AMAZON_LINUX_2"),
+            OperatingSystemName::Rhel10 => write!(f, "RHEL_10"),
             OperatingSystemName::Rhel8 => write!(f, "RHEL_8"),
+            OperatingSystemName::Rhel9 => write!(f, "RHEL_9"),
+            OperatingSystemName::Rocky10 => write!(f, "ROCKY_10"),
             OperatingSystemName::Rocky8 => write!(f, "ROCKY_8"),
+            OperatingSystemName::Rocky9 => write!(f, "ROCKY_9"),
             OperatingSystemName::Ubuntu1804 => write!(f, "UBUNTU_18_04"),
             OperatingSystemName::Ubuntu2004 => write!(f, "UBUNTU_20_04"),
             OperatingSystemName::Ubuntu2204 => write!(f, "UBUNTU_22_04"),
+            OperatingSystemName::Ubuntu2404 => write!(f, "UBUNTU_24_04"),
+            OperatingSystemName::Ubuntu2604 => write!(f, "UBUNTU_26_04"),
             OperatingSystemName::UnknownValue => write!(f, "UNKNOWN"),
             OperatingSystemName::Windows10 => write!(f, "WINDOWS_10"),
             OperatingSystemName::Windows11 => write!(f, "WINDOWS_11"),

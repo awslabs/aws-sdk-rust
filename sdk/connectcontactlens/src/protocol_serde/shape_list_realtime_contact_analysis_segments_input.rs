@@ -9,14 +9,23 @@ pub fn ser_list_realtime_contact_analysis_segments_input_input(
     if let Some(var_2) = &input.instance_id {
         object.key("InstanceId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.max_results {
+    if let Some(var_3) = &input.list_filter {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("ListFilter").start_object();
+        crate::protocol_serde::shape_real_time_contact_analysis_segments_filter::ser_real_time_contact_analysis_segments_filter(
+            &mut object_4,
+            var_3,
+        )?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("NextToken").string(var_4.as_str());
+    if let Some(var_6) = &input.next_token {
+        object.key("NextToken").string(var_6.as_str());
     }
     Ok(())
 }

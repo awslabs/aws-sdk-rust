@@ -45,15 +45,23 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_throttling_exception;
 
+pub(crate) mod shape_real_time_contact_analysis_segments_filter;
+
 pub(crate) mod shape_realtime_contact_analysis_segments;
+
+pub(crate) mod shape_categories_attribute_filter;
 
 pub(crate) mod shape_realtime_contact_analysis_segment;
 
 pub(crate) mod shape_categories;
 
+pub(crate) mod shape_categories_attribute_and_condition;
+
 pub(crate) mod shape_extracted_information;
 
 pub(crate) mod shape_post_contact_summary;
+
+pub(crate) mod shape_tag_condition;
 
 pub(crate) mod shape_transcript;
 

@@ -6,6 +6,10 @@ impl super::Client {
     ///   - [`model_name(impl Into<String>)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::set_model_name):<br>required: **true**<br><p>The name of the machine learning model to be deleted.</p><br>
     /// - On success, responds with [`DeleteModelOutput`](crate::operation::delete_model::DeleteModelOutput)
     /// - On failure, responds with [`SdkError<DeleteModelError>`](crate::operation::delete_model::DeleteModelError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn delete_model(&self) -> crate::operation::delete_model::builders::DeleteModelFluentBuilder {
         crate::operation::delete_model::builders::DeleteModelFluentBuilder::new(self.handle.clone())
     }

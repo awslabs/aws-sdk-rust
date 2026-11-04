@@ -20,6 +20,10 @@ impl super::Client {
     ///   - [`server_side_kms_key_id(Option<String>)`](crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerOutput::server_side_kms_key_id): <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment.</p>
     ///   - [`latest_inference_result(Option<LatestInferenceResult>)`](crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerOutput::latest_inference_result): <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
     /// - On failure, responds with [`SdkError<DescribeInferenceSchedulerError>`](crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn describe_inference_scheduler(&self) -> crate::operation::describe_inference_scheduler::builders::DescribeInferenceSchedulerFluentBuilder {
         crate::operation::describe_inference_scheduler::builders::DescribeInferenceSchedulerFluentBuilder::new(self.handle.clone())
     }

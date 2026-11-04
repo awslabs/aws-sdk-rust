@@ -9,6 +9,14 @@ pub use crate::types::error::_invalid_task_id_exception::InvalidTaskIdExceptionB
 
 pub use crate::types::error::_synthesis_task_not_found_exception::SynthesisTaskNotFoundExceptionBuilder;
 
+pub use crate::types::error::_invalid_tag_parameter_exception::InvalidTagParameterExceptionBuilder;
+
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
+
+pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
+
+pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
+
 pub use crate::types::error::_invalid_lexicon_exception::InvalidLexiconExceptionBuilder;
 
 pub use crate::types::error::_lexicon_size_exceeded_exception::LexiconSizeExceededExceptionBuilder;
@@ -17,15 +25,13 @@ pub use crate::types::error::_max_lexeme_length_exceeded_exception::MaxLexemeLen
 
 pub use crate::types::error::_max_lexicons_number_exceeded_exception::MaxLexiconsNumberExceededExceptionBuilder;
 
+pub use crate::types::error::_too_many_tags_exception::TooManyTagsExceptionBuilder;
+
 pub use crate::types::error::_unsupported_pls_alphabet_exception::UnsupportedPlsAlphabetExceptionBuilder;
 
 pub use crate::types::error::_unsupported_pls_language_exception::UnsupportedPlsLanguageExceptionBuilder;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
-
-pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
-
-pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 
 pub use crate::types::error::_engine_not_supported_exception::EngineNotSupportedExceptionBuilder;
 

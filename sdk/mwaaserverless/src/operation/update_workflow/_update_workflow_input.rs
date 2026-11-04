@@ -19,6 +19,10 @@ pub struct UpdateWorkflowInput {
     pub engine_version: ::std::option::Option<i32>,
     /// <p>Updated network configuration for the workflow execution environment.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
+    /// <p>The environment variables to set for tasks in the workflow.</p><important>
+    /// <p>The variables that you specify replace all existing environment variables for the workflow. If you don't specify this parameter, the workflow has no environment variables. To keep existing environment variables, include them in the request.</p>
+    /// </important>
+    pub environment: ::std::option::Option<crate::types::Environment>,
     /// <p>The trigger mode for the workflow execution.</p>
     pub trigger_mode: ::std::option::Option<::std::string::String>,
 }
@@ -55,6 +59,12 @@ impl UpdateWorkflowInput {
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
+    /// <p>The environment variables to set for tasks in the workflow.</p><important>
+    /// <p>The variables that you specify replace all existing environment variables for the workflow. If you don't specify this parameter, the workflow has no environment variables. To keep existing environment variables, include them in the request.</p>
+    /// </important>
+    pub fn environment(&self) -> ::std::option::Option<&crate::types::Environment> {
+        self.environment.as_ref()
+    }
     /// <p>The trigger mode for the workflow execution.</p>
     pub fn trigger_mode(&self) -> ::std::option::Option<&str> {
         self.trigger_mode.as_deref()
@@ -79,6 +89,7 @@ pub struct UpdateWorkflowInputBuilder {
     pub(crate) logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     pub(crate) engine_version: ::std::option::Option<i32>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
+    pub(crate) environment: ::std::option::Option<crate::types::Environment>,
     pub(crate) trigger_mode: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWorkflowInputBuilder {
@@ -197,6 +208,26 @@ impl UpdateWorkflowInputBuilder {
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         &self.network_configuration
     }
+    /// <p>The environment variables to set for tasks in the workflow.</p><important>
+    /// <p>The variables that you specify replace all existing environment variables for the workflow. If you don't specify this parameter, the workflow has no environment variables. To keep existing environment variables, include them in the request.</p>
+    /// </important>
+    pub fn environment(mut self, input: crate::types::Environment) -> Self {
+        self.environment = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The environment variables to set for tasks in the workflow.</p><important>
+    /// <p>The variables that you specify replace all existing environment variables for the workflow. If you don't specify this parameter, the workflow has no environment variables. To keep existing environment variables, include them in the request.</p>
+    /// </important>
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
+        self.environment = input;
+        self
+    }
+    /// <p>The environment variables to set for tasks in the workflow.</p><important>
+    /// <p>The variables that you specify replace all existing environment variables for the workflow. If you don't specify this parameter, the workflow has no environment variables. To keep existing environment variables, include them in the request.</p>
+    /// </important>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::Environment> {
+        &self.environment
+    }
     /// <p>The trigger mode for the workflow execution.</p>
     pub fn trigger_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trigger_mode = ::std::option::Option::Some(input.into());
@@ -224,6 +255,7 @@ impl UpdateWorkflowInputBuilder {
             logging_configuration: self.logging_configuration,
             engine_version: self.engine_version,
             network_configuration: self.network_configuration,
+            environment: self.environment,
             trigger_mode: self.trigger_mode,
         })
     }

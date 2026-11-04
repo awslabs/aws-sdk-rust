@@ -29,6 +29,8 @@ pub(crate) mod shape_batch_get_item;
 
 pub(crate) mod shape_batch_write_item;
 
+pub(crate) mod shape_cancel_bulk_operation;
+
 pub(crate) mod shape_create_backup;
 
 pub(crate) mod shape_create_global_table;
@@ -44,6 +46,8 @@ pub(crate) mod shape_delete_resource_policy;
 pub(crate) mod shape_delete_table;
 
 pub(crate) mod shape_describe_backup;
+
+pub(crate) mod shape_describe_bulk_operation;
 
 pub(crate) mod shape_describe_continuous_backups;
 
@@ -87,6 +91,8 @@ pub(crate) mod shape_import_table;
 
 pub(crate) mod shape_list_backups;
 
+pub(crate) mod shape_list_bulk_operations;
+
 pub(crate) mod shape_list_contributor_insights;
 
 pub(crate) mod shape_list_exports;
@@ -112,6 +118,8 @@ pub(crate) mod shape_restore_table_to_point_in_time;
 pub(crate) mod shape_scan;
 
 pub(crate) mod shape_search_vectors;
+
+pub(crate) mod shape_start_bulk_put_items;
 
 pub(crate) mod shape_tag_resource;
 
@@ -157,6 +165,8 @@ pub(crate) mod shape_batch_get_item_input;
 
 pub(crate) mod shape_batch_write_item_input;
 
+pub(crate) mod shape_cancel_bulk_operation_input;
+
 pub(crate) mod shape_conditional_check_failed_exception;
 
 pub(crate) mod shape_continuous_backups_unavailable_exception;
@@ -176,6 +186,8 @@ pub(crate) mod shape_delete_resource_policy_input;
 pub(crate) mod shape_delete_table_input;
 
 pub(crate) mod shape_describe_backup_input;
+
+pub(crate) mod shape_describe_bulk_operation_input;
 
 pub(crate) mod shape_describe_continuous_backups_input;
 
@@ -245,6 +257,8 @@ pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_list_backups_input;
 
+pub(crate) mod shape_list_bulk_operations_input;
+
 pub(crate) mod shape_list_contributor_insights_input;
 
 pub(crate) mod shape_list_exports_input;
@@ -288,6 +302,8 @@ pub(crate) mod shape_restore_table_to_point_in_time_input;
 pub(crate) mod shape_scan_input;
 
 pub(crate) mod shape_search_vectors_input;
+
+pub(crate) mod shape_start_bulk_put_items_input;
 
 pub(crate) mod shape_table_already_exists_exception;
 
@@ -353,6 +369,10 @@ pub(crate) mod shape_batch_statement_request;
 
 pub(crate) mod shape_batch_write_item_request_map;
 
+pub(crate) mod shape_bulk_operation_description;
+
+pub(crate) mod shape_bulk_operations_summary_list;
+
 pub(crate) mod shape_cancellation_reason_list;
 
 pub(crate) mod shape_condition;
@@ -403,6 +423,8 @@ pub(crate) mod shape_incremental_export_specification;
 
 pub(crate) mod shape_input_format_options;
 
+pub(crate) mod shape_input_s3_configuration;
+
 pub(crate) mod shape_item_collection_metrics;
 
 pub(crate) mod shape_item_collection_metrics_per_table;
@@ -422,6 +444,8 @@ pub(crate) mod shape_kinesis_data_stream_destinations;
 pub(crate) mod shape_local_secondary_index;
 
 pub(crate) mod shape_on_demand_throughput;
+
+pub(crate) mod shape_output_s3_configuration;
 
 pub(crate) mod shape_parameterized_statement;
 
@@ -496,6 +520,12 @@ pub(crate) mod shape_backup_summary;
 pub(crate) mod shape_batch_statement_response;
 
 pub(crate) mod shape_billing_mode_summary;
+
+pub(crate) mod shape_bulk_operation_summary;
+
+pub(crate) mod shape_bulk_operation_table_details;
+
+pub(crate) mod shape_bulk_operation_usage_multiple;
 
 pub(crate) mod shape_cancellation_reason;
 
@@ -625,6 +655,10 @@ pub(crate) mod shape_batch_statement_error;
 
 pub(crate) mod shape_binary_set_attribute_value;
 
+pub(crate) mod shape_bulk_operation_table_detail;
+
+pub(crate) mod shape_bulk_operation_usage;
+
 pub(crate) mod shape_expression_attribute_name_map;
 
 pub(crate) mod shape_expression_attribute_value_map;
@@ -651,6 +685,8 @@ pub(crate) mod shape_number_set_attribute_value;
 
 pub(crate) mod shape_on_demand_throughput_override;
 
+pub(crate) mod shape_output_type_list;
+
 pub(crate) mod shape_provisioned_throughput_override;
 
 pub(crate) mod shape_replica_auto_scaling_description;
@@ -673,6 +709,8 @@ pub(crate) mod shape_vector_indexes;
 
 pub(crate) mod shape_auto_scaling_policy_description_list;
 
+pub(crate) mod shape_bulk_operation_bytes;
+
 pub(crate) mod shape_csv_header_list;
 
 pub(crate) mod shape_global_secondary_index_info;
@@ -689,9 +727,15 @@ pub(crate) mod shape_replica_global_secondary_index_settings_description;
 
 pub(crate) mod shape_search_schema;
 
+pub(crate) mod shape_secondary_indexes_bulk_bytes_map;
+
 pub(crate) mod shape_vector_index_info;
 
+pub(crate) mod shape_vector_indexes_bulk_vector_bytes_map;
+
 pub(crate) mod shape_auto_scaling_policy_description;
+
+pub(crate) mod shape_bulk_operation_vector_bytes;
 
 pub(crate) mod shape_non_key_attribute_name_list;
 

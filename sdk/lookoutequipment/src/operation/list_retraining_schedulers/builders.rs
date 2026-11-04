@@ -23,6 +23,10 @@ impl crate::operation::list_retraining_schedulers::builders::ListRetrainingSched
 /// Fluent builder constructing a request to `ListRetrainingSchedulers`.
 ///
 /// <p>Lists all retraining schedulers in your account, filtering by model name prefix and status.</p>
+#[deprecated(
+    note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+    since = "2026-10-07"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRetrainingSchedulersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

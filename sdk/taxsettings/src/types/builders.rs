@@ -31,6 +31,8 @@ pub use crate::types::_tax_exemption_type::TaxExemptionTypeBuilder;
 
 pub use crate::types::_additional_info_response::AdditionalInfoResponseBuilder;
 
+pub use crate::types::_tax_registration_status_reason::TaxRegistrationStatusReasonBuilder;
+
 pub use crate::types::_supplemental_tax_registration::SupplementalTaxRegistrationBuilder;
 
 pub use crate::types::_account_details::AccountDetailsBuilder;
@@ -90,6 +92,8 @@ pub use crate::types::_mexico_additional_info::MexicoAdditionalInfoBuilder;
 pub use crate::types::_brazil_additional_info::BrazilAdditionalInfoBuilder;
 
 pub use crate::types::_india_additional_info::IndiaAdditionalInfoBuilder;
+
+pub use crate::types::_colombia_additional_info::ColombiaAdditionalInfoBuilder;
 
 pub use crate::types::_tax_registration_with_jurisdiction::TaxRegistrationWithJurisdictionBuilder;
 

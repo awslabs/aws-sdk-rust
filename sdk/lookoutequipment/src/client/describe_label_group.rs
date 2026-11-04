@@ -11,6 +11,10 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::describe_label_group::DescribeLabelGroupOutput::created_at): <p>The time at which the label group was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::describe_label_group::DescribeLabelGroupOutput::updated_at): <p>The time at which the label group was updated.</p>
     /// - On failure, responds with [`SdkError<DescribeLabelGroupError>`](crate::operation::describe_label_group::DescribeLabelGroupError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn describe_label_group(&self) -> crate::operation::describe_label_group::builders::DescribeLabelGroupFluentBuilder {
         crate::operation::describe_label_group::builders::DescribeLabelGroupFluentBuilder::new(self.handle.clone())
     }

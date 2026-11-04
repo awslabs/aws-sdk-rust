@@ -23,6 +23,10 @@ impl crate::operation::delete_retraining_scheduler::builders::DeleteRetrainingSc
 /// Fluent builder constructing a request to `DeleteRetrainingScheduler`.
 ///
 /// <p>Deletes a retraining scheduler from a model. The retraining scheduler must be in the <code>STOPPED</code> status.</p>
+#[deprecated(
+    note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+    since = "2026-10-07"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRetrainingSchedulerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -11,6 +11,10 @@ impl super::Client {
     ///   - [`label_group_name(Option<String>)`](crate::operation::create_label_group::CreateLabelGroupOutput::label_group_name): <p>The name of the label group that you have created. Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     ///   - [`label_group_arn(Option<String>)`](crate::operation::create_label_group::CreateLabelGroupOutput::label_group_arn): <p>The Amazon Resource Name (ARN) of the label group that you have created.</p>
     /// - On failure, responds with [`SdkError<CreateLabelGroupError>`](crate::operation::create_label_group::CreateLabelGroupError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn create_label_group(&self) -> crate::operation::create_label_group::builders::CreateLabelGroupFluentBuilder {
         crate::operation::create_label_group::builders::CreateLabelGroupFluentBuilder::new(self.handle.clone())
     }

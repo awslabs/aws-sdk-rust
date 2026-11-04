@@ -77,6 +77,8 @@ pub use crate::types::_hadoop_step_config::HadoopStepConfigBuilder;
 
 pub use crate::types::_step_status::StepStatusBuilder;
 
+pub use crate::types::_step_additional_info::StepAdditionalInfoBuilder;
+
 pub use crate::types::_username_password::UsernamePasswordBuilder;
 
 pub use crate::types::_compute_limits::ComputeLimitsBuilder;

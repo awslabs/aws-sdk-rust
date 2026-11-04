@@ -33,6 +33,22 @@ pub fn de_put_lexicon_http_error(
             }
             tmp
         }),
+        "InvalidTagParameterException" => crate::operation::put_lexicon::PutLexiconError::InvalidTagParameterException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidTagParameterExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_tag_parameter_exception::de_invalid_tag_parameter_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "LexiconSizeExceededException" => crate::operation::put_lexicon::PutLexiconError::LexiconSizeExceededException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -100,6 +116,21 @@ pub fn de_put_lexicon_http_error(
             }
             tmp
         }),
+        "TooManyTagsException" => crate::operation::put_lexicon::PutLexiconError::TooManyTagsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyTagsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_tags_exception::de_too_many_tags_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "UnsupportedPlsAlphabetException" => crate::operation::put_lexicon::PutLexiconError::UnsupportedPlsAlphabetException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -134,6 +165,20 @@ pub fn de_put_lexicon_http_error(
             if tmp.message.is_none() {
                 tmp.message = _error_message;
             }
+            tmp
+        }),
+        "ValidationException" => crate::operation::put_lexicon::PutLexiconError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_lexicon::PutLexiconError::unhandled)?
+            };
             tmp
         }),
         _ => crate::operation::put_lexicon::PutLexiconError::generic(generic),

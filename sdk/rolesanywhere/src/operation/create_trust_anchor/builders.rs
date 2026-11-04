@@ -151,6 +151,20 @@ impl CreateTrustAnchorFluentBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_enabled()
     }
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub fn crl_dp_revocation_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.crl_dp_revocation_enabled(input);
+        self
+    }
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub fn set_crl_dp_revocation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_crl_dp_revocation_enabled(input);
+        self
+    }
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub fn get_crl_dp_revocation_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_crl_dp_revocation_enabled()
+    }
     ///
     /// Appends an item to `tags`.
     ///

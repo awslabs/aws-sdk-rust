@@ -13,6 +13,10 @@ impl super::Client {
     ///   - [`dataset_arn(Option<String>)`](crate::operation::create_dataset::CreateDatasetOutput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset being created.</p>
     ///   - [`status(Option<DatasetStatus>)`](crate::operation::create_dataset::CreateDatasetOutput::status): <p>Indicates the status of the <code>CreateDataset</code> operation.</p>
     /// - On failure, responds with [`SdkError<CreateDatasetError>`](crate::operation::create_dataset::CreateDatasetError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn create_dataset(&self) -> crate::operation::create_dataset::builders::CreateDatasetFluentBuilder {
         crate::operation::create_dataset::builders::CreateDatasetFluentBuilder::new(self.handle.clone())
     }

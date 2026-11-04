@@ -154,6 +154,19 @@ pub fn de_option_group(
                 builder = builder.set_copy_timestamp(var_11);
             }
             ,
+            s if s.matches("SourceRegion") /* SourceRegion com.amazonaws.rds#OptionGroup$SourceRegion */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_source_region(var_12);
+            }
+            ,
             _ => {}
         }
     }

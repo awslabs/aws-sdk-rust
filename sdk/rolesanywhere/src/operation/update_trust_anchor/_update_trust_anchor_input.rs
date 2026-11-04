@@ -9,6 +9,8 @@ pub struct UpdateTrustAnchorInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The trust anchor type and its related certificate data.</p>
     pub source: ::std::option::Option<crate::types::Source>,
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub crl_dp_revocation_enabled: ::std::option::Option<bool>,
 }
 impl UpdateTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
@@ -22,6 +24,10 @@ impl UpdateTrustAnchorInput {
     /// <p>The trust anchor type and its related certificate data.</p>
     pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
         self.source.as_ref()
+    }
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub fn crl_dp_revocation_enabled(&self) -> ::std::option::Option<bool> {
+        self.crl_dp_revocation_enabled
     }
 }
 impl UpdateTrustAnchorInput {
@@ -38,6 +44,7 @@ pub struct UpdateTrustAnchorInputBuilder {
     pub(crate) trust_anchor_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::Source>,
+    pub(crate) crl_dp_revocation_enabled: ::std::option::Option<bool>,
 }
 impl UpdateTrustAnchorInputBuilder {
     /// <p>The unique identifier of the trust anchor.</p>
@@ -83,6 +90,20 @@ impl UpdateTrustAnchorInputBuilder {
     pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
         &self.source
     }
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub fn crl_dp_revocation_enabled(mut self, input: bool) -> Self {
+        self.crl_dp_revocation_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub fn set_crl_dp_revocation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.crl_dp_revocation_enabled = input;
+        self
+    }
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub fn get_crl_dp_revocation_enabled(&self) -> &::std::option::Option<bool> {
+        &self.crl_dp_revocation_enabled
+    }
     /// Consumes the builder and constructs a [`UpdateTrustAnchorInput`](crate::operation::update_trust_anchor::UpdateTrustAnchorInput).
     pub fn build(
         self,
@@ -91,6 +112,7 @@ impl UpdateTrustAnchorInputBuilder {
             trust_anchor_id: self.trust_anchor_id,
             name: self.name,
             source: self.source,
+            crl_dp_revocation_enabled: self.crl_dp_revocation_enabled,
         })
     }
 }

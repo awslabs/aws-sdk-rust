@@ -24,6 +24,11 @@ impl crate::operation::batch_put_tax_registration::builders::BatchPutTaxRegistra
 ///
 /// <p>Adds or updates tax registration for multiple accounts in batch. This can be used to add or update tax registrations for up to five accounts in one batch. You can't set a TRN if there's a pending TRN. You'll need to delete the pending TRN first.</p>
 /// <p>To call this API operation for specific countries, see the following country-specific requirements.</p>
+/// <p><b>Argentina</b></p>
+/// <ul>
+/// <li>
+/// <p><code>RegistrationType</code> valid values are <code>CUIT</code> (Clave Única de Identificación Tributaria) and <code>CDI</code> (Clave de Identificación).</p></li>
+/// </ul>
 /// <p><b>Bangladesh</b></p>
 /// <ul>
 /// <li>
@@ -151,6 +156,11 @@ impl crate::operation::batch_put_tax_registration::builders::BatchPutTaxRegistra
 /// <ul>
 /// <li>
 /// <p>The sector valid values are <code>Business</code> and <code>Individual</code>.</p></li>
+/// </ul>
+/// <p><b>Uruguay</b></p>
+/// <ul>
+/// <li>
+/// <p><code>RegistrationType</code> valid values are <code>RUT</code> (Registro Único Tributario), <code>NIE</code> (Numero de Identificacion del Extranjero), and <code>CI</code> (Cedula Identidad).</p></li>
 /// </ul>
 /// <p><b>Philippines</b></p>
 /// <ul>

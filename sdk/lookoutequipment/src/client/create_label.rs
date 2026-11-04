@@ -14,6 +14,10 @@ impl super::Client {
     /// - On success, responds with [`CreateLabelOutput`](crate::operation::create_label::CreateLabelOutput) with field(s):
     ///   - [`label_id(Option<String>)`](crate::operation::create_label::CreateLabelOutput::label_id): <p>The ID of the label that you have created.</p>
     /// - On failure, responds with [`SdkError<CreateLabelError>`](crate::operation::create_label::CreateLabelError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn create_label(&self) -> crate::operation::create_label::builders::CreateLabelFluentBuilder {
         crate::operation::create_label::builders::CreateLabelFluentBuilder::new(self.handle.clone())
     }

@@ -17,6 +17,10 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_versions::ListModelVersionsOutput::next_token): <p>If the total number of results exceeds the limit that the response can display, the response returns an opaque pagination token indicating where to continue the listing of machine learning model versions. Use this token in the <code>NextToken</code> field in the request to list the next page of results.</p>
     ///   - [`model_version_summaries(Option<Vec::<ModelVersionSummary>>)`](crate::operation::list_model_versions::ListModelVersionsOutput::model_version_summaries): <p>Provides information on the specified model version, including the created time, model and dataset ARNs, and status.</p><note>  <p>If you don't supply the <code>ModelName</code> request parameter, or if you supply the name of a model that doesn't exist, <code>ListModelVersions</code> returns an empty array in <code>ModelVersionSummaries</code>.</p> </note>
     /// - On failure, responds with [`SdkError<ListModelVersionsError>`](crate::operation::list_model_versions::ListModelVersionsError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn list_model_versions(&self) -> crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder {
         crate::operation::list_model_versions::builders::ListModelVersionsFluentBuilder::new(self.handle.clone())
     }

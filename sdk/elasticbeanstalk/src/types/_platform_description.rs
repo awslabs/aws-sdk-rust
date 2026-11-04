@@ -34,8 +34,11 @@ pub struct PlatformDescription {
     pub programming_languages: ::std::option::Option<::std::vec::Vec<crate::types::PlatformProgrammingLanguage>>,
     /// <p>The frameworks supported by the platform version.</p>
     pub frameworks: ::std::option::Option<::std::vec::Vec<crate::types::PlatformFramework>>,
-    /// <p>The custom AMIs supported by the platform version.</p>
+    /// <p>The AMIs of the platform version, by virtualization type. For Elastic Beanstalk managed platforms, these are the default <code>x86_64</code> AMIs; for custom platforms, the <code>hvm</code> entry is the AMI built for the platform version. To find a managed platform's default AMIs for every supported processor architecture, including <code>arm64</code>, use <code>DefaultAmiList</code>.</p>
     pub custom_ami_list: ::std::option::Option<::std::vec::Vec<crate::types::CustomAmi>>,
+    /// <p>The AMIs that Elastic Beanstalk uses by default for the platform version, one for each supported processor architecture. When an environment doesn't specify a custom AMI, Elastic Beanstalk chooses the default AMI that matches the environment's architecture.</p>
+    /// <p>This list isn't returned for custom platforms.</p>
+    pub default_ami_list: ::std::option::Option<::std::vec::Vec<crate::types::DefaultAmi>>,
     /// <p>The tiers supported by the platform version.</p>
     pub supported_tier_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The additions supported by the platform version.</p>
@@ -115,11 +118,18 @@ impl PlatformDescription {
     pub fn frameworks(&self) -> &[crate::types::PlatformFramework] {
         self.frameworks.as_deref().unwrap_or_default()
     }
-    /// <p>The custom AMIs supported by the platform version.</p>
+    /// <p>The AMIs of the platform version, by virtualization type. For Elastic Beanstalk managed platforms, these are the default <code>x86_64</code> AMIs; for custom platforms, the <code>hvm</code> entry is the AMI built for the platform version. To find a managed platform's default AMIs for every supported processor architecture, including <code>arm64</code>, use <code>DefaultAmiList</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_ami_list.is_none()`.
     pub fn custom_ami_list(&self) -> &[crate::types::CustomAmi] {
         self.custom_ami_list.as_deref().unwrap_or_default()
+    }
+    /// <p>The AMIs that Elastic Beanstalk uses by default for the platform version, one for each supported processor architecture. When an environment doesn't specify a custom AMI, Elastic Beanstalk chooses the default AMI that matches the environment's architecture.</p>
+    /// <p>This list isn't returned for custom platforms.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_ami_list.is_none()`.
+    pub fn default_ami_list(&self) -> &[crate::types::DefaultAmi] {
+        self.default_ami_list.as_deref().unwrap_or_default()
     }
     /// <p>The tiers supported by the platform version.</p>
     ///
@@ -176,6 +186,7 @@ pub struct PlatformDescriptionBuilder {
     pub(crate) programming_languages: ::std::option::Option<::std::vec::Vec<crate::types::PlatformProgrammingLanguage>>,
     pub(crate) frameworks: ::std::option::Option<::std::vec::Vec<crate::types::PlatformFramework>>,
     pub(crate) custom_ami_list: ::std::option::Option<::std::vec::Vec<crate::types::CustomAmi>>,
+    pub(crate) default_ami_list: ::std::option::Option<::std::vec::Vec<crate::types::DefaultAmi>>,
     pub(crate) supported_tier_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) supported_addon_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) platform_lifecycle_state: ::std::option::Option<::std::string::String>,
@@ -409,21 +420,44 @@ impl PlatformDescriptionBuilder {
     ///
     /// To override the contents of this collection use [`set_custom_ami_list`](Self::set_custom_ami_list).
     ///
-    /// <p>The custom AMIs supported by the platform version.</p>
+    /// <p>The AMIs of the platform version, by virtualization type. For Elastic Beanstalk managed platforms, these are the default <code>x86_64</code> AMIs; for custom platforms, the <code>hvm</code> entry is the AMI built for the platform version. To find a managed platform's default AMIs for every supported processor architecture, including <code>arm64</code>, use <code>DefaultAmiList</code>.</p>
     pub fn custom_ami_list(mut self, input: crate::types::CustomAmi) -> Self {
         let mut v = self.custom_ami_list.unwrap_or_default();
         v.push(input);
         self.custom_ami_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The custom AMIs supported by the platform version.</p>
+    /// <p>The AMIs of the platform version, by virtualization type. For Elastic Beanstalk managed platforms, these are the default <code>x86_64</code> AMIs; for custom platforms, the <code>hvm</code> entry is the AMI built for the platform version. To find a managed platform's default AMIs for every supported processor architecture, including <code>arm64</code>, use <code>DefaultAmiList</code>.</p>
     pub fn set_custom_ami_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomAmi>>) -> Self {
         self.custom_ami_list = input;
         self
     }
-    /// <p>The custom AMIs supported by the platform version.</p>
+    /// <p>The AMIs of the platform version, by virtualization type. For Elastic Beanstalk managed platforms, these are the default <code>x86_64</code> AMIs; for custom platforms, the <code>hvm</code> entry is the AMI built for the platform version. To find a managed platform's default AMIs for every supported processor architecture, including <code>arm64</code>, use <code>DefaultAmiList</code>.</p>
     pub fn get_custom_ami_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomAmi>> {
         &self.custom_ami_list
+    }
+    /// Appends an item to `default_ami_list`.
+    ///
+    /// To override the contents of this collection use [`set_default_ami_list`](Self::set_default_ami_list).
+    ///
+    /// <p>The AMIs that Elastic Beanstalk uses by default for the platform version, one for each supported processor architecture. When an environment doesn't specify a custom AMI, Elastic Beanstalk chooses the default AMI that matches the environment's architecture.</p>
+    /// <p>This list isn't returned for custom platforms.</p>
+    pub fn default_ami_list(mut self, input: crate::types::DefaultAmi) -> Self {
+        let mut v = self.default_ami_list.unwrap_or_default();
+        v.push(input);
+        self.default_ami_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The AMIs that Elastic Beanstalk uses by default for the platform version, one for each supported processor architecture. When an environment doesn't specify a custom AMI, Elastic Beanstalk chooses the default AMI that matches the environment's architecture.</p>
+    /// <p>This list isn't returned for custom platforms.</p>
+    pub fn set_default_ami_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DefaultAmi>>) -> Self {
+        self.default_ami_list = input;
+        self
+    }
+    /// <p>The AMIs that Elastic Beanstalk uses by default for the platform version, one for each supported processor architecture. When an environment doesn't specify a custom AMI, Elastic Beanstalk chooses the default AMI that matches the environment's architecture.</p>
+    /// <p>This list isn't returned for custom platforms.</p>
+    pub fn get_default_ami_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DefaultAmi>> {
+        &self.default_ami_list
     }
     /// Appends an item to `supported_tier_list`.
     ///
@@ -535,6 +569,7 @@ impl PlatformDescriptionBuilder {
             programming_languages: self.programming_languages,
             frameworks: self.frameworks,
             custom_ami_list: self.custom_ami_list,
+            default_ami_list: self.default_ami_list,
             supported_tier_list: self.supported_tier_list,
             supported_addon_list: self.supported_addon_list,
             platform_lifecycle_state: self.platform_lifecycle_state,

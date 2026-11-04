@@ -107,6 +107,8 @@ pub(crate) mod shape_reset_notification_settings_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_service_unavailable_exception;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_too_many_tags_exception;

@@ -178,4 +178,18 @@ impl ListRealtimeContactAnalysisSegmentsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>A filter that limits the category segments returned by the operation. When provided, use <code>CategoriesAttributeFilter</code> to return only the category segments whose rules have tags that match the filter. This enforces tag-based access control on the categories that the caller can view.</p>
+    pub fn list_filter(mut self, input: crate::types::RealTimeContactAnalysisSegmentsFilter) -> Self {
+        self.inner = self.inner.list_filter(input);
+        self
+    }
+    /// <p>A filter that limits the category segments returned by the operation. When provided, use <code>CategoriesAttributeFilter</code> to return only the category segments whose rules have tags that match the filter. This enforces tag-based access control on the categories that the caller can view.</p>
+    pub fn set_list_filter(mut self, input: ::std::option::Option<crate::types::RealTimeContactAnalysisSegmentsFilter>) -> Self {
+        self.inner = self.inner.set_list_filter(input);
+        self
+    }
+    /// <p>A filter that limits the category segments returned by the operation. When provided, use <code>CategoriesAttributeFilter</code> to return only the category segments whose rules have tags that match the filter. This enforces tag-based access control on the categories that the caller can view.</p>
+    pub fn get_list_filter(&self) -> &::std::option::Option<crate::types::RealTimeContactAnalysisSegmentsFilter> {
+        self.inner.get_list_filter()
+    }
 }

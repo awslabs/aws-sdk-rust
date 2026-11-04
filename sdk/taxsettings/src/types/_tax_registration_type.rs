@@ -12,12 +12,17 @@
 /// ```text
 /// # let taxregistrationtype = unimplemented!();
 /// match taxregistrationtype {
+///     TaxRegistrationType::Cdi => { /* ... */ },
+///     TaxRegistrationType::Ci => { /* ... */ },
 ///     TaxRegistrationType::Cnpj => { /* ... */ },
 ///     TaxRegistrationType::Cpf => { /* ... */ },
+///     TaxRegistrationType::Cuit => { /* ... */ },
 ///     TaxRegistrationType::Gst => { /* ... */ },
+///     TaxRegistrationType::Nie => { /* ... */ },
 ///     TaxRegistrationType::Nip => { /* ... */ },
 ///     TaxRegistrationType::Nric => { /* ... */ },
 ///     TaxRegistrationType::Pan => { /* ... */ },
+///     TaxRegistrationType::Rut => { /* ... */ },
 ///     TaxRegistrationType::Sst => { /* ... */ },
 ///     TaxRegistrationType::Tin => { /* ... */ },
 ///     TaxRegistrationType::Vat => { /* ... */ },
@@ -50,17 +55,27 @@
 )]
 pub enum TaxRegistrationType {
     #[allow(missing_docs)] // documentation missing in model
+    Cdi,
+    #[allow(missing_docs)] // documentation missing in model
+    Ci,
+    #[allow(missing_docs)] // documentation missing in model
     Cnpj,
     #[allow(missing_docs)] // documentation missing in model
     Cpf,
     #[allow(missing_docs)] // documentation missing in model
+    Cuit,
+    #[allow(missing_docs)] // documentation missing in model
     Gst,
+    #[allow(missing_docs)] // documentation missing in model
+    Nie,
     #[allow(missing_docs)] // documentation missing in model
     Nip,
     #[allow(missing_docs)] // documentation missing in model
     Nric,
     #[allow(missing_docs)] // documentation missing in model
     Pan,
+    #[allow(missing_docs)] // documentation missing in model
+    Rut,
     #[allow(missing_docs)] // documentation missing in model
     Sst,
     #[allow(missing_docs)] // documentation missing in model
@@ -74,12 +89,17 @@ pub enum TaxRegistrationType {
 impl ::std::convert::From<&str> for TaxRegistrationType {
     fn from(s: &str) -> Self {
         match s {
+            "CDI" => TaxRegistrationType::Cdi,
+            "CI" => TaxRegistrationType::Ci,
             "CNPJ" => TaxRegistrationType::Cnpj,
             "CPF" => TaxRegistrationType::Cpf,
+            "CUIT" => TaxRegistrationType::Cuit,
             "GST" => TaxRegistrationType::Gst,
+            "NIE" => TaxRegistrationType::Nie,
             "NIP" => TaxRegistrationType::Nip,
             "NRIC" => TaxRegistrationType::Nric,
             "PAN" => TaxRegistrationType::Pan,
+            "RUT" => TaxRegistrationType::Rut,
             "SST" => TaxRegistrationType::Sst,
             "TIN" => TaxRegistrationType::Tin,
             "VAT" => TaxRegistrationType::Vat,
@@ -98,12 +118,17 @@ impl TaxRegistrationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TaxRegistrationType::Cdi => "CDI",
+            TaxRegistrationType::Ci => "CI",
             TaxRegistrationType::Cnpj => "CNPJ",
             TaxRegistrationType::Cpf => "CPF",
+            TaxRegistrationType::Cuit => "CUIT",
             TaxRegistrationType::Gst => "GST",
+            TaxRegistrationType::Nie => "NIE",
             TaxRegistrationType::Nip => "NIP",
             TaxRegistrationType::Nric => "NRIC",
             TaxRegistrationType::Pan => "PAN",
+            TaxRegistrationType::Rut => "RUT",
             TaxRegistrationType::Sst => "SST",
             TaxRegistrationType::Tin => "TIN",
             TaxRegistrationType::Vat => "VAT",
@@ -112,7 +137,9 @@ impl TaxRegistrationType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CNPJ", "CPF", "GST", "NIP", "NRIC", "PAN", "SST", "TIN", "VAT"]
+        &[
+            "CDI", "CI", "CNPJ", "CPF", "CUIT", "GST", "NIE", "NIP", "NRIC", "PAN", "RUT", "SST", "TIN", "VAT",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for TaxRegistrationType {
@@ -135,12 +162,17 @@ impl TaxRegistrationType {
 impl ::std::fmt::Display for TaxRegistrationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            TaxRegistrationType::Cdi => write!(f, "CDI"),
+            TaxRegistrationType::Ci => write!(f, "CI"),
             TaxRegistrationType::Cnpj => write!(f, "CNPJ"),
             TaxRegistrationType::Cpf => write!(f, "CPF"),
+            TaxRegistrationType::Cuit => write!(f, "CUIT"),
             TaxRegistrationType::Gst => write!(f, "GST"),
+            TaxRegistrationType::Nie => write!(f, "NIE"),
             TaxRegistrationType::Nip => write!(f, "NIP"),
             TaxRegistrationType::Nric => write!(f, "NRIC"),
             TaxRegistrationType::Pan => write!(f, "PAN"),
+            TaxRegistrationType::Rut => write!(f, "RUT"),
             TaxRegistrationType::Sst => write!(f, "SST"),
             TaxRegistrationType::Tin => write!(f, "TIN"),
             TaxRegistrationType::Vat => write!(f, "VAT"),

@@ -73,13 +73,13 @@ pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_db_capacity_reservation_commitment_info::DbCapacityReservationCommitmentInfoBuilder;
 
+pub use crate::types::_tag_specification::TagSpecificationBuilder;
+
 pub use crate::types::_target_resource_configuration::TargetResourceConfigurationBuilder;
 
 pub use crate::types::_upgrade_target::UpgradeTargetBuilder;
 
 pub use crate::types::_timezone::TimezoneBuilder;
-
-pub use crate::types::_tag_specification::TagSpecificationBuilder;
 
 pub use crate::types::_db_cluster_associated_role::DbClusterAssociatedRoleBuilder;
 

@@ -12,6 +12,10 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsOutput::next_token): <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
     ///   - [`data_ingestion_job_summaries(Option<Vec::<DataIngestionJobSummary>>)`](crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsOutput::data_ingestion_job_summaries): <p>Specifies information about the specific data ingestion job, including dataset name and status.</p>
     /// - On failure, responds with [`SdkError<ListDataIngestionJobsError>`](crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn list_data_ingestion_jobs(&self) -> crate::operation::list_data_ingestion_jobs::builders::ListDataIngestionJobsFluentBuilder {
         crate::operation::list_data_ingestion_jobs::builders::ListDataIngestionJobsFluentBuilder::new(self.handle.clone())
     }

@@ -14,6 +14,8 @@ pub struct TrustAnchorDetail {
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>Indicates whether the trust anchor is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub crl_dp_revocation_enabled: ::std::option::Option<bool>,
     /// <p>The ISO-8601 timestamp when the trust anchor was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the trust anchor was last updated.</p>
@@ -41,6 +43,10 @@ impl TrustAnchorDetail {
     /// <p>Indicates whether the trust anchor is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
+    }
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub fn crl_dp_revocation_enabled(&self) -> ::std::option::Option<bool> {
+        self.crl_dp_revocation_enabled
     }
     /// <p>The ISO-8601 timestamp when the trust anchor was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -73,6 +79,7 @@ pub struct TrustAnchorDetailBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::Source>,
     pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) crl_dp_revocation_enabled: ::std::option::Option<bool>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) notification_settings: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingDetail>>,
@@ -148,6 +155,20 @@ impl TrustAnchorDetailBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub fn crl_dp_revocation_enabled(mut self, input: bool) -> Self {
+        self.crl_dp_revocation_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub fn set_crl_dp_revocation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.crl_dp_revocation_enabled = input;
+        self
+    }
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub fn get_crl_dp_revocation_enabled(&self) -> &::std::option::Option<bool> {
+        &self.crl_dp_revocation_enabled
+    }
     /// <p>The ISO-8601 timestamp when the trust anchor was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -204,6 +225,7 @@ impl TrustAnchorDetailBuilder {
             name: self.name,
             source: self.source,
             enabled: self.enabled,
+            crl_dp_revocation_enabled: self.crl_dp_revocation_enabled,
             created_at: self.created_at,
             updated_at: self.updated_at,
             notification_settings: self.notification_settings,

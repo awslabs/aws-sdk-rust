@@ -23,6 +23,8 @@ pub struct CreateWorkflowInput {
     pub engine_version: ::std::option::Option<i32>,
     /// <p>Network configuration for the workflow execution environment, including VPC security groups and subnets for secure network access. When specified, Amazon Managed Workflows for Apache Airflow Serverless deploys ECS worker tasks in your customer VPC to provide secure connectivity to your resources. If not specified, tasks run in the service's default worker VPC with network isolation from other customers. This configuration enables secure access to VPC-only resources like RDS databases or private endpoints.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
+    /// <p>The environment variables to set for tasks in the workflow. If you don't specify this parameter, the workflow has no environment variables.</p>
+    pub environment: ::std::option::Option<crate::types::Environment>,
     /// <p>A map of tags to assign to the workflow resource. Tags are key-value pairs that are used for resource organization and cost allocation.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The trigger mode for the workflow execution.</p>
@@ -69,6 +71,10 @@ impl CreateWorkflowInput {
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
+    /// <p>The environment variables to set for tasks in the workflow. If you don't specify this parameter, the workflow has no environment variables.</p>
+    pub fn environment(&self) -> ::std::option::Option<&crate::types::Environment> {
+        self.environment.as_ref()
+    }
     /// <p>A map of tags to assign to the workflow resource. Tags are key-value pairs that are used for resource organization and cost allocation.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -99,6 +105,7 @@ pub struct CreateWorkflowInputBuilder {
     pub(crate) logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     pub(crate) engine_version: ::std::option::Option<i32>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
+    pub(crate) environment: ::std::option::Option<crate::types::Environment>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) trigger_mode: ::std::option::Option<::std::string::String>,
 }
@@ -246,6 +253,20 @@ impl CreateWorkflowInputBuilder {
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         &self.network_configuration
     }
+    /// <p>The environment variables to set for tasks in the workflow. If you don't specify this parameter, the workflow has no environment variables.</p>
+    pub fn environment(mut self, input: crate::types::Environment) -> Self {
+        self.environment = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The environment variables to set for tasks in the workflow. If you don't specify this parameter, the workflow has no environment variables.</p>
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
+        self.environment = input;
+        self
+    }
+    /// <p>The environment variables to set for tasks in the workflow. If you don't specify this parameter, the workflow has no environment variables.</p>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::Environment> {
+        &self.environment
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -295,6 +316,7 @@ impl CreateWorkflowInputBuilder {
             logging_configuration: self.logging_configuration,
             engine_version: self.engine_version,
             network_configuration: self.network_configuration,
+            environment: self.environment,
             tags: self.tags,
             trigger_mode: self.trigger_mode,
         })

@@ -20,6 +20,10 @@ impl super::Client {
     ///   - [`data_end_time(Option<DateTime>)`](crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput::data_end_time): <p>Indicates the latest timestamp corresponding to data that was successfully ingested during this specific ingestion job.</p>
     ///   - [`source_dataset_arn(Option<String>)`](crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput::source_dataset_arn): <p>The Amazon Resource Name (ARN) of the source dataset from which the data used for the data ingestion job was imported from.</p>
     /// - On failure, responds with [`SdkError<DescribeDataIngestionJobError>`](crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn describe_data_ingestion_job(&self) -> crate::operation::describe_data_ingestion_job::builders::DescribeDataIngestionJobFluentBuilder {
         crate::operation::describe_data_ingestion_job::builders::DescribeDataIngestionJobFluentBuilder::new(self.handle.clone())
     }

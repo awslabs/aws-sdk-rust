@@ -349,6 +349,8 @@ pub(crate) mod shape_configuration_template_names_list;
 
 pub(crate) mod shape_custom_ami_list;
 
+pub(crate) mod shape_default_ami_list;
+
 pub(crate) mod shape_environment_description;
 
 pub(crate) mod shape_environment_info_description;
@@ -408,6 +410,8 @@ pub(crate) mod shape_auto_scaling_group;
 pub(crate) mod shape_configuration_option_possible_values;
 
 pub(crate) mod shape_custom_ami;
+
+pub(crate) mod shape_default_ami;
 
 pub(crate) mod shape_deployment;
 

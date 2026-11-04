@@ -72,6 +72,42 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_table_migration::CompleteTableMigrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_table_migration::CompleteTableMigrationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::complete_table_migration::CompleteTableMigrationError> for Error {
+    fn from(err: crate::operation::complete_table_migration::CompleteTableMigrationError) -> Self {
+        match err {
+            crate::operation::complete_table_migration::CompleteTableMigrationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::complete_table_migration::CompleteTableMigrationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::complete_table_migration::CompleteTableMigrationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::complete_table_migration::CompleteTableMigrationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::complete_table_migration::CompleteTableMigrationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::complete_table_migration::CompleteTableMigrationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::complete_table_migration::CompleteTableMigrationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::complete_table_migration::CompleteTableMigrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_namespace::CreateNamespaceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -991,6 +1027,35 @@ impl From<crate::operation::get_table_metadata_location::GetTableMetadataLocatio
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_migration::GetTableMigrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_migration::GetTableMigrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_table_migration::GetTableMigrationError> for Error {
+    fn from(err: crate::operation::get_table_migration::GetTableMigrationError) -> Self {
+        match err {
+            crate::operation::get_table_migration::GetTableMigrationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_table_migration::GetTableMigrationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_table_migration::GetTableMigrationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_table_migration::GetTableMigrationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_table_migration::GetTableMigrationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_table_migration::GetTableMigrationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_table_migration::GetTableMigrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_policy::GetTablePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1286,6 +1351,37 @@ impl From<crate::operation::list_table_buckets::ListTableBucketsError> for Error
             crate::operation::list_table_buckets::ListTableBucketsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::list_table_buckets::ListTableBucketsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_table_buckets::ListTableBucketsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_table_migrations::ListTableMigrationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_table_migrations::ListTableMigrationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_table_migrations::ListTableMigrationsError> for Error {
+    fn from(err: crate::operation::list_table_migrations::ListTableMigrationsError) -> Self {
+        match err {
+            crate::operation::list_table_migrations::ListTableMigrationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_table_migrations::ListTableMigrationsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_table_migrations::ListTableMigrationsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_table_migrations::ListTableMigrationsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_table_migrations::ListTableMigrationsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_table_migrations::ListTableMigrationsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_table_migrations::ListTableMigrationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1785,6 +1881,70 @@ impl From<crate::operation::rename_table::RenameTableError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_table_migration::StartTableMigrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_table_migration::StartTableMigrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_table_migration::StartTableMigrationError> for Error {
+    fn from(err: crate::operation::start_table_migration::StartTableMigrationError) -> Self {
+        match err {
+            crate::operation::start_table_migration::StartTableMigrationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_table_migration::StartTableMigrationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_table_migration::StartTableMigrationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_table_migration::StartTableMigrationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::start_table_migration::StartTableMigrationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::start_table_migration::StartTableMigrationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_table_migration::StartTableMigrationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::start_table_migration::StartTableMigrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::sync_table_migration::SyncTableMigrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::sync_table_migration::SyncTableMigrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::sync_table_migration::SyncTableMigrationError> for Error {
+    fn from(err: crate::operation::sync_table_migration::SyncTableMigrationError) -> Self {
+        match err {
+            crate::operation::sync_table_migration::SyncTableMigrationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::sync_table_migration::SyncTableMigrationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::sync_table_migration::SyncTableMigrationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::sync_table_migration::SyncTableMigrationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::sync_table_migration::SyncTableMigrationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::sync_table_migration::SyncTableMigrationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::sync_table_migration::SyncTableMigrationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::sync_table_migration::SyncTableMigrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1882,6 +2042,38 @@ impl From<crate::operation::update_table_metadata_location::UpdateTableMetadataL
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::update_table_metadata_location::UpdateTableMetadataLocationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_table_migration::UpdateTableMigrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_table_migration::UpdateTableMigrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_table_migration::UpdateTableMigrationError> for Error {
+    fn from(err: crate::operation::update_table_migration::UpdateTableMigrationError) -> Self {
+        match err {
+            crate::operation::update_table_migration::UpdateTableMigrationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_table_migration::UpdateTableMigrationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_table_migration::UpdateTableMigrationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_table_migration::UpdateTableMigrationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_table_migration::UpdateTableMigrationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_table_migration::UpdateTableMigrationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_table_migration::UpdateTableMigrationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_table_migration::UpdateTableMigrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

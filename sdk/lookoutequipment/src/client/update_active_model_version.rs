@@ -13,6 +13,10 @@ impl super::Client {
     ///   - [`current_active_version_arn(Option<String>)`](crate::operation::update_active_model_version::UpdateActiveModelVersionOutput::current_active_version_arn): <p>The Amazon Resource Name (ARN) of the machine learning model version that is the current active model version.</p>
     ///   - [`previous_active_version_arn(Option<String>)`](crate::operation::update_active_model_version::UpdateActiveModelVersionOutput::previous_active_version_arn): <p>The Amazon Resource Name (ARN) of the machine learning model version that was the previous active model version.</p>
     /// - On failure, responds with [`SdkError<UpdateActiveModelVersionError>`](crate::operation::update_active_model_version::UpdateActiveModelVersionError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn update_active_model_version(&self) -> crate::operation::update_active_model_version::builders::UpdateActiveModelVersionFluentBuilder {
         crate::operation::update_active_model_version::builders::UpdateActiveModelVersionFluentBuilder::new(self.handle.clone())
     }

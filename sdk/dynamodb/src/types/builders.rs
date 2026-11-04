@@ -21,6 +21,8 @@ pub use crate::types::_consumed_capacity::ConsumedCapacityBuilder;
 
 pub use crate::types::_item_collection_metrics::ItemCollectionMetricsBuilder;
 
+pub use crate::types::_bulk_operation_description::BulkOperationDescriptionBuilder;
+
 pub use crate::types::_continuous_backups_description::ContinuousBackupsDescriptionBuilder;
 
 pub use crate::types::_failure_exception::FailureExceptionBuilder;
@@ -46,6 +48,10 @@ pub use crate::types::_input_format_options::InputFormatOptionsBuilder;
 pub use crate::types::_table_creation_parameters::TableCreationParametersBuilder;
 
 pub use crate::types::_vector_capacity::VectorCapacityBuilder;
+
+pub use crate::types::_input_s3_configuration::InputS3ConfigurationBuilder;
+
+pub use crate::types::_output_s3_configuration::OutputS3ConfigurationBuilder;
 
 pub use crate::types::_point_in_time_recovery_specification::PointInTimeRecoverySpecificationBuilder;
 
@@ -117,6 +123,8 @@ pub use crate::types::_csv_options::CsvOptionsBuilder;
 
 pub use crate::types::_backup_summary::BackupSummaryBuilder;
 
+pub use crate::types::_bulk_operation_summary::BulkOperationSummaryBuilder;
+
 pub use crate::types::_contributor_insights_summary::ContributorInsightsSummaryBuilder;
 
 pub use crate::types::_export_summary::ExportSummaryBuilder;
@@ -172,6 +180,10 @@ pub use crate::types::_global_secondary_index_description::GlobalSecondaryIndexD
 pub use crate::types::_global_table_witness_description::GlobalTableWitnessDescriptionBuilder;
 
 pub use crate::types::_vector_index_description::VectorIndexDescriptionBuilder;
+
+pub use crate::types::_bulk_operation_table_detail::BulkOperationTableDetailBuilder;
+
+pub use crate::types::_bulk_operation_usage::BulkOperationUsageBuilder;
 
 pub use crate::types::_auto_scaling_settings_description::AutoScalingSettingsDescriptionBuilder;
 
@@ -233,6 +245,8 @@ pub use crate::types::_global_secondary_index_info::GlobalSecondaryIndexInfoBuil
 
 pub use crate::types::_vector_index_info::VectorIndexInfoBuilder;
 
+pub use crate::types::_bulk_operation_bytes::BulkOperationBytesBuilder;
+
 pub use crate::types::_replica_global_secondary_index_settings_description::ReplicaGlobalSecondaryIndexSettingsDescriptionBuilder;
 
 pub use crate::types::_replica_global_secondary_index_settings_update::ReplicaGlobalSecondaryIndexSettingsUpdateBuilder;
@@ -240,6 +254,8 @@ pub use crate::types::_replica_global_secondary_index_settings_update::ReplicaGl
 pub use crate::types::_replica_global_secondary_index_auto_scaling_update::ReplicaGlobalSecondaryIndexAutoScalingUpdateBuilder;
 
 pub use crate::types::_replica_global_secondary_index_description::ReplicaGlobalSecondaryIndexDescriptionBuilder;
+
+pub use crate::types::_bulk_operation_vector_bytes::BulkOperationVectorBytesBuilder;
 
 pub use crate::types::_auto_scaling_policy_description::AutoScalingPolicyDescriptionBuilder;
 

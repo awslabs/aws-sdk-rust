@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_complete_table_migration;
+
 pub(crate) mod shape_create_namespace;
 
 pub(crate) mod shape_create_table;
@@ -73,6 +75,8 @@ pub(crate) mod shape_get_table_maintenance_job_status;
 
 pub(crate) mod shape_get_table_metadata_location;
 
+pub(crate) mod shape_get_table_migration;
+
 pub(crate) mod shape_get_table_policy;
 
 pub(crate) mod shape_get_table_record_expiration_configuration;
@@ -88,6 +92,8 @@ pub(crate) mod shape_get_table_storage_class;
 pub(crate) mod shape_list_namespaces;
 
 pub(crate) mod shape_list_table_buckets;
+
+pub(crate) mod shape_list_table_migrations;
 
 pub(crate) mod shape_list_tables;
 
@@ -115,11 +121,17 @@ pub(crate) mod shape_put_table_replication;
 
 pub(crate) mod shape_rename_table;
 
+pub(crate) mod shape_start_table_migration;
+
+pub(crate) mod shape_sync_table_migration;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_table_metadata_location;
+
+pub(crate) mod shape_update_table_migration;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -169,21 +181,47 @@ pub(crate) mod shape_put_table_replication_input;
 
 pub(crate) mod shape_rename_table_input;
 
+pub(crate) mod shape_start_table_migration_input;
+
+pub(crate) mod shape_sync_table_migration_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_too_many_requests_exception;
 
 pub(crate) mod shape_update_table_metadata_location_input;
 
+pub(crate) mod shape_update_table_migration_input;
+
+pub(crate) mod shape_data_migration_overview;
+
+pub(crate) mod shape_data_migration_settings;
+
+pub(crate) mod shape_destination_table;
+
 pub(crate) mod shape_encryption_configuration;
 
 pub(crate) mod shape_managed_table_information;
+
+pub(crate) mod shape_migration_failure_reason;
+
+pub(crate) mod shape_migration_output_configuration;
+
+pub(crate) mod shape_migration_output_overview;
+
+pub(crate) mod shape_migration_stats;
+
+pub(crate) mod shape_migration_summary_list;
 
 pub(crate) mod shape_namespace_list;
 
 pub(crate) mod shape_namespace_summary_list;
 
+pub(crate) mod shape_planning_stats;
+
 pub(crate) mod shape_replication_destination_statuses;
+
+pub(crate) mod shape_source_configuration;
 
 pub(crate) mod shape_storage_class_configuration;
 
@@ -213,13 +251,31 @@ pub(crate) mod shape_table_summary_list;
 
 pub(crate) mod shape_tags;
 
+pub(crate) mod shape_glue_table_source;
+
 pub(crate) mod shape_iceberg_metadata;
+
+pub(crate) mod shape_iceberg_schema_v2;
+
+pub(crate) mod shape_iceberg_sort_order;
+
+pub(crate) mod shape_maintenance_settings;
+
+pub(crate) mod shape_migration_policies;
+
+pub(crate) mod shape_migration_report_prefixes;
+
+pub(crate) mod shape_migration_summary;
+
+pub(crate) mod shape_migration_table_properties;
 
 pub(crate) mod shape_namespace_summary;
 
 pub(crate) mod shape_replication_destination_status_model;
 
 pub(crate) mod shape_replication_information;
+
+pub(crate) mod shape_report_overview;
 
 pub(crate) mod shape_table_bucket_maintenance_settings;
 
@@ -241,30 +297,32 @@ pub(crate) mod shape_table_replication_rules;
 
 pub(crate) mod shape_table_summary;
 
+pub(crate) mod shape_finding_category_counts;
+
 pub(crate) mod shape_iceberg_compaction_settings;
 
 pub(crate) mod shape_iceberg_partition_spec;
 
 pub(crate) mod shape_iceberg_schema;
 
-pub(crate) mod shape_iceberg_schema_v2;
-
 pub(crate) mod shape_iceberg_snapshot_management_settings;
 
-pub(crate) mod shape_iceberg_sort_order;
+pub(crate) mod shape_iceberg_sort_field;
 
 pub(crate) mod shape_iceberg_unreferenced_file_removal_settings;
 
 pub(crate) mod shape_last_successful_replicated_update;
 
+pub(crate) mod shape_migration_compaction_settings;
+
+pub(crate) mod shape_migration_snapshot_management_settings;
+
 pub(crate) mod shape_replication_destination;
 
-pub(crate) mod shape_iceberg_partition_field;
+pub(crate) mod shape_schema_v2_field;
 
-pub(crate) mod shape_iceberg_sort_field;
+pub(crate) mod shape_iceberg_partition_field;
 
 pub(crate) mod shape_replication_destinations;
 
 pub(crate) mod shape_schema_field;
-
-pub(crate) mod shape_schema_v2_field;

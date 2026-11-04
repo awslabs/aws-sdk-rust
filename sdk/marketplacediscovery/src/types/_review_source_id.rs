@@ -13,6 +13,8 @@
 /// # let reviewsourceid = unimplemented!();
 /// match reviewsourceid {
 ///     ReviewSourceId::AwsMarketplace => { /* ... */ },
+///     ReviewSourceId::G2 => { /* ... */ },
+///     ReviewSourceId::Peerspot => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +45,10 @@
 pub enum ReviewSourceId {
     #[allow(missing_docs)] // documentation missing in model
     AwsMarketplace,
+    #[allow(missing_docs)] // documentation missing in model
+    G2,
+    #[allow(missing_docs)] // documentation missing in model
+    Peerspot,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +57,8 @@ impl ::std::convert::From<&str> for ReviewSourceId {
     fn from(s: &str) -> Self {
         match s {
             "AWS_MARKETPLACE" => ReviewSourceId::AwsMarketplace,
+            "G2" => ReviewSourceId::G2,
+            "PEERSPOT" => ReviewSourceId::Peerspot,
             other => ReviewSourceId::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +75,14 @@ impl ReviewSourceId {
     pub fn as_str(&self) -> &str {
         match self {
             ReviewSourceId::AwsMarketplace => "AWS_MARKETPLACE",
+            ReviewSourceId::G2 => "G2",
+            ReviewSourceId::Peerspot => "PEERSPOT",
             ReviewSourceId::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_MARKETPLACE"]
+        &["AWS_MARKETPLACE", "G2", "PEERSPOT"]
     }
 }
 impl ::std::convert::AsRef<str> for ReviewSourceId {
@@ -96,6 +106,8 @@ impl ::std::fmt::Display for ReviewSourceId {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ReviewSourceId::AwsMarketplace => write!(f, "AWS_MARKETPLACE"),
+            ReviewSourceId::G2 => write!(f, "G2"),
+            ReviewSourceId::Peerspot => write!(f, "PEERSPOT"),
             ReviewSourceId::Unknown(value) => write!(f, "{value}"),
         }
     }

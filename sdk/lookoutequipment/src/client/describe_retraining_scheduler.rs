@@ -15,6 +15,10 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::describe_retraining_scheduler::DescribeRetrainingSchedulerOutput::created_at): <p>Indicates the time and date at which the retraining scheduler was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::describe_retraining_scheduler::DescribeRetrainingSchedulerOutput::updated_at): <p>Indicates the time and date at which the retraining scheduler was updated.</p>
     /// - On failure, responds with [`SdkError<DescribeRetrainingSchedulerError>`](crate::operation::describe_retraining_scheduler::DescribeRetrainingSchedulerError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn describe_retraining_scheduler(
         &self,
     ) -> crate::operation::describe_retraining_scheduler::builders::DescribeRetrainingSchedulerFluentBuilder {

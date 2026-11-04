@@ -19,6 +19,8 @@ pub enum Error {
     InvalidSnsTopicArnException(crate::types::error::InvalidSnsTopicArnException),
     /// <p>The SSML you provided is invalid. Verify the SSML syntax, spelling of tags and values, and then try again.</p>
     InvalidSsmlException(crate::types::error::InvalidSsmlException),
+    /// <p>The resource ARN or a tag in the request isn't valid. Specify the ARN of a supported resource in the Amazon Web Services account and Region of the request. Tag keys can have a maximum length of 128 characters, and tag values can have a maximum length of 256 characters. Correct the ARN or the tags, and then try again.</p>
+    InvalidTagParameterException(crate::types::error::InvalidTagParameterException),
     /// <p>The provided Task ID is not valid. Please provide a valid Task ID and try again.</p>
     InvalidTaskIdException(crate::types::error::InvalidTaskIdException),
     /// <p>The language specified is not currently supported by Amazon Polly in this capacity.</p>
@@ -34,6 +36,8 @@ pub enum Error {
     MaxLexemeLengthExceededException(crate::types::error::MaxLexemeLengthExceededException),
     /// <p>The maximum number of lexicons would be exceeded by this operation.</p>
     MaxLexiconsNumberExceededException(crate::types::error::MaxLexiconsNumberExceededException),
+    /// <p>Amazon Polly can't find the specified resource. Verify that the resource exists in the Amazon Web Services account and Region of the request and that its ARN is spelled correctly, and then try again.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::types::error::ServiceFailureException),
     /// <p>The request would cause a service quota to be exceeded.</p>
@@ -46,6 +50,8 @@ pub enum Error {
     TextLengthExceededException(crate::types::error::TextLengthExceededException),
     /// <p>The request was denied because of request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
+    /// <p>The list of tags on the resource is over the limit. The maximum number of tags that can be applied to a resource is 50. Remove unused tags or reduce the number of tags in the request, and then try again.</p>
+    TooManyTagsException(crate::types::error::TooManyTagsException),
     /// <p>The alphabet specified by the lexicon is not a supported alphabet. Valid values are <code>ipa</code>, <code>x-sampa</code>, <code>x-amazon-pinyin</code>, <code>x-amazon-jyutping</code>, <code>x-amazon-pron-kana</code>, and <code>x-amazon-yomigana</code>. Replace the unsupported alphabet with one of the valid values and resubmit your request.</p>
     UnsupportedPlsAlphabetException(crate::types::error::UnsupportedPlsAlphabetException),
     /// <p>The language specified in the lexicon is unsupported. For a list of supported languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.</p>
@@ -72,6 +78,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidSampleRateException(inner) => inner.fmt(f),
             Error::InvalidSnsTopicArnException(inner) => inner.fmt(f),
             Error::InvalidSsmlException(inner) => inner.fmt(f),
+            Error::InvalidTagParameterException(inner) => inner.fmt(f),
             Error::InvalidTaskIdException(inner) => inner.fmt(f),
             Error::LanguageNotSupportedException(inner) => inner.fmt(f),
             Error::LexiconNotFoundException(inner) => inner.fmt(f),
@@ -79,12 +86,14 @@ impl ::std::fmt::Display for Error {
             Error::MarksNotSupportedForFormatException(inner) => inner.fmt(f),
             Error::MaxLexemeLengthExceededException(inner) => inner.fmt(f),
             Error::MaxLexiconsNumberExceededException(inner) => inner.fmt(f),
+            Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceFailureException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::SsmlMarksNotSupportedForTextTypeException(inner) => inner.fmt(f),
             Error::SynthesisTaskNotFoundException(inner) => inner.fmt(f),
             Error::TextLengthExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
+            Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::UnsupportedPlsAlphabetException(inner) => inner.fmt(f),
             Error::UnsupportedPlsLanguageException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
@@ -117,6 +126,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidSampleRateException(inner) => inner.meta(),
             Self::InvalidSnsTopicArnException(inner) => inner.meta(),
             Self::InvalidSsmlException(inner) => inner.meta(),
+            Self::InvalidTagParameterException(inner) => inner.meta(),
             Self::InvalidTaskIdException(inner) => inner.meta(),
             Self::LanguageNotSupportedException(inner) => inner.meta(),
             Self::LexiconNotFoundException(inner) => inner.meta(),
@@ -124,12 +134,14 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::MarksNotSupportedForFormatException(inner) => inner.meta(),
             Self::MaxLexemeLengthExceededException(inner) => inner.meta(),
             Self::MaxLexiconsNumberExceededException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceFailureException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::SsmlMarksNotSupportedForTextTypeException(inner) => inner.meta(),
             Self::SynthesisTaskNotFoundException(inner) => inner.meta(),
             Self::TextLengthExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
+            Self::TooManyTagsException(inner) => inner.meta(),
             Self::UnsupportedPlsAlphabetException(inner) => inner.meta(),
             Self::UnsupportedPlsLanguageException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
@@ -292,6 +304,38 @@ impl From<crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTask
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidTagParameterException(inner) => {
+                Error::InvalidTagParameterException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_lexicon::PutLexiconError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -310,14 +354,17 @@ impl From<crate::operation::put_lexicon::PutLexiconError> for Error {
     fn from(err: crate::operation::put_lexicon::PutLexiconError) -> Self {
         match err {
             crate::operation::put_lexicon::PutLexiconError::InvalidLexiconException(inner) => Error::InvalidLexiconException(inner),
+            crate::operation::put_lexicon::PutLexiconError::InvalidTagParameterException(inner) => Error::InvalidTagParameterException(inner),
             crate::operation::put_lexicon::PutLexiconError::LexiconSizeExceededException(inner) => Error::LexiconSizeExceededException(inner),
             crate::operation::put_lexicon::PutLexiconError::MaxLexemeLengthExceededException(inner) => Error::MaxLexemeLengthExceededException(inner),
             crate::operation::put_lexicon::PutLexiconError::MaxLexiconsNumberExceededException(inner) => {
                 Error::MaxLexiconsNumberExceededException(inner)
             }
             crate::operation::put_lexicon::PutLexiconError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::put_lexicon::PutLexiconError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
             crate::operation::put_lexicon::PutLexiconError::UnsupportedPlsAlphabetException(inner) => Error::UnsupportedPlsAlphabetException(inner),
             crate::operation::put_lexicon::PutLexiconError::UnsupportedPlsLanguageException(inner) => Error::UnsupportedPlsLanguageException(inner),
+            crate::operation::put_lexicon::PutLexiconError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_lexicon::PutLexiconError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -458,6 +505,59 @@ impl From<crate::operation::synthesize_speech::SynthesizeSpeechError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::InvalidTagParameterException(inner) => Error::InvalidTagParameterException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::tag_resource::TagResourceError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::InvalidTagParameterException(inner) => Error::InvalidTagParameterException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::StartSpeechSynthesisStreamActionStreamError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -517,6 +617,7 @@ impl ::std::error::Error for Error {
             Error::InvalidSampleRateException(inner) => inner.source(),
             Error::InvalidSnsTopicArnException(inner) => inner.source(),
             Error::InvalidSsmlException(inner) => inner.source(),
+            Error::InvalidTagParameterException(inner) => inner.source(),
             Error::InvalidTaskIdException(inner) => inner.source(),
             Error::LanguageNotSupportedException(inner) => inner.source(),
             Error::LexiconNotFoundException(inner) => inner.source(),
@@ -524,12 +625,14 @@ impl ::std::error::Error for Error {
             Error::MarksNotSupportedForFormatException(inner) => inner.source(),
             Error::MaxLexemeLengthExceededException(inner) => inner.source(),
             Error::MaxLexiconsNumberExceededException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceFailureException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::SsmlMarksNotSupportedForTextTypeException(inner) => inner.source(),
             Error::SynthesisTaskNotFoundException(inner) => inner.source(),
             Error::TextLengthExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
+            Error::TooManyTagsException(inner) => inner.source(),
             Error::UnsupportedPlsAlphabetException(inner) => inner.source(),
             Error::UnsupportedPlsLanguageException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
@@ -548,6 +651,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidSampleRateException(e) => e.request_id(),
             Self::InvalidSnsTopicArnException(e) => e.request_id(),
             Self::InvalidSsmlException(e) => e.request_id(),
+            Self::InvalidTagParameterException(e) => e.request_id(),
             Self::InvalidTaskIdException(e) => e.request_id(),
             Self::LanguageNotSupportedException(e) => e.request_id(),
             Self::LexiconNotFoundException(e) => e.request_id(),
@@ -555,12 +659,14 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::MarksNotSupportedForFormatException(e) => e.request_id(),
             Self::MaxLexemeLengthExceededException(e) => e.request_id(),
             Self::MaxLexiconsNumberExceededException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceFailureException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::SsmlMarksNotSupportedForTextTypeException(e) => e.request_id(),
             Self::SynthesisTaskNotFoundException(e) => e.request_id(),
             Self::TextLengthExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
+            Self::TooManyTagsException(e) => e.request_id(),
             Self::UnsupportedPlsAlphabetException(e) => e.request_id(),
             Self::UnsupportedPlsLanguageException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),

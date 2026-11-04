@@ -10,6 +10,9 @@ pub mod batch_get_item;
 /// Types for the `BatchWriteItem` operation.
 pub mod batch_write_item;
 
+/// Types for the `CancelBulkOperation` operation.
+pub mod cancel_bulk_operation;
+
 /// Types for the `CreateBackup` operation.
 pub mod create_backup;
 
@@ -33,6 +36,9 @@ pub mod delete_table;
 
 /// Types for the `DescribeBackup` operation.
 pub mod describe_backup;
+
+/// Types for the `DescribeBulkOperation` operation.
+pub mod describe_bulk_operation;
 
 /// Types for the `DescribeContinuousBackups` operation.
 pub mod describe_continuous_backups;
@@ -97,6 +103,9 @@ pub mod import_table;
 /// Types for the `ListBackups` operation.
 pub mod list_backups;
 
+/// Types for the `ListBulkOperations` operation.
+pub mod list_bulk_operations;
+
 /// Types for the `ListContributorInsights` operation.
 pub mod list_contributor_insights;
 
@@ -135,6 +144,9 @@ pub mod scan;
 
 /// Types for the `SearchVectors` operation.
 pub mod search_vectors;
+
+/// Types for the `StartBulkPutItems` operation.
+pub mod start_bulk_put_items;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

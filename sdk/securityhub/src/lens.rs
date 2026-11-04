@@ -149,6 +149,26 @@ pub(crate) fn reflens_get_resources_v2_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_software_resources_v2_output_output_next_token(
+    input: &crate::operation::get_software_resources_v2::GetSoftwareResourcesV2Output,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_get_software_v2_output_output_next_token(
+    input: &crate::operation::get_software_v2::GetSoftwareV2Output,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_aggregators_v2_output_output_next_token(
     input: &crate::operation::list_aggregators_v2::ListAggregatorsV2Output,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -381,6 +401,20 @@ pub(crate) fn lens_get_resources_v2_output_output_resources(
     input: crate::operation::get_resources_v2::GetResourcesV2Output,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceResult>> {
     let input = input.resources?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_software_resources_v2_output_output_software_resources(
+    input: crate::operation::get_software_resources_v2::GetSoftwareResourcesV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SoftwareResourceResult>> {
+    let input = input.software_resources?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_software_v2_output_output_software(
+    input: crate::operation::get_software_v2::GetSoftwareV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SoftwareResult>> {
+    let input = input.software?;
     ::std::option::Option::Some(input)
 }
 

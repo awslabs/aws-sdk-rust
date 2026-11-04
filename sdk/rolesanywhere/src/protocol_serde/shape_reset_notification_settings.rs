@@ -55,6 +55,23 @@ pub fn de_reset_notification_settings_http_error(
             }
             tmp
         }),
+        "ServiceUnavailableException" => {
+            crate::operation::reset_notification_settings::ResetNotificationSettingsError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::reset_notification_settings::ResetNotificationSettingsError::unhandled)?;
+                    let output = output.meta(generic);
+                    crate::serde_util::service_unavailable_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::reset_notification_settings::ResetNotificationSettingsError::unhandled)?
+                };
+                tmp
+            })
+        }
         "ValidationException" => crate::operation::reset_notification_settings::ResetNotificationSettingsError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {

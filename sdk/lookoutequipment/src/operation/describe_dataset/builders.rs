@@ -23,6 +23,10 @@ impl crate::operation::describe_dataset::builders::DescribeDatasetInputBuilder {
 /// Fluent builder constructing a request to `DescribeDataset`.
 ///
 /// <p>Provides a JSON description of the data in each time series dataset, including names, column names, and data types.</p>
+#[deprecated(
+    note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+    since = "2026-10-07"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDatasetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

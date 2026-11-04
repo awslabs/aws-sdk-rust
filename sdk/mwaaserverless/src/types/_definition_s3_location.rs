@@ -8,7 +8,7 @@ pub struct DefinitionS3Location {
     pub bucket: ::std::string::String,
     /// <p>The key (name) of the workflow definition file within the S3 bucket.</p>
     pub object_key: ::std::string::String,
-    /// <p>Optional. The version ID of the workflow definition file in Amazon S3. If not specified, the latest version is used.</p>
+    /// <p>Optional. The version ID of the workflow definition file in Amazon S3. If you don't specify a version, we use the latest version.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
 }
 impl DefinitionS3Location {
@@ -22,7 +22,7 @@ impl DefinitionS3Location {
         use std::ops::Deref;
         self.object_key.deref()
     }
-    /// <p>Optional. The version ID of the workflow definition file in Amazon S3. If not specified, the latest version is used.</p>
+    /// <p>Optional. The version ID of the workflow definition file in Amazon S3. If you don't specify a version, we use the latest version.</p>
     pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -73,17 +73,17 @@ impl DefinitionS3LocationBuilder {
     pub fn get_object_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.object_key
     }
-    /// <p>Optional. The version ID of the workflow definition file in Amazon S3. If not specified, the latest version is used.</p>
+    /// <p>Optional. The version ID of the workflow definition file in Amazon S3. If you don't specify a version, we use the latest version.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Optional. The version ID of the workflow definition file in Amazon S3. If not specified, the latest version is used.</p>
+    /// <p>Optional. The version ID of the workflow definition file in Amazon S3. If you don't specify a version, we use the latest version.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
     }
-    /// <p>Optional. The version ID of the workflow definition file in Amazon S3. If not specified, the latest version is used.</p>
+    /// <p>Optional. The version ID of the workflow definition file in Amazon S3. If you don't specify a version, we use the latest version.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_id
     }

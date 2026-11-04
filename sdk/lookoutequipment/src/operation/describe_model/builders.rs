@@ -23,6 +23,10 @@ impl crate::operation::describe_model::builders::DescribeModelInputBuilder {
 /// Fluent builder constructing a request to `DescribeModel`.
 ///
 /// <p>Provides a JSON containing the overall information about a specific machine learning model, including model name and ARN, dataset, training and evaluation information, status, and so on.</p>
+#[deprecated(
+    note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+    since = "2026-10-07"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeModelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

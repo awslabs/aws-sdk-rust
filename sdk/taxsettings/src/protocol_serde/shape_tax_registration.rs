@@ -73,6 +73,15 @@ where
                                 crate::protocol_serde::shape_additional_info_response::de_additional_info_response(tokens, _value, depth + 1)?,
                             );
                         }
+                        "statusReason" => {
+                            builder = builder.set_status_reason(
+                                crate::protocol_serde::shape_tax_registration_status_reason::de_tax_registration_status_reason(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "legalAddress" => {
                             builder = builder.set_legal_address(crate::protocol_serde::shape_address::de_address(tokens, _value, depth + 1)?);
                         }

@@ -164,6 +164,20 @@ impl CreateDatasetExportJobFluentBuilder {
     pub fn get_input(&self) -> &::std::option::Option<crate::types::ProcessingInput> {
         self.inner.get_input()
     }
+    /// <p>An optional name for the export job. When omitted, one will be created based on type of job and start time.</p>
+    pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.job_name(input.into());
+        self
+    }
+    /// <p>An optional name for the export job. When omitted, one will be created based on type of job and start time.</p>
+    pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_job_name(input);
+        self
+    }
+    /// <p>An optional name for the export job. When omitted, one will be created based on type of job and start time.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_name()
+    }
     /// <p>The location where the error report will be written on failure.</p>
     pub fn error_report_location(mut self, input: crate::types::ExportErrorReportLocation) -> Self {
         self.inner = self.inner.error_report_location(input);

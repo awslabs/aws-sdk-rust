@@ -23,6 +23,10 @@ impl crate::operation::create_inference_scheduler::builders::CreateInferenceSche
 /// Fluent builder constructing a request to `CreateInferenceScheduler`.
 ///
 /// <p>Creates a scheduled inference. Scheduling an inference is setting up a continuous real-time inference plan to analyze new measurement data. When setting up the schedule, you provide an S3 bucket location for the input data, assign it a delimiter between separate entries in the data, set an offset delay if desired, and set the frequency of inferencing. You must also provide an S3 bucket location for the output data.</p>
+#[deprecated(
+    note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+    since = "2026-10-07"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateInferenceSchedulerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -3,13 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PutLexiconInput {
-    /// <p>Name of the lexicon. The name must follow the regular express format \[0-9A-Za-z\]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.</p>
+    /// <p>Name of the lexicon. The name must follow the regular expression format \[0-9A-Za-z\]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Content of the PLS lexicon as string data.</p>
     pub content: ::std::option::Option<::std::string::String>,
+    /// <p>The metadata that you apply to the lexicon to help you categorize and organize it. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. You can't replace the tags of an existing lexicon by overwriting it with PutLexicon.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutLexiconInput {
-    /// <p>Name of the lexicon. The name must follow the regular express format \[0-9A-Za-z\]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.</p>
+    /// <p>Name of the lexicon. The name must follow the regular expression format \[0-9A-Za-z\]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -17,12 +19,17 @@ impl PutLexiconInput {
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
+    /// <p>The metadata that you apply to the lexicon to help you categorize and organize it. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. You can't replace the tags of an existing lexicon by overwriting it with PutLexicon.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for PutLexiconInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PutLexiconInput");
         formatter.field("name", &self.name);
         formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -39,20 +46,21 @@ impl PutLexiconInput {
 pub struct PutLexiconInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutLexiconInputBuilder {
-    /// <p>Name of the lexicon. The name must follow the regular express format \[0-9A-Za-z\]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.</p>
+    /// <p>Name of the lexicon. The name must follow the regular expression format \[0-9A-Za-z\]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the lexicon. The name must follow the regular express format \[0-9A-Za-z\]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.</p>
+    /// <p>Name of the lexicon. The name must follow the regular expression format \[0-9A-Za-z\]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>Name of the lexicon. The name must follow the regular express format \[0-9A-Za-z\]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.</p>
+    /// <p>Name of the lexicon. The name must follow the regular expression format \[0-9A-Za-z\]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -71,11 +79,32 @@ impl PutLexiconInputBuilder {
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The metadata that you apply to the lexicon to help you categorize and organize it. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. You can't replace the tags of an existing lexicon by overwriting it with PutLexicon.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The metadata that you apply to the lexicon to help you categorize and organize it. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. You can't replace the tags of an existing lexicon by overwriting it with PutLexicon.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The metadata that you apply to the lexicon to help you categorize and organize it. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. You can't replace the tags of an existing lexicon by overwriting it with PutLexicon.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`PutLexiconInput`](crate::operation::put_lexicon::PutLexiconInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_lexicon::PutLexiconInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_lexicon::PutLexiconInput {
             name: self.name,
             content: self.content,
+            tags: self.tags,
         })
     }
 }
@@ -84,6 +113,7 @@ impl ::std::fmt::Debug for PutLexiconInputBuilder {
         let mut formatter = f.debug_struct("PutLexiconInputBuilder");
         formatter.field("name", &self.name);
         formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

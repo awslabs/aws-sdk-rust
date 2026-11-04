@@ -175,6 +175,8 @@ mod list_lexicons;
 
 mod list_speech_synthesis_tasks;
 
+mod list_tags_for_resource;
+
 mod put_lexicon;
 
 mod start_speech_synthesis_stream;
@@ -182,3 +184,7 @@ mod start_speech_synthesis_stream;
 mod start_speech_synthesis_task;
 
 mod synthesize_speech;
+
+mod tag_resource;
+
+mod untag_resource;

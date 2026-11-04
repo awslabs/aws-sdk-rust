@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDatasetExportJobOutput`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput) with field(s):
     ///   - [`job_id(String)`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput::job_id): <p>The unique identifier for the dataset export job.</p>
     ///   - [`workspace_name(String)`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput::workspace_name): <p>The name of the workspace that contains the dataset export job.</p>
+    ///   - [`job_name(Option<String>)`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput::job_name): <p>The name of the dataset export job.</p>
     ///   - [`status(DatasetExportJobStatus)`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput::status): <p>The current status of the dataset export job.</p>
     ///   - [`started_at(DateTime)`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput::started_at): <p>The timestamp when the job started processing.</p>
     ///   - [`completed_at(Option<DateTime>)`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput::completed_at): <p>The timestamp when the job completed, or null if the job is still running.</p>

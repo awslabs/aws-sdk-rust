@@ -170,6 +170,13 @@ pub(crate) fn de_describe_dataset_export_job(
                             .transpose()?,
                     );
                 }
+                "jobName" => {
+                    builder = builder.set_job_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "startedAt" => {
                     builder = builder.set_started_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

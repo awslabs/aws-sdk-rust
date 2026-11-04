@@ -7,6 +7,8 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The request has failed due to a temporary failure of the service.</p>
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>Too many tags.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// <p>Validation exception error.</p>
@@ -25,6 +27,7 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -50,6 +53,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ServiceUnavailableException(inner) => inner.meta(),
             Self::TooManyTagsException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -74,6 +78,7 @@ impl From<crate::operation::create_profile::CreateProfileError> for Error {
     fn from(err: crate::operation::create_profile::CreateProfileError) -> Self {
         match err {
             crate::operation::create_profile::CreateProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_profile::CreateProfileError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::create_profile::CreateProfileError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_profile::CreateProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -97,6 +102,9 @@ impl From<crate::operation::create_trust_anchor::CreateTrustAnchorError> for Err
     fn from(err: crate::operation::create_trust_anchor::CreateTrustAnchorError) -> Self {
         match err {
             crate::operation::create_trust_anchor::CreateTrustAnchorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_trust_anchor::CreateTrustAnchorError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::create_trust_anchor::CreateTrustAnchorError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_trust_anchor::CreateTrustAnchorError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -127,6 +135,9 @@ impl From<crate::operation::delete_attribute_mapping::DeleteAttributeMappingErro
             crate::operation::delete_attribute_mapping::DeleteAttributeMappingError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::delete_attribute_mapping::DeleteAttributeMappingError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::delete_attribute_mapping::DeleteAttributeMappingError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_attribute_mapping::DeleteAttributeMappingError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -151,6 +162,7 @@ impl From<crate::operation::delete_crl::DeleteCrlError> for Error {
         match err {
             crate::operation::delete_crl::DeleteCrlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_crl::DeleteCrlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_crl::DeleteCrlError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::delete_crl::DeleteCrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -174,6 +186,7 @@ impl From<crate::operation::delete_profile::DeleteProfileError> for Error {
         match err {
             crate::operation::delete_profile::DeleteProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_profile::DeleteProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_profile::DeleteProfileError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::delete_profile::DeleteProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -199,6 +212,9 @@ impl From<crate::operation::delete_trust_anchor::DeleteTrustAnchorError> for Err
             crate::operation::delete_trust_anchor::DeleteTrustAnchorError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::delete_trust_anchor::DeleteTrustAnchorError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::delete_trust_anchor::DeleteTrustAnchorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -222,6 +238,7 @@ impl From<crate::operation::disable_crl::DisableCrlError> for Error {
         match err {
             crate::operation::disable_crl::DisableCrlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::disable_crl::DisableCrlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disable_crl::DisableCrlError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::disable_crl::DisableCrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -245,6 +262,7 @@ impl From<crate::operation::disable_profile::DisableProfileError> for Error {
         match err {
             crate::operation::disable_profile::DisableProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::disable_profile::DisableProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disable_profile::DisableProfileError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::disable_profile::DisableProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -270,6 +288,9 @@ impl From<crate::operation::disable_trust_anchor::DisableTrustAnchorError> for E
             crate::operation::disable_trust_anchor::DisableTrustAnchorError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::disable_trust_anchor::DisableTrustAnchorError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::disable_trust_anchor::DisableTrustAnchorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -293,6 +314,7 @@ impl From<crate::operation::enable_crl::EnableCrlError> for Error {
         match err {
             crate::operation::enable_crl::EnableCrlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::enable_crl::EnableCrlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::enable_crl::EnableCrlError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::enable_crl::EnableCrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -316,6 +338,7 @@ impl From<crate::operation::enable_profile::EnableProfileError> for Error {
         match err {
             crate::operation::enable_profile::EnableProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::enable_profile::EnableProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::enable_profile::EnableProfileError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::enable_profile::EnableProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -341,6 +364,9 @@ impl From<crate::operation::enable_trust_anchor::EnableTrustAnchorError> for Err
             crate::operation::enable_trust_anchor::EnableTrustAnchorError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::enable_trust_anchor::EnableTrustAnchorError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::enable_trust_anchor::EnableTrustAnchorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -363,6 +389,7 @@ impl From<crate::operation::get_crl::GetCrlError> for Error {
     fn from(err: crate::operation::get_crl::GetCrlError) -> Self {
         match err {
             crate::operation::get_crl::GetCrlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_crl::GetCrlError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::get_crl::GetCrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -386,6 +413,7 @@ impl From<crate::operation::get_profile::GetProfileError> for Error {
         match err {
             crate::operation::get_profile::GetProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_profile::GetProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_profile::GetProfileError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::get_profile::GetProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -409,6 +437,7 @@ impl From<crate::operation::get_subject::GetSubjectError> for Error {
         match err {
             crate::operation::get_subject::GetSubjectError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_subject::GetSubjectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_subject::GetSubjectError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::get_subject::GetSubjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -432,6 +461,7 @@ impl From<crate::operation::get_trust_anchor::GetTrustAnchorError> for Error {
         match err {
             crate::operation::get_trust_anchor::GetTrustAnchorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_trust_anchor::GetTrustAnchorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_trust_anchor::GetTrustAnchorError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::get_trust_anchor::GetTrustAnchorError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_trust_anchor::GetTrustAnchorError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -455,6 +485,7 @@ impl From<crate::operation::import_crl::ImportCrlError> for Error {
     fn from(err: crate::operation::import_crl::ImportCrlError) -> Self {
         match err {
             crate::operation::import_crl::ImportCrlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::import_crl::ImportCrlError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::import_crl::ImportCrlError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::import_crl::ImportCrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -478,6 +509,7 @@ impl From<crate::operation::list_crls::ListCrlsError> for Error {
     fn from(err: crate::operation::list_crls::ListCrlsError) -> Self {
         match err {
             crate::operation::list_crls::ListCrlsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_crls::ListCrlsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::list_crls::ListCrlsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_crls::ListCrlsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -501,6 +533,7 @@ impl From<crate::operation::list_profiles::ListProfilesError> for Error {
     fn from(err: crate::operation::list_profiles::ListProfilesError) -> Self {
         match err {
             crate::operation::list_profiles::ListProfilesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_profiles::ListProfilesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::list_profiles::ListProfilesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_profiles::ListProfilesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -524,6 +557,7 @@ impl From<crate::operation::list_subjects::ListSubjectsError> for Error {
     fn from(err: crate::operation::list_subjects::ListSubjectsError) -> Self {
         match err {
             crate::operation::list_subjects::ListSubjectsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_subjects::ListSubjectsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::list_subjects::ListSubjectsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_subjects::ListSubjectsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -550,6 +584,9 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -573,6 +610,9 @@ impl From<crate::operation::list_trust_anchors::ListTrustAnchorsError> for Error
     fn from(err: crate::operation::list_trust_anchors::ListTrustAnchorsError) -> Self {
         match err {
             crate::operation::list_trust_anchors::ListTrustAnchorsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_trust_anchors::ListTrustAnchorsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::list_trust_anchors::ListTrustAnchorsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_trust_anchors::ListTrustAnchorsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -598,6 +638,9 @@ impl From<crate::operation::put_attribute_mapping::PutAttributeMappingError> for
             crate::operation::put_attribute_mapping::PutAttributeMappingError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::put_attribute_mapping::PutAttributeMappingError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_attribute_mapping::PutAttributeMappingError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
             }
             crate::operation::put_attribute_mapping::PutAttributeMappingError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_attribute_mapping::PutAttributeMappingError::Unhandled(inner) => Error::Unhandled(inner),
@@ -629,6 +672,9 @@ impl From<crate::operation::put_notification_settings::PutNotificationSettingsEr
             }
             crate::operation::put_notification_settings::PutNotificationSettingsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_notification_settings::PutNotificationSettingsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
             }
             crate::operation::put_notification_settings::PutNotificationSettingsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -663,6 +709,9 @@ impl From<crate::operation::reset_notification_settings::ResetNotificationSettin
             crate::operation::reset_notification_settings::ResetNotificationSettingsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::reset_notification_settings::ResetNotificationSettingsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::reset_notification_settings::ResetNotificationSettingsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -689,6 +738,7 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
         match err {
             crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::tag_resource::TagResourceError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
             crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
@@ -714,6 +764,7 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         match err {
             crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -738,6 +789,7 @@ impl From<crate::operation::update_crl::UpdateCrlError> for Error {
         match err {
             crate::operation::update_crl::UpdateCrlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_crl::UpdateCrlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_crl::UpdateCrlError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::update_crl::UpdateCrlError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_crl::UpdateCrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -762,6 +814,7 @@ impl From<crate::operation::update_profile::UpdateProfileError> for Error {
         match err {
             crate::operation::update_profile::UpdateProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_profile::UpdateProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_profile::UpdateProfileError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::update_profile::UpdateProfileError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_profile::UpdateProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -788,6 +841,9 @@ impl From<crate::operation::update_trust_anchor::UpdateTrustAnchorError> for Err
             crate::operation::update_trust_anchor::UpdateTrustAnchorError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::update_trust_anchor::UpdateTrustAnchorError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::update_trust_anchor::UpdateTrustAnchorError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_trust_anchor::UpdateTrustAnchorError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -798,6 +854,7 @@ impl ::std::error::Error for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServiceUnavailableException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -809,6 +866,7 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
             Self::TooManyTagsException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

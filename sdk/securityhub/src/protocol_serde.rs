@@ -193,6 +193,12 @@ pub(crate) mod shape_get_resources_v2;
 
 pub(crate) mod shape_get_security_control_definition;
 
+pub(crate) mod shape_get_software_resources_v2;
+
+pub(crate) mod shape_get_software_statistics_v2;
+
+pub(crate) mod shape_get_software_v2;
+
 pub(crate) mod shape_invite_members;
 
 pub(crate) mod shape_list_aggregators_v2;
@@ -376,6 +382,12 @@ pub(crate) mod shape_get_resources_statistics_v2_input;
 pub(crate) mod shape_get_resources_trends_v2_input;
 
 pub(crate) mod shape_get_resources_v2_input;
+
+pub(crate) mod shape_get_software_resources_v2_input;
+
+pub(crate) mod shape_get_software_statistics_v2_input;
+
+pub(crate) mod shape_get_software_v2_input;
 
 pub(crate) mod shape_internal_exception;
 
@@ -613,6 +625,16 @@ pub(crate) mod shape_security_controls;
 
 pub(crate) mod shape_severity_update;
 
+pub(crate) mod shape_software_filters;
+
+pub(crate) mod shape_software_group_by_rule;
+
+pub(crate) mod shape_software_list;
+
+pub(crate) mod shape_software_resource_result_list;
+
+pub(crate) mod shape_software_scopes;
+
 pub(crate) mod shape_sort_criterion;
 
 pub(crate) mod shape_standards;
@@ -811,6 +833,12 @@ pub(crate) mod shape_service_now_update_configuration;
 
 pub(crate) mod shape_severity;
 
+pub(crate) mod shape_software_composite_filter;
+
+pub(crate) mod shape_software_resource_result;
+
+pub(crate) mod shape_software_result;
+
 pub(crate) mod shape_standard;
 
 pub(crate) mod shape_standards_control;
@@ -978,6 +1006,8 @@ pub(crate) mod shape_security_controls_configuration;
 pub(crate) mod shape_sequence;
 
 pub(crate) mod shape_software_package;
+
+pub(crate) mod shape_software_string_filter;
 
 pub(crate) mod shape_standards_control_arn_list;
 

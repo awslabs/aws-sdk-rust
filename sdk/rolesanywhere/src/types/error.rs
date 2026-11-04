@@ -3,6 +3,8 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
+pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableException;
+
 pub use crate::types::error::_validation_exception::ValidationException;
 
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
@@ -10,6 +12,8 @@ pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
 mod _access_denied_exception;
 
 mod _resource_not_found_exception;
+
+mod _service_unavailable_exception;
 
 mod _too_many_tags_exception;
 

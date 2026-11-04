@@ -140,6 +140,8 @@ impl Client {
 /// Import this trait to get `wait_until` methods on the client.
 ///
 pub trait Waiters {
+    /// Wait until a bulk operation is completed.
+    fn wait_until_bulk_operation_completed(&self) -> crate::waiters::bulk_operation_completed::BulkOperationCompletedFluentBuilder;
     /// Wait for `contributor_insights_enabled`
     fn wait_until_contributor_insights_enabled(&self) -> crate::waiters::contributor_insights_enabled::ContributorInsightsEnabledFluentBuilder;
     /// Wait for `export_completed`
@@ -156,6 +158,9 @@ pub trait Waiters {
     fn wait_until_table_not_exists(&self) -> crate::waiters::table_not_exists::TableNotExistsFluentBuilder;
 }
 impl Waiters for Client {
+    fn wait_until_bulk_operation_completed(&self) -> crate::waiters::bulk_operation_completed::BulkOperationCompletedFluentBuilder {
+        crate::waiters::bulk_operation_completed::BulkOperationCompletedFluentBuilder::new(self.handle.clone())
+    }
     fn wait_until_contributor_insights_enabled(&self) -> crate::waiters::contributor_insights_enabled::ContributorInsightsEnabledFluentBuilder {
         crate::waiters::contributor_insights_enabled::ContributorInsightsEnabledFluentBuilder::new(self.handle.clone())
     }
@@ -200,6 +205,8 @@ mod batch_get_item;
 
 mod batch_write_item;
 
+mod cancel_bulk_operation;
+
 mod create_backup;
 
 mod create_global_table;
@@ -243,6 +250,8 @@ mod delete_table;
 
 mod describe_backup;
 
+mod describe_bulk_operation;
+
 mod describe_continuous_backups;
 
 mod describe_contributor_insights;
@@ -285,6 +294,8 @@ mod import_table;
 
 mod list_backups;
 
+mod list_bulk_operations;
+
 mod list_contributor_insights;
 
 mod list_exports;
@@ -310,6 +321,8 @@ mod restore_table_to_point_in_time;
 mod scan;
 
 mod search_vectors;
+
+mod start_bulk_put_items;
 
 mod tag_resource;
 

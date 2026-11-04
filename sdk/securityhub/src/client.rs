@@ -333,6 +333,12 @@ mod get_resources_v2;
 
 mod get_security_control_definition;
 
+mod get_software_resources_v2;
+
+mod get_software_statistics_v2;
+
+mod get_software_v2;
+
 mod invite_members;
 
 mod list_aggregators_v2;

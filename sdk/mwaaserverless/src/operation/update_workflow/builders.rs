@@ -220,6 +220,26 @@ impl UpdateWorkflowFluentBuilder {
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         self.inner.get_network_configuration()
     }
+    /// <p>The environment variables to set for tasks in the workflow.</p><important>
+    /// <p>The variables that you specify replace all existing environment variables for the workflow. If you don't specify this parameter, the workflow has no environment variables. To keep existing environment variables, include them in the request.</p>
+    /// </important>
+    pub fn environment(mut self, input: crate::types::Environment) -> Self {
+        self.inner = self.inner.environment(input);
+        self
+    }
+    /// <p>The environment variables to set for tasks in the workflow.</p><important>
+    /// <p>The variables that you specify replace all existing environment variables for the workflow. If you don't specify this parameter, the workflow has no environment variables. To keep existing environment variables, include them in the request.</p>
+    /// </important>
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
+        self.inner = self.inner.set_environment(input);
+        self
+    }
+    /// <p>The environment variables to set for tasks in the workflow.</p><important>
+    /// <p>The variables that you specify replace all existing environment variables for the workflow. If you don't specify this parameter, the workflow has no environment variables. To keep existing environment variables, include them in the request.</p>
+    /// </important>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::Environment> {
+        self.inner.get_environment()
+    }
     /// <p>The trigger mode for the workflow execution.</p>
     pub fn trigger_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trigger_mode(input.into());

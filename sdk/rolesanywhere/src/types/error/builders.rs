@@ -3,6 +3,8 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuil
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
 
+pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableExceptionBuilder;
+
 pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsExceptionBuilder;

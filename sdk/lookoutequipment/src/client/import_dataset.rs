@@ -14,6 +14,10 @@ impl super::Client {
     ///   - [`status(Option<DatasetStatus>)`](crate::operation::import_dataset::ImportDatasetOutput::status): <p>The status of the <code>ImportDataset</code> operation.</p>
     ///   - [`job_id(Option<String>)`](crate::operation::import_dataset::ImportDatasetOutput::job_id): <p>A unique identifier for the job of importing the dataset.</p>
     /// - On failure, responds with [`SdkError<ImportDatasetError>`](crate::operation::import_dataset::ImportDatasetError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn import_dataset(&self) -> crate::operation::import_dataset::builders::ImportDatasetFluentBuilder {
         crate::operation::import_dataset::builders::ImportDatasetFluentBuilder::new(self.handle.clone())
     }

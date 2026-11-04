@@ -26,6 +26,8 @@ pub struct OptionGroup {
     pub source_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the option group was copied.</p>
     pub copy_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Specifies the Amazon Web Services Region for the option group from which this option group is copied.</p>
+    pub source_region: ::std::option::Option<::std::string::String>,
 }
 impl OptionGroup {
     /// <p>Specifies the name of the option group.</p>
@@ -74,6 +76,10 @@ impl OptionGroup {
     pub fn copy_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.copy_timestamp.as_ref()
     }
+    /// <p>Specifies the Amazon Web Services Region for the option group from which this option group is copied.</p>
+    pub fn source_region(&self) -> ::std::option::Option<&str> {
+        self.source_region.as_deref()
+    }
 }
 impl OptionGroup {
     /// Creates a new builder-style object to manufacture [`OptionGroup`](crate::types::OptionGroup).
@@ -97,6 +103,7 @@ pub struct OptionGroupBuilder {
     pub(crate) source_option_group: ::std::option::Option<::std::string::String>,
     pub(crate) source_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) copy_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) source_region: ::std::option::Option<::std::string::String>,
 }
 impl OptionGroupBuilder {
     /// <p>Specifies the name of the option group.</p>
@@ -259,6 +266,20 @@ impl OptionGroupBuilder {
     pub fn get_copy_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.copy_timestamp
     }
+    /// <p>Specifies the Amazon Web Services Region for the option group from which this option group is copied.</p>
+    pub fn source_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the Amazon Web Services Region for the option group from which this option group is copied.</p>
+    pub fn set_source_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_region = input;
+        self
+    }
+    /// <p>Specifies the Amazon Web Services Region for the option group from which this option group is copied.</p>
+    pub fn get_source_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_region
+    }
     /// Consumes the builder and constructs a [`OptionGroup`](crate::types::OptionGroup).
     pub fn build(self) -> crate::types::OptionGroup {
         crate::types::OptionGroup {
@@ -273,6 +294,7 @@ impl OptionGroupBuilder {
             source_option_group: self.source_option_group,
             source_account_id: self.source_account_id,
             copy_timestamp: self.copy_timestamp,
+            source_region: self.source_region,
         }
     }
 }

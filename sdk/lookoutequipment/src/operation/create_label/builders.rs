@@ -23,6 +23,10 @@ impl crate::operation::create_label::builders::CreateLabelInputBuilder {
 /// Fluent builder constructing a request to `CreateLabel`.
 ///
 /// <p>Creates a label for an event.</p>
+#[deprecated(
+    note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+    since = "2026-10-07"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLabelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

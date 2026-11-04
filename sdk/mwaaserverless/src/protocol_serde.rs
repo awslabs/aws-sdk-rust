@@ -113,6 +113,8 @@ pub(crate) mod shape_definition_s3_location;
 
 pub(crate) mod shape_encryption_configuration;
 
+pub(crate) mod shape_environment;
+
 pub(crate) mod shape_generic_map;
 
 pub(crate) mod shape_logging_configuration;
@@ -138,6 +140,8 @@ pub(crate) mod shape_workflow_run_summaries;
 pub(crate) mod shape_workflow_summaries;
 
 pub(crate) mod shape_workflow_version_summaries;
+
+pub(crate) mod shape_environment_variables_map;
 
 pub(crate) mod shape_s3_location;
 

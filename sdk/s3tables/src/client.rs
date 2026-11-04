@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateNamespace`](crate::operation::create_namespace) operation has
-/// a [`Client::create_namespace`], function which returns a builder for that operation.
+/// For example, the [`CompleteTableMigration`](crate::operation::complete_table_migration) operation has
+/// a [`Client::complete_table_migration`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_namespace()
-///     .table_bucket_arn("example")
+/// let result = client.complete_table_migration()
+///     .table_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod complete_table_migration;
+
 mod create_namespace;
 
 mod create_table;
@@ -153,7 +155,7 @@ mod create_table_bucket;
 /// # let client: aws_sdk_s3tables::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_namespace()
+/// let result = client.complete_table_migration()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -213,6 +215,8 @@ mod get_table_maintenance_job_status;
 
 mod get_table_metadata_location;
 
+mod get_table_migration;
+
 mod get_table_policy;
 
 mod get_table_record_expiration_configuration;
@@ -228,6 +232,8 @@ mod get_table_storage_class;
 mod list_namespaces;
 
 mod list_table_buckets;
+
+mod list_table_migrations;
 
 mod list_tables;
 
@@ -255,8 +261,14 @@ mod put_table_replication;
 
 mod rename_table;
 
+mod start_table_migration;
+
+mod sync_table_migration;
+
 mod tag_resource;
 
 mod untag_resource;
 
 mod update_table_metadata_location;
+
+mod update_table_migration;

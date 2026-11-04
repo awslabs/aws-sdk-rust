@@ -253,6 +253,9 @@ pub(crate) fn de_get_workflow(
                         depth + 1,
                     )?);
                 }
+                "Environment" => {
+                    builder = builder.set_environment(crate::protocol_serde::shape_environment::de_environment(tokens, _value, depth + 1)?);
+                }
                 "TriggerMode" => {
                     builder = builder.set_trigger_mode(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

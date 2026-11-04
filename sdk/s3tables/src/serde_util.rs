@@ -229,6 +229,60 @@ pub(crate) fn get_table_metadata_location_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_table_migration_output_output_correct_errors(
+    mut builder: crate::operation::get_table_migration::builders::GetTableMigrationOutputBuilder,
+) -> crate::operation::get_table_migration::builders::GetTableMigrationOutputBuilder {
+    if builder.migration_id.is_none() {
+        builder.migration_id = Some(Default::default())
+    }
+    if builder.table_bucket_arn.is_none() {
+        builder.table_bucket_arn = Some(Default::default())
+    }
+    if builder.namespace.is_none() {
+        builder.namespace = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::MigrationType>().ok()
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::MigrationState>().ok()
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.review_migration_plan.is_none() {
+        builder.review_migration_plan = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.state_updated_at.is_none() {
+        builder.state_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.source_type.is_none() {
+        builder.source_type = "no value was set".parse::<crate::types::MigrationSourceType>().ok()
+    }
+    if builder.source.is_none() {
+        builder.source = Some(crate::types::SourceConfiguration::Unknown)
+    }
+    if builder.data_migration.is_none() {
+        builder.data_migration = {
+            let builder = crate::types::builders::DataMigrationOverviewBuilder::default();
+            Some(crate::serde_util::data_migration_overview_correct_errors(builder).build())
+        }
+    }
+    if builder.migration_output.is_none() {
+        builder.migration_output = {
+            let builder = crate::types::builders::MigrationOutputOverviewBuilder::default();
+            crate::serde_util::migration_output_overview_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_table_policy_output_output_correct_errors(
     mut builder: crate::operation::get_table_policy::builders::GetTablePolicyOutputBuilder,
 ) -> crate::operation::get_table_policy::builders::GetTablePolicyOutputBuilder {
@@ -316,6 +370,15 @@ pub(crate) fn list_table_buckets_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_table_migrations_output_output_correct_errors(
+    mut builder: crate::operation::list_table_migrations::builders::ListTableMigrationsOutputBuilder,
+) -> crate::operation::list_table_migrations::builders::ListTableMigrationsOutputBuilder {
+    if builder.migrations.is_none() {
+        builder.migrations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_tables_output_output_correct_errors(
     mut builder: crate::operation::list_tables::builders::ListTablesOutputBuilder,
 ) -> crate::operation::list_tables::builders::ListTablesOutputBuilder {
@@ -349,6 +412,30 @@ pub(crate) fn put_table_replication_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_table_migration_output_output_correct_errors(
+    mut builder: crate::operation::start_table_migration::builders::StartTableMigrationOutputBuilder,
+) -> crate::operation::start_table_migration::builders::StartTableMigrationOutputBuilder {
+    if builder.migration_id.is_none() {
+        builder.migration_id = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::MigrationState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn sync_table_migration_output_output_correct_errors(
+    mut builder: crate::operation::sync_table_migration::builders::SyncTableMigrationOutputBuilder,
+) -> crate::operation::sync_table_migration::builders::SyncTableMigrationOutputBuilder {
+    if builder.migration_id.is_none() {
+        builder.migration_id = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::MigrationState>().ok()
+    }
+    builder
+}
+
 pub(crate) fn update_table_metadata_location_output_output_correct_errors(
     mut builder: crate::operation::update_table_metadata_location::builders::UpdateTableMetadataLocationOutputBuilder,
 ) -> crate::operation::update_table_metadata_location::builders::UpdateTableMetadataLocationOutputBuilder {
@@ -366,6 +453,18 @@ pub(crate) fn update_table_metadata_location_output_output_correct_errors(
     }
     if builder.metadata_location.is_none() {
         builder.metadata_location = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_table_migration_output_output_correct_errors(
+    mut builder: crate::operation::update_table_migration::builders::UpdateTableMigrationOutputBuilder,
+) -> crate::operation::update_table_migration::builders::UpdateTableMigrationOutputBuilder {
+    if builder.migration_id.is_none() {
+        builder.migration_id = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::MigrationState>().ok()
     }
     builder
 }
@@ -400,6 +499,51 @@ pub(crate) fn storage_class_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn data_migration_overview_correct_errors(
+    mut builder: crate::types::builders::DataMigrationOverviewBuilder,
+) -> crate::types::builders::DataMigrationOverviewBuilder {
+    if builder.maintenance_settings.is_none() {
+        builder.maintenance_settings = {
+            let builder = crate::types::builders::MaintenanceSettingsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.migration_policies.is_none() {
+        builder.migration_policies = {
+            let builder = crate::types::builders::MigrationPoliciesBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn migration_output_overview_correct_errors(
+    mut builder: crate::types::builders::MigrationOutputOverviewBuilder,
+) -> crate::types::builders::MigrationOutputOverviewBuilder {
+    if builder.bucket.is_none() {
+        builder.bucket = Some(Default::default())
+    }
+    if builder.table_compatibility_report.is_none() {
+        builder.table_compatibility_report = {
+            let builder = crate::types::builders::ReportOverviewBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.object_compatibility_report.is_none() {
+        builder.object_compatibility_report = {
+            let builder = crate::types::builders::ReportOverviewBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.object_migration_report.is_none() {
+        builder.object_migration_report = {
+            let builder = crate::types::builders::ReportOverviewBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn table_replication_configuration_correct_errors(
     mut builder: crate::types::builders::TableReplicationConfigurationBuilder,
 ) -> crate::types::builders::TableReplicationConfigurationBuilder {
@@ -408,6 +552,60 @@ pub(crate) fn table_replication_configuration_correct_errors(
     }
     if builder.rules.is_none() {
         builder.rules = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn migration_failure_reason_correct_errors(
+    mut builder: crate::types::builders::MigrationFailureReasonBuilder,
+) -> crate::types::builders::MigrationFailureReasonBuilder {
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::MigrationFailureCode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn glue_table_source_correct_errors(
+    mut builder: crate::types::builders::GlueTableSourceBuilder,
+) -> crate::types::builders::GlueTableSourceBuilder {
+    if builder.catalog_id.is_none() {
+        builder.catalog_id = Some(Default::default())
+    }
+    if builder.database_name.is_none() {
+        builder.database_name = Some(Default::default())
+    }
+    if builder.table_name.is_none() {
+        builder.table_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn migration_summary_correct_errors(
+    mut builder: crate::types::builders::MigrationSummaryBuilder,
+) -> crate::types::builders::MigrationSummaryBuilder {
+    if builder.migration_id.is_none() {
+        builder.migration_id = Some(Default::default())
+    }
+    if builder.table_bucket_arn.is_none() {
+        builder.table_bucket_arn = Some(Default::default())
+    }
+    if builder.namespace.is_none() {
+        builder.namespace = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::MigrationType>().ok()
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::MigrationState>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.state_updated_at.is_none() {
+        builder.state_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

@@ -34,6 +34,21 @@ pub fn de_create_trust_anchor_http_error(
             }
             tmp
         }),
+        "ServiceUnavailableException" => crate::operation::create_trust_anchor::CreateTrustAnchorError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::create_trust_anchor::CreateTrustAnchorError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::service_unavailable_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_trust_anchor::CreateTrustAnchorError::unhandled)?
+            };
+            tmp
+        }),
         "ValidationException" => crate::operation::create_trust_anchor::CreateTrustAnchorError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {

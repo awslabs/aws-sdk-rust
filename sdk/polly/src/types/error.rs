@@ -9,6 +9,14 @@ pub use crate::types::error::_invalid_task_id_exception::InvalidTaskIdException;
 
 pub use crate::types::error::_synthesis_task_not_found_exception::SynthesisTaskNotFoundException;
 
+pub use crate::types::error::_invalid_tag_parameter_exception::InvalidTagParameterException;
+
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
+
+pub use crate::types::error::_throttling_exception::ThrottlingException;
+
+pub use crate::types::error::_validation_exception::ValidationException;
+
 pub use crate::types::error::_invalid_lexicon_exception::InvalidLexiconException;
 
 pub use crate::types::error::_lexicon_size_exceeded_exception::LexiconSizeExceededException;
@@ -17,15 +25,13 @@ pub use crate::types::error::_max_lexeme_length_exceeded_exception::MaxLexemeLen
 
 pub use crate::types::error::_max_lexicons_number_exceeded_exception::MaxLexiconsNumberExceededException;
 
+pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
+
 pub use crate::types::error::_unsupported_pls_alphabet_exception::UnsupportedPlsAlphabetException;
 
 pub use crate::types::error::_unsupported_pls_language_exception::UnsupportedPlsLanguageException;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
-
-pub use crate::types::error::_throttling_exception::ThrottlingException;
-
-pub use crate::types::error::_validation_exception::ValidationException;
 
 pub use crate::types::error::_engine_not_supported_exception::EngineNotSupportedException;
 
@@ -289,6 +295,8 @@ mod _invalid_sns_topic_arn_exception;
 
 mod _invalid_ssml_exception;
 
+mod _invalid_tag_parameter_exception;
+
 mod _invalid_task_id_exception;
 
 mod _language_not_supported_exception;
@@ -303,6 +311,8 @@ mod _max_lexeme_length_exceeded_exception;
 
 mod _max_lexicons_number_exceeded_exception;
 
+mod _resource_not_found_exception;
+
 mod _service_failure_exception;
 
 mod _service_quota_exceeded_exception;
@@ -314,6 +324,8 @@ mod _synthesis_task_not_found_exception;
 mod _text_length_exceeded_exception;
 
 mod _throttling_exception;
+
+mod _too_many_tags_exception;
 
 mod _unsupported_pls_alphabet_exception;
 

@@ -401,17 +401,17 @@ impl CopyDBSnapshotFluentBuilder {
     pub fn get_snapshot_target(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_target()
     }
-    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account or Amazon Web Services Region and associate it with the target DB snapshot.</p>
     pub fn copy_option_group(mut self, input: bool) -> Self {
         self.inner = self.inner.copy_option_group(input);
         self
     }
-    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account or Amazon Web Services Region and associate it with the target DB snapshot.</p>
     pub fn set_copy_option_group(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_copy_option_group(input);
         self
     }
-    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account or Amazon Web Services Region and associate it with the target DB snapshot.</p>
     pub fn get_copy_option_group(&self) -> &::std::option::Option<bool> {
         self.inner.get_copy_option_group()
     }
@@ -428,5 +428,54 @@ impl CopyDBSnapshotFluentBuilder {
     /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
     pub fn get_snapshot_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_availability_zone()
+    }
+    ///
+    /// Appends an item to `TagSpecifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>Tags to assign to the copied option group. By default, the copied option group isn't tagged.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>og</code> - The copied option group.</p></li>
+    /// </ul>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can only be specified when <code>CopyOptionGroup</code> is <code>true</code></p></li>
+    /// </ul>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        self.inner = self.inner.tag_specifications(input);
+        self
+    }
+    /// <p>Tags to assign to the copied option group. By default, the copied option group isn't tagged.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>og</code> - The copied option group.</p></li>
+    /// </ul>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can only be specified when <code>CopyOptionGroup</code> is <code>true</code></p></li>
+    /// </ul>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.inner = self.inner.set_tag_specifications(input);
+        self
+    }
+    /// <p>Tags to assign to the copied option group. By default, the copied option group isn't tagged.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>og</code> - The copied option group.</p></li>
+    /// </ul>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Can only be specified when <code>CopyOptionGroup</code> is <code>true</code></p></li>
+    /// </ul>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
     }
 }

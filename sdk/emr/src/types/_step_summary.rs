@@ -18,6 +18,8 @@ pub struct StepSummary {
     pub log_uri: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Additional information about the step, including the YARN application IDs associated with the step and the resource manager that processed it.</p>
+    pub additional_info: ::std::option::Option<crate::types::StepAdditionalInfo>,
 }
 impl StepSummary {
     /// <p>The identifier of the cluster step.</p>
@@ -48,6 +50,10 @@ impl StepSummary {
     pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
         self.encryption_key_arn.as_deref()
     }
+    /// <p>Additional information about the step, including the YARN application IDs associated with the step and the resource manager that processed it.</p>
+    pub fn additional_info(&self) -> ::std::option::Option<&crate::types::StepAdditionalInfo> {
+        self.additional_info.as_ref()
+    }
 }
 impl StepSummary {
     /// Creates a new builder-style object to manufacture [`StepSummary`](crate::types::StepSummary).
@@ -67,6 +73,7 @@ pub struct StepSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StepStatus>,
     pub(crate) log_uri: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_info: ::std::option::Option<crate::types::StepAdditionalInfo>,
 }
 impl StepSummaryBuilder {
     /// <p>The identifier of the cluster step.</p>
@@ -167,6 +174,20 @@ impl StepSummaryBuilder {
     pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_key_arn
     }
+    /// <p>Additional information about the step, including the YARN application IDs associated with the step and the resource manager that processed it.</p>
+    pub fn additional_info(mut self, input: crate::types::StepAdditionalInfo) -> Self {
+        self.additional_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional information about the step, including the YARN application IDs associated with the step and the resource manager that processed it.</p>
+    pub fn set_additional_info(mut self, input: ::std::option::Option<crate::types::StepAdditionalInfo>) -> Self {
+        self.additional_info = input;
+        self
+    }
+    /// <p>Additional information about the step, including the YARN application IDs associated with the step and the resource manager that processed it.</p>
+    pub fn get_additional_info(&self) -> &::std::option::Option<crate::types::StepAdditionalInfo> {
+        &self.additional_info
+    }
     /// Consumes the builder and constructs a [`StepSummary`](crate::types::StepSummary).
     pub fn build(self) -> crate::types::StepSummary {
         crate::types::StepSummary {
@@ -177,6 +198,7 @@ impl StepSummaryBuilder {
             status: self.status,
             log_uri: self.log_uri,
             encryption_key_arn: self.encryption_key_arn,
+            additional_info: self.additional_info,
         }
     }
 }

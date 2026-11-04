@@ -10,6 +10,10 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput::creation_time): <p>The time when the resource policy was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput::last_modified_time): <p>The time when the resource policy was last modified.</p>
     /// - On failure, responds with [`SdkError<DescribeResourcePolicyError>`](crate::operation::describe_resource_policy::DescribeResourcePolicyError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn describe_resource_policy(&self) -> crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder {
         crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::new(self.handle.clone())
     }

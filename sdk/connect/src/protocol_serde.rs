@@ -2141,6 +2141,8 @@ pub(crate) mod shape_calculation_component;
 
 pub(crate) mod shape_campaign;
 
+pub(crate) mod shape_case_entries;
+
 pub(crate) mod shape_categories_attribute_filter;
 
 pub(crate) mod shape_chat_entry_point_parameters;
@@ -2604,6 +2606,8 @@ pub(crate) mod shape_auto_evaluation_details;
 pub(crate) mod shape_available_filter;
 
 pub(crate) mod shape_calculation_component_list;
+
+pub(crate) mod shape_case_entry;
 
 pub(crate) mod shape_case_sla_configuration;
 

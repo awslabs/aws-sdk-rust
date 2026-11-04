@@ -15,6 +15,8 @@ pub use crate::types::_workflow_status::WorkflowStatus;
 
 pub use crate::types::_code::Code;
 
+pub use crate::types::_environment::Environment;
+
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_encryption_type::EncryptionType;
@@ -46,6 +48,8 @@ mod _definition_s3_location;
 mod _encryption_configuration;
 
 mod _encryption_type;
+
+mod _environment;
 
 mod _logging_configuration;
 

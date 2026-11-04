@@ -35,6 +35,8 @@ pub(crate) mod shape_list_lexicons;
 
 pub(crate) mod shape_list_speech_synthesis_tasks;
 
+pub(crate) mod shape_list_tags_for_resource;
+
 pub(crate) mod shape_put_lexicon;
 
 pub(crate) mod shape_start_speech_synthesis_stream;
@@ -42,6 +44,10 @@ pub(crate) mod shape_start_speech_synthesis_stream;
 pub(crate) mod shape_start_speech_synthesis_task;
 
 pub(crate) mod shape_synthesize_speech;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -67,6 +73,8 @@ pub(crate) mod shape_invalid_sns_topic_arn_exception;
 
 pub(crate) mod shape_invalid_ssml_exception;
 
+pub(crate) mod shape_invalid_tag_parameter_exception;
+
 pub(crate) mod shape_invalid_task_id_exception;
 
 pub(crate) mod shape_language_not_supported_exception;
@@ -82,6 +90,8 @@ pub(crate) mod shape_max_lexeme_length_exceeded_exception;
 pub(crate) mod shape_max_lexicons_number_exceeded_exception;
 
 pub(crate) mod shape_put_lexicon_input;
+
+pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_failure_exception;
 
@@ -101,13 +111,19 @@ pub(crate) mod shape_synthesize_speech_input;
 
 pub(crate) mod shape_synthesize_speech_output;
 
+pub(crate) mod shape_tag_resource_input;
+
 pub(crate) mod shape_text_length_exceeded_exception;
 
 pub(crate) mod shape_throttling_exception;
 
+pub(crate) mod shape_too_many_tags_exception;
+
 pub(crate) mod shape_unsupported_pls_alphabet_exception;
 
 pub(crate) mod shape_unsupported_pls_language_exception;
+
+pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -128,6 +144,8 @@ pub(crate) mod shape_lexicon_description_list;
 pub(crate) mod shape_synthesis_task;
 
 pub(crate) mod shape_synthesis_tasks;
+
+pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_text_event;
 

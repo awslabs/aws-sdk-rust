@@ -11,6 +11,8 @@ pub struct ListRealtimeContactAnalysisSegmentsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>A filter that limits the category segments returned by the operation. When provided, use <code>CategoriesAttributeFilter</code> to return only the category segments whose rules have tags that match the filter. This enforces tag-based access control on the categories that the caller can view.</p>
+    pub list_filter: ::std::option::Option<crate::types::RealTimeContactAnalysisSegmentsFilter>,
 }
 impl ListRealtimeContactAnalysisSegmentsInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
@@ -29,6 +31,10 @@ impl ListRealtimeContactAnalysisSegmentsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>A filter that limits the category segments returned by the operation. When provided, use <code>CategoriesAttributeFilter</code> to return only the category segments whose rules have tags that match the filter. This enforces tag-based access control on the categories that the caller can view.</p>
+    pub fn list_filter(&self) -> ::std::option::Option<&crate::types::RealTimeContactAnalysisSegmentsFilter> {
+        self.list_filter.as_ref()
+    }
 }
 impl ListRealtimeContactAnalysisSegmentsInput {
     /// Creates a new builder-style object to manufacture [`ListRealtimeContactAnalysisSegmentsInput`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput).
@@ -45,6 +51,7 @@ pub struct ListRealtimeContactAnalysisSegmentsInputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) list_filter: ::std::option::Option<crate::types::RealTimeContactAnalysisSegmentsFilter>,
 }
 impl ListRealtimeContactAnalysisSegmentsInputBuilder {
     /// <p>The identifier of the Amazon Connect instance.</p>
@@ -105,6 +112,20 @@ impl ListRealtimeContactAnalysisSegmentsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>A filter that limits the category segments returned by the operation. When provided, use <code>CategoriesAttributeFilter</code> to return only the category segments whose rules have tags that match the filter. This enforces tag-based access control on the categories that the caller can view.</p>
+    pub fn list_filter(mut self, input: crate::types::RealTimeContactAnalysisSegmentsFilter) -> Self {
+        self.list_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A filter that limits the category segments returned by the operation. When provided, use <code>CategoriesAttributeFilter</code> to return only the category segments whose rules have tags that match the filter. This enforces tag-based access control on the categories that the caller can view.</p>
+    pub fn set_list_filter(mut self, input: ::std::option::Option<crate::types::RealTimeContactAnalysisSegmentsFilter>) -> Self {
+        self.list_filter = input;
+        self
+    }
+    /// <p>A filter that limits the category segments returned by the operation. When provided, use <code>CategoriesAttributeFilter</code> to return only the category segments whose rules have tags that match the filter. This enforces tag-based access control on the categories that the caller can view.</p>
+    pub fn get_list_filter(&self) -> &::std::option::Option<crate::types::RealTimeContactAnalysisSegmentsFilter> {
+        &self.list_filter
+    }
     /// Consumes the builder and constructs a [`ListRealtimeContactAnalysisSegmentsInput`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput).
     pub fn build(
         self,
@@ -118,6 +139,7 @@ impl ListRealtimeContactAnalysisSegmentsInputBuilder {
                 contact_id: self.contact_id,
                 max_results: self.max_results,
                 next_token: self.next_token,
+                list_filter: self.list_filter,
             },
         )
     }

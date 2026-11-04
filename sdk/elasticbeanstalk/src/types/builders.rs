@@ -113,6 +113,8 @@ pub use crate::types::_platform_framework::PlatformFrameworkBuilder;
 
 pub use crate::types::_custom_ami::CustomAmiBuilder;
 
+pub use crate::types::_default_ami::DefaultAmiBuilder;
+
 pub use crate::types::_listener::ListenerBuilder;
 
 pub use crate::types::_cpu_utilization::CpuUtilizationBuilder;

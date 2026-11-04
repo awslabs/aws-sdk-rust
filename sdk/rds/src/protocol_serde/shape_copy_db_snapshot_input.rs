@@ -66,6 +66,17 @@ pub fn ser_copy_db_snapshot_input_input_input(
     if let Some(var_25) = &input.snapshot_availability_zone {
         scope_24.string(var_25);
     }
+    #[allow(unused_mut)]
+    let mut scope_26 = writer.prefix("TagSpecifications");
+    if let Some(var_27) = &input.tag_specifications {
+        let mut list_29 = scope_26.start_list(false, Some("item"));
+        for item_28 in var_27 {
+            #[allow(unused_mut)]
+            let mut entry_30 = list_29.entry();
+            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_30, item_28)?;
+        }
+        list_29.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

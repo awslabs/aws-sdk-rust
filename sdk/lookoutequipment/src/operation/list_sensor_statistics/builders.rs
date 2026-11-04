@@ -23,6 +23,10 @@ impl crate::operation::list_sensor_statistics::builders::ListSensorStatisticsInp
 /// Fluent builder constructing a request to `ListSensorStatistics`.
 ///
 /// <p>Lists statistics about the data collected for each of the sensors that have been successfully ingested in the particular dataset. Can also be used to retreive Sensor Statistics for a previous ingestion job.</p>
+#[deprecated(
+    note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+    since = "2026-10-07"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSensorStatisticsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

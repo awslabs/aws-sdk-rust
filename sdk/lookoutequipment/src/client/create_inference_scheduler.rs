@@ -19,6 +19,10 @@ impl super::Client {
     ///   - [`status(Option<InferenceSchedulerStatus>)`](crate::operation::create_inference_scheduler::CreateInferenceSchedulerOutput::status): <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation.</p>
     ///   - [`model_quality(Option<ModelQuality>)`](crate::operation::create_inference_scheduler::CreateInferenceSchedulerOutput::model_quality): <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p> <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p> <p>For information about using labels with your models, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding labeling</a>.</p> <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
     /// - On failure, responds with [`SdkError<CreateInferenceSchedulerError>`](crate::operation::create_inference_scheduler::CreateInferenceSchedulerError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn create_inference_scheduler(&self) -> crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerFluentBuilder {
         crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerFluentBuilder::new(self.handle.clone())
     }

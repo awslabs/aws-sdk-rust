@@ -160,17 +160,17 @@ impl StartWorkflowRunFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
         self.inner.get_override_parameters()
     }
-    /// <p>Optional. The specific version of the workflow to execute. If not specified, the latest version is used.</p>
+    /// <p>Optional. The specific version of the workflow to execute. If you don't specify a version, we use the latest version.</p>
     pub fn workflow_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_version(input.into());
         self
     }
-    /// <p>Optional. The specific version of the workflow to execute. If not specified, the latest version is used.</p>
+    /// <p>Optional. The specific version of the workflow to execute. If you don't specify a version, we use the latest version.</p>
     pub fn set_workflow_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_version(input);
         self
     }
-    /// <p>Optional. The specific version of the workflow to execute. If not specified, the latest version is used.</p>
+    /// <p>Optional. The specific version of the workflow to execute. If you don't specify a version, we use the latest version.</p>
     pub fn get_workflow_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workflow_version()
     }

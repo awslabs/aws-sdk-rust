@@ -256,6 +256,15 @@ pub mod get_resources_v2;
 /// Types for the `GetSecurityControlDefinition` operation.
 pub mod get_security_control_definition;
 
+/// Types for the `GetSoftwareResourcesV2` operation.
+pub mod get_software_resources_v2;
+
+/// Types for the `GetSoftwareStatisticsV2` operation.
+pub mod get_software_statistics_v2;
+
+/// Types for the `GetSoftwareV2` operation.
+pub mod get_software_v2;
+
 /// Types for the `InviteMembers` operation.
 pub mod invite_members;
 

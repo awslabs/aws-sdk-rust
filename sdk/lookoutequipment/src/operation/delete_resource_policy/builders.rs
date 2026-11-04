@@ -23,6 +23,10 @@ impl crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInp
 /// Fluent builder constructing a request to `DeleteResourcePolicy`.
 ///
 /// <p>Deletes the resource policy attached to the resource.</p>
+#[deprecated(
+    note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+    since = "2026-10-07"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

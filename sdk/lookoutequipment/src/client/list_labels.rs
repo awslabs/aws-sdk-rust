@@ -15,6 +15,10 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_labels::ListLabelsOutput::next_token): <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
     ///   - [`label_summaries(Option<Vec::<LabelSummary>>)`](crate::operation::list_labels::ListLabelsOutput::label_summaries): <p>A summary of the items in the label group.</p><note>  <p>If you don't supply the <code>LabelGroupName</code> request parameter, or if you supply the name of a label group that doesn't exist, <code>ListLabels</code> returns an empty array in <code>LabelSummaries</code>.</p> </note>
     /// - On failure, responds with [`SdkError<ListLabelsError>`](crate::operation::list_labels::ListLabelsError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn list_labels(&self) -> crate::operation::list_labels::builders::ListLabelsFluentBuilder {
         crate::operation::list_labels::builders::ListLabelsFluentBuilder::new(self.handle.clone())
     }

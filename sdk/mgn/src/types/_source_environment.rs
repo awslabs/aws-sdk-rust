@@ -16,6 +16,7 @@
 ///     SourceEnvironment::CiscoAci => { /* ... */ },
 ///     SourceEnvironment::FortigateFirewall => { /* ... */ },
 ///     SourceEnvironment::LogicalModel => { /* ... */ },
+///     SourceEnvironment::MigrationPlanningArtifacts => { /* ... */ },
 ///     SourceEnvironment::ModelizeIt => { /* ... */ },
 ///     SourceEnvironment::Nsx => { /* ... */ },
 ///     SourceEnvironment::PaloAltoFirewall => { /* ... */ },
@@ -57,6 +58,8 @@ pub enum SourceEnvironment {
     #[allow(missing_docs)] // documentation missing in model
     LogicalModel,
     #[allow(missing_docs)] // documentation missing in model
+    MigrationPlanningArtifacts,
+    #[allow(missing_docs)] // documentation missing in model
     ModelizeIt,
     #[allow(missing_docs)] // documentation missing in model
     Nsx,
@@ -75,6 +78,7 @@ impl ::std::convert::From<&str> for SourceEnvironment {
             "CISCO_ACI" => SourceEnvironment::CiscoAci,
             "FORTIGATE_FIREWALL" => SourceEnvironment::FortigateFirewall,
             "LOGICAL_MODEL" => SourceEnvironment::LogicalModel,
+            "MIGRATION_PLANNING_ARTIFACTS" => SourceEnvironment::MigrationPlanningArtifacts,
             "MODELIZE_IT" => SourceEnvironment::ModelizeIt,
             "NSX" => SourceEnvironment::Nsx,
             "PALO_ALTO_FIREWALL" => SourceEnvironment::PaloAltoFirewall,
@@ -98,6 +102,7 @@ impl SourceEnvironment {
             SourceEnvironment::CiscoAci => "CISCO_ACI",
             SourceEnvironment::FortigateFirewall => "FORTIGATE_FIREWALL",
             SourceEnvironment::LogicalModel => "LOGICAL_MODEL",
+            SourceEnvironment::MigrationPlanningArtifacts => "MIGRATION_PLANNING_ARTIFACTS",
             SourceEnvironment::ModelizeIt => "MODELIZE_IT",
             SourceEnvironment::Nsx => "NSX",
             SourceEnvironment::PaloAltoFirewall => "PALO_ALTO_FIREWALL",
@@ -112,6 +117,7 @@ impl SourceEnvironment {
             "CISCO_ACI",
             "FORTIGATE_FIREWALL",
             "LOGICAL_MODEL",
+            "MIGRATION_PLANNING_ARTIFACTS",
             "MODELIZE_IT",
             "NSX",
             "PALO_ALTO_FIREWALL",
@@ -143,6 +149,7 @@ impl ::std::fmt::Display for SourceEnvironment {
             SourceEnvironment::CiscoAci => write!(f, "CISCO_ACI"),
             SourceEnvironment::FortigateFirewall => write!(f, "FORTIGATE_FIREWALL"),
             SourceEnvironment::LogicalModel => write!(f, "LOGICAL_MODEL"),
+            SourceEnvironment::MigrationPlanningArtifacts => write!(f, "MIGRATION_PLANNING_ARTIFACTS"),
             SourceEnvironment::ModelizeIt => write!(f, "MODELIZE_IT"),
             SourceEnvironment::Nsx => write!(f, "NSX"),
             SourceEnvironment::PaloAltoFirewall => write!(f, "PALO_ALTO_FIREWALL"),

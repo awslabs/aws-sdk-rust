@@ -10,6 +10,10 @@ impl super::Client {
     ///   - [`promote_mode(ModelPromoteMode)`](crate::operation::update_retraining_scheduler::builders::UpdateRetrainingSchedulerFluentBuilder::promote_mode) / [`set_promote_mode(Option<ModelPromoteMode>)`](crate::operation::update_retraining_scheduler::builders::UpdateRetrainingSchedulerFluentBuilder::set_promote_mode):<br>required: **false**<br><p>Indicates how the service will use new models. In <code>MANAGED</code> mode, new models will automatically be used for inference if they have better performance than the current model. In <code>MANUAL</code> mode, the new models will not be used <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/versioning-model.html#model-activation">until they are manually activated</a>.</p><br>
     /// - On success, responds with [`UpdateRetrainingSchedulerOutput`](crate::operation::update_retraining_scheduler::UpdateRetrainingSchedulerOutput)
     /// - On failure, responds with [`SdkError<UpdateRetrainingSchedulerError>`](crate::operation::update_retraining_scheduler::UpdateRetrainingSchedulerError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn update_retraining_scheduler(&self) -> crate::operation::update_retraining_scheduler::builders::UpdateRetrainingSchedulerFluentBuilder {
         crate::operation::update_retraining_scheduler::builders::UpdateRetrainingSchedulerFluentBuilder::new(self.handle.clone())
     }

@@ -9,6 +9,8 @@ pub struct CreateTrustAnchorInput {
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>Specifies whether the trust anchor is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub crl_dp_revocation_enabled: ::std::option::Option<bool>,
     /// <p>The tags to attach to the trust anchor.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
@@ -26,6 +28,10 @@ impl CreateTrustAnchorInput {
     /// <p>Specifies whether the trust anchor is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
+    }
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub fn crl_dp_revocation_enabled(&self) -> ::std::option::Option<bool> {
+        self.crl_dp_revocation_enabled
     }
     /// <p>The tags to attach to the trust anchor.</p>
     ///
@@ -54,6 +60,7 @@ pub struct CreateTrustAnchorInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::Source>,
     pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) crl_dp_revocation_enabled: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) notification_settings: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>>,
 }
@@ -101,6 +108,20 @@ impl CreateTrustAnchorInputBuilder {
     /// <p>Specifies whether the trust anchor is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
+    }
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub fn crl_dp_revocation_enabled(mut self, input: bool) -> Self {
+        self.crl_dp_revocation_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub fn set_crl_dp_revocation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.crl_dp_revocation_enabled = input;
+        self
+    }
+    /// <p>Specifies whether the trust anchor checks certificate revocation status against CRL distribution points.</p>
+    pub fn get_crl_dp_revocation_enabled(&self) -> &::std::option::Option<bool> {
+        &self.crl_dp_revocation_enabled
     }
     /// Appends an item to `tags`.
     ///
@@ -150,6 +171,7 @@ impl CreateTrustAnchorInputBuilder {
             name: self.name,
             source: self.source,
             enabled: self.enabled,
+            crl_dp_revocation_enabled: self.crl_dp_revocation_enabled,
             tags: self.tags,
             notification_settings: self.notification_settings,
         })

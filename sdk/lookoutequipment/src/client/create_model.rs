@@ -22,6 +22,10 @@ impl super::Client {
     ///   - [`model_arn(Option<String>)`](crate::operation::create_model::CreateModelOutput::model_arn): <p>The Amazon Resource Name (ARN) of the model being created.</p>
     ///   - [`status(Option<ModelStatus>)`](crate::operation::create_model::CreateModelOutput::status): <p>Indicates the status of the <code>CreateModel</code> operation.</p>
     /// - On failure, responds with [`SdkError<CreateModelError>`](crate::operation::create_model::CreateModelError)
+    #[deprecated(
+        note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+        since = "2026-10-07"
+    )]
     pub fn create_model(&self) -> crate::operation::create_model::builders::CreateModelFluentBuilder {
         crate::operation::create_model::builders::CreateModelFluentBuilder::new(self.handle.clone())
     }

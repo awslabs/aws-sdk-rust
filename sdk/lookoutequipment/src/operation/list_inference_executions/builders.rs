@@ -23,6 +23,10 @@ impl crate::operation::list_inference_executions::builders::ListInferenceExecuti
 /// Fluent builder constructing a request to `ListInferenceExecutions`.
 ///
 /// <p>Lists all inference executions that have been performed by the specified inference scheduler.</p>
+#[deprecated(
+    note = "End of support notice: On October 7, 2026, AWS ended support for Amazon Lookout for Equipment. For more information, see https://aws.amazon.com/products/lifecycle/",
+    since = "2026-10-07"
+)]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInferenceExecutionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

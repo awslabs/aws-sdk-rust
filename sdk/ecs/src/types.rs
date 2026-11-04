@@ -393,6 +393,8 @@ pub use crate::types::_container_restart_policy::ContainerRestartPolicy;
 
 pub use crate::types::_host_volume_properties::HostVolumeProperties;
 
+pub use crate::types::_log_driver_volume_configuration::LogDriverVolumeConfiguration;
+
 pub use crate::types::_gateway_elb_network_configuration::GatewayElbNetworkConfiguration;
 
 pub use crate::types::_gateway_elb_scheme::GatewayElbScheme;
@@ -1110,6 +1112,8 @@ mod _local_storage_type;
 mod _log_configuration;
 
 mod _log_driver;
+
+mod _log_driver_volume_configuration;
 
 mod _managed_agent;
 

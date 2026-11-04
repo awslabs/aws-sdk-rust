@@ -8,6 +8,8 @@ pub struct DescribeDatasetExportJobOutput {
     pub job_id: ::std::string::String,
     /// <p>The name of the workspace that contains the dataset export job.</p>
     pub workspace_name: ::std::string::String,
+    /// <p>The name of the dataset export job.</p>
+    pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the dataset export job.</p>
     pub status: crate::types::DatasetExportJobStatus,
     /// <p>The timestamp when the job started processing.</p>
@@ -32,6 +34,10 @@ impl DescribeDatasetExportJobOutput {
     pub fn workspace_name(&self) -> &str {
         use std::ops::Deref;
         self.workspace_name.deref()
+    }
+    /// <p>The name of the dataset export job.</p>
+    pub fn job_name(&self) -> ::std::option::Option<&str> {
+        self.job_name.as_deref()
     }
     /// <p>The current status of the dataset export job.</p>
     pub fn status(&self) -> &crate::types::DatasetExportJobStatus {
@@ -77,6 +83,7 @@ impl DescribeDatasetExportJobOutput {
 pub struct DescribeDatasetExportJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
+    pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DatasetExportJobStatus>,
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -115,6 +122,20 @@ impl DescribeDatasetExportJobOutputBuilder {
     /// <p>The name of the workspace that contains the dataset export job.</p>
     pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workspace_name
+    }
+    /// <p>The name of the dataset export job.</p>
+    pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the dataset export job.</p>
+    pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.job_name = input;
+        self
+    }
+    /// <p>The name of the dataset export job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The current status of the dataset export job.</p>
     /// This field is required.
@@ -240,6 +261,7 @@ impl DescribeDatasetExportJobOutputBuilder {
                     "workspace_name was not specified but it is required when building DescribeDatasetExportJobOutput",
                 )
             })?,
+            job_name: self.job_name,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
