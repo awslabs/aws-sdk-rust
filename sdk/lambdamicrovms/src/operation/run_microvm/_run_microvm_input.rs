@@ -5,7 +5,7 @@
 pub struct RunMicrovmInput {
     /// <p>The list of ingress network connectors to configure for the MicroVM.</p>
     pub ingress_network_connectors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The list of egress network connectors to configure for the MicroVM.</p>
+    /// <p>The list of egress network connectors available to the MicroVM at runtime.</p>
     pub egress_network_connectors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier (ARN or ID) of the MicroVM image to run.</p>
     pub image_identifier: ::std::option::Option<::std::string::String>,
@@ -31,7 +31,7 @@ impl RunMicrovmInput {
     pub fn ingress_network_connectors(&self) -> &[::std::string::String] {
         self.ingress_network_connectors.as_deref().unwrap_or_default()
     }
-    /// <p>The list of egress network connectors to configure for the MicroVM.</p>
+    /// <p>The list of egress network connectors available to the MicroVM at runtime.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.egress_network_connectors.is_none()`.
     pub fn egress_network_connectors(&self) -> &[::std::string::String] {
@@ -133,19 +133,19 @@ impl RunMicrovmInputBuilder {
     ///
     /// To override the contents of this collection use [`set_egress_network_connectors`](Self::set_egress_network_connectors).
     ///
-    /// <p>The list of egress network connectors to configure for the MicroVM.</p>
+    /// <p>The list of egress network connectors available to the MicroVM at runtime.</p>
     pub fn egress_network_connectors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.egress_network_connectors.unwrap_or_default();
         v.push(input.into());
         self.egress_network_connectors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of egress network connectors to configure for the MicroVM.</p>
+    /// <p>The list of egress network connectors available to the MicroVM at runtime.</p>
     pub fn set_egress_network_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.egress_network_connectors = input;
         self
     }
-    /// <p>The list of egress network connectors to configure for the MicroVM.</p>
+    /// <p>The list of egress network connectors available to the MicroVM at runtime.</p>
     pub fn get_egress_network_connectors(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.egress_network_connectors
     }

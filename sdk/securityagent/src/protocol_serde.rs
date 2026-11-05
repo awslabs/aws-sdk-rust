@@ -867,6 +867,8 @@ pub(crate) mod shape_git_hub_repository_metadata;
 
 pub(crate) mod shape_git_lab_repository_metadata;
 
+pub(crate) mod shape_group_metadata;
+
 pub(crate) mod shape_jira_project_metadata;
 
 pub(crate) mod shape_network_traffic_rule_list;

@@ -30,6 +30,8 @@ pub struct QuickResponseSearchResultData {
     pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the quick response search result data was last modified.</p>
     pub last_modified_time: ::aws_smithy_types::DateTime,
+    /// <p>The Amazon Web Services Region where the quick response was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
     /// <p>Whether the quick response is active.</p>
     pub is_active: bool,
     /// <p>The description of the quick response.</p>
@@ -104,6 +106,10 @@ impl QuickResponseSearchResultData {
     pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
+    /// <p>The Amazon Web Services Region where the quick response was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
     /// <p>Whether the quick response is active.</p>
     pub fn is_active(&self) -> bool {
         self.is_active
@@ -164,6 +170,7 @@ impl ::std::fmt::Debug for QuickResponseSearchResultData {
         formatter.field("contents", &self.contents);
         formatter.field("created_time", &self.created_time);
         formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_region", &self.last_modified_region);
         formatter.field("is_active", &self.is_active);
         formatter.field("description", &self.description);
         formatter.field("grouping_configuration", &self.grouping_configuration);
@@ -198,6 +205,7 @@ pub struct QuickResponseSearchResultDataBuilder {
     pub(crate) contents: ::std::option::Option<crate::types::QuickResponseContents>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
     pub(crate) is_active: ::std::option::Option<bool>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) grouping_configuration: ::std::option::Option<crate::types::GroupingConfiguration>,
@@ -377,6 +385,20 @@ impl QuickResponseSearchResultDataBuilder {
     /// <p>The timestamp when the quick response search result data was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where the quick response was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where the quick response was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the quick response was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
     }
     /// <p>Whether the quick response is active.</p>
     /// This field is required.
@@ -612,6 +634,7 @@ impl QuickResponseSearchResultDataBuilder {
                     "last_modified_time was not specified but it is required when building QuickResponseSearchResultData",
                 )
             })?,
+            last_modified_region: self.last_modified_region,
             is_active: self.is_active.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_active",
@@ -643,6 +666,7 @@ impl ::std::fmt::Debug for QuickResponseSearchResultDataBuilder {
         formatter.field("contents", &self.contents);
         formatter.field("created_time", &self.created_time);
         formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_region", &self.last_modified_region);
         formatter.field("is_active", &self.is_active);
         formatter.field("description", &self.description);
         formatter.field("grouping_configuration", &self.grouping_configuration);

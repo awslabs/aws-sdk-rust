@@ -421,6 +421,8 @@ pub(crate) mod shape_block_action;
 
 pub(crate) mod shape_challenge_javascript_sdk_injection_config;
 
+pub(crate) mod shape_connected_account_config;
+
 pub(crate) mod shape_crypto_config;
 
 pub(crate) mod shape_custom_response_bodies;
@@ -511,6 +513,10 @@ pub(crate) mod shape_challenge_javascript_sdk_injection;
 
 pub(crate) mod shape_challenge_response;
 
+pub(crate) mod shape_connected_account_chain_config;
+
+pub(crate) mod shape_connected_account_configs;
+
 pub(crate) mod shape_cookies;
 
 pub(crate) mod shape_count_action;
@@ -599,6 +605,8 @@ pub(crate) mod shape_bot_statistics;
 
 pub(crate) mod shape_condition;
 
+pub(crate) mod shape_connected_account_price;
+
 pub(crate) mod shape_cookie_match_pattern;
 
 pub(crate) mod shape_custom_http_header;
@@ -646,6 +654,8 @@ pub(crate) mod shape_aws_managed_rules_atp_rule_set;
 pub(crate) mod shape_aws_managed_rules_bot_control_rule_set;
 
 pub(crate) mod shape_conditions;
+
+pub(crate) mod shape_connected_account_payment_networks;
 
 pub(crate) mod shape_custom_http_headers;
 
@@ -718,6 +728,8 @@ pub(crate) mod shape_text_transformations;
 pub(crate) mod shape_address_field;
 
 pub(crate) mod shape_client_side_action;
+
+pub(crate) mod shape_connected_account_prices;
 
 pub(crate) mod shape_email_field;
 

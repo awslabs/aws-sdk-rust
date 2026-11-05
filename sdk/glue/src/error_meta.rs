@@ -5219,6 +5219,44 @@ impl From<crate::operation::get_jobs::GetJobsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_job_upgrade_analysis::GetJobUpgradeAnalysisError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_job_upgrade_analysis::GetJobUpgradeAnalysisError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_job_upgrade_analysis::GetJobUpgradeAnalysisError> for Error {
+    fn from(err: crate::operation::get_job_upgrade_analysis::GetJobUpgradeAnalysisError) -> Self {
+        match err {
+            crate::operation::get_job_upgrade_analysis::GetJobUpgradeAnalysisError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_job_upgrade_analysis::GetJobUpgradeAnalysisError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::get_job_upgrade_analysis::GetJobUpgradeAnalysisError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_job_upgrade_analysis::GetJobUpgradeAnalysisError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::get_job_upgrade_analysis::GetJobUpgradeAnalysisError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::get_job_upgrade_analysis::GetJobUpgradeAnalysisError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_mapping::GetMappingError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -8715,6 +8753,51 @@ impl From<crate::operation::start_job_run::StartJobRunError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_job_upgrade_analysis::StartJobUpgradeAnalysisError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_job_upgrade_analysis::StartJobUpgradeAnalysisError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_job_upgrade_analysis::StartJobUpgradeAnalysisError> for Error {
+    fn from(err: crate::operation::start_job_upgrade_analysis::StartJobUpgradeAnalysisError) -> Self {
+        match err {
+            crate::operation::start_job_upgrade_analysis::StartJobUpgradeAnalysisError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_job_upgrade_analysis::StartJobUpgradeAnalysisError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::start_job_upgrade_analysis::StartJobUpgradeAnalysisError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::start_job_upgrade_analysis::StartJobUpgradeAnalysisError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::start_job_upgrade_analysis::StartJobUpgradeAnalysisError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::start_job_upgrade_analysis::StartJobUpgradeAnalysisError::ResourceNumberLimitExceededException(inner) => {
+                Error::ResourceNumberLimitExceededException(inner)
+            }
+            crate::operation::start_job_upgrade_analysis::StartJobUpgradeAnalysisError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_job_upgrade_analysis::StartJobUpgradeAnalysisError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -9032,6 +9115,46 @@ impl From<crate::operation::stop_crawler_schedule::StopCrawlerScheduleError> for
                 Error::SchedulerTransitioningException(inner)
             }
             crate::operation::stop_crawler_schedule::StopCrawlerScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_job_upgrade_analysis::StopJobUpgradeAnalysisError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_job_upgrade_analysis::StopJobUpgradeAnalysisError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_job_upgrade_analysis::StopJobUpgradeAnalysisError> for Error {
+    fn from(err: crate::operation::stop_job_upgrade_analysis::StopJobUpgradeAnalysisError) -> Self {
+        match err {
+            crate::operation::stop_job_upgrade_analysis::StopJobUpgradeAnalysisError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::stop_job_upgrade_analysis::StopJobUpgradeAnalysisError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::stop_job_upgrade_analysis::StopJobUpgradeAnalysisError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::stop_job_upgrade_analysis::StopJobUpgradeAnalysisError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::stop_job_upgrade_analysis::StopJobUpgradeAnalysisError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::stop_job_upgrade_analysis::StopJobUpgradeAnalysisError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_job_upgrade_analysis::StopJobUpgradeAnalysisError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

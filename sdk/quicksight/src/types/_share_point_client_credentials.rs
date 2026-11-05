@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SharePointClientCredentials {
-    /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) key used to encrypt the SharePoint certificate credentials. This field is required.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the SharePoint certificate credentials. This field is required.</p>
     pub kms_key_arn: ::std::string::String,
     /// <p>The thumbprint of the certificate used for two-legged OAuth (2LO) authentication to SharePoint. This field is required.</p>
     pub cert_thumbprint: ::std::string::String,
 }
 impl SharePointClientCredentials {
-    /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) key used to encrypt the SharePoint certificate credentials. This field is required.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the SharePoint certificate credentials. This field is required.</p>
     pub fn kms_key_arn(&self) -> &str {
         use std::ops::Deref;
         self.kms_key_arn.deref()
@@ -44,18 +44,18 @@ pub struct SharePointClientCredentialsBuilder {
     pub(crate) cert_thumbprint: ::std::option::Option<::std::string::String>,
 }
 impl SharePointClientCredentialsBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) key used to encrypt the SharePoint certificate credentials. This field is required.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the SharePoint certificate credentials. This field is required.</p>
     /// This field is required.
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) key used to encrypt the SharePoint certificate credentials. This field is required.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the SharePoint certificate credentials. This field is required.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) key used to encrypt the SharePoint certificate credentials. This field is required.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the SharePoint certificate credentials. This field is required.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }

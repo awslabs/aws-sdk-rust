@@ -70,7 +70,7 @@ pub struct WebAcl {
     pub on_source_d_do_s_protection_config: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>,
     /// <p>Returns a list of <code>ApplicationAttribute</code>s.</p>
     pub application_config: ::std::option::Option<crate::types::ApplicationConfig>,
-    /// <p>The monetization configuration for the web ACL. Required when any rule in the web ACL uses the <code>Monetize</code> action. Specifies the cryptocurrency payment networks and currency mode for AI bot monetization.</p>
+    /// <p>The monetization configuration for the web ACL. Required when any rule in the web ACL uses the <code>Monetize</code> action. Specifies the payment settlement options and currency mode for AI bot monetization.</p>
     pub monetization_config: ::std::option::Option<crate::types::MonetizationConfig>,
 }
 impl WebAcl {
@@ -195,7 +195,7 @@ impl WebAcl {
     pub fn application_config(&self) -> ::std::option::Option<&crate::types::ApplicationConfig> {
         self.application_config.as_ref()
     }
-    /// <p>The monetization configuration for the web ACL. Required when any rule in the web ACL uses the <code>Monetize</code> action. Specifies the cryptocurrency payment networks and currency mode for AI bot monetization.</p>
+    /// <p>The monetization configuration for the web ACL. Required when any rule in the web ACL uses the <code>Monetize</code> action. Specifies the payment settlement options and currency mode for AI bot monetization.</p>
     pub fn monetization_config(&self) -> ::std::option::Option<&crate::types::MonetizationConfig> {
         self.monetization_config.as_ref()
     }
@@ -647,17 +647,17 @@ impl WebAclBuilder {
     pub fn get_application_config(&self) -> &::std::option::Option<crate::types::ApplicationConfig> {
         &self.application_config
     }
-    /// <p>The monetization configuration for the web ACL. Required when any rule in the web ACL uses the <code>Monetize</code> action. Specifies the cryptocurrency payment networks and currency mode for AI bot monetization.</p>
+    /// <p>The monetization configuration for the web ACL. Required when any rule in the web ACL uses the <code>Monetize</code> action. Specifies the payment settlement options and currency mode for AI bot monetization.</p>
     pub fn monetization_config(mut self, input: crate::types::MonetizationConfig) -> Self {
         self.monetization_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The monetization configuration for the web ACL. Required when any rule in the web ACL uses the <code>Monetize</code> action. Specifies the cryptocurrency payment networks and currency mode for AI bot monetization.</p>
+    /// <p>The monetization configuration for the web ACL. Required when any rule in the web ACL uses the <code>Monetize</code> action. Specifies the payment settlement options and currency mode for AI bot monetization.</p>
     pub fn set_monetization_config(mut self, input: ::std::option::Option<crate::types::MonetizationConfig>) -> Self {
         self.monetization_config = input;
         self
     }
-    /// <p>The monetization configuration for the web ACL. Required when any rule in the web ACL uses the <code>Monetize</code> action. Specifies the cryptocurrency payment networks and currency mode for AI bot monetization.</p>
+    /// <p>The monetization configuration for the web ACL. Required when any rule in the web ACL uses the <code>Monetize</code> action. Specifies the payment settlement options and currency mode for AI bot monetization.</p>
     pub fn get_monetization_config(&self) -> &::std::option::Option<crate::types::MonetizationConfig> {
         &self.monetization_config
     }

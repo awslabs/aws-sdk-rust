@@ -323,6 +323,8 @@ pub(crate) mod shape_get_job_run;
 
 pub(crate) mod shape_get_job_runs;
 
+pub(crate) mod shape_get_job_upgrade_analysis;
+
 pub(crate) mod shape_get_jobs;
 
 pub(crate) mod shape_get_mapping;
@@ -541,6 +543,8 @@ pub(crate) mod shape_start_import_labels_task_run;
 
 pub(crate) mod shape_start_job_run;
 
+pub(crate) mod shape_start_job_upgrade_analysis;
+
 pub(crate) mod shape_start_materialized_view_refresh_task_run;
 
 pub(crate) mod shape_start_ml_evaluation_task_run;
@@ -558,6 +562,8 @@ pub(crate) mod shape_stop_column_statistics_task_run_schedule;
 pub(crate) mod shape_stop_crawler;
 
 pub(crate) mod shape_stop_crawler_schedule;
+
+pub(crate) mod shape_stop_job_upgrade_analysis;
 
 pub(crate) mod shape_stop_materialized_view_refresh_task_run;
 
@@ -969,6 +975,8 @@ pub(crate) mod shape_get_job_run_input;
 
 pub(crate) mod shape_get_job_runs_input;
 
+pub(crate) mod shape_get_job_upgrade_analysis_input;
+
 pub(crate) mod shape_get_jobs_input;
 
 pub(crate) mod shape_get_mapping_input;
@@ -1245,6 +1253,8 @@ pub(crate) mod shape_start_import_labels_task_run_input;
 
 pub(crate) mod shape_start_job_run_input;
 
+pub(crate) mod shape_start_job_upgrade_analysis_input;
+
 pub(crate) mod shape_start_materialized_view_refresh_task_run_input;
 
 pub(crate) mod shape_start_ml_evaluation_task_run_input;
@@ -1262,6 +1272,8 @@ pub(crate) mod shape_stop_column_statistics_task_run_schedule_input;
 pub(crate) mod shape_stop_crawler_input;
 
 pub(crate) mod shape_stop_crawler_schedule_input;
+
+pub(crate) mod shape_stop_job_upgrade_analysis_input;
 
 pub(crate) mod shape_stop_materialized_view_refresh_task_run_input;
 
@@ -1884,6 +1896,8 @@ pub(crate) mod shape_authentication_configuration;
 pub(crate) mod shape_authentication_configuration_input;
 
 pub(crate) mod shape_authentication_types;
+
+pub(crate) mod shape_auto_upgrade_metadata;
 
 pub(crate) mod shape_basic_authentication_properties;
 

@@ -163,6 +163,10 @@ pub(crate) mod shape_put_feedback;
 
 pub(crate) mod shape_query_assistant;
 
+pub(crate) mod shape_register_assistant_replica_key;
+
+pub(crate) mod shape_register_knowledge_base_replica_key;
+
 pub(crate) mod shape_remove_assistant_ai_agent;
 
 pub(crate) mod shape_remove_knowledge_base_template_uri;
@@ -268,6 +272,10 @@ pub(crate) mod shape_precondition_failed_exception;
 pub(crate) mod shape_put_feedback_input;
 
 pub(crate) mod shape_query_assistant_input;
+
+pub(crate) mod shape_register_assistant_replica_key_input;
+
+pub(crate) mod shape_register_knowledge_base_replica_key_input;
 
 pub(crate) mod shape_render_message_template_input;
 
@@ -468,6 +476,8 @@ pub(crate) mod shape_recommendation_list;
 pub(crate) mod shape_recommendation_trigger_list;
 
 pub(crate) mod shape_rendering_configuration;
+
+pub(crate) mod shape_replica_kms_key;
 
 pub(crate) mod shape_retrieval_configuration;
 
@@ -736,6 +746,8 @@ pub(crate) mod shape_push_fcm_message_template_content;
 pub(crate) mod shape_quick_response_content_provider;
 
 pub(crate) mod shape_recommendation_trigger_data;
+
+pub(crate) mod shape_replica_kms_key_list;
 
 pub(crate) mod shape_semantic_chunking_configuration;
 

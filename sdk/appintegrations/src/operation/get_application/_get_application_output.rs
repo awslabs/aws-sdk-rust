@@ -25,6 +25,8 @@ pub struct GetApplicationOutput {
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last modified time of the Application.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where the application was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration of events or requests that the application has access to.</p>
@@ -91,6 +93,10 @@ impl GetApplicationOutput {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
+    /// <p>The Amazon Web Services Region where the application was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -153,6 +159,7 @@ pub struct GetApplicationOutputBuilder {
     pub(crate) publications: ::std::option::Option<::std::vec::Vec<crate::types::Publication>>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) is_service: ::std::option::Option<bool>,
@@ -322,6 +329,20 @@ impl GetApplicationOutputBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
+    /// <p>The Amazon Web Services Region where the application was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where the application was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the application was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -471,6 +492,7 @@ impl GetApplicationOutputBuilder {
             publications: self.publications,
             created_time: self.created_time,
             last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
             tags: self.tags,
             permissions: self.permissions,
             is_service: self.is_service.unwrap_or_default(),

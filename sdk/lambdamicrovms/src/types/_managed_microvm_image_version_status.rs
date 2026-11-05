@@ -14,6 +14,7 @@
 /// match managedmicrovmimageversionstatus {
 ///     ManagedMicrovmImageVersionStatus::Available => { /* ... */ },
 ///     ManagedMicrovmImageVersionStatus::Deprecated => { /* ... */ },
+///     ManagedMicrovmImageVersionStatus::Recalled => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum ManagedMicrovmImageVersionStatus {
     Available,
     /// <p>The version is deprecated. Do not use this version for new MicroVM images. Existing MicroVM images that use this version will continue to function.</p>
     Deprecated,
+    #[allow(missing_docs)] // documentation missing in model
+    Recalled,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for ManagedMicrovmImageVersionStatus {
         match s {
             "AVAILABLE" => ManagedMicrovmImageVersionStatus::Available,
             "DEPRECATED" => ManagedMicrovmImageVersionStatus::Deprecated,
+            "RECALLED" => ManagedMicrovmImageVersionStatus::Recalled,
             other => ManagedMicrovmImageVersionStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl ManagedMicrovmImageVersionStatus {
         match self {
             ManagedMicrovmImageVersionStatus::Available => "AVAILABLE",
             ManagedMicrovmImageVersionStatus::Deprecated => "DEPRECATED",
+            ManagedMicrovmImageVersionStatus::Recalled => "RECALLED",
             ManagedMicrovmImageVersionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVAILABLE", "DEPRECATED"]
+        &["AVAILABLE", "DEPRECATED", "RECALLED"]
     }
 }
 impl ::std::convert::AsRef<str> for ManagedMicrovmImageVersionStatus {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for ManagedMicrovmImageVersionStatus {
         match self {
             ManagedMicrovmImageVersionStatus::Available => write!(f, "AVAILABLE"),
             ManagedMicrovmImageVersionStatus::Deprecated => write!(f, "DEPRECATED"),
+            ManagedMicrovmImageVersionStatus::Recalled => write!(f, "RECALLED"),
             ManagedMicrovmImageVersionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

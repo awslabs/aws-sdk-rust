@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomJwtAuthorizerConfiguration {
-    /// <p>The OpenID Connect discovery URL used to retrieve the identity provider's metadata and signing keys.</p>
+    /// <p>The OpenID Connect discovery or OAuth 2.0 authorization server metadata URL used to retrieve the identity provider's metadata and signing keys.</p>
     pub discovery_url: ::std::string::String,
     /// <p>The audience values accepted during JWT validation. A token is rejected if none of its audience claims match.</p>
     pub allowed_audience: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -20,7 +20,7 @@ pub struct CustomJwtAuthorizerConfiguration {
     pub private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
 }
 impl CustomJwtAuthorizerConfiguration {
-    /// <p>The OpenID Connect discovery URL used to retrieve the identity provider's metadata and signing keys.</p>
+    /// <p>The OpenID Connect discovery or OAuth 2.0 authorization server metadata URL used to retrieve the identity provider's metadata and signing keys.</p>
     pub fn discovery_url(&self) -> &str {
         use std::ops::Deref;
         self.discovery_url.deref()
@@ -80,18 +80,18 @@ pub struct CustomJwtAuthorizerConfigurationBuilder {
     pub(crate) private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
 }
 impl CustomJwtAuthorizerConfigurationBuilder {
-    /// <p>The OpenID Connect discovery URL used to retrieve the identity provider's metadata and signing keys.</p>
+    /// <p>The OpenID Connect discovery or OAuth 2.0 authorization server metadata URL used to retrieve the identity provider's metadata and signing keys.</p>
     /// This field is required.
     pub fn discovery_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discovery_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The OpenID Connect discovery URL used to retrieve the identity provider's metadata and signing keys.</p>
+    /// <p>The OpenID Connect discovery or OAuth 2.0 authorization server metadata URL used to retrieve the identity provider's metadata and signing keys.</p>
     pub fn set_discovery_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.discovery_url = input;
         self
     }
-    /// <p>The OpenID Connect discovery URL used to retrieve the identity provider's metadata and signing keys.</p>
+    /// <p>The OpenID Connect discovery or OAuth 2.0 authorization server metadata URL used to retrieve the identity provider's metadata and signing keys.</p>
     pub fn get_discovery_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.discovery_url
     }

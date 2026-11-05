@@ -207,6 +207,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetDocumentCo
                 captured.insert("documentId", value);
             }
         }
+        if requested.should_capture("mediaId") {
+            if let ::std::option::Option::Some(value) = input.media_id.as_deref() {
+                captured.insert("mediaId", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

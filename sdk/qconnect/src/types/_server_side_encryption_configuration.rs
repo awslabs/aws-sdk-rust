@@ -6,11 +6,19 @@
 pub struct ServerSideEncryptionConfiguration {
     /// <p>The customer managed key used for encryption. For more information about setting up a customer managed key for Amazon Q in Connect, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a>.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The list of KMS keys used to encrypt data for this resource's replicas in other Amazon Web Services Regions. Each entry corresponds to a Region where a replica is configured.</p>
+    pub replica_kms_keys: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaKmsKey>>,
 }
 impl ServerSideEncryptionConfiguration {
     /// <p>The customer managed key used for encryption. For more information about setting up a customer managed key for Amazon Q in Connect, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a>.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
+    }
+    /// <p>The list of KMS keys used to encrypt data for this resource's replicas in other Amazon Web Services Regions. Each entry corresponds to a Region where a replica is configured.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_kms_keys.is_none()`.
+    pub fn replica_kms_keys(&self) -> &[crate::types::ReplicaKmsKey] {
+        self.replica_kms_keys.as_deref().unwrap_or_default()
     }
 }
 impl ServerSideEncryptionConfiguration {
@@ -25,6 +33,7 @@ impl ServerSideEncryptionConfiguration {
 #[non_exhaustive]
 pub struct ServerSideEncryptionConfigurationBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) replica_kms_keys: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaKmsKey>>,
 }
 impl ServerSideEncryptionConfigurationBuilder {
     /// <p>The customer managed key used for encryption. For more information about setting up a customer managed key for Amazon Q in Connect, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a>.</p>
@@ -41,8 +50,31 @@ impl ServerSideEncryptionConfigurationBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
+    /// Appends an item to `replica_kms_keys`.
+    ///
+    /// To override the contents of this collection use [`set_replica_kms_keys`](Self::set_replica_kms_keys).
+    ///
+    /// <p>The list of KMS keys used to encrypt data for this resource's replicas in other Amazon Web Services Regions. Each entry corresponds to a Region where a replica is configured.</p>
+    pub fn replica_kms_keys(mut self, input: crate::types::ReplicaKmsKey) -> Self {
+        let mut v = self.replica_kms_keys.unwrap_or_default();
+        v.push(input);
+        self.replica_kms_keys = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of KMS keys used to encrypt data for this resource's replicas in other Amazon Web Services Regions. Each entry corresponds to a Region where a replica is configured.</p>
+    pub fn set_replica_kms_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaKmsKey>>) -> Self {
+        self.replica_kms_keys = input;
+        self
+    }
+    /// <p>The list of KMS keys used to encrypt data for this resource's replicas in other Amazon Web Services Regions. Each entry corresponds to a Region where a replica is configured.</p>
+    pub fn get_replica_kms_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaKmsKey>> {
+        &self.replica_kms_keys
+    }
     /// Consumes the builder and constructs a [`ServerSideEncryptionConfiguration`](crate::types::ServerSideEncryptionConfiguration).
     pub fn build(self) -> crate::types::ServerSideEncryptionConfiguration {
-        crate::types::ServerSideEncryptionConfiguration { kms_key_id: self.kms_key_id }
+        crate::types::ServerSideEncryptionConfiguration {
+            kms_key_id: self.kms_key_id,
+            replica_kms_keys: self.replica_kms_keys,
+        }
     }
 }

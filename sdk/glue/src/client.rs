@@ -463,6 +463,8 @@ mod get_job_run;
 
 mod get_job_runs;
 
+mod get_job_upgrade_analysis;
+
 mod get_jobs;
 
 mod get_mapping;
@@ -681,6 +683,8 @@ mod start_import_labels_task_run;
 
 mod start_job_run;
 
+mod start_job_upgrade_analysis;
+
 mod start_materialized_view_refresh_task_run;
 
 mod start_ml_evaluation_task_run;
@@ -698,6 +702,8 @@ mod stop_column_statistics_task_run_schedule;
 mod stop_crawler;
 
 mod stop_crawler_schedule;
+
+mod stop_job_upgrade_analysis;
 
 mod stop_materialized_view_refresh_task_run;
 

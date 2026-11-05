@@ -24,6 +24,7 @@ impl crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyI
 ///
 /// <p>Deletes the specified retention policy.</p>
 /// <p>Log events do not expire if they belong to log groups without a retention policy.</p>
+/// <p>If an account-level retention policy applies to this log group, the log group uses the retention period from that policy. For more information about account-level retention policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRetentionPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

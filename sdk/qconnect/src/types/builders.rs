@@ -3,6 +3,8 @@ pub use crate::types::_server_side_encryption_configuration::ServerSideEncryptio
 
 pub use crate::types::_assistant_data::AssistantDataBuilder;
 
+pub use crate::types::_replica_kms_key::ReplicaKmsKeyBuilder;
+
 pub use crate::types::_retrieval_configuration::RetrievalConfigurationBuilder;
 
 pub use crate::types::_search_expression::SearchExpressionBuilder;

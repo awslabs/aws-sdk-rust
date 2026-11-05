@@ -19,6 +19,8 @@ pub use crate::types::_query_input_data::QueryInputData;
 
 pub use crate::types::_knowledge_base_search_type::KnowledgeBaseSearchType;
 
+pub use crate::types::_replica_kms_key::ReplicaKmsKey;
+
 pub use crate::types::_ai_agent_type::AiAgentType;
 
 pub use crate::types::_retrieval_configuration::RetrievalConfiguration;
@@ -93,6 +95,8 @@ pub use crate::types::_message_output::MessageOutput;
 
 pub use crate::types::_conversation_state::ConversationState;
 
+pub use crate::types::_unprocessable_content_reason::UnprocessableContentReason;
+
 pub use crate::types::_message_filter_type::MessageFilterType;
 
 pub use crate::types::_message_input::MessageInput;
@@ -138,6 +142,8 @@ pub use crate::types::_assistant_status::AssistantStatus;
 pub use crate::types::_assistant_integration_configuration::AssistantIntegrationConfiguration;
 
 pub use crate::types::_assistant_capability_configuration::AssistantCapabilityConfiguration;
+
+pub use crate::types::_assistant_global_resiliency_status::AssistantGlobalResiliencyStatus;
 
 pub use crate::types::_recommendation_data::RecommendationData;
 
@@ -308,6 +314,8 @@ pub use crate::types::_recommendation_source_type::RecommendationSourceType;
 pub use crate::types::_recommendation_trigger_data::RecommendationTriggerData;
 
 pub use crate::types::_cross_region_status::CrossRegionStatus;
+
+pub use crate::types::_global_resiliency_status::GlobalResiliencyStatus;
 
 pub use crate::types::_relevance::Relevance;
 
@@ -651,6 +659,8 @@ mod _assistant_capability_type;
 
 mod _assistant_data;
 
+mod _assistant_global_resiliency_status;
+
 mod _assistant_integration_configuration;
 
 mod _assistant_status;
@@ -776,6 +786,8 @@ mod _generative_content_feedback_data;
 mod _generative_data_details;
 
 mod _generative_reference;
+
+mod _global_resiliency_status;
 
 mod _grouping_configuration;
 
@@ -1017,6 +1029,8 @@ mod _relevance_level;
 
 mod _rendering_configuration;
 
+mod _replica_kms_key;
+
 mod _result_data;
 
 mod _retrieval_configuration;
@@ -1132,6 +1146,8 @@ mod _tool_override_input_value_type;
 mod _tool_type;
 
 mod _tool_use_result_data;
+
+mod _unprocessable_content_reason;
 
 mod _url_configuration;
 

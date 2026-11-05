@@ -40,6 +40,10 @@ where
                             crate::protocol_serde::shape_user_metadata::de_user_metadata(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'user' cannot be null"))?,
                         )),
+                        "group" => Some(crate::types::MemberMetadata::Group(
+                            crate::protocol_serde::shape_group_metadata::de_group_metadata(tokens, _value, depth + 1)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'group' cannot be null"))?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::MemberMetadata::Unknown)

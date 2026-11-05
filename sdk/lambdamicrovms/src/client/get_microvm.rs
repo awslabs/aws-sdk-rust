@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`terminated_at(Option<DateTime>)`](crate::operation::get_microvm::GetMicrovmOutput::terminated_at): <p>The timestamp when the MicroVM terminated.</p>
     ///   - [`state_reason(Option<String>)`](crate::operation::get_microvm::GetMicrovmOutput::state_reason): <p>The reason for why the MicroVM is in the current state.</p>
     ///   - [`ingress_network_connectors(Option<Vec::<String>>)`](crate::operation::get_microvm::GetMicrovmOutput::ingress_network_connectors): <p>The list of ingress network connectors configured for the MicroVM.</p>
-    ///   - [`egress_network_connectors(Option<Vec::<String>>)`](crate::operation::get_microvm::GetMicrovmOutput::egress_network_connectors): <p>The list of egress network connectors configured for the MicroVM.</p>
+    ///   - [`egress_network_connectors(Option<Vec::<String>>)`](crate::operation::get_microvm::GetMicrovmOutput::egress_network_connectors): <p>The list of egress network connectors available to the MicroVM at runtime.</p>
     /// - On failure, responds with [`SdkError<GetMicrovmError>`](crate::operation::get_microvm::GetMicrovmError)
     pub fn get_microvm(&self) -> crate::operation::get_microvm::builders::GetMicrovmFluentBuilder {
         crate::operation::get_microvm::builders::GetMicrovmFluentBuilder::new(self.handle.clone())

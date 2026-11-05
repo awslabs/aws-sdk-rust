@@ -229,6 +229,8 @@ pub use crate::types::_jira_resource_capabilities::JiraResourceCapabilitiesBuild
 
 pub use crate::types::_user_metadata::UserMetadataBuilder;
 
+pub use crate::types::_group_metadata::GroupMetadataBuilder;
+
 pub use crate::types::_git_hub_repository_resource::GitHubRepositoryResourceBuilder;
 
 pub use crate::types::_git_lab_repository_resource::GitLabRepositoryResourceBuilder;

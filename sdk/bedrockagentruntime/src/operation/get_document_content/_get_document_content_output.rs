@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetDocumentContentOutput {
-    /// <p>The MIME type of the document content. For <code>RAW</code> format, this is the original file type (for example, <code>application/pdf</code>). For <code>EXTRACTED</code> format, this is always <code>application/json</code>.</p>
+    /// <p>The MIME type of the returned content. For <code>RAW</code> format, this is the original file type (for example, <code>application/pdf</code>), or the image type (for example, <code>image/png</code>) if you specify <code>mediaId</code>. For <code>EXTRACTED</code> format, this is always <code>application/json</code>.</p>
     pub mime_type: ::std::string::String,
-    /// <p>A pre-signed URL for downloading the document content. The URL expires after 5 minutes.</p>
+    /// <p>A pre-signed URL for downloading the document content, or the selected image if you specify <code>mediaId</code>. The URL expires after 5 minutes.</p>
     pub presigned_url: ::std::string::String,
-    /// <p>The size of the document content in bytes available at the pre-signed URL.</p>
+    /// <p>The size, in bytes, of the content available at the pre-signed URL.</p>
     pub document_content_length: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetDocumentContentOutput {
-    /// <p>The MIME type of the document content. For <code>RAW</code> format, this is the original file type (for example, <code>application/pdf</code>). For <code>EXTRACTED</code> format, this is always <code>application/json</code>.</p>
+    /// <p>The MIME type of the returned content. For <code>RAW</code> format, this is the original file type (for example, <code>application/pdf</code>), or the image type (for example, <code>image/png</code>) if you specify <code>mediaId</code>. For <code>EXTRACTED</code> format, this is always <code>application/json</code>.</p>
     pub fn mime_type(&self) -> &str {
         use std::ops::Deref;
         self.mime_type.deref()
     }
-    /// <p>A pre-signed URL for downloading the document content. The URL expires after 5 minutes.</p>
+    /// <p>A pre-signed URL for downloading the document content, or the selected image if you specify <code>mediaId</code>. The URL expires after 5 minutes.</p>
     pub fn presigned_url(&self) -> &str {
         use std::ops::Deref;
         self.presigned_url.deref()
     }
-    /// <p>The size of the document content in bytes available at the pre-signed URL.</p>
+    /// <p>The size, in bytes, of the content available at the pre-signed URL.</p>
     pub fn document_content_length(&self) -> ::std::option::Option<i64> {
         self.document_content_length
     }
@@ -59,47 +59,47 @@ pub struct GetDocumentContentOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetDocumentContentOutputBuilder {
-    /// <p>The MIME type of the document content. For <code>RAW</code> format, this is the original file type (for example, <code>application/pdf</code>). For <code>EXTRACTED</code> format, this is always <code>application/json</code>.</p>
+    /// <p>The MIME type of the returned content. For <code>RAW</code> format, this is the original file type (for example, <code>application/pdf</code>), or the image type (for example, <code>image/png</code>) if you specify <code>mediaId</code>. For <code>EXTRACTED</code> format, this is always <code>application/json</code>.</p>
     /// This field is required.
     pub fn mime_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mime_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The MIME type of the document content. For <code>RAW</code> format, this is the original file type (for example, <code>application/pdf</code>). For <code>EXTRACTED</code> format, this is always <code>application/json</code>.</p>
+    /// <p>The MIME type of the returned content. For <code>RAW</code> format, this is the original file type (for example, <code>application/pdf</code>), or the image type (for example, <code>image/png</code>) if you specify <code>mediaId</code>. For <code>EXTRACTED</code> format, this is always <code>application/json</code>.</p>
     pub fn set_mime_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mime_type = input;
         self
     }
-    /// <p>The MIME type of the document content. For <code>RAW</code> format, this is the original file type (for example, <code>application/pdf</code>). For <code>EXTRACTED</code> format, this is always <code>application/json</code>.</p>
+    /// <p>The MIME type of the returned content. For <code>RAW</code> format, this is the original file type (for example, <code>application/pdf</code>), or the image type (for example, <code>image/png</code>) if you specify <code>mediaId</code>. For <code>EXTRACTED</code> format, this is always <code>application/json</code>.</p>
     pub fn get_mime_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.mime_type
     }
-    /// <p>A pre-signed URL for downloading the document content. The URL expires after 5 minutes.</p>
+    /// <p>A pre-signed URL for downloading the document content, or the selected image if you specify <code>mediaId</code>. The URL expires after 5 minutes.</p>
     /// This field is required.
     pub fn presigned_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.presigned_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A pre-signed URL for downloading the document content. The URL expires after 5 minutes.</p>
+    /// <p>A pre-signed URL for downloading the document content, or the selected image if you specify <code>mediaId</code>. The URL expires after 5 minutes.</p>
     pub fn set_presigned_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.presigned_url = input;
         self
     }
-    /// <p>A pre-signed URL for downloading the document content. The URL expires after 5 minutes.</p>
+    /// <p>A pre-signed URL for downloading the document content, or the selected image if you specify <code>mediaId</code>. The URL expires after 5 minutes.</p>
     pub fn get_presigned_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.presigned_url
     }
-    /// <p>The size of the document content in bytes available at the pre-signed URL.</p>
+    /// <p>The size, in bytes, of the content available at the pre-signed URL.</p>
     pub fn document_content_length(mut self, input: i64) -> Self {
         self.document_content_length = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of the document content in bytes available at the pre-signed URL.</p>
+    /// <p>The size, in bytes, of the content available at the pre-signed URL.</p>
     pub fn set_document_content_length(mut self, input: ::std::option::Option<i64>) -> Self {
         self.document_content_length = input;
         self
     }
-    /// <p>The size of the document content in bytes available at the pre-signed URL.</p>
+    /// <p>The size, in bytes, of the content available at the pre-signed URL.</p>
     pub fn get_document_content_length(&self) -> &::std::option::Option<i64> {
         &self.document_content_length
     }

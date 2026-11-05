@@ -20,6 +20,8 @@ pub struct ModelSummary {
     pub legacy_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the model will reach end of life and no longer be available for use.</p>
     pub end_of_life_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// Whether this model is published in every Region of the caller's Amazon Connect Global Resiliency replication group, and so can be referenced by an AI Prompt that replicates. Present only for callers to which global resiliency applies.
+    pub global_resiliency_status: ::std::option::Option<crate::types::GlobalResiliencyStatus>,
 }
 impl ModelSummary {
     /// <p>The identifier of the model.</p>
@@ -58,6 +60,10 @@ impl ModelSummary {
     pub fn end_of_life_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_of_life_timestamp.as_ref()
     }
+    /// Whether this model is published in every Region of the caller's Amazon Connect Global Resiliency replication group, and so can be referenced by an AI Prompt that replicates. Present only for callers to which global resiliency applies.
+    pub fn global_resiliency_status(&self) -> ::std::option::Option<&crate::types::GlobalResiliencyStatus> {
+        self.global_resiliency_status.as_ref()
+    }
 }
 impl ModelSummary {
     /// Creates a new builder-style object to manufacture [`ModelSummary`](crate::types::ModelSummary).
@@ -78,6 +84,7 @@ pub struct ModelSummaryBuilder {
     pub(crate) model_lifecycle: ::std::option::Option<crate::types::ModelLifecycle>,
     pub(crate) legacy_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_of_life_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) global_resiliency_status: ::std::option::Option<crate::types::GlobalResiliencyStatus>,
 }
 impl ModelSummaryBuilder {
     /// <p>The identifier of the model.</p>
@@ -200,6 +207,20 @@ impl ModelSummaryBuilder {
     pub fn get_end_of_life_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_of_life_timestamp
     }
+    /// Whether this model is published in every Region of the caller's Amazon Connect Global Resiliency replication group, and so can be referenced by an AI Prompt that replicates. Present only for callers to which global resiliency applies.
+    pub fn global_resiliency_status(mut self, input: crate::types::GlobalResiliencyStatus) -> Self {
+        self.global_resiliency_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// Whether this model is published in every Region of the caller's Amazon Connect Global Resiliency replication group, and so can be referenced by an AI Prompt that replicates. Present only for callers to which global resiliency applies.
+    pub fn set_global_resiliency_status(mut self, input: ::std::option::Option<crate::types::GlobalResiliencyStatus>) -> Self {
+        self.global_resiliency_status = input;
+        self
+    }
+    /// Whether this model is published in every Region of the caller's Amazon Connect Global Resiliency replication group, and so can be referenced by an AI Prompt that replicates. Present only for callers to which global resiliency applies.
+    pub fn get_global_resiliency_status(&self) -> &::std::option::Option<crate::types::GlobalResiliencyStatus> {
+        &self.global_resiliency_status
+    }
     /// Consumes the builder and constructs a [`ModelSummary`](crate::types::ModelSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`model_id`](crate::types::builders::ModelSummaryBuilder::model_id)
@@ -224,6 +245,7 @@ impl ModelSummaryBuilder {
             model_lifecycle: self.model_lifecycle,
             legacy_timestamp: self.legacy_timestamp,
             end_of_life_timestamp: self.end_of_life_timestamp,
+            global_resiliency_status: self.global_resiliency_status,
         })
     }
 }

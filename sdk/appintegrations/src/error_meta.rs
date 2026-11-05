@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The request conflicts with the current state of the resource. Verify the application's current state and retry the request.</p>
+    /// <p>The request conflicts with the current state of the resource. Verify the resource's current state and retry the request.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>A resource with the specified name already exists.</p>
     DuplicateResourceException(crate::types::error::DuplicateResourceException),
@@ -649,6 +649,7 @@ where
 impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServiceError(inner) => Error::InternalServiceError(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
@@ -678,6 +679,8 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::tag_resource::TagResourceError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::tag_resource::TagResourceError::InternalServiceError(inner) => Error::InternalServiceError(inner),
             crate::operation::tag_resource::TagResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -703,6 +706,8 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::untag_resource::UntagResourceError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::untag_resource::UntagResourceError::InternalServiceError(inner) => Error::InternalServiceError(inner),
             crate::operation::untag_resource::UntagResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),

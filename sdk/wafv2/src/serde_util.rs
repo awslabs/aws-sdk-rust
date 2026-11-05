@@ -345,6 +345,18 @@ pub(crate) fn bot_statistics_correct_errors(
     builder
 }
 
+pub(crate) fn connected_account_config_correct_errors(
+    mut builder: crate::types::builders::ConnectedAccountConfigBuilder,
+) -> crate::types::builders::ConnectedAccountConfigBuilder {
+    if builder.connected_account_arn.is_none() {
+        builder.connected_account_arn = Some(Default::default())
+    }
+    if builder.payment_networks.is_none() {
+        builder.payment_networks = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn cookies_correct_errors(mut builder: crate::types::builders::CookiesBuilder) -> crate::types::builders::CookiesBuilder {
     if builder.match_pattern.is_none() {
         builder.match_pattern = {
@@ -712,6 +724,18 @@ pub(crate) fn xss_match_statement_correct_errors(
     builder
 }
 
+pub(crate) fn connected_account_chain_config_correct_errors(
+    mut builder: crate::types::builders::ConnectedAccountChainConfigBuilder,
+) -> crate::types::builders::ConnectedAccountChainConfigBuilder {
+    if builder.chain.is_none() {
+        builder.chain = "no value was set".parse::<crate::types::ConnectedAccountChain>().ok()
+    }
+    if builder.prices.is_none() {
+        builder.prices = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn custom_http_header_correct_errors(
     mut builder: crate::types::builders::CustomHttpHeaderBuilder,
 ) -> crate::types::builders::CustomHttpHeaderBuilder {
@@ -869,6 +893,18 @@ pub(crate) fn aws_managed_rules_bot_control_rule_set_correct_errors(
 ) -> crate::types::builders::AwsManagedRulesBotControlRuleSetBuilder {
     if builder.inspection_level.is_none() {
         builder.inspection_level = "no value was set".parse::<crate::types::InspectionLevel>().ok()
+    }
+    builder
+}
+
+pub(crate) fn connected_account_price_correct_errors(
+    mut builder: crate::types::builders::ConnectedAccountPriceBuilder,
+) -> crate::types::builders::ConnectedAccountPriceBuilder {
+    if builder.amount.is_none() {
+        builder.amount = Some(Default::default())
+    }
+    if builder.currency.is_none() {
+        builder.currency = "no value was set".parse::<crate::types::CryptoCurrency>().ok()
     }
     builder
 }

@@ -3,6 +3,8 @@ pub use crate::types::_azure_blob_authentication_type::AzureBlobAuthenticationTy
 
 pub use crate::types::_azure_blob_sas_configuration::AzureBlobSasConfiguration;
 
+pub use crate::types::_azure_federated_identity_config::AzureFederatedIdentityConfig;
+
 pub use crate::types::_azure_blob_type::AzureBlobType;
 
 pub use crate::types::_azure_access_tier::AzureAccessTier;
@@ -26,6 +28,8 @@ pub use crate::types::_on_prem_config::OnPremConfig;
 pub use crate::types::_nfs_mount_options::NfsMountOptions;
 
 pub use crate::types::_object_storage_server_protocol::ObjectStorageServerProtocol;
+
+pub use crate::types::_object_storage_federated_identity_config::ObjectStorageFederatedIdentityConfig;
 
 pub use crate::types::_s3_storage_class::S3StorageClass;
 
@@ -77,6 +81,8 @@ pub use crate::types::_fsx_update_protocol::FsxUpdateProtocol;
 
 pub use crate::types::_tag_list_entry::TagListEntry;
 
+pub use crate::types::_azure_oidc_config::AzureOidcConfig;
+
 pub use crate::types::_fsx_protocol_nfs::FsxProtocolNfs;
 
 pub use crate::types::_fsx_protocol_smb::FsxProtocolSmb;
@@ -88,6 +94,8 @@ pub use crate::types::_hdfs_rpc_protection::HdfsRpcProtection;
 pub use crate::types::_hdfs_data_transfer_protection::HdfsDataTransferProtection;
 
 pub use crate::types::_nfs_version::NfsVersion;
+
+pub use crate::types::_object_storage_external_identity_config::ObjectStorageExternalIdentityConfig;
 
 pub use crate::types::_smb_version::SmbVersion;
 
@@ -159,6 +167,8 @@ pub use crate::types::_task_list_entry::TaskListEntry;
 
 pub use crate::types::_fsx_update_protocol_smb::FsxUpdateProtocolSmb;
 
+pub use crate::types::_google_oidc_config::GoogleOidcConfig;
+
 pub use crate::types::_filter_type::FilterType;
 
 pub use crate::types::_s3_manifest_config::S3ManifestConfig;
@@ -187,6 +197,10 @@ mod _azure_blob_sas_configuration;
 
 mod _azure_blob_type;
 
+mod _azure_federated_identity_config;
+
+mod _azure_oidc_config;
+
 mod _cmk_secret_config;
 
 mod _custom_secret_config;
@@ -212,6 +226,8 @@ mod _fsx_update_protocol;
 mod _fsx_update_protocol_smb;
 
 mod _gid;
+
+mod _google_oidc_config;
 
 mod _hdfs_authentication_type;
 
@@ -244,6 +260,10 @@ mod _nfs_mount_options;
 mod _nfs_version;
 
 mod _object_metadata;
+
+mod _object_storage_external_identity_config;
+
+mod _object_storage_federated_identity_config;
 
 mod _object_storage_server_protocol;
 

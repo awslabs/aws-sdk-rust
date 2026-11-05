@@ -22,7 +22,7 @@ impl crate::operation::delete_membership::builders::DeleteMembershipInputBuilder
 }
 /// Fluent builder constructing a request to `DeleteMembership`.
 ///
-/// <p>Deletes a membership, revoking a user's access to an agent space.</p>
+/// <p>Deletes a membership, revoking a user's or group's access to an agent space.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

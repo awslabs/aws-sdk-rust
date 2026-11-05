@@ -2218,6 +2218,102 @@ impl From<crate::operation::query_assistant::QueryAssistantError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_assistant_replica_key::RegisterAssistantReplicaKeyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::register_assistant_replica_key::RegisterAssistantReplicaKeyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::register_assistant_replica_key::RegisterAssistantReplicaKeyError> for Error {
+    fn from(err: crate::operation::register_assistant_replica_key::RegisterAssistantReplicaKeyError) -> Self {
+        match err {
+            crate::operation::register_assistant_replica_key::RegisterAssistantReplicaKeyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::register_assistant_replica_key::RegisterAssistantReplicaKeyError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::register_assistant_replica_key::RegisterAssistantReplicaKeyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::register_assistant_replica_key::RegisterAssistantReplicaKeyError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::register_assistant_replica_key::RegisterAssistantReplicaKeyError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::register_assistant_replica_key::RegisterAssistantReplicaKeyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::register_assistant_replica_key::RegisterAssistantReplicaKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::register_knowledge_base_replica_key::RegisterKnowledgeBaseReplicaKeyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::register_knowledge_base_replica_key::RegisterKnowledgeBaseReplicaKeyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::register_knowledge_base_replica_key::RegisterKnowledgeBaseReplicaKeyError> for Error {
+    fn from(err: crate::operation::register_knowledge_base_replica_key::RegisterKnowledgeBaseReplicaKeyError) -> Self {
+        match err {
+            crate::operation::register_knowledge_base_replica_key::RegisterKnowledgeBaseReplicaKeyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::register_knowledge_base_replica_key::RegisterKnowledgeBaseReplicaKeyError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::register_knowledge_base_replica_key::RegisterKnowledgeBaseReplicaKeyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::register_knowledge_base_replica_key::RegisterKnowledgeBaseReplicaKeyError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::register_knowledge_base_replica_key::RegisterKnowledgeBaseReplicaKeyError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::register_knowledge_base_replica_key::RegisterKnowledgeBaseReplicaKeyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::register_knowledge_base_replica_key::RegisterKnowledgeBaseReplicaKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_assistant_ai_agent::RemoveAssistantAIAgentError, R>>
     for Error
 where
@@ -2241,6 +2337,7 @@ impl From<crate::operation::remove_assistant_ai_agent::RemoveAssistantAIAgentErr
             crate::operation::remove_assistant_ai_agent::RemoveAssistantAIAgentError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::remove_assistant_ai_agent::RemoveAssistantAIAgentError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::remove_assistant_ai_agent::RemoveAssistantAIAgentError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -2701,6 +2798,7 @@ impl From<crate::operation::update_assistant_ai_agent::UpdateAssistantAIAgentErr
             crate::operation::update_assistant_ai_agent::UpdateAssistantAIAgentError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::update_assistant_ai_agent::UpdateAssistantAIAgentError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_assistant_ai_agent::UpdateAssistantAIAgentError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }

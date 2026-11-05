@@ -333,7 +333,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateApplica
 pub enum UpdateApplicationError {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The request conflicts with the current state of the resource. Verify the application's current state and retry the request.</p>
+    /// <p>The request conflicts with the current state of the resource. Verify the resource's current state and retry the request.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>Request processing failed due to an error or failure with the service.</p>
     InternalServiceError(crate::types::error::InternalServiceError),

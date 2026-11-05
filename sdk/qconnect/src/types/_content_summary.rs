@@ -26,6 +26,12 @@ pub struct ContentSummary {
     pub metadata: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The timestamp when the content was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where the content was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
+    /// <p>The Base64-encoded SHA-256 hash of the content file. Amazon Connect Global Resiliency returns this field only for replicated content.</p>
+    pub file_hash: ::std::option::Option<::std::string::String>,
 }
 impl ContentSummary {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
@@ -80,6 +86,18 @@ impl ContentSummary {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The timestamp when the content was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where the content was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
+    /// <p>The Base64-encoded SHA-256 hash of the content file. Amazon Connect Global Resiliency returns this field only for replicated content.</p>
+    pub fn file_hash(&self) -> ::std::option::Option<&str> {
+        self.file_hash.as_deref()
+    }
 }
 impl ContentSummary {
     /// Creates a new builder-style object to manufacture [`ContentSummary`](crate::types::ContentSummary).
@@ -103,6 +121,9 @@ pub struct ContentSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ContentStatus>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
+    pub(crate) file_hash: ::std::option::Option<::std::string::String>,
 }
 impl ContentSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
@@ -280,6 +301,48 @@ impl ContentSummaryBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The timestamp when the content was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the content was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when the content was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where the content was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where the content was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the content was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
+    /// <p>The Base64-encoded SHA-256 hash of the content file. Amazon Connect Global Resiliency returns this field only for replicated content.</p>
+    pub fn file_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_hash = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Base64-encoded SHA-256 hash of the content file. Amazon Connect Global Resiliency returns this field only for replicated content.</p>
+    pub fn set_file_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.file_hash = input;
+        self
+    }
+    /// <p>The Base64-encoded SHA-256 hash of the content file. Amazon Connect Global Resiliency returns this field only for replicated content.</p>
+    pub fn get_file_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_hash
+    }
     /// Consumes the builder and constructs a [`ContentSummary`](crate::types::ContentSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`content_arn`](crate::types::builders::ContentSummaryBuilder::content_arn)
@@ -355,6 +418,9 @@ impl ContentSummaryBuilder {
                 )
             })?,
             tags: self.tags,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
+            file_hash: self.file_hash,
         })
     }
 }

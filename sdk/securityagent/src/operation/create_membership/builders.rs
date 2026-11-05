@@ -22,7 +22,7 @@ impl crate::operation::create_membership::builders::CreateMembershipInputBuilder
 }
 /// Fluent builder constructing a request to `CreateMembership`.
 ///
-/// <p>Creates a new membership, granting a user access to an agent space within an application.</p>
+/// <p>Creates a new membership, granting a user or group access to an agent space within an application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -150,17 +150,17 @@ impl CreateMembershipFluentBuilder {
     pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_membership_id()
     }
-    /// <p>The type of member. Currently, only USER is supported.</p>
+    /// <p>The type of member. Use USER for an individual user or GROUP for an IAM Identity Center group. All members of a group have access to the agent space.</p>
     pub fn member_type(mut self, input: crate::types::MembershipType) -> Self {
         self.inner = self.inner.member_type(input);
         self
     }
-    /// <p>The type of member. Currently, only USER is supported.</p>
+    /// <p>The type of member. Use USER for an individual user or GROUP for an IAM Identity Center group. All members of a group have access to the agent space.</p>
     pub fn set_member_type(mut self, input: ::std::option::Option<crate::types::MembershipType>) -> Self {
         self.inner = self.inner.set_member_type(input);
         self
     }
-    /// <p>The type of member. Currently, only USER is supported.</p>
+    /// <p>The type of member. Use USER for an individual user or GROUP for an IAM Identity Center group. All members of a group have access to the agent space.</p>
     pub fn get_member_type(&self) -> &::std::option::Option<crate::types::MembershipType> {
         self.inner.get_member_type()
     }

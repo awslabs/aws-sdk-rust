@@ -76,6 +76,19 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "lastModifiedTime" => {
+                            builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "lastModifiedRegion" => {
+                            builder = builder.set_last_modified_region(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "description" => {
                             builder = builder.set_description(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

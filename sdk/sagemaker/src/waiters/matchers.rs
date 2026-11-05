@@ -125,13 +125,13 @@ pub(crate) fn match_describe_image_19c82d26244f04729(
     false
 }
 
-/// Matcher union: {"errorType":"ResourceNotFoundException"}
-pub(crate) fn match_describe_image_1cce2c05524fb92d4(
+/// Matcher union: {"errorType":"ResourceNotFound"}
+pub(crate) fn match_describe_image_8cb5bef55ab38338f(
     _result: ::std::result::Result<&crate::operation::describe_image::DescribeImageOutput, &crate::operation::describe_image::DescribeImageError>,
 ) -> bool {
     if let ::std::result::Result::Err(err) = _result {
         if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
-            return code == "ResourceNotFoundException";
+            return code == "ResourceNotFound";
         }
     }
     false
@@ -250,8 +250,8 @@ pub(crate) fn match_describe_image_version_19c82d26244f04729(
     false
 }
 
-/// Matcher union: {"errorType":"ResourceNotFoundException"}
-pub(crate) fn match_describe_image_version_1cce2c05524fb92d4(
+/// Matcher union: {"errorType":"ResourceNotFound"}
+pub(crate) fn match_describe_image_version_8cb5bef55ab38338f(
     _result: ::std::result::Result<
         &crate::operation::describe_image_version::DescribeImageVersionOutput,
         &crate::operation::describe_image_version::DescribeImageVersionError,
@@ -259,7 +259,7 @@ pub(crate) fn match_describe_image_version_1cce2c05524fb92d4(
 ) -> bool {
     if let ::std::result::Result::Err(err) = _result {
         if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
-            return code == "ResourceNotFoundException";
+            return code == "ResourceNotFound";
         }
     }
     false

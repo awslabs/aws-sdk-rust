@@ -28,6 +28,8 @@ pub struct QuickResponseData {
     pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the quick response data was last modified.</p>
     pub last_modified_time: ::aws_smithy_types::DateTime,
+    /// <p>The Amazon Web Services Region where the quick response was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
     /// <p>The contents of the quick response.</p>
     pub contents: ::std::option::Option<crate::types::QuickResponseContents>,
     /// <p>The description of the quick response.</p>
@@ -96,6 +98,10 @@ impl QuickResponseData {
     pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
+    /// <p>The Amazon Web Services Region where the quick response was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
     /// <p>The contents of the quick response.</p>
     pub fn contents(&self) -> ::std::option::Option<&crate::types::QuickResponseContents> {
         self.contents.as_ref()
@@ -155,6 +161,7 @@ pub struct QuickResponseDataBuilder {
     pub(crate) status: ::std::option::Option<crate::types::QuickResponseStatus>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
     pub(crate) contents: ::std::option::Option<crate::types::QuickResponseContents>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) grouping_configuration: ::std::option::Option<crate::types::GroupingConfiguration>,
@@ -318,6 +325,20 @@ impl QuickResponseDataBuilder {
     /// <p>The timestamp when the quick response data was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where the quick response was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where the quick response was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the quick response was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
     }
     /// <p>The contents of the quick response.</p>
     pub fn contents(mut self, input: crate::types::QuickResponseContents) -> Self {
@@ -524,6 +545,7 @@ impl QuickResponseDataBuilder {
                     "last_modified_time was not specified but it is required when building QuickResponseData",
                 )
             })?,
+            last_modified_region: self.last_modified_region,
             contents: self.contents,
             description: self.description,
             grouping_configuration: self.grouping_configuration,

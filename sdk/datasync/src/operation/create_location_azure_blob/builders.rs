@@ -123,17 +123,17 @@ impl CreateLocationAzureBlobFluentBuilder {
     pub fn get_container_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_container_url()
     }
-    /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
+    /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS) or an OpenID Connect (OIDC) token.</p>
     pub fn authentication_type(mut self, input: crate::types::AzureBlobAuthenticationType) -> Self {
         self.inner = self.inner.authentication_type(input);
         self
     }
-    /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
+    /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS) or an OpenID Connect (OIDC) token.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AzureBlobAuthenticationType>) -> Self {
         self.inner = self.inner.set_authentication_type(input);
         self
     }
-    /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
+    /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS) or an OpenID Connect (OIDC) token.</p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AzureBlobAuthenticationType> {
         self.inner.get_authentication_type()
     }
@@ -156,6 +156,20 @@ impl CreateLocationAzureBlobFluentBuilder {
     /// </note>
     pub fn get_sas_configuration(&self) -> &::std::option::Option<crate::types::AzureBlobSasConfiguration> {
         self.inner.get_sas_configuration()
+    }
+    /// <p>Specifies the federated identity configuration that allows DataSync to access your Azure Blob Storage using an OpenID Connect (OIDC) token instead of a shared access signature (SAS). Provide either <code>FederatedIdentity</code> or <code>SasConfiguration</code>, but not both.</p>
+    pub fn federated_identity(mut self, input: crate::types::AzureFederatedIdentityConfig) -> Self {
+        self.inner = self.inner.federated_identity(input);
+        self
+    }
+    /// <p>Specifies the federated identity configuration that allows DataSync to access your Azure Blob Storage using an OpenID Connect (OIDC) token instead of a shared access signature (SAS). Provide either <code>FederatedIdentity</code> or <code>SasConfiguration</code>, but not both.</p>
+    pub fn set_federated_identity(mut self, input: ::std::option::Option<crate::types::AzureFederatedIdentityConfig>) -> Self {
+        self.inner = self.inner.set_federated_identity(input);
+        self
+    }
+    /// <p>Specifies the federated identity configuration that allows DataSync to access your Azure Blob Storage using an OpenID Connect (OIDC) token instead of a shared access signature (SAS). Provide either <code>FederatedIdentity</code> or <code>SasConfiguration</code>, but not both.</p>
+    pub fn get_federated_identity(&self) -> &::std::option::Option<crate::types::AzureFederatedIdentityConfig> {
+        self.inner.get_federated_identity()
     }
     /// <p>Specifies the type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
     pub fn blob_type(mut self, input: crate::types::AzureBlobType) -> Self {

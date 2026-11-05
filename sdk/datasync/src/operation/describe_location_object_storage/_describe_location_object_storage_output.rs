@@ -10,6 +10,8 @@ pub struct DescribeLocationObjectStorageOutput {
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
     pub access_key: ::std::option::Option<::std::string::String>,
+    /// <p>The federated identity configuration that DataSync uses to access your object storage using an OpenID Connect (OIDC) token.</p>
+    pub federated_identity: ::std::option::Option<crate::types::ObjectStorageFederatedIdentityConfig>,
     /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
     pub server_port: ::std::option::Option<i32>,
     /// <p>The protocol that your object storage system uses to communicate.</p>
@@ -40,6 +42,10 @@ impl DescribeLocationObjectStorageOutput {
     /// <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
     pub fn access_key(&self) -> ::std::option::Option<&str> {
         self.access_key.as_deref()
+    }
+    /// <p>The federated identity configuration that DataSync uses to access your object storage using an OpenID Connect (OIDC) token.</p>
+    pub fn federated_identity(&self) -> ::std::option::Option<&crate::types::ObjectStorageFederatedIdentityConfig> {
+        self.federated_identity.as_ref()
     }
     /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
     pub fn server_port(&self) -> ::std::option::Option<i32> {
@@ -106,6 +112,16 @@ static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_ACCESS_KEY: ::aws_smithy_schem
     "AccessKey",
     2,
 );
+static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_FEDERATED_IDENTITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationObjectStorageOutput$FederatedIdentity",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationObjectStorageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FederatedIdentity",
+    3,
+);
 static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_SERVER_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.datasync.synthetic#DescribeLocationObjectStorageOutput$ServerPort",
@@ -114,7 +130,7 @@ static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_SERVER_PORT: ::aws_smithy_sche
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "ServerPort",
-    3,
+    4,
 );
 static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_SERVER_PROTOCOL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -124,7 +140,7 @@ static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_SERVER_PROTOCOL: ::aws_smithy_
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ServerProtocol",
-    4,
+    5,
 );
 static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_AGENT_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#AgentArnList$member", "com.amazonaws.datasync", "AgentArnList"),
@@ -140,7 +156,7 @@ static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_AGENT_ARNS: ::aws_smithy_schem
     ),
     ::aws_smithy_schema::ShapeType::List,
     "AgentArns",
-    5,
+    6,
 )
 .with_list_member(&DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_AGENT_ARNS_MEMBER);
 static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -151,7 +167,7 @@ static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_sc
     ),
     ::aws_smithy_schema::ShapeType::Timestamp,
     "CreationTime",
-    6,
+    7,
 );
 static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_SERVER_CERTIFICATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -161,7 +177,7 @@ static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_SERVER_CERTIFICATE: ::aws_smit
     ),
     ::aws_smithy_schema::ShapeType::Blob,
     "ServerCertificate",
-    7,
+    8,
 );
 static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_MANAGED_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> =
     ::aws_smithy_schema::Schema::new_member(
@@ -172,7 +188,7 @@ static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_MANAGED_SECRET_CONFIG: ::aws_s
         ),
         ::aws_smithy_schema::ShapeType::Structure,
         "ManagedSecretConfig",
-        8,
+        9,
     );
 static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_CMK_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -182,7 +198,7 @@ static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_CMK_SECRET_CONFIG: ::aws_smith
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "CmkSecretConfig",
-    9,
+    10,
 );
 static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_CUSTOM_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> =
     ::aws_smithy_schema::Schema::new_member(
@@ -193,7 +209,7 @@ static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_CUSTOM_SECRET_CONFIG: ::aws_sm
         ),
         ::aws_smithy_schema::ShapeType::Structure,
         "CustomSecretConfig",
-        10,
+        11,
     );
 static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -206,6 +222,7 @@ static DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'
         &DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_LOCATION_ARN,
         &DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_LOCATION_URI,
         &DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_ACCESS_KEY,
+        &DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_FEDERATED_IDENTITY,
         &DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_SERVER_PORT,
         &DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_SERVER_PROTOCOL,
         &DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_AGENT_ARNS,
@@ -239,6 +256,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for DescribeLocationObjectSt
         }
         if let Some(ref val) = self.access_key {
             ser.write_string(&DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_ACCESS_KEY, val)?;
+        }
+        if let Some(ref val) = self.federated_identity {
+            ser.write_struct(&DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_FEDERATED_IDENTITY, val)?;
         }
         if let Some(ref val) = self.server_port {
             ser.write_integer(&DESCRIBELOCATIONOBJECTSTORAGEOUTPUT_MEMBER_SERVER_PORT, *val)?;
@@ -314,52 +334,59 @@ impl crate::operation::describe_location_object_storage::builders::DescribeLocat
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.server_port = Some(deser.read_integer(member)?);
+                        self.federated_identity = Some(crate::types::ObjectStorageFederatedIdentityConfig::deserialize(deser)?);
                     }
                 }
                 Some(4) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.server_protocol = Some(crate::types::ObjectStorageServerProtocol::from(deser.read_string(member)?.as_str()));
+                        self.server_port = Some(deser.read_integer(member)?);
                     }
                 }
                 Some(5) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.agent_arns = Some(deser.read_string_list(member)?);
+                        self.server_protocol = Some(crate::types::ObjectStorageServerProtocol::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(6) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.creation_time = Some(deser.read_timestamp(member)?);
+                        self.agent_arns = Some(deser.read_string_list(member)?);
                     }
                 }
                 Some(7) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.server_certificate = Some(deser.read_blob(member)?);
+                        self.creation_time = Some(deser.read_timestamp(member)?);
                     }
                 }
                 Some(8) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.managed_secret_config = Some(crate::types::ManagedSecretConfig::deserialize(deser)?);
+                        self.server_certificate = Some(deser.read_blob(member)?);
                     }
                 }
                 Some(9) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.cmk_secret_config = Some(crate::types::CmkSecretConfig::deserialize(deser)?);
+                        self.managed_secret_config = Some(crate::types::ManagedSecretConfig::deserialize(deser)?);
                     }
                 }
                 Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cmk_secret_config = Some(crate::types::CmkSecretConfig::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -402,6 +429,7 @@ pub struct DescribeLocationObjectStorageOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) location_uri: ::std::option::Option<::std::string::String>,
     pub(crate) access_key: ::std::option::Option<::std::string::String>,
+    pub(crate) federated_identity: ::std::option::Option<crate::types::ObjectStorageFederatedIdentityConfig>,
     pub(crate) server_port: ::std::option::Option<i32>,
     pub(crate) server_protocol: ::std::option::Option<crate::types::ObjectStorageServerProtocol>,
     pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -454,6 +482,20 @@ impl DescribeLocationObjectStorageOutputBuilder {
     /// <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
     pub fn get_access_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_key
+    }
+    /// <p>The federated identity configuration that DataSync uses to access your object storage using an OpenID Connect (OIDC) token.</p>
+    pub fn federated_identity(mut self, input: crate::types::ObjectStorageFederatedIdentityConfig) -> Self {
+        self.federated_identity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The federated identity configuration that DataSync uses to access your object storage using an OpenID Connect (OIDC) token.</p>
+    pub fn set_federated_identity(mut self, input: ::std::option::Option<crate::types::ObjectStorageFederatedIdentityConfig>) -> Self {
+        self.federated_identity = input;
+        self
+    }
+    /// <p>The federated identity configuration that DataSync uses to access your object storage using an OpenID Connect (OIDC) token.</p>
+    pub fn get_federated_identity(&self) -> &::std::option::Option<crate::types::ObjectStorageFederatedIdentityConfig> {
+        &self.federated_identity
     }
     /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
     pub fn server_port(mut self, input: i32) -> Self {
@@ -588,6 +630,7 @@ impl DescribeLocationObjectStorageOutputBuilder {
             location_arn: self.location_arn,
             location_uri: self.location_uri,
             access_key: self.access_key,
+            federated_identity: self.federated_identity,
             server_port: self.server_port,
             server_protocol: self.server_protocol,
             agent_arns: self.agent_arns,

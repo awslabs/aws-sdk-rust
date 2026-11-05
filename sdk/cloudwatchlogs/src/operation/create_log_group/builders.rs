@@ -174,12 +174,14 @@ impl CreateLogGroupFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>Use this parameter to specify the log group class for this log group. There are three classes:</p>
+    /// <p>Use this parameter to specify the log group class for this log group. There are four classes:</p>
     /// <ul>
     /// <li>
     /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
     /// <li>
     /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// <li>
+    /// <p>The <code>Essentials</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
     /// <li>
     /// <p>Use the <code>Delivery</code> log class only for delivering Lambda logs to store in Amazon S3 or Amazon Data Firehose. Log events in log groups in the Delivery class are kept in CloudWatch Logs for only one day. This log class doesn't offer rich CloudWatch Logs capabilities such as CloudWatch Logs Insights queries.</p></li>
     /// </ul>
@@ -191,12 +193,14 @@ impl CreateLogGroupFluentBuilder {
         self.inner = self.inner.log_group_class(input);
         self
     }
-    /// <p>Use this parameter to specify the log group class for this log group. There are three classes:</p>
+    /// <p>Use this parameter to specify the log group class for this log group. There are four classes:</p>
     /// <ul>
     /// <li>
     /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
     /// <li>
     /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// <li>
+    /// <p>The <code>Essentials</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
     /// <li>
     /// <p>Use the <code>Delivery</code> log class only for delivering Lambda logs to store in Amazon S3 or Amazon Data Firehose. Log events in log groups in the Delivery class are kept in CloudWatch Logs for only one day. This log class doesn't offer rich CloudWatch Logs capabilities such as CloudWatch Logs Insights queries.</p></li>
     /// </ul>
@@ -208,12 +212,14 @@ impl CreateLogGroupFluentBuilder {
         self.inner = self.inner.set_log_group_class(input);
         self
     }
-    /// <p>Use this parameter to specify the log group class for this log group. There are three classes:</p>
+    /// <p>Use this parameter to specify the log group class for this log group. There are four classes:</p>
     /// <ul>
     /// <li>
     /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
     /// <li>
     /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// <li>
+    /// <p>The <code>Essentials</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
     /// <li>
     /// <p>Use the <code>Delivery</code> log class only for delivering Lambda logs to store in Amazon S3 or Amazon Data Firehose. Log events in log groups in the Delivery class are kept in CloudWatch Logs for only one day. This log class doesn't offer rich CloudWatch Logs capabilities such as CloudWatch Logs Insights queries.</p></li>
     /// </ul>

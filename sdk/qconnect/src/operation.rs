@@ -211,6 +211,12 @@ pub mod put_feedback;
 /// Types for the `QueryAssistant` operation.
 pub mod query_assistant;
 
+/// Types for the `RegisterAssistantReplicaKey` operation.
+pub mod register_assistant_replica_key;
+
+/// Types for the `RegisterKnowledgeBaseReplicaKey` operation.
+pub mod register_knowledge_base_replica_key;
+
 /// Types for the `RemoveAssistantAIAgent` operation.
 pub mod remove_assistant_ai_agent;
 

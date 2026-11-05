@@ -30,6 +30,12 @@ pub struct AssistantData {
     pub ai_agent_configuration: ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
     /// <p>The list of orchestrator configurations for the assistant.</p>
     pub orchestrator_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
+    /// <p>The timestamp when the assistant was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where the assistant was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
+    /// Whether Amazon Connect Global Resiliency replicates the Connect instance this assistant is associated with, and so whether resources created under this assistant must satisfy the replication group's model parity constraint. Answered from the ACGR side per request rather than stored, so it reflects the customer's replication state now. Absent means "not applicable or not known" - never read an absent field as DISABLED. It is absent on the operations that return an assistant which is not yet associated with a Connect instance, because replication cannot be established until it is.
+    pub assistant_global_resiliency_status: ::std::option::Option<crate::types::AssistantGlobalResiliencyStatus>,
 }
 impl AssistantData {
     /// <p>The identifier of the Amazon Q in Connect assistant.</p>
@@ -89,6 +95,18 @@ impl AssistantData {
     pub fn orchestrator_configuration_list(&self) -> &[crate::types::OrchestratorConfigurationEntry] {
         self.orchestrator_configuration_list.as_deref().unwrap_or_default()
     }
+    /// <p>The timestamp when the assistant was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where the assistant was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
+    /// Whether Amazon Connect Global Resiliency replicates the Connect instance this assistant is associated with, and so whether resources created under this assistant must satisfy the replication group's model parity constraint. Answered from the ACGR side per request rather than stored, so it reflects the customer's replication state now. Absent means "not applicable or not known" - never read an absent field as DISABLED. It is absent on the operations that return an assistant which is not yet associated with a Connect instance, because replication cannot be established until it is.
+    pub fn assistant_global_resiliency_status(&self) -> ::std::option::Option<&crate::types::AssistantGlobalResiliencyStatus> {
+        self.assistant_global_resiliency_status.as_ref()
+    }
 }
 impl AssistantData {
     /// Creates a new builder-style object to manufacture [`AssistantData`](crate::types::AssistantData).
@@ -114,6 +132,9 @@ pub struct AssistantDataBuilder {
     pub(crate) ai_agent_configuration:
         ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
     pub(crate) orchestrator_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
+    pub(crate) assistant_global_resiliency_status: ::std::option::Option<crate::types::AssistantGlobalResiliencyStatus>,
 }
 impl AssistantDataBuilder {
     /// <p>The identifier of the Amazon Q in Connect assistant.</p>
@@ -321,6 +342,48 @@ impl AssistantDataBuilder {
     pub fn get_orchestrator_configuration_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>> {
         &self.orchestrator_configuration_list
     }
+    /// <p>The timestamp when the assistant was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the assistant was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when the assistant was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where the assistant was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where the assistant was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the assistant was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
+    /// Whether Amazon Connect Global Resiliency replicates the Connect instance this assistant is associated with, and so whether resources created under this assistant must satisfy the replication group's model parity constraint. Answered from the ACGR side per request rather than stored, so it reflects the customer's replication state now. Absent means "not applicable or not known" - never read an absent field as DISABLED. It is absent on the operations that return an assistant which is not yet associated with a Connect instance, because replication cannot be established until it is.
+    pub fn assistant_global_resiliency_status(mut self, input: crate::types::AssistantGlobalResiliencyStatus) -> Self {
+        self.assistant_global_resiliency_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// Whether Amazon Connect Global Resiliency replicates the Connect instance this assistant is associated with, and so whether resources created under this assistant must satisfy the replication group's model parity constraint. Answered from the ACGR side per request rather than stored, so it reflects the customer's replication state now. Absent means "not applicable or not known" - never read an absent field as DISABLED. It is absent on the operations that return an assistant which is not yet associated with a Connect instance, because replication cannot be established until it is.
+    pub fn set_assistant_global_resiliency_status(mut self, input: ::std::option::Option<crate::types::AssistantGlobalResiliencyStatus>) -> Self {
+        self.assistant_global_resiliency_status = input;
+        self
+    }
+    /// Whether Amazon Connect Global Resiliency replicates the Connect instance this assistant is associated with, and so whether resources created under this assistant must satisfy the replication group's model parity constraint. Answered from the ACGR side per request rather than stored, so it reflects the customer's replication state now. Absent means "not applicable or not known" - never read an absent field as DISABLED. It is absent on the operations that return an assistant which is not yet associated with a Connect instance, because replication cannot be established until it is.
+    pub fn get_assistant_global_resiliency_status(&self) -> &::std::option::Option<crate::types::AssistantGlobalResiliencyStatus> {
+        &self.assistant_global_resiliency_status
+    }
     /// Consumes the builder and constructs a [`AssistantData`](crate::types::AssistantData).
     /// This method will fail if any of the following fields are not set:
     /// - [`assistant_id`](crate::types::builders::AssistantDataBuilder::assistant_id)
@@ -367,6 +430,9 @@ impl AssistantDataBuilder {
             capability_configuration: self.capability_configuration,
             ai_agent_configuration: self.ai_agent_configuration,
             orchestrator_configuration_list: self.orchestrator_configuration_list,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
+            assistant_global_resiliency_status: self.assistant_global_resiliency_status,
         })
     }
 }

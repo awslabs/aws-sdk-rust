@@ -13,6 +13,7 @@
 /// # let architecture = unimplemented!();
 /// match architecture {
 ///     Architecture::Arm64 => { /* ... */ },
+///     Architecture::X8664 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum Architecture {
     #[allow(missing_docs)] // documentation missing in model
     Arm64,
+    #[allow(missing_docs)] // documentation missing in model
+    X8664,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for Architecture {
     fn from(s: &str) -> Self {
         match s {
             "ARM_64" => Architecture::Arm64,
+            "X86_64" => Architecture::X8664,
             other => Architecture::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl Architecture {
     pub fn as_str(&self) -> &str {
         match self {
             Architecture::Arm64 => "ARM_64",
+            Architecture::X8664 => "X86_64",
             Architecture::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ARM_64"]
+        &["ARM_64", "X86_64"]
     }
 }
 impl ::std::convert::AsRef<str> for Architecture {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for Architecture {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Architecture::Arm64 => write!(f, "ARM_64"),
+            Architecture::X8664 => write!(f, "X86_64"),
             Architecture::Unknown(value) => write!(f, "{value}"),
         }
     }

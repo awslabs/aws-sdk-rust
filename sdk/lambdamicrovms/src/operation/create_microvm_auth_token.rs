@@ -452,6 +452,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for CreateMicrovmAuthTokenError
     }
     fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
         match self {
+            Self::ConflictException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
             Self::InternalServerException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
             Self::ThrottlingException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
             _ => ::std::option::Option::None,

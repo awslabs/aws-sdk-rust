@@ -303,6 +303,10 @@ mod put_feedback;
 
 mod query_assistant;
 
+mod register_assistant_replica_key;
+
+mod register_knowledge_base_replica_key;
+
 mod remove_assistant_ai_agent;
 
 mod remove_knowledge_base_template_uri;

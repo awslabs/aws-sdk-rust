@@ -30,6 +30,10 @@ pub struct AssistantSummary {
     pub ai_agent_configuration: ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
     /// <p>The list of orchestrator configurations for the assistant.</p>
     pub orchestrator_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
+    /// <p>The timestamp when the assistant was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where the assistant was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl AssistantSummary {
     /// <p>The identifier of the Amazon Q in Connect assistant.</p>
@@ -89,6 +93,14 @@ impl AssistantSummary {
     pub fn orchestrator_configuration_list(&self) -> &[crate::types::OrchestratorConfigurationEntry] {
         self.orchestrator_configuration_list.as_deref().unwrap_or_default()
     }
+    /// <p>The timestamp when the assistant was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where the assistant was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
 }
 impl AssistantSummary {
     /// Creates a new builder-style object to manufacture [`AssistantSummary`](crate::types::AssistantSummary).
@@ -114,6 +126,8 @@ pub struct AssistantSummaryBuilder {
     pub(crate) ai_agent_configuration:
         ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
     pub(crate) orchestrator_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl AssistantSummaryBuilder {
     /// <p>The identifier of the Amazon Q in Connect assistant.</p>
@@ -321,6 +335,34 @@ impl AssistantSummaryBuilder {
     pub fn get_orchestrator_configuration_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>> {
         &self.orchestrator_configuration_list
     }
+    /// <p>The timestamp when the assistant was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the assistant was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when the assistant was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where the assistant was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where the assistant was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the assistant was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
     /// Consumes the builder and constructs a [`AssistantSummary`](crate::types::AssistantSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`assistant_id`](crate::types::builders::AssistantSummaryBuilder::assistant_id)
@@ -367,6 +409,8 @@ impl AssistantSummaryBuilder {
             capability_configuration: self.capability_configuration,
             ai_agent_configuration: self.ai_agent_configuration,
             orchestrator_configuration_list: self.orchestrator_configuration_list,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
         })
     }
 }

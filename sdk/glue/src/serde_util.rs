@@ -113,6 +113,24 @@ pub(crate) fn get_databases_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_job_upgrade_analysis_output_output_correct_errors(
+    mut builder: crate::operation::get_job_upgrade_analysis::builders::GetJobUpgradeAnalysisOutputBuilder,
+) -> crate::operation::get_job_upgrade_analysis::builders::GetJobUpgradeAnalysisOutputBuilder {
+    if builder.job_name.is_none() {
+        builder.job_name = Some(Default::default())
+    }
+    if builder.analysis_id.is_none() {
+        builder.analysis_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::Status>().ok()
+    }
+    if builder.target_version.is_none() {
+        builder.target_version = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_mapping_output_output_correct_errors(
     mut builder: crate::operation::get_mapping::builders::GetMappingOutputBuilder,
 ) -> crate::operation::get_mapping::builders::GetMappingOutputBuilder {

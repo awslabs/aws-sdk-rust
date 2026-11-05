@@ -22,7 +22,7 @@ impl crate::operation::put_account_policy::builders::PutAccountPolicyInputBuilde
 }
 /// Fluent builder constructing a request to `PutAccountPolicy`.
 ///
-/// <p>Creates an account-level data protection policy, subscription filter policy, field index policy, transformer policy, or metric extraction policy that applies to all log groups, a subset of log groups, or a data source name and type combination in the account. Account-level policies are Region-specific: a policy applies only to log groups in the Region where you create it. To apply a policy across multiple Regions, create the policy separately in each Region.</p><important>
+/// <p>Creates an account-level data protection policy, subscription filter policy, field index policy, transformer policy, metric extraction policy, or retention policy that applies to all log groups, a subset of log groups, or a data source name and type combination in the account. Account-level policies are Region-specific: a policy applies only to log groups in the Region where you create it. To apply a policy across multiple Regions, create the policy separately in each Region.</p><important>
 /// <p><code>PutAccountPolicy</code> is an account-wide administrative operation intended for CloudWatch Logs administrators. Because it affects all log groups (or a broad subset) in the account, you should grant <code>logs:PutAccountPolicy</code> permissions only to administrators who manage logging configuration across the account, not to application teams or individual log group owners.</p>
 /// </important>
 /// <p><b>Conflict resolution between account-level and log-group-level policies</b></p>
@@ -38,6 +38,8 @@ impl crate::operation::put_account_policy::builders::PutAccountPolicyInputBuilde
 /// <p><i>Field index policies</i> — If a log group has its own field index policy (created with <code>PutIndexPolicy</code>), any account-level policy that uses <code>LogGroupNamePrefix</code> selection criteria or has no selection criteria is ignored for that log group. However, account-level policies that use <code>DataSourceName</code> and <code>DataSourceType</code> selection criteria still apply alongside the log-group-level policy.</p></li>
 /// <li>
 /// <p><i>Metric extraction policies</i> — Metric extraction policies are account-level only and have no log-group-level equivalent, so no conflict resolution applies.</p></li>
+/// <li>
+/// <p><i>Retention policies</i> — An account-level retention policy overrides the retention setting of the log group.</p></li>
 /// </ul>
 /// <p>For field index policies, you can configure indexed fields as <i>facets</i> to enable interactive exploration of your logs. Facets provide value distributions and counts for indexed fields in the CloudWatch Logs Insights console without requiring query execution. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Facets.html">Use facets to group and explore logs</a>.</p>
 /// <p>To use this operation, you must be signed on with the correct permissions depending on the type of policy that you are creating.</p>
@@ -54,6 +56,8 @@ impl crate::operation::put_account_policy::builders::PutAccountPolicyInputBuilde
 /// <p>To configure facets for field index policies, you must have the <code>logs:PutIndexPolicy</code> and <code>logs:PutAccountPolicy</code> permissions.</p></li>
 /// <li>
 /// <p>To create a metric extraction policy, you must have the <code>logs:PutMetricExtractionPolicy</code> and <code>logs:PutAccountPolicy</code> permissions.</p></li>
+/// <li>
+/// <p>To create a retention policy, you must have the <code>logs:PutRetentionPolicy</code> and <code>logs:PutAccountPolicy</code> permissions. A dry run requires the same permissions as the operation that it previews, and no additional permissions.</p></li>
 /// </ul>
 /// <p><b>Data protection policy</b></p>
 /// <p>A data protection policy can help safeguard sensitive data that's ingested by your log groups by auditing and masking the sensitive log data. Each account can have only one account-level data protection policy.</p><important>
@@ -187,6 +191,17 @@ impl crate::operation::put_account_policy::builders::PutAccountPolicyInputBuilde
 /// <li>
 /// <p>If you have a <code>NOT IN</code> policy for prefix <code>"/aws/lambda"</code>, you cannot create an <code>IN</code> policy for prefix <code>"/aws"</code> because the set of log groups matching <code>"/aws"</code> is not a subset of the log groups matching <code>"/aws/lambda"</code>.</p></li>
 /// </ul>
+/// <p><b>Retention policy</b></p>
+/// <p>A retention policy sets the retention period for log groups in your account. You can use an account-level retention policy to set a default retention period for all log groups in the account, or for a subset of log groups that you specify with the <code>selectionCriteria</code> parameter. CloudWatch Logs automatically deletes log events that are older than the retention period.</p>
+/// <p>Each account can have up to 20 account-level retention policies in each Region. To scope a retention policy to a subset of log groups, use <code>LogGroupNamePrefix</code> in <code>selectionCriteria</code>. Retention policies support log group name prefixes only. If you omit <code>selectionCriteria</code>, the policy applies to all log groups in the account.</p>
+/// <p>Unlike other account-level policy types, retention policies can have overlapping selection criteria. When more than one retention policy applies to a log group, the policy with the longest retention period is used. A policy that specifies <code>NEVER_EXPIRE</code> is treated as the longest retention period. This lets you set a baseline retention period for the account, apply longer retention periods to specific log groups, and exempt specific log groups from expiring at all. If two policies that apply to the same log group specify the same retention period, the policy that was created first is the one reported in <code>retentionPolicyName</code>.</p><note>
+/// <p>Account-level retention policies require a minimum retention period of 30 days.</p>
+/// </note> <note>
+/// <p>A retention policy takes effect 24 hours after you create it. If you update a policy, the new retention period takes effect 24 hours after the update, and the previous retention period stays in effect until then. During this period, <code>DescribeLogGroups</code> and log event expiration use the retention period that is currently in effect, but a dry run reports the impact as if the policy were already in effect.</p>
+/// </note>
+/// <p>Before you create, update, or delete a retention policy, you can specify <code>true</code> for <code>dryRun</code> to preview how many log groups would have a longer, shorter, or unchanged retention period. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DryRunResult.html">DryRunResult</a>.</p><important>
+/// <p>An account-level retention policy replaces the retention period set on a log group, including when the log group's own retention period is longer. For example, if a log group is set to retain log events for 10 years and you create a retention policy that sets a 90-day retention period for that log group, CloudWatch Logs deletes the log events in that log group that are older than 90 days. Specify <code>true</code> for <code>dryRun</code> to see which log groups would have a shorter retention period before you create or update the policy.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAccountPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -338,6 +353,26 @@ impl PutAccountPolicyFluentBuilder {
     /// <p>The following is an example of an index policy document that creates indexes with different types.</p>
     /// <p><code>"policyDocument": "{ \"Fields\": \[ \"TransactionId\" \], \"FieldsV2\": {\"RequestId\": {\"type\": \"FIELD_INDEX\"}, \"APIName\": {\"type\": \"FACET\"}, \"StatusCode\": {\"type\": \"FACET\"}}}"</code></p>
     /// <p>You can use <code>FieldsV2</code> to specify the type for each field. Supported types are <code>FIELD_INDEX</code> and <code>FACET</code>. Field names within <code>Fields</code> and <code>FieldsV2</code> must be mutually exclusive.</p>
+    /// <p><b>Retention policy</b></p>
+    /// <p>A retention policy must include the following attributes in a JSON block:</p>
+    /// <dl>
+    /// <dt>
+    /// retentionInDays
+    /// </dt>
+    /// <dd>
+    /// <p>The number of days to retain log events. Valid values are 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653. To retain log events indefinitely, specify the string <code>NEVER_EXPIRE</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// enforcementMode
+    /// </dt>
+    /// <dd>
+    /// <p>Specifies which log groups the policy applies to. Valid values are <code>NEW_ONLY</code> and <code>RETROACTIVE</code>.</p>
+    /// <p><code>RETROACTIVE</code> applies the policy to every log group that matches the selection criteria, including log groups that existed before you created the policy.</p>
+    /// <p><code>NEW_ONLY</code> applies the policy only to log groups that are created after you create the policy. Log groups that already existed when you created the policy keep their own retention period.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>The following is an example of a retention policy document.</p>
+    /// <p><code>"policyDocument": "{\"retentionInDays\": 90, \"enforcementMode\": \"RETROACTIVE\"}"</code></p>
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_document(input.into());
         self
@@ -394,6 +429,26 @@ impl PutAccountPolicyFluentBuilder {
     /// <p>The following is an example of an index policy document that creates indexes with different types.</p>
     /// <p><code>"policyDocument": "{ \"Fields\": \[ \"TransactionId\" \], \"FieldsV2\": {\"RequestId\": {\"type\": \"FIELD_INDEX\"}, \"APIName\": {\"type\": \"FACET\"}, \"StatusCode\": {\"type\": \"FACET\"}}}"</code></p>
     /// <p>You can use <code>FieldsV2</code> to specify the type for each field. Supported types are <code>FIELD_INDEX</code> and <code>FACET</code>. Field names within <code>Fields</code> and <code>FieldsV2</code> must be mutually exclusive.</p>
+    /// <p><b>Retention policy</b></p>
+    /// <p>A retention policy must include the following attributes in a JSON block:</p>
+    /// <dl>
+    /// <dt>
+    /// retentionInDays
+    /// </dt>
+    /// <dd>
+    /// <p>The number of days to retain log events. Valid values are 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653. To retain log events indefinitely, specify the string <code>NEVER_EXPIRE</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// enforcementMode
+    /// </dt>
+    /// <dd>
+    /// <p>Specifies which log groups the policy applies to. Valid values are <code>NEW_ONLY</code> and <code>RETROACTIVE</code>.</p>
+    /// <p><code>RETROACTIVE</code> applies the policy to every log group that matches the selection criteria, including log groups that existed before you created the policy.</p>
+    /// <p><code>NEW_ONLY</code> applies the policy only to log groups that are created after you create the policy. Log groups that already existed when you created the policy keep their own retention period.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>The following is an example of a retention policy document.</p>
+    /// <p><code>"policyDocument": "{\"retentionInDays\": 90, \"enforcementMode\": \"RETROACTIVE\"}"</code></p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
@@ -450,6 +505,26 @@ impl PutAccountPolicyFluentBuilder {
     /// <p>The following is an example of an index policy document that creates indexes with different types.</p>
     /// <p><code>"policyDocument": "{ \"Fields\": \[ \"TransactionId\" \], \"FieldsV2\": {\"RequestId\": {\"type\": \"FIELD_INDEX\"}, \"APIName\": {\"type\": \"FACET\"}, \"StatusCode\": {\"type\": \"FACET\"}}}"</code></p>
     /// <p>You can use <code>FieldsV2</code> to specify the type for each field. Supported types are <code>FIELD_INDEX</code> and <code>FACET</code>. Field names within <code>Fields</code> and <code>FieldsV2</code> must be mutually exclusive.</p>
+    /// <p><b>Retention policy</b></p>
+    /// <p>A retention policy must include the following attributes in a JSON block:</p>
+    /// <dl>
+    /// <dt>
+    /// retentionInDays
+    /// </dt>
+    /// <dd>
+    /// <p>The number of days to retain log events. Valid values are 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653. To retain log events indefinitely, specify the string <code>NEVER_EXPIRE</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// enforcementMode
+    /// </dt>
+    /// <dd>
+    /// <p>Specifies which log groups the policy applies to. Valid values are <code>NEW_ONLY</code> and <code>RETROACTIVE</code>.</p>
+    /// <p><code>RETROACTIVE</code> applies the policy to every log group that matches the selection criteria, including log groups that existed before you created the policy.</p>
+    /// <p><code>NEW_ONLY</code> applies the policy only to log groups that are created after you create the policy. Log groups that already existed when you created the policy keep their own retention period.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>The following is an example of a retention policy document.</p>
+    /// <p><code>"policyDocument": "{\"retentionInDays\": 90, \"enforcementMode\": \"RETROACTIVE\"}"</code></p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_document()
     }
@@ -482,7 +557,7 @@ impl PutAccountPolicyFluentBuilder {
         self.inner.get_scope()
     }
     /// <p>Use this parameter to apply the new policy to a subset of log groups in the account or a data source name and type combination.</p>
-    /// <p>Specifying <code>selectionCriteria</code> is valid only when you specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p>
+    /// <p>Specifying <code>selectionCriteria</code> is valid only when you specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code>, <code>TRANSFORMER_POLICY</code>, or <code>RETENTION_POLICY</code> for <code>policyType</code>.</p>
     /// <ul>
     /// <li>
     /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p></li>
@@ -497,6 +572,8 @@ impl PutAccountPolicyFluentBuilder {
     /// <p><code>DataSourceName</code> AND <code>DataSourceType</code></p></li>
     /// </ul>
     /// <p>When you specify <code>selectionCriteria</code> for a field index policy you can use either <code>LogGroupNamePrefix</code> by itself or <code>DataSourceName</code> and <code>DataSourceType</code> together.</p></li>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>RETENTION_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code>. If you omit <code>selectionCriteria</code>, the retention policy applies to all log groups in the account.</p></li>
     /// </ul>
     /// <p>The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
     /// <p>Using the <code>selectionCriteria</code> parameter with <code>SUBSCRIPTION_FILTER_POLICY</code> is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
@@ -505,7 +582,7 @@ impl PutAccountPolicyFluentBuilder {
         self
     }
     /// <p>Use this parameter to apply the new policy to a subset of log groups in the account or a data source name and type combination.</p>
-    /// <p>Specifying <code>selectionCriteria</code> is valid only when you specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p>
+    /// <p>Specifying <code>selectionCriteria</code> is valid only when you specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code>, <code>TRANSFORMER_POLICY</code>, or <code>RETENTION_POLICY</code> for <code>policyType</code>.</p>
     /// <ul>
     /// <li>
     /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p></li>
@@ -520,6 +597,8 @@ impl PutAccountPolicyFluentBuilder {
     /// <p><code>DataSourceName</code> AND <code>DataSourceType</code></p></li>
     /// </ul>
     /// <p>When you specify <code>selectionCriteria</code> for a field index policy you can use either <code>LogGroupNamePrefix</code> by itself or <code>DataSourceName</code> and <code>DataSourceType</code> together.</p></li>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>RETENTION_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code>. If you omit <code>selectionCriteria</code>, the retention policy applies to all log groups in the account.</p></li>
     /// </ul>
     /// <p>The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
     /// <p>Using the <code>selectionCriteria</code> parameter with <code>SUBSCRIPTION_FILTER_POLICY</code> is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
@@ -528,7 +607,7 @@ impl PutAccountPolicyFluentBuilder {
         self
     }
     /// <p>Use this parameter to apply the new policy to a subset of log groups in the account or a data source name and type combination.</p>
-    /// <p>Specifying <code>selectionCriteria</code> is valid only when you specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p>
+    /// <p>Specifying <code>selectionCriteria</code> is valid only when you specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code>, <code>TRANSFORMER_POLICY</code>, or <code>RETENTION_POLICY</code> for <code>policyType</code>.</p>
     /// <ul>
     /// <li>
     /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p></li>
@@ -543,6 +622,8 @@ impl PutAccountPolicyFluentBuilder {
     /// <p><code>DataSourceName</code> AND <code>DataSourceType</code></p></li>
     /// </ul>
     /// <p>When you specify <code>selectionCriteria</code> for a field index policy you can use either <code>LogGroupNamePrefix</code> by itself or <code>DataSourceName</code> and <code>DataSourceType</code> together.</p></li>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>RETENTION_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code>. If you omit <code>selectionCriteria</code>, the retention policy applies to all log groups in the account.</p></li>
     /// </ul>
     /// <p>The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
     /// <p>Using the <code>selectionCriteria</code> parameter with <code>SUBSCRIPTION_FILTER_POLICY</code> is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>

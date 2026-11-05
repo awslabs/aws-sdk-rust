@@ -291,6 +291,8 @@ pub(crate) mod shape_describe_quick_sight_q_search_configuration;
 
 pub(crate) mod shape_describe_refresh_schedule;
 
+pub(crate) mod shape_describe_resource_permissions;
+
 pub(crate) mod shape_describe_role_custom_permission;
 
 pub(crate) mod shape_describe_self_upgrade_configuration;
@@ -578,6 +580,8 @@ pub(crate) mod shape_update_q_personalization_configuration;
 pub(crate) mod shape_update_quick_sight_q_search_configuration;
 
 pub(crate) mod shape_update_refresh_schedule;
+
+pub(crate) mod shape_update_resource_permissions;
 
 pub(crate) mod shape_update_role_custom_permission;
 
@@ -882,6 +886,8 @@ pub(crate) mod shape_update_q_personalization_configuration_input;
 pub(crate) mod shape_update_quick_sight_q_search_configuration_input;
 
 pub(crate) mod shape_update_refresh_schedule_input;
+
+pub(crate) mod shape_update_resource_permissions_input;
 
 pub(crate) mod shape_update_role_custom_permission_input;
 

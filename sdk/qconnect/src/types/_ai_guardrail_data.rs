@@ -38,6 +38,10 @@ pub struct AiGuardrailData {
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The time the AI Guardrail was last modified.</p>
     pub modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The timestamp when the AI Guardrail was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where the AI Guardrail was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl AiGuardrailData {
     /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -115,6 +119,14 @@ impl AiGuardrailData {
     pub fn modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_time.as_ref()
     }
+    /// <p>The timestamp when the AI Guardrail was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where the AI Guardrail was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
 }
 impl ::std::fmt::Debug for AiGuardrailData {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -136,6 +148,8 @@ impl ::std::fmt::Debug for AiGuardrailData {
         formatter.field("tags", &self.tags);
         formatter.field("status", &self.status);
         formatter.field("modified_time", &self.modified_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_region", &self.last_modified_region);
         formatter.finish()
     }
 }
@@ -167,6 +181,8 @@ pub struct AiGuardrailDataBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl AiGuardrailDataBuilder {
     /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -427,6 +443,34 @@ impl AiGuardrailDataBuilder {
     pub fn get_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_time
     }
+    /// <p>The timestamp when the AI Guardrail was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the AI Guardrail was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when the AI Guardrail was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where the AI Guardrail was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where the AI Guardrail was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the AI Guardrail was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
     /// Consumes the builder and constructs a [`AiGuardrailData`](crate::types::AiGuardrailData).
     /// This method will fail if any of the following fields are not set:
     /// - [`assistant_id`](crate::types::builders::AiGuardrailDataBuilder::assistant_id)
@@ -496,6 +540,8 @@ impl AiGuardrailDataBuilder {
             tags: self.tags,
             status: self.status,
             modified_time: self.modified_time,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
         })
     }
 }
@@ -519,6 +565,8 @@ impl ::std::fmt::Debug for AiGuardrailDataBuilder {
         formatter.field("tags", &self.tags);
         formatter.field("status", &self.status);
         formatter.field("modified_time", &self.modified_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_region", &self.last_modified_region);
         formatter.finish()
     }
 }

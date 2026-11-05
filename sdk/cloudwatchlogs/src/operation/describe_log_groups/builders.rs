@@ -23,6 +23,7 @@ impl crate::operation::describe_log_groups::builders::DescribeLogGroupsInputBuil
 /// Fluent builder constructing a request to `DescribeLogGroups`.
 ///
 /// <p>Returns information about log groups, including data sources that ingest into each log group. You can return all your log groups or filter the results by prefix. The results are ASCII-sorted by log group name.</p>
+/// <p>If an account-level retention policy applies to a log group, <code>retentionInDays</code> shows the retention period from that policy, and <code>retentionPolicyName</code> shows the name of the policy.</p>
 /// <p>CloudWatch Logs doesn't support IAM policies that control access to the <code>DescribeLogGroups</code> action by using the <code>aws:ResourceTag/<i>key-name</i> </code> condition key. Other CloudWatch Logs actions do support the use of the <code>aws:ResourceTag/<i>key-name</i> </code> condition key to control access. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
 /// <p>If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -227,12 +228,15 @@ impl DescribeLogGroupsFluentBuilder {
         self.inner.get_include_linked_accounts()
     }
     /// <p>Use this parameter to limit the results to only those log groups in the specified log group class. If you omit this parameter, log groups of all classes can be returned.</p>
-    /// <p>Specifies the log group class for this log group. There are three classes:</p>
+    /// <p>If you specify either <code>INFREQUENT_ACCESS</code> or <code>ESSENTIALS</code>, the results include log groups in both the Infrequent Access and Essentials log classes.</p>
+    /// <p>Specifies the log group class for this log group. There are four classes:</p>
     /// <ul>
     /// <li>
     /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
     /// <li>
     /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// <li>
+    /// <p>The <code>Essentials</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
     /// <li>
     /// <p>Use the <code>Delivery</code> log class only for delivering Lambda logs to store in Amazon S3 or Amazon Data Firehose. Log events in log groups in the Delivery class are kept in CloudWatch Logs for only one day. This log class doesn't offer rich CloudWatch Logs capabilities such as CloudWatch Logs Insights queries.</p></li>
     /// </ul>
@@ -242,12 +246,15 @@ impl DescribeLogGroupsFluentBuilder {
         self
     }
     /// <p>Use this parameter to limit the results to only those log groups in the specified log group class. If you omit this parameter, log groups of all classes can be returned.</p>
-    /// <p>Specifies the log group class for this log group. There are three classes:</p>
+    /// <p>If you specify either <code>INFREQUENT_ACCESS</code> or <code>ESSENTIALS</code>, the results include log groups in both the Infrequent Access and Essentials log classes.</p>
+    /// <p>Specifies the log group class for this log group. There are four classes:</p>
     /// <ul>
     /// <li>
     /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
     /// <li>
     /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// <li>
+    /// <p>The <code>Essentials</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
     /// <li>
     /// <p>Use the <code>Delivery</code> log class only for delivering Lambda logs to store in Amazon S3 or Amazon Data Firehose. Log events in log groups in the Delivery class are kept in CloudWatch Logs for only one day. This log class doesn't offer rich CloudWatch Logs capabilities such as CloudWatch Logs Insights queries.</p></li>
     /// </ul>
@@ -257,12 +264,15 @@ impl DescribeLogGroupsFluentBuilder {
         self
     }
     /// <p>Use this parameter to limit the results to only those log groups in the specified log group class. If you omit this parameter, log groups of all classes can be returned.</p>
-    /// <p>Specifies the log group class for this log group. There are three classes:</p>
+    /// <p>If you specify either <code>INFREQUENT_ACCESS</code> or <code>ESSENTIALS</code>, the results include log groups in both the Infrequent Access and Essentials log classes.</p>
+    /// <p>Specifies the log group class for this log group. There are four classes:</p>
     /// <ul>
     /// <li>
     /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
     /// <li>
     /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// <li>
+    /// <p>The <code>Essentials</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
     /// <li>
     /// <p>Use the <code>Delivery</code> log class only for delivering Lambda logs to store in Amazon S3 or Amazon Data Firehose. Log events in log groups in the Delivery class are kept in CloudWatch Logs for only one day. This log class doesn't offer rich CloudWatch Logs capabilities such as CloudWatch Logs Insights queries.</p></li>
     /// </ul>

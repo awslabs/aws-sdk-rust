@@ -339,6 +339,8 @@ pub use crate::types::_jira_resource_capabilities::JiraResourceCapabilities;
 
 pub use crate::types::_user_metadata::UserMetadata;
 
+pub use crate::types::_group_metadata::GroupMetadata;
+
 pub use crate::types::_git_hub_repository_resource::GitHubRepositoryResource;
 
 pub use crate::types::_git_lab_repository_resource::GitLabRepositoryResource;
@@ -532,6 +534,8 @@ mod _git_lab_repository_resource;
 mod _git_lab_resource_capabilities;
 
 mod _git_lab_token_type;
+
+mod _group_metadata;
 
 mod _http_verification;
 

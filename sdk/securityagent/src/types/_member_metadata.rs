@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum MemberMetadata {
+    /// <p>The group metadata for the member.</p>
+    Group(crate::types::GroupMetadata),
     /// <p>The user metadata for the member.</p>
     User(crate::types::UserMetadata),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum MemberMetadata {
     Unknown,
 }
 impl MemberMetadata {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`Group`](crate::types::MemberMetadata::Group), extracting the inner [`GroupMetadata`](crate::types::GroupMetadata).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_group(&self) -> ::std::result::Result<&crate::types::GroupMetadata, &Self> {
+        if let MemberMetadata::Group(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Group`](crate::types::MemberMetadata::Group).
+    pub fn is_group(&self) -> bool {
+        self.as_group().is_ok()
+    }
     /// Tries to convert the enum instance into [`User`](crate::types::MemberMetadata::User), extracting the inner [`UserMetadata`](crate::types::UserMetadata).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_user(&self) -> ::std::result::Result<&crate::types::UserMetadata, &Self> {

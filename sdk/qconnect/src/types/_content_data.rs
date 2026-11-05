@@ -32,6 +32,12 @@ pub struct ContentData {
     pub url: ::std::string::String,
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
     pub url_expiry: ::aws_smithy_types::DateTime,
+    /// <p>The timestamp when the content was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where the content was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
+    /// <p>The Base64-encoded SHA-256 hash of the content file. Amazon Connect Global Resiliency returns this field only for replicated content.</p>
+    pub file_hash: ::std::option::Option<::std::string::String>,
 }
 impl ContentData {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
@@ -99,6 +105,18 @@ impl ContentData {
     pub fn url_expiry(&self) -> &::aws_smithy_types::DateTime {
         &self.url_expiry
     }
+    /// <p>The timestamp when the content was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where the content was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
+    /// <p>The Base64-encoded SHA-256 hash of the content file. Amazon Connect Global Resiliency returns this field only for replicated content.</p>
+    pub fn file_hash(&self) -> ::std::option::Option<&str> {
+        self.file_hash.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ContentData {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -117,6 +135,9 @@ impl ::std::fmt::Debug for ContentData {
         formatter.field("link_out_uri", &self.link_out_uri);
         formatter.field("url", &"*** Sensitive Data Redacted ***");
         formatter.field("url_expiry", &self.url_expiry);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_region", &self.last_modified_region);
+        formatter.field("file_hash", &self.file_hash);
         formatter.finish()
     }
 }
@@ -145,6 +166,9 @@ pub struct ContentDataBuilder {
     pub(crate) link_out_uri: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) url_expiry: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
+    pub(crate) file_hash: ::std::option::Option<::std::string::String>,
 }
 impl ContentDataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
@@ -366,6 +390,48 @@ impl ContentDataBuilder {
     pub fn get_url_expiry(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.url_expiry
     }
+    /// <p>The timestamp when the content was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the content was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when the content was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where the content was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where the content was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the content was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
+    /// <p>The Base64-encoded SHA-256 hash of the content file. Amazon Connect Global Resiliency returns this field only for replicated content.</p>
+    pub fn file_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_hash = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Base64-encoded SHA-256 hash of the content file. Amazon Connect Global Resiliency returns this field only for replicated content.</p>
+    pub fn set_file_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.file_hash = input;
+        self
+    }
+    /// <p>The Base64-encoded SHA-256 hash of the content file. Amazon Connect Global Resiliency returns this field only for replicated content.</p>
+    pub fn get_file_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_hash
+    }
     /// Consumes the builder and constructs a [`ContentData`](crate::types::ContentData).
     /// This method will fail if any of the following fields are not set:
     /// - [`content_arn`](crate::types::builders::ContentDataBuilder::content_arn)
@@ -456,6 +522,9 @@ impl ContentDataBuilder {
                     "url_expiry was not specified but it is required when building ContentData",
                 )
             })?,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
+            file_hash: self.file_hash,
         })
     }
 }
@@ -476,6 +545,9 @@ impl ::std::fmt::Debug for ContentDataBuilder {
         formatter.field("link_out_uri", &self.link_out_uri);
         formatter.field("url", &"*** Sensitive Data Redacted ***");
         formatter.field("url_expiry", &self.url_expiry);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_region", &self.last_modified_region);
+        formatter.field("file_hash", &self.file_hash);
         formatter.finish()
     }
 }

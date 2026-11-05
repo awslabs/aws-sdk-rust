@@ -19,6 +19,8 @@ pub struct UpdateLocationObjectStorageInput {
     /// <p>If you provide a secret using <code>SecretKey</code>, but do not provide secret configuration details using <code>CmkSecretConfig</code> or <code>CustomSecretConfig</code>, then DataSync stores the token using your Amazon Web Services account's Secrets Manager secret.</p>
     /// </note>
     pub secret_key: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the federated identity configuration that allows DataSync to access your object storage using an OpenID Connect (OIDC) token instead of a long-term access key and secret key. Provide either <code>FederatedIdentity</code> or the <code>AccessKey</code>/<code>SecretKey</code> credentials, but not both.</p>
+    pub federated_identity: ::std::option::Option<crate::types::ObjectStorageFederatedIdentityConfig>,
     /// <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p><note>
     /// <p>You cannot add or remove agents from a storage location after you initially create it.</p>
     /// </note>
@@ -74,6 +76,10 @@ impl UpdateLocationObjectStorageInput {
     pub fn secret_key(&self) -> ::std::option::Option<&str> {
         self.secret_key.as_deref()
     }
+    /// <p>Specifies the federated identity configuration that allows DataSync to access your object storage using an OpenID Connect (OIDC) token instead of a long-term access key and secret key. Provide either <code>FederatedIdentity</code> or the <code>AccessKey</code>/<code>SecretKey</code> credentials, but not both.</p>
+    pub fn federated_identity(&self) -> ::std::option::Option<&crate::types::ObjectStorageFederatedIdentityConfig> {
+        self.federated_identity.as_ref()
+    }
     /// <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.</p><note>
     /// <p>You cannot add or remove agents from a storage location after you initially create it.</p>
     /// </note>
@@ -118,6 +124,7 @@ impl ::std::fmt::Debug for UpdateLocationObjectStorageInput {
         formatter.field("server_hostname", &self.server_hostname);
         formatter.field("access_key", &self.access_key);
         formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("federated_identity", &self.federated_identity);
         formatter.field("agent_arns", &self.agent_arns);
         formatter.field("server_certificate", &self.server_certificate);
         formatter.field("cmk_secret_config", &self.cmk_secret_config);
@@ -195,6 +202,16 @@ static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SECRET_KEY: ::aws_smithy_schema::
     "SecretKey",
     6,
 );
+static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_FEDERATED_IDENTITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationObjectStorageInput$FederatedIdentity",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationObjectStorageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FederatedIdentity",
+    7,
+);
 static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_AGENT_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#AgentArnList$member", "com.amazonaws.datasync", "AgentArnList"),
     ::aws_smithy_schema::ShapeType::String,
@@ -209,7 +226,7 @@ static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_AGENT_ARNS: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::List,
     "AgentArns",
-    7,
+    8,
 )
 .with_list_member(&UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_AGENT_ARNS_MEMBER);
 static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SERVER_CERTIFICATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -220,7 +237,7 @@ static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SERVER_CERTIFICATE: ::aws_smithy_
     ),
     ::aws_smithy_schema::ShapeType::Blob,
     "ServerCertificate",
-    8,
+    9,
 );
 static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_CMK_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -230,7 +247,7 @@ static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_CMK_SECRET_CONFIG: ::aws_smithy_s
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "CmkSecretConfig",
-    9,
+    10,
 );
 static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_CUSTOM_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -240,7 +257,7 @@ static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_CUSTOM_SECRET_CONFIG: ::aws_smith
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "CustomSecretConfig",
-    10,
+    11,
 );
 static UPDATELOCATIONOBJECTSTORAGEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -257,6 +274,7 @@ static UPDATELOCATIONOBJECTSTORAGEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'sta
         &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SERVER_HOSTNAME,
         &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_ACCESS_KEY,
         &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SECRET_KEY,
+        &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_FEDERATED_IDENTITY,
         &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_AGENT_ARNS,
         &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SERVER_CERTIFICATE,
         &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_CMK_SECRET_CONFIG,
@@ -299,6 +317,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for UpdateLocationObjectStor
         }
         if let Some(ref val) = self.secret_key {
             ser.write_string(&UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SECRET_KEY, val)?;
+        }
+        if let Some(ref val) = self.federated_identity {
+            ser.write_struct(&UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_FEDERATED_IDENTITY, val)?;
         }
         if let Some(ref val) = self.agent_arns {
             ser.write_list(
@@ -390,24 +411,31 @@ impl crate::operation::update_location_object_storage::builders::UpdateLocationO
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.agent_arns = Some(deser.read_string_list(member)?);
+                        self.federated_identity = Some(crate::types::ObjectStorageFederatedIdentityConfig::deserialize(deser)?);
                     }
                 }
                 Some(8) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.server_certificate = Some(deser.read_blob(member)?);
+                        self.agent_arns = Some(deser.read_string_list(member)?);
                     }
                 }
                 Some(9) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.cmk_secret_config = Some(crate::types::CmkSecretConfig::deserialize(deser)?);
+                        self.server_certificate = Some(deser.read_blob(member)?);
                     }
                 }
                 Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cmk_secret_config = Some(crate::types::CmkSecretConfig::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -450,6 +478,7 @@ pub struct UpdateLocationObjectStorageInputBuilder {
     pub(crate) server_hostname: ::std::option::Option<::std::string::String>,
     pub(crate) access_key: ::std::option::Option<::std::string::String>,
     pub(crate) secret_key: ::std::option::Option<::std::string::String>,
+    pub(crate) federated_identity: ::std::option::Option<crate::types::ObjectStorageFederatedIdentityConfig>,
     pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) server_certificate: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
@@ -560,6 +589,20 @@ impl UpdateLocationObjectStorageInputBuilder {
     /// </note>
     pub fn get_secret_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_key
+    }
+    /// <p>Specifies the federated identity configuration that allows DataSync to access your object storage using an OpenID Connect (OIDC) token instead of a long-term access key and secret key. Provide either <code>FederatedIdentity</code> or the <code>AccessKey</code>/<code>SecretKey</code> credentials, but not both.</p>
+    pub fn federated_identity(mut self, input: crate::types::ObjectStorageFederatedIdentityConfig) -> Self {
+        self.federated_identity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the federated identity configuration that allows DataSync to access your object storage using an OpenID Connect (OIDC) token instead of a long-term access key and secret key. Provide either <code>FederatedIdentity</code> or the <code>AccessKey</code>/<code>SecretKey</code> credentials, but not both.</p>
+    pub fn set_federated_identity(mut self, input: ::std::option::Option<crate::types::ObjectStorageFederatedIdentityConfig>) -> Self {
+        self.federated_identity = input;
+        self
+    }
+    /// <p>Specifies the federated identity configuration that allows DataSync to access your object storage using an OpenID Connect (OIDC) token instead of a long-term access key and secret key. Provide either <code>FederatedIdentity</code> or the <code>AccessKey</code>/<code>SecretKey</code> credentials, but not both.</p>
+    pub fn get_federated_identity(&self) -> &::std::option::Option<crate::types::ObjectStorageFederatedIdentityConfig> {
+        &self.federated_identity
     }
     /// Appends an item to `agent_arns`.
     ///
@@ -683,6 +726,7 @@ impl UpdateLocationObjectStorageInputBuilder {
             server_hostname: self.server_hostname,
             access_key: self.access_key,
             secret_key: self.secret_key,
+            federated_identity: self.federated_identity,
             agent_arns: self.agent_arns,
             server_certificate: self.server_certificate,
             cmk_secret_config: self.cmk_secret_config,
@@ -700,6 +744,7 @@ impl ::std::fmt::Debug for UpdateLocationObjectStorageInputBuilder {
         formatter.field("server_hostname", &self.server_hostname);
         formatter.field("access_key", &self.access_key);
         formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("federated_identity", &self.federated_identity);
         formatter.field("agent_arns", &self.agent_arns);
         formatter.field("server_certificate", &self.server_certificate);
         formatter.field("cmk_secret_config", &self.cmk_secret_config);

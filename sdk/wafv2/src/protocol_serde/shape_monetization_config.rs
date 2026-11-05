@@ -9,8 +9,20 @@ pub fn ser_monetization_config(
         crate::protocol_serde::shape_crypto_config::ser_crypto_config(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.currency_mode {
-        object.key("CurrencyMode").string(var_3.as_str());
+    if let Some(var_3) = &input.connected_account_configs {
+        let mut array_4 = object.key("ConnectedAccountConfigs").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_connected_account_config::ser_connected_account_config(&mut object_6, item_5)?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
+    }
+    if let Some(var_7) = &input.currency_mode {
+        object.key("CurrencyMode").string(var_7.as_str());
     }
     Ok(())
 }
@@ -40,6 +52,11 @@ where
                         "CryptoConfig" => {
                             builder =
                                 builder.set_crypto_config(crate::protocol_serde::shape_crypto_config::de_crypto_config(tokens, _value, depth + 1)?);
+                        }
+                        "ConnectedAccountConfigs" => {
+                            builder = builder.set_connected_account_configs(
+                                crate::protocol_serde::shape_connected_account_configs::de_connected_account_configs(tokens, _value, depth + 1)?,
+                            );
                         }
                         "CurrencyMode" => {
                             builder = builder.set_currency_mode(

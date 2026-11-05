@@ -7,10 +7,12 @@ pub struct UpdateLocationAzureBlobInput {
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies path segments if you want to limit your transfer to a virtual directory in your container (for example, <code>/my/images</code>).</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
+    /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS) or an OpenID Connect (OIDC) token.</p>
     pub authentication_type: ::std::option::Option<crate::types::AzureBlobAuthenticationType>,
     /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
     pub sas_configuration: ::std::option::Option<crate::types::AzureBlobSasConfiguration>,
+    /// <p>Specifies the federated identity configuration that allows DataSync to access your Azure Blob Storage using an OpenID Connect (OIDC) token instead of a shared access signature (SAS). Provide either <code>FederatedIdentity</code> or <code>SasConfiguration</code>, but not both.</p>
+    pub federated_identity: ::std::option::Option<crate::types::AzureFederatedIdentityConfig>,
     /// <p>Specifies the type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
     pub blob_type: ::std::option::Option<crate::types::AzureBlobType>,
     /// <p>Specifies the access tier that you want your objects or files transferred into. This only applies when using the location as a transfer destination. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">Access tiers</a>.</p>
@@ -34,13 +36,17 @@ impl UpdateLocationAzureBlobInput {
     pub fn subdirectory(&self) -> ::std::option::Option<&str> {
         self.subdirectory.as_deref()
     }
-    /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
+    /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS) or an OpenID Connect (OIDC) token.</p>
     pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AzureBlobAuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
     pub fn sas_configuration(&self) -> ::std::option::Option<&crate::types::AzureBlobSasConfiguration> {
         self.sas_configuration.as_ref()
+    }
+    /// <p>Specifies the federated identity configuration that allows DataSync to access your Azure Blob Storage using an OpenID Connect (OIDC) token instead of a shared access signature (SAS). Provide either <code>FederatedIdentity</code> or <code>SasConfiguration</code>, but not both.</p>
+    pub fn federated_identity(&self) -> ::std::option::Option<&crate::types::AzureFederatedIdentityConfig> {
+        self.federated_identity.as_ref()
     }
     /// <p>Specifies the type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
     pub fn blob_type(&self) -> ::std::option::Option<&crate::types::AzureBlobType> {
@@ -108,6 +114,16 @@ static UPDATELOCATIONAZUREBLOBINPUT_MEMBER_SAS_CONFIGURATION: ::aws_smithy_schem
     "SasConfiguration",
     3,
 );
+static UPDATELOCATIONAZUREBLOBINPUT_MEMBER_FEDERATED_IDENTITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationAzureBlobInput$FederatedIdentity",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationAzureBlobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FederatedIdentity",
+    4,
+);
 static UPDATELOCATIONAZUREBLOBINPUT_MEMBER_BLOB_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.datasync.synthetic#UpdateLocationAzureBlobInput$BlobType",
@@ -116,7 +132,7 @@ static UPDATELOCATIONAZUREBLOBINPUT_MEMBER_BLOB_TYPE: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "BlobType",
-    4,
+    5,
 );
 static UPDATELOCATIONAZUREBLOBINPUT_MEMBER_ACCESS_TIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -126,7 +142,7 @@ static UPDATELOCATIONAZUREBLOBINPUT_MEMBER_ACCESS_TIER: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "AccessTier",
-    5,
+    6,
 );
 static UPDATELOCATIONAZUREBLOBINPUT_MEMBER_AGENT_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#AgentArnList$member", "com.amazonaws.datasync", "AgentArnList"),
@@ -142,7 +158,7 @@ static UPDATELOCATIONAZUREBLOBINPUT_MEMBER_AGENT_ARNS: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::List,
     "AgentArns",
-    6,
+    7,
 )
 .with_list_member(&UPDATELOCATIONAZUREBLOBINPUT_MEMBER_AGENT_ARNS_MEMBER);
 static UPDATELOCATIONAZUREBLOBINPUT_MEMBER_CMK_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -153,7 +169,7 @@ static UPDATELOCATIONAZUREBLOBINPUT_MEMBER_CMK_SECRET_CONFIG: ::aws_smithy_schem
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "CmkSecretConfig",
-    7,
+    8,
 );
 static UPDATELOCATIONAZUREBLOBINPUT_MEMBER_CUSTOM_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -163,7 +179,7 @@ static UPDATELOCATIONAZUREBLOBINPUT_MEMBER_CUSTOM_SECRET_CONFIG: ::aws_smithy_sc
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "CustomSecretConfig",
-    8,
+    9,
 );
 static UPDATELOCATIONAZUREBLOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -177,6 +193,7 @@ static UPDATELOCATIONAZUREBLOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static>
         &UPDATELOCATIONAZUREBLOBINPUT_MEMBER_SUBDIRECTORY,
         &UPDATELOCATIONAZUREBLOBINPUT_MEMBER_AUTHENTICATION_TYPE,
         &UPDATELOCATIONAZUREBLOBINPUT_MEMBER_SAS_CONFIGURATION,
+        &UPDATELOCATIONAZUREBLOBINPUT_MEMBER_FEDERATED_IDENTITY,
         &UPDATELOCATIONAZUREBLOBINPUT_MEMBER_BLOB_TYPE,
         &UPDATELOCATIONAZUREBLOBINPUT_MEMBER_ACCESS_TIER,
         &UPDATELOCATIONAZUREBLOBINPUT_MEMBER_AGENT_ARNS,
@@ -211,6 +228,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for UpdateLocationAzureBlobI
         }
         if let Some(ref val) = self.sas_configuration {
             ser.write_struct(&UPDATELOCATIONAZUREBLOBINPUT_MEMBER_SAS_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.federated_identity {
+            ser.write_struct(&UPDATELOCATIONAZUREBLOBINPUT_MEMBER_FEDERATED_IDENTITY, val)?;
         }
         if let Some(ref val) = self.blob_type {
             ser.write_string(&UPDATELOCATIONAZUREBLOBINPUT_MEMBER_BLOB_TYPE, val.as_str())?;
@@ -284,31 +304,38 @@ impl crate::operation::update_location_azure_blob::builders::UpdateLocationAzure
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.blob_type = Some(crate::types::AzureBlobType::from(deser.read_string(member)?.as_str()));
+                        self.federated_identity = Some(crate::types::AzureFederatedIdentityConfig::deserialize(deser)?);
                     }
                 }
                 Some(5) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.access_tier = Some(crate::types::AzureAccessTier::from(deser.read_string(member)?.as_str()));
+                        self.blob_type = Some(crate::types::AzureBlobType::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(6) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.agent_arns = Some(deser.read_string_list(member)?);
+                        self.access_tier = Some(crate::types::AzureAccessTier::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(7) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.cmk_secret_config = Some(crate::types::CmkSecretConfig::deserialize(deser)?);
+                        self.agent_arns = Some(deser.read_string_list(member)?);
                     }
                 }
                 Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cmk_secret_config = Some(crate::types::CmkSecretConfig::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -348,6 +375,7 @@ pub struct UpdateLocationAzureBlobInputBuilder {
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_type: ::std::option::Option<crate::types::AzureBlobAuthenticationType>,
     pub(crate) sas_configuration: ::std::option::Option<crate::types::AzureBlobSasConfiguration>,
+    pub(crate) federated_identity: ::std::option::Option<crate::types::AzureFederatedIdentityConfig>,
     pub(crate) blob_type: ::std::option::Option<crate::types::AzureBlobType>,
     pub(crate) access_tier: ::std::option::Option<crate::types::AzureAccessTier>,
     pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -384,17 +412,17 @@ impl UpdateLocationAzureBlobInputBuilder {
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         &self.subdirectory
     }
-    /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
+    /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS) or an OpenID Connect (OIDC) token.</p>
     pub fn authentication_type(mut self, input: crate::types::AzureBlobAuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
+    /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS) or an OpenID Connect (OIDC) token.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AzureBlobAuthenticationType>) -> Self {
         self.authentication_type = input;
         self
     }
-    /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
+    /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS) or an OpenID Connect (OIDC) token.</p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AzureBlobAuthenticationType> {
         &self.authentication_type
     }
@@ -411,6 +439,20 @@ impl UpdateLocationAzureBlobInputBuilder {
     /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
     pub fn get_sas_configuration(&self) -> &::std::option::Option<crate::types::AzureBlobSasConfiguration> {
         &self.sas_configuration
+    }
+    /// <p>Specifies the federated identity configuration that allows DataSync to access your Azure Blob Storage using an OpenID Connect (OIDC) token instead of a shared access signature (SAS). Provide either <code>FederatedIdentity</code> or <code>SasConfiguration</code>, but not both.</p>
+    pub fn federated_identity(mut self, input: crate::types::AzureFederatedIdentityConfig) -> Self {
+        self.federated_identity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the federated identity configuration that allows DataSync to access your Azure Blob Storage using an OpenID Connect (OIDC) token instead of a shared access signature (SAS). Provide either <code>FederatedIdentity</code> or <code>SasConfiguration</code>, but not both.</p>
+    pub fn set_federated_identity(mut self, input: ::std::option::Option<crate::types::AzureFederatedIdentityConfig>) -> Self {
+        self.federated_identity = input;
+        self
+    }
+    /// <p>Specifies the federated identity configuration that allows DataSync to access your Azure Blob Storage using an OpenID Connect (OIDC) token instead of a shared access signature (SAS). Provide either <code>FederatedIdentity</code> or <code>SasConfiguration</code>, but not both.</p>
+    pub fn get_federated_identity(&self) -> &::std::option::Option<crate::types::AzureFederatedIdentityConfig> {
+        &self.federated_identity
     }
     /// <p>Specifies the type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
     pub fn blob_type(mut self, input: crate::types::AzureBlobType) -> Self {
@@ -509,6 +551,7 @@ impl UpdateLocationAzureBlobInputBuilder {
             subdirectory: self.subdirectory,
             authentication_type: self.authentication_type,
             sas_configuration: self.sas_configuration,
+            federated_identity: self.federated_identity,
             blob_type: self.blob_type,
             access_tier: self.access_tier,
             agent_arns: self.agent_arns,

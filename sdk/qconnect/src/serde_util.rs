@@ -254,6 +254,30 @@ pub(crate) fn query_assistant_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn register_assistant_replica_key_output_output_correct_errors(
+    mut builder: crate::operation::register_assistant_replica_key::builders::RegisterAssistantReplicaKeyOutputBuilder,
+) -> crate::operation::register_assistant_replica_key::builders::RegisterAssistantReplicaKeyOutputBuilder {
+    if builder.assistant.is_none() {
+        builder.assistant = {
+            let builder = crate::types::builders::AssistantDataBuilder::default();
+            crate::serde_util::assistant_data_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn register_knowledge_base_replica_key_output_output_correct_errors(
+    mut builder: crate::operation::register_knowledge_base_replica_key::builders::RegisterKnowledgeBaseReplicaKeyOutputBuilder,
+) -> crate::operation::register_knowledge_base_replica_key::builders::RegisterKnowledgeBaseReplicaKeyOutputBuilder {
+    if builder.knowledge_base.is_none() {
+        builder.knowledge_base = {
+            let builder = crate::types::builders::KnowledgeBaseDataBuilder::default();
+            crate::serde_util::knowledge_base_data_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn retrieve_output_output_correct_errors(
     mut builder: crate::operation::retrieve::builders::RetrieveOutputBuilder,
 ) -> crate::operation::retrieve::builders::RetrieveOutputBuilder {
@@ -374,6 +398,48 @@ pub(crate) fn conversation_state_correct_errors(
     builder
 }
 
+pub(crate) fn assistant_data_correct_errors(
+    mut builder: crate::types::builders::AssistantDataBuilder,
+) -> crate::types::builders::AssistantDataBuilder {
+    if builder.assistant_id.is_none() {
+        builder.assistant_id = Some(Default::default())
+    }
+    if builder.assistant_arn.is_none() {
+        builder.assistant_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::AssistantType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AssistantStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn knowledge_base_data_correct_errors(
+    mut builder: crate::types::builders::KnowledgeBaseDataBuilder,
+) -> crate::types::builders::KnowledgeBaseDataBuilder {
+    if builder.knowledge_base_id.is_none() {
+        builder.knowledge_base_id = Some(Default::default())
+    }
+    if builder.knowledge_base_arn.is_none() {
+        builder.knowledge_base_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.knowledge_base_type.is_none() {
+        builder.knowledge_base_type = "no value was set".parse::<crate::types::KnowledgeBaseType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::KnowledgeBaseStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn ai_agent_data_correct_errors(mut builder: crate::types::builders::AiAgentDataBuilder) -> crate::types::builders::AiAgentDataBuilder {
     if builder.assistant_id.is_none() {
         builder.assistant_id = Some(Default::default())
@@ -489,27 +555,6 @@ pub(crate) fn assistant_association_data_correct_errors(
     }
     if builder.association_data.is_none() {
         builder.association_data = Some(crate::types::AssistantAssociationOutputData::Unknown)
-    }
-    builder
-}
-
-pub(crate) fn assistant_data_correct_errors(
-    mut builder: crate::types::builders::AssistantDataBuilder,
-) -> crate::types::builders::AssistantDataBuilder {
-    if builder.assistant_id.is_none() {
-        builder.assistant_id = Some(Default::default())
-    }
-    if builder.assistant_arn.is_none() {
-        builder.assistant_arn = Some(Default::default())
-    }
-    if builder.name.is_none() {
-        builder.name = Some(Default::default())
-    }
-    if builder.r#type.is_none() {
-        builder.r#type = "no value was set".parse::<crate::types::AssistantType>().ok()
-    }
-    if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::AssistantStatus>().ok()
     }
     builder
 }
@@ -688,27 +733,6 @@ pub(crate) fn import_job_data_correct_errors(
     }
     if builder.last_modified_time.is_none() {
         builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    builder
-}
-
-pub(crate) fn knowledge_base_data_correct_errors(
-    mut builder: crate::types::builders::KnowledgeBaseDataBuilder,
-) -> crate::types::builders::KnowledgeBaseDataBuilder {
-    if builder.knowledge_base_id.is_none() {
-        builder.knowledge_base_id = Some(Default::default())
-    }
-    if builder.knowledge_base_arn.is_none() {
-        builder.knowledge_base_arn = Some(Default::default())
-    }
-    if builder.name.is_none() {
-        builder.name = Some(Default::default())
-    }
-    if builder.knowledge_base_type.is_none() {
-        builder.knowledge_base_type = "no value was set".parse::<crate::types::KnowledgeBaseType>().ok()
-    }
-    if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::KnowledgeBaseStatus>().ok()
     }
     builder
 }
@@ -1643,6 +1667,15 @@ pub(crate) fn hierarchical_chunking_configuration_correct_errors(
     }
     if builder.overlap_tokens.is_none() {
         builder.overlap_tokens = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn replica_kms_key_correct_errors(
+    mut builder: crate::types::builders::ReplicaKmsKeyBuilder,
+) -> crate::types::builders::ReplicaKmsKeyBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
     }
     builder
 }

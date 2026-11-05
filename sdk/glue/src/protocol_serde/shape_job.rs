@@ -193,6 +193,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AutoUpgradeMetadata" => {
+                            builder = builder.set_auto_upgrade_metadata(
+                                crate::protocol_serde::shape_auto_upgrade_metadata::de_auto_upgrade_metadata(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

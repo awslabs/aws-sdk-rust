@@ -192,6 +192,13 @@ pub(crate) fn de_get_application(
                 "IsService" => {
                     builder = builder.set_is_service(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "LastModifiedRegion" => {
+                    builder = builder.set_last_modified_region(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "LastModifiedTime" => {
                     builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

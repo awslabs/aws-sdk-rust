@@ -82,6 +82,9 @@ pub mod resend_contact_reachability_email;
 /// Types for the `ResendOperationAuthorization` operation.
 pub mod resend_operation_authorization;
 
+/// Types for the `RestoreDomain` operation.
+pub mod restore_domain;
+
 /// Types for the `RetrieveDomainAuthCode` operation.
 pub mod retrieve_domain_auth_code;
 

@@ -13,6 +13,7 @@
 /// # let chipset = unimplemented!();
 /// match chipset {
 ///     Chipset::Graviton => { /* ... */ },
+///     Chipset::Intel => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum Chipset {
     #[allow(missing_docs)] // documentation missing in model
     Graviton,
+    #[allow(missing_docs)] // documentation missing in model
+    Intel,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for Chipset {
     fn from(s: &str) -> Self {
         match s {
             "GRAVITON" => Chipset::Graviton,
+            "INTEL" => Chipset::Intel,
             other => Chipset::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl Chipset {
     pub fn as_str(&self) -> &str {
         match self {
             Chipset::Graviton => "GRAVITON",
+            Chipset::Intel => "INTEL",
             Chipset::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GRAVITON"]
+        &["GRAVITON", "INTEL"]
     }
 }
 impl ::std::convert::AsRef<str> for Chipset {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for Chipset {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Chipset::Graviton => write!(f, "GRAVITON"),
+            Chipset::Intel => write!(f, "INTEL"),
             Chipset::Unknown(value) => write!(f, "{value}"),
         }
     }

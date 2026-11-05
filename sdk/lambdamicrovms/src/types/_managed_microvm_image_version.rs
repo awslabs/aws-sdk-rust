@@ -10,6 +10,8 @@ pub struct ManagedMicrovmImageVersion {
     pub image_version: ::std::string::String,
     /// <p>The lifecycle status of the managed MicroVM image version. Valid values: AVAILABLE (the version is available for use) or DEPRECATED (the version is deprecated; do not use it for new MicroVM images).</p>
     pub status: ::std::option::Option<crate::types::ManagedMicrovmImageVersionStatus>,
+    /// CPU configurations supported by this managed base image version.
+    pub supported_cpu_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CpuConfiguration>>,
     /// <p>The timestamp when the version was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the version was last updated.</p>
@@ -29,6 +31,12 @@ impl ManagedMicrovmImageVersion {
     /// <p>The lifecycle status of the managed MicroVM image version. Valid values: AVAILABLE (the version is available for use) or DEPRECATED (the version is deprecated; do not use it for new MicroVM images).</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ManagedMicrovmImageVersionStatus> {
         self.status.as_ref()
+    }
+    /// CPU configurations supported by this managed base image version.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_cpu_configurations.is_none()`.
+    pub fn supported_cpu_configurations(&self) -> &[crate::types::CpuConfiguration] {
+        self.supported_cpu_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The timestamp when the version was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
@@ -53,6 +61,7 @@ pub struct ManagedMicrovmImageVersionBuilder {
     pub(crate) image_arn: ::std::option::Option<::std::string::String>,
     pub(crate) image_version: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ManagedMicrovmImageVersionStatus>,
+    pub(crate) supported_cpu_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CpuConfiguration>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -100,6 +109,26 @@ impl ManagedMicrovmImageVersionBuilder {
     /// <p>The lifecycle status of the managed MicroVM image version. Valid values: AVAILABLE (the version is available for use) or DEPRECATED (the version is deprecated; do not use it for new MicroVM images).</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ManagedMicrovmImageVersionStatus> {
         &self.status
+    }
+    /// Appends an item to `supported_cpu_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_supported_cpu_configurations`](Self::set_supported_cpu_configurations).
+    ///
+    /// CPU configurations supported by this managed base image version.
+    pub fn supported_cpu_configurations(mut self, input: crate::types::CpuConfiguration) -> Self {
+        let mut v = self.supported_cpu_configurations.unwrap_or_default();
+        v.push(input);
+        self.supported_cpu_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// CPU configurations supported by this managed base image version.
+    pub fn set_supported_cpu_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CpuConfiguration>>) -> Self {
+        self.supported_cpu_configurations = input;
+        self
+    }
+    /// CPU configurations supported by this managed base image version.
+    pub fn get_supported_cpu_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CpuConfiguration>> {
+        &self.supported_cpu_configurations
     }
     /// <p>The timestamp when the version was created.</p>
     /// This field is required.
@@ -150,6 +179,7 @@ impl ManagedMicrovmImageVersionBuilder {
                 )
             })?,
             status: self.status,
+            supported_cpu_configurations: self.supported_cpu_configurations,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",

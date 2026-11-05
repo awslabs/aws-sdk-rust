@@ -125,6 +125,10 @@ pub struct Job {
     pub maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The name of an Glue usage profile associated with the job.</p>
     pub profile_name: ::std::option::Option<::std::string::String>,
+    /// <text>
+    /// The auto-upgrade assessment information for a job configured with glueVersion=auto. This field is null when the job is not configured to auto.
+    /// </text>
+    pub auto_upgrade_metadata: ::std::option::Option<crate::types::AutoUpgradeMetadata>,
 }
 impl Job {
     /// <p>The name you assign to this job definition.</p>
@@ -303,6 +307,12 @@ impl Job {
     pub fn profile_name(&self) -> ::std::option::Option<&str> {
         self.profile_name.as_deref()
     }
+    /// <text>
+    /// The auto-upgrade assessment information for a job configured with glueVersion=auto. This field is null when the job is not configured to auto.
+    /// </text>
+    pub fn auto_upgrade_metadata(&self) -> ::std::option::Option<&crate::types::AutoUpgradeMetadata> {
+        self.auto_upgrade_metadata.as_ref()
+    }
 }
 impl ::std::fmt::Debug for Job {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -334,6 +344,7 @@ impl ::std::fmt::Debug for Job {
         formatter.field("source_control_details", &self.source_control_details);
         formatter.field("maintenance_window", &self.maintenance_window);
         formatter.field("profile_name", &self.profile_name);
+        formatter.field("auto_upgrade_metadata", &self.auto_upgrade_metadata);
         formatter.finish()
     }
 }
@@ -376,6 +387,7 @@ pub struct JobBuilder {
     pub(crate) source_control_details: ::std::option::Option<crate::types::SourceControlDetails>,
     pub(crate) maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_upgrade_metadata: ::std::option::Option<crate::types::AutoUpgradeMetadata>,
 }
 impl JobBuilder {
     /// <p>The name you assign to this job definition.</p>
@@ -995,6 +1007,26 @@ impl JobBuilder {
     pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_name
     }
+    /// <text>
+    /// The auto-upgrade assessment information for a job configured with glueVersion=auto. This field is null when the job is not configured to auto.
+    /// </text>
+    pub fn auto_upgrade_metadata(mut self, input: crate::types::AutoUpgradeMetadata) -> Self {
+        self.auto_upgrade_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <text>
+    /// The auto-upgrade assessment information for a job configured with glueVersion=auto. This field is null when the job is not configured to auto.
+    /// </text>
+    pub fn set_auto_upgrade_metadata(mut self, input: ::std::option::Option<crate::types::AutoUpgradeMetadata>) -> Self {
+        self.auto_upgrade_metadata = input;
+        self
+    }
+    /// <text>
+    /// The auto-upgrade assessment information for a job configured with glueVersion=auto. This field is null when the job is not configured to auto.
+    /// </text>
+    pub fn get_auto_upgrade_metadata(&self) -> &::std::option::Option<crate::types::AutoUpgradeMetadata> {
+        &self.auto_upgrade_metadata
+    }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {
         crate::types::Job {
@@ -1025,6 +1057,7 @@ impl JobBuilder {
             source_control_details: self.source_control_details,
             maintenance_window: self.maintenance_window,
             profile_name: self.profile_name,
+            auto_upgrade_metadata: self.auto_upgrade_metadata,
         }
     }
 }
@@ -1058,6 +1091,7 @@ impl ::std::fmt::Debug for JobBuilder {
         formatter.field("source_control_details", &self.source_control_details);
         formatter.field("maintenance_window", &self.maintenance_window);
         formatter.field("profile_name", &self.profile_name);
+        formatter.field("auto_upgrade_metadata", &self.auto_upgrade_metadata);
         formatter.finish()
     }
 }

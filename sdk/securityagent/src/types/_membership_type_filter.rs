@@ -13,6 +13,7 @@
 /// # let membershiptypefilter = unimplemented!();
 /// match membershiptypefilter {
 ///     MembershipTypeFilter::All => { /* ... */ },
+///     MembershipTypeFilter::Group => { /* ... */ },
 ///     MembershipTypeFilter::User => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@
 pub enum MembershipTypeFilter {
     /// <p>Show all member types.</p>
     All,
+    /// <p>Show only group members.</p>
+    Group,
     /// <p>Show only user members.</p>
     User,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for MembershipTypeFilter {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => MembershipTypeFilter::All,
+            "GROUP" => MembershipTypeFilter::Group,
             "USER" => MembershipTypeFilter::User,
             other => MembershipTypeFilter::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl MembershipTypeFilter {
     pub fn as_str(&self) -> &str {
         match self {
             MembershipTypeFilter::All => "ALL",
+            MembershipTypeFilter::Group => "GROUP",
             MembershipTypeFilter::User => "USER",
             MembershipTypeFilter::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "USER"]
+        &["ALL", "GROUP", "USER"]
     }
 }
 impl ::std::convert::AsRef<str> for MembershipTypeFilter {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for MembershipTypeFilter {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MembershipTypeFilter::All => write!(f, "ALL"),
+            MembershipTypeFilter::Group => write!(f, "GROUP"),
             MembershipTypeFilter::User => write!(f, "USER"),
             MembershipTypeFilter::Unknown(value) => write!(f, "{value}"),
         }

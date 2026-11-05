@@ -1423,6 +1423,13 @@ pub(crate) fn lens_list_processing_jobs_output_output_processing_job_summaries(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_projects_output_output_project_summary_list(
+    input: crate::operation::list_projects::ListProjectsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>> {
+    let input = input.project_summary_list?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_resource_catalogs_output_output_resource_catalogs(
     input: crate::operation::list_resource_catalogs::ListResourceCatalogsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceCatalog>> {

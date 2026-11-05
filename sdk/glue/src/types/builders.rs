@@ -381,6 +381,8 @@ pub use crate::types::_data_quality_rule_results_options::DataQualityRuleResults
 
 pub use crate::types::_observation_results_options::ObservationResultsOptionsBuilder;
 
+pub use crate::types::_auto_upgrade_metadata::AutoUpgradeMetadataBuilder;
+
 pub use crate::types::_mapping_entry::MappingEntryBuilder;
 
 pub use crate::types::_import_labels_task_run_properties::ImportLabelsTaskRunPropertiesBuilder;

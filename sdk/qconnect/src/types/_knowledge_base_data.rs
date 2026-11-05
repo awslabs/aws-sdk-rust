@@ -34,6 +34,10 @@ pub struct KnowledgeBaseData {
     pub ingestion_status: ::std::option::Option<crate::types::SyncStatus>,
     /// <p>List of failure reasons on ingestion per file.</p>
     pub ingestion_failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The timestamp when the knowledge base was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where the knowledge base was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl KnowledgeBaseData {
     /// <p>The identifier of the knowledge base.</p>
@@ -99,6 +103,14 @@ impl KnowledgeBaseData {
     pub fn ingestion_failure_reasons(&self) -> &[::std::string::String] {
         self.ingestion_failure_reasons.as_deref().unwrap_or_default()
     }
+    /// <p>The timestamp when the knowledge base was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where the knowledge base was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
 }
 impl KnowledgeBaseData {
     /// Creates a new builder-style object to manufacture [`KnowledgeBaseData`](crate::types::KnowledgeBaseData).
@@ -125,6 +137,8 @@ pub struct KnowledgeBaseDataBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) ingestion_status: ::std::option::Option<crate::types::SyncStatus>,
     pub(crate) ingestion_failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl KnowledgeBaseDataBuilder {
     /// <p>The identifier of the knowledge base.</p>
@@ -346,6 +360,34 @@ impl KnowledgeBaseDataBuilder {
     pub fn get_ingestion_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ingestion_failure_reasons
     }
+    /// <p>The timestamp when the knowledge base was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the knowledge base was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when the knowledge base was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where the knowledge base was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where the knowledge base was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the knowledge base was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
     /// Consumes the builder and constructs a [`KnowledgeBaseData`](crate::types::KnowledgeBaseData).
     /// This method will fail if any of the following fields are not set:
     /// - [`knowledge_base_id`](crate::types::builders::KnowledgeBaseDataBuilder::knowledge_base_id)
@@ -394,6 +436,8 @@ impl KnowledgeBaseDataBuilder {
             tags: self.tags,
             ingestion_status: self.ingestion_status,
             ingestion_failure_reasons: self.ingestion_failure_reasons,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
         })
     }
 }

@@ -18,6 +18,10 @@ pub struct AiPromptSummary {
     pub ai_prompt_arn: ::std::string::String,
     /// <p>The time the AI Prompt was last modified.</p>
     pub modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The timestamp when the AI Prompt was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where the AI Prompt was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
     /// <p>The type of the prompt template for this AI Prompt.</p>
     pub template_type: crate::types::AiPromptTemplateType,
     /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code>.</p>
@@ -68,6 +72,14 @@ impl AiPromptSummary {
     /// <p>The time the AI Prompt was last modified.</p>
     pub fn modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_time.as_ref()
+    }
+    /// <p>The timestamp when the AI Prompt was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where the AI Prompt was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
     }
     /// <p>The type of the prompt template for this AI Prompt.</p>
     pub fn template_type(&self) -> &crate::types::AiPromptTemplateType {
@@ -121,6 +133,8 @@ pub struct AiPromptSummaryBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AiPromptType>,
     pub(crate) ai_prompt_arn: ::std::option::Option<::std::string::String>,
     pub(crate) modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
     pub(crate) template_type: ::std::option::Option<crate::types::AiPromptTemplateType>,
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) api_format: ::std::option::Option<crate::types::AiPromptApiFormat>,
@@ -234,6 +248,34 @@ impl AiPromptSummaryBuilder {
     /// <p>The time the AI Prompt was last modified.</p>
     pub fn get_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_time
+    }
+    /// <p>The timestamp when the AI Prompt was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the AI Prompt was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when the AI Prompt was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where the AI Prompt was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where the AI Prompt was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the AI Prompt was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
     }
     /// <p>The type of the prompt template for this AI Prompt.</p>
     /// This field is required.
@@ -408,6 +450,8 @@ impl AiPromptSummaryBuilder {
                 )
             })?,
             modified_time: self.modified_time,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
             template_type: self.template_type.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_type",

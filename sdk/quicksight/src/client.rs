@@ -431,6 +431,8 @@ mod describe_quick_sight_q_search_configuration;
 
 mod describe_refresh_schedule;
 
+mod describe_resource_permissions;
+
 mod describe_role_custom_permission;
 
 mod describe_self_upgrade_configuration;
@@ -718,6 +720,8 @@ mod update_q_personalization_configuration;
 mod update_quick_sight_q_search_configuration;
 
 mod update_refresh_schedule;
+
+mod update_resource_permissions;
 
 mod update_role_custom_permission;
 

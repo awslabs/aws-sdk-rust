@@ -451,6 +451,9 @@ pub mod get_job_run;
 /// Types for the `GetJobRuns` operation.
 pub mod get_job_runs;
 
+/// Types for the `GetJobUpgradeAnalysis` operation.
+pub mod get_job_upgrade_analysis;
+
 /// Types for the `GetJobs` operation.
 pub mod get_jobs;
 
@@ -778,6 +781,9 @@ pub mod start_import_labels_task_run;
 /// Types for the `StartJobRun` operation.
 pub mod start_job_run;
 
+/// Types for the `StartJobUpgradeAnalysis` operation.
+pub mod start_job_upgrade_analysis;
+
 /// Types for the `StartMaterializedViewRefreshTaskRun` operation.
 pub mod start_materialized_view_refresh_task_run;
 
@@ -804,6 +810,9 @@ pub mod stop_crawler;
 
 /// Types for the `StopCrawlerSchedule` operation.
 pub mod stop_crawler_schedule;
+
+/// Types for the `StopJobUpgradeAnalysis` operation.
+pub mod stop_job_upgrade_analysis;
 
 /// Types for the `StopMaterializedViewRefreshTaskRun` operation.
 pub mod stop_materialized_view_refresh_task_run;

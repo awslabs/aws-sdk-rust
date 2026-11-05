@@ -16,6 +16,8 @@ pub struct ApplicationSummary {
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the application was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where the application was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the application is a service.</p>
     #[deprecated(note = "IsService has been deprecated in favor of ApplicationType", since = "2025-12-01")]
     pub is_service: bool,
@@ -47,6 +49,10 @@ impl ApplicationSummary {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
+    /// <p>The Amazon Web Services Region where the application was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
     /// <p>Indicates whether the application is a service.</p>
     #[deprecated(note = "IsService has been deprecated in favor of ApplicationType", since = "2025-12-01")]
     pub fn is_service(&self) -> bool {
@@ -74,6 +80,7 @@ pub struct ApplicationSummaryBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
     pub(crate) is_service: ::std::option::Option<bool>,
     pub(crate) application_type: ::std::option::Option<crate::types::ApplicationType>,
 }
@@ -162,6 +169,20 @@ impl ApplicationSummaryBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
+    /// <p>The Amazon Web Services Region where the application was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where the application was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the application was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
     /// <p>Indicates whether the application is a service.</p>
     #[deprecated(note = "IsService has been deprecated in favor of ApplicationType", since = "2025-12-01")]
     pub fn is_service(mut self, input: bool) -> Self {
@@ -202,6 +223,7 @@ impl ApplicationSummaryBuilder {
             namespace: self.namespace,
             created_time: self.created_time,
             last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
             is_service: self.is_service.unwrap_or_default(),
             application_type: self.application_type,
         }

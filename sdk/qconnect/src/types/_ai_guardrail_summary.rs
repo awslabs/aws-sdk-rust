@@ -16,6 +16,10 @@ pub struct AiGuardrailSummary {
     pub ai_guardrail_arn: ::std::string::String,
     /// <p>The time the AI Guardrail was last modified.</p>
     pub modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The timestamp when the AI Guardrail was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where the AI Guardrail was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
     /// <p>The visibility status of the AI Guardrail.</p>
     pub visibility_status: crate::types::VisibilityStatus,
     /// <p>A description of the AI Guardrail.</p>
@@ -55,6 +59,14 @@ impl AiGuardrailSummary {
     pub fn modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_time.as_ref()
     }
+    /// <p>The timestamp when the AI Guardrail was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where the AI Guardrail was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
     /// <p>The visibility status of the AI Guardrail.</p>
     pub fn visibility_status(&self) -> &crate::types::VisibilityStatus {
         &self.visibility_status
@@ -81,6 +93,8 @@ impl ::std::fmt::Debug for AiGuardrailSummary {
         formatter.field("ai_guardrail_id", &self.ai_guardrail_id);
         formatter.field("ai_guardrail_arn", &self.ai_guardrail_arn);
         formatter.field("modified_time", &self.modified_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_region", &self.last_modified_region);
         formatter.field("visibility_status", &self.visibility_status);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
@@ -105,6 +119,8 @@ pub struct AiGuardrailSummaryBuilder {
     pub(crate) ai_guardrail_id: ::std::option::Option<::std::string::String>,
     pub(crate) ai_guardrail_arn: ::std::option::Option<::std::string::String>,
     pub(crate) modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
     pub(crate) visibility_status: ::std::option::Option<crate::types::VisibilityStatus>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
@@ -199,6 +215,34 @@ impl AiGuardrailSummaryBuilder {
     /// <p>The time the AI Guardrail was last modified.</p>
     pub fn get_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_time
+    }
+    /// <p>The timestamp when the AI Guardrail was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the AI Guardrail was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when the AI Guardrail was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where the AI Guardrail was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where the AI Guardrail was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the AI Guardrail was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
     }
     /// <p>The visibility status of the AI Guardrail.</p>
     /// This field is required.
@@ -304,6 +348,8 @@ impl AiGuardrailSummaryBuilder {
                 )
             })?,
             modified_time: self.modified_time,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
             visibility_status: self.visibility_status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "visibility_status",
@@ -325,6 +371,8 @@ impl ::std::fmt::Debug for AiGuardrailSummaryBuilder {
         formatter.field("ai_guardrail_id", &self.ai_guardrail_id);
         formatter.field("ai_guardrail_arn", &self.ai_guardrail_arn);
         formatter.field("modified_time", &self.modified_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_region", &self.last_modified_region);
         formatter.field("visibility_status", &self.visibility_status);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);

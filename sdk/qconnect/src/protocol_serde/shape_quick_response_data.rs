@@ -82,6 +82,13 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "lastModifiedRegion" => {
+                            builder = builder.set_last_modified_region(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "contents" => {
                             builder = builder.set_contents(crate::protocol_serde::shape_quick_response_contents::de_quick_response_contents(
                                 tokens,

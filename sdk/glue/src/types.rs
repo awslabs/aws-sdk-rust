@@ -175,6 +175,10 @@ pub use crate::types::_job_bookmark_entry::JobBookmarkEntry;
 
 pub use crate::types::_job_run::JobRun;
 
+pub use crate::types::_status::Status;
+
+pub use crate::types::_analysis_type::AnalysisType;
+
 pub use crate::types::_catalog_entry::CatalogEntry;
 
 pub use crate::types::_location::Location;
@@ -262,6 +266,8 @@ pub use crate::types::_connector_authentication_configuration::ConnectorAuthenti
 pub use crate::types::_search_sort::SearchSort;
 
 pub use crate::types::_search_filter_clause::SearchFilterClause;
+
+pub use crate::types::_upgrade_consent::UpgradeConsent;
 
 pub use crate::types::_test_connection_input::TestConnectionInput;
 
@@ -502,6 +508,8 @@ pub use crate::types::_observation_mode::ObservationMode;
 pub use crate::types::_data_quality_rule_results_options::DataQualityRuleResultsOptions;
 
 pub use crate::types::_observation_results_options::ObservationResultsOptions;
+
+pub use crate::types::_auto_upgrade_metadata::AutoUpgradeMetadata;
 
 pub use crate::types::_job_run_state::JobRunState;
 
@@ -925,6 +933,8 @@ pub use crate::types::_catalog_table_config_options::CatalogTableConfigOptions;
 
 pub use crate::types::_distribution_results_options::DistributionResultsOptions;
 
+pub use crate::types::_auto_upgrade_status::AutoUpgradeStatus;
+
 pub use crate::types::_predecessor::Predecessor;
 
 pub use crate::types::_code_gen_node_arg::CodeGenNodeArg;
@@ -1265,6 +1275,8 @@ mod _amazon_redshift_source;
 
 mod _amazon_redshift_target;
 
+mod _analysis_type;
+
 mod _annotation_error;
 
 mod _apply_mapping;
@@ -1290,6 +1302,10 @@ mod _authentication_type;
 mod _authorization_code_properties;
 
 mod _auto_data_quality;
+
+mod _auto_upgrade_metadata;
+
+mod _auto_upgrade_status;
 
 mod _backfill_error;
 
@@ -2325,6 +2341,8 @@ mod _statistic_model_result;
 
 mod _statistic_summary;
 
+mod _status;
+
 mod _status_details;
 
 mod _storage_descriptor;
@@ -2450,6 +2468,8 @@ mod _update_json_classifier_request;
 mod _update_open_table_format_input;
 
 mod _update_xml_classifier_request;
+
+mod _upgrade_consent;
 
 mod _upsert_redshift_target_options;
 

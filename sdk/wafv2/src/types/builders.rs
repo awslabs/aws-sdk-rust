@@ -105,6 +105,8 @@ pub use crate::types::_rule_action::RuleActionBuilder;
 
 pub use crate::types::_override_action::OverrideActionBuilder;
 
+pub use crate::types::_connected_account_config::ConnectedAccountConfigBuilder;
+
 pub use crate::types::_custom_response::CustomResponseBuilder;
 
 pub use crate::types::_custom_request_handling::CustomRequestHandlingBuilder;
@@ -219,6 +221,8 @@ pub use crate::types::_forwarded_ip_config::ForwardedIpConfigBuilder;
 
 pub use crate::types::_ip_set_forwarded_ip_config::IpSetForwardedIpConfigBuilder;
 
+pub use crate::types::_connected_account_chain_config::ConnectedAccountChainConfigBuilder;
+
 pub use crate::types::_custom_http_header::CustomHttpHeaderBuilder;
 
 pub use crate::types::_json_match_pattern::JsonMatchPatternBuilder;
@@ -280,6 +284,8 @@ pub use crate::types::_aws_managed_rules_atp_rule_set::AwsManagedRulesAtpRuleSet
 pub use crate::types::_aws_managed_rules_acfp_rule_set::AwsManagedRulesAcfpRuleSetBuilder;
 
 pub use crate::types::_aws_managed_rules_anti_d_do_s_rule_set::AwsManagedRulesAntiDDoSRuleSetBuilder;
+
+pub use crate::types::_connected_account_price::ConnectedAccountPriceBuilder;
 
 pub use crate::types::_action_condition::ActionConditionBuilder;
 

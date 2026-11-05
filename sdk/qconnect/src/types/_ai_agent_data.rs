@@ -20,6 +20,10 @@ pub struct AiAgentData {
     pub configuration: ::std::option::Option<crate::types::AiAgentConfiguration>,
     /// <p>The time the AI Agent was last modified.</p>
     pub modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The timestamp when the AI Agent was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where the AI Agent was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
     /// <p>The description of the AI Agent.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The visibility status of the AI Agent.</p>
@@ -69,6 +73,14 @@ impl AiAgentData {
     pub fn modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_time.as_ref()
     }
+    /// <p>The timestamp when the AI Agent was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where the AI Agent was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
     /// <p>The description of the AI Agent.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
@@ -109,6 +121,8 @@ pub struct AiAgentDataBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AiAgentType>,
     pub(crate) configuration: ::std::option::Option<crate::types::AiAgentConfiguration>,
     pub(crate) modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) visibility_status: ::std::option::Option<crate::types::VisibilityStatus>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -234,6 +248,34 @@ impl AiAgentDataBuilder {
     /// <p>The time the AI Agent was last modified.</p>
     pub fn get_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_time
+    }
+    /// <p>The timestamp when the AI Agent was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the AI Agent was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when the AI Agent was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where the AI Agent was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where the AI Agent was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the AI Agent was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
     }
     /// <p>The description of the AI Agent.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -361,6 +403,8 @@ impl AiAgentDataBuilder {
             })?,
             configuration: self.configuration,
             modified_time: self.modified_time,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
             description: self.description,
             visibility_status: self.visibility_status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

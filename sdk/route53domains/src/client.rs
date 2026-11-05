@@ -258,6 +258,8 @@ mod resend_contact_reachability_email;
 
 mod resend_operation_authorization;
 
+mod restore_domain;
+
 mod retrieve_domain_auth_code;
 
 mod transfer_domain;

@@ -22,7 +22,7 @@ impl crate::operation::get_document_content::builders::GetDocumentContentInputBu
 }
 /// Fluent builder constructing a request to `GetDocumentContent`.
 ///
-/// <p>Retrieves the content of an ingested document from a knowledge base. Returns a pre-signed URL for secure document access.</p>
+/// <p>Retrieves the content of an ingested document from a knowledge base, or of an image embedded in the document. Returns a pre-signed URL for downloading the content. Use this operation to display the source of a <code>Retrieve</code> result.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDocumentContentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -150,17 +150,76 @@ impl GetDocumentContentFluentBuilder {
     pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_document_id()
     }
-    /// <p>The output format for the document content. <code>RAW</code> returns the original file. <code>EXTRACTED</code> returns parsed text as JSON. Defaults to <code>RAW</code>.</p>
+    /// <p>The unique identifier (in UUID format) of an image embedded in the specified document. Set this parameter to the <code>_media_id</code> value in the metadata of the corresponding <code>Retrieve</code> result. If you specify this parameter, the response contains a pre-signed URL for the image instead of the document, and you must omit <code>outputFormat</code> or set it to <code>RAW</code>.</p>
+    pub fn media_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.media_id(input.into());
+        self
+    }
+    /// <p>The unique identifier (in UUID format) of an image embedded in the specified document. Set this parameter to the <code>_media_id</code> value in the metadata of the corresponding <code>Retrieve</code> result. If you specify this parameter, the response contains a pre-signed URL for the image instead of the document, and you must omit <code>outputFormat</code> or set it to <code>RAW</code>.</p>
+    pub fn set_media_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_media_id(input);
+        self
+    }
+    /// <p>The unique identifier (in UUID format) of an image embedded in the specified document. Set this parameter to the <code>_media_id</code> value in the metadata of the corresponding <code>Retrieve</code> result. If you specify this parameter, the response contains a pre-signed URL for the image instead of the document, and you must omit <code>outputFormat</code> or set it to <code>RAW</code>.</p>
+    pub fn get_media_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_media_id()
+    }
+    /// <p>The output format for the content. You can specify one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// RAW
+    /// </dt>
+    /// <dd>
+    /// <p>Returns the original document, or the selected image if you specify <code>mediaId</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// EXTRACTED
+    /// </dt>
+    /// <dd>
+    /// <p>Returns parsed document text as JSON.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you omit this parameter, the default is <code>RAW</code>. You can't use <code>EXTRACTED</code> with <code>mediaId</code>.</p>
     pub fn output_format(mut self, input: crate::types::DocumentOutputFormat) -> Self {
         self.inner = self.inner.output_format(input);
         self
     }
-    /// <p>The output format for the document content. <code>RAW</code> returns the original file. <code>EXTRACTED</code> returns parsed text as JSON. Defaults to <code>RAW</code>.</p>
+    /// <p>The output format for the content. You can specify one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// RAW
+    /// </dt>
+    /// <dd>
+    /// <p>Returns the original document, or the selected image if you specify <code>mediaId</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// EXTRACTED
+    /// </dt>
+    /// <dd>
+    /// <p>Returns parsed document text as JSON.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you omit this parameter, the default is <code>RAW</code>. You can't use <code>EXTRACTED</code> with <code>mediaId</code>.</p>
     pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::DocumentOutputFormat>) -> Self {
         self.inner = self.inner.set_output_format(input);
         self
     }
-    /// <p>The output format for the document content. <code>RAW</code> returns the original file. <code>EXTRACTED</code> returns parsed text as JSON. Defaults to <code>RAW</code>.</p>
+    /// <p>The output format for the content. You can specify one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// RAW
+    /// </dt>
+    /// <dd>
+    /// <p>Returns the original document, or the selected image if you specify <code>mediaId</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// EXTRACTED
+    /// </dt>
+    /// <dd>
+    /// <p>Returns parsed document text as JSON.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you omit this parameter, the default is <code>RAW</code>. You can't use <code>EXTRACTED</code> with <code>mediaId</code>.</p>
     pub fn get_output_format(&self) -> &::std::option::Option<crate::types::DocumentOutputFormat> {
         self.inner.get_output_format()
     }

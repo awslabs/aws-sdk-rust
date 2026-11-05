@@ -881,6 +881,31 @@ impl From<crate::operation::resend_operation_authorization::ResendOperationAutho
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_domain::RestoreDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_domain::RestoreDomainError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::restore_domain::RestoreDomainError> for Error {
+    fn from(err: crate::operation::restore_domain::RestoreDomainError) -> Self {
+        match err {
+            crate::operation::restore_domain::RestoreDomainError::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
+            crate::operation::restore_domain::RestoreDomainError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::restore_domain::RestoreDomainError::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+            crate::operation::restore_domain::RestoreDomainError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::operation::restore_domain::RestoreDomainError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeError, R>>
     for Error
 where

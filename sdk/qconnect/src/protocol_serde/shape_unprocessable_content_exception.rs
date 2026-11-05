@@ -20,6 +20,13 @@ pub(crate) fn de_unprocessable_content_exception_json_err(
                             .transpose()?,
                     );
                 }
+                "reason" => {
+                    builder = builder.set_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::UnprocessableContentReason::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

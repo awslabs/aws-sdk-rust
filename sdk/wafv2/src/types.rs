@@ -141,6 +141,8 @@ pub use crate::types::_override_action::OverrideAction;
 
 pub use crate::types::_response_content_type::ResponseContentType;
 
+pub use crate::types::_connected_account_config::ConnectedAccountConfig;
+
 pub use crate::types::_custom_response::CustomResponse;
 
 pub use crate::types::_custom_request_handling::CustomRequestHandling;
@@ -279,6 +281,8 @@ pub use crate::types::_label_match_scope::LabelMatchScope;
 
 pub use crate::types::_blockchain_chain::BlockchainChain;
 
+pub use crate::types::_connected_account_chain_config::ConnectedAccountChainConfig;
+
 pub use crate::types::_custom_http_header::CustomHttpHeader;
 
 pub use crate::types::_field_to_protect_type::FieldToProtectType;
@@ -318,6 +322,8 @@ pub use crate::types::_rate_based_statement_custom_key::RateBasedStatementCustom
 pub use crate::types::_managed_rule_group_config::ManagedRuleGroupConfig;
 
 pub use crate::types::_price::Price;
+
+pub use crate::types::_connected_account_chain::ConnectedAccountChain;
 
 pub use crate::types::_all::All;
 
@@ -366,6 +372,8 @@ pub use crate::types::_aws_managed_rules_acfp_rule_set::AwsManagedRulesAcfpRuleS
 pub use crate::types::_aws_managed_rules_anti_d_do_s_rule_set::AwsManagedRulesAntiDDoSRuleSet;
 
 pub use crate::types::_crypto_currency::CryptoCurrency;
+
+pub use crate::types::_connected_account_price::ConnectedAccountPrice;
 
 pub use crate::types::_action_condition::ActionCondition;
 
@@ -470,6 +478,14 @@ mod _client_side_action_config;
 mod _comparison_operator;
 
 mod _condition;
+
+mod _connected_account_chain;
+
+mod _connected_account_chain_config;
+
+mod _connected_account_config;
+
+mod _connected_account_price;
 
 mod _cookie_match_pattern;
 

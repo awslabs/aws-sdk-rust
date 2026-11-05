@@ -5230,6 +5230,45 @@ impl From<crate::operation::describe_refresh_schedule::DescribeRefreshScheduleEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_resource_permissions::DescribeResourcePermissionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_resource_permissions::DescribeResourcePermissionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_resource_permissions::DescribeResourcePermissionsError> for Error {
+    fn from(err: crate::operation::describe_resource_permissions::DescribeResourcePermissionsError) -> Self {
+        match err {
+            crate::operation::describe_resource_permissions::DescribeResourcePermissionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_resource_permissions::DescribeResourcePermissionsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::describe_resource_permissions::DescribeResourcePermissionsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_resource_permissions::DescribeResourcePermissionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_resource_permissions::DescribeResourcePermissionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_resource_permissions::DescribeResourcePermissionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_role_custom_permission::DescribeRoleCustomPermissionError, R>>
     for Error
@@ -10496,6 +10535,45 @@ impl From<crate::operation::update_refresh_schedule::UpdateRefreshScheduleError>
             }
             crate::operation::update_refresh_schedule::UpdateRefreshScheduleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_refresh_schedule::UpdateRefreshScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_resource_permissions::UpdateResourcePermissionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_resource_permissions::UpdateResourcePermissionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_resource_permissions::UpdateResourcePermissionsError> for Error {
+    fn from(err: crate::operation::update_resource_permissions::UpdateResourcePermissionsError) -> Self {
+        match err {
+            crate::operation::update_resource_permissions::UpdateResourcePermissionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_resource_permissions::UpdateResourcePermissionsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_resource_permissions::UpdateResourcePermissionsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_resource_permissions::UpdateResourcePermissionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_resource_permissions::UpdateResourcePermissionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_resource_permissions::UpdateResourcePermissionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

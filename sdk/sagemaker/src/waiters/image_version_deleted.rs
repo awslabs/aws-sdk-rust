@@ -58,8 +58,8 @@ impl ImageVersionDeletedFluentBuilder {
             &crate::operation::describe_image_version::DescribeImageVersionOutput,
             &crate::operation::describe_image_version::DescribeImageVersionError,
         >| {
-            // Matches: {"errorType":"ResourceNotFoundException"}
-            if crate::waiters::matchers::match_describe_image_version_1cce2c05524fb92d4(result) {
+            // Matches: {"errorType":"ResourceNotFound"}
+            if crate::waiters::matchers::match_describe_image_version_8cb5bef55ab38338f(result) {
                 return ::aws_smithy_runtime::client::waiters::AcceptorState::Success;
             }
             // Matches: {"output":{"path":"ImageVersionStatus","expected":"DELETE_FAILED","comparator":"stringEquals"}}

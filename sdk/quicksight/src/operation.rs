@@ -403,6 +403,9 @@ pub mod describe_quick_sight_q_search_configuration;
 /// Types for the `DescribeRefreshSchedule` operation.
 pub mod describe_refresh_schedule;
 
+/// Types for the `DescribeResourcePermissions` operation.
+pub mod describe_resource_permissions;
+
 /// Types for the `DescribeRoleCustomPermission` operation.
 pub mod describe_role_custom_permission;
 
@@ -834,6 +837,9 @@ pub mod update_quick_sight_q_search_configuration;
 
 /// Types for the `UpdateRefreshSchedule` operation.
 pub mod update_refresh_schedule;
+
+/// Types for the `UpdateResourcePermissions` operation.
+pub mod update_resource_permissions;
 
 /// Types for the `UpdateRoleCustomPermission` operation.
 pub mod update_role_custom_permission;

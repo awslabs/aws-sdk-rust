@@ -197,17 +197,17 @@ impl UpdateMicrovmImageFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_egress_network_connectors`](Self::set_egress_network_connectors).
     ///
-    /// <p>The list of egress network connectors available to the MicroVM at runtime.</p>
+    /// <p>The list of egress network connectors available to the MicroVM at image build time.</p>
     pub fn egress_network_connectors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.egress_network_connectors(input.into());
         self
     }
-    /// <p>The list of egress network connectors available to the MicroVM at runtime.</p>
+    /// <p>The list of egress network connectors available to the MicroVM at image build time.</p>
     pub fn set_egress_network_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_egress_network_connectors(input);
         self
     }
-    /// <p>The list of egress network connectors available to the MicroVM at runtime.</p>
+    /// <p>The list of egress network connectors available to the MicroVM at image build time.</p>
     pub fn get_egress_network_connectors(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_egress_network_connectors()
     }

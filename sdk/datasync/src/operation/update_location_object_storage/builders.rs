@@ -213,6 +213,20 @@ impl UpdateLocationObjectStorageFluentBuilder {
     pub fn get_secret_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_secret_key()
     }
+    /// <p>Specifies the federated identity configuration that allows DataSync to access your object storage using an OpenID Connect (OIDC) token instead of a long-term access key and secret key. Provide either <code>FederatedIdentity</code> or the <code>AccessKey</code>/<code>SecretKey</code> credentials, but not both.</p>
+    pub fn federated_identity(mut self, input: crate::types::ObjectStorageFederatedIdentityConfig) -> Self {
+        self.inner = self.inner.federated_identity(input);
+        self
+    }
+    /// <p>Specifies the federated identity configuration that allows DataSync to access your object storage using an OpenID Connect (OIDC) token instead of a long-term access key and secret key. Provide either <code>FederatedIdentity</code> or the <code>AccessKey</code>/<code>SecretKey</code> credentials, but not both.</p>
+    pub fn set_federated_identity(mut self, input: ::std::option::Option<crate::types::ObjectStorageFederatedIdentityConfig>) -> Self {
+        self.inner = self.inner.set_federated_identity(input);
+        self
+    }
+    /// <p>Specifies the federated identity configuration that allows DataSync to access your object storage using an OpenID Connect (OIDC) token instead of a long-term access key and secret key. Provide either <code>FederatedIdentity</code> or the <code>AccessKey</code>/<code>SecretKey</code> credentials, but not both.</p>
+    pub fn get_federated_identity(&self) -> &::std::option::Option<crate::types::ObjectStorageFederatedIdentityConfig> {
+        self.inner.get_federated_identity()
+    }
     ///
     /// Appends an item to `AgentArns`.
     ///

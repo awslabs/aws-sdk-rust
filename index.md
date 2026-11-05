@@ -188,6 +188,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWSServerlessApplicationRepository | [aws-sdk-serverlessapplicationrepository](https://crates.io/crates/aws-sdk-serverlessapplicationrepository) ([docs](https://docs.rs/aws-sdk-serverlessapplicationrepository)) |
 | Access Analyzer | [aws-sdk-accessanalyzer](https://crates.io/crates/aws-sdk-accessanalyzer) ([docs](https://docs.rs/aws-sdk-accessanalyzer)) |
 | Account Access | [aws-sdk-accountaccess](https://crates.io/crates/aws-sdk-accountaccess) ([docs](https://docs.rs/aws-sdk-accountaccess)) |
+| Account Access Runtime | [aws-sdk-accountaccessruntime](https://crates.io/crates/aws-sdk-accountaccessruntime) ([docs](https://docs.rs/aws-sdk-accountaccessruntime)) |
 | Agent Registry | [aws-sdk-agentregistry](https://crates.io/crates/aws-sdk-agentregistry) ([docs](https://docs.rs/aws-sdk-agentregistry)) |
 | Agent Registry Control | [aws-sdk-agentregistrycontrol](https://crates.io/crates/aws-sdk-agentregistrycontrol) ([docs](https://docs.rs/aws-sdk-agentregistrycontrol)) |
 | Agents for Amazon Bedrock | [aws-sdk-bedrockagent](https://crates.io/crates/aws-sdk-bedrockagent) ([docs](https://docs.rs/aws-sdk-bedrockagent)) |

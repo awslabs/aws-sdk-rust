@@ -10,7 +10,7 @@ pub struct CreateMembershipInput {
     pub agent_space_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the membership.</p>
     pub membership_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of member. Currently, only USER is supported.</p>
+    /// <p>The type of member. Use USER for an individual user or GROUP for an IAM Identity Center group. All members of a group have access to the agent space.</p>
     pub member_type: ::std::option::Option<crate::types::MembershipType>,
     /// <p>The configuration for the membership, such as the user role.</p>
     pub config: ::std::option::Option<crate::types::MembershipConfig>,
@@ -28,7 +28,7 @@ impl CreateMembershipInput {
     pub fn membership_id(&self) -> ::std::option::Option<&str> {
         self.membership_id.as_deref()
     }
-    /// <p>The type of member. Currently, only USER is supported.</p>
+    /// <p>The type of member. Use USER for an individual user or GROUP for an IAM Identity Center group. All members of a group have access to the agent space.</p>
     pub fn member_type(&self) -> ::std::option::Option<&crate::types::MembershipType> {
         self.member_type.as_ref()
     }
@@ -100,18 +100,18 @@ impl CreateMembershipInputBuilder {
     pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.membership_id
     }
-    /// <p>The type of member. Currently, only USER is supported.</p>
+    /// <p>The type of member. Use USER for an individual user or GROUP for an IAM Identity Center group. All members of a group have access to the agent space.</p>
     /// This field is required.
     pub fn member_type(mut self, input: crate::types::MembershipType) -> Self {
         self.member_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of member. Currently, only USER is supported.</p>
+    /// <p>The type of member. Use USER for an individual user or GROUP for an IAM Identity Center group. All members of a group have access to the agent space.</p>
     pub fn set_member_type(mut self, input: ::std::option::Option<crate::types::MembershipType>) -> Self {
         self.member_type = input;
         self
     }
-    /// <p>The type of member. Currently, only USER is supported.</p>
+    /// <p>The type of member. Use USER for an individual user or GROUP for an IAM Identity Center group. All members of a group have access to the agent space.</p>
     pub fn get_member_type(&self) -> &::std::option::Option<crate::types::MembershipType> {
         &self.member_type
     }

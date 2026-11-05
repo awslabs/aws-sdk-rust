@@ -42,6 +42,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "supportedCpuConfigurations" => {
+                            builder = builder.set_supported_cpu_configurations(
+                                crate::protocol_serde::shape_cpu_configuration_list::de_cpu_configuration_list(tokens, _value, depth + 1)?,
+                            );
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

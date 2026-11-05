@@ -227,6 +227,8 @@ pub use crate::types::_personalization_mode::PersonalizationMode;
 
 pub use crate::types::_q_search_status::QSearchStatus;
 
+pub use crate::types::_service_role_type::ServiceRoleType;
+
 pub use crate::types::_self_upgrade_configuration::SelfUpgradeConfiguration;
 
 pub use crate::types::_space_details::SpaceDetails;
@@ -5172,6 +5174,8 @@ mod _series_item;
 mod _service_account_credentials;
 
 mod _service_now_parameters;
+
+mod _service_role_type;
 
 mod _service_type;
 
