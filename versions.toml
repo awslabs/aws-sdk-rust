@@ -2813,6 +2813,10 @@ source_hash = '419f94847ab15c3f214268453e1f1cc2f9c6ddb041c4cf3f878fed9bfc44bd49'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '484ac8814dc06739c5b28ff9ef294f81487d2cc348776e1e51dafd7b15d0890e'
+
+[release]
+tag = 'release-2026-11-05'
+
 [release.crates]
 aws-sdk-accountaccessruntime = '1.0.0'
 aws-sdk-agentregistrycontrol = '1.18.0'
