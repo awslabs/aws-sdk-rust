@@ -334,6 +334,8 @@ pub enum CreatePermissionVersionError {
     MalformedArnException(crate::types::error::MalformedArnException),
     /// <p>The operation failed because the policy template that you provided isn't valid.</p>
     MalformedPolicyTemplateException(crate::types::error::MalformedPolicyTemplateException),
+    /// <p>The operation failed because the requested operation isn't permitted.</p>
+    OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
     /// <p>The operation failed because it would exceed the limit for the number of versions you can have for a permission. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM page in the Service Quotas console</a>.</p>
     PermissionVersionsLimitExceededException(crate::types::error::PermissionVersionsLimitExceededException),
     /// <p>The operation failed because the service could not respond to the request due to an internal problem. Try again later.</p>
@@ -381,6 +383,7 @@ impl CreatePermissionVersionError {
             Self::InvalidPolicyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MalformedArnException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MalformedPolicyTemplateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OperationNotPermittedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PermissionVersionsLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServerInternalException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -412,6 +415,10 @@ impl CreatePermissionVersionError {
     pub fn is_malformed_policy_template_exception(&self) -> bool {
         matches!(self, Self::MalformedPolicyTemplateException(_))
     }
+    /// Returns `true` if the error kind is `CreatePermissionVersionError::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(self, Self::OperationNotPermittedException(_))
+    }
     /// Returns `true` if the error kind is `CreatePermissionVersionError::PermissionVersionsLimitExceededException`.
     pub fn is_permission_versions_limit_exceeded_exception(&self) -> bool {
         matches!(self, Self::PermissionVersionsLimitExceededException(_))
@@ -438,6 +445,7 @@ impl ::std::error::Error for CreatePermissionVersionError {
             Self::InvalidPolicyException(_inner) => ::std::option::Option::Some(_inner),
             Self::MalformedArnException(_inner) => ::std::option::Option::Some(_inner),
             Self::MalformedPolicyTemplateException(_inner) => ::std::option::Option::Some(_inner),
+            Self::OperationNotPermittedException(_inner) => ::std::option::Option::Some(_inner),
             Self::PermissionVersionsLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServerInternalException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
@@ -455,6 +463,7 @@ impl ::std::fmt::Display for CreatePermissionVersionError {
             Self::InvalidPolicyException(_inner) => _inner.fmt(f),
             Self::MalformedArnException(_inner) => _inner.fmt(f),
             Self::MalformedPolicyTemplateException(_inner) => _inner.fmt(f),
+            Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
             Self::PermissionVersionsLimitExceededException(_inner) => _inner.fmt(f),
             Self::ServerInternalException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
@@ -486,6 +495,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreatePermiss
             Self::InvalidPolicyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MalformedArnException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MalformedPolicyTemplateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::OperationNotPermittedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PermissionVersionsLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServerInternalException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -15,6 +15,8 @@ pub struct AssumeRoleForPodIdentityOutput {
     pub assumed_role_user: ::std::option::Option<crate::types::AssumedRoleUser>,
     /// <p>The <i>Amazon Web Services Signature Version 4</i> type of temporary credentials.</p>
     pub credentials: ::std::option::Option<crate::types::Credentials>,
+    /// <p>The ARN of the workload identity provider for the returned credentials. Returned only for associations with workload identity enabled.</p>
+    pub workload_identity_provider_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssumeRoleForPodIdentityOutput {
@@ -41,6 +43,10 @@ impl AssumeRoleForPodIdentityOutput {
     pub fn credentials(&self) -> ::std::option::Option<&crate::types::Credentials> {
         self.credentials.as_ref()
     }
+    /// <p>The ARN of the workload identity provider for the returned credentials. Returned only for associations with workload identity enabled.</p>
+    pub fn workload_identity_provider_arn(&self) -> ::std::option::Option<&str> {
+        self.workload_identity_provider_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for AssumeRoleForPodIdentityOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -50,6 +56,7 @@ impl ::std::fmt::Debug for AssumeRoleForPodIdentityOutput {
         formatter.field("pod_identity_association", &self.pod_identity_association);
         formatter.field("assumed_role_user", &self.assumed_role_user);
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("workload_identity_provider_arn", &self.workload_identity_provider_arn);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -75,6 +82,7 @@ pub struct AssumeRoleForPodIdentityOutputBuilder {
     pub(crate) pod_identity_association: ::std::option::Option<crate::types::PodIdentityAssociation>,
     pub(crate) assumed_role_user: ::std::option::Option<crate::types::AssumedRoleUser>,
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
+    pub(crate) workload_identity_provider_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssumeRoleForPodIdentityOutputBuilder {
@@ -159,6 +167,20 @@ impl AssumeRoleForPodIdentityOutputBuilder {
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
         &self.credentials
     }
+    /// <p>The ARN of the workload identity provider for the returned credentials. Returned only for associations with workload identity enabled.</p>
+    pub fn workload_identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workload_identity_provider_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the workload identity provider for the returned credentials. Returned only for associations with workload identity enabled.</p>
+    pub fn set_workload_identity_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workload_identity_provider_arn = input;
+        self
+    }
+    /// <p>The ARN of the workload identity provider for the returned credentials. Returned only for associations with workload identity enabled.</p>
+    pub fn get_workload_identity_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_identity_provider_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -188,6 +210,7 @@ impl AssumeRoleForPodIdentityOutputBuilder {
             pod_identity_association: self.pod_identity_association,
             assumed_role_user: self.assumed_role_user,
             credentials: self.credentials,
+            workload_identity_provider_arn: self.workload_identity_provider_arn,
             _request_id: self._request_id,
         })
     }
@@ -200,6 +223,7 @@ impl ::std::fmt::Debug for AssumeRoleForPodIdentityOutputBuilder {
         formatter.field("pod_identity_association", &self.pod_identity_association);
         formatter.field("assumed_role_user", &self.assumed_role_user);
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("workload_identity_provider_arn", &self.workload_identity_provider_arn);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

@@ -595,6 +595,8 @@ pub use crate::types::_name_identifier::NameIdentifierBuilder;
 
 pub use crate::types::_listing_summary_item::ListingSummaryItemBuilder;
 
+pub use crate::types::_o_auth2_properties_patch::OAuth2PropertiesPatchBuilder;
+
 pub use crate::types::_o_auth2_client_application::OAuth2ClientApplicationBuilder;
 
 pub use crate::types::_authorization_code_properties::AuthorizationCodePropertiesBuilder;

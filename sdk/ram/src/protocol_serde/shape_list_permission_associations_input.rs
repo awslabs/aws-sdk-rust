@@ -30,8 +30,14 @@ pub fn ser_list_permission_associations_input_input(
             ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_8) = &input.resource_type {
-        object.key("resourceType").string(var_8.as_str());
+    if let Some(var_8) = &input.resource_owner {
+        object.key("resourceOwner").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.resource_share_arn {
+        object.key("resourceShareArn").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.resource_type {
+        object.key("resourceType").string(var_10.as_str());
     }
     Ok(())
 }

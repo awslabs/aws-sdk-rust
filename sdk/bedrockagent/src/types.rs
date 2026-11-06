@@ -191,6 +191,8 @@ pub use crate::types::_agent_knowledge_base_summary::AgentKnowledgeBaseSummary;
 
 pub use crate::types::_knowledge_base_summary::KnowledgeBaseSummary;
 
+pub use crate::types::_metadata_configuration::MetadataConfiguration;
+
 pub use crate::types::_prompt_summary::PromptSummary;
 
 pub use crate::types::_prompt_variant::PromptVariant;
@@ -310,6 +312,10 @@ pub use crate::types::_rds_field_mapping::RdsFieldMapping;
 pub use crate::types::_mongo_db_atlas_field_mapping::MongoDbAtlasFieldMapping;
 
 pub use crate::types::_neptune_analytics_field_mapping::NeptuneAnalyticsFieldMapping;
+
+pub use crate::types::_field_type::FieldType;
+
+pub use crate::types::_searchable_status::SearchableStatus;
 
 pub use crate::types::_prompt_template_type::PromptTemplateType;
 
@@ -865,6 +871,8 @@ mod _enrichment_strategy_method;
 
 mod _field_for_reranking;
 
+mod _field_type;
+
 mod _fixed_size_chunking_configuration;
 
 mod _flow_alias_concurrency_configuration;
@@ -1028,6 +1036,8 @@ mod _message;
 mod _metadata_attribute;
 
 mod _metadata_attribute_value;
+
+mod _metadata_configuration;
 
 mod _metadata_configuration_for_reranking;
 
@@ -1236,6 +1246,8 @@ mod _salesforce_crawler_configuration;
 mod _salesforce_data_source_configuration;
 
 mod _salesforce_source_configuration;
+
+mod _searchable_status;
 
 mod _seed_url;
 

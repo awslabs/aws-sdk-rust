@@ -40,7 +40,7 @@ impl crate::operation::search_all_related_items::builders::SearchAllRelatedItems
 /// <li>
 /// <p>This API searches across related items content, not case fields. Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_SearchCases.html">SearchCases</a> API to search within case field values.</p></li>
 /// </ul>
-/// <p><b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect endpoints and quotas</a>.</p>
+/// <p><b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect Customer endpoints and quotas</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchAllRelatedItemsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

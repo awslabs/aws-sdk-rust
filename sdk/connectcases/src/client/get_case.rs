@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`fields(Vec::<FieldValue>)`](crate::operation::get_case::GetCaseOutput::fields): <p>A list of detailed field information.</p>
     ///   - [`template_id(String)`](crate::operation::get_case::GetCaseOutput::template_id): <p>A unique identifier of a template.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_case::GetCaseOutput::next_token): <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    ///   - [`tags(Option<HashMap::<String, Option<String>>>)`](crate::operation::get_case::GetCaseOutput::tags): <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(Option<HashMap::<String, Option<String>>>)`](crate::operation::get_case::GetCaseOutput::tags): <p>A map of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<GetCaseError>`](crate::operation::get_case::GetCaseError)
     pub fn get_case(&self) -> crate::operation::get_case::builders::GetCaseFluentBuilder {
         crate::operation::get_case::builders::GetCaseFluentBuilder::new(self.handle.clone())

@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`r#type(RelatedItemType)`](crate::operation::update_related_item::UpdateRelatedItemOutput::type): <p>Type of the updated related item.</p>
     ///   - [`content(Option<RelatedItemContent>)`](crate::operation::update_related_item::UpdateRelatedItemOutput::content): <p>Represents the content of the updated related item.</p>
     ///   - [`association_time(DateTime)`](crate::operation::update_related_item::UpdateRelatedItemOutput::association_time): <p>Time at which the related item was associated with the case.</p>
-    ///   - [`tags(Option<HashMap::<String, Option<String>>>)`](crate::operation::update_related_item::UpdateRelatedItemOutput::tags): <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(Option<HashMap::<String, Option<String>>>)`](crate::operation::update_related_item::UpdateRelatedItemOutput::tags): <p>A map of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     ///   - [`last_updated_user(Option<UserUnion>)`](crate::operation::update_related_item::UpdateRelatedItemOutput::last_updated_user): <p>Represents the last user that updated the related item.</p>
     ///   - [`created_by(Option<UserUnion>)`](crate::operation::update_related_item::UpdateRelatedItemOutput::created_by): <p>Represents the creator of the related item.</p>
     /// - On failure, responds with [`SdkError<UpdateRelatedItemError>`](crate::operation::update_related_item::UpdateRelatedItemError)

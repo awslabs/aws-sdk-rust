@@ -2229,6 +2229,8 @@ pub(crate) mod shape_email_address_metadata;
 
 pub(crate) mod shape_email_address_summary;
 
+pub(crate) mod shape_end_associated_emails_action_definition;
+
 pub(crate) mod shape_end_associated_tasks_action_definition;
 
 pub(crate) mod shape_endpoint_info;

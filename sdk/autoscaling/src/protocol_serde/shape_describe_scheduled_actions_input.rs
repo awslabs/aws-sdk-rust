@@ -32,16 +32,21 @@ pub fn ser_describe_scheduled_actions_input_input_input(
         scope_10.date_time(var_11, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("NextToken");
-    if let Some(var_13) = &input.next_token {
-        scope_12.string(var_13);
+    let mut scope_12 = writer.prefix("IncludeManagedResources");
+    if let Some(var_13) = &input.include_managed_resources {
+        scope_12.boolean(*var_13);
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("MaxRecords");
-    if let Some(var_15) = &input.max_records {
-        scope_14.number(
+    let mut scope_14 = writer.prefix("NextToken");
+    if let Some(var_15) = &input.next_token {
+        scope_14.string(var_15);
+    }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("MaxRecords");
+    if let Some(var_17) = &input.max_records {
+        scope_16.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
     writer.finish();

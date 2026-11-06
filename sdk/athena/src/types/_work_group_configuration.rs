@@ -36,6 +36,8 @@ pub struct WorkGroupConfiguration {
     pub identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
     /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
     pub query_results_s3_access_grants_configuration: ::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration>,
+    /// <p>The read-only enablement status of each system table for the account. This field is returned by <code>GetWorkGroup</code> and is ignored on write.</p>
+    pub system_table_statuses: ::std::option::Option<::std::vec::Vec<crate::types::SystemTableStatus>>,
 }
 impl WorkGroupConfiguration {
     /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. To run the query, you must specify the query results location using one of the ways: either in the workgroup using this setting, or for individual queries (client-side), using <code>ResultConfiguration$OutputLocation</code>. If none of them is set, Athena issues an error that no output location is provided.</p>
@@ -99,6 +101,12 @@ impl WorkGroupConfiguration {
     /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
     pub fn query_results_s3_access_grants_configuration(&self) -> ::std::option::Option<&crate::types::QueryResultsS3AccessGrantsConfiguration> {
         self.query_results_s3_access_grants_configuration.as_ref()
+    }
+    /// <p>The read-only enablement status of each system table for the account. This field is returned by <code>GetWorkGroup</code> and is ignored on write.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.system_table_statuses.is_none()`.
+    pub fn system_table_statuses(&self) -> &[crate::types::SystemTableStatus] {
+        self.system_table_statuses.as_deref().unwrap_or_default()
     }
 }
 static WORKGROUPCONFIGURATION_MEMBER_RESULT_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -256,6 +264,27 @@ static WORKGROUPCONFIGURATION_MEMBER_QUERY_RESULTS_S3_ACCESS_GRANTS_CONFIGURATIO
         "QueryResultsS3AccessGrantsConfiguration",
         14,
     );
+static WORKGROUPCONFIGURATION_MEMBER_SYSTEM_TABLE_STATUSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#SystemTableStatusList$member",
+        "com.amazonaws.athena",
+        "SystemTableStatusList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static WORKGROUPCONFIGURATION_MEMBER_SYSTEM_TABLE_STATUSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#WorkGroupConfiguration$SystemTableStatuses",
+        "com.amazonaws.athena",
+        "WorkGroupConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SystemTableStatuses",
+    15,
+)
+.with_list_member(&WORKGROUPCONFIGURATION_MEMBER_SYSTEM_TABLE_STATUSES_MEMBER);
 static WORKGROUPCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.athena#WorkGroupConfiguration",
@@ -279,6 +308,7 @@ static WORKGROUPCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::a
         &WORKGROUPCONFIGURATION_MEMBER_ENABLE_MINIMUM_ENCRYPTION_CONFIGURATION,
         &WORKGROUPCONFIGURATION_MEMBER_IDENTITY_CENTER_CONFIGURATION,
         &WORKGROUPCONFIGURATION_MEMBER_QUERY_RESULTS_S3_ACCESS_GRANTS_CONFIGURATION,
+        &WORKGROUPCONFIGURATION_MEMBER_SYSTEM_TABLE_STATUSES,
     ],
 );
 impl WorkGroupConfiguration {
@@ -339,6 +369,17 @@ impl ::aws_smithy_schema::serde::SerializableStruct for WorkGroupConfiguration {
         }
         if let Some(ref val) = self.query_results_s3_access_grants_configuration {
             ser.write_struct(&WORKGROUPCONFIGURATION_MEMBER_QUERY_RESULTS_S3_ACCESS_GRANTS_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.system_table_statuses {
+            ser.write_list(
+                &WORKGROUPCONFIGURATION_MEMBER_SYSTEM_TABLE_STATUSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::SystemTableStatus::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
         }
         Ok(())
     }
@@ -464,6 +505,20 @@ impl crate::types::builders::WorkGroupConfigurationBuilder {
                             Some(crate::types::QueryResultsS3AccessGrantsConfiguration::deserialize(deser)?);
                     }
                 }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.system_table_statuses = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SystemTableStatus::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
                 _ => {}
             }
             Ok(())
@@ -507,6 +562,7 @@ pub struct WorkGroupConfigurationBuilder {
     pub(crate) enable_minimum_encryption_configuration: ::std::option::Option<bool>,
     pub(crate) identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
     pub(crate) query_results_s3_access_grants_configuration: ::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration>,
+    pub(crate) system_table_statuses: ::std::option::Option<::std::vec::Vec<crate::types::SystemTableStatus>>,
 }
 impl WorkGroupConfigurationBuilder {
     /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. To run the query, you must specify the query results location using one of the ways: either in the workgroup using this setting, or for individual queries (client-side), using <code>ResultConfiguration$OutputLocation</code>. If none of them is set, Athena issues an error that no output location is provided.</p>
@@ -731,6 +787,26 @@ impl WorkGroupConfigurationBuilder {
     pub fn get_query_results_s3_access_grants_configuration(&self) -> &::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration> {
         &self.query_results_s3_access_grants_configuration
     }
+    /// Appends an item to `system_table_statuses`.
+    ///
+    /// To override the contents of this collection use [`set_system_table_statuses`](Self::set_system_table_statuses).
+    ///
+    /// <p>The read-only enablement status of each system table for the account. This field is returned by <code>GetWorkGroup</code> and is ignored on write.</p>
+    pub fn system_table_statuses(mut self, input: crate::types::SystemTableStatus) -> Self {
+        let mut v = self.system_table_statuses.unwrap_or_default();
+        v.push(input);
+        self.system_table_statuses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The read-only enablement status of each system table for the account. This field is returned by <code>GetWorkGroup</code> and is ignored on write.</p>
+    pub fn set_system_table_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SystemTableStatus>>) -> Self {
+        self.system_table_statuses = input;
+        self
+    }
+    /// <p>The read-only enablement status of each system table for the account. This field is returned by <code>GetWorkGroup</code> and is ignored on write.</p>
+    pub fn get_system_table_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemTableStatus>> {
+        &self.system_table_statuses
+    }
     /// Consumes the builder and constructs a [`WorkGroupConfiguration`](crate::types::WorkGroupConfiguration).
     pub fn build(self) -> crate::types::WorkGroupConfiguration {
         crate::types::WorkGroupConfiguration {
@@ -749,6 +825,7 @@ impl WorkGroupConfigurationBuilder {
             enable_minimum_encryption_configuration: self.enable_minimum_encryption_configuration,
             identity_center_configuration: self.identity_center_configuration,
             query_results_s3_access_grants_configuration: self.query_results_s3_access_grants_configuration,
+            system_table_statuses: self.system_table_statuses,
         }
     }
 }

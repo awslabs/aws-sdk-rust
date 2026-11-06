@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaptionDescription {
+    /// Specifies the audio selector or audio selector group that MediaConvert uses to generate Smart subtitles. The audio selector you choose must exist in all inputs for the job. If MediaConvert can't detect speech in the audio, it can't generate subtitles. Required when source is SMART_SUBTITLE; not allowed otherwise.
+    pub audio_source_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// Specifies which "Caption Selector":#inputs-caption_selector to use from each input when generating captions. The name should be of the format "Caption Selector <n>
     /// ", which denotes that the Nth Caption Selector will be used from each input.
     /// </n>
@@ -16,8 +18,16 @@ pub struct CaptionDescription {
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// Specify a label for this set of output captions. For example, "English", "Director commentary", or "track_2". For streaming outputs, MediaConvert passes this information into destination manifests for display on the end-viewer's player device. For outputs in other output groups, the service ignores this setting.
     pub language_description: ::std::option::Option<::std::string::String>,
+    /// Specify the source of the captions for this caption description. Choose Captions input source (INPUT_CAPTION_SELECTOR) to use a caption selector from your input. Choose Smart subtitling (SMART_SUBTITLE) to have MediaConvert and Elemental Inference generate subtitles automatically from an audio source that you specify.
+    pub source: ::std::option::Option<crate::types::CaptionSource>,
 }
 impl CaptionDescription {
+    /// Specifies the audio selector or audio selector group that MediaConvert uses to generate Smart subtitles. The audio selector you choose must exist in all inputs for the job. If MediaConvert can't detect speech in the audio, it can't generate subtitles. Required when source is SMART_SUBTITLE; not allowed otherwise.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_source_names.is_none()`.
+    pub fn audio_source_names(&self) -> &[::std::string::String] {
+        self.audio_source_names.as_deref().unwrap_or_default()
+    }
     /// Specifies which "Caption Selector":#inputs-caption_selector to use from each input when generating captions. The name should be of the format "Caption Selector <n>
     /// ", which denotes that the Nth Caption Selector will be used from each input.
     /// </n>
@@ -40,6 +50,10 @@ impl CaptionDescription {
     pub fn language_description(&self) -> ::std::option::Option<&str> {
         self.language_description.as_deref()
     }
+    /// Specify the source of the captions for this caption description. Choose Captions input source (INPUT_CAPTION_SELECTOR) to use a caption selector from your input. Choose Smart subtitling (SMART_SUBTITLE) to have MediaConvert and Elemental Inference generate subtitles automatically from an audio source that you specify.
+    pub fn source(&self) -> ::std::option::Option<&crate::types::CaptionSource> {
+        self.source.as_ref()
+    }
 }
 impl CaptionDescription {
     /// Creates a new builder-style object to manufacture [`CaptionDescription`](crate::types::CaptionDescription).
@@ -52,13 +66,35 @@ impl CaptionDescription {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CaptionDescriptionBuilder {
+    pub(crate) audio_source_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) caption_selector_name: ::std::option::Option<::std::string::String>,
     pub(crate) custom_language_code: ::std::option::Option<::std::string::String>,
     pub(crate) destination_settings: ::std::option::Option<crate::types::CaptionDestinationSettings>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
     pub(crate) language_description: ::std::option::Option<::std::string::String>,
+    pub(crate) source: ::std::option::Option<crate::types::CaptionSource>,
 }
 impl CaptionDescriptionBuilder {
+    /// Appends an item to `audio_source_names`.
+    ///
+    /// To override the contents of this collection use [`set_audio_source_names`](Self::set_audio_source_names).
+    ///
+    /// Specifies the audio selector or audio selector group that MediaConvert uses to generate Smart subtitles. The audio selector you choose must exist in all inputs for the job. If MediaConvert can't detect speech in the audio, it can't generate subtitles. Required when source is SMART_SUBTITLE; not allowed otherwise.
+    pub fn audio_source_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.audio_source_names.unwrap_or_default();
+        v.push(input.into());
+        self.audio_source_names = ::std::option::Option::Some(v);
+        self
+    }
+    /// Specifies the audio selector or audio selector group that MediaConvert uses to generate Smart subtitles. The audio selector you choose must exist in all inputs for the job. If MediaConvert can't detect speech in the audio, it can't generate subtitles. Required when source is SMART_SUBTITLE; not allowed otherwise.
+    pub fn set_audio_source_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.audio_source_names = input;
+        self
+    }
+    /// Specifies the audio selector or audio selector group that MediaConvert uses to generate Smart subtitles. The audio selector you choose must exist in all inputs for the job. If MediaConvert can't detect speech in the audio, it can't generate subtitles. Required when source is SMART_SUBTITLE; not allowed otherwise.
+    pub fn get_audio_source_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.audio_source_names
+    }
     /// Specifies which "Caption Selector":#inputs-caption_selector to use from each input when generating captions. The name should be of the format "Caption Selector <n>
     /// ", which denotes that the Nth Caption Selector will be used from each input.
     /// </n>
@@ -135,14 +171,30 @@ impl CaptionDescriptionBuilder {
     pub fn get_language_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.language_description
     }
+    /// Specify the source of the captions for this caption description. Choose Captions input source (INPUT_CAPTION_SELECTOR) to use a caption selector from your input. Choose Smart subtitling (SMART_SUBTITLE) to have MediaConvert and Elemental Inference generate subtitles automatically from an audio source that you specify.
+    pub fn source(mut self, input: crate::types::CaptionSource) -> Self {
+        self.source = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the source of the captions for this caption description. Choose Captions input source (INPUT_CAPTION_SELECTOR) to use a caption selector from your input. Choose Smart subtitling (SMART_SUBTITLE) to have MediaConvert and Elemental Inference generate subtitles automatically from an audio source that you specify.
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::CaptionSource>) -> Self {
+        self.source = input;
+        self
+    }
+    /// Specify the source of the captions for this caption description. Choose Captions input source (INPUT_CAPTION_SELECTOR) to use a caption selector from your input. Choose Smart subtitling (SMART_SUBTITLE) to have MediaConvert and Elemental Inference generate subtitles automatically from an audio source that you specify.
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::CaptionSource> {
+        &self.source
+    }
     /// Consumes the builder and constructs a [`CaptionDescription`](crate::types::CaptionDescription).
     pub fn build(self) -> crate::types::CaptionDescription {
         crate::types::CaptionDescription {
+            audio_source_names: self.audio_source_names,
             caption_selector_name: self.caption_selector_name,
             custom_language_code: self.custom_language_code,
             destination_settings: self.destination_settings,
             language_code: self.language_code,
             language_description: self.language_description,
+            source: self.source,
         }
     }
 }

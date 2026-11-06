@@ -33,16 +33,21 @@ pub fn ser_describe_policies_input_input_input(
         list_11.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("NextToken");
-    if let Some(var_14) = &input.next_token {
-        scope_13.string(var_14);
+    let mut scope_13 = writer.prefix("IncludeManagedResources");
+    if let Some(var_14) = &input.include_managed_resources {
+        scope_13.boolean(*var_14);
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("MaxRecords");
-    if let Some(var_16) = &input.max_records {
-        scope_15.number(
+    let mut scope_15 = writer.prefix("NextToken");
+    if let Some(var_16) = &input.next_token {
+        scope_15.string(var_16);
+    }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("MaxRecords");
+    if let Some(var_18) = &input.max_records {
+        scope_17.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_16).into()),
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
     writer.finish();

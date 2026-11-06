@@ -23,11 +23,15 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_batch_create_related_item;
+
 pub(crate) mod shape_batch_get_case_rule;
 
 pub(crate) mod shape_batch_get_field;
 
 pub(crate) mod shape_batch_put_field_options;
+
+pub(crate) mod shape_batch_update_case;
 
 pub(crate) mod shape_create_case;
 
@@ -119,11 +123,15 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_batch_create_related_item_input;
+
 pub(crate) mod shape_batch_get_case_rule_input;
 
 pub(crate) mod shape_batch_get_field_input;
 
 pub(crate) mod shape_batch_put_field_options_input;
+
+pub(crate) mod shape_batch_update_case_input;
 
 pub(crate) mod shape_conflict_exception;
 
@@ -181,6 +189,12 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_audit_events_list;
 
+pub(crate) mod shape_batch_create_related_item_error_entry_list;
+
+pub(crate) mod shape_batch_create_related_item_identifier;
+
+pub(crate) mod shape_batch_create_related_item_success_entry_list;
+
 pub(crate) mod shape_batch_get_case_rule_error_list;
 
 pub(crate) mod shape_batch_get_case_rule_list;
@@ -190,6 +204,12 @@ pub(crate) mod shape_batch_get_case_rule_unprocessed_list;
 pub(crate) mod shape_batch_get_field_error_list;
 
 pub(crate) mod shape_batch_get_field_list;
+
+pub(crate) mod shape_batch_update_case_error_entry_list;
+
+pub(crate) mod shape_batch_update_case_identifier;
+
+pub(crate) mod shape_batch_update_case_success_entry_list;
 
 pub(crate) mod shape_case_filter;
 
@@ -218,6 +238,8 @@ pub(crate) mod shape_field_options_list;
 pub(crate) mod shape_field_summary_list;
 
 pub(crate) mod shape_field_value;
+
+pub(crate) mod shape_field_value_input;
 
 pub(crate) mod shape_field_value_list;
 
@@ -267,6 +289,16 @@ pub(crate) mod shape_audit_event;
 
 pub(crate) mod shape_basic_layout;
 
+pub(crate) mod shape_batch_create_related_item_error_entry;
+
+pub(crate) mod shape_batch_create_related_item_success_entry;
+
+pub(crate) mod shape_batch_update_case_error_entry;
+
+pub(crate) mod shape_batch_update_case_success_entry;
+
+pub(crate) mod shape_case_identifier_union;
+
 pub(crate) mod shape_case_rule_error;
 
 pub(crate) mod shape_case_rule_summary;
@@ -306,6 +338,8 @@ pub(crate) mod shape_event_included_data;
 pub(crate) mod shape_field_error;
 
 pub(crate) mod shape_field_filter;
+
+pub(crate) mod shape_field_identifier_union;
 
 pub(crate) mod shape_field_option_error;
 
@@ -354,6 +388,8 @@ pub(crate) mod shape_audit_event_performed_by;
 pub(crate) mod shape_boolean_condition;
 
 pub(crate) mod shape_case_event_included_data;
+
+pub(crate) mod shape_case_identifier;
 
 pub(crate) mod shape_custom_fields_filter;
 

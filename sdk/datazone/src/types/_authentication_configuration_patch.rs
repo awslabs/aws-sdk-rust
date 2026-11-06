@@ -8,6 +8,8 @@ pub struct AuthenticationConfigurationPatch {
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The basic authentication credentials of a connection.</p>
     pub basic_authentication_credentials: ::std::option::Option<crate::types::BasicAuthenticationCredentials>,
+    /// <p>The OAuth2 properties, such as the client application, grant type, and token URL, that you want to update for a connection. Only the properties that you specify are updated; the connection keeps its existing values for the properties that you omit.</p>
+    pub o_auth2_properties: ::std::option::Option<crate::types::OAuth2PropertiesPatch>,
 }
 impl AuthenticationConfigurationPatch {
     /// <p>The secret ARN of a connection.</p>
@@ -18,12 +20,17 @@ impl AuthenticationConfigurationPatch {
     pub fn basic_authentication_credentials(&self) -> ::std::option::Option<&crate::types::BasicAuthenticationCredentials> {
         self.basic_authentication_credentials.as_ref()
     }
+    /// <p>The OAuth2 properties, such as the client application, grant type, and token URL, that you want to update for a connection. Only the properties that you specify are updated; the connection keeps its existing values for the properties that you omit.</p>
+    pub fn o_auth2_properties(&self) -> ::std::option::Option<&crate::types::OAuth2PropertiesPatch> {
+        self.o_auth2_properties.as_ref()
+    }
 }
 impl ::std::fmt::Debug for AuthenticationConfigurationPatch {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AuthenticationConfigurationPatch");
         formatter.field("secret_arn", &self.secret_arn);
         formatter.field("basic_authentication_credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("o_auth2_properties", &self.o_auth2_properties);
         formatter.finish()
     }
 }
@@ -40,6 +47,7 @@ impl AuthenticationConfigurationPatch {
 pub struct AuthenticationConfigurationPatchBuilder {
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) basic_authentication_credentials: ::std::option::Option<crate::types::BasicAuthenticationCredentials>,
+    pub(crate) o_auth2_properties: ::std::option::Option<crate::types::OAuth2PropertiesPatch>,
 }
 impl AuthenticationConfigurationPatchBuilder {
     /// <p>The secret ARN of a connection.</p>
@@ -70,11 +78,26 @@ impl AuthenticationConfigurationPatchBuilder {
     pub fn get_basic_authentication_credentials(&self) -> &::std::option::Option<crate::types::BasicAuthenticationCredentials> {
         &self.basic_authentication_credentials
     }
+    /// <p>The OAuth2 properties, such as the client application, grant type, and token URL, that you want to update for a connection. Only the properties that you specify are updated; the connection keeps its existing values for the properties that you omit.</p>
+    pub fn o_auth2_properties(mut self, input: crate::types::OAuth2PropertiesPatch) -> Self {
+        self.o_auth2_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The OAuth2 properties, such as the client application, grant type, and token URL, that you want to update for a connection. Only the properties that you specify are updated; the connection keeps its existing values for the properties that you omit.</p>
+    pub fn set_o_auth2_properties(mut self, input: ::std::option::Option<crate::types::OAuth2PropertiesPatch>) -> Self {
+        self.o_auth2_properties = input;
+        self
+    }
+    /// <p>The OAuth2 properties, such as the client application, grant type, and token URL, that you want to update for a connection. Only the properties that you specify are updated; the connection keeps its existing values for the properties that you omit.</p>
+    pub fn get_o_auth2_properties(&self) -> &::std::option::Option<crate::types::OAuth2PropertiesPatch> {
+        &self.o_auth2_properties
+    }
     /// Consumes the builder and constructs a [`AuthenticationConfigurationPatch`](crate::types::AuthenticationConfigurationPatch).
     pub fn build(self) -> crate::types::AuthenticationConfigurationPatch {
         crate::types::AuthenticationConfigurationPatch {
             secret_arn: self.secret_arn,
             basic_authentication_credentials: self.basic_authentication_credentials,
+            o_auth2_properties: self.o_auth2_properties,
         }
     }
 }
@@ -83,6 +106,7 @@ impl ::std::fmt::Debug for AuthenticationConfigurationPatchBuilder {
         let mut formatter = f.debug_struct("AuthenticationConfigurationPatchBuilder");
         formatter.field("secret_arn", &self.secret_arn);
         formatter.field("basic_authentication_credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("o_auth2_properties", &self.o_auth2_properties);
         formatter.finish()
     }
 }

@@ -22,8 +22,8 @@ impl crate::operation::delete_template::builders::DeleteTemplateInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteTemplate`.
 ///
-/// <p>Deletes a cases template. You can delete up to 100 templates per domain.</p>
-/// <p>After a cases template is deleted:</p>
+/// <p>Deletes a Cases template. You can delete up to 100 templates per domain.</p>
+/// <p>After a Cases template is deleted:</p>
 /// <ul>
 /// <li>
 /// <p>You can still retrieve the template by calling <code>GetTemplate</code>.</p></li>

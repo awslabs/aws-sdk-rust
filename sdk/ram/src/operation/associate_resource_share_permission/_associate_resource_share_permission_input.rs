@@ -7,6 +7,8 @@ pub struct AssociateResourceSharePermissionInput {
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
     pub permission_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the template parameter values for the permission being associated. You must provide values for all parameters declared in the permission template. This parameter is required only if the specified permission has template parameters.</p>
+    pub permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterInput>>,
     /// <p>Specifies whether the specified permission should replace the existing permission associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to a resource share that currently doesn't have a permission. The default value is <code>false</code>.</p><note>
     /// <p>A resource share can have only one permission per resource type. If a resource share already has a permission for the specified resource type and you don't set <code>replace</code> to <code>true</code> then the operation returns an error. This helps prevent accidental overwriting of a permission.</p>
     /// </note>
@@ -28,6 +30,12 @@ impl AssociateResourceSharePermissionInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
     pub fn permission_arn(&self) -> ::std::option::Option<&str> {
         self.permission_arn.as_deref()
+    }
+    /// <p>Specifies the template parameter values for the permission being associated. You must provide values for all parameters declared in the permission template. This parameter is required only if the specified permission has template parameters.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permission_template_parameters.is_none()`.
+    pub fn permission_template_parameters(&self) -> &[crate::types::PermissionTemplateParameterInput] {
+        self.permission_template_parameters.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the specified permission should replace the existing permission associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to a resource share that currently doesn't have a permission. The default value is <code>false</code>.</p><note>
     /// <p>A resource share can have only one permission per resource type. If a resource share already has a permission for the specified resource type and you don't set <code>replace</code> to <code>true</code> then the operation returns an error. This helps prevent accidental overwriting of a permission.</p>
@@ -61,6 +69,7 @@ impl AssociateResourceSharePermissionInput {
 pub struct AssociateResourceSharePermissionInputBuilder {
     pub(crate) resource_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterInput>>,
     pub(crate) replace: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) permission_version: ::std::option::Option<i32>,
@@ -95,6 +104,29 @@ impl AssociateResourceSharePermissionInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
     pub fn get_permission_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.permission_arn
+    }
+    /// Appends an item to `permission_template_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_permission_template_parameters`](Self::set_permission_template_parameters).
+    ///
+    /// <p>Specifies the template parameter values for the permission being associated. You must provide values for all parameters declared in the permission template. This parameter is required only if the specified permission has template parameters.</p>
+    pub fn permission_template_parameters(mut self, input: crate::types::PermissionTemplateParameterInput) -> Self {
+        let mut v = self.permission_template_parameters.unwrap_or_default();
+        v.push(input);
+        self.permission_template_parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the template parameter values for the permission being associated. You must provide values for all parameters declared in the permission template. This parameter is required only if the specified permission has template parameters.</p>
+    pub fn set_permission_template_parameters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterInput>>,
+    ) -> Self {
+        self.permission_template_parameters = input;
+        self
+    }
+    /// <p>Specifies the template parameter values for the permission being associated. You must provide values for all parameters declared in the permission template. This parameter is required only if the specified permission has template parameters.</p>
+    pub fn get_permission_template_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterInput>> {
+        &self.permission_template_parameters
     }
     /// <p>Specifies whether the specified permission should replace the existing permission associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to a resource share that currently doesn't have a permission. The default value is <code>false</code>.</p><note>
     /// <p>A resource share can have only one permission per resource type. If a resource share already has a permission for the specified resource type and you don't set <code>replace</code> to <code>true</code> then the operation returns an error. This helps prevent accidental overwriting of a permission.</p>
@@ -167,6 +199,7 @@ impl AssociateResourceSharePermissionInputBuilder {
             crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionInput {
                 resource_share_arn: self.resource_share_arn,
                 permission_arn: self.permission_arn,
+                permission_template_parameters: self.permission_template_parameters,
                 replace: self.replace,
                 client_token: self.client_token,
                 permission_version: self.permission_version,

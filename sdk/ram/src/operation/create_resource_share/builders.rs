@@ -304,6 +304,28 @@ impl CreateResourceShareFluentBuilder {
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_sources()
     }
+    ///
+    /// Appends an item to `permissionTemplateParameters`.
+    ///
+    /// To override the contents of this collection use [`set_permission_template_parameters`](Self::set_permission_template_parameters).
+    ///
+    /// <p>Specifies the template parameter values for each permission being associated that has template parameters. Each entry maps a permission ARN to the parameter values to use when rendering the permission template for this resource share. You must provide values for all parameters declared in each permission template.</p>
+    pub fn permission_template_parameters(mut self, input: crate::types::PermissionArnAndTemplateParameters) -> Self {
+        self.inner = self.inner.permission_template_parameters(input);
+        self
+    }
+    /// <p>Specifies the template parameter values for each permission being associated that has template parameters. Each entry maps a permission ARN to the parameter values to use when rendering the permission template for this resource share. You must provide values for all parameters declared in each permission template.</p>
+    pub fn set_permission_template_parameters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionArnAndTemplateParameters>>,
+    ) -> Self {
+        self.inner = self.inner.set_permission_template_parameters(input);
+        self
+    }
+    /// <p>Specifies the template parameter values for each permission being associated that has template parameters. Each entry maps a permission ARN to the parameter values to use when rendering the permission template for this resource share. You must provide values for all parameters declared in each permission template.</p>
+    pub fn get_permission_template_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionArnAndTemplateParameters>> {
+        self.inner.get_permission_template_parameters()
+    }
     /// <p>Specifies the configuration of this resource share.</p>
     pub fn resource_share_configuration(mut self, input: crate::types::ResourceShareConfiguration) -> Self {
         self.inner = self.inner.resource_share_configuration(input);

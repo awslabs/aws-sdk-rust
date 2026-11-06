@@ -417,6 +417,8 @@ pub use crate::types::_action::Action;
 
 pub use crate::types::_principal_type::PrincipalType;
 
+pub use crate::types::_governance_mode::GovernanceMode;
+
 pub use crate::types::_schema_version_error_item::SchemaVersionErrorItem;
 
 pub use crate::types::_property::Property;
@@ -1788,6 +1790,8 @@ mod _glue_schema;
 mod _glue_studio_schema_column;
 
 mod _glue_table;
+
+mod _governance_mode;
 
 mod _governed_catalog_source;
 

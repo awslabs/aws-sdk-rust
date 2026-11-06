@@ -12,5 +12,11 @@ pub fn ser_authentication_configuration_patch(
         crate::protocol_serde::shape_basic_authentication_credentials::ser_basic_authentication_credentials(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.o_auth2_properties {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("oAuth2Properties").start_object();
+        crate::protocol_serde::shape_o_auth2_properties_patch::ser_o_auth2_properties_patch(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

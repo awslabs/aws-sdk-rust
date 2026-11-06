@@ -38,6 +38,8 @@ pub struct CreateResourceShareInput {
     pub permission_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies source constraints (accounts, ARNs, organization IDs, or organization paths) that limit when service principals can access resources in this resource share. When a service principal attempts to access a shared resource, validation is performed to ensure the request originates from one of the specified sources. This helps prevent confused deputy attacks by applying constraints on where service principals can access resources from.</p>
     pub sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies the template parameter values for each permission being associated that has template parameters. Each entry maps a permission ARN to the parameter values to use when rendering the permission template for this resource share. You must provide values for all parameters declared in each permission template.</p>
+    pub permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionArnAndTemplateParameters>>,
     /// <p>Specifies the configuration of this resource share.</p>
     pub resource_share_configuration: ::std::option::Option<crate::types::ResourceShareConfiguration>,
 }
@@ -103,6 +105,12 @@ impl CreateResourceShareInput {
     pub fn sources(&self) -> &[::std::string::String] {
         self.sources.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies the template parameter values for each permission being associated that has template parameters. Each entry maps a permission ARN to the parameter values to use when rendering the permission template for this resource share. You must provide values for all parameters declared in each permission template.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permission_template_parameters.is_none()`.
+    pub fn permission_template_parameters(&self) -> &[crate::types::PermissionArnAndTemplateParameters] {
+        self.permission_template_parameters.as_deref().unwrap_or_default()
+    }
     /// <p>Specifies the configuration of this resource share.</p>
     pub fn resource_share_configuration(&self) -> ::std::option::Option<&crate::types::ResourceShareConfiguration> {
         self.resource_share_configuration.as_ref()
@@ -127,6 +135,7 @@ pub struct CreateResourceShareInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) permission_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionArnAndTemplateParameters>>,
     pub(crate) resource_share_configuration: ::std::option::Option<crate::types::ResourceShareConfiguration>,
 }
 impl CreateResourceShareInputBuilder {
@@ -330,6 +339,29 @@ impl CreateResourceShareInputBuilder {
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.sources
     }
+    /// Appends an item to `permission_template_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_permission_template_parameters`](Self::set_permission_template_parameters).
+    ///
+    /// <p>Specifies the template parameter values for each permission being associated that has template parameters. Each entry maps a permission ARN to the parameter values to use when rendering the permission template for this resource share. You must provide values for all parameters declared in each permission template.</p>
+    pub fn permission_template_parameters(mut self, input: crate::types::PermissionArnAndTemplateParameters) -> Self {
+        let mut v = self.permission_template_parameters.unwrap_or_default();
+        v.push(input);
+        self.permission_template_parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the template parameter values for each permission being associated that has template parameters. Each entry maps a permission ARN to the parameter values to use when rendering the permission template for this resource share. You must provide values for all parameters declared in each permission template.</p>
+    pub fn set_permission_template_parameters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionArnAndTemplateParameters>>,
+    ) -> Self {
+        self.permission_template_parameters = input;
+        self
+    }
+    /// <p>Specifies the template parameter values for each permission being associated that has template parameters. Each entry maps a permission ARN to the parameter values to use when rendering the permission template for this resource share. You must provide values for all parameters declared in each permission template.</p>
+    pub fn get_permission_template_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionArnAndTemplateParameters>> {
+        &self.permission_template_parameters
+    }
     /// <p>Specifies the configuration of this resource share.</p>
     pub fn resource_share_configuration(mut self, input: crate::types::ResourceShareConfiguration) -> Self {
         self.resource_share_configuration = ::std::option::Option::Some(input);
@@ -358,6 +390,7 @@ impl CreateResourceShareInputBuilder {
             client_token: self.client_token,
             permission_arns: self.permission_arns,
             sources: self.sources,
+            permission_template_parameters: self.permission_template_parameters,
             resource_share_configuration: self.resource_share_configuration,
         })
     }

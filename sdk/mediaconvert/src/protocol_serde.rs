@@ -147,6 +147,8 @@ pub(crate) mod shape_update_queue_input;
 
 pub(crate) mod shape_acceleration_settings;
 
+pub(crate) mod shape_elemental_inference_settings;
+
 pub(crate) mod shape_hop_destination;
 
 pub(crate) mod shape_job;
@@ -198,6 +200,8 @@ pub(crate) mod shape_color_conversion3_dlut_setting;
 pub(crate) mod shape_container_settings;
 
 pub(crate) mod shape_elemental_inference_configuration;
+
+pub(crate) mod shape_elemental_inference_feed_configuration_source;
 
 pub(crate) mod shape_endpoint;
 

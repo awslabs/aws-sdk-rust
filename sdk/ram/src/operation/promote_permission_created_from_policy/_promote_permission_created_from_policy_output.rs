@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PromotePermissionCreatedFromPolicyOutput {
-    /// <p>Information about an RAM permission.</p>
+    /// <p>The details of the promoted customer managed permission, including its <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>, version, and status.</p>
     pub permission: ::std::option::Option<crate::types::ResourceSharePermissionSummary>,
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PromotePermissionCreatedFromPolicyOutput {
-    /// <p>Information about an RAM permission.</p>
+    /// <p>The details of the promoted customer managed permission, including its <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>, version, and status.</p>
     pub fn permission(&self) -> ::std::option::Option<&crate::types::ResourceSharePermissionSummary> {
         self.permission.as_ref()
     }
@@ -40,17 +40,17 @@ pub struct PromotePermissionCreatedFromPolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl PromotePermissionCreatedFromPolicyOutputBuilder {
-    /// <p>Information about an RAM permission.</p>
+    /// <p>The details of the promoted customer managed permission, including its <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>, version, and status.</p>
     pub fn permission(mut self, input: crate::types::ResourceSharePermissionSummary) -> Self {
         self.permission = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about an RAM permission.</p>
+    /// <p>The details of the promoted customer managed permission, including its <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>, version, and status.</p>
     pub fn set_permission(mut self, input: ::std::option::Option<crate::types::ResourceSharePermissionSummary>) -> Self {
         self.permission = input;
         self
     }
-    /// <p>Information about an RAM permission.</p>
+    /// <p>The details of the promoted customer managed permission, including its <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>, version, and status.</p>
     pub fn get_permission(&self) -> &::std::option::Option<crate::types::ResourceSharePermissionSummary> {
         &self.permission
     }

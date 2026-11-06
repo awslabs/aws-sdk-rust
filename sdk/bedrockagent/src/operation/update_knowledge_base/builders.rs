@@ -202,4 +202,26 @@ impl UpdateKnowledgeBaseFluentBuilder {
     pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::StorageConfiguration> {
         self.inner.get_storage_configuration()
     }
+    ///
+    /// Appends an item to `metadataConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_metadata_configurations`](Self::set_metadata_configurations).
+    ///
+    /// <p>Specifies up to 30 custom metadata field configurations for a managed knowledge base.</p>
+    /// <p>The list that you specify replaces the existing configurations. The update removes any configuration that you leave out, and its field is no longer searchable. An empty list removes all configurations. If you don't specify a list, the existing configurations don't change.</p>
+    pub fn metadata_configurations(mut self, input: crate::types::MetadataConfiguration) -> Self {
+        self.inner = self.inner.metadata_configurations(input);
+        self
+    }
+    /// <p>Specifies up to 30 custom metadata field configurations for a managed knowledge base.</p>
+    /// <p>The list that you specify replaces the existing configurations. The update removes any configuration that you leave out, and its field is no longer searchable. An empty list removes all configurations. If you don't specify a list, the existing configurations don't change.</p>
+    pub fn set_metadata_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetadataConfiguration>>) -> Self {
+        self.inner = self.inner.set_metadata_configurations(input);
+        self
+    }
+    /// <p>Specifies up to 30 custom metadata field configurations for a managed knowledge base.</p>
+    /// <p>The list that you specify replaces the existing configurations. The update removes any configuration that you leave out, and its field is no longer searchable. An empty list removes all configurations. If you don't specify a list, the existing configurations don't change.</p>
+    pub fn get_metadata_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataConfiguration>> {
+        self.inner.get_metadata_configurations()
+    }
 }

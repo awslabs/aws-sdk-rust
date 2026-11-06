@@ -5,9 +5,7 @@
 pub struct GetParametersByPathInput {
     /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. For the API call to succeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code></p>
     pub path: ::std::option::Option<::std::string::String>,
-    /// <p>Retrieve all parameters within a hierarchy.</p><important>
-    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
-    /// </important>
+    /// <p>Retrieve all parameters within a hierarchy.</p>
     pub recursive: ::std::option::Option<bool>,
     /// <p>Filters to limit the request results.</p><note>
     /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
@@ -26,9 +24,7 @@ impl GetParametersByPathInput {
     pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
-    /// <p>Retrieve all parameters within a hierarchy.</p><important>
-    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
-    /// </important>
+    /// <p>Retrieve all parameters within a hierarchy.</p>
     pub fn recursive(&self) -> ::std::option::Option<bool> {
         self.recursive
     }
@@ -301,23 +297,17 @@ impl GetParametersByPathInputBuilder {
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.path
     }
-    /// <p>Retrieve all parameters within a hierarchy.</p><important>
-    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
-    /// </important>
+    /// <p>Retrieve all parameters within a hierarchy.</p>
     pub fn recursive(mut self, input: bool) -> Self {
         self.recursive = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Retrieve all parameters within a hierarchy.</p><important>
-    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
-    /// </important>
+    /// <p>Retrieve all parameters within a hierarchy.</p>
     pub fn set_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.recursive = input;
         self
     }
-    /// <p>Retrieve all parameters within a hierarchy.</p><important>
-    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
-    /// </important>
+    /// <p>Retrieve all parameters within a hierarchy.</p>
     pub fn get_recursive(&self) -> &::std::option::Option<bool> {
         &self.recursive
     }

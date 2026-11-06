@@ -16,6 +16,8 @@ pub struct ResourceSharePermissionDetail {
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or denied access.</p>
     pub permission: ::std::option::Option<::std::string::String>,
+    /// <p>The list of template parameter declarations defined for this permission. Each declaration includes the parameter name, type, and description. This field is present only if the permission is a template with declared parameters.</p>
+    pub permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterDeclaration>>,
     /// <p>The date and time when the permission was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the permission was last updated.</p>
@@ -50,10 +52,20 @@ pub struct ResourceSharePermissionDetail {
     /// <p><code>DELETING</code> – This permission or version is in the process of being deleted.</p></li>
     /// <li>
     /// <p><code>DELETED</code> – This permission or version is deleted.</p></li>
+    /// <li>
+    /// <p><code>DEPRECATED</code> – The permission owner deprecated this permission. It can't be associated with new resource shares, but existing associations continue to function.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::PermissionStatus>,
     /// <p>The tag key and value pairs attached to the resource share.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The owner of the permission. This can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – The permission is owned by the current account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – The permission is owned by another account and shared with the current account.</p></li>
+    /// </ul>
+    pub resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
 }
 impl ResourceSharePermissionDetail {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of this RAM managed permission.</p>
@@ -79,6 +91,12 @@ impl ResourceSharePermissionDetail {
     /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or denied access.</p>
     pub fn permission(&self) -> ::std::option::Option<&str> {
         self.permission.as_deref()
+    }
+    /// <p>The list of template parameter declarations defined for this permission. Each declaration includes the parameter name, type, and description. This field is present only if the permission is a template with declared parameters.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permission_template_parameters.is_none()`.
+    pub fn permission_template_parameters(&self) -> &[crate::types::PermissionTemplateParameterDeclaration] {
+        self.permission_template_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The date and time when the permission was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -124,6 +142,8 @@ impl ResourceSharePermissionDetail {
     /// <p><code>DELETING</code> – This permission or version is in the process of being deleted.</p></li>
     /// <li>
     /// <p><code>DELETED</code> – This permission or version is deleted.</p></li>
+    /// <li>
+    /// <p><code>DEPRECATED</code> – The permission owner deprecated this permission. It can't be associated with new resource shares, but existing associations continue to function.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::PermissionStatus> {
         self.status.as_ref()
@@ -133,6 +153,16 @@ impl ResourceSharePermissionDetail {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
+    }
+    /// <p>The owner of the permission. This can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – The permission is owned by the current account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – The permission is owned by another account and shared with the current account.</p></li>
+    /// </ul>
+    pub fn resource_owner(&self) -> ::std::option::Option<&crate::types::ResourceOwner> {
+        self.resource_owner.as_ref()
     }
 }
 impl ResourceSharePermissionDetail {
@@ -152,6 +182,7 @@ pub struct ResourceSharePermissionDetailBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) permission: ::std::option::Option<::std::string::String>,
+    pub(crate) permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterDeclaration>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) is_resource_type_default: ::std::option::Option<bool>,
@@ -159,6 +190,7 @@ pub struct ResourceSharePermissionDetailBuilder {
     pub(crate) feature_set: ::std::option::Option<crate::types::PermissionFeatureSet>,
     pub(crate) status: ::std::option::Option<crate::types::PermissionStatus>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
 }
 impl ResourceSharePermissionDetailBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of this RAM managed permission.</p>
@@ -244,6 +276,31 @@ impl ResourceSharePermissionDetailBuilder {
     /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or denied access.</p>
     pub fn get_permission(&self) -> &::std::option::Option<::std::string::String> {
         &self.permission
+    }
+    /// Appends an item to `permission_template_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_permission_template_parameters`](Self::set_permission_template_parameters).
+    ///
+    /// <p>The list of template parameter declarations defined for this permission. Each declaration includes the parameter name, type, and description. This field is present only if the permission is a template with declared parameters.</p>
+    pub fn permission_template_parameters(mut self, input: crate::types::PermissionTemplateParameterDeclaration) -> Self {
+        let mut v = self.permission_template_parameters.unwrap_or_default();
+        v.push(input);
+        self.permission_template_parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of template parameter declarations defined for this permission. Each declaration includes the parameter name, type, and description. This field is present only if the permission is a template with declared parameters.</p>
+    pub fn set_permission_template_parameters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterDeclaration>>,
+    ) -> Self {
+        self.permission_template_parameters = input;
+        self
+    }
+    /// <p>The list of template parameter declarations defined for this permission. Each declaration includes the parameter name, type, and description. This field is present only if the permission is a template with declared parameters.</p>
+    pub fn get_permission_template_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterDeclaration>> {
+        &self.permission_template_parameters
     }
     /// <p>The date and time when the permission was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -367,6 +424,8 @@ impl ResourceSharePermissionDetailBuilder {
     /// <p><code>DELETING</code> – This permission or version is in the process of being deleted.</p></li>
     /// <li>
     /// <p><code>DELETED</code> – This permission or version is deleted.</p></li>
+    /// <li>
+    /// <p><code>DEPRECATED</code> – The permission owner deprecated this permission. It can't be associated with new resource shares, but existing associations continue to function.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::PermissionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -382,6 +441,8 @@ impl ResourceSharePermissionDetailBuilder {
     /// <p><code>DELETING</code> – This permission or version is in the process of being deleted.</p></li>
     /// <li>
     /// <p><code>DELETED</code> – This permission or version is deleted.</p></li>
+    /// <li>
+    /// <p><code>DEPRECATED</code> – The permission owner deprecated this permission. It can't be associated with new resource shares, but existing associations continue to function.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PermissionStatus>) -> Self {
         self.status = input;
@@ -397,6 +458,8 @@ impl ResourceSharePermissionDetailBuilder {
     /// <p><code>DELETING</code> – This permission or version is in the process of being deleted.</p></li>
     /// <li>
     /// <p><code>DELETED</code> – This permission or version is deleted.</p></li>
+    /// <li>
+    /// <p><code>DEPRECATED</code> – The permission owner deprecated this permission. It can't be associated with new resource shares, but existing associations continue to function.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PermissionStatus> {
         &self.status
@@ -421,6 +484,38 @@ impl ResourceSharePermissionDetailBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The owner of the permission. This can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – The permission is owned by the current account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – The permission is owned by another account and shared with the current account.</p></li>
+    /// </ul>
+    pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
+        self.resource_owner = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The owner of the permission. This can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – The permission is owned by the current account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – The permission is owned by another account and shared with the current account.</p></li>
+    /// </ul>
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
+        self.resource_owner = input;
+        self
+    }
+    /// <p>The owner of the permission. This can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – The permission is owned by the current account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – The permission is owned by another account and shared with the current account.</p></li>
+    /// </ul>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
+        &self.resource_owner
+    }
     /// Consumes the builder and constructs a [`ResourceSharePermissionDetail`](crate::types::ResourceSharePermissionDetail).
     pub fn build(self) -> crate::types::ResourceSharePermissionDetail {
         crate::types::ResourceSharePermissionDetail {
@@ -430,6 +525,7 @@ impl ResourceSharePermissionDetailBuilder {
             name: self.name,
             resource_type: self.resource_type,
             permission: self.permission,
+            permission_template_parameters: self.permission_template_parameters,
             creation_time: self.creation_time,
             last_updated_time: self.last_updated_time,
             is_resource_type_default: self.is_resource_type_default,
@@ -437,6 +533,7 @@ impl ResourceSharePermissionDetailBuilder {
             feature_set: self.feature_set,
             status: self.status,
             tags: self.tags,
+            resource_owner: self.resource_owner,
         }
     }
 }

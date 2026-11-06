@@ -5,7 +5,7 @@
 pub struct ListCasesForContactInput {
     /// <p>The unique identifier of the Cases domain.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier of a contact in Amazon Connect.</p>
+    /// <p>A unique identifier of a contact in Connect Customer.</p>
     pub contact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl ListCasesForContactInput {
     pub fn domain_id(&self) -> ::std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>A unique identifier of a contact in Amazon Connect.</p>
+    /// <p>A unique identifier of a contact in Connect Customer.</p>
     pub fn contact_arn(&self) -> ::std::option::Option<&str> {
         self.contact_arn.as_deref()
     }
@@ -62,18 +62,18 @@ impl ListCasesForContactInputBuilder {
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }
-    /// <p>A unique identifier of a contact in Amazon Connect.</p>
+    /// <p>A unique identifier of a contact in Connect Customer.</p>
     /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier of a contact in Amazon Connect.</p>
+    /// <p>A unique identifier of a contact in Connect Customer.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_arn = input;
         self
     }
-    /// <p>A unique identifier of a contact in Amazon Connect.</p>
+    /// <p>A unique identifier of a contact in Connect Customer.</p>
     pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_arn
     }

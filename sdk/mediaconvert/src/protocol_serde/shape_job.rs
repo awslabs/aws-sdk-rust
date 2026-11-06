@@ -76,6 +76,15 @@ where
                                 )?,
                             );
                         }
+                        "elementalInferenceSettings" => {
+                            builder = builder.set_elemental_inference_settings(
+                                crate::protocol_serde::shape_elemental_inference_settings::de_elemental_inference_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "errorCode" => {
                             builder = builder.set_error_code(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

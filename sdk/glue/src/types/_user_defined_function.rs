@@ -20,6 +20,10 @@ pub struct UserDefinedFunction {
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The resource URIs for the function.</p>
     pub resource_uris: ::std::option::Option<::std::vec::Vec<crate::types::ResourceUri>>,
+    /// <p>The Amazon S3 location that contains the function's artifacts. This location must be registered with Lake Formation. Glue returns this field only for functions whose <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>.</p>
+    pub artifact_location: ::std::option::Option<::std::string::String>,
+    /// <p>How access to the function is governed. <code>IAM_ONLY</code> means access is controlled by IAM permissions only. <code>LAKE_FORMATION</code> means Lake Formation permissions (<code>EXECUTE</code>, <code>DESCRIBE</code>, <code>ALTER</code>, and <code>DROP</code>) also control who can run, describe, update, and delete the function.</p>
+    pub governance_mode: ::std::option::Option<crate::types::GovernanceMode>,
     /// <p>The ID of the Data Catalog in which the function resides.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
 }
@@ -58,6 +62,14 @@ impl UserDefinedFunction {
     pub fn resource_uris(&self) -> &[crate::types::ResourceUri] {
         self.resource_uris.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon S3 location that contains the function's artifacts. This location must be registered with Lake Formation. Glue returns this field only for functions whose <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>.</p>
+    pub fn artifact_location(&self) -> ::std::option::Option<&str> {
+        self.artifact_location.as_deref()
+    }
+    /// <p>How access to the function is governed. <code>IAM_ONLY</code> means access is controlled by IAM permissions only. <code>LAKE_FORMATION</code> means Lake Formation permissions (<code>EXECUTE</code>, <code>DESCRIBE</code>, <code>ALTER</code>, and <code>DROP</code>) also control who can run, describe, update, and delete the function.</p>
+    pub fn governance_mode(&self) -> ::std::option::Option<&crate::types::GovernanceMode> {
+        self.governance_mode.as_ref()
+    }
     /// <p>The ID of the Data Catalog in which the function resides.</p>
     pub fn catalog_id(&self) -> ::std::option::Option<&str> {
         self.catalog_id.as_deref()
@@ -82,6 +94,8 @@ pub struct UserDefinedFunctionBuilder {
     pub(crate) owner_type: ::std::option::Option<crate::types::PrincipalType>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) resource_uris: ::std::option::Option<::std::vec::Vec<crate::types::ResourceUri>>,
+    pub(crate) artifact_location: ::std::option::Option<::std::string::String>,
+    pub(crate) governance_mode: ::std::option::Option<crate::types::GovernanceMode>,
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl UserDefinedFunctionBuilder {
@@ -203,6 +217,34 @@ impl UserDefinedFunctionBuilder {
     pub fn get_resource_uris(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceUri>> {
         &self.resource_uris
     }
+    /// <p>The Amazon S3 location that contains the function's artifacts. This location must be registered with Lake Formation. Glue returns this field only for functions whose <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>.</p>
+    pub fn artifact_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.artifact_location = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon S3 location that contains the function's artifacts. This location must be registered with Lake Formation. Glue returns this field only for functions whose <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>.</p>
+    pub fn set_artifact_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.artifact_location = input;
+        self
+    }
+    /// <p>The Amazon S3 location that contains the function's artifacts. This location must be registered with Lake Formation. Glue returns this field only for functions whose <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>.</p>
+    pub fn get_artifact_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_location
+    }
+    /// <p>How access to the function is governed. <code>IAM_ONLY</code> means access is controlled by IAM permissions only. <code>LAKE_FORMATION</code> means Lake Formation permissions (<code>EXECUTE</code>, <code>DESCRIBE</code>, <code>ALTER</code>, and <code>DROP</code>) also control who can run, describe, update, and delete the function.</p>
+    pub fn governance_mode(mut self, input: crate::types::GovernanceMode) -> Self {
+        self.governance_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>How access to the function is governed. <code>IAM_ONLY</code> means access is controlled by IAM permissions only. <code>LAKE_FORMATION</code> means Lake Formation permissions (<code>EXECUTE</code>, <code>DESCRIBE</code>, <code>ALTER</code>, and <code>DROP</code>) also control who can run, describe, update, and delete the function.</p>
+    pub fn set_governance_mode(mut self, input: ::std::option::Option<crate::types::GovernanceMode>) -> Self {
+        self.governance_mode = input;
+        self
+    }
+    /// <p>How access to the function is governed. <code>IAM_ONLY</code> means access is controlled by IAM permissions only. <code>LAKE_FORMATION</code> means Lake Formation permissions (<code>EXECUTE</code>, <code>DESCRIBE</code>, <code>ALTER</code>, and <code>DROP</code>) also control who can run, describe, update, and delete the function.</p>
+    pub fn get_governance_mode(&self) -> &::std::option::Option<crate::types::GovernanceMode> {
+        &self.governance_mode
+    }
     /// <p>The ID of the Data Catalog in which the function resides.</p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_id = ::std::option::Option::Some(input.into());
@@ -228,6 +270,8 @@ impl UserDefinedFunctionBuilder {
             owner_type: self.owner_type,
             create_time: self.create_time,
             resource_uris: self.resource_uris,
+            artifact_location: self.artifact_location,
+            governance_mode: self.governance_mode,
             catalog_id: self.catalog_id,
         }
     }

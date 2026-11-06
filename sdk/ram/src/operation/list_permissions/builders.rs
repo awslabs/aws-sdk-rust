@@ -133,6 +133,38 @@ impl ListPermissionsFluentBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_type()
     }
+    /// <p>Specifies that you want to list only permissions owned by a specific entity:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – returns only permissions owned by the calling account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – returns only permissions shared with the calling account by other accounts.</p></li>
+    /// </ul>
+    pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
+        self.inner = self.inner.resource_owner(input);
+        self
+    }
+    /// <p>Specifies that you want to list only permissions owned by a specific entity:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – returns only permissions owned by the calling account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – returns only permissions shared with the calling account by other accounts.</p></li>
+    /// </ul>
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
+        self.inner = self.inner.set_resource_owner(input);
+        self
+    }
+    /// <p>Specifies that you want to list only permissions owned by a specific entity:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – returns only permissions owned by the calling account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – returns only permissions shared with the calling account by other accounts.</p></li>
+    /// </ul>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
+        self.inner.get_resource_owner()
+    }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -201,5 +233,19 @@ impl ListPermissionsFluentBuilder {
     /// <p>If you don't specify this parameter, the default is <code>All</code>.</p>
     pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionTypeFilter> {
         self.inner.get_permission_type()
+    }
+    /// <p>Specifies that you want to filter the results to include only permissions with the specified status. For example, use <code>ATTACHABLE</code> to list only permissions that can be associated with resource shares, or <code>DEPRECATED</code> to list only deprecated permissions.</p>
+    pub fn permission_status(mut self, input: crate::types::PermissionStatus) -> Self {
+        self.inner = self.inner.permission_status(input);
+        self
+    }
+    /// <p>Specifies that you want to filter the results to include only permissions with the specified status. For example, use <code>ATTACHABLE</code> to list only permissions that can be associated with resource shares, or <code>DEPRECATED</code> to list only deprecated permissions.</p>
+    pub fn set_permission_status(mut self, input: ::std::option::Option<crate::types::PermissionStatus>) -> Self {
+        self.inner = self.inner.set_permission_status(input);
+        self
+    }
+    /// <p>Specifies that you want to filter the results to include only permissions with the specified status. For example, use <code>ATTACHABLE</code> to list only permissions that can be associated with resource shares, or <code>DEPRECATED</code> to list only deprecated permissions.</p>
+    pub fn get_permission_status(&self) -> &::std::option::Option<crate::types::PermissionStatus> {
+        self.inner.get_permission_status()
     }
 }

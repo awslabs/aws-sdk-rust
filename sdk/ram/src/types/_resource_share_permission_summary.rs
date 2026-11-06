@@ -40,8 +40,18 @@ pub struct ResourceSharePermissionSummary {
     /// <p><b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p></li>
     /// </ul>
     pub feature_set: ::std::option::Option<crate::types::PermissionFeatureSet>,
+    /// <p>The list of template parameters defined for this permission, including their names, types, descriptions, and values. This field is present only if the permission is a template with declared parameters. When returned in the context of a permission association, the values are also included.</p>
+    pub permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameter>>,
     /// <p>A list of the tag key value pairs currently attached to the permission.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The owner of the permission. This can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – The permission is owned by the current account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – The permission is owned by another account and shared with the current account.</p></li>
+    /// </ul>
+    pub resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
 }
 impl ResourceSharePermissionSummary {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission you want information about.</p>
@@ -102,11 +112,27 @@ impl ResourceSharePermissionSummary {
     pub fn feature_set(&self) -> ::std::option::Option<&crate::types::PermissionFeatureSet> {
         self.feature_set.as_ref()
     }
+    /// <p>The list of template parameters defined for this permission, including their names, types, descriptions, and values. This field is present only if the permission is a template with declared parameters. When returned in the context of a permission association, the values are also included.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permission_template_parameters.is_none()`.
+    pub fn permission_template_parameters(&self) -> &[crate::types::PermissionTemplateParameter] {
+        self.permission_template_parameters.as_deref().unwrap_or_default()
+    }
     /// <p>A list of the tag key value pairs currently attached to the permission.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
+    }
+    /// <p>The owner of the permission. This can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – The permission is owned by the current account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – The permission is owned by another account and shared with the current account.</p></li>
+    /// </ul>
+    pub fn resource_owner(&self) -> ::std::option::Option<&crate::types::ResourceOwner> {
+        self.resource_owner.as_ref()
     }
 }
 impl ResourceSharePermissionSummary {
@@ -131,7 +157,9 @@ pub struct ResourceSharePermissionSummaryBuilder {
     pub(crate) is_resource_type_default: ::std::option::Option<bool>,
     pub(crate) permission_type: ::std::option::Option<crate::types::PermissionType>,
     pub(crate) feature_set: ::std::option::Option<crate::types::PermissionFeatureSet>,
+    pub(crate) permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameter>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
 }
 impl ResourceSharePermissionSummaryBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission you want information about.</p>
@@ -330,6 +358,29 @@ impl ResourceSharePermissionSummaryBuilder {
     pub fn get_feature_set(&self) -> &::std::option::Option<crate::types::PermissionFeatureSet> {
         &self.feature_set
     }
+    /// Appends an item to `permission_template_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_permission_template_parameters`](Self::set_permission_template_parameters).
+    ///
+    /// <p>The list of template parameters defined for this permission, including their names, types, descriptions, and values. This field is present only if the permission is a template with declared parameters. When returned in the context of a permission association, the values are also included.</p>
+    pub fn permission_template_parameters(mut self, input: crate::types::PermissionTemplateParameter) -> Self {
+        let mut v = self.permission_template_parameters.unwrap_or_default();
+        v.push(input);
+        self.permission_template_parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of template parameters defined for this permission, including their names, types, descriptions, and values. This field is present only if the permission is a template with declared parameters. When returned in the context of a permission association, the values are also included.</p>
+    pub fn set_permission_template_parameters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameter>>,
+    ) -> Self {
+        self.permission_template_parameters = input;
+        self
+    }
+    /// <p>The list of template parameters defined for this permission, including their names, types, descriptions, and values. This field is present only if the permission is a template with declared parameters. When returned in the context of a permission association, the values are also included.</p>
+    pub fn get_permission_template_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameter>> {
+        &self.permission_template_parameters
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -350,6 +401,38 @@ impl ResourceSharePermissionSummaryBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The owner of the permission. This can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – The permission is owned by the current account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – The permission is owned by another account and shared with the current account.</p></li>
+    /// </ul>
+    pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
+        self.resource_owner = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The owner of the permission. This can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – The permission is owned by the current account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – The permission is owned by another account and shared with the current account.</p></li>
+    /// </ul>
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
+        self.resource_owner = input;
+        self
+    }
+    /// <p>The owner of the permission. This can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – The permission is owned by the current account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – The permission is owned by another account and shared with the current account.</p></li>
+    /// </ul>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
+        &self.resource_owner
+    }
     /// Consumes the builder and constructs a [`ResourceSharePermissionSummary`](crate::types::ResourceSharePermissionSummary).
     pub fn build(self) -> crate::types::ResourceSharePermissionSummary {
         crate::types::ResourceSharePermissionSummary {
@@ -364,7 +447,9 @@ impl ResourceSharePermissionSummaryBuilder {
             is_resource_type_default: self.is_resource_type_default,
             permission_type: self.permission_type,
             feature_set: self.feature_set,
+            permission_template_parameters: self.permission_template_parameters,
             tags: self.tags,
+            resource_owner: self.resource_owner,
         }
     }
 }

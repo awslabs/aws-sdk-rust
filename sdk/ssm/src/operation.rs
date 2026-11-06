@@ -82,6 +82,9 @@ pub mod delete_resource_data_sync;
 /// Types for the `DeleteResourcePolicy` operation.
 pub mod delete_resource_policy;
 
+/// Types for the `DeregisterDefaultHostManagementConfiguration` operation.
+pub mod deregister_default_host_management_configuration;
+
 /// Types for the `DeregisterManagedInstance` operation.
 pub mod deregister_managed_instance;
 
@@ -354,6 +357,9 @@ pub mod put_parameter;
 
 /// Types for the `PutResourcePolicy` operation.
 pub mod put_resource_policy;
+
+/// Types for the `RegisterDefaultHostManagementConfiguration` operation.
+pub mod register_default_host_management_configuration;
 
 /// Types for the `RegisterDefaultPatchBaseline` operation.
 pub mod register_default_patch_baseline;

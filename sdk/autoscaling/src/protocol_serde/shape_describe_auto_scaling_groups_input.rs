@@ -22,28 +22,33 @@ pub fn ser_describe_auto_scaling_groups_input_input_input(
         scope_6.boolean(*var_7);
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("NextToken");
-    if let Some(var_9) = &input.next_token {
-        scope_8.string(var_9);
+    let mut scope_8 = writer.prefix("IncludeManagedResources");
+    if let Some(var_9) = &input.include_managed_resources {
+        scope_8.boolean(*var_9);
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("MaxRecords");
-    if let Some(var_11) = &input.max_records {
-        scope_10.number(
+    let mut scope_10 = writer.prefix("NextToken");
+    if let Some(var_11) = &input.next_token {
+        scope_10.string(var_11);
+    }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("MaxRecords");
+    if let Some(var_13) = &input.max_records {
+        scope_12.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("Filters");
-    if let Some(var_13) = &input.filters {
-        let mut list_15 = scope_12.start_list(false, None);
-        for item_14 in var_13 {
+    let mut scope_14 = writer.prefix("Filters");
+    if let Some(var_15) = &input.filters {
+        let mut list_17 = scope_14.start_list(false, None);
+        for item_16 in var_15 {
             #[allow(unused_mut)]
-            let mut entry_16 = list_15.entry();
-            crate::protocol_serde::shape_filter::ser_filter(entry_16, item_14)?;
+            let mut entry_18 = list_17.entry();
+            crate::protocol_serde::shape_filter::ser_filter(entry_18, item_16)?;
         }
-        list_15.finish();
+        list_17.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

@@ -23,9 +23,9 @@ impl crate::operation::update_case::builders::UpdateCaseInputBuilder {
 /// Fluent builder constructing a request to `UpdateCase`.
 ///
 /// <note>
-/// <p>If you provide a value for <code>PerformedBy.UserArn</code> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a> permission on the User ARN resource that you provide</p>
+/// <p>If you provide a value for <code>PerformedBy.UserArn</code>, you must also have the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a> permission on the user ARN that you provide.</p>
 /// </note>
-/// <p>Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical to the <code>CreateCase</code> input .</p>
+/// <p>Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical to the <code>CreateCase</code> input.</p>
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCaseFluentBuilder {

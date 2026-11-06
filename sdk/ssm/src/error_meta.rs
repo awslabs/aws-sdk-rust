@@ -1418,6 +1418,39 @@ impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> f
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::deregister_default_host_management_configuration::DeregisterDefaultHostManagementConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::deregister_default_host_management_configuration::DeregisterDefaultHostManagementConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::deregister_default_host_management_configuration::DeregisterDefaultHostManagementConfigurationError> for Error {
+    fn from(err: crate::operation::deregister_default_host_management_configuration::DeregisterDefaultHostManagementConfigurationError) -> Self {
+        match err {
+            crate::operation::deregister_default_host_management_configuration::DeregisterDefaultHostManagementConfigurationError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::deregister_default_host_management_configuration::DeregisterDefaultHostManagementConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_managed_instance::DeregisterManagedInstanceError, R>>
     for Error
 where
@@ -4273,6 +4306,39 @@ impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Err
                 Error::ResourcePolicyNotFoundException(inner)
             }
             crate::operation::put_resource_policy::PutResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::register_default_host_management_configuration::RegisterDefaultHostManagementConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::register_default_host_management_configuration::RegisterDefaultHostManagementConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::register_default_host_management_configuration::RegisterDefaultHostManagementConfigurationError> for Error {
+    fn from(err: crate::operation::register_default_host_management_configuration::RegisterDefaultHostManagementConfigurationError) -> Self {
+        match err {
+            crate::operation::register_default_host_management_configuration::RegisterDefaultHostManagementConfigurationError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::register_default_host_management_configuration::RegisterDefaultHostManagementConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

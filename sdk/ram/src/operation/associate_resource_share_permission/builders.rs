@@ -136,6 +136,28 @@ impl AssociateResourceSharePermissionFluentBuilder {
     pub fn get_permission_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_permission_arn()
     }
+    ///
+    /// Appends an item to `permissionTemplateParameters`.
+    ///
+    /// To override the contents of this collection use [`set_permission_template_parameters`](Self::set_permission_template_parameters).
+    ///
+    /// <p>Specifies the template parameter values for the permission being associated. You must provide values for all parameters declared in the permission template. This parameter is required only if the specified permission has template parameters.</p>
+    pub fn permission_template_parameters(mut self, input: crate::types::PermissionTemplateParameterInput) -> Self {
+        self.inner = self.inner.permission_template_parameters(input);
+        self
+    }
+    /// <p>Specifies the template parameter values for the permission being associated. You must provide values for all parameters declared in the permission template. This parameter is required only if the specified permission has template parameters.</p>
+    pub fn set_permission_template_parameters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterInput>>,
+    ) -> Self {
+        self.inner = self.inner.set_permission_template_parameters(input);
+        self
+    }
+    /// <p>Specifies the template parameter values for the permission being associated. You must provide values for all parameters declared in the permission template. This parameter is required only if the specified permission has template parameters.</p>
+    pub fn get_permission_template_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterInput>> {
+        self.inner.get_permission_template_parameters()
+    }
     /// <p>Specifies whether the specified permission should replace the existing permission associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to a resource share that currently doesn't have a permission. The default value is <code>false</code>.</p><note>
     /// <p>A resource share can have only one permission per resource type. If a resource share already has a permission for the specified resource type and you don't set <code>replace</code> to <code>true</code> then the operation returns an error. This helps prevent accidental overwriting of a permission.</p>
     /// </note>

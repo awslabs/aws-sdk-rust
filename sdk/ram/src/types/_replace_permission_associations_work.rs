@@ -14,6 +14,8 @@ pub struct ReplacePermissionAssociationsWork {
     pub to_permission_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the managed permission that this background task is associating with the resource shares. This is always the version that is currently the default for this managed permission.</p>
     pub to_permission_version: ::std::option::Option<::std::string::String>,
+    /// <p>The template parameter values to apply when replacing the permission. This field is present only if the target permission is a template with declared parameters.</p>
+    pub permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameter>>,
     /// <p>Specifies the current status of the background tasks for the specified ID. The output is one of the following strings:</p>
     /// <ul>
     /// <li>
@@ -51,6 +53,12 @@ impl ReplacePermissionAssociationsWork {
     /// <p>The version of the managed permission that this background task is associating with the resource shares. This is always the version that is currently the default for this managed permission.</p>
     pub fn to_permission_version(&self) -> ::std::option::Option<&str> {
         self.to_permission_version.as_deref()
+    }
+    /// <p>The template parameter values to apply when replacing the permission. This field is present only if the target permission is a template with declared parameters.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permission_template_parameters.is_none()`.
+    pub fn permission_template_parameters(&self) -> &[crate::types::PermissionTemplateParameter] {
+        self.permission_template_parameters.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the current status of the background tasks for the specified ID. The output is one of the following strings:</p>
     /// <ul>
@@ -93,6 +101,7 @@ pub struct ReplacePermissionAssociationsWorkBuilder {
     pub(crate) from_permission_version: ::std::option::Option<::std::string::String>,
     pub(crate) to_permission_arn: ::std::option::Option<::std::string::String>,
     pub(crate) to_permission_version: ::std::option::Option<::std::string::String>,
+    pub(crate) permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameter>>,
     pub(crate) status: ::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -168,6 +177,29 @@ impl ReplacePermissionAssociationsWorkBuilder {
     /// <p>The version of the managed permission that this background task is associating with the resource shares. This is always the version that is currently the default for this managed permission.</p>
     pub fn get_to_permission_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.to_permission_version
+    }
+    /// Appends an item to `permission_template_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_permission_template_parameters`](Self::set_permission_template_parameters).
+    ///
+    /// <p>The template parameter values to apply when replacing the permission. This field is present only if the target permission is a template with declared parameters.</p>
+    pub fn permission_template_parameters(mut self, input: crate::types::PermissionTemplateParameter) -> Self {
+        let mut v = self.permission_template_parameters.unwrap_or_default();
+        v.push(input);
+        self.permission_template_parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The template parameter values to apply when replacing the permission. This field is present only if the target permission is a template with declared parameters.</p>
+    pub fn set_permission_template_parameters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameter>>,
+    ) -> Self {
+        self.permission_template_parameters = input;
+        self
+    }
+    /// <p>The template parameter values to apply when replacing the permission. This field is present only if the target permission is a template with declared parameters.</p>
+    pub fn get_permission_template_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameter>> {
+        &self.permission_template_parameters
     }
     /// <p>Specifies the current status of the background tasks for the specified ID. The output is one of the following strings:</p>
     /// <ul>
@@ -257,6 +289,7 @@ impl ReplacePermissionAssociationsWorkBuilder {
             from_permission_version: self.from_permission_version,
             to_permission_arn: self.to_permission_arn,
             to_permission_version: self.to_permission_version,
+            permission_template_parameters: self.permission_template_parameters,
             status: self.status,
             status_message: self.status_message,
             creation_time: self.creation_time,

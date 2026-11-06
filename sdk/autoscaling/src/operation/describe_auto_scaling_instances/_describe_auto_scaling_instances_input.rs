@@ -6,7 +6,10 @@ pub struct DescribeAutoScalingInstancesInput {
     /// <p>The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies whether to include managed Auto Scaling instances in the response. When set to <code>true</code> (default), the response includes managed Auto Scaling instances.</p>
+    pub include_managed_resources: ::std::option::Option<bool>,
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>50</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub max_records: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -19,7 +22,12 @@ impl DescribeAutoScalingInstancesInput {
     pub fn instance_ids(&self) -> &[::std::string::String] {
         self.instance_ids.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies whether to include managed Auto Scaling instances in the response. When set to <code>true</code> (default), the response includes managed Auto Scaling instances.</p>
+    pub fn include_managed_resources(&self) -> ::std::option::Option<bool> {
+        self.include_managed_resources
+    }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>50</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
@@ -40,6 +48,7 @@ impl DescribeAutoScalingInstancesInput {
 #[non_exhaustive]
 pub struct DescribeAutoScalingInstancesInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) include_managed_resources: ::std::option::Option<bool>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -67,17 +76,34 @@ impl DescribeAutoScalingInstancesInputBuilder {
     pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
+    /// <p>Specifies whether to include managed Auto Scaling instances in the response. When set to <code>true</code> (default), the response includes managed Auto Scaling instances.</p>
+    pub fn include_managed_resources(mut self, input: bool) -> Self {
+        self.include_managed_resources = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to include managed Auto Scaling instances in the response. When set to <code>true</code> (default), the response includes managed Auto Scaling instances.</p>
+    pub fn set_include_managed_resources(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_managed_resources = input;
+        self
+    }
+    /// <p>Specifies whether to include managed Auto Scaling instances in the response. When set to <code>true</code> (default), the response includes managed Auto Scaling instances.</p>
+    pub fn get_include_managed_resources(&self) -> &::std::option::Option<bool> {
+        &self.include_managed_resources
+    }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>50</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>50</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>50</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         &self.max_records
     }
@@ -104,6 +130,7 @@ impl DescribeAutoScalingInstancesInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesInput {
             instance_ids: self.instance_ids,
+            include_managed_resources: self.include_managed_resources,
             max_records: self.max_records,
             next_token: self.next_token,
         })

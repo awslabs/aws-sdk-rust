@@ -6,9 +6,9 @@
 pub enum RelatedItemInputContent {
     /// <p>Represents the content of a comment to be returned to agents.</p>
     Comment(crate::types::CommentContent),
-    /// <p>Represents the Amazon Connect case to be created as a related item.</p>
+    /// <p>Represents the Connect Customer case to be created as a related item.</p>
     ConnectCase(crate::types::ConnectCaseInputContent),
-    /// <p>Object representing a contact in Amazon Connect as an API request field.</p>
+    /// <p>Object representing a contact in Connect Customer as an API request field.</p>
     Contact(crate::types::Contact),
     /// <p>Represents the content of a <code>Custom</code> type related item.</p>
     Custom(crate::types::CustomInputContent),

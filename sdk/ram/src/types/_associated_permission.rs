@@ -22,6 +22,8 @@ pub struct AssociatedPermission {
     /// <p><code>DELETING</code> – This permission or version is in the process of being deleted.</p></li>
     /// <li>
     /// <p><code>DELETED</code> – This permission or version is deleted.</p></li>
+    /// <li>
+    /// <p><code>DEPRECATED</code> – The permission owner deprecated this permission. It can't be associated with new resource shares, but existing associations continue to function.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
@@ -38,6 +40,8 @@ pub struct AssociatedPermission {
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share associated with this permission.</p>
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The template parameter values provided when the permission was associated with this resource share. If the permission has no declared template parameters, this member doesn't appear in the response.</p>
+    pub permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameter>>,
 }
 impl AssociatedPermission {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the associated managed permission.</p>
@@ -66,6 +70,8 @@ impl AssociatedPermission {
     /// <p><code>DELETING</code> – This permission or version is in the process of being deleted.</p></li>
     /// <li>
     /// <p><code>DELETED</code> – This permission or version is deleted.</p></li>
+    /// <li>
+    /// <p><code>DEPRECATED</code> – The permission owner deprecated this permission. It can't be associated with new resource shares, but existing associations continue to function.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -90,6 +96,12 @@ impl AssociatedPermission {
     pub fn resource_share_arn(&self) -> ::std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
+    /// <p>The template parameter values provided when the permission was associated with this resource share. If the permission has no declared template parameters, this member doesn't appear in the response.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permission_template_parameters.is_none()`.
+    pub fn permission_template_parameters(&self) -> &[crate::types::PermissionTemplateParameter] {
+        self.permission_template_parameters.as_deref().unwrap_or_default()
+    }
 }
 impl AssociatedPermission {
     /// Creates a new builder-style object to manufacture [`AssociatedPermission`](crate::types::AssociatedPermission).
@@ -110,6 +122,7 @@ pub struct AssociatedPermissionBuilder {
     pub(crate) feature_set: ::std::option::Option<crate::types::PermissionFeatureSet>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) resource_share_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameter>>,
 }
 impl AssociatedPermissionBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the associated managed permission.</p>
@@ -178,6 +191,8 @@ impl AssociatedPermissionBuilder {
     /// <p><code>DELETING</code> – This permission or version is in the process of being deleted.</p></li>
     /// <li>
     /// <p><code>DELETED</code> – This permission or version is deleted.</p></li>
+    /// <li>
+    /// <p><code>DEPRECATED</code> – The permission owner deprecated this permission. It can't be associated with new resource shares, but existing associations continue to function.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -193,6 +208,8 @@ impl AssociatedPermissionBuilder {
     /// <p><code>DELETING</code> – This permission or version is in the process of being deleted.</p></li>
     /// <li>
     /// <p><code>DELETED</code> – This permission or version is deleted.</p></li>
+    /// <li>
+    /// <p><code>DEPRECATED</code> – The permission owner deprecated this permission. It can't be associated with new resource shares, but existing associations continue to function.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -208,6 +225,8 @@ impl AssociatedPermissionBuilder {
     /// <p><code>DELETING</code> – This permission or version is in the process of being deleted.</p></li>
     /// <li>
     /// <p><code>DELETED</code> – This permission or version is deleted.</p></li>
+    /// <li>
+    /// <p><code>DEPRECATED</code> – The permission owner deprecated this permission. It can't be associated with new resource shares, but existing associations continue to function.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
@@ -278,6 +297,29 @@ impl AssociatedPermissionBuilder {
     pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_share_arn
     }
+    /// Appends an item to `permission_template_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_permission_template_parameters`](Self::set_permission_template_parameters).
+    ///
+    /// <p>The template parameter values provided when the permission was associated with this resource share. If the permission has no declared template parameters, this member doesn't appear in the response.</p>
+    pub fn permission_template_parameters(mut self, input: crate::types::PermissionTemplateParameter) -> Self {
+        let mut v = self.permission_template_parameters.unwrap_or_default();
+        v.push(input);
+        self.permission_template_parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The template parameter values provided when the permission was associated with this resource share. If the permission has no declared template parameters, this member doesn't appear in the response.</p>
+    pub fn set_permission_template_parameters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameter>>,
+    ) -> Self {
+        self.permission_template_parameters = input;
+        self
+    }
+    /// <p>The template parameter values provided when the permission was associated with this resource share. If the permission has no declared template parameters, this member doesn't appear in the response.</p>
+    pub fn get_permission_template_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameter>> {
+        &self.permission_template_parameters
+    }
     /// Consumes the builder and constructs a [`AssociatedPermission`](crate::types::AssociatedPermission).
     pub fn build(self) -> crate::types::AssociatedPermission {
         crate::types::AssociatedPermission {
@@ -289,6 +331,7 @@ impl AssociatedPermissionBuilder {
             feature_set: self.feature_set,
             last_updated_time: self.last_updated_time,
             resource_share_arn: self.resource_share_arn,
+            permission_template_parameters: self.permission_template_parameters,
         }
     }
 }

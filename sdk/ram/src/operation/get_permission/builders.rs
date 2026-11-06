@@ -23,6 +23,7 @@ impl crate::operation::get_permission::builders::GetPermissionInputBuilder {
 /// Fluent builder constructing a request to `GetPermission`.
 ///
 /// <p>Retrieves the contents of a managed permission in JSON format.</p>
+/// <p>If the permission has template parameters, you can include the <code>permissionTemplateParameters</code> parameter in your request. The operation then renders the returned policy with the specified values in place of the template parameter placeholders. If you omit <code>permissionTemplateParameters</code>, the operation returns the raw policy template with <code>@{parameterName}</code> placeholders unchanged.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPermissionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -138,5 +139,33 @@ impl GetPermissionFluentBuilder {
     /// <p>To see the list of available versions, use <code>ListPermissionVersions</code>.</p>
     pub fn get_permission_version(&self) -> &::std::option::Option<i32> {
         self.inner.get_permission_version()
+    }
+    ///
+    /// Appends an item to `permissionTemplateParameters`.
+    ///
+    /// To override the contents of this collection use [`set_permission_template_parameters`](Self::set_permission_template_parameters).
+    ///
+    /// <p>Specifies the template parameter values to use when rendering the permission's policy template. Each entry supplies a parameter name and its values. When you provide this parameter, the response contains the rendered policy with the specified values in place of the template parameter placeholders.</p>
+    /// <p>For <code>STRING</code> type parameters, provide a single value. For <code>STRING_LIST</code> type parameters, provide one or more values.</p>
+    /// <p>You can specify this parameter only for permissions that declare template parameters. You must provide values for all parameters declared in the permission template.</p>
+    pub fn permission_template_parameters(mut self, input: crate::types::PermissionTemplateParameterInput) -> Self {
+        self.inner = self.inner.permission_template_parameters(input);
+        self
+    }
+    /// <p>Specifies the template parameter values to use when rendering the permission's policy template. Each entry supplies a parameter name and its values. When you provide this parameter, the response contains the rendered policy with the specified values in place of the template parameter placeholders.</p>
+    /// <p>For <code>STRING</code> type parameters, provide a single value. For <code>STRING_LIST</code> type parameters, provide one or more values.</p>
+    /// <p>You can specify this parameter only for permissions that declare template parameters. You must provide values for all parameters declared in the permission template.</p>
+    pub fn set_permission_template_parameters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterInput>>,
+    ) -> Self {
+        self.inner = self.inner.set_permission_template_parameters(input);
+        self
+    }
+    /// <p>Specifies the template parameter values to use when rendering the permission's policy template. Each entry supplies a parameter name and its values. When you provide this parameter, the response contains the rendered policy with the specified values in place of the template parameter placeholders.</p>
+    /// <p>For <code>STRING</code> type parameters, provide a single value. For <code>STRING_LIST</code> type parameters, provide one or more values.</p>
+    /// <p>You can specify this parameter only for permissions that declare template parameters. You must provide values for all parameters declared in the permission template.</p>
+    pub fn get_permission_template_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterInput>> {
+        self.inner.get_permission_template_parameters()
     }
 }

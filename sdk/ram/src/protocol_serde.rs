@@ -91,6 +91,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_permission;
+
 pub(crate) mod shape_update_resource_share;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -215,11 +217,19 @@ pub(crate) mod shape_unmatched_policy_permission_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_permission_input;
+
 pub(crate) mod shape_update_resource_share_input;
 
 pub(crate) mod shape_associated_permission_list;
 
 pub(crate) mod shape_associated_source_list;
+
+pub(crate) mod shape_permission_arn_and_template_parameters;
+
+pub(crate) mod shape_permission_template_parameter_declaration;
+
+pub(crate) mod shape_permission_template_parameter_input;
 
 pub(crate) mod shape_policy_list;
 
@@ -259,6 +269,10 @@ pub(crate) mod shape_associated_permission;
 
 pub(crate) mod shape_associated_source;
 
+pub(crate) mod shape_permission_template_parameter_declaration_list;
+
+pub(crate) mod shape_permission_template_parameter_list;
+
 pub(crate) mod shape_principal;
 
 pub(crate) mod shape_resource;
@@ -268,3 +282,7 @@ pub(crate) mod shape_resource_share_association;
 pub(crate) mod shape_service_name_and_resource_type;
 
 pub(crate) mod shape_tag_list;
+
+pub(crate) mod shape_permission_template_parameter;
+
+pub(crate) mod shape_permission_template_parameter_value_list;

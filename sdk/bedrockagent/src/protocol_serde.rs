@@ -385,6 +385,8 @@ pub(crate) mod shape_knowledge_base_summaries;
 
 pub(crate) mod shape_memory_configuration;
 
+pub(crate) mod shape_metadata_configuration;
+
 pub(crate) mod shape_prompt_override_configuration;
 
 pub(crate) mod shape_prompt_summaries;
@@ -482,6 +484,8 @@ pub(crate) mod shape_knowledge_base_summary;
 pub(crate) mod shape_managed_knowledge_base_configuration;
 
 pub(crate) mod shape_managed_knowledge_base_connector_configuration;
+
+pub(crate) mod shape_metadata_configurations;
 
 pub(crate) mod shape_mongo_db_atlas_configuration;
 

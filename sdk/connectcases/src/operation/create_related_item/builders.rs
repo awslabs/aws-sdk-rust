@@ -23,7 +23,7 @@ impl crate::operation::create_related_item::builders::CreateRelatedItemInputBuil
 /// Fluent builder constructing a request to `CreateRelatedItem`.
 ///
 /// <p>Creates a related item (comments, tasks, and contacts) and associates it with a case.</p>
-/// <p>There's a quota for the number of fields allowed in a Custom type related item. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Amazon Connect Cases quotas</a>.</p>
+/// <p>There's a quota for the number of fields allowed in a Custom type related item. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect Customer Cases quotas</a>.</p>
 /// <p><b>Use cases</b></p>
 /// <p>Following are examples of related items that you may want to associate with a case:</p>
 /// <ul>
@@ -34,7 +34,7 @@ impl crate::operation::create_related_item::builders::CreateRelatedItemInputBuil
 /// <li>
 /// <p>SLAs, to capture target resolution goals</p></li>
 /// <li>
-/// <p>Cases, to capture related Amazon Connect Cases</p></li>
+/// <p>Cases, to capture related Connect Customer Cases</p></li>
 /// <li>
 /// <p>Files, such as policy documentation or customer-provided attachments</p></li>
 /// <li>
@@ -47,11 +47,9 @@ impl crate::operation::create_related_item::builders::CreateRelatedItemInputBuil
 /// <li>
 /// <p>A Related Item is a resource that is associated with a case. It may or may not have an external identifier linking it to an external resource (for example, a <code>contactArn</code>). All Related Items have their own internal identifier, the <code>relatedItemArn</code>. Examples of related items include <code>comments</code> and <code>contacts</code>.</p></li>
 /// <li>
-/// <p>If you provide a value for <code>performedBy.userArn</code> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a> permission on the ARN of the user that you provide.</p></li>
-/// <li>
-/// <p>The <code>type</code> field is reserved for internal use only.</p></li>
+/// <p>If you provide a value for <code>performedBy.userArn</code>, you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a> permission on the ARN of the user that you provide.</p></li>
 /// </ul>
-/// <p><b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect endpoints and quotas</a>.</p>
+/// <p><b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect Customer endpoints and quotas</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRelatedItemFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

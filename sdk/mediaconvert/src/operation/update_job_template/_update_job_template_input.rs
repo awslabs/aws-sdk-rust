@@ -9,6 +9,8 @@ pub struct UpdateJobTemplateInput {
     pub category: ::std::option::Option<::std::string::String>,
     /// The new description for the job template, if you are changing it.
     pub description: ::std::option::Option<::std::string::String>,
+    /// The Elemental Inference settings used in this job.
+    pub elemental_inference_settings: ::std::option::Option<crate::types::ElementalInferenceSettings>,
     /// Optional list of hop destinations.
     pub hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     /// The name of the job template you are modifying
@@ -34,6 +36,10 @@ impl UpdateJobTemplateInput {
     /// The new description for the job template, if you are changing it.
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn elemental_inference_settings(&self) -> ::std::option::Option<&crate::types::ElementalInferenceSettings> {
+        self.elemental_inference_settings.as_ref()
     }
     /// Optional list of hop destinations.
     ///
@@ -76,6 +82,7 @@ pub struct UpdateJobTemplateInputBuilder {
     pub(crate) acceleration_settings: ::std::option::Option<crate::types::AccelerationSettings>,
     pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) elemental_inference_settings: ::std::option::Option<crate::types::ElementalInferenceSettings>,
     pub(crate) hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
@@ -125,6 +132,20 @@ impl UpdateJobTemplateInputBuilder {
     /// The new description for the job template, if you are changing it.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn elemental_inference_settings(mut self, input: crate::types::ElementalInferenceSettings) -> Self {
+        self.elemental_inference_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn set_elemental_inference_settings(mut self, input: ::std::option::Option<crate::types::ElementalInferenceSettings>) -> Self {
+        self.elemental_inference_settings = input;
+        self
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn get_elemental_inference_settings(&self) -> &::std::option::Option<crate::types::ElementalInferenceSettings> {
+        &self.elemental_inference_settings
     }
     /// Appends an item to `hop_destinations`.
     ///
@@ -225,6 +246,7 @@ impl UpdateJobTemplateInputBuilder {
             acceleration_settings: self.acceleration_settings,
             category: self.category,
             description: self.description,
+            elemental_inference_settings: self.elemental_inference_settings,
             hop_destinations: self.hop_destinations,
             name: self.name,
             priority: self.priority,

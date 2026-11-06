@@ -8,6 +8,15 @@ pub(crate) fn access_denied_exception_correct_errors(
     builder
 }
 
+pub(crate) fn conflict_exception_correct_errors(
+    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
+) -> crate::types::error::builders::ConflictExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn internal_server_exception_correct_errors(
     mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
 ) -> crate::types::error::builders::InternalServerExceptionBuilder {
@@ -32,6 +41,15 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
+pub(crate) fn service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn throttling_exception_correct_errors(
     mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
 ) -> crate::types::error::builders::ThrottlingExceptionBuilder {
@@ -46,6 +64,18 @@ pub(crate) fn validation_exception_correct_errors(
 ) -> crate::types::error::builders::ValidationExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_create_related_item_output_output_correct_errors(
+    mut builder: crate::operation::batch_create_related_item::builders::BatchCreateRelatedItemOutputBuilder,
+) -> crate::operation::batch_create_related_item::builders::BatchCreateRelatedItemOutputBuilder {
+    if builder.successful_items.is_none() {
+        builder.successful_items = Some(Default::default())
+    }
+    if builder.failed_items.is_none() {
+        builder.failed_items = Some(Default::default())
     }
     builder
 }
@@ -74,20 +104,14 @@ pub(crate) fn batch_get_field_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn service_quota_exceeded_exception_correct_errors(
-    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
-) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
+pub(crate) fn batch_update_case_output_output_correct_errors(
+    mut builder: crate::operation::batch_update_case::builders::BatchUpdateCaseOutputBuilder,
+) -> crate::operation::batch_update_case::builders::BatchUpdateCaseOutputBuilder {
+    if builder.successful_cases.is_none() {
+        builder.successful_cases = Some(Default::default())
     }
-    builder
-}
-
-pub(crate) fn conflict_exception_correct_errors(
-    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
-) -> crate::types::error::builders::ConflictExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
+    if builder.failed_cases.is_none() {
+        builder.failed_cases = Some(Default::default())
     }
     builder
 }
@@ -401,6 +425,72 @@ pub(crate) fn audit_event_correct_errors(mut builder: crate::types::builders::Au
     }
     if builder.fields.is_none() {
         builder.fields = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_create_related_item_error_entry_correct_errors(
+    mut builder: crate::types::builders::BatchCreateRelatedItemErrorEntryBuilder,
+) -> crate::types::builders::BatchCreateRelatedItemErrorEntryBuilder {
+    if builder.case_identifier.is_none() {
+        builder.case_identifier = {
+            let builder = crate::types::builders::CaseIdentifierBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.error_code.is_none() {
+        builder.error_code = Some(Default::default())
+    }
+    if builder.error_message.is_none() {
+        builder.error_message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_create_related_item_success_entry_correct_errors(
+    mut builder: crate::types::builders::BatchCreateRelatedItemSuccessEntryBuilder,
+) -> crate::types::builders::BatchCreateRelatedItemSuccessEntryBuilder {
+    if builder.case_identifier.is_none() {
+        builder.case_identifier = {
+            let builder = crate::types::builders::CaseIdentifierBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.related_item_id.is_none() {
+        builder.related_item_id = Some(Default::default())
+    }
+    if builder.related_item_arn.is_none() {
+        builder.related_item_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_update_case_error_entry_correct_errors(
+    mut builder: crate::types::builders::BatchUpdateCaseErrorEntryBuilder,
+) -> crate::types::builders::BatchUpdateCaseErrorEntryBuilder {
+    if builder.case_identifier.is_none() {
+        builder.case_identifier = {
+            let builder = crate::types::builders::CaseIdentifierBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.error_code.is_none() {
+        builder.error_code = Some(Default::default())
+    }
+    if builder.error_message.is_none() {
+        builder.error_message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_update_case_success_entry_correct_errors(
+    mut builder: crate::types::builders::BatchUpdateCaseSuccessEntryBuilder,
+) -> crate::types::builders::BatchUpdateCaseSuccessEntryBuilder {
+    if builder.case_identifier.is_none() {
+        builder.case_identifier = {
+            let builder = crate::types::builders::CaseIdentifierBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }

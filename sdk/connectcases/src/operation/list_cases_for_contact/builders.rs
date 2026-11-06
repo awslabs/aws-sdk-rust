@@ -128,17 +128,17 @@ impl ListCasesForContactFluentBuilder {
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_id()
     }
-    /// <p>A unique identifier of a contact in Amazon Connect.</p>
+    /// <p>A unique identifier of a contact in Connect Customer.</p>
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_arn(input.into());
         self
     }
-    /// <p>A unique identifier of a contact in Amazon Connect.</p>
+    /// <p>A unique identifier of a contact in Connect Customer.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_arn(input);
         self
     }
-    /// <p>A unique identifier of a contact in Amazon Connect.</p>
+    /// <p>A unique identifier of a contact in Connect Customer.</p>
     pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_arn()
     }

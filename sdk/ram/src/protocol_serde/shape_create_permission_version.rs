@@ -121,6 +121,25 @@ pub fn de_create_permission_version_http_error(
                 tmp
             })
         }
+        "OperationNotPermittedException" => {
+            crate::operation::create_permission_version::CreatePermissionVersionError::OperationNotPermittedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?;
+                    let output = output.meta(generic);
+                    crate::serde_util::operation_not_permitted_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::create_permission_version::CreatePermissionVersionError::unhandled)?
+                };
+                tmp
+            })
+        }
         "PermissionVersionsLimitExceededException" => {
             crate::operation::create_permission_version::CreatePermissionVersionError::PermissionVersionsLimitExceededException({
                 #[allow(unused_mut)]

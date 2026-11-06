@@ -119,6 +119,16 @@ pub(crate) fn reflens_list_sessions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_system_table_statuses_output_output_next_token(
+    input: &crate::operation::list_system_table_statuses::ListSystemTableStatusesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_table_metadata_output_output_next_token(
     input: &crate::operation::list_table_metadata::ListTableMetadataOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -160,6 +170,13 @@ pub(crate) fn lens_list_databases_output_output_database_list(
     input: crate::operation::list_databases::ListDatabasesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Database>> {
     let input = input.database_list?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_system_table_statuses_output_output_items(
+    input: crate::operation::list_system_table_statuses::ListSystemTableStatusesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SystemTableStatus>> {
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 

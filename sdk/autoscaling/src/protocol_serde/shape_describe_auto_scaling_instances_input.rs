@@ -17,17 +17,22 @@ pub fn ser_describe_auto_scaling_instances_input_input_input(
         list_4.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("MaxRecords");
-    if let Some(var_7) = &input.max_records {
-        scope_6.number(
+    let mut scope_6 = writer.prefix("IncludeManagedResources");
+    if let Some(var_7) = &input.include_managed_resources {
+        scope_6.boolean(*var_7);
+    }
+    #[allow(unused_mut)]
+    let mut scope_8 = writer.prefix("MaxRecords");
+    if let Some(var_9) = &input.max_records {
+        scope_8.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("NextToken");
-    if let Some(var_9) = &input.next_token {
-        scope_8.string(var_9);
+    let mut scope_10 = writer.prefix("NextToken");
+    if let Some(var_11) = &input.next_token {
+        scope_10.string(var_11);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

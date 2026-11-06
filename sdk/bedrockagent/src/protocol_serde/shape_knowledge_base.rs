@@ -96,6 +96,11 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "metadataConfigurations" => {
+                            builder = builder.set_metadata_configurations(
+                                crate::protocol_serde::shape_metadata_configurations::de_metadata_configurations(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

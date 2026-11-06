@@ -1975,6 +1975,21 @@ pub(crate) fn kendra_knowledge_base_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn metadata_configuration_correct_errors(
+    mut builder: crate::types::builders::MetadataConfigurationBuilder,
+) -> crate::types::builders::MetadataConfigurationBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::FieldType>().ok()
+    }
+    if builder.searchability.is_none() {
+        builder.searchability = "no value was set".parse::<crate::types::SearchableStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn mongo_db_atlas_configuration_correct_errors(
     mut builder: crate::types::builders::MongoDbAtlasConfigurationBuilder,
 ) -> crate::types::builders::MongoDbAtlasConfigurationBuilder {

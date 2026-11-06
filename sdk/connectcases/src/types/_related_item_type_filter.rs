@@ -6,7 +6,7 @@
 pub enum RelatedItemTypeFilter {
     /// <p>A filter for related items of type <code>Comment</code>.</p>
     Comment(crate::types::CommentFilter),
-    /// <p>Represents the Amazon Connect case to be created as a related item.</p>
+    /// <p>Represents the Connect Customer case to be created as a related item.</p>
     ConnectCase(crate::types::ConnectCaseFilter),
     /// <p>A filter for related items of type <code>Contact</code>.</p>
     Contact(crate::types::ContactFilter),

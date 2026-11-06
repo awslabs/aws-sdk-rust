@@ -16,6 +16,21 @@ pub struct UserDefinedFunctionInput {
     pub owner_type: ::std::option::Option<crate::types::PrincipalType>,
     /// <p>The resource URIs for the function.</p>
     pub resource_uris: ::std::option::Option<::std::vec::Vec<crate::types::ResourceUri>>,
+    /// <p>The Amazon S3 location that contains the function's artifacts. Required when <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>. You must register the location with Lake Formation, and every resource URI must be under this location.</p>
+    pub artifact_location: ::std::option::Option<::std::string::String>,
+    /// <p>How access to the function is governed. Specify <code>LAKE_FORMATION</code> to manage access to the function with Lake Formation permissions. If you don't specify a value, the default is <code>IAM_ONLY</code>. You can't change the governance mode after the function is created.</p>
+    /// <p>When <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You must be a data lake administrator or have all permissions on the Data Catalog with the grant option.</p></li>
+    /// <li>
+    /// <p>You must have the <code>DATA_LOCATION_ACCESS</code> permission on the <code>ArtifactLocation</code>, unless you're a data lake administrator.</p></li>
+    /// <li>
+    /// <p>You must specify from 1 to 10 resource URIs, each under the <code>ArtifactLocation</code>.</p></li>
+    /// <li>
+    /// <p>You can't rename the function.</p></li>
+    /// </ul>
+    pub governance_mode: ::std::option::Option<crate::types::GovernanceMode>,
 }
 impl UserDefinedFunctionInput {
     /// <p>The name of the function.</p>
@@ -44,6 +59,25 @@ impl UserDefinedFunctionInput {
     pub fn resource_uris(&self) -> &[crate::types::ResourceUri] {
         self.resource_uris.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon S3 location that contains the function's artifacts. Required when <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>. You must register the location with Lake Formation, and every resource URI must be under this location.</p>
+    pub fn artifact_location(&self) -> ::std::option::Option<&str> {
+        self.artifact_location.as_deref()
+    }
+    /// <p>How access to the function is governed. Specify <code>LAKE_FORMATION</code> to manage access to the function with Lake Formation permissions. If you don't specify a value, the default is <code>IAM_ONLY</code>. You can't change the governance mode after the function is created.</p>
+    /// <p>When <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You must be a data lake administrator or have all permissions on the Data Catalog with the grant option.</p></li>
+    /// <li>
+    /// <p>You must have the <code>DATA_LOCATION_ACCESS</code> permission on the <code>ArtifactLocation</code>, unless you're a data lake administrator.</p></li>
+    /// <li>
+    /// <p>You must specify from 1 to 10 resource URIs, each under the <code>ArtifactLocation</code>.</p></li>
+    /// <li>
+    /// <p>You can't rename the function.</p></li>
+    /// </ul>
+    pub fn governance_mode(&self) -> ::std::option::Option<&crate::types::GovernanceMode> {
+        self.governance_mode.as_ref()
+    }
 }
 impl UserDefinedFunctionInput {
     /// Creates a new builder-style object to manufacture [`UserDefinedFunctionInput`](crate::types::UserDefinedFunctionInput).
@@ -62,6 +96,8 @@ pub struct UserDefinedFunctionInputBuilder {
     pub(crate) function_type: ::std::option::Option<crate::types::FunctionType>,
     pub(crate) owner_type: ::std::option::Option<crate::types::PrincipalType>,
     pub(crate) resource_uris: ::std::option::Option<::std::vec::Vec<crate::types::ResourceUri>>,
+    pub(crate) artifact_location: ::std::option::Option<::std::string::String>,
+    pub(crate) governance_mode: ::std::option::Option<crate::types::GovernanceMode>,
 }
 impl UserDefinedFunctionInputBuilder {
     /// <p>The name of the function.</p>
@@ -154,6 +190,67 @@ impl UserDefinedFunctionInputBuilder {
     pub fn get_resource_uris(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceUri>> {
         &self.resource_uris
     }
+    /// <p>The Amazon S3 location that contains the function's artifacts. Required when <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>. You must register the location with Lake Formation, and every resource URI must be under this location.</p>
+    pub fn artifact_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.artifact_location = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon S3 location that contains the function's artifacts. Required when <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>. You must register the location with Lake Formation, and every resource URI must be under this location.</p>
+    pub fn set_artifact_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.artifact_location = input;
+        self
+    }
+    /// <p>The Amazon S3 location that contains the function's artifacts. Required when <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>. You must register the location with Lake Formation, and every resource URI must be under this location.</p>
+    pub fn get_artifact_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_location
+    }
+    /// <p>How access to the function is governed. Specify <code>LAKE_FORMATION</code> to manage access to the function with Lake Formation permissions. If you don't specify a value, the default is <code>IAM_ONLY</code>. You can't change the governance mode after the function is created.</p>
+    /// <p>When <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You must be a data lake administrator or have all permissions on the Data Catalog with the grant option.</p></li>
+    /// <li>
+    /// <p>You must have the <code>DATA_LOCATION_ACCESS</code> permission on the <code>ArtifactLocation</code>, unless you're a data lake administrator.</p></li>
+    /// <li>
+    /// <p>You must specify from 1 to 10 resource URIs, each under the <code>ArtifactLocation</code>.</p></li>
+    /// <li>
+    /// <p>You can't rename the function.</p></li>
+    /// </ul>
+    pub fn governance_mode(mut self, input: crate::types::GovernanceMode) -> Self {
+        self.governance_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>How access to the function is governed. Specify <code>LAKE_FORMATION</code> to manage access to the function with Lake Formation permissions. If you don't specify a value, the default is <code>IAM_ONLY</code>. You can't change the governance mode after the function is created.</p>
+    /// <p>When <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You must be a data lake administrator or have all permissions on the Data Catalog with the grant option.</p></li>
+    /// <li>
+    /// <p>You must have the <code>DATA_LOCATION_ACCESS</code> permission on the <code>ArtifactLocation</code>, unless you're a data lake administrator.</p></li>
+    /// <li>
+    /// <p>You must specify from 1 to 10 resource URIs, each under the <code>ArtifactLocation</code>.</p></li>
+    /// <li>
+    /// <p>You can't rename the function.</p></li>
+    /// </ul>
+    pub fn set_governance_mode(mut self, input: ::std::option::Option<crate::types::GovernanceMode>) -> Self {
+        self.governance_mode = input;
+        self
+    }
+    /// <p>How access to the function is governed. Specify <code>LAKE_FORMATION</code> to manage access to the function with Lake Formation permissions. If you don't specify a value, the default is <code>IAM_ONLY</code>. You can't change the governance mode after the function is created.</p>
+    /// <p>When <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You must be a data lake administrator or have all permissions on the Data Catalog with the grant option.</p></li>
+    /// <li>
+    /// <p>You must have the <code>DATA_LOCATION_ACCESS</code> permission on the <code>ArtifactLocation</code>, unless you're a data lake administrator.</p></li>
+    /// <li>
+    /// <p>You must specify from 1 to 10 resource URIs, each under the <code>ArtifactLocation</code>.</p></li>
+    /// <li>
+    /// <p>You can't rename the function.</p></li>
+    /// </ul>
+    pub fn get_governance_mode(&self) -> &::std::option::Option<crate::types::GovernanceMode> {
+        &self.governance_mode
+    }
     /// Consumes the builder and constructs a [`UserDefinedFunctionInput`](crate::types::UserDefinedFunctionInput).
     pub fn build(self) -> crate::types::UserDefinedFunctionInput {
         crate::types::UserDefinedFunctionInput {
@@ -163,6 +260,8 @@ impl UserDefinedFunctionInputBuilder {
             function_type: self.function_type,
             owner_type: self.owner_type,
             resource_uris: self.resource_uris,
+            artifact_location: self.artifact_location,
+            governance_mode: self.governance_mode,
         }
     }
 }

@@ -181,16 +181,19 @@ impl CreateTemplateFluentBuilder {
     /// To override the contents of this collection use [`set_required_fields`](Self::set_required_fields).
     ///
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
+    /// <p>To require a Customer Profile when creating cases, include <code>customer_id</code> in this list. If <code>customer_id</code> is omitted, the Customer Profile field is optional and can be added, changed, or removed after case creation.</p>
     pub fn required_fields(mut self, input: crate::types::RequiredField) -> Self {
         self.inner = self.inner.required_fields(input);
         self
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
+    /// <p>To require a Customer Profile when creating cases, include <code>customer_id</code> in this list. If <code>customer_id</code> is omitted, the Customer Profile field is optional and can be added, changed, or removed after case creation.</p>
     pub fn set_required_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>) -> Self {
         self.inner = self.inner.set_required_fields(input);
         self
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
+    /// <p>To require a Customer Profile when creating cases, include <code>customer_id</code> in this list. If <code>customer_id</code> is omitted, the Customer Profile field is optional and can be added, changed, or removed after case creation.</p>
     pub fn get_required_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequiredField>> {
         self.inner.get_required_fields()
     }

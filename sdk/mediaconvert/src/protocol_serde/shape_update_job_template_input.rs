@@ -15,35 +15,41 @@ pub fn ser_update_job_template_input_input(
     if let Some(var_4) = &input.description {
         object.key("description").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.hop_destinations {
-        let mut array_6 = object.key("hopDestinations").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.elemental_inference_settings {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("elementalInferenceSettings").start_object();
+        crate::protocol_serde::shape_elemental_inference_settings::ser_elemental_inference_settings(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.hop_destinations {
+        let mut array_8 = object.key("hopDestinations").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_hop_destination::ser_hop_destination(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_hop_destination::ser_hop_destination(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_6.finish();
+        array_8.finish();
     }
-    if let Some(var_9) = &input.priority {
+    if let Some(var_11) = &input.priority {
         object.key("priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_10) = &input.queue {
-        object.key("queue").string(var_10.as_str());
+    if let Some(var_12) = &input.queue {
+        object.key("queue").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.settings {
+    if let Some(var_13) = &input.settings {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("settings").start_object();
-        crate::protocol_serde::shape_job_template_settings::ser_job_template_settings(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_14 = object.key("settings").start_object();
+        crate::protocol_serde::shape_job_template_settings::ser_job_template_settings(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_13) = &input.status_update_interval {
-        object.key("statusUpdateInterval").string(var_13.as_str());
+    if let Some(var_15) = &input.status_update_interval {
+        object.key("statusUpdateInterval").string(var_15.as_str());
     }
     Ok(())
 }

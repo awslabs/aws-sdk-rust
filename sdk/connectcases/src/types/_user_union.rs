@@ -6,7 +6,7 @@
 pub enum UserUnion {
     /// <p>Any provided entity.</p>
     CustomEntity(::std::string::String),
-    /// <p>Represents the Amazon Connect ARN of the user.</p>
+    /// <p>Represents the Connect Customer ARN of the user.</p>
     UserArn(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

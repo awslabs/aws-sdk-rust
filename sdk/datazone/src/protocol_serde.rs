@@ -1565,6 +1565,8 @@ pub(crate) mod shape_not_like_expression;
 
 pub(crate) mod shape_o_auth2_properties;
 
+pub(crate) mod shape_o_auth2_properties_patch;
+
 pub(crate) mod shape_project_profile_list;
 
 pub(crate) mod shape_security_group_id_list;

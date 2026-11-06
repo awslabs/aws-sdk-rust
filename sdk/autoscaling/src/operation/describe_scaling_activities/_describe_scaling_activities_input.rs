@@ -12,7 +12,10 @@ pub struct DescribeScalingActivitiesInput {
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to include scaling activity from deleted Auto Scaling groups.</p>
     pub include_deleted_groups: ::std::option::Option<bool>,
+    /// <p>Specifies whether to include scaling activities for managed Auto Scaling groups in the response. When set to <code>true</code> (default), the response includes scaling activities for managed Auto Scaling groups.</p>
+    pub include_managed_resources: ::std::option::Option<bool>,
     /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub max_records: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -52,7 +55,12 @@ impl DescribeScalingActivitiesInput {
     pub fn include_deleted_groups(&self) -> ::std::option::Option<bool> {
         self.include_deleted_groups
     }
+    /// <p>Specifies whether to include scaling activities for managed Auto Scaling groups in the response. When set to <code>true</code> (default), the response includes scaling activities for managed Auto Scaling groups.</p>
+    pub fn include_managed_resources(&self) -> ::std::option::Option<bool> {
+        self.include_managed_resources
+    }
     /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
@@ -96,6 +104,7 @@ pub struct DescribeScalingActivitiesInputBuilder {
     pub(crate) activity_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) include_deleted_groups: ::std::option::Option<bool>,
+    pub(crate) include_managed_resources: ::std::option::Option<bool>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -158,17 +167,34 @@ impl DescribeScalingActivitiesInputBuilder {
     pub fn get_include_deleted_groups(&self) -> &::std::option::Option<bool> {
         &self.include_deleted_groups
     }
+    /// <p>Specifies whether to include scaling activities for managed Auto Scaling groups in the response. When set to <code>true</code> (default), the response includes scaling activities for managed Auto Scaling groups.</p>
+    pub fn include_managed_resources(mut self, input: bool) -> Self {
+        self.include_managed_resources = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to include scaling activities for managed Auto Scaling groups in the response. When set to <code>true</code> (default), the response includes scaling activities for managed Auto Scaling groups.</p>
+    pub fn set_include_managed_resources(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_managed_resources = input;
+        self
+    }
+    /// <p>Specifies whether to include scaling activities for managed Auto Scaling groups in the response. When set to <code>true</code> (default), the response includes scaling activities for managed Auto Scaling groups.</p>
+    pub fn get_include_managed_resources(&self) -> &::std::option::Option<bool> {
+        &self.include_managed_resources
+    }
     /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         &self.max_records
     }
@@ -262,6 +288,7 @@ impl DescribeScalingActivitiesInputBuilder {
             activity_ids: self.activity_ids,
             auto_scaling_group_name: self.auto_scaling_group_name,
             include_deleted_groups: self.include_deleted_groups,
+            include_managed_resources: self.include_managed_resources,
             max_records: self.max_records,
             next_token: self.next_token,
             filters: self.filters,

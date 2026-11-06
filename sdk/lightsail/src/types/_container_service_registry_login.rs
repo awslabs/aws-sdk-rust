@@ -2,7 +2,7 @@
 
 /// <p>Describes the sign-in credentials for the container image registry of an Amazon Lightsail account.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ContainerServiceRegistryLogin {
     /// <p>The container service registry username to use to push container images to the container image registry of a Lightsail account.</p>
     pub username: ::std::option::Option<::std::string::String>,
@@ -31,6 +31,16 @@ impl ContainerServiceRegistryLogin {
     /// <p>The address to use to push container images to the container image registry of a Lightsail account.</p>
     pub fn registry(&self) -> ::std::option::Option<&str> {
         self.registry.as_deref()
+    }
+}
+impl ::std::fmt::Debug for ContainerServiceRegistryLogin {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ContainerServiceRegistryLogin");
+        formatter.field("username", &self.username);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("expires_at", &self.expires_at);
+        formatter.field("registry", &self.registry);
+        formatter.finish()
     }
 }
 static CONTAINERSERVICEREGISTRYLOGIN_MEMBER_USERNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -183,7 +193,7 @@ impl ContainerServiceRegistryLogin {
 }
 
 /// A builder for [`ContainerServiceRegistryLogin`](crate::types::ContainerServiceRegistryLogin).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ContainerServiceRegistryLoginBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
@@ -259,5 +269,15 @@ impl ContainerServiceRegistryLoginBuilder {
             expires_at: self.expires_at,
             registry: self.registry,
         }
+    }
+}
+impl ::std::fmt::Debug for ContainerServiceRegistryLoginBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ContainerServiceRegistryLoginBuilder");
+        formatter.field("username", &self.username);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("expires_at", &self.expires_at);
+        formatter.field("registry", &self.registry);
+        formatter.finish()
     }
 }

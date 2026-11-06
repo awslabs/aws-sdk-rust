@@ -5,6 +5,8 @@ pub use crate::types::_data_catalog::DataCatalog;
 
 pub use crate::types::_throttle_reason::ThrottleReason;
 
+pub use crate::types::_system_table_name::SystemTableName;
+
 pub use crate::types::_work_group_configuration::WorkGroupConfiguration;
 
 pub use crate::types::_notebook_metadata::NotebookMetadata;
@@ -131,6 +133,8 @@ pub use crate::types::_prepared_statement_summary::PreparedStatementSummary;
 
 pub use crate::types::_session_summary::SessionSummary;
 
+pub use crate::types::_system_table_status::SystemTableStatus;
+
 pub use crate::types::_work_group_summary::WorkGroupSummary;
 
 pub use crate::types::_capacity_assignment::CapacityAssignment;
@@ -166,6 +170,8 @@ pub use crate::types::_encryption_option::EncryptionOption;
 pub use crate::types::_column::Column;
 
 pub use crate::types::_executor_type::ExecutorType;
+
+pub use crate::types::_system_table_type::SystemTableType;
 
 pub use crate::types::_s3_acl_option::S3AclOption;
 
@@ -328,6 +334,12 @@ mod _session_status;
 mod _session_summary;
 
 mod _statement_type;
+
+mod _system_table_name;
+
+mod _system_table_status;
+
+mod _system_table_type;
 
 mod _table_metadata;
 

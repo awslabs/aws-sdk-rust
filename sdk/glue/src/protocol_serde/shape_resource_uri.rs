@@ -9,6 +9,11 @@ pub fn ser_resource_uri(
     if let Some(var_2) = &input.uri {
         object.key("Uri").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.last_modified {
+        object
+            .key("LastModified")
+            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+    }
     Ok(())
 }
 
@@ -47,6 +52,12 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "LastModified" => {
+                            builder = builder.set_last_modified(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

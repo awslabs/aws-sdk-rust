@@ -172,17 +172,34 @@ impl DescribeScalingActivitiesFluentBuilder {
     pub fn get_include_deleted_groups(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_deleted_groups()
     }
+    /// <p>Specifies whether to include scaling activities for managed Auto Scaling groups in the response. When set to <code>true</code> (default), the response includes scaling activities for managed Auto Scaling groups.</p>
+    pub fn include_managed_resources(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_managed_resources(input);
+        self
+    }
+    /// <p>Specifies whether to include scaling activities for managed Auto Scaling groups in the response. When set to <code>true</code> (default), the response includes scaling activities for managed Auto Scaling groups.</p>
+    pub fn set_include_managed_resources(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_managed_resources(input);
+        self
+    }
+    /// <p>Specifies whether to include scaling activities for managed Auto Scaling groups in the response. When set to <code>true</code> (default), the response includes scaling activities for managed Auto Scaling groups.</p>
+    pub fn get_include_managed_resources(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_managed_resources()
+    }
     /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
         self
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_records()
     }

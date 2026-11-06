@@ -22,7 +22,7 @@ impl crate::operation::delete_layout::builders::DeleteLayoutInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteLayout`.
 ///
-/// <p>Deletes a layout from a cases template. You can delete up to 100 layouts per domain.</p>
+/// <p>Deletes a layout from a Cases template. You can delete up to 100 layouts per domain.</p>
 /// <p>After a layout is deleted:</p>
 /// <ul>
 /// <li>

@@ -9,6 +9,8 @@ pub struct CreateJobInput {
     pub billing_tags_source: ::std::option::Option<crate::types::BillingTagsSource>,
     /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
     pub client_request_token: ::std::option::Option<::std::string::String>,
+    /// The Elemental Inference settings used in this job.
+    pub elemental_inference_settings: ::std::option::Option<crate::types::ElementalInferenceSettings>,
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
     pub hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     /// Use Job engine versions to run jobs for your production workflow on one version, while you test and validate the latest version. Job engine versions represent periodically grouped MediaConvert releases with new features, updates, improvements, and fixes. Job engine versions are in a YYYY-MM-DD format. Note that the Job engine version feature is not publicly available at this time. To request access, contact AWS support.
@@ -44,6 +46,10 @@ impl CreateJobInput {
     /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn elemental_inference_settings(&self) -> ::std::option::Option<&crate::types::ElementalInferenceSettings> {
+        self.elemental_inference_settings.as_ref()
     }
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
     ///
@@ -106,6 +112,7 @@ pub struct CreateJobInputBuilder {
     pub(crate) acceleration_settings: ::std::option::Option<crate::types::AccelerationSettings>,
     pub(crate) billing_tags_source: ::std::option::Option<crate::types::BillingTagsSource>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
+    pub(crate) elemental_inference_settings: ::std::option::Option<crate::types::ElementalInferenceSettings>,
     pub(crate) hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     pub(crate) job_engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) job_template: ::std::option::Option<::std::string::String>,
@@ -160,6 +167,20 @@ impl CreateJobInputBuilder {
     /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn elemental_inference_settings(mut self, input: crate::types::ElementalInferenceSettings) -> Self {
+        self.elemental_inference_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn set_elemental_inference_settings(mut self, input: ::std::option::Option<crate::types::ElementalInferenceSettings>) -> Self {
+        self.elemental_inference_settings = input;
+        self
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn get_elemental_inference_settings(&self) -> &::std::option::Option<crate::types::ElementalInferenceSettings> {
+        &self.elemental_inference_settings
     }
     /// Appends an item to `hop_destinations`.
     ///
@@ -344,6 +365,7 @@ impl CreateJobInputBuilder {
             acceleration_settings: self.acceleration_settings,
             billing_tags_source: self.billing_tags_source,
             client_request_token: self.client_request_token,
+            elemental_inference_settings: self.elemental_inference_settings,
             hop_destinations: self.hop_destinations,
             job_engine_version: self.job_engine_version,
             job_template: self.job_template,

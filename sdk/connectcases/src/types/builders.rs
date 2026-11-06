@@ -9,6 +9,30 @@ pub use crate::types::_field_identifier::FieldIdentifierBuilder;
 
 pub use crate::types::_audit_event::AuditEventBuilder;
 
+pub use crate::types::_contact::ContactBuilder;
+
+pub use crate::types::_comment_content::CommentContentBuilder;
+
+pub use crate::types::_file_content::FileContentBuilder;
+
+pub use crate::types::_connect_case_input_content::ConnectCaseInputContentBuilder;
+
+pub use crate::types::_custom_input_content::CustomInputContentBuilder;
+
+pub use crate::types::_batch_create_related_item_identifier::BatchCreateRelatedItemIdentifierBuilder;
+
+pub use crate::types::_batch_create_related_item_success_entry::BatchCreateRelatedItemSuccessEntryBuilder;
+
+pub use crate::types::_batch_create_related_item_error_entry::BatchCreateRelatedItemErrorEntryBuilder;
+
+pub use crate::types::_batch_update_case_identifier::BatchUpdateCaseIdentifierBuilder;
+
+pub use crate::types::_field_value_input::FieldValueInputBuilder;
+
+pub use crate::types::_batch_update_case_success_entry::BatchUpdateCaseSuccessEntryBuilder;
+
+pub use crate::types::_batch_update_case_error_entry::BatchUpdateCaseErrorEntryBuilder;
+
 pub use crate::types::_case_summary::CaseSummaryBuilder;
 
 pub use crate::types::_sort::SortBuilder;
@@ -63,16 +87,6 @@ pub use crate::types::_tag_propagation_configuration::TagPropagationConfiguratio
 
 pub use crate::types::_search_related_items_response_item::SearchRelatedItemsResponseItemBuilder;
 
-pub use crate::types::_contact::ContactBuilder;
-
-pub use crate::types::_comment_content::CommentContentBuilder;
-
-pub use crate::types::_file_content::FileContentBuilder;
-
-pub use crate::types::_connect_case_input_content::ConnectCaseInputContentBuilder;
-
-pub use crate::types::_custom_input_content::CustomInputContentBuilder;
-
 pub use crate::types::_comment_update_content::CommentUpdateContentBuilder;
 
 pub use crate::types::_custom_update_content::CustomUpdateContentBuilder;
@@ -86,6 +100,10 @@ pub use crate::types::_connect_case_content::ConnectCaseContentBuilder;
 pub use crate::types::_custom_content::CustomContentBuilder;
 
 pub use crate::types::_audit_event_performed_by::AuditEventPerformedByBuilder;
+
+pub use crate::types::_sla_input_configuration::SlaInputConfigurationBuilder;
+
+pub use crate::types::_case_identifier::CaseIdentifierBuilder;
 
 pub use crate::types::_tag_value::TagValueBuilder;
 
@@ -106,8 +124,6 @@ pub use crate::types::_connect_case_filter::ConnectCaseFilterBuilder;
 pub use crate::types::_custom_filter::CustomFilterBuilder;
 
 pub use crate::types::_layout_sections::LayoutSectionsBuilder;
-
-pub use crate::types::_sla_input_configuration::SlaInputConfigurationBuilder;
 
 pub use crate::types::_sla_configuration::SlaConfigurationBuilder;
 

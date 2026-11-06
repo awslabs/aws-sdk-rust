@@ -25,6 +25,8 @@ impl crate::operation::get_parameter_history::builders::GetParameterHistoryInput
 /// <p>Retrieves the history of all changes to a parameter.</p>
 /// <p>Parameter names can't contain spaces. The service removes any spaces specified for the beginning or end of a parameter name. If the specified name for a parameter contains spaces between characters, the request fails with a <code>ValidationException</code> error.</p><important>
 /// <p>If you change the KMS key alias for the KMS key used to encrypt a parameter, then you must also update the key alias the parameter uses to reference KMS. Otherwise, <code>GetParameterHistory</code> retrieves whatever the original key alias was referencing.</p>
+/// </important> <important>
+/// <p>This operation is authorized against the <code>ssm:GetParameterHistory</code> action, not against <code>ssm:GetParameter</code>. Because parameter history includes every version of a parameter, including the current one, a principal who is denied <code>ssm:GetParameter</code>, <code>ssm:GetParameters</code>, and <code>ssm:GetParametersByPath</code> but allowed <code>ssm:GetParameterHistory</code> can still read the current value. To restrict access to a parameter value, deny every action that can return it. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-retrieval-authorization.html">How Parameter Store authorizes parameter retrieval</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetParameterHistoryFluentBuilder {

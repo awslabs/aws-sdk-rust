@@ -11,7 +11,7 @@ pub enum Error {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>We couldn't find the requested resource. Check that your resources exists and were created in the same Amazon Web Services Region as your request, and try your request again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The rate has been exceeded for this API. Please try again after a few minutes.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
@@ -65,6 +65,45 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_create_related_item::BatchCreateRelatedItemError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_create_related_item::BatchCreateRelatedItemError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_create_related_item::BatchCreateRelatedItemError> for Error {
+    fn from(err: crate::operation::batch_create_related_item::BatchCreateRelatedItemError) -> Self {
+        match err {
+            crate::operation::batch_create_related_item::BatchCreateRelatedItemError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_create_related_item::BatchCreateRelatedItemError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::batch_create_related_item::BatchCreateRelatedItemError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_create_related_item::BatchCreateRelatedItemError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_create_related_item::BatchCreateRelatedItemError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::batch_create_related_item::BatchCreateRelatedItemError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_create_related_item::BatchCreateRelatedItemError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_create_related_item::BatchCreateRelatedItemError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -152,6 +191,33 @@ impl From<crate::operation::batch_put_field_options::BatchPutFieldOptionsError> 
             crate::operation::batch_put_field_options::BatchPutFieldOptionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::batch_put_field_options::BatchPutFieldOptionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::batch_put_field_options::BatchPutFieldOptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_update_case::BatchUpdateCaseError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_update_case::BatchUpdateCaseError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_update_case::BatchUpdateCaseError> for Error {
+    fn from(err: crate::operation::batch_update_case::BatchUpdateCaseError) -> Self {
+        match err {
+            crate::operation::batch_update_case::BatchUpdateCaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_update_case::BatchUpdateCaseError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::batch_update_case::BatchUpdateCaseError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_update_case::BatchUpdateCaseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_update_case::BatchUpdateCaseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_update_case::BatchUpdateCaseError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_update_case::BatchUpdateCaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

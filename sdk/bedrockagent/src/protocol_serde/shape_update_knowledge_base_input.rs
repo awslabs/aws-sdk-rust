@@ -12,17 +12,29 @@ pub fn ser_update_knowledge_base_input_input(
         crate::protocol_serde::shape_knowledge_base_configuration::ser_knowledge_base_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.name {
-        object.key("name").string(var_4.as_str());
+    if let Some(var_4) = &input.metadata_configurations {
+        let mut array_5 = object.key("metadataConfigurations").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_metadata_configuration::ser_metadata_configuration(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
     }
-    if let Some(var_5) = &input.role_arn {
-        object.key("roleArn").string(var_5.as_str());
+    if let Some(var_8) = &input.name {
+        object.key("name").string(var_8.as_str());
     }
-    if let Some(var_6) = &input.storage_configuration {
+    if let Some(var_9) = &input.role_arn {
+        object.key("roleArn").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.storage_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("storageConfiguration").start_object();
-        crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_11 = object.key("storageConfiguration").start_object();
+        crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }

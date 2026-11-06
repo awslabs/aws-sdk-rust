@@ -14,6 +14,8 @@ pub struct JobTemplate {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// An optional description you create for each job template.
     pub description: ::std::option::Option<::std::string::String>,
+    /// The Elemental Inference settings used in this job.
+    pub elemental_inference_settings: ::std::option::Option<crate::types::ElementalInferenceSettings>,
     /// Optional list of hop destinations.
     pub hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     /// The timestamp in epoch seconds when the Job template was last updated.
@@ -51,6 +53,10 @@ impl JobTemplate {
     /// An optional description you create for each job template.
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn elemental_inference_settings(&self) -> ::std::option::Option<&crate::types::ElementalInferenceSettings> {
+        self.elemental_inference_settings.as_ref()
     }
     /// Optional list of hop destinations.
     ///
@@ -103,6 +109,7 @@ pub struct JobTemplateBuilder {
     pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) elemental_inference_settings: ::std::option::Option<crate::types::ElementalInferenceSettings>,
     pub(crate) hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -182,6 +189,20 @@ impl JobTemplateBuilder {
     /// An optional description you create for each job template.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn elemental_inference_settings(mut self, input: crate::types::ElementalInferenceSettings) -> Self {
+        self.elemental_inference_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn set_elemental_inference_settings(mut self, input: ::std::option::Option<crate::types::ElementalInferenceSettings>) -> Self {
+        self.elemental_inference_settings = input;
+        self
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn get_elemental_inference_settings(&self) -> &::std::option::Option<crate::types::ElementalInferenceSettings> {
+        &self.elemental_inference_settings
     }
     /// Appends an item to `hop_destinations`.
     ///
@@ -311,6 +332,7 @@ impl JobTemplateBuilder {
             category: self.category,
             created_at: self.created_at,
             description: self.description,
+            elemental_inference_settings: self.elemental_inference_settings,
             hop_destinations: self.hop_destinations,
             last_updated: self.last_updated,
             name: self.name,

@@ -76,6 +76,20 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "ArtifactLocation" => {
+                            builder = builder.set_artifact_location(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "GovernanceMode" => {
+                            builder = builder.set_governance_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::GovernanceMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "CatalogId" => {
                             builder = builder.set_catalog_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

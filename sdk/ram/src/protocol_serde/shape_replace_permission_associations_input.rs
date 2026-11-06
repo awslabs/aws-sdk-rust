@@ -15,8 +15,20 @@ pub fn ser_replace_permission_associations_input_input(
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_4) = &input.to_permission_arn {
-        object.key("toPermissionArn").string(var_4.as_str());
+    if let Some(var_4) = &input.permission_template_parameters {
+        let mut array_5 = object.key("permissionTemplateParameters").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_permission_template_parameter_input::ser_permission_template_parameter_input(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
+    }
+    if let Some(var_8) = &input.to_permission_arn {
+        object.key("toPermissionArn").string(var_8.as_str());
     }
     Ok(())
 }

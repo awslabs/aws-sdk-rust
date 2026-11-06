@@ -38,6 +38,9 @@ pub struct KnowledgeBase {
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>A list of reasons that the API operation on the knowledge base failed.</p>
     pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The custom metadata field configurations of the knowledge base. Each configuration specifies whether its field is searchable (<code>ENABLED</code> or <code>DISABLED</code>).</p>
+    /// <p>If the update fails, the knowledge base status becomes <code>UPDATE_UNSUCCESSFUL</code>, the field configurations revert to their previous values, and <code>failureReasons</code> describes the cause. You can retry the update from <code>UPDATE_UNSUCCESSFUL</code>.</p>
+    pub metadata_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MetadataConfiguration>>,
 }
 impl KnowledgeBase {
     /// <p>The unique identifier of the knowledge base.</p>
@@ -102,6 +105,13 @@ impl KnowledgeBase {
     pub fn failure_reasons(&self) -> &[::std::string::String] {
         self.failure_reasons.as_deref().unwrap_or_default()
     }
+    /// <p>The custom metadata field configurations of the knowledge base. Each configuration specifies whether its field is searchable (<code>ENABLED</code> or <code>DISABLED</code>).</p>
+    /// <p>If the update fails, the knowledge base status becomes <code>UPDATE_UNSUCCESSFUL</code>, the field configurations revert to their previous values, and <code>failureReasons</code> describes the cause. You can retry the update from <code>UPDATE_UNSUCCESSFUL</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metadata_configurations.is_none()`.
+    pub fn metadata_configurations(&self) -> &[crate::types::MetadataConfiguration] {
+        self.metadata_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl KnowledgeBase {
     /// Creates a new builder-style object to manufacture [`KnowledgeBase`](crate::types::KnowledgeBase).
@@ -125,6 +135,7 @@ pub struct KnowledgeBaseBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) metadata_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MetadataConfiguration>>,
 }
 impl KnowledgeBaseBuilder {
     /// <p>The unique identifier of the knowledge base.</p>
@@ -331,6 +342,29 @@ impl KnowledgeBaseBuilder {
     pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_reasons
     }
+    /// Appends an item to `metadata_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_metadata_configurations`](Self::set_metadata_configurations).
+    ///
+    /// <p>The custom metadata field configurations of the knowledge base. Each configuration specifies whether its field is searchable (<code>ENABLED</code> or <code>DISABLED</code>).</p>
+    /// <p>If the update fails, the knowledge base status becomes <code>UPDATE_UNSUCCESSFUL</code>, the field configurations revert to their previous values, and <code>failureReasons</code> describes the cause. You can retry the update from <code>UPDATE_UNSUCCESSFUL</code>.</p>
+    pub fn metadata_configurations(mut self, input: crate::types::MetadataConfiguration) -> Self {
+        let mut v = self.metadata_configurations.unwrap_or_default();
+        v.push(input);
+        self.metadata_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The custom metadata field configurations of the knowledge base. Each configuration specifies whether its field is searchable (<code>ENABLED</code> or <code>DISABLED</code>).</p>
+    /// <p>If the update fails, the knowledge base status becomes <code>UPDATE_UNSUCCESSFUL</code>, the field configurations revert to their previous values, and <code>failureReasons</code> describes the cause. You can retry the update from <code>UPDATE_UNSUCCESSFUL</code>.</p>
+    pub fn set_metadata_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetadataConfiguration>>) -> Self {
+        self.metadata_configurations = input;
+        self
+    }
+    /// <p>The custom metadata field configurations of the knowledge base. Each configuration specifies whether its field is searchable (<code>ENABLED</code> or <code>DISABLED</code>).</p>
+    /// <p>If the update fails, the knowledge base status becomes <code>UPDATE_UNSUCCESSFUL</code>, the field configurations revert to their previous values, and <code>failureReasons</code> describes the cause. You can retry the update from <code>UPDATE_UNSUCCESSFUL</code>.</p>
+    pub fn get_metadata_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataConfiguration>> {
+        &self.metadata_configurations
+    }
     /// Consumes the builder and constructs a [`KnowledgeBase`](crate::types::KnowledgeBase).
     /// This method will fail if any of the following fields are not set:
     /// - [`knowledge_base_id`](crate::types::builders::KnowledgeBaseBuilder::knowledge_base_id)
@@ -388,6 +422,7 @@ impl KnowledgeBaseBuilder {
                 )
             })?,
             failure_reasons: self.failure_reasons,
+            metadata_configurations: self.metadata_configurations,
         })
     }
 }

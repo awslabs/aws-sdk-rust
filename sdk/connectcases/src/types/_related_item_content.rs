@@ -6,7 +6,7 @@
 pub enum RelatedItemContent {
     /// <p>Represents the content of a comment to be returned to agents.</p>
     Comment(crate::types::CommentContent),
-    /// <p>Represents the Amazon Connect case to be created as a related item.</p>
+    /// <p>Represents the Connect Customer case to be created as a related item.</p>
     ConnectCase(crate::types::ConnectCaseContent),
     /// <p>Represents the content of a contact to be returned to agents.</p>
     Contact(crate::types::ContactContent),

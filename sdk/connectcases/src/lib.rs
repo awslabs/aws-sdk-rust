@@ -24,7 +24,7 @@
 //!   - [Cases actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Cases.html)
 //!   - [Cases data types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Cases.html)
 //!
-//! With Amazon Connect Cases, your agents can track and manage customer issues that require multiple interactions, follow-up tasks, and teams in your contact center. A case represents a customer issue. It records the issue, the steps and interactions taken to resolve the issue, and the outcome. For more information, see [Amazon Connect Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html) in the _Amazon Connect Administrator Guide_.
+//! With Connect Customer Cases, your agents can track and manage customer issues that require multiple interactions, follow-up tasks, and teams in your contact center. A case represents a customer issue. It records the issue, the steps and interactions taken to resolve the issue, and the outcome. For more information, see [Connect Customer Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html) in the _Connect Customer Administrator Guide_.
 //!
 //! ## Getting Started
 //!
@@ -38,7 +38,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-connectcases = "1.134.0"
+//! aws-sdk-connectcases = "1.135.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -155,13 +155,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`BatchGetCaseRule`](crate::operation::batch_get_case_rule) operation has
-/// a [`Client::batch_get_case_rule`], function which returns a builder for that operation.
+/// For example, the [`BatchCreateRelatedItem`](crate::operation::batch_create_related_item) operation has
+/// a [`Client::batch_create_related_item`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.batch_get_case_rule()
+/// let result = client.batch_create_related_item()
 ///     .domain_id("example")
 ///     .send()
 ///     .await;

@@ -150,6 +150,20 @@ impl CreateJobTemplateFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    /// The Elemental Inference settings used in this job.
+    pub fn elemental_inference_settings(mut self, input: crate::types::ElementalInferenceSettings) -> Self {
+        self.inner = self.inner.elemental_inference_settings(input);
+        self
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn set_elemental_inference_settings(mut self, input: ::std::option::Option<crate::types::ElementalInferenceSettings>) -> Self {
+        self.inner = self.inner.set_elemental_inference_settings(input);
+        self
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn get_elemental_inference_settings(&self) -> &::std::option::Option<crate::types::ElementalInferenceSettings> {
+        self.inner.get_elemental_inference_settings()
+    }
     ///
     /// Appends an item to `HopDestinations`.
     ///

@@ -2,7 +2,7 @@
 
 /// <p>Describes a pending database value modification.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PendingModifiedRelationalDatabaseValues {
     /// <p>The password for the master user of the database.</p>
     pub master_user_password: ::std::option::Option<::std::string::String>,
@@ -23,6 +23,15 @@ impl PendingModifiedRelationalDatabaseValues {
     /// <p>A Boolean value indicating whether automated backup retention is enabled.</p>
     pub fn backup_retention_enabled(&self) -> ::std::option::Option<bool> {
         self.backup_retention_enabled
+    }
+}
+impl ::std::fmt::Debug for PendingModifiedRelationalDatabaseValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PendingModifiedRelationalDatabaseValues");
+        formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("engine_version", &self.engine_version);
+        formatter.field("backup_retention_enabled", &self.backup_retention_enabled);
+        formatter.finish()
     }
 }
 static PENDINGMODIFIEDRELATIONALDATABASEVALUES_MEMBER_MASTER_USER_PASSWORD: ::aws_smithy_schema::Schema<'static> =
@@ -156,7 +165,7 @@ impl PendingModifiedRelationalDatabaseValues {
 }
 
 /// A builder for [`PendingModifiedRelationalDatabaseValues`](crate::types::PendingModifiedRelationalDatabaseValues).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct PendingModifiedRelationalDatabaseValuesBuilder {
     pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
@@ -213,5 +222,14 @@ impl PendingModifiedRelationalDatabaseValuesBuilder {
             engine_version: self.engine_version,
             backup_retention_enabled: self.backup_retention_enabled,
         }
+    }
+}
+impl ::std::fmt::Debug for PendingModifiedRelationalDatabaseValuesBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PendingModifiedRelationalDatabaseValuesBuilder");
+        formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("engine_version", &self.engine_version);
+        formatter.field("backup_retention_enabled", &self.backup_retention_enabled);
+        formatter.finish()
     }
 }

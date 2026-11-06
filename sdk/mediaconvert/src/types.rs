@@ -3,6 +3,8 @@ pub use crate::types::_acceleration_settings::AccelerationSettings;
 
 pub use crate::types::_billing_tags_source::BillingTagsSource;
 
+pub use crate::types::_elemental_inference_settings::ElementalInferenceSettings;
+
 pub use crate::types::_job_settings::JobSettings;
 
 pub use crate::types::_simulate_reserved_queue::SimulateReservedQueue;
@@ -46,6 +48,8 @@ pub use crate::types::_queue_list_by::QueueListBy;
 pub use crate::types::_resource_tags::ResourceTags;
 
 pub use crate::types::_acceleration_mode::AccelerationMode;
+
+pub use crate::types::_elemental_inference_feed_configuration_source::ElementalInferenceFeedConfigurationSource;
 
 pub use crate::types::_hop_destination::HopDestination;
 
@@ -1365,6 +1369,8 @@ pub use crate::types::_s3_storage_class::S3StorageClass;
 
 pub use crate::types::_encryption_contract_configuration::EncryptionContractConfiguration;
 
+pub use crate::types::_caption_source::CaptionSource;
+
 pub use crate::types::_hls_audio_only_container::HlsAudioOnlyContainer;
 
 pub use crate::types::_hls_audio_track_type::HlsAudioTrackType;
@@ -1600,6 +1606,8 @@ mod _caption_destination_settings;
 mod _caption_destination_type;
 
 mod _caption_selector;
+
+mod _caption_source;
 
 mod _caption_source_byte_rate_limit;
 
@@ -1891,7 +1899,11 @@ mod _elemental_inference_feature;
 
 mod _elemental_inference_feed;
 
+mod _elemental_inference_feed_configuration_source;
+
 mod _elemental_inference_feed_management_state;
+
+mod _elemental_inference_settings;
 
 mod _embedded_convert608_to708;
 

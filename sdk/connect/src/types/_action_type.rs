@@ -16,6 +16,7 @@
 ///     ActionType::AssignSla => { /* ... */ },
 ///     ActionType::CreateCase => { /* ... */ },
 ///     ActionType::CreateTask => { /* ... */ },
+///     ActionType::EndAssociatedEmails => { /* ... */ },
 ///     ActionType::EndAssociatedTasks => { /* ... */ },
 ///     ActionType::ExtractInformation => { /* ... */ },
 ///     ActionType::GenerateEventbridgeEvent => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum ActionType {
     #[allow(missing_docs)] // documentation missing in model
     CreateTask,
     #[allow(missing_docs)] // documentation missing in model
+    EndAssociatedEmails,
+    #[allow(missing_docs)] // documentation missing in model
     EndAssociatedTasks,
     #[allow(missing_docs)] // documentation missing in model
     ExtractInformation,
@@ -84,6 +87,7 @@ impl ::std::convert::From<&str> for ActionType {
             "ASSIGN_SLA" => ActionType::AssignSla,
             "CREATE_CASE" => ActionType::CreateCase,
             "CREATE_TASK" => ActionType::CreateTask,
+            "END_ASSOCIATED_EMAILS" => ActionType::EndAssociatedEmails,
             "END_ASSOCIATED_TASKS" => ActionType::EndAssociatedTasks,
             "EXTRACT_INFORMATION" => ActionType::ExtractInformation,
             "GENERATE_EVENTBRIDGE_EVENT" => ActionType::GenerateEventbridgeEvent,
@@ -110,6 +114,7 @@ impl ActionType {
             ActionType::AssignSla => "ASSIGN_SLA",
             ActionType::CreateCase => "CREATE_CASE",
             ActionType::CreateTask => "CREATE_TASK",
+            ActionType::EndAssociatedEmails => "END_ASSOCIATED_EMAILS",
             ActionType::EndAssociatedTasks => "END_ASSOCIATED_TASKS",
             ActionType::ExtractInformation => "EXTRACT_INFORMATION",
             ActionType::GenerateEventbridgeEvent => "GENERATE_EVENTBRIDGE_EVENT",
@@ -127,6 +132,7 @@ impl ActionType {
             "ASSIGN_SLA",
             "CREATE_CASE",
             "CREATE_TASK",
+            "END_ASSOCIATED_EMAILS",
             "END_ASSOCIATED_TASKS",
             "EXTRACT_INFORMATION",
             "GENERATE_EVENTBRIDGE_EVENT",
@@ -161,6 +167,7 @@ impl ::std::fmt::Display for ActionType {
             ActionType::AssignSla => write!(f, "ASSIGN_SLA"),
             ActionType::CreateCase => write!(f, "CREATE_CASE"),
             ActionType::CreateTask => write!(f, "CREATE_TASK"),
+            ActionType::EndAssociatedEmails => write!(f, "END_ASSOCIATED_EMAILS"),
             ActionType::EndAssociatedTasks => write!(f, "END_ASSOCIATED_TASKS"),
             ActionType::ExtractInformation => write!(f, "EXTRACT_INFORMATION"),
             ActionType::GenerateEventbridgeEvent => write!(f, "GENERATE_EVENTBRIDGE_EVENT"),

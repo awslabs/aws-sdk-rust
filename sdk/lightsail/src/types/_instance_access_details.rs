@@ -2,7 +2,7 @@
 
 /// <p>The parameters for gaining temporary access to one of your Amazon Lightsail instances.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InstanceAccessDetails {
     /// <p>For SSH access, the public key to use when accessing your instance For OpenSSH clients (command line SSH), you should save this value to <code>tempkey-cert.pub</code>.</p>
     pub cert_key: ::std::option::Option<::std::string::String>,
@@ -81,6 +81,23 @@ impl InstanceAccessDetails {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.host_keys.is_none()`.
     pub fn host_keys(&self) -> &[crate::types::HostKeyAttributes] {
         self.host_keys.as_deref().unwrap_or_default()
+    }
+}
+impl ::std::fmt::Debug for InstanceAccessDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceAccessDetails");
+        formatter.field("cert_key", &self.cert_key);
+        formatter.field("expires_at", &self.expires_at);
+        formatter.field("ip_address", &self.ip_address);
+        formatter.field("ipv6_addresses", &self.ipv6_addresses);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("password_data", &self.password_data);
+        formatter.field("private_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("protocol", &self.protocol);
+        formatter.field("instance_name", &self.instance_name);
+        formatter.field("username", &self.username);
+        formatter.field("host_keys", &self.host_keys);
+        formatter.finish()
     }
 }
 static INSTANCEACCESSDETAILS_MEMBER_CERT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -421,7 +438,7 @@ impl InstanceAccessDetails {
 }
 
 /// A builder for [`InstanceAccessDetails`](crate::types::InstanceAccessDetails).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct InstanceAccessDetailsBuilder {
     pub(crate) cert_key: ::std::option::Option<::std::string::String>,
@@ -627,5 +644,22 @@ impl InstanceAccessDetailsBuilder {
             username: self.username,
             host_keys: self.host_keys,
         }
+    }
+}
+impl ::std::fmt::Debug for InstanceAccessDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceAccessDetailsBuilder");
+        formatter.field("cert_key", &self.cert_key);
+        formatter.field("expires_at", &self.expires_at);
+        formatter.field("ip_address", &self.ip_address);
+        formatter.field("ipv6_addresses", &self.ipv6_addresses);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("password_data", &self.password_data);
+        formatter.field("private_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("protocol", &self.protocol);
+        formatter.field("instance_name", &self.instance_name);
+        formatter.field("username", &self.username);
+        formatter.field("host_keys", &self.host_keys);
+        formatter.finish()
     }
 }

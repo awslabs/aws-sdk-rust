@@ -197,6 +197,8 @@ mod create_prepared_statement;
 
 mod create_presigned_notebook_url;
 
+mod create_system_table_configuration;
+
 mod create_work_group;
 
 /// Operation customization and supporting types.
@@ -236,6 +238,8 @@ mod delete_notebook;
 
 mod delete_prepared_statement;
 
+mod delete_system_table_configuration;
+
 mod delete_work_group;
 
 mod export_notebook;
@@ -274,6 +278,8 @@ mod get_session_endpoint;
 
 mod get_session_status;
 
+mod get_system_table_configuration;
+
 mod get_table_metadata;
 
 mod get_work_group;
@@ -305,6 +311,8 @@ mod list_prepared_statements;
 mod list_query_executions;
 
 mod list_sessions;
+
+mod list_system_table_statuses;
 
 mod list_table_metadata;
 
@@ -341,5 +349,7 @@ mod update_notebook;
 mod update_notebook_metadata;
 
 mod update_prepared_statement;
+
+mod update_system_table_configuration;
 
 mod update_work_group;

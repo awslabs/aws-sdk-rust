@@ -2,7 +2,7 @@
 
 /// <p>The password data for the Windows Server-based instance, including the ciphertext and the key pair name.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PasswordData {
     /// <p>The encrypted password. Ciphertext will be an empty string if access to your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the instance to be ready.</p><note>
     /// <p>If you use the default key pair (<code>LightsailDefaultKeyPair</code>), the decrypted password will be available in the password field.</p>
@@ -27,6 +27,14 @@ impl PasswordData {
     /// <p>If you are using a custom key pair, you need to use your own means of decrypting your password using the <code>ciphertext</code>. Lightsail creates the ciphertext by encrypting your password with the public key part of this key pair.</p>
     pub fn key_pair_name(&self) -> ::std::option::Option<&str> {
         self.key_pair_name.as_deref()
+    }
+}
+impl ::std::fmt::Debug for PasswordData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PasswordData");
+        formatter.field("ciphertext", &"*** Sensitive Data Redacted ***");
+        formatter.field("key_pair_name", &self.key_pair_name);
+        formatter.finish()
     }
 }
 static PASSWORDDATA_MEMBER_CIPHERTEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -130,7 +138,7 @@ impl PasswordData {
 }
 
 /// A builder for [`PasswordData`](crate::types::PasswordData).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct PasswordDataBuilder {
     pub(crate) ciphertext: ::std::option::Option<::std::string::String>,
@@ -186,5 +194,13 @@ impl PasswordDataBuilder {
             ciphertext: self.ciphertext,
             key_pair_name: self.key_pair_name,
         }
+    }
+}
+impl ::std::fmt::Debug for PasswordDataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PasswordDataBuilder");
+        formatter.field("ciphertext", &"*** Sensitive Data Redacted ***");
+        formatter.field("key_pair_name", &self.key_pair_name);
+        formatter.finish()
     }
 }

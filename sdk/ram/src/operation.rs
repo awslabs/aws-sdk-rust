@@ -103,5 +103,8 @@ pub mod tag_resource;
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 
+/// Types for the `UpdatePermission` operation.
+pub mod update_permission;
+
 /// Types for the `UpdateResourceShare` operation.
 pub mod update_resource_share;

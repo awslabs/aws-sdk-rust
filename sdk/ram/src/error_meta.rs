@@ -381,6 +381,9 @@ impl From<crate::operation::create_permission_version::CreatePermissionVersionEr
             crate::operation::create_permission_version::CreatePermissionVersionError::MalformedPolicyTemplateException(inner) => {
                 Error::MalformedPolicyTemplateException(inner)
             }
+            crate::operation::create_permission_version::CreatePermissionVersionError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
             crate::operation::create_permission_version::CreatePermissionVersionError::PermissionVersionsLimitExceededException(inner) => {
                 Error::PermissionVersionsLimitExceededException(inner)
             }
@@ -1608,6 +1611,46 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::untag_resource::UntagResourceError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_permission::UpdatePermissionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_permission::UpdatePermissionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_permission::UpdatePermissionError> for Error {
+    fn from(err: crate::operation::update_permission::UpdatePermissionError) -> Self {
+        match err {
+            crate::operation::update_permission::UpdatePermissionError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::update_permission::UpdatePermissionError::InvalidClientTokenException(inner) => {
+                Error::InvalidClientTokenException(inner)
+            }
+            crate::operation::update_permission::UpdatePermissionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_permission::UpdatePermissionError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::update_permission::UpdatePermissionError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::update_permission::UpdatePermissionError::PermissionLimitExceededException(inner) => {
+                Error::PermissionLimitExceededException(inner)
+            }
+            crate::operation::update_permission::UpdatePermissionError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::update_permission::UpdatePermissionError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_permission::UpdatePermissionError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::update_permission::UpdatePermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

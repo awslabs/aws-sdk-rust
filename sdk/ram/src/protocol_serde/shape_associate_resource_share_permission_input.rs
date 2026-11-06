@@ -9,17 +9,29 @@ pub fn ser_associate_resource_share_permission_input_input(
     if let Some(var_2) = &input.permission_arn {
         object.key("permissionArn").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.permission_version {
+    if let Some(var_3) = &input.permission_template_parameters {
+        let mut array_4 = object.key("permissionTemplateParameters").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_permission_template_parameter_input::ser_permission_template_parameter_input(&mut object_6, item_5)?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
+    }
+    if let Some(var_7) = &input.permission_version {
         object.key("permissionVersion").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_4) = &input.replace {
-        object.key("replace").boolean(*var_4);
+    if let Some(var_8) = &input.replace {
+        object.key("replace").boolean(*var_8);
     }
-    if let Some(var_5) = &input.resource_share_arn {
-        object.key("resourceShareArn").string(var_5.as_str());
+    if let Some(var_9) = &input.resource_share_arn {
+        object.key("resourceShareArn").string(var_9.as_str());
     }
     Ok(())
 }

@@ -5,9 +5,12 @@
 pub struct DescribeNotificationConfigurationsInput {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies whether to include notification configurations for managed Auto Scaling groups in the response. When set to <code>true</code> (default), the response includes notification configurations for managed Auto Scaling groups.</p>
+    pub include_managed_resources: ::std::option::Option<bool>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub max_records: ::std::option::Option<i32>,
 }
 impl DescribeNotificationConfigurationsInput {
@@ -17,11 +20,16 @@ impl DescribeNotificationConfigurationsInput {
     pub fn auto_scaling_group_names(&self) -> &[::std::string::String] {
         self.auto_scaling_group_names.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies whether to include notification configurations for managed Auto Scaling groups in the response. When set to <code>true</code> (default), the response includes notification configurations for managed Auto Scaling groups.</p>
+    pub fn include_managed_resources(&self) -> ::std::option::Option<bool> {
+        self.include_managed_resources
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
@@ -38,6 +46,7 @@ impl DescribeNotificationConfigurationsInput {
 #[non_exhaustive]
 pub struct DescribeNotificationConfigurationsInputBuilder {
     pub(crate) auto_scaling_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) include_managed_resources: ::std::option::Option<bool>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
 }
@@ -62,6 +71,20 @@ impl DescribeNotificationConfigurationsInputBuilder {
     pub fn get_auto_scaling_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.auto_scaling_group_names
     }
+    /// <p>Specifies whether to include notification configurations for managed Auto Scaling groups in the response. When set to <code>true</code> (default), the response includes notification configurations for managed Auto Scaling groups.</p>
+    pub fn include_managed_resources(mut self, input: bool) -> Self {
+        self.include_managed_resources = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to include notification configurations for managed Auto Scaling groups in the response. When set to <code>true</code> (default), the response includes notification configurations for managed Auto Scaling groups.</p>
+    pub fn set_include_managed_resources(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_managed_resources = input;
+        self
+    }
+    /// <p>Specifies whether to include notification configurations for managed Auto Scaling groups in the response. When set to <code>true</code> (default), the response includes notification configurations for managed Auto Scaling groups.</p>
+    pub fn get_include_managed_resources(&self) -> &::std::option::Option<bool> {
+        &self.include_managed_resources
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -77,16 +100,19 @@ impl DescribeNotificationConfigurationsInputBuilder {
         &self.next_token
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
+    /// <p>A response can contain fewer items than the value specified by <code>MaxRecords</code>, even when more items are available. To retrieve the additional items, use the <code>NextToken</code> value in a subsequent call rather than relying on the number of items in the response.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         &self.max_records
     }
@@ -100,6 +126,7 @@ impl DescribeNotificationConfigurationsInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsInput {
                 auto_scaling_group_names: self.auto_scaling_group_names,
+                include_managed_resources: self.include_managed_resources,
                 next_token: self.next_token,
                 max_records: self.max_records,
             },

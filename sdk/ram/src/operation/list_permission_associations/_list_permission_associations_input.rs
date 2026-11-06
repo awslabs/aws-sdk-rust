@@ -16,6 +16,17 @@ pub struct ListPermissionAssociationsInput {
     /// <p>When <code>true</code>, specifies that you want to list only those associations with resource shares that use the default version of the specified managed permission.</p>
     /// <p>When <code>false</code> (the default value), lists associations with resource shares that use any version of the specified managed permission.</p>
     pub default_version: ::std::option::Option<bool>,
+    /// <p>Specifies that you want to list only those associations with resource shares owned by a specific entity:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – returns only associations with resource shares owned by the calling account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – returns only associations with resource shares owned by other Amazon Web Services accounts.</p></li>
+    /// </ul>
+    /// <p>If you don't specify this parameter, the default is <code>SELF</code>.</p>
+    pub resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share for which you want to retrieve permission associations.</p>
+    pub resource_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
@@ -47,6 +58,21 @@ impl ListPermissionAssociationsInput {
     pub fn default_version(&self) -> ::std::option::Option<bool> {
         self.default_version
     }
+    /// <p>Specifies that you want to list only those associations with resource shares owned by a specific entity:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – returns only associations with resource shares owned by the calling account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – returns only associations with resource shares owned by other Amazon Web Services accounts.</p></li>
+    /// </ul>
+    /// <p>If you don't specify this parameter, the default is <code>SELF</code>.</p>
+    pub fn resource_owner(&self) -> ::std::option::Option<&crate::types::ResourceOwner> {
+        self.resource_owner.as_ref()
+    }
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share for which you want to retrieve permission associations.</p>
+    pub fn resource_share_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_share_arn.as_deref()
+    }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
@@ -73,6 +99,8 @@ pub struct ListPermissionAssociationsInputBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) feature_set: ::std::option::Option<crate::types::PermissionFeatureSet>,
     pub(crate) default_version: ::std::option::Option<bool>,
+    pub(crate) resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
+    pub(crate) resource_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -164,6 +192,55 @@ impl ListPermissionAssociationsInputBuilder {
     pub fn get_default_version(&self) -> &::std::option::Option<bool> {
         &self.default_version
     }
+    /// <p>Specifies that you want to list only those associations with resource shares owned by a specific entity:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – returns only associations with resource shares owned by the calling account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – returns only associations with resource shares owned by other Amazon Web Services accounts.</p></li>
+    /// </ul>
+    /// <p>If you don't specify this parameter, the default is <code>SELF</code>.</p>
+    pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
+        self.resource_owner = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies that you want to list only those associations with resource shares owned by a specific entity:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – returns only associations with resource shares owned by the calling account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – returns only associations with resource shares owned by other Amazon Web Services accounts.</p></li>
+    /// </ul>
+    /// <p>If you don't specify this parameter, the default is <code>SELF</code>.</p>
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
+        self.resource_owner = input;
+        self
+    }
+    /// <p>Specifies that you want to list only those associations with resource shares owned by a specific entity:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – returns only associations with resource shares owned by the calling account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – returns only associations with resource shares owned by other Amazon Web Services accounts.</p></li>
+    /// </ul>
+    /// <p>If you don't specify this parameter, the default is <code>SELF</code>.</p>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
+        &self.resource_owner
+    }
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share for which you want to retrieve permission associations.</p>
+    pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_share_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share for which you want to retrieve permission associations.</p>
+    pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_share_arn = input;
+        self
+    }
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share for which you want to retrieve permission associations.</p>
+    pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_share_arn
+    }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -206,6 +283,8 @@ impl ListPermissionAssociationsInputBuilder {
             resource_type: self.resource_type,
             feature_set: self.feature_set,
             default_version: self.default_version,
+            resource_owner: self.resource_owner,
+            resource_share_arn: self.resource_share_arn,
             next_token: self.next_token,
             max_results: self.max_results,
         })

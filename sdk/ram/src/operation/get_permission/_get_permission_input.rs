@@ -8,6 +8,10 @@ pub struct GetPermissionInput {
     /// <p>Specifies the version number of the RAM permission to retrieve. If you don't specify this parameter, the operation retrieves the default version.</p>
     /// <p>To see the list of available versions, use <code>ListPermissionVersions</code>.</p>
     pub permission_version: ::std::option::Option<i32>,
+    /// <p>Specifies the template parameter values to use when rendering the permission's policy template. Each entry supplies a parameter name and its values. When you provide this parameter, the response contains the rendered policy with the specified values in place of the template parameter placeholders.</p>
+    /// <p>For <code>STRING</code> type parameters, provide a single value. For <code>STRING_LIST</code> type parameters, provide one or more values.</p>
+    /// <p>You can specify this parameter only for permissions that declare template parameters. You must provide values for all parameters declared in the permission template.</p>
+    pub permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterInput>>,
 }
 impl GetPermissionInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
@@ -18,6 +22,14 @@ impl GetPermissionInput {
     /// <p>To see the list of available versions, use <code>ListPermissionVersions</code>.</p>
     pub fn permission_version(&self) -> ::std::option::Option<i32> {
         self.permission_version
+    }
+    /// <p>Specifies the template parameter values to use when rendering the permission's policy template. Each entry supplies a parameter name and its values. When you provide this parameter, the response contains the rendered policy with the specified values in place of the template parameter placeholders.</p>
+    /// <p>For <code>STRING</code> type parameters, provide a single value. For <code>STRING_LIST</code> type parameters, provide one or more values.</p>
+    /// <p>You can specify this parameter only for permissions that declare template parameters. You must provide values for all parameters declared in the permission template.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permission_template_parameters.is_none()`.
+    pub fn permission_template_parameters(&self) -> &[crate::types::PermissionTemplateParameterInput] {
+        self.permission_template_parameters.as_deref().unwrap_or_default()
     }
 }
 impl GetPermissionInput {
@@ -33,6 +45,7 @@ impl GetPermissionInput {
 pub struct GetPermissionInputBuilder {
     pub(crate) permission_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_version: ::std::option::Option<i32>,
+    pub(crate) permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterInput>>,
 }
 impl GetPermissionInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
@@ -67,6 +80,35 @@ impl GetPermissionInputBuilder {
     pub fn get_permission_version(&self) -> &::std::option::Option<i32> {
         &self.permission_version
     }
+    /// Appends an item to `permission_template_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_permission_template_parameters`](Self::set_permission_template_parameters).
+    ///
+    /// <p>Specifies the template parameter values to use when rendering the permission's policy template. Each entry supplies a parameter name and its values. When you provide this parameter, the response contains the rendered policy with the specified values in place of the template parameter placeholders.</p>
+    /// <p>For <code>STRING</code> type parameters, provide a single value. For <code>STRING_LIST</code> type parameters, provide one or more values.</p>
+    /// <p>You can specify this parameter only for permissions that declare template parameters. You must provide values for all parameters declared in the permission template.</p>
+    pub fn permission_template_parameters(mut self, input: crate::types::PermissionTemplateParameterInput) -> Self {
+        let mut v = self.permission_template_parameters.unwrap_or_default();
+        v.push(input);
+        self.permission_template_parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the template parameter values to use when rendering the permission's policy template. Each entry supplies a parameter name and its values. When you provide this parameter, the response contains the rendered policy with the specified values in place of the template parameter placeholders.</p>
+    /// <p>For <code>STRING</code> type parameters, provide a single value. For <code>STRING_LIST</code> type parameters, provide one or more values.</p>
+    /// <p>You can specify this parameter only for permissions that declare template parameters. You must provide values for all parameters declared in the permission template.</p>
+    pub fn set_permission_template_parameters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterInput>>,
+    ) -> Self {
+        self.permission_template_parameters = input;
+        self
+    }
+    /// <p>Specifies the template parameter values to use when rendering the permission's policy template. Each entry supplies a parameter name and its values. When you provide this parameter, the response contains the rendered policy with the specified values in place of the template parameter placeholders.</p>
+    /// <p>For <code>STRING</code> type parameters, provide a single value. For <code>STRING_LIST</code> type parameters, provide one or more values.</p>
+    /// <p>You can specify this parameter only for permissions that declare template parameters. You must provide values for all parameters declared in the permission template.</p>
+    pub fn get_permission_template_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterInput>> {
+        &self.permission_template_parameters
+    }
     /// Consumes the builder and constructs a [`GetPermissionInput`](crate::operation::get_permission::GetPermissionInput).
     pub fn build(
         self,
@@ -74,6 +116,7 @@ impl GetPermissionInputBuilder {
         ::std::result::Result::Ok(crate::operation::get_permission::GetPermissionInput {
             permission_arn: self.permission_arn,
             permission_version: self.permission_version,
+            permission_template_parameters: self.permission_template_parameters,
         })
     }
 }

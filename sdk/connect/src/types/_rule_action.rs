@@ -28,6 +28,9 @@ pub struct RuleAction {
     /// <p>Information about the end associated tasks action.</p>
     /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
     pub end_associated_tasks_action: ::std::option::Option<crate::types::EndAssociatedTasksActionDefinition>,
+    /// <p>Information about the end associated emails action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
+    pub end_associated_emails_action: ::std::option::Option<crate::types::EndAssociatedEmailsActionDefinition>,
     /// <p>Information about the submit automated evaluation action.</p>
     pub submit_auto_evaluation_action: ::std::option::Option<crate::types::SubmitAutoEvaluationActionDefinition>,
     /// <p>Information about the extract information action.</p>
@@ -79,6 +82,11 @@ impl RuleAction {
     pub fn end_associated_tasks_action(&self) -> ::std::option::Option<&crate::types::EndAssociatedTasksActionDefinition> {
         self.end_associated_tasks_action.as_ref()
     }
+    /// <p>Information about the end associated emails action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
+    pub fn end_associated_emails_action(&self) -> ::std::option::Option<&crate::types::EndAssociatedEmailsActionDefinition> {
+        self.end_associated_emails_action.as_ref()
+    }
     /// <p>Information about the submit automated evaluation action.</p>
     pub fn submit_auto_evaluation_action(&self) -> ::std::option::Option<&crate::types::SubmitAutoEvaluationActionDefinition> {
         self.submit_auto_evaluation_action.as_ref()
@@ -113,6 +121,7 @@ pub struct RuleActionBuilder {
     pub(crate) update_case_action: ::std::option::Option<crate::types::UpdateCaseActionDefinition>,
     pub(crate) assign_sla_action: ::std::option::Option<crate::types::AssignSlaActionDefinition>,
     pub(crate) end_associated_tasks_action: ::std::option::Option<crate::types::EndAssociatedTasksActionDefinition>,
+    pub(crate) end_associated_emails_action: ::std::option::Option<crate::types::EndAssociatedEmailsActionDefinition>,
     pub(crate) submit_auto_evaluation_action: ::std::option::Option<crate::types::SubmitAutoEvaluationActionDefinition>,
     pub(crate) extract_information_action: ::std::option::Option<crate::types::ExtractInformationActionDefinition>,
     pub(crate) send_in_app_notification_action: ::std::option::Option<crate::types::SendInAppNotificationActionDefinition>,
@@ -263,6 +272,23 @@ impl RuleActionBuilder {
     pub fn get_end_associated_tasks_action(&self) -> &::std::option::Option<crate::types::EndAssociatedTasksActionDefinition> {
         &self.end_associated_tasks_action
     }
+    /// <p>Information about the end associated emails action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
+    pub fn end_associated_emails_action(mut self, input: crate::types::EndAssociatedEmailsActionDefinition) -> Self {
+        self.end_associated_emails_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the end associated emails action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
+    pub fn set_end_associated_emails_action(mut self, input: ::std::option::Option<crate::types::EndAssociatedEmailsActionDefinition>) -> Self {
+        self.end_associated_emails_action = input;
+        self
+    }
+    /// <p>Information about the end associated emails action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
+    pub fn get_end_associated_emails_action(&self) -> &::std::option::Option<crate::types::EndAssociatedEmailsActionDefinition> {
+        &self.end_associated_emails_action
+    }
     /// <p>Information about the submit automated evaluation action.</p>
     pub fn submit_auto_evaluation_action(mut self, input: crate::types::SubmitAutoEvaluationActionDefinition) -> Self {
         self.submit_auto_evaluation_action = ::std::option::Option::Some(input);
@@ -327,6 +353,7 @@ impl RuleActionBuilder {
             update_case_action: self.update_case_action,
             assign_sla_action: self.assign_sla_action,
             end_associated_tasks_action: self.end_associated_tasks_action,
+            end_associated_emails_action: self.end_associated_emails_action,
             submit_auto_evaluation_action: self.submit_auto_evaluation_action,
             extract_information_action: self.extract_information_action,
             send_in_app_notification_action: self.send_in_app_notification_action,

@@ -56,6 +56,15 @@ where
                                     .transpose()?,
                             );
                         }
+                        "permissionTemplateParameters" => {
+                            builder = builder.set_permission_template_parameters(
+                                crate::protocol_serde::shape_permission_template_parameter_list::de_permission_template_parameter_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "status" => {
                             builder = builder.set_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

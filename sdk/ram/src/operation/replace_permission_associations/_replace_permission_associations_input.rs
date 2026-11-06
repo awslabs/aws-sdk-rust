@@ -10,6 +10,8 @@ pub struct ReplacePermissionAssociationsInput {
     /// <p>Specifies the ARN of the managed permission that you want to associate with resource shares in place of the one specified by <code>fromPerssionArn</code> and <code>fromPermissionVersion</code>.</p>
     /// <p>The operation always associates the version that is currently the default for the specified managed permission.</p>
     pub to_permission_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the template parameter values to apply when replacing the permission. You must provide values for all parameters declared in the target permission template. This parameter is required only if the target permission (<code>toPermissionArn</code>) has template parameters.</p>
+    pub permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterInput>>,
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
@@ -28,6 +30,12 @@ impl ReplacePermissionAssociationsInput {
     /// <p>The operation always associates the version that is currently the default for the specified managed permission.</p>
     pub fn to_permission_arn(&self) -> ::std::option::Option<&str> {
         self.to_permission_arn.as_deref()
+    }
+    /// <p>Specifies the template parameter values to apply when replacing the permission. You must provide values for all parameters declared in the target permission template. This parameter is required only if the target permission (<code>toPermissionArn</code>) has template parameters.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permission_template_parameters.is_none()`.
+    pub fn permission_template_parameters(&self) -> &[crate::types::PermissionTemplateParameterInput] {
+        self.permission_template_parameters.as_deref().unwrap_or_default()
     }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
@@ -50,6 +58,7 @@ pub struct ReplacePermissionAssociationsInputBuilder {
     pub(crate) from_permission_arn: ::std::option::Option<::std::string::String>,
     pub(crate) from_permission_version: ::std::option::Option<i32>,
     pub(crate) to_permission_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterInput>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl ReplacePermissionAssociationsInputBuilder {
@@ -100,6 +109,29 @@ impl ReplacePermissionAssociationsInputBuilder {
     pub fn get_to_permission_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.to_permission_arn
     }
+    /// Appends an item to `permission_template_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_permission_template_parameters`](Self::set_permission_template_parameters).
+    ///
+    /// <p>Specifies the template parameter values to apply when replacing the permission. You must provide values for all parameters declared in the target permission template. This parameter is required only if the target permission (<code>toPermissionArn</code>) has template parameters.</p>
+    pub fn permission_template_parameters(mut self, input: crate::types::PermissionTemplateParameterInput) -> Self {
+        let mut v = self.permission_template_parameters.unwrap_or_default();
+        v.push(input);
+        self.permission_template_parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the template parameter values to apply when replacing the permission. You must provide values for all parameters declared in the target permission template. This parameter is required only if the target permission (<code>toPermissionArn</code>) has template parameters.</p>
+    pub fn set_permission_template_parameters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterInput>>,
+    ) -> Self {
+        self.permission_template_parameters = input;
+        self
+    }
+    /// <p>Specifies the template parameter values to apply when replacing the permission. You must provide values for all parameters declared in the target permission template. This parameter is required only if the target permission (<code>toPermissionArn</code>) has template parameters.</p>
+    pub fn get_permission_template_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterInput>> {
+        &self.permission_template_parameters
+    }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
@@ -131,6 +163,7 @@ impl ReplacePermissionAssociationsInputBuilder {
             from_permission_arn: self.from_permission_arn,
             from_permission_version: self.from_permission_version,
             to_permission_arn: self.to_permission_arn,
+            permission_template_parameters: self.permission_template_parameters,
             client_token: self.client_token,
         })
     }

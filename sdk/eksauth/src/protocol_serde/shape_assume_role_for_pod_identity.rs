@@ -240,6 +240,13 @@ pub(crate) fn de_assume_role_for_pod_identity(
                 "subject" => {
                     builder = builder.set_subject(crate::protocol_serde::shape_subject::de_subject(tokens, _value, depth + 1)?);
                 }
+                "workloadIdentityProviderArn" => {
+                    builder = builder.set_workload_identity_provider_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

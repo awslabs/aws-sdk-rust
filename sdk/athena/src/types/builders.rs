@@ -107,6 +107,8 @@ pub use crate::types::_prepared_statement_summary::PreparedStatementSummaryBuild
 
 pub use crate::types::_session_summary::SessionSummaryBuilder;
 
+pub use crate::types::_system_table_status::SystemTableStatusBuilder;
+
 pub use crate::types::_work_group_summary::WorkGroupSummaryBuilder;
 
 pub use crate::types::_capacity_assignment::CapacityAssignmentBuilder;

@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`BatchGetCaseRule`](crate::operation::batch_get_case_rule) operation has
-/// a [`Client::batch_get_case_rule`], function which returns a builder for that operation.
+/// For example, the [`BatchCreateRelatedItem`](crate::operation::batch_create_related_item) operation has
+/// a [`Client::batch_create_related_item`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.batch_get_case_rule()
+/// let result = client.batch_create_related_item()
 ///     .domain_id("example")
 ///     .send()
 ///     .await;
@@ -136,11 +136,15 @@ impl Client {
     }
 }
 
+mod batch_create_related_item;
+
 mod batch_get_case_rule;
 
 mod batch_get_field;
 
 mod batch_put_field_options;
+
+mod batch_update_case;
 
 mod create_case;
 
@@ -167,7 +171,7 @@ mod create_template;
 /// # let client: aws_sdk_connectcases::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.batch_get_case_rule()
+/// let result = client.batch_create_related_item()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

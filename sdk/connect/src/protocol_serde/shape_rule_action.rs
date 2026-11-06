@@ -54,26 +54,32 @@ pub fn ser_rule_action(
         crate::protocol_serde::shape_end_associated_tasks_action_definition::ser_end_associated_tasks_action_definition(&mut object_16, var_15)?;
         object_16.finish();
     }
-    if let Some(var_17) = &input.submit_auto_evaluation_action {
+    if let Some(var_17) = &input.end_associated_emails_action {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("SubmitAutoEvaluationAction").start_object();
-        crate::protocol_serde::shape_submit_auto_evaluation_action_definition::ser_submit_auto_evaluation_action_definition(&mut object_18, var_17)?;
+        let mut object_18 = object.key("EndAssociatedEmailsAction").start_object();
+        crate::protocol_serde::shape_end_associated_emails_action_definition::ser_end_associated_emails_action_definition(&mut object_18, var_17)?;
         object_18.finish();
     }
-    if let Some(var_19) = &input.extract_information_action {
+    if let Some(var_19) = &input.submit_auto_evaluation_action {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("ExtractInformationAction").start_object();
-        crate::protocol_serde::shape_extract_information_action_definition::ser_extract_information_action_definition(&mut object_20, var_19)?;
+        let mut object_20 = object.key("SubmitAutoEvaluationAction").start_object();
+        crate::protocol_serde::shape_submit_auto_evaluation_action_definition::ser_submit_auto_evaluation_action_definition(&mut object_20, var_19)?;
         object_20.finish();
     }
-    if let Some(var_21) = &input.send_in_app_notification_action {
+    if let Some(var_21) = &input.extract_information_action {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("SendInAppNotificationAction").start_object();
-        crate::protocol_serde::shape_send_in_app_notification_action_definition::ser_send_in_app_notification_action_definition(
-            &mut object_22,
-            var_21,
-        )?;
+        let mut object_22 = object.key("ExtractInformationAction").start_object();
+        crate::protocol_serde::shape_extract_information_action_definition::ser_extract_information_action_definition(&mut object_22, var_21)?;
         object_22.finish();
+    }
+    if let Some(var_23) = &input.send_in_app_notification_action {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("SendInAppNotificationAction").start_object();
+        crate::protocol_serde::shape_send_in_app_notification_action_definition::ser_send_in_app_notification_action_definition(
+            &mut object_24,
+            var_23,
+        )?;
+        object_24.finish();
     }
     Ok(())
 }
@@ -168,6 +174,15 @@ where
                             "EndAssociatedTasksAction" => {
                                 builder = builder.set_end_associated_tasks_action(
                                     crate::protocol_serde::shape_end_associated_tasks_action_definition::de_end_associated_tasks_action_definition(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "EndAssociatedEmailsAction" => {
+                                builder = builder.set_end_associated_emails_action(
+                                    crate::protocol_serde::shape_end_associated_emails_action_definition::de_end_associated_emails_action_definition(
                                         tokens,
                                         _value,
                                         depth + 1,

@@ -195,6 +195,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListPermissio
                 captured.insert("resourceType", value);
             }
         }
+        if requested.should_capture("resourceShareArn") {
+            if let ::std::option::Option::Some(value) = input.resource_share_arn.as_deref() {
+                captured.insert("resourceShareArn", value);
+            }
+        }
         if requested.should_capture("nextToken") {
             if let ::std::option::Option::Some(value) = input.next_token.as_deref() {
                 captured.insert("nextToken", value);

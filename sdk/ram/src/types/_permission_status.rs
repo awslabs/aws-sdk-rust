@@ -15,6 +15,7 @@
 ///     PermissionStatus::Attachable => { /* ... */ },
 ///     PermissionStatus::Deleted => { /* ... */ },
 ///     PermissionStatus::Deleting => { /* ... */ },
+///     PermissionStatus::Deprecated => { /* ... */ },
 ///     PermissionStatus::Unattachable => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum PermissionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    Deprecated,
+    #[allow(missing_docs)] // documentation missing in model
     Unattachable,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for PermissionStatus {
             "ATTACHABLE" => PermissionStatus::Attachable,
             "DELETED" => PermissionStatus::Deleted,
             "DELETING" => PermissionStatus::Deleting,
+            "DEPRECATED" => PermissionStatus::Deprecated,
             "UNATTACHABLE" => PermissionStatus::Unattachable,
             other => PermissionStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -81,13 +85,14 @@ impl PermissionStatus {
             PermissionStatus::Attachable => "ATTACHABLE",
             PermissionStatus::Deleted => "DELETED",
             PermissionStatus::Deleting => "DELETING",
+            PermissionStatus::Deprecated => "DEPRECATED",
             PermissionStatus::Unattachable => "UNATTACHABLE",
             PermissionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ATTACHABLE", "DELETED", "DELETING", "UNATTACHABLE"]
+        &["ATTACHABLE", "DELETED", "DELETING", "DEPRECATED", "UNATTACHABLE"]
     }
 }
 impl ::std::convert::AsRef<str> for PermissionStatus {
@@ -113,6 +118,7 @@ impl ::std::fmt::Display for PermissionStatus {
             PermissionStatus::Attachable => write!(f, "ATTACHABLE"),
             PermissionStatus::Deleted => write!(f, "DELETED"),
             PermissionStatus::Deleting => write!(f, "DELETING"),
+            PermissionStatus::Deprecated => write!(f, "DEPRECATED"),
             PermissionStatus::Unattachable => write!(f, "UNATTACHABLE"),
             PermissionStatus::Unknown(value) => write!(f, "{value}"),
         }

@@ -59,6 +59,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "permissionTemplateParameters" => {
+                            builder = builder.set_permission_template_parameters(
+                                    crate::protocol_serde::shape_permission_template_parameter_declaration_list::de_permission_template_parameter_declaration_list(tokens, _value, depth + 1)?
+                                );
+                        }
                         "creationTime" => {
                             builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
@@ -98,6 +103,13 @@ where
                         }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
+                        }
+                        "resourceOwner" => {
+                            builder = builder.set_resource_owner(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResourceOwner::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

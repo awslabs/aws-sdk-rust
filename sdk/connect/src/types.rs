@@ -1049,6 +1049,8 @@ pub use crate::types::_assign_sla_action_definition::AssignSlaActionDefinition;
 
 pub use crate::types::_end_associated_tasks_action_definition::EndAssociatedTasksActionDefinition;
 
+pub use crate::types::_end_associated_emails_action_definition::EndAssociatedEmailsActionDefinition;
+
 pub use crate::types::_submit_auto_evaluation_action_definition::SubmitAutoEvaluationActionDefinition;
 
 pub use crate::types::_extract_information_action_definition::ExtractInformationActionDefinition;
@@ -2082,6 +2084,8 @@ mod _empty_field_value;
 mod _encryption_config;
 
 mod _encryption_type;
+
+mod _end_associated_emails_action_definition;
 
 mod _end_associated_tasks_action_definition;
 

@@ -22,7 +22,7 @@ impl crate::operation::batch_get_case_rule::builders::BatchGetCaseRuleInputBuild
 }
 /// Fluent builder constructing a request to `BatchGetCaseRule`.
 ///
-/// <p>Gets a batch of case rules. In the Amazon Connect admin website, case rules are known as <i>case field conditions</i>. For more information about case field conditions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add case field conditions to a case template</a>.</p>
+/// <p>Gets a batch of case rules. In the Connect Customer admin website, case rules are known as <i>case field conditions</i>. For more information about case field conditions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add case field conditions to a case template</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetCaseRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

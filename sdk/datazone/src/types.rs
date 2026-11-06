@@ -905,6 +905,8 @@ pub use crate::types::_notification_resource_type::NotificationResourceType;
 
 pub use crate::types::_listing_summary_item::ListingSummaryItem;
 
+pub use crate::types::_o_auth2_properties_patch::OAuth2PropertiesPatch;
+
 pub use crate::types::_self_grant_status::SelfGrantStatus;
 
 pub use crate::types::_o_auth2_grant_type::OAuth2GrantType;
@@ -1500,6 +1502,8 @@ mod _o_auth2_client_application;
 mod _o_auth2_grant_type;
 
 mod _o_auth2_properties;
+
+mod _o_auth2_properties_patch;
 
 mod _open_lineage_run_event_summary;
 

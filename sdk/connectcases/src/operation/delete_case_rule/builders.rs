@@ -22,7 +22,7 @@ impl crate::operation::delete_case_rule::builders::DeleteCaseRuleInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCaseRule`.
 ///
-/// <p>Deletes a case rule. In the Amazon Connect admin website, case rules are known as <i>case field conditions</i>. For more information about case field conditions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add case field conditions to a case template</a>.</p>
+/// <p>Deletes a case rule. In the Connect Customer admin website, case rules are known as <i>case field conditions</i>. For more information about case field conditions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add case field conditions to a case template</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCaseRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

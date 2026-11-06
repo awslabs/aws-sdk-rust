@@ -22,7 +22,10 @@ impl crate::operation::get_parameters_by_path::builders::GetParametersByPathInpu
 }
 /// Fluent builder constructing a request to `GetParametersByPath`.
 ///
-/// <p>Retrieve information about one or more parameters under a specified level in a hierarchy.</p>
+/// <p>Retrieve information about one or more parameters under a specified level in a hierarchy.</p><important>
+/// <p>This operation is authorized against the <code>ssm:GetParametersByPath</code> action for the path that you specify in the request. It isn't authorized against the individual parameters that it returns, and it isn't authorized against <code>ssm:GetParameter</code>. A principal who is allowed to call this operation for the path <code>/a</code> with <code>Recursive</code> set to <code>true</code> receives every parameter under that path, including <code>/a/b</code>, even if a policy explicitly denies access to <code>/a/b</code>.</p>
+/// <p>To prevent a parameter from being returned by this operation, deny the <code>ssm:GetParametersByPath</code> action on every ancestor path that could include the parameter in its results. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-restrict-parameter-access.html">Restricting access to specific parameters and paths</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+/// </important>
 /// <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the response includes information up to the limit specified. The number of items returned, however, can be between zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>. You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.</p>
 /// <p>Parameter names can't contain spaces. The service removes any spaces specified for the beginning or end of a parameter name. If the specified name for a parameter contains spaces between characters, the request fails with a <code>ValidationException</code> error.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -130,23 +133,17 @@ impl GetParametersByPathFluentBuilder {
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_path()
     }
-    /// <p>Retrieve all parameters within a hierarchy.</p><important>
-    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
-    /// </important>
+    /// <p>Retrieve all parameters within a hierarchy.</p>
     pub fn recursive(mut self, input: bool) -> Self {
         self.inner = self.inner.recursive(input);
         self
     }
-    /// <p>Retrieve all parameters within a hierarchy.</p><important>
-    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
-    /// </important>
+    /// <p>Retrieve all parameters within a hierarchy.</p>
     pub fn set_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_recursive(input);
         self
     }
-    /// <p>Retrieve all parameters within a hierarchy.</p><important>
-    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
-    /// </important>
+    /// <p>Retrieve all parameters within a hierarchy.</p>
     pub fn get_recursive(&self) -> &::std::option::Option<bool> {
         self.inner.get_recursive()
     }

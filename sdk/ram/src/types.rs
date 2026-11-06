@@ -29,13 +29,21 @@ pub use crate::types::_replace_permission_associations_work_status::ReplacePermi
 
 pub use crate::types::_replace_permission_associations_work::ReplacePermissionAssociationsWork;
 
+pub use crate::types::_update_permission_status::UpdatePermissionStatus;
+
 pub use crate::types::_resource_share_invitation_status::ResourceShareInvitationStatus;
 
 pub use crate::types::_resource_share_association::ResourceShareAssociation;
 
+pub use crate::types::_permission_template_parameter_input::PermissionTemplateParameterInput;
+
+pub use crate::types::_permission_template_parameter_declaration::PermissionTemplateParameterDeclaration;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_permission_type::PermissionType;
+
+pub use crate::types::_permission_arn_and_template_parameters::PermissionArnAndTemplateParameters;
 
 pub use crate::types::_resource_share_feature_set::ResourceShareFeatureSet;
 
@@ -51,6 +59,10 @@ pub use crate::types::_service_name_and_resource_type::ServiceNameAndResourceTyp
 
 pub use crate::types::_associated_source::AssociatedSource;
 
+pub use crate::types::_permission_template_parameter_type::PermissionTemplateParameterType;
+
+pub use crate::types::_permission_template_parameter::PermissionTemplateParameter;
+
 pub use crate::types::_resource_status::ResourceStatus;
 
 pub use crate::types::_resource_region_scope::ResourceRegionScope;
@@ -59,9 +71,19 @@ mod _associated_permission;
 
 mod _associated_source;
 
+mod _permission_arn_and_template_parameters;
+
 mod _permission_feature_set;
 
 mod _permission_status;
+
+mod _permission_template_parameter;
+
+mod _permission_template_parameter_declaration;
+
+mod _permission_template_parameter_input;
+
+mod _permission_template_parameter_type;
 
 mod _permission_type;
 
@@ -110,6 +132,8 @@ mod _service_name_and_resource_type;
 mod _tag;
 
 mod _tag_filter;
+
+mod _update_permission_status;
 
 /// Builders
 pub mod builders;

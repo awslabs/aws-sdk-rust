@@ -9,8 +9,23 @@ pub fn ser_create_permission_version_input_input(
     if let Some(var_2) = &input.permission_arn {
         object.key("permissionArn").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.policy_template {
-        object.key("policyTemplate").string(var_3.as_str());
+    if let Some(var_3) = &input.permission_template_parameters {
+        let mut array_4 = object.key("permissionTemplateParameters").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_permission_template_parameter_declaration::ser_permission_template_parameter_declaration(
+                    &mut object_6,
+                    item_5,
+                )?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
+    }
+    if let Some(var_7) = &input.policy_template {
+        object.key("policyTemplate").string(var_7.as_str());
     }
     Ok(())
 }

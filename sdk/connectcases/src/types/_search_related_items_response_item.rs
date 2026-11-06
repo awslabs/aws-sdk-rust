@@ -12,7 +12,7 @@ pub struct SearchRelatedItemsResponseItem {
     pub association_time: ::aws_smithy_types::DateTime,
     /// <p>Represents the content of a particular type of related item.</p>
     pub content: ::std::option::Option<crate::types::RelatedItemContent>,
-    /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    /// <p>A map of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     /// <p>Represents the creator of the related item.</p>
     pub performed_by: ::std::option::Option<crate::types::UserUnion>,
@@ -35,7 +35,7 @@ impl SearchRelatedItemsResponseItem {
     pub fn content(&self) -> ::std::option::Option<&crate::types::RelatedItemContent> {
         self.content.as_ref()
     }
-    /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    /// <p>A map of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.tags.as_ref()
     }
@@ -127,14 +127,14 @@ impl SearchRelatedItemsResponseItemBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    /// <p>A map of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::option::Option<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    /// <p>A map of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn set_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
@@ -142,7 +142,7 @@ impl SearchRelatedItemsResponseItemBuilder {
         self.tags = input;
         self
     }
-    /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    /// <p>A map of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn get_tags(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {

@@ -6,6 +6,14 @@ pub struct ListPermissionsInput {
     /// <p>Specifies that you want to list only those permissions that apply to the specified resource type. This parameter is not case sensitive.</p>
     /// <p>For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies that you want to list only permissions owned by a specific entity:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – returns only permissions owned by the calling account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – returns only permissions shared with the calling account by other accounts.</p></li>
+    /// </ul>
+    pub resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
@@ -21,12 +29,24 @@ pub struct ListPermissionsInput {
     /// </ul>
     /// <p>If you don't specify this parameter, the default is <code>All</code>.</p>
     pub permission_type: ::std::option::Option<crate::types::PermissionTypeFilter>,
+    /// <p>Specifies that you want to filter the results to include only permissions with the specified status. For example, use <code>ATTACHABLE</code> to list only permissions that can be associated with resource shares, or <code>DEPRECATED</code> to list only deprecated permissions.</p>
+    pub permission_status: ::std::option::Option<crate::types::PermissionStatus>,
 }
 impl ListPermissionsInput {
     /// <p>Specifies that you want to list only those permissions that apply to the specified resource type. This parameter is not case sensitive.</p>
     /// <p>For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
+    }
+    /// <p>Specifies that you want to list only permissions owned by a specific entity:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – returns only permissions owned by the calling account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – returns only permissions shared with the calling account by other accounts.</p></li>
+    /// </ul>
+    pub fn resource_owner(&self) -> ::std::option::Option<&crate::types::ResourceOwner> {
+        self.resource_owner.as_ref()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -49,6 +69,10 @@ impl ListPermissionsInput {
     pub fn permission_type(&self) -> ::std::option::Option<&crate::types::PermissionTypeFilter> {
         self.permission_type.as_ref()
     }
+    /// <p>Specifies that you want to filter the results to include only permissions with the specified status. For example, use <code>ATTACHABLE</code> to list only permissions that can be associated with resource shares, or <code>DEPRECATED</code> to list only deprecated permissions.</p>
+    pub fn permission_status(&self) -> ::std::option::Option<&crate::types::PermissionStatus> {
+        self.permission_status.as_ref()
+    }
 }
 impl ListPermissionsInput {
     /// Creates a new builder-style object to manufacture [`ListPermissionsInput`](crate::operation::list_permissions::ListPermissionsInput).
@@ -62,9 +86,11 @@ impl ListPermissionsInput {
 #[non_exhaustive]
 pub struct ListPermissionsInputBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) permission_type: ::std::option::Option<crate::types::PermissionTypeFilter>,
+    pub(crate) permission_status: ::std::option::Option<crate::types::PermissionStatus>,
 }
 impl ListPermissionsInputBuilder {
     /// <p>Specifies that you want to list only those permissions that apply to the specified resource type. This parameter is not case sensitive.</p>
@@ -83,6 +109,38 @@ impl ListPermissionsInputBuilder {
     /// <p>For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
+    }
+    /// <p>Specifies that you want to list only permissions owned by a specific entity:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – returns only permissions owned by the calling account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – returns only permissions shared with the calling account by other accounts.</p></li>
+    /// </ul>
+    pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
+        self.resource_owner = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies that you want to list only permissions owned by a specific entity:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – returns only permissions owned by the calling account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – returns only permissions shared with the calling account by other accounts.</p></li>
+    /// </ul>
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
+        self.resource_owner = input;
+        self
+    }
+    /// <p>Specifies that you want to list only permissions owned by a specific entity:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – returns only permissions owned by the calling account.</p></li>
+    /// <li>
+    /// <p><code>OTHER-ACCOUNTS</code> – returns only permissions shared with the calling account by other accounts.</p></li>
+    /// </ul>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
+        &self.resource_owner
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,15 +211,31 @@ impl ListPermissionsInputBuilder {
     pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionTypeFilter> {
         &self.permission_type
     }
+    /// <p>Specifies that you want to filter the results to include only permissions with the specified status. For example, use <code>ATTACHABLE</code> to list only permissions that can be associated with resource shares, or <code>DEPRECATED</code> to list only deprecated permissions.</p>
+    pub fn permission_status(mut self, input: crate::types::PermissionStatus) -> Self {
+        self.permission_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies that you want to filter the results to include only permissions with the specified status. For example, use <code>ATTACHABLE</code> to list only permissions that can be associated with resource shares, or <code>DEPRECATED</code> to list only deprecated permissions.</p>
+    pub fn set_permission_status(mut self, input: ::std::option::Option<crate::types::PermissionStatus>) -> Self {
+        self.permission_status = input;
+        self
+    }
+    /// <p>Specifies that you want to filter the results to include only permissions with the specified status. For example, use <code>ATTACHABLE</code> to list only permissions that can be associated with resource shares, or <code>DEPRECATED</code> to list only deprecated permissions.</p>
+    pub fn get_permission_status(&self) -> &::std::option::Option<crate::types::PermissionStatus> {
+        &self.permission_status
+    }
     /// Consumes the builder and constructs a [`ListPermissionsInput`](crate::operation::list_permissions::ListPermissionsInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_permissions::ListPermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_permissions::ListPermissionsInput {
             resource_type: self.resource_type,
+            resource_owner: self.resource_owner,
             next_token: self.next_token,
             max_results: self.max_results,
             permission_type: self.permission_type,
+            permission_status: self.permission_status,
         })
     }
 }

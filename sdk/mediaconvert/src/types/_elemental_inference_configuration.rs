@@ -6,7 +6,7 @@
 pub struct ElementalInferenceConfiguration {
     /// A list of Elemental Inference features used in this job.
     pub features: ::std::option::Option<::std::vec::Vec<crate::types::ElementalInferenceFeature>>,
-    /// A list of Elemental Inference feeds used by this job.
+    /// A list of Elemental Inference feeds created during this job.
     pub feeds: ::std::option::Option<::std::vec::Vec<crate::types::ElementalInferenceFeed>>,
 }
 impl ElementalInferenceConfiguration {
@@ -16,7 +16,7 @@ impl ElementalInferenceConfiguration {
     pub fn features(&self) -> &[crate::types::ElementalInferenceFeature] {
         self.features.as_deref().unwrap_or_default()
     }
-    /// A list of Elemental Inference feeds used by this job.
+    /// A list of Elemental Inference feeds created during this job.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feeds.is_none()`.
     pub fn feeds(&self) -> &[crate::types::ElementalInferenceFeed] {
@@ -62,19 +62,19 @@ impl ElementalInferenceConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_feeds`](Self::set_feeds).
     ///
-    /// A list of Elemental Inference feeds used by this job.
+    /// A list of Elemental Inference feeds created during this job.
     pub fn feeds(mut self, input: crate::types::ElementalInferenceFeed) -> Self {
         let mut v = self.feeds.unwrap_or_default();
         v.push(input);
         self.feeds = ::std::option::Option::Some(v);
         self
     }
-    /// A list of Elemental Inference feeds used by this job.
+    /// A list of Elemental Inference feeds created during this job.
     pub fn set_feeds(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElementalInferenceFeed>>) -> Self {
         self.feeds = input;
         self
     }
-    /// A list of Elemental Inference feeds used by this job.
+    /// A list of Elemental Inference feeds created during this job.
     pub fn get_feeds(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElementalInferenceFeed>> {
         &self.feeds
     }

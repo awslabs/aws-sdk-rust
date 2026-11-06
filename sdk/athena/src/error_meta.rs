@@ -340,6 +340,47 @@ impl From<crate::operation::create_presigned_notebook_url::CreatePresignedNotebo
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_system_table_configuration::CreateSystemTableConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_system_table_configuration::CreateSystemTableConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_system_table_configuration::CreateSystemTableConfigurationError> for Error {
+    fn from(err: crate::operation::create_system_table_configuration::CreateSystemTableConfigurationError) -> Self {
+        match err {
+            crate::operation::create_system_table_configuration::CreateSystemTableConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_system_table_configuration::CreateSystemTableConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_system_table_configuration::CreateSystemTableConfigurationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::create_system_table_configuration::CreateSystemTableConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_work_group::CreateWorkGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -493,6 +534,47 @@ impl From<crate::operation::delete_prepared_statement::DeletePreparedStatementEr
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_prepared_statement::DeletePreparedStatementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_system_table_configuration::DeleteSystemTableConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_system_table_configuration::DeleteSystemTableConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_system_table_configuration::DeleteSystemTableConfigurationError> for Error {
+    fn from(err: crate::operation::delete_system_table_configuration::DeleteSystemTableConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_system_table_configuration::DeleteSystemTableConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_system_table_configuration::DeleteSystemTableConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_system_table_configuration::DeleteSystemTableConfigurationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_system_table_configuration::DeleteSystemTableConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1031,6 +1113,46 @@ impl From<crate::operation::get_session_status::GetSessionStatusError> for Error
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_system_table_configuration::GetSystemTableConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_system_table_configuration::GetSystemTableConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_system_table_configuration::GetSystemTableConfigurationError> for Error {
+    fn from(err: crate::operation::get_system_table_configuration::GetSystemTableConfigurationError) -> Self {
+        match err {
+            crate::operation::get_system_table_configuration::GetSystemTableConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_system_table_configuration::GetSystemTableConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::get_system_table_configuration::GetSystemTableConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_system_table_configuration::GetSystemTableConfigurationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_system_table_configuration::GetSystemTableConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_metadata::GetTableMetadataError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1452,6 +1574,39 @@ impl From<crate::operation::list_sessions::ListSessionsError> for Error {
             crate::operation::list_sessions::ListSessionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_sessions::ListSessionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_sessions::ListSessionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_system_table_statuses::ListSystemTableStatusesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_system_table_statuses::ListSystemTableStatusesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_system_table_statuses::ListSystemTableStatusesError> for Error {
+    fn from(err: crate::operation::list_system_table_statuses::ListSystemTableStatusesError) -> Self {
+        match err {
+            crate::operation::list_system_table_statuses::ListSystemTableStatusesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_system_table_statuses::ListSystemTableStatusesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_system_table_statuses::ListSystemTableStatusesError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_system_table_statuses::ListSystemTableStatusesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1951,6 +2106,50 @@ impl From<crate::operation::update_prepared_statement::UpdatePreparedStatementEr
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::update_prepared_statement::UpdatePreparedStatementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_system_table_configuration::UpdateSystemTableConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_system_table_configuration::UpdateSystemTableConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_system_table_configuration::UpdateSystemTableConfigurationError> for Error {
+    fn from(err: crate::operation::update_system_table_configuration::UpdateSystemTableConfigurationError) -> Self {
+        match err {
+            crate::operation::update_system_table_configuration::UpdateSystemTableConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_system_table_configuration::UpdateSystemTableConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_system_table_configuration::UpdateSystemTableConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_system_table_configuration::UpdateSystemTableConfigurationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_system_table_configuration::UpdateSystemTableConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

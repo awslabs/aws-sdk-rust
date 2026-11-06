@@ -12,11 +12,17 @@ pub fn ser_list_permissions_input_input(
     if let Some(var_2) = &input.next_token {
         object.key("nextToken").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.permission_type {
-        object.key("permissionType").string(var_3.as_str());
+    if let Some(var_3) = &input.permission_status {
+        object.key("permissionStatus").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.resource_type {
-        object.key("resourceType").string(var_4.as_str());
+    if let Some(var_4) = &input.permission_type {
+        object.key("permissionType").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.resource_owner {
+        object.key("resourceOwner").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.resource_type {
+        object.key("resourceType").string(var_6.as_str());
     }
     Ok(())
 }

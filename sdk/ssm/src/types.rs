@@ -103,6 +103,8 @@ pub use crate::types::_parameter_type::ParameterType;
 
 pub use crate::types::_parameter_tier::ParameterTier;
 
+pub use crate::types::_dhmc_permission_model::DhmcPermissionModel;
+
 pub use crate::types::_signal_type::SignalType;
 
 pub use crate::types::_document_hash_type::DocumentHashType;
@@ -702,6 +704,8 @@ mod _deletion_mode;
 mod _describe_activations_filter;
 
 mod _describe_activations_filter_keys;
+
+mod _dhmc_permission_model;
 
 mod _document_default_version_description;
 

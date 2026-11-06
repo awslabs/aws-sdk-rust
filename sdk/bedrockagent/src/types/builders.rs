@@ -131,6 +131,8 @@ pub use crate::types::_agent_knowledge_base_summary::AgentKnowledgeBaseSummaryBu
 
 pub use crate::types::_knowledge_base_summary::KnowledgeBaseSummaryBuilder;
 
+pub use crate::types::_metadata_configuration::MetadataConfigurationBuilder;
+
 pub use crate::types::_prompt_summary::PromptSummaryBuilder;
 
 pub use crate::types::_prompt_variant::PromptVariantBuilder;

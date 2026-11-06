@@ -31,6 +31,9 @@ pub mod create_prepared_statement;
 /// Types for the `CreatePresignedNotebookUrl` operation.
 pub mod create_presigned_notebook_url;
 
+/// Types for the `CreateSystemTableConfiguration` operation.
+pub mod create_system_table_configuration;
+
 /// Types for the `CreateWorkGroup` operation.
 pub mod create_work_group;
 
@@ -48,6 +51,9 @@ pub mod delete_notebook;
 
 /// Types for the `DeletePreparedStatement` operation.
 pub mod delete_prepared_statement;
+
+/// Types for the `DeleteSystemTableConfiguration` operation.
+pub mod delete_system_table_configuration;
 
 /// Types for the `DeleteWorkGroup` operation.
 pub mod delete_work_group;
@@ -106,6 +112,9 @@ pub mod get_session_endpoint;
 /// Types for the `GetSessionStatus` operation.
 pub mod get_session_status;
 
+/// Types for the `GetSystemTableConfiguration` operation.
+pub mod get_system_table_configuration;
+
 /// Types for the `GetTableMetadata` operation.
 pub mod get_table_metadata;
 
@@ -153,6 +162,9 @@ pub mod list_query_executions;
 
 /// Types for the `ListSessions` operation.
 pub mod list_sessions;
+
+/// Types for the `ListSystemTableStatuses` operation.
+pub mod list_system_table_statuses;
 
 /// Types for the `ListTableMetadata` operation.
 pub mod list_table_metadata;
@@ -207,6 +219,9 @@ pub mod update_notebook_metadata;
 
 /// Types for the `UpdatePreparedStatement` operation.
 pub mod update_prepared_statement;
+
+/// Types for the `UpdateSystemTableConfiguration` operation.
+pub mod update_system_table_configuration;
 
 /// Types for the `UpdateWorkGroup` operation.
 pub mod update_work_group;

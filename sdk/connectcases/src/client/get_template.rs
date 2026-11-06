@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_template::GetTemplateOutput::description): <p>A brief description of the template.</p>
     ///   - [`layout_configuration(Option<LayoutConfiguration>)`](crate::operation::get_template::GetTemplateOutput::layout_configuration): <p>Configuration of layouts associated to the template.</p>
     ///   - [`required_fields(Option<Vec::<RequiredField>>)`](crate::operation::get_template::GetTemplateOutput::required_fields): <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    ///   - [`tags(Option<HashMap::<String, Option<String>>>)`](crate::operation::get_template::GetTemplateOutput::tags): <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(Option<HashMap::<String, Option<String>>>)`](crate::operation::get_template::GetTemplateOutput::tags): <p>A map of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     ///   - [`status(TemplateStatus)`](crate::operation::get_template::GetTemplateOutput::status): <p>The status of the template.</p>
     ///   - [`deleted(bool)`](crate::operation::get_template::GetTemplateOutput::deleted): <p>Denotes whether or not the resource has been deleted.</p>
     ///   - [`created_time(Option<DateTime>)`](crate::operation::get_template::GetTemplateOutput::created_time): <p>Timestamp at which the resource was created.</p>

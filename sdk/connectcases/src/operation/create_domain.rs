@@ -316,7 +316,7 @@ pub enum CreateDomainError {
     ConflictException(crate::types::error::ConflictException),
     /// <p>We couldn't process your request because of an issue with the server. Try again later.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect Customer Service Quotas</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The rate has been exceeded for this API. Please try again after a few minutes.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

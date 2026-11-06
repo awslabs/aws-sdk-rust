@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`layout_arn(String)`](crate::operation::get_layout::GetLayoutOutput::layout_arn): <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
     ///   - [`name(String)`](crate::operation::get_layout::GetLayoutOutput::name): <p>The name of the layout. It must be unique.</p>
     ///   - [`content(Option<LayoutContent>)`](crate::operation::get_layout::GetLayoutOutput::content): <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field.</p>
-    ///   - [`tags(Option<HashMap::<String, Option<String>>>)`](crate::operation::get_layout::GetLayoutOutput::tags): <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    ///   - [`tags(Option<HashMap::<String, Option<String>>>)`](crate::operation::get_layout::GetLayoutOutput::tags): <p>A map of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     ///   - [`deleted(bool)`](crate::operation::get_layout::GetLayoutOutput::deleted): <p>Denotes whether or not the resource has been deleted.</p>
     ///   - [`created_time(Option<DateTime>)`](crate::operation::get_layout::GetLayoutOutput::created_time): <p>Timestamp at which the resource was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::get_layout::GetLayoutOutput::last_modified_time): <p>Timestamp at which the resource was created or last modified.</p>

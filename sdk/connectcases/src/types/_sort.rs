@@ -6,7 +6,7 @@
 pub struct Sort {
     /// <p>Unique identifier of a field.</p>
     pub field_id: ::std::string::String,
-    /// <p>A structured set of sort terms</p>
+    /// <p>Whether results should be sorted in ascending or descending order.</p>
     pub sort_order: crate::types::Order,
 }
 impl Sort {
@@ -15,7 +15,7 @@ impl Sort {
         use std::ops::Deref;
         self.field_id.deref()
     }
-    /// <p>A structured set of sort terms</p>
+    /// <p>Whether results should be sorted in ascending or descending order.</p>
     pub fn sort_order(&self) -> &crate::types::Order {
         &self.sort_order
     }
@@ -50,18 +50,18 @@ impl SortBuilder {
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.field_id
     }
-    /// <p>A structured set of sort terms</p>
+    /// <p>Whether results should be sorted in ascending or descending order.</p>
     /// This field is required.
     pub fn sort_order(mut self, input: crate::types::Order) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structured set of sort terms</p>
+    /// <p>Whether results should be sorted in ascending or descending order.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::Order>) -> Self {
         self.sort_order = input;
         self
     }
-    /// <p>A structured set of sort terms</p>
+    /// <p>Whether results should be sorted in ascending or descending order.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::Order> {
         &self.sort_order
     }

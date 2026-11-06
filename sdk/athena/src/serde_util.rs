@@ -89,6 +89,15 @@ pub(crate) fn list_notebook_sessions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_system_table_statuses_output_output_correct_errors(
+    mut builder: crate::operation::list_system_table_statuses::builders::ListSystemTableStatusesOutputBuilder,
+) -> crate::operation::list_system_table_statuses::builders::ListSystemTableStatusesOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn capacity_reservation_correct_errors(
     mut builder: crate::types::builders::CapacityReservationBuilder,
 ) -> crate::types::builders::CapacityReservationBuilder {

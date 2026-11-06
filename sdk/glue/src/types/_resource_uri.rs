@@ -8,6 +8,8 @@ pub struct ResourceUri {
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The URI for accessing the resource.</p>
     pub uri: ::std::option::Option<::std::string::String>,
+    /// <p>The time at which the resource was last modified in Amazon S3. Glue records this value when you create or update a function whose <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>. Analytics engines use it to verify that the resource hasn't changed. This is an output-only field.</p>
+    pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ResourceUri {
     /// <p>The type of the resource.</p>
@@ -17,6 +19,10 @@ impl ResourceUri {
     /// <p>The URI for accessing the resource.</p>
     pub fn uri(&self) -> ::std::option::Option<&str> {
         self.uri.as_deref()
+    }
+    /// <p>The time at which the resource was last modified in Amazon S3. Glue records this value when you create or update a function whose <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>. Analytics engines use it to verify that the resource hasn't changed. This is an output-only field.</p>
+    pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified.as_ref()
     }
 }
 impl ResourceUri {
@@ -32,6 +38,7 @@ impl ResourceUri {
 pub struct ResourceUriBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) uri: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ResourceUriBuilder {
     /// <p>The type of the resource.</p>
@@ -62,11 +69,26 @@ impl ResourceUriBuilder {
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.uri
     }
+    /// <p>The time at which the resource was last modified in Amazon S3. Glue records this value when you create or update a function whose <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>. Analytics engines use it to verify that the resource hasn't changed. This is an output-only field.</p>
+    pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time at which the resource was last modified in Amazon S3. Glue records this value when you create or update a function whose <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>. Analytics engines use it to verify that the resource hasn't changed. This is an output-only field.</p>
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified = input;
+        self
+    }
+    /// <p>The time at which the resource was last modified in Amazon S3. Glue records this value when you create or update a function whose <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>. Analytics engines use it to verify that the resource hasn't changed. This is an output-only field.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
+    }
     /// Consumes the builder and constructs a [`ResourceUri`](crate::types::ResourceUri).
     pub fn build(self) -> crate::types::ResourceUri {
         crate::types::ResourceUri {
             resource_type: self.resource_type,
             uri: self.uri,
+            last_modified: self.last_modified,
         }
     }
 }

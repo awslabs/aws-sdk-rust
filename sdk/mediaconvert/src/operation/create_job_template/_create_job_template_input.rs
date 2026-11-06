@@ -9,6 +9,8 @@ pub struct CreateJobTemplateInput {
     pub category: ::std::option::Option<::std::string::String>,
     /// Optional. A description of the job template you are creating.
     pub description: ::std::option::Option<::std::string::String>,
+    /// The Elemental Inference settings used in this job.
+    pub elemental_inference_settings: ::std::option::Option<crate::types::ElementalInferenceSettings>,
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
     pub hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     /// The name of the job template you are creating.
@@ -36,6 +38,10 @@ impl CreateJobTemplateInput {
     /// Optional. A description of the job template you are creating.
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn elemental_inference_settings(&self) -> ::std::option::Option<&crate::types::ElementalInferenceSettings> {
+        self.elemental_inference_settings.as_ref()
     }
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
     ///
@@ -82,6 +88,7 @@ pub struct CreateJobTemplateInputBuilder {
     pub(crate) acceleration_settings: ::std::option::Option<crate::types::AccelerationSettings>,
     pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) elemental_inference_settings: ::std::option::Option<crate::types::ElementalInferenceSettings>,
     pub(crate) hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
@@ -132,6 +139,20 @@ impl CreateJobTemplateInputBuilder {
     /// Optional. A description of the job template you are creating.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn elemental_inference_settings(mut self, input: crate::types::ElementalInferenceSettings) -> Self {
+        self.elemental_inference_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn set_elemental_inference_settings(mut self, input: ::std::option::Option<crate::types::ElementalInferenceSettings>) -> Self {
+        self.elemental_inference_settings = input;
+        self
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn get_elemental_inference_settings(&self) -> &::std::option::Option<crate::types::ElementalInferenceSettings> {
+        &self.elemental_inference_settings
     }
     /// Appends an item to `hop_destinations`.
     ///
@@ -253,6 +274,7 @@ impl CreateJobTemplateInputBuilder {
             acceleration_settings: self.acceleration_settings,
             category: self.category,
             description: self.description,
+            elemental_inference_settings: self.elemental_inference_settings,
             hop_destinations: self.hop_destinations,
             name: self.name,
             priority: self.priority,

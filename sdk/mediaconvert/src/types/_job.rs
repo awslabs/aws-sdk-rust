@@ -20,6 +20,8 @@ pub struct Job {
     pub current_phase: ::std::option::Option<crate::types::JobPhase>,
     /// The Elemental Inference configuration used in this job.
     pub elemental_inference_configuration: ::std::option::Option<crate::types::ElementalInferenceConfiguration>,
+    /// The Elemental Inference settings used in this job.
+    pub elemental_inference_settings: ::std::option::Option<crate::types::ElementalInferenceSettings>,
     /// Error code for the job
     pub error_code: ::std::option::Option<i32>,
     /// Error message of Job
@@ -101,6 +103,10 @@ impl Job {
     /// The Elemental Inference configuration used in this job.
     pub fn elemental_inference_configuration(&self) -> ::std::option::Option<&crate::types::ElementalInferenceConfiguration> {
         self.elemental_inference_configuration.as_ref()
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn elemental_inference_settings(&self) -> ::std::option::Option<&crate::types::ElementalInferenceSettings> {
+        self.elemental_inference_settings.as_ref()
     }
     /// Error code for the job
     pub fn error_code(&self) -> ::std::option::Option<i32> {
@@ -226,6 +232,7 @@ pub struct JobBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) current_phase: ::std::option::Option<crate::types::JobPhase>,
     pub(crate) elemental_inference_configuration: ::std::option::Option<crate::types::ElementalInferenceConfiguration>,
+    pub(crate) elemental_inference_settings: ::std::option::Option<crate::types::ElementalInferenceSettings>,
     pub(crate) error_code: ::std::option::Option<i32>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
@@ -363,6 +370,20 @@ impl JobBuilder {
     /// The Elemental Inference configuration used in this job.
     pub fn get_elemental_inference_configuration(&self) -> &::std::option::Option<crate::types::ElementalInferenceConfiguration> {
         &self.elemental_inference_configuration
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn elemental_inference_settings(mut self, input: crate::types::ElementalInferenceSettings) -> Self {
+        self.elemental_inference_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn set_elemental_inference_settings(mut self, input: ::std::option::Option<crate::types::ElementalInferenceSettings>) -> Self {
+        self.elemental_inference_settings = input;
+        self
+    }
+    /// The Elemental Inference settings used in this job.
+    pub fn get_elemental_inference_settings(&self) -> &::std::option::Option<crate::types::ElementalInferenceSettings> {
+        &self.elemental_inference_settings
     }
     /// Error code for the job
     pub fn error_code(mut self, input: i32) -> Self {
@@ -746,6 +767,7 @@ impl JobBuilder {
             created_at: self.created_at,
             current_phase: self.current_phase,
             elemental_inference_configuration: self.elemental_inference_configuration,
+            elemental_inference_settings: self.elemental_inference_settings,
             error_code: self.error_code,
             error_message: self.error_message,
             hop_destinations: self.hop_destinations,

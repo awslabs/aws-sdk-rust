@@ -15,6 +15,9 @@ pub struct UpdateKnowledgeBaseInput {
     pub knowledge_base_configuration: ::std::option::Option<crate::types::KnowledgeBaseConfiguration>,
     /// <p>Specifies the configuration for the vector store used for the knowledge base. You must use the same configuration as when the knowledge base was created.</p>
     pub storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
+    /// <p>Specifies up to 30 custom metadata field configurations for a managed knowledge base.</p>
+    /// <p>The list that you specify replaces the existing configurations. The update removes any configuration that you leave out, and its field is no longer searchable. An empty list removes all configurations. If you don't specify a list, the existing configurations don't change.</p>
+    pub metadata_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MetadataConfiguration>>,
 }
 impl UpdateKnowledgeBaseInput {
     /// <p>The unique identifier of the knowledge base to update.</p>
@@ -41,6 +44,13 @@ impl UpdateKnowledgeBaseInput {
     pub fn storage_configuration(&self) -> ::std::option::Option<&crate::types::StorageConfiguration> {
         self.storage_configuration.as_ref()
     }
+    /// <p>Specifies up to 30 custom metadata field configurations for a managed knowledge base.</p>
+    /// <p>The list that you specify replaces the existing configurations. The update removes any configuration that you leave out, and its field is no longer searchable. An empty list removes all configurations. If you don't specify a list, the existing configurations don't change.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metadata_configurations.is_none()`.
+    pub fn metadata_configurations(&self) -> &[crate::types::MetadataConfiguration] {
+        self.metadata_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateKnowledgeBaseInput {
     /// Creates a new builder-style object to manufacture [`UpdateKnowledgeBaseInput`](crate::operation::update_knowledge_base::UpdateKnowledgeBaseInput).
@@ -59,6 +69,7 @@ pub struct UpdateKnowledgeBaseInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) knowledge_base_configuration: ::std::option::Option<crate::types::KnowledgeBaseConfiguration>,
     pub(crate) storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
+    pub(crate) metadata_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MetadataConfiguration>>,
 }
 impl UpdateKnowledgeBaseInputBuilder {
     /// <p>The unique identifier of the knowledge base to update.</p>
@@ -149,6 +160,29 @@ impl UpdateKnowledgeBaseInputBuilder {
     pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::StorageConfiguration> {
         &self.storage_configuration
     }
+    /// Appends an item to `metadata_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_metadata_configurations`](Self::set_metadata_configurations).
+    ///
+    /// <p>Specifies up to 30 custom metadata field configurations for a managed knowledge base.</p>
+    /// <p>The list that you specify replaces the existing configurations. The update removes any configuration that you leave out, and its field is no longer searchable. An empty list removes all configurations. If you don't specify a list, the existing configurations don't change.</p>
+    pub fn metadata_configurations(mut self, input: crate::types::MetadataConfiguration) -> Self {
+        let mut v = self.metadata_configurations.unwrap_or_default();
+        v.push(input);
+        self.metadata_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies up to 30 custom metadata field configurations for a managed knowledge base.</p>
+    /// <p>The list that you specify replaces the existing configurations. The update removes any configuration that you leave out, and its field is no longer searchable. An empty list removes all configurations. If you don't specify a list, the existing configurations don't change.</p>
+    pub fn set_metadata_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetadataConfiguration>>) -> Self {
+        self.metadata_configurations = input;
+        self
+    }
+    /// <p>Specifies up to 30 custom metadata field configurations for a managed knowledge base.</p>
+    /// <p>The list that you specify replaces the existing configurations. The update removes any configuration that you leave out, and its field is no longer searchable. An empty list removes all configurations. If you don't specify a list, the existing configurations don't change.</p>
+    pub fn get_metadata_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataConfiguration>> {
+        &self.metadata_configurations
+    }
     /// Consumes the builder and constructs a [`UpdateKnowledgeBaseInput`](crate::operation::update_knowledge_base::UpdateKnowledgeBaseInput).
     pub fn build(
         self,
@@ -161,6 +195,7 @@ impl UpdateKnowledgeBaseInputBuilder {
             role_arn: self.role_arn,
             knowledge_base_configuration: self.knowledge_base_configuration,
             storage_configuration: self.storage_configuration,
+            metadata_configurations: self.metadata_configurations,
         })
     }
 }

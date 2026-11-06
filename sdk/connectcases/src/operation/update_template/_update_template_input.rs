@@ -14,6 +14,7 @@ pub struct UpdateTemplateInput {
     /// <p>Configuration of layouts associated to the template.</p>
     pub layout_configuration: ::std::option::Option<crate::types::LayoutConfiguration>,
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
+    /// <p>To require a Customer Profile when creating cases, include <code>customer_id</code> in this list. If <code>customer_id</code> is omitted, the Customer Profile field is optional and can be added, changed, or removed after case creation.</p>
     pub required_fields: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>,
     /// <p>The status of the template.</p>
     pub status: ::std::option::Option<crate::types::TemplateStatus>,
@@ -44,6 +45,7 @@ impl UpdateTemplateInput {
         self.layout_configuration.as_ref()
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
+    /// <p>To require a Customer Profile when creating cases, include <code>customer_id</code> in this list. If <code>customer_id</code> is omitted, the Customer Profile field is optional and can be added, changed, or removed after case creation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.required_fields.is_none()`.
     pub fn required_fields(&self) -> &[crate::types::RequiredField] {
@@ -165,6 +167,7 @@ impl UpdateTemplateInputBuilder {
     /// To override the contents of this collection use [`set_required_fields`](Self::set_required_fields).
     ///
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
+    /// <p>To require a Customer Profile when creating cases, include <code>customer_id</code> in this list. If <code>customer_id</code> is omitted, the Customer Profile field is optional and can be added, changed, or removed after case creation.</p>
     pub fn required_fields(mut self, input: crate::types::RequiredField) -> Self {
         let mut v = self.required_fields.unwrap_or_default();
         v.push(input);
@@ -172,11 +175,13 @@ impl UpdateTemplateInputBuilder {
         self
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
+    /// <p>To require a Customer Profile when creating cases, include <code>customer_id</code> in this list. If <code>customer_id</code> is omitted, the Customer Profile field is optional and can be added, changed, or removed after case creation.</p>
     pub fn set_required_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>) -> Self {
         self.required_fields = input;
         self
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
+    /// <p>To require a Customer Profile when creating cases, include <code>customer_id</code> in this list. If <code>customer_id</code> is omitted, the Customer Profile field is optional and can be added, changed, or removed after case creation.</p>
     pub fn get_required_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequiredField>> {
         &self.required_fields
     }

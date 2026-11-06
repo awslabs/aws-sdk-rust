@@ -30,5 +30,11 @@ pub fn ser_user_defined_function_input(
         }
         array_7.finish();
     }
+    if let Some(var_10) = &input.artifact_location {
+        object.key("ArtifactLocation").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.governance_mode {
+        object.key("GovernanceMode").string(var_11.as_str());
+    }
     Ok(())
 }

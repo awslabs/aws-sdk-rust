@@ -287,6 +287,8 @@ mod delete_resource_data_sync;
 
 mod delete_resource_policy;
 
+mod deregister_default_host_management_configuration;
+
 mod deregister_managed_instance;
 
 mod deregister_patch_baseline_for_patch_group;
@@ -468,6 +470,8 @@ mod put_inventory;
 mod put_parameter;
 
 mod put_resource_policy;
+
+mod register_default_host_management_configuration;
 
 mod register_default_patch_baseline;
 

@@ -803,6 +803,8 @@ pub use crate::types::_assign_sla_action_definition::AssignSlaActionDefinitionBu
 
 pub use crate::types::_end_associated_tasks_action_definition::EndAssociatedTasksActionDefinitionBuilder;
 
+pub use crate::types::_end_associated_emails_action_definition::EndAssociatedEmailsActionDefinitionBuilder;
+
 pub use crate::types::_submit_auto_evaluation_action_definition::SubmitAutoEvaluationActionDefinitionBuilder;
 
 pub use crate::types::_extract_information_action_definition::ExtractInformationActionDefinitionBuilder;

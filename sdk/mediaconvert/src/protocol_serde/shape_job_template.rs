@@ -54,6 +54,15 @@ where
                                         .transpose()?,
                                 );
                             }
+                            "elementalInferenceSettings" => {
+                                builder = builder.set_elemental_inference_settings(
+                                    crate::protocol_serde::shape_elemental_inference_settings::de_elemental_inference_settings(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
                             "hopDestinations" => {
                                 builder = builder.set_hop_destinations(
                                     crate::protocol_serde::shape_list_of_hop_destination::de_list_of_hop_destination(tokens, _value, depth + 1)?,

@@ -52,7 +52,7 @@ impl ::std::fmt::Debug for AccessKey {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AccessKey");
         formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
-        formatter.field("secret_access_key", &self.secret_access_key);
+        formatter.field("secret_access_key", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_used", &self.last_used);
@@ -317,7 +317,7 @@ impl ::std::fmt::Debug for AccessKeyBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AccessKeyBuilder");
         formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
-        formatter.field("secret_access_key", &self.secret_access_key);
+        formatter.field("secret_access_key", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_used", &self.last_used);

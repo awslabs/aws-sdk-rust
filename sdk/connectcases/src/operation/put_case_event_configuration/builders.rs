@@ -22,7 +22,7 @@ impl crate::operation::put_case_event_configuration::builders::PutCaseEventConfi
 }
 /// Fluent builder constructing a request to `PutCaseEventConfiguration`.
 ///
-/// <p>Adds case event publishing configuration. For a complete list of fields you can add to the event message, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html">Create case fields</a> in the <i>Amazon Connect Administrator Guide</i></p>
+/// <p>Adds case event publishing configuration. For a complete list of fields you can add to the event message, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html">Create case fields</a> in the <i>Connect Customer Administrator Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutCaseEventConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

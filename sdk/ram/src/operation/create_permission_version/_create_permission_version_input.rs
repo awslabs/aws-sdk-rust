@@ -16,6 +16,8 @@ pub struct CreatePermissionVersionInput {
     /// </ul>
     /// <p>This template can't include either the <code>Resource</code> or <code>Principal</code> elements. Those are both filled in by RAM when it instantiates the resource-based policy on each resource shared using this managed permission. The <code>Resource</code> comes from the ARN of the specific resource that you are sharing. The <code>Principal</code> comes from the list of identities added to the resource share.</p>
     pub policy_template: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies a list of template parameter declarations for this version of the permission. Each declaration defines a named placeholder that can be used in the policy template. Because each version is independent, you can define the same or a different set of template parameters for each version.</p>
+    pub permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterDeclaration>>,
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
@@ -39,6 +41,12 @@ impl CreatePermissionVersionInput {
     pub fn policy_template(&self) -> ::std::option::Option<&str> {
         self.policy_template.as_deref()
     }
+    /// <p>Specifies a list of template parameter declarations for this version of the permission. Each declaration defines a named placeholder that can be used in the policy template. Because each version is independent, you can define the same or a different set of template parameters for each version.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permission_template_parameters.is_none()`.
+    pub fn permission_template_parameters(&self) -> &[crate::types::PermissionTemplateParameterDeclaration] {
+        self.permission_template_parameters.as_deref().unwrap_or_default()
+    }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
@@ -59,6 +67,7 @@ impl CreatePermissionVersionInput {
 pub struct CreatePermissionVersionInputBuilder {
     pub(crate) permission_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy_template: ::std::option::Option<::std::string::String>,
+    pub(crate) permission_template_parameters: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterDeclaration>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreatePermissionVersionInputBuilder {
@@ -119,6 +128,31 @@ impl CreatePermissionVersionInputBuilder {
     pub fn get_policy_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_template
     }
+    /// Appends an item to `permission_template_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_permission_template_parameters`](Self::set_permission_template_parameters).
+    ///
+    /// <p>Specifies a list of template parameter declarations for this version of the permission. Each declaration defines a named placeholder that can be used in the policy template. Because each version is independent, you can define the same or a different set of template parameters for each version.</p>
+    pub fn permission_template_parameters(mut self, input: crate::types::PermissionTemplateParameterDeclaration) -> Self {
+        let mut v = self.permission_template_parameters.unwrap_or_default();
+        v.push(input);
+        self.permission_template_parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies a list of template parameter declarations for this version of the permission. Each declaration defines a named placeholder that can be used in the policy template. Because each version is independent, you can define the same or a different set of template parameters for each version.</p>
+    pub fn set_permission_template_parameters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterDeclaration>>,
+    ) -> Self {
+        self.permission_template_parameters = input;
+        self
+    }
+    /// <p>Specifies a list of template parameter declarations for this version of the permission. Each declaration defines a named placeholder that can be used in the policy template. Because each version is independent, you can define the same or a different set of template parameters for each version.</p>
+    pub fn get_permission_template_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionTemplateParameterDeclaration>> {
+        &self.permission_template_parameters
+    }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
@@ -149,6 +183,7 @@ impl CreatePermissionVersionInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_permission_version::CreatePermissionVersionInput {
             permission_arn: self.permission_arn,
             policy_template: self.policy_template,
+            permission_template_parameters: self.permission_template_parameters,
             client_token: self.client_token,
         })
     }

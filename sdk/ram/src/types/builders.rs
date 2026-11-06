@@ -13,7 +13,13 @@ pub use crate::types::_replace_permission_associations_work::ReplacePermissionAs
 
 pub use crate::types::_resource_share_association::ResourceShareAssociationBuilder;
 
+pub use crate::types::_permission_template_parameter_input::PermissionTemplateParameterInputBuilder;
+
+pub use crate::types::_permission_template_parameter_declaration::PermissionTemplateParameterDeclarationBuilder;
+
 pub use crate::types::_tag::TagBuilder;
+
+pub use crate::types::_permission_arn_and_template_parameters::PermissionArnAndTemplateParametersBuilder;
 
 pub use crate::types::_tag_filter::TagFilterBuilder;
 
@@ -26,3 +32,5 @@ pub use crate::types::_principal::PrincipalBuilder;
 pub use crate::types::_service_name_and_resource_type::ServiceNameAndResourceTypeBuilder;
 
 pub use crate::types::_associated_source::AssociatedSourceBuilder;
+
+pub use crate::types::_permission_template_parameter::PermissionTemplateParameterBuilder;

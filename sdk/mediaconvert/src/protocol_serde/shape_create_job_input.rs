@@ -15,67 +15,73 @@ pub fn ser_create_job_input_input(
     if let Some(var_4) = &input.client_request_token {
         object.key("clientRequestToken").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.hop_destinations {
-        let mut array_6 = object.key("hopDestinations").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.elemental_inference_settings {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("elementalInferenceSettings").start_object();
+        crate::protocol_serde::shape_elemental_inference_settings::ser_elemental_inference_settings(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.hop_destinations {
+        let mut array_8 = object.key("hopDestinations").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_hop_destination::ser_hop_destination(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_hop_destination::ser_hop_destination(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_6.finish();
+        array_8.finish();
     }
-    if let Some(var_9) = &input.job_engine_version {
-        object.key("jobEngineVersion").string(var_9.as_str());
+    if let Some(var_11) = &input.job_engine_version {
+        object.key("jobEngineVersion").string(var_11.as_str());
     }
-    if let Some(var_10) = &input.job_template {
-        object.key("jobTemplate").string(var_10.as_str());
+    if let Some(var_12) = &input.job_template {
+        object.key("jobTemplate").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.priority {
+    if let Some(var_13) = &input.priority {
         object.key("priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_12) = &input.queue {
-        object.key("queue").string(var_12.as_str());
+    if let Some(var_14) = &input.queue {
+        object.key("queue").string(var_14.as_str());
     }
-    if let Some(var_13) = &input.role {
-        object.key("role").string(var_13.as_str());
+    if let Some(var_15) = &input.role {
+        object.key("role").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.settings {
+    if let Some(var_16) = &input.settings {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("settings").start_object();
-        crate::protocol_serde::shape_job_settings::ser_job_settings(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_17 = object.key("settings").start_object();
+        crate::protocol_serde::shape_job_settings::ser_job_settings(&mut object_17, var_16)?;
+        object_17.finish();
     }
-    if let Some(var_16) = &input.simulate_reserved_queue {
-        object.key("simulateReservedQueue").string(var_16.as_str());
+    if let Some(var_18) = &input.simulate_reserved_queue {
+        object.key("simulateReservedQueue").string(var_18.as_str());
     }
-    if let Some(var_17) = &input.status_update_interval {
-        object.key("statusUpdateInterval").string(var_17.as_str());
+    if let Some(var_19) = &input.status_update_interval {
+        object.key("statusUpdateInterval").string(var_19.as_str());
     }
-    if let Some(var_18) = &input.tags {
+    if let Some(var_20) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("tags").start_object();
-        for (key_20, value_21) in var_18 {
+        let mut object_21 = object.key("tags").start_object();
+        for (key_22, value_23) in var_20 {
             {
-                object_19.key(key_20.as_str()).string(value_21.as_str());
+                object_21.key(key_22.as_str()).string(value_23.as_str());
             }
         }
-        object_19.finish();
+        object_21.finish();
     }
-    if let Some(var_22) = &input.user_metadata {
+    if let Some(var_24) = &input.user_metadata {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("userMetadata").start_object();
-        for (key_24, value_25) in var_22 {
+        let mut object_25 = object.key("userMetadata").start_object();
+        for (key_26, value_27) in var_24 {
             {
-                object_23.key(key_24.as_str()).string(value_25.as_str());
+                object_25.key(key_26.as_str()).string(value_27.as_str());
             }
         }
-        object_23.finish();
+        object_25.finish();
     }
     Ok(())
 }

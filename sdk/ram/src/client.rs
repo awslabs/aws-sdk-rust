@@ -231,4 +231,6 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_permission;
+
 mod update_resource_share;

@@ -3,23 +3,35 @@ pub fn ser_caption_description(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CaptionDescription,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.caption_selector_name {
-        object.key("captionSelectorName").string(var_1.as_str());
+    if let Some(var_1) = &input.audio_source_names {
+        let mut array_2 = object.key("audioSourceNames").start_array();
+        for item_3 in var_1 {
+            {
+                array_2.value().string(item_3.as_str());
+            }
+        }
+        array_2.finish();
     }
-    if let Some(var_2) = &input.custom_language_code {
-        object.key("customLanguageCode").string(var_2.as_str());
+    if let Some(var_4) = &input.caption_selector_name {
+        object.key("captionSelectorName").string(var_4.as_str());
     }
-    if let Some(var_3) = &input.destination_settings {
+    if let Some(var_5) = &input.custom_language_code {
+        object.key("customLanguageCode").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.destination_settings {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("destinationSettings").start_object();
-        crate::protocol_serde::shape_caption_destination_settings::ser_caption_destination_settings(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_7 = object.key("destinationSettings").start_object();
+        crate::protocol_serde::shape_caption_destination_settings::ser_caption_destination_settings(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_5) = &input.language_code {
-        object.key("languageCode").string(var_5.as_str());
+    if let Some(var_8) = &input.language_code {
+        object.key("languageCode").string(var_8.as_str());
     }
-    if let Some(var_6) = &input.language_description {
-        object.key("languageDescription").string(var_6.as_str());
+    if let Some(var_9) = &input.language_description {
+        object.key("languageDescription").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.source {
+        object.key("source").string(var_10.as_str());
     }
     Ok(())
 }
@@ -46,6 +58,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "audioSourceNames" => {
+                            builder = builder.set_audio_source_names(crate::protocol_serde::shape_list_of_string_min1::de_list_of_string_min1(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "captionSelectorName" => {
                             builder = builder.set_caption_selector_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -80,6 +99,13 @@ where
                             builder = builder.set_language_description(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "source" => {
+                            builder = builder.set_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CaptionSource::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }
