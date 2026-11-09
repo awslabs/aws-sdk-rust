@@ -61,6 +61,13 @@ impl Default for DefaultAuthSchemeResolver {
                 .expect("required fields set")],
             operation_overrides: [
                 (
+                    "CreateBearerToken",
+                    vec![::aws_smithy_runtime_api::client::auth::AuthSchemeOption::builder()
+                        .scheme_id(::aws_runtime::auth::sigv4::SCHEME_ID)
+                        .build()
+                        .expect("required fields set")],
+                ),
+                (
                     "CreateOAuth2Token",
                     vec![::aws_smithy_runtime_api::client::auth::AuthSchemeOption::from(
                         ::aws_smithy_runtime::client::auth::no_auth::NO_AUTH_SCHEME_ID,

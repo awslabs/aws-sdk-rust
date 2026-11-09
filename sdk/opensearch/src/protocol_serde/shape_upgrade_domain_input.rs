@@ -13,14 +13,20 @@ pub fn ser_upgrade_domain_input_input(
         }
         object_2.finish();
     }
-    if let Some(var_5) = &input.domain_name {
-        object.key("DomainName").string(var_5.as_str());
+    if let Some(var_5) = &input.deployment_strategy_options {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("DeploymentStrategyOptions").start_object();
+        crate::protocol_serde::shape_deployment_strategy_override_options::ser_deployment_strategy_override_options(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.perform_check_only {
-        object.key("PerformCheckOnly").boolean(*var_6);
+    if let Some(var_7) = &input.domain_name {
+        object.key("DomainName").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.target_version {
-        object.key("TargetVersion").string(var_7.as_str());
+    if let Some(var_8) = &input.perform_check_only {
+        object.key("PerformCheckOnly").boolean(*var_8);
+    }
+    if let Some(var_9) = &input.target_version {
+        object.key("TargetVersion").string(var_9.as_str());
     }
     Ok(())
 }

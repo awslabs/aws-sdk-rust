@@ -22,7 +22,7 @@ impl crate::operation::get_designation::builders::GetDesignationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDesignation`.
 ///
-/// Gets the details of a designation, including its Cedar policy.
+/// <p>Gets the details of a designation, including its Cedar permit policy. Returns the full designation record for both system-managed and user-created designations.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDesignationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

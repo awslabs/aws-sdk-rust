@@ -239,4 +239,23 @@ impl CreatePipelineFluentBuilder {
     pub fn get_parallelism_configuration(&self) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
         self.inner.get_parallelism_configuration()
     }
+    ///
+    /// Appends an item to `PipelineVersionAliases`.
+    ///
+    /// To override the contents of this collection use [`set_pipeline_version_aliases`](Self::set_pipeline_version_aliases).
+    ///
+    /// <p>The aliases to assign to the first version of the pipeline. You can use an alias instead of a pipeline version ID to start an execution, describe the pipeline, or list its executions. Each alias can contain 1-128 letters, numbers, periods (.), hyphens (-), and underscores (_), and can't consist of numbers only. An alias must be unique within the pipeline, and a version can have up to 10 aliases.</p>
+    pub fn pipeline_version_aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.pipeline_version_aliases(input.into());
+        self
+    }
+    /// <p>The aliases to assign to the first version of the pipeline. You can use an alias instead of a pipeline version ID to start an execution, describe the pipeline, or list its executions. Each alias can contain 1-128 letters, numbers, periods (.), hyphens (-), and underscores (_), and can't consist of numbers only. An alias must be unique within the pipeline, and a version can have up to 10 aliases.</p>
+    pub fn set_pipeline_version_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_pipeline_version_aliases(input);
+        self
+    }
+    /// <p>The aliases to assign to the first version of the pipeline. You can use an alias instead of a pipeline version ID to start an execution, describe the pipeline, or list its executions. Each alias can contain 1-128 letters, numbers, periods (.), hyphens (-), and underscores (_), and can't consist of numbers only. An alias must be unique within the pipeline, and a version can have up to 10 aliases.</p>
+    pub fn get_pipeline_version_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_pipeline_version_aliases()
+    }
 }

@@ -455,6 +455,15 @@ pub(crate) fn custom_entity_type_correct_errors(
     builder
 }
 
+pub(crate) fn data_quality_evaluation_config_glue_tables_correct_errors(
+    mut builder: crate::types::builders::DataQualityEvaluationConfigGlueTablesBuilder,
+) -> crate::types::builders::DataQualityEvaluationConfigGlueTablesBuilder {
+    if builder.catalog_id.is_none() {
+        builder.catalog_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn data_quality_glue_table_correct_errors(
     mut builder: crate::types::builders::DataQualityGlueTableBuilder,
 ) -> crate::types::builders::DataQualityGlueTableBuilder {
@@ -987,6 +996,15 @@ pub(crate) fn custom_code_correct_errors(mut builder: crate::types::builders::Cu
     }
     if builder.class_name.is_none() {
         builder.class_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_quality_evaluation_config_list_glue_tables_correct_errors(
+    mut builder: crate::types::builders::DataQualityEvaluationConfigListGlueTablesBuilder,
+) -> crate::types::builders::DataQualityEvaluationConfigListGlueTablesBuilder {
+    if builder.catalog_id.is_none() {
+        builder.catalog_id = Some(Default::default())
     }
     builder
 }

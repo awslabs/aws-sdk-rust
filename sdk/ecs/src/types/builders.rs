@@ -69,6 +69,8 @@ pub use crate::types::_ephemeral_storage::EphemeralStorageBuilder;
 
 pub use crate::types::_runtime_platform::RuntimePlatformBuilder;
 
+pub use crate::types::_trusted_execution_configuration::TrustedExecutionConfigurationBuilder;
+
 pub use crate::types::_task_override::TaskOverrideBuilder;
 
 pub use crate::types::_task::TaskBuilder;
@@ -202,6 +204,8 @@ pub use crate::types::_protected_task::ProtectedTaskBuilder;
 pub use crate::types::_task_volume_configuration::TaskVolumeConfigurationBuilder;
 
 pub use crate::types::_task_ephemeral_storage::TaskEphemeralStorageBuilder;
+
+pub use crate::types::_trusted_execution_summary::TrustedExecutionSummaryBuilder;
 
 pub use crate::types::_managed_instances_network_configuration::ManagedInstancesNetworkConfigurationBuilder;
 

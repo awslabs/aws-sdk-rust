@@ -175,6 +175,15 @@ pub(crate) fn de_upgrade_elasticsearch_domain(
                             crate::protocol_serde::shape_change_progress_details::de_change_progress_details(tokens, _value, depth + 1)?,
                         );
                     }
+                    "DeploymentStrategyOptions" => {
+                        builder = builder.set_deployment_strategy_options(
+                            crate::protocol_serde::shape_deployment_strategy_override_options::de_deployment_strategy_override_options(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?,
+                        );
+                    }
                     "DomainName" => {
                         builder = builder.set_domain_name(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

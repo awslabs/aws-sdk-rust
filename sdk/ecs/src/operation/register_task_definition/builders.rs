@@ -568,8 +568,6 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <ul>
     /// <li>
     /// <p>Linux platform version <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>Windows platform version <code>1.0.0</code> or later.</p></li>
     /// </ul>
     /// </note>
     pub fn ephemeral_storage(mut self, input: crate::types::EphemeralStorage) -> Self {
@@ -581,8 +579,6 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <ul>
     /// <li>
     /// <p>Linux platform version <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>Windows platform version <code>1.0.0</code> or later.</p></li>
     /// </ul>
     /// </note>
     pub fn set_ephemeral_storage(mut self, input: ::std::option::Option<crate::types::EphemeralStorage>) -> Self {
@@ -594,8 +590,6 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <ul>
     /// <li>
     /// <p>Linux platform version <code>1.4.0</code> or later.</p></li>
-    /// <li>
-    /// <p>Windows platform version <code>1.0.0</code> or later.</p></li>
     /// </ul>
     /// </note>
     pub fn get_ephemeral_storage(&self) -> &::std::option::Option<crate::types::EphemeralStorage> {
@@ -628,5 +622,25 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <p>Enables fault injection when you register your task definition and allows for fault injection requests to be accepted from the task's containers. The default value is <code>false</code>.</p>
     pub fn get_enable_fault_injection(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_fault_injection()
+    }
+    /// <p>The trusted execution configuration for tasks that use this task definition, including the isolation mode and, if configured, an attestation policy.</p><note>
+    /// <p>Trusted execution is supported only for Amazon ECS Managed Instances.</p>
+    /// </note>
+    pub fn trusted_execution_configuration(mut self, input: crate::types::TrustedExecutionConfiguration) -> Self {
+        self.inner = self.inner.trusted_execution_configuration(input);
+        self
+    }
+    /// <p>The trusted execution configuration for tasks that use this task definition, including the isolation mode and, if configured, an attestation policy.</p><note>
+    /// <p>Trusted execution is supported only for Amazon ECS Managed Instances.</p>
+    /// </note>
+    pub fn set_trusted_execution_configuration(mut self, input: ::std::option::Option<crate::types::TrustedExecutionConfiguration>) -> Self {
+        self.inner = self.inner.set_trusted_execution_configuration(input);
+        self
+    }
+    /// <p>The trusted execution configuration for tasks that use this task definition, including the isolation mode and, if configured, an attestation policy.</p><note>
+    /// <p>Trusted execution is supported only for Amazon ECS Managed Instances.</p>
+    /// </note>
+    pub fn get_trusted_execution_configuration(&self) -> &::std::option::Option<crate::types::TrustedExecutionConfiguration> {
+        self.inner.get_trusted_execution_configuration()
     }
 }

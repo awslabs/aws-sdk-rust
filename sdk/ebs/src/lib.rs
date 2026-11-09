@@ -39,7 +39,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-ebs = "1.119.0"
+//! aws-sdk-ebs = "1.120.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -214,6 +214,8 @@ mod serialization_settings;
 mod endpoint_lib;
 
 mod lens;
+
+pub(crate) mod schema_serde;
 
 #[doc(inline)]
 pub use client::Client;

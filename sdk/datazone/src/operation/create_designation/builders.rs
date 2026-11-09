@@ -22,7 +22,7 @@ impl crate::operation::create_designation::builders::CreateDesignationInputBuild
 }
 /// Fluent builder constructing a request to `CreateDesignation`.
 ///
-/// Creates a new user-defined designation with a Cedar permit policy. The designation defines a named role that can be assigned to project members.
+/// <p>Creates a new user-defined designation with a Cedar permit policy. The designation defines a named role that can be assigned to project members through <code>CreateProjectMembership</code> or granted through <code>AddPolicyGrant</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDesignationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -150,31 +150,31 @@ impl CreateDesignationFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// The Cedar permit policy that defines what actions holders of this designation are allowed to perform.
+    /// <p>The Cedar permit policy that defines the actions holders of this designation are allowed to perform.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy(input.into());
         self
     }
-    /// The Cedar permit policy that defines what actions holders of this designation are allowed to perform.
+    /// <p>The Cedar permit policy that defines the actions holders of this designation are allowed to perform.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
     }
-    /// The Cedar permit policy that defines what actions holders of this designation are allowed to perform.
+    /// <p>The Cedar permit policy that defines the actions holders of this designation are allowed to perform.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy()
     }
-    /// Whether deletion protection is enabled for this designation. Defaults to true when omitted.
+    /// <p>Specifies whether deletion protection is enabled for this designation. Defaults to <code>true</code> when omitted. When enabled, <code>DeleteDesignation</code> is rejected until protection is disabled through <code>UpdateDesignation</code>.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protection(input);
         self
     }
-    /// Whether deletion protection is enabled for this designation. Defaults to true when omitted.
+    /// <p>Specifies whether deletion protection is enabled for this designation. Defaults to <code>true</code> when omitted. When enabled, <code>DeleteDesignation</code> is rejected until protection is disabled through <code>UpdateDesignation</code>.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection(input);
         self
     }
-    /// Whether deletion protection is enabled for this designation. Defaults to true when omitted.
+    /// <p>Specifies whether deletion protection is enabled for this designation. Defaults to <code>true</code> when omitted. When enabled, <code>DeleteDesignation</code> is rejected until protection is disabled through <code>UpdateDesignation</code>.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection()
     }

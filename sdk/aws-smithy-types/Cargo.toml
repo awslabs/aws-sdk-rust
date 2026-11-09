@@ -1,6 +1,6 @@
 [package]
 name = "aws-smithy-types"
-version = "1.9.1"
+version = "1.9.3"
 authors = [
     "AWS Rust SDK Team <aws-sdk-rust@amazon.com>",
     "Russell Cohen <rcoh@amazon.com>",
@@ -41,7 +41,6 @@ http-body-1-0 = { package = "http-body", version = "1.0.1", optional = true }
 http-body-util = { version = "0.1.3", optional = true }
 hyper-0-14 = { package = "hyper", version = "0.14.26", optional = true }
 itoa = "1.0.17"
-num-integer = "0.1.46"
 pin-project-lite = "0.2.14"
 ryu = "1.0.22"
 time = { version = "0.3.4", features = ["parsing"] }
@@ -70,7 +69,7 @@ tokio = { version = "1.49.0", features = [
 tokio-stream = "0.1.5"
 tempfile = "3.16.0"
 
-criterion = "0.8.2"
+criterion = { version = "0.8.2", features = ["async_tokio"] }
 
 [package.metadata.docs.rs]
 all-features = true
@@ -88,6 +87,11 @@ stable = true
 [[bench]]
 name = "base64"
 harness = false
+
+[[bench]]
+name = "bytestream_from_file"
+harness = false
+required-features = ["rt-tokio"]
 
 [target."cfg(aws_sdk_unstable)".dependencies.serde]
 version = "1.0.229"

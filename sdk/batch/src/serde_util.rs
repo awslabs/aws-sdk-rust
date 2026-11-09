@@ -761,6 +761,15 @@ pub(crate) fn eks_container_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn eks_seccomp_profile_correct_errors(
+    mut builder: crate::types::builders::EksSeccompProfileBuilder,
+) -> crate::types::builders::EksSeccompProfileBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::EksSeccompProfileType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn eks_volume_correct_errors(mut builder: crate::types::builders::EksVolumeBuilder) -> crate::types::builders::EksVolumeBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())

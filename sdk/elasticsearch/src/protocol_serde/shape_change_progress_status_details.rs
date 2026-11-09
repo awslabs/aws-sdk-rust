@@ -84,6 +84,15 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ClonedBlueGreenUpgradeDetails" => {
+                            builder = builder.set_cloned_blue_green_upgrade_details(
+                                crate::protocol_serde::shape_cloned_blue_green_upgrade_details::de_cloned_blue_green_upgrade_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

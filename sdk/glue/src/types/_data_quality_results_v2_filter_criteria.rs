@@ -15,6 +15,10 @@ pub struct DataQualityResultsV2FilterCriteria {
     pub dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The evaluation context to filter results by.</p>
     pub evaluation_context: ::std::option::Option<::std::string::String>,
+    /// <p>Filter results by how their evaluation run started: <code>ON_DEMAND</code> or <code>EVALUATION_CONFIG</code>. Results that no evaluation run produced match neither value.</p>
+    pub evaluation_run_mode: ::std::option::Option<crate::types::DataQualityEvaluationRunMode>,
+    /// <p>Filter results by the evaluation configuration name which started the evaluation run.</p>
+    pub data_quality_evaluation_config: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityResultsV2FilterCriteria {
     /// <p>The data source used to filter the results. For example, you can retrieve all results for an Glue table. <code>DatabaseName</code> and <code>TableName</code> are required. If you omit <code>CatalogId</code>, the catalog of the calling account is used.</p>
@@ -38,6 +42,14 @@ impl DataQualityResultsV2FilterCriteria {
     pub fn evaluation_context(&self) -> ::std::option::Option<&str> {
         self.evaluation_context.as_deref()
     }
+    /// <p>Filter results by how their evaluation run started: <code>ON_DEMAND</code> or <code>EVALUATION_CONFIG</code>. Results that no evaluation run produced match neither value.</p>
+    pub fn evaluation_run_mode(&self) -> ::std::option::Option<&crate::types::DataQualityEvaluationRunMode> {
+        self.evaluation_run_mode.as_ref()
+    }
+    /// <p>Filter results by the evaluation configuration name which started the evaluation run.</p>
+    pub fn data_quality_evaluation_config(&self) -> ::std::option::Option<&str> {
+        self.data_quality_evaluation_config.as_deref()
+    }
 }
 impl DataQualityResultsV2FilterCriteria {
     /// Creates a new builder-style object to manufacture [`DataQualityResultsV2FilterCriteria`](crate::types::DataQualityResultsV2FilterCriteria).
@@ -55,6 +67,8 @@ pub struct DataQualityResultsV2FilterCriteriaBuilder {
     pub(crate) published_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) evaluation_context: ::std::option::Option<::std::string::String>,
+    pub(crate) evaluation_run_mode: ::std::option::Option<crate::types::DataQualityEvaluationRunMode>,
+    pub(crate) data_quality_evaluation_config: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityResultsV2FilterCriteriaBuilder {
     /// <p>The data source used to filter the results. For example, you can retrieve all results for an Glue table. <code>DatabaseName</code> and <code>TableName</code> are required. If you omit <code>CatalogId</code>, the catalog of the calling account is used.</p>
@@ -136,6 +150,34 @@ impl DataQualityResultsV2FilterCriteriaBuilder {
     pub fn get_evaluation_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluation_context
     }
+    /// <p>Filter results by how their evaluation run started: <code>ON_DEMAND</code> or <code>EVALUATION_CONFIG</code>. Results that no evaluation run produced match neither value.</p>
+    pub fn evaluation_run_mode(mut self, input: crate::types::DataQualityEvaluationRunMode) -> Self {
+        self.evaluation_run_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filter results by how their evaluation run started: <code>ON_DEMAND</code> or <code>EVALUATION_CONFIG</code>. Results that no evaluation run produced match neither value.</p>
+    pub fn set_evaluation_run_mode(mut self, input: ::std::option::Option<crate::types::DataQualityEvaluationRunMode>) -> Self {
+        self.evaluation_run_mode = input;
+        self
+    }
+    /// <p>Filter results by how their evaluation run started: <code>ON_DEMAND</code> or <code>EVALUATION_CONFIG</code>. Results that no evaluation run produced match neither value.</p>
+    pub fn get_evaluation_run_mode(&self) -> &::std::option::Option<crate::types::DataQualityEvaluationRunMode> {
+        &self.evaluation_run_mode
+    }
+    /// <p>Filter results by the evaluation configuration name which started the evaluation run.</p>
+    pub fn data_quality_evaluation_config(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_quality_evaluation_config = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Filter results by the evaluation configuration name which started the evaluation run.</p>
+    pub fn set_data_quality_evaluation_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_quality_evaluation_config = input;
+        self
+    }
+    /// <p>Filter results by the evaluation configuration name which started the evaluation run.</p>
+    pub fn get_data_quality_evaluation_config(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_quality_evaluation_config
+    }
     /// Consumes the builder and constructs a [`DataQualityResultsV2FilterCriteria`](crate::types::DataQualityResultsV2FilterCriteria).
     pub fn build(self) -> crate::types::DataQualityResultsV2FilterCriteria {
         crate::types::DataQualityResultsV2FilterCriteria {
@@ -144,6 +186,8 @@ impl DataQualityResultsV2FilterCriteriaBuilder {
             published_before: self.published_before,
             dimensions: self.dimensions,
             evaluation_context: self.evaluation_context,
+            evaluation_run_mode: self.evaluation_run_mode,
+            data_quality_evaluation_config: self.data_quality_evaluation_config,
         }
     }
 }

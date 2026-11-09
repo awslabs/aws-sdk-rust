@@ -84,6 +84,15 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ClonedBlueGreenUpgradeDetails" => {
+                            builder = builder.set_cloned_blue_green_upgrade_details(
+                                crate::protocol_serde::shape_cloned_blue_green_upgrade_details::de_cloned_blue_green_upgrade_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "ValidationFailures" => {
                             builder = builder.set_validation_failures(crate::protocol_serde::shape_validation_failures::de_validation_failures(
                                 tokens,

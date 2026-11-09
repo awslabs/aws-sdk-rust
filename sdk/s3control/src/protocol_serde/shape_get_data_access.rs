@@ -92,14 +92,27 @@ pub fn de_get_data_access(
                 builder = builder.set_grantee(var_4);
             }
             ,
-            s if s.matches("Credentials") /* Credentials com.amazonaws.s3control.synthetic#GetDataAccessOutput$Credentials */ =>  {
+            s if s.matches("MatchedInstanceArn") /* MatchedInstanceArn com.amazonaws.s3control.synthetic#GetDataAccessOutput$MatchedInstanceArn */ =>  {
                 let var_5 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_matched_instance_arn(var_5);
+            }
+            ,
+            s if s.matches("Credentials") /* Credentials com.amazonaws.s3control.synthetic#GetDataAccessOutput$Credentials */ =>  {
+                let var_6 =
                     Some(
                         crate::protocol_serde::shape_credentials::de_credentials(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_credentials(var_5);
+                builder = builder.set_credentials(var_6);
             }
             ,
             _ => {}

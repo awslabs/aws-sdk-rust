@@ -20,9 +20,8 @@ use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::Number;
 use p256::ecdsa::signature::RandomizedSigner;
 use p256::ecdsa::{Signature, SigningKey};
-use p256::elliptic_curve::sec1::ToEncodedPoint;
+use p256::elliptic_curve::sec1::ToSec1Point;
 use p256::SecretKey;
-use rand::SeedableRng;
 use std::sync::{Arc, LazyLock};
 use std::time::SystemTime;
 
@@ -69,7 +68,7 @@ impl Payload {
 
 fn header(private_key: &SecretKey) -> Result<Header, LoginTokenError> {
     let public_key = private_key.public_key();
-    let point = public_key.to_encoded_point(false);
+    let point = public_key.to_sec1_point(false);
 
     let x_bytes = point
         .x()
@@ -103,7 +102,7 @@ fn build_message(header: &Header, payload: &Payload) -> String {
 
 fn sign(message: &str, private_key: &SecretKey) -> Result<String, LoginTokenError> {
     let signing_key = SigningKey::from(private_key);
-    let mut rng = rand::rngs::StdRng::from_entropy();
+    let mut rng: rand::rngs::StdRng = rand::make_rng();
     let signature: Signature = signing_key.sign_with_rng(&mut rng, message.as_bytes());
     let signature_b64 = base64_simd::URL_SAFE_NO_PAD.encode_to_string(signature.to_bytes());
     Ok(format!("{message}.{signature_b64}"))
@@ -252,6 +251,63 @@ impl Sign for DPoPSigner {
 struct DPoPPrivateKey(Arc<SecretKey>);
 
 #[cfg(test)]
+pub(super) mod test_util {
+    use p256::ecdsa::signature::hazmat::PrehashVerifier;
+    use p256::ecdsa::{Signature, VerifyingKey};
+    use serde_json::Value;
+    use sha2::{Digest, Sha256};
+
+    pub(in crate::login) fn decode(part: &str) -> Vec<u8> {
+        base64_simd::URL_SAFE_NO_PAD
+            .decode_to_vec(part)
+            .expect("DPoP proof parts are unpadded base64url")
+    }
+
+    /// Checks an ES256 signature over `signing_input` against the `jwk` in a proof header. The
+    /// SHA-256 digest is computed here rather than by `p256`, so the check pins the hash ES256 uses.
+    pub(in crate::login) fn verify_signature(
+        header: &Value,
+        signing_input: &[u8],
+        signature: &[u8],
+    ) -> Result<(), p256::ecdsa::Error> {
+        let mut public_key = vec![0x04]; // SEC1 uncompressed point
+        public_key.extend(decode(header["jwk"]["x"].as_str().expect("jwk.x")));
+        public_key.extend(decode(header["jwk"]["y"].as_str().expect("jwk.y")));
+        VerifyingKey::from_sec1_bytes(&public_key)?.verify_prehash(
+            &Sha256::digest(signing_input),
+            &Signature::from_slice(signature)?,
+        )
+    }
+
+    /// Checks everything about a DPoP proof that a server checks without the request (RFC 9449
+    /// section 4.3), and returns its decoded header and payload.
+    pub(in crate::login) fn verify_proof(proof: &str) -> (Value, Value) {
+        let (signing_input, signature) = proof.rsplit_once('.').expect("JWS has three parts");
+        let (header, payload) = signing_input.split_once('.').expect("JWS has three parts");
+        let header: Value = serde_json::from_slice(&decode(header)).expect("header is JSON");
+        let payload: Value = serde_json::from_slice(&decode(payload)).expect("payload is JSON");
+        assert_eq!("dpop+jwt", header["typ"]);
+        assert_eq!("ES256", header["alg"]);
+        assert!(
+            header["jwk"].get("d").is_none(),
+            "jwk leaks the private key"
+        );
+        assert_eq!("POST", payload["htm"]);
+        assert!(payload["jti"].is_string(), "jti is required");
+        assert!(payload["iat"].is_u64(), "iat is required");
+        let signature = decode(signature);
+        assert_eq!(
+            64,
+            signature.len(),
+            "ES256 signatures are R || S (RFC 7518 section 3.4), not DER"
+        );
+        verify_signature(&header, signing_input.as_bytes(), &signature)
+            .expect("proof verifies against the key in its header");
+        (header, payload)
+    }
+}
+
+#[cfg(test)]
 mod tests {
     use super::*;
     use std::time::Duration;
@@ -312,6 +368,117 @@ mod tests {
         let dpop = result.unwrap();
         let parts: Vec<&str> = dpop.split('.').collect();
         assert_eq!(parts.len(), 3);
+    }
+
+    #[test]
+    fn test_calculate_produces_verifiable_es256_proof() {
+        let endpoint = "https://us-east-1.signin.aws.amazon.com/v1/token";
+        let now = SystemTime::UNIX_EPOCH + Duration::from_secs(1651516560);
+        let private_key = SecretKey::from_sec1_pem(TEST_KEY).unwrap();
+
+        let proof = calculate(&private_key, endpoint, now).unwrap();
+        let (header, payload) = test_util::verify_proof(&proof);
+
+        // Coordinates come from `openssl ec -pubout`, not from `p256`
+        assert_eq!(
+            serde_json::json!({
+                "typ": "dpop+jwt",
+                "alg": "ES256",
+                "jwk": {
+                    "kty": "EC",
+                    "crv": "P-256",
+                    "x": "Wb1VLi1EA2hJaTz4yYuxSELvY-1GAfL-8rUTCAdiFic",
+                    "y": "fOwX-hmPrNvtUaag79EaWYgyDAq2a7AIfkSvUt0Amhg",
+                },
+            }),
+            header
+        );
+        let jti = payload["jti"].as_str().expect("jti is a string");
+        assert_eq!(
+            Some(uuid::Version::Random),
+            uuid::Uuid::parse_str(jti).unwrap().get_version()
+        );
+        assert_eq!(
+            serde_json::json!({ "jti": jti, "htm": "POST", "htu": endpoint, "iat": 1651516560 }),
+            payload
+        );
+
+        // The verification above only means something if it rejects a forgery
+        let (signing_input, signature) = proof.rsplit_once('.').unwrap();
+        let mut signature = test_util::decode(signature);
+        let (header_b64, _) = signing_input.split_once('.').unwrap();
+        let altered_claims = Payload {
+            jti: jti.to_string(),
+            iat: 1651516561,
+            htu: endpoint.to_string(),
+        };
+        let altered_input = format!(
+            "{header_b64}.{}",
+            base64_simd::URL_SAFE_NO_PAD.encode_to_string(altered_claims.to_json())
+        );
+        assert!(
+            test_util::verify_signature(&header, altered_input.as_bytes(), &signature).is_err()
+        );
+        signature[63] ^= 1;
+        assert!(
+            test_util::verify_signature(&header, signing_input.as_bytes(), &signature).is_err()
+        );
+    }
+
+    #[test]
+    fn test_calculate_never_reuses_jti() {
+        let endpoint = "https://us-east-1.signin.aws.amazon.com/v1/token";
+        let now = SystemTime::UNIX_EPOCH + Duration::from_secs(1651516560);
+        let private_key = SecretKey::from_sec1_pem(TEST_KEY).unwrap();
+
+        // Same key, endpoint and time, as a retried request with a frozen clock would have
+        let first = test_util::verify_proof(&calculate(&private_key, endpoint, now).unwrap()).1;
+        let second = test_util::verify_proof(&calculate(&private_key, endpoint, now).unwrap()).1;
+        assert_ne!(first["jti"], second["jti"]);
+    }
+
+    /// A private key whose leading zero byte was dropped, as OpenSSL's `BN_bn2bin` does for about
+    /// one key in 256. Generated with LibreSSL 3.3.6.
+    const SHORT_SCALAR_KEY: &str = "-----BEGIN EC PRIVATE KEY-----\nMHYCAQEEH9rgRH8XRJdiB7jN5UayfeoW9aXKRNGW2HalEJ5SQSegCgYIKoZIzj0D\nAQehRANCAAS25vmt4QTwRksw1z+rgQMF6EXqhGsZefNfj1mfFrB2EMkR8ndGgPKq\n12D3WwW2yokPgIds1jOOu5FbZMNlMHOi\n-----END EC PRIVATE KEY-----\n";
+
+    #[test]
+    fn test_dpop_key_shapes_in_shared_cache_are_accepted() {
+        // Coordinates come from `openssl ec -pubout`, not from `p256`
+        let test_key = (
+            "Wb1VLi1EA2hJaTz4yYuxSELvY-1GAfL-8rUTCAdiFic",
+            "fOwX-hmPrNvtUaag79EaWYgyDAq2a7AIfkSvUt0Amhg",
+        );
+        let short_scalar_key = (
+            "tub5reEE8EZLMNc_q4EDBehF6oRrGXnzX49ZnxawdhA",
+            "yRHyd0aA8qrXYPdbBbbKiQ-Ah2zWM467kVtkw2Uwc6I",
+        );
+        let cases = [
+            ("canonical", TEST_KEY.to_string(), test_key),
+            (
+                "31-byte private key",
+                SHORT_SCALAR_KEY.to_string(),
+                short_scalar_key,
+            ),
+            (
+                "CRLF line endings",
+                TEST_KEY.replace('\n', "\r\n"),
+                test_key,
+            ),
+            (
+                "no trailing newline",
+                TEST_KEY.trim_end().to_string(),
+                test_key,
+            ),
+        ];
+        for (shape, pem, (x, y)) in cases {
+            let scheme = DPoPAuthScheme::new(&pem).unwrap_or_else(|e| panic!("{shape}: {e}"));
+            let header = header(&scheme.private_key).unwrap();
+            assert_eq!(
+                (x, y),
+                (header.x_b64.as_str(), header.y_b64.as_str()),
+                "{shape}"
+            );
+        }
     }
 
     #[test]

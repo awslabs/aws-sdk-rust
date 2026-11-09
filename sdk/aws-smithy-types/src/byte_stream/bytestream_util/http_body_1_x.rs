@@ -129,6 +129,28 @@ mod test {
     }
 
     #[tokio::test]
+    async fn path_based_bytestreams_read_64_kib_by_default() {
+        // Regression test for https://github.com/smithy-lang/smithy-rs/issues/2833: a 4 KiB
+        // default made file reads several times slower than reading into memory.
+        let mut file = NamedTempFile::new().unwrap();
+        file.write_all(&vec![7u8; 200 * 1024]).unwrap();
+        file.flush().expect("flushing is OK");
+
+        for byte_stream in [
+            ByteStream::from_path(file.path()).await.unwrap(),
+            FsBuilder::new().path(&file).build().await.unwrap(),
+        ] {
+            let mut body = byte_stream.into_inner();
+            let first_read = body
+                .next()
+                .await
+                .expect("should have some data")
+                .expect("read should not fail");
+            assert_eq!(first_read.len(), 64 * 1024);
+        }
+    }
+
+    #[tokio::test]
     async fn fsbuilder_length_is_used_as_size_hint() {
         let mut file = NamedTempFile::new().unwrap();
         write!(

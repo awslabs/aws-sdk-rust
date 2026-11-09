@@ -12,11 +12,17 @@ pub struct UpdateDesignationOutput {
     pub name: ::std::string::String,
     /// <p>A human-readable description of the designation and its intended use.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// The classification of this designation. MANAGED designations are system-defined and cannot be modified or deleted.
+    /// <p>The classification of this designation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANAGED</code> — System-defined designations that cannot be modified or deleted.</p></li>
+    /// <li>
+    /// <p><code>USER_CREATED</code> — Designations created through <code>CreateDesignation</code>.</p></li>
+    /// </ul>
     pub designation_type: crate::types::DesignationType,
-    /// The Cedar permit policy that governs what actions holders of this designation are allowed to perform.
+    /// <p>The Cedar permit policy that governs the actions holders of this designation are allowed to perform.</p>
     pub policy: ::std::string::String,
-    /// Whether deletion protection is enabled for this designation. When true, DeleteDesignation is rejected until protection is disabled via UpdateDesignation.
+    /// <p>Specifies whether deletion protection is enabled for this designation. When <code>true</code>, <code>DeleteDesignation</code> is rejected until protection is disabled through <code>UpdateDesignation</code>.</p>
     pub deletion_protection: bool,
     /// <p>The identifier of the Amazon DataZone user who created the designation.</p>
     pub created_by: ::std::string::String,
@@ -46,16 +52,22 @@ impl UpdateDesignationOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// The classification of this designation. MANAGED designations are system-defined and cannot be modified or deleted.
+    /// <p>The classification of this designation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANAGED</code> — System-defined designations that cannot be modified or deleted.</p></li>
+    /// <li>
+    /// <p><code>USER_CREATED</code> — Designations created through <code>CreateDesignation</code>.</p></li>
+    /// </ul>
     pub fn designation_type(&self) -> &crate::types::DesignationType {
         &self.designation_type
     }
-    /// The Cedar permit policy that governs what actions holders of this designation are allowed to perform.
+    /// <p>The Cedar permit policy that governs the actions holders of this designation are allowed to perform.</p>
     pub fn policy(&self) -> &str {
         use std::ops::Deref;
         self.policy.deref()
     }
-    /// Whether deletion protection is enabled for this designation. When true, DeleteDesignation is rejected until protection is disabled via UpdateDesignation.
+    /// <p>Specifies whether deletion protection is enabled for this designation. When <code>true</code>, <code>DeleteDesignation</code> is rejected until protection is disabled through <code>UpdateDesignation</code>.</p>
     pub fn deletion_protection(&self) -> bool {
         self.deletion_protection
     }
@@ -178,48 +190,66 @@ impl UpdateDesignationOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// The classification of this designation. MANAGED designations are system-defined and cannot be modified or deleted.
+    /// <p>The classification of this designation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANAGED</code> — System-defined designations that cannot be modified or deleted.</p></li>
+    /// <li>
+    /// <p><code>USER_CREATED</code> — Designations created through <code>CreateDesignation</code>.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn designation_type(mut self, input: crate::types::DesignationType) -> Self {
         self.designation_type = ::std::option::Option::Some(input);
         self
     }
-    /// The classification of this designation. MANAGED designations are system-defined and cannot be modified or deleted.
+    /// <p>The classification of this designation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANAGED</code> — System-defined designations that cannot be modified or deleted.</p></li>
+    /// <li>
+    /// <p><code>USER_CREATED</code> — Designations created through <code>CreateDesignation</code>.</p></li>
+    /// </ul>
     pub fn set_designation_type(mut self, input: ::std::option::Option<crate::types::DesignationType>) -> Self {
         self.designation_type = input;
         self
     }
-    /// The classification of this designation. MANAGED designations are system-defined and cannot be modified or deleted.
+    /// <p>The classification of this designation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANAGED</code> — System-defined designations that cannot be modified or deleted.</p></li>
+    /// <li>
+    /// <p><code>USER_CREATED</code> — Designations created through <code>CreateDesignation</code>.</p></li>
+    /// </ul>
     pub fn get_designation_type(&self) -> &::std::option::Option<crate::types::DesignationType> {
         &self.designation_type
     }
-    /// The Cedar permit policy that governs what actions holders of this designation are allowed to perform.
+    /// <p>The Cedar permit policy that governs the actions holders of this designation are allowed to perform.</p>
     /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Cedar permit policy that governs what actions holders of this designation are allowed to perform.
+    /// <p>The Cedar permit policy that governs the actions holders of this designation are allowed to perform.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }
-    /// The Cedar permit policy that governs what actions holders of this designation are allowed to perform.
+    /// <p>The Cedar permit policy that governs the actions holders of this designation are allowed to perform.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
-    /// Whether deletion protection is enabled for this designation. When true, DeleteDesignation is rejected until protection is disabled via UpdateDesignation.
+    /// <p>Specifies whether deletion protection is enabled for this designation. When <code>true</code>, <code>DeleteDesignation</code> is rejected until protection is disabled through <code>UpdateDesignation</code>.</p>
     /// This field is required.
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = ::std::option::Option::Some(input);
         self
     }
-    /// Whether deletion protection is enabled for this designation. When true, DeleteDesignation is rejected until protection is disabled via UpdateDesignation.
+    /// <p>Specifies whether deletion protection is enabled for this designation. When <code>true</code>, <code>DeleteDesignation</code> is rejected until protection is disabled through <code>UpdateDesignation</code>.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self
     }
-    /// Whether deletion protection is enabled for this designation. When true, DeleteDesignation is rejected until protection is disabled via UpdateDesignation.
+    /// <p>Specifies whether deletion protection is enabled for this designation. When <code>true</code>, <code>DeleteDesignation</code> is rejected until protection is disabled through <code>UpdateDesignation</code>.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }

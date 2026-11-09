@@ -7,8 +7,6 @@
 
 use crate::date_time::format::rfc3339::AllowOffsets;
 use crate::date_time::format::DateTimeParseErrorKind;
-use num_integer::div_mod_floor;
-use num_integer::Integer;
 use std::cmp::Ordering;
 use std::error::Error as StdError;
 use std::fmt;
@@ -75,13 +73,15 @@ impl DateTime {
 
     /// Creates a `DateTime` from a number of milliseconds since the Unix epoch.
     pub fn from_millis(epoch_millis: i64) -> DateTime {
-        let (seconds, millis) = div_mod_floor(epoch_millis, MILLIS_PER_SECOND);
+        let seconds = epoch_millis.div_euclid(MILLIS_PER_SECOND);
+        let millis = epoch_millis.rem_euclid(MILLIS_PER_SECOND);
         DateTime::from_secs_and_nanos(seconds, millis as u32 * NANOS_PER_MILLI)
     }
 
     /// Creates a `DateTime` from a number of nanoseconds since the Unix epoch.
     pub fn from_nanos(epoch_nanos: i128) -> Result<Self, ConversionError> {
-        let (seconds, subsecond_nanos) = epoch_nanos.div_mod_floor(&NANOS_PER_SECOND);
+        let seconds = epoch_nanos.div_euclid(NANOS_PER_SECOND);
+        let subsecond_nanos = epoch_nanos.rem_euclid(NANOS_PER_SECOND);
         let seconds = i64::try_from(seconds).map_err(|_| {
             ConversionError("given epoch nanos are too large to fit into a DateTime")
         })?;
@@ -211,8 +211,7 @@ impl DateTime {
     /// This is fallible since `DateTime` holds more precision than an `i64`, and will
     /// return a `ConversionError` for `DateTime` values that can't be converted.
     pub fn to_millis(self) -> Result<i64, ConversionError> {
-        let subsec_millis =
-            Integer::div_floor(&i64::from(self.subsecond_nanos), &(NANOS_PER_MILLI as i64));
+        let subsec_millis = i64::from(self.subsecond_nanos / NANOS_PER_MILLI);
         if self.seconds < 0 {
             self.seconds
                 .checked_add(1)

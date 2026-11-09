@@ -111,6 +111,8 @@ pub(crate) mod shape_invoke_code_interpreter;
 
 pub(crate) mod shape_invoke_harness;
 
+pub(crate) mod shape_invoke_web_search;
+
 pub(crate) mod shape_list_ab_tests;
 
 pub(crate) mod shape_list_actors;
@@ -243,6 +245,8 @@ pub(crate) mod shape_invoke_harness_input;
 
 pub(crate) mod shape_invoke_harness_output;
 
+pub(crate) mod shape_invoke_web_search_input;
+
 pub(crate) mod shape_list_actors_input;
 
 pub(crate) mod shape_list_browser_sessions_input;
@@ -278,6 +282,8 @@ pub(crate) mod shape_search_registry_records_input;
 pub(crate) mod shape_service_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_service_unavailable_exception;
 
 pub(crate) mod shape_start_batch_evaluation_input;
 
@@ -497,6 +503,10 @@ pub(crate) mod shape_variant_list;
 
 pub(crate) mod shape_view_port;
 
+pub(crate) mod shape_web_search_filters;
+
+pub(crate) mod shape_web_search_result_list;
+
 pub(crate) mod shape_ab_test_summary;
 
 pub(crate) mod shape_actor_summary;
@@ -536,6 +546,8 @@ pub(crate) mod shape_conversational;
 pub(crate) mod shape_crypto_x402_payment_input;
 
 pub(crate) mod shape_crypto_x402_payment_output;
+
+pub(crate) mod shape_domain_filter;
 
 pub(crate) mod shape_efs_configuration;
 
@@ -669,6 +681,8 @@ pub(crate) mod shape_proxy;
 
 pub(crate) mod shape_proxy_bypass;
 
+pub(crate) mod shape_published_date_filter;
+
 pub(crate) mod shape_recommendation_summary;
 
 pub(crate) mod shape_registry_record_summary;
@@ -706,6 +720,8 @@ pub(crate) mod shape_user_intent_cluster_list;
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_variant_configuration;
+
+pub(crate) mod shape_web_search_result;
 
 pub(crate) mod shape_agent_traces_config;
 

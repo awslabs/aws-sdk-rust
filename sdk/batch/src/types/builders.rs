@@ -191,6 +191,8 @@ pub use crate::types::_evaluate_on_exit::EvaluateOnExitBuilder;
 
 pub use crate::types::_eks_metadata::EksMetadataBuilder;
 
+pub use crate::types::_eks_pod_security_context::EksPodSecurityContextBuilder;
+
 pub use crate::types::_ecs_task_properties::EcsTaskPropertiesBuilder;
 
 pub use crate::types::_consumable_resource_requirement::ConsumableResourceRequirementBuilder;
@@ -245,6 +247,8 @@ pub use crate::types::_eks_container::EksContainerBuilder;
 
 pub use crate::types::_eks_volume::EksVolumeBuilder;
 
+pub use crate::types::_eks_seccomp_profile::EksSeccompProfileBuilder;
+
 pub use crate::types::_eks_container_override::EksContainerOverrideBuilder;
 
 pub use crate::types::_attempt_container_detail::AttemptContainerDetailBuilder;
@@ -284,6 +288,8 @@ pub use crate::types::_quota_share_capacity_usage::QuotaShareCapacityUsageBuilde
 pub use crate::types::_eks_container_environment_variable::EksContainerEnvironmentVariableBuilder;
 
 pub use crate::types::_eks_container_volume_mount::EksContainerVolumeMountBuilder;
+
+pub use crate::types::_eks_container_linux_capabilities::EksContainerLinuxCapabilitiesBuilder;
 
 pub use crate::types::_firelens_configuration::FirelensConfigurationBuilder;
 

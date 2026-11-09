@@ -9,6 +9,8 @@ pub struct GetDataAccessOutput {
     pub matched_grant_target: ::std::option::Option<::std::string::String>,
     /// <p>The user, group, or role that was granted access to the S3 location scope. For directory identities, this API also returns the grants of the IAM role used for the identity-aware request. For more information on identity-aware sessions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_sts-setcontext.html">Granting permissions to use identity-aware console sessions</a>.</p>
     pub grantee: ::std::option::Option<crate::types::Grantee>,
+    /// <p>The Amazon Resource Name (ARN) of the S3 Access Grants instance containing the grant that matched the requested S3 URI path.</p>
+    pub matched_instance_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDataAccessOutput {
@@ -24,6 +26,10 @@ impl GetDataAccessOutput {
     pub fn grantee(&self) -> ::std::option::Option<&crate::types::Grantee> {
         self.grantee.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the S3 Access Grants instance containing the grant that matched the requested S3 URI path.</p>
+    pub fn matched_instance_arn(&self) -> ::std::option::Option<&str> {
+        self.matched_instance_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for GetDataAccessOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -31,6 +37,7 @@ impl ::std::fmt::Debug for GetDataAccessOutput {
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("matched_grant_target", &self.matched_grant_target);
         formatter.field("grantee", &self.grantee);
+        formatter.field("matched_instance_arn", &self.matched_instance_arn);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -54,6 +61,7 @@ pub struct GetDataAccessOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
     pub(crate) matched_grant_target: ::std::option::Option<::std::string::String>,
     pub(crate) grantee: ::std::option::Option<crate::types::Grantee>,
+    pub(crate) matched_instance_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDataAccessOutputBuilder {
@@ -99,6 +107,20 @@ impl GetDataAccessOutputBuilder {
     pub fn get_grantee(&self) -> &::std::option::Option<crate::types::Grantee> {
         &self.grantee
     }
+    /// <p>The Amazon Resource Name (ARN) of the S3 Access Grants instance containing the grant that matched the requested S3 URI path.</p>
+    pub fn matched_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.matched_instance_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the S3 Access Grants instance containing the grant that matched the requested S3 URI path.</p>
+    pub fn set_matched_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.matched_instance_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the S3 Access Grants instance containing the grant that matched the requested S3 URI path.</p>
+    pub fn get_matched_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.matched_instance_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -114,6 +136,7 @@ impl GetDataAccessOutputBuilder {
             credentials: self.credentials,
             matched_grant_target: self.matched_grant_target,
             grantee: self.grantee,
+            matched_instance_arn: self.matched_instance_arn,
             _request_id: self._request_id,
         }
     }
@@ -124,6 +147,7 @@ impl ::std::fmt::Debug for GetDataAccessOutputBuilder {
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("matched_grant_target", &self.matched_grant_target);
         formatter.field("grantee", &self.grantee);
+        formatter.field("matched_instance_arn", &self.matched_instance_arn);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

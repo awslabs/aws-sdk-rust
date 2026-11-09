@@ -315,11 +315,11 @@ fn calculate_checksum(cfg: &mut ConfigBag, state: &RequestChecksumInterceptorSta
 
     // If the user setting is WhenSupported (the default) we always calculate it (because this interceptor
     // isn't added if it isn't supported). If it is WhenRequired we only calculate it if the checksum
-    // is marked required on the trait.
+    // is marked required on the trait, or if the caller supplied the modeled request algorithm member.
     match request_checksum_calculation {
         RequestChecksumCalculation::WhenRequired => {
             cfg.interceptor_state().store_append(SmithySdkFeature::FlexibleChecksumsReqWhenRequired);
-            state.request_checksum_required
+            state.request_checksum_required || state.checksum_algorithm.is_some()
         }
         RequestChecksumCalculation::WhenSupported => {
             cfg.interceptor_state().store_append(SmithySdkFeature::FlexibleChecksumsReqWhenSupported);

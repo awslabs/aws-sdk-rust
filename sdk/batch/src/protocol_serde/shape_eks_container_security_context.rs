@@ -27,6 +27,18 @@ pub fn ser_eks_container_security_context(
     if let Some(var_6) = &input.run_as_non_root {
         object.key("runAsNonRoot").boolean(*var_6);
     }
+    if let Some(var_7) = &input.capabilities {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("capabilities").start_object();
+        crate::protocol_serde::shape_eks_container_linux_capabilities::ser_eks_container_linux_capabilities(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.seccomp_profile {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("seccompProfile").start_object();
+        crate::protocol_serde::shape_eks_seccomp_profile::ser_eks_seccomp_profile(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }
 
@@ -79,6 +91,22 @@ where
                         }
                         "runAsNonRoot" => {
                             builder = builder.set_run_as_non_root(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "capabilities" => {
+                            builder = builder.set_capabilities(
+                                crate::protocol_serde::shape_eks_container_linux_capabilities::de_eks_container_linux_capabilities(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "seccompProfile" => {
+                            builder = builder.set_seccomp_profile(crate::protocol_serde::shape_eks_seccomp_profile::de_eks_seccomp_profile(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

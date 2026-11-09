@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksContainerSecurityContext {
-    /// <p>When this parameter is specified, the container is run as the specified user ID (<code>uid</code>). If this parameter isn't specified, the default is the user that's specified in the image metadata. This parameter maps to <code>RunAsUser</code> and <code>MustRanAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>When this parameter is specified, the container is run as the specified user ID (<code>uid</code>). If this parameter isn't specified, the default is the user that's specified in the image metadata. The supported value range is <code>0</code> through <code>2147483647</code>. This parameter maps to <code>RunAsUser</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
     pub run_as_user: ::std::option::Option<i64>,
-    /// <p>When this parameter is specified, the container is run as the specified group ID (<code>gid</code>). If this parameter isn't specified, the default is the group that's specified in the image metadata. This parameter maps to <code>RunAsGroup</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>When this parameter is specified, the container is run as the specified group ID (<code>gid</code>). If this parameter isn't specified, the default is the group that's specified in the image metadata. The supported value range is <code>0</code> through <code>2147483647</code>. This parameter maps to <code>RunAsGroup</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
     pub run_as_group: ::std::option::Option<i64>,
     /// <p>When this parameter is <code>true</code>, the container is given elevated permissions on the host container instance. The level of permissions are similar to the <code>root</code> user permissions. The default value is <code>false</code>. This parameter maps to <code>privileged</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#privileged">Privileged pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
     pub privileged: ::std::option::Option<bool>,
@@ -16,13 +16,17 @@ pub struct EksContainerSecurityContext {
     pub read_only_root_filesystem: ::std::option::Option<bool>,
     /// <p>When this parameter is specified, the container is run as a user with a <code>uid</code> other than 0. If this parameter isn't specified, so such rule is enforced. This parameter maps to <code>RunAsUser</code> and <code>MustRunAsNonRoot</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
     pub run_as_non_root: ::std::option::Option<bool>,
+    /// <p>Adds or removes Linux capabilities from the container's default capability set. With Linux capabilities, you can grant specific privileges without granting full root permissions.</p>
+    pub capabilities: ::std::option::Option<crate::types::EksContainerLinuxCapabilities>,
+    /// <p>The seccomp profile for the container. A container-level seccomp profile overrides the profile in the pod security context, which defines security settings that apply to all containers in the pod unless a container overrides them. If this parameter isn't specified, the container uses the pod security context's seccomp profile when one is specified.</p>
+    pub seccomp_profile: ::std::option::Option<crate::types::EksSeccompProfile>,
 }
 impl EksContainerSecurityContext {
-    /// <p>When this parameter is specified, the container is run as the specified user ID (<code>uid</code>). If this parameter isn't specified, the default is the user that's specified in the image metadata. This parameter maps to <code>RunAsUser</code> and <code>MustRanAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>When this parameter is specified, the container is run as the specified user ID (<code>uid</code>). If this parameter isn't specified, the default is the user that's specified in the image metadata. The supported value range is <code>0</code> through <code>2147483647</code>. This parameter maps to <code>RunAsUser</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn run_as_user(&self) -> ::std::option::Option<i64> {
         self.run_as_user
     }
-    /// <p>When this parameter is specified, the container is run as the specified group ID (<code>gid</code>). If this parameter isn't specified, the default is the group that's specified in the image metadata. This parameter maps to <code>RunAsGroup</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>When this parameter is specified, the container is run as the specified group ID (<code>gid</code>). If this parameter isn't specified, the default is the group that's specified in the image metadata. The supported value range is <code>0</code> through <code>2147483647</code>. This parameter maps to <code>RunAsGroup</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn run_as_group(&self) -> ::std::option::Option<i64> {
         self.run_as_group
     }
@@ -42,6 +46,14 @@ impl EksContainerSecurityContext {
     pub fn run_as_non_root(&self) -> ::std::option::Option<bool> {
         self.run_as_non_root
     }
+    /// <p>Adds or removes Linux capabilities from the container's default capability set. With Linux capabilities, you can grant specific privileges without granting full root permissions.</p>
+    pub fn capabilities(&self) -> ::std::option::Option<&crate::types::EksContainerLinuxCapabilities> {
+        self.capabilities.as_ref()
+    }
+    /// <p>The seccomp profile for the container. A container-level seccomp profile overrides the profile in the pod security context, which defines security settings that apply to all containers in the pod unless a container overrides them. If this parameter isn't specified, the container uses the pod security context's seccomp profile when one is specified.</p>
+    pub fn seccomp_profile(&self) -> ::std::option::Option<&crate::types::EksSeccompProfile> {
+        self.seccomp_profile.as_ref()
+    }
 }
 impl EksContainerSecurityContext {
     /// Creates a new builder-style object to manufacture [`EksContainerSecurityContext`](crate::types::EksContainerSecurityContext).
@@ -60,33 +72,35 @@ pub struct EksContainerSecurityContextBuilder {
     pub(crate) allow_privilege_escalation: ::std::option::Option<bool>,
     pub(crate) read_only_root_filesystem: ::std::option::Option<bool>,
     pub(crate) run_as_non_root: ::std::option::Option<bool>,
+    pub(crate) capabilities: ::std::option::Option<crate::types::EksContainerLinuxCapabilities>,
+    pub(crate) seccomp_profile: ::std::option::Option<crate::types::EksSeccompProfile>,
 }
 impl EksContainerSecurityContextBuilder {
-    /// <p>When this parameter is specified, the container is run as the specified user ID (<code>uid</code>). If this parameter isn't specified, the default is the user that's specified in the image metadata. This parameter maps to <code>RunAsUser</code> and <code>MustRanAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>When this parameter is specified, the container is run as the specified user ID (<code>uid</code>). If this parameter isn't specified, the default is the user that's specified in the image metadata. The supported value range is <code>0</code> through <code>2147483647</code>. This parameter maps to <code>RunAsUser</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn run_as_user(mut self, input: i64) -> Self {
         self.run_as_user = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When this parameter is specified, the container is run as the specified user ID (<code>uid</code>). If this parameter isn't specified, the default is the user that's specified in the image metadata. This parameter maps to <code>RunAsUser</code> and <code>MustRanAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>When this parameter is specified, the container is run as the specified user ID (<code>uid</code>). If this parameter isn't specified, the default is the user that's specified in the image metadata. The supported value range is <code>0</code> through <code>2147483647</code>. This parameter maps to <code>RunAsUser</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn set_run_as_user(mut self, input: ::std::option::Option<i64>) -> Self {
         self.run_as_user = input;
         self
     }
-    /// <p>When this parameter is specified, the container is run as the specified user ID (<code>uid</code>). If this parameter isn't specified, the default is the user that's specified in the image metadata. This parameter maps to <code>RunAsUser</code> and <code>MustRanAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>When this parameter is specified, the container is run as the specified user ID (<code>uid</code>). If this parameter isn't specified, the default is the user that's specified in the image metadata. The supported value range is <code>0</code> through <code>2147483647</code>. This parameter maps to <code>RunAsUser</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn get_run_as_user(&self) -> &::std::option::Option<i64> {
         &self.run_as_user
     }
-    /// <p>When this parameter is specified, the container is run as the specified group ID (<code>gid</code>). If this parameter isn't specified, the default is the group that's specified in the image metadata. This parameter maps to <code>RunAsGroup</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>When this parameter is specified, the container is run as the specified group ID (<code>gid</code>). If this parameter isn't specified, the default is the group that's specified in the image metadata. The supported value range is <code>0</code> through <code>2147483647</code>. This parameter maps to <code>RunAsGroup</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn run_as_group(mut self, input: i64) -> Self {
         self.run_as_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When this parameter is specified, the container is run as the specified group ID (<code>gid</code>). If this parameter isn't specified, the default is the group that's specified in the image metadata. This parameter maps to <code>RunAsGroup</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>When this parameter is specified, the container is run as the specified group ID (<code>gid</code>). If this parameter isn't specified, the default is the group that's specified in the image metadata. The supported value range is <code>0</code> through <code>2147483647</code>. This parameter maps to <code>RunAsGroup</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn set_run_as_group(mut self, input: ::std::option::Option<i64>) -> Self {
         self.run_as_group = input;
         self
     }
-    /// <p>When this parameter is specified, the container is run as the specified group ID (<code>gid</code>). If this parameter isn't specified, the default is the group that's specified in the image metadata. This parameter maps to <code>RunAsGroup</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>When this parameter is specified, the container is run as the specified group ID (<code>gid</code>). If this parameter isn't specified, the default is the group that's specified in the image metadata. The supported value range is <code>0</code> through <code>2147483647</code>. This parameter maps to <code>RunAsGroup</code> and <code>MustRunAs</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn get_run_as_group(&self) -> &::std::option::Option<i64> {
         &self.run_as_group
     }
@@ -146,6 +160,34 @@ impl EksContainerSecurityContextBuilder {
     pub fn get_run_as_non_root(&self) -> &::std::option::Option<bool> {
         &self.run_as_non_root
     }
+    /// <p>Adds or removes Linux capabilities from the container's default capability set. With Linux capabilities, you can grant specific privileges without granting full root permissions.</p>
+    pub fn capabilities(mut self, input: crate::types::EksContainerLinuxCapabilities) -> Self {
+        self.capabilities = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Adds or removes Linux capabilities from the container's default capability set. With Linux capabilities, you can grant specific privileges without granting full root permissions.</p>
+    pub fn set_capabilities(mut self, input: ::std::option::Option<crate::types::EksContainerLinuxCapabilities>) -> Self {
+        self.capabilities = input;
+        self
+    }
+    /// <p>Adds or removes Linux capabilities from the container's default capability set. With Linux capabilities, you can grant specific privileges without granting full root permissions.</p>
+    pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::EksContainerLinuxCapabilities> {
+        &self.capabilities
+    }
+    /// <p>The seccomp profile for the container. A container-level seccomp profile overrides the profile in the pod security context, which defines security settings that apply to all containers in the pod unless a container overrides them. If this parameter isn't specified, the container uses the pod security context's seccomp profile when one is specified.</p>
+    pub fn seccomp_profile(mut self, input: crate::types::EksSeccompProfile) -> Self {
+        self.seccomp_profile = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The seccomp profile for the container. A container-level seccomp profile overrides the profile in the pod security context, which defines security settings that apply to all containers in the pod unless a container overrides them. If this parameter isn't specified, the container uses the pod security context's seccomp profile when one is specified.</p>
+    pub fn set_seccomp_profile(mut self, input: ::std::option::Option<crate::types::EksSeccompProfile>) -> Self {
+        self.seccomp_profile = input;
+        self
+    }
+    /// <p>The seccomp profile for the container. A container-level seccomp profile overrides the profile in the pod security context, which defines security settings that apply to all containers in the pod unless a container overrides them. If this parameter isn't specified, the container uses the pod security context's seccomp profile when one is specified.</p>
+    pub fn get_seccomp_profile(&self) -> &::std::option::Option<crate::types::EksSeccompProfile> {
+        &self.seccomp_profile
+    }
     /// Consumes the builder and constructs a [`EksContainerSecurityContext`](crate::types::EksContainerSecurityContext).
     pub fn build(self) -> crate::types::EksContainerSecurityContext {
         crate::types::EksContainerSecurityContext {
@@ -155,6 +197,8 @@ impl EksContainerSecurityContextBuilder {
             allow_privilege_escalation: self.allow_privilege_escalation,
             read_only_root_filesystem: self.read_only_root_filesystem,
             run_as_non_root: self.run_as_non_root,
+            capabilities: self.capabilities,
+            seccomp_profile: self.seccomp_profile,
         }
     }
 }

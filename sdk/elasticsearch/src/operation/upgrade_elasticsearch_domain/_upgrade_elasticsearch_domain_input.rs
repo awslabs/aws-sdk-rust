@@ -10,6 +10,8 @@ pub struct UpgradeElasticsearchDomainInput {
     pub target_version: ::std::option::Option<::std::string::String>,
     /// <p>This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade.</p>
     pub perform_check_only: ::std::option::Option<bool>,
+    /// <p>Overrides the deployment strategy for this upgrade. To run a cloned blue/green upgrade, set <code>DeploymentStrategy</code> to <code>ClonedBlueGreen</code>.</p>
+    pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOverrideOptions>,
 }
 impl UpgradeElasticsearchDomainInput {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -23,6 +25,10 @@ impl UpgradeElasticsearchDomainInput {
     /// <p>This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade.</p>
     pub fn perform_check_only(&self) -> ::std::option::Option<bool> {
         self.perform_check_only
+    }
+    /// <p>Overrides the deployment strategy for this upgrade. To run a cloned blue/green upgrade, set <code>DeploymentStrategy</code> to <code>ClonedBlueGreen</code>.</p>
+    pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOverrideOptions> {
+        self.deployment_strategy_options.as_ref()
     }
 }
 impl UpgradeElasticsearchDomainInput {
@@ -39,6 +45,7 @@ pub struct UpgradeElasticsearchDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_version: ::std::option::Option<::std::string::String>,
     pub(crate) perform_check_only: ::std::option::Option<bool>,
+    pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOverrideOptions>,
 }
 impl UpgradeElasticsearchDomainInputBuilder {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -85,6 +92,20 @@ impl UpgradeElasticsearchDomainInputBuilder {
     pub fn get_perform_check_only(&self) -> &::std::option::Option<bool> {
         &self.perform_check_only
     }
+    /// <p>Overrides the deployment strategy for this upgrade. To run a cloned blue/green upgrade, set <code>DeploymentStrategy</code> to <code>ClonedBlueGreen</code>.</p>
+    pub fn deployment_strategy_options(mut self, input: crate::types::DeploymentStrategyOverrideOptions) -> Self {
+        self.deployment_strategy_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Overrides the deployment strategy for this upgrade. To run a cloned blue/green upgrade, set <code>DeploymentStrategy</code> to <code>ClonedBlueGreen</code>.</p>
+    pub fn set_deployment_strategy_options(mut self, input: ::std::option::Option<crate::types::DeploymentStrategyOverrideOptions>) -> Self {
+        self.deployment_strategy_options = input;
+        self
+    }
+    /// <p>Overrides the deployment strategy for this upgrade. To run a cloned blue/green upgrade, set <code>DeploymentStrategy</code> to <code>ClonedBlueGreen</code>.</p>
+    pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOverrideOptions> {
+        &self.deployment_strategy_options
+    }
     /// Consumes the builder and constructs a [`UpgradeElasticsearchDomainInput`](crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainInput).
     pub fn build(
         self,
@@ -96,6 +117,7 @@ impl UpgradeElasticsearchDomainInputBuilder {
             domain_name: self.domain_name,
             target_version: self.target_version,
             perform_check_only: self.perform_check_only,
+            deployment_strategy_options: self.deployment_strategy_options,
         })
     }
 }

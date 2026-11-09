@@ -349,6 +349,8 @@ mod switchover_replication;
 
 mod update_application;
 
+mod update_clone;
+
 mod update_data_source;
 
 mod update_direct_query_data_source;

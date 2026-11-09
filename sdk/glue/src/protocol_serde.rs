@@ -91,6 +91,8 @@ pub(crate) mod shape_create_crawler;
 
 pub(crate) mod shape_create_custom_entity_type;
 
+pub(crate) mod shape_create_data_quality_evaluation_config;
+
 pub(crate) mod shape_create_data_quality_ruleset;
 
 pub(crate) mod shape_create_database;
@@ -164,6 +166,8 @@ pub(crate) mod shape_delete_connection_type;
 pub(crate) mod shape_delete_crawler;
 
 pub(crate) mod shape_delete_custom_entity_type;
+
+pub(crate) mod shape_delete_data_quality_evaluation_config;
 
 pub(crate) mod shape_delete_data_quality_ruleset;
 
@@ -276,6 +280,8 @@ pub(crate) mod shape_get_dashboard_url;
 pub(crate) mod shape_get_data_catalog_encryption_settings;
 
 pub(crate) mod shape_get_data_catalog_export_configuration;
+
+pub(crate) mod shape_get_data_quality_evaluation_config;
 
 pub(crate) mod shape_get_data_quality_model;
 
@@ -426,6 +432,8 @@ pub(crate) mod shape_list_crawlers;
 pub(crate) mod shape_list_crawls;
 
 pub(crate) mod shape_list_custom_entity_types;
+
+pub(crate) mod shape_list_data_quality_evaluation_configs;
 
 pub(crate) mod shape_list_data_quality_results;
 
@@ -599,6 +607,8 @@ pub(crate) mod shape_update_crawler;
 
 pub(crate) mod shape_update_crawler_schedule;
 
+pub(crate) mod shape_update_data_quality_evaluation_config;
+
 pub(crate) mod shape_update_data_quality_ruleset;
 
 pub(crate) mod shape_update_database;
@@ -741,6 +751,8 @@ pub(crate) mod shape_create_crawler_input;
 
 pub(crate) mod shape_create_custom_entity_type_input;
 
+pub(crate) mod shape_create_data_quality_evaluation_config_input;
+
 pub(crate) mod shape_create_data_quality_ruleset_input;
 
 pub(crate) mod shape_create_database_input;
@@ -814,6 +826,8 @@ pub(crate) mod shape_delete_connection_type_input;
 pub(crate) mod shape_delete_crawler_input;
 
 pub(crate) mod shape_delete_custom_entity_type_input;
+
+pub(crate) mod shape_delete_data_quality_evaluation_config_input;
 
 pub(crate) mod shape_delete_data_quality_ruleset_input;
 
@@ -930,6 +944,8 @@ pub(crate) mod shape_get_custom_entity_type_input;
 pub(crate) mod shape_get_dashboard_url_input;
 
 pub(crate) mod shape_get_data_catalog_encryption_settings_input;
+
+pub(crate) mod shape_get_data_quality_evaluation_config_input;
 
 pub(crate) mod shape_get_data_quality_model_input;
 
@@ -1106,6 +1122,8 @@ pub(crate) mod shape_list_crawlers_input;
 pub(crate) mod shape_list_crawls_input;
 
 pub(crate) mod shape_list_custom_entity_types_input;
+
+pub(crate) mod shape_list_data_quality_evaluation_configs_input;
 
 pub(crate) mod shape_list_data_quality_results_input;
 
@@ -1313,6 +1331,8 @@ pub(crate) mod shape_update_crawler_input;
 
 pub(crate) mod shape_update_crawler_schedule_input;
 
+pub(crate) mod shape_update_data_quality_evaluation_config_input;
+
 pub(crate) mod shape_update_data_quality_ruleset_input;
 
 pub(crate) mod shape_update_database_input;
@@ -1502,6 +1522,14 @@ pub(crate) mod shape_data_quality_analyzer_result;
 pub(crate) mod shape_data_quality_analyzer_results;
 
 pub(crate) mod shape_data_quality_configuration_v2;
+
+pub(crate) mod shape_data_quality_evaluation_config_additional_run_options;
+
+pub(crate) mod shape_data_quality_evaluation_config_data_source;
+
+pub(crate) mod shape_data_quality_evaluation_config_list;
+
+pub(crate) mod shape_data_quality_evaluation_config_triggers;
 
 pub(crate) mod shape_data_quality_evaluation_run_additional_run_options;
 
@@ -1999,6 +2027,10 @@ pub(crate) mod shape_data_operations;
 
 pub(crate) mod shape_data_quality_encryption;
 
+pub(crate) mod shape_data_quality_evaluation_config_glue_tables;
+
+pub(crate) mod shape_data_quality_evaluation_config_list_details;
+
 pub(crate) mod shape_data_quality_glue_table;
 
 pub(crate) mod shape_data_quality_result;
@@ -2425,6 +2457,8 @@ pub(crate) mod shape_data_lake_access_properties_output;
 
 pub(crate) mod shape_data_lake_principal;
 
+pub(crate) mod shape_data_quality_evaluation_config_list_data_source;
+
 pub(crate) mod shape_data_quality_metric_values;
 
 pub(crate) mod shape_date_column_statistics_data;
@@ -2640,6 +2674,8 @@ pub(crate) mod shape_connection_type_variant;
 pub(crate) mod shape_count;
 
 pub(crate) mod shape_cursor_configuration;
+
+pub(crate) mod shape_data_quality_evaluation_config_list_glue_tables;
 
 pub(crate) mod shape_datatype;
 

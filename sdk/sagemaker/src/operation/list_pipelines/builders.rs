@@ -212,4 +212,18 @@ impl ListPipelinesFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>Filters the pipelines by who manages them. Specify <code>AWS</code> to return pipelines that AWS manages, or <code>CUSTOMER</code> to return pipelines that you created. If you don't specify a value, the response includes both.</p>
+    pub fn managed_by(mut self, input: crate::types::PipelineManagedBy) -> Self {
+        self.inner = self.inner.managed_by(input);
+        self
+    }
+    /// <p>Filters the pipelines by who manages them. Specify <code>AWS</code> to return pipelines that AWS manages, or <code>CUSTOMER</code> to return pipelines that you created. If you don't specify a value, the response includes both.</p>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<crate::types::PipelineManagedBy>) -> Self {
+        self.inner = self.inner.set_managed_by(input);
+        self
+    }
+    /// <p>Filters the pipelines by who manages them. Specify <code>AWS</code> to return pipelines that AWS manages, or <code>CUSTOMER</code> to return pipelines that you created. If you don't specify a value, the response includes both.</p>
+    pub fn get_managed_by(&self) -> &::std::option::Option<crate::types::PipelineManagedBy> {
+        self.inner.get_managed_by()
+    }
 }

@@ -206,4 +206,26 @@ impl UpdatePipelineFluentBuilder {
     pub fn get_parallelism_configuration(&self) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
         self.inner.get_parallelism_configuration()
     }
+    ///
+    /// Appends an item to `PipelineVersionAliases`.
+    ///
+    /// To override the contents of this collection use [`set_pipeline_version_aliases`](Self::set_pipeline_version_aliases).
+    ///
+    /// <p>The aliases to assign to the new pipeline version that this update creates. You can specify aliases only when the update changes the pipeline definition. To change the aliases of an existing version, use <code>UpdatePipelineVersion</code>.</p>
+    /// <p>An alias must be unique within the pipeline. To move an alias from an existing version to the new version, first remove the alias from the existing version with <code>UpdatePipelineVersion</code>.</p>
+    pub fn pipeline_version_aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.pipeline_version_aliases(input.into());
+        self
+    }
+    /// <p>The aliases to assign to the new pipeline version that this update creates. You can specify aliases only when the update changes the pipeline definition. To change the aliases of an existing version, use <code>UpdatePipelineVersion</code>.</p>
+    /// <p>An alias must be unique within the pipeline. To move an alias from an existing version to the new version, first remove the alias from the existing version with <code>UpdatePipelineVersion</code>.</p>
+    pub fn set_pipeline_version_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_pipeline_version_aliases(input);
+        self
+    }
+    /// <p>The aliases to assign to the new pipeline version that this update creates. You can specify aliases only when the update changes the pipeline definition. To change the aliases of an existing version, use <code>UpdatePipelineVersion</code>.</p>
+    /// <p>An alias must be unique within the pipeline. To move an alias from an existing version to the new version, first remove the alias from the existing version with <code>UpdatePipelineVersion</code>.</p>
+    pub fn get_pipeline_version_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_pipeline_version_aliases()
+    }
 }

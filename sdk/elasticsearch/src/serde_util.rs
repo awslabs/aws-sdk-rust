@@ -116,6 +116,18 @@ pub(crate) fn list_vpc_endpoints_for_domain_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_clone_output_output_correct_errors(
+    mut builder: crate::operation::update_clone::builders::UpdateCloneOutputBuilder,
+) -> crate::operation::update_clone::builders::UpdateCloneOutputBuilder {
+    if builder.domain_name.is_none() {
+        builder.domain_name = Some(Default::default())
+    }
+    if builder.change_id.is_none() {
+        builder.change_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_elasticsearch_domain_config_output_output_correct_errors(
     mut builder: crate::operation::update_elasticsearch_domain_config::builders::UpdateElasticsearchDomainConfigOutputBuilder,
 ) -> crate::operation::update_elasticsearch_domain_config::builders::UpdateElasticsearchDomainConfigOutputBuilder {
@@ -161,11 +173,53 @@ pub(crate) fn elasticsearch_domain_status_correct_errors(
     builder
 }
 
+pub(crate) fn cutover_options_correct_errors(
+    mut builder: crate::types::builders::CutoverOptionsBuilder,
+) -> crate::types::builders::CutoverOptionsBuilder {
+    if builder.target.is_none() {
+        builder.target = "no value was set".parse::<crate::types::CutoverTarget>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CutoverStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn deployment_strategy_override_options_correct_errors(
+    mut builder: crate::types::builders::DeploymentStrategyOverrideOptionsBuilder,
+) -> crate::types::builders::DeploymentStrategyOverrideOptionsBuilder {
+    if builder.deployment_strategy.is_none() {
+        builder.deployment_strategy = "no value was set".parse::<crate::types::DeploymentStrategyOverride>().ok()
+    }
+    builder
+}
+
 pub(crate) fn domain_information_correct_errors(
     mut builder: crate::types::builders::DomainInformationBuilder,
 ) -> crate::types::builders::DomainInformationBuilder {
     if builder.domain_name.is_none() {
         builder.domain_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn traffic_split_options_correct_errors(
+    mut builder: crate::types::builders::TrafficSplitOptionsBuilder,
+) -> crate::types::builders::TrafficSplitOptionsBuilder {
+    if builder.current.is_none() {
+        builder.current = {
+            let builder = crate::types::builders::TrafficPercentsBuilder::default();
+            Some(crate::serde_util::traffic_percents_correct_errors(builder).build())
+        }
+    }
+    if builder.target.is_none() {
+        builder.target = {
+            let builder = crate::types::builders::TrafficPercentsBuilder::default();
+            Some(crate::serde_util::traffic_percents_correct_errors(builder).build())
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TrafficSplitStatus>().ok()
     }
     builder
 }
@@ -434,6 +488,18 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn traffic_percents_correct_errors(
+    mut builder: crate::types::builders::TrafficPercentsBuilder,
+) -> crate::types::builders::TrafficPercentsBuilder {
+    if builder.primary_read_traffic_percent.is_none() {
+        builder.primary_read_traffic_percent = Some(Default::default())
+    }
+    if builder.clone_read_traffic_percent.is_none() {
+        builder.clone_read_traffic_percent = Some(Default::default())
     }
     builder
 }

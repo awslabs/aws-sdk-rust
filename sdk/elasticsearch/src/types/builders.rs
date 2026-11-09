@@ -51,9 +51,19 @@ pub use crate::types::_change_progress_status_details::ChangeProgressStatusDetai
 
 pub use crate::types::_elasticsearch_domain_config::ElasticsearchDomainConfigBuilder;
 
+pub use crate::types::_traffic_split_request_options::TrafficSplitRequestOptionsBuilder;
+
+pub use crate::types::_cutover_request_options::CutoverRequestOptionsBuilder;
+
+pub use crate::types::_cutover_options::CutoverOptionsBuilder;
+
+pub use crate::types::_traffic_split_options::TrafficSplitOptionsBuilder;
+
 pub use crate::types::_auto_tune_options::AutoTuneOptionsBuilder;
 
 pub use crate::types::_dry_run_results::DryRunResultsBuilder;
+
+pub use crate::types::_deployment_strategy_override_options::DeploymentStrategyOverrideOptionsBuilder;
 
 pub use crate::types::_change_progress_details::ChangeProgressDetailsBuilder;
 
@@ -84,6 +94,8 @@ pub use crate::types::_auto_tune_options_output::AutoTuneOptionsOutputBuilder;
 pub use crate::types::_automated_snapshot_pause_options::AutomatedSnapshotPauseOptionsBuilder;
 
 pub use crate::types::_auto_tune::AutoTuneBuilder;
+
+pub use crate::types::_cloned_blue_green_upgrade_details::ClonedBlueGreenUpgradeDetailsBuilder;
 
 pub use crate::types::_elasticsearch_version_status::ElasticsearchVersionStatusBuilder;
 
@@ -141,6 +153,10 @@ pub use crate::types::_upgrade_history::UpgradeHistoryBuilder;
 
 pub use crate::types::_domain_info::DomainInfoBuilder;
 
+pub use crate::types::_traffic_percents::TrafficPercentsBuilder;
+
+pub use crate::types::_cloned_blue_green_options::ClonedBlueGreenOptionsBuilder;
+
 pub use crate::types::_saml_idp::SamlIdpBuilder;
 
 pub use crate::types::_auto_tune_maintenance_schedule::AutoTuneMaintenanceScheduleBuilder;
@@ -152,6 +168,8 @@ pub use crate::types::_modifying_properties::ModifyingPropertiesBuilder;
 pub use crate::types::_auto_tune_details::AutoTuneDetailsBuilder;
 
 pub use crate::types::_change_progress_stage::ChangeProgressStageBuilder;
+
+pub use crate::types::_cloned_blue_green_scheduled_action::ClonedBlueGreenScheduledActionBuilder;
 
 pub use crate::types::_option_status::OptionStatusBuilder;
 

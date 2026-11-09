@@ -11,9 +11,9 @@ pub struct UpdateDesignationInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The updated human-readable description of the designation and its intended use.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// The updated Cedar permit policy.
+    /// <p>The updated Cedar permit policy. Omit to keep the existing policy.</p>
     pub policy: ::std::option::Option<::std::string::String>,
-    /// Whether deletion protection is enabled for this designation. Omit to keep the existing value.
+    /// <p>Specifies whether deletion protection is enabled for this designation. Omit to keep the existing value.</p>
     pub deletion_protection: ::std::option::Option<bool>,
 }
 impl UpdateDesignationInput {
@@ -33,11 +33,11 @@ impl UpdateDesignationInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// The updated Cedar permit policy.
+    /// <p>The updated Cedar permit policy. Omit to keep the existing policy.</p>
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
-    /// Whether deletion protection is enabled for this designation. Omit to keep the existing value.
+    /// <p>Specifies whether deletion protection is enabled for this designation. Omit to keep the existing value.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
@@ -131,31 +131,31 @@ impl UpdateDesignationInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// The updated Cedar permit policy.
+    /// <p>The updated Cedar permit policy. Omit to keep the existing policy.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// The updated Cedar permit policy.
+    /// <p>The updated Cedar permit policy. Omit to keep the existing policy.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }
-    /// The updated Cedar permit policy.
+    /// <p>The updated Cedar permit policy. Omit to keep the existing policy.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
-    /// Whether deletion protection is enabled for this designation. Omit to keep the existing value.
+    /// <p>Specifies whether deletion protection is enabled for this designation. Omit to keep the existing value.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = ::std::option::Option::Some(input);
         self
     }
-    /// Whether deletion protection is enabled for this designation. Omit to keep the existing value.
+    /// <p>Specifies whether deletion protection is enabled for this designation. Omit to keep the existing value.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self
     }
-    /// Whether deletion protection is enabled for this designation. Omit to keep the existing value.
+    /// <p>Specifies whether deletion protection is enabled for this designation. Omit to keep the existing value.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }

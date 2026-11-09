@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-servicediscovery = "1.120.0"
+//! aws-sdk-servicediscovery = "1.121.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -204,6 +204,8 @@ mod sdk_feature_tracker;
 mod endpoint_lib;
 
 mod lens;
+
+pub(crate) mod schema_serde;
 
 #[doc(inline)]
 pub use client::Client;

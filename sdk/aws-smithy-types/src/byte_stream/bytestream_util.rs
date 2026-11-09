@@ -19,8 +19,11 @@ mod http_body_0_4_x;
 #[cfg(feature = "http-body-1-x")]
 mod http_body_1_x;
 
-// 4KB corresponds to the default buffer size used by Tokio's ReaderStream
-const DEFAULT_BUFFER_SIZE: usize = 4096;
+// Tokio's `File` runs every read on the blocking thread pool, so a small buffer means one
+// thread round trip per few KB. 64 KiB reads a file several times faster than Tokio's 4 KiB
+// `ReaderStream` default while keeping per-stream memory small, and it matches the 64 KiB
+// aws-chunked encoding chunk size. See https://github.com/smithy-lang/smithy-rs/issues/2833.
+const DEFAULT_BUFFER_SIZE: usize = 64 * 1024;
 // By default, read files from their start
 const DEFAULT_OFFSET: u64 = 0;
 
@@ -77,8 +80,8 @@ impl PathBody {
 /// async fn bytestream_from_file() -> GetObjectInput {
 ///     let bytestream = ByteStream::read_from()
 ///         .path("docs/some-large-file.csv")
-///         // Specify the size of the buffer used to read the file (in bytes, default is 4096)
-///         .buffer_size(32_784)
+///         // Specify the size of the buffer used to read the file (in bytes, default is 65536)
+///         .buffer_size(262_144)
 ///         // Specify the length of the file used (skips an additional call to retrieve the size)
 ///         .length(Length::UpTo(123_456))
 ///         .build()
@@ -114,7 +117,7 @@ pub enum Length {
 }
 
 impl FsBuilder {
-    /// Create a new [`FsBuilder`] (using a default read buffer of 4096 bytes).
+    /// Create a new [`FsBuilder`] (using a default read buffer of 65536 bytes).
     ///
     /// You must then call either [`file`](FsBuilder::file) or [`path`](FsBuilder::path) to specify what to read from.
     pub fn new() -> Self {
@@ -158,8 +161,9 @@ impl FsBuilder {
 
     /// Specify the size of the buffer used to read the file (in bytes).
     ///
-    /// Increasing the read buffer capacity to higher values than the default (4096 bytes) can result in a large reduction
-    /// in CPU usage, at the cost of memory increase.
+    /// The default is 65536 bytes. A larger buffer means fewer reads, which can raise throughput
+    /// and cut CPU usage further, at the cost of more memory per stream. A smaller buffer saves
+    /// memory when many streams are open at once.
     pub fn buffer_size(mut self, buffer_size: usize) -> Self {
         self.buffer_size = buffer_size;
         self

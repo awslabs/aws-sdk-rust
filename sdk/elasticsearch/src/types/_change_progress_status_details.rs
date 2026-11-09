@@ -24,6 +24,8 @@ pub struct ChangeProgressStatusDetails {
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The IAM principal who initiated the configuration change.</p>
     pub initiated_by: ::std::option::Option<crate::types::InitiatedBy>,
+    /// <p>Details about a cloned blue/green upgrade, when the change is one.</p>
+    pub cloned_blue_green_upgrade_details: ::std::option::Option<crate::types::ClonedBlueGreenUpgradeDetails>,
 }
 impl ChangeProgressStatusDetails {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
@@ -72,6 +74,10 @@ impl ChangeProgressStatusDetails {
     pub fn initiated_by(&self) -> ::std::option::Option<&crate::types::InitiatedBy> {
         self.initiated_by.as_ref()
     }
+    /// <p>Details about a cloned blue/green upgrade, when the change is one.</p>
+    pub fn cloned_blue_green_upgrade_details(&self) -> ::std::option::Option<&crate::types::ClonedBlueGreenUpgradeDetails> {
+        self.cloned_blue_green_upgrade_details.as_ref()
+    }
 }
 impl ChangeProgressStatusDetails {
     /// Creates a new builder-style object to manufacture [`ChangeProgressStatusDetails`](crate::types::ChangeProgressStatusDetails).
@@ -94,6 +100,7 @@ pub struct ChangeProgressStatusDetailsBuilder {
     pub(crate) config_change_status: ::std::option::Option<crate::types::ConfigChangeStatus>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) initiated_by: ::std::option::Option<crate::types::InitiatedBy>,
+    pub(crate) cloned_blue_green_upgrade_details: ::std::option::Option<crate::types::ClonedBlueGreenUpgradeDetails>,
 }
 impl ChangeProgressStatusDetailsBuilder {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
@@ -254,6 +261,20 @@ impl ChangeProgressStatusDetailsBuilder {
     pub fn get_initiated_by(&self) -> &::std::option::Option<crate::types::InitiatedBy> {
         &self.initiated_by
     }
+    /// <p>Details about a cloned blue/green upgrade, when the change is one.</p>
+    pub fn cloned_blue_green_upgrade_details(mut self, input: crate::types::ClonedBlueGreenUpgradeDetails) -> Self {
+        self.cloned_blue_green_upgrade_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about a cloned blue/green upgrade, when the change is one.</p>
+    pub fn set_cloned_blue_green_upgrade_details(mut self, input: ::std::option::Option<crate::types::ClonedBlueGreenUpgradeDetails>) -> Self {
+        self.cloned_blue_green_upgrade_details = input;
+        self
+    }
+    /// <p>Details about a cloned blue/green upgrade, when the change is one.</p>
+    pub fn get_cloned_blue_green_upgrade_details(&self) -> &::std::option::Option<crate::types::ClonedBlueGreenUpgradeDetails> {
+        &self.cloned_blue_green_upgrade_details
+    }
     /// Consumes the builder and constructs a [`ChangeProgressStatusDetails`](crate::types::ChangeProgressStatusDetails).
     pub fn build(self) -> crate::types::ChangeProgressStatusDetails {
         crate::types::ChangeProgressStatusDetails {
@@ -267,6 +288,7 @@ impl ChangeProgressStatusDetailsBuilder {
             config_change_status: self.config_change_status,
             last_updated_time: self.last_updated_time,
             initiated_by: self.initiated_by,
+            cloned_blue_green_upgrade_details: self.cloned_blue_green_upgrade_details,
         }
     }
 }

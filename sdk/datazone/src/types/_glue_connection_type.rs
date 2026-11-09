@@ -28,6 +28,8 @@
 ///     GlueConnectionType::Sqlserver => { /* ... */ },
 ///     GlueConnectionType::Teradata => { /* ... */ },
 ///     GlueConnectionType::Vertica => { /* ... */ },
+///     GlueConnectionType::Workdayicebergrestcatalog => { /* ... */ },
+///     GlueConnectionType::Workdayldq => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -88,6 +90,10 @@ pub enum GlueConnectionType {
     Teradata,
     #[allow(missing_docs)] // documentation missing in model
     Vertica,
+    /// <p>A Workday Data Connect (Iceberg REST) catalog connection type.</p>
+    Workdayicebergrestcatalog,
+    /// <p>A Workday Live Data Query connection type.</p>
+    Workdayldq,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -111,6 +117,8 @@ impl ::std::convert::From<&str> for GlueConnectionType {
             "SQLSERVER" => GlueConnectionType::Sqlserver,
             "TERADATA" => GlueConnectionType::Teradata,
             "VERTICA" => GlueConnectionType::Vertica,
+            "WORKDAYICEBERGRESTCATALOG" => GlueConnectionType::Workdayicebergrestcatalog,
+            "WORKDAYLDQ" => GlueConnectionType::Workdayldq,
             other => GlueConnectionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -142,6 +150,8 @@ impl GlueConnectionType {
             GlueConnectionType::Sqlserver => "SQLSERVER",
             GlueConnectionType::Teradata => "TERADATA",
             GlueConnectionType::Vertica => "VERTICA",
+            GlueConnectionType::Workdayicebergrestcatalog => "WORKDAYICEBERGRESTCATALOG",
+            GlueConnectionType::Workdayldq => "WORKDAYLDQ",
             GlueConnectionType::Unknown(value) => value.as_str(),
         }
     }
@@ -164,6 +174,8 @@ impl GlueConnectionType {
             "SQLSERVER",
             "TERADATA",
             "VERTICA",
+            "WORKDAYICEBERGRESTCATALOG",
+            "WORKDAYLDQ",
         ]
     }
 }
@@ -203,6 +215,8 @@ impl ::std::fmt::Display for GlueConnectionType {
             GlueConnectionType::Sqlserver => write!(f, "SQLSERVER"),
             GlueConnectionType::Teradata => write!(f, "TERADATA"),
             GlueConnectionType::Vertica => write!(f, "VERTICA"),
+            GlueConnectionType::Workdayicebergrestcatalog => write!(f, "WORKDAYICEBERGRESTCATALOG"),
+            GlueConnectionType::Workdayldq => write!(f, "WORKDAYLDQ"),
             GlueConnectionType::Unknown(value) => write!(f, "{value}"),
         }
     }

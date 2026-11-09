@@ -22,7 +22,8 @@
 //! The two central types are [`Schema`] (a runtime descriptor of a Smithy
 //! shape) and [`ShapeId`] (a Smithy shape identifier). Both are parameterized
 //! over a lifetime `'a` that names the data their string fields and member
-//! references borrow from.
+//! references borrow from. An [`OperationSchema`] relates an operation's
+//! shape ID to its input, output, and error schemas.
 //!
 //! # API stability
 //!
@@ -103,8 +104,8 @@
 //!
 //! # Variance
 //!
-//! `Schema<'a>`, `ShapeId<'a>`, and the typed trait wrappers are covariant in
-//! `'a`. Covariance is what
+//! `Schema<'a>`, `ShapeId<'a>`, [`OperationSchema<'a>`], and the typed trait
+//! wrappers are covariant in `'a`. Covariance is what
 //! lets a `&'static Schema<'static>` (the codegen form) coerce implicitly
 //! into a `&Schema<'_>` argument at any call site, with no annotation needed
 //! at the call site. Compile-time assertion functions in this crate enforce
@@ -112,6 +113,7 @@
 //! before any downstream code is affected.
 
 mod schema {
+    pub(crate) mod operation_schema;
     pub(crate) mod payload_hint;
     pub(crate) mod shape_id;
     pub(crate) mod shape_type;
@@ -131,6 +133,7 @@ mod schema {
     pub(crate) mod serde;
 }
 
+pub use schema::operation_schema::{OperationSchema, OperationSchemaBuilder};
 pub use schema::payload_hint::PayloadHint;
 pub use schema::shape_id::ShapeId;
 pub use schema::shape_type::ShapeType;
@@ -483,7 +486,7 @@ enum SchemaMembers<'a> {
 
 // ---------- Variance assertions ----------
 //
-// `Schema<'a>`, `ShapeId<'a>`, and the eight trait-value wrappers must remain
+// `Schema<'a>`, `ShapeId<'a>`, `OperationSchema<'a>`, and the eight trait-value wrappers must remain
 // **covariant** in `'a`. Covariance
 // is what lets `&'static Schema<'static>` (the codegen-emitted form) coerce
 // implicitly into `&Schema<'_>` at call sites — without it, every call would
@@ -509,6 +512,13 @@ fn _assert_schema_covariant<'a, 'b: 'a>(s: &'b Schema<'b>) -> &'a Schema<'a> {
 #[allow(dead_code)]
 fn _assert_shape_id_covariant<'a, 'b: 'a>(id: ShapeId<'b>) -> ShapeId<'a> {
     id
+}
+
+#[allow(dead_code)]
+fn _assert_operation_schema_covariant<'a, 'b: 'a>(
+    operation: OperationSchema<'b>,
+) -> OperationSchema<'a> {
+    operation
 }
 
 // The eight trait-value wrappers carry `'a` too, and the same reasoning
@@ -544,6 +554,8 @@ assert_wrapper_covariant!(_assert_http_covariant, HttpTrait);
 const _: () = {
     const fn assert_send_sync<T: Send + Sync>() {}
     assert_send_sync::<Schema<'static>>();
+    assert_send_sync::<OperationSchema<'static>>();
+    assert_send_sync::<OperationSchemaBuilder<'static>>();
 };
 
 impl<'a> Schema<'a> {

@@ -209,6 +209,8 @@ pub(crate) mod shape_switchover_replication;
 
 pub(crate) mod shape_update_application;
 
+pub(crate) mod shape_update_clone;
+
 pub(crate) mod shape_update_data_source;
 
 pub(crate) mod shape_update_direct_query_data_source;
@@ -347,6 +349,8 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_application_input;
 
+pub(crate) mod shape_update_clone_input;
+
 pub(crate) mod shape_update_data_source_input;
 
 pub(crate) mod shape_update_direct_query_data_source_input;
@@ -415,6 +419,10 @@ pub(crate) mod shape_compatible_versions_list;
 
 pub(crate) mod shape_connection_properties;
 
+pub(crate) mod shape_cutover_options;
+
+pub(crate) mod shape_cutover_request_options;
+
 pub(crate) mod shape_data_source;
 
 pub(crate) mod shape_data_source_attachment_summary_list;
@@ -426,6 +434,8 @@ pub(crate) mod shape_data_source_type;
 pub(crate) mod shape_data_sources;
 
 pub(crate) mod shape_deployment_strategy_options;
+
+pub(crate) mod shape_deployment_strategy_override_options;
 
 pub(crate) mod shape_describe_packages_filter;
 
@@ -539,6 +549,8 @@ pub(crate) mod shape_reserved_instance_list;
 
 pub(crate) mod shape_reserved_instance_offering_list;
 
+pub(crate) mod shape_retention_options;
+
 pub(crate) mod shape_rollback_service_software_options;
 
 pub(crate) mod shape_scheduled_action;
@@ -558,6 +570,10 @@ pub(crate) mod shape_software_update_options;
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
+
+pub(crate) mod shape_traffic_split_options;
+
+pub(crate) mod shape_traffic_split_request_options;
 
 pub(crate) mod shape_upgrade_history_list;
 
@@ -616,6 +632,10 @@ pub(crate) mod shape_capability_failure;
 pub(crate) mod shape_category_diff_result;
 
 pub(crate) mod shape_change_progress_stage_list;
+
+pub(crate) mod shape_cloned_blue_green_options;
+
+pub(crate) mod shape_cloned_blue_green_upgrade_details;
 
 pub(crate) mod shape_cloud_watch_direct_query_data_source;
 
@@ -733,6 +753,8 @@ pub(crate) mod shape_software_update_options_status;
 
 pub(crate) mod shape_string_list;
 
+pub(crate) mod shape_traffic_percents;
+
 pub(crate) mod shape_upgrade_history;
 
 pub(crate) mod shape_use_case_status;
@@ -760,6 +782,8 @@ pub(crate) mod shape_availability_zone_info_list;
 pub(crate) mod shape_availability_zone_list;
 
 pub(crate) mod shape_change_progress_stage;
+
+pub(crate) mod shape_cloned_blue_green_scheduled_action;
 
 pub(crate) mod shape_diff_items;
 

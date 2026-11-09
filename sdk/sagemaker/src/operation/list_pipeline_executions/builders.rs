@@ -212,4 +212,18 @@ impl ListPipelineExecutionsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>The alias of a pipeline version. The response includes only the executions of the version that has this alias when you make the request. If no version of the pipeline has this alias, the request fails with a <code>ResourceNotFound</code> error.</p>
+    pub fn pipeline_version_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.pipeline_version_alias(input.into());
+        self
+    }
+    /// <p>The alias of a pipeline version. The response includes only the executions of the version that has this alias when you make the request. If no version of the pipeline has this alias, the request fails with a <code>ResourceNotFound</code> error.</p>
+    pub fn set_pipeline_version_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_pipeline_version_alias(input);
+        self
+    }
+    /// <p>The alias of a pipeline version. The response includes only the executions of the version that has this alias when you make the request. If no version of the pipeline has this alias, the request fails with a <code>ResourceNotFound</code> error.</p>
+    pub fn get_pipeline_version_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_version_alias()
+    }
 }

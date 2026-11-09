@@ -211,17 +211,17 @@ impl StartPipelineExecutionFluentBuilder {
     pub fn get_selective_execution_config(&self) -> &::std::option::Option<crate::types::SelectiveExecutionConfig> {
         self.inner.get_selective_execution_config()
     }
-    /// <p>The ID of the pipeline version to start execution from.</p>
+    /// <p>The ID of the pipeline version to start execution from. You can't specify this with <code>PipelineVersionAlias</code>.</p>
     pub fn pipeline_version_id(mut self, input: i64) -> Self {
         self.inner = self.inner.pipeline_version_id(input);
         self
     }
-    /// <p>The ID of the pipeline version to start execution from.</p>
+    /// <p>The ID of the pipeline version to start execution from. You can't specify this with <code>PipelineVersionAlias</code>.</p>
     pub fn set_pipeline_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_pipeline_version_id(input);
         self
     }
-    /// <p>The ID of the pipeline version to start execution from.</p>
+    /// <p>The ID of the pipeline version to start execution from. You can't specify this with <code>PipelineVersionAlias</code>.</p>
     pub fn get_pipeline_version_id(&self) -> &::std::option::Option<i64> {
         self.inner.get_pipeline_version_id()
     }
@@ -238,5 +238,33 @@ impl StartPipelineExecutionFluentBuilder {
     /// <p>The MLflow experiment name of the pipeline execution.</p>
     pub fn get_mlflow_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_mlflow_experiment_name()
+    }
+    /// <p>The alias of the pipeline version to start the execution from. You can't specify this with <code>PipelineVersionId</code>. If no version of the pipeline has this alias, the request fails with a <code>ResourceNotFound</code> error.</p>
+    pub fn pipeline_version_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.pipeline_version_alias(input.into());
+        self
+    }
+    /// <p>The alias of the pipeline version to start the execution from. You can't specify this with <code>PipelineVersionId</code>. If no version of the pipeline has this alias, the request fails with a <code>ResourceNotFound</code> error.</p>
+    pub fn set_pipeline_version_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_pipeline_version_alias(input);
+        self
+    }
+    /// <p>The alias of the pipeline version to start the execution from. You can't specify this with <code>PipelineVersionId</code>. If no version of the pipeline has this alias, the request fails with a <code>ResourceNotFound</code> error.</p>
+    pub fn get_pipeline_version_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_version_alias()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that the execution uses. You must specify this parameter when you start an execution of a pipeline that AWS manages. You can't specify it for a pipeline that you create, because its executions use the pipeline's role.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.role_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that the execution uses. You must specify this parameter when you start an execution of a pipeline that AWS manages. You can't specify it for a pipeline that you create, because its executions use the pipeline's role.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_role_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that the execution uses. You must specify this parameter when you start an execution of a pipeline that AWS manages. You can't specify it for a pipeline that you create, because its executions use the pipeline's role.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
 }

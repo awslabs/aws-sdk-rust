@@ -95,9 +95,19 @@ pub use crate::types::_rollback_service_software_options::RollbackServiceSoftwar
 
 pub use crate::types::_migration_options::MigrationOptionsBuilder;
 
+pub use crate::types::_traffic_split_request_options::TrafficSplitRequestOptionsBuilder;
+
+pub use crate::types::_cutover_request_options::CutoverRequestOptionsBuilder;
+
+pub use crate::types::_cutover_options::CutoverOptionsBuilder;
+
+pub use crate::types::_traffic_split_options::TrafficSplitOptionsBuilder;
+
 pub use crate::types::_auto_tune_options::AutoTuneOptionsBuilder;
 
 pub use crate::types::_scheduled_action::ScheduledActionBuilder;
+
+pub use crate::types::_deployment_strategy_override_options::DeploymentStrategyOverrideOptionsBuilder;
 
 pub use crate::types::_change_progress_details::ChangeProgressDetailsBuilder;
 
@@ -168,6 +178,8 @@ pub use crate::types::_cross_cluster_search_connection_properties::CrossClusterS
 pub use crate::types::_plugin_properties::PluginPropertiesBuilder;
 
 pub use crate::types::_auto_tune::AutoTuneBuilder;
+
+pub use crate::types::_cloned_blue_green_upgrade_details::ClonedBlueGreenUpgradeDetailsBuilder;
 
 pub use crate::types::_version_status::VersionStatusBuilder;
 
@@ -267,6 +279,10 @@ pub use crate::types::_migration_workspace::MigrationWorkspaceBuilder;
 
 pub use crate::types::_export_options::ExportOptionsBuilder;
 
+pub use crate::types::_traffic_percents::TrafficPercentsBuilder;
+
+pub use crate::types::_cloned_blue_green_options::ClonedBlueGreenOptionsBuilder;
+
 pub use crate::types::_diff_items::DiffItemsBuilder;
 
 pub use crate::types::_node_option::NodeOptionBuilder;
@@ -290,6 +306,8 @@ pub use crate::types::_natural_language_query_generation_options_output::Natural
 pub use crate::types::_auto_tune_details::AutoTuneDetailsBuilder;
 
 pub use crate::types::_change_progress_stage::ChangeProgressStageBuilder;
+
+pub use crate::types::_cloned_blue_green_scheduled_action::ClonedBlueGreenScheduledActionBuilder;
 
 pub use crate::types::_validation_failure::ValidationFailureBuilder;
 

@@ -17,6 +17,8 @@ pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExce
 
 pub use crate::types::error::_runtime_client_error::RuntimeClientError;
 
+pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableException;
+
 pub use crate::types::error::_retryable_conflict_exception::RetryableConflictException;
 
 pub use crate::types::error::_duplicate_id_exception::DuplicateIdException;
@@ -497,6 +499,8 @@ mod _runtime_client_error;
 mod _service_exception;
 
 mod _service_quota_exceeded_exception;
+
+mod _service_unavailable_exception;
 
 mod _subscription_required_exception;
 

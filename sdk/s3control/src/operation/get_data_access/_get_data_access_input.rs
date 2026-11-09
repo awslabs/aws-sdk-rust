@@ -31,6 +31,14 @@ pub struct GetDataAccessInput {
     pub target_type: ::std::option::Option<crate::types::S3PrefixType>,
     /// <p>The context to identify the job or query associated with the credential request. This information will be displayed in CloudTrail log in your account.</p>
     pub audit_context: ::std::option::Option<::std::string::String>,
+    /// <p>The scope of S3 Access Grants instances to search for a grant matching the requested S3 URI path.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – Searches only the instance of the Amazon Web Services account ID in the request.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – Searches the instance of the Amazon Web Services account ID in the request and all instances shared with the caller's account through Amazon Web Services Resource Access Manager (RAM).</p></li>
+    /// </ul>
+    pub instance_scope: ::std::option::Option<crate::types::InstanceScope>,
 }
 impl GetDataAccessInput {
     /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
@@ -75,6 +83,16 @@ impl GetDataAccessInput {
     pub fn audit_context(&self) -> ::std::option::Option<&str> {
         self.audit_context.as_deref()
     }
+    /// <p>The scope of S3 Access Grants instances to search for a grant matching the requested S3 URI path.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – Searches only the instance of the Amazon Web Services account ID in the request.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – Searches the instance of the Amazon Web Services account ID in the request and all instances shared with the caller's account through Amazon Web Services Resource Access Manager (RAM).</p></li>
+    /// </ul>
+    pub fn instance_scope(&self) -> ::std::option::Option<&crate::types::InstanceScope> {
+        self.instance_scope.as_ref()
+    }
 }
 impl GetDataAccessInput {
     /// Creates a new builder-style object to manufacture [`GetDataAccessInput`](crate::operation::get_data_access::GetDataAccessInput).
@@ -94,6 +112,7 @@ pub struct GetDataAccessInputBuilder {
     pub(crate) privilege: ::std::option::Option<crate::types::Privilege>,
     pub(crate) target_type: ::std::option::Option<crate::types::S3PrefixType>,
     pub(crate) audit_context: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_scope: ::std::option::Option<crate::types::InstanceScope>,
 }
 impl GetDataAccessInputBuilder {
     /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
@@ -239,6 +258,38 @@ impl GetDataAccessInputBuilder {
     pub fn get_audit_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.audit_context
     }
+    /// <p>The scope of S3 Access Grants instances to search for a grant matching the requested S3 URI path.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – Searches only the instance of the Amazon Web Services account ID in the request.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – Searches the instance of the Amazon Web Services account ID in the request and all instances shared with the caller's account through Amazon Web Services Resource Access Manager (RAM).</p></li>
+    /// </ul>
+    pub fn instance_scope(mut self, input: crate::types::InstanceScope) -> Self {
+        self.instance_scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scope of S3 Access Grants instances to search for a grant matching the requested S3 URI path.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – Searches only the instance of the Amazon Web Services account ID in the request.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – Searches the instance of the Amazon Web Services account ID in the request and all instances shared with the caller's account through Amazon Web Services Resource Access Manager (RAM).</p></li>
+    /// </ul>
+    pub fn set_instance_scope(mut self, input: ::std::option::Option<crate::types::InstanceScope>) -> Self {
+        self.instance_scope = input;
+        self
+    }
+    /// <p>The scope of S3 Access Grants instances to search for a grant matching the requested S3 URI path.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – Searches only the instance of the Amazon Web Services account ID in the request.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – Searches the instance of the Amazon Web Services account ID in the request and all instances shared with the caller's account through Amazon Web Services Resource Access Manager (RAM).</p></li>
+    /// </ul>
+    pub fn get_instance_scope(&self) -> &::std::option::Option<crate::types::InstanceScope> {
+        &self.instance_scope
+    }
     /// Consumes the builder and constructs a [`GetDataAccessInput`](crate::operation::get_data_access::GetDataAccessInput).
     pub fn build(
         self,
@@ -251,6 +302,7 @@ impl GetDataAccessInputBuilder {
             privilege: self.privilege,
             target_type: self.target_type,
             audit_context: self.audit_context,
+            instance_scope: self.instance_scope,
         })
     }
 }

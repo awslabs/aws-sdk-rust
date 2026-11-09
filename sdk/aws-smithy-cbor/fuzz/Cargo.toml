@@ -30,11 +30,11 @@ version = "0.64.1"
 
 [dependencies.aws-smithy-schema]
 path = "../../aws-smithy-schema"
-version = "1.1.2"
+version = "1.2.0"
 
 [dependencies.aws-smithy-types]
 path = "../../aws-smithy-types"
-version = "1.9.1"
+version = "1.9.3"
 
 [dependencies.arbitrary]
 version = "1"

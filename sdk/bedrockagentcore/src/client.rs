@@ -243,6 +243,8 @@ mod invoke_code_interpreter;
 
 mod invoke_harness;
 
+mod invoke_web_search;
+
 mod list_ab_tests;
 
 mod list_actors;

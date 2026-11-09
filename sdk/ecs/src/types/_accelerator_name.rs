@@ -18,6 +18,8 @@
 ///     AcceleratorName::Inferentia => { /* ... */ },
 ///     AcceleratorName::K520 => { /* ... */ },
 ///     AcceleratorName::K80 => { /* ... */ },
+///     AcceleratorName::L4 => { /* ... */ },
+///     AcceleratorName::L40S => { /* ... */ },
 ///     AcceleratorName::M60 => { /* ... */ },
 ///     AcceleratorName::RadeonProV520 => { /* ... */ },
 ///     AcceleratorName::T4 => { /* ... */ },
@@ -65,6 +67,10 @@ pub enum AcceleratorName {
     #[allow(missing_docs)] // documentation missing in model
     K80,
     #[allow(missing_docs)] // documentation missing in model
+    L4,
+    #[allow(missing_docs)] // documentation missing in model
+    L40S,
+    #[allow(missing_docs)] // documentation missing in model
     M60,
     #[allow(missing_docs)] // documentation missing in model
     RadeonProV520,
@@ -89,6 +95,8 @@ impl ::std::convert::From<&str> for AcceleratorName {
             "inferentia" => AcceleratorName::Inferentia,
             "k520" => AcceleratorName::K520,
             "k80" => AcceleratorName::K80,
+            "l4" => AcceleratorName::L4,
+            "l40s" => AcceleratorName::L40S,
             "m60" => AcceleratorName::M60,
             "radeon-pro-v520" => AcceleratorName::RadeonProV520,
             "t4" => AcceleratorName::T4,
@@ -116,6 +124,8 @@ impl AcceleratorName {
             AcceleratorName::Inferentia => "inferentia",
             AcceleratorName::K520 => "k520",
             AcceleratorName::K80 => "k80",
+            AcceleratorName::L4 => "l4",
+            AcceleratorName::L40S => "l40s",
             AcceleratorName::M60 => "m60",
             AcceleratorName::RadeonProV520 => "radeon-pro-v520",
             AcceleratorName::T4 => "t4",
@@ -134,6 +144,8 @@ impl AcceleratorName {
             "inferentia",
             "k520",
             "k80",
+            "l4",
+            "l40s",
             "m60",
             "radeon-pro-v520",
             "t4",
@@ -169,6 +181,8 @@ impl ::std::fmt::Display for AcceleratorName {
             AcceleratorName::Inferentia => write!(f, "inferentia"),
             AcceleratorName::K520 => write!(f, "k520"),
             AcceleratorName::K80 => write!(f, "k80"),
+            AcceleratorName::L4 => write!(f, "l4"),
+            AcceleratorName::L40S => write!(f, "l40s"),
             AcceleratorName::M60 => write!(f, "m60"),
             AcceleratorName::RadeonProV520 => write!(f, "radeon-pro-v520"),
             AcceleratorName::T4 => write!(f, "t4"),

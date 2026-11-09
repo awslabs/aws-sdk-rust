@@ -473,6 +473,8 @@ pub(crate) mod shape_eks_container_override;
 
 pub(crate) mod shape_eks_metadata;
 
+pub(crate) mod shape_eks_pod_security_context;
+
 pub(crate) mod shape_eks_properties_detail;
 
 pub(crate) mod shape_eks_volume;
@@ -557,6 +559,8 @@ pub(crate) mod shape_eks_persistent_volume_claim;
 
 pub(crate) mod shape_eks_pod_properties_detail;
 
+pub(crate) mod shape_eks_seccomp_profile;
+
 pub(crate) mod shape_eks_secret;
 
 pub(crate) mod shape_environment_variables;
@@ -617,6 +621,8 @@ pub(crate) mod shape_eks_attempt_container_details;
 
 pub(crate) mod shape_eks_container_details;
 
+pub(crate) mod shape_eks_container_linux_capabilities;
+
 pub(crate) mod shape_eks_containers;
 
 pub(crate) mod shape_eks_volumes;
@@ -672,5 +678,7 @@ pub(crate) mod shape_eks_limits;
 pub(crate) mod shape_eks_requests;
 
 pub(crate) mod shape_task_container_dependency_list;
+
+pub(crate) mod shape_eks_container_linux_capability_list;
 
 pub(crate) mod shape_firelens_configuration_options_map;

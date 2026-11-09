@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-ecrpublic = "1.122.0"
+//! aws-sdk-ecrpublic = "1.123.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -202,6 +202,8 @@ mod serde_util;
 mod endpoint_lib;
 
 mod lens;
+
+pub(crate) mod schema_serde;
 
 #[doc(inline)]
 pub use client::Client;

@@ -103,6 +103,9 @@ pub mod create_crawler;
 /// Types for the `CreateCustomEntityType` operation.
 pub mod create_custom_entity_type;
 
+/// Types for the `CreateDataQualityEvaluationConfig` operation.
+pub mod create_data_quality_evaluation_config;
+
 /// Types for the `CreateDataQualityRuleset` operation.
 pub mod create_data_quality_ruleset;
 
@@ -213,6 +216,9 @@ pub mod delete_crawler;
 
 /// Types for the `DeleteCustomEntityType` operation.
 pub mod delete_custom_entity_type;
+
+/// Types for the `DeleteDataQualityEvaluationConfig` operation.
+pub mod delete_data_quality_evaluation_config;
 
 /// Types for the `DeleteDataQualityRuleset` operation.
 pub mod delete_data_quality_ruleset;
@@ -381,6 +387,9 @@ pub mod get_data_catalog_encryption_settings;
 
 /// Types for the `GetDataCatalogExportConfiguration` operation.
 pub mod get_data_catalog_export_configuration;
+
+/// Types for the `GetDataQualityEvaluationConfig` operation.
+pub mod get_data_quality_evaluation_config;
 
 /// Types for the `GetDataQualityModel` operation.
 pub mod get_data_quality_model;
@@ -606,6 +615,9 @@ pub mod list_crawls;
 
 /// Types for the `ListCustomEntityTypes` operation.
 pub mod list_custom_entity_types;
+
+/// Types for the `ListDataQualityEvaluationConfigs` operation.
+pub mod list_data_quality_evaluation_configs;
 
 /// Types for the `ListDataQualityResults` operation.
 pub mod list_data_quality_results;
@@ -864,6 +876,9 @@ pub mod update_crawler;
 
 /// Types for the `UpdateCrawlerSchedule` operation.
 pub mod update_crawler_schedule;
+
+/// Types for the `UpdateDataQualityEvaluationConfig` operation.
+pub mod update_data_quality_evaluation_config;
 
 /// Types for the `UpdateDataQualityRuleset` operation.
 pub mod update_data_quality_ruleset;

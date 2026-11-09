@@ -373,17 +373,17 @@ impl PublishDataQualityResultV2FluentBuilder {
     pub fn get_data_quality_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_quality_security_configuration()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p></p>
     pub fn telemetry(mut self, input: crate::types::DataQualityTelemetry) -> Self {
         self.inner = self.inner.telemetry(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p></p>
     pub fn set_telemetry(mut self, input: ::std::option::Option<crate::types::DataQualityTelemetry>) -> Self {
         self.inner = self.inner.set_telemetry(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p></p>
     pub fn get_telemetry(&self) -> &::std::option::Option<crate::types::DataQualityTelemetry> {
         self.inner.get_telemetry()
     }

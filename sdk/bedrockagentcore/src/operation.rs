@@ -121,6 +121,9 @@ pub mod invoke_code_interpreter;
 /// Types for the `InvokeHarness` operation.
 pub mod invoke_harness;
 
+/// Types for the `InvokeWebSearch` operation.
+pub mod invoke_web_search;
+
 /// Types for the `ListABTests` operation.
 pub mod list_ab_tests;
 

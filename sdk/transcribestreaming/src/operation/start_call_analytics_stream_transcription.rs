@@ -8,6 +8,12 @@ impl StartCallAnalyticsStreamTranscription {
     pub fn new() -> Self {
         Self
     }
+    /// The schema for this operation's input shape.
+    pub const INPUT_SCHEMA: &'static ::aws_smithy_schema::Schema<'static> =
+        crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionInput::SCHEMA;
+    /// The schema for this operation's output shape.
+    pub const OUTPUT_SCHEMA: &'static ::aws_smithy_schema::Schema<'static> =
+        crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput::SCHEMA;
     pub(crate) async fn orchestrate(
         runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
         input: crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionInput,
@@ -89,6 +95,65 @@ impl StartCallAnalyticsStreamTranscription {
         }
         runtime_plugins
     }
+}
+/// Per-operation error registry. Contains an entry for every modeled
+/// error this operation can throw.
+///
+/// Used by the schema-serde error path as the operation-scoped lookup
+/// for registry-backed error reification: an error code that does not
+/// match one of the operation's modeled errors directly is resolved
+/// against this registry first, then widened to the service-wide error
+/// registry.
+pub(crate) mod error_registry {
+    pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry::TypeRegistry> = ::std::sync::LazyLock::new(|| {
+        ::aws_smithy_schema::registry::TypeRegistry::builder()
+                            .insert_error_shape(
+                        crate::types::error::BadRequestException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::BadRequestException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::BadRequestException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::ConflictException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::ConflictException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::ConflictException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::InternalFailureException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InternalFailureException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::InternalFailureException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::LimitExceededException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::LimitExceededException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::LimitExceededException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::ServiceUnavailableException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::ServiceUnavailableException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::ServiceUnavailableException::deserialize(d)?))
+                        },
+                    )
+                            .build()
+    });
 }
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartCallAnalyticsStreamTranscription {
     fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
@@ -249,11 +314,35 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartCall
         if (!response.status().is_success() && response.status().as_u16() != 200) || force_error {
             return ::std::option::Option::None;
         }
-        ::std::option::Option::Some(crate::protocol_serde::type_erase_result(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription::de_start_call_analytics_stream_transcription_http_response(
-                response, _cfg,
-            ),
-        ))
+
+        let result = (|| -> ::std::result::Result<crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput, crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError> {
+                    // Swap body out — becomes the event stream receiver.
+                    let body = std::mem::replace(response.body_mut(), ::aws_smithy_types::body::SdkBody::taken());
+                    // Bind headers by reference after the body swap so `MutateOutput`
+                    // customizations (e.g., the AWS SDK request-id decorator) can read
+                    // `x-amzn-requestid` without cloning. `response.headers()` is still
+                    // valid — swapping the body does not invalidate headers.
+                    let _response_headers = response.headers();
+                    let protocol = _cfg.load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+                        .expect("a SharedClientProtocol is required");
+                    let unmarshaller = crate::event_stream_serde::CallAnalyticsTranscriptResultStreamUnmarshaller::new(protocol.clone());
+                    let receiver = crate::event_receiver::EventReceiver::new(::aws_smithy_http::event_stream::Receiver::new(unmarshaller, body));
+                    let mut output = crate::operation::start_call_analytics_stream_transcription::builders::StartCallAnalyticsStreamTranscriptionOutputBuilder::default().set_call_analytics_transcript_result_stream(::std::option::Option::Some(receiver));
+                    // The body is gone, so the protocol reads only headers and status.
+                    let mut deser = protocol
+                        .deserialize_response(response, StartCallAnalyticsStreamTranscription::OUTPUT_SCHEMA, _cfg)
+                        .map_err(crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled)?;
+                    output.deserialize_members(&mut *deser).map_err(crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled)?;
+                    output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
+                    // Build via finalizeBuilder — applies error correction so @required
+                    // non-event-stream members are populated with defaults. For RPC
+                    // protocols with initial-response, the fluent builder re-populates
+                    // those members from the first event frame via into_builder.
+                    let output = output.build().map_err(crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled)?;
+                    ::std::result::Result::Ok(output)
+                })();
+
+        ::std::option::Option::Some(crate::protocol_serde::type_erase_result(result))
     }
 
     fn deserialize_nonstreaming_with_config(
@@ -262,15 +351,162 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartCall
         _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         // For streaming operations, we only hit this case if its an error
+        #[allow(unused_variables)]
         let body = response.body().bytes().expect("body loaded");
-        crate::protocol_serde::type_erase_result(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription::de_start_call_analytics_stream_transcription_http_error(
-                response.status().as_u16(),
-                response.headers(),
-                body,
-                _cfg,
-            ),
-        )
+        #[allow(unused_variables)]
+        let headers = response.headers();
+        #[allow(unused_variables)]
+        let status = response.status().as_u16();
+        let protocol = _cfg
+            .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+            .expect("a SharedClientProtocol is required");
+        #[allow(unused_mut)]
+        let mut generic_builder = protocol.parse_error_metadata(response, _cfg).map_err(|e| {
+            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+        })?;
+        generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, headers);
+        let generic = generic_builder.build();
+        let error_code = match generic.code() {
+            ::std::option::Option::Some(code) => code,
+            ::std::option::Option::None => {
+                return ::std::result::Result::Err(::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                    ::aws_smithy_runtime_api::box_error::BoxError::from(
+                        crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(generic),
+                    ),
+                ))
+            }
+        };
+        let _error_message = generic.message().map(|msg| msg.to_owned());
+        let err = match error_code {
+            "BadRequestException" => {
+                crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::BadRequestException({
+                    let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let mut tmp = <crate::types::error::builders::BadRequestExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    let tmp = tmp.meta(generic);
+                    tmp.build()
+                })
+            }
+            "ConflictException" => {
+                crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::ConflictException({
+                    let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let mut tmp = <crate::types::error::builders::ConflictExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    let tmp = tmp.meta(generic);
+                    tmp.build()
+                })
+            }
+            "InternalFailureException" => {
+                crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::InternalFailureException({
+                    let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let mut tmp = <crate::types::error::builders::InternalFailureExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    let tmp = tmp.meta(generic);
+                    tmp.build()
+                })
+            }
+            "LimitExceededException" => {
+                crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::LimitExceededException({
+                    let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let mut tmp = <crate::types::error::builders::LimitExceededExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    let tmp = tmp.meta(generic);
+                    tmp.build()
+                })
+            }
+            "ServiceUnavailableException" => {
+                crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::ServiceUnavailableException(
+                    {
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::ServiceUnavailableExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    },
+                )
+            }
+            _ => {
+                // Registry-backed, operation-scoped reification of an error whose
+                // code this operation does not model directly: the operation's own
+                // error registry is consulted first, then the lookup widens to the
+                // service-wide error registry. On a hit, the reified error is attached
+                // as the source of the returned unhandled error while its metadata
+                // (code, message, request id) is preserved; on a miss the generic
+                // error is returned unchanged.
+                match protocol
+                        .deserialize_error_response(response, _cfg)
+                        .ok()
+                        .and_then(|mut deser| {
+                            ::aws_smithy_schema::registry::reify_error(
+                                crate::operation::start_call_analytics_stream_transcription::error_registry::REGISTRY
+                                    .or(&crate::error_type_registry::REGISTRY),
+                                error_code,
+                                &mut *deser,
+                            )
+                        }) {
+                        ::std::option::Option::Some(source) => <crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError as ::aws_smithy_runtime_api::client::result::CreateUnhandledError>::create_unhandled_error(source, ::std::option::Option::Some(generic)),
+                        ::std::option::Option::None => crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::generic(generic),
+                    }
+            }
+        };
+        ::std::result::Result::Err(::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::operation(
+            ::aws_smithy_runtime_api::client::interceptors::context::Error::erase(err),
+        ))
     }
 }
 #[derive(Debug)]
@@ -285,41 +521,20 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartCallAna
         let input = input
             .downcast::<crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionInput>()
             .expect("correct type");
-        let _header_serialization_settings = _cfg
-            .load::<crate::serialization_settings::HeaderSerializationSettings>()
-            .cloned()
-            .unwrap_or_default();
-        let mut request_builder = {
-            #[allow(clippy::uninlined_format_args)]
-            fn uri_base(
-                _input: &crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionInput,
-                output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                use ::std::fmt::Write as _;
-                ::std::write!(output, "/call-analytics-stream-transcription").expect("formatting should succeed");
-                ::std::result::Result::Ok(())
-            }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionInput,
-                builder: ::http_1x::request::Builder,
-            ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
-                let mut uri = ::std::string::String::new();
-                uri_base(input, &mut uri)?;
-                let builder =
-                    crate::protocol_serde::shape_start_call_analytics_stream_transcription::ser_start_call_analytics_stream_transcription_headers(
-                        input, builder,
-                    )?;
-                ::std::result::Result::Ok(builder.method("POST").uri(uri))
-            }
-            let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
-            builder =
-                _header_serialization_settings.set_default_header(builder, ::http_1x::header::CONTENT_TYPE, "application/vnd.amazon.eventstream");
-            builder
-        };
-        let body = ::aws_smithy_types::body::SdkBody::from({
-            let error_marshaller = crate::event_stream_serde::AudioStreamErrorMarshaller::new();
-            let marshaller = crate::event_stream_serde::AudioStreamMarshaller::new();
+
+        let protocol = _cfg
+            .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+            .expect("a SharedClientProtocol is required");
+        let mut request = protocol
+            .serialize_request(&input, StartCallAnalyticsStreamTranscription::INPUT_SCHEMA, "", _cfg)
+            .map_err(::aws_smithy_runtime_api::box_error::BoxError::from)?;
+        *request.body_mut() = {
+            let protocol = _cfg
+                .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+                .expect("a SharedClientProtocol is required")
+                .clone();
+            let error_marshaller = crate::event_stream_serde::AudioStreamErrorMarshaller::new(protocol.clone());
+            let marshaller = crate::event_stream_serde::AudioStreamMarshaller::new(protocol.clone());
 
             let (signer, signer_sender) = ::aws_smithy_eventstream::frame::DeferredSigner::new();
             _cfg.interceptor_state().store_put(signer_sender);
@@ -328,12 +543,19 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartCallAna
                 error_marshaller,
                 signer,
             )))
-        });
-        if let Some(content_length) = body.content_length() {
-            let content_length = content_length.to_string();
-            request_builder = _header_serialization_settings.set_default_header(request_builder, ::http_1x::header::CONTENT_LENGTH, &content_length);
+        };
+        // The protocol may have set Content-Length based on the initial empty body.
+        // Remove it since the event stream body has unknown length.
+        request.headers_mut().remove("Content-Length");
+        request.headers_mut().insert("Content-Type", "application/vnd.amazon.eventstream");
+        let accept = request
+            .headers()
+            .get("accept")
+            .map(|accept| format!("application/vnd.amazon.eventstream, {}", accept));
+        if let ::std::option::Option::Some(accept) = accept {
+            request.headers_mut().insert("accept", accept);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
+        return ::std::result::Result::Ok(request);
     }
 }
 #[derive(Debug)]

@@ -82,6 +82,11 @@ where
                         "shareProcessNamespace" => {
                             builder = builder.set_share_process_namespace(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "securityContext" => {
+                            builder = builder.set_security_context(
+                                crate::protocol_serde::shape_eks_pod_security_context::de_eks_pod_security_context(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

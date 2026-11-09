@@ -280,6 +280,9 @@ pub mod switchover_replication;
 /// Types for the `UpdateApplication` operation.
 pub mod update_application;
 
+/// Types for the `UpdateClone` operation.
+pub mod update_clone;
+
 /// Types for the `UpdateDataSource` operation.
 pub mod update_data_source;
 

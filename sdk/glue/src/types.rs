@@ -35,6 +35,16 @@ pub use crate::types::_lake_formation_configuration::LakeFormationConfiguration;
 
 pub use crate::types::_database_input::DatabaseInput;
 
+pub use crate::types::_data_quality_evaluation_config_level::DataQualityEvaluationConfigLevel;
+
+pub use crate::types::_data_quality_evaluation_config_data_source::DataQualityEvaluationConfigDataSource;
+
+pub use crate::types::_data_quality_evaluation_config_managed_ruleset::DataQualityEvaluationConfigManagedRuleset;
+
+pub use crate::types::_data_quality_evaluation_config_additional_run_options::DataQualityEvaluationConfigAdditionalRunOptions;
+
+pub use crate::types::_data_quality_evaluation_run_mode::DataQualityEvaluationRunMode;
+
 pub use crate::types::_data_quality_target_table::DataQualityTargetTable;
 
 pub use crate::types::_worker_type::WorkerType;
@@ -365,6 +375,24 @@ pub use crate::types::_database_identifier::DatabaseIdentifier;
 
 pub use crate::types::_federated_database::FederatedDatabase;
 
+pub use crate::types::_data_quality_evaluation_config_glue_tables::DataQualityEvaluationConfigGlueTables;
+
+pub use crate::types::_data_quality_evaluation_config_trigger::DataQualityEvaluationConfigTrigger;
+
+pub use crate::types::_dq_composite_rule_evaluation_method::DqCompositeRuleEvaluationMethod;
+
+pub use crate::types::_row_level_results_options::RowLevelResultsOptions;
+
+pub use crate::types::_profiling_results_options::ProfilingResultsOptions;
+
+pub use crate::types::_observation_configuration::ObservationConfiguration;
+
+pub use crate::types::_observation_mode::ObservationMode;
+
+pub use crate::types::_data_quality_rule_results_options::DataQualityRuleResultsOptions;
+
+pub use crate::types::_observation_results_options::ObservationResultsOptions;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_integration_error::IntegrationError;
@@ -497,20 +525,6 @@ pub use crate::types::_data_quality_analyzer_result::DataQualityAnalyzerResult;
 
 pub use crate::types::_data_quality_observation::DataQualityObservation;
 
-pub use crate::types::_dq_composite_rule_evaluation_method::DqCompositeRuleEvaluationMethod;
-
-pub use crate::types::_row_level_results_options::RowLevelResultsOptions;
-
-pub use crate::types::_profiling_results_options::ProfilingResultsOptions;
-
-pub use crate::types::_observation_configuration::ObservationConfiguration;
-
-pub use crate::types::_observation_mode::ObservationMode;
-
-pub use crate::types::_data_quality_rule_results_options::DataQualityRuleResultsOptions;
-
-pub use crate::types::_observation_results_options::ObservationResultsOptions;
-
 pub use crate::types::_auto_upgrade_metadata::AutoUpgradeMetadata;
 
 pub use crate::types::_job_run_state::JobRunState;
@@ -596,6 +610,8 @@ pub use crate::types::_connection_type_brief::ConnectionTypeBrief;
 pub use crate::types::_crawls_filter::CrawlsFilter;
 
 pub use crate::types::_crawler_history::CrawlerHistory;
+
+pub use crate::types::_data_quality_evaluation_config_list_details::DataQualityEvaluationConfigListDetails;
 
 pub use crate::types::_data_quality_result_description::DataQualityResultDescription;
 
@@ -694,6 +710,12 @@ pub use crate::types::_delta_target::DeltaTarget;
 pub use crate::types::_iceberg_target::IcebergTarget;
 
 pub use crate::types::_hudi_target::HudiTarget;
+
+pub use crate::types::_result_type_enum::ResultTypeEnum;
+
+pub use crate::types::_catalog_table_config_options::CatalogTableConfigOptions;
+
+pub use crate::types::_distribution_results_options::DistributionResultsOptions;
 
 pub use crate::types::_integration_partition::IntegrationPartition;
 
@@ -929,12 +951,6 @@ pub use crate::types::_data_quality_rule_result_status::DataQualityRuleResultSta
 
 pub use crate::types::_metric_based_observation::MetricBasedObservation;
 
-pub use crate::types::_result_type_enum::ResultTypeEnum;
-
-pub use crate::types::_catalog_table_config_options::CatalogTableConfigOptions;
-
-pub use crate::types::_distribution_results_options::DistributionResultsOptions;
-
 pub use crate::types::_auto_upgrade_status::AutoUpgradeStatus;
 
 pub use crate::types::_predecessor::Predecessor;
@@ -970,6 +986,8 @@ pub use crate::types::_field_name::FieldName;
 pub use crate::types::_filter_operator::FilterOperator;
 
 pub use crate::types::_crawler_history_state::CrawlerHistoryState;
+
+pub use crate::types::_data_quality_evaluation_config_list_data_source::DataQualityEvaluationConfigListDataSource;
 
 pub use crate::types::_timestamped_inclusion_annotation::TimestampedInclusionAnnotation;
 
@@ -1148,6 +1166,8 @@ pub use crate::types::_node::Node;
 pub use crate::types::_edge::Edge;
 
 pub use crate::types::_connection_type_variant::ConnectionTypeVariant;
+
+pub use crate::types::_data_quality_evaluation_config_list_glue_tables::DataQualityEvaluationConfigListGlueTables;
 
 pub use crate::types::_other_metadata_value_list_item::OtherMetadataValueListItem;
 
@@ -1555,7 +1575,27 @@ mod _data_quality_encryption_mode;
 
 mod _data_quality_engine;
 
+mod _data_quality_evaluation_config_additional_run_options;
+
+mod _data_quality_evaluation_config_data_source;
+
+mod _data_quality_evaluation_config_glue_tables;
+
+mod _data_quality_evaluation_config_level;
+
+mod _data_quality_evaluation_config_list_data_source;
+
+mod _data_quality_evaluation_config_list_details;
+
+mod _data_quality_evaluation_config_list_glue_tables;
+
+mod _data_quality_evaluation_config_managed_ruleset;
+
+mod _data_quality_evaluation_config_trigger;
+
 mod _data_quality_evaluation_run_additional_run_options;
+
+mod _data_quality_evaluation_run_mode;
 
 mod _data_quality_glue_table;
 

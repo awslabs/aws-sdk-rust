@@ -204,6 +204,8 @@ mod create_crawler;
 
 mod create_custom_entity_type;
 
+mod create_data_quality_evaluation_config;
+
 mod create_data_quality_ruleset;
 
 mod create_database;
@@ -304,6 +306,8 @@ mod delete_connection_type;
 mod delete_crawler;
 
 mod delete_custom_entity_type;
+
+mod delete_data_quality_evaluation_config;
 
 mod delete_data_quality_ruleset;
 
@@ -416,6 +420,8 @@ mod get_dashboard_url;
 mod get_data_catalog_encryption_settings;
 
 mod get_data_catalog_export_configuration;
+
+mod get_data_quality_evaluation_config;
 
 mod get_data_quality_model;
 
@@ -566,6 +572,8 @@ mod list_crawlers;
 mod list_crawls;
 
 mod list_custom_entity_types;
+
+mod list_data_quality_evaluation_configs;
 
 mod list_data_quality_results;
 
@@ -738,6 +746,8 @@ mod update_connection;
 mod update_crawler;
 
 mod update_crawler_schedule;
+
+mod update_data_quality_evaluation_config;
 
 mod update_data_quality_ruleset;
 

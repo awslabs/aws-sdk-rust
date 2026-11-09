@@ -14,6 +14,8 @@ pub struct UpgradeDomainOutput {
     pub perform_check_only: ::std::option::Option<bool>,
     /// <p>The advanced options configuration for the domain.</p>
     pub advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The deployment strategy override used for the upgrade.</p>
+    pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOverrideOptions>,
     /// <p>Container for information about a configuration change happening on a domain.</p>
     pub change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     _request_id: Option<String>,
@@ -38,6 +40,10 @@ impl UpgradeDomainOutput {
     /// <p>The advanced options configuration for the domain.</p>
     pub fn advanced_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.advanced_options.as_ref()
+    }
+    /// <p>The deployment strategy override used for the upgrade.</p>
+    pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOverrideOptions> {
+        self.deployment_strategy_options.as_ref()
     }
     /// <p>Container for information about a configuration change happening on a domain.</p>
     pub fn change_progress_details(&self) -> ::std::option::Option<&crate::types::ChangeProgressDetails> {
@@ -65,6 +71,7 @@ pub struct UpgradeDomainOutputBuilder {
     pub(crate) target_version: ::std::option::Option<::std::string::String>,
     pub(crate) perform_check_only: ::std::option::Option<bool>,
     pub(crate) advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOverrideOptions>,
     pub(crate) change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     _request_id: Option<String>,
 }
@@ -152,6 +159,20 @@ impl UpgradeDomainOutputBuilder {
     pub fn get_advanced_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.advanced_options
     }
+    /// <p>The deployment strategy override used for the upgrade.</p>
+    pub fn deployment_strategy_options(mut self, input: crate::types::DeploymentStrategyOverrideOptions) -> Self {
+        self.deployment_strategy_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deployment strategy override used for the upgrade.</p>
+    pub fn set_deployment_strategy_options(mut self, input: ::std::option::Option<crate::types::DeploymentStrategyOverrideOptions>) -> Self {
+        self.deployment_strategy_options = input;
+        self
+    }
+    /// <p>The deployment strategy override used for the upgrade.</p>
+    pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOverrideOptions> {
+        &self.deployment_strategy_options
+    }
     /// <p>Container for information about a configuration change happening on a domain.</p>
     pub fn change_progress_details(mut self, input: crate::types::ChangeProgressDetails) -> Self {
         self.change_progress_details = ::std::option::Option::Some(input);
@@ -183,6 +204,7 @@ impl UpgradeDomainOutputBuilder {
             target_version: self.target_version,
             perform_check_only: self.perform_check_only,
             advanced_options: self.advanced_options,
+            deployment_strategy_options: self.deployment_strategy_options,
             change_progress_details: self.change_progress_details,
             _request_id: self._request_id,
         }

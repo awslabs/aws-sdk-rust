@@ -171,13 +171,112 @@ impl AsRef<str> for BigInteger {
 /// This type does not perform arithmetic operations. Users should parse the string
 /// with their preferred big decimal library.
 ///
+/// Equality and hashing compare numeric values, not spellings: `"1e2"`, `"100"`,
+/// and `"100.00"` are equal, and so are `"-0.0"` and `"0"`. [`AsRef<str>`] still
+/// returns the string exactly as it was parsed.
+///
 /// See the [module docs](self) for the grammar accepted by `FromStr`.
-#[derive(Debug, Clone, PartialEq, Eq, Hash)]
+#[derive(Debug, Clone)]
 #[cfg_attr(
     all(aws_sdk_unstable, feature = "serde-serialize"),
     derive(serde::Serialize)
 )]
 pub struct BigDecimal(String);
+
+/// The numeric value of a [`BigDecimal`] as `±digits × 10^exponent`.
+///
+/// `digits` has no leading or trailing zeros, so every value has exactly one
+/// form. Zero has no digits, no sign, and exponent 0. The digits are kept as
+/// two slices of the stored string (the integer and fraction parts), so building
+/// this form never allocates.
+struct Canonical<'a> {
+    negative: bool,
+    integer: &'a str,
+    fraction: &'a str,
+    exponent: i128,
+}
+
+impl<'a> Canonical<'a> {
+    /// Reads the canonical form of a string that has already passed
+    /// [`validate_big_decimal`].
+    fn of(s: &'a str) -> Self {
+        let (coefficient, exponent) = match s.split_once(['e', 'E']) {
+            Some((coefficient, exponent)) => (
+                coefficient,
+                exponent.parse::<i128>().expect("validated when parsed"),
+            ),
+            None => (s, 0),
+        };
+        let negative = coefficient.starts_with('-');
+        let coefficient = coefficient.strip_prefix(['-', '+']).unwrap_or(coefficient);
+        let (integer, fraction) = coefficient.split_once('.').unwrap_or((coefficient, ""));
+
+        // The value is (integer ++ fraction) × 10^(exponent - fraction.len()).
+        let mut exponent = exponent - fraction.len() as i128;
+
+        // Trailing zeros: drop them from the fraction, then from the integer part
+        // once the fraction is empty, raising the exponent for each one.
+        let mut fraction_kept = fraction.trim_end_matches('0');
+        exponent += (fraction.len() - fraction_kept.len()) as i128;
+        let mut integer_kept = integer;
+        if fraction_kept.is_empty() {
+            integer_kept = integer.trim_end_matches('0');
+            exponent += (integer.len() - integer_kept.len()) as i128;
+        }
+
+        // Leading zeros: drop them from the integer part, then from the fraction
+        // once the integer part is empty. They don't change the exponent.
+        integer_kept = integer_kept.trim_start_matches('0');
+        if integer_kept.is_empty() {
+            fraction_kept = fraction_kept.trim_start_matches('0');
+        }
+
+        if integer_kept.is_empty() && fraction_kept.is_empty() {
+            return Self {
+                negative: false,
+                integer: "",
+                fraction: "",
+                exponent: 0,
+            };
+        }
+        Self {
+            negative,
+            integer: integer_kept,
+            fraction: fraction_kept,
+            exponent,
+        }
+    }
+
+    fn digits(&self) -> impl Iterator<Item = u8> + 'a {
+        self.integer.bytes().chain(self.fraction.bytes())
+    }
+}
+
+impl PartialEq for BigDecimal {
+    fn eq(&self, other: &Self) -> bool {
+        let (a, b) = (Canonical::of(&self.0), Canonical::of(&other.0));
+        a.negative == b.negative && a.exponent == b.exponent && a.digits().eq(b.digits())
+    }
+}
+
+impl Eq for BigDecimal {}
+
+impl std::hash::Hash for BigDecimal {
+    fn hash<H: std::hash::Hasher>(&self, state: &mut H) {
+        let canonical = Canonical::of(&self.0);
+        canonical.negative.hash(state);
+        canonical.exponent.hash(state);
+        // Hash digit by digit: equal values can split their digits differently
+        // between the integer and fraction slices, and `Hasher::write` is not
+        // required to give the same result for differently split input.
+        let mut count = 0usize;
+        for digit in canonical.digits() {
+            state.write_u8(digit);
+            count += 1;
+        }
+        state.write_usize(count);
+    }
+}
 
 #[cfg(all(aws_sdk_unstable, feature = "serde-deserialize"))]
 impl<'de> serde::Deserialize<'de> for BigDecimal {
@@ -293,6 +392,165 @@ mod tests {
                 Err(BigNumberError::ExponentOutOfRange(value.to_string())),
                 "{value}"
             );
+        }
+    }
+
+    fn hash_of(value: &BigDecimal) -> u64 {
+        use std::hash::{BuildHasher, BuildHasherDefault};
+        BuildHasherDefault::<std::collections::hash_map::DefaultHasher>::default().hash_one(value)
+    }
+
+    fn assert_same_value(a: &str, b: &str) {
+        let (x, y) = (
+            BigDecimal::from_str(a).unwrap(),
+            BigDecimal::from_str(b).unwrap(),
+        );
+        assert_eq!(x, y, "{a} should equal {b}");
+        assert_eq!(hash_of(&x), hash_of(&y), "{a} and {b} should hash the same");
+    }
+
+    #[test]
+    fn big_decimal_compares_numeric_values_not_spellings() {
+        for (a, b) in [
+            // From https://github.com/smithy-lang/smithy-rs/issues/4863
+            ("1e2", "100"),
+            ("1.0", "1.00"),
+            ("+5", "5"),
+            ("-0.0", "0"),
+            (".5", "0.5"),
+            // Exponent, point and zero placement
+            ("5.", "5"),
+            ("1.5E+3", "1500"),
+            ("150e1", "1.5e3"),
+            ("0.0012", "1.2e-3"),
+            ("12e-5", "0.00012"),
+            ("00123.4500", "123.45"),
+            ("-007e2", "-700"),
+            ("1E0", "1"),
+            ("10.0", "1e1"),
+            // Every spelling of zero is the same value
+            ("0", "-0"),
+            ("0.000", "0e50"),
+            ("-.0e-9", "+0"),
+            ("0.0", "0"),
+        ] {
+            assert_same_value(a, b);
+        }
+    }
+
+    #[test]
+    fn big_decimal_keeps_different_values_different() {
+        for (a, b) in [
+            ("1", "-1"),
+            ("1", "10"),
+            ("1.5", "15"),
+            ("0.1", "0.01"),
+            ("1e2", "1e3"),
+            ("12", "21"),
+            ("1.2", "1.02"),
+            ("100", "101"),
+            ("0", "1e-999"),
+            ("-0.5", "0.5"),
+        ] {
+            assert_ne!(
+                BigDecimal::from_str(a).unwrap(),
+                BigDecimal::from_str(b).unwrap(),
+                "{a} should not equal {b}"
+            );
+        }
+    }
+
+    #[test]
+    fn big_decimal_equality_keeps_the_original_spelling() {
+        let scientific = BigDecimal::from_str("1e2").unwrap();
+        let plain = BigDecimal::from_str("100").unwrap();
+        assert_eq!(scientific, plain);
+        assert_eq!(scientific.as_ref(), "1e2");
+        assert_eq!(plain.as_ref(), "100");
+    }
+
+    #[test]
+    fn big_decimal_works_as_a_hash_set_key() {
+        let values: std::collections::HashSet<BigDecimal> = ["100", "1e2", "100.000", "+1E+2", "7"]
+            .into_iter()
+            .map(|v| BigDecimal::from_str(v).unwrap())
+            .collect();
+        assert_eq!(values.len(), 2);
+        assert!(values.contains(&BigDecimal::from_str("10e1").unwrap()));
+    }
+
+    #[test]
+    fn big_decimal_default_equals_zero() {
+        assert_eq!(BigDecimal::default(), BigDecimal::from_str("0").unwrap());
+    }
+
+    #[test]
+    fn big_decimal_compares_exponents_at_the_supported_extremes() {
+        assert_same_value("1e9223372036854775807", "10e9223372036854775806");
+        assert_same_value("1e-9223372036854775806", "0.1e-9223372036854775805");
+        assert_ne!(
+            BigDecimal::from_str("1e9223372036854775807").unwrap(),
+            BigDecimal::from_str("1e9223372036854775806").unwrap()
+        );
+    }
+
+    mod numeric_equality {
+        use super::super::BigDecimal;
+        use proptest::prelude::*;
+        use std::str::FromStr;
+
+        /// Writes `±digits × 10^exponent` with the decimal point moved `shift`
+        /// places, padding with `lead` leading and `trail` trailing zeros.
+        fn spell(
+            negative: bool,
+            digits: &str,
+            exponent: i64,
+            shift: usize,
+            lead: usize,
+            trail: usize,
+        ) -> String {
+            let sign = if negative { "-" } else { "" };
+            let mut all = format!("{}{digits}{}", "0".repeat(lead), "0".repeat(trail));
+            // Put the point `shift` digits from the end of `all` (pad if needed).
+            if shift > all.len() {
+                all = format!("{}{all}", "0".repeat(shift - all.len()));
+            }
+            let point = all.len() - shift;
+            let exponent = exponent - trail as i64 + shift as i64;
+            format!("{sign}{}.{}e{exponent}", &all[..point], &all[point..])
+        }
+
+        proptest! {
+            #[test]
+            fn every_spelling_of_a_value_is_equal(
+                negative in any::<bool>(),
+                digits in "[1-9]([0-9]{0,20}[1-9])?",
+                exponent in -1000i64..1000,
+                shift_a in 0usize..30, lead_a in 0usize..5, trail_a in 0usize..5,
+                shift_b in 0usize..30, lead_b in 0usize..5, trail_b in 0usize..5,
+            ) {
+                let a = spell(negative, &digits, exponent, shift_a, lead_a, trail_a);
+                let b = spell(negative, &digits, exponent, shift_b, lead_b, trail_b);
+                let (x, y) = (BigDecimal::from_str(&a).unwrap(), BigDecimal::from_str(&b).unwrap());
+                prop_assert_eq!(&x, &y, "{} vs {}", a, b);
+                prop_assert_eq!(super::hash_of(&x), super::hash_of(&y));
+            }
+
+            #[test]
+            fn different_values_are_not_equal(
+                negative in any::<bool>(),
+                digits in "[1-9]([0-9]{0,20}[1-9])?",
+                exponent in -1000i64..1000,
+                bump in 1i64..5,
+                shift in 0usize..30,
+            ) {
+                let a = spell(negative, &digits, exponent, shift, 0, 0);
+                let b = spell(negative, &digits, exponent + bump, shift, 0, 0);
+                let c = spell(!negative, &digits, exponent, shift, 0, 0);
+                let x = BigDecimal::from_str(&a).unwrap();
+                prop_assert_ne!(&x, &BigDecimal::from_str(&b).unwrap(), "{} vs {}", a, b);
+                prop_assert_ne!(&x, &BigDecimal::from_str(&c).unwrap(), "{} vs {}", a, c);
+            }
         }
     }
 

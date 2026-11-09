@@ -15,6 +15,8 @@
 ///     InstanceType::I4IMetal => { /* ... */ },
 ///     InstanceType::I7IMetal24Xl => { /* ... */ },
 ///     InstanceType::I7IMetal48Xl => { /* ... */ },
+///     InstanceType::R7IMetal24Xl => { /* ... */ },
+///     InstanceType::R7IMetal48Xl => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +51,10 @@ pub enum InstanceType {
     I7IMetal24Xl,
     #[allow(missing_docs)] // documentation missing in model
     I7IMetal48Xl,
+    #[allow(missing_docs)] // documentation missing in model
+    R7IMetal24Xl,
+    #[allow(missing_docs)] // documentation missing in model
+    R7IMetal48Xl,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +65,8 @@ impl ::std::convert::From<&str> for InstanceType {
             "i4i.metal" => InstanceType::I4IMetal,
             "i7i.metal-24xl" => InstanceType::I7IMetal24Xl,
             "i7i.metal-48xl" => InstanceType::I7IMetal48Xl,
+            "r7i.metal-24xl" => InstanceType::R7IMetal24Xl,
+            "r7i.metal-48xl" => InstanceType::R7IMetal48Xl,
             other => InstanceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +85,14 @@ impl InstanceType {
             InstanceType::I4IMetal => "i4i.metal",
             InstanceType::I7IMetal24Xl => "i7i.metal-24xl",
             InstanceType::I7IMetal48Xl => "i7i.metal-48xl",
+            InstanceType::R7IMetal24Xl => "r7i.metal-24xl",
+            InstanceType::R7IMetal48Xl => "r7i.metal-48xl",
             InstanceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["i4i.metal", "i7i.metal-24xl", "i7i.metal-48xl"]
+        &["i4i.metal", "i7i.metal-24xl", "i7i.metal-48xl", "r7i.metal-24xl", "r7i.metal-48xl"]
     }
 }
 impl ::std::convert::AsRef<str> for InstanceType {
@@ -108,6 +118,8 @@ impl ::std::fmt::Display for InstanceType {
             InstanceType::I4IMetal => write!(f, "i4i.metal"),
             InstanceType::I7IMetal24Xl => write!(f, "i7i.metal-24xl"),
             InstanceType::I7IMetal48Xl => write!(f, "i7i.metal-48xl"),
+            InstanceType::R7IMetal24Xl => write!(f, "r7i.metal-24xl"),
+            InstanceType::R7IMetal48Xl => write!(f, "r7i.metal-48xl"),
             InstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -376,19 +376,6 @@ pub(crate) fn alias_correct_errors(mut builder: crate::types::builders::AliasBui
     builder
 }
 
-pub(crate) fn wrapped_key_correct_errors(mut builder: crate::types::builders::WrappedKeyBuilder) -> crate::types::builders::WrappedKeyBuilder {
-    if builder.wrapping_key_arn.is_none() {
-        builder.wrapping_key_arn = Some(Default::default())
-    }
-    if builder.wrapped_key_material_format.is_none() {
-        builder.wrapped_key_material_format = "no value was set".parse::<crate::types::WrappedKeyMaterialFormat>().ok()
-    }
-    if builder.key_material.is_none() {
-        builder.key_material = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn key_attributes_correct_errors(
     mut builder: crate::types::builders::KeyAttributesBuilder,
 ) -> crate::types::builders::KeyAttributesBuilder {
@@ -406,63 +393,6 @@ pub(crate) fn key_attributes_correct_errors(
             let builder = crate::types::builders::KeyModesOfUseBuilder::default();
             Some(builder.build())
         }
-    }
-    builder
-}
-
-pub(crate) fn key_summary_correct_errors(mut builder: crate::types::builders::KeySummaryBuilder) -> crate::types::builders::KeySummaryBuilder {
-    if builder.key_arn.is_none() {
-        builder.key_arn = Some(Default::default())
-    }
-    if builder.key_state.is_none() {
-        builder.key_state = "no value was set".parse::<crate::types::KeyState>().ok()
-    }
-    if builder.key_attributes.is_none() {
-        builder.key_attributes = {
-            let builder = crate::types::builders::KeyAttributesBuilder::default();
-            crate::serde_util::key_attributes_correct_errors(builder).build().ok()
-        }
-    }
-    if builder.key_check_value.is_none() {
-        builder.key_check_value = Some(Default::default())
-    }
-    if builder.exportable.is_none() {
-        builder.exportable = Some(Default::default())
-    }
-    if builder.enabled.is_none() {
-        builder.enabled = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn mpa_status_correct_errors(mut builder: crate::types::builders::MpaStatusBuilder) -> crate::types::builders::MpaStatusBuilder {
-    if builder.mpa_session_arn.is_none() {
-        builder.mpa_session_arn = Some(Default::default())
-    }
-    if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::SessionStatus>().ok()
-    }
-    if builder.initiation_date.is_none() {
-        builder.initiation_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    builder
-}
-
-pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
-    if builder.key.is_none() {
-        builder.key = Some(Default::default())
-    }
-    if builder.value.is_none() {
-        builder.value = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn replication_status_type_correct_errors(
-    mut builder: crate::types::builders::ReplicationStatusTypeBuilder,
-) -> crate::types::builders::ReplicationStatusTypeBuilder {
-    if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::KeyReplicationState>().ok()
     }
     builder
 }

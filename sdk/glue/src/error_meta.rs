@@ -1393,6 +1393,64 @@ impl From<crate::operation::create_database::CreateDatabaseError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_data_quality_evaluation_config::CreateDataQualityEvaluationConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_data_quality_evaluation_config::CreateDataQualityEvaluationConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_data_quality_evaluation_config::CreateDataQualityEvaluationConfigError> for Error {
+    fn from(err: crate::operation::create_data_quality_evaluation_config::CreateDataQualityEvaluationConfigError) -> Self {
+        match err {
+            crate::operation::create_data_quality_evaluation_config::CreateDataQualityEvaluationConfigError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_data_quality_evaluation_config::CreateDataQualityEvaluationConfigError::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::operation::create_data_quality_evaluation_config::CreateDataQualityEvaluationConfigError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::create_data_quality_evaluation_config::CreateDataQualityEvaluationConfigError::IdempotentParameterMismatchException(
+                inner,
+            ) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::create_data_quality_evaluation_config::CreateDataQualityEvaluationConfigError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_data_quality_evaluation_config::CreateDataQualityEvaluationConfigError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::create_data_quality_evaluation_config::CreateDataQualityEvaluationConfigError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::create_data_quality_evaluation_config::CreateDataQualityEvaluationConfigError::ResourceNumberLimitExceededException(
+                inner,
+            ) => Error::ResourceNumberLimitExceededException(inner),
+            crate::operation::create_data_quality_evaluation_config::CreateDataQualityEvaluationConfigError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetError, R>>
     for Error
 where
@@ -2681,6 +2739,55 @@ impl From<crate::operation::delete_database::DeleteDatabaseError> for Error {
             crate::operation::delete_database::DeleteDatabaseError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::delete_database::DeleteDatabaseError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
             crate::operation::delete_database::DeleteDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_data_quality_evaluation_config::DeleteDataQualityEvaluationConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_data_quality_evaluation_config::DeleteDataQualityEvaluationConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_data_quality_evaluation_config::DeleteDataQualityEvaluationConfigError> for Error {
+    fn from(err: crate::operation::delete_data_quality_evaluation_config::DeleteDataQualityEvaluationConfigError) -> Self {
+        match err {
+            crate::operation::delete_data_quality_evaluation_config::DeleteDataQualityEvaluationConfigError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_data_quality_evaluation_config::DeleteDataQualityEvaluationConfigError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::delete_data_quality_evaluation_config::DeleteDataQualityEvaluationConfigError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_data_quality_evaluation_config::DeleteDataQualityEvaluationConfigError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::delete_data_quality_evaluation_config::DeleteDataQualityEvaluationConfigError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::delete_data_quality_evaluation_config::DeleteDataQualityEvaluationConfigError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -4518,6 +4625,53 @@ impl From<crate::operation::get_dataflow_graph::GetDataflowGraphError> for Error
             crate::operation::get_dataflow_graph::GetDataflowGraphError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::get_dataflow_graph::GetDataflowGraphError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
             crate::operation::get_dataflow_graph::GetDataflowGraphError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_data_quality_evaluation_config::GetDataQualityEvaluationConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_data_quality_evaluation_config::GetDataQualityEvaluationConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_data_quality_evaluation_config::GetDataQualityEvaluationConfigError> for Error {
+    fn from(err: crate::operation::get_data_quality_evaluation_config::GetDataQualityEvaluationConfigError) -> Self {
+        match err {
+            crate::operation::get_data_quality_evaluation_config::GetDataQualityEvaluationConfigError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_data_quality_evaluation_config::GetDataQualityEvaluationConfigError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::get_data_quality_evaluation_config::GetDataQualityEvaluationConfigError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_data_quality_evaluation_config::GetDataQualityEvaluationConfigError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::get_data_quality_evaluation_config::GetDataQualityEvaluationConfigError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::get_data_quality_evaluation_config::GetDataQualityEvaluationConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6781,6 +6935,52 @@ impl From<crate::operation::list_custom_entity_types::ListCustomEntityTypesError
                 Error::OperationTimeoutException(inner)
             }
             crate::operation::list_custom_entity_types::ListCustomEntityTypesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_data_quality_evaluation_configs::ListDataQualityEvaluationConfigsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_data_quality_evaluation_configs::ListDataQualityEvaluationConfigsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_data_quality_evaluation_configs::ListDataQualityEvaluationConfigsError> for Error {
+    fn from(err: crate::operation::list_data_quality_evaluation_configs::ListDataQualityEvaluationConfigsError) -> Self {
+        match err {
+            crate::operation::list_data_quality_evaluation_configs::ListDataQualityEvaluationConfigsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_data_quality_evaluation_configs::ListDataQualityEvaluationConfigsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_data_quality_evaluation_configs::ListDataQualityEvaluationConfigsError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::list_data_quality_evaluation_configs::ListDataQualityEvaluationConfigsError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::list_data_quality_evaluation_configs::ListDataQualityEvaluationConfigsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -9737,6 +9937,58 @@ impl From<crate::operation::update_database::UpdateDatabaseError> for Error {
             crate::operation::update_database::UpdateDatabaseError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::update_database::UpdateDatabaseError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
             crate::operation::update_database::UpdateDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_data_quality_evaluation_config::UpdateDataQualityEvaluationConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_data_quality_evaluation_config::UpdateDataQualityEvaluationConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_data_quality_evaluation_config::UpdateDataQualityEvaluationConfigError> for Error {
+    fn from(err: crate::operation::update_data_quality_evaluation_config::UpdateDataQualityEvaluationConfigError) -> Self {
+        match err {
+            crate::operation::update_data_quality_evaluation_config::UpdateDataQualityEvaluationConfigError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_data_quality_evaluation_config::UpdateDataQualityEvaluationConfigError::ConcurrentModificationException(
+                inner,
+            ) => Error::ConcurrentModificationException(inner),
+            crate::operation::update_data_quality_evaluation_config::UpdateDataQualityEvaluationConfigError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::update_data_quality_evaluation_config::UpdateDataQualityEvaluationConfigError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_data_quality_evaluation_config::UpdateDataQualityEvaluationConfigError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::update_data_quality_evaluation_config::UpdateDataQualityEvaluationConfigError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::update_data_quality_evaluation_config::UpdateDataQualityEvaluationConfigError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

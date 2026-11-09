@@ -24,6 +24,8 @@ pub struct ChangeProgressStatusDetails {
     pub config_change_status: ::std::option::Option<crate::types::ConfigChangeStatus>,
     /// <p>The IAM principal who initiated the configuration change.</p>
     pub initiated_by: ::std::option::Option<crate::types::InitiatedBy>,
+    /// <p>Details about a cloned blue/green upgrade, when the change is one.</p>
+    pub cloned_blue_green_upgrade_details: ::std::option::Option<crate::types::ClonedBlueGreenUpgradeDetails>,
     /// <p>The validation failures that occurred as a result of the configuration change.</p>
     pub validation_failures: ::std::option::Option<::std::vec::Vec<crate::types::ValidationFailure>>,
     /// <p>The list of advisory warning codes that were accepted for the configuration change.</p>
@@ -76,6 +78,10 @@ impl ChangeProgressStatusDetails {
     pub fn initiated_by(&self) -> ::std::option::Option<&crate::types::InitiatedBy> {
         self.initiated_by.as_ref()
     }
+    /// <p>Details about a cloned blue/green upgrade, when the change is one.</p>
+    pub fn cloned_blue_green_upgrade_details(&self) -> ::std::option::Option<&crate::types::ClonedBlueGreenUpgradeDetails> {
+        self.cloned_blue_green_upgrade_details.as_ref()
+    }
     /// <p>The validation failures that occurred as a result of the configuration change.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_failures.is_none()`.
@@ -110,6 +116,7 @@ pub struct ChangeProgressStatusDetailsBuilder {
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) config_change_status: ::std::option::Option<crate::types::ConfigChangeStatus>,
     pub(crate) initiated_by: ::std::option::Option<crate::types::InitiatedBy>,
+    pub(crate) cloned_blue_green_upgrade_details: ::std::option::Option<crate::types::ClonedBlueGreenUpgradeDetails>,
     pub(crate) validation_failures: ::std::option::Option<::std::vec::Vec<crate::types::ValidationFailure>>,
     pub(crate) accepted_warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -272,6 +279,20 @@ impl ChangeProgressStatusDetailsBuilder {
     pub fn get_initiated_by(&self) -> &::std::option::Option<crate::types::InitiatedBy> {
         &self.initiated_by
     }
+    /// <p>Details about a cloned blue/green upgrade, when the change is one.</p>
+    pub fn cloned_blue_green_upgrade_details(mut self, input: crate::types::ClonedBlueGreenUpgradeDetails) -> Self {
+        self.cloned_blue_green_upgrade_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about a cloned blue/green upgrade, when the change is one.</p>
+    pub fn set_cloned_blue_green_upgrade_details(mut self, input: ::std::option::Option<crate::types::ClonedBlueGreenUpgradeDetails>) -> Self {
+        self.cloned_blue_green_upgrade_details = input;
+        self
+    }
+    /// <p>Details about a cloned blue/green upgrade, when the change is one.</p>
+    pub fn get_cloned_blue_green_upgrade_details(&self) -> &::std::option::Option<crate::types::ClonedBlueGreenUpgradeDetails> {
+        &self.cloned_blue_green_upgrade_details
+    }
     /// Appends an item to `validation_failures`.
     ///
     /// To override the contents of this collection use [`set_validation_failures`](Self::set_validation_failures).
@@ -325,6 +346,7 @@ impl ChangeProgressStatusDetailsBuilder {
             last_updated_time: self.last_updated_time,
             config_change_status: self.config_change_status,
             initiated_by: self.initiated_by,
+            cloned_blue_green_upgrade_details: self.cloned_blue_green_upgrade_details,
             validation_failures: self.validation_failures,
             accepted_warnings: self.accepted_warnings,
         }

@@ -8,6 +8,10 @@ impl RecognizeUtterance {
     pub fn new() -> Self {
         Self
     }
+    /// The schema for this operation's input shape.
+    pub const INPUT_SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = crate::operation::recognize_utterance::RecognizeUtteranceInput::SCHEMA;
+    /// The schema for this operation's output shape.
+    pub const OUTPUT_SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = crate::operation::recognize_utterance::RecognizeUtteranceOutput::SCHEMA;
     pub(crate) async fn orchestrate(
         runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
         input: crate::operation::recognize_utterance::RecognizeUtteranceInput,
@@ -83,6 +87,92 @@ impl RecognizeUtterance {
         }
         runtime_plugins
     }
+}
+/// Per-operation error registry. Contains an entry for every modeled
+/// error this operation can throw.
+///
+/// Used by the schema-serde error path as the operation-scoped lookup
+/// for registry-backed error reification: an error code that does not
+/// match one of the operation's modeled errors directly is resolved
+/// against this registry first, then widened to the service-wide error
+/// registry.
+pub(crate) mod error_registry {
+    pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry::TypeRegistry> = ::std::sync::LazyLock::new(|| {
+        ::aws_smithy_schema::registry::TypeRegistry::builder()
+                            .insert_error_shape(
+                        crate::types::error::AccessDeniedException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::AccessDeniedException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::AccessDeniedException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::BadGatewayException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::BadGatewayException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::BadGatewayException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::ConflictException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::ConflictException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::ConflictException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::DependencyFailedException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::DependencyFailedException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::DependencyFailedException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::InternalServerException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InternalServerException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::InternalServerException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::ResourceNotFoundException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::ResourceNotFoundException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::ResourceNotFoundException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::ThrottlingException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::ThrottlingException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::ThrottlingException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::ValidationException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::ValidationException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::ValidationException::deserialize(d)?))
+                        },
+                    )
+                            .build()
+    });
 }
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RecognizeUtterance {
     fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
@@ -236,9 +326,29 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for Recognize
         if (!response.status().is_success() && response.status().as_u16() != 200) || force_error {
             return ::std::option::Option::None;
         }
-        ::std::option::Option::Some(crate::protocol_serde::type_erase_result(
-            crate::protocol_serde::shape_recognize_utterance::de_recognize_utterance_http_response(response, _cfg),
-        ))
+
+        let result = (|| -> ::std::result::Result<crate::operation::recognize_utterance::RecognizeUtteranceOutput, crate::operation::recognize_utterance::RecognizeUtteranceError> {
+                    #[allow(unused_mut)]
+                    let mut output = <crate::operation::recognize_utterance::builders::RecognizeUtteranceOutputBuilder>::default();
+                    {
+                        let _response_headers = response.headers();
+                        let protocol = _cfg.load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+                            .expect("a SharedClientProtocol is required");
+                        let mut deser = protocol.deserialize_response(response, RecognizeUtterance::OUTPUT_SCHEMA, _cfg)
+                            .map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
+                        output.deserialize_members(&mut *deser).map_err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled)?;
+                        output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
+                    }
+                    // Every immutable borrow of the response has been dropped, so the live body can
+                    // be taken. The streaming member was left unset above.
+                    let mut body = ::aws_smithy_types::body::SdkBody::taken();
+                    std::mem::swap(&mut body, response.body_mut());
+                    let output = output.set_audio_stream(::std::option::Option::Some(::aws_smithy_types::byte_stream::ByteStream::new(body)));
+                    let output = output.build();
+                    ::std::result::Result::Ok(output)
+                })();
+
+        ::std::option::Option::Some(crate::protocol_serde::type_erase_result(result))
     }
 
     fn deserialize_nonstreaming_with_config(
@@ -247,12 +357,163 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for Recognize
         _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         // For streaming operations, we only hit this case if its an error
+        #[allow(unused_variables)]
         let body = response.body().bytes().expect("body loaded");
-        crate::protocol_serde::type_erase_result(crate::protocol_serde::shape_recognize_utterance::de_recognize_utterance_http_error(
-            response.status().as_u16(),
-            response.headers(),
-            body,
-            _cfg,
+        #[allow(unused_variables)]
+        let headers = response.headers();
+        #[allow(unused_variables)]
+        let status = response.status().as_u16();
+        let protocol = _cfg
+            .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+            .expect("a SharedClientProtocol is required");
+        #[allow(unused_mut)]
+        let mut generic_builder = protocol.parse_error_metadata(response, _cfg).map_err(|e| {
+            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+        })?;
+        generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, headers);
+        let generic = generic_builder.build();
+        let error_code = match generic.code() {
+            ::std::option::Option::Some(code) => code,
+            ::std::option::Option::None => {
+                return ::std::result::Result::Err(::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                    ::aws_smithy_runtime_api::box_error::BoxError::from(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
+                        generic,
+                    )),
+                ))
+            }
+        };
+        let _error_message = generic.message().map(|msg| msg.to_owned());
+        let err = match error_code {
+            "AccessDeniedException" => crate::operation::recognize_utterance::RecognizeUtteranceError::AccessDeniedException({
+                let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+                let mut tmp = <crate::types::error::builders::AccessDeniedExceptionBuilder>::default();
+                tmp.deserialize_members(&mut *deser).map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+                let tmp = tmp.meta(generic);
+                crate::serde_util::access_denied_exception_correct_errors(tmp).build().map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?
+            }),
+            "BadGatewayException" => crate::operation::recognize_utterance::RecognizeUtteranceError::BadGatewayException({
+                let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+                let mut tmp = <crate::types::error::builders::BadGatewayExceptionBuilder>::default();
+                tmp.deserialize_members(&mut *deser).map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+                let tmp = tmp.meta(generic);
+                crate::serde_util::bad_gateway_exception_correct_errors(tmp).build().map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?
+            }),
+            "ConflictException" => crate::operation::recognize_utterance::RecognizeUtteranceError::ConflictException({
+                let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+                let mut tmp = <crate::types::error::builders::ConflictExceptionBuilder>::default();
+                tmp.deserialize_members(&mut *deser).map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+                let tmp = tmp.meta(generic);
+                crate::serde_util::conflict_exception_correct_errors(tmp).build().map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?
+            }),
+            "DependencyFailedException" => crate::operation::recognize_utterance::RecognizeUtteranceError::DependencyFailedException({
+                let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+                let mut tmp = <crate::types::error::builders::DependencyFailedExceptionBuilder>::default();
+                tmp.deserialize_members(&mut *deser).map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+                let tmp = tmp.meta(generic);
+                crate::serde_util::dependency_failed_exception_correct_errors(tmp).build().map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?
+            }),
+            "InternalServerException" => crate::operation::recognize_utterance::RecognizeUtteranceError::InternalServerException({
+                let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+                let mut tmp = <crate::types::error::builders::InternalServerExceptionBuilder>::default();
+                tmp.deserialize_members(&mut *deser).map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+                let tmp = tmp.meta(generic);
+                crate::serde_util::internal_server_exception_correct_errors(tmp).build().map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?
+            }),
+            "ResourceNotFoundException" => crate::operation::recognize_utterance::RecognizeUtteranceError::ResourceNotFoundException({
+                let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+                let mut tmp = <crate::types::error::builders::ResourceNotFoundExceptionBuilder>::default();
+                tmp.deserialize_members(&mut *deser).map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+                let tmp = tmp.meta(generic);
+                crate::serde_util::resource_not_found_exception_correct_errors(tmp).build().map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?
+            }),
+            "ThrottlingException" => crate::operation::recognize_utterance::RecognizeUtteranceError::ThrottlingException({
+                let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+                let mut tmp = <crate::types::error::builders::ThrottlingExceptionBuilder>::default();
+                tmp.deserialize_members(&mut *deser).map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+                let tmp = tmp.meta(generic);
+                crate::serde_util::throttling_exception_correct_errors(tmp).build().map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?
+            }),
+            "ValidationException" => crate::operation::recognize_utterance::RecognizeUtteranceError::ValidationException({
+                let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+                let mut tmp = <crate::types::error::builders::ValidationExceptionBuilder>::default();
+                tmp.deserialize_members(&mut *deser).map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+                let tmp = tmp.meta(generic);
+                crate::serde_util::validation_exception_correct_errors(tmp).build().map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?
+            }),
+            _ => {
+                // Registry-backed, operation-scoped reification of an error whose
+                // code this operation does not model directly: the operation's own
+                // error registry is consulted first, then the lookup widens to the
+                // service-wide error registry. On a hit, the reified error is attached
+                // as the source of the returned unhandled error while its metadata
+                // (code, message, request id) is preserved; on a miss the generic
+                // error is returned unchanged.
+                match protocol
+                        .deserialize_error_response(response, _cfg)
+                        .ok()
+                        .and_then(|mut deser| {
+                            ::aws_smithy_schema::registry::reify_error(
+                                crate::operation::recognize_utterance::error_registry::REGISTRY
+                                    .or(&crate::error_type_registry::REGISTRY),
+                                error_code,
+                                &mut *deser,
+                            )
+                        }) {
+                        ::std::option::Option::Some(source) => <crate::operation::recognize_utterance::RecognizeUtteranceError as ::aws_smithy_runtime_api::client::result::CreateUnhandledError>::create_unhandled_error(source, ::std::option::Option::Some(generic)),
+                        ::std::option::Option::None => crate::operation::recognize_utterance::RecognizeUtteranceError::generic(generic),
+                    }
+            }
+        };
+        ::std::result::Result::Err(::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::operation(
+            ::aws_smithy_runtime_api::client::interceptors::context::Error::erase(err),
         ))
     }
 }
@@ -268,92 +529,70 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RecognizeUtt
         let input = input
             .downcast::<crate::operation::recognize_utterance::RecognizeUtteranceInput>()
             .expect("correct type");
-        let _header_serialization_settings = _cfg
+        let _required_check = input
+            .bot_id
+            .as_ref()
+            .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("bot_id", "cannot be empty or unset"))?;
+        if _required_check.is_empty() {
+            return ::std::result::Result::Err(
+                ::aws_smithy_types::error::operation::BuildError::missing_field("bot_id", "cannot be empty or unset").into(),
+            );
+        }
+        let _required_check = input
+            .bot_alias_id
+            .as_ref()
+            .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("bot_alias_id", "cannot be empty or unset"))?;
+        if _required_check.is_empty() {
+            return ::std::result::Result::Err(
+                ::aws_smithy_types::error::operation::BuildError::missing_field("bot_alias_id", "cannot be empty or unset").into(),
+            );
+        }
+        let _required_check = input
+            .locale_id
+            .as_ref()
+            .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("locale_id", "cannot be empty or unset"))?;
+        if _required_check.is_empty() {
+            return ::std::result::Result::Err(
+                ::aws_smithy_types::error::operation::BuildError::missing_field("locale_id", "cannot be empty or unset").into(),
+            );
+        }
+        let _required_check = input
+            .session_id
+            .as_ref()
+            .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("session_id", "cannot be empty or unset"))?;
+        if _required_check.is_empty() {
+            return ::std::result::Result::Err(
+                ::aws_smithy_types::error::operation::BuildError::missing_field("session_id", "cannot be empty or unset").into(),
+            );
+        }
+        let protocol = _cfg
+            .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+            .expect("a SharedClientProtocol is required");
+        let mut request = protocol
+            .serialize_request(&input, RecognizeUtterance::INPUT_SCHEMA, "", _cfg)
+            .map_err(::aws_smithy_runtime_api::box_error::BoxError::from)?;
+        // Streaming blob payload: replace the body with the raw ByteStream.
+        *request.body_mut() = input.input_stream.into_inner();
+        // Default Content-Type / Content-Length for the streaming blob.
+        // Both honor `HeaderSerializationSettings` (used by presigning to
+        // omit the defaults so they don't get included in the signed
+        // header set), and both only fire when the header isn't already
+        // present — an `@httpHeader`-bound member like S3
+        // `PutObject::content_length` / `content_type` wins.
+        let _hss = _cfg
             .load::<crate::serialization_settings::HeaderSerializationSettings>()
             .cloned()
             .unwrap_or_default();
-        let mut request_builder = {
-            #[allow(clippy::uninlined_format_args)]
-            fn uri_base(
-                _input: &crate::operation::recognize_utterance::RecognizeUtteranceInput,
-                output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                use ::std::fmt::Write as _;
-                let input_1 = &_input.bot_id;
-                let input_1 = input_1
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("bot_id", "cannot be empty or unset"))?;
-                let bot_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
-                if bot_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "bot_id",
-                        "cannot be empty or unset",
-                    ));
-                }
-                let input_2 = &_input.bot_alias_id;
-                let input_2 = input_2
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("bot_alias_id", "cannot be empty or unset"))?;
-                let bot_alias_id = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
-                if bot_alias_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "bot_alias_id",
-                        "cannot be empty or unset",
-                    ));
-                }
-                let input_3 = &_input.locale_id;
-                let input_3 = input_3
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("locale_id", "cannot be empty or unset"))?;
-                let locale_id = ::aws_smithy_http::label::fmt_string(input_3, ::aws_smithy_http::label::EncodingStrategy::Default);
-                if locale_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "locale_id",
-                        "cannot be empty or unset",
-                    ));
-                }
-                let input_4 = &_input.session_id;
-                let input_4 = input_4
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("session_id", "cannot be empty or unset"))?;
-                let session_id = ::aws_smithy_http::label::fmt_string(input_4, ::aws_smithy_http::label::EncodingStrategy::Default);
-                if session_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "session_id",
-                        "cannot be empty or unset",
-                    ));
-                }
-                ::std::write!(
-                    output,
-                    "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/utterance",
-                    botId = bot_id,
-                    botAliasId = bot_alias_id,
-                    localeId = locale_id,
-                    sessionId = session_id
-                )
-                .expect("formatting should succeed");
-                ::std::result::Result::Ok(())
-            }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::operation::recognize_utterance::RecognizeUtteranceInput,
-                builder: ::http_1x::request::Builder,
-            ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
-                let mut uri = ::std::string::String::new();
-                uri_base(input, &mut uri)?;
-                let builder = crate::protocol_serde::shape_recognize_utterance::ser_recognize_utterance_headers(input, builder)?;
-                ::std::result::Result::Ok(builder.method("POST").uri(uri))
-            }
-            let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
-            builder = _header_serialization_settings.set_default_header(builder, ::http_1x::header::CONTENT_TYPE, "application/octet-stream");
-            builder
-        };
-        let body = crate::protocol_serde::shape_recognize_utterance_input::ser_input_stream_http_payload(input.input_stream)?.into_inner();
-        if let Some(content_length) = body.content_length() {
-            let content_length = content_length.to_string();
-            request_builder = _header_serialization_settings.set_default_header(request_builder, ::http_1x::header::CONTENT_LENGTH, &content_length);
+        if !_hss.should_omit_default_content_type() && !request.headers().contains_key("Content-Type") {
+            request.headers_mut().insert("Content-Type", "application/octet-stream");
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
+        if !_hss.should_omit_default_content_length() && !request.headers().contains_key("Content-Length") {
+            if let ::std::option::Option::Some(content_length) = request.body().content_length() {
+                request.headers_mut().insert("Content-Length", content_length.to_string());
+            }
+        }
+
+        return ::std::result::Result::Ok(request);
     }
 }
 #[derive(Debug)]

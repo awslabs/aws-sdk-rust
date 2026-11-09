@@ -47,6 +47,21 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn create_bearer_token_output_output_correct_errors(
+    mut builder: crate::operation::create_bearer_token::builders::CreateBearerTokenOutputBuilder,
+) -> crate::operation::create_bearer_token::builders::CreateBearerTokenOutputBuilder {
+    if builder.access_token.is_none() {
+        builder.access_token = Some(Default::default())
+    }
+    if builder.token_type.is_none() {
+        builder.token_type = Some(Default::default())
+    }
+    if builder.expires_in.is_none() {
+        builder.expires_in = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_o_auth2_token_output_output_correct_errors(
     mut builder: crate::operation::create_o_auth2_token::builders::CreateOAuth2TokenOutputBuilder,
 ) -> crate::operation::create_o_auth2_token::builders::CreateOAuth2TokenOutputBuilder {

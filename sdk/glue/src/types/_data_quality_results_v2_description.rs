@@ -6,6 +6,10 @@
 pub struct DataQualityResultsV2Description {
     /// <p>The unique result ID for this data quality result.</p>
     pub result_id: ::std::option::Option<::std::string::String>,
+    /// <p>How the evaluation run that produced the result started: <code>ON_DEMAND</code> for a run started by <code>StartDataQualityRulesetEvaluationRun</code>, or <code>EVALUATION_CONFIG</code> for a run started by a data quality evaluation configuration. Not returned for results that no evaluation run produced, such as results from any ETL job.</p>
+    pub evaluation_run_mode: ::std::option::Option<crate::types::DataQualityEvaluationRunMode>,
+    /// <p>The name of the data quality evaluation configuration that started the evaluation run, returned when <code>EvaluationRunMode</code> is <code>EVALUATION_CONFIG</code>.</p>
+    pub data_quality_evaluation_config: ::std::option::Option<::std::string::String>,
     /// <p>The table associated with the data quality result, if any.</p>
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>The date and time when this data quality result was published.</p>
@@ -21,6 +25,14 @@ impl DataQualityResultsV2Description {
     /// <p>The unique result ID for this data quality result.</p>
     pub fn result_id(&self) -> ::std::option::Option<&str> {
         self.result_id.as_deref()
+    }
+    /// <p>How the evaluation run that produced the result started: <code>ON_DEMAND</code> for a run started by <code>StartDataQualityRulesetEvaluationRun</code>, or <code>EVALUATION_CONFIG</code> for a run started by a data quality evaluation configuration. Not returned for results that no evaluation run produced, such as results from any ETL job.</p>
+    pub fn evaluation_run_mode(&self) -> ::std::option::Option<&crate::types::DataQualityEvaluationRunMode> {
+        self.evaluation_run_mode.as_ref()
+    }
+    /// <p>The name of the data quality evaluation configuration that started the evaluation run, returned when <code>EvaluationRunMode</code> is <code>EVALUATION_CONFIG</code>.</p>
+    pub fn data_quality_evaluation_config(&self) -> ::std::option::Option<&str> {
+        self.data_quality_evaluation_config.as_deref()
     }
     /// <p>The table associated with the data quality result, if any.</p>
     pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
@@ -55,6 +67,8 @@ impl DataQualityResultsV2Description {
 #[non_exhaustive]
 pub struct DataQualityResultsV2DescriptionBuilder {
     pub(crate) result_id: ::std::option::Option<::std::string::String>,
+    pub(crate) evaluation_run_mode: ::std::option::Option<crate::types::DataQualityEvaluationRunMode>,
+    pub(crate) data_quality_evaluation_config: ::std::option::Option<::std::string::String>,
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) result_published_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -75,6 +89,34 @@ impl DataQualityResultsV2DescriptionBuilder {
     /// <p>The unique result ID for this data quality result.</p>
     pub fn get_result_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.result_id
+    }
+    /// <p>How the evaluation run that produced the result started: <code>ON_DEMAND</code> for a run started by <code>StartDataQualityRulesetEvaluationRun</code>, or <code>EVALUATION_CONFIG</code> for a run started by a data quality evaluation configuration. Not returned for results that no evaluation run produced, such as results from any ETL job.</p>
+    pub fn evaluation_run_mode(mut self, input: crate::types::DataQualityEvaluationRunMode) -> Self {
+        self.evaluation_run_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>How the evaluation run that produced the result started: <code>ON_DEMAND</code> for a run started by <code>StartDataQualityRulesetEvaluationRun</code>, or <code>EVALUATION_CONFIG</code> for a run started by a data quality evaluation configuration. Not returned for results that no evaluation run produced, such as results from any ETL job.</p>
+    pub fn set_evaluation_run_mode(mut self, input: ::std::option::Option<crate::types::DataQualityEvaluationRunMode>) -> Self {
+        self.evaluation_run_mode = input;
+        self
+    }
+    /// <p>How the evaluation run that produced the result started: <code>ON_DEMAND</code> for a run started by <code>StartDataQualityRulesetEvaluationRun</code>, or <code>EVALUATION_CONFIG</code> for a run started by a data quality evaluation configuration. Not returned for results that no evaluation run produced, such as results from any ETL job.</p>
+    pub fn get_evaluation_run_mode(&self) -> &::std::option::Option<crate::types::DataQualityEvaluationRunMode> {
+        &self.evaluation_run_mode
+    }
+    /// <p>The name of the data quality evaluation configuration that started the evaluation run, returned when <code>EvaluationRunMode</code> is <code>EVALUATION_CONFIG</code>.</p>
+    pub fn data_quality_evaluation_config(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_quality_evaluation_config = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the data quality evaluation configuration that started the evaluation run, returned when <code>EvaluationRunMode</code> is <code>EVALUATION_CONFIG</code>.</p>
+    pub fn set_data_quality_evaluation_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_quality_evaluation_config = input;
+        self
+    }
+    /// <p>The name of the data quality evaluation configuration that started the evaluation run, returned when <code>EvaluationRunMode</code> is <code>EVALUATION_CONFIG</code>.</p>
+    pub fn get_data_quality_evaluation_config(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_quality_evaluation_config
     }
     /// <p>The table associated with the data quality result, if any.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
@@ -165,6 +207,8 @@ impl DataQualityResultsV2DescriptionBuilder {
     pub fn build(self) -> crate::types::DataQualityResultsV2Description {
         crate::types::DataQualityResultsV2Description {
             result_id: self.result_id,
+            evaluation_run_mode: self.evaluation_run_mode,
+            data_quality_evaluation_config: self.data_quality_evaluation_config,
             data_source: self.data_source,
             result_published_on: self.result_published_on,
             dimensions: self.dimensions,

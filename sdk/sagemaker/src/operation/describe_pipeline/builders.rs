@@ -122,18 +122,32 @@ impl DescribePipelineFluentBuilder {
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pipeline_name()
     }
-    /// <p>The ID of the pipeline version to describe.</p>
+    /// <p>The ID of the pipeline version to describe. You can't specify this with <code>PipelineVersionAlias</code>.</p>
     pub fn pipeline_version_id(mut self, input: i64) -> Self {
         self.inner = self.inner.pipeline_version_id(input);
         self
     }
-    /// <p>The ID of the pipeline version to describe.</p>
+    /// <p>The ID of the pipeline version to describe. You can't specify this with <code>PipelineVersionAlias</code>.</p>
     pub fn set_pipeline_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_pipeline_version_id(input);
         self
     }
-    /// <p>The ID of the pipeline version to describe.</p>
+    /// <p>The ID of the pipeline version to describe. You can't specify this with <code>PipelineVersionAlias</code>.</p>
     pub fn get_pipeline_version_id(&self) -> &::std::option::Option<i64> {
         self.inner.get_pipeline_version_id()
+    }
+    /// <p>The alias of the pipeline version to describe. You can't specify this with <code>PipelineVersionId</code>. If no version of the pipeline has this alias, the request fails with a <code>ResourceNotFound</code> error. If you specify neither, SageMaker describes the latest version of the pipeline.</p>
+    pub fn pipeline_version_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.pipeline_version_alias(input.into());
+        self
+    }
+    /// <p>The alias of the pipeline version to describe. You can't specify this with <code>PipelineVersionId</code>. If no version of the pipeline has this alias, the request fails with a <code>ResourceNotFound</code> error. If you specify neither, SageMaker describes the latest version of the pipeline.</p>
+    pub fn set_pipeline_version_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_pipeline_version_alias(input);
+        self
+    }
+    /// <p>The alias of the pipeline version to describe. You can't specify this with <code>PipelineVersionId</code>. If no version of the pipeline has this alias, the request fails with a <code>ResourceNotFound</code> error. If you specify neither, SageMaker describes the latest version of the pipeline.</p>
+    pub fn get_pipeline_version_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_version_alias()
     }
 }

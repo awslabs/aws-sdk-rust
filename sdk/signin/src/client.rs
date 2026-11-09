@@ -13,13 +13,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateOAuth2TokenWithIAM`](crate::operation::create_o_auth2_token_with_iam) operation has
-/// a [`Client::create_o_auth2_token_with_iam`], function which returns a builder for that operation.
+/// For example, the [`CreateBearerToken`](crate::operation::create_bearer_token) operation has
+/// a [`Client::create_bearer_token`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_o_auth2_token_with_iam()
+/// let result = client.create_bearer_token()
 ///     .grant_type("example")
 ///     .send()
 ///     .await;
@@ -90,6 +90,8 @@ impl Client {
     }
 }
 
+mod create_bearer_token;
+
 mod create_o_auth2_token;
 
 mod create_o_auth2_token_with_iam;
@@ -107,7 +109,7 @@ mod create_o_auth2_token_with_token_exchange;
 /// # let client: aws_sdk_signin::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_o_auth2_token()
+/// let result = client.create_bearer_token()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

@@ -21,10 +21,10 @@
       "    // The canonical number of seconds since the Unix epoch in UTC.",
       "    canonical_seconds: string,",
       "    ",
-      "    // The canonical nanosecond adjustment to the canonical number of seconds.",
-      "    // If conversion from (canonical_seconds, canonical_nanos) into a 128-bit integer is required,",
-      "    // DO NOT just add the two together as this will yield an incorrect value when",
-      "    // canonical_seconds is negative.",
+      "    // The canonical nanosecond adjustment to the canonical number of seconds. It is never",
+      "    // negative and always moves the time forward, also when canonical_seconds is negative",
+      "    // (as in java.time.Instant): -0.75 seconds is canonical_seconds -1 and canonical_nanos",
+      "    // 250000000. DO NOT join the two with a decimal point when canonical_seconds is negative.",
       "    canonical_nanos: number,",
       "    ",
       "    // Will be true if this test case is expected to result in an error or exception",
@@ -51,21 +51,21 @@
           "canonical_seconds": "-377703389549",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-377703389549.00001"
+          "smithy_format_value": "-377703389548.99999"
       },
       {
           "iso8601": "-9999-02-21T00:48:24.0001Z",
           "canonical_seconds": "-377700707496",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-377700707496.0001"
+          "smithy_format_value": "-377700707495.9999"
       },
       {
           "iso8601": "-9999-03-22T01:49:17.000234Z",
           "canonical_seconds": "-377698198243",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-377698198243.000234"
+          "smithy_format_value": "-377698198242.999766"
       },
       {
           "iso8601": "-9999-04-21T02:50:10Z",
@@ -79,28 +79,28 @@
           "canonical_seconds": "-377692747737",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-377692747737.000001"
+          "smithy_format_value": "-377692747736.999999"
       },
       {
           "iso8601": "-9999-06-23T04:52:56.00001Z",
           "canonical_seconds": "-377690152024",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-377690152024.00001"
+          "smithy_format_value": "-377690152023.99999"
       },
       {
           "iso8601": "-9999-07-26T05:53:49.0001Z",
           "canonical_seconds": "-377687297171",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-377687297171.0001"
+          "smithy_format_value": "-377687297170.9999"
       },
       {
           "iso8601": "-9999-08-27T06:54:42.000234Z",
           "canonical_seconds": "-377684528718",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-377684528718.000234"
+          "smithy_format_value": "-377684528717.999766"
       },
       {
           "iso8601": "-9999-09-26T07:55:35Z",
@@ -114,28 +114,28 @@
           "canonical_seconds": "-377679078212",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-377679078212.000001"
+          "smithy_format_value": "-377679078211.999999"
       },
       {
           "iso8601": "-9999-11-28T09:57:21.00001Z",
           "canonical_seconds": "-377676482559",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-377676482559.00001"
+          "smithy_format_value": "-377676482558.99999"
       },
       {
           "iso8601": "-9999-12-31T10:58:14.0001Z",
           "canonical_seconds": "-377673627706",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-377673627706.0001"
+          "smithy_format_value": "-377673627705.9999"
       },
       {
           "iso8601": "-0100-01-01T11:59:07.000234Z",
           "canonical_seconds": "-65322849653",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-65322849653.000234"
+          "smithy_format_value": "-65322849652.999766"
       },
       {
           "iso8601": "-0100-02-05T12:00:00Z",
@@ -149,28 +149,28 @@
           "canonical_seconds": "-65317575487",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-65317575487.000001"
+          "smithy_format_value": "-65317575486.999999"
       },
       {
           "iso8601": "-0100-04-03T14:02:46.00001Z",
           "canonical_seconds": "-65314893434",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-65314893434.00001"
+          "smithy_format_value": "-65314893433.99999"
       },
       {
           "iso8601": "-0100-05-05T15:03:39.0001Z",
           "canonical_seconds": "-65312124981",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-65312124981.0001"
+          "smithy_format_value": "-65312124980.9999"
       },
       {
           "iso8601": "-0100-06-05T16:04:32.000234Z",
           "canonical_seconds": "-65309442928",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-65309442928.000234"
+          "smithy_format_value": "-65309442927.999766"
       },
       {
           "iso8601": "-0100-07-07T17:05:25Z",
@@ -184,28 +184,28 @@
           "canonical_seconds": "-65303906022",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-65303906022.000001"
+          "smithy_format_value": "-65303906021.999999"
       },
       {
           "iso8601": "-0100-09-08T19:07:11.00001Z",
           "canonical_seconds": "-65301223969",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-65301223969.00001"
+          "smithy_format_value": "-65301223968.99999"
       },
       {
           "iso8601": "-0100-10-10T20:08:04.0001Z",
           "canonical_seconds": "-65298455516",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-65298455516.0001"
+          "smithy_format_value": "-65298455515.9999"
       },
       {
           "iso8601": "-0100-11-10T21:09:57.000234Z",
           "canonical_seconds": "-65295773403",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-65295773403.000234"
+          "smithy_format_value": "-65295773402.999766"
       },
       {
           "iso8601": "-0100-12-12T22:10:50Z",
@@ -219,28 +219,28 @@
           "canonical_seconds": "-62197634897",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-62197634897.000001"
+          "smithy_format_value": "-62197634896.999999"
       },
       {
           "iso8601": "-0001-02-17T00:12:36.00001Z",
           "canonical_seconds": "-62194693644",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-62194693644.00001"
+          "smithy_format_value": "-62194693643.99999"
       },
       {
           "iso8601": "-0001-03-15T01:13:29.0001Z",
           "canonical_seconds": "-62192443591",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-62192443591.0001"
+          "smithy_format_value": "-62192443590.9999"
       },
       {
           "iso8601": "-0001-04-15T02:14:22.000234Z",
           "canonical_seconds": "-62189761538",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-62189761538.000234"
+          "smithy_format_value": "-62189761537.999766"
       },
       {
           "iso8601": "-0001-05-17T03:15:15Z",
@@ -254,28 +254,28 @@
           "canonical_seconds": "-62184311032",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-62184311032.000001"
+          "smithy_format_value": "-62184311031.999999"
       },
       {
           "iso8601": "-0001-07-19T05:17:01.00001Z",
           "canonical_seconds": "-62181542579",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-62181542579.00001"
+          "smithy_format_value": "-62181542578.99999"
       },
       {
           "iso8601": "-0001-08-20T06:18:54.0001Z",
           "canonical_seconds": "-62178774066",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-62178774066.0001"
+          "smithy_format_value": "-62178774065.9999"
       },
       {
           "iso8601": "-0001-09-20T07:19:47.000234Z",
           "canonical_seconds": "-62176092013",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-62176092013.000234"
+          "smithy_format_value": "-62176092012.999766"
       },
       {
           "iso8601": "-0001-10-22T08:20:40Z",
@@ -289,28 +289,28 @@
           "canonical_seconds": "-62170641507",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-62170641507.000001"
+          "smithy_format_value": "-62170641506.999999"
       },
       {
           "iso8601": "-0001-12-24T10:22:26.00001Z",
           "canonical_seconds": "-62167873054",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-62167873054.00001"
+          "smithy_format_value": "-62167873053.99999"
       },
       {
           "iso8601": "0001-01-25T11:23:19.0001Z",
           "canonical_seconds": "-62133482201",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-62133482201.0001"
+          "smithy_format_value": "-62133482200.9999"
       },
       {
           "iso8601": "0001-02-01T12:24:12.000234Z",
           "canonical_seconds": "-62132873748",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-62132873748.000234"
+          "smithy_format_value": "-62132873747.999766"
       },
       {
           "iso8601": "0001-03-27T13:25:05Z",
@@ -324,28 +324,28 @@
           "canonical_seconds": "-62125522382",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-62125522382.000001"
+          "smithy_format_value": "-62125522381.999999"
       },
       {
           "iso8601": "0001-05-29T15:27:51.00001Z",
           "canonical_seconds": "-62122753929",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-62122753929.00001"
+          "smithy_format_value": "-62122753928.99999"
       },
       {
           "iso8601": "0001-06-29T16:28:44.0001Z",
           "canonical_seconds": "-62120071876",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-62120071876.0001"
+          "smithy_format_value": "-62120071875.9999"
       },
       {
           "iso8601": "0001-07-31T17:29:37.000234Z",
           "canonical_seconds": "-62117303423",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-62117303423.000234"
+          "smithy_format_value": "-62117303422.999766"
       },
       {
           "iso8601": "0001-08-01T18:30:30Z",
@@ -359,28 +359,28 @@
           "canonical_seconds": "-62114444917",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-62114444917.000001"
+          "smithy_format_value": "-62114444916.999999"
       },
       {
           "iso8601": "0001-10-03T20:32:16.00001Z",
           "canonical_seconds": "-62111762864",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-62111762864.00001"
+          "smithy_format_value": "-62111762863.99999"
       },
       {
           "iso8601": "0001-11-04T21:33:09.0001Z",
           "canonical_seconds": "-62108994411",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-62108994411.0001"
+          "smithy_format_value": "-62108994410.9999"
       },
       {
           "iso8601": "0001-12-05T22:34:02.000234Z",
           "canonical_seconds": "-62106312358",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-62106312358.000234"
+          "smithy_format_value": "-62106312357.999766"
       },
       {
           "iso8601": "0100-01-06T23:35:55Z",
@@ -394,28 +394,28 @@
           "canonical_seconds": "-59007741792",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-59007741792.000001"
+          "smithy_format_value": "-59007741791.999999"
       },
       {
           "iso8601": "0100-03-08T01:37:41.00001Z",
           "canonical_seconds": "-59005750939",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-59005750939.00001"
+          "smithy_format_value": "-59005750938.99999"
       },
       {
           "iso8601": "0100-04-09T02:38:34.0001Z",
           "canonical_seconds": "-59002982486",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-59002982486.0001"
+          "smithy_format_value": "-59002982485.9999"
       },
       {
           "iso8601": "0100-05-10T03:39:27.000234Z",
           "canonical_seconds": "-59000300433",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-59000300433.000234"
+          "smithy_format_value": "-59000300432.999766"
       },
       {
           "iso8601": "0100-06-11T04:40:20Z",
@@ -429,28 +429,28 @@
           "canonical_seconds": "-58994849927",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-58994849927.000001"
+          "smithy_format_value": "-58994849926.999999"
       },
       {
           "iso8601": "0100-08-13T06:42:06.00001Z",
           "canonical_seconds": "-58992081474",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-58992081474.00001"
+          "smithy_format_value": "-58992081473.99999"
       },
       {
           "iso8601": "0100-09-14T07:43:59.0001Z",
           "canonical_seconds": "-58989312961",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-58989312961.0001"
+          "smithy_format_value": "-58989312960.9999"
       },
       {
           "iso8601": "0100-10-15T08:44:52.000234Z",
           "canonical_seconds": "-58986630908",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-58986630908.000234"
+          "smithy_format_value": "-58986630907.999766"
       },
       {
           "iso8601": "0100-11-16T09:45:45Z",
@@ -464,35 +464,35 @@
           "canonical_seconds": "-58981180402",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-58981180402.000001"
+          "smithy_format_value": "-58981180401.999999"
       },
       {
           "iso8601": "1584-02-29T23:59:59.999Z",
           "canonical_seconds": "-12175833601",
           "canonical_nanos": 999000000,
           "error": false,
-          "smithy_format_value": "-12175833601.999"
+          "smithy_format_value": "-12175833600.001"
       },
       {
           "iso8601": "1969-01-18T11:47:31.00001Z",
           "canonical_seconds": "-30024749",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-30024749.00001"
+          "smithy_format_value": "-30024748.99999"
       },
       {
           "iso8601": "1969-02-25T12:48:24.0001Z",
           "canonical_seconds": "-26737896",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-26737896.0001"
+          "smithy_format_value": "-26737895.9999"
       },
       {
           "iso8601": "1969-03-20T13:49:17.000234Z",
           "canonical_seconds": "-24747043",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-24747043.000234"
+          "smithy_format_value": "-24747042.999766"
       },
       {
           "iso8601": "1969-04-21T14:50:10Z",
@@ -506,28 +506,28 @@
           "canonical_seconds": "-19296537",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-19296537.000001"
+          "smithy_format_value": "-19296536.999999"
       },
       {
           "iso8601": "1969-06-23T16:52:56.00001Z",
           "canonical_seconds": "-16528024",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-16528024.00001"
+          "smithy_format_value": "-16528023.99999"
       },
       {
           "iso8601": "1969-07-24T17:53:49.0001Z",
           "canonical_seconds": "-13845971",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-13845971.0001"
+          "smithy_format_value": "-13845970.9999"
       },
       {
           "iso8601": "1969-08-25T18:54:42.000234Z",
           "canonical_seconds": "-11077518",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-11077518.000234"
+          "smithy_format_value": "-11077517.999766"
       },
       {
           "iso8601": "1969-09-26T19:55:35Z",
@@ -541,21 +541,21 @@
           "canonical_seconds": "-5627012",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-5627012.000001"
+          "smithy_format_value": "-5627011.999999"
       },
       {
           "iso8601": "1969-11-28T21:57:21.00001Z",
           "canonical_seconds": "-2858559",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-2858559.00001"
+          "smithy_format_value": "-2858558.99999"
       },
       {
           "iso8601": "1969-12-29T22:58:14.0001Z",
           "canonical_seconds": "-176506",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-176506.0001"
+          "smithy_format_value": "-176505.9999"
       },
       {
           "iso8601": "1970-01-30T23:59:07.000234Z",
@@ -2547,21 +2547,21 @@
           "canonical_seconds": "-377703389549",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-377703389549.00001"
+          "smithy_format_value": "-377703389548.99999"
       },
       {
           "iso8601": "-9999-02-21T00:48:24.0001Z",
           "canonical_seconds": "-377700707496",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-377700707496.0001"
+          "smithy_format_value": "-377700707495.9999"
       },
       {
           "iso8601": "-9999-03-22T01:49:17.000234Z",
           "canonical_seconds": "-377698198243",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-377698198243.000234"
+          "smithy_format_value": "-377698198242.999766"
       },
       {
           "iso8601": "-9999-04-21T02:50:10Z",
@@ -2575,28 +2575,28 @@
           "canonical_seconds": "-377692747737",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-377692747737.000001"
+          "smithy_format_value": "-377692747736.999999"
       },
       {
           "iso8601": "-9999-06-23T04:52:56.00001Z",
           "canonical_seconds": "-377690152024",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-377690152024.00001"
+          "smithy_format_value": "-377690152023.99999"
       },
       {
           "iso8601": "-9999-07-26T05:53:49.0001Z",
           "canonical_seconds": "-377687297171",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-377687297171.0001"
+          "smithy_format_value": "-377687297170.9999"
       },
       {
           "iso8601": "-9999-08-27T06:54:42.000234Z",
           "canonical_seconds": "-377684528718",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-377684528718.000234"
+          "smithy_format_value": "-377684528717.999766"
       },
       {
           "iso8601": "-9999-09-26T07:55:35Z",
@@ -2610,28 +2610,28 @@
           "canonical_seconds": "-377679078212",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-377679078212.000001"
+          "smithy_format_value": "-377679078211.999999"
       },
       {
           "iso8601": "-9999-11-28T09:57:21.00001Z",
           "canonical_seconds": "-377676482559",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-377676482559.00001"
+          "smithy_format_value": "-377676482558.99999"
       },
       {
           "iso8601": "-9999-12-31T10:58:14.0001Z",
           "canonical_seconds": "-377673627706",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-377673627706.0001"
+          "smithy_format_value": "-377673627705.9999"
       },
       {
           "iso8601": "-0100-01-01T11:59:07.000234Z",
           "canonical_seconds": "-65322849653",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-65322849653.000234"
+          "smithy_format_value": "-65322849652.999766"
       },
       {
           "iso8601": "-0100-02-05T12:00:00Z",
@@ -2645,28 +2645,28 @@
           "canonical_seconds": "-65317575487",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-65317575487.000001"
+          "smithy_format_value": "-65317575486.999999"
       },
       {
           "iso8601": "-0100-04-03T14:02:46.00001Z",
           "canonical_seconds": "-65314893434",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-65314893434.00001"
+          "smithy_format_value": "-65314893433.99999"
       },
       {
           "iso8601": "-0100-05-05T15:03:39.0001Z",
           "canonical_seconds": "-65312124981",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-65312124981.0001"
+          "smithy_format_value": "-65312124980.9999"
       },
       {
           "iso8601": "-0100-06-05T16:04:32.000234Z",
           "canonical_seconds": "-65309442928",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-65309442928.000234"
+          "smithy_format_value": "-65309442927.999766"
       },
       {
           "iso8601": "-0100-07-07T17:05:25Z",
@@ -2680,28 +2680,28 @@
           "canonical_seconds": "-65303906022",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-65303906022.000001"
+          "smithy_format_value": "-65303906021.999999"
       },
       {
           "iso8601": "-0100-09-08T19:07:11.00001Z",
           "canonical_seconds": "-65301223969",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-65301223969.00001"
+          "smithy_format_value": "-65301223968.99999"
       },
       {
           "iso8601": "-0100-10-10T20:08:04.0001Z",
           "canonical_seconds": "-65298455516",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-65298455516.0001"
+          "smithy_format_value": "-65298455515.9999"
       },
       {
           "iso8601": "-0100-11-10T21:09:57.000234Z",
           "canonical_seconds": "-65295773403",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-65295773403.000234"
+          "smithy_format_value": "-65295773402.999766"
       },
       {
           "iso8601": "-0100-12-12T22:10:50Z",
@@ -2715,28 +2715,28 @@
           "canonical_seconds": "-62197634897",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-62197634897.000001"
+          "smithy_format_value": "-62197634896.999999"
       },
       {
           "iso8601": "-0001-02-17T00:12:36.00001Z",
           "canonical_seconds": "-62194693644",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-62194693644.00001"
+          "smithy_format_value": "-62194693643.99999"
       },
       {
           "iso8601": "-0001-03-15T01:13:29.0001Z",
           "canonical_seconds": "-62192443591",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-62192443591.0001"
+          "smithy_format_value": "-62192443590.9999"
       },
       {
           "iso8601": "-0001-04-15T02:14:22.000234Z",
           "canonical_seconds": "-62189761538",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-62189761538.000234"
+          "smithy_format_value": "-62189761537.999766"
       },
       {
           "iso8601": "-0001-05-17T03:15:15Z",
@@ -2750,28 +2750,28 @@
           "canonical_seconds": "-62184311032",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-62184311032.000001"
+          "smithy_format_value": "-62184311031.999999"
       },
       {
           "iso8601": "-0001-07-19T05:17:01.00001Z",
           "canonical_seconds": "-62181542579",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-62181542579.00001"
+          "smithy_format_value": "-62181542578.99999"
       },
       {
           "iso8601": "-0001-08-20T06:18:54.0001Z",
           "canonical_seconds": "-62178774066",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-62178774066.0001"
+          "smithy_format_value": "-62178774065.9999"
       },
       {
           "iso8601": "-0001-09-20T07:19:47.000234Z",
           "canonical_seconds": "-62176092013",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-62176092013.000234"
+          "smithy_format_value": "-62176092012.999766"
       },
       {
           "iso8601": "-0001-10-22T08:20:40Z",
@@ -2785,28 +2785,28 @@
           "canonical_seconds": "-62170641507",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-62170641507.000001"
+          "smithy_format_value": "-62170641506.999999"
       },
       {
           "iso8601": "-0001-12-24T10:22:26.00001Z",
           "canonical_seconds": "-62167873054",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-62167873054.00001"
+          "smithy_format_value": "-62167873053.99999"
       },
       {
           "iso8601": "0001-01-25T11:23:19.0001Z",
           "canonical_seconds": "-62133482201",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-62133482201.0001"
+          "smithy_format_value": "-62133482200.9999"
       },
       {
           "iso8601": "0001-02-01T12:24:12.000234Z",
           "canonical_seconds": "-62132873748",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-62132873748.000234"
+          "smithy_format_value": "-62132873747.999766"
       },
       {
           "iso8601": "0001-03-27T13:25:05Z",
@@ -2820,28 +2820,28 @@
           "canonical_seconds": "-62125522382",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-62125522382.000001"
+          "smithy_format_value": "-62125522381.999999"
       },
       {
           "iso8601": "0001-05-29T15:27:51.00001Z",
           "canonical_seconds": "-62122753929",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-62122753929.00001"
+          "smithy_format_value": "-62122753928.99999"
       },
       {
           "iso8601": "0001-06-29T16:28:44.0001Z",
           "canonical_seconds": "-62120071876",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-62120071876.0001"
+          "smithy_format_value": "-62120071875.9999"
       },
       {
           "iso8601": "0001-07-31T17:29:37.000234Z",
           "canonical_seconds": "-62117303423",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-62117303423.000234"
+          "smithy_format_value": "-62117303422.999766"
       },
       {
           "iso8601": "0001-08-01T18:30:30Z",
@@ -2855,28 +2855,28 @@
           "canonical_seconds": "-62114444917",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-62114444917.000001"
+          "smithy_format_value": "-62114444916.999999"
       },
       {
           "iso8601": "0001-10-03T20:32:16.00001Z",
           "canonical_seconds": "-62111762864",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-62111762864.00001"
+          "smithy_format_value": "-62111762863.99999"
       },
       {
           "iso8601": "0001-11-04T21:33:09.0001Z",
           "canonical_seconds": "-62108994411",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-62108994411.0001"
+          "smithy_format_value": "-62108994410.9999"
       },
       {
           "iso8601": "0001-12-05T22:34:02.000234Z",
           "canonical_seconds": "-62106312358",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-62106312358.000234"
+          "smithy_format_value": "-62106312357.999766"
       },
       {
           "iso8601": "0100-01-06T23:35:55Z",
@@ -2890,28 +2890,28 @@
           "canonical_seconds": "-59007741792",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-59007741792.000001"
+          "smithy_format_value": "-59007741791.999999"
       },
       {
           "iso8601": "0100-03-08T01:37:41.00001Z",
           "canonical_seconds": "-59005750939",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-59005750939.00001"
+          "smithy_format_value": "-59005750938.99999"
       },
       {
           "iso8601": "0100-04-09T02:38:34.0001Z",
           "canonical_seconds": "-59002982486",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-59002982486.0001"
+          "smithy_format_value": "-59002982485.9999"
       },
       {
           "iso8601": "0100-05-10T03:39:27.000234Z",
           "canonical_seconds": "-59000300433",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-59000300433.000234"
+          "smithy_format_value": "-59000300432.999766"
       },
       {
           "iso8601": "0100-06-11T04:40:20Z",
@@ -2925,28 +2925,28 @@
           "canonical_seconds": "-58994849927",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-58994849927.000001"
+          "smithy_format_value": "-58994849926.999999"
       },
       {
           "iso8601": "0100-08-13T06:42:06.00001Z",
           "canonical_seconds": "-58992081474",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-58992081474.00001"
+          "smithy_format_value": "-58992081473.99999"
       },
       {
           "iso8601": "0100-09-14T07:43:59.0001Z",
           "canonical_seconds": "-58989312961",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-58989312961.0001"
+          "smithy_format_value": "-58989312960.9999"
       },
       {
           "iso8601": "0100-10-15T08:44:52.000234Z",
           "canonical_seconds": "-58986630908",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-58986630908.000234"
+          "smithy_format_value": "-58986630907.999766"
       },
       {
           "iso8601": "0100-11-16T09:45:45Z",
@@ -2960,35 +2960,35 @@
           "canonical_seconds": "-58981180402",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-58981180402.000001"
+          "smithy_format_value": "-58981180401.999999"
       },
       {
           "iso8601": "1584-02-29T23:59:59.999Z",
           "canonical_seconds": "-12175833601",
           "canonical_nanos": 999000000,
           "error": false,
-          "smithy_format_value": "-12175833601.999"
+          "smithy_format_value": "-12175833600.001"
       },
       {
           "iso8601": "1969-01-18T11:47:31.00001Z",
           "canonical_seconds": "-30024749",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-30024749.00001"
+          "smithy_format_value": "-30024748.99999"
       },
       {
           "iso8601": "1969-02-25T12:48:24.0001Z",
           "canonical_seconds": "-26737896",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-26737896.0001"
+          "smithy_format_value": "-26737895.9999"
       },
       {
           "iso8601": "1969-03-20T13:49:17.000234Z",
           "canonical_seconds": "-24747043",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-24747043.000234"
+          "smithy_format_value": "-24747042.999766"
       },
       {
           "iso8601": "1969-04-21T14:50:10Z",
@@ -3002,28 +3002,28 @@
           "canonical_seconds": "-19296537",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-19296537.000001"
+          "smithy_format_value": "-19296536.999999"
       },
       {
           "iso8601": "1969-06-23T16:52:56.00001Z",
           "canonical_seconds": "-16528024",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-16528024.00001"
+          "smithy_format_value": "-16528023.99999"
       },
       {
           "iso8601": "1969-07-24T17:53:49.0001Z",
           "canonical_seconds": "-13845971",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-13845971.0001"
+          "smithy_format_value": "-13845970.9999"
       },
       {
           "iso8601": "1969-08-25T18:54:42.000234Z",
           "canonical_seconds": "-11077518",
           "canonical_nanos": 234000,
           "error": false,
-          "smithy_format_value": "-11077518.000234"
+          "smithy_format_value": "-11077517.999766"
       },
       {
           "iso8601": "1969-09-26T19:55:35Z",
@@ -3037,21 +3037,21 @@
           "canonical_seconds": "-5627012",
           "canonical_nanos": 1000,
           "error": false,
-          "smithy_format_value": "-5627012.000001"
+          "smithy_format_value": "-5627011.999999"
       },
       {
           "iso8601": "1969-11-28T21:57:21.00001Z",
           "canonical_seconds": "-2858559",
           "canonical_nanos": 10000,
           "error": false,
-          "smithy_format_value": "-2858559.00001"
+          "smithy_format_value": "-2858558.99999"
       },
       {
           "iso8601": "1969-12-29T22:58:14.0001Z",
           "canonical_seconds": "-176506",
           "canonical_nanos": 100000,
           "error": false,
-          "smithy_format_value": "-176506.0001"
+          "smithy_format_value": "-176505.9999"
       },
       {
           "iso8601": "1970-01-30T23:59:07.000234Z",

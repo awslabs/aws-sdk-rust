@@ -22,7 +22,7 @@ impl crate::operation::update_designation::builders::UpdateDesignationInputBuild
 }
 /// Fluent builder constructing a request to `UpdateDesignation`.
 ///
-/// Updates an existing designation. Managed designations cannot be modified.
+/// <p>Updates an existing user-created designation. Managed designations cannot be modified. Omit a field to leave its current value unchanged.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDesignationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -164,31 +164,31 @@ impl UpdateDesignationFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// The updated Cedar permit policy.
+    /// <p>The updated Cedar permit policy. Omit to keep the existing policy.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy(input.into());
         self
     }
-    /// The updated Cedar permit policy.
+    /// <p>The updated Cedar permit policy. Omit to keep the existing policy.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
     }
-    /// The updated Cedar permit policy.
+    /// <p>The updated Cedar permit policy. Omit to keep the existing policy.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy()
     }
-    /// Whether deletion protection is enabled for this designation. Omit to keep the existing value.
+    /// <p>Specifies whether deletion protection is enabled for this designation. Omit to keep the existing value.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protection(input);
         self
     }
-    /// Whether deletion protection is enabled for this designation. Omit to keep the existing value.
+    /// <p>Specifies whether deletion protection is enabled for this designation. Omit to keep the existing value.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection(input);
         self
     }
-    /// Whether deletion protection is enabled for this designation. Omit to keep the existing value.
+    /// <p>Specifies whether deletion protection is enabled for this designation. Omit to keep the existing value.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection()
     }

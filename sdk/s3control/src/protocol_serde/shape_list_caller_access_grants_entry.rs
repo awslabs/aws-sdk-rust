@@ -51,6 +51,19 @@ pub fn de_list_caller_access_grants_entry(
                 builder = builder.set_application_arn(var_3);
             }
             ,
+            s if s.matches("AccessGrantsInstanceArn") /* AccessGrantsInstanceArn com.amazonaws.s3control#ListCallerAccessGrantsEntry$AccessGrantsInstanceArn */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_access_grants_instance_arn(var_4);
+            }
+            ,
             _ => {}
         }
     }

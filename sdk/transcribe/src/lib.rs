@@ -38,7 +38,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-transcribe = "1.127.0"
+//! aws-sdk-transcribe = "1.128.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -217,6 +217,8 @@ mod sdk_feature_tracker;
 mod endpoint_lib;
 
 mod lens;
+
+pub(crate) mod schema_serde;
 
 /// Supporting types for waiters.
 ///

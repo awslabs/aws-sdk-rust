@@ -255,6 +255,8 @@ pub use crate::types::_evaluate_on_exit::EvaluateOnExit;
 
 pub use crate::types::_eks_metadata::EksMetadata;
 
+pub use crate::types::_eks_pod_security_context::EksPodSecurityContext;
+
 pub use crate::types::_ecs_task_properties::EcsTaskProperties;
 
 pub use crate::types::_consumable_resource_requirement::ConsumableResourceRequirement;
@@ -317,6 +319,8 @@ pub use crate::types::_eks_container::EksContainer;
 
 pub use crate::types::_eks_volume::EksVolume;
 
+pub use crate::types::_eks_seccomp_profile::EksSeccompProfile;
+
 pub use crate::types::_eks_container_override::EksContainerOverride;
 
 pub use crate::types::_attempt_container_detail::AttemptContainerDetail;
@@ -341,6 +345,8 @@ pub use crate::types::_eks_secret::EksSecret;
 
 pub use crate::types::_eks_persistent_volume_claim::EksPersistentVolumeClaim;
 
+pub use crate::types::_eks_seccomp_profile_type::EksSeccompProfileType;
+
 pub use crate::types::_task_container_properties::TaskContainerProperties;
 
 pub use crate::types::_task_container_overrides::TaskContainerOverrides;
@@ -362,6 +368,8 @@ pub use crate::types::_device_cgroup_permission::DeviceCgroupPermission;
 pub use crate::types::_eks_container_environment_variable::EksContainerEnvironmentVariable;
 
 pub use crate::types::_eks_container_volume_mount::EksContainerVolumeMount;
+
+pub use crate::types::_eks_container_linux_capabilities::EksContainerLinuxCapabilities;
 
 pub use crate::types::_firelens_configuration::FirelensConfiguration;
 
@@ -481,6 +489,8 @@ mod _eks_container_detail;
 
 mod _eks_container_environment_variable;
 
+mod _eks_container_linux_capabilities;
+
 mod _eks_container_override;
 
 mod _eks_container_resource_requirements;
@@ -503,11 +513,17 @@ mod _eks_pod_properties_detail;
 
 mod _eks_pod_properties_override;
 
+mod _eks_pod_security_context;
+
 mod _eks_properties;
 
 mod _eks_properties_detail;
 
 mod _eks_properties_override;
+
+mod _eks_seccomp_profile;
+
+mod _eks_seccomp_profile_type;
 
 mod _eks_secret;
 

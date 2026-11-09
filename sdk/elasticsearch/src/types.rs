@@ -65,9 +65,21 @@ pub use crate::types::_upgrade_status::UpgradeStatus;
 
 pub use crate::types::_engine_type::EngineType;
 
+pub use crate::types::_traffic_split_request_options::TrafficSplitRequestOptions;
+
+pub use crate::types::_cutover_request_options::CutoverRequestOptions;
+
+pub use crate::types::_retention_options::RetentionOptions;
+
+pub use crate::types::_cutover_options::CutoverOptions;
+
+pub use crate::types::_traffic_split_options::TrafficSplitOptions;
+
 pub use crate::types::_auto_tune_options::AutoTuneOptions;
 
 pub use crate::types::_dry_run_results::DryRunResults;
+
+pub use crate::types::_deployment_strategy_override_options::DeploymentStrategyOverrideOptions;
 
 pub use crate::types::_change_progress_details::ChangeProgressDetails;
 
@@ -131,6 +143,8 @@ pub use crate::types::_config_change_status::ConfigChangeStatus;
 
 pub use crate::types::_initiated_by::InitiatedBy;
 
+pub use crate::types::_cloned_blue_green_upgrade_details::ClonedBlueGreenUpgradeDetails;
+
 pub use crate::types::_elasticsearch_version_status::ElasticsearchVersionStatus;
 
 pub use crate::types::_elasticsearch_cluster_config_status::ElasticsearchClusterConfigStatus;
@@ -187,7 +201,23 @@ pub use crate::types::_upgrade_history::UpgradeHistory;
 
 pub use crate::types::_domain_info::DomainInfo;
 
+pub use crate::types::_traffic_strategy::TrafficStrategy;
+
+pub use crate::types::_cutover_target::CutoverTarget;
+
+pub use crate::types::_retention_action::RetentionAction;
+
+pub use crate::types::_cutover_status::CutoverStatus;
+
+pub use crate::types::_traffic_percents::TrafficPercents;
+
+pub use crate::types::_traffic_split_status::TrafficSplitStatus;
+
 pub use crate::types::_rollback_on_disable::RollbackOnDisable;
+
+pub use crate::types::_deployment_strategy_override::DeploymentStrategyOverride;
+
+pub use crate::types::_cloned_blue_green_options::ClonedBlueGreenOptions;
 
 pub use crate::types::_inbound_cross_cluster_search_connection_status_code::InboundCrossClusterSearchConnectionStatusCode;
 
@@ -209,6 +239,8 @@ pub use crate::types::_auto_tune_details::AutoTuneDetails;
 
 pub use crate::types::_change_progress_stage::ChangeProgressStage;
 
+pub use crate::types::_cloned_blue_green_scheduled_action::ClonedBlueGreenScheduledAction;
+
 pub use crate::types::_option_status::OptionStatus;
 
 pub use crate::types::_auto_tune_status::AutoTuneStatus;
@@ -226,6 +258,8 @@ pub use crate::types::_duration::Duration;
 pub use crate::types::_property_value_type::PropertyValueType;
 
 pub use crate::types::_scheduled_auto_tune_details::ScheduledAutoTuneDetails;
+
+pub use crate::types::_cloned_blue_green_scheduled_action_type::ClonedBlueGreenScheduledActionType;
 
 pub use crate::types::_option_state::OptionState;
 
@@ -297,6 +331,14 @@ mod _change_progress_stage;
 
 mod _change_progress_status_details;
 
+mod _cloned_blue_green_options;
+
+mod _cloned_blue_green_scheduled_action;
+
+mod _cloned_blue_green_scheduled_action_type;
+
+mod _cloned_blue_green_upgrade_details;
+
 mod _cognito_options;
 
 mod _cognito_options_status;
@@ -307,6 +349,14 @@ mod _compatible_versions_map;
 
 mod _config_change_status;
 
+mod _cutover_options;
+
+mod _cutover_request_options;
+
+mod _cutover_status;
+
+mod _cutover_target;
+
 mod _deployment_status;
 
 mod _deployment_strategy;
@@ -314,6 +364,10 @@ mod _deployment_strategy;
 mod _deployment_strategy_options;
 
 mod _deployment_strategy_options_status;
+
+mod _deployment_strategy_override;
+
+mod _deployment_strategy_override_options;
 
 mod _describe_packages_filter;
 
@@ -435,6 +489,10 @@ mod _reserved_elasticsearch_instance_offering;
 
 mod _reserved_elasticsearch_instance_payment_option;
 
+mod _retention_action;
+
+mod _retention_options;
+
 mod _rollback_on_disable;
 
 mod _saml_idp;
@@ -464,6 +522,16 @@ mod _tag;
 mod _time_unit;
 
 mod _tls_security_policy;
+
+mod _traffic_percents;
+
+mod _traffic_split_options;
+
+mod _traffic_split_request_options;
+
+mod _traffic_split_status;
+
+mod _traffic_strategy;
 
 mod _upgrade_history;
 

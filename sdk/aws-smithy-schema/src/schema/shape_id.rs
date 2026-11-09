@@ -113,13 +113,27 @@ impl<'a> ShapeId<'a> {
     /// Creates a `ShapeId` from its already-split component strings.
     ///
     /// `const`-callable, so the [`shape_id!`] macro and codegen use it for
-    /// `'static` ids; it also accepts borrowed parts for runtime-built ids
-    /// (e.g. from a wire-format `__type`). `fqn` must agree with
-    /// `namespace`/`shape_name` — the macro guarantees this via `concat!`.
+    /// `'static` ids; it also accepts borrowed parts for runtime-built ids, such
+    /// as ids borrowed from a model loaded at runtime or a wire-format `__type`.
+    ///
+    /// The parts must be consistent: `fqn` must be exactly
+    /// `{namespace}#{shape_name}`. This is not checked. Equality, hashing, and
+    /// `Borrow<str>` use only `fqn`, while [`Self::namespace`] and
+    /// [`Self::shape_name`] return the parts as given, so inconsistent parts
+    /// produce an id whose accessors disagree with its identity.
     ///
     /// Prefer the [`shape_id!`] macro for literal ids so the parts cannot get
     /// out of sync.
-    #[doc(hidden)]
+    ///
+    /// ```
+    /// use aws_smithy_schema::ShapeId;
+    ///
+    /// let fqn = String::from("com.example#Thing");
+    /// let (namespace, name) = fqn.split_once('#').unwrap();
+    /// let id = ShapeId::from_parts(&fqn, namespace, name);
+    /// assert_eq!(id.namespace(), "com.example");
+    /// assert_eq!(id.shape_name(), "Thing");
+    /// ```
     pub const fn from_parts(fqn: &'a str, namespace: &'a str, shape_name: &'a str) -> Self {
         Self {
             fqn,
@@ -129,9 +143,12 @@ impl<'a> ShapeId<'a> {
         }
     }
 
-    /// Creates a member `ShapeId` from its already-split component strings.
+    /// Creates a member `ShapeId` from its already-split component strings,
+    /// without allocating or validating.
     ///
-    /// See [`Self::from_parts`]; this is the member-shape variant.
+    /// This is the member-shape variant of [`Self::from_parts`], with the same
+    /// consistency requirement: `fqn` must be exactly
+    /// `{namespace}#{shape_name}${member_name}`.
     ///
     /// Prefer the [`shape_id!`] macro for literal ids so the parts cannot get
     /// out of sync.

@@ -21,6 +21,8 @@ pub use crate::types::_harness_model_configuration::HarnessModelConfiguration;
 
 pub use crate::types::_invoke_harness_stream_output::InvokeHarnessStreamOutput;
 
+pub use crate::types::_web_search_filters::WebSearchFilters;
+
 pub use crate::types::_invoke_agent_runtime_command_request_body::InvokeAgentRuntimeCommandRequestBody;
 
 pub use crate::types::_invoke_agent_runtime_command_stream_output::InvokeAgentRuntimeCommandStreamOutput;
@@ -180,6 +182,12 @@ pub use crate::types::_harness_message_stop_event::HarnessMessageStopEvent;
 pub use crate::types::_harness_metadata_event::HarnessMetadataEvent;
 
 pub use crate::types::_harness_hook_event::HarnessHookEvent;
+
+pub use crate::types::_domain_filter::DomainFilter;
+
+pub use crate::types::_published_date_filter::PublishedDateFilter;
+
+pub use crate::types::_web_search_result::WebSearchResult;
 
 pub use crate::types::_response_chunk::ResponseChunk;
 
@@ -787,6 +795,8 @@ mod _descriptor_type;
 
 mod _descriptors;
 
+mod _domain_filter;
+
 mod _efs_configuration;
 
 mod _embedded_crypto_wallet;
@@ -1141,6 +1151,8 @@ mod _proxy_configuration;
 
 mod _proxy_credentials;
 
+mod _published_date_filter;
+
 mod _recommendation_config;
 
 mod _recommendation_evaluation_config;
@@ -1290,6 +1302,10 @@ mod _variant_configuration;
 mod _variant_result;
 
 mod _view_port;
+
+mod _web_search_filters;
+
+mod _web_search_result;
 
 /// Builders
 pub mod builders;

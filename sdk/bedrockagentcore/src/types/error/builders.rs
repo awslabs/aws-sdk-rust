@@ -17,6 +17,8 @@ pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExce
 
 pub use crate::types::error::_runtime_client_error::RuntimeClientErrorBuilder;
 
+pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableExceptionBuilder;
+
 pub use crate::types::error::_retryable_conflict_exception::RetryableConflictExceptionBuilder;
 
 pub use crate::types::error::_duplicate_id_exception::DuplicateIdExceptionBuilder;

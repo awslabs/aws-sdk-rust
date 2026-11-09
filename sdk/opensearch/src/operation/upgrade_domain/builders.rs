@@ -176,4 +176,18 @@ impl UpgradeDomainFluentBuilder {
     pub fn get_advanced_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_advanced_options()
     }
+    /// <p>Overrides the deployment strategy for this upgrade. To run a cloned blue/green upgrade, set <code>DeploymentStrategy</code> to <code>ClonedBlueGreen</code>.</p>
+    pub fn deployment_strategy_options(mut self, input: crate::types::DeploymentStrategyOverrideOptions) -> Self {
+        self.inner = self.inner.deployment_strategy_options(input);
+        self
+    }
+    /// <p>Overrides the deployment strategy for this upgrade. To run a cloned blue/green upgrade, set <code>DeploymentStrategy</code> to <code>ClonedBlueGreen</code>.</p>
+    pub fn set_deployment_strategy_options(mut self, input: ::std::option::Option<crate::types::DeploymentStrategyOverrideOptions>) -> Self {
+        self.inner = self.inner.set_deployment_strategy_options(input);
+        self
+    }
+    /// <p>Overrides the deployment strategy for this upgrade. To run a cloned blue/green upgrade, set <code>DeploymentStrategy</code> to <code>ClonedBlueGreen</code>.</p>
+    pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOverrideOptions> {
+        self.inner.get_deployment_strategy_options()
+    }
 }

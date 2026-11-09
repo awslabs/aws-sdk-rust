@@ -10,6 +10,8 @@ pub struct UpgradeElasticsearchDomainOutput {
     pub target_version: ::std::option::Option<::std::string::String>,
     /// <p>This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade.</p>
     pub perform_check_only: ::std::option::Option<bool>,
+    /// <p>The deployment strategy override used for the upgrade.</p>
+    pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOverrideOptions>,
     /// <p>Specifies change details of the domain configuration change.</p>
     pub change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     _request_id: Option<String>,
@@ -26,6 +28,10 @@ impl UpgradeElasticsearchDomainOutput {
     /// <p>This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade.</p>
     pub fn perform_check_only(&self) -> ::std::option::Option<bool> {
         self.perform_check_only
+    }
+    /// <p>The deployment strategy override used for the upgrade.</p>
+    pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOverrideOptions> {
+        self.deployment_strategy_options.as_ref()
     }
     /// <p>Specifies change details of the domain configuration change.</p>
     pub fn change_progress_details(&self) -> ::std::option::Option<&crate::types::ChangeProgressDetails> {
@@ -51,6 +57,7 @@ pub struct UpgradeElasticsearchDomainOutputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_version: ::std::option::Option<::std::string::String>,
     pub(crate) perform_check_only: ::std::option::Option<bool>,
+    pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOverrideOptions>,
     pub(crate) change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     _request_id: Option<String>,
 }
@@ -97,6 +104,20 @@ impl UpgradeElasticsearchDomainOutputBuilder {
     pub fn get_perform_check_only(&self) -> &::std::option::Option<bool> {
         &self.perform_check_only
     }
+    /// <p>The deployment strategy override used for the upgrade.</p>
+    pub fn deployment_strategy_options(mut self, input: crate::types::DeploymentStrategyOverrideOptions) -> Self {
+        self.deployment_strategy_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deployment strategy override used for the upgrade.</p>
+    pub fn set_deployment_strategy_options(mut self, input: ::std::option::Option<crate::types::DeploymentStrategyOverrideOptions>) -> Self {
+        self.deployment_strategy_options = input;
+        self
+    }
+    /// <p>The deployment strategy override used for the upgrade.</p>
+    pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOverrideOptions> {
+        &self.deployment_strategy_options
+    }
     /// <p>Specifies change details of the domain configuration change.</p>
     pub fn change_progress_details(mut self, input: crate::types::ChangeProgressDetails) -> Self {
         self.change_progress_details = ::std::option::Option::Some(input);
@@ -126,6 +147,7 @@ impl UpgradeElasticsearchDomainOutputBuilder {
             domain_name: self.domain_name,
             target_version: self.target_version,
             perform_check_only: self.perform_check_only,
+            deployment_strategy_options: self.deployment_strategy_options,
             change_progress_details: self.change_progress_details,
             _request_id: self._request_id,
         }

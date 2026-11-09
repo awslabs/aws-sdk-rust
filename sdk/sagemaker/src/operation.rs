@@ -64,6 +64,9 @@ pub mod create_auto_ml_job_v2;
 /// Types for the `CreateCluster` operation.
 pub mod create_cluster;
 
+/// Types for the `CreateClusterExtension` operation.
+pub mod create_cluster_extension;
+
 /// Types for the `CreateClusterSchedulerConfig` operation.
 pub mod create_cluster_scheduler_config;
 
@@ -280,6 +283,9 @@ pub mod delete_association;
 /// Types for the `DeleteCluster` operation.
 pub mod delete_cluster;
 
+/// Types for the `DeleteClusterExtension` operation.
+pub mod delete_cluster_extension;
+
 /// Types for the `DeleteClusterSchedulerConfig` operation.
 pub mod delete_cluster_scheduler_config;
 
@@ -477,6 +483,9 @@ pub mod describe_cluster;
 
 /// Types for the `DescribeClusterEvent` operation.
 pub mod describe_cluster_event;
+
+/// Types for the `DescribeClusterExtension` operation.
+pub mod describe_cluster_extension;
 
 /// Types for the `DescribeClusterNode` operation.
 pub mod describe_cluster_node;
@@ -747,6 +756,9 @@ pub mod list_candidates_for_auto_ml_job;
 
 /// Types for the `ListClusterEvents` operation.
 pub mod list_cluster_events;
+
+/// Types for the `ListClusterExtensions` operation.
+pub mod list_cluster_extensions;
 
 /// Types for the `ListClusterNodes` operation.
 pub mod list_cluster_nodes;
@@ -1104,6 +1116,9 @@ pub mod update_artifact;
 
 /// Types for the `UpdateCluster` operation.
 pub mod update_cluster;
+
+/// Types for the `UpdateClusterExtension` operation.
+pub mod update_cluster_extension;
 
 /// Types for the `UpdateClusterSchedulerConfig` operation.
 pub mod update_cluster_scheduler_config;

@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-licensemanager = "1.124.0"
+//! aws-sdk-licensemanager = "1.125.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -200,6 +200,8 @@ mod sdk_feature_tracker;
 mod serde_util;
 
 mod endpoint_lib;
+
+pub(crate) mod schema_serde;
 
 #[doc(inline)]
 pub use client::Client;

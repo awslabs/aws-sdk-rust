@@ -124,5 +124,7 @@ pub mod ser_de;
 
 pub mod stalled_stream_protection;
 
+pub mod unit_of_work;
+
 /// Smithy support-code for code generated waiters.
 pub mod waiters;

@@ -22,7 +22,7 @@ impl crate::operation::list_caller_access_grants::builders::ListCallerAccessGran
 }
 /// Fluent builder constructing a request to `ListCallerAccessGrants`.
 ///
-/// <p>Use this API to list the access grants that grant the caller access to Amazon S3 data through S3 Access Grants. The caller (grantee) can be an Identity and Access Management (IAM) identity or Amazon Web Services Identity Center corporate directory identity. You must pass the Amazon Web Services account of the S3 data owner (grantor) in the request. You can, optionally, narrow the results by <code>GrantScope</code>, using a fragment of the data's S3 path, and S3 Access Grants will return only the grants with a path that contains the path fragment. You can also pass the <code>AllowedByApplication</code> filter in the request, which returns only the grants authorized for applications, whether the application is the caller's Identity Center application or any other application (<code>ALL</code>). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-list-grants.html">List the caller's access grants</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// <p>Use this API to list the access grants that grant the caller access to Amazon S3 data through S3 Access Grants. The caller (grantee) can be an Identity and Access Management (IAM) identity or Amazon Web Services Identity Center corporate directory identity. You must pass the Amazon Web Services account of the S3 data owner (grantor) in the request. By default, S3 Access Grants returns grants from the instance of the Amazon Web Services account ID in the request. To return grants from all instances shared with the caller's account through Amazon Web Services Resource Access Manager (RAM), set the <code>InstanceScope</code> parameter to <code>ALL</code>. You can, optionally, narrow the results by <code>GrantScope</code>, using a fragment of the data's S3 path, and S3 Access Grants will return only the grants with a path that contains the path fragment. You can also pass the <code>AllowedByApplication</code> filter in the request, which returns only the grants authorized for applications, whether the application is the caller's Identity Center application or any other application (<code>ALL</code>). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-list-grants.html">List the caller's access grants</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// <dl>
 /// <dt>
 /// Permissions
@@ -191,5 +191,37 @@ impl ListCallerAccessGrantsFluentBuilder {
     /// <p>If this optional parameter is passed in the request, a filter is applied to the results. The results will include only the access grants for the caller's Identity Center application or for any other applications (<code>ALL</code>).</p>
     pub fn get_allowed_by_application(&self) -> &::std::option::Option<bool> {
         self.inner.get_allowed_by_application()
+    }
+    /// <p>The scope of S3 Access Grants instances to list grants from.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – Lists grants from the instance of the Amazon Web Services account ID in the request.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – Lists grants from the instance of the Amazon Web Services account ID in the request and all instances shared with the caller's account through Amazon Web Services Resource Access Manager (RAM).</p></li>
+    /// </ul>
+    pub fn instance_scope(mut self, input: crate::types::InstanceScope) -> Self {
+        self.inner = self.inner.instance_scope(input);
+        self
+    }
+    /// <p>The scope of S3 Access Grants instances to list grants from.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – Lists grants from the instance of the Amazon Web Services account ID in the request.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – Lists grants from the instance of the Amazon Web Services account ID in the request and all instances shared with the caller's account through Amazon Web Services Resource Access Manager (RAM).</p></li>
+    /// </ul>
+    pub fn set_instance_scope(mut self, input: ::std::option::Option<crate::types::InstanceScope>) -> Self {
+        self.inner = self.inner.set_instance_scope(input);
+        self
+    }
+    /// <p>The scope of S3 Access Grants instances to list grants from.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – Lists grants from the instance of the Amazon Web Services account ID in the request.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – Lists grants from the instance of the Amazon Web Services account ID in the request and all instances shared with the caller's account through Amazon Web Services Resource Access Manager (RAM).</p></li>
+    /// </ul>
+    pub fn get_instance_scope(&self) -> &::std::option::Option<crate::types::InstanceScope> {
+        self.inner.get_instance_scope()
     }
 }

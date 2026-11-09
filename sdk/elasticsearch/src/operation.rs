@@ -142,6 +142,9 @@ pub mod revoke_vpc_endpoint_access;
 /// Types for the `StartElasticsearchServiceSoftwareUpdate` operation.
 pub mod start_elasticsearch_service_software_update;
 
+/// Types for the `UpdateClone` operation.
+pub mod update_clone;
+
 /// Types for the `UpdateElasticsearchDomainConfig` operation.
 pub mod update_elasticsearch_domain_config;
 

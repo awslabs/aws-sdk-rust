@@ -3026,6 +3026,32 @@ impl From<crate::operation::update_application::UpdateApplicationError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_clone::UpdateCloneError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_clone::UpdateCloneError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_clone::UpdateCloneError> for Error {
+    fn from(err: crate::operation::update_clone::UpdateCloneError) -> Self {
+        match err {
+            crate::operation::update_clone::UpdateCloneError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::update_clone::UpdateCloneError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
+            crate::operation::update_clone::UpdateCloneError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::update_clone::UpdateCloneError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_clone::UpdateCloneError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_clone::UpdateCloneError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_data_source::UpdateDataSourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

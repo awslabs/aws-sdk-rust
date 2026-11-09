@@ -138,6 +138,20 @@ pub(crate) fn de_get_data_quality_result(
                             .transpose()?,
                     );
                 }
+                "EvaluationRunMode" => {
+                    builder = builder.set_evaluation_run_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::DataQualityEvaluationRunMode::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "DataQualityEvaluationConfig" => {
+                    builder = builder.set_data_quality_evaluation_config(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "ProfileId" => {
                     builder = builder.set_profile_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

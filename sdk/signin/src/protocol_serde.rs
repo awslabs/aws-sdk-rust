@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_create_bearer_token;
+
 pub(crate) mod shape_create_o_auth2_token;
 
 pub fn rest_json_unset_struct_payload() -> ::std::vec::Vec<u8> {
@@ -64,6 +66,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_bearer_token_input;
 
 pub(crate) mod shape_create_o_auth2_token_output;
 

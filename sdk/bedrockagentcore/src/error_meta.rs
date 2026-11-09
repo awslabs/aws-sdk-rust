@@ -23,6 +23,8 @@ pub enum Error {
     ServiceException(crate::types::error::ServiceException),
     /// <p>The exception that occurs when the request would cause a service quota to be exceeded. Review your service quotas and either reduce your request rate or request a quota increase.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// <p>The service can't handle the request right now. Retry the request. If the response includes <code>retryAfterSeconds</code>, wait that many seconds before you retry.</p>
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>Returned when you attempt a wallet operation against a Coinbase Marketplace connector whose account does not hold an active Marketplace subscription and is not within the legacy exception period. Subscribe to the Marketplace listing before you retry the operation.</p>
     SubscriptionRequiredException(crate::types::error::SubscriptionRequiredException),
     /// <p>The request was denied due to request throttling. Reduce the frequency of requests and try again.</p>
@@ -55,6 +57,7 @@ impl ::std::fmt::Display for Error {
             Error::RuntimeClientError(inner) => inner.fmt(f),
             Error::ServiceException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::SubscriptionRequiredException(inner) => inner.fmt(f),
             Error::ThrottledException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
@@ -91,6 +94,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::RuntimeClientError(inner) => inner.meta(),
             Self::ServiceException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
+            Self::ServiceUnavailableException(inner) => inner.meta(),
             Self::SubscriptionRequiredException(inner) => inner.meta(),
             Self::ThrottledException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
@@ -1485,6 +1489,35 @@ impl From<crate::operation::invoke_harness::InvokeHarnessError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_web_search::InvokeWebSearchError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_web_search::InvokeWebSearchError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::invoke_web_search::InvokeWebSearchError> for Error {
+    fn from(err: crate::operation::invoke_web_search::InvokeWebSearchError) -> Self {
+        match err {
+            crate::operation::invoke_web_search::InvokeWebSearchError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::invoke_web_search::InvokeWebSearchError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::invoke_web_search::InvokeWebSearchError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::invoke_web_search::InvokeWebSearchError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::invoke_web_search::InvokeWebSearchError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::invoke_web_search::InvokeWebSearchError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::invoke_web_search::InvokeWebSearchError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ab_tests::ListABTestsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2493,6 +2526,7 @@ impl ::std::error::Error for Error {
             Error::RuntimeClientError(inner) => inner.source(),
             Error::ServiceException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::ServiceUnavailableException(inner) => inner.source(),
             Error::SubscriptionRequiredException(inner) => inner.source(),
             Error::ThrottledException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
@@ -2515,6 +2549,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::RuntimeClientError(e) => e.request_id(),
             Self::ServiceException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
             Self::SubscriptionRequiredException(e) => e.request_id(),
             Self::ThrottledException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),

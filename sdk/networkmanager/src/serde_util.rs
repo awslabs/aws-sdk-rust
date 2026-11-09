@@ -97,27 +97,3 @@ pub(crate) fn list_attachment_nat_configurations_output_output_correct_errors(
     }
     builder
 }
-
-pub(crate) fn core_network_policy_error_correct_errors(
-    mut builder: crate::types::builders::CoreNetworkPolicyErrorBuilder,
-) -> crate::types::builders::CoreNetworkPolicyErrorBuilder {
-    if builder.error_code.is_none() {
-        builder.error_code = Some(Default::default())
-    }
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn validation_exception_field_correct_errors(
-    mut builder: crate::types::builders::ValidationExceptionFieldBuilder,
-) -> crate::types::builders::ValidationExceptionFieldBuilder {
-    if builder.name.is_none() {
-        builder.name = Some(Default::default())
-    }
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}

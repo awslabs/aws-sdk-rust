@@ -14,13 +14,80 @@
               "response": {
                 "statusCode": 200,
                 "headers": {
-                  "Date": "Thu, 01 Jan 2026 00:00:01 GMT"
+                  "Date": "Thu, 01 Jan 2026 00:00:02 GMT"
                 }
               }
             }
           ],
           "expectedClientSkew": 0,
           "expectedOutcome": "success"
+        }
+      ]
+    },
+    {
+      "description": "Long-running request does not attribute server processing time to ClientSkew",
+      "operations": [
+        {
+          "initialClientSkew": 0,
+          "attempts": [
+            {
+              "clientTimeAtSend": "2026-01-01T00:00:00Z",
+              "clientTimeAtReceive": "2026-01-01T00:10:20Z",
+              "expectedSigningTime": "2026-01-01T00:00:00Z",
+              "response": {
+                "statusCode": 200,
+                "headers": {
+                  "Date": "Thu, 01 Jan 2026 00:10:20 GMT"
+                }
+              }
+            }
+          ],
+          "expectedClientSkew": 0,
+          "expectedOutcome": "success",
+          "documentation": "The request spends 620 seconds in server processing. The midpoint formula would record approximately +310 seconds, but comparing Date to response receipt time records no skew."
+        },
+        {
+          "initialClientSkew": 0,
+          "attempts": [
+            {
+              "clientTimeAtSend": "2026-01-01T00:10:21Z",
+              "clientTimeAtReceive": "2026-01-01T00:10:22Z",
+              "expectedSigningTime": "2026-01-01T00:10:21Z",
+              "response": {
+                "statusCode": 200,
+                "headers": {
+                  "Date": "Thu, 01 Jan 2026 00:10:22 GMT"
+                }
+              }
+            }
+          ],
+          "expectedClientSkew": 0,
+          "expectedOutcome": "success",
+          "documentation": "The following operation is signed without a false offset from the preceding long-running request."
+        }
+      ]
+    },
+    {
+      "description": "Response latency is attributed to ClientSkew",
+      "operations": [
+        {
+          "initialClientSkew": 0,
+          "attempts": [
+            {
+              "clientTimeAtSend": "2026-01-01T00:00:00Z",
+              "clientTimeAtReceive": "2026-01-01T00:00:02Z",
+              "expectedSigningTime": "2026-01-01T00:00:00Z",
+              "response": {
+                "statusCode": 200,
+                "headers": {
+                  "Date": "Thu, 01 Jan 2026 00:00:01 GMT"
+                }
+              }
+            }
+          ],
+          "expectedClientSkew": -1,
+          "expectedOutcome": "success",
+          "documentation": "The response is generated when the clocks agree and takes one second to reach the client. Without a server transmit timestamp, that response latency is included in the candidate skew."
         }
       ]
     },
@@ -37,7 +104,7 @@
               "response": {
                 "statusCode": 403,
                 "headers": {
-                  "Date": "Thu, 01 Jan 2026 00:05:01 GMT"
+                  "Date": "Thu, 01 Jan 2026 00:05:02 GMT"
                 },
                 "errorCode": "RequestTimeTooSkewed"
               }
@@ -49,7 +116,7 @@
               "response": {
                 "statusCode": 200,
                 "headers": {
-                  "Date": "Thu, 01 Jan 2026 00:05:03 GMT"
+                  "Date": "Thu, 01 Jan 2026 00:05:04 GMT"
                 }
               }
             }
@@ -67,7 +134,7 @@
               "response": {
                 "statusCode": 200,
                 "headers": {
-                  "Date": "Thu, 01 Jan 2026 00:06:01 GMT"
+                  "Date": "Thu, 01 Jan 2026 00:06:02 GMT"
                 }
               }
             }
@@ -91,7 +158,7 @@
               "response": {
                 "statusCode": 403,
                 "headers": {
-                  "Date": "Thu, 01 Jan 2026 00:05:01 GMT"
+                  "Date": "Thu, 01 Jan 2026 00:05:02 GMT"
                 },
                 "errorCode": "RequestTimeTooSkewed"
               }
@@ -133,7 +200,7 @@
               "response": {
                 "statusCode": 200,
                 "headers": {
-                  "Date": "Thu, 01 Jan 2026 00:22:01 GMT"
+                  "Date": "Thu, 01 Jan 2026 00:22:02 GMT"
                 }
               }
             }
@@ -156,7 +223,7 @@
               "response": {
                 "statusCode": 200,
                 "headers": {
-                  "Date": "Thu, 01 Jan 2026 00:00:01 GMT"
+                  "Date": "Thu, 01 Jan 2026 00:00:02 GMT"
                 }
               }
             }
@@ -179,7 +246,7 @@
               "response": {
                 "statusCode": 400,
                 "headers": {
-                  "Date": "Thu, 01 Jan 2026 00:02:01 GMT"
+                  "Date": "Thu, 01 Jan 2026 00:02:02 GMT"
                 },
                 "errorCode": "InvalidSignatureException"
               }
@@ -204,7 +271,7 @@
               "response": {
                 "statusCode": 400,
                 "headers": {
-                  "Date": "Thu, 01 Jan 2026 00:05:01 GMT"
+                  "Date": "Thu, 01 Jan 2026 00:05:02 GMT"
                 },
                 "errorCode": "InvalidSignatureException"
               }
@@ -216,7 +283,7 @@
               "response": {
                 "statusCode": 200,
                 "headers": {
-                  "Date": "Thu, 01 Jan 2026 00:05:03 GMT"
+                  "Date": "Thu, 01 Jan 2026 00:05:04 GMT"
                 }
               }
             }
@@ -281,7 +348,7 @@
               "response": {
                 "statusCode": 200,
                 "headers": {
-                  "Date": "Thu, 01 Jan 2026 16:56:11 GMT"
+                  "Date": "Thu, 01 Jan 2026 16:56:12 GMT"
                 }
               }
             }
@@ -325,7 +392,7 @@
               "response": {
                 "statusCode": 200,
                 "headers": {
-                  "Date": "Thu, 01 Jan 2026 16:51:11 GMT"
+                  "Date": "Thu, 01 Jan 2026 16:51:12 GMT"
                 }
               }
             }

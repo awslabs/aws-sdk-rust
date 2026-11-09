@@ -25,7 +25,7 @@ pub struct JobDefinition {
     /// <p>The timeout time for jobs that are submitted with this job definition. After the amount of time you specify passes, Batch terminates your jobs if they aren't finished.</p>
     pub timeout: ::std::option::Option<crate::types::JobTimeout>,
     /// <p>An object with properties that are specific to multi-node parallel jobs. When <code>nodeProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.</p><note>
-    /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
+    /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. We recommend <code>ecsProperties</code>, which supports both single-container and multi-container jobs. <code>containerProperties</code> is also supported for single-container jobs.</p>
     /// </note>
     pub node_properties: ::std::option::Option<crate::types::NodeProperties>,
     /// <p>The tags that are applied to the job definition.</p>
@@ -85,7 +85,7 @@ impl JobDefinition {
         self.timeout.as_ref()
     }
     /// <p>An object with properties that are specific to multi-node parallel jobs. When <code>nodeProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.</p><note>
-    /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
+    /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. We recommend <code>ecsProperties</code>, which supports both single-container and multi-container jobs. <code>containerProperties</code> is also supported for single-container jobs.</p>
     /// </note>
     pub fn node_properties(&self) -> ::std::option::Option<&crate::types::NodeProperties> {
         self.node_properties.as_ref()
@@ -303,21 +303,21 @@ impl JobDefinitionBuilder {
         &self.timeout
     }
     /// <p>An object with properties that are specific to multi-node parallel jobs. When <code>nodeProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.</p><note>
-    /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
+    /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. We recommend <code>ecsProperties</code>, which supports both single-container and multi-container jobs. <code>containerProperties</code> is also supported for single-container jobs.</p>
     /// </note>
     pub fn node_properties(mut self, input: crate::types::NodeProperties) -> Self {
         self.node_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object with properties that are specific to multi-node parallel jobs. When <code>nodeProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.</p><note>
-    /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
+    /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. We recommend <code>ecsProperties</code>, which supports both single-container and multi-container jobs. <code>containerProperties</code> is also supported for single-container jobs.</p>
     /// </note>
     pub fn set_node_properties(mut self, input: ::std::option::Option<crate::types::NodeProperties>) -> Self {
         self.node_properties = input;
         self
     }
     /// <p>An object with properties that are specific to multi-node parallel jobs. When <code>nodeProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.</p><note>
-    /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
+    /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. We recommend <code>ecsProperties</code>, which supports both single-container and multi-container jobs. <code>containerProperties</code> is also supported for single-container jobs.</p>
     /// </note>
     pub fn get_node_properties(&self) -> &::std::option::Option<crate::types::NodeProperties> {
         &self.node_properties

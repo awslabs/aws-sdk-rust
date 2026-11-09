@@ -295,6 +295,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDataAcces
                         query.push_kv("auditContext", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
+                if let ::std::option::Option::Some(inner_7) = &_input.instance_scope {
+                    {
+                        query.push_kv("instanceScope", &::aws_smithy_http::query::fmt_string(inner_7.as_str()));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

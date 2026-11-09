@@ -54,7 +54,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-storagegateway = "1.127.0"
+//! aws-sdk-storagegateway = "1.128.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -219,6 +219,8 @@ mod sdk_feature_tracker;
 mod endpoint_lib;
 
 mod lens;
+
+pub(crate) mod schema_serde;
 
 #[doc(inline)]
 pub use client::Client;

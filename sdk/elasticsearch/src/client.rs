@@ -257,6 +257,8 @@ mod revoke_vpc_endpoint_access;
 
 mod start_elasticsearch_service_software_update;
 
+mod update_clone;
+
 mod update_elasticsearch_domain_config;
 
 mod update_package;

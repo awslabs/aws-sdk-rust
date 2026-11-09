@@ -35,7 +35,7 @@ pub struct PublishDataQualityResultV2Input {
     pub ruleset_name: ::std::option::Option<::std::string::String>,
     /// <p>The security configuration for the result.</p>
     pub data_quality_security_configuration: ::std::option::Option<::std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p></p>
     pub telemetry: ::std::option::Option<crate::types::DataQualityTelemetry>,
 }
 impl PublishDataQualityResultV2Input {
@@ -111,7 +111,7 @@ impl PublishDataQualityResultV2Input {
     pub fn data_quality_security_configuration(&self) -> ::std::option::Option<&str> {
         self.data_quality_security_configuration.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p></p>
     pub fn telemetry(&self) -> ::std::option::Option<&crate::types::DataQualityTelemetry> {
         self.telemetry.as_ref()
     }
@@ -417,17 +417,17 @@ impl PublishDataQualityResultV2InputBuilder {
     pub fn get_data_quality_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_quality_security_configuration
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p></p>
     pub fn telemetry(mut self, input: crate::types::DataQualityTelemetry) -> Self {
         self.telemetry = ::std::option::Option::Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p></p>
     pub fn set_telemetry(mut self, input: ::std::option::Option<crate::types::DataQualityTelemetry>) -> Self {
         self.telemetry = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p></p>
     pub fn get_telemetry(&self) -> &::std::option::Option<crate::types::DataQualityTelemetry> {
         &self.telemetry
     }

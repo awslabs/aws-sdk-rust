@@ -13,6 +13,14 @@ pub struct ListCallerAccessGrantsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>If this optional parameter is passed in the request, a filter is applied to the results. The results will include only the access grants for the caller's Identity Center application or for any other applications (<code>ALL</code>).</p>
     pub allowed_by_application: ::std::option::Option<bool>,
+    /// <p>The scope of S3 Access Grants instances to list grants from.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – Lists grants from the instance of the Amazon Web Services account ID in the request.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – Lists grants from the instance of the Amazon Web Services account ID in the request and all instances shared with the caller's account through Amazon Web Services Resource Access Manager (RAM).</p></li>
+    /// </ul>
+    pub instance_scope: ::std::option::Option<crate::types::InstanceScope>,
 }
 impl ListCallerAccessGrantsInput {
     /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
@@ -35,6 +43,16 @@ impl ListCallerAccessGrantsInput {
     pub fn allowed_by_application(&self) -> ::std::option::Option<bool> {
         self.allowed_by_application
     }
+    /// <p>The scope of S3 Access Grants instances to list grants from.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – Lists grants from the instance of the Amazon Web Services account ID in the request.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – Lists grants from the instance of the Amazon Web Services account ID in the request and all instances shared with the caller's account through Amazon Web Services Resource Access Manager (RAM).</p></li>
+    /// </ul>
+    pub fn instance_scope(&self) -> ::std::option::Option<&crate::types::InstanceScope> {
+        self.instance_scope.as_ref()
+    }
 }
 impl ListCallerAccessGrantsInput {
     /// Creates a new builder-style object to manufacture [`ListCallerAccessGrantsInput`](crate::operation::list_caller_access_grants::ListCallerAccessGrantsInput).
@@ -52,6 +70,7 @@ pub struct ListCallerAccessGrantsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) allowed_by_application: ::std::option::Option<bool>,
+    pub(crate) instance_scope: ::std::option::Option<crate::types::InstanceScope>,
 }
 impl ListCallerAccessGrantsInputBuilder {
     /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
@@ -125,6 +144,38 @@ impl ListCallerAccessGrantsInputBuilder {
     pub fn get_allowed_by_application(&self) -> &::std::option::Option<bool> {
         &self.allowed_by_application
     }
+    /// <p>The scope of S3 Access Grants instances to list grants from.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – Lists grants from the instance of the Amazon Web Services account ID in the request.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – Lists grants from the instance of the Amazon Web Services account ID in the request and all instances shared with the caller's account through Amazon Web Services Resource Access Manager (RAM).</p></li>
+    /// </ul>
+    pub fn instance_scope(mut self, input: crate::types::InstanceScope) -> Self {
+        self.instance_scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scope of S3 Access Grants instances to list grants from.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – Lists grants from the instance of the Amazon Web Services account ID in the request.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – Lists grants from the instance of the Amazon Web Services account ID in the request and all instances shared with the caller's account through Amazon Web Services Resource Access Manager (RAM).</p></li>
+    /// </ul>
+    pub fn set_instance_scope(mut self, input: ::std::option::Option<crate::types::InstanceScope>) -> Self {
+        self.instance_scope = input;
+        self
+    }
+    /// <p>The scope of S3 Access Grants instances to list grants from.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SELF</code> – Lists grants from the instance of the Amazon Web Services account ID in the request.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – Lists grants from the instance of the Amazon Web Services account ID in the request and all instances shared with the caller's account through Amazon Web Services Resource Access Manager (RAM).</p></li>
+    /// </ul>
+    pub fn get_instance_scope(&self) -> &::std::option::Option<crate::types::InstanceScope> {
+        &self.instance_scope
+    }
     /// Consumes the builder and constructs a [`ListCallerAccessGrantsInput`](crate::operation::list_caller_access_grants::ListCallerAccessGrantsInput).
     pub fn build(
         self,
@@ -138,6 +189,7 @@ impl ListCallerAccessGrantsInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             allowed_by_application: self.allowed_by_application,
+            instance_scope: self.instance_scope,
         })
     }
 }

@@ -89,7 +89,15 @@ pub(crate) mod epoch_seconds {
         if date_time.subsecond_nanos == 0 {
             format!("{}", date_time.seconds)
         } else {
-            let mut result = format!("{}.{:0>9}", date_time.seconds, date_time.subsecond_nanos);
+            let mut result = if date_time.seconds < 0 {
+                format!(
+                    "-{}.{:0>9}",
+                    date_time.seconds.unsigned_abs() - 1,
+                    1_000_000_000 - date_time.subsecond_nanos
+                )
+            } else {
+                format!("{}.{:0>9}", date_time.seconds, date_time.subsecond_nanos)
+            };
             remove_trailing_zeros(&mut result);
             result
         }
@@ -122,6 +130,12 @@ pub(crate) mod epoch_seconds {
             for _ in 0..missing_places {
                 decimal *= 10;
             }
+        }
+        if decimal != 0 && value.starts_with('-') {
+            whole = whole.checked_sub(1).ok_or_else(|| {
+                DateTimeParseErrorKind::Invalid("epoch-seconds timestamp out of range".into())
+            })?;
+            decimal = 1_000_000_000 - decimal;
         }
         Ok(DateTime::from_secs_and_nanos(whole, decimal))
     }
@@ -656,6 +670,62 @@ mod tests {
     }
 
     #[test]
+    fn epoch_seconds_negative_fraction() {
+        let cases = [
+            (-750_000_000i128, "-0.75"),
+            (-1_250_000_000, "-1.25"),
+            (-500_000_000, "-0.5"),
+            (-1_000_000, "-0.001"),
+            (-1, "-0.000000001"),
+            (-1_000_000_000, "-1"),
+            (-999_999_999_999, "-999.999999999"),
+            (750_000_000, "0.75"),
+        ];
+        for (nanos, text) in cases {
+            let date_time = DateTime::from_nanos(nanos).unwrap();
+            assert_eq!(text, epoch_seconds::format(&date_time), "format {nanos} ns");
+            assert_eq!(
+                date_time,
+                epoch_seconds::parse(text).unwrap(),
+                "parse {text}"
+            );
+        }
+        assert_eq!(
+            DateTime::from_nanos(-750_000_000).unwrap(),
+            epoch_seconds::parse("-0.750").unwrap()
+        );
+        assert_eq!(
+            DateTime::from_secs(0),
+            epoch_seconds::parse("-0.0").unwrap()
+        );
+    }
+
+    #[test]
+    fn epoch_seconds_extremes() {
+        let min = DateTime::from_secs_and_nanos(i64::MIN, 500_000_000);
+        assert_eq!("-9223372036854775807.5", epoch_seconds::format(&min));
+        assert_eq!(min, epoch_seconds::parse("-9223372036854775807.5").unwrap());
+        assert_eq!(
+            "-9223372036854775808",
+            epoch_seconds::format(&DateTime::from_secs(i64::MIN))
+        );
+        assert!(epoch_seconds::parse("-9223372036854775808.5").is_err());
+    }
+
+    fn epoch_seconds_reference(date_time: &DateTime) -> String {
+        let nanos = date_time.as_nanos();
+        let sign = if nanos < 0 { "-" } else { "" };
+        let (whole, fraction) = (nanos.abs() / 1_000_000_000, nanos.abs() % 1_000_000_000);
+        if fraction == 0 {
+            format!("{sign}{whole}")
+        } else {
+            format!("{sign}{whole}.{fraction:09}")
+                .trim_end_matches('0')
+                .to_string()
+        }
+    }
+
+    #[test]
     fn read_rfc3339_date_comma_split() {
         let date = "1985-04-12T23:20:50Z,1985-04-12T23:20:51Z";
         let (e1, date) =
@@ -817,6 +887,14 @@ mod tests {
         #[test]
         fn round_trip(secs in -10000000..9999999999i64, nanos in 0..1_000_000_000u32) {
             http_date_check_roundtrip(secs, nanos);
+        }
+
+        #[test]
+        fn epoch_seconds_matches_reference(secs in any::<i64>(), nanos in 0..1_000_000_000u32) {
+            let date_time = DateTime::from_secs_and_nanos(secs, nanos);
+            let formatted = epoch_seconds::format(&date_time);
+            prop_assert_eq!(epoch_seconds_reference(&date_time), formatted.clone());
+            prop_assert_eq!(date_time, epoch_seconds::parse(&formatted).unwrap());
         }
     }
 }

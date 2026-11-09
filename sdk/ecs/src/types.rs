@@ -127,6 +127,8 @@ pub use crate::types::_ephemeral_storage::EphemeralStorage;
 
 pub use crate::types::_runtime_platform::RuntimePlatform;
 
+pub use crate::types::_trusted_execution_configuration::TrustedExecutionConfiguration;
+
 pub use crate::types::_task_override::TaskOverride;
 
 pub use crate::types::_task::Task;
@@ -315,6 +317,8 @@ pub use crate::types::_cpu_architecture::CpuArchitecture;
 
 pub use crate::types::_os_family::OsFamily;
 
+pub use crate::types::_isolation_mode::IsolationMode;
+
 pub use crate::types::_task_field::TaskField;
 
 pub use crate::types::_protected_task::ProtectedTask;
@@ -328,6 +332,8 @@ pub use crate::types::_health_status::HealthStatus;
 pub use crate::types::_task_stop_code::TaskStopCode;
 
 pub use crate::types::_task_ephemeral_storage::TaskEphemeralStorage;
+
+pub use crate::types::_trusted_execution_summary::TrustedExecutionSummary;
 
 pub use crate::types::_scale_unit::ScaleUnit;
 
@@ -494,6 +500,8 @@ pub use crate::types::_inference_accelerator_override::InferenceAcceleratorOverr
 pub use crate::types::_task_managed_ebs_volume_configuration::TaskManagedEbsVolumeConfiguration;
 
 pub use crate::types::_container::Container;
+
+pub use crate::types::_attestation_policy_status::AttestationPolicyStatus;
 
 pub use crate::types::_v_cpu_count_range_request::VCpuCountRangeRequest;
 
@@ -730,6 +738,8 @@ mod _assign_public_ip;
 mod _attachment;
 
 mod _attachment_state_change;
+
+mod _attestation_policy_status;
 
 mod _attribute;
 
@@ -1093,6 +1103,8 @@ mod _instance_requirements_request;
 
 mod _ipc_mode;
 
+mod _isolation_mode;
+
 mod _kernel_capabilities;
 
 mod _key_value_pair;
@@ -1386,6 +1398,10 @@ mod _tmpfs;
 mod _total_local_storage_gb_request;
 
 mod _transport_protocol;
+
+mod _trusted_execution_configuration;
+
+mod _trusted_execution_summary;
 
 mod _ulimit;
 

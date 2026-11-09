@@ -3,14 +3,20 @@ pub fn ser_upgrade_elasticsearch_domain_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.domain_name {
-        object.key("DomainName").string(var_1.as_str());
+    if let Some(var_1) = &input.deployment_strategy_options {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("DeploymentStrategyOptions").start_object();
+        crate::protocol_serde::shape_deployment_strategy_override_options::ser_deployment_strategy_override_options(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_2) = &input.perform_check_only {
-        object.key("PerformCheckOnly").boolean(*var_2);
+    if let Some(var_3) = &input.domain_name {
+        object.key("DomainName").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.target_version {
-        object.key("TargetVersion").string(var_3.as_str());
+    if let Some(var_4) = &input.perform_check_only {
+        object.key("PerformCheckOnly").boolean(*var_4);
+    }
+    if let Some(var_5) = &input.target_version {
+        object.key("TargetVersion").string(var_5.as_str());
     }
     Ok(())
 }

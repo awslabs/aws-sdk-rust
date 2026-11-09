@@ -433,6 +433,10 @@ pub use crate::types::_cluster_auto_scaling_config_output::ClusterAutoScalingCon
 
 pub use crate::types::_cluster_event_detail::ClusterEventDetail;
 
+pub use crate::types::_extension_details::ExtensionDetails;
+
+pub use crate::types::_extension_node_summary::ExtensionNodeSummary;
+
 pub use crate::types::_cluster_node_details::ClusterNodeDetails;
 
 pub use crate::types::_scheduler_resource_status::SchedulerResourceStatus;
@@ -783,6 +787,8 @@ pub use crate::types::_sort_pipeline_executions_by::SortPipelineExecutionsBy;
 
 pub use crate::types::_sort_pipelines_by::SortPipelinesBy;
 
+pub use crate::types::_pipeline_managed_by::PipelineManagedBy;
+
 pub use crate::types::_project_sort_by::ProjectSortBy;
 
 pub use crate::types::_project_sort_order::ProjectSortOrder;
@@ -838,6 +844,8 @@ pub use crate::types::_domain_settings_for_update::DomainSettingsForUpdate;
 pub use crate::types::_online_store_config_update::OnlineStoreConfigUpdate;
 
 pub use crate::types::_throughput_config_update::ThroughputConfigUpdate;
+
+pub use crate::types::_alias_operations::AliasOperations;
 
 pub use crate::types::_service_catalog_provisioning_update_details::ServiceCatalogProvisioningUpdateDetails;
 
@@ -1237,6 +1245,8 @@ pub use crate::types::_event_details::EventDetails;
 
 pub use crate::types::_cluster_event_level::ClusterEventLevel;
 
+pub use crate::types::_extension_status::ExtensionStatus;
+
 pub use crate::types::_cluster_instance_status_details::ClusterInstanceStatusDetails;
 
 pub use crate::types::_cluster_instance_type::ClusterInstanceType;
@@ -1346,6 +1356,8 @@ pub use crate::types::_association_summary::AssociationSummary;
 pub use crate::types::_auto_ml_job_summary::AutoMlJobSummary;
 
 pub use crate::types::_cluster_event_summary::ClusterEventSummary;
+
+pub use crate::types::_extension_summary::ExtensionSummary;
 
 pub use crate::types::_cluster_node_summary::ClusterNodeSummary;
 
@@ -2243,6 +2255,8 @@ pub use crate::types::_cleanup_step_metadata::CleanupStepMetadata;
 
 pub use crate::types::_for_each_step_metadata::ForEachStepMetadata;
 
+pub use crate::types::_hub_content_step_metadata::HubContentStepMetadata;
+
 pub use crate::types::_operator::Operator;
 
 pub use crate::types::_trial_component_source_detail::TrialComponentSourceDetail;
@@ -2524,6 +2538,8 @@ mod _algorithm_summary;
 mod _algorithm_validation_profile;
 
 mod _algorithm_validation_specification;
+
+mod _alias_operations;
 
 mod _amazon_q_settings;
 
@@ -3247,6 +3263,14 @@ mod _explainability;
 
 mod _explainer_config;
 
+mod _extension_details;
+
+mod _extension_node_summary;
+
+mod _extension_status;
+
+mod _extension_summary;
+
 mod _f_sx_lustre_config;
 
 mod _f_sx_lustre_file_system;
@@ -3336,6 +3360,8 @@ mod _hub_content_info;
 mod _hub_content_sort_by;
 
 mod _hub_content_status;
+
+mod _hub_content_step_metadata;
 
 mod _hub_content_support_status;
 
@@ -4088,6 +4114,8 @@ mod _pipeline_execution_step_metadata;
 mod _pipeline_execution_summary;
 
 mod _pipeline_experiment_config;
+
+mod _pipeline_managed_by;
 
 mod _pipeline_status;
 

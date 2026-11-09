@@ -51,6 +51,8 @@ pub use crate::types::_mfa_delete_status::MfaDeleteStatus;
 
 pub use crate::types::_privilege::Privilege;
 
+pub use crate::types::_instance_scope::InstanceScope;
+
 pub use crate::types::_credentials::Credentials;
 
 pub use crate::types::_multi_region_access_point_report::MultiRegionAccessPointReport;
@@ -482,6 +484,8 @@ mod _grantee;
 mod _grantee_type;
 
 mod _include;
+
+mod _instance_scope;
 
 mod _job_descriptor;
 

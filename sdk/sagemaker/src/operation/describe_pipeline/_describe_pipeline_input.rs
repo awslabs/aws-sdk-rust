@@ -5,120 +5,23 @@
 pub struct DescribePipelineInput {
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the pipeline version to describe.</p>
+    /// <p>The ID of the pipeline version to describe. You can't specify this with <code>PipelineVersionAlias</code>.</p>
     pub pipeline_version_id: ::std::option::Option<i64>,
+    /// <p>The alias of the pipeline version to describe. You can't specify this with <code>PipelineVersionId</code>. If no version of the pipeline has this alias, the request fails with a <code>ResourceNotFound</code> error. If you specify neither, SageMaker describes the latest version of the pipeline.</p>
+    pub pipeline_version_alias: ::std::option::Option<::std::string::String>,
 }
 impl DescribePipelineInput {
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
     pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
-    /// <p>The ID of the pipeline version to describe.</p>
+    /// <p>The ID of the pipeline version to describe. You can't specify this with <code>PipelineVersionAlias</code>.</p>
     pub fn pipeline_version_id(&self) -> ::std::option::Option<i64> {
         self.pipeline_version_id
     }
-}
-static DESCRIBEPIPELINEINPUT_MEMBER_PIPELINE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker.synthetic#DescribePipelineInput$PipelineName",
-        "com.amazonaws.sagemaker.synthetic",
-        "DescribePipelineInput",
-    ),
-    ::aws_smithy_schema::ShapeType::String,
-    "PipelineName",
-    0,
-);
-static DESCRIBEPIPELINEINPUT_MEMBER_PIPELINE_VERSION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker.synthetic#DescribePipelineInput$PipelineVersionId",
-        "com.amazonaws.sagemaker.synthetic",
-        "DescribePipelineInput",
-    ),
-    ::aws_smithy_schema::ShapeType::Long,
-    "PipelineVersionId",
-    1,
-);
-static DESCRIBEPIPELINEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker.synthetic#DescribePipelineInput",
-        "com.amazonaws.sagemaker.synthetic",
-        "DescribePipelineInput",
-    ),
-    ::aws_smithy_schema::ShapeType::Structure,
-    &[
-        &DESCRIBEPIPELINEINPUT_MEMBER_PIPELINE_NAME,
-        &DESCRIBEPIPELINEINPUT_MEMBER_PIPELINE_VERSION_ID,
-    ],
-)
-.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
-.with_original_name("DescribePipelineRequest");
-impl DescribePipelineInput {
-    /// The schema for this shape.
-    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEPIPELINEINPUT_SCHEMA;
-}
-impl ::aws_smithy_schema::serde::SerializableStruct for DescribePipelineInput {
-    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
-        Self::SCHEMA
-    }
-
-    #[allow(unused_variables, clippy::diverging_sub_expression)]
-    fn serialize_members(
-        &self,
-        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
-    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
-        if let Some(ref val) = self.pipeline_name {
-            ser.write_string(&DESCRIBEPIPELINEINPUT_MEMBER_PIPELINE_NAME, val)?;
-        }
-        if let Some(ref val) = self.pipeline_version_id {
-            ser.write_long(&DESCRIBEPIPELINEINPUT_MEMBER_PIPELINE_VERSION_ID, *val)?;
-        }
-        Ok(())
-    }
-}
-impl crate::operation::describe_pipeline::builders::DescribePipelineInputBuilder {
-    #[allow(
-        unused_variables,
-        unreachable_code,
-        clippy::single_match,
-        clippy::match_single_binding,
-        clippy::diverging_sub_expression
-    )]
-    pub(crate) fn deserialize_members(
-        &mut self,
-        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
-    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
-        deserializer.read_struct(&DESCRIBEPIPELINEINPUT_SCHEMA, &mut |member, deser| {
-            match member.member_index() {
-                Some(0) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.pipeline_name = Some(deser.read_string(member)?);
-                    }
-                }
-                Some(1) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.pipeline_version_id = Some(deser.read_long(member)?);
-                    }
-                }
-                _ => {}
-            }
-            Ok(())
-        })
-    }
-}
-
-impl DescribePipelineInput {
-    /// Deserializes this structure from a [`ShapeDeserializer`].
-    pub fn deserialize(
-        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
-    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
-        let mut builder = Self::builder();
-        builder.deserialize_members(deserializer)?;
-        builder.pipeline_name = builder.pipeline_name.or(Some(String::new()));
-        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    /// <p>The alias of the pipeline version to describe. You can't specify this with <code>PipelineVersionId</code>. If no version of the pipeline has this alias, the request fails with a <code>ResourceNotFound</code> error. If you specify neither, SageMaker describes the latest version of the pipeline.</p>
+    pub fn pipeline_version_alias(&self) -> ::std::option::Option<&str> {
+        self.pipeline_version_alias.as_deref()
     }
 }
 impl DescribePipelineInput {
@@ -134,6 +37,7 @@ impl DescribePipelineInput {
 pub struct DescribePipelineInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_version_id: ::std::option::Option<i64>,
+    pub(crate) pipeline_version_alias: ::std::option::Option<::std::string::String>,
 }
 impl DescribePipelineInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
@@ -151,19 +55,33 @@ impl DescribePipelineInputBuilder {
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_name
     }
-    /// <p>The ID of the pipeline version to describe.</p>
+    /// <p>The ID of the pipeline version to describe. You can't specify this with <code>PipelineVersionAlias</code>.</p>
     pub fn pipeline_version_id(mut self, input: i64) -> Self {
         self.pipeline_version_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ID of the pipeline version to describe.</p>
+    /// <p>The ID of the pipeline version to describe. You can't specify this with <code>PipelineVersionAlias</code>.</p>
     pub fn set_pipeline_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.pipeline_version_id = input;
         self
     }
-    /// <p>The ID of the pipeline version to describe.</p>
+    /// <p>The ID of the pipeline version to describe. You can't specify this with <code>PipelineVersionAlias</code>.</p>
     pub fn get_pipeline_version_id(&self) -> &::std::option::Option<i64> {
         &self.pipeline_version_id
+    }
+    /// <p>The alias of the pipeline version to describe. You can't specify this with <code>PipelineVersionId</code>. If no version of the pipeline has this alias, the request fails with a <code>ResourceNotFound</code> error. If you specify neither, SageMaker describes the latest version of the pipeline.</p>
+    pub fn pipeline_version_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pipeline_version_alias = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alias of the pipeline version to describe. You can't specify this with <code>PipelineVersionId</code>. If no version of the pipeline has this alias, the request fails with a <code>ResourceNotFound</code> error. If you specify neither, SageMaker describes the latest version of the pipeline.</p>
+    pub fn set_pipeline_version_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pipeline_version_alias = input;
+        self
+    }
+    /// <p>The alias of the pipeline version to describe. You can't specify this with <code>PipelineVersionId</code>. If no version of the pipeline has this alias, the request fails with a <code>ResourceNotFound</code> error. If you specify neither, SageMaker describes the latest version of the pipeline.</p>
+    pub fn get_pipeline_version_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_version_alias
     }
     /// Consumes the builder and constructs a [`DescribePipelineInput`](crate::operation::describe_pipeline::DescribePipelineInput).
     pub fn build(
@@ -172,6 +90,7 @@ impl DescribePipelineInputBuilder {
         ::std::result::Result::Ok(crate::operation::describe_pipeline::DescribePipelineInput {
             pipeline_name: self.pipeline_name,
             pipeline_version_id: self.pipeline_version_id,
+            pipeline_version_alias: self.pipeline_version_alias,
         })
     }
 }

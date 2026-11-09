@@ -8,6 +8,10 @@ impl ListQueries {
     pub fn new() -> Self {
         Self
     }
+    /// The schema for this operation's input shape.
+    pub const INPUT_SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = crate::operation::list_queries::ListQueriesInput::SCHEMA;
+    /// The schema for this operation's output shape.
+    pub const OUTPUT_SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = crate::operation::list_queries::ListQueriesOutput::SCHEMA;
     pub(crate) async fn orchestrate(
         runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
         input: crate::operation::list_queries::ListQueriesInput,
@@ -83,6 +87,56 @@ impl ListQueries {
         }
         runtime_plugins
     }
+}
+/// Per-operation error registry. Contains an entry for every modeled
+/// error this operation can throw.
+///
+/// Used by the schema-serde error path as the operation-scoped lookup
+/// for registry-backed error reification: an error code that does not
+/// match one of the operation's modeled errors directly is resolved
+/// against this registry first, then widened to the service-wide error
+/// registry.
+pub(crate) mod error_registry {
+    pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry::TypeRegistry> = ::std::sync::LazyLock::new(|| {
+        ::aws_smithy_schema::registry::TypeRegistry::builder()
+                            .insert_error_shape(
+                        crate::types::error::AccessDeniedException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::AccessDeniedException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::AccessDeniedException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::InternalServerException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InternalServerException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::InternalServerException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::ThrottlingException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::ThrottlingException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::ThrottlingException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::ValidationException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::ValidationException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::ValidationException::deserialize(d)?))
+                        },
+                    )
+                            .build()
+    });
 }
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListQueries {
     fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
@@ -204,17 +258,166 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListQueri
         _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
-        let headers = response.headers();
+        // Load body and headers BEFORE BeforeParseResponse so customizations
+        // (e.g., S3's `body_is_error` check that detects errors returned with
+        // HTTP 200) can inspect them. The legacy non-streaming path also
+        // loads `body` before firing this hook.
+        #[allow(unused_variables)]
         let body = response.body().bytes().expect("body loaded");
+        let headers = response.headers();
         #[allow(unused_mut)]
         let mut force_error = false;
         ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
-        let parse_result = if !success && status != 200 || force_error {
-            crate::protocol_serde::shape_list_queries::de_list_queries_http_error(status, headers, body, _cfg)
+        if !success && status != 200 || force_error {
+            let protocol = _cfg
+                .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+                .expect("a SharedClientProtocol is required");
+            #[allow(unused_mut)]
+            let mut generic_builder = protocol.parse_error_metadata(response, _cfg).map_err(|e| {
+                ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+            })?;
+            generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, headers);
+            let generic = generic_builder.build();
+            let error_code = match generic.code() {
+                ::std::option::Option::Some(code) => code,
+                ::std::option::Option::None => {
+                    return ::std::result::Result::Err(::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                        ::aws_smithy_runtime_api::box_error::BoxError::from(crate::operation::list_queries::ListQueriesError::unhandled(generic)),
+                    ))
+                }
+            };
+            let _error_message = generic.message().map(|msg| msg.to_owned());
+            let err = match error_code {
+                "AccessDeniedException" => crate::operation::list_queries::ListQueriesError::AccessDeniedException({
+                    let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let mut tmp = <crate::types::error::builders::AccessDeniedExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let tmp = tmp.meta(generic);
+                    crate::serde_util::access_denied_exception_correct_errors(tmp).build().map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?
+                }),
+                "InternalServerException" => crate::operation::list_queries::ListQueriesError::InternalServerException({
+                    let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let mut tmp = <crate::types::error::builders::InternalServerExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let tmp = tmp.meta(generic);
+                    crate::serde_util::internal_server_exception_correct_errors(tmp).build().map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?
+                }),
+                "ThrottlingException" => crate::operation::list_queries::ListQueriesError::ThrottlingException({
+                    let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let mut tmp = <crate::types::error::builders::ThrottlingExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let tmp = tmp.meta(generic);
+                    crate::serde_util::throttling_exception_correct_errors(tmp).build().map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?
+                }),
+                "ValidationException" => crate::operation::list_queries::ListQueriesError::ValidationException({
+                    let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let mut tmp = <crate::types::error::builders::ValidationExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let tmp = tmp.meta(generic);
+                    crate::serde_util::validation_exception_correct_errors(tmp).build().map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?
+                }),
+                _ => {
+                    // Registry-backed, operation-scoped reification of an error whose
+                    // code this operation does not model directly: the operation's own
+                    // error registry is consulted first, then the lookup widens to the
+                    // service-wide error registry. On a hit, the reified error is attached
+                    // as the source of the returned unhandled error while its metadata
+                    // (code, message, request id) is preserved; on a miss the generic
+                    // error is returned unchanged.
+                    match protocol
+                        .deserialize_error_response(response, _cfg)
+                        .ok()
+                        .and_then(|mut deser| {
+                            ::aws_smithy_schema::registry::reify_error(
+                                crate::operation::list_queries::error_registry::REGISTRY
+                                    .or(&crate::error_type_registry::REGISTRY),
+                                error_code,
+                                &mut *deser,
+                            )
+                        }) {
+                        ::std::option::Option::Some(source) => <crate::operation::list_queries::ListQueriesError as ::aws_smithy_runtime_api::client::result::CreateUnhandledError>::create_unhandled_error(source, ::std::option::Option::Some(generic)),
+                        ::std::option::Option::None => crate::operation::list_queries::ListQueriesError::generic(generic),
+                    }
+                }
+            };
+            ::std::result::Result::Err(::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::operation(
+                ::aws_smithy_runtime_api::client::interceptors::context::Error::erase(err),
+            ))
         } else {
-            crate::protocol_serde::shape_list_queries::de_list_queries_http_response(status, headers, body, _cfg)
-        };
-        crate::protocol_serde::type_erase_result(parse_result)
+            let protocol = _cfg
+                .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+                .expect("a SharedClientProtocol is required");
+            let mut deser = protocol.deserialize_response(response, ListQueries::OUTPUT_SCHEMA, _cfg).map_err(|e| {
+                ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+            })?;
+            // `headers` is already in scope from the top of the function; alias it as
+            // `_response_headers` so MutateOutput customizations have a stable name to
+            // read from.
+            let _response_headers = headers;
+            // `mut` is required because `deserialize_members` and the `MutateOutput`
+            // builder setters take `&mut self`. Marked `allow(unused_mut)` because an
+            // empty output has no members and no customizations to run.
+            #[allow(unused_mut)]
+            let mut output = <crate::operation::list_queries::builders::ListQueriesOutputBuilder>::default();
+            output.deserialize_members(&mut *deser).map_err(|e| {
+                ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+            })?;
+            output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
+            let output = crate::serde_util::list_queries_output_output_correct_errors(output)
+                .build()
+                .map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+            ::std::result::Result::Ok(::aws_smithy_runtime_api::client::interceptors::context::Output::erase(output))
+        }
     }
 }
 #[derive(Debug)]
@@ -229,54 +432,21 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListQueriesR
         let input = input
             .downcast::<crate::operation::list_queries::ListQueriesInput>()
             .expect("correct type");
-        let _header_serialization_settings = _cfg
-            .load::<crate::serialization_settings::HeaderSerializationSettings>()
-            .cloned()
-            .unwrap_or_default();
-        let mut request_builder = {
-            #[allow(clippy::uninlined_format_args)]
-            fn uri_base(
-                _input: &crate::operation::list_queries::ListQueriesInput,
-                output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                use ::std::fmt::Write as _;
-                ::std::write!(output, "/queries").expect("formatting should succeed");
-                ::std::result::Result::Ok(())
-            }
-            fn uri_query(
-                _input: &crate::operation::list_queries::ListQueriesInput,
-                mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                let mut query = ::aws_smithy_http::query::Writer::new(output);
-                let inner_1 = &_input.max_results;
-                let inner_1 = inner_1
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("max_results", "cannot be empty or unset"))?;
-                query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_1).encode());
-                if let ::std::option::Option::Some(inner_2) = &_input.state {
-                    {
-                        query.push_kv("state", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
-                    }
-                }
-                ::std::result::Result::Ok(())
-            }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::operation::list_queries::ListQueriesInput,
-                builder: ::http_1x::request::Builder,
-            ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
-                let mut uri = ::std::string::String::new();
-                uri_base(input, &mut uri)?;
-                uri_query(input, &mut uri)?;
-                let builder = crate::protocol_serde::shape_list_queries::ser_list_queries_headers(input, builder)?;
-                ::std::result::Result::Ok(builder.method("GET").uri(uri))
-            }
-            let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
-            builder
-        };
-        let body = ::aws_smithy_types::body::SdkBody::from("");
+        let _required_check = input
+            .max_results
+            .as_ref()
+            .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("max_results", "cannot be empty or unset"))?;
+        let protocol = _cfg
+            .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+            .expect("a SharedClientProtocol is required");
+        let mut request = protocol
+            .serialize_request(&input, ListQueries::INPUT_SCHEMA, "", _cfg)
+            .map_err(::aws_smithy_runtime_api::box_error::BoxError::from)?;
+        *request.body_mut() = ::aws_smithy_types::body::SdkBody::empty();
+        request.headers_mut().remove("Content-Type");
+        request.headers_mut().remove("Content-Length");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
+        return ::std::result::Result::Ok(request);
     }
 }
 #[derive(Debug)]

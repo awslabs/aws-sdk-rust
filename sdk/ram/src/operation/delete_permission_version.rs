@@ -8,6 +8,12 @@ impl DeletePermissionVersion {
     pub fn new() -> Self {
         Self
     }
+    /// The schema for this operation's input shape.
+    pub const INPUT_SCHEMA: &'static ::aws_smithy_schema::Schema<'static> =
+        crate::operation::delete_permission_version::DeletePermissionVersionInput::SCHEMA;
+    /// The schema for this operation's output shape.
+    pub const OUTPUT_SCHEMA: &'static ::aws_smithy_schema::Schema<'static> =
+        crate::operation::delete_permission_version::DeletePermissionVersionOutput::SCHEMA;
     pub(crate) async fn orchestrate(
         runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
         input: crate::operation::delete_permission_version::DeletePermissionVersionInput,
@@ -83,6 +89,92 @@ impl DeletePermissionVersion {
         }
         runtime_plugins
     }
+}
+/// Per-operation error registry. Contains an entry for every modeled
+/// error this operation can throw.
+///
+/// Used by the schema-serde error path as the operation-scoped lookup
+/// for registry-backed error reification: an error code that does not
+/// match one of the operation's modeled errors directly is resolved
+/// against this registry first, then widened to the service-wide error
+/// registry.
+pub(crate) mod error_registry {
+    pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry::TypeRegistry> = ::std::sync::LazyLock::new(|| {
+        ::aws_smithy_schema::registry::TypeRegistry::builder()
+                            .insert_error_shape(
+                        crate::types::error::IdempotentParameterMismatchException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::IdempotentParameterMismatchException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::IdempotentParameterMismatchException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::InvalidClientTokenException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InvalidClientTokenException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::InvalidClientTokenException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::InvalidParameterException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InvalidParameterException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::InvalidParameterException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::MalformedArnException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::MalformedArnException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::MalformedArnException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::OperationNotPermittedException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::OperationNotPermittedException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::OperationNotPermittedException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::ServerInternalException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::ServerInternalException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::ServerInternalException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::ServiceUnavailableException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::ServiceUnavailableException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::ServiceUnavailableException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::UnknownResourceException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::UnknownResourceException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::UnknownResourceException::deserialize(d)?))
+                        },
+                    )
+                            .build()
+    });
 }
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeletePermissionVersion {
     fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
@@ -209,17 +301,260 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeletePer
         _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
-        let headers = response.headers();
+        // Load body and headers BEFORE BeforeParseResponse so customizations
+        // (e.g., S3's `body_is_error` check that detects errors returned with
+        // HTTP 200) can inspect them. The legacy non-streaming path also
+        // loads `body` before firing this hook.
+        #[allow(unused_variables)]
         let body = response.body().bytes().expect("body loaded");
+        let headers = response.headers();
         #[allow(unused_mut)]
         let mut force_error = false;
         ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
-        let parse_result = if !success && status != 200 || force_error {
-            crate::protocol_serde::shape_delete_permission_version::de_delete_permission_version_http_error(status, headers, body, _cfg)
+        if !success && status != 200 || force_error {
+            let protocol = _cfg
+                .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+                .expect("a SharedClientProtocol is required");
+            #[allow(unused_mut)]
+            let mut generic_builder = protocol.parse_error_metadata(response, _cfg).map_err(|e| {
+                ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+            })?;
+            generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, headers);
+            let generic = generic_builder.build();
+            let error_code = match generic.code() {
+                ::std::option::Option::Some(code) => code,
+                ::std::option::Option::None => {
+                    return ::std::result::Result::Err(::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                        ::aws_smithy_runtime_api::box_error::BoxError::from(
+                            crate::operation::delete_permission_version::DeletePermissionVersionError::unhandled(generic),
+                        ),
+                    ))
+                }
+            };
+            let _error_message = generic.message().map(|msg| msg.to_owned());
+            let err = match error_code {
+                "IdempotentParameterMismatchException" => {
+                    crate::operation::delete_permission_version::DeletePermissionVersionError::IdempotentParameterMismatchException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::IdempotentParameterMismatchExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let tmp = tmp.meta(generic);
+                        crate::serde_util::idempotent_parameter_mismatch_exception_correct_errors(tmp)
+                            .build()
+                            .map_err(|e| {
+                                ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                    ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                                )
+                            })?
+                    })
+                }
+                "InvalidClientTokenException" => {
+                    crate::operation::delete_permission_version::DeletePermissionVersionError::InvalidClientTokenException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::InvalidClientTokenExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let tmp = tmp.meta(generic);
+                        crate::serde_util::invalid_client_token_exception_correct_errors(tmp)
+                            .build()
+                            .map_err(|e| {
+                                ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                    ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                                )
+                            })?
+                    })
+                }
+                "InvalidParameterException" => {
+                    crate::operation::delete_permission_version::DeletePermissionVersionError::InvalidParameterException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::InvalidParameterExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let tmp = tmp.meta(generic);
+                        crate::serde_util::invalid_parameter_exception_correct_errors(tmp).build().map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?
+                    })
+                }
+                "MalformedArnException" => crate::operation::delete_permission_version::DeletePermissionVersionError::MalformedArnException({
+                    let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let mut tmp = <crate::types::error::builders::MalformedArnExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let tmp = tmp.meta(generic);
+                    crate::serde_util::malformed_arn_exception_correct_errors(tmp).build().map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?
+                }),
+                "OperationNotPermittedException" => {
+                    crate::operation::delete_permission_version::DeletePermissionVersionError::OperationNotPermittedException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::OperationNotPermittedExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let tmp = tmp.meta(generic);
+                        crate::serde_util::operation_not_permitted_exception_correct_errors(tmp)
+                            .build()
+                            .map_err(|e| {
+                                ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                    ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                                )
+                            })?
+                    })
+                }
+                "ServerInternalException" => crate::operation::delete_permission_version::DeletePermissionVersionError::ServerInternalException({
+                    let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let mut tmp = <crate::types::error::builders::ServerInternalExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let tmp = tmp.meta(generic);
+                    crate::serde_util::server_internal_exception_correct_errors(tmp).build().map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?
+                }),
+                "ServiceUnavailableException" => {
+                    crate::operation::delete_permission_version::DeletePermissionVersionError::ServiceUnavailableException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::ServiceUnavailableExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let tmp = tmp.meta(generic);
+                        crate::serde_util::service_unavailable_exception_correct_errors(tmp)
+                            .build()
+                            .map_err(|e| {
+                                ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                    ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                                )
+                            })?
+                    })
+                }
+                "UnknownResourceException" => crate::operation::delete_permission_version::DeletePermissionVersionError::UnknownResourceException({
+                    let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let mut tmp = <crate::types::error::builders::UnknownResourceExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let tmp = tmp.meta(generic);
+                    crate::serde_util::unknown_resource_exception_correct_errors(tmp).build().map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?
+                }),
+                _ => {
+                    // Registry-backed, operation-scoped reification of an error whose
+                    // code this operation does not model directly: the operation's own
+                    // error registry is consulted first, then the lookup widens to the
+                    // service-wide error registry. On a hit, the reified error is attached
+                    // as the source of the returned unhandled error while its metadata
+                    // (code, message, request id) is preserved; on a miss the generic
+                    // error is returned unchanged.
+                    match protocol
+                        .deserialize_error_response(response, _cfg)
+                        .ok()
+                        .and_then(|mut deser| {
+                            ::aws_smithy_schema::registry::reify_error(
+                                crate::operation::delete_permission_version::error_registry::REGISTRY
+                                    .or(&crate::error_type_registry::REGISTRY),
+                                error_code,
+                                &mut *deser,
+                            )
+                        }) {
+                        ::std::option::Option::Some(source) => <crate::operation::delete_permission_version::DeletePermissionVersionError as ::aws_smithy_runtime_api::client::result::CreateUnhandledError>::create_unhandled_error(source, ::std::option::Option::Some(generic)),
+                        ::std::option::Option::None => crate::operation::delete_permission_version::DeletePermissionVersionError::generic(generic),
+                    }
+                }
+            };
+            ::std::result::Result::Err(::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::operation(
+                ::aws_smithy_runtime_api::client::interceptors::context::Error::erase(err),
+            ))
         } else {
-            crate::protocol_serde::shape_delete_permission_version::de_delete_permission_version_http_response(status, headers, body, _cfg)
-        };
-        crate::protocol_serde::type_erase_result(parse_result)
+            let protocol = _cfg
+                .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+                .expect("a SharedClientProtocol is required");
+            let mut deser = protocol
+                .deserialize_response(response, DeletePermissionVersion::OUTPUT_SCHEMA, _cfg)
+                .map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+            // `headers` is already in scope from the top of the function; alias it as
+            // `_response_headers` so MutateOutput customizations have a stable name to
+            // read from.
+            let _response_headers = headers;
+            // `mut` is required because `deserialize_members` and the `MutateOutput`
+            // builder setters take `&mut self`. Marked `allow(unused_mut)` because an
+            // empty output has no members and no customizations to run.
+            #[allow(unused_mut)]
+            let mut output = <crate::operation::delete_permission_version::builders::DeletePermissionVersionOutputBuilder>::default();
+            output.deserialize_members(&mut *deser).map_err(|e| {
+                ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+            })?;
+            output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
+            let output = output.build();
+            ::std::result::Result::Ok(::aws_smithy_runtime_api::client::interceptors::context::Output::erase(output))
+        }
     }
 }
 #[derive(Debug)]
@@ -234,64 +569,30 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeletePermis
         let input = input
             .downcast::<crate::operation::delete_permission_version::DeletePermissionVersionInput>()
             .expect("correct type");
-        let _header_serialization_settings = _cfg
-            .load::<crate::serialization_settings::HeaderSerializationSettings>()
-            .cloned()
-            .unwrap_or_default();
-        let mut request_builder = {
-            #[allow(clippy::uninlined_format_args)]
-            fn uri_base(
-                _input: &crate::operation::delete_permission_version::DeletePermissionVersionInput,
-                output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                use ::std::fmt::Write as _;
-                ::std::write!(output, "/deletepermissionversion").expect("formatting should succeed");
-                ::std::result::Result::Ok(())
-            }
-            fn uri_query(
-                _input: &crate::operation::delete_permission_version::DeletePermissionVersionInput,
-                mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                let mut query = ::aws_smithy_http::query::Writer::new(output);
-                let inner_1 = &_input.permission_arn;
-                let inner_1 = inner_1
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("permission_arn", "cannot be empty or unset"))?;
-                if inner_1.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "permission_arn",
-                        "cannot be empty or unset",
-                    ));
-                }
-                query.push_kv("permissionArn", &::aws_smithy_http::query::fmt_string(inner_1));
-                let inner_2 = &_input.permission_version;
-                let inner_2 = inner_2.as_ref().ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field("permission_version", "cannot be empty or unset")
-                })?;
-                query.push_kv("permissionVersion", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
-                if let ::std::option::Option::Some(inner_3) = &_input.client_token {
-                    {
-                        query.push_kv("clientToken", &::aws_smithy_http::query::fmt_string(inner_3));
-                    }
-                }
-                ::std::result::Result::Ok(())
-            }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::operation::delete_permission_version::DeletePermissionVersionInput,
-                builder: ::http_1x::request::Builder,
-            ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
-                let mut uri = ::std::string::String::new();
-                uri_base(input, &mut uri)?;
-                uri_query(input, &mut uri)?;
-                ::std::result::Result::Ok(builder.method("DELETE").uri(uri))
-            }
-            let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
-            builder
-        };
-        let body = ::aws_smithy_types::body::SdkBody::from("");
+        let _required_check = input
+            .permission_arn
+            .as_ref()
+            .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("permission_arn", "cannot be empty or unset"))?;
+        if _required_check.is_empty() {
+            return ::std::result::Result::Err(
+                ::aws_smithy_types::error::operation::BuildError::missing_field("permission_arn", "cannot be empty or unset").into(),
+            );
+        }
+        let _required_check = input
+            .permission_version
+            .as_ref()
+            .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("permission_version", "cannot be empty or unset"))?;
+        let protocol = _cfg
+            .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+            .expect("a SharedClientProtocol is required");
+        let mut request = protocol
+            .serialize_request(&input, DeletePermissionVersion::INPUT_SCHEMA, "", _cfg)
+            .map_err(::aws_smithy_runtime_api::box_error::BoxError::from)?;
+        *request.body_mut() = ::aws_smithy_types::body::SdkBody::empty();
+        request.headers_mut().remove("Content-Type");
+        request.headers_mut().remove("Content-Length");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
+        return ::std::result::Result::Ok(request);
     }
 }
 #[derive(Debug)]

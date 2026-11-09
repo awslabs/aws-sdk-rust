@@ -278,6 +278,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCallerAc
                         query.push_kv("allowedByApplication", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }
+                if let ::std::option::Option::Some(inner_5) = &_input.instance_scope {
+                    {
+                        query.push_kv("instanceScope", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

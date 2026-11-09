@@ -26,6 +26,8 @@ pub struct PipelineVersion {
     pub last_executed_pipeline_execution_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the most recent pipeline execution created from this pipeline version.</p>
     pub last_executed_pipeline_execution_status: ::std::option::Option<crate::types::PipelineExecutionStatus>,
+    /// <p>The aliases assigned to the pipeline version.</p>
+    pub pipeline_version_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PipelineVersion {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
@@ -72,292 +74,11 @@ impl PipelineVersion {
     pub fn last_executed_pipeline_execution_status(&self) -> ::std::option::Option<&crate::types::PipelineExecutionStatus> {
         self.last_executed_pipeline_execution_status.as_ref()
     }
-}
-static PIPELINEVERSION_MEMBER_PIPELINE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker#PipelineVersion$PipelineArn",
-        "com.amazonaws.sagemaker",
-        "PipelineVersion",
-    ),
-    ::aws_smithy_schema::ShapeType::String,
-    "PipelineArn",
-    0,
-);
-static PIPELINEVERSION_MEMBER_PIPELINE_VERSION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker#PipelineVersion$PipelineVersionId",
-        "com.amazonaws.sagemaker",
-        "PipelineVersion",
-    ),
-    ::aws_smithy_schema::ShapeType::Long,
-    "PipelineVersionId",
-    1,
-);
-static PIPELINEVERSION_MEMBER_PIPELINE_VERSION_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker#PipelineVersion$PipelineVersionDisplayName",
-        "com.amazonaws.sagemaker",
-        "PipelineVersion",
-    ),
-    ::aws_smithy_schema::ShapeType::String,
-    "PipelineVersionDisplayName",
-    2,
-);
-static PIPELINEVERSION_MEMBER_PIPELINE_VERSION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker#PipelineVersion$PipelineVersionDescription",
-        "com.amazonaws.sagemaker",
-        "PipelineVersion",
-    ),
-    ::aws_smithy_schema::ShapeType::String,
-    "PipelineVersionDescription",
-    3,
-);
-static PIPELINEVERSION_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker#PipelineVersion$CreationTime",
-        "com.amazonaws.sagemaker",
-        "PipelineVersion",
-    ),
-    ::aws_smithy_schema::ShapeType::Timestamp,
-    "CreationTime",
-    4,
-);
-static PIPELINEVERSION_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker#PipelineVersion$LastModifiedTime",
-        "com.amazonaws.sagemaker",
-        "PipelineVersion",
-    ),
-    ::aws_smithy_schema::ShapeType::Timestamp,
-    "LastModifiedTime",
-    5,
-);
-static PIPELINEVERSION_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker#PipelineVersion$CreatedBy",
-        "com.amazonaws.sagemaker",
-        "PipelineVersion",
-    ),
-    ::aws_smithy_schema::ShapeType::Structure,
-    "CreatedBy",
-    6,
-);
-static PIPELINEVERSION_MEMBER_LAST_MODIFIED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker#PipelineVersion$LastModifiedBy",
-        "com.amazonaws.sagemaker",
-        "PipelineVersion",
-    ),
-    ::aws_smithy_schema::ShapeType::Structure,
-    "LastModifiedBy",
-    7,
-);
-static PIPELINEVERSION_MEMBER_LAST_EXECUTED_PIPELINE_EXECUTION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker#PipelineVersion$LastExecutedPipelineExecutionArn",
-        "com.amazonaws.sagemaker",
-        "PipelineVersion",
-    ),
-    ::aws_smithy_schema::ShapeType::String,
-    "LastExecutedPipelineExecutionArn",
-    8,
-);
-static PIPELINEVERSION_MEMBER_LAST_EXECUTED_PIPELINE_EXECUTION_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> =
-    ::aws_smithy_schema::Schema::new_member(
-        ::aws_smithy_schema::ShapeId::from_parts(
-            "com.amazonaws.sagemaker#PipelineVersion$LastExecutedPipelineExecutionDisplayName",
-            "com.amazonaws.sagemaker",
-            "PipelineVersion",
-        ),
-        ::aws_smithy_schema::ShapeType::String,
-        "LastExecutedPipelineExecutionDisplayName",
-        9,
-    );
-static PIPELINEVERSION_MEMBER_LAST_EXECUTED_PIPELINE_EXECUTION_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker#PipelineVersion$LastExecutedPipelineExecutionStatus",
-        "com.amazonaws.sagemaker",
-        "PipelineVersion",
-    ),
-    ::aws_smithy_schema::ShapeType::String,
-    "LastExecutedPipelineExecutionStatus",
-    10,
-);
-static PIPELINEVERSION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
-    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#PipelineVersion", "com.amazonaws.sagemaker", "PipelineVersion"),
-    ::aws_smithy_schema::ShapeType::Structure,
-    &[
-        &PIPELINEVERSION_MEMBER_PIPELINE_ARN,
-        &PIPELINEVERSION_MEMBER_PIPELINE_VERSION_ID,
-        &PIPELINEVERSION_MEMBER_PIPELINE_VERSION_DISPLAY_NAME,
-        &PIPELINEVERSION_MEMBER_PIPELINE_VERSION_DESCRIPTION,
-        &PIPELINEVERSION_MEMBER_CREATION_TIME,
-        &PIPELINEVERSION_MEMBER_LAST_MODIFIED_TIME,
-        &PIPELINEVERSION_MEMBER_CREATED_BY,
-        &PIPELINEVERSION_MEMBER_LAST_MODIFIED_BY,
-        &PIPELINEVERSION_MEMBER_LAST_EXECUTED_PIPELINE_EXECUTION_ARN,
-        &PIPELINEVERSION_MEMBER_LAST_EXECUTED_PIPELINE_EXECUTION_DISPLAY_NAME,
-        &PIPELINEVERSION_MEMBER_LAST_EXECUTED_PIPELINE_EXECUTION_STATUS,
-    ],
-);
-impl PipelineVersion {
-    /// The schema for this shape.
-    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PIPELINEVERSION_SCHEMA;
-}
-impl ::aws_smithy_schema::serde::SerializableStruct for PipelineVersion {
-    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
-        Self::SCHEMA
-    }
-
-    #[allow(unused_variables, clippy::diverging_sub_expression)]
-    fn serialize_members(
-        &self,
-        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
-    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
-        if let Some(ref val) = self.pipeline_arn {
-            ser.write_string(&PIPELINEVERSION_MEMBER_PIPELINE_ARN, val)?;
-        }
-        if let Some(ref val) = self.pipeline_version_id {
-            ser.write_long(&PIPELINEVERSION_MEMBER_PIPELINE_VERSION_ID, *val)?;
-        }
-        if let Some(ref val) = self.pipeline_version_display_name {
-            ser.write_string(&PIPELINEVERSION_MEMBER_PIPELINE_VERSION_DISPLAY_NAME, val)?;
-        }
-        if let Some(ref val) = self.pipeline_version_description {
-            ser.write_string(&PIPELINEVERSION_MEMBER_PIPELINE_VERSION_DESCRIPTION, val)?;
-        }
-        if let Some(ref val) = self.creation_time {
-            ser.write_timestamp(&PIPELINEVERSION_MEMBER_CREATION_TIME, val)?;
-        }
-        if let Some(ref val) = self.last_modified_time {
-            ser.write_timestamp(&PIPELINEVERSION_MEMBER_LAST_MODIFIED_TIME, val)?;
-        }
-        if let Some(ref val) = self.created_by {
-            ser.write_struct(&PIPELINEVERSION_MEMBER_CREATED_BY, val)?;
-        }
-        if let Some(ref val) = self.last_modified_by {
-            ser.write_struct(&PIPELINEVERSION_MEMBER_LAST_MODIFIED_BY, val)?;
-        }
-        if let Some(ref val) = self.last_executed_pipeline_execution_arn {
-            ser.write_string(&PIPELINEVERSION_MEMBER_LAST_EXECUTED_PIPELINE_EXECUTION_ARN, val)?;
-        }
-        if let Some(ref val) = self.last_executed_pipeline_execution_display_name {
-            ser.write_string(&PIPELINEVERSION_MEMBER_LAST_EXECUTED_PIPELINE_EXECUTION_DISPLAY_NAME, val)?;
-        }
-        if let Some(ref val) = self.last_executed_pipeline_execution_status {
-            ser.write_string(&PIPELINEVERSION_MEMBER_LAST_EXECUTED_PIPELINE_EXECUTION_STATUS, val.as_str())?;
-        }
-        Ok(())
-    }
-}
-impl crate::types::builders::PipelineVersionBuilder {
-    #[allow(
-        unused_variables,
-        unreachable_code,
-        clippy::single_match,
-        clippy::match_single_binding,
-        clippy::diverging_sub_expression
-    )]
-    pub(crate) fn deserialize_members(
-        &mut self,
-        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
-    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
-        deserializer.read_struct(&PIPELINEVERSION_SCHEMA, &mut |member, deser| {
-            match member.member_index() {
-                Some(0) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.pipeline_arn = Some(deser.read_string(member)?);
-                    }
-                }
-                Some(1) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.pipeline_version_id = Some(deser.read_long(member)?);
-                    }
-                }
-                Some(2) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.pipeline_version_display_name = Some(deser.read_string(member)?);
-                    }
-                }
-                Some(3) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.pipeline_version_description = Some(deser.read_string(member)?);
-                    }
-                }
-                Some(4) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.creation_time = Some(deser.read_timestamp(member)?);
-                    }
-                }
-                Some(5) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.last_modified_time = Some(deser.read_timestamp(member)?);
-                    }
-                }
-                Some(6) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.created_by = Some(crate::types::UserContext::deserialize(deser)?);
-                    }
-                }
-                Some(7) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.last_modified_by = Some(crate::types::UserContext::deserialize(deser)?);
-                    }
-                }
-                Some(8) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.last_executed_pipeline_execution_arn = Some(deser.read_string(member)?);
-                    }
-                }
-                Some(9) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.last_executed_pipeline_execution_display_name = Some(deser.read_string(member)?);
-                    }
-                }
-                Some(10) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.last_executed_pipeline_execution_status =
-                            Some(crate::types::PipelineExecutionStatus::from(deser.read_string(member)?.as_str()));
-                    }
-                }
-                _ => {}
-            }
-            Ok(())
-        })
-    }
-}
-
-impl PipelineVersion {
-    /// Deserializes this structure from a [`ShapeDeserializer`].
-    pub fn deserialize(
-        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
-    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
-        let mut builder = Self::builder();
-        builder.deserialize_members(deserializer)?;
-        Ok(builder.build())
+    /// <p>The aliases assigned to the pipeline version.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_version_aliases.is_none()`.
+    pub fn pipeline_version_aliases(&self) -> &[::std::string::String] {
+        self.pipeline_version_aliases.as_deref().unwrap_or_default()
     }
 }
 impl PipelineVersion {
@@ -382,6 +103,7 @@ pub struct PipelineVersionBuilder {
     pub(crate) last_executed_pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) last_executed_pipeline_execution_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) last_executed_pipeline_execution_status: ::std::option::Option<crate::types::PipelineExecutionStatus>,
+    pub(crate) pipeline_version_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PipelineVersionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
@@ -538,6 +260,26 @@ impl PipelineVersionBuilder {
     pub fn get_last_executed_pipeline_execution_status(&self) -> &::std::option::Option<crate::types::PipelineExecutionStatus> {
         &self.last_executed_pipeline_execution_status
     }
+    /// Appends an item to `pipeline_version_aliases`.
+    ///
+    /// To override the contents of this collection use [`set_pipeline_version_aliases`](Self::set_pipeline_version_aliases).
+    ///
+    /// <p>The aliases assigned to the pipeline version.</p>
+    pub fn pipeline_version_aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.pipeline_version_aliases.unwrap_or_default();
+        v.push(input.into());
+        self.pipeline_version_aliases = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The aliases assigned to the pipeline version.</p>
+    pub fn set_pipeline_version_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.pipeline_version_aliases = input;
+        self
+    }
+    /// <p>The aliases assigned to the pipeline version.</p>
+    pub fn get_pipeline_version_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.pipeline_version_aliases
+    }
     /// Consumes the builder and constructs a [`PipelineVersion`](crate::types::PipelineVersion).
     pub fn build(self) -> crate::types::PipelineVersion {
         crate::types::PipelineVersion {
@@ -552,6 +294,7 @@ impl PipelineVersionBuilder {
             last_executed_pipeline_execution_arn: self.last_executed_pipeline_execution_arn,
             last_executed_pipeline_execution_display_name: self.last_executed_pipeline_execution_display_name,
             last_executed_pipeline_execution_status: self.last_executed_pipeline_execution_status,
+            pipeline_version_aliases: self.pipeline_version_aliases,
         }
     }
 }

@@ -25,5 +25,11 @@ pub fn ser_data_quality_result_filter_criteria(
             .key("StartedBefore")
             .date_time(var_6, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
+    if let Some(var_7) = &input.evaluation_run_mode {
+        object.key("EvaluationRunMode").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.data_quality_evaluation_config {
+        object.key("DataQualityEvaluationConfig").string(var_8.as_str());
+    }
     Ok(())
 }

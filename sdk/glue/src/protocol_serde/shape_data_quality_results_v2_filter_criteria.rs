@@ -32,5 +32,11 @@ pub fn ser_data_quality_results_v2_filter_criteria(
     if let Some(var_9) = &input.evaluation_context {
         object.key("EvaluationContext").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.evaluation_run_mode {
+        object.key("EvaluationRunMode").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.data_quality_evaluation_config {
+        object.key("DataQualityEvaluationConfig").string(var_11.as_str());
+    }
     Ok(())
 }

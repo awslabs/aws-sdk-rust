@@ -28,6 +28,8 @@ pub struct EksPodProperties {
     pub metadata: ::std::option::Option<crate::types::EksMetadata>,
     /// <p>Indicates if the processes in a container are shared, or visible, to other containers in the same pod. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">Share Process Namespace between Containers in a Pod</a>.</p>
     pub share_process_namespace: ::std::option::Option<bool>,
+    /// <p>The security context to apply to the pod. The settings apply to all containers in the pod unless an individual container specifies an overriding value.</p>
+    pub security_context: ::std::option::Option<crate::types::EksPodSecurityContext>,
 }
 impl EksPodProperties {
     /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
@@ -80,6 +82,10 @@ impl EksPodProperties {
     pub fn share_process_namespace(&self) -> ::std::option::Option<bool> {
         self.share_process_namespace
     }
+    /// <p>The security context to apply to the pod. The settings apply to all containers in the pod unless an individual container specifies an overriding value.</p>
+    pub fn security_context(&self) -> ::std::option::Option<&crate::types::EksPodSecurityContext> {
+        self.security_context.as_ref()
+    }
 }
 impl EksPodProperties {
     /// Creates a new builder-style object to manufacture [`EksPodProperties`](crate::types::EksPodProperties).
@@ -101,6 +107,7 @@ pub struct EksPodPropertiesBuilder {
     pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::EksVolume>>,
     pub(crate) metadata: ::std::option::Option<crate::types::EksMetadata>,
     pub(crate) share_process_namespace: ::std::option::Option<bool>,
+    pub(crate) security_context: ::std::option::Option<crate::types::EksPodSecurityContext>,
 }
 impl EksPodPropertiesBuilder {
     /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
@@ -271,6 +278,20 @@ impl EksPodPropertiesBuilder {
     pub fn get_share_process_namespace(&self) -> &::std::option::Option<bool> {
         &self.share_process_namespace
     }
+    /// <p>The security context to apply to the pod. The settings apply to all containers in the pod unless an individual container specifies an overriding value.</p>
+    pub fn security_context(mut self, input: crate::types::EksPodSecurityContext) -> Self {
+        self.security_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The security context to apply to the pod. The settings apply to all containers in the pod unless an individual container specifies an overriding value.</p>
+    pub fn set_security_context(mut self, input: ::std::option::Option<crate::types::EksPodSecurityContext>) -> Self {
+        self.security_context = input;
+        self
+    }
+    /// <p>The security context to apply to the pod. The settings apply to all containers in the pod unless an individual container specifies an overriding value.</p>
+    pub fn get_security_context(&self) -> &::std::option::Option<crate::types::EksPodSecurityContext> {
+        &self.security_context
+    }
     /// Consumes the builder and constructs a [`EksPodProperties`](crate::types::EksPodProperties).
     pub fn build(self) -> crate::types::EksPodProperties {
         crate::types::EksPodProperties {
@@ -283,6 +304,7 @@ impl EksPodPropertiesBuilder {
             volumes: self.volumes,
             metadata: self.metadata,
             share_process_namespace: self.share_process_namespace,
+            security_context: self.security_context,
         }
     }
 }

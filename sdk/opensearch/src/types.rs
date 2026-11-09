@@ -157,6 +157,16 @@ pub use crate::types::_migration_options::MigrationOptions;
 
 pub use crate::types::_schedule_at::ScheduleAt;
 
+pub use crate::types::_traffic_split_request_options::TrafficSplitRequestOptions;
+
+pub use crate::types::_cutover_request_options::CutoverRequestOptions;
+
+pub use crate::types::_retention_options::RetentionOptions;
+
+pub use crate::types::_cutover_options::CutoverOptions;
+
+pub use crate::types::_traffic_split_options::TrafficSplitOptions;
+
 pub use crate::types::_auto_tune_options::AutoTuneOptions;
 
 pub use crate::types::_dry_run_mode::DryRunMode;
@@ -166,6 +176,8 @@ pub use crate::types::_package_scope_operation_enum::PackageScopeOperationEnum;
 pub use crate::types::_action_type::ActionType;
 
 pub use crate::types::_scheduled_action::ScheduledAction;
+
+pub use crate::types::_deployment_strategy_override_options::DeploymentStrategyOverrideOptions;
 
 pub use crate::types::_change_progress_details::ChangeProgressDetails;
 
@@ -277,6 +289,8 @@ pub use crate::types::_config_change_status::ConfigChangeStatus;
 
 pub use crate::types::_initiated_by::InitiatedBy;
 
+pub use crate::types::_cloned_blue_green_upgrade_details::ClonedBlueGreenUpgradeDetails;
+
 pub use crate::types::_version_status::VersionStatus;
 
 pub use crate::types::_cluster_config_status::ClusterConfigStatus;
@@ -379,6 +393,18 @@ pub use crate::types::_migration_workspace::MigrationWorkspace;
 
 pub use crate::types::_export_options::ExportOptions;
 
+pub use crate::types::_traffic_strategy::TrafficStrategy;
+
+pub use crate::types::_cutover_target::CutoverTarget;
+
+pub use crate::types::_retention_action::RetentionAction;
+
+pub use crate::types::_cutover_status::CutoverStatus;
+
+pub use crate::types::_traffic_percents::TrafficPercents;
+
+pub use crate::types::_traffic_split_status::TrafficSplitStatus;
+
 pub use crate::types::_rollback_on_disable::RollbackOnDisable;
 
 pub use crate::types::_action_severity::ActionSeverity;
@@ -386,6 +412,10 @@ pub use crate::types::_action_severity::ActionSeverity;
 pub use crate::types::_scheduled_by::ScheduledBy;
 
 pub use crate::types::_action_status::ActionStatus;
+
+pub use crate::types::_deployment_strategy_override::DeploymentStrategyOverride;
+
+pub use crate::types::_cloned_blue_green_options::ClonedBlueGreenOptions;
 
 pub use crate::types::_inbound_connection_status_code::InboundConnectionStatusCode;
 
@@ -427,6 +457,8 @@ pub use crate::types::_auto_tune_details::AutoTuneDetails;
 
 pub use crate::types::_change_progress_stage::ChangeProgressStage;
 
+pub use crate::types::_cloned_blue_green_scheduled_action::ClonedBlueGreenScheduledAction;
+
 pub use crate::types::_validation_failure::ValidationFailure;
 
 pub use crate::types::_option_status::OptionStatus;
@@ -466,6 +498,8 @@ pub use crate::types::_property_value_type::PropertyValueType;
 pub use crate::types::_natural_language_query_generation_current_state::NaturalLanguageQueryGenerationCurrentState;
 
 pub use crate::types::_scheduled_auto_tune_details::ScheduledAutoTuneDetails;
+
+pub use crate::types::_cloned_blue_green_scheduled_action_type::ClonedBlueGreenScheduledActionType;
 
 pub use crate::types::_validation_failure_severity::ValidationFailureSeverity;
 
@@ -593,6 +627,14 @@ mod _change_progress_stage;
 
 mod _change_progress_status_details;
 
+mod _cloned_blue_green_options;
+
+mod _cloned_blue_green_scheduled_action;
+
+mod _cloned_blue_green_scheduled_action_type;
+
+mod _cloned_blue_green_upgrade_details;
+
 mod _cloud_watch_direct_query_data_source;
 
 mod _cluster_config;
@@ -615,6 +657,14 @@ mod _connection_properties;
 
 mod _cross_cluster_search_connection_properties;
 
+mod _cutover_options;
+
+mod _cutover_request_options;
+
+mod _cutover_status;
+
+mod _cutover_target;
+
 mod _data_source;
 
 mod _data_source_attachment_status;
@@ -634,6 +684,10 @@ mod _deployment_strategy;
 mod _deployment_strategy_options;
 
 mod _deployment_strategy_options_status;
+
+mod _deployment_strategy_override;
+
+mod _deployment_strategy_override_options;
 
 mod _describe_packages_filter;
 
@@ -901,6 +955,10 @@ mod _reserved_instance_offering;
 
 mod _reserved_instance_payment_option;
 
+mod _retention_action;
+
+mod _retention_options;
+
 mod _roles_key_id_c_option;
 
 mod _rollback_on_disable;
@@ -960,6 +1018,16 @@ mod _tag;
 mod _time_unit;
 
 mod _tls_security_policy;
+
+mod _traffic_percents;
+
+mod _traffic_split_options;
+
+mod _traffic_split_request_options;
+
+mod _traffic_split_status;
+
+mod _traffic_strategy;
 
 mod _upgrade_history;
 

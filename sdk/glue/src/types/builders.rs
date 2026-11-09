@@ -27,6 +27,10 @@ pub use crate::types::_lake_formation_configuration::LakeFormationConfigurationB
 
 pub use crate::types::_database_input::DatabaseInputBuilder;
 
+pub use crate::types::_data_quality_evaluation_config_data_source::DataQualityEvaluationConfigDataSourceBuilder;
+
+pub use crate::types::_data_quality_evaluation_config_additional_run_options::DataQualityEvaluationConfigAdditionalRunOptionsBuilder;
+
 pub use crate::types::_data_quality_target_table::DataQualityTargetTableBuilder;
 
 pub use crate::types::_integration_config::IntegrationConfigBuilder;
@@ -271,6 +275,16 @@ pub use crate::types::_database_identifier::DatabaseIdentifierBuilder;
 
 pub use crate::types::_federated_database::FederatedDatabaseBuilder;
 
+pub use crate::types::_data_quality_evaluation_config_glue_tables::DataQualityEvaluationConfigGlueTablesBuilder;
+
+pub use crate::types::_row_level_results_options::RowLevelResultsOptionsBuilder;
+
+pub use crate::types::_profiling_results_options::ProfilingResultsOptionsBuilder;
+
+pub use crate::types::_data_quality_rule_results_options::DataQualityRuleResultsOptionsBuilder;
+
+pub use crate::types::_observation_results_options::ObservationResultsOptionsBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_integration_error::IntegrationErrorBuilder;
@@ -373,14 +387,6 @@ pub use crate::types::_data_quality_analyzer_result::DataQualityAnalyzerResultBu
 
 pub use crate::types::_data_quality_observation::DataQualityObservationBuilder;
 
-pub use crate::types::_row_level_results_options::RowLevelResultsOptionsBuilder;
-
-pub use crate::types::_profiling_results_options::ProfilingResultsOptionsBuilder;
-
-pub use crate::types::_data_quality_rule_results_options::DataQualityRuleResultsOptionsBuilder;
-
-pub use crate::types::_observation_results_options::ObservationResultsOptionsBuilder;
-
 pub use crate::types::_auto_upgrade_metadata::AutoUpgradeMetadataBuilder;
 
 pub use crate::types::_mapping_entry::MappingEntryBuilder;
@@ -436,6 +442,8 @@ pub use crate::types::_connection_type_brief::ConnectionTypeBriefBuilder;
 pub use crate::types::_crawls_filter::CrawlsFilterBuilder;
 
 pub use crate::types::_crawler_history::CrawlerHistoryBuilder;
+
+pub use crate::types::_data_quality_evaluation_config_list_details::DataQualityEvaluationConfigListDetailsBuilder;
 
 pub use crate::types::_data_quality_result_description::DataQualityResultDescriptionBuilder;
 
@@ -526,6 +534,10 @@ pub use crate::types::_delta_target::DeltaTargetBuilder;
 pub use crate::types::_iceberg_target::IcebergTargetBuilder;
 
 pub use crate::types::_hudi_target::HudiTargetBuilder;
+
+pub use crate::types::_catalog_table_config_options::CatalogTableConfigOptionsBuilder;
+
+pub use crate::types::_distribution_results_options::DistributionResultsOptionsBuilder;
 
 pub use crate::types::_integration_partition::IntegrationPartitionBuilder;
 
@@ -731,10 +743,6 @@ pub use crate::types::_o_auth2_properties::OAuth2PropertiesBuilder;
 
 pub use crate::types::_metric_based_observation::MetricBasedObservationBuilder;
 
-pub use crate::types::_catalog_table_config_options::CatalogTableConfigOptionsBuilder;
-
-pub use crate::types::_distribution_results_options::DistributionResultsOptionsBuilder;
-
 pub use crate::types::_predecessor::PredecessorBuilder;
 
 pub use crate::types::_code_gen_node_arg::CodeGenNodeArgBuilder;
@@ -752,6 +760,8 @@ pub use crate::types::_compaction_metrics::CompactionMetricsBuilder;
 pub use crate::types::_retention_metrics::RetentionMetricsBuilder;
 
 pub use crate::types::_orphan_file_deletion_metrics::OrphanFileDeletionMetricsBuilder;
+
+pub use crate::types::_data_quality_evaluation_config_list_data_source::DataQualityEvaluationConfigListDataSourceBuilder;
 
 pub use crate::types::_timestamped_inclusion_annotation::TimestampedInclusionAnnotationBuilder;
 
@@ -868,6 +878,8 @@ pub use crate::types::_node::NodeBuilder;
 pub use crate::types::_edge::EdgeBuilder;
 
 pub use crate::types::_connection_type_variant::ConnectionTypeVariantBuilder;
+
+pub use crate::types::_data_quality_evaluation_config_list_glue_tables::DataQualityEvaluationConfigListGlueTablesBuilder;
 
 pub use crate::types::_other_metadata_value_list_item::OtherMetadataValueListItemBuilder;
 

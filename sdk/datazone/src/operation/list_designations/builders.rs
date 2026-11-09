@@ -22,7 +22,7 @@ impl crate::operation::list_designations::builders::ListDesignationsInputBuilder
 }
 /// Fluent builder constructing a request to `ListDesignations`.
 ///
-/// Lists the designations in a domain. Returns system-managed designations first, followed by user-created designations sorted alphabetically by name.
+/// <p>Lists the designations in a domain. The response returns system-managed designations first, followed by user-created designations in alphabetical order by name. Results are paginated. Use <code>nextToken</code> to retrieve additional pages of results.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDesignationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

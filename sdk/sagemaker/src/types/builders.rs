@@ -329,6 +329,10 @@ pub use crate::types::_cluster_auto_scaling_config_output::ClusterAutoScalingCon
 
 pub use crate::types::_cluster_event_detail::ClusterEventDetailBuilder;
 
+pub use crate::types::_extension_details::ExtensionDetailsBuilder;
+
+pub use crate::types::_extension_node_summary::ExtensionNodeSummaryBuilder;
+
 pub use crate::types::_cluster_node_details::ClusterNodeDetailsBuilder;
 
 pub use crate::types::_model_artifacts::ModelArtifactsBuilder;
@@ -448,6 +452,8 @@ pub use crate::types::_domain_settings_for_update::DomainSettingsForUpdateBuilde
 pub use crate::types::_online_store_config_update::OnlineStoreConfigUpdateBuilder;
 
 pub use crate::types::_throughput_config_update::ThroughputConfigUpdateBuilder;
+
+pub use crate::types::_alias_operations::AliasOperationsBuilder;
 
 pub use crate::types::_service_catalog_provisioning_update_details::ServiceCatalogProvisioningUpdateDetailsBuilder;
 
@@ -832,6 +838,8 @@ pub use crate::types::_association_summary::AssociationSummaryBuilder;
 pub use crate::types::_auto_ml_job_summary::AutoMlJobSummaryBuilder;
 
 pub use crate::types::_cluster_event_summary::ClusterEventSummaryBuilder;
+
+pub use crate::types::_extension_summary::ExtensionSummaryBuilder;
 
 pub use crate::types::_cluster_node_summary::ClusterNodeSummaryBuilder;
 
@@ -1544,6 +1552,8 @@ pub use crate::types::_athena_step_metadata::AthenaStepMetadataBuilder;
 pub use crate::types::_cleanup_step_metadata::CleanupStepMetadataBuilder;
 
 pub use crate::types::_for_each_step_metadata::ForEachStepMetadataBuilder;
+
+pub use crate::types::_hub_content_step_metadata::HubContentStepMetadataBuilder;
 
 pub use crate::types::_trial_component_source_detail::TrialComponentSourceDetailBuilder;
 

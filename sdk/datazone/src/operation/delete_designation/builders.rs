@@ -22,7 +22,7 @@ impl crate::operation::delete_designation::builders::DeleteDesignationInputBuild
 }
 /// Fluent builder constructing a request to `DeleteDesignation`.
 ///
-/// Deletes a designation. Managed designations cannot be deleted. This operation is idempotent.
+/// <p>Deletes a user-created designation. Managed designations cannot be deleted. The call fails if the designation has <code>deletionProtection</code> enabled or if any project member still holds it. This operation is idempotent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDesignationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -302,6 +302,12 @@ pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry:
                         },
                     )
 .insert_shape(
+                        crate::types::AliasOperations::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::AliasOperations::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
                         crate::types::AmazonQSettings::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::AmazonQSettings::deserialize(d)?))
@@ -1814,6 +1820,24 @@ pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry:
                         },
                     )
 .insert_shape(
+                        crate::types::ExtensionDetails::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::ExtensionDetails::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::ExtensionNodeSummary::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::ExtensionNodeSummary::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::ExtensionSummary::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::ExtensionSummary::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
                         crate::types::FSxLustreConfig::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::FSxLustreConfig::deserialize(d)?))
@@ -1979,6 +2003,12 @@ pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry:
                         crate::types::HubContentInfo::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::HubContentInfo::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::HubContentStepMetadata::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::HubContentStepMetadata::deserialize(d)?))
                         },
                     )
 .insert_shape(

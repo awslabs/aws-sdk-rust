@@ -92,8 +92,8 @@ pub(crate) fn signing_time(
         .map_or(now, |skew| skew.0.apply(now))
 }
 
-// The client's raw local time when the request was sent (no skew applied), used to compute
-// the midpoint for the candidate skew.
+// The client's raw local time when the request was sent (no skew applied), used to discard
+// the measurement when the round trip is too slow to trust.
 #[derive(Clone, Copy, Debug)]
 struct TimeRequestSent(SystemTime);
 impl Storable for TimeRequestSent {
@@ -135,10 +135,11 @@ fn server_time(response: &HttpResponse) -> Option<SystemTime> {
     SystemTime::try_from(date_time).ok()
 }
 
-// `serverTime - midpoint`, as a signed skew. The midpoint assumes the server generated its
-// timestamp halfway through the round trip (the NTP clock offset calculation, RFC 5905 §8).
-fn signed_skew(server: SystemTime, midpoint: SystemTime) -> ClockSkew {
-    match server.duration_since(midpoint) {
+// `serverTime - timeResponseReceived`, as a signed skew. `Date` is generated with the response
+// (RFC 9110 §6.6.1), so comparing it to the request midpoint would count half of the server's
+// processing time as skew.
+fn signed_skew(server: SystemTime, received: SystemTime) -> ClockSkew {
+    match server.duration_since(received) {
         Ok(d) => ClockSkew(d.as_millis() as i64),
         Err(e) => ClockSkew(-(e.duration().as_millis() as i64)),
     }
@@ -248,8 +249,7 @@ impl Intercept for ServiceClockSkewInterceptor {
             );
             return Ok(());
         }
-        let midpoint = time_sent + elapsed / 2;
-        let candidate = signed_skew(server, midpoint);
+        let candidate = signed_skew(server, time_received);
         // Record unconditionally: every response refreshes the skew, so a stale value is
         // corrected without any special-case healing logic.
         cfg.interceptor_state().store_put(AttemptSkew(candidate));
@@ -380,15 +380,15 @@ mod tests {
 
     #[test]
     fn signed_skew_tracks_direction() {
-        let midpoint = SystemTime::UNIX_EPOCH + Duration::from_secs(1000);
+        let received = SystemTime::UNIX_EPOCH + Duration::from_secs(1000);
         // Server ahead of the client.
         assert_eq!(
-            signed_skew(midpoint + Duration::from_secs(10), midpoint),
+            signed_skew(received + Duration::from_secs(10), received),
             ClockSkew(10_000)
         );
         // Client ahead of the server.
         assert_eq!(
-            signed_skew(midpoint - Duration::from_secs(10), midpoint),
+            signed_skew(received - Duration::from_secs(10), received),
             ClockSkew(-10_000)
         );
     }
@@ -662,7 +662,7 @@ mod tests {
     #[test]
     fn clock_skew_conformance() {
         let suite: Suite = serde_json::from_str(SUITE).expect("valid clock skew suite json");
-        assert_eq!(suite.tests.len(), 10, "expected the full clock skew suite");
+        assert_eq!(suite.tests.len(), 12, "expected the full clock skew suite");
         for case in &suite.tests {
             // ClientSkew starts at the first operation's initial value and persists across the
             // operations of a case (a single client).

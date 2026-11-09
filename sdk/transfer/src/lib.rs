@@ -49,7 +49,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-transfer = "1.140.0"
+//! aws-sdk-transfer = "1.141.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -230,6 +230,8 @@ mod serde_util;
 mod endpoint_lib;
 
 mod lens;
+
+pub(crate) mod schema_serde;
 
 /// Supporting types for waiters.
 ///

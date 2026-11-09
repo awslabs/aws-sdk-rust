@@ -524,6 +524,24 @@ pub(crate) fn invoke_browser_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn service_unavailable_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceUnavailableExceptionBuilder,
+) -> crate::types::error::builders::ServiceUnavailableExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn invoke_web_search_output_output_correct_errors(
+    mut builder: crate::operation::invoke_web_search::builders::InvokeWebSearchOutputBuilder,
+) -> crate::operation::invoke_web_search::builders::InvokeWebSearchOutputBuilder {
+    if builder.results.is_none() {
+        builder.results = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_ab_tests_output_output_correct_errors(
     mut builder: crate::operation::list_ab_tests::builders::ListAbTestsOutputBuilder,
 ) -> crate::operation::list_ab_tests::builders::ListAbTestsOutputBuilder {
@@ -1634,6 +1652,15 @@ pub(crate) fn variant_correct_errors(mut builder: crate::types::builders::Varian
             let builder = crate::types::builders::VariantConfigurationBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn web_search_result_correct_errors(
+    mut builder: crate::types::builders::WebSearchResultBuilder,
+) -> crate::types::builders::WebSearchResultBuilder {
+    if builder.text.is_none() {
+        builder.text = Some(Default::default())
     }
     builder
 }

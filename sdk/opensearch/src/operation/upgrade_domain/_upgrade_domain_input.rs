@@ -12,6 +12,8 @@ pub struct UpgradeDomainInput {
     pub perform_check_only: ::std::option::Option<bool>,
     /// <p>Only supports the <code>override_main_response_version</code> parameter and not other advanced options. You can only include this option when upgrading to an OpenSearch version. Specifies whether the domain reports its version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.</p>
     pub advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Overrides the deployment strategy for this upgrade. To run a cloned blue/green upgrade, set <code>DeploymentStrategy</code> to <code>ClonedBlueGreen</code>.</p>
+    pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOverrideOptions>,
 }
 impl UpgradeDomainInput {
     /// <p>Name of the OpenSearch Service domain that you want to upgrade.</p>
@@ -30,6 +32,10 @@ impl UpgradeDomainInput {
     pub fn advanced_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.advanced_options.as_ref()
     }
+    /// <p>Overrides the deployment strategy for this upgrade. To run a cloned blue/green upgrade, set <code>DeploymentStrategy</code> to <code>ClonedBlueGreen</code>.</p>
+    pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOverrideOptions> {
+        self.deployment_strategy_options.as_ref()
+    }
 }
 impl UpgradeDomainInput {
     /// Creates a new builder-style object to manufacture [`UpgradeDomainInput`](crate::operation::upgrade_domain::UpgradeDomainInput).
@@ -46,6 +52,7 @@ pub struct UpgradeDomainInputBuilder {
     pub(crate) target_version: ::std::option::Option<::std::string::String>,
     pub(crate) perform_check_only: ::std::option::Option<bool>,
     pub(crate) advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOverrideOptions>,
 }
 impl UpgradeDomainInputBuilder {
     /// <p>Name of the OpenSearch Service domain that you want to upgrade.</p>
@@ -119,6 +126,20 @@ impl UpgradeDomainInputBuilder {
     pub fn get_advanced_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.advanced_options
     }
+    /// <p>Overrides the deployment strategy for this upgrade. To run a cloned blue/green upgrade, set <code>DeploymentStrategy</code> to <code>ClonedBlueGreen</code>.</p>
+    pub fn deployment_strategy_options(mut self, input: crate::types::DeploymentStrategyOverrideOptions) -> Self {
+        self.deployment_strategy_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Overrides the deployment strategy for this upgrade. To run a cloned blue/green upgrade, set <code>DeploymentStrategy</code> to <code>ClonedBlueGreen</code>.</p>
+    pub fn set_deployment_strategy_options(mut self, input: ::std::option::Option<crate::types::DeploymentStrategyOverrideOptions>) -> Self {
+        self.deployment_strategy_options = input;
+        self
+    }
+    /// <p>Overrides the deployment strategy for this upgrade. To run a cloned blue/green upgrade, set <code>DeploymentStrategy</code> to <code>ClonedBlueGreen</code>.</p>
+    pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOverrideOptions> {
+        &self.deployment_strategy_options
+    }
     /// Consumes the builder and constructs a [`UpgradeDomainInput`](crate::operation::upgrade_domain::UpgradeDomainInput).
     pub fn build(
         self,
@@ -128,6 +149,7 @@ impl UpgradeDomainInputBuilder {
             target_version: self.target_version,
             perform_check_only: self.perform_check_only,
             advanced_options: self.advanced_options,
+            deployment_strategy_options: self.deployment_strategy_options,
         })
     }
 }

@@ -29,3 +29,4 @@ mod noop;
 mod provider;
 pub use provider::{TelemetryProvider, TelemetryProviderBuilder};
 pub mod instruments;
+pub mod unit_of_work;

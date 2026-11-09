@@ -116,6 +116,15 @@ pub(crate) fn create_cluster_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_cluster_extension_output_output_correct_errors(
+    mut builder: crate::operation::create_cluster_extension::builders::CreateClusterExtensionOutputBuilder,
+) -> crate::operation::create_cluster_extension::builders::CreateClusterExtensionOutputBuilder {
+    if builder.extension_arn.is_none() {
+        builder.extension_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_cluster_scheduler_config_output_output_correct_errors(
     mut builder: crate::operation::create_cluster_scheduler_config::builders::CreateClusterSchedulerConfigOutputBuilder,
 ) -> crate::operation::create_cluster_scheduler_config::builders::CreateClusterSchedulerConfigOutputBuilder {
@@ -470,6 +479,15 @@ pub(crate) fn delete_cluster_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_cluster_extension_output_output_correct_errors(
+    mut builder: crate::operation::delete_cluster_extension::builders::DeleteClusterExtensionOutputBuilder,
+) -> crate::operation::delete_cluster_extension::builders::DeleteClusterExtensionOutputBuilder {
+    if builder.extension_arn.is_none() {
+        builder.extension_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn delete_inference_experiment_output_output_correct_errors(
     mut builder: crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentOutputBuilder,
 ) -> crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentOutputBuilder {
@@ -682,6 +700,18 @@ pub(crate) fn describe_cluster_output_output_correct_errors(
     }
     if builder.instance_groups.is_none() {
         builder.instance_groups = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn describe_cluster_extension_output_output_correct_errors(
+    mut builder: crate::operation::describe_cluster_extension::builders::DescribeClusterExtensionOutputBuilder,
+) -> crate::operation::describe_cluster_extension::builders::DescribeClusterExtensionOutputBuilder {
+    if builder.extension_details.is_none() {
+        builder.extension_details = {
+            let builder = crate::types::builders::ExtensionDetailsBuilder::default();
+            Some(crate::serde_util::extension_details_correct_errors(builder).build())
+        }
     }
     builder
 }
@@ -2006,6 +2036,15 @@ pub(crate) fn list_candidates_for_auto_ml_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_cluster_extensions_output_output_correct_errors(
+    mut builder: crate::operation::list_cluster_extensions::builders::ListClusterExtensionsOutputBuilder,
+) -> crate::operation::list_cluster_extensions::builders::ListClusterExtensionsOutputBuilder {
+    if builder.extensions.is_none() {
+        builder.extensions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_cluster_nodes_output_output_correct_errors(
     mut builder: crate::operation::list_cluster_nodes::builders::ListClusterNodesOutputBuilder,
 ) -> crate::operation::list_cluster_nodes::builders::ListClusterNodesOutputBuilder {
@@ -2513,6 +2552,15 @@ pub(crate) fn update_cluster_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_cluster_extension_output_output_correct_errors(
+    mut builder: crate::operation::update_cluster_extension::builders::UpdateClusterExtensionOutputBuilder,
+) -> crate::operation::update_cluster_extension::builders::UpdateClusterExtensionOutputBuilder {
+    if builder.extension_arn.is_none() {
+        builder.extension_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_cluster_scheduler_config_output_output_correct_errors(
     mut builder: crate::operation::update_cluster_scheduler_config::builders::UpdateClusterSchedulerConfigOutputBuilder,
 ) -> crate::operation::update_cluster_scheduler_config::builders::UpdateClusterSchedulerConfigOutputBuilder {
@@ -2758,6 +2806,27 @@ pub(crate) fn auto_ml_output_data_config_correct_errors(
 ) -> crate::types::builders::AutoMlOutputDataConfigBuilder {
     if builder.s3_output_path.is_none() {
         builder.s3_output_path = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn extension_details_correct_errors(
+    mut builder: crate::types::builders::ExtensionDetailsBuilder,
+) -> crate::types::builders::ExtensionDetailsBuilder {
+    if builder.cluster_arn.is_none() {
+        builder.cluster_arn = Some(Default::default())
+    }
+    if builder.extension_arn.is_none() {
+        builder.extension_arn = Some(Default::default())
+    }
+    if builder.extension_name.is_none() {
+        builder.extension_name = Some(Default::default())
+    }
+    if builder.extension_version.is_none() {
+        builder.extension_version = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ExtensionStatus>().ok()
     }
     builder
 }

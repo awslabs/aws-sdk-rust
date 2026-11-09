@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-signin = "1.33.0"
+//! aws-sdk-signin = "1.34.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -106,13 +106,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateOAuth2TokenWithIAM`](crate::operation::create_o_auth2_token_with_iam) operation has
-/// a [`Client::create_o_auth2_token_with_iam`], function which returns a builder for that operation.
+/// For example, the [`CreateBearerToken`](crate::operation::create_bearer_token) operation has
+/// a [`Client::create_bearer_token`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_o_auth2_token_with_iam()
+/// let result = client.create_bearer_token()
 ///     .grant_type("example")
 ///     .send()
 ///     .await;

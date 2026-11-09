@@ -117,6 +117,8 @@ pub(crate) mod shape_revoke_vpc_endpoint_access;
 
 pub(crate) mod shape_start_elasticsearch_service_software_update;
 
+pub(crate) mod shape_update_clone;
+
 pub(crate) mod shape_update_elasticsearch_domain_config;
 
 pub(crate) mod shape_update_package;
@@ -187,6 +189,8 @@ pub(crate) mod shape_revoke_vpc_endpoint_access_input;
 
 pub(crate) mod shape_start_elasticsearch_service_software_update_input;
 
+pub(crate) mod shape_update_clone_input;
+
 pub(crate) mod shape_update_elasticsearch_domain_config_input;
 
 pub(crate) mod shape_update_package_input;
@@ -221,7 +225,13 @@ pub(crate) mod shape_cognito_options;
 
 pub(crate) mod shape_compatible_elasticsearch_versions_list;
 
+pub(crate) mod shape_cutover_options;
+
+pub(crate) mod shape_cutover_request_options;
+
 pub(crate) mod shape_deployment_strategy_options;
+
+pub(crate) mod shape_deployment_strategy_override_options;
 
 pub(crate) mod shape_describe_packages_filter;
 
@@ -285,6 +295,8 @@ pub(crate) mod shape_reserved_elasticsearch_instance_list;
 
 pub(crate) mod shape_reserved_elasticsearch_instance_offering_list;
 
+pub(crate) mod shape_retention_options;
+
 pub(crate) mod shape_service_software_options;
 
 pub(crate) mod shape_snapshot_options;
@@ -292,6 +304,10 @@ pub(crate) mod shape_snapshot_options;
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
+
+pub(crate) mod shape_traffic_split_options;
+
+pub(crate) mod shape_traffic_split_request_options;
 
 pub(crate) mod shape_upgrade_history_list;
 
@@ -332,6 +348,10 @@ pub(crate) mod shape_automated_snapshot_pause_options_status;
 pub(crate) mod shape_cancelled_change_property;
 
 pub(crate) mod shape_change_progress_stage_list;
+
+pub(crate) mod shape_cloned_blue_green_options;
+
+pub(crate) mod shape_cloned_blue_green_upgrade_details;
 
 pub(crate) mod shape_cognito_options_status;
 
@@ -385,6 +405,8 @@ pub(crate) mod shape_snapshot_options_status;
 
 pub(crate) mod shape_string_list;
 
+pub(crate) mod shape_traffic_percents;
+
 pub(crate) mod shape_upgrade_history;
 
 pub(crate) mod shape_use_case_status;
@@ -404,6 +426,8 @@ pub(crate) mod shape_auto_tune_details;
 pub(crate) mod shape_auto_tune_status;
 
 pub(crate) mod shape_change_progress_stage;
+
+pub(crate) mod shape_cloned_blue_green_scheduled_action;
 
 pub(crate) mod shape_duration;
 

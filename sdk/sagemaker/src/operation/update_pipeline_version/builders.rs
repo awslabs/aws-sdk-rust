@@ -164,4 +164,18 @@ impl UpdatePipelineVersionFluentBuilder {
     pub fn get_pipeline_version_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pipeline_version_description()
     }
+    /// <p>The aliases to add to or remove from the pipeline version.</p>
+    pub fn pipeline_version_alias_operations(mut self, input: crate::types::AliasOperations) -> Self {
+        self.inner = self.inner.pipeline_version_alias_operations(input);
+        self
+    }
+    /// <p>The aliases to add to or remove from the pipeline version.</p>
+    pub fn set_pipeline_version_alias_operations(mut self, input: ::std::option::Option<crate::types::AliasOperations>) -> Self {
+        self.inner = self.inner.set_pipeline_version_alias_operations(input);
+        self
+    }
+    /// <p>The aliases to add to or remove from the pipeline version.</p>
+    pub fn get_pipeline_version_alias_operations(&self) -> &::std::option::Option<crate::types::AliasOperations> {
+        self.inner.get_pipeline_version_alias_operations()
+    }
 }

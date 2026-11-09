@@ -217,6 +217,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribePipel
                 captured.insert("PipelineName", value);
             }
         }
+        if requested.should_capture("PipelineVersionAlias") {
+            if let ::std::option::Option::Some(value) = input.pipeline_version_alias.as_deref() {
+                captured.insert("PipelineVersionAlias", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

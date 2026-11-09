@@ -22,11 +22,11 @@ pub struct RegisterJobDefinitionInput {
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub scheduling_priority: ::std::option::Option<i32>,
     /// <p>An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS-based job definitions.</p><note>
-    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
+    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>. We recommend <code>ecsProperties</code>, which supports both single-container and multi-container jobs. <code>containerProperties</code> is also supported for single-container jobs. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-container-jobs.html">Multi-container jobs</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub container_properties: ::std::option::Option<crate::types::ContainerProperties>,
     /// <p>An object with properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>.</p><note>
-    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>. We recommend <code>ecsProperties</code>, which supports both single-container and multi-container jobs. <code>containerProperties</code> is also supported for single-container jobs.</p>
     /// </note> <note>
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.</p>
     /// </note>
@@ -80,13 +80,13 @@ impl RegisterJobDefinitionInput {
         self.scheduling_priority
     }
     /// <p>An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS-based job definitions.</p><note>
-    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
+    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>. We recommend <code>ecsProperties</code>, which supports both single-container and multi-container jobs. <code>containerProperties</code> is also supported for single-container jobs. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-container-jobs.html">Multi-container jobs</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn container_properties(&self) -> ::std::option::Option<&crate::types::ContainerProperties> {
         self.container_properties.as_ref()
     }
     /// <p>An object with properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>.</p><note>
-    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>. We recommend <code>ecsProperties</code>, which supports both single-container and multi-container jobs. <code>containerProperties</code> is also supported for single-container jobs.</p>
     /// </note> <note>
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.</p>
     /// </note>
@@ -252,27 +252,27 @@ impl RegisterJobDefinitionInputBuilder {
         &self.scheduling_priority
     }
     /// <p>An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS-based job definitions.</p><note>
-    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
+    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>. We recommend <code>ecsProperties</code>, which supports both single-container and multi-container jobs. <code>containerProperties</code> is also supported for single-container jobs. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-container-jobs.html">Multi-container jobs</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn container_properties(mut self, input: crate::types::ContainerProperties) -> Self {
         self.container_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS-based job definitions.</p><note>
-    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
+    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>. We recommend <code>ecsProperties</code>, which supports both single-container and multi-container jobs. <code>containerProperties</code> is also supported for single-container jobs. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-container-jobs.html">Multi-container jobs</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn set_container_properties(mut self, input: ::std::option::Option<crate::types::ContainerProperties>) -> Self {
         self.container_properties = input;
         self
     }
     /// <p>An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS-based job definitions.</p><note>
-    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
+    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>. We recommend <code>ecsProperties</code>, which supports both single-container and multi-container jobs. <code>containerProperties</code> is also supported for single-container jobs. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-container-jobs.html">Multi-container jobs</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn get_container_properties(&self) -> &::std::option::Option<crate::types::ContainerProperties> {
         &self.container_properties
     }
     /// <p>An object with properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>.</p><note>
-    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>. We recommend <code>ecsProperties</code>, which supports both single-container and multi-container jobs. <code>containerProperties</code> is also supported for single-container jobs.</p>
     /// </note> <note>
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.</p>
     /// </note>
@@ -281,7 +281,7 @@ impl RegisterJobDefinitionInputBuilder {
         self
     }
     /// <p>An object with properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>.</p><note>
-    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>. We recommend <code>ecsProperties</code>, which supports both single-container and multi-container jobs. <code>containerProperties</code> is also supported for single-container jobs.</p>
     /// </note> <note>
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.</p>
     /// </note>
@@ -290,7 +290,7 @@ impl RegisterJobDefinitionInputBuilder {
         self
     }
     /// <p>An object with properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>.</p><note>
-    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>. We recommend <code>ecsProperties</code>, which supports both single-container and multi-container jobs. <code>containerProperties</code> is also supported for single-container jobs.</p>
     /// </note> <note>
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.</p>
     /// </note>

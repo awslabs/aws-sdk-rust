@@ -17,6 +17,9 @@ pub struct UpdatePipelineInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>If specified, it applies to all executions of this pipeline by default.</p>
     pub parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
+    /// <p>The aliases to assign to the new pipeline version that this update creates. You can specify aliases only when the update changes the pipeline definition. To change the aliases of an existing version, use <code>UpdatePipelineVersion</code>.</p>
+    /// <p>An alias must be unique within the pipeline. To move an alias from an existing version to the new version, first remove the alias from the existing version with <code>UpdatePipelineVersion</code>.</p>
+    pub pipeline_version_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdatePipelineInput {
     /// <p>The name of the pipeline to update.</p>
@@ -47,213 +50,12 @@ impl UpdatePipelineInput {
     pub fn parallelism_configuration(&self) -> ::std::option::Option<&crate::types::ParallelismConfiguration> {
         self.parallelism_configuration.as_ref()
     }
-}
-static UPDATEPIPELINEINPUT_MEMBER_PIPELINE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker.synthetic#UpdatePipelineInput$PipelineName",
-        "com.amazonaws.sagemaker.synthetic",
-        "UpdatePipelineInput",
-    ),
-    ::aws_smithy_schema::ShapeType::String,
-    "PipelineName",
-    0,
-);
-static UPDATEPIPELINEINPUT_MEMBER_PIPELINE_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker.synthetic#UpdatePipelineInput$PipelineDisplayName",
-        "com.amazonaws.sagemaker.synthetic",
-        "UpdatePipelineInput",
-    ),
-    ::aws_smithy_schema::ShapeType::String,
-    "PipelineDisplayName",
-    1,
-);
-static UPDATEPIPELINEINPUT_MEMBER_PIPELINE_DEFINITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker.synthetic#UpdatePipelineInput$PipelineDefinition",
-        "com.amazonaws.sagemaker.synthetic",
-        "UpdatePipelineInput",
-    ),
-    ::aws_smithy_schema::ShapeType::String,
-    "PipelineDefinition",
-    2,
-);
-static UPDATEPIPELINEINPUT_MEMBER_PIPELINE_DEFINITION_S3_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker.synthetic#UpdatePipelineInput$PipelineDefinitionS3Location",
-        "com.amazonaws.sagemaker.synthetic",
-        "UpdatePipelineInput",
-    ),
-    ::aws_smithy_schema::ShapeType::Structure,
-    "PipelineDefinitionS3Location",
-    3,
-);
-static UPDATEPIPELINEINPUT_MEMBER_PIPELINE_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker.synthetic#UpdatePipelineInput$PipelineDescription",
-        "com.amazonaws.sagemaker.synthetic",
-        "UpdatePipelineInput",
-    ),
-    ::aws_smithy_schema::ShapeType::String,
-    "PipelineDescription",
-    4,
-);
-static UPDATEPIPELINEINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker.synthetic#UpdatePipelineInput$RoleArn",
-        "com.amazonaws.sagemaker.synthetic",
-        "UpdatePipelineInput",
-    ),
-    ::aws_smithy_schema::ShapeType::String,
-    "RoleArn",
-    5,
-);
-static UPDATEPIPELINEINPUT_MEMBER_PARALLELISM_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker.synthetic#UpdatePipelineInput$ParallelismConfiguration",
-        "com.amazonaws.sagemaker.synthetic",
-        "UpdatePipelineInput",
-    ),
-    ::aws_smithy_schema::ShapeType::Structure,
-    "ParallelismConfiguration",
-    6,
-);
-static UPDATEPIPELINEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.sagemaker.synthetic#UpdatePipelineInput",
-        "com.amazonaws.sagemaker.synthetic",
-        "UpdatePipelineInput",
-    ),
-    ::aws_smithy_schema::ShapeType::Structure,
-    &[
-        &UPDATEPIPELINEINPUT_MEMBER_PIPELINE_NAME,
-        &UPDATEPIPELINEINPUT_MEMBER_PIPELINE_DISPLAY_NAME,
-        &UPDATEPIPELINEINPUT_MEMBER_PIPELINE_DEFINITION,
-        &UPDATEPIPELINEINPUT_MEMBER_PIPELINE_DEFINITION_S3_LOCATION,
-        &UPDATEPIPELINEINPUT_MEMBER_PIPELINE_DESCRIPTION,
-        &UPDATEPIPELINEINPUT_MEMBER_ROLE_ARN,
-        &UPDATEPIPELINEINPUT_MEMBER_PARALLELISM_CONFIGURATION,
-    ],
-)
-.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
-.with_original_name("UpdatePipelineRequest");
-impl UpdatePipelineInput {
-    /// The schema for this shape.
-    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEPIPELINEINPUT_SCHEMA;
-}
-impl ::aws_smithy_schema::serde::SerializableStruct for UpdatePipelineInput {
-    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
-        Self::SCHEMA
-    }
-
-    #[allow(unused_variables, clippy::diverging_sub_expression)]
-    fn serialize_members(
-        &self,
-        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
-    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
-        if let Some(ref val) = self.pipeline_name {
-            ser.write_string(&UPDATEPIPELINEINPUT_MEMBER_PIPELINE_NAME, val)?;
-        }
-        if let Some(ref val) = self.pipeline_display_name {
-            ser.write_string(&UPDATEPIPELINEINPUT_MEMBER_PIPELINE_DISPLAY_NAME, val)?;
-        }
-        if let Some(ref val) = self.pipeline_definition {
-            ser.write_string(&UPDATEPIPELINEINPUT_MEMBER_PIPELINE_DEFINITION, val)?;
-        }
-        if let Some(ref val) = self.pipeline_definition_s3_location {
-            ser.write_struct(&UPDATEPIPELINEINPUT_MEMBER_PIPELINE_DEFINITION_S3_LOCATION, val)?;
-        }
-        if let Some(ref val) = self.pipeline_description {
-            ser.write_string(&UPDATEPIPELINEINPUT_MEMBER_PIPELINE_DESCRIPTION, val)?;
-        }
-        if let Some(ref val) = self.role_arn {
-            ser.write_string(&UPDATEPIPELINEINPUT_MEMBER_ROLE_ARN, val)?;
-        }
-        if let Some(ref val) = self.parallelism_configuration {
-            ser.write_struct(&UPDATEPIPELINEINPUT_MEMBER_PARALLELISM_CONFIGURATION, val)?;
-        }
-        Ok(())
-    }
-}
-impl crate::operation::update_pipeline::builders::UpdatePipelineInputBuilder {
-    #[allow(
-        unused_variables,
-        unreachable_code,
-        clippy::single_match,
-        clippy::match_single_binding,
-        clippy::diverging_sub_expression
-    )]
-    pub(crate) fn deserialize_members(
-        &mut self,
-        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
-    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
-        deserializer.read_struct(&UPDATEPIPELINEINPUT_SCHEMA, &mut |member, deser| {
-            match member.member_index() {
-                Some(0) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.pipeline_name = Some(deser.read_string(member)?);
-                    }
-                }
-                Some(1) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.pipeline_display_name = Some(deser.read_string(member)?);
-                    }
-                }
-                Some(2) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.pipeline_definition = Some(deser.read_string(member)?);
-                    }
-                }
-                Some(3) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.pipeline_definition_s3_location = Some(crate::types::PipelineDefinitionS3Location::deserialize(deser)?);
-                    }
-                }
-                Some(4) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.pipeline_description = Some(deser.read_string(member)?);
-                    }
-                }
-                Some(5) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.role_arn = Some(deser.read_string(member)?);
-                    }
-                }
-                Some(6) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.parallelism_configuration = Some(crate::types::ParallelismConfiguration::deserialize(deser)?);
-                    }
-                }
-                _ => {}
-            }
-            Ok(())
-        })
-    }
-}
-
-impl UpdatePipelineInput {
-    /// Deserializes this structure from a [`ShapeDeserializer`].
-    pub fn deserialize(
-        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
-    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
-        let mut builder = Self::builder();
-        builder.deserialize_members(deserializer)?;
-        builder.pipeline_name = builder.pipeline_name.or(Some(String::new()));
-        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    /// <p>The aliases to assign to the new pipeline version that this update creates. You can specify aliases only when the update changes the pipeline definition. To change the aliases of an existing version, use <code>UpdatePipelineVersion</code>.</p>
+    /// <p>An alias must be unique within the pipeline. To move an alias from an existing version to the new version, first remove the alias from the existing version with <code>UpdatePipelineVersion</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_version_aliases.is_none()`.
+    pub fn pipeline_version_aliases(&self) -> &[::std::string::String] {
+        self.pipeline_version_aliases.as_deref().unwrap_or_default()
     }
 }
 impl UpdatePipelineInput {
@@ -274,6 +76,7 @@ pub struct UpdatePipelineInputBuilder {
     pub(crate) pipeline_description: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
+    pub(crate) pipeline_version_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdatePipelineInputBuilder {
     /// <p>The name of the pipeline to update.</p>
@@ -375,6 +178,29 @@ impl UpdatePipelineInputBuilder {
     pub fn get_parallelism_configuration(&self) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
         &self.parallelism_configuration
     }
+    /// Appends an item to `pipeline_version_aliases`.
+    ///
+    /// To override the contents of this collection use [`set_pipeline_version_aliases`](Self::set_pipeline_version_aliases).
+    ///
+    /// <p>The aliases to assign to the new pipeline version that this update creates. You can specify aliases only when the update changes the pipeline definition. To change the aliases of an existing version, use <code>UpdatePipelineVersion</code>.</p>
+    /// <p>An alias must be unique within the pipeline. To move an alias from an existing version to the new version, first remove the alias from the existing version with <code>UpdatePipelineVersion</code>.</p>
+    pub fn pipeline_version_aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.pipeline_version_aliases.unwrap_or_default();
+        v.push(input.into());
+        self.pipeline_version_aliases = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The aliases to assign to the new pipeline version that this update creates. You can specify aliases only when the update changes the pipeline definition. To change the aliases of an existing version, use <code>UpdatePipelineVersion</code>.</p>
+    /// <p>An alias must be unique within the pipeline. To move an alias from an existing version to the new version, first remove the alias from the existing version with <code>UpdatePipelineVersion</code>.</p>
+    pub fn set_pipeline_version_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.pipeline_version_aliases = input;
+        self
+    }
+    /// <p>The aliases to assign to the new pipeline version that this update creates. You can specify aliases only when the update changes the pipeline definition. To change the aliases of an existing version, use <code>UpdatePipelineVersion</code>.</p>
+    /// <p>An alias must be unique within the pipeline. To move an alias from an existing version to the new version, first remove the alias from the existing version with <code>UpdatePipelineVersion</code>.</p>
+    pub fn get_pipeline_version_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.pipeline_version_aliases
+    }
     /// Consumes the builder and constructs a [`UpdatePipelineInput`](crate::operation::update_pipeline::UpdatePipelineInput).
     pub fn build(
         self,
@@ -387,6 +213,7 @@ impl UpdatePipelineInputBuilder {
             pipeline_description: self.pipeline_description,
             role_arn: self.role_arn,
             parallelism_configuration: self.parallelism_configuration,
+            pipeline_version_aliases: self.pipeline_version_aliases,
         })
     }
 }

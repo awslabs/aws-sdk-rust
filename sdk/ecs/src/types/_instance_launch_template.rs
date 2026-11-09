@@ -54,6 +54,11 @@ pub struct InstanceLaunchTemplate {
     /// </ul>
     /// <p>Amazon ECS will launch instances according to the specified criteria.</p>
     pub capacity_reservations: ::std::option::Option<crate::types::CapacityReservationRequest>,
+    /// <p>Specifies whether instances that this capacity provider launches have <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-ec2-nitro-sandboxes.html">Nitro Sandbox</a> enabled. Enable this setting to run tasks that use the <code>ISOLATED_SANDBOX</code> or <code>CONFIDENTIAL_SANDBOX</code> isolation mode.</p>
+    /// <p>When you enable this setting, the capacity provider must include at least one instance type that supports Nitro Sandbox. You can't enable this setting together with local storage (the <code>useLocalStorage</code> setting in <code>localStorageConfiguration</code>).</p>
+    /// <p>The default value is <code>false</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/isolated-confidential-tasks.html">Isolated and confidential tasks</a> in <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub nitro_enclaves_enabled: ::std::option::Option<bool>,
 }
 impl InstanceLaunchTemplate {
     /// <p>The Amazon Resource Name (ARN) of the instance profile that Amazon ECS applies to Amazon ECS Managed Instances. This instance profile must include the necessary permissions for your tasks to access Amazon Web Services services and resources.</p>
@@ -127,268 +132,12 @@ impl InstanceLaunchTemplate {
     pub fn capacity_reservations(&self) -> ::std::option::Option<&crate::types::CapacityReservationRequest> {
         self.capacity_reservations.as_ref()
     }
-}
-static INSTANCELAUNCHTEMPLATE_MEMBER_EC2_INSTANCE_PROFILE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.ecs#InstanceLaunchTemplate$ec2InstanceProfileArn",
-        "com.amazonaws.ecs",
-        "InstanceLaunchTemplate",
-    ),
-    ::aws_smithy_schema::ShapeType::String,
-    "ec2InstanceProfileArn",
-    0,
-);
-static INSTANCELAUNCHTEMPLATE_MEMBER_NETWORK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.ecs#InstanceLaunchTemplate$networkConfiguration",
-        "com.amazonaws.ecs",
-        "InstanceLaunchTemplate",
-    ),
-    ::aws_smithy_schema::ShapeType::Structure,
-    "networkConfiguration",
-    1,
-);
-static INSTANCELAUNCHTEMPLATE_MEMBER_STORAGE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.ecs#InstanceLaunchTemplate$storageConfiguration",
-        "com.amazonaws.ecs",
-        "InstanceLaunchTemplate",
-    ),
-    ::aws_smithy_schema::ShapeType::Structure,
-    "storageConfiguration",
-    2,
-);
-static INSTANCELAUNCHTEMPLATE_MEMBER_LOCAL_STORAGE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.ecs#InstanceLaunchTemplate$localStorageConfiguration",
-        "com.amazonaws.ecs",
-        "InstanceLaunchTemplate",
-    ),
-    ::aws_smithy_schema::ShapeType::Structure,
-    "localStorageConfiguration",
-    3,
-);
-static INSTANCELAUNCHTEMPLATE_MEMBER_MONITORING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.ecs#InstanceLaunchTemplate$monitoring",
-        "com.amazonaws.ecs",
-        "InstanceLaunchTemplate",
-    ),
-    ::aws_smithy_schema::ShapeType::String,
-    "monitoring",
-    4,
-);
-static INSTANCELAUNCHTEMPLATE_MEMBER_CAPACITY_OPTION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.ecs#InstanceLaunchTemplate$capacityOptionType",
-        "com.amazonaws.ecs",
-        "InstanceLaunchTemplate",
-    ),
-    ::aws_smithy_schema::ShapeType::String,
-    "capacityOptionType",
-    5,
-);
-static INSTANCELAUNCHTEMPLATE_MEMBER_INSTANCE_METADATA_TAGS_PROPAGATION: ::aws_smithy_schema::Schema<'static> =
-    ::aws_smithy_schema::Schema::new_member(
-        ::aws_smithy_schema::ShapeId::from_parts(
-            "com.amazonaws.ecs#InstanceLaunchTemplate$instanceMetadataTagsPropagation",
-            "com.amazonaws.ecs",
-            "InstanceLaunchTemplate",
-        ),
-        ::aws_smithy_schema::ShapeType::Boolean,
-        "instanceMetadataTagsPropagation",
-        6,
-    );
-static INSTANCELAUNCHTEMPLATE_MEMBER_INSTANCE_REQUIREMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.ecs#InstanceLaunchTemplate$instanceRequirements",
-        "com.amazonaws.ecs",
-        "InstanceLaunchTemplate",
-    ),
-    ::aws_smithy_schema::ShapeType::Structure,
-    "instanceRequirements",
-    7,
-);
-static INSTANCELAUNCHTEMPLATE_MEMBER_FIPS_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.ecs#InstanceLaunchTemplate$fipsEnabled",
-        "com.amazonaws.ecs",
-        "InstanceLaunchTemplate",
-    ),
-    ::aws_smithy_schema::ShapeType::Boolean,
-    "fipsEnabled",
-    8,
-);
-static INSTANCELAUNCHTEMPLATE_MEMBER_CAPACITY_RESERVATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
-    ::aws_smithy_schema::ShapeId::from_parts(
-        "com.amazonaws.ecs#InstanceLaunchTemplate$capacityReservations",
-        "com.amazonaws.ecs",
-        "InstanceLaunchTemplate",
-    ),
-    ::aws_smithy_schema::ShapeType::Structure,
-    "capacityReservations",
-    9,
-);
-static INSTANCELAUNCHTEMPLATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
-    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#InstanceLaunchTemplate", "com.amazonaws.ecs", "InstanceLaunchTemplate"),
-    ::aws_smithy_schema::ShapeType::Structure,
-    &[
-        &INSTANCELAUNCHTEMPLATE_MEMBER_EC2_INSTANCE_PROFILE_ARN,
-        &INSTANCELAUNCHTEMPLATE_MEMBER_NETWORK_CONFIGURATION,
-        &INSTANCELAUNCHTEMPLATE_MEMBER_STORAGE_CONFIGURATION,
-        &INSTANCELAUNCHTEMPLATE_MEMBER_LOCAL_STORAGE_CONFIGURATION,
-        &INSTANCELAUNCHTEMPLATE_MEMBER_MONITORING,
-        &INSTANCELAUNCHTEMPLATE_MEMBER_CAPACITY_OPTION_TYPE,
-        &INSTANCELAUNCHTEMPLATE_MEMBER_INSTANCE_METADATA_TAGS_PROPAGATION,
-        &INSTANCELAUNCHTEMPLATE_MEMBER_INSTANCE_REQUIREMENTS,
-        &INSTANCELAUNCHTEMPLATE_MEMBER_FIPS_ENABLED,
-        &INSTANCELAUNCHTEMPLATE_MEMBER_CAPACITY_RESERVATIONS,
-    ],
-);
-impl InstanceLaunchTemplate {
-    /// The schema for this shape.
-    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCELAUNCHTEMPLATE_SCHEMA;
-}
-impl ::aws_smithy_schema::serde::SerializableStruct for InstanceLaunchTemplate {
-    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
-        Self::SCHEMA
-    }
-
-    #[allow(unused_variables, clippy::diverging_sub_expression)]
-    fn serialize_members(
-        &self,
-        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
-    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
-        {
-            let val = &self.ec2_instance_profile_arn;
-            ser.write_string(&INSTANCELAUNCHTEMPLATE_MEMBER_EC2_INSTANCE_PROFILE_ARN, val)?;
-        }
-        if let Some(ref val) = self.network_configuration {
-            ser.write_struct(&INSTANCELAUNCHTEMPLATE_MEMBER_NETWORK_CONFIGURATION, val)?;
-        }
-        if let Some(ref val) = self.storage_configuration {
-            ser.write_struct(&INSTANCELAUNCHTEMPLATE_MEMBER_STORAGE_CONFIGURATION, val)?;
-        }
-        if let Some(ref val) = self.local_storage_configuration {
-            ser.write_struct(&INSTANCELAUNCHTEMPLATE_MEMBER_LOCAL_STORAGE_CONFIGURATION, val)?;
-        }
-        if let Some(ref val) = self.monitoring {
-            ser.write_string(&INSTANCELAUNCHTEMPLATE_MEMBER_MONITORING, val.as_str())?;
-        }
-        if let Some(ref val) = self.capacity_option_type {
-            ser.write_string(&INSTANCELAUNCHTEMPLATE_MEMBER_CAPACITY_OPTION_TYPE, val.as_str())?;
-        }
-        if let Some(ref val) = self.instance_metadata_tags_propagation {
-            ser.write_boolean(&INSTANCELAUNCHTEMPLATE_MEMBER_INSTANCE_METADATA_TAGS_PROPAGATION, *val)?;
-        }
-        if let Some(ref val) = self.instance_requirements {
-            ser.write_struct(&INSTANCELAUNCHTEMPLATE_MEMBER_INSTANCE_REQUIREMENTS, val)?;
-        }
-        if let Some(ref val) = self.fips_enabled {
-            ser.write_boolean(&INSTANCELAUNCHTEMPLATE_MEMBER_FIPS_ENABLED, *val)?;
-        }
-        if let Some(ref val) = self.capacity_reservations {
-            ser.write_struct(&INSTANCELAUNCHTEMPLATE_MEMBER_CAPACITY_RESERVATIONS, val)?;
-        }
-        Ok(())
-    }
-}
-impl crate::types::builders::InstanceLaunchTemplateBuilder {
-    #[allow(
-        unused_variables,
-        unreachable_code,
-        clippy::single_match,
-        clippy::match_single_binding,
-        clippy::diverging_sub_expression
-    )]
-    pub(crate) fn deserialize_members(
-        &mut self,
-        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
-    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
-        deserializer.read_struct(&INSTANCELAUNCHTEMPLATE_SCHEMA, &mut |member, deser| {
-            match member.member_index() {
-                Some(0) => {
-                    self.ec2_instance_profile_arn = Some(deser.read_string(member)?);
-                }
-                Some(1) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.network_configuration = Some(crate::types::ManagedInstancesNetworkConfiguration::deserialize(deser)?);
-                    }
-                }
-                Some(2) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.storage_configuration = Some(crate::types::ManagedInstancesStorageConfiguration::deserialize(deser)?);
-                    }
-                }
-                Some(3) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.local_storage_configuration = Some(crate::types::ManagedInstancesLocalStorageConfiguration::deserialize(deser)?);
-                    }
-                }
-                Some(4) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.monitoring = Some(crate::types::ManagedInstancesMonitoringOptions::from(deser.read_string(member)?.as_str()));
-                    }
-                }
-                Some(5) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.capacity_option_type = Some(crate::types::CapacityOptionType::from(deser.read_string(member)?.as_str()));
-                    }
-                }
-                Some(6) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.instance_metadata_tags_propagation = Some(deser.read_boolean(member)?);
-                    }
-                }
-                Some(7) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.instance_requirements = Some(crate::types::InstanceRequirementsRequest::deserialize(deser)?);
-                    }
-                }
-                Some(8) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.fips_enabled = Some(deser.read_boolean(member)?);
-                    }
-                }
-                Some(9) => {
-                    if deser.is_null() {
-                        deser.read_null()?;
-                    } else {
-                        self.capacity_reservations = Some(crate::types::CapacityReservationRequest::deserialize(deser)?);
-                    }
-                }
-                _ => {}
-            }
-            Ok(())
-        })
-    }
-}
-
-impl InstanceLaunchTemplate {
-    /// Deserializes this structure from a [`ShapeDeserializer`].
-    pub fn deserialize(
-        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
-    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
-        let mut builder = Self::builder();
-        builder.deserialize_members(deserializer)?;
-        builder.ec2_instance_profile_arn = builder.ec2_instance_profile_arn.or(Some(String::new()));
-        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    /// <p>Specifies whether instances that this capacity provider launches have <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-ec2-nitro-sandboxes.html">Nitro Sandbox</a> enabled. Enable this setting to run tasks that use the <code>ISOLATED_SANDBOX</code> or <code>CONFIDENTIAL_SANDBOX</code> isolation mode.</p>
+    /// <p>When you enable this setting, the capacity provider must include at least one instance type that supports Nitro Sandbox. You can't enable this setting together with local storage (the <code>useLocalStorage</code> setting in <code>localStorageConfiguration</code>).</p>
+    /// <p>The default value is <code>false</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/isolated-confidential-tasks.html">Isolated and confidential tasks</a> in <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn nitro_enclaves_enabled(&self) -> ::std::option::Option<bool> {
+        self.nitro_enclaves_enabled
     }
 }
 impl InstanceLaunchTemplate {
@@ -412,6 +161,7 @@ pub struct InstanceLaunchTemplateBuilder {
     pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
     pub(crate) fips_enabled: ::std::option::Option<bool>,
     pub(crate) capacity_reservations: ::std::option::Option<crate::types::CapacityReservationRequest>,
+    pub(crate) nitro_enclaves_enabled: ::std::option::Option<bool>,
 }
 impl InstanceLaunchTemplateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the instance profile that Amazon ECS applies to Amazon ECS Managed Instances. This instance profile must include the necessary permissions for your tasks to access Amazon Web Services services and resources.</p>
@@ -646,6 +396,29 @@ impl InstanceLaunchTemplateBuilder {
     pub fn get_capacity_reservations(&self) -> &::std::option::Option<crate::types::CapacityReservationRequest> {
         &self.capacity_reservations
     }
+    /// <p>Specifies whether instances that this capacity provider launches have <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-ec2-nitro-sandboxes.html">Nitro Sandbox</a> enabled. Enable this setting to run tasks that use the <code>ISOLATED_SANDBOX</code> or <code>CONFIDENTIAL_SANDBOX</code> isolation mode.</p>
+    /// <p>When you enable this setting, the capacity provider must include at least one instance type that supports Nitro Sandbox. You can't enable this setting together with local storage (the <code>useLocalStorage</code> setting in <code>localStorageConfiguration</code>).</p>
+    /// <p>The default value is <code>false</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/isolated-confidential-tasks.html">Isolated and confidential tasks</a> in <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn nitro_enclaves_enabled(mut self, input: bool) -> Self {
+        self.nitro_enclaves_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether instances that this capacity provider launches have <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-ec2-nitro-sandboxes.html">Nitro Sandbox</a> enabled. Enable this setting to run tasks that use the <code>ISOLATED_SANDBOX</code> or <code>CONFIDENTIAL_SANDBOX</code> isolation mode.</p>
+    /// <p>When you enable this setting, the capacity provider must include at least one instance type that supports Nitro Sandbox. You can't enable this setting together with local storage (the <code>useLocalStorage</code> setting in <code>localStorageConfiguration</code>).</p>
+    /// <p>The default value is <code>false</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/isolated-confidential-tasks.html">Isolated and confidential tasks</a> in <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn set_nitro_enclaves_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.nitro_enclaves_enabled = input;
+        self
+    }
+    /// <p>Specifies whether instances that this capacity provider launches have <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-ec2-nitro-sandboxes.html">Nitro Sandbox</a> enabled. Enable this setting to run tasks that use the <code>ISOLATED_SANDBOX</code> or <code>CONFIDENTIAL_SANDBOX</code> isolation mode.</p>
+    /// <p>When you enable this setting, the capacity provider must include at least one instance type that supports Nitro Sandbox. You can't enable this setting together with local storage (the <code>useLocalStorage</code> setting in <code>localStorageConfiguration</code>).</p>
+    /// <p>The default value is <code>false</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/isolated-confidential-tasks.html">Isolated and confidential tasks</a> in <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_nitro_enclaves_enabled(&self) -> &::std::option::Option<bool> {
+        &self.nitro_enclaves_enabled
+    }
     /// Consumes the builder and constructs a [`InstanceLaunchTemplate`](crate::types::InstanceLaunchTemplate).
     /// This method will fail if any of the following fields are not set:
     /// - [`ec2_instance_profile_arn`](crate::types::builders::InstanceLaunchTemplateBuilder::ec2_instance_profile_arn)
@@ -666,6 +439,7 @@ impl InstanceLaunchTemplateBuilder {
             instance_requirements: self.instance_requirements,
             fips_enabled: self.fips_enabled,
             capacity_reservations: self.capacity_reservations,
+            nitro_enclaves_enabled: self.nitro_enclaves_enabled,
         })
     }
 }

@@ -15,7 +15,12 @@ use aws_smithy_runtime_api::client::interceptors::context::{
     BeforeDeserializationInterceptorContextMut, BeforeSerializationInterceptorContextMut, Input,
 };
 use aws_smithy_runtime_api::client::interceptors::{dyn_dispatch_hint, Intercept};
+use aws_smithy_runtime_api::client::retries::RequestAttempts;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
+use aws_smithy_runtime_api::client::unit_of_work::checksums::{
+    ChecksumEvent, ChecksumEventKind, ChecksumSkip, Match, Mismatch, NotValidated, ObserveResponseChecksum, SharedResponseChecksumObserver,
+    Validating,
+};
 use aws_smithy_runtime_api::http::Headers;
 use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::checksum_config::ResponseChecksumValidation;
@@ -127,16 +132,61 @@ where
             true
         };
 
-        if validation_enabled {
-            let response = context.response_mut();
-            let maybe_checksum_headers = check_headers_for_precalculated_checksum(response.headers(), self.response_algorithms);
+        let response = context.response_mut();
+        // Observers are registered by callers that want to know how validation went, such as a
+        // `Capture` from `aws-smithy-observability`. Usually there are none.
+        let observers: Vec<SharedResponseChecksumObserver> = cfg.load::<SharedResponseChecksumObserver>().cloned().collect();
+        // Only an attempt with observers looks up its number, so an attempt without one still
+        // costs a single config-bag miss.
+        let attempt = if observers.is_empty() {
+            1
+        } else {
+            cfg.load::<RequestAttempts>().map_or(1, RequestAttempts::attempts)
+        };
+        // An error response is never validated: a mismatch would replace its modeled error with a
+        // body error that is retried as transient.
+        if !response.status().is_success() {
+            notify(
+                &observers,
+                attempt,
+                ChecksumEventKind::NotValidated(NotValidated::new(ChecksumSkip::ErrorResponse)),
+            );
+            return Ok(());
+        }
 
-            if let Some((checksum_algorithm, precalculated_checksum)) = maybe_checksum_headers {
+        if !validation_enabled {
+            notify(
+                &observers,
+                attempt,
+                ChecksumEventKind::NotValidated(NotValidated::new(ChecksumSkip::Disabled)),
+            );
+            return Ok(());
+        }
+
+        match check_headers_for_precalculated_checksum(response.headers(), self.response_algorithms) {
+            Ok((checksum_algorithm, precalculated_checksum)) => {
+                notify(
+                    &observers,
+                    attempt,
+                    ChecksumEventKind::Validating(Validating::new(checksum_algorithm.as_str())),
+                );
+
                 let mut body = SdkBody::taken();
                 mem::swap(&mut body, response.body_mut());
 
-                let mut body = wrap_body_with_checksum_validator(body, checksum_algorithm, precalculated_checksum);
+                let mut body = wrap_body_with_checksum_validator(body, checksum_algorithm, precalculated_checksum, observers, attempt);
                 mem::swap(&mut body, response.body_mut());
+            }
+            Err(skip) => {
+                let skip = if skip == ChecksumSkip::NoChecksum
+                    && !observers.is_empty()
+                    && has_unsupported_checksum_header(response.headers(), self.response_algorithms)
+                {
+                    ChecksumSkip::UnsupportedAlgorithm
+                } else {
+                    skip
+                };
+                notify(&observers, attempt, ChecksumEventKind::NotValidated(NotValidated::new(skip)));
             }
         }
 
@@ -146,27 +196,73 @@ where
 
 /// Given an `SdkBody`, a `aws_smithy_checksums::ChecksumAlgorithm`, and a pre-calculated checksum,
 /// return an `SdkBody` where the body will processed with the checksum algorithm and checked
-/// against the pre-calculated checksum.
+/// against the pre-calculated checksum. When validation ends, `observers` hear how it ended, in an
+/// event of `attempt`.
 pub(crate) fn wrap_body_with_checksum_validator(
     body: SdkBody,
     checksum_algorithm: ChecksumAlgorithm,
     precalculated_checksum: bytes::Bytes,
+    observers: Vec<SharedResponseChecksumObserver>,
+    attempt: u32,
 ) -> SdkBody {
     use aws_smithy_checksums::body::validate;
 
     body.map(move |body: SdkBody| {
-        SdkBody::from_body_1_x(validate::ChecksumBody::new(
-            body,
-            checksum_algorithm.into_impl(),
-            precalculated_checksum.clone(),
-        ))
+        let body = validate::ChecksumBody::new(body, checksum_algorithm.into_impl(), precalculated_checksum.clone());
+        if observers.is_empty() {
+            return SdkBody::from_body_1_x(body);
+        }
+        let observers = observers.clone();
+        SdkBody::from_body_1_x(body.with_completion(move |end| report_end(&observers, attempt, end)))
     })
 }
 
-/// Given a `HeaderMap`, extract any checksum included in the headers as `Some(Bytes)`.
-/// If no checksum header is set, return `None`. If multiple checksum headers are set, the one that
-/// is fastest to compute will be chosen.
-pub(crate) fn check_headers_for_precalculated_checksum(headers: &Headers, response_algorithms: &[&str]) -> Option<(ChecksumAlgorithm, bytes::Bytes)> {
+/// Sends one event to every observer.
+fn notify(observers: &[SharedResponseChecksumObserver], attempt: u32, kind: ChecksumEventKind<'_>) {
+    let event = ChecksumEvent::new(attempt, kind);
+    observers.iter().for_each(|o| o.on_event(&event));
+}
+
+fn report_end(observers: &[SharedResponseChecksumObserver], attempt: u32, end: aws_smithy_checksums::body::validate::ValidationEnd) {
+    use aws_smithy_checksums::body::validate::ValidationEnd;
+    use aws_smithy_types::base64;
+
+    match &end {
+        ValidationEnd::Matched { actual } => {
+            let computed = base64::encode(actual);
+            notify(observers, attempt, ChecksumEventKind::Matched(Match::new(&computed)));
+        }
+        ValidationEnd::Mismatched { expected, actual } => {
+            let (expected, computed) = (base64::encode(expected), base64::encode(actual));
+            let kind = ChecksumEventKind::Mismatched(Mismatch::new(&expected, &computed));
+            notify(observers, attempt, kind);
+        }
+        ValidationEnd::Dropped => notify(observers, attempt, ChecksumEventKind::Dropped),
+        // An ending added by a later `aws-smithy-checksums` is never reported as a match.
+        _ => notify(observers, attempt, ChecksumEventKind::Errored),
+    }
+}
+
+/// Whether the response has a checksum header for an algorithm that the operation lists but the
+/// SDK does not compute, such as MD5.
+fn has_unsupported_checksum_header(headers: &Headers, response_algorithms: &[&str]) -> bool {
+    response_algorithms
+        .iter()
+        .filter(|algorithm| {
+            !aws_smithy_checksums::http::CHECKSUM_ALGORITHMS_IN_PRIORITY_ORDER
+                .iter()
+                .any(|supported| supported.eq_ignore_ascii_case(algorithm))
+        })
+        .any(|algorithm| headers.get(format!("x-amz-checksum-{}", algorithm.to_ascii_lowercase())).is_some())
+}
+
+/// Given a `HeaderMap`, extract the checksum to validate the response body against. If multiple
+/// checksum headers are set, the one that is fastest to compute will be chosen. If that header
+/// can't be used, or no checksum header is set, return why.
+pub(crate) fn check_headers_for_precalculated_checksum(
+    headers: &Headers,
+    response_algorithms: &[&str],
+) -> Result<(ChecksumAlgorithm, bytes::Bytes), ChecksumSkip> {
     let checksum_algorithms_to_check = aws_smithy_checksums::http::CHECKSUM_ALGORITHMS_IN_PRIORITY_ORDER
         .into_iter()
         // Process list of algorithms, from fastest to slowest, that may have been used to checksum
@@ -194,22 +290,22 @@ pub(crate) fn check_headers_for_precalculated_checksum(headers: &Headers, respon
                       "This checksum is a part-level checksum which can't be validated by the Rust SDK. Disable checksum validation for this request to fix this warning.",
                   );
 
-                return None;
+                return Err(ChecksumSkip::PartLevelChecksum);
             }
 
             let precalculated_checksum = match aws_smithy_types::base64::decode(base64_encoded_precalculated_checksum) {
                 Ok(decoded_checksum) => decoded_checksum.into(),
                 Err(_) => {
                     tracing::error!("Checksum received from server could not be base64 decoded. No checksum validation will be performed.");
-                    return None;
+                    return Err(ChecksumSkip::InvalidChecksumHeader);
                 }
             };
 
-            return Some((checksum_algorithm, precalculated_checksum));
+            return Ok((checksum_algorithm, precalculated_checksum));
         }
     }
 
-    None
+    Err(ChecksumSkip::NoChecksum)
 }
 
 fn is_part_level_checksum(checksum: &str) -> bool {
@@ -242,11 +338,87 @@ fn is_part_level_checksum(checksum: &str) -> bool {
 
 #[cfg(test)]
 mod tests {
-    use super::{is_part_level_checksum, wrap_body_with_checksum_validator};
+    use super::{check_headers_for_precalculated_checksum, is_part_level_checksum, wrap_body_with_checksum_validator};
+    use aws_smithy_checksums::ChecksumAlgorithm;
+    use aws_smithy_runtime_api::client::unit_of_work::checksums::ChecksumSkip;
+    use aws_smithy_runtime_api::http::Headers;
     use aws_smithy_types::body::SdkBody;
     use aws_smithy_types::byte_stream::ByteStream;
     use aws_smithy_types::error::display::DisplayErrorContext;
     use bytes::Bytes;
+
+    /// The CRC32 of "Hello world", in base64.
+    const HELLO_WORLD_CRC32: &str = "i9aeUg==";
+
+    fn select(headers: &[(&'static str, &'static str)], response_algorithms: &[&str]) -> Result<(ChecksumAlgorithm, Bytes), ChecksumSkip> {
+        let mut map = Headers::new();
+        for (name, value) in headers {
+            map.insert(*name, *value);
+        }
+        check_headers_for_precalculated_checksum(&map, response_algorithms)
+    }
+
+    #[test]
+    fn header_selection() {
+        let crc32 = |bytes: &'static [u8]| Ok((ChecksumAlgorithm::Crc32, Bytes::from(bytes)));
+        for (headers, response_algorithms, expected) in [
+            (&[][..], &["crc32"][..], Err(ChecksumSkip::NoChecksum)),
+            (
+                &[("x-amz-checksum-crc32", HELLO_WORLD_CRC32)],
+                &["crc32"],
+                crc32(&[0x8b, 0xd6, 0x9e, 0x52]),
+            ),
+            // The model's algorithm names match in any case.
+            (
+                &[("x-amz-checksum-crc32", HELLO_WORLD_CRC32)],
+                &["CRC32"],
+                crc32(&[0x8b, 0xd6, 0x9e, 0x52]),
+            ),
+            // A header for an algorithm the model does not list is ignored.
+            (&[("x-amz-checksum-sha256", HELLO_WORLD_CRC32)], &["crc32"], Err(ChecksumSkip::NoChecksum)),
+            (
+                &[("x-amz-checksum-crc32", "i9aeUg==-3")],
+                &["crc32"],
+                Err(ChecksumSkip::PartLevelChecksum),
+            ),
+            (
+                &[("x-amz-checksum-crc32", "not base64!")],
+                &["crc32"],
+                Err(ChecksumSkip::InvalidChecksumHeader),
+            ),
+            // Empty and wrong-length values are still validated, so they fail as a mismatch.
+            (&[("x-amz-checksum-crc32", "")], &["crc32"], crc32(&[])),
+            (&[("x-amz-checksum-crc32", "AAA=")], &["crc32"], crc32(&[0, 0])),
+            // The fastest algorithm wins, and its header decides even when it can't be used.
+            (
+                &[("x-amz-checksum-crc32", HELLO_WORLD_CRC32), ("x-amz-checksum-crc32c", "AAAAAA==")],
+                &["crc32", "crc32c"],
+                Ok((ChecksumAlgorithm::Crc32c, Bytes::from_static(&[0, 0, 0, 0]))),
+            ),
+            (
+                &[("x-amz-checksum-crc32", HELLO_WORLD_CRC32), ("x-amz-checksum-crc32c", "AAAAAA==-3")],
+                &["crc32", "crc32c"],
+                Err(ChecksumSkip::PartLevelChecksum),
+            ),
+        ] {
+            assert_eq!(select(headers, response_algorithms), expected, "{headers:?} for {response_algorithms:?}");
+        }
+    }
+
+    #[tokio::test]
+    async fn empty_and_wrong_length_checksums_fail_as_a_mismatch() {
+        for value in ["", "AAA="] {
+            let (algorithm, precalculated) = select(&[("x-amz-checksum-crc32", value)], &["crc32"]).expect("the header is selected");
+            let body = wrap_body_with_checksum_validator(SdkBody::from("Hello world"), algorithm, precalculated, Vec::new(), 1);
+
+            let error = ByteStream::new(body).collect().await.unwrap_err();
+            let source = std::error::Error::source(&error).expect("the body's error");
+            assert!(
+                source.downcast_ref::<aws_smithy_checksums::body::validate::Error>().is_some(),
+                "{value:?}: {error}"
+            );
+        }
+    }
 
     #[tokio::test]
     async fn test_build_checksum_validated_body_works() {
@@ -255,7 +427,8 @@ mod tests {
         let precalculated_checksum = Bytes::from_static(&[0x8b, 0xd6, 0x9e, 0x52]);
         let body = ByteStream::new(SdkBody::from(input_text));
 
-        let body = body.map(move |sdk_body| wrap_body_with_checksum_validator(sdk_body, checksum_algorithm, precalculated_checksum.clone()));
+        let body =
+            body.map(move |sdk_body| wrap_body_with_checksum_validator(sdk_body, checksum_algorithm, precalculated_checksum.clone(), Vec::new(), 1));
 
         let mut validated_body = Vec::new();
         if let Err(e) = tokio::io::copy(&mut body.into_async_read(), &mut validated_body).await {
@@ -300,5 +473,239 @@ mod tests {
         assert!(!backwards);
         let double_dash = is_part_level_checksum("C9A5A6878D97B48CC965C1E41859F03-4-14");
         assert!(!double_dash);
+    }
+
+    mod producer {
+        use super::HELLO_WORLD_CRC32;
+        use crate::http_response_checksum::{ResponseChecksumInterceptor, ResponseChecksumInterceptorState};
+        use aws_smithy_runtime_api::box_error::BoxError;
+        use aws_smithy_runtime_api::client::interceptors::context::{Input, InterceptorContext};
+        use aws_smithy_runtime_api::client::interceptors::Intercept;
+        use aws_smithy_runtime_api::client::retries::RequestAttempts;
+        use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
+        use aws_smithy_runtime_api::client::unit_of_work::checksums::{
+            ChecksumEvent, ChecksumEventKind, ObserveResponseChecksum, SharedResponseChecksumObserver,
+        };
+        use aws_smithy_runtime_api::http::{Response, StatusCode};
+        use aws_smithy_types::body::SdkBody;
+        use aws_smithy_types::byte_stream::ByteStream;
+        use aws_smithy_types::checksum_config::ResponseChecksumValidation;
+        use aws_smithy_types::config_bag::{ConfigBag, Layer};
+        use std::sync::{Arc, Mutex};
+
+        /// GetObject's response algorithms, lowercased as codegen passes them.
+        const GET_OBJECT_ALGORITHMS: &[&str] = &[
+            "crc64nvme",
+            "crc32",
+            "crc32c",
+            "sha256",
+            "sha1",
+            "sha512",
+            "md5",
+            "xxhash64",
+            "xxhash3",
+            "xxhash128",
+        ];
+
+        /// Records the events it receives. It stands in for any observer, including one from a
+        /// second copy of `aws-smithy-observability`.
+        #[derive(Clone, Debug, Default)]
+        struct Recorder(Arc<Mutex<Vec<(u32, String)>>>);
+
+        impl Recorder {
+            fn events(&self) -> Vec<String> {
+                let recorded = self.0.lock().unwrap();
+                recorded.iter().map(|(_, event)| event.clone()).collect()
+            }
+
+            fn attempts(&self) -> Vec<u32> {
+                let recorded = self.0.lock().unwrap();
+                recorded.iter().map(|(attempt, _)| *attempt).collect()
+            }
+        }
+
+        impl ObserveResponseChecksum for Recorder {
+            fn on_event(&self, event: &ChecksumEvent<'_>) {
+                let recorded = match event.kind() {
+                    ChecksumEventKind::Validating(data) => {
+                        format!("validating {}", data.algorithm())
+                    }
+                    ChecksumEventKind::NotValidated(data) => {
+                        format!("not_validated {:?}", data.reason())
+                    }
+                    ChecksumEventKind::Matched(data) => format!("matched {}", data.computed()),
+                    ChecksumEventKind::Mismatched(data) => {
+                        format!("mismatched {} {}", data.expected(), data.computed())
+                    }
+                    ChecksumEventKind::Errored => "errored".to_string(),
+                    ChecksumEventKind::Dropped => "dropped".to_string(),
+                    other => format!("unknown {other:?}"),
+                };
+                self.0.lock().unwrap().push((event.attempt(), recorded));
+            }
+        }
+
+        /// Runs the interceptor's response hook on a "Hello world" response, with `observers`
+        /// registered the way a capture registers them, and returns the response body.
+        fn produce(
+            status: u16,
+            headers: &[(&'static str, &'static str)],
+            validation: ResponseChecksumValidation,
+            observers: &[&Recorder],
+        ) -> SdkBody {
+            let interceptor = ResponseChecksumInterceptor::new(
+                GET_OBJECT_ALGORITHMS,
+                |_: &Input| false,
+                |_: &mut Input, _: &ConfigBag| -> Result<(), BoxError> { Ok(()) },
+            );
+            let mut layer = Layer::new("test");
+            layer.store_put(ResponseChecksumInterceptorState { validation_enabled: false });
+            layer.store_put(validation);
+            layer.store_put(RequestAttempts::new(2));
+            let mut cfg = ConfigBag::of_layers(vec![layer]);
+            for observer in observers {
+                cfg.interceptor_state()
+                    .store_append(SharedResponseChecksumObserver::new((*observer).clone()));
+            }
+
+            let mut response = Response::new(StatusCode::try_from(status).unwrap(), SdkBody::from("Hello world"));
+            for (name, value) in headers {
+                response.headers_mut().insert(*name, *value);
+            }
+            let mut context = InterceptorContext::new(Input::doesnt_matter());
+            context.set_response(response);
+            interceptor
+                .modify_before_deserialization(
+                    &mut (&mut context).into(),
+                    &RuntimeComponentsBuilder::for_tests().build().unwrap(),
+                    &mut cfg,
+                )
+                .unwrap();
+            context.response_mut().unwrap().take_body()
+        }
+
+        const CRC32_HEADER: (&str, &str) = ("x-amz-checksum-crc32", HELLO_WORLD_CRC32);
+        const WRONG_CRC32_HEADER: (&str, &str) = ("x-amz-checksum-crc32", "AAAAAA==");
+
+        #[tokio::test]
+        async fn every_observer_hears_validating_then_matched() {
+            let (first, second) = (Recorder::default(), Recorder::default());
+            let body = produce(200, &[CRC32_HEADER], ResponseChecksumValidation::WhenSupported, &[&first, &second]);
+            assert_eq!(first.events(), ["validating crc32"]);
+
+            ByteStream::new(body).collect().await.unwrap();
+            for recorder in [first, second] {
+                assert_eq!(
+                    recorder.events(),
+                    ["validating crc32".to_string(), format!("matched {HELLO_WORLD_CRC32}"),]
+                );
+                assert_eq!(recorder.attempts(), [2, 2]);
+            }
+        }
+
+        #[tokio::test]
+        async fn a_mismatch_is_reported_with_both_checksums_in_base64() {
+            let recorder = Recorder::default();
+            let body = produce(200, &[WRONG_CRC32_HEADER], ResponseChecksumValidation::WhenSupported, &[&recorder]);
+
+            ByteStream::new(body).collect().await.unwrap_err();
+            assert_eq!(
+                recorder.events(),
+                ["validating crc32".to_string(), format!("mismatched AAAAAA== {HELLO_WORLD_CRC32}"),]
+            );
+        }
+
+        #[test]
+        fn a_body_dropped_before_its_end_reports_dropped() {
+            let recorder = Recorder::default();
+            drop(produce(200, &[CRC32_HEADER], ResponseChecksumValidation::WhenSupported, &[&recorder]));
+            assert_eq!(recorder.events(), ["validating crc32", "dropped"]);
+        }
+
+        #[test]
+        fn a_response_that_is_not_validated_reports_why() {
+            for (headers, validation, expected) in [
+                (&[][..], ResponseChecksumValidation::WhenSupported, "not_validated NoChecksum"),
+                (
+                    &[("x-amz-checksum-crc32", "i9aeUg==-3")],
+                    ResponseChecksumValidation::WhenSupported,
+                    "not_validated PartLevelChecksum",
+                ),
+                (
+                    &[("x-amz-checksum-crc32", "not base64!")],
+                    ResponseChecksumValidation::WhenSupported,
+                    "not_validated InvalidChecksumHeader",
+                ),
+                // GetObject lists MD5 and the XXHASH algorithms, which the SDK does not compute.
+                // Parsing "md5" as a `ChecksumAlgorithm` would give CRC32.
+                (
+                    &[("x-amz-checksum-md5", "AAAAAAAAAAAAAAAAAAAAAA==")],
+                    ResponseChecksumValidation::WhenSupported,
+                    "not_validated UnsupportedAlgorithm",
+                ),
+                (
+                    &[("x-amz-checksum-xxhash64", "AAAAAAAAAAA=")],
+                    ResponseChecksumValidation::WhenSupported,
+                    "not_validated UnsupportedAlgorithm",
+                ),
+                // A header for an algorithm the SDK computes decides, even when it can't be used.
+                (
+                    &[("x-amz-checksum-md5", "AAAAAAAAAAAAAAAAAAAAAA=="), ("x-amz-checksum-crc32", "i9aeUg==-3")],
+                    ResponseChecksumValidation::WhenSupported,
+                    "not_validated PartLevelChecksum",
+                ),
+                (
+                    &[
+                        ("x-amz-checksum-md5", "AAAAAAAAAAAAAAAAAAAAAA=="),
+                        ("x-amz-checksum-crc32", "not base64!"),
+                    ],
+                    ResponseChecksumValidation::WhenSupported,
+                    "not_validated InvalidChecksumHeader",
+                ),
+                (&[CRC32_HEADER], ResponseChecksumValidation::WhenRequired, "not_validated Disabled"),
+            ] {
+                let recorder = Recorder::default();
+                drop(produce(200, headers, validation, &[&recorder]));
+                assert_eq!(recorder.events(), [expected], "{headers:?}");
+            }
+        }
+
+        #[tokio::test]
+        async fn a_checksum_the_sdk_computes_wins_over_one_it_does_not() {
+            let recorder = Recorder::default();
+            let body = produce(
+                200,
+                &[("x-amz-checksum-md5", "AAAAAAAAAAAAAAAAAAAAAA=="), CRC32_HEADER],
+                ResponseChecksumValidation::WhenSupported,
+                &[&recorder],
+            );
+
+            ByteStream::new(body).collect().await.unwrap();
+            assert_eq!(
+                recorder.events(),
+                ["validating crc32".to_string(), format!("matched {HELLO_WORLD_CRC32}"),]
+            );
+        }
+
+        #[tokio::test]
+        async fn an_error_response_is_reported_but_never_validated() {
+            for status in [404, 503] {
+                let recorder = Recorder::default();
+                let body = produce(status, &[WRONG_CRC32_HEADER], ResponseChecksumValidation::WhenSupported, &[&recorder]);
+
+                // A wrong checksum must not turn the modeled error into a body error.
+                ByteStream::new(body)
+                    .collect()
+                    .await
+                    .unwrap_or_else(|e| panic!("{status} was validated: {e}"));
+                assert_eq!(recorder.events(), ["not_validated ErrorResponse"], "{status}");
+            }
+        }
+
+        #[tokio::test]
+        async fn without_observers_a_mismatch_still_fails_the_read() {
+            let body = produce(200, &[WRONG_CRC32_HEADER], ResponseChecksumValidation::WhenSupported, &[]);
+            ByteStream::new(body).collect().await.unwrap_err();
+        }
     }
 }

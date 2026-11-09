@@ -69,6 +69,12 @@ pub fn ser_eks_pod_properties(
     if let Some(var_22) = &input.share_process_namespace {
         object.key("shareProcessNamespace").boolean(*var_22);
     }
+    if let Some(var_23) = &input.security_context {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("securityContext").start_object();
+        crate::protocol_serde::shape_eks_pod_security_context::ser_eks_pod_security_context(&mut object_24, var_23)?;
+        object_24.finish();
+    }
     Ok(())
 }
 
@@ -137,6 +143,11 @@ where
                         }
                         "shareProcessNamespace" => {
                             builder = builder.set_share_process_namespace(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "securityContext" => {
+                            builder = builder.set_security_context(
+                                crate::protocol_serde::shape_eks_pod_security_context::de_eks_pod_security_context(tokens, _value, depth + 1)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

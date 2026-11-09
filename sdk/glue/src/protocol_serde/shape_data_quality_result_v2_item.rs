@@ -29,6 +29,20 @@ where
                                         .transpose()?,
                                 );
                             }
+                            "EvaluationRunMode" => {
+                                builder = builder.set_evaluation_run_mode(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::DataQualityEvaluationRunMode::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "DataQualityEvaluationConfig" => {
+                                builder = builder.set_data_quality_evaluation_config(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
                             "DataSource" => {
                                 builder =
                                     builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens, _value, depth + 1)?);

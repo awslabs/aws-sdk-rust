@@ -33,15 +33,15 @@ features = ["alloc", "half"]
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client"]
-version = "1.19.2"
+version = "1.20.0"
 
 [dependencies.aws-smithy-schema]
 path = "../aws-smithy-schema"
-version = "1.1.2"
+version = "1.2.0"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.9.1"
+version = "1.9.3"
 
 [dev-dependencies]
 criterion = "0.8.2"

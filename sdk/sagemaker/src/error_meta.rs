@@ -581,6 +581,32 @@ impl From<crate::operation::create_cluster::CreateClusterError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cluster_extension::CreateClusterExtensionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cluster_extension::CreateClusterExtensionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_cluster_extension::CreateClusterExtensionError> for Error {
+    fn from(err: crate::operation::create_cluster_extension::CreateClusterExtensionError) -> Self {
+        match err {
+            crate::operation::create_cluster_extension::CreateClusterExtensionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_cluster_extension::CreateClusterExtensionError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::create_cluster_extension::CreateClusterExtensionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::create_cluster_extension::CreateClusterExtensionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cluster_scheduler_config::CreateClusterSchedulerConfigError, R>>
     for Error
@@ -2468,6 +2494,32 @@ impl From<crate::operation::delete_cluster::DeleteClusterError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cluster_extension::DeleteClusterExtensionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cluster_extension::DeleteClusterExtensionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_cluster_extension::DeleteClusterExtensionError> for Error {
+    fn from(err: crate::operation::delete_cluster_extension::DeleteClusterExtensionError) -> Self {
+        match err {
+            crate::operation::delete_cluster_extension::DeleteClusterExtensionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_cluster_extension::DeleteClusterExtensionError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::delete_cluster_extension::DeleteClusterExtensionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::delete_cluster_extension::DeleteClusterExtensionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cluster_scheduler_config::DeleteClusterSchedulerConfigError, R>>
     for Error
@@ -4075,6 +4127,31 @@ impl From<crate::operation::describe_cluster_event::DescribeClusterEventError> f
         match err {
             crate::operation::describe_cluster_event::DescribeClusterEventError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::describe_cluster_event::DescribeClusterEventError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_cluster_extension::DescribeClusterExtensionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_cluster_extension::DescribeClusterExtensionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_cluster_extension::DescribeClusterExtensionError> for Error {
+    fn from(err: crate::operation::describe_cluster_extension::DescribeClusterExtensionError) -> Self {
+        match err {
+            crate::operation::describe_cluster_extension::DescribeClusterExtensionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::describe_cluster_extension::DescribeClusterExtensionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6341,6 +6418,30 @@ impl From<crate::operation::list_cluster_events::ListClusterEventsError> for Err
         match err {
             crate::operation::list_cluster_events::ListClusterEventsError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::list_cluster_events::ListClusterEventsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cluster_extensions::ListClusterExtensionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cluster_extensions::ListClusterExtensionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_cluster_extensions::ListClusterExtensionsError> for Error {
+    fn from(err: crate::operation::list_cluster_extensions::ListClusterExtensionsError) -> Self {
+        match err {
+            crate::operation::list_cluster_extensions::ListClusterExtensionsError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::list_cluster_extensions::ListClusterExtensionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -9235,6 +9336,31 @@ impl From<crate::operation::update_cluster::UpdateClusterError> for Error {
             crate::operation::update_cluster::UpdateClusterError::ResourceLimitExceeded(inner) => Error::ResourceLimitExceeded(inner),
             crate::operation::update_cluster::UpdateClusterError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::update_cluster::UpdateClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cluster_extension::UpdateClusterExtensionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cluster_extension::UpdateClusterExtensionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_cluster_extension::UpdateClusterExtensionError> for Error {
+    fn from(err: crate::operation::update_cluster_extension::UpdateClusterExtensionError) -> Self {
+        match err {
+            crate::operation::update_cluster_extension::UpdateClusterExtensionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_cluster_extension::UpdateClusterExtensionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::update_cluster_extension::UpdateClusterExtensionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

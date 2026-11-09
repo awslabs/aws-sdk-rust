@@ -320,6 +320,8 @@ mod create_auto_ml_job_v2;
 
 mod create_cluster;
 
+mod create_cluster_extension;
+
 mod create_cluster_scheduler_config;
 
 mod create_code_repository;
@@ -491,6 +493,8 @@ mod delete_association;
 
 mod delete_cluster;
 
+mod delete_cluster_extension;
+
 mod delete_cluster_scheduler_config;
 
 mod delete_code_repository;
@@ -622,6 +626,8 @@ mod describe_auto_ml_job_v2;
 mod describe_cluster;
 
 mod describe_cluster_event;
+
+mod describe_cluster_extension;
 
 mod describe_cluster_node;
 
@@ -802,6 +808,8 @@ mod list_auto_ml_jobs;
 mod list_candidates_for_auto_ml_job;
 
 mod list_cluster_events;
+
+mod list_cluster_extensions;
 
 mod list_cluster_nodes;
 
@@ -1040,6 +1048,8 @@ mod update_app_image_config;
 mod update_artifact;
 
 mod update_cluster;
+
+mod update_cluster_extension;
 
 mod update_cluster_scheduler_config;
 
