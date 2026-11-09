@@ -2813,6 +2813,10 @@ source_hash = '9d25fc5582bf478654626b796607f76f146332ddca7d0bbafaa9f9e4dd21cf3c'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '205eabc7acfa23536b7dda071e4bbe9239653e81f137951ee1ccf1245d436d00'
+
+[release]
+tag = 'release-2026-11-09'
+
 [release.crates]
 aws-config = '1.13.1'
 aws-runtime = '1.10.3'

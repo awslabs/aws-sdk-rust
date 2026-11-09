@@ -1,4 +1,608 @@
 <!-- Do not manually edit this file. Use the `changelogger` tool. -->
+November 9th, 2026
+==================
+**New this release:**
+- :tada: ([smithy-rs#4718](https://github.com/smithy-lang/smithy-rs/issues/4718), [smithy-rs#4990](https://github.com/smithy-lang/smithy-rs/issues/4990)) Add `aws_smithy_observability::unit_of_work`, which tells a caller whether a response body was
+    validated against its checksum. Attach a `Capture` carrying a `checksums::ChecksumCapture` with
+    `.customize().interceptor(..)`, read the body, then call `try_outcome()`: it reads `Validated` with
+    the algorithm and computed checksum, `Mismatch` with both checksums, `NotValidated` with a reason,
+    or `Incomplete`. The SDK reports through a new stable contract in `aws-smithy-runtime-api`
+    (`client::unit_of_work::checksums`), so a capture keeps working when the caller and the SDK resolve
+    different releases of `aws-smithy-observability`. `aws-smithy-checksums` adds
+    `ChecksumBody::with_completion`.
+- :tada: The following AWS SDK clients now use schema-based serialization and
+    deserialization instead of the legacy per-shape `protocol_serde` code.
+
+    `awsJson1_1`:
+
+    - `aws-sdk-ecr`
+    - `aws-sdk-kms`
+    - `aws-sdk-cloudwatchlogs`
+    - `aws-sdk-secretsmanager`
+
+    `awsJson1_0`:
+
+    - `aws-sdk-opensearchserverless`
+    - `aws-sdk-proton`
+    - `aws-sdk-cloudcontrol`
+    - `aws-sdk-paymentcryptography`
+
+    `rpcv2Cbor`:
+
+    - `aws-sdk-cloudwatch`
+
+    `restJson1`:
+
+    - `aws-sdk-cleanrooms`
+    - `aws-sdk-glacier`
+    - `aws-sdk-mediapackage`
+    - `aws-sdk-networkmanager`
+    - `aws-sdk-neptunegraph`
+    - `aws-sdk-securitylake`
+    - `aws-sdk-marketplacecatalog`
+    - `aws-sdk-iot`
+    - `aws-sdk-outposts`
+    - `aws-sdk-managedblockchainquery`
+    - `aws-sdk-mediaconnect`
+    - `aws-sdk-vpclattice`
+    - `aws-sdk-grafana`
+    - `aws-sdk-lexruntimev2`
+    - `aws-sdk-ivs`
+    - `aws-sdk-amp`
+    - `aws-sdk-schemas`
+    - `aws-sdk-connectcases`
+    - `aws-sdk-medialive`
+    - `aws-sdk-ram`
+    - `aws-sdk-accessanalyzer`
+    - `aws-sdk-signer`
+    - `aws-sdk-lexmodelsv2`
+    - `aws-sdk-imagebuilder`
+    - `aws-sdk-emrcontainers`
+    - `aws-sdk-mediaconvert`
+    - `aws-sdk-quicksight`
+    - `aws-sdk-pipes`
+    - `aws-sdk-drs`
+    - `aws-sdk-guardduty`
+    - `aws-sdk-inspector2`
+    - `aws-sdk-pinpoint`
+    - `aws-sdk-appsync`
+    - `aws-sdk-groundstation`
+    - `aws-sdk-resourcegroups`
+    - `aws-sdk-bedrockagent`
+    - `aws-sdk-transcribestreaming`
+    - `aws-sdk-bedrockagentruntime`
+    - `aws-sdk-ssooidc`
+    - `aws-sdk-connect`
+    - `aws-sdk-mq`
+    - `aws-sdk-amplify`
+    - `aws-sdk-fis`
+    - `aws-sdk-bedrock`
+    - `aws-sdk-appconfig`
+
+    No change in behavior or public API is expected.
+- :bug: ([smithy-rs#4986](https://github.com/smithy-lang/smithy-rs/issues/4986), @xiazhvera) Fix `RequestChecksumCalculation::WhenRequired` ignoring a caller-set checksum algorithm. With `RequestChecksumCalculation::WhenRequired` and trait `requestChecksumRequired: false`, the SDK now calculates a request checksum when the caller sets the modeled request algorithm member. If the member is not set, no checksum is calculated as before.
+- :bug: ([aws-sdk-rust#1471](https://github.com/awslabs/aws-sdk-rust/issues/1471)) The `credentials-login` feature of `aws-config` now uses `p256` 0.14, addressing RUSTSEC-2026-0387.
+    It previously depended on `p256` 0.13, whose `crypto-bigint` 0.5 dependency has no patched release,
+    so the advisory could not be cleared with a lockfile update. The DPoP proofs sent when refreshing a
+    login session are unchanged.
+- :bug: ([smithy-rs#2833](https://github.com/smithy-lang/smithy-rs/issues/2833), @Regalias3) `ByteStream::from_path` and `ByteStream::read_from()` now read files with a 64 KiB buffer by default, up from 4 KiB. On a 64 MiB file this makes reads about 5x faster (174 to 899 MiB/s in the new `bytestream_from_file` benchmark). Each open file stream uses about 60 KiB more memory. To keep the old behavior, call `ByteStream::read_from().buffer_size(4096)`.
+- :bug: ([smithy-rs#4988](https://github.com/smithy-lang/smithy-rs/issues/4988)) Fix clock skew correction counting server processing time as clock skew. A long-running call, such
+    as a synchronous Lambda `Invoke` over 10 minutes, could make the next request on the same client
+    fail with `InvalidSignatureException`. The SDK now compares the response `Date` header to when the
+    response headers arrived instead of to the midpoint of the request.
+- ([smithy-rs#4916](https://github.com/smithy-lang/smithy-rs/issues/4916), @FalkWoldmann) Removed the `num-integer` dependency from `aws-smithy-types`. `DateTime` now uses `div_euclid` and `rem_euclid` from std, which give the same results here since all divisors are positive.
+- :bug: ([smithy-rs#4990](https://github.com/smithy-lang/smithy-rs/issues/4990)) Response checksums are no longer validated on error responses. An error response that carried a
+    checksum header was validated as if it were a success, so a mismatch replaced its modeled error with
+    a body error that was retried as transient. Error responses now keep their modeled errors.
+- :bug: ([smithy-rs#4863](https://github.com/smithy-lang/smithy-rs/issues/4863), @Regalias3) `BigDecimal` now compares and hashes by numeric value instead of by spelling. `"1e2"` equals `"100"`, `"1.0"` equals `"1.00"`, `"+5"` equals `"5"`, and every spelling of zero, such as `"-0.0"` and `"0"`, is equal. `AsRef<str>` still returns the original string, so serialization doesn't change.
+- :bug: ([smithy-rs#4960](https://github.com/smithy-lang/smithy-rs/issues/4960), @franco2002lu) Fix `DateTime` epoch-seconds formatting and parsing of timestamps before 1970 that have fractional seconds. Formatting -0.75 seconds produced `-1.25`, and parsing `-0.75` produced 0.75. Timestamps at or after 1970 are unaffected.
+- :bug: ([smithy-rs#4484](https://github.com/smithy-lang/smithy-rs/issues/4484), @thomasqueirozb) Clients for services with operations modeled with `@requestCompression` (such as `aws-sdk-cloudwatch`) no longer enable the `http-body-0-4-x` feature of `aws-smithy-types`. The request compression interceptor only uses `http-body` 1.x, so these clients no longer pull in `http` 0.2 and `http-body` 0.4.
+
+**Service Features:**
+- `aws-sdk-batch` (1.139.0): Adds support for additional Amazon EKS security context settings in AWS Batch. Pod-level settings include fsGroup, runAsUser, runAsGroup, runAsNonRoot, and seccompProfile. Container-level settings add Linux capabilities and seccompProfile to existing runAsUser, runAsGroup, and runAsNonRoot support.
+- `aws-sdk-bedrockagentcore` (1.84.0): Adds the InvokeWebSearch API, which searches the web using the AWS-managed web search and returns ranked results with a text extract from each page. Results can be filtered by domain and by publication time.
+- `aws-sdk-datazone` (1.169.0): Adds support for Workday Data Connect and Workday Live Data Query connection types in Amazon DataZone connection APIs.
+- `aws-sdk-ecs` (1.158.0): Amazon ECS Managed Instances now supports isolated and confidential tasks, which run in AWS Nitro Sandboxes. Configure them with trustedExecutionConfiguration in task definitions and nitroEnclavesEnabled in capacity providers.
+- `aws-sdk-elasticsearch` (1.128.0): Adds cloned blue-green upgrades for Amazon OpenSearch Service domains. UpgradeElasticsearchDomain accepts DeploymentStrategyOptions to upgrade on a cloned cluster, the new UpdateClone API shifts search traffic, cuts over and sets retention, and DescribeDomainChangeProgress reports upgrade details.
+- `aws-sdk-evs` (1.53.0): Amazon EVS adds support for r7i.metal-24xl and r7i.metal-48xl EC2 bare metal instance types for self-deployed VMware Cloud Foundation environments. These diskless instance types use customer-connected external NFS storage, such as Amazon FSx for NetApp ONTAP, instead of local NVMe and vSAN.
+- `aws-sdk-glue` (1.185.0): We are releasing five new APIs to allow customers to enable Catalog-level data quality monitoring in AWS Glue Data Catalog, a new feature to perform data quality evaluation on collections of GDC tables selected by the customer, on a schedule or event-driven basis, using a custom or managed ruleset.
+- `aws-sdk-opensearch` (1.158.0): Adds cloned blue-green upgrades for Amazon OpenSearch Service domains. UpgradeDomain accepts DeploymentStrategyOptions to upgrade on a cloned cluster, the new UpdateClone API shifts search traffic, cuts over and sets retention, and DescribeDomainChangeProgress reports the upgrade details.
+- `aws-sdk-s3control` (1.139.0): Adds support for cross-account access grants with InstanceScope parameter for GetDataAccess and ListCallerAccessGrants operations in S3 Access Grants.
+- `aws-sdk-sagemaker` (1.250.0): Adds support for pipelines that AWS manages, filter ListPipelines by ManagedBy and run them with your own role via RoleArn on StartPipelineExecution. Adds pipeline version aliases to reference versions by name. Adds HubContent step metadata to ListPipelineExecutionSteps.
+- `aws-sdk-signin` (1.34.0): Adds the CreateBearerToken API, which exchanges your IAM credentials for a bearer token that can be used to access supported AWS services.
+
+**Contributors**
+Thank you for your contributions! ❤
+- @FalkWoldmann ([smithy-rs#4916](https://github.com/smithy-lang/smithy-rs/issues/4916))
+- @Regalias3 ([smithy-rs#2833](https://github.com/smithy-lang/smithy-rs/issues/2833), [smithy-rs#4863](https://github.com/smithy-lang/smithy-rs/issues/4863))
+- @franco2002lu ([smithy-rs#4960](https://github.com/smithy-lang/smithy-rs/issues/4960))
+- @thomasqueirozb ([smithy-rs#4484](https://github.com/smithy-lang/smithy-rs/issues/4484))
+- @xiazhvera ([smithy-rs#4986](https://github.com/smithy-lang/smithy-rs/issues/4986))
+
+**Crate Versions**
+<details>
+<summary>Click to expand to view crate versions...</summary>
+
+|Crate|Version|
+|-|-|
+|aws-config|1.13.1|
+|aws-credential-types|1.3.1|
+|aws-runtime|1.10.3|
+|aws-runtime-api|1.2.0|
+|aws-sdk-accessanalyzer|1.129.0|
+|aws-sdk-account|1.127.0|
+|aws-sdk-accountaccess|1.16.0|
+|aws-sdk-accountaccessruntime|1.1.0|
+|aws-sdk-acm|1.127.0|
+|aws-sdk-acmpca|1.127.0|
+|aws-sdk-agentregistry|1.18.0|
+|aws-sdk-agentregistrycontrol|1.19.0|
+|aws-sdk-aiops|1.49.0|
+|aws-sdk-amp|1.130.0|
+|aws-sdk-amplify|1.132.0|
+|aws-sdk-amplifybackend|1.121.0|
+|aws-sdk-amplifyuibuilder|1.120.0|
+|aws-sdk-apigateway|1.126.0|
+|aws-sdk-apigatewaymanagement|1.121.0|
+|aws-sdk-apigatewayv2|1.124.0|
+|aws-sdk-appconfig|1.126.0|
+|aws-sdk-appconfigdata|1.121.0|
+|aws-sdk-appfabric|1.121.0|
+|aws-sdk-appflow|1.122.0|
+|aws-sdk-appintegrations|1.128.0|
+|aws-sdk-applicationautoscaling|1.128.0|
+|aws-sdk-applicationcostprofiler|1.120.0|
+|aws-sdk-applicationdiscovery|1.123.0|
+|aws-sdk-applicationinsights|1.122.0|
+|aws-sdk-applicationsignals|1.102.0|
+|aws-sdk-appmesh|1.121.0|
+|aws-sdk-apprunner|1.121.0|
+|aws-sdk-appstream|1.139.0|
+|aws-sdk-appsync|1.134.0|
+|aws-sdk-arcregionswitch|1.49.0|
+|aws-sdk-arczonalshift|1.125.0|
+|aws-sdk-artifact|1.113.0|
+|aws-sdk-athena|1.129.0|
+|aws-sdk-auditmanager|1.125.0|
+|aws-sdk-autoscaling|1.142.0|
+|aws-sdk-autoscalingplans|1.121.0|
+|aws-sdk-b2bi|1.127.0|
+|aws-sdk-backup|1.133.0|
+|aws-sdk-backupgateway|1.123.0|
+|aws-sdk-backupsearch|1.69.0|
+|aws-sdk-batch|1.139.0|
+|aws-sdk-bcmdashboards|1.40.0|
+|aws-sdk-bcmdataexports|1.121.0|
+|aws-sdk-bcmpricingcalculator|1.78.0|
+|aws-sdk-bcmrecommendedactions|1.41.0|
+|aws-sdk-bedrock|1.167.0|
+|aws-sdk-bedrockagent|1.158.0|
+|aws-sdk-bedrockagentcore|1.84.0|
+|aws-sdk-bedrockagentcorecontrol|1.99.0|
+|aws-sdk-bedrockagentruntime|1.153.0|
+|aws-sdk-bedrockdataautomation|1.77.0|
+|aws-sdk-bedrockdataautomationruntime|1.74.0|
+|aws-sdk-bedrockruntime|1.154.0|
+|aws-sdk-billing|1.81.0|
+|aws-sdk-billingconductor|1.126.0|
+|aws-sdk-braket|1.126.0|
+|aws-sdk-budgets|1.131.0|
+|aws-sdk-chatbot|1.110.0|
+|aws-sdk-chime|1.122.0|
+|aws-sdk-chimesdkidentity|1.120.0|
+|aws-sdk-chimesdkmediapipelines|1.122.0|
+|aws-sdk-chimesdkmeetings|1.122.0|
+|aws-sdk-chimesdkmessaging|1.121.0|
+|aws-sdk-chimesdkvoice|1.126.0|
+|aws-sdk-cleanrooms|1.148.0|
+|aws-sdk-cleanroomsml|1.128.0|
+|aws-sdk-cloud9|1.121.0|
+|aws-sdk-cloudcontrol|1.121.0|
+|aws-sdk-clouddirectory|1.121.0|
+|aws-sdk-cloudformation|1.137.0|
+|aws-sdk-cloudfront|1.142.0|
+|aws-sdk-cloudfrontkeyvaluestore|1.119.0|
+|aws-sdk-cloudhsm|1.121.0|
+|aws-sdk-cloudhsmv2|1.124.0|
+|aws-sdk-cloudsearch|1.121.0|
+|aws-sdk-cloudsearchdomain|1.121.0|
+|aws-sdk-cloudtrail|1.131.0|
+|aws-sdk-cloudtraildata|1.121.0|
+|aws-sdk-cloudwatch|1.141.0|
+|aws-sdk-cloudwatchevents|1.121.0|
+|aws-sdk-cloudwatchlogs|1.164.0|
+|aws-sdk-cloudwatchomni|1.9.0|
+|aws-sdk-codeartifact|1.123.0|
+|aws-sdk-codebuild|1.146.0|
+|aws-sdk-codecatalyst|1.121.0|
+|aws-sdk-codecommit|1.124.0|
+|aws-sdk-codeconnections|1.106.0|
+|aws-sdk-codedeploy|1.125.0|
+|aws-sdk-codeguruprofiler|1.120.0|
+|aws-sdk-codegurureviewer|1.120.0|
+|aws-sdk-codegurusecurity|1.121.0|
+|aws-sdk-codepipeline|1.132.0|
+|aws-sdk-codestarconnections|1.122.0|
+|aws-sdk-codestarnotifications|1.121.0|
+|aws-sdk-cognitoidentity|1.122.0|
+|aws-sdk-cognitoidentityprovider|1.145.0|
+|aws-sdk-cognitosync|1.121.0|
+|aws-sdk-comprehend|1.120.0|
+|aws-sdk-comprehendmedical|1.121.0|
+|aws-sdk-computeoptimizer|1.129.0|
+|aws-sdk-computeoptimizerautomation|1.32.0|
+|aws-sdk-config|1.132.0|
+|aws-sdk-connect|1.223.0|
+|aws-sdk-connectcampaigns|1.123.0|
+|aws-sdk-connectcampaignsv2|1.80.0|
+|aws-sdk-connectcases|1.136.0|
+|aws-sdk-connectcontactlens|1.125.0|
+|aws-sdk-connecthealth|1.28.0|
+|aws-sdk-connectparticipant|1.127.0|
+|aws-sdk-continuum|1.3.0|
+|aws-sdk-controlcatalog|1.106.0|
+|aws-sdk-controltower|1.129.0|
+|aws-sdk-costandusagereport|1.122.0|
+|aws-sdk-costexplorer|1.139.0|
+|aws-sdk-costoptimizationhub|1.128.0|
+|aws-sdk-customerprofiles|1.137.0|
+|aws-sdk-databasemigration|1.134.0|
+|aws-sdk-databrew|1.121.0|
+|aws-sdk-dataexchange|1.124.0|
+|aws-sdk-datapipeline|1.121.0|
+|aws-sdk-datasync|1.134.0|
+|aws-sdk-datazone|1.169.0|
+|aws-sdk-dax|1.122.0|
+|aws-sdk-deadline|1.126.0|
+|aws-sdk-detective|1.121.0|
+|aws-sdk-devicefarm|1.128.0|
+|aws-sdk-devopsagent|1.33.0|
+|aws-sdk-devopsguru|1.120.0|
+|aws-sdk-directconnect|1.128.0|
+|aws-sdk-directory|1.126.0|
+|aws-sdk-directoryservicedata|1.78.0|
+|aws-sdk-dlm|1.121.0|
+|aws-sdk-docdb|1.129.0|
+|aws-sdk-docdbelastic|1.122.0|
+|aws-sdk-drs|1.129.0|
+|aws-sdk-dsql|1.80.0|
+|aws-sdk-dynamodb|1.138.0|
+|aws-sdk-dynamodbstreams|1.123.0|
+|aws-sdk-ebs|1.120.0|
+|aws-sdk-ec2|1.276.0|
+|aws-sdk-ec2instanceconnect|1.121.0|
+|aws-sdk-ecr|1.139.0|
+|aws-sdk-ecrpublic|1.123.0|
+|aws-sdk-ecs|1.158.0|
+|aws-sdk-efs|1.124.0|
+|aws-sdk-eks|1.161.0|
+|aws-sdk-eksauth|1.119.0|
+|aws-sdk-elasticache|1.130.0|
+|aws-sdk-elasticbeanstalk|1.124.0|
+|aws-sdk-elasticloadbalancing|1.122.0|
+|aws-sdk-elasticloadbalancingv2|1.135.0|
+|aws-sdk-elasticsearch|1.128.0|
+|aws-sdk-elastictranscoder|1.120.0|
+|aws-sdk-elementalinference|1.31.0|
+|aws-sdk-emr|1.134.0|
+|aws-sdk-emrcontainers|1.129.0|
+|aws-sdk-emrserverless|1.133.0|
+|aws-sdk-endusermessaging|1.6.0|
+|aws-sdk-entityresolution|1.133.0|
+|aws-sdk-eventbridge|1.128.0|
+|aws-sdk-eventbridgev2|1.8.0|
+|aws-sdk-evs|1.53.0|
+|aws-sdk-firehose|1.129.0|
+|aws-sdk-fis|1.123.0|
+|aws-sdk-fms|1.125.0|
+|aws-sdk-forecast|1.120.0|
+|aws-sdk-forecastquery|1.120.0|
+|aws-sdk-frauddetector|1.120.0|
+|aws-sdk-freetier|1.118.0|
+|aws-sdk-fsx|1.134.0|
+|aws-sdk-gamelift|1.138.0|
+|aws-sdk-gameliftstreams|1.69.0|
+|aws-sdk-geomaps|1.77.0|
+|aws-sdk-geoplaces|1.75.0|
+|aws-sdk-georoutes|1.77.0|
+|aws-sdk-glacier|1.122.0|
+|aws-sdk-globalaccelerator|1.123.0|
+|aws-sdk-glue|1.185.0|
+|aws-sdk-grafana|1.124.0|
+|aws-sdk-greengrass|1.121.0|
+|aws-sdk-greengrassv2|1.121.0|
+|aws-sdk-groundstation|1.126.0|
+|aws-sdk-guardduty|1.155.0|
+|aws-sdk-health|1.126.0|
+|aws-sdk-healthlake|1.128.0|
+|aws-sdk-iam|1.134.0|
+|aws-sdk-iamtoolbox|1.12.0|
+|aws-sdk-identitystore|1.123.0|
+|aws-sdk-imagebuilder|1.138.0|
+|aws-sdk-inspector|1.121.0|
+|aws-sdk-inspector2|1.139.0|
+|aws-sdk-inspectorscan|1.122.0|
+|aws-sdk-interconnect|1.24.0|
+|aws-sdk-internetmonitor|1.125.0|
+|aws-sdk-invoicing|1.77.0|
+|aws-sdk-iot|1.136.0|
+|aws-sdk-iotdataplane|1.121.0|
+|aws-sdk-iotdeviceadvisor|1.121.0|
+|aws-sdk-iotfleetwise|1.127.0|
+|aws-sdk-iotjobsdataplane|1.121.0|
+|aws-sdk-iotmanagedintegrations|1.65.0|
+|aws-sdk-iotsecuretunneling|1.122.0|
+|aws-sdk-iotsitewise|1.131.0|
+|aws-sdk-iotthingsgraph|1.120.0|
+|aws-sdk-iottwinmaker|1.120.0|
+|aws-sdk-iotwireless|1.130.0|
+|aws-sdk-ivs|1.132.0|
+|aws-sdk-ivschat|1.121.0|
+|aws-sdk-ivsrealtime|1.134.0|
+|aws-sdk-kafka|1.135.0|
+|aws-sdk-kafkaconnect|1.126.0|
+|aws-sdk-kendra|1.123.0|
+|aws-sdk-kendraranking|1.120.0|
+|aws-sdk-keyspaces|1.127.0|
+|aws-sdk-keyspacesstreams|1.48.0|
+|aws-sdk-kinesis|1.131.0|
+|aws-sdk-kinesisanalytics|1.121.0|
+|aws-sdk-kinesisanalyticsv2|1.126.0|
+|aws-sdk-kinesisvideo|1.123.0|
+|aws-sdk-kinesisvideoarchivedmedia|1.121.0|
+|aws-sdk-kinesisvideomedia|1.121.0|
+|aws-sdk-kinesisvideosignaling|1.120.0|
+|aws-sdk-kinesisvideowebrtcstorage|1.121.0|
+|aws-sdk-kms|1.130.0|
+|aws-sdk-lakeformation|1.127.0|
+|aws-sdk-lambda|1.157.0|
+|aws-sdk-lambdacore|1.19.0|
+|aws-sdk-lambdamicrovms|1.20.0|
+|aws-sdk-lambdaweb|1.8.0|
+|aws-sdk-launchwizard|1.123.0|
+|aws-sdk-lexmodelbuilding|1.122.0|
+|aws-sdk-lexmodelsv2|1.133.0|
+|aws-sdk-lexruntime|1.120.0|
+|aws-sdk-lexruntimev2|1.121.0|
+|aws-sdk-licensemanager|1.125.0|
+|aws-sdk-licensemanagerlinuxsubscriptions|1.121.0|
+|aws-sdk-licensemanagerusersubscriptions|1.124.0|
+|aws-sdk-lightsail|1.137.0|
+|aws-sdk-location|1.125.0|
+|aws-sdk-lookoutequipment|1.123.0|
+|aws-sdk-m2|1.124.0|
+|aws-sdk-machinelearning|1.121.0|
+|aws-sdk-macie2|1.125.0|
+|aws-sdk-mailmanager|1.107.0|
+|aws-sdk-managedblockchain|1.120.0|
+|aws-sdk-managedblockchainquery|1.123.0|
+|aws-sdk-marketplaceagreement|1.125.0|
+|aws-sdk-marketplacecatalog|1.132.0|
+|aws-sdk-marketplacecommerceanalytics|1.121.0|
+|aws-sdk-marketplacedeployment|1.117.0|
+|aws-sdk-marketplacediscovery|1.27.0|
+|aws-sdk-marketplaceentitlement|1.127.0|
+|aws-sdk-marketplacemetering|1.125.0|
+|aws-sdk-marketplacereporting|1.76.0|
+|aws-sdk-mediaconnect|1.134.0|
+|aws-sdk-mediaconvert|1.155.0|
+|aws-sdk-medialive|1.166.0|
+|aws-sdk-mediapackage|1.121.0|
+|aws-sdk-mediapackagev2|1.141.0|
+|aws-sdk-mediapackagevod|1.121.0|
+|aws-sdk-mediastore|1.120.0|
+|aws-sdk-mediastoredata|1.121.0|
+|aws-sdk-mediatailor|1.139.0|
+|aws-sdk-medicalimaging|1.128.0|
+|aws-sdk-memorydb|1.124.0|
+|aws-sdk-mgn|1.128.0|
+|aws-sdk-migrationhub|1.121.0|
+|aws-sdk-migrationhubconfig|1.120.0|
+|aws-sdk-migrationhuborchestrator|1.121.0|
+|aws-sdk-migrationhubrefactorspaces|1.120.0|
+|aws-sdk-migrationhubstrategy|1.120.0|
+|aws-sdk-mpa|1.49.0|
+|aws-sdk-mq|1.126.0|
+|aws-sdk-mturk|1.120.0|
+|aws-sdk-mwaa|1.129.0|
+|aws-sdk-mwaaserverless|1.34.0|
+|aws-sdk-neptune|1.125.0|
+|aws-sdk-neptunedata|1.123.0|
+|aws-sdk-neptunegraph|1.120.0|
+|aws-sdk-networkfirewall|1.137.0|
+|aws-sdk-networkflowmonitor|1.76.0|
+|aws-sdk-networkmanager|1.125.0|
+|aws-sdk-networkmonitor|1.111.0|
+|aws-sdk-networksecuritymanager|1.8.0|
+|aws-sdk-notifications|1.74.0|
+|aws-sdk-notificationscontacts|1.71.0|
+|aws-sdk-novaact|1.30.0|
+|aws-sdk-oam|1.123.0|
+|aws-sdk-observabilityadmin|1.87.0|
+|aws-sdk-odb|1.57.0|
+|aws-sdk-omics|1.138.0|
+|aws-sdk-opensearch|1.158.0|
+|aws-sdk-opensearchserverless|1.130.0|
+|aws-sdk-organizations|1.138.0|
+|aws-sdk-osis|1.125.0|
+|aws-sdk-outposts|1.138.0|
+|aws-sdk-partnercentralaccount|1.35.0|
+|aws-sdk-partnercentralbenefits|1.30.0|
+|aws-sdk-partnercentralchannel|1.32.0|
+|aws-sdk-partnercentralrevenuemeasurement|1.18.0|
+|aws-sdk-partnercentralselling|1.85.0|
+|aws-sdk-paymentcryptography|1.131.0|
+|aws-sdk-paymentcryptographydata|1.130.0|
+|aws-sdk-pcaconnectorad|1.121.0|
+|aws-sdk-pcaconnectorscep|1.91.0|
+|aws-sdk-pcs|1.98.0|
+|aws-sdk-personalize|1.125.0|
+|aws-sdk-personalizeevents|1.121.0|
+|aws-sdk-personalizeruntime|1.120.0|
+|aws-sdk-pi|1.123.0|
+|aws-sdk-pinpoint|1.122.0|
+|aws-sdk-pinpointemail|1.120.0|
+|aws-sdk-pinpointsmsvoice|1.121.0|
+|aws-sdk-pinpointsmsvoicev2|1.135.0|
+|aws-sdk-pipes|1.123.0|
+|aws-sdk-polly|1.129.0|
+|aws-sdk-pricing|1.124.0|
+|aws-sdk-pricingplanmanager|1.15.0|
+|aws-sdk-proton|1.120.0|
+|aws-sdk-qapps|1.88.0|
+|aws-sdk-qbusiness|1.137.0|
+|aws-sdk-qconnect|1.137.0|
+|aws-sdk-quicksight|1.168.0|
+|aws-sdk-ram|1.123.0|
+|aws-sdk-rbin|1.123.0|
+|aws-sdk-rds|1.161.0|
+|aws-sdk-rdsdata|1.123.0|
+|aws-sdk-redshift|1.129.0|
+|aws-sdk-redshiftdata|1.127.0|
+|aws-sdk-redshiftserverless|1.130.0|
+|aws-sdk-rekognition|1.124.0|
+|aws-sdk-repostspace|1.119.0|
+|aws-sdk-resiliencehub|1.124.0|
+|aws-sdk-resiliencehubv2|1.24.0|
+|aws-sdk-resourceexplorer2|1.125.0|
+|aws-sdk-resourcegroups|1.124.0|
+|aws-sdk-resourcegroupstagging|1.120.0|
+|aws-sdk-rolesanywhere|1.127.0|
+|aws-sdk-route53|1.133.0|
+|aws-sdk-route53domains|1.127.0|
+|aws-sdk-route53globalresolver|1.33.0|
+|aws-sdk-route53profiles|1.100.0|
+|aws-sdk-route53recoverycluster|1.121.0|
+|aws-sdk-route53recoverycontrolconfig|1.121.0|
+|aws-sdk-route53recoveryreadiness|1.121.0|
+|aws-sdk-route53resolver|1.131.0|
+|aws-sdk-rtbfabric|1.39.0|
+|aws-sdk-rum|1.123.0|
+|aws-sdk-s3|1.158.0|
+|aws-sdk-s3control|1.139.0|
+|aws-sdk-s3files|1.24.0|
+|aws-sdk-s3outposts|1.121.0|
+|aws-sdk-s3tables|1.78.0|
+|aws-sdk-s3vectors|1.48.0|
+|aws-sdk-sagemaker|1.250.0|
+|aws-sdk-sagemakera2iruntime|1.120.0|
+|aws-sdk-sagemakeredge|1.120.0|
+|aws-sdk-sagemakerfeaturestoreruntime|1.123.0|
+|aws-sdk-sagemakergeospatial|1.120.0|
+|aws-sdk-sagemakerjobruntime|1.19.0|
+|aws-sdk-sagemakermetrics|1.122.0|
+|aws-sdk-sagemakerruntime|1.124.0|
+|aws-sdk-sagemakerruntimehttp2|1.31.0|
+|aws-sdk-sagemakertrainingsessionruntime|1.6.0|
+|aws-sdk-savingsplans|1.123.0|
+|aws-sdk-scheduler|1.120.0|
+|aws-sdk-schemas|1.120.0|
+|aws-sdk-secretsmanager|1.126.0|
+|aws-sdk-securityagent|1.40.0|
+|aws-sdk-securityhub|1.139.0|
+|aws-sdk-securityir|1.76.0|
+|aws-sdk-securitylake|1.124.0|
+|aws-sdk-serverlessapplicationrepository|1.120.0|
+|aws-sdk-servicecatalog|1.122.0|
+|aws-sdk-servicecatalogappregistry|1.120.0|
+|aws-sdk-servicediscovery|1.121.0|
+|aws-sdk-servicequotas|1.122.0|
+|aws-sdk-ses|1.124.0|
+|aws-sdk-sesv2|1.146.0|
+|aws-sdk-sfn|1.126.0|
+|aws-sdk-shield|1.120.0|
+|aws-sdk-signer|1.121.0|
+|aws-sdk-signerdata|1.26.0|
+|aws-sdk-signin|1.34.0|
+|aws-sdk-simpledbv2|1.24.0|
+|aws-sdk-snowball|1.120.0|
+|aws-sdk-snowdevicemanagement|1.121.0|
+|aws-sdk-sns|1.122.0|
+|aws-sdk-socialmessaging|1.82.0|
+|aws-sdk-sqs|1.120.0|
+|aws-sdk-ssm|1.135.0|
+|aws-sdk-ssmcontacts|1.119.0|
+|aws-sdk-ssmguiconnect|1.56.0|
+|aws-sdk-ssmincidents|1.120.0|
+|aws-sdk-ssmquicksetup|1.84.0|
+|aws-sdk-ssmsap|1.125.0|
+|aws-sdk-sso|1.120.0|
+|aws-sdk-ssoadmin|1.126.0|
+|aws-sdk-ssooidc|1.122.0|
+|aws-sdk-storagegateway|1.128.0|
+|aws-sdk-sts|1.125.0|
+|aws-sdk-supplychain|1.115.0|
+|aws-sdk-support|1.122.0|
+|aws-sdk-supportapp|1.120.0|
+|aws-sdk-supportauthz|1.18.0|
+|aws-sdk-sustainability|1.25.0|
+|aws-sdk-swf|1.122.0|
+|aws-sdk-synthetics|1.131.0|
+|aws-sdk-taxsettings|1.103.0|
+|aws-sdk-textract|1.120.0|
+|aws-sdk-timestreaminfluxdb|1.114.0|
+|aws-sdk-timestreamquery|1.125.0|
+|aws-sdk-timestreamwrite|1.122.0|
+|aws-sdk-transcribe|1.128.0|
+|aws-sdk-transcribestreaming|1.127.0|
+|aws-sdk-transfer|1.141.0|
+|aws-sdk-translate|1.121.0|
+|aws-sdk-trustedadvisor|1.123.0|
+|aws-sdk-uxc|1.24.0|
+|aws-sdk-verifiedpermissions|1.133.0|
+|aws-sdk-voiceid|1.120.0|
+|aws-sdk-vpclattice|1.129.0|
+|aws-sdk-waf|1.120.0|
+|aws-sdk-wafregional|1.122.0|
+|aws-sdk-wafv2|1.141.0|
+|aws-sdk-wellarchitected|1.122.0|
+|aws-sdk-wickr|1.31.0|
+|aws-sdk-wisdom|1.122.0|
+|aws-sdk-workdocs|1.121.0|
+|aws-sdk-workmail|1.122.0|
+|aws-sdk-workmailmessageflow|1.120.0|
+|aws-sdk-workspaces|1.146.0|
+|aws-sdk-workspacesinstances|1.52.0|
+|aws-sdk-workspacesthinclient|1.126.0|
+|aws-sdk-workspacesweb|1.131.0|
+|aws-sdk-xray|1.122.0|
+|aws-sigv4|1.6.5|
+|aws-smithy-async|1.3.1|
+|aws-smithy-cbor|0.64.1|
+|aws-smithy-cbor-fuzz|0.0.0|
+|aws-smithy-checksums|0.65.1|
+|aws-smithy-compression|0.2.0|
+|aws-smithy-dns|0.2.3|
+|aws-smithy-eventstream|0.61.6|
+|aws-smithy-eventstream-fuzz|0.1.0|
+|aws-smithy-experimental|0.3.0|
+|aws-smithy-http|0.64.3|
+|aws-smithy-http-client|1.5.2|
+|aws-smithy-http-fuzz|0.0.0|
+|aws-smithy-json|0.65.1|
+|aws-smithy-json-fuzz|0.0.0|
+|aws-smithy-legacy-http|0.63.3|
+|aws-smithy-mocks|0.3.0|
+|aws-smithy-observability|0.3.1|
+|aws-smithy-observability-otel|0.2.3|
+|aws-smithy-protocol-test|0.64.0|
+|aws-smithy-query|0.64.0|
+|aws-smithy-query-fuzz|0.0.0|
+|aws-smithy-runtime|1.16.2|
+|aws-smithy-runtime-api|1.20.0|
+|aws-smithy-runtime-api-macros|1.2.0|
+|aws-smithy-schema|1.2.0|
+|aws-smithy-types|1.9.3|
+|aws-smithy-types-convert|0.61.1|
+|aws-smithy-types-fuzz|0.0.0|
+|aws-smithy-wasm|0.2.0|
+|aws-smithy-xml|0.64.1|
+|aws-smithy-xml-fuzz|0.0.0|
+|aws-types|1.7.0|
+|aws-types-fuzz|0.0.0|
+</details>
+
+
 November 6th, 2026
 ==================
 **Service Features:**
