@@ -22,7 +22,7 @@ impl crate::operation::resume_contact::builders::ResumeContactInputBuilder {
 }
 /// Fluent builder constructing a request to `ResumeContact`.
 ///
-/// <p>Allows resuming a task contact in a paused state.</p>
+/// <p>Resumes a task or email contact in a paused state.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResumeContactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

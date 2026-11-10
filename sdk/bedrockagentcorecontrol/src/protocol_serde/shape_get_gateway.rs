@@ -159,6 +159,13 @@ pub(crate) fn de_get_gateway(
                             .transpose()?,
                     );
                 }
+                "domainOverride" => {
+                    builder = builder.set_domain_override(crate::protocol_serde::shape_domain_override::de_domain_override(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "exceptionLevel" => {
                     builder = builder.set_exception_level(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

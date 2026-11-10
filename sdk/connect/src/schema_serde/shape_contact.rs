@@ -406,6 +406,12 @@ static CONTACT_MEMBER_GLOBAL_RESILIENCY_METADATA: ::aws_smithy_schema::Schema<'s
     "GlobalResiliencyMetadata",
     48,
 );
+static CONTACT_MEMBER_CONTACT_LENS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.connect#Contact$ContactLens", "com.amazonaws.connect", "Contact"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ContactLens",
+    49,
+);
 static CONTACT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.connect#Contact", "com.amazonaws.connect", "Contact"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -459,6 +465,7 @@ static CONTACT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schem
         &CONTACT_MEMBER_ATTRIBUTES,
         &CONTACT_MEMBER_NEXT_CONTACTS,
         &CONTACT_MEMBER_GLOBAL_RESILIENCY_METADATA,
+        &CONTACT_MEMBER_CONTACT_LENS,
     ],
 );
 impl crate::types::Contact {
@@ -675,6 +682,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Contact {
         }
         if let Some(ref val) = self.global_resiliency_metadata {
             ser.write_struct(&CONTACT_MEMBER_GLOBAL_RESILIENCY_METADATA, val)?;
+        }
+        if let Some(ref val) = self.contact_lens {
+            ser.write_struct(&CONTACT_MEMBER_CONTACT_LENS, val)?;
         }
         Ok(())
     }
@@ -1070,6 +1080,13 @@ impl crate::types::builders::ContactBuilder {
                         deser.read_null()?;
                     } else {
                         self.global_resiliency_metadata = Some(crate::types::GlobalResiliencyMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(49) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.contact_lens = Some(crate::types::ContactLens::deserialize(deser)?);
                     }
                 }
                 _ => {}

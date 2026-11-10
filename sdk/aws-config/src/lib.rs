@@ -957,15 +957,14 @@ mod loader {
                 .unwrap_or_else(|| TimeoutConfig::builder().build());
             timeout_config.take_defaults_from(&base_config);
 
-            let (retry_config, retry_config_explicitly_set) = match self.retry_config {
-                Some(rc) => (rc, true),
-                None => (
+            let (retry_config, retry_config_origin) = match self.retry_config {
+                Some(rc) => (rc, Origin::shared_config()),
+                None => {
                     retry_config::default_provider()
                         .configure(&conf)
-                        .retry_config()
-                        .await,
-                    false,
-                ),
+                        .retry_config_with_origin()
+                        .await
+                }
             };
             let conf = conf
                 .with_retry_config(retry_config.clone())
@@ -1003,9 +1002,7 @@ mod loader {
                 .time_source(time_source)
                 .service_config(service_config);
 
-            if retry_config_explicitly_set {
-                builder.insert_origin("retry_config", Origin::shared_config());
-            }
+            builder.insert_origin("retry_config", retry_config_origin);
             builder = builder.retry_config(retry_config);
 
             // If an endpoint URL is set programmatically, then our work is done.

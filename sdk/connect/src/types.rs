@@ -649,6 +649,8 @@ pub use crate::types::_contact_details::ContactDetails;
 
 pub use crate::types::_global_resiliency_metadata::GlobalResiliencyMetadata;
 
+pub use crate::types::_contact_lens::ContactLens;
+
 pub use crate::types::_evaluation_metadata::EvaluationMetadata;
 
 pub use crate::types::_evaluation_status::EvaluationStatus;
@@ -1111,6 +1113,8 @@ pub use crate::types::_case_entry::CaseEntry;
 
 pub use crate::types::_next_contact_entry::NextContactEntry;
 
+pub use crate::types::_conversational_analytics::ConversationalAnalytics;
+
 pub use crate::types::_evaluation_score::EvaluationScore;
 
 pub use crate::types::_auto_evaluation_details::AutoEvaluationDetails;
@@ -1347,6 +1351,10 @@ pub use crate::types::_next_contact_type::NextContactType;
 
 pub use crate::types::_next_contact_metadata::NextContactMetadata;
 
+pub use crate::types::_conversational_analytics_configuration::ConversationalAnalyticsConfiguration;
+
+pub use crate::types::_contact_analysis_reference_state::ContactAnalysisReferenceState;
+
 pub use crate::types::_contact_participant_role::ContactParticipantRole;
 
 pub use crate::types::_instance_replication_status::InstanceReplicationStatus;
@@ -1474,6 +1482,14 @@ pub use crate::types::_expiry::Expiry;
 pub use crate::types::_routing_criteria_step_status::RoutingCriteriaStepStatus;
 
 pub use crate::types::_quick_connect_contact_data::QuickConnectContactData;
+
+pub use crate::types::_contact_lens_channel_configuration::ContactLensChannelConfiguration;
+
+pub use crate::types::_contact_lens_redaction_configuration::ContactLensRedactionConfiguration;
+
+pub use crate::types::_contact_lens_summary_configuration::ContactLensSummaryConfiguration;
+
+pub use crate::types::_contact_lens_sentiment_configuration::ContactLensSentimentConfiguration;
 
 pub use crate::types::_evaluation_review_request_comment::EvaluationReviewRequestComment;
 
@@ -1853,6 +1869,8 @@ mod _contact_analysis;
 
 mod _contact_analysis_reference;
 
+mod _contact_analysis_reference_state;
+
 mod _contact_configuration;
 
 mod _contact_data_request;
@@ -1925,6 +1943,16 @@ mod _contact_initiation_method;
 
 mod _contact_interaction_type;
 
+mod _contact_lens;
+
+mod _contact_lens_channel_configuration;
+
+mod _contact_lens_redaction_configuration;
+
+mod _contact_lens_sentiment_configuration;
+
+mod _contact_lens_summary_configuration;
+
 mod _contact_media_processing_failure_mode;
 
 mod _contact_metric_info;
@@ -1960,6 +1988,10 @@ mod _control_plane_attribute_filter;
 mod _control_plane_tag_filter;
 
 mod _control_plane_user_attribute_filter;
+
+mod _conversational_analytics;
+
+mod _conversational_analytics_configuration;
 
 mod _create_case_action_definition;
 

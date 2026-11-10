@@ -489,6 +489,8 @@ pub use crate::types::_contact_details::ContactDetailsBuilder;
 
 pub use crate::types::_global_resiliency_metadata::GlobalResiliencyMetadataBuilder;
 
+pub use crate::types::_contact_lens::ContactLensBuilder;
+
 pub use crate::types::_evaluation_metadata::EvaluationMetadataBuilder;
 
 pub use crate::types::_instance_status_reason::InstanceStatusReasonBuilder;
@@ -853,6 +855,8 @@ pub use crate::types::_case_entry::CaseEntryBuilder;
 
 pub use crate::types::_next_contact_entry::NextContactEntryBuilder;
 
+pub use crate::types::_conversational_analytics::ConversationalAnalyticsBuilder;
+
 pub use crate::types::_evaluation_score::EvaluationScoreBuilder;
 
 pub use crate::types::_auto_evaluation_details::AutoEvaluationDetailsBuilder;
@@ -1003,6 +1007,10 @@ pub use crate::types::_audio_quality_metrics_info::AudioQualityMetricsInfoBuilde
 
 pub use crate::types::_email_recipient::EmailRecipientBuilder;
 
+pub use crate::types::_conversational_analytics_configuration::ConversationalAnalyticsConfigurationBuilder;
+
+pub use crate::types::_contact_analysis_reference_state::ContactAnalysisReferenceStateBuilder;
+
 pub use crate::types::_queue_reference::QueueReferenceBuilder;
 
 pub use crate::types::_agent_status_identifier::AgentStatusIdentifierBuilder;
@@ -1084,6 +1092,14 @@ pub use crate::types::_primary_attribute_value::PrimaryAttributeValueBuilder;
 pub use crate::types::_expiry::ExpiryBuilder;
 
 pub use crate::types::_quick_connect_contact_data::QuickConnectContactDataBuilder;
+
+pub use crate::types::_contact_lens_channel_configuration::ContactLensChannelConfigurationBuilder;
+
+pub use crate::types::_contact_lens_redaction_configuration::ContactLensRedactionConfigurationBuilder;
+
+pub use crate::types::_contact_lens_summary_configuration::ContactLensSummaryConfigurationBuilder;
+
+pub use crate::types::_contact_lens_sentiment_configuration::ContactLensSentimentConfigurationBuilder;
 
 pub use crate::types::_evaluation_review_request_comment::EvaluationReviewRequestCommentBuilder;
 

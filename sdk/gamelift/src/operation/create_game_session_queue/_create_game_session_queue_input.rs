@@ -15,7 +15,7 @@ pub struct CreateGameSessionQueueInput {
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>,
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location.</p>
     pub filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub priority_configuration: ::std::option::Option<crate::types::PriorityConfiguration>,
     /// <p>Information to be added to all events that are related to this game session queue.</p>
     pub custom_event_data: ::std::option::Option<::std::string::String>,
@@ -23,6 +23,8 @@ pub struct CreateGameSessionQueueInput {
     pub notification_target: ::std::option::Option<::std::string::String>,
     /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>An optional configuration that delivers game session placement insight logs to one or more destinations of your choice. Use these logs to diagnose why a game session placement is <code>FULFILLED</code>, <code>CANCELLED</code>, <code>TIMED_OUT</code>, or <code>FAILED</code>, which locations were evaluated, and the latency and cost factors that influenced each decision.</p>
+    pub log_configuration: ::std::option::Option<crate::types::GameSessionQueueLogConfiguration>,
 }
 impl CreateGameSessionQueueInput {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
@@ -51,7 +53,7 @@ impl CreateGameSessionQueueInput {
     pub fn filter_configuration(&self) -> ::std::option::Option<&crate::types::FilterConfiguration> {
         self.filter_configuration.as_ref()
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub fn priority_configuration(&self) -> ::std::option::Option<&crate::types::PriorityConfiguration> {
         self.priority_configuration.as_ref()
     }
@@ -69,6 +71,10 @@ impl CreateGameSessionQueueInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>An optional configuration that delivers game session placement insight logs to one or more destinations of your choice. Use these logs to diagnose why a game session placement is <code>FULFILLED</code>, <code>CANCELLED</code>, <code>TIMED_OUT</code>, or <code>FAILED</code>, which locations were evaluated, and the latency and cost factors that influenced each decision.</p>
+    pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::GameSessionQueueLogConfiguration> {
+        self.log_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateGameSessionQueueInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -82,6 +88,7 @@ impl ::std::fmt::Debug for CreateGameSessionQueueInput {
         formatter.field("custom_event_data", &"*** Sensitive Data Redacted ***");
         formatter.field("notification_target", &self.notification_target);
         formatter.field("tags", &self.tags);
+        formatter.field("log_configuration", &self.log_configuration);
         formatter.finish()
     }
 }
@@ -105,6 +112,7 @@ pub struct CreateGameSessionQueueInputBuilder {
     pub(crate) custom_event_data: ::std::option::Option<::std::string::String>,
     pub(crate) notification_target: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) log_configuration: ::std::option::Option<crate::types::GameSessionQueueLogConfiguration>,
 }
 impl CreateGameSessionQueueInputBuilder {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
@@ -196,17 +204,17 @@ impl CreateGameSessionQueueInputBuilder {
     pub fn get_filter_configuration(&self) -> &::std::option::Option<crate::types::FilterConfiguration> {
         &self.filter_configuration
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub fn priority_configuration(mut self, input: crate::types::PriorityConfiguration) -> Self {
         self.priority_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub fn set_priority_configuration(mut self, input: ::std::option::Option<crate::types::PriorityConfiguration>) -> Self {
         self.priority_configuration = input;
         self
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub fn get_priority_configuration(&self) -> &::std::option::Option<crate::types::PriorityConfiguration> {
         &self.priority_configuration
     }
@@ -258,6 +266,20 @@ impl CreateGameSessionQueueInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>An optional configuration that delivers game session placement insight logs to one or more destinations of your choice. Use these logs to diagnose why a game session placement is <code>FULFILLED</code>, <code>CANCELLED</code>, <code>TIMED_OUT</code>, or <code>FAILED</code>, which locations were evaluated, and the latency and cost factors that influenced each decision.</p>
+    pub fn log_configuration(mut self, input: crate::types::GameSessionQueueLogConfiguration) -> Self {
+        self.log_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An optional configuration that delivers game session placement insight logs to one or more destinations of your choice. Use these logs to diagnose why a game session placement is <code>FULFILLED</code>, <code>CANCELLED</code>, <code>TIMED_OUT</code>, or <code>FAILED</code>, which locations were evaluated, and the latency and cost factors that influenced each decision.</p>
+    pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::GameSessionQueueLogConfiguration>) -> Self {
+        self.log_configuration = input;
+        self
+    }
+    /// <p>An optional configuration that delivers game session placement insight logs to one or more destinations of your choice. Use these logs to diagnose why a game session placement is <code>FULFILLED</code>, <code>CANCELLED</code>, <code>TIMED_OUT</code>, or <code>FAILED</code>, which locations were evaluated, and the latency and cost factors that influenced each decision.</p>
+    pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::GameSessionQueueLogConfiguration> {
+        &self.log_configuration
+    }
     /// Consumes the builder and constructs a [`CreateGameSessionQueueInput`](crate::operation::create_game_session_queue::CreateGameSessionQueueInput).
     pub fn build(
         self,
@@ -275,6 +297,7 @@ impl CreateGameSessionQueueInputBuilder {
             custom_event_data: self.custom_event_data,
             notification_target: self.notification_target,
             tags: self.tags,
+            log_configuration: self.log_configuration,
         })
     }
 }
@@ -290,6 +313,7 @@ impl ::std::fmt::Debug for CreateGameSessionQueueInputBuilder {
         formatter.field("custom_event_data", &"*** Sensitive Data Redacted ***");
         formatter.field("notification_target", &self.notification_target);
         formatter.field("tags", &self.tags);
+        formatter.field("log_configuration", &self.log_configuration);
         formatter.finish()
     }
 }

@@ -331,4 +331,18 @@ impl UpdateGatewayFluentBuilder {
     pub fn get_waf_configuration(&self) -> &::std::option::Option<crate::types::WafConfiguration> {
         self.inner.get_waf_configuration()
     }
+    /// <p>The updated public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header. Specify this when clients reach the gateway through your own proxy or custom domain.</p>
+    pub fn domain_override(mut self, input: crate::types::DomainOverride) -> Self {
+        self.inner = self.inner.domain_override(input);
+        self
+    }
+    /// <p>The updated public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header. Specify this when clients reach the gateway through your own proxy or custom domain.</p>
+    pub fn set_domain_override(mut self, input: ::std::option::Option<crate::types::DomainOverride>) -> Self {
+        self.inner = self.inner.set_domain_override(input);
+        self
+    }
+    /// <p>The updated public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header. Specify this when clients reach the gateway through your own proxy or custom domain.</p>
+    pub fn get_domain_override(&self) -> &::std::option::Option<crate::types::DomainOverride> {
+        self.inner.get_domain_override()
+    }
 }

@@ -29,7 +29,7 @@ use aws_smithy_runtime_api::client::runtime_plugin::{
 use aws_smithy_runtime_api::client::stalled_stream_protection::StalledStreamProtectionConfig;
 use aws_smithy_runtime_api::shared::IntoShared;
 use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer, Layer};
-use aws_smithy_types::retry::RetryConfig;
+use aws_smithy_types::retry::{ReconnectMode, RetryConfig, RetrySpec};
 use aws_smithy_types::timeout::TimeoutConfig;
 use std::borrow::Cow;
 use std::time::Duration;
@@ -220,10 +220,6 @@ pub fn default_retry_config_plugin(
                 .with_config_validator(SharedConfigValidator::base_client_config_fn(
                     validate_retry_config,
                 ))
-                // TODO(retry 2.1 on by default): revert TokenBucketProvider to the old
-                // approach: `new()` takes `init: impl FnOnce() -> TokenBucket`, eagerly
-                // calls `TOKEN_BUCKET.get_or_init(default_partition.clone(), init)`, stores
-                // the result directly (no OnceLock), and the hot path is just `.clone()`.
                 .with_interceptor(SharedInterceptor::permanent(TokenBucketProvider::new(
                     retry_partition.clone(),
                 )))
@@ -240,6 +236,7 @@ pub fn default_retry_config_plugin(
 ///
 /// This version respects the behavior version to enable retries by default for newer versions.
 /// For AWS SDK clients with BehaviorVersion >= v2026_01_12, retries are enabled by default.
+/// For all clients with BehaviorVersion >= v2026_11_10, the default config uses Retry Behavior 2.1.
 pub fn default_retry_config_plugin_v2(params: &DefaultPluginParams) -> Option<SharedRuntimePlugin> {
     let retry_partition = RetryPartition::new(
         params
@@ -271,6 +268,14 @@ pub fn default_retry_config_plugin_v2(params: &DefaultPluginParams) -> Option<Sh
                 } else {
                     RetryConfig::disabled()
                 };
+            #[allow(deprecated)]
+            let retry_config = if behavior_version.is_at_least(BehaviorVersion::v2026_11_10()) {
+                retry_config
+                    .with_retry_spec(RetrySpec::v2_1())
+                    .with_reconnect_mode(ReconnectMode::ReuseAllConnections)
+            } else {
+                retry_config
+            };
             layer.store_put(retry_config);
             layer.store_put(retry_partition);
         }))

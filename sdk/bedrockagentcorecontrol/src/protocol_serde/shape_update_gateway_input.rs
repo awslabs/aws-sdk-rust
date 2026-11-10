@@ -21,50 +21,56 @@ pub fn ser_update_gateway_input_input(
     if let Some(var_6) = &input.description {
         object.key("description").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.exception_level {
-        object.key("exceptionLevel").string(var_7.as_str());
+    if let Some(var_7) = &input.domain_override {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("domainOverride").start_object();
+        crate::protocol_serde::shape_domain_override::ser_domain_override(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.interceptor_configurations {
-        let mut array_9 = object.key("interceptorConfigurations").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.exception_level {
+        object.key("exceptionLevel").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.interceptor_configurations {
+        let mut array_11 = object.key("interceptorConfigurations").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_gateway_interceptor_configuration::ser_gateway_interceptor_configuration(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_gateway_interceptor_configuration::ser_gateway_interceptor_configuration(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_9.finish();
+        array_11.finish();
     }
-    if let Some(var_12) = &input.kms_key_arn {
-        object.key("kmsKeyArn").string(var_12.as_str());
+    if let Some(var_14) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_14.as_str());
     }
-    if let Some(var_13) = &input.name {
-        object.key("name").string(var_13.as_str());
+    if let Some(var_15) = &input.name {
+        object.key("name").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.policy_engine_configuration {
+    if let Some(var_16) = &input.policy_engine_configuration {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("policyEngineConfiguration").start_object();
-        crate::protocol_serde::shape_gateway_policy_engine_configuration::ser_gateway_policy_engine_configuration(&mut object_15, var_14)?;
-        object_15.finish();
-    }
-    if let Some(var_16) = &input.protocol_configuration {
-        #[allow(unused_mut)]
-        let mut object_17 = object.key("protocolConfiguration").start_object();
-        crate::protocol_serde::shape_gateway_protocol_configuration::ser_gateway_protocol_configuration(&mut object_17, var_16)?;
+        let mut object_17 = object.key("policyEngineConfiguration").start_object();
+        crate::protocol_serde::shape_gateway_policy_engine_configuration::ser_gateway_policy_engine_configuration(&mut object_17, var_16)?;
         object_17.finish();
     }
-    if let Some(var_18) = &input.protocol_type {
-        object.key("protocolType").string(var_18.as_str());
-    }
-    if let Some(var_19) = &input.role_arn {
-        object.key("roleArn").string(var_19.as_str());
-    }
-    if let Some(var_20) = &input.waf_configuration {
+    if let Some(var_18) = &input.protocol_configuration {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("wafConfiguration").start_object();
-        crate::protocol_serde::shape_waf_configuration::ser_waf_configuration(&mut object_21, var_20)?;
-        object_21.finish();
+        let mut object_19 = object.key("protocolConfiguration").start_object();
+        crate::protocol_serde::shape_gateway_protocol_configuration::ser_gateway_protocol_configuration(&mut object_19, var_18)?;
+        object_19.finish();
+    }
+    if let Some(var_20) = &input.protocol_type {
+        object.key("protocolType").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.role_arn {
+        object.key("roleArn").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.waf_configuration {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("wafConfiguration").start_object();
+        crate::protocol_serde::shape_waf_configuration::ser_waf_configuration(&mut object_23, var_22)?;
+        object_23.finish();
     }
     Ok(())
 }

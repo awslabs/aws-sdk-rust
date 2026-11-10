@@ -11,6 +11,8 @@ pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_illegal_state_exception::IllegalStateException;
 
+pub use crate::types::error::_retryable_conflict_exception::RetryableConflictException;
+
 mod _access_denied_exception;
 
 mod _conflict_exception;
@@ -22,6 +24,8 @@ mod _illegal_state_exception;
 mod _internal_server_exception;
 
 mod _resource_not_found_exception;
+
+mod _retryable_conflict_exception;
 
 /// Builders
 pub mod builders;

@@ -16,3 +16,15 @@ pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     }
     builder
 }
+
+pub(crate) fn update_profile_association_output_output_correct_errors(
+    mut builder: crate::operation::update_profile_association::builders::UpdateProfileAssociationOutputBuilder,
+) -> crate::operation::update_profile_association::builders::UpdateProfileAssociationOutputBuilder {
+    if builder.profile_association.is_none() {
+        builder.profile_association = {
+            let builder = crate::types::builders::ProfileAssociationBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}

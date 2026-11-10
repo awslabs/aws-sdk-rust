@@ -33,6 +33,8 @@ pub use crate::types::_table_resource::TableResourceBuilder;
 
 pub use crate::types::_query_planning_context::QueryPlanningContextBuilder;
 
+pub use crate::types::_any_resource::AnyResourceBuilder;
+
 pub use crate::types::_catalog_resource::CatalogResourceBuilder;
 
 pub use crate::types::_database_resource::DatabaseResourceBuilder;
@@ -50,6 +52,8 @@ pub use crate::types::_lf_tag_policy_resource::LfTagPolicyResourceBuilder;
 pub use crate::types::_lf_tag_expression_resource::LfTagExpressionResourceBuilder;
 
 pub use crate::types::_rls_policy_resource::RlsPolicyResourceBuilder;
+
+pub use crate::types::_user_defined_function_resource::UserDefinedFunctionResourceBuilder;
 
 pub use crate::types::_lf_tag_pair::LfTagPairBuilder;
 
@@ -94,6 +98,8 @@ pub use crate::types::_tagged_database::TaggedDatabaseBuilder;
 pub use crate::types::_tagged_table::TaggedTableBuilder;
 
 pub use crate::types::_write_operation::WriteOperationBuilder;
+
+pub use crate::types::_user_defined_function_wildcard::UserDefinedFunctionWildcardBuilder;
 
 pub use crate::types::_error_detail::ErrorDetailBuilder;
 

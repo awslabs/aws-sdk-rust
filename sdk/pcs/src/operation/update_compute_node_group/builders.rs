@@ -108,6 +108,53 @@ impl UpdateComputeNodeGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. This value overrides the AMI ID in the custom launch template. Specify an empty string (<code>""</code>) to remove the AMI ID from the compute node group and use the AMI ID specified in the custom launch template. Omit this value to leave the current setting unchanged.</p>
+    pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ami_id(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. This value overrides the AMI ID in the custom launch template. Specify an empty string (<code>""</code>) to remove the AMI ID from the compute node group and use the AMI ID specified in the custom launch template. Omit this value to leave the current setting unchanged.</p>
+    pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ami_id(input);
+        self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. This value overrides the AMI ID in the custom launch template. Specify an empty string (<code>""</code>) to remove the AMI ID from the compute node group and use the AMI ID specified in the custom launch template. Omit this value to leave the current setting unchanged.</p>
+    pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ami_id()
+    }
+    ///
+    /// Appends an item to `securityGroupIds`.
+    ///
+    /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+    ///
+    /// <p>The IDs of the EC2 security groups to configure directly on the compute node group. The security groups must be in the same VPC as the cluster. PCS uses these security groups instead of the security groups in the custom launch template. You can't specify this value if the custom launch template defines network interfaces. Specify an empty list (<code>\[\]</code>) to remove the security groups from the compute node group and use the security groups in the custom launch template. Omit this value to leave the current setting unchanged.</p>
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.security_group_ids(input.into());
+        self
+    }
+    /// <p>The IDs of the EC2 security groups to configure directly on the compute node group. The security groups must be in the same VPC as the cluster. PCS uses these security groups instead of the security groups in the custom launch template. You can't specify this value if the custom launch template defines network interfaces. Specify an empty list (<code>\[\]</code>) to remove the security groups from the compute node group and use the security groups in the custom launch template. Omit this value to leave the current setting unchanged.</p>
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_security_group_ids(input);
+        self
+    }
+    /// <p>The IDs of the EC2 security groups to configure directly on the compute node group. The security groups must be in the same VPC as the cluster. PCS uses these security groups instead of the security groups in the custom launch template. You can't specify this value if the custom launch template defines network interfaces. Specify an empty list (<code>\[\]</code>) to remove the security groups from the compute node group and use the security groups in the custom launch template. Omit this value to leave the current setting unchanged.</p>
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_group_ids()
+    }
+    /// <p>The name of the EC2 key pair to configure directly on the compute node group. The key pair must exist in your account and Amazon Web Services Region. PCS uses this key pair instead of the key pair in the custom launch template. Specify an empty string (<code>""</code>) to remove the key pair from the compute node group and use the key pair in the custom launch template. Omit this value to leave the current setting unchanged. You must have permission for <code>ec2:DescribeKeyPairs</code> to specify a key pair. If you delete the key pair later, future instance launches can fail.</p>
+    pub fn ssh_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ssh_key_name(input.into());
+        self
+    }
+    /// <p>The name of the EC2 key pair to configure directly on the compute node group. The key pair must exist in your account and Amazon Web Services Region. PCS uses this key pair instead of the key pair in the custom launch template. Specify an empty string (<code>""</code>) to remove the key pair from the compute node group and use the key pair in the custom launch template. Omit this value to leave the current setting unchanged. You must have permission for <code>ec2:DescribeKeyPairs</code> to specify a key pair. If you delete the key pair later, future instance launches can fail.</p>
+    pub fn set_ssh_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ssh_key_name(input);
+        self
+    }
+    /// <p>The name of the EC2 key pair to configure directly on the compute node group. The key pair must exist in your account and Amazon Web Services Region. PCS uses this key pair instead of the key pair in the custom launch template. Specify an empty string (<code>""</code>) to remove the key pair from the compute node group and use the key pair in the custom launch template. Omit this value to leave the current setting unchanged. You must have permission for <code>ec2:DescribeKeyPairs</code> to specify a key pair. If you delete the key pair later, future instance launches can fail.</p>
+    pub fn get_ssh_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ssh_key_name()
+    }
     /// <p>The name or ID of the cluster of the compute node group.</p>
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
@@ -136,20 +183,6 @@ impl UpdateComputeNodeGroupFluentBuilder {
     pub fn get_compute_node_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_compute_node_group_identifier()
     }
-    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
-    pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.ami_id(input.into());
-        self
-    }
-    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
-    pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_ami_id(input);
-        self
-    }
-    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
-    pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_ami_id()
-    }
     ///
     /// Appends an item to `subnetIds`.
     ///
@@ -169,17 +202,55 @@ impl UpdateComputeNodeGroupFluentBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnet_ids()
     }
-    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
+    /// <p>Specifies whether the compute node group uses a custom launch template or a launch template that PCS manages. Omit this value to keep the current mode.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – Use a custom launch template. To switch from <code>MANAGED</code>, also provide <code>customLaunchTemplate</code>. If the compute node group already uses <code>CUSTOM</code> and you omit <code>customLaunchTemplate</code>, the existing launch template is unchanged.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – Use a launch template created and managed by PCS. Omit <code>customLaunchTemplate</code>. Switching to this mode removes the custom launch template association but doesn't delete the launch template.</p></li>
+    /// </ul>
+    /// <p>When switching to <code>MANAGED</code>, the compute node group must have <code>amiId</code> and <code>securityGroupIds</code> configured. You can set these values in the same request.</p>
+    pub fn launch_template_mode(mut self, input: crate::types::LaunchTemplateMode) -> Self {
+        self.inner = self.inner.launch_template_mode(input);
+        self
+    }
+    /// <p>Specifies whether the compute node group uses a custom launch template or a launch template that PCS manages. Omit this value to keep the current mode.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – Use a custom launch template. To switch from <code>MANAGED</code>, also provide <code>customLaunchTemplate</code>. If the compute node group already uses <code>CUSTOM</code> and you omit <code>customLaunchTemplate</code>, the existing launch template is unchanged.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – Use a launch template created and managed by PCS. Omit <code>customLaunchTemplate</code>. Switching to this mode removes the custom launch template association but doesn't delete the launch template.</p></li>
+    /// </ul>
+    /// <p>When switching to <code>MANAGED</code>, the compute node group must have <code>amiId</code> and <code>securityGroupIds</code> configured. You can set these values in the same request.</p>
+    pub fn set_launch_template_mode(mut self, input: ::std::option::Option<crate::types::LaunchTemplateMode>) -> Self {
+        self.inner = self.inner.set_launch_template_mode(input);
+        self
+    }
+    /// <p>Specifies whether the compute node group uses a custom launch template or a launch template that PCS manages. Omit this value to keep the current mode.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – Use a custom launch template. To switch from <code>MANAGED</code>, also provide <code>customLaunchTemplate</code>. If the compute node group already uses <code>CUSTOM</code> and you omit <code>customLaunchTemplate</code>, the existing launch template is unchanged.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – Use a launch template created and managed by PCS. Omit <code>customLaunchTemplate</code>. Switching to this mode removes the custom launch template association but doesn't delete the launch template.</p></li>
+    /// </ul>
+    /// <p>When switching to <code>MANAGED</code>, the compute node group must have <code>amiId</code> and <code>securityGroupIds</code> configured. You can set these values in the same request.</p>
+    pub fn get_launch_template_mode(&self) -> &::std::option::Option<crate::types::LaunchTemplateMode> {
+        self.inner.get_launch_template_mode()
+    }
+    /// <p>The custom Amazon EC2 launch template to associate with the compute node group. To set or change the custom launch template, specify <code>id</code> and <code>version</code>. If you provide this value and omit <code>launchTemplateMode</code>, the compute node group must already use <code>CUSTOM</code> mode. To switch from <code>MANAGED</code> to <code>CUSTOM</code>, specify <code>launchTemplateMode</code> as <code>CUSTOM</code> and provide this value. If the compute node group already uses <code>CUSTOM</code>, omit this value while also omitting <code>launchTemplateMode</code>, or while specifying <code>CUSTOM</code>, to keep the existing custom launch template. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_cng_instance-settings-migrate.html">Migrating a compute node group from a custom launch template</a> in the <i>PCS User Guide</i>.</p>
     pub fn custom_launch_template(mut self, input: crate::types::CustomLaunchTemplate) -> Self {
         self.inner = self.inner.custom_launch_template(input);
         self
     }
-    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
+    /// <p>The custom Amazon EC2 launch template to associate with the compute node group. To set or change the custom launch template, specify <code>id</code> and <code>version</code>. If you provide this value and omit <code>launchTemplateMode</code>, the compute node group must already use <code>CUSTOM</code> mode. To switch from <code>MANAGED</code> to <code>CUSTOM</code>, specify <code>launchTemplateMode</code> as <code>CUSTOM</code> and provide this value. If the compute node group already uses <code>CUSTOM</code>, omit this value while also omitting <code>launchTemplateMode</code>, or while specifying <code>CUSTOM</code>, to keep the existing custom launch template. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_cng_instance-settings-migrate.html">Migrating a compute node group from a custom launch template</a> in the <i>PCS User Guide</i>.</p>
     pub fn set_custom_launch_template(mut self, input: ::std::option::Option<crate::types::CustomLaunchTemplate>) -> Self {
         self.inner = self.inner.set_custom_launch_template(input);
         self
     }
-    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
+    /// <p>The custom Amazon EC2 launch template to associate with the compute node group. To set or change the custom launch template, specify <code>id</code> and <code>version</code>. If you provide this value and omit <code>launchTemplateMode</code>, the compute node group must already use <code>CUSTOM</code> mode. To switch from <code>MANAGED</code> to <code>CUSTOM</code>, specify <code>launchTemplateMode</code> as <code>CUSTOM</code> and provide this value. If the compute node group already uses <code>CUSTOM</code>, omit this value while also omitting <code>launchTemplateMode</code>, or while specifying <code>CUSTOM</code>, to keep the existing custom launch template. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_cng_instance-settings-migrate.html">Migrating a compute node group from a custom launch template</a> in the <i>PCS User Guide</i>.</p>
     pub fn get_custom_launch_template(&self) -> &::std::option::Option<crate::types::CustomLaunchTemplate> {
         self.inner.get_custom_launch_template()
     }
@@ -267,17 +338,17 @@ impl UpdateComputeNodeGroupFluentBuilder {
     pub fn get_node_lifecycle_actions(&self) -> &::std::option::Option<crate::types::UpdateNodeLifecycleActionsRequest> {
         self.inner.get_node_lifecycle_actions()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect. If you don't specify a client token, the CLI and SDK automatically generate 1 for you.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect. If you don't specify a client token, the CLI and SDK automatically generate one for you.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect. If you don't specify a client token, the CLI and SDK automatically generate 1 for you.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect. If you don't specify a client token, the CLI and SDK automatically generate one for you.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect. If you don't specify a client token, the CLI and SDK automatically generate 1 for you.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect. If you don't specify a client token, the CLI and SDK automatically generate one for you.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

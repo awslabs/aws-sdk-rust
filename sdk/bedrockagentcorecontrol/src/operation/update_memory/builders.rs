@@ -150,17 +150,17 @@ impl UpdateMemoryFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The number of days after which memory events will expire, between 7 and 365 days.</p>
+    /// <p>The number of days after which memory events expire, between 7 and 3650 days.</p>
     pub fn event_expiry_duration(mut self, input: i32) -> Self {
         self.inner = self.inner.event_expiry_duration(input);
         self
     }
-    /// <p>The number of days after which memory events will expire, between 7 and 365 days.</p>
+    /// <p>The number of days after which memory events expire, between 7 and 3650 days.</p>
     pub fn set_event_expiry_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_event_expiry_duration(input);
         self
     }
-    /// <p>The number of days after which memory events will expire, between 7 and 365 days.</p>
+    /// <p>The number of days after which memory events expire, between 7 and 3650 days.</p>
     pub fn get_event_expiry_duration(&self) -> &::std::option::Option<i32> {
         self.inner.get_event_expiry_duration()
     }

@@ -201,6 +201,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListProfileRe
                 captured.insert("ResourceType", value);
             }
         }
+        if requested.should_capture("ResourceArn") {
+            if let ::std::option::Option::Some(value) = input.resource_arn.as_deref() {
+                captured.insert("ResourceArn", value);
+            }
+        }
         if requested.should_capture("NextToken") {
             if let ::std::option::Option::Some(value) = input.next_token.as_deref() {
                 captured.insert("NextToken", value);
@@ -285,14 +290,19 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListProfileR
                         query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
-                if let ::std::option::Option::Some(inner_3) = &_input.max_results {
+                if let ::std::option::Option::Some(inner_3) = &_input.resource_arn {
                     {
-                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
+                        query.push_kv("resourceArn", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
-                if let ::std::option::Option::Some(inner_4) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_4) = &_input.max_results {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_5) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -486,7 +496,11 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ListProfileResourceAssociat
         ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
     fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
-        ::std::option::Option::None
+        match self {
+            Self::InternalServiceErrorException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            Self::ThrottlingException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            _ => ::std::option::Option::None,
+        }
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListProfileResourceAssociationsError {

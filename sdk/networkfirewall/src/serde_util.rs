@@ -26,6 +26,21 @@ pub(crate) fn create_firewall_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_firewall_policy_v2_output_output_correct_errors(
+    mut builder: crate::operation::create_firewall_policy_v2::builders::CreateFirewallPolicyV2OutputBuilder,
+) -> crate::operation::create_firewall_policy_v2::builders::CreateFirewallPolicyV2OutputBuilder {
+    if builder.update_token.is_none() {
+        builder.update_token = Some(Default::default())
+    }
+    if builder.firewall_policy_v2_response.is_none() {
+        builder.firewall_policy_v2_response = {
+            let builder = crate::types::builders::FirewallPolicyV2ResponseBuilder::default();
+            crate::serde_util::firewall_policy_v2_response_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_rule_group_output_output_correct_errors(
     mut builder: crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder,
 ) -> crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder {
@@ -65,6 +80,18 @@ pub(crate) fn delete_firewall_policy_output_output_correct_errors(
         builder.firewall_policy_response = {
             let builder = crate::types::builders::FirewallPolicyResponseBuilder::default();
             crate::serde_util::firewall_policy_response_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn delete_firewall_policy_v2_output_output_correct_errors(
+    mut builder: crate::operation::delete_firewall_policy_v2::builders::DeleteFirewallPolicyV2OutputBuilder,
+) -> crate::operation::delete_firewall_policy_v2::builders::DeleteFirewallPolicyV2OutputBuilder {
+    if builder.firewall_policy_v2_response.is_none() {
+        builder.firewall_policy_v2_response = {
+            let builder = crate::types::builders::FirewallPolicyV2ResponseBuilder::default();
+            crate::serde_util::firewall_policy_v2_response_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -123,6 +150,21 @@ pub(crate) fn describe_firewall_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_firewall_policy_v2_output_output_correct_errors(
+    mut builder: crate::operation::describe_firewall_policy_v2::builders::DescribeFirewallPolicyV2OutputBuilder,
+) -> crate::operation::describe_firewall_policy_v2::builders::DescribeFirewallPolicyV2OutputBuilder {
+    if builder.update_token.is_none() {
+        builder.update_token = Some(Default::default())
+    }
+    if builder.firewall_policy_v2_response.is_none() {
+        builder.firewall_policy_v2_response = {
+            let builder = crate::types::builders::FirewallPolicyV2ResponseBuilder::default();
+            crate::serde_util::firewall_policy_v2_response_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn describe_rule_group_output_output_correct_errors(
     mut builder: crate::operation::describe_rule_group::builders::DescribeRuleGroupOutputBuilder,
 ) -> crate::operation::describe_rule_group::builders::DescribeRuleGroupOutputBuilder {
@@ -176,6 +218,15 @@ pub(crate) fn describe_tls_inspection_configuration_output_output_correct_errors
     builder
 }
 
+pub(crate) fn list_firewall_policies_v2_output_output_correct_errors(
+    mut builder: crate::operation::list_firewall_policies_v2::builders::ListFirewallPoliciesV2OutputBuilder,
+) -> crate::operation::list_firewall_policies_v2::builders::ListFirewallPoliciesV2OutputBuilder {
+    if builder.firewall_policies_v2.is_none() {
+        builder.firewall_policies_v2 = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn reject_network_firewall_transit_gateway_attachment_output_output_correct_errors(
     mut builder: crate::operation::reject_network_firewall_transit_gateway_attachment::builders::RejectNetworkFirewallTransitGatewayAttachmentOutputBuilder,
 ) -> crate::operation::reject_network_firewall_transit_gateway_attachment::builders::RejectNetworkFirewallTransitGatewayAttachmentOutputBuilder {
@@ -207,6 +258,21 @@ pub(crate) fn update_firewall_policy_output_output_correct_errors(
         builder.firewall_policy_response = {
             let builder = crate::types::builders::FirewallPolicyResponseBuilder::default();
             crate::serde_util::firewall_policy_response_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_firewall_policy_v2_output_output_correct_errors(
+    mut builder: crate::operation::update_firewall_policy_v2::builders::UpdateFirewallPolicyV2OutputBuilder,
+) -> crate::operation::update_firewall_policy_v2::builders::UpdateFirewallPolicyV2OutputBuilder {
+    if builder.update_token.is_none() {
+        builder.update_token = Some(Default::default())
+    }
+    if builder.firewall_policy_v2_response.is_none() {
+        builder.firewall_policy_v2_response = {
+            let builder = crate::types::builders::FirewallPolicyV2ResponseBuilder::default();
+            crate::serde_util::firewall_policy_v2_response_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -255,6 +321,21 @@ pub(crate) fn firewall_policy_response_correct_errors(
     }
     if builder.firewall_policy_id.is_none() {
         builder.firewall_policy_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn firewall_policy_v2_response_correct_errors(
+    mut builder: crate::types::builders::FirewallPolicyV2ResponseBuilder,
+) -> crate::types::builders::FirewallPolicyV2ResponseBuilder {
+    if builder.firewall_policy_v2_name.is_none() {
+        builder.firewall_policy_v2_name = Some(Default::default())
+    }
+    if builder.firewall_policy_v2_arn.is_none() {
+        builder.firewall_policy_v2_arn = Some(Default::default())
+    }
+    if builder.firewall_policy_v2_id.is_none() {
+        builder.firewall_policy_v2_id = Some(Default::default())
     }
     builder
 }
@@ -326,6 +407,18 @@ pub(crate) fn firewall_policy_correct_errors(
     builder
 }
 
+pub(crate) fn firewall_rule_group_correct_errors(
+    mut builder: crate::types::builders::FirewallRuleGroupBuilder,
+) -> crate::types::builders::FirewallRuleGroupBuilder {
+    if builder.rules_source.is_none() {
+        builder.rules_source = {
+            let builder = crate::types::builders::FirewallRulesSourceBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn firewall_status_correct_errors(
     mut builder: crate::types::builders::FirewallStatusBuilder,
 ) -> crate::types::builders::FirewallStatusBuilder {
@@ -334,6 +427,16 @@ pub(crate) fn firewall_status_correct_errors(
     }
     if builder.configuration_sync_state_summary.is_none() {
         builder.configuration_sync_state_summary = "no value was set".parse::<crate::types::ConfigurationSyncState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn ips_rule_group_correct_errors(mut builder: crate::types::builders::IpsRuleGroupBuilder) -> crate::types::builders::IpsRuleGroupBuilder {
+    if builder.rules_source.is_none() {
+        builder.rules_source = {
+            let builder = crate::types::builders::IpsRulesSourceBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }
@@ -567,6 +670,22 @@ pub(crate) fn container_attribute_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn firewall_rule_correct_errors(mut builder: crate::types::builders::FirewallRuleBuilder) -> crate::types::builders::FirewallRuleBuilder {
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::FirewallRuleAction>().ok()
+    }
+    if builder.action_scope.is_none() {
+        builder.action_scope = "no value was set".parse::<crate::types::ActionScope>().ok()
+    }
+    if builder.hook.is_none() {
+        builder.hook = "no value was set".parse::<crate::types::HookKey>().ok()
+    }
+    if builder.protocol.is_none() {
+        builder.protocol = "no value was set".parse::<crate::types::FirewallRuleProtocol>().ok()
     }
     builder
 }

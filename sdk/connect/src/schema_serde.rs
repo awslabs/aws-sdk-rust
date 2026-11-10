@@ -303,6 +303,8 @@ pub(crate) mod shape_contact_analysis;
 
 pub(crate) mod shape_contact_analysis_reference;
 
+pub(crate) mod shape_contact_analysis_reference_state;
+
 pub(crate) mod shape_contact_configuration;
 
 pub(crate) mod shape_contact_data_request;
@@ -357,6 +359,16 @@ pub(crate) mod shape_contact_flow_type_condition;
 
 pub(crate) mod shape_contact_flow_version_summary;
 
+pub(crate) mod shape_contact_lens;
+
+pub(crate) mod shape_contact_lens_channel_configuration;
+
+pub(crate) mod shape_contact_lens_redaction_configuration;
+
+pub(crate) mod shape_contact_lens_sentiment_configuration;
+
+pub(crate) mod shape_contact_lens_summary_configuration;
+
 pub(crate) mod shape_contact_metric_info;
 
 pub(crate) mod shape_contact_metric_result;
@@ -384,6 +396,10 @@ pub(crate) mod shape_control_plane_attribute_filter;
 pub(crate) mod shape_control_plane_tag_filter;
 
 pub(crate) mod shape_control_plane_user_attribute_filter;
+
+pub(crate) mod shape_conversational_analytics;
+
+pub(crate) mod shape_conversational_analytics_configuration;
 
 pub(crate) mod shape_create_agent_status_input_input;
 

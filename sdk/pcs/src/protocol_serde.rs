@@ -205,6 +205,8 @@ pub(crate) mod shape_scaling_configuration;
 
 pub(crate) mod shape_scheduler;
 
+pub(crate) mod shape_security_group_id_list;
+
 pub(crate) mod shape_slurm_custom_setting;
 
 pub(crate) mod shape_slurm_rest_request;
@@ -232,8 +234,6 @@ pub(crate) mod shape_jwt_auth;
 pub(crate) mod shape_node_lifecycle_script;
 
 pub(crate) mod shape_node_lifecycle_script_list;
-
-pub(crate) mod shape_security_group_id_list;
 
 pub(crate) mod shape_slurm_auth_key;
 

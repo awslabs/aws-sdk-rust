@@ -12,56 +12,68 @@ pub fn ser_create_rule_group_input_input(
         crate::protocol_serde::shape_rule_group::ser_rule_group(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.rules {
-        object.key("Rules").string(var_4.as_str());
+    if let Some(var_4) = &input.firewall_rule_group {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("FirewallRuleGroup").start_object();
+        crate::protocol_serde::shape_firewall_rule_group::ser_firewall_rule_group(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.r#type {
-        object.key("Type").string(var_5.as_str());
+    if let Some(var_6) = &input.ips_rule_group {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("IpsRuleGroup").start_object();
+        crate::protocol_serde::shape_ips_rule_group::ser_ips_rule_group(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_6) = &input.description {
-        object.key("Description").string(var_6.as_str());
+    if let Some(var_8) = &input.rules {
+        object.key("Rules").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.capacity {
+    if let Some(var_9) = &input.r#type {
+        object.key("Type").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.description {
+        object.key("Description").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.capacity {
         object.key("Capacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_8) = &input.tags {
-        let mut array_9 = object.key("Tags").start_array();
-        for item_10 in var_8 {
+    if let Some(var_12) = &input.tags {
+        let mut array_13 = object.key("Tags").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_9.finish();
+        array_13.finish();
     }
-    if let Some(var_12) = &input.dry_run {
-        object.key("DryRun").boolean(*var_12);
+    if let Some(var_16) = &input.dry_run {
+        object.key("DryRun").boolean(*var_16);
     }
-    if let Some(var_13) = &input.encryption_configuration {
+    if let Some(var_17) = &input.encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("EncryptionConfiguration").start_object();
-        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_18 = object.key("EncryptionConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_18, var_17)?;
+        object_18.finish();
     }
-    if let Some(var_15) = &input.source_metadata {
+    if let Some(var_19) = &input.source_metadata {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("SourceMetadata").start_object();
-        crate::protocol_serde::shape_source_metadata::ser_source_metadata(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_20 = object.key("SourceMetadata").start_object();
+        crate::protocol_serde::shape_source_metadata::ser_source_metadata(&mut object_20, var_19)?;
+        object_20.finish();
     }
-    if let Some(var_17) = &input.analyze_rule_group {
-        object.key("AnalyzeRuleGroup").boolean(*var_17);
+    if let Some(var_21) = &input.analyze_rule_group {
+        object.key("AnalyzeRuleGroup").boolean(*var_21);
     }
-    if let Some(var_18) = &input.summary_configuration {
+    if let Some(var_22) = &input.summary_configuration {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("SummaryConfiguration").start_object();
-        crate::protocol_serde::shape_summary_configuration::ser_summary_configuration(&mut object_19, var_18)?;
-        object_19.finish();
+        let mut object_23 = object.key("SummaryConfiguration").start_object();
+        crate::protocol_serde::shape_summary_configuration::ser_summary_configuration(&mut object_23, var_22)?;
+        object_23.finish();
     }
     Ok(())
 }

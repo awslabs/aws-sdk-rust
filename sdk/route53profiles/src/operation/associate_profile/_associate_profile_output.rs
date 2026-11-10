@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateProfileOutput {
-    /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
+    /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, such as update and delete.</p>
     pub profile_association: ::std::option::Option<crate::types::ProfileAssociation>,
     _request_id: Option<String>,
 }
 impl AssociateProfileOutput {
-    /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
+    /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, such as update and delete.</p>
     pub fn profile_association(&self) -> ::std::option::Option<&crate::types::ProfileAssociation> {
         self.profile_association.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct AssociateProfileOutputBuilder {
     _request_id: Option<String>,
 }
 impl AssociateProfileOutputBuilder {
-    /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
+    /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, such as update and delete.</p>
     pub fn profile_association(mut self, input: crate::types::ProfileAssociation) -> Self {
         self.profile_association = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
+    /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, such as update and delete.</p>
     pub fn set_profile_association(mut self, input: ::std::option::Option<crate::types::ProfileAssociation>) -> Self {
         self.profile_association = input;
         self
     }
-    /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
+    /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, such as update and delete.</p>
     pub fn get_profile_association(&self) -> &::std::option::Option<crate::types::ProfileAssociation> {
         &self.profile_association
     }

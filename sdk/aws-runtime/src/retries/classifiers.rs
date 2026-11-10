@@ -142,6 +142,21 @@ where
             }
         };
 
+        // A bare HTTP 429 with no modeled error code is a throttling error. This check runs after
+        // the error-code checks above. The classifier runs before `ModeledAsRetryableClassifier`,
+        // so a modeled error's retryable trait still wins.
+        let is_too_many_requests = ctx
+            .response()
+            .map(|res| res.status().into())
+            .map(|status: u16| status == 429)
+            .unwrap_or(false);
+        if is_too_many_requests {
+            return RetryAction::RetryIndicated(RetryReason::RetryableError {
+                kind: ErrorKind::ThrottlingError,
+                retry_after,
+            });
+        }
+
         RetryAction::NoActionIndicated
     }
 
@@ -464,6 +479,129 @@ mod test {
         assert_eq!(
             policy.classify_retry_v2(&ctx_with(Some("invalid"), None), &previous),
             RetryAction::NoActionIndicated,
+        );
+    }
+
+    // Build a context with the given HTTP status, an optional `x-amz-retry-after` (milliseconds)
+    // header, and an error carrying no identifiable AWS error code.
+    fn ctx_with_status(status: u16, retry_after_header_millis: Option<&str>) -> InterceptorContext {
+        let mut builder = http_1x::Response::builder().status(status);
+        if let Some(millis) = retry_after_header_millis {
+            builder = builder.header("x-amz-retry-after", millis);
+        }
+        let res = builder.body("nope").unwrap().map(SdkBody::from);
+        let mut ctx = InterceptorContext::new(Input::doesnt_matter());
+        ctx.set_response(res.try_into().unwrap());
+        ctx.set_output_or_error(Err(OrchestratorError::operation(Error::erase(
+            ErrorMetadata::builder().build(),
+        ))));
+        ctx
+    }
+
+    // A bare 429 with no modeled error code is a throttling error.
+    #[test]
+    fn bare_429_is_throttling() {
+        let policy = AwsErrorCodeClassifier::<ErrorMetadata>::new();
+        assert_eq!(
+            policy.classify_retry(&ctx_with_status(429, None)),
+            RetryAction::throttling_error()
+        );
+    }
+
+    // The 429 throttling verdict still honors x-amz-retry-after (5000ms == 5s).
+    #[test]
+    fn bare_429_carries_retry_after() {
+        let policy = AwsErrorCodeClassifier::<ErrorMetadata>::new();
+        assert_eq!(
+            policy.classify_retry(&ctx_with_status(429, Some("5000"))),
+            RetryAction::retryable_error_with_explicit_delay(
+                ErrorKind::ThrottlingError,
+                Duration::from_secs(5)
+            )
+        );
+    }
+
+    // A non-429 response with no error code is not retried by this classifier.
+    #[test]
+    fn non_429_without_code_is_no_action() {
+        let policy = AwsErrorCodeClassifier::<ErrorMetadata>::new();
+        assert_eq!(
+            policy.classify_retry(&ctx_with_status(418, None)),
+            RetryAction::NoActionIndicated
+        );
+    }
+
+    // A modeled error's retryable trait wins over the bare-429 rule, because
+    // AwsErrorCodeClassifier runs before ModeledAsRetryableClassifier.
+    #[test]
+    fn modeled_retryable_wins_over_bare_429() {
+        use aws_smithy_runtime::client::retries::classifiers::{
+            run_classifiers_on_ctx, ModeledAsRetryableClassifier,
+        };
+        use aws_smithy_runtime_api::client::retries::classifiers::SharedRetryClassifier;
+        use aws_smithy_types::retry::ProvideErrorKind;
+
+        #[derive(Debug)]
+        struct TestError {
+            meta: ErrorMetadata,
+            retryable: Option<ErrorKind>,
+        }
+        impl fmt::Display for TestError {
+            fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+                write!(f, "test error")
+            }
+        }
+        impl std::error::Error for TestError {}
+        impl ProvideErrorMetadata for TestError {
+            fn meta(&self) -> &ErrorMetadata {
+                &self.meta
+            }
+        }
+        impl ProvideErrorKind for TestError {
+            fn retryable_error_kind(&self) -> Option<ErrorKind> {
+                self.retryable
+            }
+            fn code(&self) -> Option<&str> {
+                None
+            }
+        }
+
+        fn ctx_for(retryable: Option<ErrorKind>) -> InterceptorContext {
+            let res = http_1x::Response::builder()
+                .status(429)
+                .body("nope")
+                .unwrap()
+                .map(SdkBody::from);
+            let mut ctx = InterceptorContext::new(Input::doesnt_matter());
+            ctx.set_response(res.try_into().unwrap());
+            ctx.set_output_or_error(Err(OrchestratorError::operation(Error::erase(TestError {
+                meta: ErrorMetadata::builder().build(),
+                retryable,
+            }))));
+            ctx
+        }
+
+        // Priority order: AwsErrorCodeClassifier runs before the modeled classifier.
+        let classifiers = || {
+            vec![
+                SharedRetryClassifier::new(AwsErrorCodeClassifier::<TestError>::new()),
+                SharedRetryClassifier::new(ModeledAsRetryableClassifier::<TestError>::new()),
+            ]
+        };
+
+        // Modeled retryable -> the trait wins over the 429 throttling rule.
+        assert_eq!(
+            run_classifiers_on_ctx(
+                classifiers().into_iter(),
+                &ctx_for(Some(ErrorKind::ServerError))
+            ),
+            RetryAction::retryable_error(ErrorKind::ServerError),
+        );
+
+        // Not modeled-retryable -> the bare-429 throttling rule stands.
+        assert_eq!(
+            run_classifiers_on_ctx(classifiers().into_iter(), &ctx_for(None)),
+            RetryAction::throttling_error(),
         );
     }
 }

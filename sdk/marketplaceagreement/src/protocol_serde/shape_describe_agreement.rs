@@ -197,6 +197,14 @@ pub(crate) fn de_describe_agreement(
                     )?)),
                 )
             })?,
+            "freeTrialSummary" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(
+                    builder.set_free_trial_summary(Some(crate::protocol_serde::shape_free_trial_summary::de_free_trial_summary(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
+            })?,
             _ => {
                 decoder.skip()?;
                 builder

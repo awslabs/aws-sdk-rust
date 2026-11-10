@@ -43,6 +43,8 @@ pub struct CreateGatewayInput {
     pub exception_level: ::std::option::Option<crate::types::ExceptionLevel>,
     /// <p>A map of key-value pairs to associate with the gateway as metadata tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header. Specify this when clients reach the gateway through your own proxy or custom domain.</p>
+    pub domain_override: ::std::option::Option<crate::types::DomainOverride>,
 }
 impl CreateGatewayInput {
     /// <p>The name of the gateway. The name must be unique within your account.</p>
@@ -113,6 +115,10 @@ impl CreateGatewayInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header. Specify this when clients reach the gateway through your own proxy or custom domain.</p>
+    pub fn domain_override(&self) -> ::std::option::Option<&crate::types::DomainOverride> {
+        self.domain_override.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateGatewayInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -130,6 +136,7 @@ impl ::std::fmt::Debug for CreateGatewayInput {
         formatter.field("policy_engine_configuration", &self.policy_engine_configuration);
         formatter.field("exception_level", &self.exception_level);
         formatter.field("tags", &self.tags);
+        formatter.field("domain_override", &self.domain_override);
         formatter.finish()
     }
 }
@@ -157,6 +164,7 @@ pub struct CreateGatewayInputBuilder {
     pub(crate) policy_engine_configuration: ::std::option::Option<crate::types::GatewayPolicyEngineConfiguration>,
     pub(crate) exception_level: ::std::option::Option<crate::types::ExceptionLevel>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) domain_override: ::std::option::Option<crate::types::DomainOverride>,
 }
 impl CreateGatewayInputBuilder {
     /// <p>The name of the gateway. The name must be unique within your account.</p>
@@ -401,6 +409,20 @@ impl CreateGatewayInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header. Specify this when clients reach the gateway through your own proxy or custom domain.</p>
+    pub fn domain_override(mut self, input: crate::types::DomainOverride) -> Self {
+        self.domain_override = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header. Specify this when clients reach the gateway through your own proxy or custom domain.</p>
+    pub fn set_domain_override(mut self, input: ::std::option::Option<crate::types::DomainOverride>) -> Self {
+        self.domain_override = input;
+        self
+    }
+    /// <p>The public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header. Specify this when clients reach the gateway through your own proxy or custom domain.</p>
+    pub fn get_domain_override(&self) -> &::std::option::Option<crate::types::DomainOverride> {
+        &self.domain_override
+    }
     /// Consumes the builder and constructs a [`CreateGatewayInput`](crate::operation::create_gateway::CreateGatewayInput).
     pub fn build(
         self,
@@ -419,6 +441,7 @@ impl CreateGatewayInputBuilder {
             policy_engine_configuration: self.policy_engine_configuration,
             exception_level: self.exception_level,
             tags: self.tags,
+            domain_override: self.domain_override,
         })
     }
 }
@@ -438,6 +461,7 @@ impl ::std::fmt::Debug for CreateGatewayInputBuilder {
         formatter.field("policy_engine_configuration", &self.policy_engine_configuration);
         formatter.field("exception_level", &self.exception_level);
         formatter.field("tags", &self.tags);
+        formatter.field("domain_override", &self.domain_override);
         formatter.finish()
     }
 }

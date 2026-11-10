@@ -14,7 +14,7 @@ pub struct ProfileResourceAssociation {
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource association.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Resource type, such as a private hosted zone, or DNS Firewall rule group.</p>
+    /// <p>Resource type, such as a private hosted zone, interface VPC endpoint, Resolver query log configuration, or DNS Firewall rule group.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>If the DNS resource is a DNS Firewall rule group, this indicates the priority.</p>
     pub resource_properties: ::std::option::Option<::std::string::String>,
@@ -48,7 +48,7 @@ impl ProfileResourceAssociation {
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Resource type, such as a private hosted zone, or DNS Firewall rule group.</p>
+    /// <p>Resource type, such as a private hosted zone, interface VPC endpoint, Resolver query log configuration, or DNS Firewall rule group.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -167,17 +167,17 @@ impl ProfileResourceAssociationBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// <p>Resource type, such as a private hosted zone, or DNS Firewall rule group.</p>
+    /// <p>Resource type, such as a private hosted zone, interface VPC endpoint, Resolver query log configuration, or DNS Firewall rule group.</p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Resource type, such as a private hosted zone, or DNS Firewall rule group.</p>
+    /// <p>Resource type, such as a private hosted zone, interface VPC endpoint, Resolver query log configuration, or DNS Firewall rule group.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>Resource type, such as a private hosted zone, or DNS Firewall rule group.</p>
+    /// <p>Resource type, such as a private hosted zone, interface VPC endpoint, Resolver query log configuration, or DNS Firewall rule group.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }

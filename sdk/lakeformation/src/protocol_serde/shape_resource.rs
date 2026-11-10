@@ -3,65 +3,77 @@ pub fn ser_resource(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Resource,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.catalog {
+    if let Some(var_1) = &input.any_resource {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("Catalog").start_object();
-        crate::protocol_serde::shape_catalog_resource::ser_catalog_resource(&mut object_2, var_1)?;
+        let mut object_2 = object.key("AnyResource").start_object();
+        crate::protocol_serde::shape_any_resource::ser_any_resource(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.database {
+    if let Some(var_3) = &input.catalog {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("Database").start_object();
-        crate::protocol_serde::shape_database_resource::ser_database_resource(&mut object_4, var_3)?;
+        let mut object_4 = object.key("Catalog").start_object();
+        crate::protocol_serde::shape_catalog_resource::ser_catalog_resource(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.table {
+    if let Some(var_5) = &input.database {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Table").start_object();
-        crate::protocol_serde::shape_table_resource::ser_table_resource(&mut object_6, var_5)?;
+        let mut object_6 = object.key("Database").start_object();
+        crate::protocol_serde::shape_database_resource::ser_database_resource(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.table_with_columns {
+    if let Some(var_7) = &input.table {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("TableWithColumns").start_object();
-        crate::protocol_serde::shape_table_with_columns_resource::ser_table_with_columns_resource(&mut object_8, var_7)?;
+        let mut object_8 = object.key("Table").start_object();
+        crate::protocol_serde::shape_table_resource::ser_table_resource(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.data_location {
+    if let Some(var_9) = &input.table_with_columns {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("DataLocation").start_object();
-        crate::protocol_serde::shape_data_location_resource::ser_data_location_resource(&mut object_10, var_9)?;
+        let mut object_10 = object.key("TableWithColumns").start_object();
+        crate::protocol_serde::shape_table_with_columns_resource::ser_table_with_columns_resource(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.data_cells_filter {
+    if let Some(var_11) = &input.data_location {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("DataCellsFilter").start_object();
-        crate::protocol_serde::shape_data_cells_filter_resource::ser_data_cells_filter_resource(&mut object_12, var_11)?;
+        let mut object_12 = object.key("DataLocation").start_object();
+        crate::protocol_serde::shape_data_location_resource::ser_data_location_resource(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.lf_tag {
+    if let Some(var_13) = &input.data_cells_filter {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("LFTag").start_object();
-        crate::protocol_serde::shape_lf_tag_key_resource::ser_lf_tag_key_resource(&mut object_14, var_13)?;
+        let mut object_14 = object.key("DataCellsFilter").start_object();
+        crate::protocol_serde::shape_data_cells_filter_resource::ser_data_cells_filter_resource(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.lf_tag_policy {
+    if let Some(var_15) = &input.lf_tag {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("LFTagPolicy").start_object();
-        crate::protocol_serde::shape_lf_tag_policy_resource::ser_lf_tag_policy_resource(&mut object_16, var_15)?;
+        let mut object_16 = object.key("LFTag").start_object();
+        crate::protocol_serde::shape_lf_tag_key_resource::ser_lf_tag_key_resource(&mut object_16, var_15)?;
         object_16.finish();
     }
-    if let Some(var_17) = &input.lf_tag_expression {
+    if let Some(var_17) = &input.lf_tag_policy {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("LFTagExpression").start_object();
-        crate::protocol_serde::shape_lf_tag_expression_resource::ser_lf_tag_expression_resource(&mut object_18, var_17)?;
+        let mut object_18 = object.key("LFTagPolicy").start_object();
+        crate::protocol_serde::shape_lf_tag_policy_resource::ser_lf_tag_policy_resource(&mut object_18, var_17)?;
         object_18.finish();
     }
-    if let Some(var_19) = &input.rls_policy {
+    if let Some(var_19) = &input.lf_tag_expression {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("RLSPolicy").start_object();
-        crate::protocol_serde::shape_rls_policy_resource::ser_rls_policy_resource(&mut object_20, var_19)?;
+        let mut object_20 = object.key("LFTagExpression").start_object();
+        crate::protocol_serde::shape_lf_tag_expression_resource::ser_lf_tag_expression_resource(&mut object_20, var_19)?;
         object_20.finish();
+    }
+    if let Some(var_21) = &input.rls_policy {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("RLSPolicy").start_object();
+        crate::protocol_serde::shape_rls_policy_resource::ser_rls_policy_resource(&mut object_22, var_21)?;
+        object_22.finish();
+    }
+    if let Some(var_23) = &input.user_defined_function {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("UserDefinedFunction").start_object();
+        crate::protocol_serde::shape_user_defined_function_resource::ser_user_defined_function_resource(&mut object_24, var_23)?;
+        object_24.finish();
     }
     Ok(())
 }
@@ -88,6 +100,10 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "AnyResource" => {
+                            builder =
+                                builder.set_any_resource(crate::protocol_serde::shape_any_resource::de_any_resource(tokens, _value, depth + 1)?);
+                        }
                         "Catalog" => {
                             builder = builder.set_catalog(crate::protocol_serde::shape_catalog_resource::de_catalog_resource(
                                 tokens,
@@ -147,6 +163,15 @@ where
                                 _value,
                                 depth + 1,
                             )?);
+                        }
+                        "UserDefinedFunction" => {
+                            builder = builder.set_user_defined_function(
+                                crate::protocol_serde::shape_user_defined_function_resource::de_user_defined_function_resource(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

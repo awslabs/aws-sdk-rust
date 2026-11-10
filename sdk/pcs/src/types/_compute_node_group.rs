@@ -4,6 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputeNodeGroup {
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not present, PCS uses the AMI ID specified in the custom launch template.</p>
+    pub ami_id: ::std::option::Option<::std::string::String>,
+    /// <p>The IDs of the EC2 security groups configured directly on the compute node group. PCS uses these security groups instead of the security groups in the custom launch template. This value isn't present if security groups aren't configured directly on the compute node group. In that case, PCS uses the security groups in the custom launch template.</p>
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The name of the EC2 key pair configured directly on the compute node group. PCS uses this key pair instead of the key pair in the custom launch template. This value isn't present if a key pair isn't configured directly on the compute node group. In that case, PCS uses the key pair in the custom launch template, if one is specified.</p>
+    pub ssh_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that identifies the compute node group.</p>
     pub name: ::std::string::String,
     /// <p>The generated unique ID of the compute node group.</p>
@@ -22,13 +28,20 @@ pub struct ComputeNodeGroup {
     /// <p>The resource enters the <code>SUSPENDING</code> and <code>SUSPENDED</code> states when the scheduler is beyond end of life and we have suspended the cluster. When in these states, you can't use the cluster. The cluster controller is down and all compute instances are terminated. The resources still count toward your service quotas. You can delete a resource if its status is <code>SUSPENDED</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions_faq.html">Frequently asked questions about Slurm versions in PCS</a> in the <i>PCS User Guide</i>.</p>
     /// </important>
     pub status: crate::types::ComputeNodeGroupStatus,
-    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
-    pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of subnet IDs where instances are provisioned by the compute node group. The subnets must be in the same VPC as the cluster.</p>
     pub subnet_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>Specifies how EC2 instances are purchased on your behalf. PCS supports On-Demand Instances, Spot Instances, Interruptible Capacity Reservations, On-Demand Capacity Reservations, and Amazon EC2 Capacity Blocks for ML. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Amazon EC2 billing and purchasing options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about PCS support for Capacity Blocks, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/capacity-blocks.html">Using Amazon EC2 Capacity Blocks for ML with PCS</a> in the <i>PCS User Guide</i>. For more information about PCS support for interruptible capacity reservations, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/capacity-reservations-iodcr.html">Using I-ODCRs with PCS</a> in the <i>PCS User Guide</i>. Choose On-Demand if you plan to use an On-Demand Capacity Reservation (ODCR). For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/capacity-reservations-odcr.html">Using ODCRs with PCS</a>. If you don't provide this option, it defaults to On-Demand.</p>
     pub purchase_option: ::std::option::Option<crate::types::PurchaseOption>,
-    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
+    /// <p>Indicates whether the compute node group uses a custom launch template or a launch template that PCS manages. The default value is <code>CUSTOM</code>.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – The compute node group uses the launch template in <code>customLaunchTemplate</code>.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – PCS creates and manages the launch template.</p></li>
+    /// </ul>
+    pub launch_template_mode: crate::types::LaunchTemplateMode,
+    /// <p>The custom Amazon EC2 launch template associated with the compute node group. This value is present when <code>launchTemplateMode</code> is <code>CUSTOM</code> and isn't present when <code>launchTemplateMode</code> is <code>MANAGED</code>.</p>
     pub custom_launch_template: ::std::option::Option<crate::types::CustomLaunchTemplate>,
     /// <p>The Amazon Resource Name (ARN) of the IAM instance profile used to pass an IAM role when launching EC2 instances. The role contained in your instance profile must have the <code>pcs:RegisterComputeNodeGroupInstance</code> permission and the role name must start with <code>AWSPCS</code> or must have the path <code>/aws-pcs/</code>. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/security-instance-profiles.html">IAM instance profiles for PCS</a> in the <i>PCS User Guide</i>.</p>
     pub iam_instance_profile_arn: ::std::string::String,
@@ -46,6 +59,20 @@ pub struct ComputeNodeGroup {
     pub error_info: ::std::option::Option<::std::vec::Vec<crate::types::ErrorInfo>>,
 }
 impl ComputeNodeGroup {
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not present, PCS uses the AMI ID specified in the custom launch template.</p>
+    pub fn ami_id(&self) -> ::std::option::Option<&str> {
+        self.ami_id.as_deref()
+    }
+    /// <p>The IDs of the EC2 security groups configured directly on the compute node group. PCS uses these security groups instead of the security groups in the custom launch template. This value isn't present if security groups aren't configured directly on the compute node group. In that case, PCS uses the security groups in the custom launch template.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The name of the EC2 key pair configured directly on the compute node group. PCS uses this key pair instead of the key pair in the custom launch template. This value isn't present if a key pair isn't configured directly on the compute node group. In that case, PCS uses the key pair in the custom launch template, if one is specified.</p>
+    pub fn ssh_key_name(&self) -> ::std::option::Option<&str> {
+        self.ssh_key_name.as_deref()
+    }
     /// <p>The name that identifies the compute node group.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
@@ -82,10 +109,6 @@ impl ComputeNodeGroup {
     pub fn status(&self) -> &crate::types::ComputeNodeGroupStatus {
         &self.status
     }
-    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
-    pub fn ami_id(&self) -> ::std::option::Option<&str> {
-        self.ami_id.as_deref()
-    }
     /// <p>The list of subnet IDs where instances are provisioned by the compute node group. The subnets must be in the same VPC as the cluster.</p>
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         use std::ops::Deref;
@@ -95,7 +118,18 @@ impl ComputeNodeGroup {
     pub fn purchase_option(&self) -> ::std::option::Option<&crate::types::PurchaseOption> {
         self.purchase_option.as_ref()
     }
-    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
+    /// <p>Indicates whether the compute node group uses a custom launch template or a launch template that PCS manages. The default value is <code>CUSTOM</code>.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – The compute node group uses the launch template in <code>customLaunchTemplate</code>.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – PCS creates and manages the launch template.</p></li>
+    /// </ul>
+    pub fn launch_template_mode(&self) -> &crate::types::LaunchTemplateMode {
+        &self.launch_template_mode
+    }
+    /// <p>The custom Amazon EC2 launch template associated with the compute node group. This value is present when <code>launchTemplateMode</code> is <code>CUSTOM</code> and isn't present when <code>launchTemplateMode</code> is <code>MANAGED</code>.</p>
     pub fn custom_launch_template(&self) -> ::std::option::Option<&crate::types::CustomLaunchTemplate> {
         self.custom_launch_template.as_ref()
     }
@@ -143,6 +177,9 @@ impl ComputeNodeGroup {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ComputeNodeGroupBuilder {
+    pub(crate) ami_id: ::std::option::Option<::std::string::String>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ssh_key_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -150,9 +187,9 @@ pub struct ComputeNodeGroupBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ComputeNodeGroupStatus>,
-    pub(crate) ami_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) purchase_option: ::std::option::Option<crate::types::PurchaseOption>,
+    pub(crate) launch_template_mode: ::std::option::Option<crate::types::LaunchTemplateMode>,
     pub(crate) custom_launch_template: ::std::option::Option<crate::types::CustomLaunchTemplate>,
     pub(crate) iam_instance_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_configuration: ::std::option::Option<crate::types::ScalingConfiguration>,
@@ -163,6 +200,54 @@ pub struct ComputeNodeGroupBuilder {
     pub(crate) error_info: ::std::option::Option<::std::vec::Vec<crate::types::ErrorInfo>>,
 }
 impl ComputeNodeGroupBuilder {
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not present, PCS uses the AMI ID specified in the custom launch template.</p>
+    pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ami_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not present, PCS uses the AMI ID specified in the custom launch template.</p>
+    pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ami_id = input;
+        self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not present, PCS uses the AMI ID specified in the custom launch template.</p>
+    pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ami_id
+    }
+    /// Appends an item to `security_group_ids`.
+    ///
+    /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+    ///
+    /// <p>The IDs of the EC2 security groups configured directly on the compute node group. PCS uses these security groups instead of the security groups in the custom launch template. This value isn't present if security groups aren't configured directly on the compute node group. In that case, PCS uses the security groups in the custom launch template.</p>
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.security_group_ids.unwrap_or_default();
+        v.push(input.into());
+        self.security_group_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IDs of the EC2 security groups configured directly on the compute node group. PCS uses these security groups instead of the security groups in the custom launch template. This value isn't present if security groups aren't configured directly on the compute node group. In that case, PCS uses the security groups in the custom launch template.</p>
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.security_group_ids = input;
+        self
+    }
+    /// <p>The IDs of the EC2 security groups configured directly on the compute node group. PCS uses these security groups instead of the security groups in the custom launch template. This value isn't present if security groups aren't configured directly on the compute node group. In that case, PCS uses the security groups in the custom launch template.</p>
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
+    /// <p>The name of the EC2 key pair configured directly on the compute node group. PCS uses this key pair instead of the key pair in the custom launch template. This value isn't present if a key pair isn't configured directly on the compute node group. In that case, PCS uses the key pair in the custom launch template, if one is specified.</p>
+    pub fn ssh_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ssh_key_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the EC2 key pair configured directly on the compute node group. PCS uses this key pair instead of the key pair in the custom launch template. This value isn't present if a key pair isn't configured directly on the compute node group. In that case, PCS uses the key pair in the custom launch template, if one is specified.</p>
+    pub fn set_ssh_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ssh_key_name = input;
+        self
+    }
+    /// <p>The name of the EC2 key pair configured directly on the compute node group. PCS uses this key pair instead of the key pair in the custom launch template. This value isn't present if a key pair isn't configured directly on the compute node group. In that case, PCS uses the key pair in the custom launch template, if one is specified.</p>
+    pub fn get_ssh_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssh_key_name
+    }
     /// <p>The name that identifies the compute node group.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -280,20 +365,6 @@ impl ComputeNodeGroupBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ComputeNodeGroupStatus> {
         &self.status
     }
-    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
-    pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.ami_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
-    pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ami_id = input;
-        self
-    }
-    /// <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not provided, PCS uses the AMI ID specified in the custom launch template.</p>
-    pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.ami_id
-    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -328,18 +399,52 @@ impl ComputeNodeGroupBuilder {
     pub fn get_purchase_option(&self) -> &::std::option::Option<crate::types::PurchaseOption> {
         &self.purchase_option
     }
-    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
-    /// This field is required.
+    /// <p>Indicates whether the compute node group uses a custom launch template or a launch template that PCS manages. The default value is <code>CUSTOM</code>.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – The compute node group uses the launch template in <code>customLaunchTemplate</code>.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – PCS creates and manages the launch template.</p></li>
+    /// </ul>
+    pub fn launch_template_mode(mut self, input: crate::types::LaunchTemplateMode) -> Self {
+        self.launch_template_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the compute node group uses a custom launch template or a launch template that PCS manages. The default value is <code>CUSTOM</code>.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – The compute node group uses the launch template in <code>customLaunchTemplate</code>.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – PCS creates and manages the launch template.</p></li>
+    /// </ul>
+    pub fn set_launch_template_mode(mut self, input: ::std::option::Option<crate::types::LaunchTemplateMode>) -> Self {
+        self.launch_template_mode = input;
+        self
+    }
+    /// <p>Indicates whether the compute node group uses a custom launch template or a launch template that PCS manages. The default value is <code>CUSTOM</code>.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – The compute node group uses the launch template in <code>customLaunchTemplate</code>.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – PCS creates and manages the launch template.</p></li>
+    /// </ul>
+    pub fn get_launch_template_mode(&self) -> &::std::option::Option<crate::types::LaunchTemplateMode> {
+        &self.launch_template_mode
+    }
+    /// <p>The custom Amazon EC2 launch template associated with the compute node group. This value is present when <code>launchTemplateMode</code> is <code>CUSTOM</code> and isn't present when <code>launchTemplateMode</code> is <code>MANAGED</code>.</p>
     pub fn custom_launch_template(mut self, input: crate::types::CustomLaunchTemplate) -> Self {
         self.custom_launch_template = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
+    /// <p>The custom Amazon EC2 launch template associated with the compute node group. This value is present when <code>launchTemplateMode</code> is <code>CUSTOM</code> and isn't present when <code>launchTemplateMode</code> is <code>MANAGED</code>.</p>
     pub fn set_custom_launch_template(mut self, input: ::std::option::Option<crate::types::CustomLaunchTemplate>) -> Self {
         self.custom_launch_template = input;
         self
     }
-    /// <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p>
+    /// <p>The custom Amazon EC2 launch template associated with the compute node group. This value is present when <code>launchTemplateMode</code> is <code>CUSTOM</code> and isn't present when <code>launchTemplateMode</code> is <code>MANAGED</code>.</p>
     pub fn get_custom_launch_template(&self) -> &::std::option::Option<crate::types::CustomLaunchTemplate> {
         &self.custom_launch_template
     }
@@ -469,6 +574,9 @@ impl ComputeNodeGroupBuilder {
     /// - [`instance_configs`](crate::types::builders::ComputeNodeGroupBuilder::instance_configs)
     pub fn build(self) -> ::std::result::Result<crate::types::ComputeNodeGroup, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ComputeNodeGroup {
+            ami_id: self.ami_id,
+            security_group_ids: self.security_group_ids,
+            ssh_key_name: self.ssh_key_name,
             name: self.name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
@@ -511,7 +619,6 @@ impl ComputeNodeGroupBuilder {
                     "status was not specified but it is required when building ComputeNodeGroup",
                 )
             })?,
-            ami_id: self.ami_id,
             subnet_ids: self.subnet_ids.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnet_ids",
@@ -519,6 +626,11 @@ impl ComputeNodeGroupBuilder {
                 )
             })?,
             purchase_option: self.purchase_option,
+            launch_template_mode: self.launch_template_mode.unwrap_or(
+                "CUSTOM"
+                    .parse::<crate::types::LaunchTemplateMode>()
+                    .expect("static value validated to member"),
+            ),
             custom_launch_template: self.custom_launch_template,
             iam_instance_profile_arn: self.iam_instance_profile_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

@@ -24,6 +24,7 @@
 ///     Permission::Delete => { /* ... */ },
 ///     Permission::Describe => { /* ... */ },
 ///     Permission::Drop => { /* ... */ },
+///     Permission::Execute => { /* ... */ },
 ///     Permission::GrantWithLfTagExpression => { /* ... */ },
 ///     Permission::Insert => { /* ... */ },
 ///     Permission::Select => { /* ... */ },
@@ -81,6 +82,8 @@ pub enum Permission {
     #[allow(missing_docs)] // documentation missing in model
     Drop,
     #[allow(missing_docs)] // documentation missing in model
+    Execute,
+    #[allow(missing_docs)] // documentation missing in model
     GrantWithLfTagExpression,
     #[allow(missing_docs)] // documentation missing in model
     Insert,
@@ -107,6 +110,7 @@ impl ::std::convert::From<&str> for Permission {
             "DELETE" => Permission::Delete,
             "DESCRIBE" => Permission::Describe,
             "DROP" => Permission::Drop,
+            "EXECUTE" => Permission::Execute,
             "GRANT_WITH_LF_TAG_EXPRESSION" => Permission::GrantWithLfTagExpression,
             "INSERT" => Permission::Insert,
             "SELECT" => Permission::Select,
@@ -138,6 +142,7 @@ impl Permission {
             Permission::Delete => "DELETE",
             Permission::Describe => "DESCRIBE",
             Permission::Drop => "DROP",
+            Permission::Execute => "EXECUTE",
             Permission::GrantWithLfTagExpression => "GRANT_WITH_LF_TAG_EXPRESSION",
             Permission::Insert => "INSERT",
             Permission::Select => "SELECT",
@@ -160,6 +165,7 @@ impl Permission {
             "DELETE",
             "DESCRIBE",
             "DROP",
+            "EXECUTE",
             "GRANT_WITH_LF_TAG_EXPRESSION",
             "INSERT",
             "SELECT",
@@ -199,6 +205,7 @@ impl ::std::fmt::Display for Permission {
             Permission::Delete => write!(f, "DELETE"),
             Permission::Describe => write!(f, "DESCRIBE"),
             Permission::Drop => write!(f, "DROP"),
+            Permission::Execute => write!(f, "EXECUTE"),
             Permission::GrantWithLfTagExpression => write!(f, "GRANT_WITH_LF_TAG_EXPRESSION"),
             Permission::Insert => write!(f, "INSERT"),
             Permission::Select => write!(f, "SELECT"),

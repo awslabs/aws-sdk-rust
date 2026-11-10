@@ -55,6 +55,9 @@ pub struct AgreementViewSummary {
     /// <p><code>RENEWAL_LIMIT_EXHAUSTED</code> – The agreement reached the maximum number of renewals allowed by its renewal term.</p></li>
     /// </ul>
     pub end_time_behavior_reason_code: ::std::option::Option<crate::types::EndTimeBehaviorReasonCode>,
+    /// <p>The date and time when the free trial of the agreement ends. This field is present only when the agreement includes a free trial.</p>
+    /// <p>For an agreement that includes both a free trial and usage-based pricing, the agreement converts to paid usage at this time.</p>
+    pub free_trial_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AgreementViewSummary {
     /// <p>The unique identifier of the agreement.</p>
@@ -138,6 +141,11 @@ impl AgreementViewSummary {
     pub fn end_time_behavior_reason_code(&self) -> ::std::option::Option<&crate::types::EndTimeBehaviorReasonCode> {
         self.end_time_behavior_reason_code.as_ref()
     }
+    /// <p>The date and time when the free trial of the agreement ends. This field is present only when the agreement includes a free trial.</p>
+    /// <p>For an agreement that includes both a free trial and usage-based pricing, the agreement converts to paid usage at this time.</p>
+    pub fn free_trial_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.free_trial_end_time.as_ref()
+    }
 }
 impl AgreementViewSummary {
     /// Creates a new builder-style object to manufacture [`AgreementViewSummary`](crate::types::AgreementViewSummary).
@@ -164,6 +172,7 @@ pub struct AgreementViewSummaryBuilder {
     pub(crate) initial_agreement_id: ::std::option::Option<::std::string::String>,
     pub(crate) end_time_behavior_type: ::std::option::Option<crate::types::EndTimeBehaviorType>,
     pub(crate) end_time_behavior_reason_code: ::std::option::Option<crate::types::EndTimeBehaviorReasonCode>,
+    pub(crate) free_trial_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AgreementViewSummaryBuilder {
     /// <p>The unique identifier of the agreement.</p>
@@ -437,6 +446,23 @@ impl AgreementViewSummaryBuilder {
     pub fn get_end_time_behavior_reason_code(&self) -> &::std::option::Option<crate::types::EndTimeBehaviorReasonCode> {
         &self.end_time_behavior_reason_code
     }
+    /// <p>The date and time when the free trial of the agreement ends. This field is present only when the agreement includes a free trial.</p>
+    /// <p>For an agreement that includes both a free trial and usage-based pricing, the agreement converts to paid usage at this time.</p>
+    pub fn free_trial_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.free_trial_end_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time when the free trial of the agreement ends. This field is present only when the agreement includes a free trial.</p>
+    /// <p>For an agreement that includes both a free trial and usage-based pricing, the agreement converts to paid usage at this time.</p>
+    pub fn set_free_trial_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.free_trial_end_time = input;
+        self
+    }
+    /// <p>The date and time when the free trial of the agreement ends. This field is present only when the agreement includes a free trial.</p>
+    /// <p>For an agreement that includes both a free trial and usage-based pricing, the agreement converts to paid usage at this time.</p>
+    pub fn get_free_trial_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.free_trial_end_time
+    }
     /// Consumes the builder and constructs a [`AgreementViewSummary`](crate::types::AgreementViewSummary).
     pub fn build(self) -> crate::types::AgreementViewSummary {
         crate::types::AgreementViewSummary {
@@ -454,6 +480,7 @@ impl AgreementViewSummaryBuilder {
             initial_agreement_id: self.initial_agreement_id,
             end_time_behavior_type: self.end_time_behavior_type,
             end_time_behavior_reason_code: self.end_time_behavior_reason_code,
+            free_trial_end_time: self.free_trial_end_time,
         }
     }
 }

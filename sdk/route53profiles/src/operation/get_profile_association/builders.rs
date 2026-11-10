@@ -22,7 +22,7 @@ impl crate::operation::get_profile_association::builders::GetProfileAssociationI
 }
 /// Fluent builder constructing a request to `GetProfileAssociation`.
 ///
-/// <p>Retrieves a Route 53 Profile association for a VPC. A VPC can have only one Profile association, but a Profile can be associated with up to 5000 VPCs.</p>
+/// <p>Retrieves a Route 53 Profile association for a VPC. A VPC can have up to two Profile associations, and a Profile can be associated with up to 1,000 VPCs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetProfileAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

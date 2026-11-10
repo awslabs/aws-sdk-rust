@@ -353,6 +353,27 @@ pub(crate) fn get_space_credentials_for_organization_output_output_correct_error
     builder
 }
 
+pub(crate) fn policy_too_large_exception_correct_errors(
+    mut builder: crate::types::error::builders::PolicyTooLargeExceptionBuilder,
+) -> crate::types::error::builders::PolicyTooLargeExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_space_data_access_output_output_correct_errors(
+    mut builder: crate::operation::get_space_data_access::builders::GetSpaceDataAccessOutputBuilder,
+) -> crate::operation::get_space_data_access::builders::GetSpaceDataAccessOutputBuilder {
+    if builder.credentials.is_none() {
+        builder.credentials = {
+            let builder = crate::types::builders::AwsCredentialsBuilder::default();
+            crate::serde_util::aws_credentials_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_telemetry_query_results_output_output_correct_errors(
     mut builder: crate::operation::get_telemetry_query_results::builders::GetTelemetryQueryResultsOutputBuilder,
 ) -> crate::operation::get_telemetry_query_results::builders::GetTelemetryQueryResultsOutputBuilder {

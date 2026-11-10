@@ -21,6 +21,10 @@ pub use crate::types::_firewall_policy::FirewallPolicy;
 
 pub use crate::types::_firewall_policy_response::FirewallPolicyResponse;
 
+pub use crate::types::_firewall_policy_v2::FirewallPolicyV2;
+
+pub use crate::types::_firewall_policy_v2_response::FirewallPolicyV2Response;
+
 pub use crate::types::_tls_intercept_properties_request::TlsInterceptPropertiesRequest;
 
 pub use crate::types::_proxy::Proxy;
@@ -34,6 +38,10 @@ pub use crate::types::_proxy_rule_group::ProxyRuleGroup;
 pub use crate::types::_create_proxy_rules_by_request_phase::CreateProxyRulesByRequestPhase;
 
 pub use crate::types::_rule_group::RuleGroup;
+
+pub use crate::types::_firewall_rule_group::FirewallRuleGroup;
+
+pub use crate::types::_ips_rule_group::IpsRuleGroup;
 
 pub use crate::types::_rule_group_type::RuleGroupType;
 
@@ -54,6 +62,8 @@ pub use crate::types::_vpc_endpoint_association::VpcEndpointAssociation;
 pub use crate::types::_vpc_endpoint_association_status::VpcEndpointAssociationStatus;
 
 pub use crate::types::_firewall_status_value::FirewallStatusValue;
+
+pub use crate::types::_rule_output_format::RuleOutputFormat;
 
 pub use crate::types::_flow_operation_type::FlowOperationType;
 
@@ -109,6 +119,12 @@ pub use crate::types::_route53_resolved_ip_validation::Route53ResolvedIpValidati
 
 pub use crate::types::_resource_status::ResourceStatus;
 
+pub use crate::types::_policy_mode::PolicyMode;
+
+pub use crate::types::_policy_default_action::PolicyDefaultAction;
+
+pub use crate::types::_stateful_engine_options_v2::StatefulEngineOptionsV2;
+
 pub use crate::types::_listener_property_request::ListenerPropertyRequest;
 
 pub use crate::types::_tls_intercept_mode::TlsInterceptMode;
@@ -125,6 +141,10 @@ pub use crate::types::_reference_sets::ReferenceSets;
 
 pub use crate::types::_rules_source::RulesSource;
 
+pub use crate::types::_firewall_rules_source::FirewallRulesSource;
+
+pub use crate::types::_ips_rules_source::IpsRulesSource;
+
 pub use crate::types::_tls_certificate_data::TlsCertificateData;
 
 pub use crate::types::_ip_address_type::IpAddressType;
@@ -140,6 +160,8 @@ pub use crate::types::_analysis_report::AnalysisReport;
 pub use crate::types::_container_association_summary::ContainerAssociationSummary;
 
 pub use crate::types::_firewall_policy_metadata::FirewallPolicyMetadata;
+
+pub use crate::types::_firewall_policy_v2_metadata::FirewallPolicyV2Metadata;
 
 pub use crate::types::_firewall_metadata::FirewallMetadata;
 
@@ -193,6 +215,12 @@ pub use crate::types::_dns_expiry_exception_policy::DnsExpiryExceptionPolicy;
 
 pub use crate::types::_firewall_policy_error::FirewallPolicyError;
 
+pub use crate::types::_firewall_rule_group_entry::FirewallRuleGroupEntry;
+
+pub use crate::types::_ips_rule_group_entry::IpsRuleGroupEntry;
+
+pub use crate::types::_stream_exception_policy_v2::StreamExceptionPolicyV2;
+
 pub use crate::types::_listener_property_type::ListenerPropertyType;
 
 pub use crate::types::_create_proxy_rule::CreateProxyRule;
@@ -231,6 +259,8 @@ pub use crate::types::_ip_set::IpSet;
 
 pub use crate::types::_firewall_policy_error_code::FirewallPolicyErrorCode;
 
+pub use crate::types::_ips_rule_group_override::IpsRuleGroupOverride;
+
 pub use crate::types::_port_set::PortSet;
 
 pub use crate::types::_ip_set_reference::IpSetReference;
@@ -238,6 +268,8 @@ pub use crate::types::_ip_set_reference::IpSetReference;
 pub use crate::types::_generated_rules_type::GeneratedRulesType;
 
 pub use crate::types::_stateful_rule::StatefulRule;
+
+pub use crate::types::_firewall_rule::FirewallRule;
 
 pub use crate::types::_identified_type::IdentifiedType;
 
@@ -266,6 +298,16 @@ pub use crate::types::_stateful_action::StatefulAction;
 pub use crate::types::_header::Header;
 
 pub use crate::types::_stateless_rule::StatelessRule;
+
+pub use crate::types::_firewall_rule_action::FirewallRuleAction;
+
+pub use crate::types::_action_scope::ActionScope;
+
+pub use crate::types::_hook_key::HookKey;
+
+pub use crate::types::_firewall_rule_protocol::FirewallRuleProtocol;
+
+pub use crate::types::_rule_metadata::RuleMetadata;
 
 pub use crate::types::_server_certificate::ServerCertificate;
 
@@ -296,6 +338,8 @@ pub use crate::types::_tcp_flag_field::TcpFlagField;
 pub use crate::types::_tcp_flag::TcpFlag;
 
 mod _action_definition;
+
+mod _action_scope;
 
 mod _address;
 
@@ -365,6 +409,24 @@ mod _firewall_policy_metadata;
 
 mod _firewall_policy_response;
 
+mod _firewall_policy_v2;
+
+mod _firewall_policy_v2_metadata;
+
+mod _firewall_policy_v2_response;
+
+mod _firewall_rule;
+
+mod _firewall_rule_action;
+
+mod _firewall_rule_group;
+
+mod _firewall_rule_group_entry;
+
+mod _firewall_rule_protocol;
+
+mod _firewall_rules_source;
+
 mod _firewall_status;
 
 mod _firewall_status_value;
@@ -389,6 +451,8 @@ mod _header;
 
 mod _hits;
 
+mod _hook_key;
+
 mod _identified_type;
 
 mod _ip_address_type;
@@ -398,6 +462,14 @@ mod _ip_set;
 mod _ip_set_metadata;
 
 mod _ip_set_reference;
+
+mod _ips_rule_group;
+
+mod _ips_rule_group_entry;
+
+mod _ips_rule_group_override;
+
+mod _ips_rules_source;
 
 mod _listener_property;
 
@@ -426,6 +498,10 @@ mod _override_action;
 mod _per_object_status;
 
 mod _per_object_sync_status;
+
+mod _policy_default_action;
+
+mod _policy_mode;
 
 mod _policy_variables;
 
@@ -499,9 +575,13 @@ mod _rule_group_response;
 
 mod _rule_group_type;
 
+mod _rule_metadata;
+
 mod _rule_option;
 
 mod _rule_order;
+
+mod _rule_output_format;
 
 mod _rule_summary;
 
@@ -523,6 +603,8 @@ mod _stateful_action;
 
 mod _stateful_engine_options;
 
+mod _stateful_engine_options_v2;
+
 mod _stateful_rule;
 
 mod _stateful_rule_direction;
@@ -542,6 +624,8 @@ mod _stateless_rule_group_reference;
 mod _stateless_rules_and_custom_actions;
 
 mod _stream_exception_policy;
+
+mod _stream_exception_policy_v2;
 
 mod _subnet_mapping;
 

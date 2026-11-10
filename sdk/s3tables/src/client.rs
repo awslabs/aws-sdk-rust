@@ -197,6 +197,8 @@ mod get_table_bucket;
 
 mod get_table_bucket_encryption;
 
+mod get_table_bucket_logging;
+
 mod get_table_bucket_maintenance_configuration;
 
 mod get_table_bucket_metrics_configuration;
@@ -240,6 +242,8 @@ mod list_tables;
 mod list_tags_for_resource;
 
 mod put_table_bucket_encryption;
+
+mod put_table_bucket_logging;
 
 mod put_table_bucket_maintenance_configuration;
 

@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
+    /// <p>All resources of the specified type in a Data Catalog. When you grant or revoke permissions on this resource, the principal must be a user-defined function whose <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>, and the Data Catalog must be in your account.</p>
+    pub any_resource: ::std::option::Option<crate::types::AnyResource>,
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub catalog: ::std::option::Option<crate::types::CatalogResource>,
     /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal.</p>
@@ -24,8 +26,26 @@ pub struct Resource {
     pub lf_tag_expression: ::std::option::Option<crate::types::LfTagExpressionResource>,
     /// <p>A row-level security policy resource. Specify this when granting or revoking permissions on a row-level security policy.</p>
     pub rls_policy: ::std::option::Option<crate::types::RlsPolicyResource>,
+    /// <p>The user-defined function that you want to grant or revoke permissions on. The function's <code>GovernanceMode</code> must be <code>LAKE_FORMATION</code>. You can grant the following permissions:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EXECUTE</code> – Use the function in a job, and get credentials to download its artifacts.</p></li>
+    /// <li>
+    /// <p><code>DESCRIBE</code> – View the function's definition.</p></li>
+    /// <li>
+    /// <p><code>ALTER</code> – Update the function.</p></li>
+    /// <li>
+    /// <p><code>DROP</code> – Delete the function.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – All of the preceding permissions.</p></li>
+    /// </ul>
+    pub user_defined_function: ::std::option::Option<crate::types::UserDefinedFunctionResource>,
 }
 impl Resource {
+    /// <p>All resources of the specified type in a Data Catalog. When you grant or revoke permissions on this resource, the principal must be a user-defined function whose <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>, and the Data Catalog must be in your account.</p>
+    pub fn any_resource(&self) -> ::std::option::Option<&crate::types::AnyResource> {
+        self.any_resource.as_ref()
+    }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn catalog(&self) -> ::std::option::Option<&crate::types::CatalogResource> {
         self.catalog.as_ref()
@@ -66,6 +86,22 @@ impl Resource {
     pub fn rls_policy(&self) -> ::std::option::Option<&crate::types::RlsPolicyResource> {
         self.rls_policy.as_ref()
     }
+    /// <p>The user-defined function that you want to grant or revoke permissions on. The function's <code>GovernanceMode</code> must be <code>LAKE_FORMATION</code>. You can grant the following permissions:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EXECUTE</code> – Use the function in a job, and get credentials to download its artifacts.</p></li>
+    /// <li>
+    /// <p><code>DESCRIBE</code> – View the function's definition.</p></li>
+    /// <li>
+    /// <p><code>ALTER</code> – Update the function.</p></li>
+    /// <li>
+    /// <p><code>DROP</code> – Delete the function.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – All of the preceding permissions.</p></li>
+    /// </ul>
+    pub fn user_defined_function(&self) -> ::std::option::Option<&crate::types::UserDefinedFunctionResource> {
+        self.user_defined_function.as_ref()
+    }
 }
 impl Resource {
     /// Creates a new builder-style object to manufacture [`Resource`](crate::types::Resource).
@@ -78,6 +114,7 @@ impl Resource {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ResourceBuilder {
+    pub(crate) any_resource: ::std::option::Option<crate::types::AnyResource>,
     pub(crate) catalog: ::std::option::Option<crate::types::CatalogResource>,
     pub(crate) database: ::std::option::Option<crate::types::DatabaseResource>,
     pub(crate) table: ::std::option::Option<crate::types::TableResource>,
@@ -88,8 +125,23 @@ pub struct ResourceBuilder {
     pub(crate) lf_tag_policy: ::std::option::Option<crate::types::LfTagPolicyResource>,
     pub(crate) lf_tag_expression: ::std::option::Option<crate::types::LfTagExpressionResource>,
     pub(crate) rls_policy: ::std::option::Option<crate::types::RlsPolicyResource>,
+    pub(crate) user_defined_function: ::std::option::Option<crate::types::UserDefinedFunctionResource>,
 }
 impl ResourceBuilder {
+    /// <p>All resources of the specified type in a Data Catalog. When you grant or revoke permissions on this resource, the principal must be a user-defined function whose <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>, and the Data Catalog must be in your account.</p>
+    pub fn any_resource(mut self, input: crate::types::AnyResource) -> Self {
+        self.any_resource = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>All resources of the specified type in a Data Catalog. When you grant or revoke permissions on this resource, the principal must be a user-defined function whose <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>, and the Data Catalog must be in your account.</p>
+    pub fn set_any_resource(mut self, input: ::std::option::Option<crate::types::AnyResource>) -> Self {
+        self.any_resource = input;
+        self
+    }
+    /// <p>All resources of the specified type in a Data Catalog. When you grant or revoke permissions on this resource, the principal must be a user-defined function whose <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>, and the Data Catalog must be in your account.</p>
+    pub fn get_any_resource(&self) -> &::std::option::Option<crate::types::AnyResource> {
+        &self.any_resource
+    }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn catalog(mut self, input: crate::types::CatalogResource) -> Self {
         self.catalog = ::std::option::Option::Some(input);
@@ -230,9 +282,60 @@ impl ResourceBuilder {
     pub fn get_rls_policy(&self) -> &::std::option::Option<crate::types::RlsPolicyResource> {
         &self.rls_policy
     }
+    /// <p>The user-defined function that you want to grant or revoke permissions on. The function's <code>GovernanceMode</code> must be <code>LAKE_FORMATION</code>. You can grant the following permissions:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EXECUTE</code> – Use the function in a job, and get credentials to download its artifacts.</p></li>
+    /// <li>
+    /// <p><code>DESCRIBE</code> – View the function's definition.</p></li>
+    /// <li>
+    /// <p><code>ALTER</code> – Update the function.</p></li>
+    /// <li>
+    /// <p><code>DROP</code> – Delete the function.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – All of the preceding permissions.</p></li>
+    /// </ul>
+    pub fn user_defined_function(mut self, input: crate::types::UserDefinedFunctionResource) -> Self {
+        self.user_defined_function = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The user-defined function that you want to grant or revoke permissions on. The function's <code>GovernanceMode</code> must be <code>LAKE_FORMATION</code>. You can grant the following permissions:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EXECUTE</code> – Use the function in a job, and get credentials to download its artifacts.</p></li>
+    /// <li>
+    /// <p><code>DESCRIBE</code> – View the function's definition.</p></li>
+    /// <li>
+    /// <p><code>ALTER</code> – Update the function.</p></li>
+    /// <li>
+    /// <p><code>DROP</code> – Delete the function.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – All of the preceding permissions.</p></li>
+    /// </ul>
+    pub fn set_user_defined_function(mut self, input: ::std::option::Option<crate::types::UserDefinedFunctionResource>) -> Self {
+        self.user_defined_function = input;
+        self
+    }
+    /// <p>The user-defined function that you want to grant or revoke permissions on. The function's <code>GovernanceMode</code> must be <code>LAKE_FORMATION</code>. You can grant the following permissions:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EXECUTE</code> – Use the function in a job, and get credentials to download its artifacts.</p></li>
+    /// <li>
+    /// <p><code>DESCRIBE</code> – View the function's definition.</p></li>
+    /// <li>
+    /// <p><code>ALTER</code> – Update the function.</p></li>
+    /// <li>
+    /// <p><code>DROP</code> – Delete the function.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – All of the preceding permissions.</p></li>
+    /// </ul>
+    pub fn get_user_defined_function(&self) -> &::std::option::Option<crate::types::UserDefinedFunctionResource> {
+        &self.user_defined_function
+    }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
+            any_resource: self.any_resource,
             catalog: self.catalog,
             database: self.database,
             table: self.table,
@@ -243,6 +346,7 @@ impl ResourceBuilder {
             lf_tag_policy: self.lf_tag_policy,
             lf_tag_expression: self.lf_tag_expression,
             rls_policy: self.rls_policy,
+            user_defined_function: self.user_defined_function,
         }
     }
 }

@@ -3,7 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_sdk_dynamodb::config::{BehaviorVersion, SharedAsyncSleep, StalledStreamProtectionConfig};
+use aws_sdk_dynamodb::config::{
+    BehaviorVersion, Credentials, Region, SharedAsyncSleep, StalledStreamProtectionConfig,
+};
 use aws_sdk_dynamodb::{Client, Config};
 use aws_smithy_async::test_util::instant_time_and_sleep;
 use aws_smithy_async::time::SharedTimeSource;
@@ -15,7 +17,8 @@ use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::config_bag::ConfigBag;
-use aws_smithy_types::retry::{RetryConfig, RetrySpec};
+use aws_smithy_types::retry::RetryConfig;
+use aws_types::os_shim_internal::{Env, Fs};
 use std::time::{Duration, SystemTime};
 
 fn req() -> http_1x::Request<SdkBody> {
@@ -68,7 +71,6 @@ impl Intercept for StaticBackoffInterceptor {
     }
 }
 
-/// Retry 2.1: DynamoDB uses 25ms backoff and 4 max attempts.
 #[tokio::test]
 async fn dynamodb_v2_1_uses_25ms_backoff_and_4_max_attempts() {
     let (time_source, sleep_impl) = instant_time_and_sleep(SystemTime::UNIX_EPOCH);
@@ -80,14 +82,14 @@ async fn dynamodb_v2_1_uses_25ms_backoff_and_4_max_attempts() {
     ]);
 
     // Build via SdkConfig so CopySdkConfigToClientConfig runs (applies DynamoDB's
-    // 25ms backoff and max_attempts=4 when RetrySpec::V2_1 is present).
+    // 25ms backoff and max_attempts=4).
     let sdk_config = aws_types::SdkConfig::builder()
         .behavior_version(BehaviorVersion::latest())
         .region(aws_types::region::Region::new("us-east-1"))
         .credentials_provider(aws_sdk_dynamodb::config::SharedCredentialsProvider::new(
             aws_sdk_dynamodb::config::Credentials::for_tests(),
         ))
-        .retry_config(RetryConfig::standard().with_retry_spec(RetrySpec::v2_1()))
+        .retry_config(RetryConfig::standard())
         .stalled_stream_protection(StalledStreamProtectionConfig::disabled())
         .time_source(SharedTimeSource::new(time_source))
         .sleep_impl(SharedAsyncSleep::new(sleep_impl.clone()))
@@ -162,8 +164,6 @@ async fn dynamodb_v2_0_uses_1s_backoff_and_3_max_attempts() {
     assert_eq!(sleep_impl.total_duration(), Duration::from_secs(3));
 }
 
-/// When user explicitly sets max_attempts=6 with RetrySpec::v2_1() via SdkConfig
-/// with origin tracking, DynamoDB should preserve the user's max_attempts.
 #[tokio::test]
 async fn dynamodb_v2_1_preserves_user_max_attempts() {
     let (time_source, sleep_impl) = instant_time_and_sleep(SystemTime::UNIX_EPOCH);
@@ -182,11 +182,7 @@ async fn dynamodb_v2_1_preserves_user_max_attempts() {
         .credentials_provider(aws_sdk_dynamodb::config::SharedCredentialsProvider::new(
             aws_sdk_dynamodb::config::Credentials::for_tests(),
         ))
-        .retry_config(
-            RetryConfig::standard()
-                .with_retry_spec(RetrySpec::v2_1())
-                .with_max_attempts(6),
-        )
+        .retry_config(RetryConfig::standard().with_max_attempts(6))
         .stalled_stream_protection(StalledStreamProtectionConfig::disabled())
         .time_source(SharedTimeSource::new(time_source))
         .sleep_impl(SharedAsyncSleep::new(sleep_impl.clone()))
@@ -205,4 +201,19 @@ async fn dynamodb_v2_1_preserves_user_max_attempts() {
     let res = client.list_tables().send().await;
     assert_eq!(http_client.actual_requests().count(), 6);
     res.expect("with max_attempts=6 the 6th request should succeed");
+}
+
+#[tokio::test]
+async fn aws_max_attempts_survives_dynamodb_defaults() {
+    let sdk_config = aws_config::defaults(BehaviorVersion::latest())
+        .env(Env::from_slice(&[("AWS_MAX_ATTEMPTS", "2")]))
+        .fs(Fs::from_slice(&[]))
+        .region(Region::new("us-east-1"))
+        .credentials_provider(Credentials::for_tests())
+        .load()
+        .await;
+    assert_eq!(sdk_config.retry_config().unwrap().max_attempts(), 2);
+
+    let config = Config::from(&sdk_config);
+    assert_eq!(config.retry_config().unwrap().max_attempts(), 2);
 }

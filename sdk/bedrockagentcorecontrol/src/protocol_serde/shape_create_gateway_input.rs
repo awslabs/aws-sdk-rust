@@ -18,54 +18,60 @@ pub fn ser_create_gateway_input_input(
     if let Some(var_5) = &input.description {
         object.key("description").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.exception_level {
-        object.key("exceptionLevel").string(var_6.as_str());
+    if let Some(var_6) = &input.domain_override {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("domainOverride").start_object();
+        crate::protocol_serde::shape_domain_override::ser_domain_override(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.interceptor_configurations {
-        let mut array_8 = object.key("interceptorConfigurations").start_array();
-        for item_9 in var_7 {
+    if let Some(var_8) = &input.exception_level {
+        object.key("exceptionLevel").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.interceptor_configurations {
+        let mut array_10 = object.key("interceptorConfigurations").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_gateway_interceptor_configuration::ser_gateway_interceptor_configuration(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_gateway_interceptor_configuration::ser_gateway_interceptor_configuration(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_8.finish();
+        array_10.finish();
     }
-    if let Some(var_11) = &input.kms_key_arn {
-        object.key("kmsKeyArn").string(var_11.as_str());
+    if let Some(var_13) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.name {
-        object.key("name").string(var_12.as_str());
+    if let Some(var_14) = &input.name {
+        object.key("name").string(var_14.as_str());
     }
-    if let Some(var_13) = &input.policy_engine_configuration {
+    if let Some(var_15) = &input.policy_engine_configuration {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("policyEngineConfiguration").start_object();
-        crate::protocol_serde::shape_gateway_policy_engine_configuration::ser_gateway_policy_engine_configuration(&mut object_14, var_13)?;
-        object_14.finish();
-    }
-    if let Some(var_15) = &input.protocol_configuration {
-        #[allow(unused_mut)]
-        let mut object_16 = object.key("protocolConfiguration").start_object();
-        crate::protocol_serde::shape_gateway_protocol_configuration::ser_gateway_protocol_configuration(&mut object_16, var_15)?;
+        let mut object_16 = object.key("policyEngineConfiguration").start_object();
+        crate::protocol_serde::shape_gateway_policy_engine_configuration::ser_gateway_policy_engine_configuration(&mut object_16, var_15)?;
         object_16.finish();
     }
-    if let Some(var_17) = &input.protocol_type {
-        object.key("protocolType").string(var_17.as_str());
-    }
-    if let Some(var_18) = &input.role_arn {
-        object.key("roleArn").string(var_18.as_str());
-    }
-    if let Some(var_19) = &input.tags {
+    if let Some(var_17) = &input.protocol_configuration {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("tags").start_object();
-        for (key_21, value_22) in var_19 {
+        let mut object_18 = object.key("protocolConfiguration").start_object();
+        crate::protocol_serde::shape_gateway_protocol_configuration::ser_gateway_protocol_configuration(&mut object_18, var_17)?;
+        object_18.finish();
+    }
+    if let Some(var_19) = &input.protocol_type {
+        object.key("protocolType").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.role_arn {
+        object.key("roleArn").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("tags").start_object();
+        for (key_23, value_24) in var_21 {
             {
-                object_20.key(key_21.as_str()).string(value_22.as_str());
+                object_22.key(key_23.as_str()).string(value_24.as_str());
             }
         }
-        object_20.finish();
+        object_22.finish();
     }
     Ok(())
 }

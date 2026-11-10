@@ -186,12 +186,6 @@ pub(crate) fn compute_node_group_correct_errors(
     if builder.subnet_ids.is_none() {
         builder.subnet_ids = Some(Default::default())
     }
-    if builder.custom_launch_template.is_none() {
-        builder.custom_launch_template = {
-            let builder = crate::types::builders::CustomLaunchTemplateBuilder::default();
-            crate::serde_util::custom_launch_template_correct_errors(builder).build().ok()
-        }
-    }
     if builder.iam_instance_profile_arn.is_none() {
         builder.iam_instance_profile_arn = Some(Default::default())
     }

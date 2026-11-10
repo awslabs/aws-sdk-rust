@@ -13,11 +13,15 @@ pub use crate::types::error::_throttling_exception::ThrottlingException;
 
 pub use crate::types::error::_validation_exception::ValidationException;
 
+pub use crate::types::error::_policy_too_large_exception::PolicyTooLargeException;
+
 mod _access_denied_exception;
 
 mod _conflict_exception;
 
 mod _internal_server_exception;
+
+mod _policy_too_large_exception;
 
 mod _resource_not_found_exception;
 

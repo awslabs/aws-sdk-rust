@@ -8,7 +8,7 @@ pub struct FreeTrialPricingTerm {
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the terms.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>Duration of the free trial period (5–31 days).</p>
+    /// <p>Duration of the free trial period. The allowed duration depends on the product type. For SaaS products, the free trial lasts 7 to 90 days.</p>
     pub duration: ::std::option::Option<::std::string::String>,
     /// <p>Entitlements granted to the acceptor of a free trial as part of an agreement execution.</p>
     pub grants: ::std::option::Option<::std::vec::Vec<crate::types::GrantItem>>,
@@ -22,7 +22,7 @@ impl FreeTrialPricingTerm {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>Duration of the free trial period (5–31 days).</p>
+    /// <p>Duration of the free trial period. The allowed duration depends on the product type. For SaaS products, the free trial lasts 7 to 90 days.</p>
     pub fn duration(&self) -> ::std::option::Option<&str> {
         self.duration.as_deref()
     }
@@ -78,17 +78,17 @@ impl FreeTrialPricingTermBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>Duration of the free trial period (5–31 days).</p>
+    /// <p>Duration of the free trial period. The allowed duration depends on the product type. For SaaS products, the free trial lasts 7 to 90 days.</p>
     pub fn duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.duration = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Duration of the free trial period (5–31 days).</p>
+    /// <p>Duration of the free trial period. The allowed duration depends on the product type. For SaaS products, the free trial lasts 7 to 90 days.</p>
     pub fn set_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.duration = input;
         self
     }
-    /// <p>Duration of the free trial period (5–31 days).</p>
+    /// <p>Duration of the free trial period. The allowed duration depends on the product type. For SaaS products, the free trial lasts 7 to 90 days.</p>
     pub fn get_duration(&self) -> &::std::option::Option<::std::string::String> {
         &self.duration
     }

@@ -23,6 +23,8 @@ pub struct GetAgentRuntimeOutput {
     pub status: crate::types::AgentRuntimeStatus,
     /// <p>The life cycle configuration for the AgentCore Runtime.</p>
     pub lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
+    /// <p>The lifecycle hooks configuration for the AgentCore Runtime.</p>
+    pub hooks_configuration: ::std::option::Option<crate::types::RuntimeHooksConfiguration>,
     /// <p>The reason for failure if the AgentCore Runtime is in a failed state.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The description of the AgentCore Runtime.</p>
@@ -49,6 +51,8 @@ pub struct GetAgentRuntimeOutput {
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The additional ports on the AgentCore Runtime that are reachable through the runtime's session URL.</p>
     pub allowed_ports: ::std::option::Option<::std::vec::Vec<crate::types::AllowedPort>>,
+    /// <p>The resource configurations for the AgentCore Runtime.</p>
+    pub resource_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetAgentRuntimeOutput {
@@ -96,6 +100,10 @@ impl GetAgentRuntimeOutput {
     /// <p>The life cycle configuration for the AgentCore Runtime.</p>
     pub fn lifecycle_configuration(&self) -> ::std::option::Option<&crate::types::LifecycleConfiguration> {
         self.lifecycle_configuration.as_ref()
+    }
+    /// <p>The lifecycle hooks configuration for the AgentCore Runtime.</p>
+    pub fn hooks_configuration(&self) -> ::std::option::Option<&crate::types::RuntimeHooksConfiguration> {
+        self.hooks_configuration.as_ref()
     }
     /// <p>The reason for failure if the AgentCore Runtime is in a failed state.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
@@ -153,6 +161,12 @@ impl GetAgentRuntimeOutput {
     pub fn allowed_ports(&self) -> &[crate::types::AllowedPort] {
         self.allowed_ports.as_deref().unwrap_or_default()
     }
+    /// <p>The resource configurations for the AgentCore Runtime.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_configurations.is_none()`.
+    pub fn resource_configurations(&self) -> &[crate::types::ResourceConfiguration] {
+        self.resource_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for GetAgentRuntimeOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -167,6 +181,7 @@ impl ::std::fmt::Debug for GetAgentRuntimeOutput {
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("status", &self.status);
         formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
+        formatter.field("hooks_configuration", &self.hooks_configuration);
         formatter.field("failure_reason", &self.failure_reason);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("workload_identity_details", &self.workload_identity_details);
@@ -180,6 +195,7 @@ impl ::std::fmt::Debug for GetAgentRuntimeOutput {
         formatter.field("capacity_provider_configuration", &self.capacity_provider_configuration);
         formatter.field("platform_version", &self.platform_version);
         formatter.field("allowed_ports", &self.allowed_ports);
+        formatter.field("resource_configurations", &self.resource_configurations);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -210,6 +226,7 @@ pub struct GetAgentRuntimeOutputBuilder {
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::AgentRuntimeStatus>,
     pub(crate) lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
+    pub(crate) hooks_configuration: ::std::option::Option<crate::types::RuntimeHooksConfiguration>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) workload_identity_details: ::std::option::Option<crate::types::WorkloadIdentityDetails>,
@@ -223,6 +240,7 @@ pub struct GetAgentRuntimeOutputBuilder {
     pub(crate) capacity_provider_configuration: ::std::option::Option<crate::types::CapacityProviderConfiguration>,
     pub(crate) platform_version: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_ports: ::std::option::Option<::std::vec::Vec<crate::types::AllowedPort>>,
+    pub(crate) resource_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetAgentRuntimeOutputBuilder {
@@ -374,6 +392,20 @@ impl GetAgentRuntimeOutputBuilder {
     /// <p>The life cycle configuration for the AgentCore Runtime.</p>
     pub fn get_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::LifecycleConfiguration> {
         &self.lifecycle_configuration
+    }
+    /// <p>The lifecycle hooks configuration for the AgentCore Runtime.</p>
+    pub fn hooks_configuration(mut self, input: crate::types::RuntimeHooksConfiguration) -> Self {
+        self.hooks_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The lifecycle hooks configuration for the AgentCore Runtime.</p>
+    pub fn set_hooks_configuration(mut self, input: ::std::option::Option<crate::types::RuntimeHooksConfiguration>) -> Self {
+        self.hooks_configuration = input;
+        self
+    }
+    /// <p>The lifecycle hooks configuration for the AgentCore Runtime.</p>
+    pub fn get_hooks_configuration(&self) -> &::std::option::Option<crate::types::RuntimeHooksConfiguration> {
+        &self.hooks_configuration
     }
     /// <p>The reason for failure if the AgentCore Runtime is in a failed state.</p>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -582,6 +614,26 @@ impl GetAgentRuntimeOutputBuilder {
     pub fn get_allowed_ports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedPort>> {
         &self.allowed_ports
     }
+    /// Appends an item to `resource_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_resource_configurations`](Self::set_resource_configurations).
+    ///
+    /// <p>The resource configurations for the AgentCore Runtime.</p>
+    pub fn resource_configurations(mut self, input: crate::types::ResourceConfiguration) -> Self {
+        let mut v = self.resource_configurations.unwrap_or_default();
+        v.push(input);
+        self.resource_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The resource configurations for the AgentCore Runtime.</p>
+    pub fn set_resource_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceConfiguration>>) -> Self {
+        self.resource_configurations = input;
+        self
+    }
+    /// <p>The resource configurations for the AgentCore Runtime.</p>
+    pub fn get_resource_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceConfiguration>> {
+        &self.resource_configurations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -655,6 +707,7 @@ impl GetAgentRuntimeOutputBuilder {
                 )
             })?,
             lifecycle_configuration: self.lifecycle_configuration,
+            hooks_configuration: self.hooks_configuration,
             failure_reason: self.failure_reason,
             description: self.description,
             workload_identity_details: self.workload_identity_details,
@@ -668,6 +721,7 @@ impl GetAgentRuntimeOutputBuilder {
             capacity_provider_configuration: self.capacity_provider_configuration,
             platform_version: self.platform_version,
             allowed_ports: self.allowed_ports,
+            resource_configurations: self.resource_configurations,
             _request_id: self._request_id,
         })
     }
@@ -685,6 +739,7 @@ impl ::std::fmt::Debug for GetAgentRuntimeOutputBuilder {
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("status", &self.status);
         formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
+        formatter.field("hooks_configuration", &self.hooks_configuration);
         formatter.field("failure_reason", &self.failure_reason);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("workload_identity_details", &self.workload_identity_details);
@@ -698,6 +753,7 @@ impl ::std::fmt::Debug for GetAgentRuntimeOutputBuilder {
         formatter.field("capacity_provider_configuration", &self.capacity_provider_configuration);
         formatter.field("platform_version", &self.platform_version);
         formatter.field("allowed_ports", &self.allowed_ports);
+        formatter.field("resource_configurations", &self.resource_configurations);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

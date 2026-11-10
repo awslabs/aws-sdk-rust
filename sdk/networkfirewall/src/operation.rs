@@ -25,6 +25,9 @@ pub mod create_firewall;
 /// Types for the `CreateFirewallPolicy` operation.
 pub mod create_firewall_policy;
 
+/// Types for the `CreateFirewallPolicyV2` operation.
+pub mod create_firewall_policy_v2;
+
 /// Types for the `CreateProxy` operation.
 pub mod create_proxy;
 
@@ -54,6 +57,9 @@ pub mod delete_firewall;
 
 /// Types for the `DeleteFirewallPolicy` operation.
 pub mod delete_firewall_policy;
+
+/// Types for the `DeleteFirewallPolicyV2` operation.
+pub mod delete_firewall_policy_v2;
 
 /// Types for the `DeleteNetworkFirewallTransitGatewayAttachment` operation.
 pub mod delete_network_firewall_transit_gateway_attachment;
@@ -93,6 +99,9 @@ pub mod describe_firewall_metadata;
 
 /// Types for the `DescribeFirewallPolicy` operation.
 pub mod describe_firewall_policy;
+
+/// Types for the `DescribeFirewallPolicyV2` operation.
+pub mod describe_firewall_policy_v2;
 
 /// Types for the `DescribeFlowOperation` operation.
 pub mod describe_flow_operation;
@@ -150,6 +159,9 @@ pub mod list_container_associations;
 
 /// Types for the `ListFirewallPolicies` operation.
 pub mod list_firewall_policies;
+
+/// Types for the `ListFirewallPoliciesV2` operation.
+pub mod list_firewall_policies_v2;
 
 /// Types for the `ListFirewalls` operation.
 pub mod list_firewalls;
@@ -225,6 +237,9 @@ pub mod update_firewall_policy;
 
 /// Types for the `UpdateFirewallPolicyChangeProtection` operation.
 pub mod update_firewall_policy_change_protection;
+
+/// Types for the `UpdateFirewallPolicyV2` operation.
+pub mod update_firewall_policy_v2;
 
 /// Types for the `UpdateLoggingConfiguration` operation.
 pub mod update_logging_configuration;

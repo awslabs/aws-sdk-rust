@@ -45,6 +45,8 @@ pub struct DescribeAgreementOutput {
     /// <p>The behavior of the agreement when it reaches its end date. For example, whether the agreement renews, and if it doesn't, the reason why.</p>
     /// <p>This field is present for every active agreement that has an end date. It is not present for an agreement that has no end date, because such an agreement never reaches an end time. Pay-as-you-go agreements are the most common example. It is also not present for an agreement that is no longer active.</p>
     pub end_time_behavior: ::std::option::Option<crate::types::EndTimeBehavior>,
+    /// <p>The free trial details of the agreement. This field is present only when the agreement includes a free trial.</p>
+    pub free_trial_summary: ::std::option::Option<crate::types::FreeTrialSummary>,
     _request_id: Option<String>,
 }
 impl DescribeAgreementOutput {
@@ -114,6 +116,10 @@ impl DescribeAgreementOutput {
     pub fn end_time_behavior(&self) -> ::std::option::Option<&crate::types::EndTimeBehavior> {
         self.end_time_behavior.as_ref()
     }
+    /// <p>The free trial details of the agreement. This field is present only when the agreement includes a free trial.</p>
+    pub fn free_trial_summary(&self) -> ::std::option::Option<&crate::types::FreeTrialSummary> {
+        self.free_trial_summary.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeAgreementOutput {
     fn request_id(&self) -> Option<&str> {
@@ -143,6 +149,7 @@ pub struct DescribeAgreementOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AgreementStatus>,
     pub(crate) initial_agreement_id: ::std::option::Option<::std::string::String>,
     pub(crate) end_time_behavior: ::std::option::Option<crate::types::EndTimeBehavior>,
+    pub(crate) free_trial_summary: ::std::option::Option<crate::types::FreeTrialSummary>,
     _request_id: Option<String>,
 }
 impl DescribeAgreementOutputBuilder {
@@ -368,6 +375,20 @@ impl DescribeAgreementOutputBuilder {
     pub fn get_end_time_behavior(&self) -> &::std::option::Option<crate::types::EndTimeBehavior> {
         &self.end_time_behavior
     }
+    /// <p>The free trial details of the agreement. This field is present only when the agreement includes a free trial.</p>
+    pub fn free_trial_summary(mut self, input: crate::types::FreeTrialSummary) -> Self {
+        self.free_trial_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The free trial details of the agreement. This field is present only when the agreement includes a free trial.</p>
+    pub fn set_free_trial_summary(mut self, input: ::std::option::Option<crate::types::FreeTrialSummary>) -> Self {
+        self.free_trial_summary = input;
+        self
+    }
+    /// <p>The free trial details of the agreement. This field is present only when the agreement includes a free trial.</p>
+    pub fn get_free_trial_summary(&self) -> &::std::option::Option<crate::types::FreeTrialSummary> {
+        &self.free_trial_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -392,6 +413,7 @@ impl DescribeAgreementOutputBuilder {
             status: self.status,
             initial_agreement_id: self.initial_agreement_id,
             end_time_behavior: self.end_time_behavior,
+            free_trial_summary: self.free_trial_summary,
             _request_id: self._request_id,
         }
     }

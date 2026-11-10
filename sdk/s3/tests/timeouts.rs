@@ -214,7 +214,7 @@ async fn test_default_connect_timeout_with_bmv_2026_01_12() {
     use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
 
     // With BehaviorVersion >= v2025_01_17, a 3.1s connect timeout is enabled by default
-    // This test uses v2026_01_12 (the latest) to verify timeout behavior
+    // This test uses v2026_01_12 to verify timeout behavior
     let config = Config::builder()
         .behavior_version(BehaviorVersion::v2026_01_12())
         .region(Region::new("us-east-1"))

@@ -685,6 +685,8 @@ pub(crate) mod shape_descriptors;
 
 pub(crate) mod shape_dimension_keys;
 
+pub(crate) mod shape_domain_override;
+
 pub(crate) mod shape_environment_variables_map;
 
 pub(crate) mod shape_evaluator_config;
@@ -829,9 +831,15 @@ pub(crate) mod shape_request_header_configuration;
 
 pub(crate) mod shape_resource;
 
+pub(crate) mod shape_resource_configuration;
+
+pub(crate) mod shape_resource_configurations;
+
 pub(crate) mod shape_resource_oauth2_return_url_list_type;
 
 pub(crate) mod shape_rule;
+
+pub(crate) mod shape_runtime_hooks_configuration;
 
 pub(crate) mod shape_runtime_metadata_configuration;
 
@@ -914,6 +922,8 @@ pub(crate) mod shape_atlassian_oauth2_provider_config_output;
 pub(crate) mod shape_browser_profile_summary;
 
 pub(crate) mod shape_browser_summary;
+
+pub(crate) mod shape_build_lifecycle_hooks;
 
 pub(crate) mod shape_capacity_provider_summary;
 
@@ -1143,6 +1153,8 @@ pub(crate) mod shape_policy_summary;
 
 pub(crate) mod shape_port_range;
 
+pub(crate) mod shape_public_domain_name_list;
+
 pub(crate) mod shape_rate_config;
 
 pub(crate) mod shape_registry_record_summary;
@@ -1286,6 +1298,8 @@ pub(crate) mod shape_lambda_evaluator_config;
 pub(crate) mod shape_lambda_interceptor_configuration;
 
 pub(crate) mod shape_launch_template_source;
+
+pub(crate) mod shape_lifecycle_hook;
 
 pub(crate) mod shape_log_group_name_prefix_list;
 
@@ -1451,6 +1465,8 @@ pub(crate) mod shape_interceptor_payload_exclusion_selector;
 
 pub(crate) mod shape_launch_parameters;
 
+pub(crate) mod shape_lifecycle_hook_action;
+
 pub(crate) mod shape_match_model_entries;
 
 pub(crate) mod shape_match_path_patterns;
@@ -1570,6 +1586,8 @@ pub(crate) mod shape_fallback_target;
 pub(crate) mod shape_fallback_triggers;
 
 pub(crate) mod shape_harness_aws_skill_paths;
+
+pub(crate) mod shape_http_post_lifecycle_hook_action;
 
 pub(crate) mod shape_inference_configuration;
 

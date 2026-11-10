@@ -142,21 +142,51 @@ impl DescribeRuleGroupFluentBuilder {
     pub fn get_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rule_group_arn()
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p><note>
+    /// <p>Indicates the type of the rule group. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>STATEFUL</code> - Stateful rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Firewall engine rules, for use in a Next Generation policy.</p></li>
+    /// <li>
+    /// <p><code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p></li>
+    /// </ul><note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn r#type(mut self, input: crate::types::RuleGroupType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p><note>
+    /// <p>Indicates the type of the rule group. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>STATEFUL</code> - Stateful rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Firewall engine rules, for use in a Next Generation policy.</p></li>
+    /// <li>
+    /// <p><code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p></li>
+    /// </ul><note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RuleGroupType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p><note>
+    /// <p>Indicates the type of the rule group. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>STATEFUL</code> - Stateful rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Firewall engine rules, for use in a Next Generation policy.</p></li>
+    /// <li>
+    /// <p><code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p></li>
+    /// </ul><note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RuleGroupType> {
@@ -175,5 +205,40 @@ impl DescribeRuleGroupFluentBuilder {
     /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.</p>
     pub fn get_analyze_rule_group(&self) -> &::std::option::Option<bool> {
         self.inner.get_analyze_rule_group()
+    }
+    /// <p>For a firewall engine rule group, the format in which to return the rules. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FIREWALL_RULES</code> - Returns the rules as structured <code>FirewallRule</code> objects.</p></li>
+    /// <li>
+    /// <p><code>RULES_STRING</code> - Returns the rules as a Suricata-compatible firewall-mode rule string.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a format, Network Firewall returns the rules in the format you provided them in. This setting applies only to <code>FIREWALL</code> and <code>IPS</code> rule groups; IPS engine rule groups support only <code>RULES_STRING</code>.</p>
+    pub fn rule_output_format(mut self, input: crate::types::RuleOutputFormat) -> Self {
+        self.inner = self.inner.rule_output_format(input);
+        self
+    }
+    /// <p>For a firewall engine rule group, the format in which to return the rules. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FIREWALL_RULES</code> - Returns the rules as structured <code>FirewallRule</code> objects.</p></li>
+    /// <li>
+    /// <p><code>RULES_STRING</code> - Returns the rules as a Suricata-compatible firewall-mode rule string.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a format, Network Firewall returns the rules in the format you provided them in. This setting applies only to <code>FIREWALL</code> and <code>IPS</code> rule groups; IPS engine rule groups support only <code>RULES_STRING</code>.</p>
+    pub fn set_rule_output_format(mut self, input: ::std::option::Option<crate::types::RuleOutputFormat>) -> Self {
+        self.inner = self.inner.set_rule_output_format(input);
+        self
+    }
+    /// <p>For a firewall engine rule group, the format in which to return the rules. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FIREWALL_RULES</code> - Returns the rules as structured <code>FirewallRule</code> objects.</p></li>
+    /// <li>
+    /// <p><code>RULES_STRING</code> - Returns the rules as a Suricata-compatible firewall-mode rule string.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a format, Network Firewall returns the rules in the format you provided them in. This setting applies only to <code>FIREWALL</code> and <code>IPS</code> rule groups; IPS engine rule groups support only <code>RULES_STRING</code>.</p>
+    pub fn get_rule_output_format(&self) -> &::std::option::Option<crate::types::RuleOutputFormat> {
+        self.inner.get_rule_output_format()
     }
 }

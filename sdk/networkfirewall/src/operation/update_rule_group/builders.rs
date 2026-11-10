@@ -180,6 +180,34 @@ impl UpdateRuleGroupFluentBuilder {
     pub fn get_rule_group(&self) -> &::std::option::Option<crate::types::RuleGroup> {
         self.inner.get_rule_group()
     }
+    /// <p>An object that defines the rules in a firewall engine rule group, for use in a Next Generation policy.</p>
+    pub fn firewall_rule_group(mut self, input: crate::types::FirewallRuleGroup) -> Self {
+        self.inner = self.inner.firewall_rule_group(input);
+        self
+    }
+    /// <p>An object that defines the rules in a firewall engine rule group, for use in a Next Generation policy.</p>
+    pub fn set_firewall_rule_group(mut self, input: ::std::option::Option<crate::types::FirewallRuleGroup>) -> Self {
+        self.inner = self.inner.set_firewall_rule_group(input);
+        self
+    }
+    /// <p>An object that defines the rules in a firewall engine rule group, for use in a Next Generation policy.</p>
+    pub fn get_firewall_rule_group(&self) -> &::std::option::Option<crate::types::FirewallRuleGroup> {
+        self.inner.get_firewall_rule_group()
+    }
+    /// <p>An object that defines the rules in an IPS engine rule group, for use in a Next Generation policy.</p>
+    pub fn ips_rule_group(mut self, input: crate::types::IpsRuleGroup) -> Self {
+        self.inner = self.inner.ips_rule_group(input);
+        self
+    }
+    /// <p>An object that defines the rules in an IPS engine rule group, for use in a Next Generation policy.</p>
+    pub fn set_ips_rule_group(mut self, input: ::std::option::Option<crate::types::IpsRuleGroup>) -> Self {
+        self.inner = self.inner.set_ips_rule_group(input);
+        self
+    }
+    /// <p>An object that defines the rules in an IPS engine rule group, for use in a Next Generation policy.</p>
+    pub fn get_ips_rule_group(&self) -> &::std::option::Option<crate::types::IpsRuleGroup> {
+        self.inner.get_ips_rule_group()
+    }
     /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p><note>
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both.</p>
     /// </note>
@@ -203,21 +231,51 @@ impl UpdateRuleGroupFluentBuilder {
     pub fn get_rules(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rules()
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p><note>
+    /// <p>Indicates the type of the rule group. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>STATEFUL</code> - Stateful rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Firewall engine rules, for use in a Next Generation policy.</p></li>
+    /// <li>
+    /// <p><code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p></li>
+    /// </ul><note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn r#type(mut self, input: crate::types::RuleGroupType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p><note>
+    /// <p>Indicates the type of the rule group. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>STATEFUL</code> - Stateful rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Firewall engine rules, for use in a Next Generation policy.</p></li>
+    /// <li>
+    /// <p><code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p></li>
+    /// </ul><note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RuleGroupType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p><note>
+    /// <p>Indicates the type of the rule group. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>STATEFUL</code> - Stateful rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Firewall engine rules, for use in a Next Generation policy.</p></li>
+    /// <li>
+    /// <p><code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p></li>
+    /// </ul><note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RuleGroupType> {

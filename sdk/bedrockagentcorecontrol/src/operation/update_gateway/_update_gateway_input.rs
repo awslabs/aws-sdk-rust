@@ -37,6 +37,8 @@ pub struct UpdateGatewayInput {
     pub exception_level: ::std::option::Option<crate::types::ExceptionLevel>,
     /// <p>The updated Amazon Web Services WAF configuration for the gateway.</p>
     pub waf_configuration: ::std::option::Option<crate::types::WafConfiguration>,
+    /// <p>The updated public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header. Specify this when clients reach the gateway through your own proxy or custom domain.</p>
+    pub domain_override: ::std::option::Option<crate::types::DomainOverride>,
 }
 impl UpdateGatewayInput {
     /// <p>The identifier of the gateway to update.</p>
@@ -103,6 +105,10 @@ impl UpdateGatewayInput {
     pub fn waf_configuration(&self) -> ::std::option::Option<&crate::types::WafConfiguration> {
         self.waf_configuration.as_ref()
     }
+    /// <p>The updated public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header. Specify this when clients reach the gateway through your own proxy or custom domain.</p>
+    pub fn domain_override(&self) -> ::std::option::Option<&crate::types::DomainOverride> {
+        self.domain_override.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateGatewayInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -121,6 +127,7 @@ impl ::std::fmt::Debug for UpdateGatewayInput {
         formatter.field("policy_engine_configuration", &self.policy_engine_configuration);
         formatter.field("exception_level", &self.exception_level);
         formatter.field("waf_configuration", &self.waf_configuration);
+        formatter.field("domain_override", &self.domain_override);
         formatter.finish()
     }
 }
@@ -149,6 +156,7 @@ pub struct UpdateGatewayInputBuilder {
     pub(crate) policy_engine_configuration: ::std::option::Option<crate::types::GatewayPolicyEngineConfiguration>,
     pub(crate) exception_level: ::std::option::Option<crate::types::ExceptionLevel>,
     pub(crate) waf_configuration: ::std::option::Option<crate::types::WafConfiguration>,
+    pub(crate) domain_override: ::std::option::Option<crate::types::DomainOverride>,
 }
 impl UpdateGatewayInputBuilder {
     /// <p>The identifier of the gateway to update.</p>
@@ -378,6 +386,20 @@ impl UpdateGatewayInputBuilder {
     pub fn get_waf_configuration(&self) -> &::std::option::Option<crate::types::WafConfiguration> {
         &self.waf_configuration
     }
+    /// <p>The updated public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header. Specify this when clients reach the gateway through your own proxy or custom domain.</p>
+    pub fn domain_override(mut self, input: crate::types::DomainOverride) -> Self {
+        self.domain_override = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header. Specify this when clients reach the gateway through your own proxy or custom domain.</p>
+    pub fn set_domain_override(mut self, input: ::std::option::Option<crate::types::DomainOverride>) -> Self {
+        self.domain_override = input;
+        self
+    }
+    /// <p>The updated public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header. Specify this when clients reach the gateway through your own proxy or custom domain.</p>
+    pub fn get_domain_override(&self) -> &::std::option::Option<crate::types::DomainOverride> {
+        &self.domain_override
+    }
     /// Consumes the builder and constructs a [`UpdateGatewayInput`](crate::operation::update_gateway::UpdateGatewayInput).
     pub fn build(
         self,
@@ -397,6 +419,7 @@ impl UpdateGatewayInputBuilder {
             policy_engine_configuration: self.policy_engine_configuration,
             exception_level: self.exception_level,
             waf_configuration: self.waf_configuration,
+            domain_override: self.domain_override,
         })
     }
 }
@@ -417,6 +440,7 @@ impl ::std::fmt::Debug for UpdateGatewayInputBuilder {
         formatter.field("policy_engine_configuration", &self.policy_engine_configuration);
         formatter.field("exception_level", &self.exception_level);
         formatter.field("waf_configuration", &self.waf_configuration);
+        formatter.field("domain_override", &self.domain_override);
         formatter.finish()
     }
 }

@@ -55,6 +55,11 @@ pub(crate) fn de_game_session_queue(
             "NotificationTarget" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_notification_target(Some(decoder.string()?)))
             })?,
+            "LogConfiguration" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_log_configuration(Some(
+                    crate::protocol_serde::shape_game_session_queue_log_configuration::de_game_session_queue_log_configuration(decoder, depth + 1)?,
+                )))
+            })?,
             _ => {
                 decoder.skip()?;
                 builder

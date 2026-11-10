@@ -139,6 +139,16 @@ pub(crate) fn de_describe_rule_group(
                 "RuleGroup" => {
                     builder = builder.set_rule_group(crate::protocol_serde::shape_rule_group::de_rule_group(tokens, _value, depth + 1)?);
                 }
+                "FirewallRuleGroup" => {
+                    builder = builder.set_firewall_rule_group(crate::protocol_serde::shape_firewall_rule_group::de_firewall_rule_group(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
+                "IpsRuleGroup" => {
+                    builder = builder.set_ips_rule_group(crate::protocol_serde::shape_ips_rule_group::de_ips_rule_group(tokens, _value, depth + 1)?);
+                }
                 "RuleGroupResponse" => {
                     builder = builder.set_rule_group_response(crate::protocol_serde::shape_rule_group_response::de_rule_group_response(
                         tokens,

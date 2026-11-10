@@ -22,7 +22,20 @@ impl crate::operation::associate_profile::builders::AssociateProfileInputBuilder
 }
 /// Fluent builder constructing a request to `AssociateProfile`.
 ///
-/// <p>Associates a Route 53 Profiles profile with a VPC. A VPC can have only one Profile associated with it, but a Profile can be associated with 1000 of VPCs (and you can request a higher quota). For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities">https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities</a>.</p>
+/// <p>Associates a Route 53 Profiles profile with a VPC. A VPC can have up to two Profile associations. A Profile can be associated with up to 1,000 VPCs, and you can request a higher quota for the number of VPCs. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-route53-profiles">Quotas on Route 53 Profiles</a>.</p>
+/// <p>Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority order, starting with the lowest <code>Priority</code> value. If the VPC has no other Profile associations, you can omit <code>Priority</code>, and the association gets priority 100. When the VPC already has a Profile association, you must specify a <code>Priority</code>, and each Profile association for the VPC must have a unique priority. To change the priority of an existing association, use <code>UpdateProfileAssociation</code>.</p>
+/// <p>The request fails with a <code>ValidationException</code> in these cases:</p>
+/// <ul>
+/// <li>
+/// <p>You omit <code>Priority</code>, and the VPC already has a Profile association.</p></li>
+/// <li>
+/// <p>Another Profile association for the VPC already uses the priority that you specify.</p></li>
+/// <li>
+/// <p>The priority is outside the range 100–9900.</p></li>
+/// <li>
+/// <p>The Profile is already associated with the VPC, and you specify a different <code>Name</code> or <code>Priority</code>. To change the priority, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_UpdateProfileAssociation.html">UpdateProfileAssociation</a>.</p></li>
+/// </ul>
+/// <p>The request fails with a <code>LimitExceededException</code> if the VPC already has the maximum number of Profile associations.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -168,5 +181,22 @@ impl AssociateProfileFluentBuilder {
     /// <p>A list of the tag keys and values that you want to identify the Profile association.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
+    }
+    /// <p>The priority of the Profile association. Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority order, starting with the lowest value.</p>
+    /// <p>When the VPC already has a Profile association, you must specify a priority that no other Profile association for the VPC uses. If you omit the priority for the first association with a VPC, the association gets priority 100.</p>
+    pub fn priority(mut self, input: i32) -> Self {
+        self.inner = self.inner.priority(input);
+        self
+    }
+    /// <p>The priority of the Profile association. Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority order, starting with the lowest value.</p>
+    /// <p>When the VPC already has a Profile association, you must specify a priority that no other Profile association for the VPC uses. If you omit the priority for the first association with a VPC, the association gets priority 100.</p>
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_priority(input);
+        self
+    }
+    /// <p>The priority of the Profile association. Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority order, starting with the lowest value.</p>
+    /// <p>When the VPC already has a Profile association, you must specify a priority that no other Profile association for the VPC uses. If you omit the priority for the first association with a VPC, the association gets priority 100.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        self.inner.get_priority()
     }
 }

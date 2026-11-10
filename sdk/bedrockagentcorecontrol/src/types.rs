@@ -61,6 +61,8 @@ pub use crate::types::_protocol_configuration::ProtocolConfiguration;
 
 pub use crate::types::_lifecycle_configuration::LifecycleConfiguration;
 
+pub use crate::types::_runtime_hooks_configuration::RuntimeHooksConfiguration;
+
 pub use crate::types::_capacity_provider_configuration::CapacityProviderConfiguration;
 
 pub use crate::types::_workload_identity_details::WorkloadIdentityDetails;
@@ -136,6 +138,8 @@ pub use crate::types::_authorizer_type::AuthorizerType;
 pub use crate::types::_gateway_policy_engine_configuration::GatewayPolicyEngineConfiguration;
 
 pub use crate::types::_exception_level::ExceptionLevel;
+
+pub use crate::types::_domain_override::DomainOverride;
 
 pub use crate::types::_gateway_status::GatewayStatus;
 
@@ -287,9 +291,13 @@ pub use crate::types::_custom_jwt_authorizer_configuration::CustomJwtAuthorizerC
 
 pub use crate::types::_server_protocol::ServerProtocol;
 
+pub use crate::types::_build_lifecycle_hooks::BuildLifecycleHooks;
+
 pub use crate::types::_filesystem_configuration::FilesystemConfiguration;
 
 pub use crate::types::_allowed_port::AllowedPort;
+
+pub use crate::types::_resource_configuration::ResourceConfiguration;
 
 pub use crate::types::_api_key_credential_provider_item::ApiKeyCredentialProviderItem;
 
@@ -539,6 +547,8 @@ pub use crate::types::_agent_managed_runtime_type::AgentManagedRuntimeType;
 
 pub use crate::types::_allowed_workload_configuration::AllowedWorkloadConfiguration;
 
+pub use crate::types::_lifecycle_hook::LifecycleHook;
+
 pub use crate::types::_session_storage_configuration::SessionStorageConfiguration;
 
 pub use crate::types::_s3_files_access_point_configuration::S3FilesAccessPointConfiguration;
@@ -711,6 +721,8 @@ pub use crate::types::_payment_credential_provider_configuration::PaymentCredent
 
 pub use crate::types::_custom_claim_validation_type::CustomClaimValidationType;
 
+pub use crate::types::_lifecycle_hook_action::LifecycleHookAction;
+
 pub use crate::types::_secrets_manager_location::SecretsManagerLocation;
 
 pub use crate::types::_launch_parameters::LaunchParameters;
@@ -824,6 +836,8 @@ pub use crate::types::_inbound_token_claim_value_type::InboundTokenClaimValueTyp
 pub use crate::types::_authorizing_claim_match_value_type::AuthorizingClaimMatchValueType;
 
 pub use crate::types::_hosting_environment::HostingEnvironment;
+
+pub use crate::types::_http_post_lifecycle_hook_action::HttpPostLifecycleHookAction;
 
 pub use crate::types::_operating_system::OperatingSystem;
 
@@ -1153,6 +1167,8 @@ mod _browser_status;
 
 mod _browser_summary;
 
+mod _build_lifecycle_hooks;
+
 mod _capacity_provider_configuration;
 
 mod _capacity_provider_status;
@@ -1326,6 +1342,8 @@ mod _descriptor_type;
 mod _descriptors;
 
 mod _dimension_rating_scale;
+
+mod _domain_override;
 
 mod _draft_status;
 
@@ -1565,6 +1583,8 @@ mod _http_connector_source;
 
 mod _http_connector_target_configuration;
 
+mod _http_post_lifecycle_hook_action;
+
 mod _http_target_configuration;
 
 mod _iam_credential_provider;
@@ -1636,6 +1656,10 @@ mod _launch_template_source;
 mod _license_specification;
 
 mod _lifecycle_configuration;
+
+mod _lifecycle_hook;
+
+mod _lifecycle_hook_action;
 
 mod _limit_entry;
 
@@ -1899,6 +1923,8 @@ mod _request_header_configuration;
 
 mod _resource;
 
+mod _resource_configuration;
+
 mod _resource_location;
 
 mod _resource_type;
@@ -1912,6 +1938,8 @@ mod _root_volume_configuration;
 mod _route_to_target_action;
 
 mod _rule;
+
+mod _runtime_hooks_configuration;
 
 mod _runtime_metadata_configuration;
 

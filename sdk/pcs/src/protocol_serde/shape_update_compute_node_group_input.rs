@@ -3,62 +3,77 @@ pub fn ser_update_compute_node_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_compute_node_group::UpdateComputeNodeGroupInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.cluster_identifier {
-        object.key("clusterIdentifier").string(var_1.as_str());
+    if let Some(var_1) = &input.ami_id {
+        object.key("amiId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.compute_node_group_identifier {
-        object.key("computeNodeGroupIdentifier").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.ami_id {
-        object.key("amiId").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.subnet_ids {
-        let mut array_5 = object.key("subnetIds").start_array();
-        for item_6 in var_4 {
+    if let Some(var_2) = &input.security_group_ids {
+        let mut array_3 = object.key("securityGroupIds").start_array();
+        for item_4 in var_2 {
             {
-                array_5.value().string(item_6.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_5.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.custom_launch_template {
+    if let Some(var_5) = &input.ssh_key_name {
+        object.key("sshKeyName").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.cluster_identifier {
+        object.key("clusterIdentifier").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.compute_node_group_identifier {
+        object.key("computeNodeGroupIdentifier").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.subnet_ids {
+        let mut array_9 = object.key("subnetIds").start_array();
+        for item_10 in var_8 {
+            {
+                array_9.value().string(item_10.as_str());
+            }
+        }
+        array_9.finish();
+    }
+    if let Some(var_11) = &input.launch_template_mode {
+        object.key("launchTemplateMode").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.custom_launch_template {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("customLaunchTemplate").start_object();
-        crate::protocol_serde::shape_custom_launch_template::ser_custom_launch_template(&mut object_8, var_7)?;
-        object_8.finish();
-    }
-    if let Some(var_9) = &input.purchase_option {
-        object.key("purchaseOption").string(var_9.as_str());
-    }
-    if let Some(var_10) = &input.spot_options {
-        #[allow(unused_mut)]
-        let mut object_11 = object.key("spotOptions").start_object();
-        crate::protocol_serde::shape_spot_options::ser_spot_options(&mut object_11, var_10)?;
-        object_11.finish();
-    }
-    if let Some(var_12) = &input.scaling_configuration {
-        #[allow(unused_mut)]
-        let mut object_13 = object.key("scalingConfiguration").start_object();
-        crate::protocol_serde::shape_scaling_configuration_request::ser_scaling_configuration_request(&mut object_13, var_12)?;
+        let mut object_13 = object.key("customLaunchTemplate").start_object();
+        crate::protocol_serde::shape_custom_launch_template::ser_custom_launch_template(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.iam_instance_profile_arn {
-        object.key("iamInstanceProfileArn").string(var_14.as_str());
+    if let Some(var_14) = &input.purchase_option {
+        object.key("purchaseOption").string(var_14.as_str());
     }
-    if let Some(var_15) = &input.slurm_configuration {
+    if let Some(var_15) = &input.spot_options {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("slurmConfiguration").start_object();
-        crate::protocol_serde::shape_update_compute_node_group_slurm_configuration_request::ser_update_compute_node_group_slurm_configuration_request(&mut object_16, var_15)?;
+        let mut object_16 = object.key("spotOptions").start_object();
+        crate::protocol_serde::shape_spot_options::ser_spot_options(&mut object_16, var_15)?;
         object_16.finish();
     }
-    if let Some(var_17) = &input.node_lifecycle_actions {
+    if let Some(var_17) = &input.scaling_configuration {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("nodeLifecycleActions").start_object();
-        crate::protocol_serde::shape_update_node_lifecycle_actions_request::ser_update_node_lifecycle_actions_request(&mut object_18, var_17)?;
+        let mut object_18 = object.key("scalingConfiguration").start_object();
+        crate::protocol_serde::shape_scaling_configuration_request::ser_scaling_configuration_request(&mut object_18, var_17)?;
         object_18.finish();
     }
-    if let Some(var_19) = &input.client_token {
-        object.key("clientToken").string(var_19.as_str());
+    if let Some(var_19) = &input.iam_instance_profile_arn {
+        object.key("iamInstanceProfileArn").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.slurm_configuration {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("slurmConfiguration").start_object();
+        crate::protocol_serde::shape_update_compute_node_group_slurm_configuration_request::ser_update_compute_node_group_slurm_configuration_request(&mut object_21, var_20)?;
+        object_21.finish();
+    }
+    if let Some(var_22) = &input.node_lifecycle_actions {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("nodeLifecycleActions").start_object();
+        crate::protocol_serde::shape_update_node_lifecycle_actions_request::ser_update_node_lifecycle_actions_request(&mut object_23, var_22)?;
+        object_23.finish();
+    }
+    if let Some(var_24) = &input.client_token {
+        object.key("clientToken").string(var_24.as_str());
     }
     Ok(())
 }

@@ -37,6 +37,8 @@ pub use crate::types::_protocol_configuration::ProtocolConfigurationBuilder;
 
 pub use crate::types::_lifecycle_configuration::LifecycleConfigurationBuilder;
 
+pub use crate::types::_runtime_hooks_configuration::RuntimeHooksConfigurationBuilder;
+
 pub use crate::types::_capacity_provider_configuration::CapacityProviderConfigurationBuilder;
 
 pub use crate::types::_workload_identity_details::WorkloadIdentityDetailsBuilder;
@@ -64,6 +66,8 @@ pub use crate::types::_version_lineage_metadata::VersionLineageMetadataBuilder;
 pub use crate::types::_version_filter::VersionFilterBuilder;
 
 pub use crate::types::_gateway_policy_engine_configuration::GatewayPolicyEngineConfigurationBuilder;
+
+pub use crate::types::_domain_override::DomainOverrideBuilder;
 
 pub use crate::types::_custom_transform_configuration::CustomTransformConfigurationBuilder;
 
@@ -128,6 +132,10 @@ pub use crate::types::_code_configuration::CodeConfigurationBuilder;
 pub use crate::types::_vpc_config::VpcConfigBuilder;
 
 pub use crate::types::_custom_jwt_authorizer_configuration::CustomJwtAuthorizerConfigurationBuilder;
+
+pub use crate::types::_build_lifecycle_hooks::BuildLifecycleHooksBuilder;
+
+pub use crate::types::_resource_configuration::ResourceConfigurationBuilder;
 
 pub use crate::types::_api_key_credential_provider_item::ApiKeyCredentialProviderItemBuilder;
 
@@ -318,6 +326,8 @@ pub use crate::types::_payment_connector_summary::PaymentConnectorSummaryBuilder
 pub use crate::types::_coinbase_cdp_rotation_targets::CoinbaseCdpRotationTargetsBuilder;
 
 pub use crate::types::_allowed_workload_configuration::AllowedWorkloadConfigurationBuilder;
+
+pub use crate::types::_lifecycle_hook::LifecycleHookBuilder;
 
 pub use crate::types::_session_storage_configuration::SessionStorageConfigurationBuilder;
 
@@ -518,6 +528,8 @@ pub use crate::types::_updated_agent_skills_descriptor_fields::UpdatedAgentSkill
 pub use crate::types::_authorizing_claim_match_value_type::AuthorizingClaimMatchValueTypeBuilder;
 
 pub use crate::types::_hosting_environment::HostingEnvironmentBuilder;
+
+pub use crate::types::_http_post_lifecycle_hook_action::HttpPostLifecycleHookActionBuilder;
 
 pub use crate::types::_instance_requirements::InstanceRequirementsBuilder;
 

@@ -61,41 +61,59 @@ pub fn ser_update_agent_runtime_input_input(
         }
         array_18.finish();
     }
-    if let Some(var_21) = &input.lifecycle_configuration {
+    if let Some(var_21) = &input.hooks_configuration {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("lifecycleConfiguration").start_object();
-        crate::protocol_serde::shape_lifecycle_configuration::ser_lifecycle_configuration(&mut object_22, var_21)?;
+        let mut object_22 = object.key("hooksConfiguration").start_object();
+        crate::protocol_serde::shape_runtime_hooks_configuration::ser_runtime_hooks_configuration(&mut object_22, var_21)?;
         object_22.finish();
     }
-    if let Some(var_23) = &input.metadata_configuration {
+    if let Some(var_23) = &input.lifecycle_configuration {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("metadataConfiguration").start_object();
-        crate::protocol_serde::shape_runtime_metadata_configuration::ser_runtime_metadata_configuration(&mut object_24, var_23)?;
+        let mut object_24 = object.key("lifecycleConfiguration").start_object();
+        crate::protocol_serde::shape_lifecycle_configuration::ser_lifecycle_configuration(&mut object_24, var_23)?;
         object_24.finish();
     }
-    if let Some(var_25) = &input.network_configuration {
+    if let Some(var_25) = &input.metadata_configuration {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("networkConfiguration").start_object();
-        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_26, var_25)?;
+        let mut object_26 = object.key("metadataConfiguration").start_object();
+        crate::protocol_serde::shape_runtime_metadata_configuration::ser_runtime_metadata_configuration(&mut object_26, var_25)?;
         object_26.finish();
     }
-    if let Some(var_27) = &input.platform_version {
-        object.key("platformVersion").string(var_27.as_str());
-    }
-    if let Some(var_28) = &input.protocol_configuration {
+    if let Some(var_27) = &input.network_configuration {
         #[allow(unused_mut)]
-        let mut object_29 = object.key("protocolConfiguration").start_object();
-        crate::protocol_serde::shape_protocol_configuration::ser_protocol_configuration(&mut object_29, var_28)?;
-        object_29.finish();
+        let mut object_28 = object.key("networkConfiguration").start_object();
+        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_28, var_27)?;
+        object_28.finish();
     }
-    if let Some(var_30) = &input.request_header_configuration {
+    if let Some(var_29) = &input.platform_version {
+        object.key("platformVersion").string(var_29.as_str());
+    }
+    if let Some(var_30) = &input.protocol_configuration {
         #[allow(unused_mut)]
-        let mut object_31 = object.key("requestHeaderConfiguration").start_object();
-        crate::protocol_serde::shape_request_header_configuration::ser_request_header_configuration(&mut object_31, var_30)?;
+        let mut object_31 = object.key("protocolConfiguration").start_object();
+        crate::protocol_serde::shape_protocol_configuration::ser_protocol_configuration(&mut object_31, var_30)?;
         object_31.finish();
     }
-    if let Some(var_32) = &input.role_arn {
-        object.key("roleArn").string(var_32.as_str());
+    if let Some(var_32) = &input.request_header_configuration {
+        #[allow(unused_mut)]
+        let mut object_33 = object.key("requestHeaderConfiguration").start_object();
+        crate::protocol_serde::shape_request_header_configuration::ser_request_header_configuration(&mut object_33, var_32)?;
+        object_33.finish();
+    }
+    if let Some(var_34) = &input.resource_configurations {
+        let mut array_35 = object.key("resourceConfigurations").start_array();
+        for item_36 in var_34 {
+            {
+                #[allow(unused_mut)]
+                let mut object_37 = array_35.value().start_object();
+                crate::protocol_serde::shape_resource_configuration::ser_resource_configuration(&mut object_37, item_36)?;
+                object_37.finish();
+            }
+        }
+        array_35.finish();
+    }
+    if let Some(var_38) = &input.role_arn {
+        object.key("roleArn").string(var_38.as_str());
     }
     Ok(())
 }

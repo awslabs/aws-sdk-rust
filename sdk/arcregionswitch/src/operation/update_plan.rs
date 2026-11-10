@@ -329,6 +329,8 @@ pub enum UpdatePlanError {
     /// <p>The specified resource was not found.</p>
     /// <p>HTTP Status Code: 404</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The request conflicted with a concurrent modification of the same resource and did not take effect.</p>
+    RetryableConflictException(crate::types::error::RetryableConflictException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -363,6 +365,7 @@ impl UpdatePlanError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RetryableConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -370,11 +373,16 @@ impl UpdatePlanError {
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
     }
+    /// Returns `true` if the error kind is `UpdatePlanError::RetryableConflictException`.
+    pub fn is_retryable_conflict_exception(&self) -> bool {
+        matches!(self, Self::RetryableConflictException(_))
+    }
 }
 impl ::std::error::Error for UpdatePlanError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::RetryableConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -383,6 +391,7 @@ impl ::std::fmt::Display for UpdatePlanError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::RetryableConflictException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -398,13 +407,17 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for UpdatePlanError {
         ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
     fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
-        ::std::option::Option::None
+        match self {
+            Self::RetryableConflictException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            _ => ::std::option::Option::None,
+        }
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdatePlanError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RetryableConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

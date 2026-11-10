@@ -83,6 +83,8 @@ pub(crate) mod shape_get_data_lake_settings;
 
 pub(crate) mod shape_get_effective_permissions_for_path;
 
+pub(crate) mod shape_get_glue_function_session_context;
+
 pub(crate) mod shape_get_lf_tag;
 
 pub(crate) mod shape_get_lf_tag_expression;
@@ -98,6 +100,8 @@ pub(crate) mod shape_get_rls_policy;
 pub(crate) mod shape_get_table_objects;
 
 pub(crate) mod shape_get_temporary_data_location_credentials;
+
+pub(crate) mod shape_get_temporary_glue_function_credentials;
 
 pub(crate) mod shape_get_temporary_glue_partition_credentials;
 
@@ -239,6 +243,8 @@ pub(crate) mod shape_get_data_lake_settings_input;
 
 pub(crate) mod shape_get_effective_permissions_for_path_input;
 
+pub(crate) mod shape_get_glue_function_session_context_input;
+
 pub(crate) mod shape_get_lf_tag_expression_input;
 
 pub(crate) mod shape_get_lf_tag_input;
@@ -254,6 +260,8 @@ pub(crate) mod shape_get_rls_policy_input;
 pub(crate) mod shape_get_table_objects_input;
 
 pub(crate) mod shape_get_temporary_data_location_credentials_input;
+
+pub(crate) mod shape_get_temporary_glue_function_credentials_input;
 
 pub(crate) mod shape_get_temporary_glue_partition_credentials_input;
 
@@ -441,6 +449,8 @@ pub(crate) mod shape_write_operation;
 
 pub(crate) mod shape_add_object_input;
 
+pub(crate) mod shape_any_resource;
+
 pub(crate) mod shape_authorized_session_tag_value_list;
 
 pub(crate) mod shape_batch_permissions_failure_entry;
@@ -507,6 +517,8 @@ pub(crate) mod shape_tagged_table;
 
 pub(crate) mod shape_trusted_resource_owners;
 
+pub(crate) mod shape_user_defined_function_resource;
+
 pub(crate) mod shape_work_unit_range;
 
 pub(crate) mod shape_all_rows_wildcard;
@@ -526,6 +538,8 @@ pub(crate) mod shape_redshift_service_integrations;
 pub(crate) mod shape_storage_optimizer_config;
 
 pub(crate) mod shape_table_object_list;
+
+pub(crate) mod shape_user_defined_function_wildcard;
 
 pub(crate) mod shape_resource_share_list;
 

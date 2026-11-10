@@ -621,6 +621,8 @@ pub(crate) mod shape_game_session_queue_destination;
 
 pub(crate) mod shape_game_session_queue_list;
 
+pub(crate) mod shape_game_session_queue_log_configuration;
+
 pub(crate) mod shape_instance_access;
 
 pub(crate) mod shape_instance_definition;
@@ -646,6 +648,8 @@ pub(crate) mod shape_location_state_list;
 pub(crate) mod shape_locational_deployments;
 
 pub(crate) mod shape_log_configuration;
+
+pub(crate) mod shape_log_delivery_destination;
 
 pub(crate) mod shape_managed_capacity_configuration;
 
@@ -814,6 +818,8 @@ pub(crate) mod shape_container_port_range;
 pub(crate) mod shape_location_list;
 
 pub(crate) mod shape_location_order_override_list;
+
+pub(crate) mod shape_log_delivery_destination_list;
 
 pub(crate) mod shape_matched_player_session_list;
 

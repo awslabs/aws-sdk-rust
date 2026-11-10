@@ -19,6 +19,8 @@ pub use crate::types::_node_lifecycle_actions::NodeLifecycleActions;
 
 pub use crate::types::_purchase_option::PurchaseOption;
 
+pub use crate::types::_launch_template_mode::LaunchTemplateMode;
+
 pub use crate::types::_custom_launch_template::CustomLaunchTemplate;
 
 pub use crate::types::_scaling_configuration_request::ScalingConfigurationRequest;
@@ -168,6 +170,8 @@ mod _instance_config;
 mod _jwt_auth;
 
 mod _jwt_key;
+
+mod _launch_template_mode;
 
 mod _network_type;
 

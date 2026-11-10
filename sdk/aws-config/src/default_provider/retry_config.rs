@@ -7,7 +7,8 @@ use crate::provider_config::ProviderConfig;
 use crate::retry::error::{RetryConfigError, RetryConfigErrorKind};
 use aws_runtime::env_config::{EnvConfigError, EnvConfigValue};
 use aws_smithy_types::error::display::DisplayErrorContext;
-use aws_smithy_types::retry::{RetryConfig, RetryMode, RetrySpec};
+use aws_smithy_types::retry::{RetryConfig, RetryMode};
+use aws_types::origin::Origin;
 use std::str::FromStr;
 
 /// Default RetryConfig Provider chain
@@ -53,7 +54,6 @@ pub fn default_provider() -> Builder {
 mod env {
     pub(super) const MAX_ATTEMPTS: &str = "AWS_MAX_ATTEMPTS";
     pub(super) const RETRY_MODE: &str = "AWS_RETRY_MODE";
-    pub(super) const NEW_RETRIES_2026: &str = "AWS_NEW_RETRIES_2026";
 }
 
 mod profile_keys {
@@ -94,6 +94,11 @@ impl Builder {
     /// - Panics if the `AWS_MAX_ATTEMPTS` env var or `max_attempts` profile var is set to 0
     /// - Panics if the `AWS_RETRY_MODE` env var or `retry_mode` profile var is set to "adaptive" (it's not yet supported)
     pub async fn retry_config(self) -> RetryConfig {
+        self.retry_config_with_origin().await.0
+    }
+
+    // The origin is where `max_attempts` came from.
+    pub(crate) async fn retry_config_with_origin(self) -> (RetryConfig, Origin) {
         match self.try_retry_config().await {
             Ok(conf) => conf,
             Err(e) => panic!("{}", DisplayErrorContext(e)),
@@ -102,7 +107,7 @@ impl Builder {
 
     pub(crate) async fn try_retry_config(
         self,
-    ) -> Result<RetryConfig, EnvConfigError<RetryConfigError>> {
+    ) -> Result<(RetryConfig, Origin), EnvConfigError<RetryConfigError>> {
         let env = self.provider_config.env();
         let profiles = self.provider_config.profile().await;
         // Both of these can return errors due to invalid config settings, and we want to surface those as early as possible
@@ -112,7 +117,7 @@ impl Builder {
         let max_attempts = EnvConfigValue::new()
             .env(env::MAX_ATTEMPTS)
             .profile(profile_keys::MAX_ATTEMPTS)
-            .validate(&env, profiles, validate_max_attempts);
+            .validate_and_return_origin(&env, profiles, validate_max_attempts);
 
         let retry_mode = EnvConfigValue::new()
             .env(env::RETRY_MODE)
@@ -122,7 +127,8 @@ impl Builder {
                     .map_err(|err| RetryConfigErrorKind::InvalidRetryMode { source: err }.into())
             });
 
-        if let Some(max_attempts) = max_attempts? {
+        let (max_attempts, max_attempts_origin) = max_attempts?;
+        if let Some(max_attempts) = max_attempts {
             retry_config = retry_config.with_max_attempts(max_attempts);
         }
 
@@ -130,18 +136,7 @@ impl Builder {
             retry_config = retry_config.with_retry_mode(retry_mode);
         }
 
-        // Enable Retry Behavior 2.1 when AWS_NEW_RETRIES_2026=true
-        let new_retries =
-            EnvConfigValue::new()
-                .env(env::NEW_RETRIES_2026)
-                .validate(&env, profiles, |s| Ok::<_, RetryConfigError>(s.to_owned()));
-        if let Some(val) = new_retries? {
-            if val.eq_ignore_ascii_case("true") {
-                retry_config = retry_config.with_retry_spec(RetrySpec::v2_1());
-            }
-        }
-
-        Ok(retry_config)
+        Ok((retry_config, max_attempts_origin))
     }
 }
 
@@ -170,6 +165,7 @@ mod test {
             .configure(&ProviderConfig::no_configuration().with_env(Env::from_slice(vars)))
             .try_retry_config()
             .await
+            .map(|(retry_config, _)| retry_config)
     }
 
     #[tokio::test]
@@ -349,29 +345,5 @@ max_attempts = potato
                 kind: RetryConfigErrorKind::MaxAttemptsMustNotBeZero
             }
         ));
-    }
-
-    #[tokio::test]
-    async fn new_retries_env_var_enables_retry_spec_v2_1() {
-        use aws_smithy_types::retry::RetrySpec;
-        let config = test_provider(&[(env::NEW_RETRIES_2026, "true")])
-            .await
-            .unwrap();
-        assert_eq!(config.retry_spec(), Some(&RetrySpec::v2_1()));
-    }
-
-    #[tokio::test]
-    async fn new_retries_env_var_case_insensitive() {
-        use aws_smithy_types::retry::RetrySpec;
-        let config = test_provider(&[(env::NEW_RETRIES_2026, "True")])
-            .await
-            .unwrap();
-        assert_eq!(config.retry_spec(), Some(&RetrySpec::v2_1()));
-    }
-
-    #[tokio::test]
-    async fn new_retries_env_var_not_set_means_no_retry_spec() {
-        let config = test_provider(&[]).await.unwrap();
-        assert_eq!(config.retry_spec(), None);
     }
 }

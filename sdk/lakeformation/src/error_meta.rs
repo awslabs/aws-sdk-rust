@@ -1152,6 +1152,53 @@ impl From<crate::operation::get_effective_permissions_for_path::GetEffectivePerm
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_glue_function_session_context::GetGlueFunctionSessionContextError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_glue_function_session_context::GetGlueFunctionSessionContextError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_glue_function_session_context::GetGlueFunctionSessionContextError> for Error {
+    fn from(err: crate::operation::get_glue_function_session_context::GetGlueFunctionSessionContextError) -> Self {
+        match err {
+            crate::operation::get_glue_function_session_context::GetGlueFunctionSessionContextError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_glue_function_session_context::GetGlueFunctionSessionContextError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::get_glue_function_session_context::GetGlueFunctionSessionContextError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_glue_function_session_context::GetGlueFunctionSessionContextError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::get_glue_function_session_context::GetGlueFunctionSessionContextError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::get_glue_function_session_context::GetGlueFunctionSessionContextError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_lf_tag::GetLFTagError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1400,6 +1447,58 @@ impl From<crate::operation::get_temporary_data_location_credentials::GetTemporar
                 Error::OperationTimeoutException(inner)
             }
             crate::operation::get_temporary_data_location_credentials::GetTemporaryDataLocationCredentialsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_temporary_glue_function_credentials::GetTemporaryGlueFunctionCredentialsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_temporary_glue_function_credentials::GetTemporaryGlueFunctionCredentialsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_temporary_glue_function_credentials::GetTemporaryGlueFunctionCredentialsError> for Error {
+    fn from(err: crate::operation::get_temporary_glue_function_credentials::GetTemporaryGlueFunctionCredentialsError) -> Self {
+        match err {
+            crate::operation::get_temporary_glue_function_credentials::GetTemporaryGlueFunctionCredentialsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_temporary_glue_function_credentials::GetTemporaryGlueFunctionCredentialsError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::get_temporary_glue_function_credentials::GetTemporaryGlueFunctionCredentialsError::GlueEncryptionException(inner) => {
+                Error::GlueEncryptionException(inner)
+            }
+            crate::operation::get_temporary_glue_function_credentials::GetTemporaryGlueFunctionCredentialsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_temporary_glue_function_credentials::GetTemporaryGlueFunctionCredentialsError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::get_temporary_glue_function_credentials::GetTemporaryGlueFunctionCredentialsError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::get_temporary_glue_function_credentials::GetTemporaryGlueFunctionCredentialsError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }

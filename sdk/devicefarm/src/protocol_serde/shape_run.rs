@@ -214,6 +214,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "testPackageArn" => {
+                            builder = builder.set_test_package_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "deviceSelectionResult" => {
                             builder = builder.set_device_selection_result(
                                 crate::protocol_serde::shape_device_selection_result::de_device_selection_result(tokens, _value, depth + 1)?,

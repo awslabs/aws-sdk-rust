@@ -103,6 +103,8 @@ pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_retryable_conflict_exception;
+
 pub(crate) mod shape_start_plan_execution_input;
 
 pub(crate) mod shape_tag_resource_input;

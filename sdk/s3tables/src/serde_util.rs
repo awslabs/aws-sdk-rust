@@ -122,6 +122,18 @@ pub(crate) fn get_table_bucket_encryption_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_table_bucket_logging_output_output_correct_errors(
+    mut builder: crate::operation::get_table_bucket_logging::builders::GetTableBucketLoggingOutputBuilder,
+) -> crate::operation::get_table_bucket_logging::builders::GetTableBucketLoggingOutputBuilder {
+    if builder.table_bucket_logging_status.is_none() {
+        builder.table_bucket_logging_status = {
+            let builder = crate::types::builders::TableBucketLoggingStatusBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_table_bucket_maintenance_configuration_output_output_correct_errors(
     mut builder: crate::operation::get_table_bucket_maintenance_configuration::builders::GetTableBucketMaintenanceConfigurationOutputBuilder,
 ) -> crate::operation::get_table_bucket_maintenance_configuration::builders::GetTableBucketMaintenanceConfigurationOutputBuilder {
@@ -580,6 +592,24 @@ pub(crate) fn glue_table_source_correct_errors(
     builder
 }
 
+pub(crate) fn logging_enabled_correct_errors(
+    mut builder: crate::types::builders::LoggingEnabledBuilder,
+) -> crate::types::builders::LoggingEnabledBuilder {
+    if builder.target_bucket.is_none() {
+        builder.target_bucket = Some(Default::default())
+    }
+    if builder.target_prefix.is_none() {
+        builder.target_prefix = Some(Default::default())
+    }
+    if builder.target_object_key_format.is_none() {
+        builder.target_object_key_format = {
+            let builder = crate::types::builders::TargetObjectKeyFormatBuilder::default();
+            Some(crate::serde_util::target_object_key_format_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn migration_summary_correct_errors(
     mut builder: crate::types::builders::MigrationSummaryBuilder,
 ) -> crate::types::builders::MigrationSummaryBuilder {
@@ -724,6 +754,27 @@ pub(crate) fn table_replication_rule_correct_errors(
 ) -> crate::types::builders::TableReplicationRuleBuilder {
     if builder.destinations.is_none() {
         builder.destinations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn target_object_key_format_correct_errors(
+    mut builder: crate::types::builders::TargetObjectKeyFormatBuilder,
+) -> crate::types::builders::TargetObjectKeyFormatBuilder {
+    if builder.partitioned_prefix.is_none() {
+        builder.partitioned_prefix = {
+            let builder = crate::types::builders::PartitionedPrefixBuilder::default();
+            crate::serde_util::partitioned_prefix_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn partitioned_prefix_correct_errors(
+    mut builder: crate::types::builders::PartitionedPrefixBuilder,
+) -> crate::types::builders::PartitionedPrefixBuilder {
+    if builder.partition_date_source.is_none() {
+        builder.partition_date_source = "no value was set".parse::<crate::types::PartitionDateSource>().ok()
     }
     builder
 }

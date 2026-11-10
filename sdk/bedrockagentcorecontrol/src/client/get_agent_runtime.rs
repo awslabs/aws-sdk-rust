@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`network_configuration(Option<NetworkConfiguration>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::network_configuration): <p>The network configuration for the AgentCore Runtime.</p>
     ///   - [`status(AgentRuntimeStatus)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::status): <p>The current status of the AgentCore Runtime.</p>
     ///   - [`lifecycle_configuration(Option<LifecycleConfiguration>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::lifecycle_configuration): <p>The life cycle configuration for the AgentCore Runtime.</p>
+    ///   - [`hooks_configuration(Option<RuntimeHooksConfiguration>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::hooks_configuration): <p>The lifecycle hooks configuration for the AgentCore Runtime.</p>
     ///   - [`failure_reason(Option<String>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::failure_reason): <p>The reason for failure if the AgentCore Runtime is in a failed state.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::description): <p>The description of the AgentCore Runtime.</p>
     ///   - [`workload_identity_details(Option<WorkloadIdentityDetails>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::workload_identity_details): <p>The workload identity details for the AgentCore Runtime.</p>
@@ -29,6 +30,7 @@ impl super::Client {
     ///   - [`capacity_provider_configuration(Option<CapacityProviderConfiguration>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::capacity_provider_configuration): <p>The capacity provider configuration for the AgentCore Runtime.</p>
     ///   - [`platform_version(Option<String>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::platform_version): <p>The version of the runtime platform used by the AgentCore Runtime.</p>
     ///   - [`allowed_ports(Option<Vec::<AllowedPort>>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::allowed_ports): <p>The additional ports on the AgentCore Runtime that are reachable through the runtime's session URL.</p>
+    ///   - [`resource_configurations(Option<Vec::<ResourceConfiguration>>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::resource_configurations): <p>The resource configurations for the AgentCore Runtime.</p>
     /// - On failure, responds with [`SdkError<GetAgentRuntimeError>`](crate::operation::get_agent_runtime::GetAgentRuntimeError)
     pub fn get_agent_runtime(&self) -> crate::operation::get_agent_runtime::builders::GetAgentRuntimeFluentBuilder {
         crate::operation::get_agent_runtime::builders::GetAgentRuntimeFluentBuilder::new(self.handle.clone())

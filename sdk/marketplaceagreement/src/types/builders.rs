@@ -13,6 +13,8 @@ pub use crate::types::_proposal_summary::ProposalSummaryBuilder;
 
 pub use crate::types::_end_time_behavior::EndTimeBehaviorBuilder;
 
+pub use crate::types::_free_trial_summary::FreeTrialSummaryBuilder;
+
 pub use crate::types::_invoice_billing_period::InvoiceBillingPeriodBuilder;
 
 pub use crate::types::_sort::SortBuilder;

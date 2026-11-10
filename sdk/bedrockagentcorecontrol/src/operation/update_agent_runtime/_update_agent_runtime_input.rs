@@ -21,6 +21,8 @@ pub struct UpdateAgentRuntimeInput {
     pub protocol_configuration: ::std::option::Option<crate::types::ProtocolConfiguration>,
     /// <p>The updated life cycle configuration for the AgentCore Runtime.</p>
     pub lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
+    /// <p>The updated lifecycle hooks configuration for the AgentCore Runtime.</p>
+    pub hooks_configuration: ::std::option::Option<crate::types::RuntimeHooksConfiguration>,
     /// <p>The updated configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
     pub metadata_configuration: ::std::option::Option<crate::types::RuntimeMetadataConfiguration>,
     /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
@@ -33,6 +35,8 @@ pub struct UpdateAgentRuntimeInput {
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The updated additional ports on the AgentCore Runtime that are reachable through the runtime's session URL. Specify one to five non-overlapping entries, each containing either a single port or an inclusive port range. Ports must be between <code>8000</code> and <code>12000</code>, excluding the reserved port <code>8443</code>.</p>
     pub allowed_ports: ::std::option::Option<::std::vec::Vec<crate::types::AllowedPort>>,
+    /// <p>The updated resource configurations for the AgentCore Runtime. You can specify at most one resource configuration.</p>
+    pub resource_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceConfiguration>>,
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -73,6 +77,10 @@ impl UpdateAgentRuntimeInput {
     pub fn lifecycle_configuration(&self) -> ::std::option::Option<&crate::types::LifecycleConfiguration> {
         self.lifecycle_configuration.as_ref()
     }
+    /// <p>The updated lifecycle hooks configuration for the AgentCore Runtime.</p>
+    pub fn hooks_configuration(&self) -> ::std::option::Option<&crate::types::RuntimeHooksConfiguration> {
+        self.hooks_configuration.as_ref()
+    }
     /// <p>The updated configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
     pub fn metadata_configuration(&self) -> ::std::option::Option<&crate::types::RuntimeMetadataConfiguration> {
         self.metadata_configuration.as_ref()
@@ -101,6 +109,12 @@ impl UpdateAgentRuntimeInput {
     pub fn allowed_ports(&self) -> &[crate::types::AllowedPort] {
         self.allowed_ports.as_deref().unwrap_or_default()
     }
+    /// <p>The updated resource configurations for the AgentCore Runtime. You can specify at most one resource configuration.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_configurations.is_none()`.
+    pub fn resource_configurations(&self) -> &[crate::types::ResourceConfiguration] {
+        self.resource_configurations.as_deref().unwrap_or_default()
+    }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -118,12 +132,14 @@ impl ::std::fmt::Debug for UpdateAgentRuntimeInput {
         formatter.field("request_header_configuration", &self.request_header_configuration);
         formatter.field("protocol_configuration", &self.protocol_configuration);
         formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
+        formatter.field("hooks_configuration", &self.hooks_configuration);
         formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("filesystem_configurations", &self.filesystem_configurations);
         formatter.field("capacity_provider_configuration", &self.capacity_provider_configuration);
         formatter.field("platform_version", &self.platform_version);
         formatter.field("allowed_ports", &self.allowed_ports);
+        formatter.field("resource_configurations", &self.resource_configurations);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
@@ -148,12 +164,14 @@ pub struct UpdateAgentRuntimeInputBuilder {
     pub(crate) request_header_configuration: ::std::option::Option<crate::types::RequestHeaderConfiguration>,
     pub(crate) protocol_configuration: ::std::option::Option<crate::types::ProtocolConfiguration>,
     pub(crate) lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
+    pub(crate) hooks_configuration: ::std::option::Option<crate::types::RuntimeHooksConfiguration>,
     pub(crate) metadata_configuration: ::std::option::Option<crate::types::RuntimeMetadataConfiguration>,
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) filesystem_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>,
     pub(crate) capacity_provider_configuration: ::std::option::Option<crate::types::CapacityProviderConfiguration>,
     pub(crate) platform_version: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_ports: ::std::option::Option<::std::vec::Vec<crate::types::AllowedPort>>,
+    pub(crate) resource_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceConfiguration>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAgentRuntimeInputBuilder {
@@ -286,6 +304,20 @@ impl UpdateAgentRuntimeInputBuilder {
     pub fn get_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::LifecycleConfiguration> {
         &self.lifecycle_configuration
     }
+    /// <p>The updated lifecycle hooks configuration for the AgentCore Runtime.</p>
+    pub fn hooks_configuration(mut self, input: crate::types::RuntimeHooksConfiguration) -> Self {
+        self.hooks_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated lifecycle hooks configuration for the AgentCore Runtime.</p>
+    pub fn set_hooks_configuration(mut self, input: ::std::option::Option<crate::types::RuntimeHooksConfiguration>) -> Self {
+        self.hooks_configuration = input;
+        self
+    }
+    /// <p>The updated lifecycle hooks configuration for the AgentCore Runtime.</p>
+    pub fn get_hooks_configuration(&self) -> &::std::option::Option<crate::types::RuntimeHooksConfiguration> {
+        &self.hooks_configuration
+    }
     /// <p>The updated configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
     pub fn metadata_configuration(mut self, input: crate::types::RuntimeMetadataConfiguration) -> Self {
         self.metadata_configuration = ::std::option::Option::Some(input);
@@ -395,6 +427,26 @@ impl UpdateAgentRuntimeInputBuilder {
     pub fn get_allowed_ports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedPort>> {
         &self.allowed_ports
     }
+    /// Appends an item to `resource_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_resource_configurations`](Self::set_resource_configurations).
+    ///
+    /// <p>The updated resource configurations for the AgentCore Runtime. You can specify at most one resource configuration.</p>
+    pub fn resource_configurations(mut self, input: crate::types::ResourceConfiguration) -> Self {
+        let mut v = self.resource_configurations.unwrap_or_default();
+        v.push(input);
+        self.resource_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The updated resource configurations for the AgentCore Runtime. You can specify at most one resource configuration.</p>
+    pub fn set_resource_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceConfiguration>>) -> Self {
+        self.resource_configurations = input;
+        self
+    }
+    /// <p>The updated resource configurations for the AgentCore Runtime. You can specify at most one resource configuration.</p>
+    pub fn get_resource_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceConfiguration>> {
+        &self.resource_configurations
+    }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -424,12 +476,14 @@ impl UpdateAgentRuntimeInputBuilder {
             request_header_configuration: self.request_header_configuration,
             protocol_configuration: self.protocol_configuration,
             lifecycle_configuration: self.lifecycle_configuration,
+            hooks_configuration: self.hooks_configuration,
             metadata_configuration: self.metadata_configuration,
             environment_variables: self.environment_variables,
             filesystem_configurations: self.filesystem_configurations,
             capacity_provider_configuration: self.capacity_provider_configuration,
             platform_version: self.platform_version,
             allowed_ports: self.allowed_ports,
+            resource_configurations: self.resource_configurations,
             client_token: self.client_token,
         })
     }
@@ -446,12 +500,14 @@ impl ::std::fmt::Debug for UpdateAgentRuntimeInputBuilder {
         formatter.field("request_header_configuration", &self.request_header_configuration);
         formatter.field("protocol_configuration", &self.protocol_configuration);
         formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
+        formatter.field("hooks_configuration", &self.hooks_configuration);
         formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("filesystem_configurations", &self.filesystem_configurations);
         formatter.field("capacity_provider_configuration", &self.capacity_provider_configuration);
         formatter.field("platform_version", &self.platform_version);
         formatter.field("allowed_ports", &self.allowed_ports);
+        formatter.field("resource_configurations", &self.resource_configurations);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }

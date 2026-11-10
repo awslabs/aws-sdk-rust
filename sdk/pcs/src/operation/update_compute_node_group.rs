@@ -193,6 +193,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateCompute
         };
 
         let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("amiId") {
+            if let ::std::option::Option::Some(value) = input.ami_id.as_deref() {
+                captured.insert("amiId", value);
+            }
+        }
+        if requested.should_capture("sshKeyName") {
+            if let ::std::option::Option::Some(value) = input.ssh_key_name.as_deref() {
+                captured.insert("sshKeyName", value);
+            }
+        }
         if requested.should_capture("clusterIdentifier") {
             if let ::std::option::Option::Some(value) = input.cluster_identifier.as_deref() {
                 captured.insert("clusterIdentifier", value);
@@ -201,11 +211,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateCompute
         if requested.should_capture("computeNodeGroupIdentifier") {
             if let ::std::option::Option::Some(value) = input.compute_node_group_identifier.as_deref() {
                 captured.insert("computeNodeGroupIdentifier", value);
-            }
-        }
-        if requested.should_capture("amiId") {
-            if let ::std::option::Option::Some(value) = input.ami_id.as_deref() {
-                captured.insert("amiId", value);
             }
         }
         if requested.should_capture("iamInstanceProfileArn") {

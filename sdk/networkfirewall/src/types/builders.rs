@@ -15,6 +15,10 @@ pub use crate::types::_firewall_policy::FirewallPolicyBuilder;
 
 pub use crate::types::_firewall_policy_response::FirewallPolicyResponseBuilder;
 
+pub use crate::types::_firewall_policy_v2::FirewallPolicyV2Builder;
+
+pub use crate::types::_firewall_policy_v2_response::FirewallPolicyV2ResponseBuilder;
+
 pub use crate::types::_tls_intercept_properties_request::TlsInterceptPropertiesRequestBuilder;
 
 pub use crate::types::_proxy::ProxyBuilder;
@@ -28,6 +32,10 @@ pub use crate::types::_proxy_rule_group::ProxyRuleGroupBuilder;
 pub use crate::types::_create_proxy_rules_by_request_phase::CreateProxyRulesByRequestPhaseBuilder;
 
 pub use crate::types::_rule_group::RuleGroupBuilder;
+
+pub use crate::types::_firewall_rule_group::FirewallRuleGroupBuilder;
+
+pub use crate::types::_ips_rule_group::IpsRuleGroupBuilder;
 
 pub use crate::types::_source_metadata::SourceMetadataBuilder;
 
@@ -77,6 +85,8 @@ pub use crate::types::_policy_variables::PolicyVariablesBuilder;
 
 pub use crate::types::_route53_resolved_ip_validation::Route53ResolvedIpValidationBuilder;
 
+pub use crate::types::_stateful_engine_options_v2::StatefulEngineOptionsV2Builder;
+
 pub use crate::types::_listener_property_request::ListenerPropertyRequestBuilder;
 
 pub use crate::types::_tls_intercept_properties::TlsInterceptPropertiesBuilder;
@@ -86,6 +96,10 @@ pub use crate::types::_rule_variables::RuleVariablesBuilder;
 pub use crate::types::_reference_sets::ReferenceSetsBuilder;
 
 pub use crate::types::_rules_source::RulesSourceBuilder;
+
+pub use crate::types::_firewall_rules_source::FirewallRulesSourceBuilder;
+
+pub use crate::types::_ips_rules_source::IpsRulesSourceBuilder;
 
 pub use crate::types::_tls_certificate_data::TlsCertificateDataBuilder;
 
@@ -98,6 +112,8 @@ pub use crate::types::_analysis_report::AnalysisReportBuilder;
 pub use crate::types::_container_association_summary::ContainerAssociationSummaryBuilder;
 
 pub use crate::types::_firewall_policy_metadata::FirewallPolicyMetadataBuilder;
+
+pub use crate::types::_firewall_policy_v2_metadata::FirewallPolicyV2MetadataBuilder;
 
 pub use crate::types::_firewall_metadata::FirewallMetadataBuilder;
 
@@ -145,6 +161,10 @@ pub use crate::types::_flow_timeouts::FlowTimeoutsBuilder;
 
 pub use crate::types::_firewall_policy_error::FirewallPolicyErrorBuilder;
 
+pub use crate::types::_firewall_rule_group_entry::FirewallRuleGroupEntryBuilder;
+
+pub use crate::types::_ips_rule_group_entry::IpsRuleGroupEntryBuilder;
+
 pub use crate::types::_create_proxy_rule::CreateProxyRuleBuilder;
 
 pub use crate::types::_rules_source_list::RulesSourceListBuilder;
@@ -177,11 +197,15 @@ pub use crate::types::_stateful_rule_group_override::StatefulRuleGroupOverrideBu
 
 pub use crate::types::_ip_set::IpSetBuilder;
 
+pub use crate::types::_ips_rule_group_override::IpsRuleGroupOverrideBuilder;
+
 pub use crate::types::_port_set::PortSetBuilder;
 
 pub use crate::types::_ip_set_reference::IpSetReferenceBuilder;
 
 pub use crate::types::_stateful_rule::StatefulRuleBuilder;
+
+pub use crate::types::_firewall_rule::FirewallRuleBuilder;
 
 pub use crate::types::_check_certificate_revocation_status_actions::CheckCertificateRevocationStatusActionsBuilder;
 
@@ -196,6 +220,8 @@ pub use crate::types::_publish_metric_action::PublishMetricActionBuilder;
 pub use crate::types::_header::HeaderBuilder;
 
 pub use crate::types::_stateless_rule::StatelessRuleBuilder;
+
+pub use crate::types::_rule_metadata::RuleMetadataBuilder;
 
 pub use crate::types::_server_certificate::ServerCertificateBuilder;
 

@@ -19,6 +19,8 @@ pub enum Error {
     /// <p>The specified resource was not found.</p>
     /// <p>HTTP Status Code: 404</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The request conflicted with a concurrent modification of the same resource and did not take effect.</p>
+    RetryableConflictException(crate::types::error::RetryableConflictException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -37,6 +39,7 @@ impl ::std::fmt::Display for Error {
             Error::IllegalStateException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::RetryableConflictException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -64,6 +67,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::IllegalStateException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::RetryableConflictException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -594,6 +598,7 @@ impl From<crate::operation::update_plan::UpdatePlanError> for Error {
     fn from(err: crate::operation::update_plan::UpdatePlanError) -> Self {
         match err {
             crate::operation::update_plan::UpdatePlanError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_plan::UpdatePlanError::RetryableConflictException(inner) => Error::RetryableConflictException(inner),
             crate::operation::update_plan::UpdatePlanError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -675,6 +680,7 @@ impl ::std::error::Error for Error {
             Error::IllegalStateException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::RetryableConflictException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -688,6 +694,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::IllegalStateException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::RetryableConflictException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

@@ -53,6 +53,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_profile_association;
+
 pub(crate) mod shape_update_profile_resource_association;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -88,6 +90,8 @@ pub(crate) mod shape_resource_not_found_exception;
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
+
+pub(crate) mod shape_update_profile_association_input;
 
 pub(crate) mod shape_update_profile_resource_association_input;
 

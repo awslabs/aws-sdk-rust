@@ -23,7 +23,7 @@ impl crate::operation::create_game_session_queue::builders::CreateGameSessionQue
 /// Fluent builder constructing a request to `CreateGameSessionQueue`.
 ///
 /// <p><b>This API works with the following fleet types:</b> EC2, Anywhere, Container</p>
-/// <p>Creates a placement queue that processes requests for new game sessions. A queue uses FleetIQ algorithms to locate the best available placement locations for a new game session, and then prompts the game server process to start a new game session.</p>
+/// <p>Creates a placement queue that processes requests for new game sessions. A queue finds the best available game server, then prompts it to start a new game session.</p>
 /// <p>A game session queue is configured with a set of destinations (Amazon GameLift Servers fleets or aliases) that determine where the queue can place new game sessions. These destinations can span multiple Amazon Web Services Regions, can use different instance types, and can include both Spot and On-Demand fleets. If the queue includes multi-location fleets, the queue can place game sessions in any of a fleet's remote locations.</p>
 /// <p>You can configure a queue to determine how it selects the best available placement for a new game session. Queues can prioritize placement decisions based on a combination of location, hosting cost, and player latency. You can set up the queue to use the default prioritization or provide alternate instructions using <code>PriorityConfiguration</code>.</p>
 /// <p><b>Request options</b></p>
@@ -60,6 +60,14 @@ impl crate::operation::create_game_session_queue::builders::CreateGameSessionQue
 /// <p>Required parameters <code>Name</code> and <code>Destinations</code></p></li>
 /// <li>
 /// <p><code>PlayerLatencyPolicies</code></p></li>
+/// </ul></li>
+/// <li>
+/// <p>Create a queue that delivers game session placement insight logs to one or more log destinations.</p>
+/// <ul>
+/// <li>
+/// <p>Required parameters <code>Name</code> and <code>Destinations</code></p></li>
+/// <li>
+/// <p><code>LogConfiguration</code></p></li>
 /// </ul></li>
 /// </ul>
 /// <p><b>Results</b></p>
@@ -240,17 +248,17 @@ impl CreateGameSessionQueueFluentBuilder {
     pub fn get_filter_configuration(&self) -> &::std::option::Option<crate::types::FilterConfiguration> {
         self.inner.get_filter_configuration()
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub fn priority_configuration(mut self, input: crate::types::PriorityConfiguration) -> Self {
         self.inner = self.inner.priority_configuration(input);
         self
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub fn set_priority_configuration(mut self, input: ::std::option::Option<crate::types::PriorityConfiguration>) -> Self {
         self.inner = self.inner.set_priority_configuration(input);
         self
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub fn get_priority_configuration(&self) -> &::std::option::Option<crate::types::PriorityConfiguration> {
         self.inner.get_priority_configuration()
     }
@@ -300,5 +308,19 @@ impl CreateGameSessionQueueFluentBuilder {
     /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
+    }
+    /// <p>An optional configuration that delivers game session placement insight logs to one or more destinations of your choice. Use these logs to diagnose why a game session placement is <code>FULFILLED</code>, <code>CANCELLED</code>, <code>TIMED_OUT</code>, or <code>FAILED</code>, which locations were evaluated, and the latency and cost factors that influenced each decision.</p>
+    pub fn log_configuration(mut self, input: crate::types::GameSessionQueueLogConfiguration) -> Self {
+        self.inner = self.inner.log_configuration(input);
+        self
+    }
+    /// <p>An optional configuration that delivers game session placement insight logs to one or more destinations of your choice. Use these logs to diagnose why a game session placement is <code>FULFILLED</code>, <code>CANCELLED</code>, <code>TIMED_OUT</code>, or <code>FAILED</code>, which locations were evaluated, and the latency and cost factors that influenced each decision.</p>
+    pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::GameSessionQueueLogConfiguration>) -> Self {
+        self.inner = self.inner.set_log_configuration(input);
+        self
+    }
+    /// <p>An optional configuration that delivers game session placement insight logs to one or more destinations of your choice. Use these logs to diagnose why a game session placement is <code>FULFILLED</code>, <code>CANCELLED</code>, <code>TIMED_OUT</code>, or <code>FAILED</code>, which locations were evaluated, and the latency and cost factors that influenced each decision.</p>
+    pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::GameSessionQueueLogConfiguration> {
+        self.inner.get_log_configuration()
     }
 }

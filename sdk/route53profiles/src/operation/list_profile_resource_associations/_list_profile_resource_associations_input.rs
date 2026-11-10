@@ -7,6 +7,8 @@ pub struct ListProfileResourceAssociationsInput {
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>ID of a resource if you want information on only one type.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of a resource. If you specify this parameter, only the association with that resource is returned.</p>
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of objects that you want to return for this request. If more objects are available, in the response, a <code>NextToken</code> value, which you can use in a subsequent call to get the next batch of objects, is provided.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, up to 100 objects are returned.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -22,6 +24,10 @@ impl ListProfileResourceAssociationsInput {
     /// <p>ID of a resource if you want information on only one type.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource. If you specify this parameter, only the association with that resource is returned.</p>
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
     }
     /// <p>The maximum number of objects that you want to return for this request. If more objects are available, in the response, a <code>NextToken</code> value, which you can use in a subsequent call to get the next batch of objects, is provided.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, up to 100 objects are returned.</p>
@@ -47,6 +53,7 @@ impl ListProfileResourceAssociationsInput {
 pub struct ListProfileResourceAssociationsInputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -79,6 +86,20 @@ impl ListProfileResourceAssociationsInputBuilder {
     /// <p>ID of a resource if you want information on only one type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource. If you specify this parameter, only the association with that resource is returned.</p>
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource. If you specify this parameter, only the association with that resource is returned.</p>
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource. If you specify this parameter, only the association with that resource is returned.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The maximum number of objects that you want to return for this request. If more objects are available, in the response, a <code>NextToken</code> value, which you can use in a subsequent call to get the next batch of objects, is provided.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, up to 100 objects are returned.</p>
@@ -125,6 +146,7 @@ impl ListProfileResourceAssociationsInputBuilder {
             crate::operation::list_profile_resource_associations::ListProfileResourceAssociationsInput {
                 profile_id: self.profile_id,
                 resource_type: self.resource_type,
+                resource_arn: self.resource_arn,
                 max_results: self.max_results,
                 next_token: self.next_token,
             },

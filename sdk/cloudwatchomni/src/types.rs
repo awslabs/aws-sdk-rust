@@ -109,6 +109,8 @@ pub use crate::types::_edge_type::EdgeType;
 
 pub use crate::types::_node::Node;
 
+pub use crate::types::_data_access_target::DataAccessTarget;
+
 pub use crate::types::_partial_results::PartialResults;
 
 pub use crate::types::_access_grant_summary::AccessGrantSummary;
@@ -252,6 +254,8 @@ mod _aws_credentials;
 mod _comparator;
 
 mod _contributor_summary;
+
+mod _data_access_target;
 
 mod _domain;
 

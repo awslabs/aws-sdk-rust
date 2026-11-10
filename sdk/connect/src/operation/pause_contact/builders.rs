@@ -22,7 +22,7 @@ impl crate::operation::pause_contact::builders::PauseContactInputBuilder {
 }
 /// Fluent builder constructing a request to `PauseContact`.
 ///
-/// <p>Allows pausing an ongoing task contact.</p>
+/// <p>Pauses an ongoing task or email contact.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PauseContactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

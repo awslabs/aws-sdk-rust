@@ -15,7 +15,7 @@ pub struct CreateRemoteAccessSessionConfiguration {
     /// <p>The name-value string pairs that specify additional settings for the remote access session.</p>
     /// <ul>
     /// <li>
-    /// <p><code>appium:version</code>: The major version of the Appium server to use for the session (for example, 2 or 3). The service may reject the selected version if it is not available for the selected device.</p></li>
+    /// <p><code>appium:version</code>: The major version of the Appium server to use for the session (for example, 2 or 3). The service might reject the selected version if it is not available for the selected device.</p></li>
     /// </ul>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -43,7 +43,7 @@ impl CreateRemoteAccessSessionConfiguration {
     /// <p>The name-value string pairs that specify additional settings for the remote access session.</p>
     /// <ul>
     /// <li>
-    /// <p><code>appium:version</code>: The major version of the Appium server to use for the session (for example, 2 or 3). The service may reject the selected version if it is not available for the selected device.</p></li>
+    /// <p><code>appium:version</code>: The major version of the Appium server to use for the session (for example, 2 or 3). The service might reject the selected version if it is not available for the selected device.</p></li>
     /// </ul>
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
@@ -142,7 +142,7 @@ impl CreateRemoteAccessSessionConfigurationBuilder {
     /// <p>The name-value string pairs that specify additional settings for the remote access session.</p>
     /// <ul>
     /// <li>
-    /// <p><code>appium:version</code>: The major version of the Appium server to use for the session (for example, 2 or 3). The service may reject the selected version if it is not available for the selected device.</p></li>
+    /// <p><code>appium:version</code>: The major version of the Appium server to use for the session (for example, 2 or 3). The service might reject the selected version if it is not available for the selected device.</p></li>
     /// </ul>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
@@ -153,7 +153,7 @@ impl CreateRemoteAccessSessionConfigurationBuilder {
     /// <p>The name-value string pairs that specify additional settings for the remote access session.</p>
     /// <ul>
     /// <li>
-    /// <p><code>appium:version</code>: The major version of the Appium server to use for the session (for example, 2 or 3). The service may reject the selected version if it is not available for the selected device.</p></li>
+    /// <p><code>appium:version</code>: The major version of the Appium server to use for the session (for example, 2 or 3). The service might reject the selected version if it is not available for the selected device.</p></li>
     /// </ul>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
@@ -162,7 +162,7 @@ impl CreateRemoteAccessSessionConfigurationBuilder {
     /// <p>The name-value string pairs that specify additional settings for the remote access session.</p>
     /// <ul>
     /// <li>
-    /// <p><code>appium:version</code>: The major version of the Appium server to use for the session (for example, 2 or 3). The service may reject the selected version if it is not available for the selected device.</p></li>
+    /// <p><code>appium:version</code>: The major version of the Appium server to use for the session (for example, 2 or 3). The service might reject the selected version if it is not available for the selected device.</p></li>
     /// </ul>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters

@@ -145,6 +145,8 @@ pub struct Run {
     pub skip_app_resign: ::std::option::Option<bool>,
     /// <p>The ARN of the YAML-formatted test specification for the run.</p>
     pub test_spec_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the test package the run was scheduled with. This field is not returned for test types that do not use a test package, such as <code>BUILTIN_FUZZ</code>.</p>
+    pub test_package_arn: ::std::option::Option<::std::string::String>,
     /// <p>The results of a device filter used to select the devices for a test run.</p>
     pub device_selection_result: ::std::option::Option<crate::types::DeviceSelectionResult>,
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
@@ -362,6 +364,10 @@ impl Run {
     pub fn test_spec_arn(&self) -> ::std::option::Option<&str> {
         self.test_spec_arn.as_deref()
     }
+    /// <p>The ARN of the test package the run was scheduled with. This field is not returned for test types that do not use a test package, such as <code>BUILTIN_FUZZ</code>.</p>
+    pub fn test_package_arn(&self) -> ::std::option::Option<&str> {
+        self.test_package_arn.as_deref()
+    }
     /// <p>The results of a device filter used to select the devices for a test run.</p>
     pub fn device_selection_result(&self) -> ::std::option::Option<&crate::types::DeviceSelectionResult> {
         self.device_selection_result.as_ref()
@@ -433,6 +439,7 @@ pub struct RunBuilder {
     pub(crate) web_url: ::std::option::Option<::std::string::String>,
     pub(crate) skip_app_resign: ::std::option::Option<bool>,
     pub(crate) test_spec_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) test_package_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_selection_result: ::std::option::Option<crate::types::DeviceSelectionResult>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
@@ -1112,6 +1119,20 @@ impl RunBuilder {
     pub fn get_test_spec_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.test_spec_arn
     }
+    /// <p>The ARN of the test package the run was scheduled with. This field is not returned for test types that do not use a test package, such as <code>BUILTIN_FUZZ</code>.</p>
+    pub fn test_package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.test_package_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the test package the run was scheduled with. This field is not returned for test types that do not use a test package, such as <code>BUILTIN_FUZZ</code>.</p>
+    pub fn set_test_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.test_package_arn = input;
+        self
+    }
+    /// <p>The ARN of the test package the run was scheduled with. This field is not returned for test types that do not use a test package, such as <code>BUILTIN_FUZZ</code>.</p>
+    pub fn get_test_package_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_package_arn
+    }
     /// <p>The results of a device filter used to select the devices for a test run.</p>
     pub fn device_selection_result(mut self, input: crate::types::DeviceSelectionResult) -> Self {
         self.device_selection_result = ::std::option::Option::Some(input);
@@ -1242,6 +1263,7 @@ impl RunBuilder {
             web_url: self.web_url,
             skip_app_resign: self.skip_app_resign,
             test_spec_arn: self.test_spec_arn,
+            test_package_arn: self.test_package_arn,
             device_selection_result: self.device_selection_result,
             vpc_config: self.vpc_config,
             execution_role_arn: self.execution_role_arn,

@@ -229,6 +229,8 @@ mod get_space;
 
 mod get_space_credentials_for_organization;
 
+mod get_space_data_access;
+
 mod get_telemetry_query_results;
 
 mod get_view;

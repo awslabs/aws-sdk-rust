@@ -652,6 +652,39 @@ impl From<crate::operation::get_table_bucket_encryption::GetTableBucketEncryptio
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_bucket_logging::GetTableBucketLoggingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_bucket_logging::GetTableBucketLoggingError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_table_bucket_logging::GetTableBucketLoggingError> for Error {
+    fn from(err: crate::operation::get_table_bucket_logging::GetTableBucketLoggingError) -> Self {
+        match err {
+            crate::operation::get_table_bucket_logging::GetTableBucketLoggingError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_table_bucket_logging::GetTableBucketLoggingError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_table_bucket_logging::GetTableBucketLoggingError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_table_bucket_logging::GetTableBucketLoggingError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_table_bucket_logging::GetTableBucketLoggingError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_table_bucket_logging::GetTableBucketLoggingError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_table_bucket_logging::GetTableBucketLoggingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1478,6 +1511,39 @@ impl From<crate::operation::put_table_bucket_encryption::PutTableBucketEncryptio
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::put_table_bucket_encryption::PutTableBucketEncryptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_table_bucket_logging::PutTableBucketLoggingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_table_bucket_logging::PutTableBucketLoggingError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_table_bucket_logging::PutTableBucketLoggingError> for Error {
+    fn from(err: crate::operation::put_table_bucket_logging::PutTableBucketLoggingError) -> Self {
+        match err {
+            crate::operation::put_table_bucket_logging::PutTableBucketLoggingError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::put_table_bucket_logging::PutTableBucketLoggingError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_table_bucket_logging::PutTableBucketLoggingError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::put_table_bucket_logging::PutTableBucketLoggingError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::put_table_bucket_logging::PutTableBucketLoggingError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::put_table_bucket_logging::PutTableBucketLoggingError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::put_table_bucket_logging::PutTableBucketLoggingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

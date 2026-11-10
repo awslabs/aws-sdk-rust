@@ -234,6 +234,20 @@ impl UpdateAgentRuntimeFluentBuilder {
     pub fn get_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::LifecycleConfiguration> {
         self.inner.get_lifecycle_configuration()
     }
+    /// <p>The updated lifecycle hooks configuration for the AgentCore Runtime.</p>
+    pub fn hooks_configuration(mut self, input: crate::types::RuntimeHooksConfiguration) -> Self {
+        self.inner = self.inner.hooks_configuration(input);
+        self
+    }
+    /// <p>The updated lifecycle hooks configuration for the AgentCore Runtime.</p>
+    pub fn set_hooks_configuration(mut self, input: ::std::option::Option<crate::types::RuntimeHooksConfiguration>) -> Self {
+        self.inner = self.inner.set_hooks_configuration(input);
+        self
+    }
+    /// <p>The updated lifecycle hooks configuration for the AgentCore Runtime.</p>
+    pub fn get_hooks_configuration(&self) -> &::std::option::Option<crate::types::RuntimeHooksConfiguration> {
+        self.inner.get_hooks_configuration()
+    }
     /// <p>The updated configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
     pub fn metadata_configuration(mut self, input: crate::types::RuntimeMetadataConfiguration) -> Self {
         self.inner = self.inner.metadata_configuration(input);
@@ -339,6 +353,25 @@ impl UpdateAgentRuntimeFluentBuilder {
     /// <p>The updated additional ports on the AgentCore Runtime that are reachable through the runtime's session URL. Specify one to five non-overlapping entries, each containing either a single port or an inclusive port range. Ports must be between <code>8000</code> and <code>12000</code>, excluding the reserved port <code>8443</code>.</p>
     pub fn get_allowed_ports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedPort>> {
         self.inner.get_allowed_ports()
+    }
+    ///
+    /// Appends an item to `resourceConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_resource_configurations`](Self::set_resource_configurations).
+    ///
+    /// <p>The updated resource configurations for the AgentCore Runtime. You can specify at most one resource configuration.</p>
+    pub fn resource_configurations(mut self, input: crate::types::ResourceConfiguration) -> Self {
+        self.inner = self.inner.resource_configurations(input);
+        self
+    }
+    /// <p>The updated resource configurations for the AgentCore Runtime. You can specify at most one resource configuration.</p>
+    pub fn set_resource_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceConfiguration>>) -> Self {
+        self.inner = self.inner.set_resource_configurations(input);
+        self
+    }
+    /// <p>The updated resource configurations for the AgentCore Runtime. You can specify at most one resource configuration.</p>
+    pub fn get_resource_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceConfiguration>> {
+        self.inner.get_resource_configurations()
     }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -15,5 +15,8 @@ pub fn ser_describe_rule_group_input_input(
     if let Some(var_4) = &input.analyze_rule_group {
         object.key("AnalyzeRuleGroup").boolean(*var_4);
     }
+    if let Some(var_5) = &input.rule_output_format {
+        object.key("RuleOutputFormat").string(var_5.as_str());
+    }
     Ok(())
 }

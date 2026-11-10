@@ -27,6 +27,7 @@ impl super::Client {
     ///   - [`exception_level(Option<ExceptionLevel>)`](crate::operation::get_gateway::GetGatewayOutput::exception_level): <p>The level of detail in error messages returned when invoking the gateway.</p> <ul>  <li>   <p>If the value is <code>DEBUG</code>, granular exception messages are returned to help a user debug the gateway.</p></li>  <li>   <p>If the value is omitted, a generic error message is returned to the end user.</p></li> </ul>
     ///   - [`web_acl_arn(Option<String>)`](crate::operation::get_gateway::GetGatewayOutput::web_acl_arn): <p>The Amazon Resource Name (ARN) of the Amazon Web Services WAF web ACL associated with the gateway.</p>
     ///   - [`waf_configuration(Option<WafConfiguration>)`](crate::operation::get_gateway::GetGatewayOutput::waf_configuration): <p>The Amazon Web Services WAF configuration for the gateway.</p>
+    ///   - [`domain_override(Option<DomainOverride>)`](crate::operation::get_gateway::GetGatewayOutput::domain_override): <p>The public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header.</p>
     /// - On failure, responds with [`SdkError<GetGatewayError>`](crate::operation::get_gateway::GetGatewayError)
     pub fn get_gateway(&self) -> crate::operation::get_gateway::builders::GetGatewayFluentBuilder {
         crate::operation::get_gateway::builders::GetGatewayFluentBuilder::new(self.handle.clone())

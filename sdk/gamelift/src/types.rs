@@ -75,6 +75,8 @@ pub use crate::types::_filter_configuration::FilterConfiguration;
 
 pub use crate::types::_priority_configuration::PriorityConfiguration;
 
+pub use crate::types::_game_session_queue_log_configuration::GameSessionQueueLogConfiguration;
+
 pub use crate::types::_game_session_queue::GameSessionQueue;
 
 pub use crate::types::_location_model::LocationModel;
@@ -263,6 +265,8 @@ pub use crate::types::_container_group_definition_remove_attribute::ContainerGro
 
 pub use crate::types::_zero_capacity_strategy::ZeroCapacityStrategy;
 
+pub use crate::types::_log_delivery_destination::LogDeliveryDestination;
+
 pub use crate::types::_filter_instance_status::FilterInstanceStatus;
 
 pub use crate::types::_ip_protocol::IpProtocol;
@@ -298,6 +302,8 @@ pub use crate::types::_placed_player_session::PlacedPlayerSession;
 pub use crate::types::_instance_status::InstanceStatus;
 
 pub use crate::types::_vpc_peering_connection_status::VpcPeeringConnectionStatus;
+
+pub use crate::types::_log_delivery_destination_type::LogDeliveryDestinationType;
 
 pub use crate::types::_container_fleet_location_status::ContainerFleetLocationStatus;
 
@@ -491,6 +497,8 @@ mod _game_session_queue;
 
 mod _game_session_queue_destination;
 
+mod _game_session_queue_log_configuration;
+
 mod _game_session_status;
 
 mod _game_session_status_reason;
@@ -534,6 +542,10 @@ mod _location_update_status;
 mod _locational_deployment;
 
 mod _log_configuration;
+
+mod _log_delivery_destination;
+
+mod _log_delivery_destination_type;
 
 mod _log_destination;
 

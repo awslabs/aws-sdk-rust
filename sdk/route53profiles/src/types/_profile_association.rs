@@ -22,6 +22,8 @@ pub struct ProfileAssociation {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the Profile association was modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The priority of the Profile association. Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority order, starting with the lowest value. Associations created without a priority have priority 100.</p>
+    pub priority: ::std::option::Option<i32>,
 }
 impl ProfileAssociation {
     /// <p>ID of the Profile association.</p>
@@ -60,6 +62,10 @@ impl ProfileAssociation {
     pub fn modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modification_time.as_ref()
     }
+    /// <p>The priority of the Profile association. Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority order, starting with the lowest value. Associations created without a priority have priority 100.</p>
+    pub fn priority(&self) -> ::std::option::Option<i32> {
+        self.priority
+    }
 }
 impl ProfileAssociation {
     /// Creates a new builder-style object to manufacture [`ProfileAssociation`](crate::types::ProfileAssociation).
@@ -81,6 +87,7 @@ pub struct ProfileAssociationBuilder {
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) priority: ::std::option::Option<i32>,
 }
 impl ProfileAssociationBuilder {
     /// <p>ID of the Profile association.</p>
@@ -209,6 +216,20 @@ impl ProfileAssociationBuilder {
     pub fn get_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modification_time
     }
+    /// <p>The priority of the Profile association. Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority order, starting with the lowest value. Associations created without a priority have priority 100.</p>
+    pub fn priority(mut self, input: i32) -> Self {
+        self.priority = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The priority of the Profile association. Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority order, starting with the lowest value. Associations created without a priority have priority 100.</p>
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.priority = input;
+        self
+    }
+    /// <p>The priority of the Profile association. Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority order, starting with the lowest value. Associations created without a priority have priority 100.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// Consumes the builder and constructs a [`ProfileAssociation`](crate::types::ProfileAssociation).
     pub fn build(self) -> crate::types::ProfileAssociation {
         crate::types::ProfileAssociation {
@@ -221,6 +242,7 @@ impl ProfileAssociationBuilder {
             status_message: self.status_message,
             creation_time: self.creation_time,
             modification_time: self.modification_time,
+            priority: self.priority,
         }
     }
 }

@@ -51,6 +51,8 @@ pub use crate::types::_transaction_type::TransactionType;
 
 pub use crate::types::_application_status::ApplicationStatus;
 
+pub use crate::types::_any_resource::AnyResource;
+
 pub use crate::types::_catalog_resource::CatalogResource;
 
 pub use crate::types::_database_resource::DatabaseResource;
@@ -68,6 +70,8 @@ pub use crate::types::_lf_tag_policy_resource::LfTagPolicyResource;
 pub use crate::types::_lf_tag_expression_resource::LfTagExpressionResource;
 
 pub use crate::types::_rls_policy_resource::RlsPolicyResource;
+
+pub use crate::types::_user_defined_function_resource::UserDefinedFunctionResource;
 
 pub use crate::types::_lf_tag_pair::LfTagPair;
 
@@ -123,7 +127,11 @@ pub use crate::types::_tagged_table::TaggedTable;
 
 pub use crate::types::_write_operation::WriteOperation;
 
+pub use crate::types::_any_resource_supported_types::AnyResourceSupportedTypes;
+
 pub use crate::types::_resource_type::ResourceType;
+
+pub use crate::types::_user_defined_function_wildcard::UserDefinedFunctionWildcard;
 
 pub use crate::types::_error_detail::ErrorDetail;
 
@@ -152,6 +160,10 @@ pub use crate::types::_service_authorization::ServiceAuthorization;
 mod _add_object_input;
 
 mod _all_rows_wildcard;
+
+mod _any_resource;
+
+mod _any_resource_supported_types;
 
 mod _application_status;
 
@@ -290,6 +302,10 @@ mod _transaction_status;
 mod _transaction_status_filter;
 
 mod _transaction_type;
+
+mod _user_defined_function_resource;
+
+mod _user_defined_function_wildcard;
 
 mod _verification_status;
 

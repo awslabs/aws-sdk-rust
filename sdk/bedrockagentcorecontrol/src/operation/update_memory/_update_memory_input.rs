@@ -9,7 +9,7 @@ pub struct UpdateMemoryInput {
     pub memory_id: ::std::option::Option<::std::string::String>,
     /// <p>The updated description of the AgentCore Memory resource.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The number of days after which memory events will expire, between 7 and 365 days.</p>
+    /// <p>The number of days after which memory events expire, between 7 and 3650 days.</p>
     pub event_expiry_duration: ::std::option::Option<i32>,
     /// <p>The ARN of the IAM role that provides permissions for the AgentCore Memory resource.</p>
     pub memory_execution_role_arn: ::std::option::Option<::std::string::String>,
@@ -35,7 +35,7 @@ impl UpdateMemoryInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The number of days after which memory events will expire, between 7 and 365 days.</p>
+    /// <p>The number of days after which memory events expire, between 7 and 3650 days.</p>
     pub fn event_expiry_duration(&self) -> ::std::option::Option<i32> {
         self.event_expiry_duration
     }
@@ -144,17 +144,17 @@ impl UpdateMemoryInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The number of days after which memory events will expire, between 7 and 365 days.</p>
+    /// <p>The number of days after which memory events expire, between 7 and 3650 days.</p>
     pub fn event_expiry_duration(mut self, input: i32) -> Self {
         self.event_expiry_duration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of days after which memory events will expire, between 7 and 365 days.</p>
+    /// <p>The number of days after which memory events expire, between 7 and 3650 days.</p>
     pub fn set_event_expiry_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.event_expiry_duration = input;
         self
     }
-    /// <p>The number of days after which memory events will expire, between 7 and 365 days.</p>
+    /// <p>The number of days after which memory events expire, between 7 and 3650 days.</p>
     pub fn get_event_expiry_duration(&self) -> &::std::option::Option<i32> {
         &self.event_expiry_duration
     }

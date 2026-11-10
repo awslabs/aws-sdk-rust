@@ -178,17 +178,17 @@ impl CreateMemoryFluentBuilder {
     pub fn get_memory_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_execution_role_arn()
     }
-    /// <p>The duration after which memory events expire. Specified as an ISO 8601 duration.</p>
+    /// <p>The number of days after which memory events expire, between 7 and 3650 days.</p>
     pub fn event_expiry_duration(mut self, input: i32) -> Self {
         self.inner = self.inner.event_expiry_duration(input);
         self
     }
-    /// <p>The duration after which memory events expire. Specified as an ISO 8601 duration.</p>
+    /// <p>The number of days after which memory events expire, between 7 and 3650 days.</p>
     pub fn set_event_expiry_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_event_expiry_duration(input);
         self
     }
-    /// <p>The duration after which memory events expire. Specified as an ISO 8601 duration.</p>
+    /// <p>The number of days after which memory events expire, between 7 and 3650 days.</p>
     pub fn get_event_expiry_duration(&self) -> &::std::option::Option<i32> {
         self.inner.get_event_expiry_duration()
     }

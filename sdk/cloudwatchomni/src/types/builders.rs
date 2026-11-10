@@ -55,6 +55,8 @@ pub use crate::types::_api_key_credential::ApiKeyCredentialBuilder;
 
 pub use crate::types::_node::NodeBuilder;
 
+pub use crate::types::_data_access_target::DataAccessTargetBuilder;
+
 pub use crate::types::_partial_results::PartialResultsBuilder;
 
 pub use crate::types::_access_grant_summary::AccessGrantSummaryBuilder;

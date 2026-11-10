@@ -68,6 +68,15 @@ pub(crate) fn connection_port_range_correct_errors(
     builder
 }
 
+pub(crate) fn game_session_queue_log_configuration_correct_errors(
+    mut builder: crate::types::builders::GameSessionQueueLogConfigurationBuilder,
+) -> crate::types::builders::GameSessionQueueLogConfigurationBuilder {
+    if builder.delivery_destinations.is_none() {
+        builder.delivery_destinations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn ip_permission_correct_errors(mut builder: crate::types::builders::IpPermissionBuilder) -> crate::types::builders::IpPermissionBuilder {
     if builder.from_port.is_none() {
         builder.from_port = Some(Default::default())
@@ -190,6 +199,15 @@ pub(crate) fn container_mount_point_correct_errors(
 ) -> crate::types::builders::ContainerMountPointBuilder {
     if builder.instance_path.is_none() {
         builder.instance_path = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn log_delivery_destination_correct_errors(
+    mut builder: crate::types::builders::LogDeliveryDestinationBuilder,
+) -> crate::types::builders::LogDeliveryDestinationBuilder {
+    if builder.log_destination.is_none() {
+        builder.log_destination = "no value was set".parse::<crate::types::LogDeliveryDestinationType>().ok()
     }
     builder
 }

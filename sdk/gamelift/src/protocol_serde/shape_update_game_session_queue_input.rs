@@ -42,6 +42,24 @@ pub fn ser_update_game_session_queue_input_input(
     if let Some(var_10) = &input.notification_target {
         encoder.str("NotificationTarget").str(var_10.as_str());
     }
+    if let Some(var_11) = &input.add_log_delivery_destinations {
+        encoder.str("AddLogDeliveryDestinations");
+        encoder.array((*var_11).len());
+        for item_12 in var_11 {
+            {
+                crate::protocol_serde::shape_log_delivery_destination::ser_log_delivery_destination(encoder, item_12)?;
+            }
+        }
+    }
+    if let Some(var_13) = &input.remove_log_delivery_destinations {
+        encoder.str("RemoveLogDeliveryDestinations");
+        encoder.array((*var_13).len());
+        for item_14 in var_13 {
+            {
+                crate::protocol_serde::shape_log_delivery_destination::ser_log_delivery_destination(encoder, item_14)?;
+            }
+        }
+    }
     encoder.end();
     Ok(())
 }

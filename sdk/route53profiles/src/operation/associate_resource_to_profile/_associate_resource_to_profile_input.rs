@@ -5,7 +5,7 @@
 pub struct AssociateResourceToProfileInput {
     /// <p>ID of the Profile.</p>
     pub profile_id: ::std::option::Option<::std::string::String>,
-    /// <p>Amazon resource number, ARN, of the DNS resource.</p>
+    /// <p>Amazon resource number, ARN, of the resource to associate. Either a private hosted zone, DNS Firewall rule group, Resolver rule, or an interface VPC endpoint.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name for the resource association.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl AssociateResourceToProfileInput {
     pub fn profile_id(&self) -> ::std::option::Option<&str> {
         self.profile_id.as_deref()
     }
-    /// <p>Amazon resource number, ARN, of the DNS resource.</p>
+    /// <p>Amazon resource number, ARN, of the resource to associate. Either a private hosted zone, DNS Firewall rule group, Resolver rule, or an interface VPC endpoint.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -64,18 +64,18 @@ impl AssociateResourceToProfileInputBuilder {
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_id
     }
-    /// <p>Amazon resource number, ARN, of the DNS resource.</p>
+    /// <p>Amazon resource number, ARN, of the resource to associate. Either a private hosted zone, DNS Firewall rule group, Resolver rule, or an interface VPC endpoint.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon resource number, ARN, of the DNS resource.</p>
+    /// <p>Amazon resource number, ARN, of the resource to associate. Either a private hosted zone, DNS Firewall rule group, Resolver rule, or an interface VPC endpoint.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>Amazon resource number, ARN, of the DNS resource.</p>
+    /// <p>Amazon resource number, ARN, of the resource to associate. Either a private hosted zone, DNS Firewall rule group, Resolver rule, or an interface VPC endpoint.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

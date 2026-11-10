@@ -21,6 +21,27 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "amiId" => {
+                            builder = builder.set_ami_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "securityGroupIds" => {
+                            builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_id_list::de_security_group_id_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "sshKeyName" => {
+                            builder = builder.set_ssh_key_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "name" => {
                             builder = builder.set_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -68,13 +89,6 @@ where
                                     .transpose()?,
                             );
                         }
-                        "amiId" => {
-                            builder = builder.set_ami_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
                         "subnetIds" => {
                             builder =
                                 builder.set_subnet_ids(crate::protocol_serde::shape_subnet_id_list::de_subnet_id_list(tokens, _value, depth + 1)?);
@@ -83,6 +97,13 @@ where
                             builder = builder.set_purchase_option(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::PurchaseOption::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "launchTemplateMode" => {
+                            builder = builder.set_launch_template_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::LaunchTemplateMode::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

@@ -9,12 +9,31 @@ pub struct DescribeRuleGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub rule_group_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p><note>
+    /// <p>Indicates the type of the rule group. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>STATEFUL</code> - Stateful rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Firewall engine rules, for use in a Next Generation policy.</p></li>
+    /// <li>
+    /// <p><code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p></li>
+    /// </ul><note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub r#type: ::std::option::Option<crate::types::RuleGroupType>,
     /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.</p>
     pub analyze_rule_group: ::std::option::Option<bool>,
+    /// <p>For a firewall engine rule group, the format in which to return the rules. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FIREWALL_RULES</code> - Returns the rules as structured <code>FirewallRule</code> objects.</p></li>
+    /// <li>
+    /// <p><code>RULES_STRING</code> - Returns the rules as a Suricata-compatible firewall-mode rule string.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a format, Network Firewall returns the rules in the format you provided them in. This setting applies only to <code>FIREWALL</code> and <code>IPS</code> rule groups; IPS engine rule groups support only <code>RULES_STRING</code>.</p>
+    pub rule_output_format: ::std::option::Option<crate::types::RuleOutputFormat>,
 }
 impl DescribeRuleGroupInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -27,7 +46,17 @@ impl DescribeRuleGroupInput {
     pub fn rule_group_arn(&self) -> ::std::option::Option<&str> {
         self.rule_group_arn.as_deref()
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p><note>
+    /// <p>Indicates the type of the rule group. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>STATEFUL</code> - Stateful rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Firewall engine rules, for use in a Next Generation policy.</p></li>
+    /// <li>
+    /// <p><code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p></li>
+    /// </ul><note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::RuleGroupType> {
@@ -36,6 +65,17 @@ impl DescribeRuleGroupInput {
     /// <p>Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.</p>
     pub fn analyze_rule_group(&self) -> ::std::option::Option<bool> {
         self.analyze_rule_group
+    }
+    /// <p>For a firewall engine rule group, the format in which to return the rules. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FIREWALL_RULES</code> - Returns the rules as structured <code>FirewallRule</code> objects.</p></li>
+    /// <li>
+    /// <p><code>RULES_STRING</code> - Returns the rules as a Suricata-compatible firewall-mode rule string.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a format, Network Firewall returns the rules in the format you provided them in. This setting applies only to <code>FIREWALL</code> and <code>IPS</code> rule groups; IPS engine rule groups support only <code>RULES_STRING</code>.</p>
+    pub fn rule_output_format(&self) -> ::std::option::Option<&crate::types::RuleOutputFormat> {
+        self.rule_output_format.as_ref()
     }
 }
 impl DescribeRuleGroupInput {
@@ -53,6 +93,7 @@ pub struct DescribeRuleGroupInputBuilder {
     pub(crate) rule_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::RuleGroupType>,
     pub(crate) analyze_rule_group: ::std::option::Option<bool>,
+    pub(crate) rule_output_format: ::std::option::Option<crate::types::RuleOutputFormat>,
 }
 impl DescribeRuleGroupInputBuilder {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -89,21 +130,51 @@ impl DescribeRuleGroupInputBuilder {
     pub fn get_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_group_arn
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p><note>
+    /// <p>Indicates the type of the rule group. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>STATEFUL</code> - Stateful rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Firewall engine rules, for use in a Next Generation policy.</p></li>
+    /// <li>
+    /// <p><code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p></li>
+    /// </ul><note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn r#type(mut self, input: crate::types::RuleGroupType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p><note>
+    /// <p>Indicates the type of the rule group. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>STATEFUL</code> - Stateful rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Firewall engine rules, for use in a Next Generation policy.</p></li>
+    /// <li>
+    /// <p><code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p></li>
+    /// </ul><note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RuleGroupType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p><note>
+    /// <p>Indicates the type of the rule group. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>STATEFUL</code> - Stateful rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Firewall engine rules, for use in a Next Generation policy.</p></li>
+    /// <li>
+    /// <p><code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p></li>
+    /// </ul><note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RuleGroupType> {
@@ -123,6 +194,41 @@ impl DescribeRuleGroupInputBuilder {
     pub fn get_analyze_rule_group(&self) -> &::std::option::Option<bool> {
         &self.analyze_rule_group
     }
+    /// <p>For a firewall engine rule group, the format in which to return the rules. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FIREWALL_RULES</code> - Returns the rules as structured <code>FirewallRule</code> objects.</p></li>
+    /// <li>
+    /// <p><code>RULES_STRING</code> - Returns the rules as a Suricata-compatible firewall-mode rule string.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a format, Network Firewall returns the rules in the format you provided them in. This setting applies only to <code>FIREWALL</code> and <code>IPS</code> rule groups; IPS engine rule groups support only <code>RULES_STRING</code>.</p>
+    pub fn rule_output_format(mut self, input: crate::types::RuleOutputFormat) -> Self {
+        self.rule_output_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>For a firewall engine rule group, the format in which to return the rules. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FIREWALL_RULES</code> - Returns the rules as structured <code>FirewallRule</code> objects.</p></li>
+    /// <li>
+    /// <p><code>RULES_STRING</code> - Returns the rules as a Suricata-compatible firewall-mode rule string.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a format, Network Firewall returns the rules in the format you provided them in. This setting applies only to <code>FIREWALL</code> and <code>IPS</code> rule groups; IPS engine rule groups support only <code>RULES_STRING</code>.</p>
+    pub fn set_rule_output_format(mut self, input: ::std::option::Option<crate::types::RuleOutputFormat>) -> Self {
+        self.rule_output_format = input;
+        self
+    }
+    /// <p>For a firewall engine rule group, the format in which to return the rules. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FIREWALL_RULES</code> - Returns the rules as structured <code>FirewallRule</code> objects.</p></li>
+    /// <li>
+    /// <p><code>RULES_STRING</code> - Returns the rules as a Suricata-compatible firewall-mode rule string.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a format, Network Firewall returns the rules in the format you provided them in. This setting applies only to <code>FIREWALL</code> and <code>IPS</code> rule groups; IPS engine rule groups support only <code>RULES_STRING</code>.</p>
+    pub fn get_rule_output_format(&self) -> &::std::option::Option<crate::types::RuleOutputFormat> {
+        &self.rule_output_format
+    }
     /// Consumes the builder and constructs a [`DescribeRuleGroupInput`](crate::operation::describe_rule_group::DescribeRuleGroupInput).
     pub fn build(
         self,
@@ -132,6 +238,7 @@ impl DescribeRuleGroupInputBuilder {
             rule_group_arn: self.rule_group_arn,
             r#type: self.r#type,
             analyze_rule_group: self.analyze_rule_group,
+            rule_output_format: self.rule_output_format,
         })
     }
 }

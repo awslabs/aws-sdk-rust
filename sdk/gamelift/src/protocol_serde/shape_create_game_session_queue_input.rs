@@ -51,6 +51,10 @@ pub fn ser_create_game_session_queue_input_input(
             }
         }
     }
+    if let Some(var_13) = &input.log_configuration {
+        encoder.str("LogConfiguration");
+        crate::protocol_serde::shape_game_session_queue_log_configuration::ser_game_session_queue_log_configuration(encoder, var_13)?;
+    }
     encoder.end();
     Ok(())
 }

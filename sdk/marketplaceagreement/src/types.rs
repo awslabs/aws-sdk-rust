@@ -29,6 +29,8 @@ pub use crate::types::_agreement_status::AgreementStatus;
 
 pub use crate::types::_end_time_behavior::EndTimeBehavior;
 
+pub use crate::types::_free_trial_summary::FreeTrialSummary;
+
 pub use crate::types::_billing_adjustment_reason_code::BillingAdjustmentReasonCode;
 
 pub use crate::types::_billing_adjustment_status::BillingAdjustmentStatus;
@@ -248,6 +250,8 @@ mod _fixed_percentage;
 mod _fixed_upfront_pricing_term;
 
 mod _free_trial_pricing_term;
+
+mod _free_trial_summary;
 
 mod _grant_item;
 

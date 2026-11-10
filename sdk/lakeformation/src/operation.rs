@@ -91,6 +91,9 @@ pub mod get_data_lake_settings;
 /// Types for the `GetEffectivePermissionsForPath` operation.
 pub mod get_effective_permissions_for_path;
 
+/// Types for the `GetGlueFunctionSessionContext` operation.
+pub mod get_glue_function_session_context;
+
 /// Types for the `GetLFTag` operation.
 pub mod get_lf_tag;
 
@@ -114,6 +117,9 @@ pub mod get_table_objects;
 
 /// Types for the `GetTemporaryDataLocationCredentials` operation.
 pub mod get_temporary_data_location_credentials;
+
+/// Types for the `GetTemporaryGlueFunctionCredentials` operation.
+pub mod get_temporary_glue_function_credentials;
 
 /// Types for the `GetTemporaryGluePartitionCredentials` operation.
 pub mod get_temporary_glue_partition_credentials;

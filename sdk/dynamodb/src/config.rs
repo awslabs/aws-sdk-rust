@@ -1466,6 +1466,16 @@ impl ServiceRuntimePlugin {
             let mut cfg = ::aws_smithy_types::config_bag::Layer::new("DynamoDB_20120810");
             cfg.store_put(crate::idempotency_token::default_provider());
             cfg.store_put(::aws_smithy_runtime::client::orchestrator::AuthSchemeAndEndpointOrchestrationV2);
+            #[allow(deprecated)]
+            if _service_config
+                .behavior_version
+                .as_ref()
+                .is_some_and(|bv| bv.is_at_least(::aws_smithy_runtime_api::client::behavior_version::BehaviorVersion::v2026_11_10()))
+            {
+                cfg.store_put(::aws_smithy_types::retry::RetryConfig::standard().with_max_attempts(4).with_retry_spec(
+                    ::aws_smithy_types::retry::RetrySpec::v2_1().with_non_throttling_initial_backoff(::std::time::Duration::from_millis(25)),
+                ));
+            }
             ::std::option::Option::Some(cfg.freeze())
         };
         let mut runtime_components = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ServiceRuntimePlugin");
@@ -1637,15 +1647,20 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
             builder.set_identity_cache(cache);
         }
         builder = builder.disable_clock_skew_correction(input.disable_clock_skew_correction());
+        #[allow(deprecated)]
         if let ::std::option::Option::Some(existing_rc) = input.retry_config().cloned() {
-            if existing_rc
-                .retry_spec()
-                .is_some_and(|s| s.is_at_least(::aws_smithy_types::retry::RetrySpec::V2_1))
+            if input
+                .behavior_version()
+                .is_some_and(|bv| bv.is_at_least(::aws_smithy_runtime_api::client::behavior_version::BehaviorVersion::v2026_11_10()))
             {
                 let mut rc = existing_rc.with_retry_spec(
                     ::aws_smithy_types::retry::RetrySpec::v2_1().with_non_throttling_initial_backoff(::std::time::Duration::from_millis(25)),
                 );
-                if !input.get_origin("retry_config").is_client_config() {
+                let origin = input.get_origin("retry_config");
+                let max_attempts_configured = origin.is_client_config()
+                    || origin == ::aws_types::origin::Origin::shared_environment_variable()
+                    || origin == ::aws_types::origin::Origin::shared_profile_file();
+                if !max_attempts_configured {
                     rc = rc.with_max_attempts(4);
                 }
                 builder = builder.retry_config(rc);

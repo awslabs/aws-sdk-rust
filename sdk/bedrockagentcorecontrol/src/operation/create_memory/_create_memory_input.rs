@@ -13,7 +13,7 @@ pub struct CreateMemoryInput {
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the memory to access Amazon Web Services services.</p>
     pub memory_execution_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The duration after which memory events expire. Specified as an ISO 8601 duration.</p>
+    /// <p>The number of days after which memory events expire, between 7 and 3650 days.</p>
     pub event_expiry_duration: ::std::option::Option<i32>,
     /// <p>The memory strategies to use for this memory. Strategies define how information is extracted, processed, and consolidated.</p>
     pub memory_strategies: ::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategyInput>>,
@@ -47,7 +47,7 @@ impl CreateMemoryInput {
     pub fn memory_execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.memory_execution_role_arn.as_deref()
     }
-    /// <p>The duration after which memory events expire. Specified as an ISO 8601 duration.</p>
+    /// <p>The number of days after which memory events expire, between 7 and 3650 days.</p>
     pub fn event_expiry_duration(&self) -> ::std::option::Option<i32> {
         self.event_expiry_duration
     }
@@ -190,18 +190,18 @@ impl CreateMemoryInputBuilder {
     pub fn get_memory_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_execution_role_arn
     }
-    /// <p>The duration after which memory events expire. Specified as an ISO 8601 duration.</p>
+    /// <p>The number of days after which memory events expire, between 7 and 3650 days.</p>
     /// This field is required.
     pub fn event_expiry_duration(mut self, input: i32) -> Self {
         self.event_expiry_duration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The duration after which memory events expire. Specified as an ISO 8601 duration.</p>
+    /// <p>The number of days after which memory events expire, between 7 and 3650 days.</p>
     pub fn set_event_expiry_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.event_expiry_duration = input;
         self
     }
-    /// <p>The duration after which memory events expire. Specified as an ISO 8601 duration.</p>
+    /// <p>The number of days after which memory events expire, between 7 and 3650 days.</p>
     pub fn get_event_expiry_duration(&self) -> &::std::option::Option<i32> {
         &self.event_expiry_duration
     }

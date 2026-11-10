@@ -16,21 +16,24 @@ pub struct FleetDeployment {
     pub per_instance_binary_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the version of the per-instance container group definition to roll back to if deployment fails. Amazon GameLift Servers sets this property to the container group definition version that the fleet used when it was last active.</p>
     pub rollback_per_instance_binary_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The status of fleet deployment activity in the location.</p>
+    /// <p>The status of the fleet deployment. For per-location status, see <code>LocationalDeployment</code>.</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress.</p></li>
+    /// <p><code>PENDING</code> -- Amazon GameLift Servers has accepted the deployment and hasn't started it yet.</p></li>
     /// <li>
-    /// <p><code>IMPAIRED</code> -- The deployment failed and the fleet has some impaired containers.</p></li>
+    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress. This status covers validation as well as the replacement of the fleet's containers.</p></li>
     /// <li>
-    /// <p><code>COMPLETE</code> -- The deployment has completed successfully.</p></li>
+    /// <p><code>IMPAIRED</code> -- The deployment failed validation, and the fleet kept the containers that failed validation so that you can inspect them. A deployment reaches this status when its impairment strategy is <code>MAINTAIN</code>.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated.</p></li>
+    /// <p><code>COMPLETE</code> -- The deployment has completed successfully in every fleet location.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_COMPLETE</code> -- The deployment failed and rollback has been completed.</p></li>
+    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated. A deployment reaches this status when its impairment strategy is <code>ROLLBACK</code>.</p></li>
     /// <li>
-    /// <p><code>CANCELLED</code> -- The deployment was cancelled.</p></li>
+    /// <p><code>ROLLBACK_COMPLETE</code> -- The deployment failed and rollback has been completed. The fleet is running the configuration from the last successful deployment.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> -- The deployment was cancelled because a new deployment started for the same fleet.</p></li>
     /// </ul>
+    /// <p>For how to debug an impaired deployment or cancel one, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/containers-deployment-validation.html">Container fleet deployments</a>.</p>
     pub deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>Instructions for how to deploy updates to a container fleet and what actions to take if the deployment fails.</p>
     pub deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
@@ -62,21 +65,24 @@ impl FleetDeployment {
     pub fn rollback_per_instance_binary_arn(&self) -> ::std::option::Option<&str> {
         self.rollback_per_instance_binary_arn.as_deref()
     }
-    /// <p>The status of fleet deployment activity in the location.</p>
+    /// <p>The status of the fleet deployment. For per-location status, see <code>LocationalDeployment</code>.</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress.</p></li>
+    /// <p><code>PENDING</code> -- Amazon GameLift Servers has accepted the deployment and hasn't started it yet.</p></li>
     /// <li>
-    /// <p><code>IMPAIRED</code> -- The deployment failed and the fleet has some impaired containers.</p></li>
+    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress. This status covers validation as well as the replacement of the fleet's containers.</p></li>
     /// <li>
-    /// <p><code>COMPLETE</code> -- The deployment has completed successfully.</p></li>
+    /// <p><code>IMPAIRED</code> -- The deployment failed validation, and the fleet kept the containers that failed validation so that you can inspect them. A deployment reaches this status when its impairment strategy is <code>MAINTAIN</code>.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated.</p></li>
+    /// <p><code>COMPLETE</code> -- The deployment has completed successfully in every fleet location.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_COMPLETE</code> -- The deployment failed and rollback has been completed.</p></li>
+    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated. A deployment reaches this status when its impairment strategy is <code>ROLLBACK</code>.</p></li>
     /// <li>
-    /// <p><code>CANCELLED</code> -- The deployment was cancelled.</p></li>
+    /// <p><code>ROLLBACK_COMPLETE</code> -- The deployment failed and rollback has been completed. The fleet is running the configuration from the last successful deployment.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> -- The deployment was cancelled because a new deployment started for the same fleet.</p></li>
     /// </ul>
+    /// <p>For how to debug an impaired deployment or cancel one, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/containers-deployment-validation.html">Container fleet deployments</a>.</p>
     pub fn deployment_status(&self) -> ::std::option::Option<&crate::types::DeploymentStatus> {
         self.deployment_status.as_ref()
     }
@@ -195,59 +201,68 @@ impl FleetDeploymentBuilder {
     pub fn get_rollback_per_instance_binary_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.rollback_per_instance_binary_arn
     }
-    /// <p>The status of fleet deployment activity in the location.</p>
+    /// <p>The status of the fleet deployment. For per-location status, see <code>LocationalDeployment</code>.</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress.</p></li>
+    /// <p><code>PENDING</code> -- Amazon GameLift Servers has accepted the deployment and hasn't started it yet.</p></li>
     /// <li>
-    /// <p><code>IMPAIRED</code> -- The deployment failed and the fleet has some impaired containers.</p></li>
+    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress. This status covers validation as well as the replacement of the fleet's containers.</p></li>
     /// <li>
-    /// <p><code>COMPLETE</code> -- The deployment has completed successfully.</p></li>
+    /// <p><code>IMPAIRED</code> -- The deployment failed validation, and the fleet kept the containers that failed validation so that you can inspect them. A deployment reaches this status when its impairment strategy is <code>MAINTAIN</code>.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated.</p></li>
+    /// <p><code>COMPLETE</code> -- The deployment has completed successfully in every fleet location.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_COMPLETE</code> -- The deployment failed and rollback has been completed.</p></li>
+    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated. A deployment reaches this status when its impairment strategy is <code>ROLLBACK</code>.</p></li>
     /// <li>
-    /// <p><code>CANCELLED</code> -- The deployment was cancelled.</p></li>
+    /// <p><code>ROLLBACK_COMPLETE</code> -- The deployment failed and rollback has been completed. The fleet is running the configuration from the last successful deployment.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> -- The deployment was cancelled because a new deployment started for the same fleet.</p></li>
     /// </ul>
+    /// <p>For how to debug an impaired deployment or cancel one, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/containers-deployment-validation.html">Container fleet deployments</a>.</p>
     pub fn deployment_status(mut self, input: crate::types::DeploymentStatus) -> Self {
         self.deployment_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of fleet deployment activity in the location.</p>
+    /// <p>The status of the fleet deployment. For per-location status, see <code>LocationalDeployment</code>.</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress.</p></li>
+    /// <p><code>PENDING</code> -- Amazon GameLift Servers has accepted the deployment and hasn't started it yet.</p></li>
     /// <li>
-    /// <p><code>IMPAIRED</code> -- The deployment failed and the fleet has some impaired containers.</p></li>
+    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress. This status covers validation as well as the replacement of the fleet's containers.</p></li>
     /// <li>
-    /// <p><code>COMPLETE</code> -- The deployment has completed successfully.</p></li>
+    /// <p><code>IMPAIRED</code> -- The deployment failed validation, and the fleet kept the containers that failed validation so that you can inspect them. A deployment reaches this status when its impairment strategy is <code>MAINTAIN</code>.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated.</p></li>
+    /// <p><code>COMPLETE</code> -- The deployment has completed successfully in every fleet location.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_COMPLETE</code> -- The deployment failed and rollback has been completed.</p></li>
+    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated. A deployment reaches this status when its impairment strategy is <code>ROLLBACK</code>.</p></li>
     /// <li>
-    /// <p><code>CANCELLED</code> -- The deployment was cancelled.</p></li>
+    /// <p><code>ROLLBACK_COMPLETE</code> -- The deployment failed and rollback has been completed. The fleet is running the configuration from the last successful deployment.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> -- The deployment was cancelled because a new deployment started for the same fleet.</p></li>
     /// </ul>
+    /// <p>For how to debug an impaired deployment or cancel one, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/containers-deployment-validation.html">Container fleet deployments</a>.</p>
     pub fn set_deployment_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
         self.deployment_status = input;
         self
     }
-    /// <p>The status of fleet deployment activity in the location.</p>
+    /// <p>The status of the fleet deployment. For per-location status, see <code>LocationalDeployment</code>.</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress.</p></li>
+    /// <p><code>PENDING</code> -- Amazon GameLift Servers has accepted the deployment and hasn't started it yet.</p></li>
     /// <li>
-    /// <p><code>IMPAIRED</code> -- The deployment failed and the fleet has some impaired containers.</p></li>
+    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress. This status covers validation as well as the replacement of the fleet's containers.</p></li>
     /// <li>
-    /// <p><code>COMPLETE</code> -- The deployment has completed successfully.</p></li>
+    /// <p><code>IMPAIRED</code> -- The deployment failed validation, and the fleet kept the containers that failed validation so that you can inspect them. A deployment reaches this status when its impairment strategy is <code>MAINTAIN</code>.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated.</p></li>
+    /// <p><code>COMPLETE</code> -- The deployment has completed successfully in every fleet location.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_COMPLETE</code> -- The deployment failed and rollback has been completed.</p></li>
+    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated. A deployment reaches this status when its impairment strategy is <code>ROLLBACK</code>.</p></li>
     /// <li>
-    /// <p><code>CANCELLED</code> -- The deployment was cancelled.</p></li>
+    /// <p><code>ROLLBACK_COMPLETE</code> -- The deployment failed and rollback has been completed. The fleet is running the configuration from the last successful deployment.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> -- The deployment was cancelled because a new deployment started for the same fleet.</p></li>
     /// </ul>
+    /// <p>For how to debug an impaired deployment or cancel one, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/containers-deployment-validation.html">Container fleet deployments</a>.</p>
     pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
         &self.deployment_status
     }

@@ -181,6 +181,8 @@ mod create_firewall;
 
 mod create_firewall_policy;
 
+mod create_firewall_policy_v2;
+
 mod create_proxy;
 
 mod create_proxy_configuration;
@@ -228,6 +230,8 @@ mod delete_firewall;
 
 mod delete_firewall_policy;
 
+mod delete_firewall_policy_v2;
+
 mod delete_network_firewall_transit_gateway_attachment;
 
 mod delete_proxy;
@@ -253,6 +257,8 @@ mod describe_firewall;
 mod describe_firewall_metadata;
 
 mod describe_firewall_policy;
+
+mod describe_firewall_policy_v2;
 
 mod describe_flow_operation;
 
@@ -291,6 +297,8 @@ mod list_analysis_reports;
 mod list_container_associations;
 
 mod list_firewall_policies;
+
+mod list_firewall_policies_v2;
 
 mod list_firewalls;
 
@@ -341,6 +349,8 @@ mod update_firewall_encryption_configuration;
 mod update_firewall_policy;
 
 mod update_firewall_policy_change_protection;
+
+mod update_firewall_policy_v2;
 
 mod update_logging_configuration;
 

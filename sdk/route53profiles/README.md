@@ -1,6 +1,6 @@
 # aws-sdk-route53profiles
 
-With Amazon Route 53 Profiles you can share Route 53 configurations with VPCs and AWS accounts
+With Amazon Route 53 Profiles you can share Route 53 configurations with VPCs and Amazon Web Services accounts
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-route53profiles = "1.100.0"
+aws-sdk-route53profiles = "1.101.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

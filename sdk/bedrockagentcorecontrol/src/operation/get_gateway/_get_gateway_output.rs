@@ -53,6 +53,8 @@ pub struct GetGatewayOutput {
     pub web_acl_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services WAF configuration for the gateway.</p>
     pub waf_configuration: ::std::option::Option<crate::types::WafConfiguration>,
+    /// <p>The public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header.</p>
+    pub domain_override: ::std::option::Option<crate::types::DomainOverride>,
     _request_id: Option<String>,
 }
 impl GetGatewayOutput {
@@ -157,6 +159,10 @@ impl GetGatewayOutput {
     pub fn waf_configuration(&self) -> ::std::option::Option<&crate::types::WafConfiguration> {
         self.waf_configuration.as_ref()
     }
+    /// <p>The public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header.</p>
+    pub fn domain_override(&self) -> ::std::option::Option<&crate::types::DomainOverride> {
+        self.domain_override.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetGatewayOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -183,6 +189,7 @@ impl ::std::fmt::Debug for GetGatewayOutput {
         formatter.field("exception_level", &self.exception_level);
         formatter.field("web_acl_arn", &self.web_acl_arn);
         formatter.field("waf_configuration", &self.waf_configuration);
+        formatter.field("domain_override", &self.domain_override);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -225,6 +232,7 @@ pub struct GetGatewayOutputBuilder {
     pub(crate) exception_level: ::std::option::Option<crate::types::ExceptionLevel>,
     pub(crate) web_acl_arn: ::std::option::Option<::std::string::String>,
     pub(crate) waf_configuration: ::std::option::Option<crate::types::WafConfiguration>,
+    pub(crate) domain_override: ::std::option::Option<crate::types::DomainOverride>,
     _request_id: Option<String>,
 }
 impl GetGatewayOutputBuilder {
@@ -576,6 +584,20 @@ impl GetGatewayOutputBuilder {
     pub fn get_waf_configuration(&self) -> &::std::option::Option<crate::types::WafConfiguration> {
         &self.waf_configuration
     }
+    /// <p>The public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header.</p>
+    pub fn domain_override(mut self, input: crate::types::DomainOverride) -> Self {
+        self.domain_override = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header.</p>
+    pub fn set_domain_override(mut self, input: ::std::option::Option<crate::types::DomainOverride>) -> Self {
+        self.domain_override = input;
+        self
+    }
+    /// <p>The public domain names that the gateway advertises in its OAuth discovery URLs instead of the inbound Host header.</p>
+    pub fn get_domain_override(&self) -> &::std::option::Option<crate::types::DomainOverride> {
+        &self.domain_override
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -657,6 +679,7 @@ impl GetGatewayOutputBuilder {
             exception_level: self.exception_level,
             web_acl_arn: self.web_acl_arn,
             waf_configuration: self.waf_configuration,
+            domain_override: self.domain_override,
             _request_id: self._request_id,
         })
     }
@@ -686,6 +709,7 @@ impl ::std::fmt::Debug for GetGatewayOutputBuilder {
         formatter.field("exception_level", &self.exception_level);
         formatter.field("web_acl_arn", &self.web_acl_arn);
         formatter.field("waf_configuration", &self.waf_configuration);
+        formatter.field("domain_override", &self.domain_override);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

@@ -15,12 +15,16 @@ pub struct UpdateGameSessionQueueInput {
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>,
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
     pub filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
     pub priority_configuration: ::std::option::Option<crate::types::PriorityConfiguration>,
     /// <p>Information to be added to all events that are related to this game session queue.</p>
     pub custom_event_data: ::std::option::Option<::std::string::String>,
     /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
     pub notification_target: ::std::option::Option<::std::string::String>,
+    /// <p>Log delivery destinations to add to the queue's log configuration (<code>LogConfiguration</code>).</p>
+    pub add_log_delivery_destinations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryDestination>>,
+    /// <p>Log delivery destinations to remove from the queue's log configuration (<code>LogConfiguration</code>).</p>
+    pub remove_log_delivery_destinations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryDestination>>,
 }
 impl UpdateGameSessionQueueInput {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value.</p>
@@ -49,7 +53,7 @@ impl UpdateGameSessionQueueInput {
     pub fn filter_configuration(&self) -> ::std::option::Option<&crate::types::FilterConfiguration> {
         self.filter_configuration.as_ref()
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
     pub fn priority_configuration(&self) -> ::std::option::Option<&crate::types::PriorityConfiguration> {
         self.priority_configuration.as_ref()
     }
@@ -60,6 +64,18 @@ impl UpdateGameSessionQueueInput {
     /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
     pub fn notification_target(&self) -> ::std::option::Option<&str> {
         self.notification_target.as_deref()
+    }
+    /// <p>Log delivery destinations to add to the queue's log configuration (<code>LogConfiguration</code>).</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_log_delivery_destinations.is_none()`.
+    pub fn add_log_delivery_destinations(&self) -> &[crate::types::LogDeliveryDestination] {
+        self.add_log_delivery_destinations.as_deref().unwrap_or_default()
+    }
+    /// <p>Log delivery destinations to remove from the queue's log configuration (<code>LogConfiguration</code>).</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_log_delivery_destinations.is_none()`.
+    pub fn remove_log_delivery_destinations(&self) -> &[crate::types::LogDeliveryDestination] {
+        self.remove_log_delivery_destinations.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UpdateGameSessionQueueInput {
@@ -73,6 +89,8 @@ impl ::std::fmt::Debug for UpdateGameSessionQueueInput {
         formatter.field("priority_configuration", &self.priority_configuration);
         formatter.field("custom_event_data", &"*** Sensitive Data Redacted ***");
         formatter.field("notification_target", &self.notification_target);
+        formatter.field("add_log_delivery_destinations", &self.add_log_delivery_destinations);
+        formatter.field("remove_log_delivery_destinations", &self.remove_log_delivery_destinations);
         formatter.finish()
     }
 }
@@ -95,6 +113,8 @@ pub struct UpdateGameSessionQueueInputBuilder {
     pub(crate) priority_configuration: ::std::option::Option<crate::types::PriorityConfiguration>,
     pub(crate) custom_event_data: ::std::option::Option<::std::string::String>,
     pub(crate) notification_target: ::std::option::Option<::std::string::String>,
+    pub(crate) add_log_delivery_destinations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryDestination>>,
+    pub(crate) remove_log_delivery_destinations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryDestination>>,
 }
 impl UpdateGameSessionQueueInputBuilder {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value.</p>
@@ -186,17 +206,17 @@ impl UpdateGameSessionQueueInputBuilder {
     pub fn get_filter_configuration(&self) -> &::std::option::Option<crate::types::FilterConfiguration> {
         &self.filter_configuration
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
     pub fn priority_configuration(mut self, input: crate::types::PriorityConfiguration) -> Self {
         self.priority_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
     pub fn set_priority_configuration(mut self, input: ::std::option::Option<crate::types::PriorityConfiguration>) -> Self {
         self.priority_configuration = input;
         self
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
     pub fn get_priority_configuration(&self) -> &::std::option::Option<crate::types::PriorityConfiguration> {
         &self.priority_configuration
     }
@@ -228,6 +248,49 @@ impl UpdateGameSessionQueueInputBuilder {
     pub fn get_notification_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_target
     }
+    /// Appends an item to `add_log_delivery_destinations`.
+    ///
+    /// To override the contents of this collection use [`set_add_log_delivery_destinations`](Self::set_add_log_delivery_destinations).
+    ///
+    /// <p>Log delivery destinations to add to the queue's log configuration (<code>LogConfiguration</code>).</p>
+    pub fn add_log_delivery_destinations(mut self, input: crate::types::LogDeliveryDestination) -> Self {
+        let mut v = self.add_log_delivery_destinations.unwrap_or_default();
+        v.push(input);
+        self.add_log_delivery_destinations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Log delivery destinations to add to the queue's log configuration (<code>LogConfiguration</code>).</p>
+    pub fn set_add_log_delivery_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryDestination>>) -> Self {
+        self.add_log_delivery_destinations = input;
+        self
+    }
+    /// <p>Log delivery destinations to add to the queue's log configuration (<code>LogConfiguration</code>).</p>
+    pub fn get_add_log_delivery_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryDestination>> {
+        &self.add_log_delivery_destinations
+    }
+    /// Appends an item to `remove_log_delivery_destinations`.
+    ///
+    /// To override the contents of this collection use [`set_remove_log_delivery_destinations`](Self::set_remove_log_delivery_destinations).
+    ///
+    /// <p>Log delivery destinations to remove from the queue's log configuration (<code>LogConfiguration</code>).</p>
+    pub fn remove_log_delivery_destinations(mut self, input: crate::types::LogDeliveryDestination) -> Self {
+        let mut v = self.remove_log_delivery_destinations.unwrap_or_default();
+        v.push(input);
+        self.remove_log_delivery_destinations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Log delivery destinations to remove from the queue's log configuration (<code>LogConfiguration</code>).</p>
+    pub fn set_remove_log_delivery_destinations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryDestination>>,
+    ) -> Self {
+        self.remove_log_delivery_destinations = input;
+        self
+    }
+    /// <p>Log delivery destinations to remove from the queue's log configuration (<code>LogConfiguration</code>).</p>
+    pub fn get_remove_log_delivery_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryDestination>> {
+        &self.remove_log_delivery_destinations
+    }
     /// Consumes the builder and constructs a [`UpdateGameSessionQueueInput`](crate::operation::update_game_session_queue::UpdateGameSessionQueueInput).
     pub fn build(
         self,
@@ -244,6 +307,8 @@ impl UpdateGameSessionQueueInputBuilder {
             priority_configuration: self.priority_configuration,
             custom_event_data: self.custom_event_data,
             notification_target: self.notification_target,
+            add_log_delivery_destinations: self.add_log_delivery_destinations,
+            remove_log_delivery_destinations: self.remove_log_delivery_destinations,
         })
     }
 }
@@ -258,6 +323,8 @@ impl ::std::fmt::Debug for UpdateGameSessionQueueInputBuilder {
         formatter.field("priority_configuration", &self.priority_configuration);
         formatter.field("custom_event_data", &"*** Sensitive Data Redacted ***");
         formatter.field("notification_target", &self.notification_target);
+        formatter.field("add_log_delivery_destinations", &self.add_log_delivery_destinations);
+        formatter.field("remove_log_delivery_destinations", &self.remove_log_delivery_destinations);
         formatter.finish()
     }
 }

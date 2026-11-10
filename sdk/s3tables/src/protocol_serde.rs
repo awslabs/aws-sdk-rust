@@ -57,6 +57,8 @@ pub(crate) mod shape_get_table_bucket;
 
 pub(crate) mod shape_get_table_bucket_encryption;
 
+pub(crate) mod shape_get_table_bucket_logging;
+
 pub(crate) mod shape_get_table_bucket_maintenance_configuration;
 
 pub(crate) mod shape_get_table_bucket_metrics_configuration;
@@ -100,6 +102,8 @@ pub(crate) mod shape_list_tables;
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_put_table_bucket_encryption;
+
+pub(crate) mod shape_put_table_bucket_logging;
 
 pub(crate) mod shape_put_table_bucket_maintenance_configuration;
 
@@ -163,6 +167,8 @@ pub(crate) mod shape_not_found_exception;
 
 pub(crate) mod shape_put_table_bucket_encryption_input;
 
+pub(crate) mod shape_put_table_bucket_logging_input;
+
 pub(crate) mod shape_put_table_bucket_maintenance_configuration_input;
 
 pub(crate) mod shape_put_table_bucket_policy_input;
@@ -225,6 +231,8 @@ pub(crate) mod shape_source_configuration;
 
 pub(crate) mod shape_storage_class_configuration;
 
+pub(crate) mod shape_table_bucket_logging_status;
+
 pub(crate) mod shape_table_bucket_maintenance_configuration;
 
 pub(crate) mod shape_table_bucket_maintenance_configuration_value;
@@ -258,6 +266,8 @@ pub(crate) mod shape_iceberg_metadata;
 pub(crate) mod shape_iceberg_schema_v2;
 
 pub(crate) mod shape_iceberg_sort_order;
+
+pub(crate) mod shape_logging_enabled;
 
 pub(crate) mod shape_maintenance_settings;
 
@@ -321,7 +331,11 @@ pub(crate) mod shape_replication_destination;
 
 pub(crate) mod shape_schema_v2_field;
 
+pub(crate) mod shape_target_object_key_format;
+
 pub(crate) mod shape_iceberg_partition_field;
+
+pub(crate) mod shape_partitioned_prefix;
 
 pub(crate) mod shape_replication_destinations;
 

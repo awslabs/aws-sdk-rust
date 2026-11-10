@@ -159,6 +159,8 @@ pub(crate) mod shape_estimated_charges;
 
 pub(crate) mod shape_filter;
 
+pub(crate) mod shape_free_trial_summary;
+
 pub(crate) mod shape_invoice_billing_period;
 
 pub(crate) mod shape_payment_request_summary_list;

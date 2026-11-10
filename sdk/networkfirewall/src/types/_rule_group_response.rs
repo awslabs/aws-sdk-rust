@@ -14,7 +14,17 @@ pub struct RuleGroupResponse {
     pub rule_group_id: ::std::string::String,
     /// <p>A description of the rule group.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
+    /// <p>Indicates the type of the rule group. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>STATEFUL</code> - Stateful rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Firewall engine rules, for use in a Next Generation policy.</p></li>
+    /// <li>
+    /// <p><code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p></li>
+    /// </ul>
     pub r#type: ::std::option::Option<crate::types::RuleGroupType>,
     /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group.</p>
     /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>.</p>
@@ -68,7 +78,17 @@ impl RuleGroupResponse {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
+    /// <p>Indicates the type of the rule group. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>STATEFUL</code> - Stateful rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Firewall engine rules, for use in a Next Generation policy.</p></li>
+    /// <li>
+    /// <p><code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p></li>
+    /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::RuleGroupType> {
         self.r#type.as_ref()
     }
@@ -222,17 +242,47 @@ impl RuleGroupResponseBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
+    /// <p>Indicates the type of the rule group. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>STATEFUL</code> - Stateful rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Firewall engine rules, for use in a Next Generation policy.</p></li>
+    /// <li>
+    /// <p><code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p></li>
+    /// </ul>
     pub fn r#type(mut self, input: crate::types::RuleGroupType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
+    /// <p>Indicates the type of the rule group. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>STATEFUL</code> - Stateful rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Firewall engine rules, for use in a Next Generation policy.</p></li>
+    /// <li>
+    /// <p><code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p></li>
+    /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RuleGroupType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
+    /// <p>Indicates the type of the rule group. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>STATEFUL</code> - Stateful rules, for use in a Classic Network Firewall policy.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Firewall engine rules, for use in a Next Generation policy.</p></li>
+    /// <li>
+    /// <p><code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p></li>
+    /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RuleGroupType> {
         &self.r#type
     }

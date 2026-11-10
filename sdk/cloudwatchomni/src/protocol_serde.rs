@@ -81,6 +81,8 @@ pub(crate) mod shape_get_space;
 
 pub(crate) mod shape_get_space_credentials_for_organization;
 
+pub(crate) mod shape_get_space_data_access;
+
 pub(crate) mod shape_get_telemetry_query_results;
 
 pub(crate) mod shape_get_view;
@@ -205,6 +207,8 @@ pub(crate) mod shape_get_omni_dashboard_input;
 
 pub(crate) mod shape_get_space_credentials_for_organization_input;
 
+pub(crate) mod shape_get_space_data_access_input;
+
 pub(crate) mod shape_get_space_input;
 
 pub(crate) mod shape_get_telemetry_query_results_input;
@@ -236,6 +240,8 @@ pub(crate) mod shape_list_telemetry_fields_input;
 pub(crate) mod shape_list_telemetry_query_sessions_input;
 
 pub(crate) mod shape_list_views_input;
+
+pub(crate) mod shape_policy_too_large_exception;
 
 pub(crate) mod shape_put_intelligence_configuration_input;
 
@@ -290,6 +296,8 @@ pub(crate) mod shape_alert_filter_criteria;
 pub(crate) mod shape_alert_summary_list;
 
 pub(crate) mod shape_aws_credentials;
+
+pub(crate) mod shape_data_access_target;
 
 pub(crate) mod shape_domain;
 

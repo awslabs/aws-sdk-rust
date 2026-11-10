@@ -12,6 +12,8 @@
 /// ```text
 /// # let rulegrouptype = unimplemented!();
 /// match rulegrouptype {
+///     RuleGroupType::Firewall => { /* ... */ },
+///     RuleGroupType::Ips => { /* ... */ },
 ///     RuleGroupType::Stateful => { /* ... */ },
 ///     RuleGroupType::StatefulDomain => { /* ... */ },
 ///     RuleGroupType::Stateless => { /* ... */ },
@@ -44,6 +46,10 @@
 )]
 pub enum RuleGroupType {
     #[allow(missing_docs)] // documentation missing in model
+    Firewall,
+    #[allow(missing_docs)] // documentation missing in model
+    Ips,
+    #[allow(missing_docs)] // documentation missing in model
     Stateful,
     #[allow(missing_docs)] // documentation missing in model
     StatefulDomain,
@@ -56,6 +62,8 @@ pub enum RuleGroupType {
 impl ::std::convert::From<&str> for RuleGroupType {
     fn from(s: &str) -> Self {
         match s {
+            "FIREWALL" => RuleGroupType::Firewall,
+            "IPS" => RuleGroupType::Ips,
             "STATEFUL" => RuleGroupType::Stateful,
             "STATEFUL_DOMAIN" => RuleGroupType::StatefulDomain,
             "STATELESS" => RuleGroupType::Stateless,
@@ -74,6 +82,8 @@ impl RuleGroupType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RuleGroupType::Firewall => "FIREWALL",
+            RuleGroupType::Ips => "IPS",
             RuleGroupType::Stateful => "STATEFUL",
             RuleGroupType::StatefulDomain => "STATEFUL_DOMAIN",
             RuleGroupType::Stateless => "STATELESS",
@@ -82,7 +92,7 @@ impl RuleGroupType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["STATEFUL", "STATEFUL_DOMAIN", "STATELESS"]
+        &["FIREWALL", "IPS", "STATEFUL", "STATEFUL_DOMAIN", "STATELESS"]
     }
 }
 impl ::std::convert::AsRef<str> for RuleGroupType {
@@ -105,6 +115,8 @@ impl RuleGroupType {
 impl ::std::fmt::Display for RuleGroupType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RuleGroupType::Firewall => write!(f, "FIREWALL"),
+            RuleGroupType::Ips => write!(f, "IPS"),
             RuleGroupType::Stateful => write!(f, "STATEFUL"),
             RuleGroupType::StatefulDomain => write!(f, "STATEFUL_DOMAIN"),
             RuleGroupType::Stateless => write!(f, "STATELESS"),

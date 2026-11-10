@@ -9,6 +9,8 @@ pub enum Error {
     ConflictException(crate::types::error::ConflictException),
     /// An unexpected error occurred while processing the request.
     InternalServerException(crate::types::error::InternalServerException),
+    /// The requested actions produce a credential that exceeds the maximum size. Request fewer actions.
+    PolicyTooLargeException(crate::types::error::PolicyTooLargeException),
     /// The specified resource does not exist.
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// A service quota was exceeded.
@@ -32,6 +34,7 @@ impl ::std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::PolicyTooLargeException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
@@ -60,6 +63,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
+            Self::PolicyTooLargeException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
@@ -1111,6 +1115,35 @@ impl From<crate::operation::get_space_credentials_for_organization::GetSpaceCred
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_space_data_access::GetSpaceDataAccessError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_space_data_access::GetSpaceDataAccessError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_space_data_access::GetSpaceDataAccessError> for Error {
+    fn from(err: crate::operation::get_space_data_access::GetSpaceDataAccessError) -> Self {
+        match err {
+            crate::operation::get_space_data_access::GetSpaceDataAccessError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_space_data_access::GetSpaceDataAccessError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_space_data_access::GetSpaceDataAccessError::PolicyTooLargeException(inner) => Error::PolicyTooLargeException(inner),
+            crate::operation::get_space_data_access::GetSpaceDataAccessError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_space_data_access::GetSpaceDataAccessError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_space_data_access::GetSpaceDataAccessError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_space_data_access::GetSpaceDataAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_telemetry_query_results::GetTelemetryQueryResultsError, R>>
     for Error
 where
@@ -1985,6 +2018,7 @@ impl ::std::error::Error for Error {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
+            Error::PolicyTooLargeException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
@@ -1999,6 +2033,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
+            Self::PolicyTooLargeException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),

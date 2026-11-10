@@ -223,6 +223,8 @@ mod get_data_lake_settings;
 
 mod get_effective_permissions_for_path;
 
+mod get_glue_function_session_context;
+
 mod get_lf_tag;
 
 mod get_lf_tag_expression;
@@ -238,6 +240,8 @@ mod get_rls_policy;
 mod get_table_objects;
 
 mod get_temporary_data_location_credentials;
+
+mod get_temporary_glue_function_credentials;
 
 mod get_temporary_glue_partition_credentials;
 

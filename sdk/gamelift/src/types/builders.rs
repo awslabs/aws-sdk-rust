@@ -49,6 +49,8 @@ pub use crate::types::_filter_configuration::FilterConfigurationBuilder;
 
 pub use crate::types::_priority_configuration::PriorityConfigurationBuilder;
 
+pub use crate::types::_game_session_queue_log_configuration::GameSessionQueueLogConfigurationBuilder;
+
 pub use crate::types::_game_session_queue::GameSessionQueueBuilder;
 
 pub use crate::types::_location_model::LocationModelBuilder;
@@ -152,6 +154,8 @@ pub use crate::types::_desired_player_session::DesiredPlayerSessionBuilder;
 pub use crate::types::_player::PlayerBuilder;
 
 pub use crate::types::_game_session_connection_info::GameSessionConnectionInfoBuilder;
+
+pub use crate::types::_log_delivery_destination::LogDeliveryDestinationBuilder;
 
 pub use crate::types::_container_fleet_location_attributes::ContainerFleetLocationAttributesBuilder;
 

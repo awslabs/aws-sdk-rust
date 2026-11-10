@@ -12,6 +12,7 @@
 /// ```text
 /// # let datalakeresourcetype = unimplemented!();
 /// match datalakeresourcetype {
+///     DataLakeResourceType::AnyResource => { /* ... */ },
 ///     DataLakeResourceType::Catalog => { /* ... */ },
 ///     DataLakeResourceType::Database => { /* ... */ },
 ///     DataLakeResourceType::DataLocation => { /* ... */ },
@@ -21,6 +22,7 @@
 ///     DataLakeResourceType::LfTagPolicyDatabase => { /* ... */ },
 ///     DataLakeResourceType::LfTagPolicyTable => { /* ... */ },
 ///     DataLakeResourceType::Table => { /* ... */ },
+///     DataLakeResourceType::UserDefinedFunction => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -50,6 +52,8 @@
 )]
 pub enum DataLakeResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    AnyResource,
+    #[allow(missing_docs)] // documentation missing in model
     Catalog,
     #[allow(missing_docs)] // documentation missing in model
     Database,
@@ -67,6 +71,8 @@ pub enum DataLakeResourceType {
     LfTagPolicyTable,
     #[allow(missing_docs)] // documentation missing in model
     Table,
+    #[allow(missing_docs)] // documentation missing in model
+    UserDefinedFunction,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -74,6 +80,7 @@ pub enum DataLakeResourceType {
 impl ::std::convert::From<&str> for DataLakeResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "ANY_RESOURCE" => DataLakeResourceType::AnyResource,
             "CATALOG" => DataLakeResourceType::Catalog,
             "DATABASE" => DataLakeResourceType::Database,
             "DATA_LOCATION" => DataLakeResourceType::DataLocation,
@@ -83,6 +90,7 @@ impl ::std::convert::From<&str> for DataLakeResourceType {
             "LF_TAG_POLICY_DATABASE" => DataLakeResourceType::LfTagPolicyDatabase,
             "LF_TAG_POLICY_TABLE" => DataLakeResourceType::LfTagPolicyTable,
             "TABLE" => DataLakeResourceType::Table,
+            "USER_DEFINED_FUNCTION" => DataLakeResourceType::UserDefinedFunction,
             other => DataLakeResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -98,6 +106,7 @@ impl DataLakeResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DataLakeResourceType::AnyResource => "ANY_RESOURCE",
             DataLakeResourceType::Catalog => "CATALOG",
             DataLakeResourceType::Database => "DATABASE",
             DataLakeResourceType::DataLocation => "DATA_LOCATION",
@@ -107,12 +116,14 @@ impl DataLakeResourceType {
             DataLakeResourceType::LfTagPolicyDatabase => "LF_TAG_POLICY_DATABASE",
             DataLakeResourceType::LfTagPolicyTable => "LF_TAG_POLICY_TABLE",
             DataLakeResourceType::Table => "TABLE",
+            DataLakeResourceType::UserDefinedFunction => "USER_DEFINED_FUNCTION",
             DataLakeResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ANY_RESOURCE",
             "CATALOG",
             "DATABASE",
             "DATA_LOCATION",
@@ -122,6 +133,7 @@ impl DataLakeResourceType {
             "LF_TAG_POLICY_DATABASE",
             "LF_TAG_POLICY_TABLE",
             "TABLE",
+            "USER_DEFINED_FUNCTION",
         ]
     }
 }
@@ -145,6 +157,7 @@ impl DataLakeResourceType {
 impl ::std::fmt::Display for DataLakeResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            DataLakeResourceType::AnyResource => write!(f, "ANY_RESOURCE"),
             DataLakeResourceType::Catalog => write!(f, "CATALOG"),
             DataLakeResourceType::Database => write!(f, "DATABASE"),
             DataLakeResourceType::DataLocation => write!(f, "DATA_LOCATION"),
@@ -154,6 +167,7 @@ impl ::std::fmt::Display for DataLakeResourceType {
             DataLakeResourceType::LfTagPolicyDatabase => write!(f, "LF_TAG_POLICY_DATABASE"),
             DataLakeResourceType::LfTagPolicyTable => write!(f, "LF_TAG_POLICY_TABLE"),
             DataLakeResourceType::Table => write!(f, "TABLE"),
+            DataLakeResourceType::UserDefinedFunction => write!(f, "USER_DEFINED_FUNCTION"),
             DataLakeResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

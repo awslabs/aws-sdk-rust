@@ -32,6 +32,20 @@ pub fn de_update_plan_http_error(
             };
             tmp
         }),
+        "RetryableConflictException" => crate::operation::update_plan::UpdatePlanError::RetryableConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RetryableConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_retryable_conflict_exception::de_retryable_conflict_exception_cbor_err(_response_body, output)
+                    .map_err(crate::operation::update_plan::UpdatePlanError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::retryable_conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_plan::UpdatePlanError::unhandled)?
+            };
+            tmp
+        }),
         _ => crate::operation::update_plan::UpdatePlanError::generic(generic),
     })
 }

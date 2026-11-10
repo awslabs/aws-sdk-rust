@@ -10,3 +10,5 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
 pub use crate::types::error::_illegal_state_exception::IllegalStateExceptionBuilder;
+
+pub use crate::types::error::_retryable_conflict_exception::RetryableConflictExceptionBuilder;

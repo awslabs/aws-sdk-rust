@@ -10,6 +10,10 @@ pub struct DescribeRuleGroupOutput {
     /// <p>Network Firewall uses a rule group to inspect and control network traffic. You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their traffic flow.</p>
     /// <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from more than one firewall policy, and you can use a firewall policy in more than one firewall.</p>
     pub rule_group: ::std::option::Option<crate::types::RuleGroup>,
+    /// <p>The object that defines the rules in a firewall engine rule group, for use in a Next Generation policy.</p>
+    pub firewall_rule_group: ::std::option::Option<crate::types::FirewallRuleGroup>,
+    /// <p>The object that defines the rules in an IPS engine rule group, for use in a Next Generation policy.</p>
+    pub ips_rule_group: ::std::option::Option<crate::types::IpsRuleGroup>,
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>.</p>
     pub rule_group_response: ::std::option::Option<crate::types::RuleGroupResponse>,
     _request_id: Option<String>,
@@ -26,6 +30,14 @@ impl DescribeRuleGroupOutput {
     /// <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from more than one firewall policy, and you can use a firewall policy in more than one firewall.</p>
     pub fn rule_group(&self) -> ::std::option::Option<&crate::types::RuleGroup> {
         self.rule_group.as_ref()
+    }
+    /// <p>The object that defines the rules in a firewall engine rule group, for use in a Next Generation policy.</p>
+    pub fn firewall_rule_group(&self) -> ::std::option::Option<&crate::types::FirewallRuleGroup> {
+        self.firewall_rule_group.as_ref()
+    }
+    /// <p>The object that defines the rules in an IPS engine rule group, for use in a Next Generation policy.</p>
+    pub fn ips_rule_group(&self) -> ::std::option::Option<&crate::types::IpsRuleGroup> {
+        self.ips_rule_group.as_ref()
     }
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>.</p>
     pub fn rule_group_response(&self) -> ::std::option::Option<&crate::types::RuleGroupResponse> {
@@ -50,6 +62,8 @@ impl DescribeRuleGroupOutput {
 pub struct DescribeRuleGroupOutputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
     pub(crate) rule_group: ::std::option::Option<crate::types::RuleGroup>,
+    pub(crate) firewall_rule_group: ::std::option::Option<crate::types::FirewallRuleGroup>,
+    pub(crate) ips_rule_group: ::std::option::Option<crate::types::IpsRuleGroup>,
     pub(crate) rule_group_response: ::std::option::Option<crate::types::RuleGroupResponse>,
     _request_id: Option<String>,
 }
@@ -92,6 +106,34 @@ impl DescribeRuleGroupOutputBuilder {
     pub fn get_rule_group(&self) -> &::std::option::Option<crate::types::RuleGroup> {
         &self.rule_group
     }
+    /// <p>The object that defines the rules in a firewall engine rule group, for use in a Next Generation policy.</p>
+    pub fn firewall_rule_group(mut self, input: crate::types::FirewallRuleGroup) -> Self {
+        self.firewall_rule_group = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The object that defines the rules in a firewall engine rule group, for use in a Next Generation policy.</p>
+    pub fn set_firewall_rule_group(mut self, input: ::std::option::Option<crate::types::FirewallRuleGroup>) -> Self {
+        self.firewall_rule_group = input;
+        self
+    }
+    /// <p>The object that defines the rules in a firewall engine rule group, for use in a Next Generation policy.</p>
+    pub fn get_firewall_rule_group(&self) -> &::std::option::Option<crate::types::FirewallRuleGroup> {
+        &self.firewall_rule_group
+    }
+    /// <p>The object that defines the rules in an IPS engine rule group, for use in a Next Generation policy.</p>
+    pub fn ips_rule_group(mut self, input: crate::types::IpsRuleGroup) -> Self {
+        self.ips_rule_group = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The object that defines the rules in an IPS engine rule group, for use in a Next Generation policy.</p>
+    pub fn set_ips_rule_group(mut self, input: ::std::option::Option<crate::types::IpsRuleGroup>) -> Self {
+        self.ips_rule_group = input;
+        self
+    }
+    /// <p>The object that defines the rules in an IPS engine rule group, for use in a Next Generation policy.</p>
+    pub fn get_ips_rule_group(&self) -> &::std::option::Option<crate::types::IpsRuleGroup> {
+        &self.ips_rule_group
+    }
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>.</p>
     /// This field is required.
     pub fn rule_group_response(mut self, input: crate::types::RuleGroupResponse) -> Self {
@@ -130,6 +172,8 @@ impl DescribeRuleGroupOutputBuilder {
                 )
             })?,
             rule_group: self.rule_group,
+            firewall_rule_group: self.firewall_rule_group,
+            ips_rule_group: self.ips_rule_group,
             rule_group_response: self.rule_group_response,
             _request_id: self._request_id,
         })

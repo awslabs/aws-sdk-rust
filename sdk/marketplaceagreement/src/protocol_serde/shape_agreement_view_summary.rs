@@ -73,6 +73,9 @@ pub(crate) fn de_agreement_view_summary(
                 Ok(builder
                     .set_end_time_behavior_reason_code(Some(decoder.string().map(|s| crate::types::EndTimeBehaviorReasonCode::from(s.as_str()))?)))
             })?,
+            "freeTrialEndTime" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_free_trial_end_time(Some(decoder.timestamp()?)))
+            })?,
             _ => {
                 decoder.skip()?;
                 builder

@@ -7,17 +7,17 @@ pub struct LocationalDeployment {
     /// <p>The status of fleet deployment activity in the location.</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress.</p></li>
+    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress in the location. This status covers validation as well as the replacement of the location's containers.</p></li>
     /// <li>
-    /// <p><code>IMPAIRED</code> -- The deployment failed and the fleet has some impaired containers.</p></li>
+    /// <p><code>IMPAIRED</code> -- The deployment failed validation in the location, and the location kept the containers that failed validation so that you can inspect them. A location reaches this status when the deployment's impairment strategy is <code>MAINTAIN</code>.</p></li>
     /// <li>
-    /// <p><code>COMPLETE</code> -- The deployment has completed successfully.</p></li>
+    /// <p><code>COMPLETE</code> -- The deployment has completed successfully in the location.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated.</p></li>
+    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated in the location. A location reaches this status when the deployment's impairment strategy is <code>ROLLBACK</code>.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_COMPLETE</code> -- The deployment failed and rollback has been completed.</p></li>
+    /// <p><code>ROLLBACK_COMPLETE</code> -- The deployment failed and rollback has been completed in the location. The location is running the configuration from the last successful deployment.</p></li>
     /// <li>
-    /// <p><code>CANCELLED</code> -- The deployment was cancelled.</p></li>
+    /// <p><code>CANCELLED</code> -- The deployment was cancelled because a new deployment started for the same fleet.</p></li>
     /// </ul>
     pub deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
 }
@@ -25,17 +25,17 @@ impl LocationalDeployment {
     /// <p>The status of fleet deployment activity in the location.</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress.</p></li>
+    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress in the location. This status covers validation as well as the replacement of the location's containers.</p></li>
     /// <li>
-    /// <p><code>IMPAIRED</code> -- The deployment failed and the fleet has some impaired containers.</p></li>
+    /// <p><code>IMPAIRED</code> -- The deployment failed validation in the location, and the location kept the containers that failed validation so that you can inspect them. A location reaches this status when the deployment's impairment strategy is <code>MAINTAIN</code>.</p></li>
     /// <li>
-    /// <p><code>COMPLETE</code> -- The deployment has completed successfully.</p></li>
+    /// <p><code>COMPLETE</code> -- The deployment has completed successfully in the location.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated.</p></li>
+    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated in the location. A location reaches this status when the deployment's impairment strategy is <code>ROLLBACK</code>.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_COMPLETE</code> -- The deployment failed and rollback has been completed.</p></li>
+    /// <p><code>ROLLBACK_COMPLETE</code> -- The deployment failed and rollback has been completed in the location. The location is running the configuration from the last successful deployment.</p></li>
     /// <li>
-    /// <p><code>CANCELLED</code> -- The deployment was cancelled.</p></li>
+    /// <p><code>CANCELLED</code> -- The deployment was cancelled because a new deployment started for the same fleet.</p></li>
     /// </ul>
     pub fn deployment_status(&self) -> ::std::option::Option<&crate::types::DeploymentStatus> {
         self.deployment_status.as_ref()
@@ -58,17 +58,17 @@ impl LocationalDeploymentBuilder {
     /// <p>The status of fleet deployment activity in the location.</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress.</p></li>
+    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress in the location. This status covers validation as well as the replacement of the location's containers.</p></li>
     /// <li>
-    /// <p><code>IMPAIRED</code> -- The deployment failed and the fleet has some impaired containers.</p></li>
+    /// <p><code>IMPAIRED</code> -- The deployment failed validation in the location, and the location kept the containers that failed validation so that you can inspect them. A location reaches this status when the deployment's impairment strategy is <code>MAINTAIN</code>.</p></li>
     /// <li>
-    /// <p><code>COMPLETE</code> -- The deployment has completed successfully.</p></li>
+    /// <p><code>COMPLETE</code> -- The deployment has completed successfully in the location.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated.</p></li>
+    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated in the location. A location reaches this status when the deployment's impairment strategy is <code>ROLLBACK</code>.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_COMPLETE</code> -- The deployment failed and rollback has been completed.</p></li>
+    /// <p><code>ROLLBACK_COMPLETE</code> -- The deployment failed and rollback has been completed in the location. The location is running the configuration from the last successful deployment.</p></li>
     /// <li>
-    /// <p><code>CANCELLED</code> -- The deployment was cancelled.</p></li>
+    /// <p><code>CANCELLED</code> -- The deployment was cancelled because a new deployment started for the same fleet.</p></li>
     /// </ul>
     pub fn deployment_status(mut self, input: crate::types::DeploymentStatus) -> Self {
         self.deployment_status = ::std::option::Option::Some(input);
@@ -77,17 +77,17 @@ impl LocationalDeploymentBuilder {
     /// <p>The status of fleet deployment activity in the location.</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress.</p></li>
+    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress in the location. This status covers validation as well as the replacement of the location's containers.</p></li>
     /// <li>
-    /// <p><code>IMPAIRED</code> -- The deployment failed and the fleet has some impaired containers.</p></li>
+    /// <p><code>IMPAIRED</code> -- The deployment failed validation in the location, and the location kept the containers that failed validation so that you can inspect them. A location reaches this status when the deployment's impairment strategy is <code>MAINTAIN</code>.</p></li>
     /// <li>
-    /// <p><code>COMPLETE</code> -- The deployment has completed successfully.</p></li>
+    /// <p><code>COMPLETE</code> -- The deployment has completed successfully in the location.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated.</p></li>
+    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated in the location. A location reaches this status when the deployment's impairment strategy is <code>ROLLBACK</code>.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_COMPLETE</code> -- The deployment failed and rollback has been completed.</p></li>
+    /// <p><code>ROLLBACK_COMPLETE</code> -- The deployment failed and rollback has been completed in the location. The location is running the configuration from the last successful deployment.</p></li>
     /// <li>
-    /// <p><code>CANCELLED</code> -- The deployment was cancelled.</p></li>
+    /// <p><code>CANCELLED</code> -- The deployment was cancelled because a new deployment started for the same fleet.</p></li>
     /// </ul>
     pub fn set_deployment_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
         self.deployment_status = input;
@@ -96,17 +96,17 @@ impl LocationalDeploymentBuilder {
     /// <p>The status of fleet deployment activity in the location.</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress.</p></li>
+    /// <p><code>IN_PROGRESS</code> -- The deployment is in progress in the location. This status covers validation as well as the replacement of the location's containers.</p></li>
     /// <li>
-    /// <p><code>IMPAIRED</code> -- The deployment failed and the fleet has some impaired containers.</p></li>
+    /// <p><code>IMPAIRED</code> -- The deployment failed validation in the location, and the location kept the containers that failed validation so that you can inspect them. A location reaches this status when the deployment's impairment strategy is <code>MAINTAIN</code>.</p></li>
     /// <li>
-    /// <p><code>COMPLETE</code> -- The deployment has completed successfully.</p></li>
+    /// <p><code>COMPLETE</code> -- The deployment has completed successfully in the location.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated.</p></li>
+    /// <p><code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback has been initiated in the location. A location reaches this status when the deployment's impairment strategy is <code>ROLLBACK</code>.</p></li>
     /// <li>
-    /// <p><code>ROLLBACK_IN_COMPLETE</code> -- The deployment failed and rollback has been completed.</p></li>
+    /// <p><code>ROLLBACK_COMPLETE</code> -- The deployment failed and rollback has been completed in the location. The location is running the configuration from the last successful deployment.</p></li>
     /// <li>
-    /// <p><code>CANCELLED</code> -- The deployment was cancelled.</p></li>
+    /// <p><code>CANCELLED</code> -- The deployment was cancelled because a new deployment started for the same fleet.</p></li>
     /// </ul>
     pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
         &self.deployment_status

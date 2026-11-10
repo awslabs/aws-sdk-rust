@@ -11,6 +11,9 @@ pub struct AssociateProfileInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the tag keys and values that you want to identify the Profile association.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The priority of the Profile association. Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority order, starting with the lowest value.</p>
+    /// <p>When the VPC already has a Profile association, you must specify a priority that no other Profile association for the VPC uses. If you omit the priority for the first association with a VPC, the association gets priority 100.</p>
+    pub priority: ::std::option::Option<i32>,
 }
 impl AssociateProfileInput {
     /// <p>ID of the Profile.</p>
@@ -31,6 +34,11 @@ impl AssociateProfileInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The priority of the Profile association. Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority order, starting with the lowest value.</p>
+    /// <p>When the VPC already has a Profile association, you must specify a priority that no other Profile association for the VPC uses. If you omit the priority for the first association with a VPC, the association gets priority 100.</p>
+    pub fn priority(&self) -> ::std::option::Option<i32> {
+        self.priority
+    }
 }
 impl AssociateProfileInput {
     /// Creates a new builder-style object to manufacture [`AssociateProfileInput`](crate::operation::associate_profile::AssociateProfileInput).
@@ -47,6 +55,7 @@ pub struct AssociateProfileInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) priority: ::std::option::Option<i32>,
 }
 impl AssociateProfileInputBuilder {
     /// <p>ID of the Profile.</p>
@@ -114,6 +123,23 @@ impl AssociateProfileInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The priority of the Profile association. Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority order, starting with the lowest value.</p>
+    /// <p>When the VPC already has a Profile association, you must specify a priority that no other Profile association for the VPC uses. If you omit the priority for the first association with a VPC, the association gets priority 100.</p>
+    pub fn priority(mut self, input: i32) -> Self {
+        self.priority = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The priority of the Profile association. Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority order, starting with the lowest value.</p>
+    /// <p>When the VPC already has a Profile association, you must specify a priority that no other Profile association for the VPC uses. If you omit the priority for the first association with a VPC, the association gets priority 100.</p>
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.priority = input;
+        self
+    }
+    /// <p>The priority of the Profile association. Route 53 VPC Resolver evaluates the Profile associations for a VPC in priority order, starting with the lowest value.</p>
+    /// <p>When the VPC already has a Profile association, you must specify a priority that no other Profile association for the VPC uses. If you omit the priority for the first association with a VPC, the association gets priority 100.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// Consumes the builder and constructs a [`AssociateProfileInput`](crate::operation::associate_profile::AssociateProfileInput).
     pub fn build(
         self,
@@ -123,6 +149,7 @@ impl AssociateProfileInputBuilder {
             resource_id: self.resource_id,
             name: self.name,
             tags: self.tags,
+            priority: self.priority,
         })
     }
 }

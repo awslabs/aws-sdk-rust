@@ -100,6 +100,9 @@ pub mod get_space;
 /// Types for the `GetSpaceCredentialsForOrganization` operation.
 pub mod get_space_credentials_for_organization;
 
+/// Types for the `GetSpaceDataAccess` operation.
+pub mod get_space_data_access;
+
 /// Types for the `GetTelemetryQueryResults` operation.
 pub mod get_telemetry_query_results;
 

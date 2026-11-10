@@ -398,6 +398,44 @@ impl From<crate::operation::create_firewall_policy::CreateFirewallPolicyError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_firewall_policy_v2::CreateFirewallPolicyV2Error, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_firewall_policy_v2::CreateFirewallPolicyV2Error, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_firewall_policy_v2::CreateFirewallPolicyV2Error> for Error {
+    fn from(err: crate::operation::create_firewall_policy_v2::CreateFirewallPolicyV2Error) -> Self {
+        match err {
+            crate::operation::create_firewall_policy_v2::CreateFirewallPolicyV2Error::InsufficientCapacityException(inner) => {
+                Error::InsufficientCapacityException(inner)
+            }
+            crate::operation::create_firewall_policy_v2::CreateFirewallPolicyV2Error::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::create_firewall_policy_v2::CreateFirewallPolicyV2Error::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::operation::create_firewall_policy_v2::CreateFirewallPolicyV2Error::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_firewall_policy_v2::CreateFirewallPolicyV2Error::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_firewall_policy_v2::CreateFirewallPolicyV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_firewall_policy_v2::CreateFirewallPolicyV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_proxy::CreateProxyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -743,6 +781,44 @@ impl From<crate::operation::delete_firewall_policy::DeleteFirewallPolicyError> f
                 Error::UnsupportedOperationException(inner)
             }
             crate::operation::delete_firewall_policy::DeleteFirewallPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_firewall_policy_v2::DeleteFirewallPolicyV2Error, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_firewall_policy_v2::DeleteFirewallPolicyV2Error, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_firewall_policy_v2::DeleteFirewallPolicyV2Error> for Error {
+    fn from(err: crate::operation::delete_firewall_policy_v2::DeleteFirewallPolicyV2Error) -> Self {
+        match err {
+            crate::operation::delete_firewall_policy_v2::DeleteFirewallPolicyV2Error::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_firewall_policy_v2::DeleteFirewallPolicyV2Error::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::operation::delete_firewall_policy_v2::DeleteFirewallPolicyV2Error::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_firewall_policy_v2::DeleteFirewallPolicyV2Error::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_firewall_policy_v2::DeleteFirewallPolicyV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_firewall_policy_v2::DeleteFirewallPolicyV2Error::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::delete_firewall_policy_v2::DeleteFirewallPolicyV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1180,6 +1256,42 @@ impl From<crate::operation::describe_firewall_policy::DescribeFirewallPolicyErro
             }
             crate::operation::describe_firewall_policy::DescribeFirewallPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_firewall_policy::DescribeFirewallPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_firewall_policy_v2::DescribeFirewallPolicyV2Error, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_firewall_policy_v2::DescribeFirewallPolicyV2Error, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_firewall_policy_v2::DescribeFirewallPolicyV2Error> for Error {
+    fn from(err: crate::operation::describe_firewall_policy_v2::DescribeFirewallPolicyV2Error) -> Self {
+        match err {
+            crate::operation::describe_firewall_policy_v2::DescribeFirewallPolicyV2Error::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::describe_firewall_policy_v2::DescribeFirewallPolicyV2Error::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_firewall_policy_v2::DescribeFirewallPolicyV2Error::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_firewall_policy_v2::DescribeFirewallPolicyV2Error::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_firewall_policy_v2::DescribeFirewallPolicyV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1838,6 +1950,35 @@ impl From<crate::operation::list_firewall_policies::ListFirewallPoliciesError> f
             }
             crate::operation::list_firewall_policies::ListFirewallPoliciesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_firewall_policies::ListFirewallPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_firewall_policies_v2::ListFirewallPoliciesV2Error, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_firewall_policies_v2::ListFirewallPoliciesV2Error, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_firewall_policies_v2::ListFirewallPoliciesV2Error> for Error {
+    fn from(err: crate::operation::list_firewall_policies_v2::ListFirewallPoliciesV2Error) -> Self {
+        match err {
+            crate::operation::list_firewall_policies_v2::ListFirewallPoliciesV2Error::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::list_firewall_policies_v2::ListFirewallPoliciesV2Error::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_firewall_policies_v2::ListFirewallPoliciesV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_firewall_policies_v2::ListFirewallPoliciesV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2693,6 +2834,44 @@ impl From<crate::operation::update_firewall_policy_change_protection::UpdateFire
             crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_firewall_policy_v2::UpdateFirewallPolicyV2Error, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_firewall_policy_v2::UpdateFirewallPolicyV2Error, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_firewall_policy_v2::UpdateFirewallPolicyV2Error> for Error {
+    fn from(err: crate::operation::update_firewall_policy_v2::UpdateFirewallPolicyV2Error) -> Self {
+        match err {
+            crate::operation::update_firewall_policy_v2::UpdateFirewallPolicyV2Error::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::update_firewall_policy_v2::UpdateFirewallPolicyV2Error::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::operation::update_firewall_policy_v2::UpdateFirewallPolicyV2Error::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_firewall_policy_v2::UpdateFirewallPolicyV2Error::InvalidTokenException(inner) => {
+                Error::InvalidTokenException(inner)
+            }
+            crate::operation::update_firewall_policy_v2::UpdateFirewallPolicyV2Error::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_firewall_policy_v2::UpdateFirewallPolicyV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_firewall_policy_v2::UpdateFirewallPolicyV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

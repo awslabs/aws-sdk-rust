@@ -30,8 +30,9 @@ pub struct ScheduleRunConfiguration {
     pub environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
     /// <p>An IAM role to be assumed by the test host for the run.</p>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The types of insights to generate for a run. Specify one or more values to opt in to insights generation when scheduling a run.</p>
-    /// <p>Insights are currently supported for custom mode runs with Instrumentation, Appium Java TestNG, and XCTest UI test types.</p>
+    /// <p>The types of insights to generate for a run. If you do not specify a value, the default is <code>TEST_REPORT</code> for runs that support insights.</p>
+    /// <p>Specify <code>NONE</code> if you do not want the service to generate insights for the run. You cannot combine <code>NONE</code> with any other value.</p>
+    /// <p>Insights are supported for custom mode runs of all test types except Appium Ruby and Appium Web Ruby.</p>
     pub insights_types: ::std::option::Option<::std::vec::Vec<crate::types::InsightsType>>,
 }
 impl ScheduleRunConfiguration {
@@ -91,8 +92,9 @@ impl ScheduleRunConfiguration {
     pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p>The types of insights to generate for a run. Specify one or more values to opt in to insights generation when scheduling a run.</p>
-    /// <p>Insights are currently supported for custom mode runs with Instrumentation, Appium Java TestNG, and XCTest UI test types.</p>
+    /// <p>The types of insights to generate for a run. If you do not specify a value, the default is <code>TEST_REPORT</code> for runs that support insights.</p>
+    /// <p>Specify <code>NONE</code> if you do not want the service to generate insights for the run. You cannot combine <code>NONE</code> with any other value.</p>
+    /// <p>Insights are supported for custom mode runs of all test types except Appium Ruby and Appium Web Ruby.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insights_types.is_none()`.
     pub fn insights_types(&self) -> &[crate::types::InsightsType] {
@@ -321,22 +323,25 @@ impl ScheduleRunConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_insights_types`](Self::set_insights_types).
     ///
-    /// <p>The types of insights to generate for a run. Specify one or more values to opt in to insights generation when scheduling a run.</p>
-    /// <p>Insights are currently supported for custom mode runs with Instrumentation, Appium Java TestNG, and XCTest UI test types.</p>
+    /// <p>The types of insights to generate for a run. If you do not specify a value, the default is <code>TEST_REPORT</code> for runs that support insights.</p>
+    /// <p>Specify <code>NONE</code> if you do not want the service to generate insights for the run. You cannot combine <code>NONE</code> with any other value.</p>
+    /// <p>Insights are supported for custom mode runs of all test types except Appium Ruby and Appium Web Ruby.</p>
     pub fn insights_types(mut self, input: crate::types::InsightsType) -> Self {
         let mut v = self.insights_types.unwrap_or_default();
         v.push(input);
         self.insights_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The types of insights to generate for a run. Specify one or more values to opt in to insights generation when scheduling a run.</p>
-    /// <p>Insights are currently supported for custom mode runs with Instrumentation, Appium Java TestNG, and XCTest UI test types.</p>
+    /// <p>The types of insights to generate for a run. If you do not specify a value, the default is <code>TEST_REPORT</code> for runs that support insights.</p>
+    /// <p>Specify <code>NONE</code> if you do not want the service to generate insights for the run. You cannot combine <code>NONE</code> with any other value.</p>
+    /// <p>Insights are supported for custom mode runs of all test types except Appium Ruby and Appium Web Ruby.</p>
     pub fn set_insights_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightsType>>) -> Self {
         self.insights_types = input;
         self
     }
-    /// <p>The types of insights to generate for a run. Specify one or more values to opt in to insights generation when scheduling a run.</p>
-    /// <p>Insights are currently supported for custom mode runs with Instrumentation, Appium Java TestNG, and XCTest UI test types.</p>
+    /// <p>The types of insights to generate for a run. If you do not specify a value, the default is <code>TEST_REPORT</code> for runs that support insights.</p>
+    /// <p>Specify <code>NONE</code> if you do not want the service to generate insights for the run. You cannot combine <code>NONE</code> with any other value.</p>
+    /// <p>Insights are supported for custom mode runs of all test types except Appium Ruby and Appium Web Ruby.</p>
     pub fn get_insights_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightsType>> {
         &self.insights_types
     }

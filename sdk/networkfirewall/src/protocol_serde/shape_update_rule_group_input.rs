@@ -18,38 +18,50 @@ pub fn ser_update_rule_group_input_input(
         crate::protocol_serde::shape_rule_group::ser_rule_group(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.rules {
-        object.key("Rules").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.r#type {
-        object.key("Type").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.description {
-        object.key("Description").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.dry_run {
-        object.key("DryRun").boolean(*var_9);
-    }
-    if let Some(var_10) = &input.encryption_configuration {
+    if let Some(var_6) = &input.firewall_rule_group {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("EncryptionConfiguration").start_object();
-        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_7 = object.key("FirewallRuleGroup").start_object();
+        crate::protocol_serde::shape_firewall_rule_group::ser_firewall_rule_group(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_12) = &input.source_metadata {
+    if let Some(var_8) = &input.ips_rule_group {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("SourceMetadata").start_object();
-        crate::protocol_serde::shape_source_metadata::ser_source_metadata(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_9 = object.key("IpsRuleGroup").start_object();
+        crate::protocol_serde::shape_ips_rule_group::ser_ips_rule_group(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_14) = &input.analyze_rule_group {
-        object.key("AnalyzeRuleGroup").boolean(*var_14);
+    if let Some(var_10) = &input.rules {
+        object.key("Rules").string(var_10.as_str());
     }
-    if let Some(var_15) = &input.summary_configuration {
+    if let Some(var_11) = &input.r#type {
+        object.key("Type").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.description {
+        object.key("Description").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.dry_run {
+        object.key("DryRun").boolean(*var_13);
+    }
+    if let Some(var_14) = &input.encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("SummaryConfiguration").start_object();
-        crate::protocol_serde::shape_summary_configuration::ser_summary_configuration(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_15 = object.key("EncryptionConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.source_metadata {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("SourceMetadata").start_object();
+        crate::protocol_serde::shape_source_metadata::ser_source_metadata(&mut object_17, var_16)?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.analyze_rule_group {
+        object.key("AnalyzeRuleGroup").boolean(*var_18);
+    }
+    if let Some(var_19) = &input.summary_configuration {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("SummaryConfiguration").start_object();
+        crate::protocol_serde::shape_summary_configuration::ser_summary_configuration(&mut object_20, var_19)?;
+        object_20.finish();
     }
     Ok(())
 }

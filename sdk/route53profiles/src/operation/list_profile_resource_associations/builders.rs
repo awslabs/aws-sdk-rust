@@ -142,6 +142,20 @@ impl ListProfileResourceAssociationsFluentBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_type()
     }
+    /// <p>The Amazon Resource Name (ARN) of a resource. If you specify this parameter, only the association with that resource is returned.</p>
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.resource_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource. If you specify this parameter, only the association with that resource is returned.</p>
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_resource_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource. If you specify this parameter, only the association with that resource is returned.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>The maximum number of objects that you want to return for this request. If more objects are available, in the response, a <code>NextToken</code> value, which you can use in a subsequent call to get the next batch of objects, is provided.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, up to 100 objects are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {

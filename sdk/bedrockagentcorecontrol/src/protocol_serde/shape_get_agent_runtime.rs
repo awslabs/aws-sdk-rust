@@ -209,6 +209,11 @@ pub(crate) fn de_get_agent_runtime(
                         crate::protocol_serde::shape_filesystem_configurations::de_filesystem_configurations(tokens, _value, depth + 1)?,
                     );
                 }
+                "hooksConfiguration" => {
+                    builder = builder.set_hooks_configuration(
+                        crate::protocol_serde::shape_runtime_hooks_configuration::de_runtime_hooks_configuration(tokens, _value, depth + 1)?,
+                    );
+                }
                 "lastUpdatedAt" => {
                     builder = builder.set_last_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -252,6 +257,13 @@ pub(crate) fn de_get_agent_runtime(
                     builder = builder.set_request_header_configuration(
                         crate::protocol_serde::shape_request_header_configuration::de_request_header_configuration(tokens, _value, depth + 1)?,
                     );
+                }
+                "resourceConfigurations" => {
+                    builder = builder.set_resource_configurations(crate::protocol_serde::shape_resource_configurations::de_resource_configurations(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "roleArn" => {
                     builder = builder.set_role_arn(

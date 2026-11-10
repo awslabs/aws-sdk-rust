@@ -193,4 +193,6 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_profile_association;
+
 mod update_profile_resource_association;

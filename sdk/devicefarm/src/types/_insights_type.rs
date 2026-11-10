@@ -12,6 +12,7 @@
 /// ```text
 /// # let insightstype = unimplemented!();
 /// match insightstype {
+///     InsightsType::None => { /* ... */ },
 ///     InsightsType::TestReport => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -35,12 +36,22 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// <p>The type of insights to generate.</p>
+/// <p>The type of insights to generate. Possible values are:</p>
+/// <ul>
+/// <li>
+/// <p>TEST_REPORT: Specifies that you receive a test summary for each job in the run, and an aggregated summary for the run. This is the default value. Use <code>TEST_REPORT</code> when you want job-level and run-level test summaries.</p>
+/// </li>
+/// <li>
+/// <p>NONE: Specifies that you do not receive insights for the run. Use <code>NONE</code> when you do not want insights generated. You cannot combine <code>NONE</code> with any other value.</p>
+/// </li>
+/// </ul>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InsightsType {
+    #[allow(missing_docs)] // documentation missing in model
+    None,
     #[allow(missing_docs)] // documentation missing in model
     TestReport,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -50,6 +61,7 @@ pub enum InsightsType {
 impl ::std::convert::From<&str> for InsightsType {
     fn from(s: &str) -> Self {
         match s {
+            "NONE" => InsightsType::None,
             "TEST_REPORT" => InsightsType::TestReport,
             other => InsightsType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +78,14 @@ impl InsightsType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            InsightsType::None => "NONE",
             InsightsType::TestReport => "TEST_REPORT",
             InsightsType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TEST_REPORT"]
+        &["NONE", "TEST_REPORT"]
     }
 }
 impl ::std::convert::AsRef<str> for InsightsType {
@@ -95,6 +108,7 @@ impl InsightsType {
 impl ::std::fmt::Display for InsightsType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            InsightsType::None => write!(f, "NONE"),
             InsightsType::TestReport => write!(f, "TEST_REPORT"),
             InsightsType::Unknown(value) => write!(f, "{value}"),
         }

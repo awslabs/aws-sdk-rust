@@ -52,6 +52,9 @@ pub mod get_table_bucket;
 /// Types for the `GetTableBucketEncryption` operation.
 pub mod get_table_bucket_encryption;
 
+/// Types for the `GetTableBucketLogging` operation.
+pub mod get_table_bucket_logging;
+
 /// Types for the `GetTableBucketMaintenanceConfiguration` operation.
 pub mod get_table_bucket_maintenance_configuration;
 
@@ -117,6 +120,9 @@ pub mod list_tags_for_resource;
 
 /// Types for the `PutTableBucketEncryption` operation.
 pub mod put_table_bucket_encryption;
+
+/// Types for the `PutTableBucketLogging` operation.
+pub mod put_table_bucket_logging;
 
 /// Types for the `PutTableBucketMaintenanceConfiguration` operation.
 pub mod put_table_bucket_maintenance_configuration;

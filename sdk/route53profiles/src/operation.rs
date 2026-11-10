@@ -46,5 +46,8 @@ pub mod tag_resource;
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 
+/// Types for the `UpdateProfileAssociation` operation.
+pub mod update_profile_association;
+
 /// Types for the `UpdateProfileResourceAssociation` operation.
 pub mod update_profile_resource_association;

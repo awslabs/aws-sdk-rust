@@ -68,13 +68,13 @@ where
 }
 
 pub fn ser_gateway_protocol_configuration(
-    object_16: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    object_18: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GatewayProtocolConfiguration,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::GatewayProtocolConfiguration::Mcp(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_16.key("mcp").start_object();
+            let mut object_1 = object_18.key("mcp").start_object();
             crate::protocol_serde::shape_mcp_gateway_configuration::ser_mcp_gateway_configuration(&mut object_1, inner)?;
             object_1.finish();
         }

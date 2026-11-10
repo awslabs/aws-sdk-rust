@@ -185,6 +185,9 @@ impl RetryConfigBuilder {
     /// the server.
     ///
     /// This behavior can be disabled by setting [`ReconnectMode::ReuseAllConnections`] instead.
+    ///
+    /// Clients on Retry Behavior 2.1 (`BehaviorVersion` `v2026_11_10` or later) default to
+    /// `ReuseAllConnections`, but an explicit setting here still takes effect.
     pub fn reconnect_mode(mut self, reconnect_mode: ReconnectMode) -> Self {
         self.set_reconnect_mode(Some(reconnect_mode));
         self
@@ -197,6 +200,9 @@ impl RetryConfigBuilder {
     /// the server.
     ///
     /// This behavior can be disabled by setting [`ReconnectMode::ReuseAllConnections`] instead.
+    ///
+    /// Clients on Retry Behavior 2.1 (`BehaviorVersion` `v2026_11_10` or later) default to
+    /// `ReuseAllConnections`, but an explicit setting here still takes effect.
     pub fn set_reconnect_mode(&mut self, reconnect_mode: Option<ReconnectMode>) -> &mut Self {
         self.reconnect_mode = reconnect_mode;
         self
@@ -272,9 +278,7 @@ impl RetryConfigBuilder {
             initial_backoff: self
                 .initial_backoff
                 .unwrap_or_else(|| Duration::from_secs(1)),
-            reconnect_mode: self
-                .reconnect_mode
-                .unwrap_or(ReconnectMode::ReconnectOnTransientError),
+            reconnect_mode: self.reconnect_mode,
             max_backoff: self.max_backoff.unwrap_or_else(|| Duration::from_secs(20)),
             use_static_exponential_base: false,
             retry_spec: None,
@@ -290,7 +294,7 @@ pub struct RetryConfig {
     max_attempts: u32,
     initial_backoff: Duration,
     max_backoff: Duration,
-    reconnect_mode: ReconnectMode,
+    reconnect_mode: Option<ReconnectMode>,
     use_static_exponential_base: bool,
     retry_spec: Option<RetrySpec>,
 }
@@ -303,6 +307,9 @@ impl Storable for RetryConfig {
 ///
 /// By default, when a transient error is encountered, the connection in use will be poisoned. This
 /// behavior can be disabled by setting [`ReconnectMode::ReuseAllConnections`] instead.
+///
+/// Clients on Retry Behavior 2.1 (`BehaviorVersion` `v2026_11_10` or later) default to
+/// `ReuseAllConnections`, but an explicit setting still takes effect.
 #[derive(Debug, Clone, PartialEq, Copy)]
 pub enum ReconnectMode {
     /// Reconnect on [`ErrorKind::TransientError`]
@@ -427,7 +434,7 @@ impl RetryConfig {
             mode: RetryMode::Standard,
             max_attempts: 3,
             initial_backoff: Duration::from_secs(1),
-            reconnect_mode: ReconnectMode::ReconnectOnTransientError,
+            reconnect_mode: None,
             max_backoff: Duration::from_secs(20),
             use_static_exponential_base: false,
             retry_spec: None,
@@ -440,7 +447,7 @@ impl RetryConfig {
             mode: RetryMode::Adaptive,
             max_attempts: 3,
             initial_backoff: Duration::from_secs(1),
-            reconnect_mode: ReconnectMode::ReconnectOnTransientError,
+            reconnect_mode: None,
             max_backoff: Duration::from_secs(20),
             use_static_exponential_base: false,
             retry_spec: None,
@@ -472,8 +479,11 @@ impl RetryConfig {
     /// the server.
     ///
     /// This behavior can be disabled by setting [`ReconnectMode::ReuseAllConnections`] instead.
+    ///
+    /// Clients on Retry Behavior 2.1 (`BehaviorVersion` `v2026_11_10` or later) default to
+    /// `ReuseAllConnections`, but an explicit setting here still takes effect.
     pub fn with_reconnect_mode(mut self, reconnect_mode: ReconnectMode) -> Self {
-        self.reconnect_mode = reconnect_mode;
+        self.reconnect_mode = Some(reconnect_mode);
         self
     }
 
@@ -527,6 +537,7 @@ impl RetryConfig {
     /// Returns the [`ReconnectMode`]
     pub fn reconnect_mode(&self) -> ReconnectMode {
         self.reconnect_mode
+            .unwrap_or(ReconnectMode::ReconnectOnTransientError)
     }
 
     /// Returns the max attempts.
@@ -575,6 +586,9 @@ impl RetryConfig {
             self.retry_spec = other.retry_spec.clone();
         } else if let (Some(mine), Some(theirs)) = (self.retry_spec.as_mut(), &other.retry_spec) {
             mine.take_defaults_from(theirs);
+        }
+        if self.reconnect_mode.is_none() {
+            self.reconnect_mode = other.reconnect_mode;
         }
     }
 }

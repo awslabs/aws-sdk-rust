@@ -102,6 +102,8 @@ pub struct Contact {
     pub next_contacts: ::std::option::Option<::std::vec::Vec<crate::types::NextContactEntry>>,
     /// <p>Information about the global resiliency configuration for the contact, including traffic distribution details.</p>
     pub global_resiliency_metadata: ::std::option::Option<crate::types::GlobalResiliencyMetadata>,
+    /// <p>Information about the conversational analytics configuration applied to the contact. This field is present only for contacts where conversational analytics is enabled in the contact flow.</p>
+    pub contact_lens: ::std::option::Option<crate::types::ContactLens>,
 }
 impl Contact {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -308,6 +310,10 @@ impl Contact {
     pub fn global_resiliency_metadata(&self) -> ::std::option::Option<&crate::types::GlobalResiliencyMetadata> {
         self.global_resiliency_metadata.as_ref()
     }
+    /// <p>Information about the conversational analytics configuration applied to the contact. This field is present only for contacts where conversational analytics is enabled in the contact flow.</p>
+    pub fn contact_lens(&self) -> ::std::option::Option<&crate::types::ContactLens> {
+        self.contact_lens.as_ref()
+    }
 }
 impl ::std::fmt::Debug for Contact {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -361,6 +367,7 @@ impl ::std::fmt::Debug for Contact {
         formatter.field("attributes", &self.attributes);
         formatter.field("next_contacts", &self.next_contacts);
         formatter.field("global_resiliency_metadata", &self.global_resiliency_metadata);
+        formatter.field("contact_lens", &self.contact_lens);
         formatter.finish()
     }
 }
@@ -424,6 +431,7 @@ pub struct ContactBuilder {
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) next_contacts: ::std::option::Option<::std::vec::Vec<crate::types::NextContactEntry>>,
     pub(crate) global_resiliency_metadata: ::std::option::Option<crate::types::GlobalResiliencyMetadata>,
+    pub(crate) contact_lens: ::std::option::Option<crate::types::ContactLens>,
 }
 impl ContactBuilder {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -1164,6 +1172,20 @@ impl ContactBuilder {
     pub fn get_global_resiliency_metadata(&self) -> &::std::option::Option<crate::types::GlobalResiliencyMetadata> {
         &self.global_resiliency_metadata
     }
+    /// <p>Information about the conversational analytics configuration applied to the contact. This field is present only for contacts where conversational analytics is enabled in the contact flow.</p>
+    pub fn contact_lens(mut self, input: crate::types::ContactLens) -> Self {
+        self.contact_lens = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the conversational analytics configuration applied to the contact. This field is present only for contacts where conversational analytics is enabled in the contact flow.</p>
+    pub fn set_contact_lens(mut self, input: ::std::option::Option<crate::types::ContactLens>) -> Self {
+        self.contact_lens = input;
+        self
+    }
+    /// <p>Information about the conversational analytics configuration applied to the contact. This field is present only for contacts where conversational analytics is enabled in the contact flow.</p>
+    pub fn get_contact_lens(&self) -> &::std::option::Option<crate::types::ContactLens> {
+        &self.contact_lens
+    }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
     pub fn build(self) -> crate::types::Contact {
         crate::types::Contact {
@@ -1216,6 +1238,7 @@ impl ContactBuilder {
             attributes: self.attributes,
             next_contacts: self.next_contacts,
             global_resiliency_metadata: self.global_resiliency_metadata,
+            contact_lens: self.contact_lens,
         }
     }
 }
@@ -1271,6 +1294,7 @@ impl ::std::fmt::Debug for ContactBuilder {
         formatter.field("attributes", &self.attributes);
         formatter.field("next_contacts", &self.next_contacts);
         formatter.field("global_resiliency_metadata", &self.global_resiliency_metadata);
+        formatter.field("contact_lens", &self.contact_lens);
         formatter.finish()
     }
 }

@@ -21,12 +21,14 @@ pub struct GameSessionQueue {
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>,
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location.</p>
     pub filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub priority_configuration: ::std::option::Option<crate::types::PriorityConfiguration>,
     /// <p>Information that is added to all events that are related to this game session queue.</p>
     pub custom_event_data: ::std::option::Option<::std::string::String>,
     /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
     pub notification_target: ::std::option::Option<::std::string::String>,
+    /// <p>An optional configuration that delivers game session placement insight logs to one or more destinations of your choice. Use these logs to diagnose why a game session placement is <code>FULFILLED</code>, <code>CANCELLED</code>, <code>TIMED_OUT</code>, or <code>FAILED</code>, which locations were evaluated, and the latency and cost factors that influenced each decision.</p>
+    pub log_configuration: ::std::option::Option<crate::types::GameSessionQueueLogConfiguration>,
 }
 impl GameSessionQueue {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
@@ -62,7 +64,7 @@ impl GameSessionQueue {
     pub fn filter_configuration(&self) -> ::std::option::Option<&crate::types::FilterConfiguration> {
         self.filter_configuration.as_ref()
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub fn priority_configuration(&self) -> ::std::option::Option<&crate::types::PriorityConfiguration> {
         self.priority_configuration.as_ref()
     }
@@ -73,6 +75,10 @@ impl GameSessionQueue {
     /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
     pub fn notification_target(&self) -> ::std::option::Option<&str> {
         self.notification_target.as_deref()
+    }
+    /// <p>An optional configuration that delivers game session placement insight logs to one or more destinations of your choice. Use these logs to diagnose why a game session placement is <code>FULFILLED</code>, <code>CANCELLED</code>, <code>TIMED_OUT</code>, or <code>FAILED</code>, which locations were evaluated, and the latency and cost factors that influenced each decision.</p>
+    pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::GameSessionQueueLogConfiguration> {
+        self.log_configuration.as_ref()
     }
 }
 impl ::std::fmt::Debug for GameSessionQueue {
@@ -87,6 +93,7 @@ impl ::std::fmt::Debug for GameSessionQueue {
         formatter.field("priority_configuration", &self.priority_configuration);
         formatter.field("custom_event_data", &"*** Sensitive Data Redacted ***");
         formatter.field("notification_target", &self.notification_target);
+        formatter.field("log_configuration", &self.log_configuration);
         formatter.finish()
     }
 }
@@ -110,6 +117,7 @@ pub struct GameSessionQueueBuilder {
     pub(crate) priority_configuration: ::std::option::Option<crate::types::PriorityConfiguration>,
     pub(crate) custom_event_data: ::std::option::Option<::std::string::String>,
     pub(crate) notification_target: ::std::option::Option<::std::string::String>,
+    pub(crate) log_configuration: ::std::option::Option<crate::types::GameSessionQueueLogConfiguration>,
 }
 impl GameSessionQueueBuilder {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
@@ -223,17 +231,17 @@ impl GameSessionQueueBuilder {
     pub fn get_filter_configuration(&self) -> &::std::option::Option<crate::types::FilterConfiguration> {
         &self.filter_configuration
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub fn priority_configuration(mut self, input: crate::types::PriorityConfiguration) -> Self {
         self.priority_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub fn set_priority_configuration(mut self, input: ::std::option::Option<crate::types::PriorityConfiguration>) -> Self {
         self.priority_configuration = input;
         self
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub fn get_priority_configuration(&self) -> &::std::option::Option<crate::types::PriorityConfiguration> {
         &self.priority_configuration
     }
@@ -265,6 +273,20 @@ impl GameSessionQueueBuilder {
     pub fn get_notification_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_target
     }
+    /// <p>An optional configuration that delivers game session placement insight logs to one or more destinations of your choice. Use these logs to diagnose why a game session placement is <code>FULFILLED</code>, <code>CANCELLED</code>, <code>TIMED_OUT</code>, or <code>FAILED</code>, which locations were evaluated, and the latency and cost factors that influenced each decision.</p>
+    pub fn log_configuration(mut self, input: crate::types::GameSessionQueueLogConfiguration) -> Self {
+        self.log_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An optional configuration that delivers game session placement insight logs to one or more destinations of your choice. Use these logs to diagnose why a game session placement is <code>FULFILLED</code>, <code>CANCELLED</code>, <code>TIMED_OUT</code>, or <code>FAILED</code>, which locations were evaluated, and the latency and cost factors that influenced each decision.</p>
+    pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::GameSessionQueueLogConfiguration>) -> Self {
+        self.log_configuration = input;
+        self
+    }
+    /// <p>An optional configuration that delivers game session placement insight logs to one or more destinations of your choice. Use these logs to diagnose why a game session placement is <code>FULFILLED</code>, <code>CANCELLED</code>, <code>TIMED_OUT</code>, or <code>FAILED</code>, which locations were evaluated, and the latency and cost factors that influenced each decision.</p>
+    pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::GameSessionQueueLogConfiguration> {
+        &self.log_configuration
+    }
     /// Consumes the builder and constructs a [`GameSessionQueue`](crate::types::GameSessionQueue).
     pub fn build(self) -> crate::types::GameSessionQueue {
         crate::types::GameSessionQueue {
@@ -277,6 +299,7 @@ impl GameSessionQueueBuilder {
             priority_configuration: self.priority_configuration,
             custom_event_data: self.custom_event_data,
             notification_target: self.notification_target,
+            log_configuration: self.log_configuration,
         }
     }
 }
@@ -292,6 +315,7 @@ impl ::std::fmt::Debug for GameSessionQueueBuilder {
         formatter.field("priority_configuration", &self.priority_configuration);
         formatter.field("custom_event_data", &"*** Sensitive Data Redacted ***");
         formatter.field("notification_target", &self.notification_target);
+        formatter.field("log_configuration", &self.log_configuration);
         formatter.finish()
     }
 }

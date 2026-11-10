@@ -3195,6 +3195,15 @@ pub(crate) fn clustering_config_correct_errors(
     builder
 }
 
+pub(crate) fn domain_override_correct_errors(
+    mut builder: crate::types::builders::DomainOverrideBuilder,
+) -> crate::types::builders::DomainOverrideBuilder {
+    if builder.default_domain.is_none() {
+        builder.default_domain = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn gateway_policy_engine_configuration_correct_errors(
     mut builder: crate::types::builders::GatewayPolicyEngineConfigurationBuilder,
 ) -> crate::types::builders::GatewayPolicyEngineConfigurationBuilder {
@@ -4406,6 +4415,15 @@ pub(crate) fn registry_summary_correct_errors(
     builder
 }
 
+pub(crate) fn resource_configuration_correct_errors(
+    mut builder: crate::types::builders::ResourceConfigurationBuilder,
+) -> crate::types::builders::ResourceConfigurationBuilder {
+    if builder.minimum_memory_in_mib.is_none() {
+        builder.minimum_memory_in_mib = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3LocationBuilder) -> crate::types::builders::S3LocationBuilder {
     if builder.bucket.is_none() {
         builder.bucket = Some(Default::default())
@@ -4764,6 +4782,15 @@ pub(crate) fn lambda_evaluator_config_correct_errors(
 ) -> crate::types::builders::LambdaEvaluatorConfigBuilder {
     if builder.lambda_arn.is_none() {
         builder.lambda_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn lifecycle_hook_correct_errors(
+    mut builder: crate::types::builders::LifecycleHookBuilder,
+) -> crate::types::builders::LifecycleHookBuilder {
+    if builder.action.is_none() {
+        builder.action = Some(crate::types::LifecycleHookAction::Unknown)
     }
     builder
 }
@@ -5400,6 +5427,15 @@ pub(crate) fn hosting_environment_correct_errors(
 ) -> crate::types::builders::HostingEnvironmentBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn http_post_lifecycle_hook_action_correct_errors(
+    mut builder: crate::types::builders::HttpPostLifecycleHookActionBuilder,
+) -> crate::types::builders::HttpPostLifecycleHookActionBuilder {
+    if builder.path.is_none() {
+        builder.path = Some(Default::default())
     }
     builder
 }

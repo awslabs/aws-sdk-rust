@@ -128,6 +128,13 @@ pub(crate) fn table_resource_correct_errors(
     builder
 }
 
+pub(crate) fn any_resource_correct_errors(mut builder: crate::types::builders::AnyResourceBuilder) -> crate::types::builders::AnyResourceBuilder {
+    if builder.resource_type.is_none() {
+        builder.resource_type = "no value was set".parse::<crate::types::AnyResourceSupportedTypes>().ok()
+    }
+    builder
+}
+
 pub(crate) fn data_location_resource_correct_errors(
     mut builder: crate::types::builders::DataLocationResourceBuilder,
 ) -> crate::types::builders::DataLocationResourceBuilder {
@@ -184,6 +191,15 @@ pub(crate) fn table_with_columns_resource_correct_errors(
     }
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn user_defined_function_resource_correct_errors(
+    mut builder: crate::types::builders::UserDefinedFunctionResourceBuilder,
+) -> crate::types::builders::UserDefinedFunctionResourceBuilder {
+    if builder.database_name.is_none() {
+        builder.database_name = Some(Default::default())
     }
     builder
 }

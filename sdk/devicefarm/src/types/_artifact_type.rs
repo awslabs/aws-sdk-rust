@@ -25,6 +25,7 @@
 ///     ArtifactType::CalabashStandardOutput => { /* ... */ },
 ///     ArtifactType::CustomerArtifact => { /* ... */ },
 ///     ArtifactType::CustomerArtifactLog => { /* ... */ },
+///     ArtifactType::DeviceConnectCommandLog => { /* ... */ },
 ///     ArtifactType::DeviceLog => { /* ... */ },
 ///     ArtifactType::ExerciserMonkeyOutput => { /* ... */ },
 ///     ArtifactType::ExplorerEventLog => { /* ... */ },
@@ -96,6 +97,8 @@ pub enum ArtifactType {
     #[allow(missing_docs)] // documentation missing in model
     CustomerArtifactLog,
     #[allow(missing_docs)] // documentation missing in model
+    DeviceConnectCommandLog,
+    #[allow(missing_docs)] // documentation missing in model
     DeviceLog,
     #[allow(missing_docs)] // documentation missing in model
     ExerciserMonkeyOutput,
@@ -146,6 +149,7 @@ impl ::std::convert::From<&str> for ArtifactType {
             "CALABASH_STANDARD_OUTPUT" => ArtifactType::CalabashStandardOutput,
             "CUSTOMER_ARTIFACT" => ArtifactType::CustomerArtifact,
             "CUSTOMER_ARTIFACT_LOG" => ArtifactType::CustomerArtifactLog,
+            "DEVICE_CONNECT_COMMAND_LOG" => ArtifactType::DeviceConnectCommandLog,
             "DEVICE_LOG" => ArtifactType::DeviceLog,
             "EXERCISER_MONKEY_OUTPUT" => ArtifactType::ExerciserMonkeyOutput,
             "EXPLORER_EVENT_LOG" => ArtifactType::ExplorerEventLog,
@@ -189,6 +193,7 @@ impl ArtifactType {
             ArtifactType::CalabashStandardOutput => "CALABASH_STANDARD_OUTPUT",
             ArtifactType::CustomerArtifact => "CUSTOMER_ARTIFACT",
             ArtifactType::CustomerArtifactLog => "CUSTOMER_ARTIFACT_LOG",
+            ArtifactType::DeviceConnectCommandLog => "DEVICE_CONNECT_COMMAND_LOG",
             ArtifactType::DeviceLog => "DEVICE_LOG",
             ArtifactType::ExerciserMonkeyOutput => "EXERCISER_MONKEY_OUTPUT",
             ArtifactType::ExplorerEventLog => "EXPLORER_EVENT_LOG",
@@ -223,6 +228,7 @@ impl ArtifactType {
             "CALABASH_STANDARD_OUTPUT",
             "CUSTOMER_ARTIFACT",
             "CUSTOMER_ARTIFACT_LOG",
+            "DEVICE_CONNECT_COMMAND_LOG",
             "DEVICE_LOG",
             "EXERCISER_MONKEY_OUTPUT",
             "EXPLORER_EVENT_LOG",
@@ -274,6 +280,7 @@ impl ::std::fmt::Display for ArtifactType {
             ArtifactType::CalabashStandardOutput => write!(f, "CALABASH_STANDARD_OUTPUT"),
             ArtifactType::CustomerArtifact => write!(f, "CUSTOMER_ARTIFACT"),
             ArtifactType::CustomerArtifactLog => write!(f, "CUSTOMER_ARTIFACT_LOG"),
+            ArtifactType::DeviceConnectCommandLog => write!(f, "DEVICE_CONNECT_COMMAND_LOG"),
             ArtifactType::DeviceLog => write!(f, "DEVICE_LOG"),
             ArtifactType::ExerciserMonkeyOutput => write!(f, "EXERCISER_MONKEY_OUTPUT"),
             ArtifactType::ExplorerEventLog => write!(f, "EXPLORER_EVENT_LOG"),

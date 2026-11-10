@@ -12,7 +12,6 @@ use aws_smithy_async::time::SharedTimeSource;
 use aws_smithy_http_client::test_util::{ReplayEvent, StaticReplayClient};
 use aws_smithy_runtime::client::retries::RetryPartition;
 use aws_smithy_types::body::SdkBody;
-use aws_smithy_types::retry::RetrySpec;
 use std::time::{Duration, SystemTime};
 
 fn req() -> http_1x::Request<SdkBody> {
@@ -50,7 +49,6 @@ fn throttling_err() -> http_1x::Response<SdkBody> {
 
 async fn adaptive_retries_no_throttling(
     behavior_version: BehaviorVersion,
-    retry_config: RetryConfig,
     partition_name: &str,
     expected_op1_sleep: Duration,
     expected_op2_sleep: Duration,
@@ -79,7 +77,11 @@ async fn adaptive_retries_no_throttling(
         .stalled_stream_protection(StalledStreamProtectionConfig::disabled())
         .credentials_provider(Credentials::for_tests())
         .region(Region::new("us-east-1"))
-        .retry_config(retry_config)
+        .retry_config(
+            RetryConfig::adaptive()
+                .with_max_attempts(4)
+                .with_use_static_exponential_base(true),
+        )
         .time_source(SharedTimeSource::new(time_source))
         .sleep_impl(SharedAsyncSleep::new(sleep_impl.clone()))
         .retry_partition(RetryPartition::new(partition_name.to_owned()))
@@ -108,7 +110,6 @@ async fn adaptive_retries_no_throttling(
 
 async fn adaptive_retries_with_throttling(
     behavior_version: BehaviorVersion,
-    retry_config: RetryConfig,
     partition_name: &str,
     expected_op1_sleep: Duration,
     expected_op2_sleep_min: Duration,
@@ -132,7 +133,11 @@ async fn adaptive_retries_with_throttling(
         .stalled_stream_protection(StalledStreamProtectionConfig::disabled())
         .credentials_provider(Credentials::for_tests())
         .region(Region::new("us-east-1"))
-        .retry_config(retry_config)
+        .retry_config(
+            RetryConfig::adaptive()
+                .with_max_attempts(4)
+                .with_use_static_exponential_base(true),
+        )
         .time_source(SharedTimeSource::new(time_source))
         .sleep_impl(SharedAsyncSleep::new(sleep_impl.clone()))
         .retry_partition(RetryPartition::new(partition_name.to_owned()))
@@ -156,15 +161,10 @@ async fn adaptive_retries_with_throttling(
 
 #[tokio::test]
 async fn test_adaptive_retries_with_no_throttling_errors() {
-    let base_config = RetryConfig::adaptive()
-        .with_max_attempts(4)
-        .with_use_static_exponential_base(true);
-
     // Legacy: 1s base backoff → 1+2=3s, 3+1=4s, 4+1+2+4=11s
     #[allow(deprecated)]
     adaptive_retries_no_throttling(
         BehaviorVersion::v2024_03_28(),
-        base_config.clone(),
         "no_throttle_legacy",
         Duration::from_secs(3),
         Duration::from_secs(3 + 1),
@@ -175,9 +175,6 @@ async fn test_adaptive_retries_with_no_throttling_errors() {
     // Retry 2.1: DynamoDB 25ms base backoff → 25+50=75ms, 75+25=100ms, 100+25+50+100=275ms
     adaptive_retries_no_throttling(
         BehaviorVersion::latest(),
-        base_config.with_retry_spec(
-            RetrySpec::v2_1().with_non_throttling_initial_backoff(Duration::from_millis(25)),
-        ),
         "no_throttle_v2_1",
         Duration::from_millis(75),
         Duration::from_millis(100),
@@ -188,15 +185,10 @@ async fn test_adaptive_retries_with_no_throttling_errors() {
 
 #[tokio::test]
 async fn test_adaptive_retries_with_throttling_errors() {
-    let base_config = RetryConfig::adaptive()
-        .with_max_attempts(4)
-        .with_use_static_exponential_base(true);
-
     // Legacy: throttling uses 1s base, rate limiter dominates
     #[allow(deprecated)]
     adaptive_retries_with_throttling(
         BehaviorVersion::v2024_03_28(),
-        base_config.clone(),
         "throttle_legacy",
         Duration::from_secs(38),
         Duration::from_secs(47),
@@ -212,9 +204,6 @@ async fn test_adaptive_retries_with_throttling_errors() {
     // total is ~5.15s.
     adaptive_retries_with_throttling(
         BehaviorVersion::latest(),
-        base_config.with_retry_spec(
-            RetrySpec::v2_1().with_non_throttling_initial_backoff(Duration::from_millis(25)),
-        ),
         "throttle_v2_1",
         Duration::from_secs(4),
         Duration::from_millis(5000),

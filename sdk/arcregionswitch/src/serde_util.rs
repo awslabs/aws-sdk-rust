@@ -98,6 +98,15 @@ pub(crate) fn conflict_exception_correct_errors(
     builder
 }
 
+pub(crate) fn retryable_conflict_exception_correct_errors(
+    mut builder: crate::types::error::builders::RetryableConflictExceptionBuilder,
+) -> crate::types::error::builders::RetryableConflictExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn plan_correct_errors(mut builder: crate::types::builders::PlanBuilder) -> crate::types::builders::PlanBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())

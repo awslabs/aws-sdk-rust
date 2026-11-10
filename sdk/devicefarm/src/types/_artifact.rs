@@ -53,6 +53,8 @@ pub struct Artifact {
     /// <p>CUSTOMER_ARTIFACT_LOG</p></li>
     /// <li>
     /// <p>TESTSPEC_OUTPUT</p></li>
+    /// <li>
+    /// <p>DEVICE_CONNECT_COMMAND_LOG</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::ArtifactType>,
     /// <p>The artifact's file extension.</p>
@@ -114,6 +116,8 @@ impl Artifact {
     /// <p>CUSTOMER_ARTIFACT_LOG</p></li>
     /// <li>
     /// <p>TESTSPEC_OUTPUT</p></li>
+    /// <li>
+    /// <p>DEVICE_CONNECT_COMMAND_LOG</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ArtifactType> {
         self.r#type.as_ref()
@@ -218,6 +222,8 @@ impl ArtifactBuilder {
     /// <p>CUSTOMER_ARTIFACT_LOG</p></li>
     /// <li>
     /// <p>TESTSPEC_OUTPUT</p></li>
+    /// <li>
+    /// <p>DEVICE_CONNECT_COMMAND_LOG</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ArtifactType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -268,6 +274,8 @@ impl ArtifactBuilder {
     /// <p>CUSTOMER_ARTIFACT_LOG</p></li>
     /// <li>
     /// <p>TESTSPEC_OUTPUT</p></li>
+    /// <li>
+    /// <p>DEVICE_CONNECT_COMMAND_LOG</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ArtifactType>) -> Self {
         self.r#type = input;
@@ -318,6 +326,8 @@ impl ArtifactBuilder {
     /// <p>CUSTOMER_ARTIFACT_LOG</p></li>
     /// <li>
     /// <p>TESTSPEC_OUTPUT</p></li>
+    /// <li>
+    /// <p>DEVICE_CONNECT_COMMAND_LOG</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ArtifactType> {
         &self.r#type
